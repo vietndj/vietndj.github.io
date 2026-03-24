@@ -85,7 +85,7 @@
             renderRepos(); 
         }
 
-        // --- 1. QUÉT DỮ LIỆU & LẤY PREVIEW NỘI DUNG ---
+        // --- 1. QUÉT DỮ LIỆU & LẤY 500 KÝ TỰ PREVIEW ---
         async function loadRepos() {
             const container = document.getElementById('repo-container');
             container.innerHTML = '<p class="text-center text-gray-500 italic animate-pulse py-10 text-lg">🚀 Đang quét dữ liệu, trích xuất text...</p>';
@@ -96,7 +96,7 @@
                 
                 if (repos.message) throw new Error(repos.message);
 
-                repoDataCache = {}; // Reset cache
+                repoDataCache = {}; 
 
                 for (const repo of repos) {
                     if (repo.name === `${username}.github.io`) continue;
@@ -108,7 +108,6 @@
                         const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
                         
                         const fileDetails = await Promise.all(htmlFiles.map(async file => {
-                            // Lấy Ngày tháng
                             let dateObj = new Date();
                             try {
                                 const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() });
@@ -116,20 +115,18 @@
                                 if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date);
                             } catch(e) {}
 
-                            // Lấy Preview Content (Xử lý thông minh bằng DOMParser)
                             let previewText = "Không có nội dung hiển thị...";
                             try {
-                                const rawRes = await fetch(file.download_url); // Lấy raw html siêu tốc
+                                const rawRes = await fetch(file.download_url); 
                                 const htmlString = await rawRes.text();
                                 
-                                // Dùng DOM ảo để bóc tách chữ, bỏ code
                                 const doc = new DOMParser().parseFromString(htmlString, 'text/html');
                                 const rawText = doc.body.textContent || "";
                                 
-                                // Xóa khoảng trắng thừa và cắt 100 ký tự đầu tiên
                                 const cleanText = rawText.replace(/\s+/g, ' ').trim();
                                 if(cleanText.length > 0) {
-                                    previewText = cleanText.substring(0, 100) + "...";
+                                    // ĐÃ CẬP NHẬT: LẤY 500 KÝ TỰ THAY VÌ 100
+                                    previewText = cleanText.substring(0, 500) + (cleanText.length > 500 ? "..." : "");
                                 }
                             } catch(e) {}
                             
@@ -173,17 +170,17 @@
                         ${files.map(f => `
                             <li class="p-4 hover:bg-gray-50 transition group flex flex-col gap-2">
                                 <div class="flex justify-between items-start gap-2">
-                                    <div class="flex-1">
-                                        <div class="flex items-center gap-2">
+                                    <div class="flex-1 w-full">
+                                        <div class="flex items-center gap-2 mb-1">
                                             <a href="${f.url}" target="_blank" class="font-bold text-lg text-indigo-700 hover:text-indigo-500 transition line-clamp-1" title="Xem trang">📄 ${f.name}</a>
                                             <button onclick="renameFile('${repoName}', '${f.fileName}', '${f.sha}')" class="text-gray-400 hover:text-blue-600 bg-gray-100 hover:bg-blue-50 px-2 py-0.5 rounded text-xs font-bold transition" title="Đổi tên file">✏️ Sửa Tên</button>
                                         </div>
-                                        <p class="text-sm text-gray-500 italic mt-1 line-clamp-2 leading-relaxed bg-gray-50 p-2 rounded border border-gray-100 border-l-4 border-l-gray-300">
+                                        <p class="text-sm text-gray-600 italic mt-1 line-clamp-5 leading-relaxed bg-gray-50 p-3 rounded border border-gray-200 border-l-4 border-l-gray-400 shadow-inner text-justify">
                                             ${f.preview}
                                         </p>
                                     </div>
-                                    <div class="flex flex-col items-end gap-1 shrink-0">
-                                        <span class="text-[10px] sm:text-xs font-mono font-bold text-gray-400 bg-gray-100 px-2 py-1 rounded border border-gray-200">🕒 ${f.fullDate}</span>
+                                    <div class="flex flex-col items-end gap-1 shrink-0 ml-2">
+                                        <span class="text-[10px] sm:text-xs font-mono font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded border border-gray-200 shadow-sm whitespace-nowrap">🕒 ${f.fullDate}</span>
                                     </div>
                                 </div>
                             </li>
@@ -194,30 +191,26 @@
             });
         }
 
-        // --- 2. LOGIC ĐỔI TÊN FILE (Đỉnh cao API) ---
+        // --- 2. LOGIC ĐỔI TÊN FILE ---
         async function renameFile(repoName, oldFileName, fileSha) {
             const token = document.getElementById('github-token').value.trim() || savedToken;
             if(!token) return alert("❌ Bạn cần nhập GitHub Token vào ô bên phải để sử dụng tính năng này!");
 
-            // Bật bảng hỏi tên mới
             let newName = prompt(`Nhập tên file mới để thay thế cho:\n[ ${oldFileName} ]\n\nLưu ý: Viết liền không dấu, dùng gạch-ngang. VD: bai-viet-moi.html`, oldFileName);
             
-            if (!newName || newName === oldFileName) return; // Người dùng ấn Cancel hoặc không sửa
+            if (!newName || newName === oldFileName) return; 
             if (!newName.endsWith('.html')) newName += '.html';
 
             const confirmRename = confirm(`Hệ thống sẽ:\n1. Copy nội dung từ file cũ\n2. Tạo file mới: ${newName}\n3. Xóa file cũ: ${oldFileName}\n\nBạn có chắc chắn?`);
             if(!confirmRename) return;
 
-            // Đổi con trỏ chuột thành hình xoay báo hiệu đang load
             document.body.style.cursor = 'wait';
 
             try {
-                // B1: Lấy nội dung file cũ
                 const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() });
                 const oldData = await getRes.json();
                 if(!getRes.ok) throw new Error("Không thể đọc file cũ.");
 
-                // B2: Tạo file mới với nội dung Y HỆT file cũ (dùng base64 cũ)
                 const createRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, {
                     method: 'PUT',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -225,7 +218,6 @@
                 });
                 if(!createRes.ok) throw new Error("Lỗi khi tạo file tên mới. (Có thể tên file đã tồn tại).");
 
-                // B3: Xóa file cũ
                 const deleteRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, {
                     method: 'DELETE',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
@@ -233,7 +225,7 @@
                 });
 
                 alert(`✅ Thành công! Đã đổi tên thành: ${newName}`);
-                loadRepos(); // Quét lại toàn bộ giao diện
+                loadRepos(); 
 
             } catch(e) {
                 alert(`❌ Có lỗi xảy ra: ${e.message}`);
@@ -273,7 +265,6 @@
                     document.getElementById('upload-filename').value = '';
                     document.getElementById('upload-content').value = '';
                     
-                    // Quét lại hệ thống sau khi tạo
                     loadRepos();
                     
                     setTimeout(() => window.open(`https://${repoPath.split('/')[0]}.github.io/${repoPath.split('/')[1]}/${name}`, '_blank'), 2000);
