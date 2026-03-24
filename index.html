@@ -3,94 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vietndj - Trung Tâm Quản Lý</title>
+    <title>vietndj - Command Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-    </style>
+    <style> body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } </style>
 </head>
-<body class="bg-gray-100 min-h-screen text-gray-800 p-6 md:p-12">
+<body class="bg-gray-100 min-h-screen text-gray-800 p-4 md:p-8">
 
-    <header class="max-w-4xl mx-auto text-center mb-10">
-        <h1 class="text-4xl font-extrabold text-indigo-700 mb-2">🌐 vietndj Hub</h1>
-        <p class="text-gray-500 text-lg">Hệ thống sinh thái Kho lưu trữ & Bài viết</p>
+    <header class="max-w-6xl mx-auto text-center mb-8 bg-indigo-600 text-white p-6 rounded-2xl shadow-lg">
+        <h1 class="text-3xl md:text-4xl font-extrabold mb-2">🚀 vietndj Command Center</h1>
+        <p class="text-indigo-200">Trạm điều khiển Sinh thái GitHub Pages</p>
     </header>
 
-    <main class="max-w-4xl mx-auto">
-        <div id="repo-container" class="grid grid-cols-1 gap-6">
-            <p class="text-center text-gray-500 italic animate-pulse">⏳ Đang quét toàn bộ dữ liệu từ GitHub...</p>
+    <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <div class="lg:col-span-7 flex flex-col gap-6">
+            <section class="bg-white p-6 rounded-xl shadow border border-gray-200">
+                <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-4 flex items-center gap-2">
+                    <span>📂</span> Quản Lý Kho (Repositories)
+                </h2>
+                <div id="repo-container" class="flex flex-col gap-4">
+                    <p class="text-center text-gray-500 italic animate-pulse">⏳ Đang tải dữ liệu từ GitHub...</p>
+                </div>
+            </section>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col gap-6">
+            
+            <section class="bg-white p-6 rounded-xl shadow border border-gray-200 border-t-4 border-t-green-500">
+                <h2 class="text-xl font-bold text-gray-800 border-b pb-2 mb-4 flex items-center gap-2">
+                    <span>⚡</span> Tạo File HTML Siêu Tốc
+                </h2>
+                
+                <div class="space-y-3">
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">🔑 GitHub Token (Chỉ nhập 1 lần)</label>
+                        <input type="password" id="github-token" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" 
+                               class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-green-500 text-sm">
+                    </div>
+                    <div class="grid grid-cols-2 gap-2">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Tên Kho</label>
+                            <input type="text" id="upload-repo" placeholder="vietndj/aiTool" value="vietndj/"
+                                   class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-green-500 text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-600 mb-1">Tên File</label>
+                            <input type="text" id="upload-filename" placeholder="bai-moi.html" 
+                                   class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-green-500 text-sm">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-semibold text-gray-600 mb-1">Code HTML</label>
+                        <textarea id="upload-content" rows="4" placeholder="Dán code HTML của bạn vào đây..." 
+                                  class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-green-500 text-sm font-mono"></textarea>
+                    </div>
+                    <button onclick="createFile()" id="btn-create" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-2 rounded transition-colors">
+                        🚀 Push Lên GitHub Ngay
+                    </button>
+                    <p id="upload-status" class="text-sm text-center font-semibold mt-2 hidden"></p>
+                </div>
+            </section>
+
+            <section class="bg-white p-6 rounded-xl shadow border border-gray-200 border-t-4 border-t-blue-500">
+                <h2 class="text-xl font-bold text-gray-800 border-b pb-2 mb-4 flex items-center gap-2">
+                    <span>🤖</span> Tạo Index.html (Trang Chủ Kho)
+                </h2>
+                
+                <div class="mb-4">
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Nhập tên kho (VD: vietndj/aiTool)</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="repo-input" placeholder="vietndj/..." class="w-full px-3 py-2 border rounded text-sm focus:ring-2 focus:ring-blue-500">
+                        <button onclick="generateIndexCode()" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded text-sm font-bold whitespace-nowrap">Tạo Code</button>
+                    </div>
+                </div>
+                
+                <div class="relative mb-4">
+                    <textarea id="output-code" rows="3" readonly placeholder="Mã HTML tự động sẽ hiện ở đây..." 
+                              class="w-full px-3 py-2 bg-gray-900 text-green-400 font-mono text-xs rounded"></textarea>
+                    <button onclick="copyCode('output-code')" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-[10px] px-2 py-1 rounded">📋 Copy</button>
+                </div>
+
+                <div class="border-t pt-3">
+                    <label class="block text-xs font-semibold text-gray-600 mb-1">Mega Prompt cho Gemini</label>
+                    <div class="flex gap-2">
+                        <button onclick="copyMegaPrompt()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 text-sm py-2 rounded font-medium">📋 Copy Prompt</button>
+                        <a href="https://gemini.google.com/" target="_blank" class="flex-1 text-center bg-blue-100 hover:bg-blue-200 text-blue-700 text-sm py-2 rounded font-medium">Mở Gemini ↗</a>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
 
     <script>
         const username = 'vietndj';
-        const container = document.getElementById('repo-container');
 
-        // 1. Lấy danh sách tất cả các kho (repos)
+        // --- 1. QUÉT DANH SÁCH KHO ---
         fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
             .then(res => res.json())
             .then(repos => {
-                container.innerHTML = ''; // Xóa chữ loading
+                const container = document.getElementById('repo-container');
+                container.innerHTML = ''; 
+
+                if (repos.message && repos.message.includes("API rate limit")) {
+                    container.innerHTML = '<p class="text-red-500 text-center font-bold">⚠️ Vượt quá 60 lần quét/giờ. Đợi chút nhé!</p>';
+                    return;
+                }
 
                 repos.forEach(repo => {
-                    // Bỏ qua kho chứa trang chủ này
                     if (repo.name === `${username}.github.io`) return;
 
-                    // 2. Tạo khung (Card) cho mỗi kho
-                    const repoCard = document.createElement('div');
-                    repoCard.className = "bg-white p-6 rounded-xl shadow border border-gray-200";
-                    repoCard.innerHTML = `
-                        <h2 class="text-2xl font-bold text-gray-800 border-b pb-2 mb-4 flex items-center justify-between">
-                            <span>📂 ${repo.name}</span>
-                            <a href="https://${username}.github.io/${repo.name}/" target="_blank" class="text-sm text-indigo-500 hover:text-indigo-700 font-normal">Mở trang chủ kho ↗</a>
-                        </h2>
-                        <ul id="list-${repo.name}" class="flex flex-col gap-2 pl-2">
-                            <li class="text-sm text-gray-400 italic loading-text">Đang tải bài viết...</li>
+                    const card = document.createElement('div');
+                    card.className = "bg-gray-50 p-4 rounded-lg border border-gray-200";
+                    card.innerHTML = `
+                        <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-gray-200 pb-2 mb-3 gap-2">
+                            <h3 class="text-lg font-bold text-indigo-700">📂 ${repo.name}</h3>
+                            <div class="flex gap-2 text-xs font-medium">
+                                <a href="https://${username}.github.io/${repo.name}/" target="_blank" class="bg-indigo-100 text-indigo-700 px-2 py-1 rounded hover:bg-indigo-200 transition">🌐 Xem Web</a>
+                                <a href="https://github.dev/${username}/${repo.name}" target="_blank" class="bg-gray-800 text-white px-2 py-1 rounded hover:bg-gray-700 transition">💻 Mở VS Code</a>
+                            </div>
+                        </div>
+                        <ul id="list-${repo.name}" class="flex flex-col gap-1 pl-2 text-sm">
+                            <li class="text-gray-400 italic text-xs">Đang quét file...</li>
                         </ul>
                     `;
-                    container.appendChild(repoCard);
+                    container.appendChild(card);
 
-                    // 3. Quét các file bên trong kho đó
+                    // Quét file con
                     fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`)
                         .then(res => res.json())
                         .then(files => {
-                            const listContainer = document.getElementById(`list-${repo.name}`);
-                            listContainer.innerHTML = ''; // Xóa chữ "đang tải bài viết..."
-
-                            // Nếu kho trống hoặc bị lỗi API
-                            if (!Array.isArray(files)) {
-                                listContainer.innerHTML = '<li class="text-gray-500 text-sm">Không thể tải dữ liệu (Có thể kho trống).</li>';
-                                return;
-                            }
-
-                            // Lọc ra các file .html và bỏ qua index.html
+                            const list = document.getElementById(`list-${repo.name}`);
+                            list.innerHTML = ''; 
+                            if (!Array.isArray(files)) { list.innerHTML = '<li class="text-gray-400 text-xs">Kho rỗng/Lỗi API</li>'; return; }
+                            
                             const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
+                            if (htmlFiles.length === 0) { list.innerHTML = '<li class="text-gray-400 text-xs">Chưa có bài viết .html</li>'; return; }
 
-                            if (htmlFiles.length === 0) {
-                                listContainer.innerHTML = '<li class="text-gray-400 text-sm">Chưa có bài viết .html nào.</li>';
-                                return;
-                            }
-
-                            // Hiển thị từng file thành link
                             htmlFiles.forEach(file => {
                                 let name = decodeURIComponent(file.name.replace('.html', ''));
-                                listContainer.innerHTML += `
-                                    <li>
-                                        <a href="https://${username}.github.io/${repo.name}/${file.name}" target="_blank" class="text-gray-700 hover:text-indigo-600 hover:underline flex items-center gap-2 transition-colors">
-                                            📄 ${name}
-                                        </a>
-                                    </li>
-                                `;
+                                list.innerHTML += `<li><a href="https://${username}.github.io/${repo.name}/${file.name}" target="_blank" class="text-gray-600 hover:text-indigo-600 hover:underline">📄 ${name}</a></li>`;
                             });
-                        })
-                        .catch(err => {
-                            document.getElementById(`list-${repo.name}`).innerHTML = '<li class="text-red-400 text-sm">Lỗi quét file.</li>';
                         });
                 });
-            })
-            .catch(err => {
-                container.innerHTML = '<p class="text-red-500 text-center">❌ Lỗi kết nối đến GitHub API.</p>';
             });
+
+        // --- 2. LOGIC TẠO FILE TỰ ĐỘNG BẰNG GITHUB API ---
+        // Tự động điền token nếu đã lưu
+        const savedToken = localStorage.getItem('github_pat');
+        if(savedToken) document.getElementById('github-token').value = savedToken;
+
+        async function createFile() {
+            const token = document.getElementById('github-token').value.trim();
+            const repo = document.getElementById('upload-repo').value.trim();
+            let filename = document.getElementById('upload-filename').value.trim();
+            const content = document.getElementById('upload-content').value;
+            const statusEl = document.getElementById('upload-status');
+            const btn = document.getElementById('btn-create');
+
+            if(!token || !repo || !filename || !content) {
+                alert("Vui lòng điền đầy đủ các ô!"); return;
+            }
+
+            if(!filename.endsWith('.html')) filename += '.html';
+            
+            // Lưu token vào máy tính để lần sau không phải nhập lại
+            localStorage.setItem('github_pat', token);
+
+            btn.innerText = "⏳ Đang đẩy lên..."; btn.disabled = true;
+            statusEl.classList.remove('hidden', 'text-green-600', 'text-red-600');
+            statusEl.innerText = "Đang xử lý...";
+
+            try {
+                // Mã hóa nội dung thành Base64 (Hỗ trợ tiếng Việt)
+                const base64Content = btoa(unescape(encodeURIComponent(content)));
+
+                const response = await fetch(`https://api.github.com/repos/${repo}/contents/${filename}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        message: `Tự động tạo file ${filename} qua Command Center`,
+                        content: base64Content
+                    })
+                });
+
+                const data = await response.json();
+
+                if(response.ok) {
+                    statusEl.innerText = `✅ Thành công! Đã tạo ${filename}`;
+                    statusEl.classList.add('text-green-600');
+                    document.getElementById('upload-filename').value = '';
+                    document.getElementById('upload-content').value = '';
+                } else {
+                    statusEl.innerText = `❌ Lỗi: ${data.message}`;
+                    statusEl.classList.add('text-red-600');
+                }
+            } catch (error) {
+                statusEl.innerText = `❌ Lỗi kết nối mạng`;
+                statusEl.classList.add('text-red-600');
+            } finally {
+                btn.innerText = "🚀 Push Lên GitHub Ngay"; btn.disabled = false;
+            }
+        }
+
+        // --- 3. LOGIC TẠO CODE INDEX VÀ MEGA PROMPT ---
+        function generateIndexCode() {
+            const repo = document.getElementById('repo-input').value.trim();
+            if(!repo) { alert("Nhập tên kho!"); return; }
+            const code = `<!DOCTYPE html><html lang="vi"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Trang chủ</title><script src="https://cdn.tailwindcss.com"><\/script></head><body class="bg-gray-100 p-8"><div class="max-w-3xl mx-auto bg-white p-8 rounded shadow"><h1 class="text-3xl font-bold text-blue-600 border-b pb-4 mb-4">Danh sách bài viết</h1><div id="list" class="flex flex-col gap-2"></div></div><script>fetch('https://api.github.com/repos/${repo}/contents/').then(r=>r.json()).then(d=>{const lst=document.getElementById('list');d.filter(f=>f.name.endsWith('.html')&&f.name!=='index.html').forEach(f=>lst.innerHTML+=\`<a href="\${f.name}" class="p-3 bg-gray-50 border rounded hover:bg-blue-50">📄 \${decodeURIComponent(f.name.replace('.html',''))}</a>\`)})<\/script></body></html>`;
+            document.getElementById('output-code').value = code;
+        }
+
+        function copyCode(id) {
+            const val = document.getElementById(id).value;
+            if(!val) return;
+            navigator.clipboard.writeText(val);
+            alert("✅ Đã Copy!");
+        }
+
+        function copyMegaPrompt() {
+            const prompt = `Đóng vai chuyên gia lập trình Web. Giúp tôi tạo file index.html tự động cập nhật danh sách bài viết trong kho GitHub. Hỏi tôi tên kho trước, sau đó dùng Fetch API gọi https://api.github.com/repos/[TÊN_KHO]/contents/ để lấy danh sách file (lọc bỏ index.html). Dùng TailwindCSS cho đẹp.`;
+            navigator.clipboard.writeText(prompt);
+            alert("✅ Đã Copy Mega Prompt!");
+        }
     </script>
 </body>
 </html>
