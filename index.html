@@ -7,180 +7,90 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
-        /* Hiệu ứng cuộn mượt */
-        html { scroll-behavior: smooth; }
     </style>
 </head>
-<body class="bg-gray-100 min-h-screen text-gray-800">
+<body class="bg-gray-100 min-h-screen text-gray-800 p-6 md:p-12">
 
-    <header class="bg-indigo-600 text-white p-8 text-center shadow-md">
-        <h1 class="text-4xl font-extrabold mb-2">🌐 vietndj Hub</h1>
-        <p class="text-indigo-200 text-lg">Hệ thống quản lý Kho lưu trữ & Công cụ AI</p>
+    <header class="max-w-4xl mx-auto text-center mb-10">
+        <h1 class="text-4xl font-extrabold text-indigo-700 mb-2">🌐 vietndj Hub</h1>
+        <p class="text-gray-500 text-lg">Hệ thống sinh thái Kho lưu trữ & Bài viết</p>
     </header>
 
-    <main class="max-w-5xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 mt-6">
-
-        <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-4 flex items-center">
-                <span class="mr-2">📂</span> Các Kho (Repositories)
-            </h2>
-            <p class="text-sm text-gray-500 mb-4">Tự động lấy dữ liệu từ GitHub của vietndj.</p>
-            
-            <div id="repo-list" class="flex flex-col gap-3">
-                <p class="text-gray-400 italic animate-pulse">Đang tải danh sách kho...</p>
-            </div>
-        </section>
-
-        <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-            <h2 class="text-2xl font-bold text-gray-800 border-b pb-3 mb-4 flex items-center">
-                <span class="mr-2">⚡</span> Tool Tạo Trang Tự Động
-            </h2>
-            <p class="text-sm text-gray-500 mb-4">Không cần dùng Gemini nữa. Chỉ cần nhập tên kho, hệ thống sẽ tự tạo code `index.html` cho bạn copy.</p>
-
-            <div class="mb-4">
-                <label class="block text-sm font-semibold mb-1">Nhập tên kho của bạn (Ví dụ: vietndj/aiTool)</label>
-                <div class="flex gap-2">
-                    <input type="text" id="repo-input" placeholder="vietndj/ten-kho-cua-ban" 
-                           class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                    <button onclick="generateCode()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg font-bold transition-colors shadow-md whitespace-nowrap">
-                        Tạo Code
-                    </button>
-                </div>
-            </div>
-
-            <div class="relative">
-                <textarea id="output-code" rows="8" readonly placeholder="Mã nguồn HTML sẽ xuất hiện ở đây..." 
-                          class="w-full w-full px-4 py-3 bg-gray-900 text-green-400 font-mono text-sm rounded-lg focus:outline-none scrollbar-thin"></textarea>
-                
-                <button onclick="copyGeneratedCode()" class="absolute top-2 right-2 bg-gray-700 hover:bg-gray-600 text-white text-xs px-3 py-1 rounded transition-colors">
-                    📋 Copy Code
-                </button>
-            </div>
-            
-            <div class="mt-6 pt-4 border-t">
-                <h3 class="font-bold text-gray-700 mb-2">Dự phòng: Lấy Mega Prompt cho Gemini</h3>
-                <div class="flex gap-2">
-                    <button onclick="copyMegaPrompt()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-lg font-medium transition-colors">
-                        📋 Copy Mega Prompt
-                    </button>
-                    <a href="https://gemini.google.com/" target="_blank" class="flex-1 text-center bg-blue-100 hover:bg-blue-200 text-blue-700 px-4 py-2 rounded-lg font-medium transition-colors">
-                        Mở Gemini ↗️
-                    </a>
-                </div>
-            </div>
-        </section>
-
+    <main class="max-w-4xl mx-auto">
+        <div id="repo-container" class="grid grid-cols-1 gap-6">
+            <p class="text-center text-gray-500 italic animate-pulse">⏳ Đang quét toàn bộ dữ liệu từ GitHub...</p>
+        </div>
     </main>
 
     <script>
-        // --- 1. TỰ ĐỘNG TẢI DANH SÁCH KHO TỪ GITHUB API ---
         const username = 'vietndj';
+        const container = document.getElementById('repo-container');
+
+        // 1. Lấy danh sách tất cả các kho (repos)
         fetch(`https://api.github.com/users/${username}/repos?sort=updated`)
             .then(res => res.json())
             .then(repos => {
-                const repoList = document.getElementById('repo-list');
-                repoList.innerHTML = ''; // Xóa chữ loading
-                
-                repos.forEach(repo => {
-                    // Bỏ qua kho chứa trang chủ này để tránh tự lặp
-                    if(repo.name === `${username}.github.io`) return;
+                container.innerHTML = ''; // Xóa chữ loading
 
-                    const link = document.createElement('a');
-                    // Đường link trỏ tới website Pages của kho đó
-                    link.href = `https://${username}.github.io/${repo.name}/`;
-                    link.target = "_blank";
-                    link.className = "flex items-center justify-between p-3 bg-gray-50 rounded-lg hover:bg-indigo-50 border border-gray-200 hover:border-indigo-300 transition-all";
-                    
-                    link.innerHTML = `
-                        <div>
-                            <span class="font-bold text-indigo-700 text-lg">${repo.name}</span>
-                            <span class="block text-xs text-gray-500 mt-1">${repo.description || 'Không có mô tả'}</span>
-                        </div>
-                        <span class="text-indigo-400">➔</span>
+                repos.forEach(repo => {
+                    // Bỏ qua kho chứa trang chủ này
+                    if (repo.name === `${username}.github.io`) return;
+
+                    // 2. Tạo khung (Card) cho mỗi kho
+                    const repoCard = document.createElement('div');
+                    repoCard.className = "bg-white p-6 rounded-xl shadow border border-gray-200";
+                    repoCard.innerHTML = `
+                        <h2 class="text-2xl font-bold text-gray-800 border-b pb-2 mb-4 flex items-center justify-between">
+                            <span>📂 ${repo.name}</span>
+                            <a href="https://${username}.github.io/${repo.name}/" target="_blank" class="text-sm text-indigo-500 hover:text-indigo-700 font-normal">Mở trang chủ kho ↗</a>
+                        </h2>
+                        <ul id="list-${repo.name}" class="flex flex-col gap-2 pl-2">
+                            <li class="text-sm text-gray-400 italic loading-text">Đang tải bài viết...</li>
+                        </ul>
                     `;
-                    repoList.appendChild(link);
+                    container.appendChild(repoCard);
+
+                    // 3. Quét các file bên trong kho đó
+                    fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`)
+                        .then(res => res.json())
+                        .then(files => {
+                            const listContainer = document.getElementById(`list-${repo.name}`);
+                            listContainer.innerHTML = ''; // Xóa chữ "đang tải bài viết..."
+
+                            // Nếu kho trống hoặc bị lỗi API
+                            if (!Array.isArray(files)) {
+                                listContainer.innerHTML = '<li class="text-gray-500 text-sm">Không thể tải dữ liệu (Có thể kho trống).</li>';
+                                return;
+                            }
+
+                            // Lọc ra các file .html và bỏ qua index.html
+                            const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
+
+                            if (htmlFiles.length === 0) {
+                                listContainer.innerHTML = '<li class="text-gray-400 text-sm">Chưa có bài viết .html nào.</li>';
+                                return;
+                            }
+
+                            // Hiển thị từng file thành link
+                            htmlFiles.forEach(file => {
+                                let name = decodeURIComponent(file.name.replace('.html', ''));
+                                listContainer.innerHTML += `
+                                    <li>
+                                        <a href="https://${username}.github.io/${repo.name}/${file.name}" target="_blank" class="text-gray-700 hover:text-indigo-600 hover:underline flex items-center gap-2 transition-colors">
+                                            📄 ${name}
+                                        </a>
+                                    </li>
+                                `;
+                            });
+                        })
+                        .catch(err => {
+                            document.getElementById(`list-${repo.name}`).innerHTML = '<li class="text-red-400 text-sm">Lỗi quét file.</li>';
+                        });
                 });
             })
             .catch(err => {
-                document.getElementById('repo-list').innerHTML = '<p class="text-red-500">Lỗi khi tải danh sách kho.</p>';
+                container.innerHTML = '<p class="text-red-500 text-center">❌ Lỗi kết nối đến GitHub API.</p>';
             });
-
-
-        // --- 2. LOGIC TẠO CODE HTML CHO TRANG CON ---
-        function generateCode() {
-            const repoName = document.getElementById('repo-input').value.trim();
-            if(!repoName) {
-                alert("Vui lòng nhập tên kho (VD: vietndj/aiTool)");
-                return;
-            }
-
-            // Mẫu code chuẩn bị sẵn (Sử dụng thủ thuật chia thẻ script để không bị lỗi trình duyệt)
-            const template = `<!DOCTYPE html>
-<html lang="vi">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ - ${repoName}</title>
-    <script src="https://cdn.tailwindcss.com"><\/script>
-</head>
-<body class="bg-gray-100 min-h-screen p-6 md:p-12">
-    <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl shadow-lg border border-gray-200">
-        <div class="text-center mb-10 border-b pb-6">
-            <h1 class="text-3xl font-extrabold text-blue-700 mb-2">Trang chủ: ${repoName.split('/')[1] || repoName}</h1>
-            <p class="text-gray-500">Danh sách bài viết tự động cập nhật</p>
-        </div>
-        <div id="danh-sach-bai-viet" class="flex flex-col gap-4">
-            <p class="text-gray-500 italic text-center">⏳ Đang quét dữ liệu...</p>
-        </div>
-    </div>
-
-    <script>
-        const repo = '${repoName}'; 
-        fetch('https://api.github.com/repos/' + repo + '/contents/')
-            .then(res => res.json())
-            .then(data => {
-                const khung = document.getElementById('danh-sach-bai-viet');
-                khung.innerHTML = '';
-                const files = data.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
-                if(files.length === 0) {
-                    khung.innerHTML = '<p class="text-center text-gray-500">Chưa có file nào.</p>';
-                    return;
-                }
-                files.forEach(file => {
-                    let name = decodeURIComponent(file.name.replace('.html', ''));
-                    khung.innerHTML += \`<a href="\${file.name}" class="p-4 bg-gray-50 rounded hover:bg-blue-50 border flex justify-between group">
-                        <span class="font-medium text-gray-700 group-hover:text-blue-600">📄 \${name}</span>
-                        <span class="text-blue-400">➔</span>
-                    </a>\`;
-                });
-            });
-    <\/script>
-</body>
-</html>`;
-
-            document.getElementById('output-code').value = template;
-        }
-
-
-		
-        // --- 3. CÁC HÀM COPY ---
-        function copyGeneratedCode() {
-            const code = document.getElementById('output-code').value;
-            if(!code) {
-                alert("Bạn chưa tạo code!");
-                return;
-            }
-            navigator.clipboard.writeText(code);
-            alert("✅ Đã copy mã HTML! Hãy dán vào file index.html của kho con.");
-        }
-
-        const megaPrompt = `Đóng vai là một chuyên gia lập trình Web và GitHub Pages. Nhiệm vụ của bạn là giúp tôi tạo nhanh một trang chủ index.html có khả năng tự động cập nhật danh sách các file bài viết/công cụ trong kho GitHub của tôi.
-Yêu cầu bạn hỏi tôi tên kho trước, sau đó viết code HTML5 + Tailwind CSS tự động fetch danh sách file từ kho đó (loại bỏ index.html). Trình bày dạng nút bấm đẹp mắt.`;
-
-        function copyMegaPrompt() {
-            navigator.clipboard.writeText(megaPrompt);
-            alert("✅ Đã copy Mega Prompt! Bạn có thể dán vào Gemini.");
-        }
     </script>
 </body>
 </html>
