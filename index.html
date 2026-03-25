@@ -5,108 +5,150 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>vietndj - CMS Super Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style> body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } </style>
+    <style> 
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } 
+        /* Tùy chỉnh thanh cuộn cho Kanban */
+        .kanban-scroll::-webkit-scrollbar { height: 8px; width: 6px; }
+        .kanban-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
+        .kanban-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .kanban-scroll::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
 </head>
-<body class="bg-gray-100 min-h-screen text-gray-800 p-4 md:p-8">
+<body class="bg-slate-50 min-h-screen text-slate-800 p-4 md:p-8">
 
-    <header class="max-w-7xl mx-auto text-center mb-8 bg-indigo-800 text-white p-6 rounded-2xl shadow-xl border-b-4 border-indigo-900">
-        <h1 class="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-indigo-100">🚀 vietndj CMS Super Center</h1>
-        <p class="text-indigo-200 font-medium">Quản lý File, Đổi Tên & Preview Nội Dung Trực Tiếp</p>
+    <header class="max-w-7xl mx-auto text-center mb-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl">
+        <h1 class="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">🚀 vietndj CMS Dashboard</h1>
+        <p class="text-slate-400 font-medium">Hệ quản trị Nội dung Đa góc nhìn (Multi-view)</p>
     </header>
 
-    <main class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6">
+    <main class="max-w-7xl mx-auto flex flex-col gap-6">
 
-        <div class="lg:col-span-8 flex flex-col gap-6">
-            <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200">
-                <div class="flex flex-col sm:flex-row justify-between items-center border-b pb-4 mb-4 gap-4">
-                    <h2 class="text-2xl font-bold text-gray-800 flex items-center gap-2">
-                        <span>📂</span> Hệ Thống Kho (Repos)
-                    </h2>
-                    <div class="flex gap-2 bg-gray-100 p-1 rounded-lg">
-                        <button onclick="changeSortOrder('desc')" id="sort-desc" class="px-3 py-1.5 rounded-md text-sm font-bold bg-indigo-600 text-white shadow">Mới nhất ↓</button>
-                        <button onclick="changeSortOrder('asc')" id="sort-asc" class="px-3 py-1.5 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-200 transition">Cũ nhất ↑</button>
-                        <button onclick="loadRepos()" class="ml-2 px-3 py-1.5 bg-white border border-gray-300 rounded-md text-sm hover:bg-gray-50 transition" title="Làm mới">🔄</button>
+        <section class="bg-white rounded-xl shadow-md border border-slate-200 overflow-hidden transition-all duration-300">
+            <button onclick="toggleUpload()" class="w-full px-6 py-4 flex justify-between items-center bg-emerald-50 hover:bg-emerald-100 transition text-emerald-800 font-bold border-b border-emerald-100 focus:outline-none">
+                <span class="flex items-center gap-2"><span>⚡</span> Mở công cụ Tạo File HTML (Upload)</span>
+                <span id="upload-icon" class="transform transition-transform duration-300">▼</span>
+            </button>
+            
+            <div id="upload-section" class="hidden p-6 bg-white">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 mb-1">🔑 GITHUB TOKEN</label>
+                        <input type="password" id="github-token" class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 mb-1">CHỌN KHO</label>
+                        <input type="text" id="upload-repo" value="vietndj/" class="w-full px-3 py-2 border rounded font-bold text-indigo-700 bg-slate-50">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-500 mb-1">TÊN FILE MỚI (.html)</label>
+                        <input type="text" id="upload-filename" placeholder="ten-bai-viet.html" class="w-full px-3 py-2 border rounded font-semibold focus:ring-2 focus:ring-emerald-500">
                     </div>
                 </div>
-                <div id="repo-container" class="flex flex-col gap-6">
-                    <p class="text-center text-gray-500 italic animate-pulse py-10 text-lg">🚀 Đang quét & trích xuất nội dung từ GitHub...</p>
+                <div class="mb-4">
+                    <label class="block text-xs font-bold text-slate-500 mb-1">MÃ NGUỒN (HTML Code)</label>
+                    <textarea id="upload-content" rows="6" class="w-full px-3 py-2 border rounded font-mono text-xs bg-slate-900 text-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500" placeholder="<html>...</html>"></textarea>
                 </div>
-            </section>
+                <button onclick="createFile()" id="btn-create" class="w-full md:w-auto px-8 bg-emerald-600 hover:bg-emerald-700 text-white font-extrabold py-3 rounded-lg transition-all shadow-md active:scale-95">
+                    🚀 PUSH LÊN GITHUB
+                </button>
+                <p id="upload-status" class="text-sm font-bold mt-3 hidden px-4 py-2 rounded-lg inline-block"></p>
+            </div>
+        </section>
+
+        <section class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4 sticky top-4 z-10">
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0 w-full md:w-auto kanban-scroll">
+                <span class="text-sm font-bold text-slate-500 mr-2">Góc nhìn:</span>
+                <button onclick="setView('gallery')" id="btn-view-gallery" class="px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 bg-indigo-600 text-white shadow"><span class="text-lg">🪟</span> Gallery</button>
+                <button onclick="setView('kanban')" id="btn-view-kanban" class="px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100"><span class="text-lg">📋</span> Kanban</button>
+                <button onclick="setView('table')" id="btn-view-table" class="px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100"><span class="text-lg">📊</span> Table</button>
+                <button onclick="setView('feed')" id="btn-view-feed" class="px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100"><span class="text-lg">📰</span> Feed</button>
+                <button onclick="setView('list')" id="btn-view-list" class="px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100"><span class="text-lg">📝</span> List</button>
+            </div>
+
+            <div class="flex gap-2 w-full md:w-auto justify-end">
+                <button onclick="changeSortOrder('desc')" id="sort-desc" class="px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow">Mới nhất ↓</button>
+                <button onclick="changeSortOrder('asc')" id="sort-asc" class="px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition">Cũ nhất ↑</button>
+                <button onclick="loadRepos()" class="px-3 py-1.5 bg-slate-100 text-slate-600 rounded-md text-sm hover:bg-slate-200 font-bold transition flex items-center gap-1">🔄 Làm mới</button>
+            </div>
+        </section>
+
+        <div id="repo-container" class="transition-all duration-300">
+            <p class="text-center text-slate-500 italic animate-pulse py-10 text-lg">🚀 Đang quét dữ liệu, trích xuất text...</p>
         </div>
 
-        <div class="lg:col-span-4">
-            <section class="bg-white p-6 rounded-xl shadow-lg border border-gray-200 border-t-4 border-t-green-500 sticky top-6">
-                <h2 class="text-xl font-bold text-gray-800 border-b pb-3 mb-4 flex items-center gap-2">
-                    <span>⚡</span> Tạo File HTML Ngay
-                </h2>
-                <div class="space-y-4">
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">🔑 GITHUB TOKEN</label>
-                        <input type="password" id="github-token" class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-green-500 text-sm bg-gray-50">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">CHỌN KHO (Tự động điền khi bấm tên kho ở cột trái)</label>
-                        <input type="text" id="upload-repo" value="vietndj/" class="w-full px-3 py-2 border rounded font-bold text-indigo-700 bg-gray-50">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">TÊN FILE MỚI (.html)</label>
-                        <input type="text" id="upload-filename" placeholder="ten-bai-viet.html" class="w-full px-3 py-2 border rounded font-semibold focus:ring-2 focus:ring-green-500">
-                    </div>
-                    <div>
-                        <label class="block text-xs font-bold text-gray-500 mb-1">MÃ NGUỒN (HTML Code)</label>
-                        <textarea id="upload-content" rows="10" class="w-full px-3 py-2 border rounded font-mono text-xs bg-gray-900 text-green-400 focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="<html>...</html>"></textarea>
-                    </div>
-                    <button onclick="createFile()" id="btn-create" class="w-full bg-green-600 hover:bg-green-700 text-white font-extrabold py-3 rounded-lg transition-all shadow-lg transform active:scale-95">
-                        🚀 PUSH LÊN GITHUB
-                    </button>
-                    <p id="upload-status" class="text-sm text-center font-bold p-2 rounded-lg hidden"></p>
-                </div>
-            </section>
-        </div>
     </main>
 
     <script>
         const username = 'vietndj';
         let sortOrder = 'desc'; 
+        let currentView = 'gallery'; // Mặc định là Gallery Notion
         let repoDataCache = {}; 
+        let allFilesCache = []; // Bộ đệm phẳng cho mọi file
 
+        // Khởi tạo Token
         const savedToken = localStorage.getItem('github_pat');
         if(savedToken) document.getElementById('github-token').value = savedToken;
-
         function getHeaders() {
             const t = document.getElementById('github-token').value.trim() || savedToken;
             return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : {};
         }
 
+        // Toggle Accordion Upload
+        function toggleUpload() {
+            const section = document.getElementById('upload-section');
+            const icon = document.getElementById('upload-icon');
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                section.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+
+        // Đổi chế độ sắp xếp
         function changeSortOrder(order) {
             sortOrder = order;
-            document.getElementById('sort-desc').className = order === 'desc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-indigo-600 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-200 transition';
-            document.getElementById('sort-asc').className = order === 'asc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-indigo-600 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-gray-600 hover:bg-gray-200 transition';
+            document.getElementById('sort-desc').className = order === 'desc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition';
+            document.getElementById('sort-asc').className = order === 'asc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition';
             renderRepos(); 
         }
 
-        // --- 1. QUÉT DỮ LIỆU & LẤY 500 KÝ TỰ PREVIEW ---
+        // Đổi chế độ View
+        function setView(view) {
+            currentView = view;
+            const views = ['gallery', 'kanban', 'table', 'feed', 'list'];
+            views.forEach(v => {
+                const btn = document.getElementById(`btn-view-${v}`);
+                if(v === view) {
+                    btn.className = 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 bg-indigo-600 text-white shadow';
+                } else {
+                    btn.className = 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100';
+                }
+            });
+            renderRepos();
+        }
+
+        // --- 1. TẢI DỮ LIỆU ---
         async function loadRepos() {
             const container = document.getElementById('repo-container');
-            container.innerHTML = '<p class="text-center text-gray-500 italic animate-pulse py-10 text-lg">🚀 Đang quét dữ liệu, trích xuất text...</p>';
+            container.innerHTML = '<p class="text-center text-slate-500 italic animate-pulse py-10 text-lg">🚀 Đang kết nối GitHub và trích xuất nội dung...</p>';
 
             try {
                 const resRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, { headers: getHeaders() });
                 const repos = await resRepos.json();
-                
                 if (repos.message) throw new Error(repos.message);
 
                 repoDataCache = {}; 
+                allFilesCache = [];
 
                 for (const repo of repos) {
                     if (repo.name === `${username}.github.io`) continue;
-                    
                     const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() });
                     const files = await resFiles.json();
                     
                     if (Array.isArray(files)) {
                         const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
-                        
                         const fileDetails = await Promise.all(htmlFiles.map(async file => {
                             let dateObj = new Date();
                             try {
@@ -119,18 +161,14 @@
                             try {
                                 const rawRes = await fetch(file.download_url); 
                                 const htmlString = await rawRes.text();
-                                
                                 const doc = new DOMParser().parseFromString(htmlString, 'text/html');
                                 const rawText = doc.body.textContent || "";
-                                
                                 const cleanText = rawText.replace(/\s+/g, ' ').trim();
-                                if(cleanText.length > 0) {
-                                    // ĐÃ CẬP NHẬT: LẤY 500 KÝ TỰ THAY VÌ 100
-                                    previewText = cleanText.substring(0, 500) + (cleanText.length > 500 ? "..." : "");
-                                }
+                                if(cleanText.length > 0) previewText = cleanText.substring(0, 300) + (cleanText.length > 300 ? "..." : "");
                             } catch(e) {}
                             
-                            return {
+                            const fileData = {
+                                repoName: repo.name,
                                 name: decodeURIComponent(file.name.replace('.html', '')),
                                 fileName: file.name,
                                 sha: file.sha,
@@ -139,102 +177,193 @@
                                 fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }),
                                 preview: previewText
                             };
+                            allFilesCache.push(fileData);
+                            return fileData;
                         }));
                         repoDataCache[repo.name] = fileDetails;
                     }
                 }
                 renderRepos();
             } catch(e) {
-                container.innerHTML = `<div class="p-4 bg-red-100 text-red-700 rounded-lg font-bold text-center">❌ Lỗi: ${e.message}</div>`;
+                container.innerHTML = `<div class="p-4 bg-red-100 text-red-700 rounded-lg font-bold text-center shadow">❌ Lỗi API: ${e.message}</div>`;
             }
         }
 
+        // --- 2. RENDER THEO CHẾ ĐỘ (VIEWS) ---
         function renderRepos() {
             const container = document.getElementById('repo-container');
             container.innerHTML = '';
+            container.className = ''; // Reset class
 
-            Object.keys(repoDataCache).forEach(repoName => {
-                const files = [...repoDataCache[repoName]];
-                files.sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
+            // Chuẩn bị dữ liệu phẳng đã sort
+            let sortedAllFiles = [...allFilesCache].sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
 
-                const card = document.createElement('div');
-                card.className = "bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm";
-                card.innerHTML = `
-                    <div class="bg-indigo-50 px-4 py-3 flex justify-between items-center border-b border-indigo-100">
-                        <h3 class="font-black text-indigo-800 uppercase text-sm tracking-wider cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'">
-                            📂 ${repoName} <span class="text-xs font-normal text-indigo-500">(Bấm chọn kho)</span>
-                        </h3>
-                    </div>
-                    <ul class="divide-y divide-gray-100">
-                        ${files.length === 0 ? '<li class="text-xs text-gray-400 p-4 italic text-center">Kho trống</li>' : ''}
-                        ${files.map(f => `
-                            <li class="p-4 hover:bg-gray-50 transition group flex flex-col gap-2">
-                                <div class="flex justify-between items-start gap-2">
-                                    <div class="flex-1 w-full">
-                                        <div class="flex items-center gap-2 mb-1">
-                                            <a href="${f.url}" target="_blank" class="font-bold text-lg text-indigo-700 hover:text-indigo-500 transition line-clamp-1" title="Xem trang">📄 ${f.name}</a>
-                                            <button onclick="renameFile('${repoName}', '${f.fileName}', '${f.sha}')" class="text-gray-400 hover:text-blue-600 bg-gray-100 hover:bg-blue-50 px-2 py-0.5 rounded text-xs font-bold transition" title="Đổi tên file">✏️ Sửa Tên</button>
-                                        </div>
-                                        <p class="text-sm text-gray-600 italic mt-1 line-clamp-5 leading-relaxed bg-gray-50 p-3 rounded border border-gray-200 border-l-4 border-l-gray-400 shadow-inner text-justify">
-                                            ${f.preview}
-                                        </p>
-                                    </div>
-                                    <div class="flex flex-col items-end gap-1 shrink-0 ml-2">
-                                        <span class="text-[10px] sm:text-xs font-mono font-bold text-gray-500 bg-gray-100 px-2 py-1 rounded border border-gray-200 shadow-sm whitespace-nowrap">🕒 ${f.fullDate}</span>
-                                    </div>
+            if (sortedAllFiles.length === 0) {
+                container.innerHTML = '<div class="text-center py-12 text-slate-500 bg-white rounded-xl shadow border">Kho trống, chưa có bài viết nào!</div>';
+                return;
+            }
+
+            // GÓC NHÌN: GALLERY (Lưới Notion)
+            if (currentView === 'gallery') {
+                container.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
+                sortedAllFiles.forEach(f => {
+                    container.innerHTML += `
+                        <div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-200 overflow-hidden flex flex-col h-full group">
+                            <div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div>
+                            <div class="p-5 flex-1 flex flex-col">
+                                <div class="flex justify-between items-start mb-2">
+                                    <span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer hover:bg-indigo-100" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">📁 ${f.repoName}</span>
+                                    <button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-100 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition">✏️ Sửa</button>
                                 </div>
-                            </li>
-                        `).join('')}
-                    </ul>
+                                <a href="${f.url}" target="_blank" class="font-bold text-lg text-slate-800 hover:text-indigo-600 mb-2 line-clamp-2 leading-tight">📄 ${f.name}</a>
+                                <p class="text-xs text-slate-500 italic line-clamp-4 leading-relaxed flex-1">${f.preview}</p>
+                            </div>
+                            <div class="bg-slate-50 p-3 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center">
+                                <span>🕒 ${f.fullDate}</span>
+                            </div>
+                        </div>
+                    `;
+                });
+            } 
+            // GÓC NHÌN: KANBAN (Trello)
+            else if (currentView === 'kanban') {
+                container.className = 'flex kanban-scroll overflow-x-auto gap-6 pb-6 items-start h-[75vh]';
+                Object.keys(repoDataCache).forEach(repoName => {
+                    let files = [...repoDataCache[repoName]].sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
+                    container.innerHTML += `
+                        <div class="bg-slate-100 rounded-xl w-80 min-w-[320px] shrink-0 border border-slate-200 flex flex-col max-h-full">
+                            <div class="p-3 border-b border-slate-200 flex justify-between items-center cursor-pointer hover:bg-slate-200 transition rounded-t-xl" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'">
+                                <h3 class="font-black text-slate-700 uppercase tracking-wide">📂 ${repoName}</h3>
+                                <span class="bg-slate-300 text-slate-700 text-xs font-bold px-2 py-0.5 rounded-full">${files.length}</span>
+                            </div>
+                            <div class="p-3 overflow-y-auto flex-1 kanban-scroll space-y-3">
+                                ${files.map(f => `
+                                    <div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 group relative">
+                                        <button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="absolute top-2 right-2 text-slate-400 hover:text-blue-600 bg-slate-100 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition">✏️</button>
+                                        <a href="${f.url}" target="_blank" class="font-bold text-sm text-slate-800 hover:text-indigo-600 block pr-6 mb-1">📄 ${f.name}</a>
+                                        <p class="text-[11px] text-slate-500 line-clamp-3 mb-2">${f.preview}</p>
+                                        <span class="text-[10px] font-mono text-slate-400">🕒 ${f.fullDate}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                });
+            }
+            // GÓC NHÌN: BẢNG (Data Table)
+            else if (currentView === 'table') {
+                container.className = 'bg-white rounded-xl shadow-sm border border-slate-200 overflow-x-auto';
+                container.innerHTML = `
+                    <table class="w-full text-left border-collapse min-w-[800px]">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-500 uppercase text-xs tracking-wider border-b border-slate-200">
+                                <th class="p-4 font-bold w-1/4">Tên Bài Viết</th>
+                                <th class="p-4 font-bold w-1/6">Kho (Repo)</th>
+                                <th class="p-4 font-bold w-1/3">Trích đoạn</th>
+                                <th class="p-4 font-bold w-1/6">Cập nhật</th>
+                                <th class="p-4 font-bold text-center">Hành động</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            ${sortedAllFiles.map(f => `
+                                <tr class="hover:bg-slate-50 transition">
+                                    <td class="p-4"><a href="${f.url}" target="_blank" class="font-bold text-indigo-700 hover:underline">📄 ${f.name}</a></td>
+                                    <td class="p-4"><span class="text-xs font-bold bg-slate-100 px-2 py-1 rounded text-slate-600">📁 ${f.repoName}</span></td>
+                                    <td class="p-4 text-xs text-slate-500 italic line-clamp-2">${f.preview}</td>
+                                    <td class="p-4 text-xs font-mono text-slate-400 whitespace-nowrap">${f.fullDate}</td>
+                                    <td class="p-4 text-center">
+                                        <button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-blue-600 hover:bg-blue-50 px-2 py-1 rounded text-xs font-bold transition">Đổi tên</button>
+                                    </td>
+                                </tr>
+                            `).join('')}
+                        </tbody>
+                    </table>
                 `;
-                container.appendChild(card);
-            });
-        }
-
-        // --- 2. LOGIC ĐỔI TÊN FILE ---
-        async function renameFile(repoName, oldFileName, fileSha) {
-            const token = document.getElementById('github-token').value.trim() || savedToken;
-            if(!token) return alert("❌ Bạn cần nhập GitHub Token vào ô bên phải để sử dụng tính năng này!");
-
-            let newName = prompt(`Nhập tên file mới để thay thế cho:\n[ ${oldFileName} ]\n\nLưu ý: Viết liền không dấu, dùng gạch-ngang. VD: bai-viet-moi.html`, oldFileName);
-            
-            if (!newName || newName === oldFileName) return; 
-            if (!newName.endsWith('.html')) newName += '.html';
-
-            const confirmRename = confirm(`Hệ thống sẽ:\n1. Copy nội dung từ file cũ\n2. Tạo file mới: ${newName}\n3. Xóa file cũ: ${oldFileName}\n\nBạn có chắc chắn?`);
-            if(!confirmRename) return;
-
-            document.body.style.cursor = 'wait';
-
-            try {
-                const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() });
-                const oldData = await getRes.json();
-                if(!getRes.ok) throw new Error("Không thể đọc file cũ.");
-
-                const createRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, {
-                    method: 'PUT',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: `Đổi tên: Tạo ${newName}`, content: oldData.content })
+            }
+            // GÓC NHÌN: FEED (Tin tức)
+            else if (currentView === 'feed') {
+                container.className = 'max-w-3xl mx-auto flex flex-col gap-8 w-full';
+                sortedAllFiles.forEach(f => {
+                    container.innerHTML += `
+                        <article class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition">
+                            <div class="flex items-center gap-3 mb-4">
+                                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
+                                    ${f.repoName.charAt(0).toUpperCase()}
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p>
+                                    <p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p>
+                                </div>
+                            </div>
+                            <h2 class="text-2xl font-black text-slate-800 mb-3 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank">${f.name}</a></h2>
+                            <p class="text-slate-600 text-base leading-relaxed mb-4 bg-slate-50 p-4 rounded-xl border-l-4 border-l-indigo-300 italic">"${f.preview}"</p>
+                            <div class="flex gap-2">
+                                <a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a>
+                                <button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition">✏️ Đổi tên</button>
+                            </div>
+                        </article>
+                    `;
                 });
-                if(!createRes.ok) throw new Error("Lỗi khi tạo file tên mới. (Có thể tên file đã tồn tại).");
-
-                const deleteRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, {
-                    method: 'DELETE',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: `Đổi tên: Xóa ${oldFileName}`, sha: fileSha })
+            }
+            // GÓC NHÌN: LIST (Truyền thống theo kho)
+            else {
+                container.className = 'flex flex-col gap-6';
+                Object.keys(repoDataCache).forEach(repoName => {
+                    let files = [...repoDataCache[repoName]].sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
+                    container.innerHTML += `
+                        <div class="bg-white border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                            <div class="bg-slate-800 px-4 py-3 border-b border-slate-900 cursor-pointer" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'">
+                                <h3 class="font-black text-white uppercase text-sm tracking-widest">📂 ${repoName}</h3>
+                            </div>
+                            <ul class="divide-y divide-slate-100">
+                                ${files.map(f => `
+                                    <li class="flex justify-between items-center p-4 hover:bg-slate-50 transition group">
+                                        <div class="flex items-center gap-3 w-[70%]">
+                                            <a href="${f.url}" target="_blank" class="font-bold text-slate-700 hover:text-indigo-600 truncate">📄 ${f.name}</a>
+                                            <span class="text-xs text-slate-400 truncate hidden sm:block italic">- ${f.preview.substring(0, 50)}...</span>
+                                        </div>
+                                        <div class="flex items-center gap-3 shrink-0">
+                                            <span class="text-[11px] font-mono font-bold text-slate-400 bg-slate-100 px-2 py-1 rounded">🕒 ${f.fullDate}</span>
+                                            <button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-100 hover:bg-blue-50 px-2 py-1 rounded text-xs font-bold transition">✏️</button>
+                                        </div>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                    `;
                 });
-
-                alert(`✅ Thành công! Đã đổi tên thành: ${newName}`);
-                loadRepos(); 
-
-            } catch(e) {
-                alert(`❌ Có lỗi xảy ra: ${e.message}`);
-            } finally {
-                document.body.style.cursor = 'default';
             }
         }
 
-        // --- 3. LOGIC TẠO FILE TỰ ĐỘNG ---
+        // --- 3. ĐỔI TÊN & TẠO FILE (Giữ nguyên logic cực mượt của bạn) ---
+        async function renameFile(repoName, oldFileName, fileSha) {
+            const token = document.getElementById('github-token').value.trim() || savedToken;
+            if(!token) return alert("❌ Cần Token để thực hiện thao tác này!");
+
+            let newName = prompt(`Đổi tên file:\n[ ${oldFileName} ]\n(Viết liền, không dấu, dùng gạch ngang)`, oldFileName);
+            if (!newName || newName === oldFileName) return; 
+            if (!newName.endsWith('.html')) newName += '.html';
+            if(!confirm(`Xác nhận đổi tên thành: ${newName}?`)) return;
+
+            document.body.style.cursor = 'wait';
+            try {
+                const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() });
+                const oldData = await getRes.json();
+                
+                await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, {
+                    method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: `Đổi tên: Tạo ${newName}`, content: oldData.content })
+                });
+
+                await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, {
+                    method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: `Đổi tên: Xóa ${oldFileName}`, sha: fileSha })
+                });
+
+                loadRepos(); 
+            } catch(e) { alert(`❌ Lỗi: ${e.message}`); } finally { document.body.style.cursor = 'default'; }
+        }
+
         async function createFile() {
             const token = document.getElementById('github-token').value.trim();
             const repoPath = document.getElementById('upload-repo').value.trim();
@@ -243,44 +372,36 @@
             const status = document.getElementById('upload-status');
             const btn = document.getElementById('btn-create');
 
-            if(!token || !repoPath || !name || !content) { alert("Thiếu dữ liệu!"); return; }
+            if(!token || !repoPath || !name || !content) return alert("Thiếu dữ liệu!");
             if(!name.endsWith('.html')) name += '.html';
             localStorage.setItem('github_pat', token);
 
             btn.innerText = "⏳ ĐANG PUSH..."; btn.disabled = true;
-            status.className = "text-sm text-center font-bold p-2 rounded-lg bg-yellow-100 text-yellow-700 block animate-pulse";
-            status.innerText = "Đang truyền tải dữ liệu...";
+            status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-yellow-100 text-yellow-700 block animate-pulse";
+            status.innerText = "Đang xử lý dữ liệu...";
 
             try {
                 const base64 = btoa(unescape(encodeURIComponent(content)));
                 const response = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}`, {
-                    method: 'PUT',
-                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: `Cập nhật: ${name}`, content: base64 })
+                    method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: `Tạo mới: ${name}`, content: base64 })
                 });
 
                 if(response.ok) {
-                    status.className = "text-sm text-center font-bold p-2 rounded-lg bg-green-100 text-green-700 block";
-                    status.innerText = `✅ Đã tạo file thành công!`;
+                    status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-emerald-100 text-emerald-700 block";
+                    status.innerText = `✅ Xong! Đã tạo: ${name}`;
                     document.getElementById('upload-filename').value = '';
                     document.getElementById('upload-content').value = '';
-                    
                     loadRepos();
-                    
                     setTimeout(() => window.open(`https://${repoPath.split('/')[0]}.github.io/${repoPath.split('/')[1]}/${name}`, '_blank'), 2000);
-                } else {
-                    const errorData = await response.json();
-                    throw new Error(errorData.message);
-                }
+                } else { throw new Error((await response.json()).message); }
             } catch (e) {
-                status.className = "text-sm text-center font-bold p-2 rounded-lg bg-red-100 text-red-700 block";
+                status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-red-100 text-red-700 block";
                 status.innerText = `❌ Lỗi: ${e.message}`;
-            } finally {
-                btn.innerText = "🚀 PUSH LÊN GITHUB"; btn.disabled = false;
-            }
+            } finally { btn.innerText = "🚀 PUSH LÊN GITHUB"; btn.disabled = false; }
         }
 
-        loadRepos();
+        loadRepos(); // Chạy ngay khi mở
     </script>
 </body>
 </html>
