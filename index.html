@@ -13,7 +13,6 @@
         .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
-        /* Cải tiến hiển thị Preview/TOC */
         .preview-list { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
         details[open] summary { margin-bottom: 8px; }
         details summary::-webkit-details-marker { display:none; }
@@ -88,7 +87,7 @@
 
         const username = 'vietndj';
         let sortOrder = 'desc', currentView = 'list', repoDataCache = {}, allFilesCache = [];
-        let allContentCache = {}; // Cache nội dung
+        let allContentCache = {}; 
         
         const savedToken = localStorage.getItem('github_pat');
         if(savedToken) document.getElementById('github-token').value = savedToken;
@@ -97,6 +96,15 @@
         function toggleUpload() { const s = document.getElementById('upload-section'), i = document.getElementById('upload-icon'); if(s.classList.contains('hidden')){ s.classList.remove('hidden'); i.style.transform='rotate(180deg)';} else {s.classList.add('hidden'); i.style.transform='rotate(0deg)';} }
         function changeSortOrder(order) { sortOrder = order; document.getElementById('sort-desc').className = order === 'desc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition'; document.getElementById('sort-asc').className = order === 'asc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition'; renderRepos(); }
         function setView(view) { currentView = view; ['gallery','kanban','table','feed','list'].forEach(v => { document.getElementById(`btn-view-${v}`).className = v === view ? 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 bg-indigo-600 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100'; }); renderRepos(); }
+
+        // Giải mã Base64 an toàn cho Tiếng Việt (UTF-8)
+        function decodeBase64UTF8(str) {
+            try {
+                return decodeURIComponent(atob(str).split('').map(function(c) {
+                    return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+                }).join(''));
+            } catch (e) { return atob(str); }
+        }
 
         async function loadRepos() {
             const container = document.getElementById('repo-container');
@@ -116,9 +124,8 @@
                             let dateObj = new Date();
                             try { const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); const commitData = await resCommit.json(); if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); } catch(e) {}
                             
-                            // LƯU Ý: Thêm downloadUrl để fetch trực tiếp, tránh lỗi sai tên nhánh master/main
                             const fileData = { 
-                                repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url, timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), 
+                                repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), 
                                 preview: "Loading preview...", tocHTML: "", coverHTML: ""
                             };
                             allFilesCache.push(fileData); return fileData;
@@ -139,23 +146,27 @@
 
             if (previewObserver) previewObserver.disconnect();
             
-            // IntersectionObserver: Load Data khi thẻ xuất hiện trên màn hình
             previewObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
+                entries.forEach(async entry => {
                     if (entry.isIntersecting) {
                         const target = entry.target;
-                        const { repoName, fileName, fileSha, fileUrl, downloadUrl } = target.dataset; // Dataset chuẩn xác
+                        const { repoName, fileName, fileSha, fileUrl } = target.dataset; 
                         observer.unobserve(target);
-                        renderFilePreview(target, repoName, fileName, fileSha, fileUrl, downloadUrl);
+                        try {
+                            await renderFilePreview(target, repoName, fileName, fileSha, fileUrl);
+                        } catch (err) {
+                            // Xử lý hiển thị lỗi cụ thể nếu quá trình parse thất bại
+                            const pEl = target.querySelector(`#preview-${fileSha}`);
+                            if(pEl) pEl.innerHTML = `<p class="text-red-500 text-xs font-bold">❌ Lỗi hiển thị: ${err.message}</p>`;
+                        }
                     }
                 });
-            }, { rootMargin: '0px 0px 300px 0px' });
+            }, { rootMargin: '100px' });
 
             if (currentView === 'gallery') {
                 container.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
                 sortedAllFiles.forEach(f => {
-                    // Cấu trúc thẻ HTML có coverHTML (Canvas Cover)
-                    container.innerHTML += `<div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-200 overflow-hidden flex flex-col h-full group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div><div id="cover-${f.sha}" class="w-full h-28 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 text-xs">${f.coverHTML}</div><div class="p-5 flex-1 flex flex-col"><div class="flex justify-between items-start mb-2"><span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer hover:bg-indigo-100" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">📁 ${f.repoName}</span><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-100 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition">✏️ Sửa</button></div><a href="${f.url}" target="_blank" class="font-bold text-lg text-slate-800 hover:text-indigo-600 mb-3 line-clamp-2 leading-tight">📄 ${f.name}</a><div id="preview-${f.sha}" class="text-xs text-slate-500 italic line-clamp-5 leading-relaxed flex-1 space-y-2"><p class="animate-pulse">${f.preview}</p></div></div><div class="bg-slate-50 p-3 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center"><span>🕒 ${f.fullDate}</span></div></div>`;
+                    container.innerHTML += `<div class="bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-200 overflow-hidden flex flex-col h-full group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}"><div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div><div id="cover-${f.sha}" class="w-full h-28 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 text-xs">${f.coverHTML}</div><div class="p-5 flex-1 flex flex-col"><div class="flex justify-between items-start mb-2"><span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer hover:bg-indigo-100" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">📁 ${f.repoName}</span><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-100 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition">✏️ Sửa</button></div><a href="${f.url}" target="_blank" class="font-bold text-lg text-slate-800 hover:text-indigo-600 mb-3 line-clamp-2 leading-tight">📄 ${f.name}</a><div id="preview-${f.sha}" class="text-xs text-slate-500 italic line-clamp-5 leading-relaxed flex-1 space-y-2"><p class="animate-pulse">${f.preview}</p></div></div><div class="bg-slate-50 p-3 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center"><span>🕒 ${f.fullDate}</span></div></div>`;
                     previewObserver.observe(container.lastElementChild);
                 });
             } 
@@ -171,7 +182,7 @@
             else if (currentView === 'feed') {
                 container.className = 'max-w-3xl mx-auto flex flex-col gap-8 w-full';
                 sortedAllFiles.forEach(f => {
-                    container.innerHTML += `<article class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div><div><p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p></div></div><h2 class="text-2xl font-black text-slate-800 mb-4 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank">${f.name}</a></h2><div id="cover-${f.sha}" class="w-full h-48 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 mb-4 rounded-xl overflow-hidden">${f.coverHTML}</div><div id="preview-${f.sha}" class="text-slate-600 text-base leading-relaxed mb-4 p-4 rounded-xl border-l-4 border-l-indigo-300 italic animate-pulse space-y-2"><p>${f.preview}</p></div><div class="flex gap-2"><a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition">✏️ Đổi tên</button></div></article>`;
+                    container.innerHTML += `<article class="bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div><div><p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p></div></div><h2 class="text-2xl font-black text-slate-800 mb-4 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank">${f.name}</a></h2><div id="cover-${f.sha}" class="w-full h-48 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 mb-4 rounded-xl overflow-hidden">${f.coverHTML}</div><div id="preview-${f.sha}" class="text-slate-600 text-base leading-relaxed mb-4 p-4 rounded-xl border-l-4 border-l-indigo-300 italic animate-pulse space-y-2"><p>${f.preview}</p></div><div class="flex gap-2"><a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition">✏️ Đổi tên</button></div></article>`;
                     previewObserver.observe(container.lastElementChild);
                 });
             }
@@ -182,22 +193,27 @@
             }
         }
 
-        // Parse HTML: Tạo ảnh bìa Canvas bằng CSS và trích xuất TOC / Text
-        async function getFileContent(repoName, fileName, fileSha, fileUrl, downloadUrl) {
+        // Dùng chuẩn API của GitHub để lấy nội dung (Bypass CORS khi chạy local)
+        async function getFileContent(repoName, fileName, fileSha, fileUrl) {
             if (allContentCache[fileSha]) return allContentCache[fileSha]; 
 
-            let contentData = { tocHTML: '', previewText: 'Không có nội dung hiển thị...', coverHTML: '' };
+            let contentData = { tocHTML: '', previewText: 'Đang xử lý nội dung...', coverHTML: '' };
             try {
-                // Fetch trực tiếp bằng URL download chuẩn của GitHub
-                const rawRes = await fetch(downloadUrl);
-                if (!rawRes.ok) throw new Error("Fetch failed");
-                const htmlString = await rawRes.text();
+                // Gọi API lấy thông tin file (Trả về Base64 JSON)
+                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}`, { 
+                    headers: getHeaders()
+                });
+                
+                if (!response.ok) throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                
+                const data = await response.json();
+                
+                // Decode Base64 an toàn
+                const htmlString = decodeBase64UTF8(data.content);
                 const doc = new DOMParser().parseFromString(htmlString, 'text/html');
 
-                // 1. CANVAS COVER: Tìm Title hoặc Thẻ H1 để làm ảnh bìa
+                // 1. CANVAS COVER
                 let mainTitle = doc.querySelector('title')?.textContent || doc.querySelector('h1')?.textContent || fileName.replace('.html', '');
-                
-                // Random màu nền gradient mượt mà dựa trên mã SHA (giữ màu cố định cho từng file)
                 const gradients = [
                     'from-blue-600 to-cyan-500', 'from-emerald-600 to-teal-500', 
                     'from-purple-600 to-fuchsia-500', 'from-orange-500 to-amber-500', 
@@ -208,7 +224,7 @@
                 
                 contentData.coverHTML = `<div class="w-full h-full bg-gradient-to-br ${selectedGradient} p-4 flex items-center justify-center opacity-90 hover:opacity-100 transition"><h3 class="text-white font-black text-center text-[15px] line-clamp-3 leading-snug drop-shadow-md px-2">${mainTitle}</h3></div>`;
 
-                // 2. Trích xuất TOC (H1, H2, H3)
+                // 2. MỤC LỤC
                 const headings = doc.querySelectorAll('h1, h2, h3');
                 let tocList = [];
                 headings.forEach((h, index) => {
@@ -219,8 +235,7 @@
                     contentData.tocHTML = `<details class="bg-indigo-50/50 border border-indigo-100 p-2 rounded-lg text-[11px] text-slate-600 mb-3 cursor-pointer group"><summary class="font-bold text-indigo-700 flex items-center justify-between"><span>📋 Mục lục bài viết (${tocList.length})</span><span class="group-open:rotate-180 transition-transform">▼</span></summary><ul class="mt-2 space-y-1">${tocList.join('')}</ul></details>`;
                 }
 
-                // 3. Trích xuất Preview Text (1000 ký tự)
-                // Lấy toàn bộ chữ, bỏ qua tag script/style
+                // 3. TRÍCH ĐOẠN TEXT
                 const scripts = doc.querySelectorAll('script, style'); scripts.forEach(s => s.remove());
                 const cleanText = (doc.body.textContent || "").replace(/\s+/g, ' ').trim();
                 if(cleanText.length > 0) contentData.previewText = cleanText.substring(0, 1000) + (cleanText.length > 1000 ? "..." : "");
@@ -228,20 +243,18 @@
                 allContentCache[fileSha] = contentData; 
                 return contentData;
             } catch(e) {
+                console.error(e);
                 contentData.previewText = `❌ Lỗi tải nội dung: ${e.message}`;
                 return contentData;
             }
         }
 
-        // Hàm Render trực tiếp vào DOM cho mượt
-        async function renderFilePreview(cardElement, repoName, fileName, fileSha, fileUrl, downloadUrl) {
-            const previewData = await getFileContent(repoName, fileName, fileSha, fileUrl, downloadUrl);
+        async function renderFilePreview(cardElement, repoName, fileName, fileSha, fileUrl) {
+            const previewData = await getFileContent(repoName, fileName, fileSha, fileUrl);
             
-            // Lưu cache lại để khi chuyển View khác không bị mất
             allFilesCache.forEach(f => { if (f.sha === fileSha) { f.tocHTML = previewData.tocHTML; f.preview = previewData.previewText; f.coverHTML = previewData.coverHTML; } });
             if(repoDataCache[repoName]){ repoDataCache[repoName].forEach(f => { if (f.sha === fileSha) { f.tocHTML = previewData.tocHTML; f.preview = previewData.previewText; f.coverHTML = previewData.coverHTML; } }); }
 
-            // Replace Placeholder thành Nội dung thực
             const previewElement = cardElement.querySelector(`#preview-${fileSha}`);
             const coverContainer = cardElement.querySelector(`#cover-${fileSha}`);
             
