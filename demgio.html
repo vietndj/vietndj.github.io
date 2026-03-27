@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>25:00</title>
+    <style>
+        /* CSS Giao diện Tối giản (Minimalist Pomodoro) */
+        :root {
+            --bg-color: #121212; /* Đen nhám dịu mắt */
+            --panel-bg: #1E1E1E;
+            --text-main: #E0E0E0;
+            --text-muted: #888888;
+            --primary: #E9504F; /* Đỏ Pomodoro chuẩn */
+            --border: #2C2C2C;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            margin: 0;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Thanh lịch sử bên trái (Floating Sidebar) */
+        .sidebar {
+            width: 280px;
+            background-color: var(--panel-bg);
+            border-right: 1px solid var(--border);
+            padding: 25px 20px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        .sidebar h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 0;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .history-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            overflow-y: auto;
+            flex: 1;
+        }
+
+        .history-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgba(255,255,255,0.03);
+            padding: 12px 15px;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .history-task { font-size: 14px; font-weight: 500; color: var(--text-main); }
+        .history-time { font-size: 13px; font-weight: 600; color: var(--primary); }
+
+        /* Khu vực đếm giờ chính */
+        .main-content {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .timer-container {
+            width: 360px;
+            text-align: center;
+        }
+
+        /* 3 Tab Thời gian */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .tab-btn {
+            background: none; border: none; color: var(--text-muted);
+            font-size: 14px; font-weight: 600; padding: 6px 12px;
+            cursor: pointer; border-radius: 6px; transition: 0.2s;
+        }
+
+        .tab-btn.active {
+            background-color: rgba(233, 80, 79, 0.15);
+            color: var(--primary);
+        }
+
+        /* Hiển thị thời gian khổng lồ */
+        .time-display {
+            font-size: 90px;
+            font-weight: 700;
+            letter-spacing: -3px;
+            margin-bottom: 30px;
+            color: var(--text-main);
+            font-variant-numeric: tabular-nums; /* Giúp số không bị giật khi đếm */
+        }
+
+        /* Ô nhập việc và âm thanh (Gọn gàng) */
+        .inputs-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .clean-input, .clean-select {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            padding: 12px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            outline: none;
+            transition: border 0.2s;
+        }
+
+        .clean-input { flex: 2; }
+        .clean-input:focus { border-color: var(--primary); }
+        
+        .clean-select { flex: 1; cursor: pointer; }
+        
+        .test-sound-btn {
+            background: none; border: 1px solid var(--border);
+            color: var(--text-muted); border-radius: 8px;
+            padding: 0 12px; cursor: pointer; transition: 0.2s;
+        }
+        .test-sound-btn:hover { color: var(--text-main); border-color: var(--text-main); }
+
+        /* Nút Điều Khiển */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .btn-start {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            font-size: 20px;
+            font-weight: 700;
+            padding: 15px 0;
+            width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 0 rgb(186, 60, 60); /* Hiệu ứng phím cơ mềm */
+            transition: transform 0.1s, box-shadow 0.1s;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-start:active {
+            transform: translateY(6px);
+            box-shadow: 0 0 0 rgb(186, 60, 60);
+        }
+
+        .btn-start:disabled {
+            background-color: var(--border);
+            box-shadow: 0 6px 0 #1a1a1a;
+            color: var(--text-muted);
+            cursor: not-allowed;
+        }
+
+        .btn-reset {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+
+        .btn-reset:hover { color: var(--text-main); }
+
+        /* Custom Modal thay Alert */
+        .modal-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.7); display: none;
+            justify-content: center; align-items: center; z-index: 1000;
+        }
+        .modal-box {
+            background: var(--panel-bg); padding: 30px; border-radius: 16px;
+            text-align: center; border: 1px solid var(--border); width: 300px;
+        }
+        .modal-box h2 { margin: 0 0 10px 0; font-size: 22px; color: white;}
+        .modal-box p { color: var(--text-muted); margin-bottom: 25px; font-size: 15px; }
+        .modal-btn {
+            background: var(--primary); color: white; border: none; width: 100%;
+            padding: 12px; border-radius: 8px; font-size: 15px; cursor: pointer; font-weight: 600;
+        }
+
+    </style>
+</head>
+<body>
+
+<audio id="alarm-player" src="1.mp3" preload="auto"></audio>
+
+<div class="sidebar">
+    <h2>Lịch sử làm việc</h2>
+    <ul class="history-list" id="history-list">
+        </ul>
+</div>
+
+<div class="main-content">
+    <div class="timer-container">
+        
+        <div class="tabs">
+            <button class="tab-btn active" data-time="1500" id="tab-focus">Focus</button>
+            <button class="tab-btn" data-time="300" id="tab-short">Nghỉ ngắn</button>
+            <button class="tab-btn" data-time="900" id="tab-long">Nghỉ dài</button>
+        </div>
+
+        <div class="time-display" id="time">25:00</div>
+
+        <div class="inputs-group">
+            <input type="text" id="task-name" class="clean-input" placeholder="Bạn đang làm gì?" autocomplete="off">
+            <select id="alarm-sound" class="clean-select">
+                <option value="1.mp3">Chuông 1</option>
+                <option value="2.mp3">Chuông 2</option>
+                <option value="3.mp3">Chuông 3</option>
+                <option value="4.mp3">Chuông 4</option>
+                <option value="5.mp3">Chuông 5</option>
+            </select>
+            <button class="test-sound-btn" id="test-sound" title="Nghe thử">🔊</button>
+        </div>
+
+        <div class="controls">
+            <button class="btn-start" id="start-btn">Bắt đầu</button>
+            <button class="btn-reset" id="reset-btn">Đặt lại thời gian</button>
+        </div>
+
+    </div>
+</div>
+
+<div id="modal-overlay" class="modal-overlay">
+    <div class="modal-box">
+        <h2>⏰ Hoàn thành!</h2>
+        <p id="modal-task-name">Khối: Làm việc</p>
+        <button class="modal-btn" id="close-modal">Lưu & Tắt chuông</button>
+    </div>
+</div>
+
+<script>
+    let timerInterval;
+    let totalSeconds = 1500; 
+    let secondsLeft = totalSeconds;
+    let isRunning = false;
+    let endTime;
+
+    // OBJECT LƯU TRỮ LỊCH SỬ CỘNG DỒN
+    let historyData = {};
+
+    const timeDisplay = document.getElementById('time');
+    const startBtn = document.getElementById('start-btn');
+    const resetBtn = document.getElementById('reset-btn');
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    
+    const taskInput = document.getElementById('task-name');
+    const historyList = document.getElementById('history-list');
+    
+    const soundSelect = document.getElementById('alarm-sound');
+    const testSoundBtn = document.getElementById('test-sound');
+    const audioPlayer = document.getElementById('alarm-player');
+
+    const modalOverlay = document.getElementById('modal-overlay');
+    const closeModalBtn = document.getElementById('close-modal');
+    const modalTaskName = document.getElementById('modal-task-name');
+
+    // Âm thanh
+    soundSelect.addEventListener('change', (e) => { audioPlayer.src = e.target.value; });
+    function playAudio() {
+        audioPlayer.currentTime = 0; 
+        let playPromise = audioPlayer.play();
+        if (playPromise !== undefined) playPromise.catch(() => {});
+    }
+    testSoundBtn.addEventListener('click', () => { playAudio(); });
+
+    // Hiển thị thời gian
+    function updateDisplay() {
+        let minutes = Math.floor(secondsLeft / 60);
+        let seconds = secondsLeft % 60;
+        let timeString = `${minutes < 10 ? '0' : ''}${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+        
+        timeDisplay.textContent = timeString;
+        document.title = timeString; 
+    }
+
+    // RENDER LỊCH SỬ CỘNG DỒN
+    function renderHistory() {
+        historyList.innerHTML = '';
+        // Sắp xếp các mảng theo thời gian từ cao xuống thấp
+        let sortedHistory = Object.keys(historyData).sort((a, b) => historyData[b] - historyData[a]);
+
+        sortedHistory.forEach(task => {
+            let li = document.createElement('li');
+            li.className = 'history-item';
+            li.innerHTML = `
+                <span class="history-task">${task}</span>
+                <span class="history-time">${historyData[task]} phút</span>
+            `;
+            historyList.appendChild(li);
+        });
+    }
+
+    // Xử lý hết giờ
+    function handleTimerComplete() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        secondsLeft = 0;
+        updateDisplay();
+        playAudio(); 
+        
+        startBtn.disabled = false;
+        startBtn.textContent = "Bắt đầu";
+        document.title = "⏰ HẾT GIỜ!";
+        
+        // Xử lý ghi nhận lịch sử (Cộng dồn)
+        let taskName = taskInput.value.trim() || "Làm việc";
+        let durationMinutes = Math.round(totalSeconds / 60);
+
+        if (historyData[taskName]) {
+            historyData[taskName] += durationMinutes;
+        } else {
+            historyData[taskName] = durationMinutes;
+        }
+        
+        renderHistory();
+
+        // Hiện modal
+        modalTaskName.textContent = `Nội dung: ${taskName}`;
+        modalOverlay.style.display = 'flex';
+    }
+
+    closeModalBtn.addEventListener('click', () => {
+        audioPlayer.pause();
+        audioPlayer.currentTime = 0;
+        modalOverlay.style.display = 'none';
+        resetTimer();
+    });
+
+    // BẮT ĐẦU ĐẾM
+    function startTimer() {
+        if (!isRunning) {
+            isRunning = true;
+            startBtn.disabled = true; // Khóa nút bắt đầu lại
+            startBtn.textContent = "Đang chạy...";
+            audioPlayer.pause(); 
+            
+            endTime = Date.now() + (secondsLeft * 1000);
+            
+            timerInterval = setInterval(() => {
+                let now = Date.now();
+                secondsLeft = Math.round((endTime - now) / 1000);
+
+                if (secondsLeft <= 0) {
+                    handleTimerComplete();
+                } else {
+                    updateDisplay();
+                }
+            }, 200); 
+        }
+    }
+
+    // ĐẶT LẠI (Thay cho Pause)
+    function resetTimer() {
+        clearInterval(timerInterval);
+        isRunning = false;
+        startBtn.disabled = false;
+        startBtn.textContent = "Bắt đầu";
+        secondsLeft = totalSeconds;
+        updateDisplay();
+    }
+
+    // CHUYỂN TAB (Focus / Nghỉ ngắn / Nghỉ dài)
+    tabBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            if (isRunning) {
+                let confirmSwitch = confirm("Đồng hồ đang chạy. Bạn có chắc muốn chuyển Tab và hủy phiên hiện tại?");
+                if (!confirmSwitch) return;
+            }
+
+            // Đổi UI Tab
+            tabBtns.forEach(t => t.classList.remove('active'));
+            e.target.classList.add('active');
+
+            // Đổi màu Nút Bắt đầu & Thời gian theo Tab
+            let newTime = parseInt(e.target.getAttribute('data-time'));
+            if (newTime === 1500) {
+                document.documentElement.style.setProperty('--primary', '#E9504F'); // Đỏ
+            } else {
+                document.documentElement.style.setProperty('--primary', '#38858A'); // Xanh ngọc
+            }
+
+            totalSeconds = newTime;
+            resetTimer();
+        });
+    });
+
+    // Gắn sự kiện nút bấm
+    startBtn.addEventListener('click', startTimer);
+    resetBtn.addEventListener('click', resetTimer);
+
+    // Khởi tạo ban đầu
+    updateDisplay();
+
+</script>
+</body>
+</html>
