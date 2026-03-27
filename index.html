@@ -6,19 +6,136 @@
     <title>vietndj - Private Access</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style> 
+        /* CSS Gốc của CMS */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } 
         .kanban-scroll::-webkit-scrollbar { height: 8px; width: 6px; }
         .kanban-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
         .kanban-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        /* Loại bỏ mũi tên mặc định của thẻ summary */
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+
+        /* ========================================== */
+        /* CSS WIDGET POMODORO (Góc phải)             */
+        /* ========================================== */
+        #vietndj-pomodoro-widget {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 999999; 
+            font-family: 'Inter', -apple-system, sans-serif;
+            width: 260px;
+            background-color: #1A1A1A;
+            border: 1px solid #333;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            color: #E0E0E0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        #pomo-header {
+            background-color: #252525;
+            padding: 12px 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            user-select: none;
+            border-bottom: 1px solid transparent;
+        }
+        #pomo-header:hover { background-color: #2E2E2E; }
+        #pomo-content {
+            display: none; 
+            padding: 15px;
+            border-top: 1px solid #333;
+        }
+        .pomo-tabs { display: flex; gap: 5px; margin-bottom: 15px; }
+        .pomo-tab { 
+            background: transparent; border: 1px solid #444; color: #888; 
+            padding: 6px; font-size: 11px; border-radius: 6px; 
+            cursor: pointer; flex: 1; text-align: center; font-weight: 500;
+        }
+        .pomo-tab.active { background: rgba(233, 80, 79, 0.15); color: #E9504F; border-color: #E9504F; }
+        .pomo-time { 
+            font-size: 46px; font-weight: 700; text-align: center; 
+            letter-spacing: -2px; margin: 0 0 15px 0; color: #FFF; 
+            font-variant-numeric: tabular-nums; line-height: 1;
+        }
+        .pomo-input-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        .pomo-input, .pomo-select { 
+            background: #121212; border: 1px solid #333; color: #FFF; 
+            padding: 8px 10px; border-radius: 6px; font-size: 12px; outline: none; 
+        }
+        .pomo-input:focus { border-color: #E9504F; }
+        .pomo-controls { display: flex; gap: 8px; }
+        .pomo-btn-start { 
+            flex: 2; background: #E9504F; color: white; border: none; 
+            padding: 10px; border-radius: 6px; font-weight: 600; font-size: 12px; cursor: pointer; text-transform: uppercase;
+        }
+        .pomo-btn-reset { 
+            flex: 1; background: transparent; color: #AAA; border: 1px solid #444; 
+            padding: 10px; border-radius: 6px; font-size: 12px; cursor: pointer; 
+        }
+        .pomo-btn-start:disabled { opacity: 0.6; cursor: not-allowed; }
+        .pomo-history-toggle { 
+            font-size: 11px; color: #888; text-align: center; 
+            margin-top: 15px; cursor: pointer; text-decoration: underline; 
+        }
+        .pomo-history { 
+            display: none; margin-top: 10px; max-height: 120px; overflow-y: auto; 
+        }
+        .pomo-history::-webkit-scrollbar { width: 4px; }
+        .pomo-history::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
+        .pomo-history-item { 
+            display: flex; justify-content: space-between; background: #121212; 
+            padding: 6px 8px; margin-bottom: 5px; border-radius: 4px; border: 1px solid #222; font-size: 11px;
+        }
+        .pomo-history-task { color: #CCC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
+        .pomo-history-time { color: #E9504F; font-weight: 600; }
     </style>
 </head>
-<body class="bg-slate-50 min-h-screen text-slate-800">
+<body class="bg-slate-50 min-h-screen text-slate-800 relative">
+
+    <div id="vietndj-pomodoro-widget">
+        <div id="pomo-header">
+            <span>⏱️ Timer (<span id="pomo-mini-time">25:00</span>)</span>
+            <span id="pomo-icon">▼</span>
+        </div>
+        
+        <div id="pomo-content">
+            <audio id="pomo-audio" src="1.mp3" preload="auto"></audio>
+            
+            <div class="pomo-tabs">
+                <button class="pomo-tab active" data-time="1500" data-color="#E9504F">Focus</button>
+                <button class="pomo-tab" data-time="300" data-color="#38858A">Ngắn</button>
+                <button class="pomo-tab" data-time="900" data-color="#38858A">Dài</button>
+            </div>
+            
+            <div class="pomo-time" id="pomo-main-time">25:00</div>
+            
+            <div class="pomo-input-group">
+                <input type="text" id="pomo-task" class="pomo-input" placeholder="Nhập mục đích khối..." autocomplete="off">
+                <select id="pomo-sound" class="pomo-select">
+                    <option value="1.mp3">🎵 Chuông 1</option>
+                    <option value="2.mp3">🎵 Chuông 2</option>
+                    <option value="3.mp3">🎵 Chuông 3</option>
+                    <option value="4.mp3">🎵 Chuông 4</option>
+                    <option value="5.mp3">🎵 Chuông 5</option>
+                </select>
+            </div>
+            
+            <div class="pomo-controls">
+                <button class="pomo-btn-start" id="pomo-start">BẮT ĐẦU</button>
+                <button class="pomo-btn-reset" id="pomo-reset">Đặt lại</button>
+            </div>
+            
+            <div class="pomo-history-toggle" id="pomo-history-btn">Xem lịch sử làm việc ▼</div>
+            <div class="pomo-history" id="pomo-history-list"></div>
+        </div>
+    </div>
 
     <div id="login-screen" class="fixed inset-0 bg-slate-900 flex flex-col items-center justify-center z-50 transition-opacity duration-500">
         <div class="bg-white p-8 rounded-2xl shadow-2xl max-w-sm w-full mx-4 text-center transform transition-all">
@@ -32,7 +149,7 @@
     </div>
 
     <div id="app-content" class="hidden p-4 md:p-8">
-        <header class="max-w-7xl mx-auto text-center mb-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl">
+        <header class="max-w-7xl mx-auto text-center mb-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl mt-4">
             <h1 class="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">🚀 vietndj CMS Dashboard</h1>
             <p class="text-slate-400 font-medium">Hệ quản trị Nội dung Đa góc nhìn (Multi-view)</p>
             <button onclick="logout()" class="mt-4 text-xs bg-slate-800 hover:bg-red-900 text-slate-300 px-3 py-1 rounded-full transition border border-slate-700">🔒 Đóng khóa hệ thống</button>
@@ -77,6 +194,164 @@
             </div>
         </main>
     </div>
+
+    <script>
+    (function() {
+        const header = document.getElementById('pomo-header');
+        const content = document.getElementById('pomo-content');
+        const icon = document.getElementById('pomo-icon');
+        const miniTime = document.getElementById('pomo-mini-time');
+        
+        header.addEventListener('click', () => {
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+                icon.textContent = '▼';
+            } else {
+                content.style.display = 'block';
+                icon.textContent = '▲';
+            }
+        });
+
+        let timerInterval;
+        let totalSeconds = 1500;
+        let secondsLeft = totalSeconds;
+        let isRunning = false;
+        let endTime;
+        
+        let historyData = JSON.parse(localStorage.getItem('pomoHistory')) || {}; 
+
+        const mainTime = document.getElementById('pomo-main-time');
+        const tabs = document.querySelectorAll('.pomo-tab');
+        const taskInput = document.getElementById('pomo-task');
+        const startBtn = document.getElementById('pomo-start');
+        const resetBtn = document.getElementById('pomo-reset');
+        const soundSelect = document.getElementById('pomo-sound');
+        const audioPlayer = document.getElementById('pomo-audio');
+        const historyBtn = document.getElementById('pomo-history-btn');
+        const historyList = document.getElementById('pomo-history-list');
+
+        historyBtn.addEventListener('click', () => {
+            if (historyList.style.display === 'block') {
+                historyList.style.display = 'none';
+                historyBtn.textContent = 'Xem lịch sử làm việc ▼';
+            } else {
+                historyList.style.display = 'block';
+                historyBtn.textContent = 'Ẩn lịch sử ▲';
+                renderHistory();
+            }
+        });
+
+        soundSelect.addEventListener('change', (e) => { audioPlayer.src = e.target.value; });
+
+        function updateDisplay() {
+            let m = Math.floor(secondsLeft / 60);
+            let s = secondsLeft % 60;
+            let str = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
+            mainTime.textContent = str;
+            miniTime.textContent = str; 
+            document.title = isRunning ? `(${str}) CMS Dashboard` : "vietndj CMS";
+        }
+
+        function renderHistory() {
+            historyList.innerHTML = '';
+            let sorted = Object.keys(historyData).sort((a,b) => historyData[b] - historyData[a]);
+            if(sorted.length === 0) {
+                historyList.innerHTML = '<div style="color:#666;text-align:center;padding:10px 0;">Chưa có dữ liệu hôm nay</div>';
+                return;
+            }
+            sorted.forEach(task => {
+                historyList.innerHTML += `
+                    <div class="pomo-history-item">
+                        <span class="pomo-history-task" title="${task}">${task}</span>
+                        <span class="pomo-history-time">${historyData[task]}p</span>
+                    </div>`;
+            });
+        }
+
+        function completeTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            secondsLeft = 0;
+            updateDisplay();
+            
+            audioPlayer.currentTime = 0;
+            let p = audioPlayer.play();
+            if(p !== undefined) p.catch(()=>{});
+
+            startBtn.disabled = false;
+            startBtn.textContent = "BẮT ĐẦU";
+            
+            let taskName = taskInput.value.trim() || "Làm việc";
+            let duration = Math.round(totalSeconds / 60);
+            
+            historyData[taskName] = (historyData[taskName] || 0) + duration;
+            localStorage.setItem('pomoHistory', JSON.stringify(historyData));
+            if(historyList.style.display === 'block') renderHistory();
+
+            setTimeout(() => alert(`⏰ Hết giờ! Khối [${taskName}] đã được cộng thêm ${duration} phút.`), 100);
+        }
+
+        function startTimer() {
+            if (!isRunning) {
+                isRunning = true;
+                startBtn.disabled = true;
+                startBtn.textContent = "ĐANG CHẠY...";
+                audioPlayer.pause();
+                
+                endTime = Date.now() + (secondsLeft * 1000);
+                timerInterval = setInterval(() => {
+                    let now = Date.now();
+                    secondsLeft = Math.round((endTime - now) / 1000);
+                    if (secondsLeft <= 0) {
+                        completeTimer();
+                    } else {
+                        updateDisplay();
+                    }
+                }, 200);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            isRunning = false;
+            startBtn.disabled = false;
+            startBtn.textContent = "BẮT ĐẦU";
+            secondsLeft = totalSeconds;
+            updateDisplay();
+        }
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', (e) => {
+                if (isRunning && !confirm("Bạn có chắc muốn hủy khối làm việc hiện tại?")) return;
+                
+                tabs.forEach(t => { 
+                    t.classList.remove('active'); 
+                    t.style.borderColor = '#444'; 
+                    t.style.color = '#888'; 
+                    t.style.backgroundColor = 'transparent';
+                });
+                
+                let target = e.target;
+                target.classList.add('active');
+                let color = target.getAttribute('data-color');
+                
+                target.style.borderColor = color;
+                target.style.color = color;
+                target.style.backgroundColor = color === '#E9504F' ? 'rgba(233, 80, 79, 0.15)' : 'rgba(56, 133, 138, 0.15)';
+                startBtn.style.backgroundColor = color;
+                
+                totalSeconds = parseInt(target.getAttribute('data-time'));
+                resetTimer();
+            });
+        });
+
+        // Gắn sự kiện nút
+        startBtn.addEventListener('click', startTimer);
+        resetBtn.addEventListener('click', resetTimer);
+
+        updateDisplay();
+    })();
+    </script>
 
     <script>
         const SECRET_PIN = "0070";
@@ -148,17 +423,14 @@
         function renderRepos() {
             const container = document.getElementById('repo-container'); container.innerHTML = ''; container.className = ''; 
             
-            // Lọc và Sắp xếp Mảng Tất cả File
             let sortedAllFiles = [...allFilesCache].sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
             if (sortedAllFiles.length === 0) { container.innerHTML = '<div class="text-center py-12 text-slate-500 bg-white rounded-xl shadow border">Kho trống, chưa có bài viết nào!</div>'; return; }
 
-            // YÊU CẦU 1: Thuật toán sắp xếp các REPO dựa trên thời gian bài viết mới nhất bên trong nó
             let repoEntries = Object.keys(repoDataCache).map(repoName => {
                 let files = [...repoDataCache[repoName]].sort((a, b) => sortOrder === 'desc' ? b.timestamp - a.timestamp : a.timestamp - b.timestamp);
-                let latestUpdate = files.length > 0 ? files[0].timestamp : 0; // Lấy thời gian bài mới nhất
+                let latestUpdate = files.length > 0 ? files[0].timestamp : 0; 
                 return { repoName, files, latestUpdate };
             });
-            // Xếp hạng thư mục
             repoEntries.sort((a, b) => sortOrder === 'desc' ? b.latestUpdate - a.latestUpdate : a.latestUpdate - b.latestUpdate);
 
             if (previewObserver) previewObserver.disconnect();
@@ -183,11 +455,9 @@
 
             let finalHTML = '';
 
-            // YÊU CẦU 4: Gallery View theo chuẩn Masonry bằng CSS Columns (loại bỏ grid fixed)
             if (currentView === 'gallery') {
-                container.className = 'columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6'; // CSS Columns
+                container.className = 'columns-1 sm:columns-2 lg:columns-3 xl:columns-4 gap-6'; 
                 sortedAllFiles.forEach(f => {
-                    // break-inside-avoid giúp thẻ không bị cắt đôi giữa 2 cột, mb-6 thay cho space-y
                     finalHTML += `<div class="observe-target break-inside-avoid mb-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow duration-300 border border-slate-200 flex flex-col group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div><div id="cover-${f.sha}" class="w-full h-28 shrink-0 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 text-xs">${f.coverHTML}</div><div class="p-4 flex flex-col"><div class="flex justify-between items-start mb-2"><span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer hover:bg-indigo-100" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">📁 ${f.repoName}</span><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-100 px-2 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition">✏️ Sửa</button></div><a href="${f.url}" target="_blank" class="font-bold text-base text-slate-800 hover:text-indigo-600 mb-2 line-clamp-2 leading-tight">📄 ${f.name}</a><div id="preview-${f.sha}" class="text-xs text-slate-500 italic line-clamp-5 leading-relaxed space-y-2 mb-2"><p class="animate-pulse">${f.preview}</p></div></div><div class="bg-slate-50 p-3 shrink-0 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center"><span>🕒 ${f.fullDate}</span></div></div>`;
                 });
                 container.innerHTML = finalHTML;
@@ -200,7 +470,6 @@
                 });
                 container.innerHTML = finalHTML;
             }
-            // YÊU CẦU 2: Nhóm Accordion cho Table
             else if (currentView === 'table') {
                 container.className = 'flex flex-col gap-6';
                 repoEntries.forEach(({repoName, files}) => {
@@ -223,16 +492,14 @@
                 });
                 container.innerHTML = finalHTML;
             }
-            // YÊU CẦU 5: Feed Masonry
             else if (currentView === 'feed') {
-                container.className = 'columns-1 lg:columns-2 gap-8'; // Dùng Masonry columns-2
+                container.className = 'columns-1 lg:columns-2 gap-8'; 
                 sortedAllFiles.forEach(f => {
                     finalHTML += `<article class="observe-target break-inside-avoid mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div><div><p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p></div></div><h2 class="text-2xl font-black text-slate-800 mb-4 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank">${f.name}</a></h2><div id="cover-${f.sha}" class="w-full h-48 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 mb-4 rounded-xl overflow-hidden">${f.coverHTML}</div><div id="preview-${f.sha}" class="text-slate-600 text-base leading-relaxed mb-4 p-4 rounded-xl border-l-4 border-l-indigo-300 italic animate-pulse space-y-2"><p>${f.preview}</p></div><div class="flex gap-2"><a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a><button onclick="renameFile('${f.repoName}', '${f.fileName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition">✏️ Đổi tên</button></div></article>`;
                 });
                 container.innerHTML = finalHTML;
                 container.querySelectorAll('.observe-target').forEach(el => previewObserver.observe(el));
             }
-            // YÊU CẦU 2 & 3: List View theo nhóm, dạng lưới cột xếp khít (Masonry-like lưới 2 cột)
             else {
                 container.className = 'columns-1 space-y-6';
                 repoEntries.forEach(({repoName, files}) => {
@@ -296,7 +563,6 @@
                     tocList.push(`<li class="truncate"><a href="${fileUrl}#${h.id}" class="hover:text-indigo-600 transition" target="_blank">• ${h.textContent.trim()}</a></li>`);
                 });
                 
-                // YÊU CẦU 5: Nếu đang ở Feed view, thẻ details sẽ bung sẵn (thuộc tính open)
                 if (tocList.length > 0) {
                     contentData.tocHTML = `<details class="bg-indigo-50/50 border border-indigo-100 p-3 rounded-xl text-xs text-slate-700 mb-3 cursor-pointer group toc-element"><summary class="font-bold text-indigo-800 flex items-center justify-between"><span>📋 Mục lục bài viết (${tocList.length})</span><span class="group-open:rotate-180 transition-transform">▼</span></summary><ul class="mt-3 space-y-2 border-t border-indigo-100 pt-2">${tocList.join('')}</ul></details>`;
                 }
@@ -323,7 +589,6 @@
                 previewElement.innerHTML = `${previewData.tocHTML}<p class="mt-2 text-[13px]">${previewData.previewText}</p>`;
                 previewElement.classList.remove('animate-pulse'); 
                 
-                // YÊU CẦU 5: Tự động bung TOC và xóa line-clamp cho view Feed để nó thả nổi chiều dài
                 if (currentView === 'feed') {
                     previewElement.classList.remove('line-clamp-5');
                     const tocDetails = previewElement.querySelector('.toc-element');
@@ -359,299 +624,5 @@
             } catch (e) { status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-red-100 text-red-700 block"; status.innerText = `❌ Lỗi: ${e.message}`; } finally { btn.innerText = "🚀 PUSH LÊN GITHUB"; btn.disabled = false; }
         }
     </script>
-
-    <style>
-/* CSS được đóng gói riêng, không làm hỏng giao diện trang chủ của bạn */
-#vietndj-pomodoro-widget {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    z-index: 999999; /* Đảm bảo luôn nổi trên cùng */
-    font-family: 'Inter', -apple-system, sans-serif;
-    width: 260px;
-    background-color: #1A1A1A;
-    border: 1px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-    color: #E0E0E0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-#pomo-header {
-    background-color: #252525;
-    padding: 12px 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-    user-select: none;
-    border-bottom: 1px solid transparent;
-}
-
-#pomo-header:hover { background-color: #2E2E2E; }
-
-#pomo-content {
-    display: none; /* Mặc định thu gọn Accordion */
-    padding: 15px;
-    border-top: 1px solid #333;
-}
-
-.pomo-tabs { display: flex; gap: 5px; margin-bottom: 15px; }
-.pomo-tab { 
-    background: transparent; border: 1px solid #444; color: #888; 
-    padding: 6px; font-size: 11px; border-radius: 6px; 
-    cursor: pointer; flex: 1; text-align: center; font-weight: 500;
-}
-.pomo-tab.active { background: rgba(233, 80, 79, 0.15); color: #E9504F; border-color: #E9504F; }
-
-.pomo-time { 
-    font-size: 46px; font-weight: 700; text-align: center; 
-    letter-spacing: -2px; margin: 0 0 15px 0; color: #FFF; 
-    font-variant-numeric: tabular-nums; line-height: 1;
-}
-
-.pomo-input-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
-.pomo-input, .pomo-select { 
-    background: #121212; border: 1px solid #333; color: #FFF; 
-    padding: 8px 10px; border-radius: 6px; font-size: 12px; outline: none; 
-}
-.pomo-input:focus { border-color: #E9504F; }
-
-.pomo-controls { display: flex; gap: 8px; }
-.pomo-btn-start { 
-    flex: 2; background: #E9504F; color: white; border: none; 
-    padding: 10px; border-radius: 6px; font-weight: 600; font-size: 12px; cursor: pointer; text-transform: uppercase;
-}
-.pomo-btn-reset { 
-    flex: 1; background: transparent; color: #AAA; border: 1px solid #444; 
-    padding: 10px; border-radius: 6px; font-size: 12px; cursor: pointer; 
-}
-.pomo-btn-start:disabled { opacity: 0.6; cursor: not-allowed; }
-
-/* Sub-Accordion Lịch sử (bên trong) */
-.pomo-history-toggle { 
-    font-size: 11px; color: #888; text-align: center; 
-    margin-top: 15px; cursor: pointer; text-decoration: underline; 
-}
-.pomo-history { 
-    display: none; margin-top: 10px; max-height: 120px; overflow-y: auto; 
-}
-.pomo-history::-webkit-scrollbar { width: 4px; }
-.pomo-history::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
-
-.pomo-history-item { 
-    display: flex; justify-content: space-between; background: #121212; 
-    padding: 6px 8px; margin-bottom: 5px; border-radius: 4px; border: 1px solid #222; font-size: 11px;
-}
-.pomo-history-task { color: #CCC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
-.pomo-history-time { color: #E9504F; font-weight: 600; }
-</style>
-
-<div id="vietndj-pomodoro-widget">
-    <div id="pomo-header">
-        <span>⏱️ Timer (<span id="pomo-mini-time">25:00</span>)</span>
-        <span id="pomo-icon">▼</span>
-    </div>
-    
-    <div id="pomo-content">
-        <audio id="pomo-audio" src="1.mp3" preload="auto"></audio>
-        
-        <div class="pomo-tabs">
-            <button class="pomo-tab active" data-time="1500" data-color="#E9504F">Focus</button>
-            <button class="pomo-tab" data-time="300" data-color="#38858A">Ngắn</button>
-            <button class="pomo-tab" data-time="900" data-color="#38858A">Dài</button>
-        </div>
-        
-        <div class="pomo-time" id="pomo-main-time">25:00</div>
-        
-        <div class="pomo-input-group">
-            <input type="text" id="pomo-task" class="pomo-input" placeholder="Nhập mục đích khối..." autocomplete="off">
-            <select id="pomo-sound" class="pomo-select">
-                <option value="1.mp3">🎵 Chuông 1</option>
-                <option value="2.mp3">🎵 Chuông 2</option>
-                <option value="3.mp3">🎵 Chuông 3</option>
-                <option value="4.mp3">🎵 Chuông 4</option>
-                <option value="5.mp3">🎵 Chuông 5</option>
-            </select>
-        </div>
-        
-        <div class="pomo-controls">
-            <button class="pomo-btn-start" id="pomo-start">BẮT ĐẦU</button>
-            <button class="pomo-btn-reset" id="pomo-reset">Đặt lại</button>
-        </div>
-        
-        <div class="pomo-history-toggle" id="pomo-history-btn">Xem lịch sử làm việc ▼</div>
-        <div class="pomo-history" id="pomo-history-list">
-            </div>
-    </div>
-</div>
-
-<script>
-// Sử dụng IIFE để bọc code JS, tránh xung đột biến với hệ thống CMS của bạn
-(function() {
-    const header = document.getElementById('pomo-header');
-    const content = document.getElementById('pomo-content');
-    const icon = document.getElementById('pomo-icon');
-    const miniTime = document.getElementById('pomo-mini-time');
-    
-    // 1. Logic Accordion Chính
-    header.addEventListener('click', () => {
-        if (content.style.display === 'block') {
-            content.style.display = 'none';
-            icon.textContent = '▼';
-        } else {
-            content.style.display = 'block';
-            icon.textContent = '▲';
-        }
-    });
-
-    let timerInterval;
-    let totalSeconds = 1500;
-    let secondsLeft = totalSeconds;
-    let isRunning = false;
-    let endTime;
-    
-    // Load lịch sử từ LocalStorage để không mất khi tải lại trang web
-    let historyData = JSON.parse(localStorage.getItem('pomoHistory')) || {}; 
-
-    const mainTime = document.getElementById('pomo-main-time');
-    const tabs = document.querySelectorAll('.pomo-tab');
-    const taskInput = document.getElementById('pomo-task');
-    const startBtn = document.getElementById('pomo-start');
-    const resetBtn = document.getElementById('pomo-reset');
-    const soundSelect = document.getElementById('pomo-sound');
-    const audioPlayer = document.getElementById('pomo-audio');
-    
-    const historyBtn = document.getElementById('pomo-history-btn');
-    const historyList = document.getElementById('pomo-history-list');
-
-    // 2. Logic Accordion Lịch sử
-    historyBtn.addEventListener('click', () => {
-        if (historyList.style.display === 'block') {
-            historyList.style.display = 'none';
-            historyBtn.textContent = 'Xem lịch sử làm việc ▼';
-        } else {
-            historyList.style.display = 'block';
-            historyBtn.textContent = 'Ẩn lịch sử ▲';
-            renderHistory();
-        }
-    });
-
-    soundSelect.addEventListener('change', (e) => { audioPlayer.src = e.target.value; });
-
-    function updateDisplay() {
-        let m = Math.floor(secondsLeft / 60);
-        let s = secondsLeft % 60;
-        let str = `${m < 10 ? '0' : ''}${m}:${s < 10 ? '0' : ''}${s}`;
-        mainTime.textContent = str;
-        miniTime.textContent = str; // Cập nhật cả ở thẻ tiêu đề Accordion thu gọn
-        // Đổi Title Tab web CMS của bạn
-        document.title = isRunning ? `(${str}) CMS Dashboard` : "vietndj CMS";
-    }
-
-    function renderHistory() {
-        historyList.innerHTML = '';
-        let sorted = Object.keys(historyData).sort((a,b) => historyData[b] - historyData[a]);
-        
-        if(sorted.length === 0) {
-            historyList.innerHTML = '<div style="color:#666;text-align:center;padding:10px 0;">Chưa có dữ liệu hôm nay</div>';
-            return;
-        }
-
-        sorted.forEach(task => {
-            historyList.innerHTML += `
-                <div class="pomo-history-item">
-                    <span class="pomo-history-task" title="${task}">${task}</span>
-                    <span class="pomo-history-time">${historyData[task]}p</span>
-                </div>`;
-        });
-    }
-
-    function completeTimer() {
-        clearInterval(timerInterval);
-        isRunning = false;
-        secondsLeft = 0;
-        updateDisplay();
-        
-        audioPlayer.currentTime = 0;
-        let p = audioPlayer.play();
-        if(p !== undefined) p.catch(()=>console.log("Cần click trang web để phát âm thanh"));
-
-        startBtn.disabled = false;
-        startBtn.textContent = "BẮT ĐẦU";
-        
-        let taskName = taskInput.value.trim() || "Làm việc";
-        let duration = Math.round(totalSeconds / 60);
-        
-        // Cộng dồn và lưu vào LocalStorage
-        historyData[taskName] = (historyData[taskName] || 0) + duration;
-        localStorage.setItem('pomoHistory', JSON.stringify(historyData));
-        if(historyList.style.display === 'block') renderHistory();
-
-        // Hiện thông báo hệ thống nhỏ gọn thay vì chặn toàn bộ web
-        setTimeout(() => alert(`⏰ Hết giờ! Khối [${taskName}] đã được cộng thêm ${duration} phút.`), 100);
-    }
-
-    function startTimer() {
-        if (!isRunning) {
-            isRunning = true;
-            startBtn.disabled = true;
-            startBtn.textContent = "ĐANG CHẠY...";
-            audioPlayer.pause();
-            
-            endTime = Date.now() + (secondsLeft * 1000);
-            timerInterval = setInterval(() => {
-                let now = Date.now();
-                secondsLeft = Math.round((endTime - now) / 1000);
-                if (secondsLeft <= 0) {
-                    completeTimer();
-                } else {
-                    updateDisplay();
-                }
-            }, 200);
-        }
-    }
-
-    function resetTimer() {
-        clearInterval(timerInterval);
-        isRunning = false;
-        startBtn.disabled = false;
-        startBtn.textContent = "BẮT ĐẦU";
-        secondsLeft = totalSeconds;
-        updateDisplay();
-    }
-
-    // Đổi màu sắc và thời gian dựa trên Tab
-    tabs.forEach(tab => {
-        tab.addEventListener('click', (e) => {
-            if (isRunning && !confirm("Bạn có chắc muốn hủy khối làm việc hiện tại?")) return;
-            
-            tabs.forEach(t => { 
-                t.classList.remove('active'); 
-                t.style.borderColor = '#444'; 
-                t.style.color = '#888'; 
-                t.style.backgroundColor = 'transparent';
-            });
-            
-            let target = e.target;
-            target.classList.add('active');
-            let color = target.getAttribute('data-color');
-            
-            target.style.borderColor = color;
-            target.style.color = color;
-            target.style.backgroundColor = color === '#E9504F' ? 'rgba(233, 80, 79, 0.15)' : 'rgba(56, 133, 138, 0.15)';
-            startBtn.style.backgroundColor = color;
-            
-            totalSeconds = parseInt(target.getAttribute('data-time'));
-            resetTimer();
-        });
-    });
-
-    updateDisplay();
-})();
-</script>
 </body>
 </html>
