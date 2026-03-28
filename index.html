@@ -7,7 +7,6 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style> 
-        /* CSS Gốc của CMS */
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; } 
         .kanban-scroll::-webkit-scrollbar { height: 8px; width: 6px; }
         .kanban-scroll::-webkit-scrollbar-track { background: #f1f5f9; border-radius: 4px; }
@@ -17,7 +16,7 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* WIDGET POMODORO (Góc trên phải) */
+        /* WIDGET POMODORO */
         #vietndj-pomodoro-widget { position: fixed; top: 20px; right: 20px; z-index: 999999; font-family: 'Inter', -apple-system, sans-serif; width: 260px; background-color: #1A1A1A; border: 1px solid #333; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); color: #E0E0E0; overflow: hidden; transition: all 0.3s ease; }
         #pomo-header { background-color: #252525; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 13px; font-weight: 600; user-select: none; border-bottom: 1px solid transparent; }
         #pomo-header:hover { background-color: #2E2E2E; }
@@ -41,9 +40,7 @@
         .pomo-history-task { color: #CCC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
         .pomo-history-time { color: #E9504F; font-weight: 600; }
 
-        /* ========================================== */
-        /* CSS WIDGET GOOGLE TASKS (Góc dưới phải)    */
-        /* ========================================== */
+        /* WIDGET GOOGLE TASKS */
         #vietndj-tasks-widget { position: fixed; bottom: 20px; right: 20px; z-index: 999998; font-family: 'Inter', -apple-system, sans-serif; width: 300px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); color: #334155; overflow: hidden; transition: all 0.3s ease; }
         #gtasks-header { background-color: #f8fafc; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 13px; font-weight: 700; user-select: none; border-bottom: 1px solid #e2e8f0; color: #475569; }
         #gtasks-header:hover { background-color: #f1f5f9; }
@@ -165,10 +162,7 @@
     </div>
 
     <script>
-        // ==========================================
-        // ĐIỀN CLIENT ID CỦA BẠN VÀO DƯỚI ĐÂY
-        // ==========================================
-        const GOOGLE_CLIENT_ID = 'YOUR_GOOGLE_CLIENT_ID_HERE'; 
+        const GOOGLE_CLIENT_ID = '69969715731-jeemef1madpjor1gh6m0oqoqnrnda46e.apps.googleusercontent.com'; 
         
         let gtasksTokenClient;
         let gtasksAccessToken = null;
@@ -183,7 +177,6 @@
         const gtasksListContainer = document.getElementById('gtasks-list-container');
         const gtasksLoading = document.getElementById('gtasks-loading');
 
-        // Đóng mở Widget
         gtasksHeader.addEventListener('click', () => {
             if (gtasksContent.style.display === 'block') {
                 gtasksContent.style.display = 'none'; gtasksIcon.textContent = '▼';
@@ -192,12 +185,9 @@
             }
         });
 
-        // Khởi tạo Google Identity (Chỉ chạy khi script google load xong)
         window.onload = function() {
-            // Init CMS
             if (localStorage.getItem("cms_auth") === "granted") unlockSystem(); else document.getElementById('pin-input').focus();
             
-            // Init Google Auth
             if (typeof google !== 'undefined') {
                 gtasksTokenClient = google.accounts.oauth2.initTokenClient({
                     client_id: GOOGLE_CLIENT_ID,
@@ -215,10 +205,6 @@
         };
 
         gtasksLoginBtn.addEventListener('click', () => {
-            if (GOOGLE_CLIENT_ID === '69969715731-jeemef1madpjor1gh6m0oqoqnrnda46e.apps.googleusercontent.com') {
-                alert("❌ Vui lòng thay đổi GOOGLE_CLIENT_ID trong code HTML bằng Client ID thực tế của bạn trước khi đăng nhập!");
-                return;
-            }
             gtasksTokenClient.requestAccessToken({prompt: 'consent'});
         });
 
@@ -236,7 +222,7 @@
                         option.value = list.id; option.textContent = list.title;
                         gtasksListSelect.appendChild(option);
                     });
-                    fetchGoogleTasks(data.items[0].id); // Tải List đầu tiên
+                    fetchGoogleTasks(data.items[0].id); 
                 } else {
                     gtasksListContainer.innerHTML = '<p class="text-xs text-center text-slate-500">Bạn chưa có danh sách công việc nào.</p>';
                 }
@@ -257,9 +243,8 @@
                 });
                 const data = await res.json();
                 if(data.items && data.items.length > 0) {
-                    // Lọc task con và task cha (Để đơn giản, hiển thị dạng danh sách phẳng trước)
                     data.items.forEach(task => {
-                        if(task.title.trim() === "") return; // Bỏ qua task rỗng
+                        if(task.title.trim() === "") return; 
                         const isCompleted = task.status === 'completed';
                         gtasksListContainer.innerHTML += `
                             <div class="gtask-item">
