@@ -75,6 +75,26 @@
         <span id="sync-status-text" class="truncate">Đang đồng bộ dữ liệu...</span>
     </div>
 
+    <div id="tag-modal-overlay" class="hidden fixed inset-0 bg-slate-900 bg-opacity-60 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity duration-300">
+        <div class="bg-white p-6 rounded-2xl shadow-2xl max-w-md w-full mx-4 transform transition-all">
+            <h3 class="text-lg font-black text-slate-800 mb-1" id="tag-modal-title">Gắn Tag</h3>
+            <p class="text-xs text-slate-500 mb-4">Nhập tag mới cách nhau bằng dấu phẩy, hoặc nhấp để chọn từ danh sách bên dưới.</p>
+            
+            <input type="text" id="tag-modal-input" class="w-full px-3 py-2 border-2 border-slate-200 rounded-xl focus:outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 text-sm font-bold text-indigo-700 mb-4" placeholder="Ví dụ: Tuần 1, Thiết kế...">
+            
+            <div class="mb-5">
+                <span class="text-[10px] font-bold text-slate-400 uppercase mb-2 block">Gợi ý Tags đã có trong hệ thống:</span>
+                <div id="tag-modal-suggestions" class="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto kanban-scroll p-1 border border-slate-100 rounded-lg bg-slate-50 min-h-[40px]">
+                    </div>
+            </div>
+            
+            <div class="flex justify-end gap-2">
+                <button onclick="closeTagModal()" class="px-4 py-2 rounded-lg text-sm font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition">Hủy</button>
+                <button onclick="saveTagModal()" class="px-4 py-2 rounded-lg text-sm font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition shadow-md">Lưu Tags</button>
+            </div>
+        </div>
+    </div>
+
     <div id="vietndj-pomodoro-widget">
         <div id="pomo-header"><span>⏱️ Timer (<span id="pomo-mini-time">25:00</span>)</span><span id="pomo-icon" onclick="toggleWidget('vietndj-pomodoro-widget')">❌</span></div>
         <div id="pomo-content">
@@ -376,6 +396,10 @@
         let activeTag = 'all'; 
         let isSyncing = false; 
 
+        // Biến trạng thái cho Tag Modal
+        let currentEditTagKey = null;
+        let currentEditFileSha = null;
+
         function decodeBase64UTF8(str) { try { return decodeURIComponent(atob(str).split('').map(function(c) { return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2); }).join('')); } catch (e) { return atob(str); } }
 
         function checkPIN() { if (document.getElementById('pin-input').value === SECRET_PIN) { localStorage.setItem("cms_auth", "granted"); unlockSystem(); } else { document.getElementById('login-error').classList.remove('hidden'); document.getElementById('pin-input').value = ''; } }
@@ -540,30 +564,111 @@
             localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
         }
 
-        async function editFileTags(repoName, fileName, fileSha) {
-            const key = `${repoName}/${fileName}`;
-            const currentTags = (tagsDataCache[key] || []).join(', ');
-            const input = prompt(`Sửa nhãn (Tags) cho bài viết\nCách nhau bằng dấu phẩy (Ví dụ: Tuần 1, Thiết kế, Tips):`, currentTags);
-            if (input === null) return;
+        // ==========================================
+        // LOGIC TAG MODAL (POPUP GẮN TAG THÔNG MINH)
+        // ==========================================
+        function editFileTags(repoName, encodedFileName, fileSha) {
+            // Giải mã lại fileName từ html
+            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
+            currentEditTagKey = `${repoName}/${fileName}`;
+            currentEditFileSha = fileSha;
+
+            let currentTags = tagsDataCache[currentEditTagKey] || [];
             
-            const newTags = input.split(',').map(t => t.trim()).filter(t => t);
+            // Lấy tất cả Tag duy nhất
+            const allTags = new Set();
+            Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
+            const tagsArray = Array.from(allTags).sort();
+
+            // Cập nhật UI Modal
+            document.getElementById('tag-modal-title').innerText = `Gắn Tag`;
+            const inputEl = document.getElementById('tag-modal-input');
+            inputEl.value = currentTags.join(', ');
+
+            // Vẽ danh sách gợi ý
+            const suggestionsEl = document.getElementById('tag-modal-suggestions');
+            if (tagsArray.length === 0) {
+                suggestionsEl.innerHTML = '<span class="text-xs text-slate-400 italic">Chưa có tag nào trong hệ thống.</span>';
+            } else {
+                suggestionsEl.innerHTML = tagsArray.map(tag => {
+                    const isActive = currentTags.includes(tag);
+                    const safeTag = tag.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                    const bgClass = isActive ? 'bg-indigo-600 text-white shadow-sm border-indigo-600' : 'bg-white text-slate-600 hover:bg-slate-100 border-slate-200';
+                    return `<button type="button" onclick="toggleModalTag('${safeTag}')" class="px-2.5 py-1.5 text-xs font-bold rounded-lg transition border tag-suggest-btn ${bgClass}" data-tag="${safeTag}">${tag}</button>`;
+                }).join('');
+            }
+
+            // Hiện Modal
+            const overlay = document.getElementById('tag-modal-overlay');
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            setTimeout(() => inputEl.focus(), 100);
+        }
+
+        function toggleModalTag(encodedTag) {
+            const tag = encodedTag.replace(/\\'/g, "'").replace(/&quot;/g, '"');
+            const inputEl = document.getElementById('tag-modal-input');
+            let currentTags = inputEl.value.split(',').map(t => t.trim()).filter(t => t);
+            
+            if (currentTags.includes(tag)) {
+                currentTags = currentTags.filter(t => t !== tag);
+            } else {
+                currentTags.push(tag);
+            }
+            inputEl.value = currentTags.join(', ');
+
+            // Cập nhật màu sắc nút bấm trực tiếp
+            document.querySelectorAll('.tag-suggest-btn').forEach(btn => {
+                const btnTagRaw = btn.getAttribute('data-tag').replace(/\\'/g, "'").replace(/&quot;/g, '"');
+                if (currentTags.includes(btnTagRaw)) {
+                    btn.className = 'px-2.5 py-1.5 text-xs font-bold rounded-lg transition border tag-suggest-btn bg-indigo-600 text-white shadow-sm border-indigo-600';
+                } else {
+                    btn.className = 'px-2.5 py-1.5 text-xs font-bold rounded-lg transition border tag-suggest-btn bg-white text-slate-600 hover:bg-slate-100 border-slate-200';
+                }
+            });
+        }
+
+        function closeTagModal() {
+            const overlay = document.getElementById('tag-modal-overlay');
+            overlay.classList.add('hidden');
+            overlay.classList.remove('flex');
+            currentEditTagKey = null;
+            currentEditFileSha = null;
+        }
+
+        async function saveTagModal() {
+            const inputEl = document.getElementById('tag-modal-input');
+            const newTags = inputEl.value.split(',').map(t => t.trim()).filter(t => t);
+
+            const key = currentEditTagKey;
+            const fileSha = currentEditFileSha;
+
+            if (!key) return;
+
+            // Update Cache Local
             if (newTags.length > 0) tagsDataCache[key] = newTags;
             else delete tagsDataCache[key];
-            
+
+            // Cập nhật DOM cục bộ trên thẻ bài viết ngay lập tức
             const tagsContainer = document.getElementById(`tags-${fileSha}`);
             if (tagsContainer) {
                 tagsContainer.innerHTML = newTags.map(t => `<span class="bg-indigo-100 text-indigo-700 text-[9px] px-1.5 py-0.5 rounded font-bold">${t}</span>`).join(' ');
             }
-            
+
+            closeTagModal(); // Đóng Modal
+
+            // Lưu ngầm lên Github
             document.body.style.cursor = 'wait';
             try {
                 await saveMetadataToGithub();
-                renderFilterBar();
-            } catch(e) { alert("Lỗi lưu tags lên Github!"); }
+                renderFilterBar(); // Tái tạo bộ lọc lỡ có tag mới
+            } catch(e) {
+                alert("Lỗi lưu tags lên Github!");
+            }
             document.body.style.cursor = 'default';
         }
+        // ==========================================
 
-        // TÍNH NĂNG MỚI: ĐỔI TÊN/XÓA TAG TRÊN TOÀN HỆ THỐNG
         async function renameGlobalTag() {
             const oldTag = prompt("NHẬP CHÍNH XÁC tên Tag bạn muốn sửa/đổi (Có phân biệt hoa thường):");
             if (!oldTag) return;
@@ -580,7 +685,7 @@
                     } else {
                         tags[index] = newTag.trim(); 
                     }
-                    tagsDataCache[key] = [...new Set(tags)]; // Lọc trùng lặp
+                    tagsDataCache[key] = [...new Set(tags)]; 
                     if(tagsDataCache[key].length === 0) delete tagsDataCache[key];
                     hasChanges = true;
                 }
@@ -616,10 +721,10 @@
             html += `<button onclick="filterByTag('all')" class="px-3 py-1 text-xs font-bold rounded-full transition ${activeTag === 'all' ? 'bg-indigo-600 text-white shadow' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">Tất cả</button>`;
             
             tagsArray.forEach(tag => {
-                html += `<button onclick="filterByTag('${tag}')" class="px-3 py-1 text-xs font-bold rounded-full transition ${activeTag === tag ? 'bg-indigo-600 text-white shadow' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${tag}</button>`;
+                const safeTag = tag.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                html += `<button onclick="filterByTag('${safeTag}')" class="px-3 py-1 text-xs font-bold rounded-full transition ${activeTag === tag ? 'bg-indigo-600 text-white shadow' : 'bg-slate-100 text-slate-600 hover:bg-slate-200'}">${tag}</button>`;
             });
 
-            // THÊM NÚT SỬA TAG TOÀN CẦU
             if(tagsArray.length > 0) {
                 html += `<button onclick="renameGlobalTag()" class="ml-2 px-2 py-1 text-[10px] font-bold rounded-md bg-slate-800 text-white hover:bg-slate-700 transition shadow-sm" title="Đổi tên hoặc Xóa một Tag hàng loạt">⚙️ Sửa Tag</button>`;
             }
@@ -627,7 +732,8 @@
             document.getElementById('tag-filter-bar').innerHTML = html;
         }
 
-        async function copyForSubstack(repoName, fileName, btnEl) {
+        async function copyForSubstack(repoName, encodedFileName, btnEl) {
+            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
             const originalText = btnEl.innerHTML;
             btnEl.innerHTML = "⏳..."; btnEl.disabled = true;
             try {
@@ -645,8 +751,7 @@
                 const item = new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText });
                 await navigator.clipboard.write([item]);
                 
-                btnEl.innerHTML = "✅";
-                btnEl.classList.add("text-emerald-500");
+                btnEl.innerHTML = "✅"; btnEl.classList.add("text-emerald-500");
             } catch (err) { 
                 btnEl.innerHTML = "❌"; 
             } finally { 
@@ -668,7 +773,7 @@
             if (activeTag !== 'all') {
                 filteredFiles = allFilesCache.filter(f => {
                     const fileTags = tagsDataCache[`${f.repoName}/${f.fileName}`] || [];
-                    return fileTags.includes(activeTag);
+                    return fileTags.includes(activeTag.replace(/\\'/g, "'").replace(/&quot;/g, '"'));
                 });
             }
 
@@ -694,7 +799,7 @@
                 sortedAllFiles.forEach(f => {
                     const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     const tagsHtml = (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).map(t => `<span class="bg-indigo-100 text-indigo-700 text-[9px] px-1.5 py-0.5 rounded font-bold">${t}</span>`).join(' ');
-                    finalHTML += `<div class="observe-target break-inside-avoid mb-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div><div id="cover-${f.sha}" class="w-full h-28 shrink-0 bg-slate-100 flex items-center justify-center text-slate-400 text-xs">${f.coverHTML}</div><div class="p-4 flex flex-col"><div class="flex justify-between items-start mb-2"><span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer">📁 ${f.repoName}</span><div class="flex gap-1"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-emerald-500 bg-slate-50 hover:bg-emerald-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Gắn Tags">🏷️</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-slate-400 hover:text-orange-500 bg-slate-50 hover:bg-orange-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Copy Substack">📑</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Đổi tên">✏️</button></div></div><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-2 min-h-[18px]">${tagsHtml}</div><a href="${f.url}" target="_blank" class="font-bold text-base text-slate-800 hover:text-blue-600 line-clamp-2 leading-tight mb-2" id="title-${f.sha}">📄 ${f.name}</a><div id="preview-${f.sha}" class="text-xs text-slate-500 italic line-clamp-5 leading-relaxed space-y-2 mb-2"><p class="animate-pulse">${f.preview}</p></div></div><div class="bg-slate-50 p-3 shrink-0 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center"><span>🕒 ${f.fullDate}</span></div></div>`;
+                    finalHTML += `<div class="observe-target break-inside-avoid mb-6 bg-white rounded-xl shadow-sm hover:shadow-xl transition-shadow border border-slate-200 flex flex-col group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="h-2 bg-gradient-to-r from-indigo-400 to-purple-400"></div><div id="cover-${f.sha}" class="w-full h-28 shrink-0 bg-slate-100 flex items-center justify-center text-slate-400 text-xs">${f.coverHTML}</div><div class="p-4 flex flex-col"><div class="flex justify-between items-start mb-2"><span class="text-[10px] uppercase font-bold text-indigo-600 bg-indigo-50 px-2 py-1 rounded cursor-pointer">📁 ${f.repoName}</span><div class="flex gap-1"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-emerald-500 bg-slate-50 hover:bg-emerald-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Gắn Tags">🏷️</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-slate-400 hover:text-orange-500 bg-slate-50 hover:bg-orange-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Copy Substack">📑</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-50 hover:bg-blue-50 px-1.5 py-1 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Đổi tên">✏️</button></div></div><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-2 min-h-[18px]">${tagsHtml}</div><a href="${f.url}" target="_blank" class="font-bold text-base text-slate-800 hover:text-blue-600 line-clamp-2 leading-tight mb-2">📄 ${f.name}</a><div id="preview-${f.sha}" class="text-xs text-slate-500 italic line-clamp-5 leading-relaxed space-y-2 mb-2"><p class="animate-pulse">${f.preview}</p></div></div><div class="bg-slate-50 p-3 shrink-0 border-t border-slate-100 text-[11px] text-slate-400 font-mono font-bold flex justify-between items-center"><span>🕒 ${f.fullDate}</span></div></div>`;
                 });
                 container.querySelectorAll('.observe-target').forEach(el => previewObserver.observe(el));
             } 
@@ -704,7 +809,7 @@
                     finalHTML += `<div class="bg-slate-100 rounded-xl w-80 min-w-[320px] shrink-0 border border-slate-200 flex flex-col max-h-full"><div class="p-3 border-b border-slate-200 flex justify-between items-center cursor-pointer hover:bg-slate-200 transition rounded-t-xl" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'"><h3 class="font-black text-slate-700 uppercase tracking-wide">📂 ${repoName}</h3><span class="bg-slate-300 text-slate-700 text-xs font-bold px-2 py-0.5 rounded-full">${files.length}</span></div><div class="p-3 overflow-y-auto flex-1 kanban-scroll space-y-3">${files.map(f => {
                         const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                         const tagsHtml = (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).map(t => `<span class="bg-indigo-100 text-indigo-700 text-[9px] px-1.5 py-0.5 rounded font-bold">${t}</span>`).join(' ');
-                        return `<div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 group relative"><div class="absolute top-2 right-2 flex gap-1"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-emerald-500 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Gắn Tags">🏷️</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-slate-400 hover:text-orange-500 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Copy Substack">📑</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Đổi tên">✏️</button></div><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1.5 pr-16 min-h-[18px]">${tagsHtml}</div><a href="${f.url}" target="_blank" class="font-bold text-sm text-slate-800 hover:text-indigo-600 block pr-2 mb-1" id="title-${f.sha}">📄 ${f.name}</a><p class="text-[11px] text-slate-500 line-clamp-3 mb-2">${f.preview}</p><span class="text-[10px] font-mono text-slate-400">🕒 ${f.fullDate}</span></div>`;
+                        return `<div class="bg-white p-3 rounded-lg shadow-sm border border-slate-200 group relative"><div class="absolute top-2 right-2 flex gap-1"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-emerald-500 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Gắn Tags">🏷️</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-slate-400 hover:text-orange-500 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Copy Substack">📑</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-slate-400 hover:text-blue-600 bg-slate-50 px-1.5 py-0.5 rounded text-[10px] font-bold opacity-0 group-hover:opacity-100 transition" title="Đổi tên">✏️</button></div><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1.5 pr-16 min-h-[18px]">${tagsHtml}</div><a href="${f.url}" target="_blank" class="font-bold text-sm text-slate-800 hover:text-indigo-600 block pr-2 mb-1">📄 ${f.name}</a><p class="text-[11px] text-slate-500 line-clamp-3 mb-2">${f.preview}</p><span class="text-[10px] font-mono text-slate-400">🕒 ${f.fullDate}</span></div>`;
                     }).join('')}</div></div>`; 
                 }); 
             }
@@ -715,7 +820,7 @@
                     finalHTML += `<details ${isOpen} class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden group"><summary class="bg-slate-50 px-5 py-4 border-b border-slate-200 cursor-pointer list-none flex justify-between items-center select-none"><h3 class="font-black text-slate-700 uppercase tracking-widest text-sm hover:text-indigo-600 transition" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📂 ${repoName} <span class="text-xs text-slate-400 font-normal ml-2">(${files.length} bài)</span></h3><span class="text-slate-400 group-open:rotate-180 transition-transform duration-300">▼</span></summary><div class="overflow-x-auto"><table class="w-full text-left border-collapse min-w-[800px]"><thead><tr class="bg-white text-slate-400 uppercase text-[10px] tracking-wider border-b border-slate-100"><th class="p-3 font-bold w-1/3">Tên Bài Viết & Tags</th><th class="p-3 font-bold w-1/3">Trích đoạn</th><th class="p-3 font-bold w-1/6">Cập nhật</th><th class="p-3 font-bold text-center">Hành động</th></tr></thead><tbody class="divide-y divide-slate-100">${files.map(f => {
                         const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                         const tagsHtml = (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).map(t => `<span class="bg-indigo-100 text-indigo-700 text-[9px] px-1.5 py-0.5 rounded font-bold">${t}</span>`).join(' ');
-                        return `<tr class="hover:bg-slate-50 transition"><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold text-indigo-700 text-sm hover:underline block mb-1" id="title-${f.sha}">📄 ${f.name}</a><div id="tags-${f.sha}" class="flex flex-wrap gap-1 min-h-[18px]">${tagsHtml}</div></td><td class="p-3 text-xs text-slate-500 italic line-clamp-2">${f.preview}</td><td class="p-3 text-xs font-mono text-slate-400 whitespace-nowrap">${f.fullDate}</td><td class="p-3 text-center whitespace-nowrap"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-emerald-600 hover:bg-emerald-50 px-2 py-1 rounded text-xs font-bold transition border border-emerald-200 mr-1">🏷️ Tag</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-orange-600 hover:bg-orange-50 px-2 py-1 rounded text-xs font-bold transition mr-1 border border-orange-200">📑 Sub</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-blue-600 hover:bg-blue-50 px-2 py-1 rounded text-xs font-bold transition border border-blue-200">✏️ Sửa</button></td></tr>`;
+                        return `<tr class="hover:bg-slate-50 transition"><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold text-indigo-700 text-sm hover:underline block mb-1">📄 ${f.name}</a><div id="tags-${f.sha}" class="flex flex-wrap gap-1 min-h-[18px]">${tagsHtml}</div></td><td class="p-3 text-xs text-slate-500 italic line-clamp-2">${f.preview}</td><td class="p-3 text-xs font-mono text-slate-400 whitespace-nowrap">${f.fullDate}</td><td class="p-3 text-center whitespace-nowrap"><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="text-emerald-600 hover:bg-emerald-50 px-2 py-1 rounded text-xs font-bold transition border border-emerald-200 mr-1">🏷️ Tag</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="text-orange-600 hover:bg-orange-50 px-2 py-1 rounded text-xs font-bold transition mr-1 border border-orange-200">📑 Sub</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="text-blue-600 hover:bg-blue-50 px-2 py-1 rounded text-xs font-bold transition border border-blue-200">✏️ Sửa</button></td></tr>`;
                     }).join('')}</tbody></table></div></details>`; 
                 }); 
             }
@@ -724,7 +829,7 @@
                 sortedAllFiles.forEach(f => { 
                     const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                     const tagsHtml = (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).map(t => `<span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-1 rounded font-bold">${t}</span>`).join(' ');
-                    finalHTML += `<article class="observe-target break-inside-avoid mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div><div><p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p></div></div><h2 class="text-2xl font-black text-slate-800 mb-2 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank" id="title-${f.sha}">${f.name}</a></h2><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-4 min-h-[18px]">${tagsHtml}</div><div id="cover-${f.sha}" class="w-full h-48 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 mb-4 rounded-xl overflow-hidden">${f.coverHTML}</div><div id="preview-${f.sha}" class="text-slate-600 text-base leading-relaxed mb-4 p-4 rounded-xl border-l-4 border-l-indigo-300 italic animate-pulse space-y-2"><p>${f.preview}</p></div><div class="flex flex-wrap gap-2"><a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-emerald-100 transition border border-emerald-200">🏷️ Gắn Tag</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-orange-100 transition border border-orange-200">📑 Copy Substack</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition border border-slate-200">✏️ Đổi tên</button></div></article>`; 
+                    finalHTML += `<article class="observe-target break-inside-avoid mb-8 bg-white p-6 rounded-2xl shadow-sm border border-slate-200 hover:shadow-md transition" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}"><div class="flex items-center gap-3 mb-4"><div class="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div><div><p class="text-sm font-bold text-slate-800">vietndj <span class="text-slate-400 font-normal">đã đăng trong</span> <span class="text-indigo-600 cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-xs font-mono text-slate-400">🕒 ${f.fullDate}</p></div></div><h2 class="text-2xl font-black text-slate-800 mb-2 hover:text-indigo-600 transition"><a href="${f.url}" target="_blank">${f.name}</a></h2><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-4 min-h-[18px]">${tagsHtml}</div><div id="cover-${f.sha}" class="w-full h-48 bg-slate-100 animate-pulse flex items-center justify-center text-slate-400 mb-4 rounded-xl overflow-hidden">${f.coverHTML}</div><div id="preview-${f.sha}" class="text-slate-600 text-base leading-relaxed mb-4 p-4 rounded-xl border-l-4 border-l-indigo-300 italic animate-pulse space-y-2"><p>${f.preview}</p></div><div class="flex flex-wrap gap-2"><a href="${f.url}" target="_blank" class="bg-indigo-50 text-indigo-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-indigo-100 transition">Đọc tiếp ➔</a><button onclick="editFileTags('${f.repoName}', '${safeName}', '${f.sha}')" class="bg-emerald-50 text-emerald-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-emerald-100 transition border border-emerald-200">🏷️ Gắn Tag</button><button onclick="copyForSubstack('${f.repoName}', '${safeName}', this)" class="bg-orange-50 text-orange-700 px-4 py-2 rounded-lg text-sm font-bold hover:bg-orange-100 transition border border-orange-200">📑 Copy Substack</button><button onclick="renameFile('${f.repoName}', '${safeName}', '${f.sha}')" class="bg-slate-100 text-slate-600 px-4 py-2 rounded-lg text-sm font-bold hover:bg-slate-200 transition border border-slate-200">✏️ Đổi tên</button></div></article>`; 
                 }); 
                 container.querySelectorAll('.observe-target').forEach(el => previewObserver.observe(el)); 
             }
@@ -850,8 +955,8 @@
             }
         }
 
-        // TÍNH NĂNG ĐỔI TÊN SIÊU TỐC - KHÔNG CONFIRM - KHÔNG RELOAD REPO
-        async function renameFile(repoName, oldFileName, fileSha) {
+        async function renameFile(repoName, encodedFileName, fileSha) {
+            const oldFileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
             const token = localStorage.getItem('github_pat') || document.getElementById('github-token').value.trim();
             if(!token) return alert("❌ Cần nhập Token ở mục Tạo File trước!");
             
@@ -859,27 +964,22 @@
             if (!newName || newName === oldFileName.replace('.html', '')) return;
             if (!newName.endsWith('.html')) newName += '.html';
             
-            // Xử lý Giao diện ngay lập tức để báo hiệu đang chạy
             const elItem = document.getElementById(`item-${fileSha}`) || document.getElementById(`title-${fileSha}`)?.closest('div.group') || document.getElementById(`title-${fileSha}`)?.closest('article') || document.getElementById(`title-${fileSha}`)?.closest('tr');
             if(elItem) elItem.style.opacity = '0.5';
             
             document.body.style.cursor = 'wait';
             try {
-                // 1. Lấy nội dung cũ
                 const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() });
                 if(!getRes.ok) throw new Error("Không tải được file cũ");
                 const oldData = await getRes.json();
                 
-                // 2. Tạo file mới
                 const putRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Tạo ${newName}`, content: oldData.content }) });
                 if(!putRes.ok) throw new Error("Không tạo được file mới");
                 const putData = await putRes.json();
                 const newSha = putData.content.sha;
 
-                // 3. Xóa file cũ
                 await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Xóa ${oldFileName}`, sha: fileSha }) });
                 
-                // 4. Đổi khóa Tag trong metadata.json
                 const oldKey = `${repoName}/${oldFileName}`;
                 const newKey = `${repoName}/${newName}`;
                 if(tagsDataCache[oldKey]) {
@@ -888,20 +988,15 @@
                     await saveMetadataToGithub();
                 }
 
-                // 5. CẬP NHẬT TRỰC TIẾP VÀO CACHE (KHÔNG ĐỒNG BỘ LẠI TỪ MẠNG)
                 const newTitle = decodeURIComponent(newName.replace('.html', ''));
                 const newUrl = `https://${username}.github.io/${repoName === username+'.github.io' ? '' : repoName + '/'}${newName}`;
                 
                 allFilesCache.forEach(f => {
-                    if (f.sha === fileSha) {
-                        f.fileName = newName; f.name = newTitle; f.sha = newSha; f.url = newUrl;
-                    }
+                    if (f.sha === fileSha) { f.fileName = newName; f.name = newTitle; f.sha = newSha; f.url = newUrl; }
                 });
                 if(repoDataCache[repoName]) {
                     repoDataCache[repoName].forEach(f => {
-                        if (f.sha === fileSha) {
-                            f.fileName = newName; f.name = newTitle; f.sha = newSha; f.url = newUrl;
-                        }
+                        if (f.sha === fileSha) { f.fileName = newName; f.name = newTitle; f.sha = newSha; f.url = newUrl; }
                     });
                 }
                 if(allContentCache[fileSha]) {
@@ -910,7 +1005,6 @@
                 }
                 localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
                 
-                // 6. Tái cấu trúc DOM nội bộ siêu tốc
                 renderRepos();
 
             } catch(e) { 
