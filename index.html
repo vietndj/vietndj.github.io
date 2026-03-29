@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vietndj - Private Access</title>
+    <title>vietndj - Workspace</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style> 
@@ -16,11 +18,11 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* WIDGET POMODORO */
-        #vietndj-pomodoro-widget { position: fixed; top: 20px; right: 20px; z-index: 999999; font-family: 'Inter', -apple-system, sans-serif; width: 260px; background-color: #1A1A1A; border: 1px solid #333; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); color: #E0E0E0; overflow: hidden; transition: all 0.3s ease; }
+        /* WIDGET POMODORO (Ẩn mặc định) */
+        #vietndj-pomodoro-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999999; font-family: 'Inter', -apple-system, sans-serif; width: 260px; background-color: #1A1A1A; border: 1px solid #333; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); color: #E0E0E0; overflow: hidden; transition: all 0.3s ease; }
         #pomo-header { background-color: #252525; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 13px; font-weight: 600; user-select: none; border-bottom: 1px solid transparent; }
         #pomo-header:hover { background-color: #2E2E2E; }
-        #pomo-content { display: none; padding: 15px; border-top: 1px solid #333; }
+        #pomo-content { display: block; padding: 15px; border-top: 1px solid #333; }
         .pomo-tabs { display: flex; gap: 5px; margin-bottom: 15px; }
         .pomo-tab { background: transparent; border: 1px solid #444; color: #888; padding: 6px; font-size: 11px; border-radius: 6px; cursor: pointer; flex: 1; text-align: center; font-weight: 500; }
         .pomo-tab.active { background: rgba(233, 80, 79, 0.15); color: #E9504F; border-color: #E9504F; }
@@ -40,18 +42,17 @@
         .pomo-history-task { color: #CCC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
         .pomo-history-time { color: #E9504F; font-weight: 600; }
 
-        /* WIDGET GOOGLE TASKS (UI Mới) */
-        #vietndj-tasks-widget { position: fixed; bottom: 20px; right: 20px; z-index: 999998; font-family: 'Inter', -apple-system, sans-serif; width: 340px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); color: #334155; overflow: hidden; transition: all 0.3s ease; }
+        /* WIDGET GOOGLE TASKS (Ẩn mặc định) */
+        #vietndj-tasks-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999998; font-family: 'Inter', -apple-system, sans-serif; width: 340px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); color: #334155; overflow: hidden; transition: all 0.3s ease; }
         #gtasks-header { background-color: #f8fafc; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14px; font-weight: 800; user-select: none; border-bottom: 1px solid #e2e8f0; color: #0f172a; }
         #gtasks-header:hover { background-color: #f1f5f9; }
-        #gtasks-content { display: none; padding: 16px; max-height: 450px; overflow-y: auto; }
+        #gtasks-content { display: block; padding: 16px; max-height: 450px; overflow-y: auto; }
         #gtasks-content::-webkit-scrollbar { width: 6px; }
         #gtasks-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
         
         .gtasks-login-btn { width: 100%; background: #2563eb; color: white; border: none; padding: 12px; border-radius: 8px; font-weight: 700; font-size: 13px; cursor: pointer; box-shadow: 0 2px 4px rgba(37, 99, 235, 0.2); transition: 0.2s;}
         .gtasks-login-btn:hover { background: #1d4ed8; }
 
-        /* Custom Checkbox */
         .gtask-checkbox { width: 18px; height: 18px; cursor: pointer; accent-color: #2563eb; margin-top: 2px;}
         .gtask-title { flex: 1; word-break: break-word; line-height: 1.4; transition: 0.2s; font-size: 13px; font-weight: 500; color: #334155; }
         .gtask-completed { text-decoration: line-through; color: #94a3b8; }
@@ -60,7 +61,6 @@
         .gtask-delete-btn:hover { background: #fecaca; }
         .gtask-item:hover .gtask-delete-btn { opacity: 1; }
 
-        /* Form thêm task mới */
         .gtask-add-form { display: flex; gap: 6px; margin-bottom: 12px; }
         .gtask-add-input { flex: 1; padding: 6px 10px; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 12px; outline: none; }
         .gtask-add-input:focus { border-color: #4285F4; }
@@ -72,7 +72,7 @@
 <body class="bg-slate-50 min-h-screen text-slate-800 relative">
 
     <div id="vietndj-pomodoro-widget">
-        <div id="pomo-header"><span>⏱️ Timer (<span id="pomo-mini-time">25:00</span>)</span><span id="pomo-icon">▼</span></div>
+        <div id="pomo-header"><span>⏱️ Timer (<span id="pomo-mini-time">25:00</span>)</span><span id="pomo-icon" onclick="toggleWidget('vietndj-pomodoro-widget')">❌</span></div>
         <div id="pomo-content">
             <audio id="pomo-audio" src="1.mp3" preload="auto"></audio>
             <div class="pomo-tabs">
@@ -100,28 +100,24 @@
     <div id="vietndj-tasks-widget">
         <div id="gtasks-header">
             <span class="flex items-center gap-2"><span class="text-blue-600 text-lg">☑️</span> Google Tasks</span>
-            <span id="gtasks-icon" class="text-slate-400">▲</span>
+            <span id="gtasks-icon" class="text-slate-400 hover:text-red-500 transition" onclick="toggleWidget('vietndj-tasks-widget')">❌</span>
         </div>
-        <div id="gtasks-content" style="display: block;">
-            
+        <div id="gtasks-content">
             <div id="gtasks-login-section">
                 <div class="bg-blue-50 p-4 rounded-xl mb-4 text-center border border-blue-100">
                     <p class="text-xs text-blue-800 font-medium">Bật đồng bộ để quản lý công việc trực tiếp trên Dashboard.</p>
                 </div>
                 <button id="gtasks-login-btn" class="gtasks-login-btn">🚀 Kết nối Google Tasks</button>
             </div>
-
             <div id="gtasks-main-section" style="display: none;">
                 <div class="flex items-center gap-2 mb-4 bg-slate-100 p-1.5 rounded-lg border border-slate-200">
                     <select id="gtasks-list-select" class="flex-1 bg-transparent border-none text-sm font-bold text-slate-700 outline-none cursor-pointer"></select>
                     <button id="gtasks-rename-list-btn" class="bg-white shadow-sm border border-slate-200 text-slate-500 hover:text-blue-600 rounded-md px-2.5 py-1.5 text-xs font-bold transition" title="Đổi tên danh mục">✏️ Sửa</button>
                 </div>
-                
                 <div class="flex gap-2 mb-5">
                     <input type="text" id="gtasks-new-input" class="flex-1 border-2 border-slate-200 focus:border-blue-500 rounded-lg px-3 py-2 text-sm outline-none transition" placeholder="Viết công việc mới..." autocomplete="off">
                     <button id="gtasks-add-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-black rounded-lg px-4 py-2 shadow-md transition disabled:opacity-50">Thêm</button>
                 </div>
-
                 <div id="gtasks-loading" class="text-center text-xs text-slate-400 py-6 hidden animate-pulse font-bold">⏳ Đang đồng bộ...</div>
                 <div id="gtasks-list-container" class="space-y-1"></div>
             </div>
@@ -140,10 +136,26 @@
     </div>
 
     <div id="app-content" class="hidden p-4 md:p-8">
-        <header class="max-w-7xl mx-auto text-center mb-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl mt-4">
-            <h1 class="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">🚀 vietndj CMS Dashboard</h1>
-            <p class="text-slate-400 font-medium">Hệ quản trị Nội dung Đa góc nhìn (Multi-view)</p>
-            <button onclick="logout()" class="mt-4 text-xs bg-slate-800 hover:bg-red-900 text-slate-300 px-3 py-1 rounded-full transition border border-slate-700">🔒 Đóng khóa hệ thống</button>
+        <header class="max-w-7xl mx-auto text-center mb-6 bg-slate-900 text-white p-6 rounded-2xl shadow-xl mt-4 relative overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-500"></div>
+            
+            <h1 class="text-3xl md:text-4xl font-black mb-2 uppercase tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400">🚀 vietndj Workspace</h1>
+            <p class="text-slate-400 font-medium mb-6">Hệ quản trị Nội dung & Năng suất (Multi-view)</p>
+            
+            <div class="flex flex-wrap justify-center items-center gap-3">
+                <div class="flex gap-2 bg-slate-800 p-1.5 rounded-lg border border-slate-700">
+                    <button onclick="toggleWidget('vietndj-pomodoro-widget')" class="text-xs bg-slate-700 hover:bg-rose-600 text-white px-3 py-1.5 rounded-md transition font-bold shadow-sm">⏱️ Pomodoro</button>
+                    <button onclick="toggleWidget('vietndj-tasks-widget')" class="text-xs bg-slate-700 hover:bg-blue-600 text-white px-3 py-1.5 rounded-md transition font-bold shadow-sm">☑️ Google Tasks</button>
+                </div>
+                
+                <div class="flex gap-2 bg-slate-800 p-1.5 rounded-lg border border-slate-700 hidden sm:flex">
+                    <span class="text-[10px] uppercase font-bold text-slate-500 flex items-center px-2">Launch:</span>
+                    <a href="notion://" class="text-xs bg-slate-700 hover:bg-slate-600 text-white px-3 py-1.5 rounded-md transition font-bold shadow-sm">📝 Notion</a>
+                    <a href="vscode://" class="text-xs bg-slate-700 hover:bg-blue-500 text-white px-3 py-1.5 rounded-md transition font-bold shadow-sm">💻 VS Code</a>
+                </div>
+
+                <button onclick="logout()" class="text-xs bg-slate-800 hover:bg-red-900 text-slate-300 px-4 py-2 rounded-lg transition border border-slate-700 font-bold ml-auto sm:ml-0">🔒 Khóa hệ thống</button>
+            </div>
         </header>
 
         <main class="max-w-7xl mx-auto flex flex-col gap-6">
@@ -154,7 +166,7 @@
                 </button>
                 <div id="upload-section" class="hidden p-6 bg-white">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <div><label class="block text-xs font-bold text-slate-500 mb-1">🔑 GITHUB TOKEN</label><input type="password" id="github-token" class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50"></div>
+                        <div><label class="block text-xs font-bold text-slate-500 mb-1">🔑 GITHUB TOKEN</label><input type="password" id="github-token" class="w-full px-3 py-2 border rounded focus:ring-2 focus:ring-emerald-500 text-sm bg-slate-50 text-slate-400" title="Token đã được tích hợp cứng"></div>
                         <div><label class="block text-xs font-bold text-slate-500 mb-1">CHỌN KHO</label><input type="text" id="upload-repo" value="vietndj/" class="w-full px-3 py-2 border rounded font-bold text-indigo-700 bg-slate-50"></div>
                         <div><label class="block text-xs font-bold text-slate-500 mb-1">TÊN FILE MỚI (.html)</label><input type="text" id="upload-filename" placeholder="ten-bai-viet.html" class="w-full px-3 py-2 border rounded font-semibold focus:ring-2 focus:ring-emerald-500"></div>
                     </div>
@@ -187,136 +199,63 @@
     </div>
 
     <script>
-        const GOOGLE_CLIENT_ID = '69969715731-jeemef1madpjor1gh6m0oqoqnrnda46e.apps.googleusercontent.com'; 
-        
-        let gtasksTokenClient;
-        let gtasksAccessToken = null;
-
-        const gtasksHeader = document.getElementById('gtasks-header');
-        const gtasksContent = document.getElementById('gtasks-content');
-        const gtasksIcon = document.getElementById('gtasks-icon');
-        const gtasksLoginBtn = document.getElementById('gtasks-login-btn');
-        const gtasksLoginSection = document.getElementById('gtasks-login-section');
-        const gtasksMainSection = document.getElementById('gtasks-main-section');
-        const gtasksListSelect = document.getElementById('gtasks-list-select');
-        const gtasksListContainer = document.getElementById('gtasks-list-container');
-        const gtasksLoading = document.getElementById('gtasks-loading');
-        const gtasksNewInput = document.getElementById('gtasks-new-input');
-        const gtasksAddBtn = document.getElementById('gtasks-add-btn');
-        const gtasksRenameListBtn = document.getElementById('gtasks-rename-list-btn');
-
-        gtasksHeader.addEventListener('click', () => {
-            if (gtasksContent.style.display === 'block') {
-                gtasksContent.style.display = 'none'; gtasksIcon.textContent = '▼';
+        function toggleWidget(id) {
+            const widget = document.getElementById(id);
+            if(widget.style.display === 'none' || widget.style.display === '') {
+                widget.style.display = 'block';
+                widget.classList.add('fade-in');
             } else {
-                gtasksContent.style.display = 'block'; gtasksIcon.textContent = '▲';
+                widget.style.display = 'none';
             }
-        });
+        }
+    </script>
 
-        window.onload = function() {
-            if (localStorage.getItem("cms_auth") === "granted") unlockSystem(); else document.getElementById('pin-input').focus();
-            
-            if (typeof google !== 'undefined') {
-                gtasksTokenClient = google.accounts.oauth2.initTokenClient({
-                    client_id: GOOGLE_CLIENT_ID,
-                    scope: 'https://www.googleapis.com/auth/tasks',
-                    callback: (tokenResponse) => {
-                        if (tokenResponse && tokenResponse.access_token) {
-                            gtasksAccessToken = tokenResponse.access_token;
-                            gtasksLoginSection.style.display = 'none';
-                            gtasksMainSection.style.display = 'block';
-                            fetchGoogleTaskLists();
-                        }
-                    },
-                });
-            }
-        };
+    <script>
+        const GOOGLE_CLIENT_ID = '69969715731-jeemef1madpjor1gh6m0oqoqnrnda46e.apps.googleusercontent.com'; 
+        let gtasksTokenClient; let gtasksAccessToken = null;
+        const gtasksLoginBtn = document.getElementById('gtasks-login-btn'); const gtasksLoginSection = document.getElementById('gtasks-login-section'); const gtasksMainSection = document.getElementById('gtasks-main-section'); const gtasksListSelect = document.getElementById('gtasks-list-select'); const gtasksListContainer = document.getElementById('gtasks-list-container'); const gtasksLoading = document.getElementById('gtasks-loading'); const gtasksNewInput = document.getElementById('gtasks-new-input'); const gtasksAddBtn = document.getElementById('gtasks-add-btn'); const gtasksRenameListBtn = document.getElementById('gtasks-rename-list-btn');
 
-        gtasksLoginBtn.addEventListener('click', () => {
-            gtasksTokenClient.requestAccessToken({prompt: 'consent'});
-        });
+        gtasksLoginBtn.addEventListener('click', () => { gtasksTokenClient.requestAccessToken({prompt: 'consent'}); });
 
         async function fetchGoogleTaskLists() {
             gtasksLoading.style.display = 'block';
             try {
-                const res = await fetch('https://tasks.googleapis.com/tasks/v1/users/@me/lists', {
-                    headers: { 'Authorization': `Bearer ${gtasksAccessToken}` }
-                });
+                const res = await fetch('https://tasks.googleapis.com/tasks/v1/users/@me/lists', { headers: { 'Authorization': `Bearer ${gtasksAccessToken}` } });
                 const data = await res.json();
                 gtasksListSelect.innerHTML = '';
                 if(data.items && data.items.length > 0) {
-                    data.items.forEach(list => {
-                        const option = document.createElement('option');
-                        option.value = list.id; option.textContent = list.title;
-                        gtasksListSelect.appendChild(option);
-                    });
+                    data.items.forEach(list => { const option = document.createElement('option'); option.value = list.id; option.textContent = list.title; gtasksListSelect.appendChild(option); });
                     fetchGoogleTasks(data.items[0].id); 
-                } else {
-                    gtasksListContainer.innerHTML = '<p class="text-xs text-center text-slate-500 py-4">Chưa có danh sách.</p>';
-                }
-            } catch (err) {
-                gtasksListContainer.innerHTML = `<p class="text-xs text-red-500 text-center">Lỗi: ${err.message}</p>`;
-            }
+                } else { gtasksListContainer.innerHTML = '<p class="text-xs text-center text-slate-500">Bạn chưa có danh sách công việc nào.</p>'; }
+            } catch (err) {}
             gtasksLoading.style.display = 'none';
         }
 
         gtasksListSelect.addEventListener('change', (e) => fetchGoogleTasks(e.target.value));
 
         gtasksRenameListBtn.addEventListener('click', async () => {
-            const listId = gtasksListSelect.value;
-            const currentName = gtasksListSelect.options[gtasksListSelect.selectedIndex].text;
-            const newName = prompt(`Đổi tên danh mục:\n[ ${currentName} ]`, currentName);
-            
+            const listId = gtasksListSelect.value; const currentName = gtasksListSelect.options[gtasksListSelect.selectedIndex].text; const newName = prompt(`Đổi tên danh mục:\n[ ${currentName} ]`, currentName);
             if (!newName || newName === currentName) return;
-            
-            gtasksRenameListBtn.disabled = true;
-            gtasksRenameListBtn.textContent = '...';
-
+            gtasksRenameListBtn.disabled = true; gtasksRenameListBtn.textContent = '...';
             try {
-                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/users/@me/lists/${listId}`, {
-                    method: 'PATCH',
-                    headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title: newName })
-                });
-                if (res.ok) {
-                    gtasksListSelect.options[gtasksListSelect.selectedIndex].text = newName;
-                } else {
-                    alert("Lỗi đổi tên danh mục!");
-                }
-            } catch (e) {
-                alert("Lỗi kết nối!");
-            } finally {
-                gtasksRenameListBtn.disabled = false;
-                gtasksRenameListBtn.textContent = '✏️ Sửa';
-            }
+                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/users/@me/lists/${listId}`, { method: 'PATCH', headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ title: newName }) });
+                if (res.ok) gtasksListSelect.options[gtasksListSelect.selectedIndex].text = newName; else alert("Lỗi đổi tên danh mục!");
+            } catch (e) {} finally { gtasksRenameListBtn.disabled = false; gtasksRenameListBtn.textContent = '✏️ Sửa'; }
         });
 
         async function fetchGoogleTasks(listId) {
-            gtasksListContainer.innerHTML = '';
-            gtasksLoading.style.display = 'block';
+            gtasksListContainer.innerHTML = ''; gtasksLoading.style.display = 'block';
             try {
-                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks?showCompleted=true&showHidden=true`, {
-                    headers: { 'Authorization': `Bearer ${gtasksAccessToken}` }
-                });
+                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks?showCompleted=true&showHidden=true`, { headers: { 'Authorization': `Bearer ${gtasksAccessToken}` } });
                 const data = await res.json();
                 if(data.items && data.items.length > 0) {
                     data.items.forEach(task => {
                         if(task.title.trim() === "") return; 
                         const isCompleted = task.status === 'completed';
-                        gtasksListContainer.innerHTML += `
-                            <div class="gtask-item group hover:bg-slate-50 p-2 rounded-lg transition" data-id="${task.id}">
-                                <input type="checkbox" class="gtask-checkbox" ${isCompleted ? 'checked' : ''} data-id="${task.id}" data-status="${task.status}">
-                                <span class="gtask-title ${isCompleted ? 'gtask-completed' : ''}">${task.title}</span>
-                                <button class="gtask-delete-btn" data-id="${task.id}" title="Xóa">🗑️</button>
-                            </div>
-                        `;
+                        gtasksListContainer.innerHTML += `<div class="gtask-item group hover:bg-slate-50 p-2 rounded-lg transition" data-id="${task.id}"><input type="checkbox" class="gtask-checkbox" ${isCompleted ? 'checked' : ''} data-id="${task.id}" data-status="${task.status}"><span class="gtask-title ${isCompleted ? 'gtask-completed' : ''}">${task.title}</span><button class="gtask-delete-btn" data-id="${task.id}" title="Xóa">🗑️</button></div>`;
                     });
-                } else {
-                    gtasksListContainer.innerHTML = '<p class="text-xs text-center text-slate-500 py-6">Mục này chưa có công việc nào!</p>';
-                }
-            } catch (err) {
-                gtasksListContainer.innerHTML = `<p class="text-xs text-red-500 text-center">Lỗi: ${err.message}</p>`;
-            }
+                } else { gtasksListContainer.innerHTML = '<p class="text-xs text-center text-slate-500 py-6">Mục này chưa có công việc nào!</p>'; }
+            } catch (err) {}
             gtasksLoading.style.display = 'none';
         }
 
@@ -324,93 +263,37 @@
         gtasksNewInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') createNewTask(); });
 
         async function createNewTask() {
-            const taskTitle = gtasksNewInput.value.trim();
-            const listId = gtasksListSelect.value;
+            const taskTitle = gtasksNewInput.value.trim(); const listId = gtasksListSelect.value;
             if (!taskTitle || !listId) return;
-
-            gtasksAddBtn.disabled = true; gtasksAddBtn.textContent = '...';
-            gtasksNewInput.disabled = true;
-
+            gtasksAddBtn.disabled = true; gtasksAddBtn.textContent = '...'; gtasksNewInput.disabled = true;
             try {
-                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks`, {
-                    method: 'POST',
-                    headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ title: taskTitle })
-                });
-                if (res.ok) {
-                    gtasksNewInput.value = ''; 
-                    fetchGoogleTasks(listId); 
-                } else {
-                    alert("Lỗi khi thêm công việc!");
-                }
-            } catch (e) {
-                alert("Lỗi kết nối: " + e.message);
-            } finally {
-                gtasksAddBtn.disabled = false; gtasksAddBtn.textContent = 'Thêm';
-                gtasksNewInput.disabled = false; gtasksNewInput.focus();
-            }
+                const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks`, { method: 'POST', headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ title: taskTitle }) });
+                if (res.ok) { gtasksNewInput.value = ''; fetchGoogleTasks(listId); } else alert("Lỗi khi thêm công việc!");
+            } catch (e) {} finally { gtasksAddBtn.disabled = false; gtasksAddBtn.textContent = 'Thêm'; gtasksNewInput.disabled = false; gtasksNewInput.focus(); }
         }
 
         gtasksListContainer.addEventListener('click', async (e) => {
             const listId = gtasksListSelect.value;
-
             if (e.target.classList.contains('gtask-delete-btn')) {
                 const taskId = e.target.getAttribute('data-id');
-                if (!confirm("Bạn có chắc muốn xóa công việc này vĩnh viễn?")) return;
-                
+                if (!confirm("Xóa công việc này?")) return;
                 e.target.textContent = '...';
-                try {
-                    const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, {
-                        method: 'DELETE',
-                        headers: { 'Authorization': `Bearer ${gtasksAccessToken}` }
-                    });
-                    if (res.ok) fetchGoogleTasks(listId);
-                } catch(err) { alert("Lỗi khi xóa!"); }
+                try { const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${gtasksAccessToken}` } }); if (res.ok) fetchGoogleTasks(listId); } catch(err) {}
                 return;
             }
-
             if (e.target.classList.contains('gtask-checkbox')) {
-                const checkbox = e.target;
-                const taskId = checkbox.getAttribute('data-id');
-                const currentStatus = checkbox.getAttribute('data-status');
-                const newStatus = currentStatus === 'completed' ? 'needsAction' : 'completed';
-                
+                const checkbox = e.target; const taskId = checkbox.getAttribute('data-id'); const currentStatus = checkbox.getAttribute('data-status'); const newStatus = currentStatus === 'completed' ? 'needsAction' : 'completed';
                 checkbox.disabled = true; 
-
-                try {
-                    const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, {
-                        method: 'PATCH',
-                        headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ status: newStatus })
-                    });
-                    if (res.ok) fetchGoogleTasks(listId); 
-                    else checkbox.disabled = false;
-                } catch(err) {
-                    checkbox.disabled = false;
-                    alert("Lỗi khi cập nhật!");
-                }
+                try { const res = await fetch(`https://tasks.googleapis.com/tasks/v1/lists/${listId}/tasks/${taskId}`, { method: 'PATCH', headers: { 'Authorization': `Bearer ${gtasksAccessToken}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ status: newStatus }) }); if (res.ok) fetchGoogleTasks(listId); else checkbox.disabled = false; } catch(err) { checkbox.disabled = false; }
             }
         });
     </script>
 
     <script>
     (function() {
-        const header = document.getElementById('pomo-header');
-        const content = document.getElementById('pomo-content');
-        const icon = document.getElementById('pomo-icon');
-        const miniTime = document.getElementById('pomo-mini-time');
-        
-        header.addEventListener('click', () => {
-            if (content.style.display === 'block') {
-                content.style.display = 'none'; icon.textContent = '▼';
-            } else {
-                content.style.display = 'block'; icon.textContent = '▲';
-            }
-        });
-
         let timerInterval; let totalSeconds = 1500; let secondsLeft = totalSeconds; let isRunning = false; let endTime;
         let historyData = JSON.parse(localStorage.getItem('pomoHistory')) || {}; 
-        const mainTime = document.getElementById('pomo-main-time'); const tabs = document.querySelectorAll('.pomo-tab'); const taskInput = document.getElementById('pomo-task'); const startBtn = document.getElementById('pomo-start'); const resetBtn = document.getElementById('pomo-reset'); const soundSelect = document.getElementById('pomo-sound'); const audioPlayer = document.getElementById('pomo-audio'); const historyBtn = document.getElementById('pomo-history-btn'); const historyList = document.getElementById('pomo-history-list');
+        const mainTime = document.getElementById('pomo-main-time'); const miniTime = document.getElementById('pomo-mini-time'); const tabs = document.querySelectorAll('.pomo-tab'); const taskInput = document.getElementById('pomo-task'); const startBtn = document.getElementById('pomo-start'); const resetBtn = document.getElementById('pomo-reset'); const soundSelect = document.getElementById('pomo-sound'); const audioPlayer = document.getElementById('pomo-audio'); const historyBtn = document.getElementById('pomo-history-btn'); const historyList = document.getElementById('pomo-history-list');
 
         historyBtn.addEventListener('click', () => { if (historyList.style.display === 'block') { historyList.style.display = 'none'; historyBtn.textContent = 'Xem lịch sử làm việc ▼'; } else { historyList.style.display = 'block'; historyBtn.textContent = 'Ẩn lịch sử ▲'; renderHistory(); }});
         soundSelect.addEventListener('change', (e) => { audioPlayer.src = e.target.value; });
@@ -421,7 +304,7 @@
         function startTimer() { if (!isRunning) { isRunning = true; startBtn.disabled = true; startBtn.textContent = "ĐANG CHẠY..."; audioPlayer.pause(); endTime = Date.now() + (secondsLeft * 1000); timerInterval = setInterval(() => { let now = Date.now(); secondsLeft = Math.round((endTime - now) / 1000); if (secondsLeft <= 0) { completeTimer(); } else { updateDisplay(); } }, 200); } }
         function resetTimer() { clearInterval(timerInterval); isRunning = false; startBtn.disabled = false; startBtn.textContent = "BẮT ĐẦU"; secondsLeft = totalSeconds; updateDisplay(); }
 
-        tabs.forEach(tab => { tab.addEventListener('click', (e) => { if (isRunning && !confirm("Bạn có chắc muốn hủy khối làm việc hiện tại?")) return; tabs.forEach(t => { t.classList.remove('active'); t.style.borderColor = '#444'; t.style.color = '#888'; t.style.backgroundColor = 'transparent'; }); let target = e.target; target.classList.add('active'); let color = target.getAttribute('data-color'); target.style.borderColor = color; target.style.color = color; target.style.backgroundColor = color === '#E9504F' ? 'rgba(233, 80, 79, 0.15)' : 'rgba(56, 133, 138, 0.15)'; startBtn.style.backgroundColor = color; totalSeconds = parseInt(target.getAttribute('data-time')); resetTimer(); }); });
+        tabs.forEach(tab => { tab.addEventListener('click', (e) => { if (isRunning && !confirm("Hủy khối làm việc hiện tại?")) return; tabs.forEach(t => { t.classList.remove('active'); t.style.borderColor = '#444'; t.style.color = '#888'; t.style.backgroundColor = 'transparent'; }); let target = e.target; target.classList.add('active'); let color = target.getAttribute('data-color'); target.style.borderColor = color; target.style.color = color; target.style.backgroundColor = color === '#E9504F' ? 'rgba(233, 80, 79, 0.15)' : 'rgba(56, 133, 138, 0.15)'; startBtn.style.backgroundColor = color; totalSeconds = parseInt(target.getAttribute('data-time')); resetTimer(); }); });
 
         startBtn.addEventListener('click', startTimer); resetBtn.addEventListener('click', resetTimer); updateDisplay();
     })();
@@ -429,15 +312,49 @@
 
     <script>
         const SECRET_PIN = "0070";
+        // NHÚNG CỨNG GITHUB TOKEN TẠI ĐÂY
+        const HARDCODED_GITHUB_TOKEN = "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";
+
         function checkPIN() { if (document.getElementById('pin-input').value === SECRET_PIN) { localStorage.setItem("cms_auth", "granted"); unlockSystem(); } else { document.getElementById('login-error').classList.remove('hidden'); document.getElementById('pin-input').value = ''; } }
-        function unlockSystem() { document.getElementById('login-screen').style.opacity = "0"; setTimeout(() => { document.getElementById('login-screen').classList.add('hidden'); const app = document.getElementById('app-content'); app.classList.remove('hidden'); app.classList.add('fade-in'); loadRepos(); }, 300); }
+        
+        function unlockSystem() { 
+            document.getElementById('login-screen').style.opacity = "0"; 
+            setTimeout(() => { 
+                document.getElementById('login-screen').classList.add('hidden'); 
+                const app = document.getElementById('app-content'); 
+                app.classList.remove('hidden'); 
+                app.classList.add('fade-in'); 
+                
+                // Tự động điền Token
+                document.getElementById('github-token').value = HARDCODED_GITHUB_TOKEN;
+                
+                // Khởi tạo Google Identity Auth
+                if (typeof google !== 'undefined') {
+                    gtasksTokenClient = google.accounts.oauth2.initTokenClient({
+                        client_id: GOOGLE_CLIENT_ID,
+                        scope: 'https://www.googleapis.com/auth/tasks',
+                        callback: (tokenResponse) => {
+                            if (tokenResponse && tokenResponse.access_token) {
+                                gtasksAccessToken = tokenResponse.access_token;
+                                gtasksLoginSection.style.display = 'none';
+                                gtasksMainSection.style.display = 'block';
+                                fetchGoogleTaskLists();
+                            }
+                        },
+                    });
+                }
+                
+                loadRepos(); 
+            }, 300); 
+        }
+        
         function logout() { localStorage.removeItem("cms_auth"); location.reload(); }
+        window.onload = () => { if (localStorage.getItem("cms_auth") === "granted") unlockSystem(); else document.getElementById('pin-input').focus(); };
 
         const username = 'vietndj';
         let sortOrder = 'desc', currentView = 'list', repoDataCache = {}, allFilesCache = []; let allContentCache = {}; 
         
-        const savedToken = localStorage.getItem('github_pat'); if(savedToken) document.getElementById('github-token').value = savedToken;
-        function getHeaders() { const t = document.getElementById('github-token').value.trim() || savedToken; return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : {}; }
+        function getHeaders() { const t = document.getElementById('github-token').value.trim() || HARDCODED_GITHUB_TOKEN; return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : {}; }
         function toggleUpload() { const s = document.getElementById('upload-section'), i = document.getElementById('upload-icon'); if(s.classList.contains('hidden')){ s.classList.remove('hidden'); i.style.transform='rotate(180deg)';} else {s.classList.add('hidden'); i.style.transform='rotate(0deg)';} }
         function changeSortOrder(order) { sortOrder = order; document.getElementById('sort-desc').className = order === 'desc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition'; document.getElementById('sort-asc').className = order === 'asc' ? 'px-3 py-1.5 rounded-md text-sm font-bold bg-slate-800 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold text-slate-600 hover:bg-slate-200 transition'; renderRepos(); }
         function setView(view) { currentView = view; ['gallery','kanban','table','feed','list'].forEach(v => { document.getElementById(`btn-view-${v}`).className = v === view ? 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 bg-indigo-600 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100'; }); renderRepos(); }
@@ -487,7 +404,7 @@
 
         async function getFileContent(repoName, fileName, fileSha, fileUrl, downloadUrl) { if (allContentCache[fileSha]) return allContentCache[fileSha]; let contentData = { tocHTML: '', previewText: 'Đang xử lý nội dung...', coverHTML: '' }; try { let htmlString = ""; const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}`, { headers: reqHeaders }); if (response.ok) { htmlString = await response.text(); } else { if (downloadUrl) { const fallbackRes = await fetch(downloadUrl); if(fallbackRes.ok) htmlString = await fallbackRes.text(); } else throw new Error("Lỗi API tải nội dung"); } if (!htmlString) throw new Error("Nội dung trống."); const doc = new DOMParser().parseFromString(htmlString, 'text/html'); let mainTitle = doc.querySelector('title')?.textContent || doc.querySelector('h1')?.textContent || fileName.replace('.html', ''); const gradients = ['from-blue-600 to-cyan-500', 'from-emerald-600 to-teal-500', 'from-purple-600 to-fuchsia-500', 'from-orange-500 to-amber-500', 'from-indigo-600 to-blue-500', 'from-rose-500 to-red-500']; const hashInt = parseInt(fileSha.substring(0, 5), 16) || 0; contentData.coverHTML = `<div class="w-full h-full bg-gradient-to-br ${gradients[hashInt % gradients.length]} p-4 flex items-center justify-center opacity-90 hover:opacity-100 transition"><h3 class="text-white font-black text-center text-[15px] line-clamp-3 leading-snug drop-shadow-md px-2">${mainTitle}</h3></div>`; const headings = doc.querySelectorAll('h1, h2, h3'); let tocList = []; headings.forEach((h, index) => { if (!h.id) h.id = `toc-${index}`; tocList.push(`<li class="truncate"><a href="${fileUrl}#${h.id}" class="hover:text-indigo-600 transition" target="_blank">• ${h.textContent.trim()}</a></li>`); }); if (tocList.length > 0) { contentData.tocHTML = `<details class="bg-indigo-50/50 border border-indigo-100 p-3 rounded-xl text-xs text-slate-700 mb-3 cursor-pointer group toc-element"><summary class="font-bold text-indigo-800 flex items-center justify-between"><span>📋 Mục lục bài viết (${tocList.length})</span><span class="group-open:rotate-180 transition-transform">▼</span></summary><ul class="mt-3 space-y-2 border-t border-indigo-100 pt-2">${tocList.join('')}</ul></details>`; } const scripts = doc.querySelectorAll('script, style'); scripts.forEach(s => s.remove()); const cleanText = (doc.body.textContent || "").replace(/\s+/g, ' ').trim(); if(cleanText.length > 0) contentData.previewText = cleanText.substring(0, 1000) + (cleanText.length > 1000 ? "..." : ""); allContentCache[fileSha] = contentData; return contentData; } catch(e) { throw e; } }
         async function renderFilePreview(repoName, fileName, fileSha, fileUrl, downloadUrl) { const previewData = await getFileContent(repoName, fileName, fileSha, fileUrl, downloadUrl); allFilesCache.forEach(f => { if (f.sha === fileSha) { f.tocHTML = previewData.tocHTML; f.preview = previewData.previewText; f.coverHTML = previewData.coverHTML; } }); if(repoDataCache[repoName]){ repoDataCache[repoName].forEach(f => { if (f.sha === fileSha) { f.tocHTML = previewData.tocHTML; f.preview = previewData.previewText; f.coverHTML = previewData.coverHTML; } }); } const previewElement = document.getElementById(`preview-${fileSha}`); const coverContainer = document.getElementById(`cover-${fileSha}`); if (previewElement) { previewElement.innerHTML = `${previewData.tocHTML}<p class="mt-2 text-[13px]">${previewData.previewText}</p>`; previewElement.classList.remove('animate-pulse'); if (currentView === 'feed') { previewElement.classList.remove('line-clamp-5'); const tocDetails = previewElement.querySelector('.toc-element'); if (tocDetails) tocDetails.setAttribute('open', ''); } else { previewElement.classList.add('line-clamp-5'); } } if (coverContainer && previewData.coverHTML) { coverContainer.outerHTML = `<div id="cover-${fileSha}" class="w-full shrink-0 ${currentView === 'gallery' ? 'h-28' : 'h-48'} overflow-hidden">${previewData.coverHTML}</div>`; } }
-        async function renameFile(repoName, oldFileName, fileSha) { const token = document.getElementById('github-token').value.trim() || savedToken; if(!token) return alert("❌ Cần Token!"); let newName = prompt(`Đổi tên:\n[ ${oldFileName} ]`, oldFileName); if (!newName || newName === oldFileName) return; if (!newName.endsWith('.html')) newName += '.html'; if(!confirm(`Xác nhận đổi thành: ${newName}?`)) return; document.body.style.cursor = 'wait'; try { const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() }); const oldData = await getRes.json(); await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Tạo ${newName}`, content: oldData.content }) }); await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Xóa ${oldFileName}`, sha: fileSha }) }); await loadRepos(); } catch(e) { alert(`❌ Lỗi: ${e.message}`); } finally { document.body.style.cursor = 'default'; } }
+        async function renameFile(repoName, oldFileName, fileSha) { const token = document.getElementById('github-token').value.trim() || HARDCODED_GITHUB_TOKEN; if(!token) return alert("❌ Cần Token!"); let newName = prompt(`Đổi tên:\n[ ${oldFileName} ]`, oldFileName); if (!newName || newName === oldFileName) return; if (!newName.endsWith('.html')) newName += '.html'; if(!confirm(`Xác nhận đổi thành: ${newName}?`)) return; document.body.style.cursor = 'wait'; try { const getRes = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { headers: getHeaders() }); const oldData = await getRes.json(); await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${newName}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Tạo ${newName}`, content: oldData.content }) }); await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${oldFileName}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Đổi tên: Xóa ${oldFileName}`, sha: fileSha }) }); await loadRepos(); } catch(e) { alert(`❌ Lỗi: ${e.message}`); } finally { document.body.style.cursor = 'default'; } }
         async function createFile() { const token = document.getElementById('github-token').value.trim(), repoPath = document.getElementById('upload-repo').value.trim(); let name = document.getElementById('upload-filename').value.trim(); const content = document.getElementById('upload-content').value, status = document.getElementById('upload-status'), btn = document.getElementById('btn-create'); if(!token || !repoPath || !name || !content) return alert("Thiếu dữ liệu!"); if(!name.endsWith('.html')) name += '.html'; localStorage.setItem('github_pat', token); btn.innerText = "⏳ ĐANG PUSH..."; btn.disabled = true; status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-yellow-100 text-yellow-700 block animate-pulse"; status.innerText = "Đang xử lý..."; try { const response = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Tạo mới: ${name}`, content: btoa(unescape(encodeURIComponent(content))) }) }); if(response.ok) { status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-emerald-100 text-emerald-700 block"; status.innerText = `✅ Đã tạo: ${name}`; document.getElementById('upload-filename').value = ''; document.getElementById('upload-content').value = ''; loadRepos(); setTimeout(() => window.open(`https://${repoPath.split('/')[0]}.github.io/${repoPath.split('/')[1]}/${name}`, '_blank'), 2000); } else throw new Error((await response.json()).message); } catch (e) { status.className = "text-sm mt-3 px-4 py-2 font-bold rounded-lg bg-red-100 text-red-700 block"; status.innerText = `❌ Lỗi: ${e.message}`; } finally { btn.innerText = "🚀 PUSH LÊN GITHUB"; btn.disabled = false; } }
     </script>
 </body>
