@@ -18,7 +18,7 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
 
-        /* WIDGET POMODORO (Ẩn mặc định) */
+        /* WIDGET POMODORO */
         #vietndj-pomodoro-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999999; font-family: 'Inter', -apple-system, sans-serif; width: 260px; background-color: #1A1A1A; border: 1px solid #333; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); color: #E0E0E0; overflow: hidden; transition: all 0.3s ease; }
         #pomo-header { background-color: #252525; padding: 12px 15px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 13px; font-weight: 600; user-select: none; border-bottom: 1px solid transparent; }
         #pomo-header:hover { background-color: #2E2E2E; }
@@ -42,7 +42,7 @@
         .pomo-history-task { color: #CCC; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 130px; }
         .pomo-history-time { color: #E9504F; font-weight: 600; }
 
-        /* WIDGET GOOGLE TASKS (Ẩn mặc định) */
+        /* WIDGET GOOGLE TASKS */
         #vietndj-tasks-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999998; font-family: 'Inter', -apple-system, sans-serif; width: 340px; background-color: #ffffff; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.15); color: #334155; overflow: hidden; transition: all 0.3s ease; }
         #gtasks-header { background-color: #f8fafc; padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14px; font-weight: 800; user-select: none; border-bottom: 1px solid #e2e8f0; color: #0f172a; }
         #gtasks-header:hover { background-color: #f1f5f9; }
@@ -323,13 +323,9 @@
                 app.classList.remove('hidden'); 
                 app.classList.add('fade-in'); 
                 
-                // Khôi phục Token từ LocalStorage
                 const savedToken = localStorage.getItem('github_pat');
-                if(savedToken) {
-                    document.getElementById('github-token').value = savedToken;
-                }
+                if(savedToken) document.getElementById('github-token').value = savedToken;
                 
-                // Khởi tạo Google Identity Auth
                 if (typeof google !== 'undefined') {
                     gtasksTokenClient = google.accounts.oauth2.initTokenClient({
                         client_id: GOOGLE_CLIENT_ID,
@@ -361,30 +357,52 @@
         function setView(view) { currentView = view; ['gallery','kanban','table','feed','list'].forEach(v => { document.getElementById(`btn-view-${v}`).className = v === view ? 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 bg-indigo-600 text-white shadow' : 'px-3 py-1.5 rounded-md text-sm font-bold transition flex items-center gap-1 text-slate-600 hover:bg-slate-100'; }); renderRepos(); }
 
         async function loadRepos() {
-            // LƯU TOKEN VÀO BỘ NHỚ NẾU NGƯỜI DÙNG VỪA NHẬP VÀO Ô TEXT
             const currentToken = document.getElementById('github-token').value.trim();
             if (currentToken) localStorage.setItem('github_pat', currentToken);
 
-            const container = document.getElementById('repo-container'); container.innerHTML = '<p class="text-center text-slate-500 italic animate-pulse py-10 text-lg">🚀 Đang kết nối GitHub và trích xuất nội dung...</p>';
+            const container = document.getElementById('repo-container'); 
+            container.innerHTML = '<p class="text-center text-slate-500 italic animate-pulse py-10 text-lg">🚀 Đang kết nối GitHub và tải danh sách Repo...</p>';
+            
             try {
                 const resRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, { headers: getHeaders() });
-                const repos = await resRepos.json(); if (repos.message) throw new Error(repos.message);
+                if(!resRepos.ok) throw new Error("Mã Token không hợp lệ hoặc hết hạn!");
+                const repos = await resRepos.json(); 
+                
                 repoDataCache = {}; allFilesCache = []; allContentCache = {}; 
                 for (const repo of repos) {
                     if (repo.name === `${username}.github.io`) continue;
-                    const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() }); const files = await resFiles.json();
+                    
+                    // THÔNG BÁO UI TỐI ƯU CHO TỪNG KHO ĐỂ KHÔNG BỊ CẢM GIÁC ĐỨNG MÁY
+                    container.innerHTML = `<p class="text-center text-slate-500 italic animate-pulse py-10 text-lg">⏳ Đang xử lý kho: <b class="text-indigo-600">${repo.name}</b>...</p>`;
+                    
+                    const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() }); 
+                    if (!resFiles.ok) continue; // Bỏ qua nếu kho trống hoặc lỗi quyền
+                    const files = await resFiles.json();
+                    
                     if (Array.isArray(files)) {
                         const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
-                        const fileDetails = await Promise.all(htmlFiles.map(async file => {
-                            let dateObj = new Date(); try { const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); const commitData = await resCommit.json(); if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); } catch(e) {} 
+                        const fileDetails = [];
+                        
+                        // CHẠY TUẦN TỰ (FOR...OF) THAY VÌ PROMISE.ALL ĐỂ CHỐNG GITHUB RATE LIMIT
+                        for (const file of htmlFiles) {
+                            let dateObj = new Date(); 
+                            try { 
+                                const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); 
+                                if(resCommit.ok) {
+                                    const commitData = await resCommit.json(); 
+                                    if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); 
+                                }
+                            } catch(e) {} 
+                            
                             const fileData = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", tocHTML: "", coverHTML: "" };
-                            allFilesCache.push(fileData); return fileData;
-                        }));
-                        repoDataCache[repo.name] = fileDetails;
+                            allFilesCache.push(fileData); 
+                            fileDetails.push(fileData);
+                        }
+                        if(fileDetails.length > 0) repoDataCache[repo.name] = fileDetails;
                     }
                 }
                 renderRepos();
-            } catch(e) { container.innerHTML = `<div class="p-4 bg-red-100 text-red-700 rounded-lg font-bold text-center shadow">❌ Lỗi API: ${e.message}</div>`; }
+            } catch(e) { container.innerHTML = `<div class="p-4 bg-red-100 text-red-700 rounded-lg font-bold text-center shadow">❌ Lỗi: ${e.message}</div>`; }
         }
 
         let previewObserver; 
