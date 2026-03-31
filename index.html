@@ -199,7 +199,6 @@
                     
                     <div class="flex flex-wrap gap-3 items-center">
                         <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md">Lưu & Đăng tải</button>
-                        <button onclick="clearUploadForm()" class="apple-btn-secondary px-6 py-3">Làm mới Form</button>
                         <button onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden apple-btn-danger px-6 py-3 ml-auto">Xóa bài viết</button>
                     </div>
                     <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
@@ -227,7 +226,8 @@
             </section>
 
             <section class="bg-white px-4 py-3 rounded-2xl shadow-sm border border-gray-100 flex flex-col md:flex-row gap-4 justify-between items-center">
-                <div class="flex items-center gap-2 overflow-x-auto kanban-scroll w-full md:w-auto" id="tag-filter-bar"></div>
+                <div class="flex items-center gap-2 overflow-x-auto kanban-scroll w-full md:w-auto" id="tag-filter-bar">
+                    </div>
                 
                 <div class="flex items-center bg-[#F2F2F7] rounded-full px-4 py-1.5 w-full md:w-64 border border-transparent focus-within:border-[#007AFF] transition">
                     <span class="text-gray-400 text-xs">🔍</span>
@@ -302,6 +302,7 @@
         function changeSortOrder(order) { sortOrder = order; updateSegmentedUI(`sort-${order}`, ['sort-asc', 'sort-desc']); renderRepos(); }
         function setView(view) { currentView = view; updateSegmentedUI(`btn-view-${view}`, ['btn-view-list', 'btn-view-gallery', 'btn-view-kanban', 'btn-view-table', 'btn-view-feed']); renderRepos(); }
         function sortTable(by) { if (tableSort.by === by) { tableSort.dir = tableSort.dir === 'asc' ? 'desc' : 'asc'; } else { tableSort.by = by; tableSort.dir = 'desc'; } renderRepos(); }
+        
         function handleSearch(val) { searchQuery = val.toLowerCase(); renderRepos(); }
 
         function initCMS() {
@@ -399,7 +400,7 @@
             const container = document.getElementById('repo-container'); container.innerHTML = ''; container.className = ''; 
             
             let filteredFiles = allFilesCache.filter(f => {
-                const matchTag = activeTag === 'all' || (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).includes(activeTag);
+                const matchTag = activeTag === 'all' || (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).includes(activeTag.replace(/\\'/g, "'").replace(/&quot;/g, '"'));
                 const matchSearch = f.name.toLowerCase().includes(searchQuery) || f.repoName.toLowerCase().includes(searchQuery) || (f.preview || "").toLowerCase().includes(searchQuery);
                 return matchTag && matchSearch;
             });
@@ -482,7 +483,7 @@
                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1.5 mb-5 min-h-[24px]">${getTagsHTML(f.repoName, f.fileName)}</div>
                         <div id="cover-${f.sha}" class="w-full h-56 bg-[#F2F2F7] animate-pulse flex items-center justify-center text-gray-400 mb-5 rounded-xl overflow-hidden">${f.coverHTML}</div>
                         <div id="preview-${f.sha}" class="text-[#1D1D1F] text-[15px] leading-relaxed mb-6 opacity-80 flex-1 flex flex-col">
-                            ${f.previewFeedHTML ? `<div class="mt-2 space-y-2">${f.previewFeedHTML}</div>` : `<p class="animate-pulse">${f.preview}</p>`}
+                            ${f.previewFeedHTML ? `<div class="mt-2">${f.previewFeedHTML}</div>` : `<p class="animate-pulse">${f.preview}</p>`}
                         </div>
                         <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50 mt-auto"><a href="${f.url}" target="_blank" class="apple-btn-secondary px-5 py-2 text-sm">Đọc tiếp ➔</a>${getActionBtns(f.repoName, safeName, f.sha, 'feed')}</div>
                     </article>`; 
@@ -601,17 +602,14 @@
                 headings.forEach((h, index) => { if (!h.id) h.id = `toc-${index}`; tocList.push(`<li class="truncate"><a href="${fileUrl}#${h.id}" class="hover:text-[#007AFF] transition" target="_blank">• ${h.textContent.trim()}</a></li>`); });
                 if (tocList.length > 0) { contentData.tocHTML = `<details class="bg-[#F2F2F7] rounded-xl text-xs text-[#1D1D1F] mb-3 cursor-pointer group toc-element"><summary class="font-bold text-[#007AFF] flex items-center justify-between p-3"><span>📋 Mục lục (${tocList.length})</span><span class="group-open:rotate-180 transition-transform">▼</span></summary><ul class="p-3 pt-0 space-y-2 border-t border-gray-200 mt-1">${tocList.join('')}</ul></details>`; }
                 
-                // Trích xuất văn bản thô cho View List
                 const bodyClone = doc.body.cloneNode(true);
                 bodyClone.querySelectorAll('script, style, nav, header, footer, iframe, svg').forEach(s => s.remove());
                 const cleanText = (bodyClone.textContent || "").replace(/\s+/g, ' ').trim();
                 if(cleanText.length > 0) contentData.previewText = cleanText.substring(0, 1000) + (cleanText.length > 1000 ? "..." : "");
 
-                // XỬ LÝ RICH TEXT CHO VIEW FEED (BẢN TIN)
                 let feedHtml = "";
                 let pNodes = doc.body.querySelectorAll('p, h2, h3, h4, ul, ol, blockquote');
                 if(pNodes.length > 0) {
-                    let charSum = 0;
                     for (let i = 0; i < pNodes.length; i++) {
                         let node = pNodes[i];
                         let text = node.textContent.trim();
@@ -629,17 +627,10 @@
                         } else {
                             feedHtml += `<p class="mb-4 text-[#1D1D1F] opacity-90 leading-relaxed">${text}</p>`;
                         }
-                        
-                        charSum += text.length;
-                        if(charSum > 600) {
-                            feedHtml += `<div class="mt-4"><a href="${fileUrl}" target="_blank" class="text-[#007AFF] font-semibold hover:underline">Xem toàn bộ bài viết ➔</a></div>`;
-                            break;
-                        }
                     }
-                    contentData.previewFeedHTML = feedHtml || `<p class="mb-3 opacity-90">${contentData.previewText.substring(0, 500)}...</p>`;
+                    contentData.previewFeedHTML = feedHtml || `<p class="mb-3 opacity-90 whitespace-pre-line">${contentData.previewText}</p>`;
                 } else {
-                    let paragraphs = contentData.previewText.split('\n').filter(p => p.trim().length > 0);
-                    contentData.previewFeedHTML = paragraphs.slice(0, 3).map(p => `<p class="mb-4 opacity-90 leading-relaxed">${p}</p>`).join('') + `<div class="mt-4"><a href="${fileUrl}" target="_blank" class="text-[#007AFF] font-semibold hover:underline">Đọc tiếp ➔</a></div>`;
+                    contentData.previewFeedHTML = `<div class="mb-4 opacity-90 leading-relaxed whitespace-pre-line">${contentData.previewText}</div>`;
                 }
 
                 allContentCache[fileSha] = contentData; 
@@ -657,7 +648,7 @@
             
             if (previewElement) {
                 if (currentView === 'feed') {
-                    previewElement.innerHTML = `${previewData.tocHTML}<div class="mt-2 text-[15px]">${previewData.previewFeedHTML}</div>`;
+                    previewElement.innerHTML = `${previewData.tocHTML}<div class="mt-2 text-[15px] space-y-2">${previewData.previewFeedHTML}</div>`;
                     previewElement.classList.remove('line-clamp-5', 'animate-pulse', 'opacity-80'); 
                 } else {
                     previewElement.innerHTML = `${previewData.tocHTML}<p class="mt-2 text-sm">${previewData.previewText}</p>`;
@@ -668,9 +659,6 @@
             if (coverContainer && previewData.coverHTML) { coverContainer.outerHTML = `<div id="cover-${fileSha}" class="w-full shrink-0 ${currentView === 'gallery' ? 'h-32' : 'h-56'} overflow-hidden bg-gray-50 border-b border-gray-100">${previewData.coverHTML}</div>`; }
         }
 
-        // ==========================
-        // CÁC HÀM CRUD VÀ MODAL TAG
-        // ==========================
         function editFileTags(repoName, encodedFileName, fileSha) {
             const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
             currentEditTagKey = `${repoName}/${fileName}`; currentEditFileSha = fileSha;
@@ -778,7 +766,6 @@
 
                 let rOwner = repoPath.split('/')[0]; let rName = repoPath.split('/')[1] || repoPath.split('/')[0]; 
                 
-                // LƯU TAG TỪ FORM
                 let tagsInput = document.getElementById('upload-tags').value;
                 let newTagsList = tagsInput.split(',').map(t => t.trim()).filter(t => t);
                 const finalKey = `${rName}/${name}`;
