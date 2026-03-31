@@ -11,30 +11,34 @@
     <style> 
         /* APPLE DESIGN SYSTEM */
         body { 
-            background-color: #F5F5F7; 
+            background-color: #F5F5F7;
             font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            color: #1D1D1F; 
-            -webkit-font-smoothing: antialiased; 
+            color: #1D1D1F;
+            -webkit-font-smoothing: antialiased;
         } 
         
-        .apple-card { 
-            background: #FFFFFF; 
-            border-radius: 18px; 
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03); 
-            border: 1px solid rgba(0, 0, 0, 0.03); 
+        .apple-card {
+            background: #FFFFFF;
+            border-radius: 18px;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
         
-        /* CHỈ HIGHLIGHT NHỮNG THẺ CÓ CLASS NÀY (BÀI VIẾT) */
-        .hover-lift { 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); 
-        }
-        .hover-lift:hover { 
-            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08); 
-            transform: translateY(-2px); 
-            border-color: rgba(0, 122, 255, 0.25);
+        /* Hiệu ứng nổi bật chỉ dành riêng cho TỪNG THẺ BÀI VIẾT */
+        .hover-lift:hover {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+            border-color: rgba(0, 122, 255, 0.3);
         }
 
-        .apple-glass { background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); }
+        .apple-glass {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
         .apple-btn-primary { background-color: #007AFF; color: white; border-radius: 12px; font-weight: 600; transition: 0.2s; }
         .apple-btn-primary:hover { background-color: #0062CC; transform: scale(0.98); }
         .apple-btn-secondary { background-color: #E5E5EA; color: #1D1D1F; border-radius: 12px; font-weight: 600; transition: 0.2s; }
@@ -52,8 +56,11 @@
         .kanban-scroll::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 10px; }
         .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
         details > summary { list-style: none; outline: none; }
         details > summary::-webkit-details-marker { display: none; }
+        /* CSS xử lý mũi tên đóng/mở thư mục mượt mà */
+        details[open] > summary .nav-arrow { transform: rotate(180deg); }
 
         /* WIDGETS */
         #vietndj-pomodoro-widget, #vietndj-tasks-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999999; width: 300px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #1D1D1F; overflow: hidden; }
@@ -325,7 +332,7 @@
                                 if(toastText) toastText.innerHTML = `Cập nhật: <b>${file.name}</b>`;
                                 let dateObj = new Date(); 
                                 try { const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); if(resCommit.ok) { const commitData = await resCommit.json(); if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); } } catch(e) {} 
-                                const newFile = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", tocHTML: "", coverHTML: "" };
+                                const newFile = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" };
                                 newAllFiles.push(newFile); newRepoData[repo.name].push(newFile);
                                 await new Promise(r => setTimeout(r, 10));
                             }
@@ -398,7 +405,7 @@
                 container.className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6';
                 sortedAllFiles.forEach(f => {
                     const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                    finalHTML += `<div class="observe-target apple-card hover-lift flex flex-col group relative overflow-hidden" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}" id="item-${f.sha}">
+                    finalHTML += `<div class="observe-target apple-card hover-lift flex flex-col relative overflow-hidden" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}" id="item-${f.sha}">
                         <div class="h-1.5 w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"></div>
                         <div id="cover-${f.sha}" class="w-full h-32 shrink-0 bg-gray-50 flex items-center justify-center text-gray-300 text-xs border-b border-gray-100 overflow-hidden">${f.coverHTML}</div>
                         <div class="p-5 flex flex-col flex-1">
@@ -439,7 +446,7 @@
                 container.className = 'flex flex-col gap-6'; 
                 repoEntries.forEach(({repoName, files}, index) => { 
                     files.sort((a, b) => { if (tableSort.by === 'name') return tableSort.dir === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name); else return tableSort.dir === 'asc' ? a.timestamp - b.timestamp : b.timestamp - a.timestamp; });
-                    finalHTML += `<details ${index === 0 ? 'open' : ''} class="apple-card overflow-hidden group"><summary class="bg-white px-6 py-4 cursor-pointer flex justify-between items-center hover:bg-gray-50 transition border-b border-gray-50"><h3 class="font-bold text-[#1D1D1F] text-base" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📂 ${repoName} <span class="text-sm text-[#86868B] font-normal ml-2">(${files.length})</span></h3><span class="text-[#86868B] group-open:rotate-180 transition-transform duration-300">▼</span></summary><div class="overflow-x-auto p-4"><table class="w-full text-left border-collapse min-w-[800px]"><thead><tr class="text-[#86868B] uppercase text-[10px] tracking-wider border-b border-gray-100">
+                    finalHTML += `<details ${index === 0 ? 'open' : ''} class="bg-transparent"><summary class="cursor-pointer flex justify-between items-center hover:bg-gray-100 p-2 rounded-lg transition mb-2"><h3 class="font-bold text-[#1D1D1F] text-lg" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📂 ${repoName} <span class="text-sm text-[#86868B] font-normal ml-2">(${files.length})</span></h3><span class="text-[#86868B] transition-transform duration-300 nav-arrow">▼</span></summary><div class="overflow-x-auto apple-card p-4"><table class="w-full text-left border-collapse min-w-[800px]"><thead><tr class="text-[#86868B] uppercase text-[10px] tracking-wider border-b border-gray-100">
                         <th class="p-3 font-bold w-1/3 cursor-pointer hover:bg-gray-50 transition" onclick="sortTable('name')">Bài viết & Nhãn ${tableSort.by==='name'?(tableSort.dir==='asc'?'↑':'↓'):'↕️'}</th>
                         <th class="p-3 font-bold w-1/3">Mô tả</th>
                         <th class="p-3 font-bold w-1/6 cursor-pointer hover:bg-gray-50 transition" onclick="sortTable('date')">Cập nhật ${tableSort.by==='date'?(tableSort.dir==='asc'?'↑':'↓'):'↕️'}</th>
@@ -453,7 +460,7 @@
                 container.className = 'grid grid-cols-1 lg:grid-cols-2 gap-8'; 
                 sortedAllFiles.forEach(f => { 
                     const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                    finalHTML += `<article class="observe-target apple-card hover-lift p-6 flex flex-col group" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}" id="item-${f.sha}">
+                    finalHTML += `<article class="observe-target apple-card hover-lift p-6 flex flex-col relative" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}" id="item-${f.sha}">
                         <div class="flex items-center gap-3 mb-5">
                             <div class="w-12 h-12 rounded-full bg-[#E5E5EA] flex items-center justify-center text-[#1D1D1F] font-bold text-xl">${f.repoName.charAt(0).toUpperCase()}</div>
                             <div><p class="text-sm font-bold text-[#1D1D1F]">vietndj <span class="text-[#86868B] font-normal">đã đăng trong</span> <span class="text-[#007AFF] cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-[11px] font-semibold text-[#86868B] mt-0.5">${f.fullDate}</p></div>
@@ -462,7 +469,7 @@
                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1.5 mb-5 min-h-[24px]">${getTagsHTML(f.repoName, f.fileName)}</div>
                         <div id="cover-${f.sha}" class="w-full h-56 bg-[#F2F2F7] animate-pulse flex items-center justify-center text-gray-400 mb-5 rounded-xl overflow-hidden">${f.coverHTML}</div>
                         <div id="preview-${f.sha}" class="text-[#1D1D1F] text-[15px] leading-relaxed mb-6 opacity-80 flex-1 flex flex-col">
-                            ${f.previewFeedHTML ? `<div class="mt-2 space-y-3">${f.previewFeedHTML}</div>` : `<p class="animate-pulse">${f.preview}</p>`}
+                            ${f.previewFeedHTML ? `<div class="mt-2">${f.previewFeedHTML}</div>` : `<p class="animate-pulse">${f.preview}</p>`}
                         </div>
                         <div class="flex flex-wrap gap-2 pt-4 border-t border-gray-50 mt-auto"><a href="${f.url}" target="_blank" class="apple-btn-secondary px-5 py-2 text-sm">Đọc tiếp ➔</a>${getActionBtns(f.repoName, safeName, f.sha, 'feed')}</div>
                     </article>`; 
@@ -472,11 +479,11 @@
                 container.className = 'flex flex-col gap-6'; 
                 repoEntries.forEach(({repoName, files}, index) => { 
                     finalHTML += `
-                    <details ${index === 0 ? 'open' : ''} class="bg-transparent group">
-                        <summary class="cursor-pointer flex items-center gap-3 select-none mb-4 pl-2 border-b border-gray-200 pb-2">
-                            <h3 class="font-bold text-[#1D1D1F] text-xl hover:text-[#007AFF] transition" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📁 ${repoName}</h3>
+                    <details ${index === 0 ? 'open' : ''} class="bg-transparent">
+                        <summary class="cursor-pointer flex items-center gap-3 select-none mb-4 pl-2 border-b border-gray-300 pb-2">
+                            <h3 class="font-black text-[#1D1D1F] text-xl hover:text-[#007AFF] transition" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📁 ${repoName}</h3>
                             <span class="bg-[#E5E5EA] text-[#1D1D1F] text-xs font-bold px-2 py-0.5 rounded-full">${files.length}</span>
-                            <span class="text-[#86868B] group-open:rotate-180 transition-transform duration-300 text-xs ml-auto">▼</span>
+                            <span class="text-[#86868B] transition-transform duration-300 text-xs ml-auto nav-arrow">▼</span>
                         </summary>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-4">
                                 ${files.map(f => {
@@ -512,9 +519,29 @@
             }
         }
 
-        // ==========================
-        // CÁC HÀM XỬ LÝ NỘI DUNG VÀ API
-        // ==========================
+        function filterByTag(encodedTag) { 
+            activeTag = encodedTag.replace(/&quot;/g, '"').replace(/\\'/g, "'"); 
+            renderRepos(); 
+        }
+
+        function renderFilterBar() {
+            const allTags = new Set(); Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
+            const tagsArray = Array.from(allTags).sort();
+            
+            let html = `<span class="text-[10px] font-bold text-[#86868B] mr-2 uppercase tracking-wider pl-2 whitespace-nowrap">Lọc nhãn</span>`;
+            const btnClassAll = activeTag === 'all' ? 'bg-[#1D1D1F] text-white shadow-sm' : 'bg-[#F2F2F7] text-[#1D1D1F] hover:bg-[#E5E5EA]';
+            html += `<button onclick="filterByTag('all')" class="px-4 py-1.5 text-xs font-semibold rounded-full transition ${btnClassAll} whitespace-nowrap">Tất cả</button>`;
+            
+            tagsArray.forEach(tag => {
+                const safeTag = tag.replace(/'/g, "\\'").replace(/"/g, "&quot;");
+                const btnClass = activeTag === tag ? 'bg-[#1D1D1F] text-white shadow-sm' : 'bg-[#F2F2F7] text-[#1D1D1F] hover:bg-[#E5E5EA]';
+                html += `<button onclick="filterByTag('${safeTag}')" class="px-4 py-1.5 text-xs font-semibold rounded-full transition ${btnClass} whitespace-nowrap">${tag}</button>`;
+            });
+
+            if(tagsArray.length > 0) { html += `<button onclick="renameGlobalTag()" class="ml-2 px-3 py-1.5 text-xs font-semibold rounded-full bg-white text-[#007AFF] hover:bg-blue-50 border border-blue-100 transition shadow-sm whitespace-nowrap">✎ Quản lý</button>`; }
+            document.getElementById('tag-filter-bar').innerHTML = html;
+        }
+
         async function getFileContent(repoName, fileName, fileSha, fileUrl, downloadUrl) {
             if (allContentCache[fileSha]) return allContentCache[fileSha];
             let contentData = { tocHTML: '', previewText: 'Đang tải nội dung...', previewFeedHTML: '', coverHTML: '' };
@@ -532,16 +559,13 @@
                 headings.forEach((h, index) => { if (!h.id) h.id = `toc-${index}`; tocList.push(`<li class="truncate"><a href="${fileUrl}#${h.id}" class="hover:text-[#007AFF] transition" target="_blank">• ${h.textContent.trim()}</a></li>`); });
                 if (tocList.length > 0) { contentData.tocHTML = `<details class="bg-[#F2F2F7] rounded-xl text-xs text-[#1D1D1F] mb-3 cursor-pointer group toc-element"><summary class="font-bold text-[#007AFF] flex items-center justify-between p-3"><span>📋 Mục lục (${tocList.length})</span><span class="group-open:rotate-180 transition-transform">▼</span></summary><ul class="p-3 pt-0 space-y-2 border-t border-gray-200 mt-1">${tocList.join('')}</ul></details>`; }
                 
-                // Loại bỏ mã thừa
-                doc.querySelectorAll('script, style, nav, header, footer, iframe').forEach(s => s.remove());
-                
-                // 1. Dùng cho thẻ ngắn
+                doc.querySelectorAll('script, style, nav, header, footer, iframe, img, svg').forEach(s => s.remove());
                 const cleanText = (doc.body.textContent || "").replace(/\s+/g, ' ').trim();
-                contentData.previewText = cleanText.substring(0, 1000) + (cleanText.length > 1000 ? "..." : "");
+                if(cleanText.length > 0) contentData.previewText = cleanText.substring(0, 1000) + (cleanText.length > 1000 ? "..." : "");
 
-                // 2. Dùng cho View Feed (Giữ định dạng Paragraph & Heading)
+                // Xử lý Rich Text cho Feed View
                 let feedHtml = "";
-                let pNodes = doc.body.querySelectorAll('p, h2, h3, h4, ul, ol');
+                let pNodes = doc.body.querySelectorAll('p, h2, h3, h4, ul, ol, blockquote');
                 if(pNodes.length > 0) {
                     let charSum = 0;
                     for (let i = 0; i < pNodes.length; i++) {
@@ -550,23 +574,26 @@
                         if(!text || text.length < 5) continue;
                         let tagName = node.tagName.toLowerCase();
                         if(tagName.startsWith('h')) {
-                            feedHtml += `<h4 class="font-bold text-[#1D1D1F] mt-4 mb-1 border-l-4 border-[#007AFF] pl-2">${text}</h4>`;
+                            feedHtml += `<h4 class="font-bold text-[#1D1D1F] mt-5 mb-2 border-l-4 border-[#007AFF] pl-3 text-lg">${text}</h4>`;
                         } else if (tagName === 'ul' || tagName === 'ol') {
-                            feedHtml += `<ul class="list-disc pl-6 mb-3 text-gray-600 text-[14px]">`;
-                            node.querySelectorAll('li').forEach(li => { feedHtml += `<li class="mb-1">${li.textContent.trim()}</li>`; });
+                            feedHtml += `<ul class="list-disc pl-6 mb-4 text-[#1D1D1F] opacity-90 space-y-1.5">`;
+                            node.querySelectorAll('li').forEach(li => { feedHtml += `<li>${li.textContent.trim()}</li>`; });
                             feedHtml += `</ul>`;
+                        } else if (tagName === 'blockquote') {
+                            feedHtml += `<blockquote class="border-l-4 border-gray-300 pl-4 py-1 italic text-gray-600 mb-4 bg-gray-50 rounded-r-lg">${text}</blockquote>`;
                         } else {
-                            feedHtml += `<p class="mb-3 text-[#1D1D1F] opacity-90">${text}</p>`;
+                            feedHtml += `<p class="mb-4 text-[#1D1D1F] opacity-90 leading-relaxed">${text}</p>`;
                         }
                         charSum += text.length;
-                        if(charSum > 1000) {
-                            feedHtml += `<p class="text-[#007AFF] font-medium italic mt-2 cursor-pointer hover:underline" onclick="window.open('${fileUrl}', '_blank')">... [Xem chi tiết bài viết]</p>`;
+                        if(charSum > 800) {
+                            feedHtml += `<div class="mt-4"><a href="${fileUrl}" target="_blank" class="text-[#007AFF] font-semibold hover:underline">Đọc toàn bộ bài viết ➔</a></div>`;
                             break;
                         }
                     }
                     contentData.previewFeedHTML = feedHtml || `<p class="mb-3 opacity-90">${contentData.previewText.substring(0, 500)}...</p>`;
                 } else {
-                    contentData.previewFeedHTML = `<p class="mb-3 opacity-90">${contentData.previewText.substring(0, 500)}...</p>`;
+                    let paragraphs = contentData.previewText.split('\n').filter(p => p.trim().length > 0);
+                    contentData.previewFeedHTML = paragraphs.slice(0, 3).map(p => `<p class="mb-4 opacity-90 leading-relaxed">${p}</p>`).join('') + `<div class="mt-4"><a href="${fileUrl}" target="_blank" class="text-[#007AFF] font-semibold hover:underline">Đọc tiếp ➔</a></div>`;
                 }
 
                 allContentCache[fileSha] = contentData; 
@@ -583,13 +610,13 @@
             const coverContainer = document.getElementById(`cover-${fileSha}`);
             
             if (previewElement) {
-                if (currentView === 'feed') { 
-                    previewElement.innerHTML = `${previewData.tocHTML}<div class="mt-4">${previewData.previewFeedHTML}</div>`;
-                    previewElement.classList.remove('line-clamp-5', 'line-clamp-6', 'animate-pulse', 'opacity-80'); 
-                } else { 
+                if (currentView === 'feed' && previewData.previewFeedHTML) {
+                    previewElement.innerHTML = `${previewData.tocHTML}<div class="mt-2 text-[15px] space-y-2">${previewData.previewFeedHTML}</div>`;
+                    previewElement.classList.remove('line-clamp-5', 'animate-pulse', 'opacity-80');
+                } else {
                     previewElement.innerHTML = `${previewData.tocHTML}<p class="mt-2 text-sm">${previewData.previewText}</p>`;
-                    previewElement.classList.add('line-clamp-5'); 
                     previewElement.classList.remove('animate-pulse', 'opacity-80');
+                    previewElement.classList.add('line-clamp-5');
                 }
             }
             if (coverContainer && previewData.coverHTML) { coverContainer.outerHTML = `<div id="cover-${fileSha}" class="w-full shrink-0 ${currentView === 'gallery' ? 'h-32' : 'h-56'} overflow-hidden bg-gray-50 border-b border-gray-100">${previewData.coverHTML}</div>`; }
@@ -640,29 +667,6 @@
             let hasChanges = false;
             for (let key in tagsDataCache) { let tags = tagsDataCache[key]; let index = tags.indexOf(oldTag); if (index !== -1) { if (newTag.trim() === "") tags.splice(index, 1); else tags[index] = newTag.trim(); tagsDataCache[key] = [...new Set(tags)]; if(tagsDataCache[key].length === 0) delete tagsDataCache[key]; hasChanges = true; } }
             if(hasChanges) { document.body.style.cursor = 'wait'; try { await saveMetadataToGithub(); if (activeTag === oldTag) activeTag = newTag.trim() || 'all'; renderRepos(); } catch(e) { } document.body.style.cursor = 'default'; } else { alert("Không tìm thấy Nhãn nào có tên như vậy."); }
-        }
-
-        function filterByTag(encodedTag) { 
-            activeTag = encodedTag.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
-            renderRepos(); 
-        }
-
-        function renderFilterBar() {
-            const allTags = new Set(); Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
-            const tagsArray = Array.from(allTags).sort();
-            
-            let html = `<span class="text-[10px] font-bold text-[#86868B] mr-2 uppercase tracking-wider pl-2 whitespace-nowrap">Lọc nhãn</span>`;
-            const btnClassAll = activeTag === 'all' ? 'bg-[#1D1D1F] text-white shadow-sm' : 'bg-[#F2F2F7] text-[#1D1D1F] hover:bg-[#E5E5EA]';
-            html += `<button onclick="filterByTag('all')" class="px-4 py-1.5 text-xs font-semibold rounded-full transition ${btnClassAll} whitespace-nowrap">Tất cả</button>`;
-            
-            tagsArray.forEach(tag => {
-                const safeTag = tag.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                const btnClass = activeTag === tag ? 'bg-[#1D1D1F] text-white shadow-sm' : 'bg-[#F2F2F7] text-[#1D1D1F] hover:bg-[#E5E5EA]';
-                html += `<button onclick="filterByTag('${safeTag}')" class="px-4 py-1.5 text-xs font-semibold rounded-full transition ${btnClass} whitespace-nowrap">${tag}</button>`;
-            });
-
-            if(tagsArray.length > 0) { html += `<button onclick="renameGlobalTag()" class="ml-2 px-3 py-1.5 text-xs font-semibold rounded-full bg-white text-[#007AFF] hover:bg-blue-50 border border-blue-100 transition shadow-sm whitespace-nowrap">✎ Quản lý</button>`; }
-            document.getElementById('tag-filter-bar').innerHTML = html;
         }
 
         async function copyForSubstack(repoName, encodedFileName, btnEl) {
@@ -718,7 +722,7 @@
                 // MÔ PHỎNG DỮ LIỆU ĐỂ RENDER NGAY LẬP TỨC MÀ KHÔNG CẦN TẢI LẠI (OPTIMISTIC UI)
                 if(name.endsWith('.html') && name !== 'index.html') {
                     if (targetSha) { allFilesCache.forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); if(repoDataCache[rName]) { repoDataCache[rName].forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); } } 
-                    else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
+                    else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
                     localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache})); renderRepos(); 
                 }
 
