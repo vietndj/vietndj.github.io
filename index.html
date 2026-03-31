@@ -282,6 +282,8 @@
         function changeSortOrder(order) { sortOrder = order; updateSegmentedUI(`sort-${order}`, ['sort-asc', 'sort-desc']); renderRepos(); }
         function setView(view) { currentView = view; updateSegmentedUI(`btn-view-${view}`, ['btn-view-list', 'btn-view-gallery', 'btn-view-kanban', 'btn-view-table', 'btn-view-feed']); renderRepos(); }
         function sortTable(by) { if (tableSort.by === by) { tableSort.dir = tableSort.dir === 'asc' ? 'desc' : 'asc'; } else { tableSort.by = by; tableSort.dir = 'desc'; } renderRepos(); }
+        
+        // HÀM XỬ LÝ TÌM KIẾM REALTIME
         function handleSearch(val) { searchQuery = val.toLowerCase(); renderRepos(); }
 
         function initCMS() {
@@ -348,7 +350,7 @@
         }
 
         // ==========================
-        // CÁC HÀM HELPER TẠO HTML
+        // CÁC HÀM HELPER TẠO HTML ĐÃ RÚT GỌN
         // ==========================
         function getTagsHTML(rName, fName) {
             return (tagsDataCache[`${rName}/${fName}`] || []).map(t => `<span class="bg-[#F2F2F7] text-[#1D1D1F] text-[10px] px-2 py-0.5 rounded-full font-medium border border-gray-100">${t}</span>`).join('');
@@ -378,6 +380,7 @@
             renderFilterBar(); 
             const container = document.getElementById('repo-container'); container.innerHTML = ''; container.className = ''; 
             
+            // XỬ LÝ LỌC REALTIME
             let filteredFiles = allFilesCache.filter(f => {
                 const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                 const matchTag = activeTag === 'all' || (tagsDataCache[`${f.repoName}/${f.fileName}`] || []).includes(activeTag.replace(/\\'/g, "'").replace(/&quot;/g, '"'));
@@ -468,12 +471,13 @@
                 }); 
             }
             else { 
+                // LIST MỚI: XÓA NỀN CỦA REPO MÀ CHỈ GIỮ HIGHLIGHT CỦA BÀI VIẾT
                 container.className = 'flex flex-col gap-6'; 
                 repoEntries.forEach(({repoName, files}, index) => { 
                     finalHTML += `
                     <details ${index === 0 ? 'open' : ''} class="bg-transparent group">
-                        <summary class="cursor-pointer flex items-center gap-3 select-none mb-4 pl-2">
-                            <h3 class="font-bold text-[#1D1D1F] text-xl" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📁 ${repoName}</h3>
+                        <summary class="cursor-pointer flex items-center gap-3 select-none mb-4 pl-2 border-b border-gray-300 pb-2">
+                            <h3 class="font-black text-[#1D1D1F] text-xl" onclick="document.getElementById('upload-repo').value='${username}/${repoName}'; event.stopPropagation();">📁 ${repoName}</h3>
                             <span class="bg-[#E5E5EA] text-[#1D1D1F] text-xs font-bold px-2 py-0.5 rounded-full">${files.length}</span>
                         </summary>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-4">
@@ -481,7 +485,7 @@
                                     const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
                                     return `
                                     <div class="apple-card p-4 flex flex-col group hover:border-[#007AFF] hover:border-opacity-30" id="item-${f.sha}">
-                                        <a href="${f.url}" target="_blank" class="font-bold text-[14px] text-[#1D1D1F] group-hover:text-[#007AFF] transition leading-snug break-words mb-2" title="${f.name}" id="title-${f.sha}">${f.name}</a>
+                                        <a href="${f.url}" target="_blank" class="font-bold text-[14px] text-[#1D1D1F] group-hover:text-[#007AFF] transition leading-snug break-words mb-2 pr-2" title="${f.name}" id="title-${f.sha}">${f.name}</a>
                                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-3 min-h-[20px]">${getTagsHTML(f.repoName, f.fileName)}</div>
                                         <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-50">
                                             <div class="text-[10px] font-medium text-[#86868B]" title="${f.fullDate}">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</div>
@@ -511,8 +515,7 @@
         }
 
         function renderFilterBar() {
-            const allTags = new Set();
-            Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
+            const allTags = new Set(); Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
             const tagsArray = Array.from(allTags).sort();
             
             let html = `<span class="text-[10px] font-bold text-[#86868B] mr-2 uppercase tracking-wider pl-2 whitespace-nowrap">Lọc nhãn</span>`;
@@ -603,7 +606,7 @@
             if (newTags.length > 0) tagsDataCache[key] = newTags; else delete tagsDataCache[key];
 
             const tagsContainer = document.getElementById(`tags-${fileSha}`);
-            if (tagsContainer) { tagsContainer.innerHTML = newTags.map(t => `<span class="bg-[#F2F2F7] text-[#1D1D1F] text-[9px] px-2 py-0.5 rounded-full font-semibold border border-gray-100">${t}</span>`).join(''); }
+            if (tagsContainer) { tagsContainer.innerHTML = newTags.map(t => `<span class="bg-[#F2F2F7] text-[#1D1D1F] text-[10px] px-2 py-0.5 rounded-full font-semibold border border-gray-100">${t}</span>`).join(''); }
             closeTagModal(); 
             document.body.style.cursor = 'wait'; try { await saveMetadataToGithub(); renderFilterBar(); } catch(e) { } document.body.style.cursor = 'default';
         }
@@ -632,7 +635,7 @@
 
         async function loadMainIndex() {
             clearUploadForm(); const status = document.getElementById('upload-status'); status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = "Đang tải mã nguồn index.html...";
-            try { const res = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); document.getElementById('upload-repo').value = `${username}/${username}.github.io`; document.getElementById('upload-filename').value = `index.html`; document.getElementById('original-repo').value = `${username}/${username}.github.io`; document.getElementById('original-filename').value = `index.html`; document.getElementById('original-sha').value = data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng chỉnh sửa trang chủ!"; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi tải trang chủ"); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
+            try { const res = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); document.getElementById('upload-repo').value = `${username}/${username}.github.io`; document.getElementById('upload-filename').value = `index.html`; document.getElementById('original-repo').value = `${username}/${username}.github.io`; document.getElementById('original-filename').value = `index.html`; document.getElementById('original-sha').value = data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng chỉnh sửa trang chủ!"; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi tải trang chủ"); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
         }
 
         async function editFileContent(repoName, encodedFileName, fileSha) {
@@ -640,7 +643,7 @@
             const uploadSection = document.getElementById('upload-section'); const uploadIcon = document.getElementById('upload-icon'); if(uploadSection.classList.contains('hidden')){ uploadSection.classList.remove('hidden'); uploadIcon.style.transform='rotate(180deg)'; }
             window.scrollTo({ top: 0, behavior: 'smooth' });
             const status = document.getElementById('upload-status'); status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = `Đang tải mã nguồn...`;
-            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng! Sửa Tên hoặc Nội dung, sau đó ấn LƯU THAY ĐỔI."; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi tải file."); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
+            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng! Sửa Tên hoặc Nội dung, sau đó ấn LƯU THAY ĐỔI."; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi tải file."); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
         }
 
         async function createFile() {
@@ -649,11 +652,12 @@
             let name = document.getElementById('upload-filename').value.trim(); const content = document.getElementById('upload-content').value;
             const origRepo = document.getElementById('original-repo').value; const origName = document.getElementById('original-filename').value; const origSha = document.getElementById('original-sha').value;
             const status = document.getElementById('upload-status'); const btn = document.getElementById('btn-create');
+            
             if(!token || !repoPath || !name || !content) return alert("Thiếu dữ liệu!"); if(!name.endsWith('.html')) name += '.html';
             localStorage.setItem('github_pat', token); checkTokenUI(); btn.innerText = "⏳ Xử lý..."; btn.disabled = true; status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = "Đang kiểm tra file...";
             
             try {
-                let targetSha = ""; const checkRes = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}`, { headers: getHeaders() }); if (checkRes.ok) { const checkData = await checkRes.json(); targetSha = checkData.sha; status.innerText = "Đang lưu thay đổi..."; } else { status.innerText = "Đang tạo mới..."; }
+                let targetSha = ""; const checkRes = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}?t=${Date.now()}`, { headers: getHeaders() }); if (checkRes.ok) { const checkData = await checkRes.json(); targetSha = checkData.sha; status.innerText = "Đang lưu thay đổi..."; } else { status.innerText = "Đang tạo mới..."; }
                 const bodyData = { message: `Cập nhật: ${name}`, content: btoa(unescape(encodeURIComponent(content))) }; if (targetSha) bodyData.sha = targetSha; 
                 
                 const response = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(bodyData) }); 
@@ -665,12 +669,13 @@
 
                 let rOwner = repoPath.split('/')[0]; let rName = repoPath.split('/')[1] || repoPath.split('/')[0]; const newTitle = decodeURIComponent(name.replace('.html', '')); const newUrl = `https://${rOwner}.github.io/${rName === `${rOwner}.github.io` ? '' : rName + '/'}${name}`; const newDate = new Date(); const dateStr = newDate.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
                 
-                // MÔ PHỎNG DỮ LIỆU ĐỂ RENDER NGAY LẬP TỨC MÀ KHÔNG CẦN TẢI LẠI (OPTIMISTIC UI)
-                if (targetSha) { allFilesCache.forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); if(repoDataCache[rName]) { repoDataCache[rName].forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); } } 
-                else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
-                
-                localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
-                renderRepos(); // Render giao diện ngay tức thì
+                // MÔ PHỎNG DỮ LIỆU ĐỂ RENDER NGAY LẬP TỨC (OPTIMISTIC UI)
+                if(name !== 'index.html') {
+                    if (targetSha) { allFilesCache.forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); if(repoDataCache[rName]) { repoDataCache[rName].forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); } } 
+                    else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
+                    localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
+                    renderRepos(); 
+                }
 
                 status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; status.innerText = `✅ LƯU THÀNH CÔNG!`; 
                 clearUploadForm();
