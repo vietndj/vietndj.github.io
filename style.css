@@ -1,0 +1,53 @@
+/* APPLE DESIGN SYSTEM */
+body { 
+    background-color: #F5F5F7;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+    color: #1D1D1F;
+    -webkit-font-smoothing: antialiased;
+} 
+
+.apple-card {
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+.apple-card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06); }
+
+.apple-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.apple-btn-primary { background-color: #007AFF; color: white; border-radius: 12px; font-weight: 600; transition: 0.2s; }
+.apple-btn-primary:hover { background-color: #0062CC; transform: scale(0.98); }
+.apple-btn-secondary { background-color: #E5E5EA; color: #1D1D1F; border-radius: 12px; font-weight: 600; transition: 0.2s; }
+.apple-btn-secondary:hover { background-color: #D1D1D6; transform: scale(0.98); }
+.apple-btn-danger { background-color: #FF3B30; color: white; border-radius: 12px; font-weight: 600; transition: 0.2s; }
+.apple-btn-danger:hover { background-color: #D70015; transform: scale(0.98); }
+
+.view-group { background: #F2F2F7; padding: 4px; border-radius: 12px; display: inline-flex; gap: 4px; }
+.view-btn { padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #86868B; background: transparent; border: none; }
+.view-btn:hover:not(.active) { color: #1D1D1F; }
+.view-btn.active { background: #FFFFFF; color: #1D1D1F; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+
+.kanban-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
+.kanban-scroll::-webkit-scrollbar-track { background: transparent; }
+.kanban-scroll::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 10px; }
+.fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+details > summary { list-style: none; outline: none; }
+details > summary::-webkit-details-marker { display: none; }
+
+/* WIDGETS */
+#vietndj-pomodoro-widget, #vietndj-tasks-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999999; width: 300px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #1D1D1F; overflow: hidden; }
+#pomo-header, #gtasks-header { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14px; font-weight: 700; border-bottom: 1px solid rgba(0,0,0,0.05); }
+#pomo-content, #gtasks-content { padding: 16px; }
+.pomo-time { font-size: 48px; font-weight: 800; text-align: center; margin: 0 0 15px 0; color: #1D1D1F; font-variant-numeric: tabular-nums; letter-spacing: -2px;}
+.pomo-input, .pomo-select, .gtask-add-input { background: #F2F2F7; border: none; color: #1D1D1F; padding: 10px 14px; border-radius: 10px; font-size: 13px; outline: none; width: 100%; box-sizing: border-box; }
+.gtask-checkbox { width: 18px; height: 18px; cursor: pointer; accent-color: #007AFF; margin-top: 2px;}
+
+#sync-status-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 50; background: rgba(29, 29, 31, 0.85); color: white; padding: 12px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; box-shadow: 0 8px 24px rgba(0,0,0,0.15); backdrop-filter: blur(10px); display: none; align-items: center; gap: 10px; }
