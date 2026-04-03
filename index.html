@@ -3,473 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vietndj - Workspace</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <style> 
-        /* APPLE DESIGN SYSTEM */
+    <title>Quản lý Bài viết theo Repo</title>
+    <style>
+        /* Base Styles */
         body { 
-            background-color: #F5F5F7;
-            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
-            color: #1D1D1F;
-            -webkit-font-smoothing: antialiased;
-        } 
-        
-        .apple-card {
-            background: #FFFFFF;
-            border-radius: 18px;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0, 0, 0, 0.03);
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            background-color: #f4f7f6; 
+            color: #333; 
+            margin: 0; 
+            padding: 20px; 
         }
+        .container { max-width: 900px; margin: auto; }
         
-        .hover-lift:hover {
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
-            transform: translateY(-2px);
-            border-color: rgba(0, 122, 255, 0.3);
+        /* Repo Section */
+        .repo-section { 
+            margin-bottom: 40px; 
+            background: #fff; 
+            padding: 20px 25px; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
         }
-
-        .apple-glass {
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.3);
+        .repo-title { 
+            border-bottom: 2px solid #eaeaea; 
+            padding-bottom: 10px; 
+            margin-top: 0; 
+            color: #2c3e50; 
+            font-size: 1.4em;
         }
 
-        .apple-btn-primary { background-color: #007AFF; color: white; border-radius: 12px; font-weight: 600; transition: 0.2s; }
-        .apple-btn-primary:hover { background-color: #0062CC; transform: scale(0.98); }
-        .apple-btn-secondary { background-color: #E5E5EA; color: #1D1D1F; border-radius: 12px; font-weight: 600; transition: 0.2s; }
-        .apple-btn-secondary:hover { background-color: #D1D1D6; transform: scale(0.98); }
-        .apple-btn-danger { background-color: #FF3B30; color: white; border-radius: 12px; font-weight: 600; transition: 0.2s; }
-        .apple-btn-danger:hover { background-color: #D70015; transform: scale(0.98); }
+        /* Article Card */
+        .article-card { 
+            border: 1px solid #eaeaea; 
+            padding: 20px; 
+            border-radius: 6px; 
+            margin-top: 20px; 
+            background: #fafafa; 
+        }
+        .article-title { margin: 0 0 10px 0; font-size: 1.2em; color: #34495e; }
+        .article-content { margin-bottom: 15px; color: #555; }
 
-        .view-group { background: #F2F2F7; padding: 4px; border-radius: 12px; display: inline-flex; gap: 4px; }
-        .view-btn { padding: 6px 14px; border-radius: 8px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #86868B; background: transparent; border: none; }
-        .view-btn:hover:not(.active) { color: #1D1D1F; }
-        .view-btn.active { background: #FFFFFF; color: #1D1D1F; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+        /* Tính năng: Nút link tham khảo (Nổi bật vừa phải, dạng nút) */
+        .reference-links { 
+            margin-top: 15px; 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 10px; 
+        }
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            background-color: #f0f9ff; 
+            color: #0369a1;
+            text-decoration: none;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            border: 1px solid #bae6fd;
+            transition: background 0.2s;
+        }
+        .btn-link:hover { background-color: #e0f2fe; }
+        .btn-link::before { content: '🔗 '; margin-right: 4px; }
 
-        .kanban-scroll::-webkit-scrollbar { height: 6px; width: 6px; }
-        .kanban-scroll::-webkit-scrollbar-track { background: transparent; }
-        .kanban-scroll::-webkit-scrollbar-thumb { background: #D1D1D6; border-radius: 10px; }
-        .fade-in { animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        
-        details > summary { list-style: none; outline: none; }
-        details > summary::-webkit-details-marker { display: none; }
-        details[open] > summary .nav-arrow { transform: rotate(180deg); }
-
-        /* WIDGETS */
-        #vietndj-pomodoro-widget, #vietndj-tasks-widget { display: none; position: fixed; top: 80px; right: 20px; z-index: 999999; width: 300px; background: rgba(255,255,255,0.95); backdrop-filter: blur(20px); border: 1px solid rgba(0,0,0,0.1); border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); color: #1D1D1F; overflow: hidden; }
-        #pomo-header, #gtasks-header { padding: 14px 18px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 14px; font-weight: 700; border-bottom: 1px solid rgba(0,0,0,0.05); }
-        #pomo-content, #gtasks-content { padding: 16px; }
-        .pomo-time { font-size: 48px; font-weight: 800; text-align: center; margin: 0 0 15px 0; color: #1D1D1F; font-variant-numeric: tabular-nums; letter-spacing: -2px;}
-        .pomo-input, .pomo-select, .gtask-add-input { background: #F2F2F7; border: none; color: #1D1D1F; padding: 10px 14px; border-radius: 10px; font-size: 13px; outline: none; width: 100%; box-sizing: border-box; }
-        .gtask-checkbox { width: 18px; height: 18px; cursor: pointer; accent-color: #007AFF; margin-top: 2px;}
-        
-        #sync-status-toast { position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 50; background: rgba(29, 29, 31, 0.85); color: white; padding: 12px 20px; border-radius: 100px; font-size: 13px; font-weight: 500; box-shadow: 0 8px 24px rgba(0,0,0,0.15); backdrop-filter: blur(10px); display: none; align-items: center; gap: 10px; }
+        /* Sửa lỗi: 3 nút chức năng dễ ấn nhưng KHÔNG nổi bật */
+        .actions { 
+            display: flex; 
+            gap: 10px; 
+            margin-top: 20px; 
+            border-top: 1px dashed #ddd; 
+            padding-top: 15px; 
+        }
+        .btn-action {
+            background-color: transparent; /* Không dùng màu nền nổi */
+            border: 1px solid #d1d5db;     /* Viền xám nhạt */
+            color: #6b7280;                /* Chữ xám */
+            padding: 8px 16px;             /* Vùng ấn rộng, dễ thao tác */
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.9em;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .btn-action:hover { 
+            background-color: #f3f4f6; 
+            color: #374151; 
+            border-color: #9ca3af; 
+        }
     </style>
 </head>
 <body>
-
-    <div id="sync-status-toast">
-        <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-        <span id="sync-status-text" class="truncate">Đang đồng bộ...</span>
-    </div>
-
-    <div id="tag-modal-overlay" class="hidden fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity duration-300">
-        <div class="apple-card p-6 max-w-sm w-full mx-4 transform transition-all">
-            <h3 class="text-xl font-bold text-[#1D1D1F] mb-1">Gắn Nhãn</h3>
-            <p class="text-sm text-[#86868B] mb-5">Nhập tag mới hoặc chọn từ danh sách.</p>
-            <input type="text" id="tag-modal-input" onkeypress="if(event.key === 'Enter') saveTagModal()" class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-[#007AFF] text-sm font-semibold text-[#007AFF] mb-4">
-            <div id="tag-modal-suggestions" class="flex flex-wrap gap-2 max-h-40 overflow-y-auto mb-6"></div>
-            <div class="flex justify-end gap-3">
-                <button onclick="closeTagModal()" class="apple-btn-secondary px-5 py-2.5 text-sm">Hủy</button>
-                <button onclick="saveTagModal()" class="apple-btn-primary px-5 py-2.5 text-sm shadow-md">Lưu (Enter)</button>
-            </div>
+    <div class="container" id="app">
         </div>
-    </div>
-
-    <div id="create-repo-overlay" class="hidden fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity duration-300">
-        <div class="apple-card p-6 max-w-sm w-full mx-4 transform transition-all">
-            <h3 class="text-xl font-bold text-[#1D1D1F] mb-1">Tạo Kho (Repository)</h3>
-            <input type="text" id="new-repo-name" onkeypress="if(event.key === 'Enter') submitCreateRepo()" class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl focus:ring-2 focus:ring-[#007AFF] text-sm font-semibold text-[#007AFF] my-6" placeholder="vietndj-kho-moi">
-            <div class="flex justify-end gap-3">
-                <button onclick="closeCreateRepoModal()" class="apple-btn-secondary px-5 py-2.5 text-sm">Hủy</button>
-                <button onclick="submitCreateRepo()" id="btn-submit-create-repo" class="apple-btn-primary px-5 py-2.5 text-sm shadow-md">Tạo Kho (Enter)</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="rename-repo-overlay" class="hidden fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity duration-300">
-        <div class="apple-card p-6 max-w-sm w-full mx-4 transform transition-all">
-            <h3 class="text-xl font-bold text-[#1D1D1F] mb-1">Đổi tên Repo</h3>
-            <p id="rename-repo-desc" class="text-sm text-[#86868B] mb-5 truncate"></p>
-            <input type="hidden" id="rename-repo-old-name">
-            <input type="text" id="rename-repo-new-name" onkeypress="if(event.key === 'Enter') submitRenameRepo()" class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl focus:ring-2 focus:ring-[#007AFF] text-sm font-semibold text-[#007AFF] mb-6">
-            <div class="flex justify-end gap-3">
-                <button onclick="closeRenameRepoModal()" class="apple-btn-secondary px-5 py-2.5 text-sm">Hủy</button>
-                <button onclick="submitRenameRepo()" id="btn-submit-rename-repo" class="apple-btn-primary px-5 py-2.5 text-sm shadow-md">Lưu Tên (Enter)</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="move-file-overlay" class="hidden fixed inset-0 bg-black bg-opacity-30 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity duration-300">
-        <div class="apple-card p-6 max-w-sm w-full mx-4 transform transition-all">
-            <h3 class="text-xl font-bold text-[#1D1D1F] mb-1">Di chuyển bài viết</h3>
-            <p id="move-file-desc" class="text-sm text-[#86868B] mb-5 truncate"></p>
-            <select id="move-target-repo" class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl text-sm font-semibold mb-6 outline-none"></select>
-            <div class="flex justify-end gap-3">
-                <button onclick="closeMoveModal()" class="apple-btn-secondary px-5 py-2.5 text-sm">Hủy</button>
-                <button onclick="submitMoveFile()" id="btn-submit-move-file" class="apple-btn-primary px-5 py-2.5 text-sm shadow-md">Xác nhận Chuyển</button>
-            </div>
-        </div>
-    </div>
-
-    <div id="vietndj-pomodoro-widget">
-        <div id="pomo-header"><span>⏱️ Hẹn giờ (<span id="pomo-mini-time">25:00</span>)</span><span onclick="toggleWidget('vietndj-pomodoro-widget')">✕</span></div>
-        <div id="pomo-content">
-            <audio id="pomo-audio" src="1.mp3" preload="auto"></audio>
-            <div class="flex gap-2 mb-4">
-                <button class="flex-1 pomo-tab active" data-time="1500" style="background:#007AFF; color:white; border-radius:8px; font-size:11px; padding:6px 0;">Tập trung</button>
-                <button class="flex-1 pomo-tab" data-time="300" style="background:#E5E5EA; border-radius:8px; font-size:11px; padding:6px 0;">Nghỉ ngắn</button>
-            </div>
-            <div class="pomo-time" id="pomo-main-time">25:00</div>
-            <input type="text" id="pomo-task" class="pomo-input" placeholder="Bạn đang làm gì?">
-            <div class="flex gap-2 mt-4"><button class="apple-btn-primary flex-1 py-2 text-xs" id="pomo-start">BẮT ĐẦU</button><button class="apple-btn-secondary px-4 py-2 text-xs" id="pomo-reset">Đặt lại</button></div>
-        </div>
-    </div>
-
-    <div id="vietndj-tasks-widget">
-        <div id="gtasks-header"><span class="text-[#007AFF]">☑️ Lời nhắc</span><span onclick="toggleWidget('vietndj-tasks-widget')">✕</span></div>
-        <div id="gtasks-content">
-            <div id="gtasks-login-section"><button id="gtasks-login-btn" class="apple-btn-primary w-full py-3 text-sm">Kết nối Google Tasks</button></div>
-            <div id="gtasks-main-section" style="display: none;">
-                <select id="gtasks-list-select" class="w-full bg-[#F2F2F7] rounded-xl p-2 mb-4 text-xs font-bold outline-none"></select>
-                <div class="flex gap-2 mb-4"><input type="text" id="gtasks-new-input" class="gtask-add-input" placeholder="Thêm việc..."><button id="gtasks-add-btn" class="apple-btn-primary px-4">+</button></div>
-                <div id="gtasks-list-container" class="space-y-1 max-h-60 overflow-y-auto"></div>
-            </div>
-        </div>
-    </div>
-
-    <div id="login-screen" class="fixed inset-0 bg-[#F5F5F7] flex flex-col items-center justify-center z-50 transition-opacity duration-500">
-        <div class="apple-card p-10 max-w-sm w-full mx-4 text-center">
-            <div class="text-3xl mb-6">🔒</div>
-            <h2 class="text-2xl font-bold mb-6">Workspace</h2>
-            <input type="password" id="pin-input" placeholder="••••" class="w-full text-center text-3xl tracking-[0.5em] font-bold py-4 bg-[#F2F2F7] border-none rounded-2xl focus:ring-2 focus:ring-[#007AFF] mb-6" onkeypress="if(event.key === 'Enter') checkPIN()">
-            <button onclick="checkPIN()" class="apple-btn-primary w-full py-4">Mở Khóa</button>
-            <p id="login-error" class="text-[#FF3B30] text-sm font-bold mt-4 hidden">Mã PIN không đúng.</p>
-        </div>
-    </div>
-
-    <div id="app-content" class="hidden p-4 md:p-8 max-w-[1400px] mx-auto">
-        <header class="mb-8 text-center pt-4">
-            <h1 class="text-3xl md:text-4xl font-bold mb-2">vietndj Workspace</h1>
-            <div class="flex flex-wrap justify-center items-center gap-2 mt-6">
-                <div class="view-group">
-                    <button class="view-btn" onclick="toggleWidget('vietndj-pomodoro-widget')">⏱ Hẹn giờ</button>
-                    <button class="view-btn" onclick="toggleWidget('vietndj-tasks-widget')">☑️ Lời nhắc</button>
-                </div>
-                <div class="view-group hidden sm:inline-flex">
-                    <button class="view-btn" onclick="openCreateRepoModal()">📁 Tạo Repo</button>
-                    <button class="view-btn" onclick="window.location.href='notion://'">📝 Notion</button>
-                    <button class="view-btn" onclick="window.location.href='vscode://'">💻 VS Code</button>
-                </div>
-                <button onclick="logout()" class="bg-white text-[#FF3B30] text-xs font-bold px-4 py-2 rounded-xl border hover:bg-gray-50 transition shadow-sm">Khóa</button>
-            </div>
-        </header>
-
-        <main class="flex flex-col gap-6">
-            <section class="apple-card overflow-hidden">
-                <button onclick="toggleUpload()" class="w-full px-6 py-4 flex justify-between items-center bg-white hover:bg-gray-50 transition">
-                    <span class="font-semibold flex items-center gap-2">
-                        <span class="text-[#007AFF]">✎</span> Trình soạn thảo HTML
-                        <span class="text-[10px] text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded font-mono border uppercase hidden sm:inline-block">Ctrl E</span>
-                    </span>
-                    <span id="upload-icon" class="text-gray-400 transform transition-transform duration-300">▼</span>
-                </button>
-                <div id="upload-section" class="hidden p-6 border-t bg-white">
-                    <div class="flex justify-between items-center mb-6">
-                        <button onclick="loadMainIndex()" class="apple-btn-secondary px-4 py-2 text-xs">Sửa trang chủ</button>
-                        <div id="token-saved-badge" class="hidden bg-[#F2F2F7] px-3 py-1.5 rounded-lg text-xs font-semibold flex items-center gap-2">
-                            <span class="text-[#34C759]">✓</span> Đã cấp quyền Github
-                            <button onclick="clearToken()" class="text-[#007AFF] hover:underline">Đổi</button>
-                        </div>
-                    </div>
-                    
-                    <input type="hidden" id="original-repo"><input type="hidden" id="original-filename"><input type="hidden" id="original-sha">
-
-                    <div id="upload-inputs-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                        <div id="token-col"><label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Mã bảo mật (Token)</label><input type="password" id="github-token" class="w-full px-4 py-2.5 bg-[#F2F2F7] rounded-xl text-sm" placeholder="ghp_..."></div>
-                        <div><label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Thư mục (Kho)</label><input type="text" id="upload-repo" value="vietndj/" class="w-full px-4 py-2.5 bg-[#F2F2F7] rounded-xl text-sm font-semibold text-[#007AFF]"></div>
-                        <div><label class="block text-[10px] font-bold text-gray-400 uppercase mb-1">Tên bài viết (.html)</label><input type="text" id="upload-filename" class="w-full px-4 py-2.5 bg-[#F2F2F7] rounded-xl text-sm font-semibold"></div>
-                    </div>
-
-                    <div class="mb-4 bg-[#F5F5F7] p-4 rounded-xl">
-                        <label class="block text-[10px] font-bold text-gray-400 uppercase mb-2">🏷️ Gắn Nhãn</label>
-                        <input type="text" id="upload-tags" oninput="syncUploadTagsUI()" class="w-full px-4 py-2.5 bg-white rounded-lg text-sm font-semibold text-[#007AFF] mb-3 shadow-sm" placeholder="Ngăn cách bằng dấu phẩy...">
-                        <div id="upload-tag-suggestions" class="flex flex-wrap gap-1.5"></div>
-                    </div>
-
-                    <textarea id="upload-content" rows="12" class="w-full px-4 py-3 bg-[#1D1D1F] text-[#34C759] rounded-xl font-mono text-xs mb-5 outline-none focus:ring-2 focus:ring-[#007AFF]"></textarea>
-                    
-                    <div class="flex flex-wrap gap-3">
-                        <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md flex items-center justify-center gap-2">
-                            Lưu & Đăng tải
-                            <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block">Ctrl S</span>
-                        </button>
-                        <button onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden apple-btn-danger px-6 py-3 ml-auto">Xóa bài</button>
-                    </div>
-                    <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
-                </div>
-            </section>
-
-            <section class="apple-glass p-2.5 rounded-2xl shadow-sm flex flex-col md:flex-row justify-between items-center gap-3 sticky top-4 z-40">
-                <div class="view-group">
-                    <button onclick="setView('list')" id="btn-view-list" class="view-btn active">Grid</button>
-                    <button onclick="setView('gallery')" id="btn-view-gallery" class="view-btn">Gallery</button>
-                    <button onclick="setView('kanban')" id="btn-view-kanban" class="view-btn">Kanban</button>
-                    <button onclick="setView('table')" id="btn-view-table" class="view-btn">Table</button>
-                    <button onclick="setView('feed')" id="btn-view-feed" class="view-btn">Feed</button>
-                </div>
-                <div class="flex items-center gap-2">
-                    <div class="view-group"><button onclick="changeSortOrder('desc')" id="sort-desc" class="view-btn active">Mới ↓</button><button onclick="changeSortOrder('asc')" id="sort-asc" class="view-btn">Cũ ↑</button></div>
-                    <button onclick="forceSync()" class="bg-white text-[#007AFF] text-xs font-bold px-3 py-1.5 rounded-xl border hover:bg-gray-50 shadow-sm h-[32px]">↻ Đồng bộ</button>
-                </div>
-            </section>
-
-            <section class="bg-white px-4 py-3 rounded-2xl border flex flex-col md:flex-row gap-4 justify-between items-center">
-                <div class="flex items-center gap-2 overflow-x-auto kanban-scroll w-full" id="tag-filter-bar"></div>
-                <div class="flex items-center bg-[#F2F2F7] rounded-full px-4 py-1.5 w-full md:w-64 border border-transparent focus-within:border-[#007AFF]">
-                    <span class="text-gray-400 text-xs">🔍</span>
-                    <input type="text" id="search-input" oninput="handleSearch(this.value)" placeholder="Tìm bài viết... (Ctrl K)" class="bg-transparent border-none outline-none text-sm w-full ml-2 font-medium">
-                </div>
-            </section>
-
-            <div id="repo-container" class="min-h-[50vh]"></div>
-        </main>
-    </div>
 
     <script>
-        const SECRET_PIN = "0070"; const username = 'vietndj';
-        let sortOrder = 'desc', currentView = 'list', repoDataCache = {}, allFilesCache = [], allContentCache = {}; 
-        let tagsDataCache = {}, activeTag = 'all', searchQuery = '', isSyncing = false; 
-        let tableSort = { by: 'date', dir: 'desc' };
-
-        function decodeBase64UTF8(str) { try { return decodeURIComponent(atob(str).split('').map(c => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)).join('')); } catch (e) { return atob(str); } }
-        
-        // CẢI TIẾN: Luôn trim() token để tránh lỗi khoảng trắng
-        function getHeaders() { 
-            const t = (document.getElementById('github-token').value || localStorage.getItem('github_pat') || "").trim(); 
-            return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : {}; 
-        }
-
-        function checkPIN() { if (document.getElementById('pin-input').value === SECRET_PIN) { localStorage.setItem("cms_auth", "granted"); unlockSystem(); } else { document.getElementById('login-error').classList.remove('hidden'); document.getElementById('pin-input').value = ''; } }
-        function unlockSystem() { document.getElementById('login-screen').classList.add('hidden'); document.getElementById('app-content').classList.remove('hidden'); document.getElementById('app-content').classList.add('fade-in'); checkTokenUI(); initCMS(); }
-        function logout() { localStorage.removeItem("cms_auth"); location.reload(); }
-        window.onload = () => { if (localStorage.getItem("cms_auth") === "granted") unlockSystem(); else document.getElementById('pin-input').focus(); };
-
-        // PHÍM TẮT TOÀN CẦU
-        document.addEventListener('keydown', e => {
-            const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0;
-            const cmdOrCtrl = isMac ? e.metaKey : e.ctrlKey;
-            if(!document.getElementById('app-content').classList.contains('fade-in')) return;
-
-            if (cmdOrCtrl && e.key.toLowerCase() === 's' && !document.getElementById('upload-section').classList.contains('hidden')) { e.preventDefault(); createFile(); }
-            if (cmdOrCtrl && e.key.toLowerCase() === 'k') { e.preventDefault(); document.getElementById('search-input').focus(); }
-            if (cmdOrCtrl && e.key.toLowerCase() === 'e') { e.preventDefault(); toggleUpload(); if(!document.getElementById('upload-section').classList.contains('hidden')) document.getElementById('upload-filename').focus(); }
-            if (e.key === 'Escape') { closeTagModal(); closeCreateRepoModal(); closeRenameRepoModal(); closeMoveModal(); if(!document.getElementById('upload-section').classList.contains('hidden')) toggleUpload(); }
-        });
-
-        function toggleUpload() { const s = document.getElementById('upload-section'), i = document.getElementById('upload-icon'); s.classList.toggle('hidden'); i.style.transform = s.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'; }
-        function checkTokenUI() {
-            const token = localStorage.getItem('github_pat');
-            const grid = document.getElementById('upload-inputs-grid'), tCol = document.getElementById('token-col'), badge = document.getElementById('token-saved-badge');
-            if(token) { tCol.style.display = 'none'; grid.classList.replace('md:grid-cols-3', 'md:grid-cols-2'); badge.classList.remove('hidden'); } 
-            else { tCol.style.display = 'block'; grid.classList.replace('md:grid-cols-2', 'md:grid-cols-3'); badge.classList.add('hidden'); }
-        }
-        function clearToken() { if(confirm("Xóa Mã bảo mật?")) { localStorage.removeItem('github_pat'); checkTokenUI(); } }
-        function forceSync() { 
-            const val = document.getElementById('github-token').value.trim();
-            if (val) { localStorage.setItem('github_pat', val); checkTokenUI(); } 
-            backgroundSync(); 
-        }
-
-        async function backgroundSync() {
-            if (isSyncing) return;
-            const token = (localStorage.getItem('github_pat') || document.getElementById('github-token').value || "").trim();
-            if(!token) return; isSyncing = true;
-            const toast = document.getElementById('sync-status-toast'), tText = document.getElementById('sync-status-text');
-            if(toast) toast.style.display = 'flex';
-
-            try {
-                tText.innerText = "Đang kết nối GitHub...";
-                const resRepos = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`, { headers: getHeaders() });
-                
-                // CẢI TIẾN: Bắt lỗi token giả/hết hạn ngay lập tức
-                if(!resRepos.ok) {
-                    if(resRepos.status === 401) {
-                        localStorage.removeItem('github_pat'); // Xóa token hỏng
-                        checkTokenUI();
-                        throw new Error("Token sai hoặc đã bị thu hồi (401). Hãy nhập lại.");
+        // Dữ liệu mẫu: Khôi phục cấu trúc mảng lồng nhau (Repo -> Articles)
+        // Thêm trường 'links' cho từng bài viết
+        const data = [
+            {
+                repo: "Frontend / Web App",
+                articles: [
+                    {
+                        id: 1,
+                        title: "Hướng dẫn setup ReactJS",
+                        content: "Các bước cơ bản để khởi tạo một project ReactJS với Vite. Cấu hình ESLint và Prettier theo chuẩn của team.",
+                        links: [
+                            { title: "Vite Documentation", url: "https://vitejs.dev/" },
+                            { title: "React Dev", url: "https://react.dev/" }
+                        ]
+                    },
+                    {
+                        id: 2,
+                        title: "Quy chuẩn viết CSS",
+                        content: "Thống nhất sử dụng Tailwind CSS cho các dự án mới. Không viết inline-style trừ trường hợp bất khả kháng.",
+                        links: [
+                            { title: "Tailwind Cheat Sheet", url: "https://nerdcave.com/tailwind-cheat-sheet" }
+                        ]
                     }
-                    throw new Error(`Lỗi GitHub (${resRepos.status})`);
-                }
+                ]
+            },
+            {
+                repo: "Backend / API Services",
+                articles: [
+                    {
+                        id: 3,
+                        title: "Luồng hoạt động của JWT Authentication",
+                        content: "Giải thích chi tiết về cách Access Token và Refresh Token hoạt động, cách xử lý khi token hết hạn tại middleware.",
+                        links: [
+                            { title: "JWT.io Debugger", url: "https://jwt.io/" },
+                            { title: "RFC 7519", url: "https://datatracker.ietf.org/doc/html/rfc7519" },
+                            { title: "Oauth2 Flow", url: "https://oauth.net/2/" }
+                        ]
+                    },
+                    {
+                        id: 4,
+                        title: "Cấu hình Docker Compose",
+                        content: "File docker-compose.yml chuẩn bao gồm Redis, PostgreSQL và service Node.js.",
+                        links: [] // Bỏ trống nếu không có link tham khảo
+                    }
+                ]
+            }
+        ];
 
-                // Load Tags
-                try { 
-                    const resMeta = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, {headers: getHeaders()}); 
-                    if(resMeta.ok) tagsDataCache = JSON.parse(decodeBase64UTF8((await resMeta.json()).content)); 
-                } catch(e) {}
+        function renderApp() {
+            const app = document.getElementById('app');
+            let html = ``;
 
-                const repos = await resRepos.json();
-                let newAllFiles = [], newRepoData = {};
-                for (const repo of repos) {
-                    if (repo.name === `${username}.github.io`) continue;
-                    const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() }); 
-                    if (!resFiles.ok) continue;
-                    const files = await resFiles.json();
-                    if (Array.isArray(files)) {
-                        newRepoData[repo.name] = [];
-                        files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html').forEach(file => {
-                            const cached = allFilesCache.find(f => f.sha === file.sha);
-                            const item = cached || { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url || "", timestamp: Date.now(), fullDate: "Đang tải...", preview: "...", previewFeedHTML: "", tocHTML: "", coverHTML: "" };
-                            newAllFiles.push(item); newRepoData[repo.name].push(item);
+            // Lặp qua từng Repo
+            data.forEach(repoData => {
+                html += `
+                    <div class="repo-section">
+                        <h2 class="repo-title">📁 ${repoData.repo}</h2>
+                `;
+
+                // Lặp qua từng bài viết trong Repo đó
+                repoData.articles.forEach(article => {
+                    
+                    // Xử lý render các nút Link tham khảo
+                    let linksHtml = '';
+                    if (article.links && article.links.length > 0) {
+                        linksHtml = `<div class="reference-links">`;
+                        article.links.forEach(link => {
+                            // Dùng thẻ <a> dạng nút, target="_blank" để mở tab mới
+                            linksHtml += `<a href="${link.url}" target="_blank" class="btn-link">${link.title}</a>`;
                         });
+                        linksHtml += `</div>`;
                     }
-                }
-                allFilesCache = newAllFiles; repoDataCache = newRepoData;
-                localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
-                renderRepos();
-                tText.innerHTML = "✅ Xong!"; setTimeout(() => toast.style.display = 'none', 1500);
-            } catch(e) { 
-                tText.innerHTML = `❌ ${e.message}`; setTimeout(() => toast.style.display = 'none', 4000); 
-            } finally { isSyncing = false; }
-        }
 
-        // CREATE REPO & AUTO PAGES
-        async function submitCreateRepo() {
-            const token = (localStorage.getItem('github_pat') || "").trim();
-            const name = document.getElementById('new-repo-name').value.trim();
-            if (!token || !name) return alert("Thiếu Token hoặc Tên repo!");
-            const btn = document.getElementById('btn-submit-create-repo');
-            btn.innerText = "⏳..."; btn.disabled = true;
-            try {
-                const res = await fetch('https://api.github.com/user/repos', {
-                    method: 'POST', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ name: name, auto_init: true }) 
-                });
-                if (!res.ok) throw new Error("Lỗi tạo repo");
-                await new Promise(r => setTimeout(r, 2000));
-                await fetch(`https://api.github.com/repos/${username}/${name}/pages`, {
-                    method: 'POST', headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json', 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ source: { branch: 'main', path: '/' } }) 
-                });
-                alert("Tạo thành công & Đã bật Pages!");
-                location.reload();
-            } catch (e) { alert(e.message); } finally { btn.disabled = false; }
-        }
+                    // Khung bài viết và 3 nút chức năng chìm
+                    html += `
+                        <div class="article-card">
+                            <h3 class="article-title">${article.title}</h3>
+                            <div class="article-content">${article.content}</div>
 
-        // SUBSTACK COPY (SANITIZER)
-        async function copyForSubstack(repoName, encodedFileName, btnEl) {
-            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
-            const originalText = btnEl.innerHTML; btnEl.innerHTML = "⏳";
-            try { 
-                const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }); 
-                const html = await res.text();
-                const doc = new DOMParser().parseFromString(html, 'text/html');
-                doc.querySelectorAll('script, style, link, meta, nav, header, footer, button, svg').forEach(el => el.remove());
-                doc.body.querySelectorAll('*').forEach(el => {
-                    const h = el.getAttribute('href'), s = el.getAttribute('src');
-                    while(el.attributes.length > 0) el.removeAttribute(el.attributes[0].name);
-                    if(h) el.setAttribute('href', h); if(s) el.setAttribute('src', s);
-                });
-                await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([doc.body.innerHTML], {type:'text/html'}), 'text/plain': new Blob([doc.body.innerText], {type:'text/plain'}) })]);
-                btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759";
-            } catch (e) { btnEl.innerHTML = "✕"; } finally { setTimeout(() => { btnEl.innerHTML = originalText; btnEl.style.color = ""; }, 2000); }
-        }
+                            ${linksHtml}
 
-        // MOVE FILE FIX
-        async function submitMoveFile() {
-            const target = document.getElementById('move-target-repo').value;
-            if(!target) return;
-            const btn = document.getElementById('btn-submit-move-file'); btn.disabled = true;
-            try {
-                const getRes = await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${encodeURIComponent(moveFileName)}`, { headers: getHeaders() });
-                const fileData = await getRes.json();
-                const putRes = await fetch(`https://api.github.com/repos/${username}/${target}/contents/${encodeURIComponent(moveFileName)}`, {
-                    method: 'PUT', headers: { 'Authorization': `Bearer ${localStorage.getItem('github_pat')}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: `Move from ${moveSourceRepo}`, content: fileData.content })
-                });
-                const newMeta = await putRes.json();
-                await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${encodeURIComponent(moveFileName)}`, {
-                    method: 'DELETE', headers: { 'Authorization': `Bearer ${localStorage.getItem('github_pat')}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: `Cleanup move`, sha: fileData.sha })
-                });
-                alert("Đã chuyển xong!"); location.reload();
-            } catch(e) { alert(e.message); btn.disabled = false; }
-        }
-
-        // Helper placeholders for missing logic to keep file compact
-        function initCMS() { backgroundSync(); }
-        function renderRepos() { 
-            const container = document.getElementById('repo-container');
-            container.innerHTML = `<div class="grid grid-cols-1 md:grid-cols-3 gap-6">` + 
-                allFilesCache.map(f => `
-                    <div class="apple-card p-5 hover-lift">
-                        <h3 class="font-bold mb-2 truncate">${f.name}</h3>
-                        <div class="text-[10px] text-gray-400 mb-4 uppercase">📁 ${f.repoName}</div>
-                        <div class="flex gap-2">
-                            <button onclick="editFileContent('${f.repoName}', '${f.fileName.replace(/'/g, "\\'")}', '${f.sha}')" class="apple-btn-primary px-3 py-1 text-[10px]">Sửa</button>
-                            <button onclick="copyForSubstack('${f.repoName}', '${f.fileName.replace(/'/g, "\\'")}', this)" class="apple-btn-secondary px-3 py-1 text-[10px]">Copy</button>
-                            <button onclick="openMoveModal('${f.repoName}', '${f.fileName.replace(/'/g, "\\'")}', '${f.sha}')" class="apple-btn-secondary px-3 py-1 text-[10px]">Chuyển</button>
+                            <div class="actions">
+                                <button class="btn-action" onclick="console.log('Xem ${article.id}')">Đọc bài</button>
+                                <button class="btn-action" onclick="console.log('Sửa ${article.id}')">Sửa nội dung</button>
+                                <button class="btn-action" onclick="console.log('Xóa ${article.id}')">Xóa bài</button>
+                            </div>
                         </div>
-                    </div>
-                `).join('') + `</div>`;
-        }
-        function setView(v) { currentView = v; renderRepos(); }
-        function handleSearch(v) { searchQuery = v.toLowerCase(); renderRepos(); }
-        function changeSortOrder(o) { sortOrder = o; renderRepos(); }
-        function toggleWidget(id) { document.getElementById(id).style.display = document.getElementById(id).style.display === 'block' ? 'none' : 'block'; }
-        
-        let moveSourceRepo, moveFileName, moveFileSha;
-        function openMoveModal(r, f, s) { 
-            moveSourceRepo = r; moveFileName = f; moveFileSha = s;
-            document.getElementById('move-file-desc').innerText = f;
-            const sel = document.getElementById('move-target-repo'); sel.innerHTML = '';
-            Object.keys(repoDataCache).forEach(repo => { if(repo !== r) sel.innerHTML += `<option value="${repo}">${repo}</option>`; });
-            document.getElementById('move-file-overlay').classList.replace('hidden', 'flex'); 
-        }
-        function closeMoveModal() { document.getElementById('move-file-overlay').classList.replace('flex', 'hidden'); }
-
-        async function createFile() {
-            const token = (localStorage.getItem('github_pat') || "").trim();
-            const repo = document.getElementById('upload-repo').value.replace('vietndj/', '').trim();
-            const name = document.getElementById('upload-filename').value.trim();
-            const content = document.getElementById('upload-content').value;
-            if(!token || !repo || !name) return alert("Thiếu dữ liệu!");
-            const status = document.getElementById('upload-status');
-            status.classList.remove('hidden'); status.innerText = "Đang lưu...";
-            try {
-                const check = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${encodeURIComponent(name)}`, { headers: getHeaders() });
-                const sha = check.ok ? (await check.json()).sha : null;
-                const res = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${encodeURIComponent(name)}`, {
-                    method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: "Update via CMS", content: btoa(unescape(encodeURIComponent(content))), sha: sha })
+                    `;
                 });
-                if(res.ok) { status.innerText = "✅ Đã lưu!"; setTimeout(() => { status.classList.add('hidden'); toggleUpload(); backgroundSync(); }, 1500); }
-            } catch(e) { status.innerText = "❌ Lỗi: " + e.message; }
+
+                html += `</div>`; // Đóng .repo-section
+            });
+
+            app.innerHTML = html;
         }
 
-        async function editFileContent(repo, file, sha) {
-            if(document.getElementById('upload-section').classList.contains('hidden')) toggleUpload();
-            const res = await fetch(`https://api.github.com/repos/${username}/${repo}/contents/${encodeURIComponent(file)}`, { headers: getHeaders(), 'Accept': 'application/vnd.github.v3.raw' });
-            document.getElementById('upload-content').value = await res.text();
-            document.getElementById('upload-repo').value = repo;
-            document.getElementById('upload-filename').value = file;
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        }
+        // Khởi chạy
+        document.addEventListener('DOMContentLoaded', renderApp);
     </script>
 </body>
 </html>
