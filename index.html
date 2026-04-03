@@ -650,7 +650,8 @@
             let contentData = { tocHTML: '', previewText: 'Đang tải nội dung...', previewFeedHTML: '', coverHTML: '' };
             try {
                 let htmlString = ""; const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' };
-                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}`, { headers: reqHeaders });
+                // Đã fix lỗi decode URIComponent nếu filename có space
+                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders });
                 if (response.ok) { htmlString = await response.text(); } else { if (downloadUrl) { const fallbackRes = await fetch(downloadUrl); if(fallbackRes.ok) htmlString = await fallbackRes.text(); } else throw new Error("Lỗi API"); }
                 if (!htmlString) throw new Error("Trống");
 
@@ -765,7 +766,7 @@
 
         async function copyForSubstack(repoName, encodedFileName, btnEl) {
             const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); const originalText = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
-            try { const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}`, { headers: reqHeaders }); if (!response.ok) throw new Error("Lỗi"); const htmlString = await response.text(); const doc = new DOMParser().parseFromString(htmlString, 'text/html'); doc.querySelectorAll('script, style, link, meta, title, nav').forEach(el => el.remove()); let contentToCopy = doc.body.innerHTML; const blobHtml = new Blob([contentToCopy], { type: 'text/html' }); const blobText = new Blob([doc.body.innerText], { type: 'text/plain' }); const item = new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText }); await navigator.clipboard.write([item]); btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; } catch (err) { btnEl.innerHTML = "✕"; } finally { setTimeout(() => { btnEl.innerHTML = originalText; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
+            try { const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); if (!response.ok) throw new Error("Lỗi"); const htmlString = await response.text(); const doc = new DOMParser().parseFromString(htmlString, 'text/html'); doc.querySelectorAll('script, style, link, meta, title, nav').forEach(el => el.remove()); let contentToCopy = doc.body.innerHTML; const blobHtml = new Blob([contentToCopy], { type: 'text/html' }); const blobText = new Blob([doc.body.innerText], { type: 'text/plain' }); const item = new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText }); await navigator.clipboard.write([item]); btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; } catch (err) { btnEl.innerHTML = "✕"; } finally { setTimeout(() => { btnEl.innerHTML = originalText; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
         }
 
         async function confirmDeleteFromForm() {
@@ -774,7 +775,7 @@
             if(!confirm(`CẢNH BÁO:\nBạn đang xóa vĩnh viễn bài viết:\n[ ${fileName} ]\n\nHành động này không thể hoàn tác!`)) return;
             const btn = document.getElementById('btn-delete'); const originalText = btn.innerText; btn.innerText = "⏳ Đang xóa..."; btn.disabled = true;
             const token = localStorage.getItem('github_pat') || document.getElementById('github-token').value.trim();
-            try { const response = await fetch(`https://api.github.com/repos/${repoName}/contents/${fileName}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Xóa bài viết: ${fileName}`, sha: fileSha }) }); if (!response.ok) throw new Error("Xóa file trên máy chủ thất bại."); allFilesCache = allFilesCache.filter(f => f.sha !== fileSha); const rName = repoName.split('/')[1] || repoName.split('/')[0]; if(repoDataCache[rName]) { repoDataCache[rName] = repoDataCache[rName].filter(f => f.sha !== fileSha); if(repoDataCache[rName].length === 0) delete repoDataCache[rName]; } if(allContentCache[fileSha]) delete allContentCache[fileSha]; const key = `${rName}/${fileName}`; if(tagsDataCache[key]) { delete tagsDataCache[key]; await saveMetadataToGithub(); } localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache})); clearUploadForm(); renderRepos(); alert("Đã xóa bài viết thành công!"); } catch(e) { alert(`Lỗi: ${e.message}`); btn.innerText = originalText; btn.disabled = false; } 
+            try { const response = await fetch(`https://api.github.com/repos/${repoName}/contents/${encodeURIComponent(fileName)}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Xóa bài viết: ${fileName}`, sha: fileSha }) }); if (!response.ok) throw new Error("Xóa file trên máy chủ thất bại."); allFilesCache = allFilesCache.filter(f => f.sha !== fileSha); const rName = repoName.split('/')[1] || repoName.split('/')[0]; if(repoDataCache[rName]) { repoDataCache[rName] = repoDataCache[rName].filter(f => f.sha !== fileSha); if(repoDataCache[rName].length === 0) delete repoDataCache[rName]; } if(allContentCache[fileSha]) delete allContentCache[fileSha]; const key = `${rName}/${fileName}`; if(tagsDataCache[key]) { delete tagsDataCache[key]; await saveMetadataToGithub(); } localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache})); clearUploadForm(); renderRepos(); alert("Đã xóa bài viết thành công!"); } catch(e) { alert(`Lỗi: ${e.message}`); btn.innerText = originalText; btn.disabled = false; } 
         }
 
         async function loadMainIndex() {
@@ -787,7 +788,7 @@
             const uploadSection = document.getElementById('upload-section'); const uploadIcon = document.getElementById('upload-icon'); if(uploadSection.classList.contains('hidden')){ uploadSection.classList.remove('hidden'); uploadIcon.style.transform='rotate(180deg)'; }
             window.scrollTo({ top: 0, behavior: 'smooth' });
             const status = document.getElementById('upload-status'); status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = `Đang tải mã nguồn...`;
-            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${fileName}?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); 
+            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerText = "Lưu Thay Đổi"; document.getElementById('btn-delete').classList.remove('hidden'); 
             
             let rName = repoName === username || repoName === `${username}.github.io` ? `${username}.github.io` : repoName;
             if(rName.includes('/')) rName = rName.split('/')[1] || rName.split('/')[0];
@@ -809,16 +810,16 @@
             localStorage.setItem('github_pat', token); checkTokenUI(); btn.innerText = "⏳ Xử lý..."; btn.disabled = true; status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = "Đang kiểm tra file...";
             
             try {
-                let targetSha = ""; const checkRes = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}?t=${Date.now()}`, { headers: getHeaders() }); if (checkRes.ok) { const checkData = await checkRes.json(); targetSha = checkData.sha; status.innerText = "Đang lưu thay đổi..."; } else { status.innerText = "Đang tạo mới..."; }
+                let targetSha = ""; const checkRes = await fetch(`https://api.github.com/repos/${repoPath}/contents/${encodeURIComponent(name)}?t=${Date.now()}`, { headers: getHeaders() }); if (checkRes.ok) { const checkData = await checkRes.json(); targetSha = checkData.sha; status.innerText = "Đang lưu thay đổi..."; } else { status.innerText = "Đang tạo mới..."; }
                 const bodyData = { message: `Cập nhật: ${name}`, content: btoa(unescape(encodeURIComponent(content))) }; if (targetSha) bodyData.sha = targetSha; 
                 
-                const response = await fetch(`https://api.github.com/repos/${repoPath}/contents/${name}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(bodyData) }); 
+                const response = await fetch(`https://api.github.com/repos/${repoPath}/contents/${encodeURIComponent(name)}`, { method: 'PUT', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify(bodyData) }); 
                 if(!response.ok) throw new Error((await response.json()).message); 
                 const responseData = await response.json();
                 
                 let isRenamed = origName && origRepo && (origName !== name || origRepo !== repoPath);
                 if (isRenamed && origSha) { 
-                    await fetch(`https://api.github.com/repos/${origRepo}/contents/${origName}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Xóa file cũ do đổi tên: ${origName}`, sha: origSha }) }); 
+                    await fetch(`https://api.github.com/repos/${origRepo}/contents/${encodeURIComponent(origName)}`, { method: 'DELETE', headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ message: `Xóa file cũ do đổi tên: ${origName}`, sha: origSha }) }); 
                     const oldRepoName = origRepo.split('/')[1] || origRepo.split('/')[0]; 
                     const oldKey = `${oldRepoName}/${origName}`; 
                     if(tagsDataCache[oldKey]) delete tagsDataCache[oldKey]; 
@@ -832,11 +833,14 @@
                 if (newTagsList.length > 0) { tagsDataCache[finalKey] = [...new Set(newTagsList)]; } else { delete tagsDataCache[finalKey]; }
                 await saveMetadataToGithub();
 
-                const newTitle = decodeURIComponent(name.replace('.html', '')); const newUrl = `https://${rOwner}.github.io/${rName === `${rOwner}.github.io` ? '' : rName + '/'}${name}`; const newDate = new Date(); const dateStr = newDate.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
+                const newTitle = decodeURIComponent(name.replace('.html', '')); 
+                // Cập nhật URL đúng format GitHub Pages
+                const newUrl = `https://${rOwner}.github.io/${rName === `${rOwner}.github.io` ? '' : rName + '/'}${name}`; 
+                const newDate = new Date(); const dateStr = newDate.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' });
                 
                 if(name.endsWith('.html') && name !== 'index.html') {
                     if (targetSha) { allFilesCache.forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); if(repoDataCache[rName]) { repoDataCache[rName].forEach(f => { if (f.sha === targetSha) { f.fileName = name; f.name = newTitle; f.url = newUrl; f.timestamp = newDate.getTime(); f.fullDate = dateStr; } }); } } 
-                    else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
+                    else { const newFileObj = { repoName: rName, name: newTitle, fileName: name, sha: responseData.content.sha, url: newUrl, downloadUrl: responseData.content.download_url || "", timestamp: newDate.getTime(), fullDate: dateStr, preview: "Vừa mới đăng tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" }; allFilesCache.unshift(newFileObj); if(!repoDataCache[rName]) repoDataCache[rName] = []; repoDataCache[rName].unshift(newFileObj); }
                     localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache})); renderRepos(); 
                 }
 
@@ -995,6 +999,10 @@
                     select.innerHTML += `<option value="${r}">📂 ${r}</option>`;
                 }
             });
+            // Cho phép trả về repo gốc
+            if (moveSourceRepo !== `${username}.github.io`) {
+                select.innerHTML += `<option value="${username}.github.io">📂 ${username}.github.io</option>`;
+            }
 
             document.getElementById('move-file-overlay').classList.remove('hidden');
             document.getElementById('move-file-overlay').classList.add('flex');
@@ -1018,11 +1026,12 @@
             document.body.style.cursor = 'wait';
 
             try {
-                const getRes = await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${moveFileName}`, { headers: getHeaders() });
+                // Đã Fix: URL Encode để tránh lỗi khoảng trắng
+                const getRes = await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${encodeURIComponent(moveFileName)}`, { headers: getHeaders() });
                 if (!getRes.ok) throw new Error("Không thể đọc nội dung file gốc.");
                 const fileData = await getRes.json();
 
-                const putRes = await fetch(`https://api.github.com/repos/${username}/${targetRepo}/contents/${moveFileName}`, {
+                const putRes = await fetch(`https://api.github.com/repos/${username}/${targetRepo}/contents/${encodeURIComponent(moveFileName)}`, {
                     method: 'PUT',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: `CMS: Chuyển file từ ${moveSourceRepo}`, content: fileData.content })
@@ -1030,7 +1039,7 @@
                 if (!putRes.ok) throw new Error("Không thể ghi file sang Repo đích. Có thể file đã tồn tại.");
                 const newFileMeta = await putRes.json();
 
-                await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${moveFileName}`, {
+                await fetch(`https://api.github.com/repos/${username}/${moveSourceRepo}/contents/${encodeURIComponent(moveFileName)}`, {
                     method: 'DELETE',
                     headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
                     body: JSON.stringify({ message: `CMS: Xóa file do chuyển sang ${targetRepo}`, sha: fileData.sha })
@@ -1046,17 +1055,25 @@
 
                 const newDate = new Date();
                 const fileIndex = allFilesCache.findIndex(f => f.sha === moveFileSha);
+                
                 if (fileIndex !== -1) {
-                    let f = allFilesCache[fileIndex];
-                    f.repoName = targetRepo;
-                    f.sha = newFileMeta.content.sha;
-                    f.url = `https://${username}.github.io/${targetRepo}/${moveFileName}`;
-                    f.timestamp = newDate.getTime();
-                    
+                    // ĐÃ FIX: Di chuyển block xóa cache lên TRƯỚC khi object bị update mã SHA
                     if (repoDataCache[moveSourceRepo]) {
                         repoDataCache[moveSourceRepo] = repoDataCache[moveSourceRepo].filter(x => x.sha !== moveFileSha);
                         if(repoDataCache[moveSourceRepo].length === 0) delete repoDataCache[moveSourceRepo];
                     }
+
+                    let f = allFilesCache[fileIndex];
+                    f.repoName = targetRepo;
+                    f.sha = newFileMeta.content.sha;
+                    
+                    // ĐÃ FIX: Nối URL đúng ngữ cảnh (Tránh URL vietnamdj.github.io/vietnamdj.github.io)
+                    f.url = `https://${username}.github.io/${targetRepo === `${username}.github.io` ? '' : targetRepo + '/'}${moveFileName}`;
+                    
+                    // ĐÃ FIX: Update lại downloadUrl mới từ API (Nếu không Preview sẽ gọi 404 về file cũ)
+                    f.downloadUrl = newFileMeta.content.download_url || "";
+                    f.timestamp = newDate.getTime();
+                    
                     if (!repoDataCache[targetRepo]) repoDataCache[targetRepo] = [];
                     repoDataCache[targetRepo].unshift(f);
                     
@@ -1067,6 +1084,7 @@
                 
                 closeMoveModal();
                 renderRepos();
+                alert("Đã chuyển bài viết thành công!");
                 
             } catch (e) {
                 alert(`Lỗi di chuyển: ${e.message}`);
