@@ -765,8 +765,67 @@
         }
 
         async function copyForSubstack(repoName, encodedFileName, btnEl) {
-            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); const originalText = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
-            try { const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); if (!response.ok) throw new Error("Lỗi"); const htmlString = await response.text(); const doc = new DOMParser().parseFromString(htmlString, 'text/html'); doc.querySelectorAll('script, style, link, meta, title, nav').forEach(el => el.remove()); let contentToCopy = doc.body.innerHTML; const blobHtml = new Blob([contentToCopy], { type: 'text/html' }); const blobText = new Blob([doc.body.innerText], { type: 'text/plain' }); const item = new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText }); await navigator.clipboard.write([item]); btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; } catch (err) { btnEl.innerHTML = "✕"; } finally { setTimeout(() => { btnEl.innerHTML = originalText; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
+            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
+            const originalText = btnEl.innerHTML; 
+            btnEl.innerHTML = "⏳"; btnEl.disabled = true;
+            
+            try { 
+                const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; 
+                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); 
+                if (!response.ok) throw new Error("Lỗi fetch dữ liệu"); 
+                
+                const htmlString = await response.text(); 
+                const doc = new DOMParser().parseFromString(htmlString, 'text/html'); 
+                
+                // 1. Dọn dẹp rác: Xóa các thẻ layout, style, script không thuộc nội dung bài viết
+                doc.querySelectorAll('script, style, link, meta, title, nav, header, footer, button, svg, iframe').forEach(el => el.remove()); 
+                
+                // 2. Lột xác (Sanitize): Xóa sạch các class Tailwind, ID, Inline-style để Substack dễ dàng Parser
+                doc.body.querySelectorAll('*').forEach(el => {
+                    const tagName = el.tagName.toLowerCase();
+                    const href = el.getAttribute('href');
+                    const src = el.getAttribute('src');
+                    const alt = el.getAttribute('alt');
+                    
+                    // Xóa trắng mọi attribute hiện có (Bao gồm cả class, id, style...)
+                    while(el.attributes.length > 0) {
+                        el.removeAttribute(el.attributes[0].name);
+                    }
+                    
+                    // Chỉ khôi phục lại những attribute sống còn cho bài viết
+                    if (href && tagName === 'a') el.setAttribute('href', href);
+                    if (src && tagName === 'img') el.setAttribute('src', src);
+                    if (alt && tagName === 'img') el.setAttribute('alt', alt);
+                });
+
+                // 3. Tùy chọn: Chuyển thẻ <div> thành <p> để Substack định dạng khoảng cách dòng tốt hơn
+                doc.body.querySelectorAll('div').forEach(div => {
+                    const p = doc.createElement('p');
+                    p.innerHTML = div.innerHTML;
+                    div.parentNode.replaceChild(p, div);
+                });
+
+                // Lấy nội dung HTML đã được làm sạch
+                let cleanContentToCopy = doc.body.innerHTML; 
+                
+                const blobHtml = new Blob([cleanContentToCopy], { type: 'text/html' }); 
+                const blobText = new Blob([doc.body.innerText], { type: 'text/plain' }); 
+                const item = new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText }); 
+                
+                await navigator.clipboard.write([item]); 
+                
+                btnEl.innerHTML = "✓"; 
+                btnEl.style.color = "#34C759"; 
+            } catch (err) { 
+                console.error("Lỗi Copy Substack:", err);
+                btnEl.innerHTML = "✕"; 
+            } finally { 
+                setTimeout(() => { 
+                    btnEl.innerHTML = originalText; 
+                    btnEl.style.color = ""; 
+                    btnEl.disabled = false; 
+                }, 2000); 
+            }
         }
 
         async function confirmDeleteFromForm() {
@@ -879,10 +938,26 @@
                 });
                 if (!res.ok) throw new Error((await res.json()).message || "Tạo Repo thất bại.");
                 
+                // TỰ ĐỘNG BẬT GITHUB PAGES
+                try {
+                    await new Promise(r => setTimeout(r, 2000));
+                    await fetch(`https://api.github.com/repos/${username}/${name}/pages`, {
+                        method: 'POST',
+                        headers: { 
+                            'Authorization': `Bearer ${token}`, 
+                            'Accept': 'application/vnd.github.v3+json',
+                            'Content-Type': 'application/json' 
+                        },
+                        body: JSON.stringify({ source: { branch: 'main', path: '/' } }) 
+                    });
+                } catch(pageErr) {
+                    console.warn("Lỗi tự động bật Pages (Có thể do nhánh chưa sẵn sàng):", pageErr);
+                }
+                
                 if (!repoDataCache[name]) repoDataCache[name] = [];
                 localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache}));
                 
-                alert(`Tạo thành công Repo: ${name}\nBây giờ bạn có thể đăng tải bài viết vào đây.`);
+                alert(`Tạo thành công Repo: ${name}\n\nHệ thống đã tự động kích hoạt Github Pages.\n⚠️ Lưu ý: Khi đăng bài vào repo mới này, hãy đợi khoảng 1-2 phút để Github deploy thì link bài mới xem được nhé!`);
                 closeCreateRepoModal();
                 renderRepos();
                 document.getElementById('upload-repo').value = `${username}/${name}`;
