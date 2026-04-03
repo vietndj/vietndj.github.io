@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giải Phẫu Tư Duy - Khóa Học Quay Dựng</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* slate-900 */
+            color: #e2e8f0; /* slate-200 */
+        }
+
+        /* --- CSS ABSTRACT ART CLASSES --- */
+        
+        /* Hero Art: Abstract Brain/Lens */
+        .art-hero {
+            position: relative;
+            width: 200px;
+            height: 200px;
+        }
+        .art-hero::before {
+            content: '';
+            position: absolute;
+            top: 10%; left: 10%; width: 80%; height: 80%;
+            background: linear-gradient(135deg, #10b981, #3b82f6);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 8s ease-in-out infinite alternate;
+            box-shadow: 0 0 40px rgba(16, 185, 129, 0.4);
+        }
+        .art-hero::after {
+            content: '';
+            position: absolute;
+            top: 25%; left: 25%; width: 50%; height: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            backdrop-filter: blur(5px);
+        }
+
+        /* SHTG Art: 4 Nodes connecting */
+        .art-shtg {
+            width: 100%; height: 120px;
+            display: flex; align-items: center; justify-content: space-between;
+            position: relative; padding: 0 20px;
+        }
+        .art-shtg::before {
+            content: ''; position: absolute;
+            top: 50%; left: 10%; right: 10%; height: 4px;
+            background: linear-gradient(90deg, #ef4444, #f59e0b, #3b82f6, #10b981);
+            transform: translateY(-50%); z-index: 0;
+            border-radius: 4px;
+        }
+        .art-node {
+            width: 40px; height: 40px; border-radius: 50%;
+            z-index: 1; display: flex; align-items: center; justify-content: center;
+            font-weight: bold; color: #0f172a; box-shadow: 0 0 15px currentColor;
+        }
+
+        /* Camera Art: Abstract Lens */
+        .art-camera {
+            width: 120px; height: 120px;
+            background: #1e293b; border-radius: 20%;
+            display: flex; align-items: center; justify-content: center;
+            box-shadow: inset 0 0 20px #000;
+            border: 2px solid #334155;
+        }
+        .art-camera::before {
+            content: ''; width: 80px; height: 80px;
+            border-radius: 50%; border: 8px solid #0f172a;
+            background: conic-gradient(from 0deg, #3b82f6, #8b5cf6, #ec4899, #3b82f6);
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+        }
+
+        /* Audio Art: Sound Waves */
+        .art-audio {
+            width: 120px; height: 80px;
+            display: flex; align-items: center; justify-content: space-between;
+            gap: 6px;
+        }
+        .art-audio span {
+            flex: 1; background: #8b5cf6; border-radius: 99px;
+            animation: eq 1.5s ease-in-out infinite alternate;
+            box-shadow: 0 0 10px #8b5cf6;
+        }
+        .art-audio span:nth-child(1) { height: 30%; animation-delay: 0.1s; }
+        .art-audio span:nth-child(2) { height: 70%; animation-delay: 0.3s; }
+        .art-audio span:nth-child(3) { height: 100%; animation-delay: 0.0s; }
+        .art-audio span:nth-child(4) { height: 50%; animation-delay: 0.4s; }
+        .art-audio span:nth-child(5) { height: 80%; animation-delay: 0.2s; }
+
+        /* Edit Art: Timeline blocks */
+        .art-edit {
+            width: 120px; height: 80px; position: relative;
+            background: repeating-linear-gradient(90deg, #334155 0, #334155 2px, transparent 2px, transparent 20px);
+            border-top: 2px solid #475569; border-bottom: 2px solid #475569;
+        }
+        .art-edit::before {
+            content: ''; position: absolute;
+            top: 10px; left: 10px; width: 40px; height: 25px;
+            background: #ec4899; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+        .art-edit::after {
+            content: ''; position: absolute;
+            bottom: 10px; left: 60px; width: 50px; height: 25px;
+            background: #10b981; border-radius: 4px; box-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+        }
+
+        /* Script Art: Abstract Paper & Pen */
+        .art-script {
+            width: 80px; height: 100px; position: relative;
+            background: #f8fafc; border-radius: 8px 30px 8px 8px;
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.1), 5px 5px 15px rgba(0,0,0,0.5);
+        }
+        .art-script::before {
+            content: ''; position: absolute;
+            top: 20px; left: 15px; width: 40px; height: 4px;
+            background: #cbd5e1; border-radius: 2px;
+            box-shadow: 0 15px 0 #cbd5e1, 0 30px 0 #cbd5e1;
+        }
+        .art-script::after {
+            content: '!'; position: absolute;
+            bottom: 15px; right: 15px; font-weight: 900; font-size: 32px;
+            color: #f59e0b; font-family: serif; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
+        }
+
+        /* Compare Art: Yin Yang Split */
+        .art-compare {
+            width: 150px; height: 150px; border-radius: 50%;
+            background: linear-gradient(90deg, #ef4444 50%, #10b981 50%);
+            position: relative; box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            display: flex; align-items: center; justify-content: center;
+        }
+        .art-compare::before {
+            content: 'VS'; font-weight: 900; font-size: 24px; color: #fff;
+            background: #0f172a; padding: 10px; border-radius: 50%;
+            border: 4px solid #1e293b;
+        }
+
+        /* Animations */
+        @keyframes morph {
+            0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
+        }
+        @keyframes eq {
+            0% { transform: scaleY(0.3); }
+            100% { transform: scaleY(1); }
+        }
+
+        .gradient-text {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- HERO SECTION -->
+    <header class="relative overflow-hidden border-b border-slate-800 bg-slate-900 pt-20 pb-24">
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAzNHYtNGgtMnY0aC00djJoNHY0aDJ2LTRoNHYtMmgtNHptMC0zMFYwaC0ydjRoLTR2Mmg0djRoMnYtNGg0VjJoLTR6bS0yMCAyMHYtNGgtMnY0SC00djJoNHY0aDJ2LTRoNHYtMmgtNHoiIGZpbGw9IiMzMzQxNTUiIGZpbGwtb3BhY2l0eT0iMC4xNSIvPjwvZz48L3N2Zz4=')] opacity-20"></div>
+        <div class="container mx-auto px-6 relative z-10 flex flex-col md:flex-row items-center justify-between gap-12">
+            <div class="md:w-2/3">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-slate-800 border border-slate-700 text-sm font-semibold text-emerald-400 mb-6 tracking-wide">
+                    TÀI LIỆU LƯU HÀNH NỘI BỘ
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+                    Giải phẫu tư duy, <br>
+                    <span class="bg-gradient-to-r from-emerald-400 to-cyan-400 gradient-text">20 bài tập thực chiến</span><br>
+                    và 2 kịch bản bóc tách
+                </h1>
+                <p class="text-xl text-slate-400 font-light border-l-4 border-emerald-500 pl-4 italic">
+                    Dành riêng cho khóa học quay dựng của bạn.
+                </p>
+            </div>
+            <div class="md:w-1/3 flex justify-center">
+                <div class="art-hero"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- PHẦN 1: TỪNG BƯỚC SUY LUẬN -->
+    <section class="py-20 bg-slate-800/50 border-b border-slate-800">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">PHẦN 1: TỪNG BƯỚC SUY LUẬN ĐỂ CHUYỂN ĐỔI VĂN PHONG</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-emerald-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="bg-slate-800 rounded-2xl p-8 md:p-10 shadow-xl border border-slate-700 mb-12">
+                <p class="text-lg leading-relaxed mb-6">
+                    <strong class="text-amber-400 text-xl">Bản chất Tâm lý học:</strong> Cách nói bình thường mang tính <span class="text-rose-400 bg-rose-900/30 px-2 py-0.5 rounded font-semibold">"Giáo điều/Ra lệnh"</span> (Hãy làm A đi), não người rất ghét bị dạy bảo nên họ phớt lờ. Cách nói Nhân - Quả áp dụng <span class="text-emerald-400 bg-emerald-900/30 px-2 py-0.5 rounded font-semibold">"Hiệu ứng Sợ Mất Mát"</span>: Phải cho họ thấy thảm họa nếu họ làm sai, sau đó mới đưa ra phao cứu sinh.
+                </p>
+                <p class="text-lg mb-8 text-slate-300">Để chuyển đổi, bạn ép não bộ chạy qua <strong class="text-white">Công thức 4 bước S.H.T.G</strong> sau:</p>
+
+                <!-- Abstract Art for SHTG -->
+                <div class="art-shtg mb-12 hidden sm:flex">
+                    <div class="art-node bg-rose-500 shadow-rose-500/50">S</div>
+                    <div class="art-node bg-amber-500 shadow-amber-500/50">H</div>
+                    <div class="art-node bg-blue-500 shadow-blue-500/50">T</div>
+                    <div class="art-node bg-emerald-500 shadow-emerald-500/50">G</div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-rose-500 mb-2">Bước 1: [S] - Sai lầm (NGUYÊN NHÂN)</h3>
+                        <p class="text-slate-300">Học viên đang làm sai cái gì? (Thay vì khuyên họ làm đúng ngay).</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-amber-500 mb-2">Bước 2: [H] - Hậu quả (NỖI ĐAU)</h3>
+                        <p class="text-slate-300">Phóng đại sự tồi tệ của cái sai đó tác động đến video và người xem.</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-blue-500 mb-2">Bước 3: [T] - Từ nối bản lề</h3>
+                        <p class="text-slate-300">Dùng từ dứt khoát bẻ lái: Chính vì thế, Do đó, Bí quyết sống còn là...</p>
+                    </div>
+                    <div class="bg-slate-900 p-6 rounded-xl border border-slate-700">
+                        <h3 class="text-xl font-bold text-emerald-500 mb-2">Bước 4: [G] - Giải pháp (LỢI ÍCH)</h3>
+                        <p class="text-slate-300">Nêu lời khuyên gốc của bạn ra.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ví dụ nhẩm trong đầu -->
+            <div class="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 border border-slate-700 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10">
+                    <svg class="w-32 h-32 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-6 relative z-10">Ví dụ nhẩm trong đầu:</h3>
+                <ul class="space-y-4 text-lg text-slate-300 relative z-10">
+                    <li><strong class="text-white">Lời khuyên gốc:</strong> Nhớ lau ống kính trước khi quay.</li>
+                    <li><strong class="text-white">Suy luận:</strong> Sai lầm là không lau -> Hậu quả là hình mờ đục, lóa sáng, trông phèn -> Từ nối: Do đó -> Giải pháp: Chùi vào áo 2 giây để video nét căng.</li>
+                    <li class="bg-slate-900 p-6 rounded-xl border border-emerald-500/30 shadow-inner mt-6">
+                        <strong class="text-emerald-400 text-xl block mb-2">Thành phẩm:</strong> 
+                        "Nếu bạn cứ để nguyên vân tay trên ống kính mà bấm quay <span class="text-rose-400 font-bold">[S]</span>, ánh sáng sẽ bị lóa và video mờ đục như sương mù <span class="text-amber-400 font-bold">[H]</span>. <span class="text-blue-400 font-bold">DO ĐÓ [T]</span>, chỉ cần 2 giây quệt camera vào áo, bạn đã đòi lại độ sắc nét 4K cho thước phim <span class="text-emerald-400 font-bold">[G]</span>."
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN 2: 20 VÍ DỤ BÀI TẬP -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-white">PHẦN 2: 20 VÍ DỤ BÀI TẬP THỰC CHIẾN (QUAY & DỰNG)</h2>
+                <p class="text-xl text-slate-400 max-w-3xl mx-auto">
+                    <strong class="text-amber-400">Cách luyện tập:</strong> Hãy đọc to phần <span class="text-emerald-400 font-bold">✅</span> và NHẤN MẠNH giọng vào các NGUYÊN NHÂN (sai lầm) và TỪ NỐI để cảm nhận sự quyền lực.
+                </p>
+            </div>
+
+            <!-- GROUP 1: Camera -->
+            <div class="mb-20">
+                <div class="flex items-center gap-6 mb-10 pb-4 border-b border-slate-700">
+                    <div class="art-camera flex-shrink-0"></div>
+                    <h3 class="text-3xl font-bold text-white">Nhóm 1: Tư duy Máy ảnh & Ánh sáng (Camera & Lighting)</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Nhìn thẳng vào Lens</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Khi quay nhớ nhìn thẳng vào camera, đừng nhìn màn hình.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Việc bạn cứ liếc nhìn mình trong màn hình điện thoại <span class="text-rose-400">(Nhân)</span> khiến khán giả cảm thấy bạn đang lảng tránh và thiếu tự tin <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">THẾ NÊN</span>, hãy nhìn xuyên qua cái lỗ camera đen ngòm kia, để ánh mắt bạn kết nối trực tiếp với người xem.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Setup hướng ánh sáng</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Hãy xoay mặt ra cửa sổ để lấy sáng.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Quay lưng lại với cửa sổ <span class="text-rose-400">(Nhân)</span> sẽ ép camera đo sáng sai, biến mặt bạn thành một cái bóng đen vô hồn <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">CHỈ CẦN</span> xoay người 180 độ đón nguồn sáng, da bạn sẽ tự động căng bóng mà không cần app.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Bố cục khung hình (Headroom)</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Đừng để khoảng trống trên đỉnh đầu quá nhiều.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Chừa một khoảng mênh mông trên đỉnh đầu <span class="text-rose-400">(Nhân)</span> sẽ dìm chiều cao của bạn xuống và trông cực kỳ yếu thế <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">HÃY HẤT</span> nhẹ ống kính hẹp lại, đưa mắt vào vạch 1/3 phía trên để lấy lại sự uy quyền.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Sử dụng Tripod (Chân máy)</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Cầm tay quay hay bị rung, bạn nên mua Tripod.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Những cú cầm máy tay bo rung bần bật <span class="text-rose-400">(Nhân)</span> sẽ truyền sự chóng mặt thẳng lên não người xem khiến họ thoát video <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">BẮT BUỘC</span> phải gắn máy lên Tripod, sự tĩnh lặng đó lập tức nâng tầm video lên chuẩn điện ảnh.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Góc đặt máy ngang mắt</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Đừng đặt máy quay hất từ dưới lên.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Đặt máy hất từ dưới bụng lên <span class="text-rose-400">(Nhân)</span> sẽ tự động phô ra nọng cằm và lỗ mũi của bạn <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">HÃY NÂNG</span> chân máy cao ngang tầm mắt để có góc V-line thanh thoát nhất.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Lấy nét tay (Manual Focus) cho sản phẩm</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Quay sản phẩm thì tắt Auto Focus đi.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Để máy tự động lấy nét <span class="text-rose-400">(Nhân)</span>, khung hình sẽ liên tục giật mờ mờ tỏ tỏ mỗi khi bạn đưa tay vào gây nhức mắt <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">KHÓA CỨNG</span> nét bằng tay từ đầu là cách duy nhất ép khán giả phải nhìn đúng điểm bạn muốn.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-blue-500 pl-3">Đèn nền (Practical Light)</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50">
+                                <span class="text-rose-500 font-bold text-lg mr-2">❌ Bình thường:</span> Bật thêm cái đèn nhỏ phía sau lưng cho có chiều sâu.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50">
+                                <span class="text-emerald-500 font-bold text-lg mr-2">✅ Nhân-Quả:</span> Quay trước một bức tường phẳng tối om <span class="text-rose-400">(Nhân)</span>, bạn sẽ bị bẹt dí và chìm nghỉm vào không gian <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">BẬT</span> một chiếc đèn màu hắt vào góc tường sau lưng, bạn lập tức tạo ra khối 3D tách biệt khỏi background.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROUP 2: Audio -->
+            <div class="mb-20">
+                <div class="flex items-center gap-6 mb-10 pb-4 border-b border-slate-700">
+                    <div class="art-audio flex-shrink-0">
+                        <span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <h3 class="text-3xl font-bold text-white">Nhóm 2: Tư duy Âm thanh (Audio)</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Khoảng cách thu âm</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50 text-sm">
+                                <span class="text-rose-500 font-bold block mb-1">❌ Bình thường:</span> Dùng mic điện thoại thì đứng gần thôi.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50 text-sm">
+                                <span class="text-emerald-500 font-bold block mb-1">✅ Nhân-Quả:</span> Đứng xa 2 mét mà thu âm bo bằng điện thoại <span class="text-rose-400">(Nhân)</span>, giọng bạn sẽ vang lùng bùng cùng mọi tiếng ồn xe cộ <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">ĐẦU TƯ</span> một chiếc mic rời cài áo là khoản chi rẻ nhất để cứu lấy lỗ tai của khán giả.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Âm vang căn phòng (Echo)</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50 text-sm">
+                                <span class="text-rose-500 font-bold block mb-1">❌ Bình thường:</span> Đừng thu âm ở phòng trống, tiếng sẽ bị vang.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50 text-sm">
+                                <span class="text-emerald-500 font-bold block mb-1">✅ Nhân-Quả:</span> Thu âm trong căn phòng 4 bức tường trống không <span class="text-rose-400">(Nhân)</span> sẽ tạo ra tiếng vang vọng cực kỳ rẻ tiền <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">HÃY</span> lót một tấm thảm hoặc kéo rèm vải lại, nó sẽ hút sạch tiếng vang, trả lại âm thanh Studio trầm ấm.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg hover:border-slate-500 transition-colors">
+                        <h4 class="text-xl font-bold text-white mb-4 border-l-4 border-purple-500 pl-3">Âm lượng nhạc nền</h4>
+                        <div class="space-y-4">
+                            <p class="bg-rose-900/20 p-4 rounded-lg text-slate-300 border border-rose-900/50 text-sm">
+                                <span class="text-rose-500 font-bold block mb-1">❌ Bình thường:</span> Chỉnh nhạc nền nhỏ xuống kẻo ồn.
+                            </p>
+                            <p class="bg-emerald-900/20 p-4 rounded-lg text-slate-200 border border-emerald-900/50 text-sm">
+                                <span class="text-emerald-500 font-bold block mb-1">✅ Nhân-Quả:</span> Nhạc nền đập ầm ầm ngang bằng giọng nói <span class="text-rose-400">(Nhân)</span> sẽ tạo ra sự nhiễu loạn khiến khán giả tức điên vì không nghe được bạn nói gì <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">ÉP NHẠC NỀN</span> xuống mức -25dB, biến nó thành bệ phóng cảm xúc để tôn giọng bạn lên làm vua.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROUP 3: Editing -->
+            <div class="mb-20">
+                <div class="flex items-center gap-6 mb-10 pb-4 border-b border-slate-700">
+                    <div class="art-edit flex-shrink-0"></div>
+                    <h3 class="text-3xl font-bold text-white">Nhóm 3: Tư duy Dựng phim (Editing)</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Cắt khoảng lặng (Jump Cut)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Hãy cắt bỏ những đoạn ngập ngừng, thở dài.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Mỗi lần bạn chừa lại 1 giây im lặng "ờ... ừm" (Nhân), bạn đang tặng cho não khán giả 1 giây rảnh rỗi để lướt sang video khác (Quả). <strong>TÀN NHẪN</strong> xén sạch mọi nhịp thở thừa sẽ dồn ép nhịp độ, trói chặt sự chú ý của họ.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Sử dụng B-roll (Cảnh trám)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Nên chèn thêm video minh họa vào cho sinh động.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Ép khán giả nhìn chằm chằm cái miệng bạn luyên thuyên suốt 1 phút (Nhân), thị giác họ sẽ bị tê liệt và buồn ngủ (Quả). <strong>CỨ MỖI 5 GIÂY</strong>, đập ngay một cảnh B-roll lên màn hình để reset lại đồng hồ tập trung của họ.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Lạm dụng Transition (Chuyển cảnh)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Đừng lạm dụng hiệu ứng xoay lật 3D có sẵn.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Nhồi nhét các cú chuyển cảnh lật trang, cuộn mây (Nhân) sẽ biến clip của bạn thành đĩa CD đám cưới năm 2000 (Quả). <strong>SỰ THẬT LÀ</strong> pro editor 90% chỉ xài lệnh Cắt thẳng (Hard-cut) để giữ sự dứt khoát, đắt tiền.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Viền chữ (Text Shadow)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Chữ màu trắng nhớ thêm viền đen vào.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Ném một dòng chữ trắng mỏng manh lên nền video sáng (Nhân), người xem sẽ phải nheo mắt lại để dịch và cuối cùng họ lướt qua luôn (Quả). <strong>BẮT BUỘC</strong> phải đổ bóng (Drop shadow) đen phía sau để khối chữ nảy bật lên đập thẳng vào mắt họ.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Hiệu ứng âm thanh chữ (SFX)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Khi chữ xuất hiện hãy chèn thêm tiếng ting.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Một dòng chữ to đùng hiện ra giữa màn hình mà câm như hến (Nhân) sẽ bị não bộ đánh giá là đồ họa giả tạo (Quả). <strong>LÓT THÊM</strong> tiếng gió "Vút" (Whoosh) rơi đúng nhịp, bạn đang thao túng não họ tin rằng khối chữ đó có sức nặng vật lý.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Vùng an toàn TikTok (Safe Zone)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Đừng để phụ đề tràn ra mép lề phải.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Cố kéo chữ sát mép phải (Nhân), thông điệp của bạn sẽ bị các nút Tim, Share của Tiktok đè nát bét không ai đọc được (Quả). <strong>LUÔN BẬT</strong> lưới Safe Zone để nhốt mọi thông tin quan trọng vào vùng lõi an toàn.</p>
+                    </div>
+
+                     <!-- Item -->
+                     <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Zoom In bằng Keyframe</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Thỉnh thoảng nhớ zoom mặt lại gần cho đỡ chán.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Giữ nguyên một góc máy tĩnh từ đầu đến cuối (Nhân), năng lượng video sẽ từ từ tuột dốc như thuốc ngủ (Quả). <strong>DÙNG KEYFRAME</strong> đẩy từ từ góc máy sát vào mặt sẽ tạo áp lực thị giác ép họ phải nín thở nghe câu chốt của bạn.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Chỉnh màu (Color Correction trước LUT)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Nhớ chỉnh sáng cho đủ rồi mới áp màu LUT.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Ốp thẳng cục màu LUT vào một video đang thiếu sáng (Nhân) sẽ làm da mặt bạn ám màu cam xỉn bẹp dí (Quả). <strong>NGUYÊN TẮC LÀ</strong> kéo sáng chuẩn thực tế trước, rồi mới được quyền phủ ma thuật điện ảnh (LUT) lên.</p>
+                    </div>
+
+                    <!-- Item -->
+                    <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-lg">
+                        <h4 class="text-lg font-bold text-white mb-3 border-l-4 border-pink-500 pl-2">Export xuất file (Bitrate)</h4>
+                        <p class="text-slate-400 text-sm mb-2"><strong class="text-rose-500">❌</strong> Xuất video nhớ chọn Bitrate cao để không bị mờ.</p>
+                        <p class="text-slate-200 text-sm"><strong class="text-emerald-500">✅</strong> Dù quay 4K nhưng xuất file với Bitrate quá thấp (Nhân), thuật toán nền tảng sẽ bóp nát video thành những điểm ảnh vỡ vụn (Quả). <strong>KHÓA CỨNG</strong> Bitrate ở mức 15-20Mbps để bảo vệ độ sắc nét tuyệt đối khi upload.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GROUP 4: Scripting -->
+            <div>
+                <div class="flex items-center gap-6 mb-10 pb-4 border-b border-slate-700">
+                    <div class="art-script flex-shrink-0"></div>
+                    <h3 class="text-3xl font-bold text-white">Nhóm 4: Tư duy Kịch bản (Scripting)</h3>
+                </div>
+                
+                <div class="bg-slate-800 rounded-xl p-8 border border-amber-500/30 shadow-[0_0_30px_rgba(245,158,11,0.1)]">
+                    <h4 class="text-2xl font-bold text-amber-400 mb-6 border-l-4 border-amber-500 pl-4">Hook (Mở đầu 3 giây)</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-rose-900/10 p-6 rounded-xl border border-rose-900/50">
+                            <p class="text-slate-300 text-lg">
+                                <span class="text-rose-500 font-bold block mb-2 text-xl">❌ Bình thường:</span> 
+                                Mở đầu nhớ nói thẳng vấn đề, đừng chào hỏi.
+                            </p>
+                        </div>
+                        <div class="bg-emerald-900/10 p-6 rounded-xl border border-emerald-900/50">
+                            <p class="text-slate-200 text-lg leading-relaxed">
+                                <span class="text-emerald-500 font-bold block mb-2 text-xl">✅ Nhân-Quả:</span> 
+                                Lãng phí 3 giây đầu để chào "Xin chào các bạn lại là mình" <span class="text-rose-400">(Nhân)</span>, não khán giả sẽ dán mác "Nhàm chán" và vuốt đi ngay lập tức <span class="text-amber-400">(Quả)</span>. <span class="text-blue-400 font-bold uppercase">BẮT BUỘC</span> phải ném thẳng nỗi đau của họ vào giây đầu tiên để tước đoạt ngón tay lướt của họ.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PHẦN 3: SO SÁNH 2 KỊCH BẢN -->
+    <section class="py-20 bg-slate-800/80 border-t border-slate-700 relative overflow-hidden">
+        <!-- Background element -->
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-emerald-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16 flex flex-col items-center">
+                <div class="art-compare mb-8"></div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">PHẦN 3: SO SÁNH CHI TIẾT 2 KỊCH BẢN NÓI</h2>
+                <div class="inline-block bg-slate-900 px-6 py-3 rounded-full border border-slate-700 mt-4">
+                    <p class="text-xl text-slate-300"><strong class="text-white">Chủ đề bài giảng:</strong> "Vì sao phải dọn dẹp Background trước khi quay?"</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Bad Script -->
+                <div class="bg-slate-900 rounded-2xl p-8 border border-rose-500/30 shadow-[0_0_40px_rgba(244,63,94,0.1)]">
+                    <h3 class="text-2xl font-bold text-rose-500 mb-6 flex items-center gap-3">
+                        <span class="bg-rose-500 text-white rounded-full w-8 h-8 flex items-center justify-center">❌</span> 
+                        KỊCH BẢN 1
+                    </h3>
+                    <p class="text-slate-400 text-sm mb-6 uppercase tracking-wider font-semibold">Lối nói thông thường - Đọc lý thuyết, nhàm chán</p>
+                    <div class="text-slate-300 text-lg leading-relaxed italic border-l-4 border-rose-900 pl-4 bg-slate-800/50 p-6 rounded-r-lg">
+                        "Chào các học viên. Hôm nay chúng ta học về Background. Trước khi các bạn bấm máy quay, hãy quay lại nhìn phía sau xem có bừa bộn không nhé. Các bạn nên dọn dẹp chăn gối, quần áo cho gọn gàng. Nếu không có điều kiện, hãy tìm một bức tường trống để quay. Việc dọn dẹp này giúp khung hình của các bạn sạch sẽ hơn, người xem sẽ tập trung vào bạn hơn và video trông cũng chuyên nghiệp hơn. Chúc các bạn áp dụng thành công!"
+                    </div>
+                </div>
+
+                <!-- Good Script -->
+                <div class="bg-slate-900 rounded-2xl p-8 border border-emerald-500/50 shadow-[0_0_40px_rgba(16,185,129,0.15)] relative transform lg:-translate-y-4">
+                    <div class="absolute -top-3 -right-3 bg-emerald-500 text-white text-xs font-bold px-3 py-1 rounded-full animate-bounce shadow-lg">RECOMMENDED</div>
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-6 flex items-center gap-3">
+                        <span class="bg-emerald-500 text-white rounded-full w-8 h-8 flex items-center justify-center">✅</span> 
+                        KỊCH BẢN 2
+                    </h3>
+                    <p class="text-emerald-200/70 text-sm mb-6 uppercase tracking-wider font-semibold">Lối nói Nhân - Quả: Uy quyền, Bóc lỗi, Đe dọa tâm lý</p>
+                    <div class="text-white text-lg leading-relaxed border-l-4 border-emerald-500 pl-4 bg-emerald-900/20 p-6 rounded-r-lg">
+                        "Lý do bạn nói rất hay, nội dung rất tốt nhưng không ai xem hết video? Hãy nhìn ngay ra đằng sau lưng bạn! Việc bạn lười biếng để nguyên một chiếc giường chưa gấp, hay một đống quần áo lộn xộn phía sau lưng <span class="text-rose-400 font-bold">(Nguyên nhân/Sai lầm)</span>... chính là bạn đang âm thầm dâng tặng sự chú ý của khán giả cho những món đồ vô tri đó. Não bộ người xem rất tò mò, họ sẽ dán mắt vào việc soi xét căn phòng bừa bộn của bạn thay vì nghe những kiến thức bạn đang dạy <span class="text-amber-400 font-bold">(Hậu quả/Nỗi đau)</span>. Đừng tự phá nát video của mình nữa! <span class="text-blue-400 font-bold">(Từ nối bẻ lái)</span> Dọn sạch background, hoặc quay lưng vào một bức tường phẳng không phải là để cho đẹp. Nó là thủ thuật tâm lý ĐỂ bạn khóa mọi lối thoát thị giác, ÉP bộ não khán giả không còn gì khác để nhìn ngoài khuôn mặt và quyền lực của bạn! <span class="text-emerald-400 font-bold">(Giải pháp & Sự sung sướng)</span>. Thực hành dọn phòng và set máy quay ngay lập tức nhé!"
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FLASHCARD SECTION -->
+    <section class="py-24 bg-[#0a0f1c] border-t border-slate-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="inline-block py-1 px-3 rounded bg-indigo-900/50 text-indigo-400 border border-indigo-500/30 text-sm font-bold tracking-widest mb-4">REVISION</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Khối Flashcard: 25 Câu Hỏi Ôn Tập Nhanh</h2>
+                <p class="text-slate-400 max-w-2xl mx-auto">Kiến thức đã được chắt lọc dưới dạng Hỏi - Đáp trực quan. Đọc lướt để ghi nhớ vĩnh viễn các nguyên tắc sống còn.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:grid-cols-3 gap-6">
+                <!-- Flashcard Template Builder -->
+                <script>
+                    const flashcards = [
+                        { q: "Bản chất Tâm lý học của cách nói Nhân - Quả là gì?", a: "Áp dụng 'Hiệu ứng Sợ Mất Mát': Cho thấy thảm họa nếu làm sai, sau đó mới đưa ra phao cứu sinh." },
+                        { q: "Ý nghĩa của chữ [S] trong công thức 4 bước?", a: "Sai lầm (NGUYÊN NHÂN): Học viên đang làm sai cái gì?" },
+                        { q: "Ý nghĩa của chữ [H] trong công thức 4 bước?", a: "Hậu quả (NỖI ĐAU): Phóng đại sự tồi tệ của cái sai đó tác động đến video." },
+                        { q: "Ý nghĩa của chữ [T] trong công thức 4 bước?", a: "Từ nối bản lề: Dùng từ dứt khoát bẻ lái (VD: Do đó, Chính vì thế...)" },
+                        { q: "Ý nghĩa của chữ [G] trong công thức 4 bước?", a: "Giải pháp (LỢI ÍCH): Nêu lời khuyên gốc của bạn ra." },
+                        { q: "Hậu quả của việc liếc nhìn mình trong màn hình điện thoại khi quay?", a: "Khiến khán giả cảm thấy bạn đang lảng tránh và thiếu tự tin." },
+                        { q: "Quay lưng lại với cửa sổ sẽ dẫn đến điều gì?", a: "Ép camera đo sáng sai, biến mặt bạn thành một cái bóng đen vô hồn." },
+                        { q: "Chừa khoảng trống trên đỉnh đầu quá nhiều (Headroom) gây cảm giác gì?", a: "Dìm chiều cao của bạn xuống và trông cực kỳ yếu thế." },
+                        { q: "Tại sao bắt buộc phải gắn máy lên Tripod?", a: "Cầm máy tay bo rung bần bật sẽ truyền sự chóng mặt lên não người xem khiến họ thoát video." },
+                        { q: "Đặt máy quay hất từ dưới bụng lên sẽ phô ra khuyết điểm gì?", a: "Tự động phô ra nọng cằm và lỗ mũi của bạn." },
+                        { q: "Hậu quả của việc để máy tự động lấy nét (Auto Focus) khi quay sản phẩm?", a: "Khung hình sẽ liên tục giật mờ tỏ mỗi khi đưa tay vào gây nhức mắt." },
+                        { q: "Quay trước một bức tường phẳng tối om mà không có đèn nền sẽ ra sao?", a: "Bạn sẽ bị bẹt dí và chìm nghỉm vào không gian (mất khối 3D)." },
+                        { q: "Đứng xa 2 mét mà thu âm bo bằng điện thoại sẽ có hậu quả gì?", a: "Giọng bạn sẽ vang lùng bùng cùng mọi tiếng ồn xe cộ." },
+                        { q: "Thu âm trong căn phòng 4 bức tường trống không tạo ra điều gì?", a: "Tạo ra tiếng vang vọng cực kỳ rẻ tiền." },
+                        { q: "Nếu để nhạc nền đập ầm ầm ngang bằng giọng nói thì sao?", a: "Tạo sự nhiễu loạn khiến khán giả tức điên vì không nghe được bạn nói gì." },
+                        { q: "Chừa lại 1 giây im lặng 'ờ... ừm' trong video sẽ làm gì?", a: "Tặng cho não khán giả 1 giây rảnh rỗi để lướt sang video khác." },
+                        { q: "Ép khán giả nhìn chằm chằm miệng bạn luyên thuyên suốt 1 phút gây ra gì?", a: "Thị giác họ sẽ bị tê liệt và buồn ngủ (cần chèn B-roll)." },
+                        { q: "Nhồi nhét các cú chuyển cảnh lật trang, cuộn mây có tác dụng phụ gì?", a: "Biến clip của bạn thành đĩa CD đám cưới năm 2000." },
+                        { q: "Ném một dòng chữ trắng mỏng manh lên nền video sáng dẫn đến điều gì?", a: "Người xem phải nheo mắt lại để dịch và cuối cùng họ lướt qua luôn." },
+                        { q: "Dòng chữ to đùng hiện ra giữa màn hình mà câm như hến sẽ bị đánh giá sao?", a: "Bị não bộ đánh giá là đồ họa giả tạo (cần thêm SFX)." },
+                        { q: "Cố kéo chữ sát mép phải màn hình Tiktok sẽ bị gì?", a: "Thông điệp bị các nút Tim, Share đè nát bét không ai đọc được." },
+                        { q: "Giữ nguyên một góc máy tĩnh từ đầu đến cuối làm video trở nên thế nào?", a: "Năng lượng video sẽ từ từ tuột dốc như thuốc ngủ." },
+                        { q: "Ốp thẳng cục màu LUT vào một video đang thiếu sáng gây ra lỗi gì?", a: "Làm da mặt bạn ám màu cam xỉn bẹp dí." },
+                        { q: "Xuất file với Bitrate quá thấp sẽ bị thuật toán nền tảng xử lý ra sao?", a: "Bóp nát video thành những điểm ảnh vỡ vụn dù quay 4K." },
+                        { q: "Lãng phí 3 giây đầu để chào hỏi rườm rà gây hậu quả gì?", a: "Não khán giả dán mác 'Nhàm chán' và vuốt đi ngay lập tức." }
+                    ];
+
+                    document.write(flashcards.map((card, index) => `
+                        <div class="bg-slate-800 rounded-xl p-6 border border-slate-700 shadow-md flex flex-col justify-between h-full relative overflow-hidden group hover:border-emerald-500/50 transition-colors">
+                            <div class="absolute top-0 right-0 bg-slate-900 text-slate-500 text-xs font-bold px-2 py-1 rounded-bl-lg">#${index + 1}</div>
+                            <div>
+                                <h4 class="text-white font-bold text-base mb-4 leading-snug group-hover:text-emerald-400 transition-colors pr-4">${card.q}</h4>
+                            </div>
+                            <div>
+                                <div class="w-full h-px bg-slate-700 mb-4 group-hover:bg-emerald-900 transition-colors"></div>
+                                <p class="text-slate-300 text-sm leading-relaxed">${card.a}</p>
+                            </div>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-slate-950 py-8 text-center text-slate-500 text-sm border-t border-slate-900">
+        <p>© 2026 Nội dung độc quyền - Khóa Học Quay Dựng. Được thiết kế tối ưu hóa sự tập trung.</p>
+    </footer>
+
+</body>
+</html>
