@@ -418,7 +418,7 @@
                 
                 let newAllFiles = []; let newRepoData = {};
                 for (const repo of repos) {
-                    if (repo.name === `${username}.github.io`) continue;
+                    // Đã bỏ dòng code cản trở việc quét repo gốc ở đây
                     if(toastText) toastText.innerHTML = `Đang quét: <b>${repo.name}</b>`;
                     const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() }); 
                     if (!resFiles.ok) continue;
@@ -433,7 +433,11 @@
                                 if(toastText) toastText.innerHTML = `Cập nhật: <b>${file.name}</b>`;
                                 let dateObj = new Date(); 
                                 try { const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); if(resCommit.ok) { const commitData = await resCommit.json(); if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); } } catch(e) {} 
-                                const newFile = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: `https://${username}.github.io/${repo.name}/${file.name}`, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" };
+                                
+                                // FIX: Tạo URL đúng chuẩn cho các file trong repo gốc
+                                const fileUrl = repo.name === `${username}.github.io` ? `https://${username}.github.io/${file.name}` : `https://${username}.github.io/${repo.name}/${file.name}`;
+
+                                const newFile = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: fileUrl, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" };
                                 newAllFiles.push(newFile); newRepoData[repo.name].push(newFile);
                                 await new Promise(r => setTimeout(r, 10));
                             }
@@ -1097,6 +1101,7 @@
                 }
 
                 const newDate = new Date(); const fileIndex = allFilesCache.findIndex(f => f.sha === moveFileSha);
+                
                 if (fileIndex !== -1) {
                     if (repoDataCache[moveSourceRepo]) { repoDataCache[moveSourceRepo] = repoDataCache[moveSourceRepo].filter(x => x.sha !== moveFileSha); if(repoDataCache[moveSourceRepo].length === 0) delete repoDataCache[moveSourceRepo]; }
                     let f = allFilesCache[fileIndex]; f.repoName = targetRepo; f.sha = newFileMeta.content.sha; f.url = `https://${username}.github.io/${targetRepo === `${username}.github.io` ? '' : targetRepo + '/'}${moveFileName}`; f.downloadUrl = newFileMeta.content.download_url || ""; f.timestamp = newDate.getTime();
@@ -1105,6 +1110,7 @@
                 }
                 localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache, linksDataCache}));
                 closeMoveModal(); renderRepos(); alert("Đã chuyển bài viết thành công!");
+                
             } catch (e) { alert(`Lỗi di chuyển: ${e.message}`); } finally { btn.innerText = "Xác nhận Chuyển"; btn.disabled = false; document.body.style.cursor = 'default'; }
         }
     </script>
