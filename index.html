@@ -8,6 +8,7 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><line x1='9' y1='9' x2='15' y2='15'></line><line x1='15' y1='9' x2='9' y2='15'></line></svg>">
     
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <style> 
         /* APPLE DESIGN SYSTEM */
         body { 
@@ -42,6 +43,8 @@
         .apple-btn-primary:hover { background-color: #0062CC; transform: scale(0.98); }
         .apple-btn-secondary { background-color: #E5E5EA; color: #1D1D1F; border-radius: 10px; font-weight: 600; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;}
         .apple-btn-secondary:hover { background-color: #D1D1D6; transform: scale(0.98); }
+        .apple-btn-danger { background-color: #FF3B30; color: white; border-radius: 10px; font-weight: 600; transition: 0.2s; display: inline-flex; align-items: center; justify-content: center; gap: 6px;}
+        .apple-btn-danger:hover { background-color: #D70015; transform: scale(0.98); }
 
         .view-group { background: #F2F2F7; padding: 4px; border-radius: 10px; display: inline-flex; gap: 2px; }
         .view-btn { padding: 6px 12px; border-radius: 6px; font-size: 13px; font-weight: 600; cursor: pointer; transition: all 0.2s; color: #86868B; background: transparent; border: none; display: inline-flex; align-items: center; gap: 4px; }
@@ -216,7 +219,10 @@
                         <div class="mb-5"><label class="block text-[11px] font-bold text-[#86868B] mb-1.5 uppercase">Nội dung HTML</label><textarea id="upload-content" rows="12" class="w-full px-4 py-3 bg-[#1D1D1F] text-[#34C759] border-none rounded-xl focus:ring-2 focus:ring-[#007AFF] font-mono text-xs leading-relaxed"></textarea></div>
                         
                         <div class="flex flex-wrap gap-3 items-center">
-                            <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md">Lưu & Đăng tải</button>
+                            <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md">Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span></button>
+                            
+                            <button type="button" onclick="copyEditorToSubstack()" id="btn-copy-editor" class="apple-btn-secondary px-6 py-3 flex items-center gap-2 font-bold"><svg class="svg-icon"><use href="#icon-copy"></use></svg> Copy sang Substack</button>
+
                             <button onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden apple-btn-danger px-6 py-3 ml-auto"><svg class="svg-icon"><use href="#icon-trash"></use></svg> Xóa bài</button>
                         </div>
                         <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
@@ -309,7 +315,7 @@
         function clearUploadForm() {
             document.getElementById('upload-filename').value = ''; document.getElementById('upload-content').value = ''; document.getElementById('upload-tags').value = '';
             document.getElementById('original-repo').value = ''; document.getElementById('original-filename').value = ''; document.getElementById('original-sha').value = '';
-            document.getElementById('btn-create').innerHTML = 'Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block">Ctrl S</span>'; 
+            document.getElementById('btn-create').innerHTML = 'Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span>'; 
             document.getElementById('upload-status').style.display = 'none'; document.getElementById('btn-delete').classList.add('hidden');
             syncUploadTagsUI(); uploadLinksTemp = []; renderUploadLinks();
         }
@@ -363,7 +369,6 @@
                 return;
             }
 
-            // Sắp xếp: Chưa xong lên trên, xong rồi xuống dưới, mới nhất trên cùng
             let sortedTasks = [...nativeTasksCache].sort((a, b) => {
                 if (a.completed === b.completed) return b.id - a.id;
                 return a.completed ? 1 : -1;
@@ -382,7 +387,6 @@
             const input = document.getElementById('native-task-input');
             const val = input.value.trim();
             if(!val) return;
-            
             nativeTasksCache.unshift({ id: Date.now(), title: val, completed: false });
             input.value = '';
             _saveTasksLocal(); renderNativeTasks(); _syncTasksSilent();
@@ -403,7 +407,7 @@
         }
         
         async function _syncTasksSilent() {
-            try { await saveMetadataToGithub(); } catch(e) { console.warn("Lưu metadata (task) ngầm lỗi:", e); }
+            try { await saveMetadataToGithub(); } catch(e) {}
         }
         // -------------------------
 
@@ -438,17 +442,9 @@
                     if(resMeta.ok) { 
                         const rawMeta = JSON.parse(decodeBase64UTF8((await resMeta.json()).content)); 
                         if(rawMeta._version >= 2) {
-                            tagsDataCache = rawMeta.tags || {};
-                            linksDataCache = rawMeta.links || {};
-                            // Sync Tasks from Cloud to Local if Version >= 3 or tasks exists
-                            if(rawMeta.tasks && Array.isArray(rawMeta.tasks)) {
-                                // Merge logic: Ưu tiên dữ liệu mới hơn (Đơn giản hóa: lấy từ Github nếu Github có)
-                                nativeTasksCache = rawMeta.tasks;
-                                renderNativeTasks();
-                            }
-                        } else {
-                            tagsDataCache = rawMeta; linksDataCache = {};
-                        }
+                            tagsDataCache = rawMeta.tags || {}; linksDataCache = rawMeta.links || {};
+                            if(rawMeta.tasks && Array.isArray(rawMeta.tasks)) { nativeTasksCache = rawMeta.tasks; renderNativeTasks(); }
+                        } else { tagsDataCache = rawMeta; linksDataCache = {}; }
                     } 
                 } catch(e) {}
 
@@ -492,7 +488,6 @@
             const token = localStorage.getItem('github_pat') || document.getElementById('github-token').value.trim(); if(!token) return;
             let currentSha = null; try { const getRes = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, {headers: getHeaders()}); if(getRes.ok) currentSha = (await getRes.json()).sha; } catch(e) {}
             
-            // VERSION 3: Lưu Tags, Links và Tasks
             const dataToSave = { _version: 3, tags: tagsDataCache, links: linksDataCache, tasks: nativeTasksCache };
             const content = btoa(unescape(encodeURIComponent(JSON.stringify(dataToSave, null, 2))));
             
@@ -501,9 +496,6 @@
             _saveTasksLocal();
         }
 
-        // ==========================
-        // CÁC HÀM HELPER TẠO HTML (Sử dụng Icon mới)
-        // ==========================
         function getTagsHTML(rName, fName) {
             const tags = tagsDataCache[`${rName}/${fName}`] || [];
             if(tags.length === 0) return '';
@@ -538,9 +530,118 @@
                     <button onclick="editFileContent('${rName}', '${sName}', '${fSha}')" class="icon-btn text-[#007AFF] hover:bg-blue-50 ml-1" title="Sửa bài"><svg class="svg-icon"><use href="#icon-edit"></use></svg></button>`;
         }
 
-        // ==========================
-        // QUẢN LÝ LINK TRONG FORM UPLOAD
-        // ==========================
+        // ==========================================
+        // SUBSTACK SANITIZER - BẢN NÂNG CẤP XÓA SẠCH CSS
+        // ==========================================
+        async function copyForSubstack(repoName, encodedFileName, btnEl) {
+            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
+            const originalHTML = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
+            try { 
+                const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; 
+                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); 
+                if (!response.ok) throw new Error("Lỗi fetch dữ liệu"); 
+                const htmlString = await response.text(); 
+                
+                const doc = new DOMParser().parseFromString(htmlString, 'text/html'); 
+                
+                // 1. Cạo sạch toàn bộ rác và mã code
+                doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove()); 
+                
+                // 2. Lột sạch mọi class, id, style nội tuyến
+                doc.body.querySelectorAll('*').forEach(el => { 
+                    const tagName = el.tagName.toLowerCase(); 
+                    const href = el.getAttribute('href'); 
+                    const src = el.getAttribute('src'); 
+                    const alt = el.getAttribute('alt'); 
+                    
+                    while(el.attributes.length > 0) { 
+                        el.removeAttribute(el.attributes[0].name); 
+                    } 
+                    
+                    if (href && tagName === 'a') el.setAttribute('href', href); 
+                    if (src && tagName === 'img') {
+                        el.setAttribute('src', src); 
+                        el.setAttribute('alt', alt || ''); 
+                    }
+                }); 
+                
+                // 3. Đổi div thành p
+                doc.body.querySelectorAll('div, section, article').forEach(div => { 
+                    const p = doc.createElement('p'); 
+                    p.innerHTML = div.innerHTML; 
+                    div.parentNode.replaceChild(p, div); 
+                });
+                
+                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); 
+                const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' }); 
+                
+                await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]); 
+                btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; 
+            } catch (err) { 
+                btnEl.innerHTML = "✕"; btnEl.style.color = "red";
+            } finally { 
+                setTimeout(() => { btnEl.innerHTML = originalHTML; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); 
+            }
+        }
+
+        async function copyEditorToSubstack() {
+            const content = document.getElementById('upload-content').value;
+            if (!content) return alert('Nội dung Editor đang trống!');
+            
+            const btn = document.getElementById('btn-copy-editor');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = "⏳ Đang copy..."; btn.disabled = true;
+
+            try {
+                const doc = new DOMParser().parseFromString(content, 'text/html');
+
+                // 1. Xóa rác
+                doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove());
+
+                // 2. Lột thuộc tính
+                doc.body.querySelectorAll('*').forEach(el => {
+                    const tag = el.tagName.toLowerCase();
+                    const href = el.getAttribute('href');
+                    const src = el.getAttribute('src');
+                    const alt = el.getAttribute('alt');
+
+                    while(el.attributes.length > 0) el.removeAttribute(el.attributes[0].name);
+
+                    if (tag === 'a' && href) el.setAttribute('href', href);
+                    if (tag === 'img' && src) { el.setAttribute('src', src); el.setAttribute('alt', alt || ''); }
+                });
+
+                // 3. Chuyển đổi div -> p
+                doc.body.querySelectorAll('div, section, article').forEach(div => {
+                    const p = doc.createElement('p');
+                    p.innerHTML = div.innerHTML;
+                    div.parentNode.replaceChild(p, div);
+                });
+
+                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' });
+                const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' });
+
+                await navigator.clipboard.write([new ClipboardItem({
+                    'text/html': blobHtml,
+                    'text/plain': blobText
+                })]);
+
+                btn.innerHTML = "✅ Đã Copy Substack";
+                btn.classList.replace('apple-btn-secondary', 'bg-[#34C759]');
+                btn.style.color = "white";
+            } catch (e) {
+                alert('Lỗi Copy: ' + e.message);
+            } finally {
+                setTimeout(() => { 
+                    btn.innerHTML = originalHTML; 
+                    btn.classList.replace('bg-[#34C759]', 'apple-btn-secondary');
+                    btn.style.color = ""; 
+                    btn.disabled = false; 
+                }, 3000);
+            }
+        }
+        // ==========================================
+
         function renderUploadLinks() {
             const container = document.getElementById('upload-links-container');
             if(uploadLinksTemp.length === 0) { container.innerHTML = '<span class="text-[10px] text-gray-400 italic">Chưa có link ngoài nào.</span>'; return; }
@@ -553,41 +654,6 @@
             `).join('');
         }
         function addUploadLink() { uploadLinksTemp.push({title:'', url:''}); renderUploadLinks(); }
-
-        // ==========================
-        // QUẢN LÝ LINK BẰNG QUICK MODAL
-        // ==========================
-        function openLinkModal(repoName, encodedFileName, fileSha) {
-            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"');
-            currentEditLinkKey = `${repoName}/${fileName}`; currentEditLinkSha = fileSha; renderLinkModalList();
-            const overlay = document.getElementById('link-modal-overlay'); overlay.classList.remove('hidden'); overlay.classList.add('flex');
-        }
-        function closeLinkModal() { document.getElementById('link-modal-overlay').classList.add('hidden'); document.getElementById('link-modal-overlay').classList.remove('flex'); currentEditLinkKey = null; currentEditLinkSha = null; }
-        function renderLinkModalList() { window.tempModalLinks = linksDataCache[currentEditLinkKey] ? JSON.parse(JSON.stringify(linksDataCache[currentEditLinkKey])) : []; _updateLinkModalUI(); }
-        function _updateLinkModalUI() {
-            const container = document.getElementById('link-modal-list');
-            if(window.tempModalLinks.length === 0) { container.innerHTML = '<p class="text-xs text-gray-500 italic text-center py-6">Chưa có link tham khảo nào.</p>'; } 
-            else {
-                container.innerHTML = window.tempModalLinks.map((l, i) => `
-                    <div class="flex gap-2 items-center bg-white p-2 rounded-xl border border-gray-200 shadow-sm">
-                        <div class="flex-1 flex flex-col gap-1.5">
-                            <input type="text" class="w-full px-2 py-1 text-xs border-b border-gray-100 outline-none focus:border-blue-500 font-semibold text-[#1D1D1F]" value="${l.title}" onchange="window.tempModalLinks[${i}].title=this.value" placeholder="Tên hiển thị">
-                            <input type="text" class="w-full px-2 py-1 text-xs outline-none text-gray-500" value="${l.url}" onchange="window.tempModalLinks[${i}].url=this.value" placeholder="Đường dẫn URL">
-                        </div>
-                        <button onclick="window.tempModalLinks.splice(${i}, 1); _updateLinkModalUI();" class="text-red-500 hover:bg-red-50 p-2 rounded-lg transition"><svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><use href="#icon-trash"></use></svg></button>
-                    </div>
-                `).join('');
-            }
-        }
-        function addLinkItem() { window.tempModalLinks.push({title: '', url: ''}); _updateLinkModalUI(); }
-        async function saveLinkModal() {
-            if(!currentEditLinkKey) return;
-            let validLinks = window.tempModalLinks.filter(l => l.title.trim() && l.url.trim());
-            if(validLinks.length > 0) { linksDataCache[currentEditLinkKey] = validLinks; } else { delete linksDataCache[currentEditLinkKey]; }
-            const linkContainer = document.getElementById(`links-${currentEditLinkSha}`);
-            if(linkContainer) linkContainer.innerHTML = getLinksHTML(...currentEditLinkKey.split('/'));
-            closeLinkModal(); document.body.style.cursor = 'wait'; try { await saveMetadataToGithub(); renderRepos(); } catch(e) {} document.body.style.cursor = 'default';
-        }
 
         // ==========================
         // RENDER GIAO DIỆN CHÍNH
@@ -749,7 +815,7 @@
             }
         }
 
-        // Logic Lọc, Tag, Lấy Content... (Giữ nguyên thuật toán, cập nhật UI icon)
+        // Logic Lọc, Tag, Lấy Content... (Giữ nguyên)
         function filterByTag(encodedTag) { activeTag = encodedTag.replace(/&quot;/g, '"').replace(/\\'/g, "'"); renderRepos(); }
         function renderFilterBar() {
             const allTags = new Set(); Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
@@ -839,19 +905,6 @@
             if (coverContainer && previewData.coverHTML) { coverContainer.outerHTML = `<div id="cover-${fileSha}" class="w-full shrink-0 ${currentView === 'gallery' ? 'h-28' : 'h-64'} overflow-hidden bg-gray-50 border-b border-gray-100">${previewData.coverHTML}</div>`; }
         }
 
-        // Substack, CRUD Bài viết & Repo (Giữ nguyên)
-        async function copyForSubstack(repoName, encodedFileName, btnEl) {
-            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
-            const originalHTML = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
-            try { 
-                const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); 
-                if (!response.ok) throw new Error("Lỗi fetch"); const htmlString = await response.text(); 
-                const doc = new DOMParser().parseFromString(htmlString, 'text/html'); doc.querySelectorAll('script, style, link, meta, title, nav, header, footer, button, svg, iframe').forEach(el => el.remove()); doc.body.querySelectorAll('*').forEach(el => { const tagName = el.tagName.toLowerCase(); const href = el.getAttribute('href'); const src = el.getAttribute('src'); const alt = el.getAttribute('alt'); while(el.attributes.length > 0) { el.removeAttribute(el.attributes[0].name); } if (href && tagName === 'a') el.setAttribute('href', href); if (src && tagName === 'img') el.setAttribute('src', src); if (alt && tagName === 'img') el.setAttribute('alt', alt); }); doc.body.querySelectorAll('div').forEach(div => { const p = doc.createElement('p'); p.innerHTML = div.innerHTML; div.parentNode.replaceChild(p, div); });
-                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); const blobText = new Blob([doc.body.innerText], { type: 'text/plain' }); 
-                await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]); btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; 
-            } catch (err) { btnEl.innerHTML = "✕"; } finally { setTimeout(() => { btnEl.innerHTML = originalHTML; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
-        }
-
         async function confirmDeleteFromForm() {
             const repoName = document.getElementById('original-repo').value; const fileName = document.getElementById('original-filename').value; const fileSha = document.getElementById('original-sha').value;
             if(!repoName || !fileName || !fileSha) return alert("Không tìm thấy thông tin gốc để xóa."); if(!confirm(`CẢNH BÁO:\nBạn đang xóa vĩnh viễn bài viết:\n[ ${fileName} ]\n\nHành động này không thể hoàn tác!`)) return;
@@ -868,13 +921,13 @@
 
         async function loadMainIndex() {
             clearUploadForm(); const status = document.getElementById('upload-status'); status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = "Đang tải...";
-            try { const res = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); document.getElementById('upload-repo').value = `${username}/${username}.github.io`; document.getElementById('upload-filename').value = `index.html`; document.getElementById('original-repo').value = `${username}/${username}.github.io`; document.getElementById('original-filename').value = `index.html`; document.getElementById('original-sha').value = data.sha; document.getElementById('btn-create').innerHTML = 'Lưu Thay Đổi <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block">Ctrl S</span>'; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng chỉnh sửa trang chủ!"; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi"); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
+            try { const res = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); document.getElementById('upload-repo').value = `${username}/${username}.github.io`; document.getElementById('upload-filename').value = `index.html`; document.getElementById('original-repo').value = `${username}/${username}.github.io`; document.getElementById('original-filename').value = `index.html`; document.getElementById('original-sha').value = data.sha; document.getElementById('btn-create').innerHTML = 'Lưu Thay Đổi <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span>'; document.getElementById('btn-delete').classList.remove('hidden'); status.innerText = "✅ Sẵn sàng chỉnh sửa trang chủ!"; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; } else throw new Error("Lỗi"); } catch(e) { status.innerText = `❌ Lỗi: ${e.message}`; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; }
         }
 
         async function editFileContent(repoName, encodedFileName, fileSha) {
             const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); const uploadSection = document.getElementById('upload-section'); const uploadIcon = document.getElementById('upload-icon'); if(uploadSection.classList.contains('hidden')){ uploadSection.classList.remove('hidden'); uploadIcon.style.transform='rotate(180deg)'; }
             window.scrollTo({ top: 0, behavior: 'smooth' }); const status = document.getElementById('upload-status'); status.style.display = 'block'; status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FFF500] bg-opacity-20 text-[#B8860B] block animate-pulse"; status.innerText = `Đang tải mã nguồn...`;
-            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerHTML = 'Lưu Thay Đổi <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block">Ctrl S</span>'; document.getElementById('btn-delete').classList.remove('hidden'); 
+            try { const res = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}?t=${Date.now()}`, {headers: getHeaders()}); if(res.ok) { const data = await res.json(); document.getElementById('upload-content').value = decodeBase64UTF8(data.content); let repoPathValue = repoName; if(repoName === username || repoName === `${username}.github.io`) { repoPathValue = `${username}/${username}.github.io`; } else { repoPathValue = `${username}/${repoName}`; } document.getElementById('upload-repo').value = repoPathValue; document.getElementById('upload-filename').value = fileName; document.getElementById('original-repo').value = repoPathValue; document.getElementById('original-filename').value = fileName; document.getElementById('original-sha').value = fileSha || data.sha; document.getElementById('btn-create').innerHTML = 'Lưu Thay Đổi <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span>'; document.getElementById('btn-delete').classList.remove('hidden'); 
             let rName = repoName === username || repoName === `${username}.github.io` ? `${username}.github.io` : repoName; if(rName.includes('/')) rName = rName.split('/')[1] || rName.split('/')[0];
             const currentTags = tagsDataCache[`${rName}/${fileName}`] || []; document.getElementById('upload-tags').value = currentTags.join(', '); syncUploadTagsUI();
             uploadLinksTemp = linksDataCache[`${rName}/${fileName}`] ? JSON.parse(JSON.stringify(linksDataCache[`${rName}/${fileName}`])) : []; renderUploadLinks();
@@ -915,10 +968,10 @@
                     localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache, linksDataCache, nativeTasksCache})); renderRepos(); 
                 }
                 status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#34C759] bg-opacity-10 text-[#34C759] block"; status.innerText = `✅ THÀNH CÔNG!`; clearUploadForm(); setTimeout(() => window.open(newUrl, '_blank'), 1500); 
-            } catch (e) { status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; status.innerText = `❌ Lỗi: ${e.message}`; } finally { btn.innerHTML = 'Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block">Ctrl S</span>'; btn.disabled = false; } 
+            } catch (e) { status.className = "text-sm mt-3 px-4 py-3 font-semibold rounded-xl bg-[#FF3B30] bg-opacity-10 text-[#FF3B30] block"; status.innerText = `❌ Lỗi: ${e.message}`; } finally { btn.innerHTML = 'Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span>'; btn.disabled = false; } 
         }
 
-        // --- CÁC HÀM REPO MODAL (Giữ nguyên thuật toán) ---
+        // --- CÁC HÀM REPO MODAL ---
         function openCreateRepoModal() { document.getElementById('new-repo-name').value = ''; document.getElementById('create-repo-overlay').classList.remove('hidden'); document.getElementById('create-repo-overlay').classList.add('flex'); setTimeout(() => document.getElementById('new-repo-name').focus(), 100); }
         function closeCreateRepoModal() { document.getElementById('create-repo-overlay').classList.add('hidden'); document.getElementById('create-repo-overlay').classList.remove('flex'); }
         async function submitCreateRepo() {
