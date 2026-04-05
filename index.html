@@ -220,9 +220,7 @@
                         
                         <div class="flex flex-wrap gap-3 items-center">
                             <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md">Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span></button>
-                            
                             <button type="button" onclick="copyEditorToSubstack()" id="btn-copy-editor" class="apple-btn-secondary px-6 py-3 flex items-center gap-2 font-bold"><svg class="svg-icon"><use href="#icon-copy"></use></svg> Copy sang Substack</button>
-
                             <button onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden apple-btn-danger px-6 py-3 ml-auto"><svg class="svg-icon"><use href="#icon-trash"></use></svg> Xóa bài</button>
                         </div>
                         <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
@@ -454,32 +452,83 @@
                 const repos = await resRepos.json(); 
                 
                 let newAllFiles = []; let newRepoData = {};
+                let fetchDatePromises = []; // <<< TỐI ƯU: Chứa các task tải ngày tháng chạy ngầm
+
                 for (const repo of repos) {
                     if(toastText) toastText.innerHTML = `Đang quét: <b>${repo.name}</b>`;
                     const resFiles = await fetch(`https://api.github.com/repos/${username}/${repo.name}/contents/`, { headers: getHeaders() }); 
                     if (!resFiles.ok) continue;
                     const files = await resFiles.json();
+                    
                     if (Array.isArray(files)) {
                         const htmlFiles = files.filter(f => f.name.endsWith('.html') && f.name !== 'index.html');
                         newRepoData[repo.name] = [];
+                        let hasNew = false; 
+
                         for (const file of htmlFiles) {
                             const cachedFile = allFilesCache.find(f => f.sha === file.sha);
-                            if (cachedFile) { newAllFiles.push(cachedFile); newRepoData[repo.name].push(cachedFile); } 
+                            if (cachedFile) { 
+                                newAllFiles.push(cachedFile); newRepoData[repo.name].push(cachedFile); 
+                            } 
                             else {
-                                if(toastText) toastText.innerHTML = `Cập nhật: <b>${file.name}</b>`;
-                                let dateObj = new Date(); 
-                                try { const resCommit = await fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() }); if(resCommit.ok) { const commitData = await resCommit.json(); if(commitData.length > 0) dateObj = new Date(commitData[0].commit.committer.date); } } catch(e) {} 
+                                hasNew = true;
                                 const fileUrl = repo.name === `${username}.github.io` ? `https://${username}.github.io/${file.name}` : `https://${username}.github.io/${repo.name}/${file.name}`;
-                                const newFile = { repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), fileName: file.name, sha: file.sha, url: fileUrl, downloadUrl: file.download_url || "", timestamp: dateObj.getTime(), fullDate: dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }), preview: "Đang tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" };
+                                
+                                // <<< TỐI ƯU: Hiển thị ngay lập tức với ngày chờ
+                                const newFile = { 
+                                    repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), 
+                                    fileName: file.name, sha: file.sha, url: fileUrl, 
+                                    downloadUrl: file.download_url || "", 
+                                    timestamp: Date.now(), 
+                                    fullDate: "Đang tải ngày...", 
+                                    preview: "Đang tải...", previewFeedHTML: "", tocHTML: "", coverHTML: "" 
+                                };
                                 newAllFiles.push(newFile); newRepoData[repo.name].push(newFile);
-                                await new Promise(r => setTimeout(r, 10));
+                                
+                                // <<< TỐI ƯU: Lấy ngày ngầm qua Commits API
+                                const p = fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() })
+                                    .then(res => res.ok ? res.json() : [])
+                                    .then(commitData => {
+                                        if(commitData.length > 0) { 
+                                            const dateObj = new Date(commitData[0].commit.committer.date); 
+                                            newFile.timestamp = dateObj.getTime(); 
+                                            newFile.fullDate = dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }); 
+                                            
+                                            // Tự động nhảy text ngày trên giao diện
+                                            const dateEl = document.getElementById(`date-${newFile.sha}`);
+                                            if (dateEl) {
+                                                dateEl.innerText = (currentView === 'table' || currentView === 'feed') ? newFile.fullDate : (newFile.fullDate.split(' ')[1] || newFile.fullDate.split(',')[0]);
+                                            }
+                                        } 
+                                    }).catch(e => {});
+                                fetchDatePromises.push(p);
                             }
+                        }
+
+                        // <<< TỐI ƯU: Nếu kho này có file mới, render ra ngay lập tức
+                        if (hasNew) {
+                            allFilesCache = [...newAllFiles];
+                            repoDataCache = {...newRepoData};
+                            renderRepos();
                         }
                     }
                 }
+                
+                // Xóa file cũ
                 allFilesCache = newAllFiles; repoDataCache = newRepoData; 
-                _saveTasksLocal(); renderRepos();
-                if(toastText) toastText.innerHTML = "✅ Hoàn tất!"; setTimeout(() => { if(toast) toast.style.display = 'none'; }, 1500);
+                
+                // Chờ các process ngầm xong thì render lại một lần cuối cho đúng thứ tự sort
+                if (fetchDatePromises.length > 0) {
+                    if(toastText) toastText.innerHTML = "Đang đồng bộ dữ liệu phụ...";
+                    Promise.allSettled(fetchDatePromises).then(() => {
+                        _saveTasksLocal(); renderRepos();
+                        if(toastText) toastText.innerHTML = "✅ Hoàn tất!"; setTimeout(() => { if(toast) toast.style.display = 'none'; }, 1500);
+                    });
+                } else {
+                    _saveTasksLocal(); renderRepos();
+                    if(toastText) toastText.innerHTML = "✅ Hoàn tất!"; setTimeout(() => { if(toast) toast.style.display = 'none'; }, 1500);
+                }
+
             } catch(e) { if(toastText) toastText.innerHTML = `❌ Lỗi: ${e.message}`; setTimeout(() => { if(toast) toast.style.display = 'none'; }, 3000); }
             isSyncing = false;
         }
@@ -693,7 +742,7 @@
                             <div id="links-${f.sha}" class="flex flex-wrap gap-1.5 mb-3 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                             <div id="preview-${f.sha}" class="text-sm text-[#86868B] line-clamp-3 leading-relaxed mb-4 flex-1"></div>
                             <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-50">
-                                <div class="text-[11px] font-semibold text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate}</div>
+                                <div id="date-${f.sha}" class="text-[11px] font-semibold text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate}</div>
                                 <div class="flex gap-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                             </div>
                         </div></div>`;
@@ -718,7 +767,7 @@
                                     <div id="links-${f.sha}" class="flex flex-wrap gap-1 mb-2 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                                     <a href="${f.url}" target="_blank" class="font-bold text-[14px] text-[#1D1D1F] hover:text-[#007AFF] block mb-3 leading-tight transition" id="title-${f.sha}">${f.name}</a>
                                     <div class="flex justify-between items-center">
-                                        <span class="text-[10px] font-medium text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</span>
+                                        <span id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</span>
                                         <div class="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-lg shadow-sm px-1 py-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                                     </div>
                                 </div>`;
@@ -744,7 +793,7 @@
                         <th class="p-3 font-bold w-1/6 cursor-pointer hover:bg-gray-50 transition" onclick="sortTable('date')">Cập nhật ${tableSort.by==='date'?(tableSort.dir==='asc'?'↑':'↓'):'↕️'}</th>
                         <th class="p-3 font-bold text-center">Hành động</th></tr></thead><tbody class="divide-y divide-gray-50">${files.map(f => {
                         const safeName = f.fileName.replace(/'/g, "\\'").replace(/"/g, "&quot;");
-                        return `<tr class="hover:bg-gray-50 transition" id="item-${f.sha}"><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold text-[#1D1D1F] hover:text-[#007AFF] text-sm block mb-1.5 transition" id="title-${f.sha}">${f.name}</a><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1 empty:hidden">${getTagsHTML(f.repoName, f.fileName)}</div><div id="links-${f.sha}" class="flex flex-wrap gap-1 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div></td><td class="p-3 text-xs text-[#86868B] line-clamp-2">${f.preview}</td><td class="p-3 text-xs font-medium text-[#86868B] whitespace-nowrap">${f.fullDate}</td><td class="p-3 text-center whitespace-nowrap"><div class="flex justify-center gap-2">${getActionBtns(f.repoName, safeName, f.sha, 'text')}</div></td></tr>`;
+                        return `<tr class="hover:bg-gray-50 transition" id="item-${f.sha}"><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold text-[#1D1D1F] hover:text-[#007AFF] text-sm block mb-1.5 transition" id="title-${f.sha}">${f.name}</a><div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1 empty:hidden">${getTagsHTML(f.repoName, f.fileName)}</div><div id="links-${f.sha}" class="flex flex-wrap gap-1 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div></td><td class="p-3 text-xs text-[#86868B] line-clamp-2">${f.preview}</td><td id="date-${f.sha}" class="p-3 text-xs font-medium text-[#86868B] whitespace-nowrap">${f.fullDate}</td><td class="p-3 text-center whitespace-nowrap"><div class="flex justify-center gap-2">${getActionBtns(f.repoName, safeName, f.sha, 'text')}</div></td></tr>`;
                     }).join('')}</tbody></table></div></details>`; 
                 }); 
             }
@@ -755,7 +804,7 @@
                     finalHTML += `<article class="observe-target apple-card hover-lift p-6 flex flex-col relative" data-repo-name="${f.repoName}" data-file-name="${f.fileName}" data-file-sha="${f.sha}" data-file-url="${f.url}" data-download-url="${f.downloadUrl}" id="item-${f.sha}">
                         <div class="flex items-center gap-3 mb-5">
                             <div class="w-10 h-10 rounded-full bg-[#E5E5EA] flex items-center justify-center text-[#1D1D1F]"><svg class="w-5 h-5"><use href="#icon-folder"></use></svg></div>
-                            <div><p class="text-sm font-bold text-[#1D1D1F]"><span class="text-[#007AFF] cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p class="text-[11px] font-semibold text-[#86868B] mt-0.5">${f.fullDate}</p></div>
+                            <div><p class="text-sm font-bold text-[#1D1D1F]"><span class="text-[#007AFF] cursor-pointer hover:underline" onclick="document.getElementById('upload-repo').value='${username}/${f.repoName}'">${f.repoName}</span></p><p id="date-${f.sha}" class="text-[11px] font-semibold text-[#86868B] mt-0.5">${f.fullDate}</p></div>
                         </div>
                         <h2 class="text-2xl font-bold text-[#1D1D1F] mb-3 hover:text-[#007AFF] transition leading-tight"><a href="${f.url}" target="_blank" id="title-${f.sha}">${f.name}</a></h2>
                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1.5 mb-2 empty:hidden">${getTagsHTML(f.repoName, f.fileName)}</div>
@@ -790,7 +839,7 @@
                                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1.5 empty:hidden">${getTagsHTML(f.repoName, f.fileName)}</div>
                                         <div id="links-${f.sha}" class="flex flex-wrap gap-1 mb-3 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                                         <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-50">
-                                            <div class="text-[10px] font-medium text-[#86868B]" title="${f.fullDate}">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</div>
+                                            <div id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]" title="${f.fullDate}">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</div>
                                             <div class="flex gap-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                                         </div>
                                     </div>`;
