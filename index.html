@@ -6,9 +6,8 @@
     <title>vietndj - Workspace</title>
     
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><line x1='9' y1='9' x2='15' y2='15'></line><line x1='15' y1='9' x2='9' y2='15'></line></svg>">
-    
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    
     <style> 
         /* APPLE DESIGN SYSTEM */
         body { 
@@ -452,7 +451,7 @@
                 const repos = await resRepos.json(); 
                 
                 let newAllFiles = []; let newRepoData = {};
-                let fetchDatePromises = []; // <<< TỐI ƯU: Chứa các task tải ngày tháng chạy ngầm
+                let fetchDatePromises = []; // Chứa các hàm tải ngày ngầm
 
                 for (const repo of repos) {
                     if(toastText) toastText.innerHTML = `Đang quét: <b>${repo.name}</b>`;
@@ -474,7 +473,7 @@
                                 hasNew = true;
                                 const fileUrl = repo.name === `${username}.github.io` ? `https://${username}.github.io/${file.name}` : `https://${username}.github.io/${repo.name}/${file.name}`;
                                 
-                                // <<< TỐI ƯU: Hiển thị ngay lập tức với ngày chờ
+                                // Hiển thị tạm lập tức
                                 const newFile = { 
                                     repoName: repo.name, name: decodeURIComponent(file.name.replace('.html', '')), 
                                     fileName: file.name, sha: file.sha, url: fileUrl, 
@@ -485,7 +484,7 @@
                                 };
                                 newAllFiles.push(newFile); newRepoData[repo.name].push(newFile);
                                 
-                                // <<< TỐI ƯU: Lấy ngày ngầm qua Commits API
+                                // Đẩy xuống chạy ngầm việc lấy giờ từ Commits
                                 const p = fetch(`https://api.github.com/repos/${username}/${repo.name}/commits?path=${file.path}&per_page=1`, { headers: getHeaders() })
                                     .then(res => res.ok ? res.json() : [])
                                     .then(commitData => {
@@ -494,30 +493,25 @@
                                             newFile.timestamp = dateObj.getTime(); 
                                             newFile.fullDate = dateObj.toLocaleString('vi-VN', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit', year: 'numeric' }); 
                                             
-                                            // Tự động nhảy text ngày trên giao diện
                                             const dateEl = document.getElementById(`date-${newFile.sha}`);
-                                            if (dateEl) {
-                                                dateEl.innerText = (currentView === 'table' || currentView === 'feed') ? newFile.fullDate : (newFile.fullDate.split(' ')[1] || newFile.fullDate.split(',')[0]);
-                                            }
+                                            if (dateEl) dateEl.innerText = newFile.fullDate;
                                         } 
                                     }).catch(e => {});
                                 fetchDatePromises.push(p);
                             }
                         }
 
-                        // <<< TỐI ƯU: Nếu kho này có file mới, render ra ngay lập tức
+                        // Nếu có bài mới xuất hiện, vẽ lại DOM ngay lập tức
                         if (hasNew) {
-                            allFilesCache = [...newAllFiles];
-                            repoDataCache = {...newRepoData};
+                            allFilesCache = [...newAllFiles]; repoDataCache = {...newRepoData};
                             renderRepos();
                         }
                     }
                 }
                 
-                // Xóa file cũ
                 allFilesCache = newAllFiles; repoDataCache = newRepoData; 
                 
-                // Chờ các process ngầm xong thì render lại một lần cuối cho đúng thứ tự sort
+                // Đợi load giờ xong thì mới tính toán lại toàn bộ vị trí Repo
                 if (fetchDatePromises.length > 0) {
                     if(toastText) toastText.innerHTML = "Đang đồng bộ dữ liệu phụ...";
                     Promise.allSettled(fetchDatePromises).then(() => {
@@ -579,9 +573,6 @@
                     <button onclick="editFileContent('${rName}', '${sName}', '${fSha}')" class="icon-btn text-[#007AFF] hover:bg-blue-50 ml-1" title="Sửa bài"><svg class="svg-icon"><use href="#icon-edit"></use></svg></button>`;
         }
 
-        // ==========================================
-        // SUBSTACK SANITIZER - BẢN NÂNG CẤP XÓA SẠCH CSS
-        // ==========================================
         async function copyForSubstack(repoName, encodedFileName, btnEl) {
             const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
             const originalHTML = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
@@ -592,104 +583,40 @@
                 const htmlString = await response.text(); 
                 
                 const doc = new DOMParser().parseFromString(htmlString, 'text/html'); 
-                
-                // 1. Cạo sạch toàn bộ rác và mã code
                 doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove()); 
-                
-                // 2. Lột sạch mọi class, id, style nội tuyến
                 doc.body.querySelectorAll('*').forEach(el => { 
-                    const tagName = el.tagName.toLowerCase(); 
-                    const href = el.getAttribute('href'); 
-                    const src = el.getAttribute('src'); 
-                    const alt = el.getAttribute('alt'); 
-                    
-                    while(el.attributes.length > 0) { 
-                        el.removeAttribute(el.attributes[0].name); 
-                    } 
-                    
+                    const tagName = el.tagName.toLowerCase(); const href = el.getAttribute('href'); const src = el.getAttribute('src'); const alt = el.getAttribute('alt'); 
+                    while(el.attributes.length > 0) { el.removeAttribute(el.attributes[0].name); } 
                     if (href && tagName === 'a') el.setAttribute('href', href); 
-                    if (src && tagName === 'img') {
-                        el.setAttribute('src', src); 
-                        el.setAttribute('alt', alt || ''); 
-                    }
+                    if (src && tagName === 'img') { el.setAttribute('src', src); el.setAttribute('alt', alt || ''); }
                 }); 
+                doc.body.querySelectorAll('div, section, article').forEach(div => { const p = doc.createElement('p'); p.innerHTML = div.innerHTML; div.parentNode.replaceChild(p, div); });
                 
-                // 3. Đổi div thành p
-                doc.body.querySelectorAll('div, section, article').forEach(div => { 
-                    const p = doc.createElement('p'); 
-                    p.innerHTML = div.innerHTML; 
-                    div.parentNode.replaceChild(p, div); 
-                });
-                
-                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); 
-                const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' }); 
-                
+                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' }); 
                 await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]); 
                 btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; 
-            } catch (err) { 
-                btnEl.innerHTML = "✕"; btnEl.style.color = "red";
-            } finally { 
-                setTimeout(() => { btnEl.innerHTML = originalHTML; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); 
-            }
+            } catch (err) { btnEl.innerHTML = "✕"; btnEl.style.color = "red"; } finally { setTimeout(() => { btnEl.innerHTML = originalHTML; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
         }
 
         async function copyEditorToSubstack() {
             const content = document.getElementById('upload-content').value;
             if (!content) return alert('Nội dung Editor đang trống!');
-            
-            const btn = document.getElementById('btn-copy-editor');
-            const originalHTML = btn.innerHTML;
-            btn.innerHTML = "⏳ Đang copy..."; btn.disabled = true;
-
+            const btn = document.getElementById('btn-copy-editor'); const originalHTML = btn.innerHTML; btn.innerHTML = "⏳ Đang copy..."; btn.disabled = true;
             try {
                 const doc = new DOMParser().parseFromString(content, 'text/html');
-
-                // 1. Xóa rác
                 doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove());
-
-                // 2. Lột thuộc tính
                 doc.body.querySelectorAll('*').forEach(el => {
-                    const tag = el.tagName.toLowerCase();
-                    const href = el.getAttribute('href');
-                    const src = el.getAttribute('src');
-                    const alt = el.getAttribute('alt');
-
+                    const tag = el.tagName.toLowerCase(); const href = el.getAttribute('href'); const src = el.getAttribute('src'); const alt = el.getAttribute('alt');
                     while(el.attributes.length > 0) el.removeAttribute(el.attributes[0].name);
-
                     if (tag === 'a' && href) el.setAttribute('href', href);
                     if (tag === 'img' && src) { el.setAttribute('src', src); el.setAttribute('alt', alt || ''); }
                 });
-
-                // 3. Chuyển đổi div -> p
-                doc.body.querySelectorAll('div, section, article').forEach(div => {
-                    const p = doc.createElement('p');
-                    p.innerHTML = div.innerHTML;
-                    div.parentNode.replaceChild(p, div);
-                });
-
-                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' });
-                const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' });
-
-                await navigator.clipboard.write([new ClipboardItem({
-                    'text/html': blobHtml,
-                    'text/plain': blobText
-                })]);
-
-                btn.innerHTML = "✅ Đã Copy Substack";
-                btn.classList.replace('apple-btn-secondary', 'bg-[#34C759]');
-                btn.style.color = "white";
-            } catch (e) {
-                alert('Lỗi Copy: ' + e.message);
-            } finally {
-                setTimeout(() => { 
-                    btn.innerHTML = originalHTML; 
-                    btn.classList.replace('bg-[#34C759]', 'apple-btn-secondary');
-                    btn.style.color = ""; 
-                    btn.disabled = false; 
-                }, 3000);
-            }
+                doc.body.querySelectorAll('div, section, article').forEach(div => { const p = doc.createElement('p'); p.innerHTML = div.innerHTML; div.parentNode.replaceChild(p, div); });
+                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' });
+                await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]);
+                btn.innerHTML = "✅ Đã Copy Substack"; btn.classList.replace('apple-btn-secondary', 'bg-[#34C759]'); btn.style.color = "white";
+            } catch (e) { alert('Lỗi Copy: ' + e.message); } finally { setTimeout(() => { btn.innerHTML = originalHTML; btn.classList.replace('bg-[#34C759]', 'apple-btn-secondary'); btn.style.color = ""; btn.disabled = false; }, 3000); }
         }
-        // ==========================================
 
         function renderUploadLinks() {
             const container = document.getElementById('upload-links-container');
@@ -704,9 +631,6 @@
         }
         function addUploadLink() { uploadLinksTemp.push({title:'', url:''}); renderUploadLinks(); }
 
-        // ==========================
-        // RENDER GIAO DIỆN CHÍNH
-        // ==========================
         let previewObserver; 
         function renderRepos() {
             renderFilterBar(); syncUploadTagsUI();
@@ -742,7 +666,7 @@
                             <div id="links-${f.sha}" class="flex flex-wrap gap-1.5 mb-3 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                             <div id="preview-${f.sha}" class="text-sm text-[#86868B] line-clamp-3 leading-relaxed mb-4 flex-1"></div>
                             <div class="flex justify-between items-center mt-auto pt-4 border-t border-gray-50">
-                                <div id="date-${f.sha}" class="text-[11px] font-semibold text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate}</div>
+                                <div id="date-${f.sha}" class="text-[11px] font-semibold text-[#86868B]">${f.fullDate}</div>
                                 <div class="flex gap-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                             </div>
                         </div></div>`;
@@ -767,7 +691,7 @@
                                     <div id="links-${f.sha}" class="flex flex-wrap gap-1 mb-2 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                                     <a href="${f.url}" target="_blank" class="font-bold text-[14px] text-[#1D1D1F] hover:text-[#007AFF] block mb-3 leading-tight transition" id="title-${f.sha}">${f.name}</a>
                                     <div class="flex justify-between items-center">
-                                        <span id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</span>
+                                        <span id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]">${f.fullDate}</span>
                                         <div class="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity bg-white rounded-lg shadow-sm px-1 py-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                                     </div>
                                 </div>`;
@@ -839,7 +763,7 @@
                                         <div id="tags-${f.sha}" class="flex flex-wrap gap-1 mb-1.5 empty:hidden">${getTagsHTML(f.repoName, f.fileName)}</div>
                                         <div id="links-${f.sha}" class="flex flex-wrap gap-1 mb-3 empty:hidden">${getLinksHTML(f.repoName, f.fileName)}</div>
                                         <div class="flex justify-between items-center mt-auto pt-3 border-t border-gray-50">
-                                            <div id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]" title="${f.fullDate}">${f.fullDate.split(' ')[1] || f.fullDate.split(',')[0]}</div>
+                                            <div id="date-${f.sha}" class="text-[10px] font-medium text-[#86868B]" title="${f.fullDate}">${f.fullDate}</div>
                                             <div class="flex gap-0.5">${getActionBtns(f.repoName, safeName, f.sha, 'icon')}</div>
                                         </div>
                                     </div>`;
@@ -864,7 +788,7 @@
             }
         }
 
-        // Logic Lọc, Tag, Lấy Content... (Giữ nguyên)
+        // Logic Lọc, Tag, Lấy Content...
         function filterByTag(encodedTag) { activeTag = encodedTag.replace(/&quot;/g, '"').replace(/\\'/g, "'"); renderRepos(); }
         function renderFilterBar() {
             const allTags = new Set(); Object.values(tagsDataCache).forEach(tags => tags.forEach(t => allTags.add(t)));
