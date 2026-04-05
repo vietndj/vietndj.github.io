@@ -219,7 +219,9 @@
                         
                         <div class="flex flex-wrap gap-3 items-center">
                             <button onclick="createFile()" id="btn-create" class="apple-btn-primary px-8 py-3 flex-1 sm:flex-none shadow-md">Lưu & Đăng tải <span class="text-[10px] text-[#007AFF] bg-white bg-opacity-90 px-1.5 py-0.5 rounded font-mono uppercase hidden sm:inline-block ml-1">Ctrl S</span></button>
+                            
                             <button type="button" onclick="copyEditorToSubstack()" id="btn-copy-editor" class="apple-btn-secondary px-6 py-3 flex items-center gap-2 font-bold"><svg class="svg-icon"><use href="#icon-copy"></use></svg> Copy sang Substack</button>
+
                             <button onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden apple-btn-danger px-6 py-3 ml-auto"><svg class="svg-icon"><use href="#icon-trash"></use></svg> Xóa bài</button>
                         </div>
                         <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
@@ -551,72 +553,84 @@
             return links.map(l => `<a href="${l.url}" target="_blank" onclick="event.stopPropagation()" class="bg-[#F0F9FF] text-[#0369A1] text-[10px] px-2.5 py-1 rounded-md font-semibold border border-[#BAE6FD] hover:bg-[#E0F2FE] transition inline-flex items-center gap-1 shadow-sm"><svg class="w-3 h-3"><use href="#icon-link"></use></svg> ${l.title}</a>`).join('');
         }
         
+        // ĐÃ XÓA NÚT COPY Ở CÁC CARD BÊN NGOÀI
         function getActionBtns(rName, sName, fSha, type = 'icon') {
             if (type === 'text') {
                 return `<button onclick="editFileTags('${rName}', '${sName}', '${fSha}')" class="bg-white text-[#1D1D1F] border border-gray-200 hover:bg-gray-100 px-3 py-1 rounded-lg text-xs font-semibold transition shadow-sm flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-tag"></use></svg> Nhãn</button>
                         <button onclick="openLinkModal('${rName}', '${sName}', '${fSha}')" class="bg-white text-[#1D1D1F] border border-gray-200 hover:bg-gray-100 px-3 py-1 rounded-lg text-xs font-semibold transition shadow-sm flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-link"></use></svg> Link</button>
                         <button onclick="openMoveModal('${rName}', '${sName}', '${fSha}')" class="bg-white text-[#1D1D1F] border border-gray-200 hover:bg-gray-100 px-3 py-1 rounded-lg text-xs font-semibold transition shadow-sm flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-move"></use></svg> Chuyển</button>
-                        <button onclick="copyForSubstack('${rName}', '${sName}', this)" class="bg-white text-[#1D1D1F] border border-gray-200 hover:bg-gray-100 px-3 py-1 rounded-lg text-xs font-semibold transition shadow-sm flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-copy"></use></svg> Copy</button>
                         <button onclick="editFileContent('${rName}', '${sName}', '${fSha}')" class="bg-[#F2F2F7] text-[#007AFF] hover:bg-[#007AFF] hover:text-white px-4 py-1 rounded-lg text-xs font-bold transition shadow-sm flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-edit"></use></svg> Sửa</button>`;
             }
             if (type === 'feed') {
                 return `<button onclick="editFileContent('${rName}', '${sName}', '${fSha}')" class="apple-btn-primary px-5 py-2 text-sm shadow-sm ml-auto"><svg class="w-4 h-4"><use href="#icon-edit"></use></svg> Chỉnh sửa</button>
                         <button onclick="openMoveModal('${rName}', '${sName}', '${fSha}')" class="bg-white border border-gray-200 hover:bg-gray-50 text-[#1D1D1F] px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-move"></use></svg> Chuyển</button>
                         <button onclick="editFileTags('${rName}', '${sName}', '${fSha}')" class="bg-white border border-gray-200 hover:bg-gray-50 text-[#1D1D1F] px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-tag"></use></svg> Nhãn</button>
-                        <button onclick="openLinkModal('${rName}', '${sName}', '${fSha}')" class="bg-white border border-gray-200 hover:bg-gray-50 text-[#1D1D1F] px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-link"></use></svg> Link</button>
-                        <button onclick="copyForSubstack('${rName}', '${sName}', this)" class="bg-white border border-gray-200 hover:bg-gray-50 text-[#1D1D1F] px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-copy"></use></svg> Copy</button>`;
+                        <button onclick="openLinkModal('${rName}', '${sName}', '${fSha}')" class="bg-white border border-gray-200 hover:bg-gray-50 text-[#1D1D1F] px-4 py-2 rounded-xl text-sm font-semibold transition shadow-sm flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-link"></use></svg> Link</button>`;
             }
             return `<button onclick="editFileTags('${rName}', '${sName}', '${fSha}')" class="icon-btn" title="Gắn Nhãn"><svg class="svg-icon"><use href="#icon-tag"></use></svg></button>
                     <button onclick="openLinkModal('${rName}', '${sName}', '${fSha}')" class="icon-btn text-blue-500 hover:bg-blue-50" title="Link Tham Khảo"><svg class="svg-icon"><use href="#icon-link"></use></svg></button>
                     <button onclick="openMoveModal('${rName}', '${sName}', '${fSha}')" class="icon-btn" title="Chuyển Repo"><svg class="svg-icon"><use href="#icon-move"></use></svg></button>
-                    <button onclick="copyForSubstack('${rName}', '${sName}', this)" class="icon-btn" title="Sao chép"><svg class="svg-icon"><use href="#icon-copy"></use></svg></button>
                     <button onclick="editFileContent('${rName}', '${sName}', '${fSha}')" class="icon-btn text-[#007AFF] hover:bg-blue-50 ml-1" title="Sửa bài"><svg class="svg-icon"><use href="#icon-edit"></use></svg></button>`;
         }
 
-        async function copyForSubstack(repoName, encodedFileName, btnEl) {
-            const fileName = encodedFileName.replace(/\\'/g, "'").replace(/&quot;/g, '"'); 
-            const originalHTML = btnEl.innerHTML; btnEl.innerHTML = "⏳"; btnEl.disabled = true;
-            try { 
-                const reqHeaders = { ...getHeaders(), 'Accept': 'application/vnd.github.v3.raw' }; 
-                const response = await fetch(`https://api.github.com/repos/${username}/${repoName}/contents/${encodeURIComponent(fileName)}`, { headers: reqHeaders }); 
-                if (!response.ok) throw new Error("Lỗi fetch dữ liệu"); 
-                const htmlString = await response.text(); 
-                
-                const doc = new DOMParser().parseFromString(htmlString, 'text/html'); 
-                doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove()); 
-                doc.body.querySelectorAll('*').forEach(el => { 
-                    const tagName = el.tagName.toLowerCase(); const href = el.getAttribute('href'); const src = el.getAttribute('src'); const alt = el.getAttribute('alt'); 
-                    while(el.attributes.length > 0) { el.removeAttribute(el.attributes[0].name); } 
-                    if (href && tagName === 'a') el.setAttribute('href', href); 
-                    if (src && tagName === 'img') { el.setAttribute('src', src); el.setAttribute('alt', alt || ''); }
-                }); 
-                doc.body.querySelectorAll('div, section, article').forEach(div => { const p = doc.createElement('p'); p.innerHTML = div.innerHTML; div.parentNode.replaceChild(p, div); });
-                
-                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' }); 
-                await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]); 
-                btnEl.innerHTML = "✓"; btnEl.style.color = "#34C759"; 
-            } catch (err) { btnEl.innerHTML = "✕"; btnEl.style.color = "red"; } finally { setTimeout(() => { btnEl.innerHTML = originalHTML; btnEl.style.color = ""; btnEl.disabled = false; }, 2000); }
-        }
-
+        // ==========================================
+        // SUBSTACK SANITIZER - BẢN NÂNG CẤP CHUẨN RICH TEXT
+        // ==========================================
         async function copyEditorToSubstack() {
             const content = document.getElementById('upload-content').value;
             if (!content) return alert('Nội dung Editor đang trống!');
-            const btn = document.getElementById('btn-copy-editor'); const originalHTML = btn.innerHTML; btn.innerHTML = "⏳ Đang copy..."; btn.disabled = true;
+            
+            const btn = document.getElementById('btn-copy-editor');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = "⏳ Đang copy..."; btn.disabled = true;
+
             try {
                 const doc = new DOMParser().parseFromString(content, 'text/html');
+
+                // 1. Xóa rác, giữ lại cấu trúc cơ bản
                 doc.querySelectorAll('head, style, script, svg, iframe, nav, footer, header, meta, title').forEach(el => el.remove());
+
+                // 2. Lột thuộc tính rác, GIỮ LẠI các thẻ định dạng (ul, ol, li, blockquote, b, i, p...)
+                // Chú ý: Substack cần các thẻ cấu trúc này để giữ định dạng danh sách và thụt lề
                 doc.body.querySelectorAll('*').forEach(el => {
-                    const tag = el.tagName.toLowerCase(); const href = el.getAttribute('href'); const src = el.getAttribute('src'); const alt = el.getAttribute('alt');
+                    const tag = el.tagName.toLowerCase();
+                    const href = el.getAttribute('href');
+                    const src = el.getAttribute('src');
+                    const alt = el.getAttribute('alt');
+
+                    // Lột sạch class, id, style để Substack không bị loạn
                     while(el.attributes.length > 0) el.removeAttribute(el.attributes[0].name);
+
+                    // Khôi phục thuộc tính cần thiết cho Link và Ảnh
                     if (tag === 'a' && href) el.setAttribute('href', href);
                     if (tag === 'img' && src) { el.setAttribute('src', src); el.setAttribute('alt', alt || ''); }
                 });
-                doc.body.querySelectorAll('div, section, article').forEach(div => { const p = doc.createElement('p'); p.innerHTML = div.innerHTML; div.parentNode.replaceChild(p, div); });
-                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' }); const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' });
-                await navigator.clipboard.write([new ClipboardItem({ 'text/html': blobHtml, 'text/plain': blobText })]);
-                btn.innerHTML = "✅ Đã Copy Substack"; btn.classList.replace('apple-btn-secondary', 'bg-[#34C759]'); btn.style.color = "white";
-            } catch (e) { alert('Lỗi Copy: ' + e.message); } finally { setTimeout(() => { btn.innerHTML = originalHTML; btn.classList.replace('bg-[#34C759]', 'apple-btn-secondary'); btn.style.color = ""; btn.disabled = false; }, 3000); }
+
+                // 3. Đưa vào Clipboard dạng Rich Text chuẩn HTML
+                const blobHtml = new Blob([doc.body.innerHTML], { type: 'text/html' });
+                // Fallback text thường nếu paste vào notepad
+                const blobText = new Blob([doc.body.textContent || doc.body.innerText], { type: 'text/plain' });
+
+                await navigator.clipboard.write([new ClipboardItem({
+                    'text/html': blobHtml,
+                    'text/plain': blobText
+                })]);
+
+                btn.innerHTML = "✅ Đã Copy Substack";
+                btn.classList.replace('apple-btn-secondary', 'bg-[#34C759]');
+                btn.style.color = "white";
+            } catch (e) {
+                alert('Lỗi Copy: ' + e.message);
+            } finally {
+                setTimeout(() => { 
+                    btn.innerHTML = originalHTML; 
+                    btn.classList.replace('bg-[#34C759]', 'apple-btn-secondary');
+                    btn.style.color = ""; 
+                    btn.disabled = false; 
+                }, 3000);
+            }
         }
+        // ==========================================
 
         function renderUploadLinks() {
             const container = document.getElementById('upload-links-container');
@@ -631,6 +645,9 @@
         }
         function addUploadLink() { uploadLinksTemp.push({title:'', url:''}); renderUploadLinks(); }
 
+        // ==========================
+        // RENDER GIAO DIỆN CHÍNH
+        // ==========================
         let previewObserver; 
         function renderRepos() {
             renderFilterBar(); syncUploadTagsUI();
