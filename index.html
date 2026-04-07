@@ -323,7 +323,7 @@
         function sortTable(by) { if (tableSort.by === by) { tableSort.dir = tableSort.dir === 'asc' ? 'desc' : 'asc'; } else { tableSort.by = by; tableSort.dir = 'desc'; } renderRepos(); }
         function handleSearch(val) { searchQuery = val.toLowerCase(); renderRepos(); }
 
-        // --- NATIVE TASKS LOGIC ---
+        // --- NATIVE TASKS LOGIC (VÁ LỖI XÓA ẢNH) ---
         function renderNativeTasks() {
             const container = document.getElementById('native-task-list'); const badge = document.getElementById('task-count-badge');
             let activeCount = nativeTasksCache.filter(t => !t.completed).length; badge.innerText = activeCount > 0 ? activeCount : '✓';
@@ -344,7 +344,33 @@
         }
         function addNativeTask() { const input = document.getElementById('native-task-input'); const val = input.value.trim(); if(!val) return; nativeTasksCache.unshift({ id: Date.now(), title: val, completed: false }); input.value = ''; _saveLocal(); renderNativeTasks(); _syncSilent(); }
         function toggleNativeTask(id) { let task = nativeTasksCache.find(t => t.id === id); if(task) { task.completed = !task.completed; _saveLocal(); renderNativeTasks(); _syncSilent(); } }
-        function deleteNativeTask(id) { nativeTasksCache = nativeTasksCache.filter(t => t.id !== id); _saveLocal(); renderNativeTasks(); _syncSilent(); }
+        
+        function deleteNativeTask(id) { 
+            let task = nativeTasksCache.find(t => t.id === id);
+            nativeTasksCache = nativeTasksCache.filter(t => t.id !== id); 
+            _saveLocal(); renderNativeTasks(); 
+
+            // Chạy ngầm xóa ảnh trên Github nếu có
+            if(task && task.image && task.image.includes('task_images/')) {
+                const token = localStorage.getItem('github_pat') || document.getElementById('github-token').value.trim();
+                if(token) {
+                    const fileName = `task_images/img_${id}.png`;
+                    fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/${fileName}`, { headers: getHeaders() })
+                    .then(res => res.ok ? res.json() : null)
+                    .then(fileData => {
+                        if(fileData && fileData.sha) {
+                            fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/${fileName}`, { 
+                                method: 'DELETE', 
+                                headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' }, 
+                                body: JSON.stringify({ message: `CMS: Xóa ảnh Task ${fileName}`, sha: fileData.sha }) 
+                            });
+                        }
+                    });
+                }
+            }
+            _syncSilent(); 
+        }
+
         function _saveLocal() { localStorage.setItem('cms_repo_data', JSON.stringify({repoDataCache, allFilesCache, tagsDataCache, linksDataCache, nativeTasksCache, pinnedDataCache, colorsDataCache, customColorsCache})); }
         async function _syncSilent() { try { await saveMetadataToGithub(); } catch(e) {} }
 
