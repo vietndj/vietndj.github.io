@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>B-Roll Trong Storytelling: Phân Tích Tâm Lý & Kỹ Thuật Bậc Cao</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #F8FAFC;
+    color: #0F172A;
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+}
+@media (min-width: 768px) {
+    .chart-container { height: 450px; max-height: 500px; }
+}
+.card-hover {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(135deg, #4F46E5, #DB2777);
+}
+.abstract-art-container {
+    width: 80px;
+    height: 80px;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+.flip-card {
+    perspective: 1000px;
+    cursor: pointer;
+    height: 220px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.flip-card-back {
+    transform: rotateY(180deg);
+    overflow-y: auto;
+}
+</style>
+</head>
+<body class="antialiased pb-24">
+
+<header class="bg-white shadow-sm pt-20 pb-16 mb-12 border-b-8 border-indigo-600 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none flex flex-wrap gap-4 p-4">
+        <div class="w-32 h-32 rounded-full bg-indigo-500 blur-2xl"></div>
+        <div class="w-48 h-48 bg-pink-500 transform rotate-45 blur-2xl ml-auto"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+        <span class="inline-block py-1 px-3 rounded-full bg-indigo-100 text-indigo-800 font-bold text-sm mb-4 tracking-wider uppercase">Masterclass Kỹ Thuật Dựng Video</span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 text-slate-900 tracking-tight leading-tight">6 Cấp Độ B-Roll Trong <br><span class="text-gradient">Nghệ Thuật Kể Chuyện</span></h1>
+        <p class="text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed">
+            Khám phá chiều sâu của hình ảnh minh họa. Từ những cảnh cắt ghép cơ bản đến nghệ thuật thao túng nhận thức, duy trì dòng chảy (Flow State) và kích hoạt Dopamine thông qua lăng kính của tâm lý học điện ảnh.
+        </p>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-6">
+
+    <section class="mb-20">
+        <div class="mb-10 border-l-4 border-indigo-600 pl-6">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">I. Phân Tích Chuyên Sâu 6 Cấp Độ Cảnh Trám</h2>
+            <p class="text-lg text-slate-600 max-w-4xl">Mỗi kỹ thuật sở hữu một năng lực tâm lý riêng biệt. Dưới đây là bách khoa toàn thư kèm ví dụ trực quan chi tiết cho từng phương pháp bạn đã nhận diện, cùng với hình ảnh CSS Abstract Art mô phỏng cấu trúc của kỹ thuật đó.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-blue-500 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-blue-500 uppercase tracking-widest">Level 1</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Minh Họa Tuyến Tính</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Illustrative / Literal B-roll</p>
+                    </div>
+                    <div class="abstract-art-container bg-blue-50 flex items-center justify-center p-2">
+                        <div class="w-full h-4 bg-blue-400 rounded-sm mb-2 transform -translate-x-2"></div>
+                        <div class="absolute w-full h-4 bg-blue-600 rounded-sm top-1/2 -translate-y-1/2 transform translate-x-2 shadow-md"></div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Biên tập trực nghĩa. Giọng đọc nói về cái gì, hình ảnh lập tức hiển thị chính xác cái đó, đóng vai trò như phụ đề bằng hình ảnh.</p>
+                    <p><strong>Ví dụ chi tiết:</strong> Voice: "Sáng nay tôi thức dậy và pha một tách cà phê để bắt đầu ngày mới". Hình ảnh (B-Roll): Góc quay cận cảnh bàn tay đang rót nước sôi vào phin cà phê bốc khói.</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Cognitive Ease):</p>
+                        <p class="text-sm">Tạo ra sự thư giãn cho não bộ. Khán giả không cần nỗ lực giải mã hình ảnh. Tuy nhiên, nếu lạm dụng liên tục 100%, video sẽ biến thành bản tin thời sự hoặc slide thuyết trình nhàm chán.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-emerald-500 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-emerald-500 uppercase tracking-widest">Level 2</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Chuỗi Tự Sự</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Narrative Sequence</p>
+                    </div>
+                    <div class="abstract-art-container bg-emerald-50 relative p-1">
+                        <div class="absolute w-8 h-8 bg-emerald-300 rounded shadow-sm top-2 left-2 transition-transform"></div>
+                        <div class="absolute w-8 h-8 bg-emerald-400 rounded shadow-md top-6 left-6 z-10"></div>
+                        <div class="absolute w-8 h-8 bg-emerald-600 rounded shadow-lg top-10 left-10 z-20"></div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Tập hợp nhiều shot quay ngắn liên kết với nhau theo trình tự thời gian hoặc logic hành động, tạo thành một tiểu thuyết nhỏ (mini-story) bên trong video chính.</p>
+                    <p><strong>Ví dụ chi tiết:</strong> Thay vì chỉ 1 cảnh mở laptop. Chuỗi gồm 3 cảnh: (1) Toàn cảnh bước vào quán cafe ngồi xuống -> (2) Trung cảnh lấy laptop từ balo đặt lên bàn -> (3) Cận cảnh ngón tay ấn nút nguồn và màn hình sáng lên.</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Zeigarnik Effect):</p>
+                        <p class="text-sm">Não người ghét sự dang dở. Khi thấy cảnh 1 (vào quán) và cảnh 2 (lấy máy), não tự động chờ đợi cảnh 3 (bật máy). Việc hoàn thiện chuỗi tạo ra cảm giác thỏa mãn (Closure).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-pink-500 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-pink-500 uppercase tracking-widest">Level 3</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Điệp Cảnh Phá Vỡ</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Diegetic Integration / 4th Wall</p>
+                    </div>
+                    <div class="abstract-art-container bg-pink-100 relative overflow-hidden">
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-12 h-12 border-4 border-pink-300 transform rotate-45"></div>
+                        </div>
+                        <div class="absolute w-6 h-6 bg-pink-600 rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 shadow-xl border-2 border-white z-10 scale-125"></div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Nhân vật đang hiện diện trong B-roll (tưởng chừng chỉ là cảnh câm) bất ngờ tương tác trực tiếp với máy quay, biến B-roll thành A-roll ngay lập tức.</p>
+                    <p><strong>Ví dụ chi tiết:</strong> Khán giả đang xem B-roll bạn cắm cúi viết sổ bộc lộ sự căng thẳng, tiếng lồng tiếng vẫn chạy. Bất ngờ, bạn trong B-roll ngẩng mặt lên, nhìn thẳng ống kính và nói trùng khớp phần cuối của câu lồng tiếng: "...và đó là lúc tôi nhận ra mình sai hoàn toàn".</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Pattern Interrupt & Dopamine):</p>
+                        <p class="text-sm">Phá vỡ quy luật kỳ vọng. Sự giật mình nhẹ này đánh thức những bộ não đang lơ đễnh, ép họ phải tập trung cao độ ngay lập tức. Cần tiết chế để không làm mất hiệu ứng.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-amber-500 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-amber-500 uppercase tracking-widest">Level 4</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Cắt Chéo Phức Hợp (L/J-Cut)</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Audio-Video Split / Invisible Cut</p>
+                    </div>
+                    <div class="abstract-art-container bg-amber-50 flex flex-col justify-center gap-2 p-2 relative">
+                        <div class="w-full h-5 bg-amber-300 rounded-r-lg transform -translate-x-3 relative z-10 shadow-sm border border-amber-200"></div>
+                        <div class="w-full h-5 bg-amber-500 rounded-l-lg transform translate-x-3 absolute top-10 shadow-sm"></div>
+                        <div class="w-1 absolute h-16 bg-slate-300 left-1/2 transform -translate-x-1/2 top-1 z-0"></div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Kỹ thuật tách rời điểm cắt của Hình ảnh (Video) và Âm thanh (Audio). Giúp quá trình chuyển cảnh từ người nói sang cảnh trám diễn ra mượt mà nhất có thể.</p>
+                    <p><strong>Ví dụ chi tiết (L-Cut):</strong> Bạn đang nhìn camera nói: "Thiết kế này rất tinh tế...". Hình ảnh chuyển sang cảnh cận chiếc điện thoại (B-roll), nhưng giọng bạn vẫn tiếp tục không ngắt quãng: "...nó kết hợp kim loại và kính cong".</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Flow State & Invisible Editing):</p>
+                        <p class="text-sm">Bộ não con người nhận diện âm thanh liên tục tốt hơn hình ảnh. Bằng cách giữ âm thanh ổn định và đổi hình ảnh, kỹ thuật này "che mắt" bộ não, tạo cảm giác mượt mà (Flow), không bị khựng lại vì vết cắt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-purple-500 flex flex-col h-full">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-purple-500 uppercase tracking-widest">Level 5</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">Neo Thị Giác & Ẩn Dụ</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Visual Metaphor / Conceptual Props</p>
+                    </div>
+                    <div class="abstract-art-container bg-purple-50 flex items-center justify-center relative p-2">
+                        <div class="w-10 h-10 bg-purple-200 rounded-full absolute mix-blend-multiply"></div>
+                        <div class="w-10 h-10 bg-purple-400 rounded-full absolute mix-blend-multiply transform translate-x-3 -translate-y-2"></div>
+                        <div class="w-10 h-10 bg-purple-600 rounded-full absolute mix-blend-multiply transform -translate-x-2 translate-y-2"></div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Sử dụng đồ vật, hoạt hình, biểu đồ, hoặc vật lý hóa (như mô hình Lego, quân cờ) để giải thích một khái niệm trừu tượng, tâm lý hoặc học thuật.</p>
+                    <p><strong>Ví dụ chi tiết:</strong> Khi nói về "Xây dựng thói quen", thay vì quay cảnh tập thể dục thông thường, B-roll quay cận cảnh bàn tay đang tỉ mỉ lắp từng mảnh Lego nhỏ vào nhau tạo thành một bức tường kiên cố.</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Dual-Coding Theory):</p>
+                        <p class="text-sm">Học thuyết mã hóa kép. Khi một ý tưởng trừu tượng được cung cấp đồng thời bằng ngôn ngữ (lời nói) và biểu tượng thị giác vật lý (Lego), não bộ sẽ tạo ra hai luồng ghi nhớ, giúp thông tin in sâu lâu dài.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-lg card-hover border-t-4 border-slate-700 flex flex-col h-full bg-gradient-to-br from-white to-slate-50">
+                <div class="flex items-start justify-between mb-6">
+                    <div>
+                        <span class="text-xs font-black text-slate-500 uppercase tracking-widest">Level 6</span>
+                        <h3 class="text-2xl font-bold text-slate-900 mt-1">B-Roll Kiến Tạo (Bổ sung)</h3>
+                        <p class="text-sm text-slate-500 font-semibold italic">Establishing / Atmospheric Shot</p>
+                    </div>
+                    <div class="abstract-art-container bg-gradient-to-t from-slate-700 to-slate-300 relative overflow-hidden">
+                        <div class="absolute bottom-0 w-full h-1/3 bg-slate-900 opacity-50"></div>
+                        <div class="absolute w-12 h-12 bg-white rounded-full blur-sm opacity-30 top-1 left-4"></div>
+                        <div class="absolute bottom-2 left-2 w-full flex gap-1">
+                            <div class="w-2 h-4 bg-slate-400 rounded-t"></div>
+                            <div class="w-2 h-6 bg-slate-500 rounded-t"></div>
+                            <div class="w-2 h-3 bg-slate-400 rounded-t"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex-grow space-y-4 text-slate-700">
+                    <p><strong>Khái niệm:</strong> Những cảnh quay không mang tính giải thích thông tin, mà dùng để thiết lập không gian, thời gian, hoặc truyền tải nhịp điệu (mood/tone) cảm xúc cho phân đoạn.</p>
+                    <p><strong>Ví dụ chi tiết:</strong> Chuyển sang một chương buồn trong câu chuyện, video lồng ghép 3 giây quay chậm cảnh những giọt mưa rơi trên cửa kính ô tô, kèm tiếng nhạc đệm trầm xuống, dù lời nói không nhắc gì đến thời tiết.</p>
+                    <div class="bg-slate-50 p-4 rounded-lg mt-4 border border-slate-200">
+                        <p class="font-bold text-slate-800 mb-1">Tâm lý học (Emotional Priming & Pacing):</p>
+                        <p class="text-sm">"Mồi" cảm xúc. Nó cho khán giả một khoảng nghỉ không gian (breathing room) để tiêu hóa thông tin trước đó, đồng thời chuẩn bị tâm lý cho loại thông tin sắp được tiếp nhận. Rất quan trọng để điều tiết Pacing (nhịp điệu).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-20">
+        <div class="mb-10 border-l-4 border-indigo-600 pl-6">
+            <h2 class="text-3xl font-extrabold text-slate-900 mb-4">II. Data Visualizations: Phân Tích & Chiến Lược</h2>
+            <p class="text-lg text-slate-600 max-w-4xl">Đánh giá mức độ khó khăn trong khâu sản xuất so sánh với độ hấp dẫn, cùng với tỷ lệ phân bổ hoàn hảo theo nghiên cứu tâm lý học để tạo ra một cấu trúc video "gây nghiện".</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800 mb-2 text-center">Ma Trận Rủi Ro & Phần Thưởng</h3>
+                <p class="text-sm text-slate-500 text-center mb-6">Độ khó triển khai (X) vs Sức hút tâm lý (Y)</p>
+                <div class="flex-grow chart-container relative">
+                    <canvas id="bubbleChart"></canvas>
+                </div>
+                <p class="mt-6 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <strong>Phân tích:</strong> Level 3 (Điệp cảnh) có sức hút cực lớn (điểm 9.5) nhưng rủi ro/độ khó cao nhất. Level 4 (L/J Cut) mang lại sức hút cao (điểm 8.5) với độ khó vừa phải, khiến nó trở thành công cụ tối ưu nhất (ROI cao nhất) cho Editor.
+                </p>
+            </div>
+
+            <div class="bg-white p-8 rounded-2xl shadow-xl border border-slate-100 flex flex-col">
+                <h3 class="text-xl font-bold text-slate-800 mb-2 text-center">Tỷ Lệ Vàng (Golden Pacing Ratio)</h3>
+                <p class="text-sm text-slate-500 text-center mb-6">Khuyến nghị phân bổ thời lượng cảnh trong Video Storytelling</p>
+                <div class="flex-grow chart-container relative">
+                    <canvas id="polarChart"></canvas>
+                </div>
+                <p class="mt-6 text-sm text-slate-600 bg-slate-50 p-4 rounded-lg border border-slate-200">
+                    <strong>Chiến lược:</strong> Đừng bao giờ làm toàn bộ video chỉ bằng Level 3 (gây mệt mỏi) hoặc Level 1 (nhàm chán). Hãy dùng Level 4 làm bộ khung (35%), đan xen Level 2 (25%) để kể chuyện phụ, và ném Level 3 (10%) vào điểm nút cao trào (Climax).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-20">
+        <div class="mb-10 text-center">
+            <span class="inline-block py-1 px-4 rounded-full bg-indigo-100 text-indigo-700 font-bold text-sm mb-4">Interactive Learning</span>
+            <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Hệ Thống 25 Flashcard Ôn Tập</h2>
+            <p class="text-lg text-slate-600 max-w-3xl mx-auto">Nhấn (Click) vào từng thẻ để lật xem câu trả lời. Hệ thống câu hỏi được thiết kế để củng cố kiến thức về Tâm lý học nhận thức và Kỹ thuật chỉnh sửa video.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6" id="flashcard-container">
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-slate-900 text-slate-300 py-12 border-t-4 border-pink-500">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+        <div class="w-16 h-16 mx-auto bg-gradient-to-br from-indigo-500 to-pink-500 rounded-2xl rotate-12 mb-6 flex items-center justify-center shadow-lg">
+            <div class="w-8 h-8 bg-white rounded-full opacity-20"></div>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Kết Luận Triết Lý</h3>
+        <p class="text-lg leading-relaxed mb-6">Sự hấp dẫn của một video không nằm ở việc bạn dùng kỹ thuật khó nhất liên tục, mà sinh ra từ <strong>Sự Biến Thiên Nhịp Độ (Pacing)</strong>. Một người kể chuyện xuất chúng là người biết điều hướng <em>Cognitive Load</em> của khán giả: Kéo căng bằng bất ngờ (Level 3), xoa dịu bằng flow mượt mà (Level 4), và giải thích sâu sắc bằng biểu tượng (Level 5).</p>
+        <div class="h-px w-32 bg-slate-700 mx-auto mb-6"></div>
+        <p class="text-sm text-slate-500 tracking-wider">SINGLE-PAGE APPLICATION INFOGRAPHIC • TAILWIND CSS • CHART.JS</p>
+    </div>
+</footer>
+
+<script>
+function wrapLabel(label) {
+    if (label.length <= 16) return label;
+    const words = label.split(' ');
+    let lines = [];
+    let currentLine = words[0];
+    for (let i = 1; i < words.length; i++) {
+        if ((currentLine + ' ' + words[i]).length <= 16) {
+            currentLine += ' ' + words[i];
+        } else {
+            lines.push(currentLine);
+            currentLine = words[i];
+        }
+    }
+    lines.push(currentLine);
+    return lines;
+}
+
+const tooltipConfig = {
+    plugins: {
+        tooltip: {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        }
+    }
+};
+
+const bubbleCtx = document.getElementById('bubbleChart').getContext('2d');
+new Chart(bubbleCtx, {
+    type: 'bubble',
+    data: {
+        datasets: [
+            { label: 'Lv 1: Minh Họa', data: [{x: 2, y: 3, r: 12}], backgroundColor: 'rgba(59, 130, 246, 0.8)' },
+            { label: 'Lv 2: Chuỗi (Sequence)', data: [{x: 5, y: 7.5, r: 20}], backgroundColor: 'rgba(16, 185, 129, 0.8)' },
+            { label: 'Lv 3: Điệp Cảnh (4th Wall)', data: [{x: 9, y: 9.5, r: 15}], backgroundColor: 'rgba(236, 72, 153, 0.8)' },
+            { label: 'Lv 4: L/J Cut (Flow)', data: [{x: 6.5, y: 8.5, r: 30}], backgroundColor: 'rgba(245, 158, 11, 0.8)' },
+            { label: 'Lv 5: Neo Thị Giác', data: [{x: 7.5, y: 8, r: 18}], backgroundColor: 'rgba(168, 85, 247, 0.8)' },
+            { label: 'Lv 6: Kiến Tạo Không Khí', data: [{x: 3, y: 6, r: 15}], backgroundColor: 'rgba(71, 85, 105, 0.8)' }
+        ]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            x: { 
+                title: { display: true, text: 'Độ Khó Triển Khai & Setup (1 - 10)', font: {weight: 'bold', family: 'Inter'} },
+                min: 0, max: 10,
+                grid: { color: '#f1f5f9' }
+            },
+            y: { 
+                title: { display: true, text: 'Sức Hút & Đột Phá Cảm Xúc (1 - 10)', font: {weight: 'bold', family: 'Inter'} },
+                min: 0, max: 10,
+                grid: { color: '#f1f5f9' }
+            }
+        },
+        plugins: {
+            legend: { position: 'bottom', labels: { boxWidth: 12, font: {family: 'Inter'} } },
+            tooltip: {
+                callbacks: {
+                    label: function(context) {
+                        return context.dataset.label + ' | Khó: ' + context.raw.x + ' | Hút: ' + context.raw.y;
+                    }
+                }
+            }
+        }
+    }
+});
+
+const rawPolarLabels = ['Lv 4: L/J Cut (Flow)', 'Lv 2: Chuỗi Sequence', 'A-Roll Thuần (Nhìn Camera)', 'Lv 5: Neo Thị Giác', 'Lv 3: Điệp Cảnh (Climax)', 'Lv 6: Kiến tạo không khí'];
+const polarLabels = rawPolarLabels.map(wrapLabel);
+
+const polarCtx = document.getElementById('polarChart').getContext('2d');
+new Chart(polarCtx, {
+    type: 'polarArea',
+    data: {
+        labels: polarLabels,
+        datasets: [{
+            data: [35, 25, 15, 10, 10, 5],
+            backgroundColor: [
+                'rgba(245, 158, 11, 0.7)',
+                'rgba(16, 185, 129, 0.7)',
+                'rgba(148, 163, 184, 0.7)',
+                'rgba(168, 85, 247, 0.7)',
+                'rgba(236, 72, 153, 0.7)',
+                'rgba(71, 85, 105, 0.7)'
+            ],
+            borderWidth: 2,
+            borderColor: '#ffffff'
+        }]
+    },
+    options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+            r: {
+                ticks: { display: false },
+                grid: { color: '#f1f5f9' }
+            }
+        },
+        plugins: {
+            legend: { position: 'right', labels: { font: {family: 'Inter'} } },
+            ...tooltipConfig.plugins
+        }
+    }
+});
+
+const flashcardsData = [
+    {q: "B-roll Minh họa (Level 1) tác động đến tâm lý thế nào?", a: "Tạo sự thư giãn (Cognitive Ease), não không cần nỗ lực giải mã thông tin hình ảnh."},
+    {q: "Hiệu ứng Zeigarnik được ứng dụng trong B-roll loại nào?", a: "Level 2: Chuỗi tự sự (Narrative Sequence). Khán giả mong đợi thấy hành động được hoàn thành."},
+    {q: "Mục đích chính của Điệp cảnh (Level 3) là gì?", a: "Phá vỡ kỳ vọng (Pattern Interrupt), kích hoạt Dopamine để lôi kéo sự tập trung tức thì."},
+    {q: "Kỹ thuật nào giúp che giấu 'vết cắt' hình ảnh hoàn hảo nhất?", a: "Level 4: L-Cut / J-Cut (Duy trì âm thanh hoặc hình ảnh vượt qua điểm cắt)."},
+    {q: "L-Cut là gì?", a: "Hình ảnh chuyển sang cảnh B, nhưng âm thanh của cảnh A vẫn tiếp tục chạy mượt mà."},
+    {q: "J-Cut là gì?", a: "Âm thanh của cảnh B vang lên trước, sau đó hình ảnh cảnh B mới xuất hiện."},
+    {q: "Neo thị giác / Ẩn dụ (Level 5) áp dụng học thuyết tâm lý nào?", a: "Thuyết mã hóa kép (Dual-Coding Theory). Kết hợp lời nói trừu tượng và hình ảnh vật lý."},
+    {q: "Tỷ lệ phân bổ vàng cho L/J Cut (Level 4) là bao nhiêu?", a: "Khoảng 35%, vì nó là xương sống duy trì Flow State của toàn bộ video."},
+    {q: "Tại sao không nên dùng quá nhiều Level 3 (Điệp cảnh)?", a: "Gây 'mệt mỏi nhận thức' (Cognitive Fatigue), làm mất đi tính bất ngờ và giá trị của cao trào."},
+    {q: "B-roll kiến tạo (Level 6) đóng vai trò gì?", a: "Tạo không gian trống (Breathing room), điều tiết nhịp điệu (Pacing) và mồi cảm xúc."},
+    {q: "Kỹ thuật nào có độ khó sản xuất cao nhất?", a: "Level 3: Cần tính toán ánh sáng, setup khung hình chuẩn xác để khớp B-roll và A-roll."},
+    {q: "Thay vì quay 1 shot mở máy, quay 3 shot: ngồi xuống -> mở máy -> gõ. Gọi là gì?", a: "Level 2: Chuỗi tự sự (Narrative Sequence)."},
+    {q: "Trạng thái Dòng chảy (Flow State) được duy trì tốt nhất bởi kỹ thuật nào?", a: "Level 4: Cắt chéo phức hợp (L-Cut / J-Cut)."},
+    {q: "Dùng mô hình Lego xếp gạch để giải thích việc 'xây dựng thói quen' thuộc kỹ thuật nào?", a: "Level 5: Neo thị giác / Ẩn dụ."},
+    {q: "Cảnh hạt mưa rơi trên kính không liên quan lời nói dùng để làm gì?", a: "Level 6: B-roll Kiến tạo, thiết lập không khí u buồn."},
+    {q: "Thuật ngữ 'Breaking the 4th Wall' tương ứng với loại B-roll nào?", a: "Level 3: Điệp cảnh phá vỡ (Nhân vật trong B-roll nhìn thẳng ống kính)."},
+    {q: "Tỷ lệ lý tưởng cho A-Roll thuần (nhìn thẳng mặt nói chuyện) nên giữ ở mức nào?", a: "Khoảng 15% - Đủ để tạo sự kết nối chân thành mà không gây chán."},
+    {q: "Lỗi lớn nhất khi sử dụng Level 1 (Minh họa tuyến tính) liên tục là gì?", a: "Biến video trở thành bản tin thời sự hoặc slide thuyết trình nhàm chán."},
+    {q: "Sự hấp dẫn cốt lõi của video Storytelling đến từ đâu?", a: "Đến từ Sự biến thiên nhịp độ (Pacing), luân phiên sử dụng các cấp độ B-roll."},
+    {q: "Level 2 (Chuỗi tự sự) chiếm khoảng bao nhiêu % trong tỷ lệ vàng?", a: "25% - Tạo ra các mini-story giữ chân người xem xuyên suốt."},
+    {q: "Youtuber nổi tiếng Ali Abdaal hay dùng loại B-roll nào khi giảng giải?", a: "Level 5: Neo thị giác (Sử dụng biểu đồ, đồ vật, hình vẽ để vật lý hóa khái niệm)."},
+    {q: "Level nào mang lại ROI (Lợi tức đầu tư) tốt nhất cho Editor?", a: "Level 4. Độ khó vừa phải nhưng sức hút duy trì sự chú ý rất cao."},
+    {q: "Cảm giác 'thỏa mãn' khi chuỗi hành động kết thúc liên quan đến hormone nào?", a: "Dopamine (hệ thống phần thưởng của não khi giải quyết xong sự tò mò)."},
+    {q: "Thuật ngữ 'Cognitive Load' có nghĩa là gì?", a: "Tải trọng nhận thức - Lượng nỗ lực tinh thần cần thiết để xử lý thông tin trong video."},
+    {q: "Trong B-roll, 'Mồi cảm xúc' (Emotional Priming) đạt được thông qua Level nào?", a: "Level 6: B-roll kiến tạo không khí (âm thanh nền, màu sắc, cảnh tĩnh)."}
+];
+
+const colors = [
+    {bg: 'bg-blue-500', art: 'bg-blue-300'},
+    {bg: 'bg-emerald-500', art: 'bg-emerald-300'},
+    {bg: 'bg-pink-500', art: 'bg-pink-300'},
+    {bg: 'bg-amber-500', art: 'bg-amber-300'},
+    {bg: 'bg-purple-500', art: 'bg-purple-300'}
+];
+
+const container = document.getElementById('flashcard-container');
+
+flashcardsData.forEach((data, index) => {
+    const colorScheme = colors[index % colors.length];
+    
+    let artShapes = '';
+    if(index % 3 === 0) {
+        artShapes = `<div class="w-8 h-8 rounded-full ${colorScheme.art} absolute top-2 right-2 opacity-50"></div><div class="w-12 h-2 ${colorScheme.art} rounded absolute bottom-4 left-4 opacity-70 transform rotate-12"></div>`;
+    } else if (index % 3 === 1) {
+        artShapes = `<div class="w-10 h-10 ${colorScheme.art} absolute top-4 left-4 opacity-50 transform 45"></div><div class="w-4 h-4 rounded-full ${colorScheme.art} absolute bottom-4 right-6 opacity-80"></div>`;
+    } else {
+        artShapes = `<div class="w-0 h-0 border-l-[15px] border-l-transparent border-r-[15px] border-r-transparent border-b-[25px] border-b-${colorScheme.art.replace('bg-', '')} absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-40"></div>`;
+    }
+
+    const cardHTML = `
+        <div class="flip-card group" onclick="toggleCard(this)">
+            <div class="flip-card-inner shadow-sm rounded-xl border border-slate-200">
+                <div class="flip-card-front bg-white flex flex-col items-center justify-center p-4 relative overflow-hidden">
+                    <span class="absolute top-2 left-2 text-xs font-bold text-slate-300">#${index + 1}</span>
+                    <div class="w-full h-16 relative mb-4 flex items-center justify-center">
+                        ${artShapes}
+                    </div>
+                    <p class="text-sm font-semibold text-slate-800 text-center z-10 leading-snug">${data.q}</p>
+                    <div class="absolute bottom-2 text-xs text-slate-400 font-semibold uppercase tracking-wider">Lật xem</div>
+                </div>
+                <div class="flip-card-back ${colorScheme.bg} text-white p-5 flex flex-col items-center justify-center">
+                    <p class="text-sm font-medium text-center leading-relaxed">${data.a}</p>
+                </div>
+            </div>
+        </div>
+    `;
+    container.innerHTML += cardHTML;
+});
+
+function toggleCard(element) {
+    const inner = element.querySelector('.flip-card-inner');
+    const currentTransform = inner.style.transform;
+    if (currentTransform === 'rotateY(180deg)') {
+        inner.style.transform = 'rotateY(0deg)';
+    } else {
+        inner.style.transform = 'rotateY(180deg)';
+    }
+}
+</script>
+</body>
+</html>
