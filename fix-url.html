@@ -17,8 +17,8 @@
 <body class="p-8 max-w-4xl mx-auto">
 
     <header class="mb-8 text-center">
-        <h1 class="text-3xl font-bold mb-2">Trình Tối Ưu Hóa URL (Auto Slugify)</h1>
-        <p class="text-gray-500 text-sm">Quét và đổi tên các file HTML cũ sang chuẩn Slug (tiếng Việt không dấu), bảo tồn tiêu đề gốc.</p>
+        <h1 class="text-3xl font-bold mb-2">Trình Tối Ưu Hóa URL & Phục Hồi Tiêu Đề</h1>
+        <p class="text-gray-500 text-sm">Quét, chuyển file sang chuẩn Slug và TỰ ĐỘNG cứu hộ tiêu đề Tiếng Việt bị mất.</p>
     </header>
 
     <div class="apple-card mb-6 flex flex-col md:flex-row gap-4 items-end">
@@ -69,6 +69,7 @@
         }
 
         function slugify(text) {
+            if(!text) return "";
             return text.toString().toLowerCase()
                 .replace(/á|à|ả|ạ|ã|ă|ắ|ằ|ẳ|ẵ|ặ|â|ấ|ầ|ẩ|ẫ|ậ/gi, 'a')
                 .replace(/é|è|ẻ|ẽ|ẹ|ê|ế|ề|ể|ễ|ệ/gi, 'e')
@@ -92,10 +93,16 @@
             if (token) headers['Authorization'] = `Bearer ${token}`;
             if (body) headers['Content-Type'] = 'application/json';
 
+            // Thêm Cache-Buster vào GET để đảm bảo dữ liệu luôn mới nhất
+            let url = `https://api.github.com${path}`;
+            if (method === 'GET') {
+                url += (url.includes('?') ? '&' : '?') + `t=${Date.now()}`;
+            }
+
             const opts = { method, headers };
             if(body) opts.body = JSON.stringify(body);
             
-            const res = await fetch(`https://api.github.com${path}`, opts);
+            const res = await fetch(url, opts);
             
             if(!res.ok) { 
                 let errMsg = 'Lỗi API không xác định';
@@ -164,7 +171,7 @@
                     
                     for (const file of htmlFiles) {
                         const oldName = file.name;
-                        const rawTitle = oldName.replace('.html', '');
+                        const rawTitle = decodeURIComponent(oldName.replace('.html', ''));
                         let newSlug = slugify(rawTitle);
                         
                         let oldKey = `${rName === user + '.github.io' ? rName : rName}/${oldName}`;
@@ -175,10 +182,11 @@
                         }
                         
                         const newName = newSlug + '.html';
+                        const newKey = `${rName === user + '.github.io' ? rName : rName}/${newName}`;
 
+                        // TRƯỜNG HỢP 1: Cần phải Rename file
                         if (oldName !== newName) {
-                            log(`⚠️ Phát hiện file cần sửa: [${oldName}]`);
-                            
+                            log(`⚠️ Cần đổi tên file: [${oldName}]`);
                             try {
                                 log(`   - Đọc nội dung...`);
                                 const oldFileData = await api(`/repos/${user}/${rName}/contents/${encodeURIComponent(oldName)}`);
@@ -196,7 +204,6 @@
                                 });
 
                                 log(`   - Chuyển đổi Metadata...`);
-                                const newKey = `${rName === user + '.github.io' ? rName : rName}/${newName}`;
                                 
                                 if(metadata.tags[oldKey]) { metadata.tags[newKey] = metadata.tags[oldKey]; delete metadata.tags[oldKey]; }
                                 if(metadata.links[oldKey]) { metadata.links[newKey] = metadata.links[oldKey]; delete metadata.links[oldKey]; }
@@ -213,11 +220,35 @@
                                 }
 
                                 totalFixed++;
-                                log(`   ✅ Hoàn tất đổi file.`);
+                                log(`   ✅ Hoàn tất.`);
                                 await delay(1500); 
                                 
                             } catch(fileErr) {
                                 log(`   ❌ Lỗi khi sửa file [${oldName}]: ${fileErr.message}`, 'log-error');
+                            }
+                        } 
+                        // TRƯỜNG HỢP 2: File đã là Slug, nhưng MẤT TIÊU ĐỀ (Cứu hộ)
+                        else {
+                            if (!metadata.titles[newKey] || metadata.titles[newKey] === newSlug) {
+                                let extractedTitle = rawTitle;
+                                try {
+                                    // Tải mã HTML về để lôi thẻ <title> ra
+                                    const fileContentRes = await fetch(file.download_url + `?t=${Date.now()}`);
+                                    if(fileContentRes.ok) {
+                                        const htmlText = await fileContentRes.text();
+                                        const titleMatch = htmlText.match(/<title[^>]*>(.*?)<\/title>/i);
+                                        const h1Match = htmlText.match(/<h1[^>]*>(.*?)<\/h1>/i);
+                                        
+                                        if (titleMatch && titleMatch[1]) extractedTitle = titleMatch[1].trim();
+                                        else if (h1Match && h1Match[1]) extractedTitle = h1Match[1].trim();
+                                    }
+                                } catch(e) {}
+                                
+                                if (extractedTitle !== newSlug && extractedTitle !== metadata.titles[newKey]) {
+                                    log(`♻️ Cứu hộ Tiêu đề cho: [${newName}] -> "${extractedTitle}"`, 'log-info');
+                                    metadata.titles[newKey] = extractedTitle;
+                                    totalFixed++;
+                                }
                             }
                         }
                     }
@@ -226,17 +257,17 @@
                 if (totalFixed > 0) {
                     log(`\n💾 Đang lưu Metadata mới lên GitHub...`, 'log-info');
                     const metaBody = {
-                        message: `Auto-Slugify: Cập nhật cấu trúc Metadata`,
+                        message: `Auto-Slugify: Cập nhật Metadata`,
                         content: btoa(unescape(encodeURIComponent(JSON.stringify(metadata, null, 2))))
                     };
                     if (metaSha) metaBody.sha = metaSha;
                     await api(`/repos/${user}/${user}.github.io/contents/metadata.json`, 'PUT', metaBody);
-                    log(`✅ Lưu Metadata thành công!`);
+                    log(`✅ Lưu Metadata thành công! Vui lòng F5 lại trang CMS chính.`);
                 } else {
                     log(`\n🎉 Không có file nào cần tối ưu. Mọi thứ đã chuẩn!`, 'log-info');
                 }
 
-                log(`\n=== KẾT THÚC. ĐÃ SỬA ${totalFixed} BÀI VIẾT ===`, 'log-info');
+                log(`\n=== KẾT THÚC ===`, 'log-info');
 
             } catch(e) {
                 log(`Lỗi hệ thống: ${e.message}`, 'log-error');
