@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tool Cập nhật Nút Ghim Hàng loạt (V2)</title>
+    <title>Tool Cập nhật Nút Ghim Hàng loạt (Stealth Mode)</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .console-log { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 13px; line-height: 1.6; }
@@ -17,9 +17,9 @@
 
     <div class="bg-white rounded-[24px] shadow-sm p-8 w-full max-w-3xl border border-gray-100">
         <h1 class="text-2xl font-bold text-[#1D1D1F] mb-2 flex items-center gap-2">
-            📌 Tool Cập nhật Nút Ghim (V2)
+            📌 Tool Cập nhật Nút Ghim (Tàng hình)
         </h1>
-        <p class="text-sm text-[#86868B] mb-8">Tự động quét Database Lõi và gắn mã script "Nút Ghim thông minh (Mở Tab ẩn tự đóng)" vào toàn bộ các bài viết cũ của bạn.</p>
+        <p class="text-sm text-[#86868B] mb-8">Tự động quét Database Lõi và gắn mã script "Nút Ghim thông minh" vào toàn bộ bài viết.</p>
 
         <div class="space-y-4">
             <input type="password" id="github-token" placeholder="Nhập Token GitHub (PAT)..." class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-[#007AFF] text-sm text-center tracking-widest font-mono transition">
@@ -35,7 +35,6 @@
     </div>
 
     <script>
-        // Bắt lỗi toàn cục để màn hình không bao giờ bị "im lìm"
         window.onerror = function(msg, url, line) {
             alert("Lỗi Hệ thống JS: " + msg + "\nDòng: " + line);
             return false;
@@ -43,44 +42,52 @@
 
         const username = 'vietndj';
         
-        // MÃ WIDGET GHIM BÀI ĐƯỢC CHIA NHỎ ĐỂ CHỐNG LỖI PARSER TRÌNH DUYỆT 100%
-        const WIDGET_LINES = [
-            "",
-            "",
-            "<scr" + "ipt id=\"cms-pin-widget\">",
-            "  if(localStorage.getItem(\"cms_auth\") === \"granted\") {",
-            "    const path = window.location.pathname.split(\"/\").filter(Boolean);",
-            "    let repo = \"vietndj.github.io\", file = \"index.html\";",
-            "    if (path.length > 1) { repo = path[0]; file = path.pop(); }",
-            "    else if (path.length === 1) { if (path[0].endsWith(\".html\")) file = path[0]; else repo = path[0]; }",
-            "    const fileKey = repo + \"/\" + decodeURIComponent(file);",
-            "    let isPinned = false;",
-            "    try { const dbStr = localStorage.getItem(\"cms_repo_data\"); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}",
-            "    const btn = document.createElement(\"a\");",
-            "    btn.href = \"https://vietndj.github.io/?\" + (isPinned ? \"unpin=\" : \"pin=\") + encodeURIComponent(fileKey);",
-            "    btn.innerHTML = isPinned ? \"❌ Bỏ ghim\" : \"📌 Ghim bài\";",
-            "    btn.style.cssText = \"position:fixed;top:15px;right:15px;background:\" + (isPinned ? \"#FF3B30\" : \"#FF9500\") + \";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;\";",
-            "    btn.onmouseover = () => btn.style.transform = \"scale(1.05)\";",
-            "    btn.onmouseout = () => btn.style.transform = \"scale(1)\";",
-            "    btn.onclick = function(e) {",
-            "      e.preventDefault();",
-            "      window.open(this.href, \"_blank\");",
-            "      isPinned = !isPinned;",
-            "      this.innerHTML = isPinned ? \"❌ Bỏ ghim\" : \"📌 Ghim bài\";",
-            "      this.style.background = isPinned ? \"#FF3B30\" : \"#FF9500\";",
-            "      this.href = \"https://vietndj.github.io/?\" + (isPinned ? \"unpin=\" : \"pin=\") + encodeURIComponent(fileKey);",
-            "    };",
-            "    document.body.appendChild(btn);",
-            "  }",
-            "</scr" + "ipt>",
-            "",
-            ""
-        ];
-        
-        const CMS_PIN_WIDGET = WIDGET_LINES.join("\n");
+        // ==========================================
+        // CƠ CHẾ CHỐNG LỖI "INCEPTION" TỐI THƯỢNG
+        // ==========================================
+        // Mã hóa Base64 để trình duyệt & CMS không thể đọc trộm các thẻ <script> hay 
 
-        // REGEX ĐỂ TÌM VÀ XÓA SCRIPT CŨ AN TOÀN
-        const WIDGET_REGEX = new RegExp('\\n*<scr' + 'ipt id="cms-pin-widget">[\\s\\S]*?</scr' + 'ipt>\\n*', 'gi');
+<script id="cms-pin-widget">
+  if(localStorage.getItem("cms_auth") === "granted") {
+    const path = window.location.pathname.split("/").filter(Boolean);
+    let repo = "vietndj.github.io", file = "index.html";
+    if (path.length > 1) { repo = path[0]; file = path.pop(); }
+    else if (path.length === 1) { if (path[0].endsWith(".html")) file = path[0]; else repo = path[0]; }
+    const fileKey = repo + "/" + decodeURIComponent(file);
+    let isPinned = false;
+    try { const dbStr = localStorage.getItem("cms_repo_data"); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}
+    const btn = document.createElement("a");
+    btn.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    btn.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+    btn.style.cssText = "position:fixed;top:15px;right:15px;background:" + (isPinned ? "#FF3B30" : "#FF9500") + ";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";
+    btn.onmouseover = () => btn.style.transform = "scale(1.05)";
+    btn.onmouseout = () => btn.style.transform = "scale(1)";
+    btn.onclick = function(e) {
+      e.preventDefault();
+      window.open(this.href, "_blank");
+      isPinned = !isPinned;
+      this.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+      this.style.background = isPinned ? "#FF3B30" : "#FF9500";
+      this.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    };
+    document.body.appendChild(btn);
+  }
+</script>
+
+</body>
+        const BASE64_WIDGET = "Cgo8c2NyaXB0IGlkPSJjbXMtcGluLXdpZGdldCI+CiAgaWYobG9jYWxTdG9yYWdlLmdldEl0ZW0oImNtc19hdXRoIikgPT09ICJncmFudGVkIikgewogICAgY29uc3QgcGF0aCA9IHdpbmRvdy5sb2NhdGlvbi5wYXRobmFtZS5zcGxpdCgiLyIpLmZpbHRlcihCb29sZWFuKTsKICAgIGxldCByZXBvID0gInZpZXRuZGouZ2l0aHViLmlvIiwgZmlsZSA9ICJpbmRleC5odG1sIjsKICAgIGlmIChwYXRoLmxlbmd0aCA+IDEpIHsgcmVwbyA9IHBhdGhbMF07IGZpbGUgPSBwYXRoLnBvcCgpOyB9CiAgICBlbHNlIGlmIChwYXRoLmxlbmd0aCA+PT0gMSkgeyBpZiAocGF0aFswXS5lbmRzV2l0aCgiLmh0bWwiKSkgZmlsZSA9IHBhdGhbMF07IGVsc2UgcmVwbyA9IHBhdGhbMF07IH0KICAgIGNvbnN0IGZpbGVLZXkgPSByZXBvICsgIi8iICsgZGVjb2RlVVJJQ29tcG9uZW50KGZpbGUpOwogICAgbGV0IGlzUGlubmVkID0gZmFsc2U7CiAgICB0cnkgeyBjb25zdCBkYlN0ciA9IGxvY2FsU3RvcmFnZS5nZXRJdGVtKCJjbXNfcmVwb19kYXRhIik7IGlmKGRiU3RyKXsgY29uc3QgZGIgPSBKU09OLnBhcnNlKGRiU3RyKTsgaWYoQXJyYXkuaXNBcnJheShkYi5waW5uZWREYXRhQ2FjaGUpICYmIGRiLnBpbm5lZERhdGFDYWNoZS5pbmNsdWRlcyhmaWxlS2V5KSkgaXNQaW5uZWQgPSB0cnVlOyB9IH0gY2F0Y2goZSl7fQogICAgY29uc3QgYnRuID0gZG9jdW1lbnQuY3JlYXRlRWxlbWVudCgiYSIpOwogICAgYnRuLmhyZWYgPSAiaHR0cHM6Ly92aWV0bmRqLmdpdGh1Yi5pby8/IiArIChpc1Bpbm5lZCA/ICJ1bnBpbj0iIDogInBpbj0iKSArIGVuY29kZVVSSUNvbXBvbmVudChmaWxlS2V5KTsKICAgIGJ0bi5pbm5lckhUTUwgPSBpc1Bpbm5lZCA/ICLimYwgQuG7jyBnaGltIiA6ICLwn5OMIEdoaW0gYsOgaSI7CiAgICBidG4uc3R5bGUuY3NzVGV4dCA9ICJwb3NpdGlvbjpmaXhlZDt0b3A6MTVweDtyaWdodDoxNXB4O2JhY2tncm91bmQ6IiArIChpc1Bpbm5lZCA/ICIjRkYzQjMwIiA6ICIjRkY5NTAwIikgKyAiO2NvbG9yOndoaXRlO3BhZGRpbmc6OHB4IDE2cHg7Ym9yZGVyLXJhZGl1czoyMHB4O2ZvbnQtd2VpZ2h0OmJvbGQ7Zm9udC1zaXplOjEycHg7ei1pbmRleDo5OTk5OTt0ZXh0LWRlY29yYXRpb246bm9uZTtib3gtc2hhZG93OjAgNHB4IDEwcHggcmdiYSgwLDAsMCwwLjE1KTt0cmFuc2l0aW9uOmFsbCAwLjJzIGVhc2U7Y3Vyc29yOnBvaW50ZXI7IjsKICAgIGJ0bi5vbm1vdXNlb3ZlciA9ICgpID0+IGJ0bi5zdHlsZS50cmFuc2Zvcm0gPSAic2NhbGUoMS4wNSkiOwogICAgYnRuLm9ubW91c2VvdXQgPSAoKSA9PiBidG4uc3R5bGUudHJhbnNmb3JtID0gInNjYWxlKDEpIjsKICAgIGJ0bi5vbmNsaWNrID0gZnVuY3Rpb24oZSkgewogICAgICBlLnByZXZlbnREZWZhdWx0KCk7CiAgICAgIHdpbmRvdy5vcGVuKHRoaXMuaHJlZiwgIl9ibGFuayIpOwogICAgICBpc1Bpbm5lZCA9ICFpc1Bpbm5lZDsKICAgICAgdGhpcy5pbm5lckhUTUwgPSBpc1Bpbm5lZCA/ICLinYwgQuG7jyBnaGltIiA6ICLwn5OMIEdoaW0gYsOgaSI7CiAgICAgIHRoaXMuc3R5bGUuYmFja2dyb3VuZCA9IGlzUGlubmVkID8gIiNGRjNCMzAiIDogIiNGRjk1MDAiOwogICAgICB0aGlzLmhyZWYgPSAiaHR0cHM6Ly92aWV0bmRqLmdpdGh1Yi5pby8/IiArIChpc1Bpbm5lZCA/ICJ1bnBpbj0iIDogInBpbj0iKSArIGVuY29kZVVSSUNvbXBvbmVudChmaWxlS2V5KTsKICAgIH07CiAgICBkb2N1bWVudC5ib2R5LmFwcGVuZENoaWxkKGJ0bik7CiAgfQo8L3NjcmlwdD4KCg==";
+
+        function decodeUTF8(base64Str) {
+            try { return decodeURIComponent(escape(window.atob(base64Str))); } 
+            catch(e) { return window.atob(base64Str); }
+        }
+        const CMS_PIN_WIDGET = decodeUTF8(BASE64_WIDGET);
+
+        // Lắp ráp từ khóa tàng hình
+        const S_TAG = String.fromCharCode(115, 99, 114, 105, 112, 116);
+        const WIDGET_REGEX = new RegExp('\\n*<' + S_TAG + ' id="cms-pin-widget">[\\s\\S]*?</' + S_TAG + '>\\n*', 'gi');
+        const B_TAG = String.fromCharCode(98, 111, 100, 121);
+        const END_BODY = '</' + B_TAG + '>';
 
         function log(msg, type = 'info') {
             const box = document.getElementById('console-box');
@@ -178,39 +185,12 @@
 
                         let htmlContent = await fileRes.text();
                         
+                        // Xóa script cũ an toàn
                         htmlContent = htmlContent.replace(WIDGET_REGEX, '');
                         
-                        if(htmlContent.includes('
-
-<script id="cms-pin-widget">
-  if(localStorage.getItem("cms_auth") === "granted") {
-    const path = window.location.pathname.split("/").filter(Boolean);
-    let repo = "vietndj.github.io", file = "index.html";
-    if (path.length > 1) { repo = path[0]; file = path.pop(); }
-    else if (path.length === 1) { if (path[0].endsWith(".html")) file = path[0]; else repo = path[0]; }
-    const fileKey = repo + "/" + decodeURIComponent(file);
-    let isPinned = false;
-    try { const dbStr = localStorage.getItem("cms_repo_data"); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}
-    const btn = document.createElement("a");
-    btn.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
-    btn.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
-    btn.style.cssText = "position:fixed;top:15px;right:15px;background:" + (isPinned ? "#FF3B30" : "#FF9500") + ";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";
-    btn.onmouseover = () => btn.style.transform = "scale(1.05)";
-    btn.onmouseout = () => btn.style.transform = "scale(1)";
-    btn.onclick = function(e) {
-      e.preventDefault();
-      window.open(this.href, "_blank");
-      isPinned = !isPinned;
-      this.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
-      this.style.background = isPinned ? "#FF3B30" : "#FF9500";
-      this.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
-    };
-    document.body.appendChild(btn);
-  }
-</script>
-
-</body>')) {
-                            htmlContent = htmlContent.replace('</body>', CMS_PIN_WIDGET + '\n</body>');
+                        // Chèn script mới bằng biến END_BODY đã giấu
+                        if(htmlContent.includes(END_BODY)) {
+                            htmlContent = htmlContent.replace(END_BODY, CMS_PIN_WIDGET + '\n' + END_BODY);
                         } else {
                             htmlContent += CMS_PIN_WIDGET; 
                         }
