@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odysseus Pact Manager</title>
+    <!-- Sử dụng Tailwind CSS để thiết kế giao diện tối giản, Dark Mode native -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a; /* Nền tối giảm kích thích thị giác */
+            color: #e2e8f0;
+        }
+        
+        /* Hiệu ứng chuyển đổi mượt mà để tránh giật mình, giữ não bộ ở trạng thái bình tĩnh */
+        .fade-transition {
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+        .hidden-state {
+            opacity: 0;
+            transform: translateY(10px);
+            pointer-events: none;
+            position: absolute;
+            visibility: hidden;
+        }
+        .active-state {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+            position: relative;
+            visibility: visible;
+        }
+
+        /* Tùy chỉnh thanh cuộn cho khu vực nhập liệu */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b; 
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4 selection:bg-indigo-500 selection:text-white relative overflow-hidden">
+
+    <!-- Container chính -->
+    <main class="w-full max-w-2xl bg-slate-800/80 backdrop-blur-sm p-8 md:p-12 rounded-2xl border border-slate-700 shadow-2xl relative">
+        
+        <!-- Header -->
+        <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold text-slate-100 tracking-tight">Odysseus Pact</h1>
+            <p class="text-slate-400 mt-2 text-sm font-light">Kích hoạt vỏ não trước trán. Vô hiệu hóa hệ viền.</p>
+        </div>
+
+        <!-- TRẠNG THÁI 1: KHAI BÁO -->
+        <div id="state-declaration" class="active-state flex flex-col space-y-8">
+            
+            <!-- Ô nhập liệu 1: Mục tiêu -->
+            <div class="space-y-2">
+                <label for="goal-input" class="block text-sm font-medium text-indigo-300">
+                    Mục tiêu cốt lõi trong phiên làm việc này là gì?
+                </label>
+                <input type="text" id="goal-input" placeholder="Vd: Dựng xong phần typo cho video..." 
+                    class="w-full bg-slate-900/50 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-all text-lg">
+            </div>
+
+            <!-- Ô nhập liệu 2: Cạm bẫy -->
+            <div class="space-y-2">
+                <label for="traps-input" class="block text-sm font-medium text-amber-300">
+                    Những cạm bẫy tiến hóa nào có thể kích hoạt dopamine rác?
+                </label>
+                <textarea id="traps-input" rows="2" placeholder="Vd: Lướt Threads, check tin nhắn, mở tab Youtube..." 
+                    class="w-full bg-slate-900/50 border border-slate-600 rounded-lg px-4 py-3 text-slate-100 placeholder-slate-500 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all text-lg resize-none"></textarea>
+            </div>
+
+            <!-- Bản cam kết Logic (Tự động cập nhật) -->
+            <div class="bg-slate-900/80 border-l-4 border-indigo-500 p-6 rounded-r-lg">
+                <p class="text-xs text-slate-400 uppercase tracking-wider mb-2 font-semibold">Bản cam kết Logic (IF-THEN)</p>
+                <p id="pact-preview" class="text-lg leading-relaxed text-slate-300 font-light">
+                    Tôi nhận thức rõ <span class="font-semibold text-amber-400 border-b border-dashed border-amber-400/50">[Cạm bẫy]</span> chỉ là những phản xạ nguyên thủy. Tôi cam kết vô hiệu hóa chúng để tập trung hoàn toàn vào <span class="font-semibold text-indigo-400 border-b border-dashed border-indigo-400/50">[Mục tiêu cốt lõi]</span>.
+                </p>
+            </div>
+
+            <!-- Nút Khóa (Lock-in) -->
+            <button id="btn-lock" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-indigo-500/20 transition-all transform hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none text-lg tracking-wide">
+                Ký cam kết & Khóa chặt (Lock-in)
+            </button>
+        </div>
+
+
+        <!-- TRẠNG THÁI 2: THỰC THI (Ẩn mặc định) -->
+        <div id="state-execution" class="hidden-state flex flex-col items-center justify-center space-y-12 text-center py-4">
+            
+            <!-- Hiển thị Mục tiêu -->
+            <div class="space-y-4">
+                <h2 class="text-sm font-bold text-slate-500 uppercase tracking-widest">Nhiệm vụ tối thượng</h2>
+                <h3 id="active-goal" class="text-3xl md:text-4xl font-bold text-indigo-400 leading-tight">
+                    <!-- Sẽ được điền bằng JS -->
+                </h3>
+            </div>
+
+            <!-- Đồng hồ Pomodoro/Ultradian (90 phút) -->
+            <div class="relative">
+                <div class="absolute inset-0 bg-indigo-500/10 blur-3xl rounded-full"></div>
+                <div id="timer-display" class="relative text-7xl md:text-8xl font-mono font-bold text-slate-100 tracking-tighter tabular-nums drop-shadow-md">
+                    90:00
+                </div>
+                <p class="text-slate-400 mt-4 text-sm tracking-widest uppercase">Phút tập trung tuyệt đối</p>
+            </div>
+
+            <!-- Hiển thị Cam kết -->
+            <div class="max-w-lg bg-slate-900/50 border border-slate-700/50 p-5 rounded-lg">
+                <p id="active-pact" class="text-base text-slate-400 italic">
+                    <!-- Sẽ được điền bằng JS -->
+                </p>
+            </div>
+
+            <!-- Nút Đầu hàng (Cần xác nhận 2 lần để tạo ma sát nhận thức) -->
+            <div class="pt-8 w-full">
+                <button id="btn-surrender" class="w-full bg-slate-800 border border-red-900/30 text-red-500 hover:bg-red-950/40 hover:text-red-400 hover:border-red-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-300 text-sm">
+                    Phá vỡ cam kết (Đầu hàng)
+                </button>
+                <p id="surrender-warning" class="text-red-400 text-xs mt-3 h-4 opacity-0 transition-opacity">
+                    Hệ viền đang đánh lừa bạn. Bấm lần nữa nếu bạn thực sự muốn bỏ cuộc.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Script Logic Xử lý Giao diện & Trạng thái -->
+    <script>
+        // Các DOM Elements
+        const DOM = {
+            stateDeclaration: document.getElementById('state-declaration'),
+            stateExecution: document.getElementById('state-execution'),
+            goalInput: document.getElementById('goal-input'),
+            trapsInput: document.getElementById('traps-input'),
+            pactPreview: document.getElementById('pact-preview'),
+            btnLock: document.getElementById('btn-lock'),
+            activeGoal: document.getElementById('active-goal'),
+            activePact: document.getElementById('active-pact'),
+            timerDisplay: document.getElementById('timer-display'),
+            btnSurrender: document.getElementById('btn-surrender'),
+            surrenderWarning: document.getElementById('surrender-warning')
+        };
+
+        // Cấu hình (90 phút = 5400 giây)
+        const SESSION_DURATION_SECONDS = 90 * 60; 
+        
+        // Trạng thái ứng dụng
+        let timerInterval = null;
+        let timeRemaining = SESSION_DURATION_SECONDS;
+        let surrenderStage = 0; // 0: Bình thường, 1: Đã bấm lần 1 (Chờ xác nhận)
+        let surrenderTimeout = null;
+
+        // Cập nhật Bản cam kết logic khi người dùng gõ phím
+        function updatePactPreview() {
+            const goalText = DOM.goalInput.value.trim() || "[Mục tiêu cốt lõi]";
+            const trapsText = DOM.trapsInput.value.trim() || "[Cạm bẫy]";
+            
+            // Validate để vô hiệu hóa/bật nút Lock
+            if (DOM.goalInput.value.trim() !== '' && DOM.trapsInput.value.trim() !== '') {
+                DOM.btnLock.disabled = false;
+            } else {
+                DOM.btnLock.disabled = true;
+            }
+
+            DOM.pactPreview.innerHTML = `Tôi nhận thức rõ <span class="font-semibold text-amber-400 border-b border-dashed border-amber-400/50">${trapsText}</span> chỉ là những phản xạ nguyên thủy. Tôi cam kết vô hiệu hóa chúng để tập trung hoàn toàn vào <span class="font-semibold text-indigo-400 border-b border-dashed border-indigo-400/50">${goalText}</span>.`;
+        }
+
+        // Lắng nghe sự kiện nhập liệu
+        DOM.goalInput.addEventListener('input', updatePactPreview);
+        DOM.trapsInput.addEventListener('input', updatePactPreview);
+
+        // Khởi tạo trạng thái nút Lock
+        updatePactPreview();
+
+        // Chuyển đổi trạng thái (Crossfade)
+        function switchState(toExecution) {
+            if (toExecution) {
+                DOM.stateDeclaration.classList.remove('active-state');
+                DOM.stateDeclaration.classList.add('hidden-state');
+                
+                // Đợi transition của declaration xong rồi mới hiện execution
+                setTimeout(() => {
+                    DOM.stateExecution.classList.remove('hidden-state');
+                    DOM.stateExecution.classList.add('active-state');
+                }, 400);
+            } else {
+                DOM.stateExecution.classList.remove('active-state');
+                DOM.stateExecution.classList.add('hidden-state');
+                
+                setTimeout(() => {
+                    DOM.stateDeclaration.classList.remove('hidden-state');
+                    DOM.stateDeclaration.classList.add('active-state');
+                }, 400);
+            }
+        }
+
+        // Hàm định dạng thời gian (MM:SS)
+        function formatTime(seconds) {
+            const m = Math.floor(seconds / 60).toString().padStart(2, '0');
+            const s = (seconds % 60).toString().padStart(2, '0');
+            return `${m}:${s}`;
+        }
+
+        // Logic đếm ngược
+        function startTimer() {
+            timeRemaining = SESSION_DURATION_SECONDS;
+            DOM.timerDisplay.textContent = formatTime(timeRemaining);
+            
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                DOM.timerDisplay.textContent = formatTime(timeRemaining);
+                
+                // Hoàn thành phiên làm việc
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Xin chúc mừng! Bạn đã chinh phục được bản năng và hoàn thành xuất sắc cam kết.");
+                    resetApp();
+                }
+            }, 1000);
+        }
+
+        // Xử lý khi bấm nút "Ký cam kết & Khóa"
+        DOM.btnLock.addEventListener('click', () => {
+            const goal = DOM.goalInput.value.trim();
+            const traps = DOM.trapsInput.value.trim();
+            
+            if (!goal || !traps) return; // Bảo vệ fallback
+
+            // 1. Chuyển dữ liệu sang màn hình Thực thi
+            DOM.activeGoal.textContent = goal;
+            DOM.activePact.innerHTML = `Tôi nhận thức rõ <strong>${traps}</strong> chỉ là phản xạ nguyên thủy. Tôi cam kết tập trung vào <strong>${goal}</strong>.`;
+
+            // 2. Chuyển UI và Bắt đầu đếm ngược
+            switchState(true);
+            startTimer();
+        });
+
+        // Thiết lập lại ứng dụng về trạng thái ban đầu
+        function resetApp() {
+            clearInterval(timerInterval);
+            
+            // Reset dữ liệu UI
+            DOM.goalInput.value = '';
+            DOM.trapsInput.value = '';
+            updatePactPreview();
+            
+            // Reset nút đầu hàng
+            surrenderStage = 0;
+            DOM.btnSurrender.textContent = "Phá vỡ cam kết (Đầu hàng)";
+            DOM.btnSurrender.className = "w-full bg-slate-800 border border-red-900/30 text-red-500 hover:bg-red-950/40 hover:text-red-400 hover:border-red-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-300 text-sm";
+            DOM.surrenderWarning.style.opacity = '0';
+            
+            // Chuyển UI
+            switchState(false);
+        }
+
+        // Xử lý nút Đầu hàng (Tạo "Cognitive Friction" - Ma sát nhận thức)
+        DOM.btnSurrender.addEventListener('click', () => {
+            if (surrenderStage === 0) {
+                // Lần click thứ 1: Cảnh báo, yêu cầu xác nhận
+                surrenderStage = 1;
+                
+                // Thay đổi giao diện nút để cảnh báo mạnh hơn
+                DOM.btnSurrender.textContent = "Xác nhận phá vỡ cam kết";
+                DOM.btnSurrender.className = "w-full bg-red-900 text-white font-bold py-3 px-6 rounded-lg transition-all transform scale-95 border border-red-500";
+                
+                // Hiện dòng cảnh báo
+                DOM.surrenderWarning.style.opacity = '1';
+
+                // Nếu sau 5 giây không bấm lần 2, tự động hủy bỏ yêu cầu đầu hàng (Lý trí đã chiến thắng)
+                surrenderTimeout = setTimeout(() => {
+                    surrenderStage = 0;
+                    DOM.btnSurrender.textContent = "Phá vỡ cam kết (Đầu hàng)";
+                    DOM.btnSurrender.className = "w-full bg-slate-800 border border-red-900/30 text-red-500 hover:bg-red-950/40 hover:text-red-400 hover:border-red-800 font-semibold py-3 px-6 rounded-lg transition-colors duration-300 text-sm";
+                    DOM.surrenderWarning.style.opacity = '0';
+                }, 5000);
+
+            } else if (surrenderStage === 1) {
+                // Lần click thứ 2 (Trong vòng 5s): Chấp nhận đầu hàng
+                clearTimeout(surrenderTimeout);
+                resetApp();
+            }
+        });
+
+    </script>
+
+
+<script id="cms-pin-widget">
+  if(localStorage.getItem("cms_auth") === "granted") {
+    const path = window.location.pathname.split("/").filter(Boolean);
+    let repo = "vietndj.github.io", file = "index.html";
+    if (path.length > 1) { repo = path[0]; file = path.pop(); }
+    else if (path.length === 1) { if (path[0].endsWith(".html")) file = path[0]; else repo = path[0]; }
+    const fileKey = repo + "/" + decodeURIComponent(file);
+    let isPinned = false;
+    try { const dbStr = localStorage.getItem("cms_repo_data"); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}
+    const btn = document.createElement("a");
+    btn.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    btn.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+    btn.style.cssText = "position:fixed;top:15px;right:15px;background:" + (isPinned ? "#FF3B30" : "#FF9500") + ";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";
+    btn.onmouseover = () => btn.style.transform = "scale(1.05)";
+    btn.onmouseout = () => btn.style.transform = "scale(1)";
+    btn.onclick = function(e) {
+      e.preventDefault();
+      window.open(this.href, "_blank");
+      isPinned = !isPinned;
+      this.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+      this.style.background = isPinned ? "#FF3B30" : "#FF9500";
+      this.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    };
+    document.body.appendChild(btn);
+  }
+</script>
+
+</body>
+</html>
