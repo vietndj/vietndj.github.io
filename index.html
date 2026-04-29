@@ -6,21 +6,22 @@
     <title>vietndj - Workspace</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><line x1='9' y1='9' x2='15' y2='15'></line><line x1='15' y1='9' x2='9' y2='15'></line></svg>">
     <script>
-        const savedTheme = localStorage.getItem('cms_theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        try { const savedTheme = localStorage.getItem('cms_theme') || 'light'; document.documentElement.setAttribute('data-theme', savedTheme); } catch(e){}
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* CORE THEME ENGINE */
         :root { --bg-body: #F5F5F7; --bg-card: #FFFFFF; --bg-hover: #F2F2F7; --text-main: #1D1D1F; --text-muted: #86868B; --border: #E5E5EA; --accent: #007AFF; --font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
         [data-theme="dark"] { --bg-body: #000000; --bg-card: #1C1C1E; --bg-hover: #2C2C2E; --text-main: #F5F5F7; --text-muted: #98989D; --border: #38383A; --accent: #0A84FF; }
-        [data-theme="read"] { --bg-body: #F4ECD8; --bg-card: #FAF6EB; --bg-hover: #EAE0D0; --text-main: #333333; --text-muted: #7A7566; --border: #E6DBC8; --accent: #D35400; --font-family: Georgia, serif; }
+        
+        /* CHẾ ĐỘ SÁCH VỚI TỔ HỢP FONT MEDIUM.COM (CHỐNG LỖI DẤU TIẾNG VIỆT) */
+        [data-theme="read"] { --bg-body: #F9F6EE; --bg-card: #FFFFFF; --bg-hover: #EBE5D9; --text-main: #292929; --text-muted: #6B6B6B; --border: #E8E0D1; --accent: #B85042; --font-family: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif; }
 
         body { background-color: var(--bg-body); color: var(--text-main); font-family: var(--font-family); transition: background-color 0.3s, color 0.3s; min-height: 100vh; }
         .cms-card { background-color: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
         .cms-glass { background-color: rgba(255, 255, 255, 0.85); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--border); }
         [data-theme="dark"] .cms-glass { background-color: rgba(28, 28, 30, 0.85); }
-        [data-theme="read"] .cms-glass { background-color: rgba(250, 246, 235, 0.85); }
+        [data-theme="read"] .cms-glass { background-color: rgba(249, 246, 238, 0.9); }
         
         .cms-input { background-color: var(--bg-hover); color: var(--text-main); border: 1px solid transparent; outline: none; transition: 0.2s; }
         .cms-input:focus { border-color: var(--accent); }
@@ -53,16 +54,16 @@
         <button type="button" onclick="clearBulkSelection()" class="text-sm font-bold text-muted hover:text-red-500 transition ml-2">Hủy</button>
     </div>
     
-    <div id="sync-status-toast" class="hidden fixed bottom-6 left-6 z-[9999] cms-card px-4 py-2 rounded-xl shadow-lg items-center gap-2 text-sm font-bold">
+    <div id="sync-status-toast" class="hidden fixed bottom-6 left-6 z-[9999] cms-card px-4 py-2 rounded-xl shadow-lg items-center gap-2 text-sm font-bold border-l-4 border-l-[var(--accent)]">
         <svg class="animate-spin h-4 w-4 text-[var(--accent)]" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
         <span id="sync-status-text">Đang đồng bộ...</span>
     </div>
 
-    <div id="login-screen" class="fixed inset-0 flex flex-col items-center justify-center z-[99999] transition-opacity duration-300 bg-[var(--bg-body)]">
-        <div class="cms-card p-10 max-w-sm w-full mx-4 text-center">
+    <div id="login-screen" class="hidden fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)]">
+        <div class="cms-card p-10 max-w-sm w-full mx-4 text-center shadow-2xl">
             <h2 class="text-2xl font-bold mb-2">Workspace</h2>
             <p class="text-sm text-muted mb-6">Nhập mã PIN truy cập</p>
-            <input type="password" id="pin-input" placeholder="••••" class="w-full text-center text-3xl tracking-[0.5em] font-bold px-4 py-4 cms-input rounded-2xl mb-6" onkeypress="if(event.key === 'Enter') checkPIN()">
+            <input type="password" id="pin-input" placeholder="••••" class="w-full text-center text-3xl tracking-[0.5em] font-bold px-4 py-4 cms-input rounded-2xl mb-6 border cms-border" onkeypress="if(event.key === 'Enter') checkPIN()">
             <button type="button" onclick="checkPIN()" class="w-full py-4 text-base cms-btn-primary rounded-xl shadow-md">Mở Khóa</button>
             <p id="login-error" class="text-red-500 text-sm font-bold mt-4 hidden">Mã PIN sai.</p>
         </div>
@@ -87,21 +88,21 @@
                 <button type="button" id="btn-rebuild-db" onclick="buildMasterDatabase()" class="hidden bg-red-500 text-white text-xs font-bold px-3 py-2 rounded-xl animate-pulse shadow-sm">⚠️ Data Lõi</button>
                 <button type="button" id="btn-task-toggle" onclick="toggleTasks()" class="cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1">📝 Việc</button>
                 
-                <div class="relative group" id="tools-dropdown-container">
-                    <button type="button" class="cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1">Công cụ ▾</button>
-                    <div id="tools-dropdown" class="absolute right-0 mt-2 w-48 cms-card shadow-xl hidden group-hover:flex flex-col p-2 z-[100]">
+                <div class="relative" id="tools-dropdown-container">
+                    <button type="button" id="btn-tools-menu" onclick="toggleToolsMenu(event)" class="cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1">Công cụ ▾</button>
+                    <div id="tools-dropdown" class="absolute right-0 mt-2 w-48 cms-card shadow-xl hidden flex-col p-2 z-[100] border cms-border">
                         <div class="px-2 py-1 text-[10px] uppercase text-muted font-bold tracking-wider">Giao diện</div>
                         <div class="flex gap-1 px-1 mb-2">
-                            <button type="button" onclick="setTheme('light')" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Sáng</button>
-                            <button type="button" onclick="setTheme('dark')" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Tối</button>
-                            <button type="button" onclick="setTheme('read')" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Sách</button>
+                            <button type="button" onclick="setTheme('light'); toggleToolsMenu();" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Sáng</button>
+                            <button type="button" onclick="setTheme('dark'); toggleToolsMenu();" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Tối</button>
+                            <button type="button" onclick="setTheme('read'); toggleToolsMenu();" class="flex-1 py-1 rounded text-[10px] font-bold cms-input hover:opacity-80 transition border cms-border">Sách</button>
                         </div>
                         <hr class="cms-border my-1 border-t">
-                        <button type="button" onclick="toggleWidget('vietndj-pomodoro-widget')" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">🍅 Pomodoro</button>
-                        <button type="button" onclick="openCreateRepoModal()" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">📁 Tạo Kho mới</button>
-                        <button type="button" onclick="window.location.href='notion://'" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">📓 Mở Notion</button>
-                        <button type="button" onclick="window.location.href='vscode://'" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">💻 Mở Code</button>
-                        <button type="button" onclick="compileAllForNotebookLM()" class="text-left px-3 py-2 text-xs font-bold text-[#8E44AD] hover:bg-[var(--bg-hover)] rounded-lg transition">🤖 Xuất Sách AI</button>
+                        <button type="button" onclick="toggleWidget('vietndj-pomodoro-widget'); toggleToolsMenu();" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">🍅 Pomodoro</button>
+                        <button type="button" onclick="openCreateRepoModal(); toggleToolsMenu();" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">📁 Tạo Kho mới</button>
+                        <button type="button" onclick="window.location.href='notion://'; toggleToolsMenu();" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">📓 Mở Notion</button>
+                        <button type="button" onclick="window.location.href='vscode://'; toggleToolsMenu();" class="text-left px-3 py-2 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">💻 Mở Code</button>
+                        <button type="button" onclick="compileAllForNotebookLM(); toggleToolsMenu();" class="text-left px-3 py-2 text-xs font-bold text-[#8E44AD] hover:bg-[var(--bg-hover)] rounded-lg transition">🤖 Xuất Sách AI</button>
                         <hr class="cms-border my-1 border-t">
                         <button type="button" onclick="logout()" class="text-left px-3 py-2 text-xs font-bold text-red-500 hover:bg-[var(--bg-hover)] rounded-lg transition">🔒 Khóa App</button>
                     </div>
@@ -109,7 +110,7 @@
             </div>
         </header>
 
-        <div class="sticky top-[60px] lg:top-[68px] z-40 bg-[var(--bg-body)]/90 backdrop-blur-md border-b cms-border py-2 mb-6 shadow-sm">
+        <div class="sticky top-[60px] lg:top-[68px] z-40 bg-[var(--bg-body)]/95 backdrop-blur-md border-b cms-border py-2 mb-6 shadow-sm">
             <div class="max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8 flex flex-col gap-2">
                 <div class="flex flex-wrap items-center justify-between gap-3">
                     <div class="flex items-center gap-1 overflow-x-auto kanban-scroll pb-1">
@@ -149,7 +150,7 @@
                                 <button type="button" onclick="loadMainIndex()" class="cms-btn px-4 py-2 text-xs font-bold rounded-lg shadow-sm">Sửa Root</button>
                                 <button type="button" onclick="loadRepoIndex()" class="cms-btn-primary px-4 py-2 text-xs rounded-lg shadow-sm">Sửa Index Repo</button>
                             </div>
-                            <div id="token-saved-badge" class="hidden text-green-500 bg-green-50 dark:bg-green-900/30 px-3 py-1.5 rounded-lg text-xs font-bold border border-green-200 dark:border-transparent">✓ API Connected <button onclick="clearToken()" class="underline ml-1">Xóa</button></div>
+                            <div id="token-saved-badge" class="hidden text-green-500 bg-green-50 dark:bg-green-900/30 px-3 py-1.5 rounded-lg text-xs font-bold border border-green-200 dark:border-transparent">✓ API Connected <button type="button" onclick="clearToken()" class="underline ml-1">Xóa</button></div>
                         </div>
                         <input type="hidden" id="original-repo"><input type="hidden" id="original-filename"><input type="hidden" id="original-sha">
                         
@@ -178,7 +179,9 @@
                     </div>
                 </section>
 
-                <div id="repo-container" class="transition-all duration-400 min-h-[50vh] pb-10"></div>
+                <div id="repo-container" class="transition-all duration-400 min-h-[50vh] pb-10">
+                    <div class="text-center py-20 text-muted font-bold text-sm">Đang tải dữ liệu...</div>
+                </div>
             </main>
 
             <aside id="task-sidebar" class="hidden w-full lg:w-[320px] shrink-0 sticky top-[150px] h-[calc(100vh-160px)]">
@@ -200,10 +203,10 @@
         </div>
     </div>
 
-    <div id="vietndj-pomodoro-widget" class="hidden fixed bottom-6 right-6 w-72 cms-card z-[100] p-4 shadow-2xl">
+    <div id="vietndj-pomodoro-widget" class="hidden fixed bottom-6 right-6 w-72 cms-card z-[100] p-4 shadow-2xl border cms-border">
         <div class="flex justify-between items-center font-bold text-sm mb-4 border-b cms-border pb-2">
             <span><svg class="w-4 h-4 inline pb-0.5 text-[#FF9500]"><use href="#icon-timer"></use></svg> Pomo (<span id="pomo-mini-time">25:00</span>)</span>
-            <div><span onclick="$('webhook-settings').classList.toggle('hidden')" class="cursor-pointer mr-3 text-muted hover:text-[var(--accent)]">⚙️</span><span onclick="toggleWidget('vietndj-pomodoro-widget')" class="cursor-pointer text-red-500 font-bold">✕</span></div>
+            <div><span onclick="document.getElementById('webhook-settings').classList.toggle('hidden')" class="cursor-pointer mr-3 text-muted hover:text-[var(--accent)]">⚙️</span><span onclick="toggleWidget('vietndj-pomodoro-widget')" class="cursor-pointer text-red-500 font-bold">✕</span></div>
         </div>
         <audio id="pomo-audio" src="1.mp3" preload="none"></audio>
         <div class="flex gap-2 mb-4">
@@ -229,126 +232,143 @@
         // ==========================================
         // 1. CÁC HÀM TIỆN ÍCH & TRẠNG THÁI CORE
         // ==========================================
-        const $ = id => document.getElementById(id);
         const SECRET_PIN = "0070", username = 'vietndj', DRIVE_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzaSLNSuCFtaWG1ti3CHnEvqD_ZcuhuK9rkhbbOJIijVozlkJSqXlIkW8icGvtS6oVojQ/exec";
         const CMS_PIN_WIDGET = '\n<script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}<' + '/script>\n';
         const WIDGET_REGEX = new RegExp('\\n*<script id="cms-pin-widget">[\\s\\S]*?<\\/' + 'script>\\n*', 'gi');
 
-        let st = { sort: 'desc', view: 'list', tag: 'all', repo: 'all', q: '', deep: false, sync: false, tbl: {by:'date',dir:'desc'} };
+        let sortOrder = 'desc', currentView = 'list', activeTag = 'all', activeRepo = 'all', searchQuery = '', isDeepSearch = false, isSyncing = false, tableSort = {by:'date',dir:'desc'};
         let db = { repos: {}, files: [], tags: {}, links: {}, tasks: [], pinned: [], colors: {}, customCol: [], titles: {} };
         let bulkSet = new Set(), isSlugEdited = false, currentColorKey = null, currentColorSha = null, uploadLinksTemp = [];
         let editMeta = { tagKey: null, sha: null, linkKey: null, mSR: '', mFN: '', mFS: '' };
 
         // ==========================================
-        // 2. KHỞI TẠO & ĐĂNG NHẬP
+        // 2. KHỞI TẠO & ĐĂNG NHẬP (Fix Lỗi Quota Cứng)
         // ==========================================
-        window.onload = () => {
-            try {
-                _injectModals();
-                if(localStorage.getItem("cms_auth") === "granted") {
-                    unlockSystem(); 
-                } else {
-                    if($('pin-input')) $('pin-input').focus();
-                }
-                const w = localStorage.getItem('cms_pomo_webhook'); 
-                if(w && $('pomo-webhook-url')) $('pomo-webhook-url').value = w;
-            } catch(e) { console.error(e); }
-        };
+        window.addEventListener('DOMContentLoaded', () => {
+            _injectModals();
+            let auth = false; try { if(localStorage.getItem("cms_auth") === "granted") auth = true; } catch(e) {}
+            if(auth) unlockSystem(); else {
+                const ls = document.getElementById('login-screen'); if(ls) { ls.classList.remove('hidden'); ls.style.display = 'flex'; }
+                const inp = document.getElementById('pin-input'); if(inp) inp.focus();
+            }
+            try { const w = localStorage.getItem('cms_pomo_webhook'); if(w) { const i = document.getElementById('pomo-webhook-url'); if(i) i.value = w; } } catch(e) {}
+        });
 
         function checkPIN() { 
-            const inp = $('pin-input');
+            const inp = document.getElementById('pin-input');
             if(inp && inp.value.trim() === SECRET_PIN) { 
-                try{localStorage.setItem("cms_auth", "granted");}catch(e){} 
+                try { localStorage.setItem("cms_auth", "granted"); } catch(e) { console.warn(e); } 
                 unlockSystem(); 
             } else { 
-                if($('login-error')) $('login-error').classList.remove('hidden'); 
+                const err = document.getElementById('login-error'); if(err) err.classList.remove('hidden'); 
                 if(inp) inp.value=''; 
             } 
         }
 
         function unlockSystem() { 
             try {
-                if($('login-screen')) $('login-screen').style.display = 'none'; 
-                if($('app-content')) {
-                    $('app-content').classList.remove('hidden'); 
-                    $('app-content').style.display = 'flex'; 
-                    $('app-content').classList.add('fade-in'); 
-                }
-                setTimeout(() => {
-                    try { checkTokenUI(); initCMS(); } catch(e) { console.error(e); }
-                }, 50); 
+                const ls = document.getElementById('login-screen'); if(ls) ls.style.display = 'none'; 
+                const ac = document.getElementById('app-content');
+                if(ac) { ac.classList.remove('hidden'); ac.style.display = 'flex'; ac.classList.add('fade-in'); }
+                setTimeout(() => { try { checkTokenUI(); initCMS(); } catch(e) { console.error(e); } }, 50); 
             } catch(e) { console.error("UNLOCK ERR", e); }
         }
 
         function logout() { try{localStorage.removeItem("cms_auth");}catch(e){} location.reload(); }
 
         // ==========================================
-        // 3. UI ACTIONS CHUNG
+        // 3. UI ACTIONS CHUNG (TOOLS, DROPDOWN...)
         // ==========================================
+        function toggleToolsMenu(e) {
+            if(e) e.stopPropagation();
+            const d = document.getElementById('tools-dropdown');
+            if(d) {
+                if(d.classList.contains('hidden')) { d.classList.remove('hidden'); d.classList.add('flex'); } 
+                else { d.classList.add('hidden'); d.classList.remove('flex'); }
+            }
+        }
+        document.addEventListener('click', (e) => {
+            const d = document.getElementById('tools-dropdown');
+            if(d && !d.classList.contains('hidden') && !e.target.closest('#tools-dropdown-container')) {
+                d.classList.add('hidden'); d.classList.remove('flex');
+            }
+        });
+
         function toggleTasks() { 
-            const s = $('task-sidebar'), b = $('btn-task-toggle'); 
+            const s = document.getElementById('task-sidebar'), b = document.getElementById('btn-task-toggle'); 
             if(!s) return;
             if(s.classList.contains('hidden')) { 
                 s.classList.remove('hidden'); s.classList.add('flex'); 
-                if(b) b.classList.add('text-[var(--accent)]', 'border-[var(--accent)]'); 
+                if(b) b.classList.add('text-accent', 'border-accent'); 
             } else { 
                 s.classList.add('hidden'); s.classList.remove('flex'); 
-                if(b) b.classList.remove('text-[var(--accent)]', 'border-[var(--accent)]'); 
+                if(b) b.classList.remove('text-accent', 'border-accent'); 
             } 
         }
 
-        function toggleWidget(id) { const w = $(id); if(w) w.classList.toggle('hidden'); }
-        function closeModal(id) { const e = $(id); if(e){e.classList.add('hidden');e.classList.remove('flex');} }
-        function openModal(id) { const e = $(id); if(e){e.classList.remove('hidden');e.classList.add('flex');} }
-        function showToast(msg, err=false) { const t=$('sync-status-toast'), tt=$('sync-status-text'); if(!t) return; t.classList.remove('hidden'); t.classList.add('flex'); t.style.borderColor = err?'#FF3B30':'var(--border)'; tt.innerText=msg; }
-        function hideToast() { setTimeout(()=>$('sync-status-toast')?.classList.add('hidden'), 2000); }
-        function setTheme(t) { document.documentElement.setAttribute('data-theme', t); localStorage.setItem('cms_theme', t); }
+        function toggleWidget(id) { const w = document.getElementById(id); if(w) w.classList.toggle('hidden'); }
+        function closeModal(id) { const e = document.getElementById(id); if(e){e.classList.add('hidden');e.classList.remove('flex');} }
+        function openModal(id) { const e = document.getElementById(id); if(e){e.classList.remove('hidden');e.classList.add('flex');} }
+        function showToast(msg, err=false) { const t=document.getElementById('sync-status-toast'), tt=document.getElementById('sync-status-text'); if(!t) return; t.classList.remove('hidden'); t.classList.add('flex'); t.style.borderColor = err?'#FF3B30':'var(--border)'; tt.innerText=msg; }
+        function hideToast() { setTimeout(()=>document.getElementById('sync-status-toast')?.classList.add('hidden'), 2000); }
+        
+        function setTheme(t) { 
+            document.documentElement.setAttribute('data-theme', t); 
+            try{ localStorage.setItem('cms_theme', t); }catch(e){} 
+            toggleToolsMenu(); 
+        }
 
         function checkTokenUI() { 
             try { 
                 const tk = localStorage.getItem('github_pat'); 
-                if(tk) { 
-                    if($('token-col')) $('token-col').style.display='none'; 
-                    if($('token-saved-badge')) $('token-saved-badge').classList.remove('hidden'); 
-                    if($('github-token')) $('github-token').value=tk; 
-                } else { 
-                    if($('token-col')) $('token-col').style.display='block'; 
-                    if($('token-saved-badge')) $('token-saved-badge').classList.add('hidden'); 
-                    if($('github-token')) $('github-token').value=''; 
-                } 
+                const tc = document.getElementById('token-col'), tb = document.getElementById('token-saved-badge'), ght = document.getElementById('github-token');
+                if(tk) { if(tc) tc.style.display='none'; if(tb) tb.classList.remove('hidden'); if(ght) ght.value=tk; } 
+                else { if(tc) tc.style.display='block'; if(tb) tb.classList.add('hidden'); if(ght) ght.value=''; } 
             } catch(e){} 
         }
 
-        function clearToken() { if(confirm("Xóa Token bảo mật?")) { localStorage.removeItem('github_pat'); checkTokenUI(); } }
+        function clearToken() { if(confirm("Xóa Token bảo mật?")) { try{localStorage.removeItem('github_pat');}catch(e){} checkTokenUI(); } }
+
+        function renderRepoSuggestions() {
+            try {
+                const c = document.getElementById('repo-suggestions'); if(!c) return;
+                const rs = Object.keys(db.repos).filter(r=>r!=='📌 Đã ghim'&&r!==`${username}.github.io`).sort();
+                rs.unshift(`${username}.github.io`);
+                c.innerHTML = rs.map(r=>`<button type="button" onclick="document.getElementById('upload-repo').value='${username}/${r}'" class="cms-btn px-2 py-1 rounded-lg text-[10px] font-bold shadow-sm opacity-90 transition hover:opacity-100">${r}</button>`).join(''); 
+            } catch(e){}
+        }
 
         function toggleUpload() { 
-            const s = $('upload-section'), i = $('upload-icon'); 
+            const s = document.getElementById('upload-section'), i = document.getElementById('upload-icon'); 
             if(!s) return;
             if(s.classList.contains('hidden')){ 
                 s.classList.remove('hidden'); if(i) i.style.transform='rotate(180deg)'; 
-                if($('repo-suggestions')) $('repo-suggestions').innerHTML = Object.keys(db.repos).filter(r=>r!=='📌 Đã ghim'&&r!==`${username}.github.io`).sort().map(r=>`<button type="button" onclick="$('upload-repo').value='${username}/${r}'" class="cms-input border cms-border px-2 py-1 rounded text-[10px] font-bold opacity-80">${r}</button>`).join(''); 
+                renderRepoSuggestions(); syncUploadTagsUI();
             } else { 
                 s.classList.add('hidden'); if(i) i.style.transform='rotate(0deg)'; 
             } 
         }
 
         function clearUploadForm() { 
-            ['upload-title', 'upload-filename', 'upload-content', 'upload-tags', 'original-repo', 'original-filename', 'original-sha'].forEach(id => { if($(id)) $(id).value=''; });
-            if($('btn-create')) $('btn-create').innerHTML='Lưu (Ctrl S)'; 
-            if($('upload-status')) $('upload-status').style.display='none'; 
-            if($('btn-delete')) $('btn-delete').classList.add('hidden'); 
+            ['upload-title', 'upload-filename', 'upload-content', 'upload-tags', 'original-repo', 'original-filename', 'original-sha'].forEach(id => { const el = document.getElementById(id); if(el) el.value=''; });
+            const bc = document.getElementById('btn-create'), bd = document.getElementById('btn-delete'), us = document.getElementById('upload-status');
+            if(bc) bc.innerHTML='Lưu (Ctrl S)'; 
+            if(us) us.style.display='none'; 
+            if(bd) bd.classList.add('hidden'); 
             uploadLinksTemp=[]; renderUploadLinks(); syncUploadTagsUI(); isSlugEdited=false; 
+            renderRepoSuggestions();
         }
 
         function syncUploadTagsUI() { 
             try {
-                const tg = Array.from(new Set(Object.values(getSafeTagsData()).flat())).sort(); 
-                const inp = $('upload-tags'); if(!inp) return; 
+                const safeTagsData = getSafeTagsData(); const allTags = new Set(); Object.values(safeTagsData).forEach(tags => tags.forEach(t => allTags.add(t)));
+                const tg = Array.from(allTags).sort(); 
+                const inp = document.getElementById('upload-tags'); if(!inp) return; 
                 const cur = inp.value.split(',').map(x=>x.trim()).filter(Boolean); 
-                const sug = $('upload-tag-suggestions'); if(!sug) return;
+                const sug = document.getElementById('upload-tag-suggestions'); if(!sug) return;
                 if(!tg.length) sug.innerHTML='<span class="text-[10px] text-muted italic mt-2">Chưa có nhãn.</span>'; 
                 else sug.innerHTML = tg.map(t=>{ 
-                    const c = cur.includes(t) ? 'theme-bg-accent border-transparent' : 'bg-transparent text-muted border-[var(--border)] hover:opacity-80'; 
+                    const c = cur.includes(t) ? 'bg-[var(--accent)] text-white border-transparent' : 'bg-transparent text-muted border-[var(--border)] hover:opacity-80'; 
                     const sf = t.replace(/'/g,"\\'").replace(/"/g,"&quot;");
                     return `<button type="button" onclick="toggleUploadTagForm('${sf}')" class="px-2.5 py-1 text-[10px] font-bold rounded-md transition border ${c}" data-tag="${sf}">${t}</button>`; 
                 }).join(''); 
@@ -356,7 +376,7 @@
         }
 
         function toggleUploadTagForm(t) {
-            t = t.replace(/\\'/g,"'").replace(/&quot;/g,'"'); const i = $('upload-tags');
+            t = t.replace(/\\'/g,"'").replace(/&quot;/g,'"'); const i = document.getElementById('upload-tags');
             if(!i) return;
             let c = i.value.split(',').map(x=>x.trim()).filter(Boolean);
             if(c.includes(t)) c = c.filter(x=>x!==t); else c.push(t);
@@ -364,48 +384,56 @@
         }
 
         function renderUploadLinks() { 
-            const c=$('upload-links-container'); if(!c) return; 
+            const c=document.getElementById('upload-links-container'); if(!c) return; 
             if(!uploadLinksTemp.length) { c.innerHTML='<span class="text-[10px] text-muted italic">Chưa có link ngoài nào.</span>'; return; }
-            c.innerHTML=uploadLinksTemp.map((l,i)=>`<div class="flex gap-2 items-center cms-card p-1 rounded-md border cms-border"><input type="text" placeholder="Tên" value="${l.title}" oninput="uploadLinksTemp[${i}].title=this.value" class="w-1/3 px-2 py-1.5 text-[11px] rounded bg-transparent outline-none font-bold text-[var(--text-main)]"><input type="text" placeholder="URL" value="${l.url}" oninput="uploadLinksTemp[${i}].url=this.value" class="flex-1 px-2 py-1.5 text-[11px] rounded bg-transparent outline-none border-l cms-border text-[var(--text-main)]"><button type="button" onclick="uploadLinksTemp.splice(${i},1);renderUploadLinks()" class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 px-2 py-1 rounded text-xs transition font-bold">✕</button></div>`).join(''); 
+            c.innerHTML=uploadLinksTemp.map((l,i)=>`<div class="flex gap-2 items-center cms-card p-1 rounded-md border border-theme"><input type="text" placeholder="Tên" value="${l.title}" oninput="uploadLinksTemp[${i}].title=this.value" class="w-1/3 px-2 py-1.5 text-[11px] rounded bg-transparent outline-none font-bold text-[var(--text-main)]"><input type="text" placeholder="URL" value="${l.url}" oninput="uploadLinksTemp[${i}].url=this.value" class="flex-1 px-2 py-1.5 text-[11px] rounded bg-transparent outline-none border-l border-theme text-[var(--text-main)]"><button type="button" onclick="uploadLinksTemp.splice(${i},1);renderUploadLinks()" class="text-red-500 hover:bg-red-50 dark:hover:bg-red-900/30 px-2 py-1 rounded text-xs transition font-bold">✕</button></div>`).join(''); 
         }
-
         function addUploadLink() { uploadLinksTemp.push({title:'Gem '+(uploadLinksTemp.length+1),url:''}); renderUploadLinks(); }
 
         document.addEventListener('keydown', e => {
             const cmd = navigator.platform.toUpperCase().indexOf('MAC')>=0 ? e.metaKey : e.ctrlKey;
-            if(!$('app-content')?.classList.contains('hidden')) {
-                if(cmd && e.key.toLowerCase()==='s' && $('upload-section') && !$('upload-section').classList.contains('hidden')) { e.preventDefault(); createFile(); }
-                if(cmd && e.key.toLowerCase()==='k') { e.preventDefault(); $('search-input')?.focus(); }
-                if(cmd && e.key.toLowerCase()==='e') { e.preventDefault(); toggleUpload(); if($('upload-section') && !$('upload-section').classList.contains('hidden')) $('upload-title')?.focus(); }
-                if(e.key === 'Escape') { ['tag-modal-overlay','link-modal-overlay','color-modal-overlay','create-repo-overlay','rename-repo-overlay','move-file-overlay','bulk-move-overlay'].forEach(id=>closeModal(id)); if($('upload-section') && !$('upload-section').classList.contains('hidden')) toggleUpload(); $('search-input')?.blur(); }
+            const ac = document.getElementById('app-content');
+            if(ac && !ac.classList.contains('hidden')) {
+                const us = document.getElementById('upload-section');
+                if(cmd && e.key.toLowerCase()==='s' && us && !us.classList.contains('hidden')) { e.preventDefault(); createFile(); }
+                if(cmd && e.key.toLowerCase()==='k') { e.preventDefault(); const si = document.getElementById('search-input'); if(si) si.focus(); }
+                if(cmd && e.key.toLowerCase()==='e') { e.preventDefault(); toggleUpload(); const ut = document.getElementById('upload-title'); if(us && !us.classList.contains('hidden') && ut) ut.focus(); }
+                if(e.key === 'Escape') { ['tag-modal-overlay','link-modal-overlay','color-modal-overlay','create-repo-overlay','rename-repo-overlay','move-file-overlay','bulk-move-overlay'].forEach(id=>closeModal(id)); if(us && !us.classList.contains('hidden')) toggleUpload(); const si = document.getElementById('search-input'); if(si) si.blur(); }
             }
         });
 
         // ==========================================
         // 4. API GITHUB VÀ MÃ HÓA
         // ==========================================
-        const getToken = () => ($('github-token')?.value || localStorage.getItem('github_pat') || '').replace(/\s+/g, '');
+        const getToken = () => (document.getElementById('github-token')?.value || localStorage.getItem('github_pat') || '').replace(/\s+/g, '');
         const getHeaders = () => { const t = getToken(); return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : { 'Accept': 'application/vnd.github.v3+json' }; };
-        const requireToken = () => { if(!getToken()) { alert("🔒 Vui lòng nhập Mã Token GitHub!"); if($('upload-section') && $('upload-section').classList.contains('hidden')) toggleUpload(); $('github-token')?.focus(); return false; } return true; };
+        const requireToken = () => { if(!getToken()) { alert("🔒 Vui lòng nhập Mã Token GitHub!"); const us = document.getElementById('upload-section'); if(us && us.classList.contains('hidden')) toggleUpload(); const gt = document.getElementById('github-token'); if(gt) gt.focus(); return false; } return true; };
         
+        // HÀM AN TOÀN BẢO VỆ MÃ HÓA ĐÚP TIẾNG VIỆT
         const safeEnc = fn => { try { fn = decodeURIComponent(fn); } catch(e){} return encodeURIComponent(fn); };
         const encodeB64 = str => new Promise((resolve) => { const r = new FileReader(); r.onload = () => resolve(r.result.split(',')[1]); r.readAsDataURL(new Blob([new TextEncoder().encode(str)])); });
         
         async function fetchJSON(url, opts) { try { const r = await fetch(url, opts); return r.ok ? await r.json() : null; } catch(e) { return null; } }
         async function fetchText(url, opts) { try { const r = await fetch(url, opts); return r.ok ? await r.text() : null; } catch(e) { return null; } }
-        async function getFileShaSafe(repo, file) { let d = await fetchJSON(`https://api.github.com/repos/${repo}/contents/${safeEnc(file)}?t=${Date.now()}`, {headers: getHeaders()}); if(d && !Array.isArray(d)) return d.sha; let d2 = await fetchJSON(`https://api.github.com/repos/${repo}/contents/?t=${Date.now()}`, {headers: getHeaders()}); if(d2 && Array.isArray(d2)) { const f = d2.find(x => x.name === file); if(f) return f.sha; } return null; }
+        async function getFileShaSafe(repoPath, file) { 
+            let d = await fetchJSON(`https://api.github.com/repos/${repoPath}/contents/${safeEnc(file)}?t=${Date.now()}`, {headers: getHeaders()}); 
+            if(d && !Array.isArray(d)) return d.sha; 
+            let d2 = await fetchJSON(`https://api.github.com/repos/${repoPath}/contents/?t=${Date.now()}`, {headers: getHeaders()}); 
+            if(d2 && Array.isArray(d2)) { const f = d2.find(x => x.name === file); if(f) return f.sha; } 
+            return null; 
+        }
         
         const getContrastYIQ = hex => { if(!hex)return '#1D1D1F'; hex=hex.replace("#",""); const yiq=((parseInt(hex.substr(0,2),16)*299)+(parseInt(hex.substr(2,2),16)*587)+(parseInt(hex.substr(4,2),16)*114))/1000; return (yiq>=128)?'#1D1D1F':'#FFFFFF'; };
         const slugify = t => t?t.toString().toLowerCase().replace(/[áàảạãăắằẳẵặâấầẩẫậ]/gi,'a').replace(/[éèẻẽẹêếềểễệ]/gi,'e').replace(/[iíìỉĩị]/gi,'i').replace(/[óòỏõọôốồổỗộơớờởỡợ]/gi,'o').replace(/[úùủũụưứừửữự]/gi,'u').replace(/[ýỳỷỹỵ]/gi,'y').replace(/đ/gi,'d').replace(/\s+/g,'-').replace(/[^\w\-]+/g,'').replace(/\-\-+/g,'-').replace(/^-+|-+$/g,''):"";
         
         function autoSlugify() { 
             if(isSlugEdited) return; 
-            const ti = $('upload-title'); if(!ti) return;
+            const ti = document.getElementById('upload-title'); if(!ti) return;
             let t = ti.value.trim(); 
-            const fn = $('upload-filename'); if(!fn) return;
+            const fn = document.getElementById('upload-filename'); if(!fn) return;
             if(t.toLowerCase()==='index'||t.toLowerCase()==='index.html') { fn.value='index.html'; return; }
             let s = slugify(t);
-            const tagInp = $('upload-tags');
+            const tagInp = document.getElementById('upload-tags');
             let tg = tagInp ? tagInp.value.split(',').map(x=>x.trim()).filter(Boolean) : []; 
             if(tg.length && s) { 
                 let ts=slugify(tg.join('-')); 
@@ -431,29 +459,39 @@
             let res = { tocHTML:'', previewText:'Trống', previewFeedHTML:'', coverHTML:'', fullText:'' }; try {
                 const doc = new DOMParser().parseFromString(html, 'text/html'), t = doc.querySelector('title')?.textContent||doc.querySelector('h1')?.textContent||safeN.replace('.html','');
                 res.coverHTML = `<div class="w-full h-full p-4 flex items-center justify-center text-center opacity-60 font-bold">${t}</div>`;
-                let tocs=[]; doc.querySelectorAll('h1, h2, h3').forEach((h,i) => { if(!h.id) h.id=`toc-${i}`; tocs.push(`<li class="truncate"><a href="${url}#${h.id}" class="hover:underline transition">• ${h.textContent.trim()}</a></li>`); });
-                if(tocs.length) res.tocHTML = `<details class="cms-input rounded-xl text-xs mb-4 border cms-border cursor-pointer"><summary class="font-bold p-3 outline-none">📋 Mục lục (${tocs.length})</summary><ul class="p-3 pt-0 space-y-2 opacity-90">${tocs.join('')}</ul></details>`;
+                let tocs=[]; doc.querySelectorAll('h1, h2, h3').forEach((h,i) => { if(!h.id) h.id=`toc-${i}`; tocs.push(`<li class="truncate"><a href="${url}#${h.id}" class="hover:underline transition text-[var(--accent)] font-medium">• ${h.textContent.trim()}</a></li>`); });
+                if(tocs.length) res.tocHTML = `<details class="cms-input rounded-xl text-xs mb-4 border border-theme cursor-pointer"><summary class="font-bold p-3 outline-none opacity-80">📋 Mục lục (${tocs.length})</summary><ul class="p-3 pt-0 space-y-2 opacity-90">${tocs.join('')}</ul></details>`;
                 const b = doc.body.cloneNode(true); b.querySelectorAll('script, style, nav, header, footer, iframe, svg, button').forEach(x=>x.remove()); res.fullText = (b.textContent||"").replace(/\s+/g,' ').trim();
                 if(res.fullText) res.previewText = res.fullText.substring(0,800)+(res.fullText.length>800?"...":"");
                 let fH="", pN=doc.body.querySelectorAll('p, h2, h3, h4, ul, ol, blockquote');
                 if(pN.length) { pN.forEach(n=>{ let tx=n.textContent.trim(), tg=n.tagName.toLowerCase(); if(tx.length<4) return;
-                    if(tg.startsWith('h')) fH+=`<h4 class="font-bold mt-6 mb-2 border-l-4 border-[var(--accent)] pl-3 text-lg">${tx}</h4>`;
+                    if(tg.startsWith('h')) fH+=`<h4 class="font-bold mt-6 mb-2 border-l-4 border-accent pl-3 text-lg">${tx}</h4>`;
                     else if(tg==='ul'||tg==='ol') fH+=`<ul class="list-disc pl-6 mb-4 opacity-90 space-y-1.5">${Array.from(n.querySelectorAll('li')).map(li=>`<li>${li.textContent.trim()}</li>`).join('')}</ul>`;
                     else if(tg==='blockquote') fH+=`<blockquote class="border-l-4 border-[var(--border)] pl-4 py-1 italic mb-4 cms-input rounded-r-lg opacity-80">${tx}</blockquote>`;
-                    else fH+=`<p class="mb-4 text-[15px] leading-relaxed opacity-95">${tx}</p>`;
-                }); res.previewFeedHTML = fH || `<p class="whitespace-pre-line">${res.previewText}</p>`; } else res.previewFeedHTML = `<div class="mb-4 whitespace-pre-line">${res.previewText}</div>`;
+                    else fH+=`<p class="mb-4 text-[16px] leading-relaxed opacity-95">${tx}</p>`;
+                }); res.previewFeedHTML = fH || `<p class="whitespace-pre-line text-[16px]">${res.previewText}</p>`; } else res.previewFeedHTML = `<div class="mb-4 whitespace-pre-line text-[16px]">${res.previewText}</div>`;
             } catch(e){} return res;
         }
 
         // ==========================================
-        // 5. DATABASE SYNC & LOAD
+        // 5. DATABASE SYNC & LƯU NHẸ (CHỐNG LỖI QUOTA)
         // ==========================================
+        function rebuildRepoMap() {
+            db.repos = {};
+            if(Array.isArray(db.files)) {
+                db.files.forEach(f => {
+                    if(!db.repos[f.repoName]) db.repos[f.repoName] = [];
+                    db.repos[f.repoName].push(f);
+                });
+            }
+        }
+
         function initCMS() {
             try { 
-                const c = JSON.parse(localStorage.getItem('cms_repo_data')); 
-                if(c) { 
+                const cStr = localStorage.getItem('cms_repo_data');
+                if(cStr) {
+                    const c = JSON.parse(cStr);
                     if(c.files) db.files = c.files;
-                    if(c.repos) db.repos = c.repos;
                     if(c.tags) db.tags = c.tags;
                     if(c.links) db.links = c.links;
                     if(c.tasks) db.tasks = c.tasks;
@@ -463,6 +501,7 @@
                     if(c.titles) db.titles = c.titles;
 
                     getSafeTagsData(); 
+                    rebuildRepoMap();
                     if(Array.isArray(db.files) && db.files.length > 0) renderRepos(); 
                     renderTasks(); 
                 } 
@@ -471,13 +510,44 @@
             checkUrlPin(); 
         }
 
-        function _saveLocal() { localStorage.setItem('cms_repo_data', JSON.stringify({ ...db, files: db.files.map(({htmlContent,...r})=>r), repos:{} })); }
+        function _saveLocal() { 
+            try {
+                // ÉP CÂN DỮ LIỆU BỘ NHỚ ĐỆM ĐỂ CHỐNG LỖI 5MB QUOTA
+                const leanFiles = (db.files || []).slice(0, 50).map(f => ({
+                    repoName: f.repoName, name: f.name, fileName: f.fileName, sha: f.sha, url: f.url, 
+                    timestamp: f.timestamp, fullDate: f.fullDate, 
+                    // Chặt bỏ mã HTML dài, chỉ lưu 100 ký tự đầu để Load List/Grid khởi tạo nhanh
+                    preview: f.preview ? f.preview.substring(0, 100) + '...' : ''
+                }));
+                const dataToSave = { 
+                    tags: db.tags, links: db.links, tasks: db.tasks, 
+                    pinned: db.pinned, colors: db.colors, customCol: db.customCol, titles: db.titles,
+                    files: leanFiles
+                };
+                localStorage.setItem('cms_repo_data', JSON.stringify(dataToSave));
+            } catch(e) { 
+                console.warn("Storage quota exceeded", e);
+                if(e.name === 'QuotaExceededError' || e.code === 22) {
+                     // Nếu vẫn đầy, mạnh tay cắt bỏ danh sách File, chỉ lưu Cấu hình (Pin Auth sẽ luôn an toàn)
+                     const essentialData = { tags: db.tags, links: db.links, tasks: db.tasks, pinned: db.pinned, colors: db.colors, customCol: db.customCol, titles: db.titles };
+                     try{ localStorage.setItem('cms_repo_data', JSON.stringify(essentialData)); }catch(err){}
+                }
+            }
+        }
         
-        async function saveMeta() { const t=getToken(); if(!t)return; try{ const sha=await getFileShaSafe(`${username}/${username}.github.io`, 'metadata.json'), c=await encodeB64(JSON.stringify({_version:6, tags:db.tags, links:db.links, tasks:db.tasks, pinned:db.pinned, colors:db.colors, customCol:db.customCol, titles:db.titles}, null, 2)); await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, {method:'PUT', headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'}, body:JSON.stringify({message:"Sync Meta", content:c, sha:sha||undefined})}); _saveLocal(); }catch(e){} }
-        async function saveDB() { const t=getToken(); if(!t)return; try{ const sha=await getFileShaSafe(`${username}/${username}.github.io`, 'cms_db.json'), c=await encodeB64(JSON.stringify({allFiles:db.files.map(({htmlContent,...r})=>r)})), b={message:"Auto-sync DB", content:c}; if(sha) b.sha=sha; await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/cms_db.json`, {method:'PUT', headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'}, body:JSON.stringify(b)}); }catch(e){} }
+        async function saveMeta() { const t=getToken(); if(!t)return; try{ const sha=await getFileShaSafe(`${username}/${username}.github.io`, 'metadata.json'); const c=await encodeB64(JSON.stringify({_version:7, tags:db.tags, links:db.links, tasks:db.tasks, pinned:db.pinned, colors:db.colors, customCol:db.customCol, titles:db.titles}, null, 2)); await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, {method:'PUT', headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'}, body:JSON.stringify({message:"Sync Meta", content:c, sha:sha||undefined})}); _saveLocal(); }catch(e){} }
+        async function saveDB() { 
+            const t=getToken(); if(!t)return; 
+            try{ 
+                const sha=await getFileShaSafe(`${username}/${username}.github.io`, 'cms_db.json'); 
+                const c=await encodeB64(JSON.stringify({allFiles: db.files})); // Toàn bộ Data vẫn sống trên GitHub
+                const b={message:"Auto-sync DB", content:c}; if(sha) b.sha=sha; 
+                await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/cms_db.json`, {method:'PUT', headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'}, body:JSON.stringify(b)}); 
+            }catch(e){} 
+        }
         async function _syncSilent() { try{ await saveMeta(); await saveDB(); }catch(e){} }
         
-        function forceSync() { const t=$('github-token')?.value.trim(); if(t){try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI();} fastLoadDB(); }
+        function forceSync() { const t=document.getElementById('github-token')?.value.trim(); if(t){try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI();} fastLoadDB(); }
 
         async function fetchRawJSON(repoPath, file) {
             const h = { 'Accept': 'application/vnd.github.v3.raw' }; const t = getToken(); if(t) h['Authorization'] = `Bearer ${t}`;
@@ -486,26 +556,41 @@
         }
 
         async function fastLoadDB() {
-            if(st.sync) return; st.sync=true; showToast("Tải DB...");
+            if(isSyncing) return; isSyncing=true; showToast("Đang tải Database...");
             try {
                 const m = await fetchRawJSON(`${username}/${username}.github.io`, 'metadata.json');
-                if(m && typeof m==='object') { ['tags','links','tasks','pinned','colors','customCol','titles'].forEach(k => {if(m[k]) db[k]=m[k];}); getSafeTagsData(); }
+                if(m && typeof m==='object') { 
+                    if(m.tags) db.tags = m.tags; if(m.links) db.links = m.links; if(m.tasks) db.tasks = m.tasks; 
+                    if(m.pinned) db.pinned = m.pinned; if(m.colors) db.colors = m.colors; 
+                    if(m.customCol) db.customCol = m.customCol; if(m.titles) db.titles = m.titles;
+                    getSafeTagsData(); 
+                }
                 const d = await fetchRawJSON(`${username}/${username}.github.io`, 'cms_db.json');
                 if(d && d.allFiles) {
-                    db.files = d.allFiles; db.repos={}; db.files.forEach(f=>{if(!db.repos[f.repoName])db.repos[f.repoName]=[];db.repos[f.repoName].push(f);});
-                    _saveLocal(); renderRepos(); renderTasks(); showToast("✅ Hoàn tất!"); hideToast();
-                    if($('btn-rebuild-db')) { $('btn-rebuild-db').className="cms-btn px-3 py-1.5 rounded-xl text-xs font-bold transition shadow-sm h-[32px] hidden lg:block"; $('btn-rebuild-db').innerText="↻ Tải DB Lõi"; }
+                    db.files = d.allFiles; 
+                    rebuildRepoMap();
+                    _saveLocal(); renderRepos(); renderTasks(); 
+                    
+                    const uploadSect = document.getElementById('upload-section');
+                    if(uploadSect && !uploadSect.classList.contains('hidden')) {
+                        renderRepoSuggestions(); syncUploadTagsUI();
+                    }
+                    
+                    showToast("✅ Hoàn tất!"); hideToast();
+                    const b = document.getElementById('btn-rebuild-db');
+                    if(b) { b.className="cms-btn px-3 py-1.5 rounded-xl text-xs font-bold transition shadow-sm h-[32px] hidden lg:block"; b.innerText="↻ Tải DB Lõi"; }
                 } else throw new Error("No DB");
             } catch(e) { 
                 showToast("⚠️ Trống, Nạp Core Lõi!", true); 
-                if($('btn-rebuild-db')) $('btn-rebuild-db').classList.remove('hidden'); 
-                setTimeout(()=>$('sync-status-toast')?.classList.add('hidden'), 3000); 
-            } finally { st.sync=false; }
+                const b = document.getElementById('btn-rebuild-db');
+                if(b) b.classList.remove('hidden'); 
+                setTimeout(()=>document.getElementById('sync-status-toast')?.classList.add('hidden'), 3000); 
+            } finally { isSyncing=false; }
         }
 
         async function buildMasterDatabase() {
             if(!requireToken() || !confirm("⚠️ QUÉT LẠI TOÀN BỘ DATA LÕI?\nMất khoảng 15-30s. Bắt đầu?")) return;
-            const btn = $('btn-rebuild-db'); if(btn) { btn.innerText="⏳ Đang quét..."; btn.disabled=true; }
+            const btn = document.getElementById('btn-rebuild-db'); if(btn) { btn.innerText="⏳ Đang quét..."; btn.disabled=true; }
             showToast("Bắt đầu quét Github...");
             try {
                 const rR=await fetchJSON(`https://api.github.com/users/${username}/repos?per_page=100&t=${Date.now()}`, {headers:getHeaders()});
@@ -529,7 +614,7 @@
                     }
                 }
                 showToast("Trích xuất HTML..."); await Promise.allSettled(fP);
-                db.files = mF.sort((a,b)=>b.timestamp-a.timestamp); db.repos={}; db.files.forEach(x=>{if(!db.repos[x.repoName])db.repos[x.repoName]=[];db.repos[x.repoName].push(x);});
+                db.files = mF.sort((a,b)=>b.timestamp-a.timestamp); rebuildRepoMap();
                 showToast("Lưu lên GitHub..."); await saveDB(); await saveMeta();
                 if(btn){ btn.innerText="↻ Tải DB Lõi"; btn.classList.remove('bg-red-500','text-white','animate-pulse'); btn.className="cms-btn px-3 py-1.5 rounded-xl text-xs font-bold transition shadow-sm h-[32px]"; }
                 _saveLocal(); renderRepos(); showToast("✅ THÀNH CÔNG!"); alert("Cập nhật Database thành công!");
@@ -543,7 +628,7 @@
                 const dec = decodeURIComponent(t), arr = dec.split('/'), f = arr.pop(), r = arr.join('/')||`${username}.github.io`, k = `${r}/${f}`;
                 if(r && f) {
                     let ch = false; if(p.get('pin') && (!db.pinned || !db.pinned.includes(k))){ if(!Array.isArray(db.pinned)) db.pinned=[]; db.pinned.push(k); ch=true; } else if(p.get('unpin') && db.pinned && db.pinned.includes(k)){ db.pinned=db.pinned.filter(x=>x!==k); ch=true; }
-                    document.body.innerHTML=`<div style="display:flex;height:100vh;align-items:center;justify-content:center;background:var(--bg-main)"><div class="cms-card p-10 text-center shadow-lg border cms-border"><div style="font-size:50px">${p.get('pin')?'📌':'❌'}</div><h2 class="text-xl font-bold mt-4">Đã xử lý!</h2><p class="text-muted text-sm mt-2">Đang lưu & tự đóng tab...</p></div></div>`;
+                    document.body.innerHTML=`<div style="display:flex;height:100vh;align-items:center;justify-content:center;background:var(--bg-body)"><div class="cms-card p-10 text-center shadow-lg border cms-border"><div style="font-size:50px">${p.get('pin')?'📌':'❌'}</div><h2 class="text-xl font-bold mt-4">Đã xử lý!</h2><p class="text-muted text-sm mt-2">Đang lưu & tự đóng tab...</p></div></div>`;
                     const fin = () => { window.history.replaceState({},document.title,window.location.pathname); setTimeout(()=>window.close(), 1000); };
                     if(ch){ _saveLocal(); _syncSilent().then(fin).catch(fin); } else fin();
                 }
@@ -553,26 +638,26 @@
         // ==========================================
         // 6. RENDER REPOS & FILTERS
         // ==========================================
-        function handleSearch(v) { st.q = v.toLowerCase(); if($('clear-search-btn')) $('clear-search-btn').classList.toggle('hidden',!v); renderRepos(); }
-        function clearSearch() { if($('search-input')) { $('search-input').value=''; handleSearch(''); $('search-input').focus(); } }
-        function toggleDeepSearch() { st.deep=!st.deep; if($('btn-deep-search')) $('btn-deep-search').className=st.deep?"shrink-0 theme-bg-accent text-white px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-transparent":"shrink-0 cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"; if($('text-deep-search')) $('text-deep-search').innerText=st.deep?"Sâu: ON":"Sâu"; if(st.q) renderRepos(); }
-        function changeSortOrder(o) { st.sort=o; ['sort-asc','sort-desc'].forEach(id=>{if($(id)) $(id).classList.toggle('active',id===`sort-${o}`)}); renderRepos(); }
-        function setView(v) { st.view=v; ['btn-view-list','btn-view-gallery','btn-view-kanban','btn-view-table','btn-view-feed'].forEach(id=>{if($(id)) $(id).classList.toggle('active',id===`btn-view-${v}`)}); renderRepos(); }
-        function sortTable(b) { if(st.tbl.by===b) st.tbl.dir=st.tbl.dir==='asc'?'desc':'asc'; else {st.tbl.by=b; st.tbl.dir='desc';} renderRepos(); }
-        function filterByRepo(r) { st.repo=r; renderRepos(); }
-        function filterByTag(t) { st.tag=t.replace(/&quot;/g,'"').replace(/\\'/g,"'"); renderRepos(); }
+        function handleSearch(v) { searchQuery = v.toLowerCase(); const c = document.getElementById('clear-search-btn'); if(c) c.classList.toggle('hidden',!v); renderRepos(); }
+        function clearSearch() { const s = document.getElementById('search-input'); if(s) { s.value=''; handleSearch(''); s.focus(); } }
+        function toggleDeepSearch() { isDeepSearch=!isDeepSearch; const bd = document.getElementById('btn-deep-search'), td = document.getElementById('text-deep-search'); if(bd) bd.className=isDeepSearch?"shrink-0 bg-[var(--accent)] text-white px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-transparent":"shrink-0 cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"; if(td) td.innerText=isDeepSearch?"Sâu: ON":"Sâu"; if(searchQuery) renderRepos(); }
+        function changeSortOrder(o) { sortOrder=o; ['sort-asc','sort-desc'].forEach(id=>{const el = document.getElementById(id); if(el) el.classList.toggle('active',id===`sort-${o}`)}); renderRepos(); }
+        function setView(v) { currentView=v; ['btn-view-list','btn-view-gallery','btn-view-kanban','btn-view-table','btn-view-feed'].forEach(id=>{const el = document.getElementById(id); if(el) el.classList.toggle('active',id===`btn-view-${v}`)}); renderRepos(); }
+        function sortTable(b) { if(tableSort.by===b) tableSort.dir=tableSort.dir==='asc'?'desc':'asc'; else {tableSort.by=b; tableSort.dir='desc';} renderRepos(); }
+        function filterByRepo(r) { activeRepo=r; renderRepos(); }
+        function filterByTag(t) { activeTag=t.replace(/&quot;/g,'"').replace(/\\'/g,"'"); renderRepos(); }
 
         function renderFilters() {
-            const rb=$('repo-filter-bar'), tb=$('tag-filter-bar'); if(!rb||!tb) return;
+            const rb=document.getElementById('repo-filter-bar'), tb=document.getElementById('tag-filter-bar'); if(!rb||!tb) return;
             let rs = Object.keys(db.repos).filter(r=>r!=='📌 Đã ghim'&&r!==`${username}.github.io`).sort(); rs.unshift('all', `${username}.github.io`);
-            rb.innerHTML = `<span class="text-[10px] font-bold text-muted uppercase shrink-0 mr-2 flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-folder"></use></svg> Kho</span>` + rs.map(r=>`<button type="button" onclick="filterByRepo('${r.replace(/'/g,"\\'")}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition whitespace-nowrap ${st.repo===r?'theme-bg-accent border-transparent shadow-sm':'cms-input border-transparent hover:opacity-80'}">${r==='all'?'Tất cả':r}</button>`).join('');
+            rb.innerHTML = `<span class="text-[10px] font-bold text-muted uppercase shrink-0 mr-2 flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-folder"></use></svg> Kho</span>` + rs.map(r=>`<button type="button" onclick="filterByRepo('${r.replace(/'/g,"\\'")}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition whitespace-nowrap ${activeRepo===r?'bg-[var(--accent)] text-white border-transparent shadow-sm':'cms-input border-transparent hover:opacity-80'}">${r==='all'?'Tất cả':r}</button>`).join('');
             
             const aT=new Set(); Object.values(db.tags).forEach(a=>a.forEach(x=>aT.add(x))); const tags=['all',...Array.from(aT).sort()];
-            tb.innerHTML = `<span class="text-[10px] font-bold text-muted uppercase shrink-0 mr-2 flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-tag"></use></svg> Nhãn</span>` + tags.map(t=>{const safe=t.replace(/'/g,"\\'").replace(/"/g,"&quot;"); return `<button type="button" onclick="filterByTag('${safe}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition whitespace-nowrap ${st.tag===t?'theme-bg-accent border-transparent shadow-sm':'cms-input border-transparent hover:opacity-80'}">${t==='all'?'Tất cả':t}</button>`}).join('') + (tags.length>1 ? `<button type="button" onclick="renameGlobalTag()" class="ml-2 px-3 py-1 text-xs font-bold rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition shrink-0">⚙ Sửa</button>`:'');
+            tb.innerHTML = `<span class="text-[10px] font-bold text-muted uppercase shrink-0 mr-2 flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-tag"></use></svg> Nhãn</span>` + tags.map(t=>{const safe=t.replace(/'/g,"\\'").replace(/"/g,"&quot;"); return `<button type="button" onclick="filterByTag('${safe}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition whitespace-nowrap ${activeTag===t?'bg-[var(--accent)] text-white border-transparent shadow-sm':'cms-input border-transparent hover:opacity-80'}">${t==='all'?'Tất cả':t}</button>`}).join('') + (tags.length>1 ? `<button type="button" onclick="renameGlobalTag()" class="ml-2 px-3 py-1 text-xs font-bold rounded-lg border border-[var(--accent)] text-[var(--accent)] hover:bg-[var(--accent)] hover:text-white transition shrink-0">⚙ Sửa</button>`:'');
         }
 
         const getTagsH = (r,f) => (db.tags[`${r}/${f}`]||[]).map(t=>`<span class="cms-input text-[10px] px-2 py-0.5 rounded font-bold border cms-border flex items-center gap-1 opacity-90"><svg class="w-2.5 h-2.5 opacity-60"><use href="#icon-tag"></use></svg>${t}</span>`).join('');
-        const getLnkH = (r,f) => (db.links[`${r}/${f}`]||[]).map(l=>`<a href="${l.url}" target="_blank" onclick="event.stopPropagation()" class="bg-[#007AFF]/10 text-[#007AFF] text-[10px] px-2 py-0.5 rounded font-bold border border-transparent hover:border-[#007AFF]/30 transition flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-link"></use></svg>${l.title}</a>`).join('');
+        const getLnkH = (r,f) => (db.links[`${r}/${f}`]||[]).map(l=>`<a href="${l.url}" target="_blank" onclick="event.stopPropagation()" class="bg-[#007AFF]/10 text-[var(--accent)] text-[10px] px-2 py-0.5 rounded font-bold border border-transparent hover:border-[#007AFF]/30 transition flex items-center gap-1"><svg class="w-3 h-3"><use href="#icon-link"></use></svg>${l.title}</a>`).join('');
         const getActBtns = (r, fn, sf, sha, feed) => {
             const isP = db.pinned && db.pinned.includes(`${r}/${fn}`), pC = isP ? 'text-[#FF9500]' : '', pI = isP ? '#icon-pin-filled' : '#icon-pin';
             if(feed) return `<button type="button" onclick="editFileContent('${r}','${sf}','${sha}')" class="cms-btn-primary px-5 py-2 rounded-xl text-sm font-bold ml-auto shadow-sm flex items-center gap-1 hover:opacity-90 transition"><svg class="w-4 h-4"><use href="#icon-edit"></use></svg> Sửa bài</button><button type="button" onclick="togglePin('${r}','${sf}')" class="cms-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-1.5 ${pC}"><svg class="w-4 h-4"><use href="${pI}"></use></svg> Ghim</button><button type="button" onclick="openColorModal('${r}','${sf}','${sha}')" class="cms-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-palette"></use></svg> Màu</button><button type="button" onclick="editFileTags('${r}','${sf}','${sha}')" class="cms-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-1.5"><svg class="w-4 h-4"><use href="#icon-tag"></use></svg> Nhãn</button><button type="button" onclick="openLinkModal('${r}','${sf}','${sha}')" class="cms-btn px-4 py-2 rounded-xl text-sm font-bold flex items-center gap-1.5 text-[var(--accent)]"><svg class="w-4 h-4"><use href="#icon-link"></use></svg> Link</button>`;
@@ -581,14 +666,14 @@
 
         function renderRepos() {
             renderFilters();
-            const cont = $('repo-container'); if(!cont) return; cont.innerHTML = '';
+            const cont = document.getElementById('repo-container'); if(!cont) return; cont.innerHTML = '';
             
             let filtered = [];
             if (Array.isArray(db.files)) {
                 filtered = db.files.filter(f => {
-                    let mt = st.tag==='all' || (db.tags[`${f.repoName}/${f.fileName}`]||[]).includes(st.tag.replace(/\\'/g,"'").replace(/&quot;/g,'"'));
-                    let mr = st.repo==='all' || f.repoName === st.repo.replace(/\\'/g,"'");
-                    let sl = st.q; let mq = !sl || (f.name||"").toLowerCase().includes(sl) || (f.repoName||"").toLowerCase().includes(sl) || (st.deep && ((f.preview||"").toLowerCase().includes(sl) || (f.fullText||"").toLowerCase().includes(sl)));
+                    let mt = activeTag==='all' || (db.tags[`${f.repoName}/${f.fileName}`]||[]).includes(activeTag.replace(/\\'/g,"'").replace(/&quot;/g,'"'));
+                    let mr = activeRepo==='all' || f.repoName === activeRepo.replace(/\\'/g,"'");
+                    let sl = searchQuery; let mq = !sl || (f.name||"").toLowerCase().includes(sl) || (f.repoName||"").toLowerCase().includes(sl) || (isDeepSearch && ((f.preview||"").toLowerCase().includes(sl) || (f.fullText||"").toLowerCase().includes(sl) || (f.previewFeedHTML||"").toLowerCase().includes(sl)));
                     return mt && mr && mq;
                 });
             }
@@ -596,7 +681,7 @@
             let p = [], u = []; 
             if(!Array.isArray(db.pinned)) db.pinned = [];
             filtered.forEach(f => db.pinned.includes(`${f.repoName}/${f.fileName}`) ? p.push(f) : u.push(f));
-            const sortFn = (a,b) => st.sort==='desc' ? (b.timestamp||0)-(a.timestamp||0) : (a.timestamp||0)-(b.timestamp||0); p.sort(sortFn); u.sort(sortFn);
+            const sortFn = (a,b) => sortOrder==='desc' ? (b.timestamp||0)-(a.timestamp||0) : (a.timestamp||0)-(b.timestamp||0); p.sort(sortFn); u.sort(sortFn);
 
             if(!filtered.length) { cont.innerHTML = '<div class="text-center py-20 text-muted font-bold text-sm">Trống</div>'; return; }
 
@@ -605,25 +690,25 @@
                 const isDark = col && getContrastYIQ(col) === '#FFFFFF'; const stl = col ? `background-color:${col}; border-color:transparent; color:${isDark?'#FFF':'#1D1D1F'};` : '';
                 const chk = `<input type="checkbox" class="absolute top-4 left-4 w-4 h-4 z-10 cursor-pointer accent-[#007AFF]" onclick="toggleFileSelection('${f.repoName}','${sf}','${f.sha}',event)" ${bulkSet.has(`${f.repoName}|${f.fileName}|${f.sha}`) ? 'checked':''}>`;
                 
-                if(v==='feed') return `<article class="cms-card p-6 md:p-8 flex flex-col relative mb-8 border cms-border" style="${stl}">${chk}<div class="flex items-center gap-3 mb-4 pl-8"><div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl cms-input border cms-border"><svg class="w-5 h-5"><use href="#icon-folder"></use></svg></div><div><p class="text-sm font-bold cursor-pointer hover:underline opacity-80" onclick="st.repo='${f.repoName}';renderRepos()">${f.repoName}</p><p class="text-[11px] font-semibold opacity-70 mt-0.5">${f.fullDate}</p></div></div><h2 class="text-3xl font-bold mb-4 pl-8"><a href="${f.url}" target="_blank" class="hover:underline opacity-90">${f.name}</a></h2><div class="flex flex-wrap gap-2 mb-2 pl-8 empty:hidden">${getTagsH(f.repoName,f.fileName)}</div><div class="flex flex-wrap gap-2 mb-6 pl-8 empty:hidden">${getLnkH(f.repoName,f.fileName)}</div><div class="w-full h-48 cms-input mb-6 rounded-xl flex items-center justify-center overflow-hidden border cms-border">${f.coverHTML||''}</div><div class="text-[15px] leading-relaxed mb-6 opacity-90">${f.tocHTML||''}${f.previewFeedHTML||f.preview}</div><div class="flex flex-wrap gap-2 pt-5 border-t cms-border mt-auto"><a href="${f.url}" target="_blank" class="cms-btn px-6 py-2 rounded-xl text-sm font-bold shadow-sm">Đọc bài</a>${getActBtns(f.repoName,f.fileName,sf,f.sha,true)}</div></article>`;
+                if(v==='feed') return `<article class="cms-card p-6 md:p-8 flex flex-col relative mb-8 border cms-border" style="${stl}">${chk}<div class="flex items-center gap-3 mb-4 pl-8"><div class="w-10 h-10 rounded-full flex items-center justify-center font-bold text-xl cms-input border cms-border"><svg class="w-5 h-5"><use href="#icon-folder"></use></svg></div><div><p class="text-sm font-bold cursor-pointer hover:underline opacity-80" onclick="activeRepo='${f.repoName}';renderRepos()">${f.repoName}</p><p class="text-[11px] font-semibold opacity-70 mt-0.5">${f.fullDate}</p></div></div><h2 class="text-3xl font-bold mb-4 pl-8"><a href="${f.url}" target="_blank" class="hover:underline opacity-90">${f.name}</a></h2><div class="flex flex-wrap gap-2 mb-2 pl-8 empty:hidden">${getTagsH(f.repoName,f.fileName)}</div><div class="flex flex-wrap gap-2 mb-6 pl-8 empty:hidden">${getLnkH(f.repoName,f.fileName)}</div><div class="w-full h-48 cms-input mb-6 rounded-xl flex items-center justify-center overflow-hidden border cms-border">${f.coverHTML||''}</div><div class="text-[16px] leading-relaxed mb-6 opacity-90">${f.tocHTML||''}${f.previewFeedHTML||f.preview}</div><div class="flex flex-wrap gap-2 pt-5 border-t cms-border mt-auto"><a href="${f.url}" target="_blank" class="cms-btn px-6 py-2 rounded-xl text-sm font-bold shadow-sm">Đọc bài</a>${getActBtns(f.repoName,f.fileName,sf,f.sha,true)}</div></article>`;
                 if(v==='gallery') return `<div class="cms-card flex flex-col relative overflow-hidden group hover:scale-[1.02] transition border cms-border" style="${stl}">${chk}<div class="h-28 cms-input flex items-center justify-center border-b cms-border overflow-hidden">${f.coverHTML||''}</div><div class="p-5 flex flex-col flex-1"><span class="text-[10px] uppercase font-bold text-muted mb-2">${f.repoName}</span><a href="${f.url}" target="_blank" class="font-bold text-lg mb-2 line-clamp-2 hover:underline">${f.name}</a><div class="flex flex-wrap gap-1.5 mb-2 empty:hidden">${getTagsH(f.repoName,f.fileName)}</div><div class="flex flex-wrap gap-1.5 mb-3 empty:hidden">${getLnkH(f.repoName,f.fileName)}</div><div class="text-sm opacity-70 line-clamp-4 flex-1 mb-4">${f.tocHTML||''}${f.preview}</div><div class="flex justify-between items-center pt-3 border-t cms-border"><span class="text-[10px] opacity-60">${f.fullDate}</span><div class="flex gap-0.5">${getActBtns(f.repoName,f.fileName,sf,f.sha,false)}</div></div></div></div>`;
                 return `<div class="cms-card p-4 flex flex-col relative group hover:scale-[1.01] transition border cms-border" style="${stl}">${chk}<a href="${f.url}" target="_blank" class="font-bold text-[15px] hover:underline mb-2 pl-6 line-clamp-2">${f.name}</a><div class="flex flex-wrap gap-1 mb-2 pl-6 empty:hidden">${getTagsH(f.repoName,f.fileName)}</div><div class="flex flex-wrap gap-1 mb-3 pl-6 empty:hidden">${getLnkH(f.repoName,f.fileName)}</div><div class="flex justify-between items-center mt-auto pt-3 border-t cms-border"><span class="text-[10px] opacity-60">${v==='kanban'?(f.fullDate.split(' ')[1]||f.fullDate):f.fullDate}</span><div class="flex gap-0.5 opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition">${getActBtns(f.repoName,f.fileName,sf,f.sha,false)}</div></div></div>`;
             };
 
             let html = '';
-            if(st.view === 'gallery' || st.view === 'feed') {
-                cont.className = st.view === 'gallery' ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6' : 'flex flex-col max-w-3xl mx-auto w-full';
-                if(p.length) { html += `<h3 class="col-span-full font-bold mb-2 text-[#FF9500] text-lg border-b cms-border pb-2">📌 Đã ghim</h3>`; p.forEach(f=>html+=renderCard(f,st.view)); }
-                if(u.length) { if(p.length) html += `<h3 class="col-span-full font-bold mt-4 mb-2 text-lg border-b cms-border pb-2">Khác</h3>`; u.forEach(f=>html+=renderCard(f,st.view)); }
+            if(currentView === 'gallery' || currentView === 'feed') {
+                cont.className = currentView === 'gallery' ? 'grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6' : 'flex flex-col max-w-3xl mx-auto w-full';
+                if(p.length) { html += `<h3 class="col-span-full font-bold mb-2 text-[#FF9500] text-lg border-b cms-border pb-2">📌 Đã ghim</h3>`; p.forEach(f=>html+=renderCard(f,currentView)); }
+                if(u.length) { if(p.length) html += `<h3 class="col-span-full font-bold mt-4 mb-2 text-lg border-b cms-border pb-2">Khác</h3>`; u.forEach(f=>html+=renderCard(f,currentView)); }
             } else {
-                cont.className = st.view === 'kanban' ? 'flex kanban-scroll overflow-x-auto gap-6 pb-6 items-start min-h-[70vh]' : 'flex flex-col gap-6';
+                cont.className = currentView === 'kanban' ? 'flex kanban-scroll overflow-x-auto gap-6 pb-6 items-start min-h-[70vh]' : 'flex flex-col gap-6';
                 let groups = {}; if(p.length) groups['📌 Đã ghim']=p; u.forEach(f=>{if(!groups[f.repoName])groups[f.repoName]=[]; groups[f.repoName].push(f);});
                 
                 Object.keys(groups).sort((a,b)=>a==='📌 Đã ghim'?-1:b==='📌 Đã ghim'?1:0).forEach(k => {
-                    if(st.view === 'kanban') { html += `<div class="w-[320px] shrink-0 cms-input rounded-2xl flex flex-col h-full max-h-[70vh] border cms-border p-2"><div class="px-3 py-2 flex justify-between items-center font-bold text-sm mb-2 ${k==='📌 Đã ghim'?'text-[#FF9500]':''} cursor-pointer hover:opacity-70 transition" onclick="if('${k}'!=='📌 Đã ghim'){filterByRepo('${k}')}"><span>${k}</span><span class="cms-card px-2 py-0.5 rounded-full text-[10px] border-none shadow-sm">${groups[k].length}</span></div><div class="overflow-y-auto kanban-scroll space-y-3 px-1 pb-2 flex-1">${groups[k].map(f=>renderCard(f,'kanban')).join('')}</div></div>`;
-                    } else if(st.view === 'table') { groups[k].sort((a,b)=>st.tbl.by==='name'?(st.tbl.dir==='asc'?(a.name||"").localeCompare(b.name||""):(b.name||"").localeCompare(a.name||"")):(st.tbl.dir==='asc'?(a.timestamp||0)-(b.timestamp||0):(b.timestamp||0)-(a.timestamp||0)));
-                        html += `<details open class="mb-4"><summary class="font-bold text-lg mb-2 cursor-pointer border-b cms-border pb-2 flex items-center gap-2 outline-none ${k==='📌 Đã ghim'?'text-[#FF9500]':''}">${k} <span class="text-sm text-muted">(${groups[k].length})</span></summary><div class="cms-card overflow-x-auto"><table class="w-full text-left text-sm min-w-[800px]"><tr class="cms-input text-muted text-[10px] uppercase tracking-wider border-b cms-border"><th class="p-3 w-8"></th><th class="p-3 cursor-pointer hover:underline" onclick="sortTable('name')">Bài viết ${st.tbl.by==='name'?(st.tbl.dir==='asc'?'↑':'↓'):'↕'}</th><th class="p-3">Mô tả</th><th class="p-3 w-32 cursor-pointer hover:underline" onclick="sortTable('date')">Cập nhật ${st.tbl.by==='date'?(st.tbl.dir==='asc'?'↑':'↓'):'↕'}</th><th class="p-3 text-center w-40">Thao tác</th></tr>${groups[k].map(f=>{const sN=(f.fileName||"").replace(/'/g,"\\'"), c=db.colors[`${f.repoName}/${f.fileName}`], d=c&&getContrastYIQ(c)==='#FFFFFF'?'text-white':'', chk=bulkSet.has(`${f.repoName}|${f.fileName}|${f.sha}`) ? 'checked':''; return `<tr class="border-b cms-border hover:bg-[var(--bg-hover)] transition ${d}" style="${c?`background-color:${c};`:''}"><td class="p-3 text-center"><input type="checkbox" class="accent-[#007AFF] w-4 h-4 cursor-pointer" onclick="toggleFileSelection('${f.repoName}','${sN}','${f.sha}',event)" ${chk}></td><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold hover:text-[var(--accent)] text-[15px]">${f.name}</a><div class="mt-1 flex flex-wrap gap-1">${getTagsH(f.repoName,f.fileName)}${getLnkH(f.repoName,f.fileName)}</div></td><td class="p-3 text-xs opacity-70 line-clamp-2 max-w-[200px] leading-relaxed">${f.preview||''}</td><td class="p-3 text-xs opacity-80 whitespace-nowrap">${f.fullDate}</td><td class="p-3"><div class="flex gap-1 justify-center">${getActBtns(f.repoName,f.fileName,sN,f.sha,false)}</div></td></tr>`}).join('')}</table></div></details>`;
-                    } else { html += `<details open class="mb-6"><summary class="font-bold text-xl mb-4 border-b cms-border pb-2 cursor-pointer outline-none ${k==='📌 Đã ghim'?'text-[#FF9500]':''} flex items-center gap-2" onclick="if($('upload-repo')) $('upload-repo').value='${k==='📌 Đã ghim'?'':username+'/'+k}'; event.stopPropagation();"><svg class="w-6 h-6"><use href="${k==='📌 Đã ghim'?'#icon-pin-filled':'#icon-folder'}"></use></svg>${k} <span class="cms-input text-xs px-2 py-0.5 rounded-full border cms-border">${groups[k].length}</span></summary><div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">${groups[k].map(f=>renderCard(f,'list')).join('')}</div></details>`; }
+                    if(currentView === 'kanban') { html += `<div class="w-[320px] shrink-0 cms-input rounded-2xl flex flex-col h-full max-h-[70vh] border cms-border p-2"><div class="px-3 py-2 flex justify-between items-center font-bold text-sm mb-2 ${k==='📌 Đã ghim'?'text-[#FF9500]':''} cursor-pointer hover:opacity-70 transition" onclick="if('${k}'!=='📌 Đã ghim'){filterByRepo('${k}')}"><span>${k}</span><span class="cms-card px-2 py-0.5 rounded-full text-[10px] border-none shadow-sm">${groups[k].length}</span></div><div class="overflow-y-auto kanban-scroll space-y-3 px-1 pb-2 flex-1">${groups[k].map(f=>renderCard(f,'kanban')).join('')}</div></div>`;
+                    } else if(currentView === 'table') { groups[k].sort((a,b)=>tableSort.by==='name'?(tableSort.dir==='asc'?(a.name||"").localeCompare(b.name||""):(b.name||"").localeCompare(a.name||"")):(tableSort.dir==='asc'?(a.timestamp||0)-(b.timestamp||0):(b.timestamp||0)-(a.timestamp||0)));
+                        html += `<details open class="mb-4"><summary class="font-bold text-lg mb-2 cursor-pointer border-b cms-border pb-2 flex items-center gap-2 outline-none ${k==='📌 Đã ghim'?'text-[#FF9500]':''}">${k} <span class="text-sm text-muted">(${groups[k].length})</span></summary><div class="cms-card overflow-x-auto"><table class="w-full text-left text-sm min-w-[800px]"><tr class="cms-input text-muted text-[10px] uppercase tracking-wider border-b cms-border"><th class="p-3 w-8"></th><th class="p-3 cursor-pointer hover:underline" onclick="sortTable('name')">Bài viết ${tableSort.by==='name'?(tableSort.dir==='asc'?'↑':'↓'):'↕'}</th><th class="p-3">Mô tả</th><th class="p-3 w-32 cursor-pointer hover:underline" onclick="sortTable('date')">Cập nhật ${tableSort.by==='date'?(tableSort.dir==='asc'?'↑':'↓'):'↕'}</th><th class="p-3 text-center w-40">Thao tác</th></tr>${groups[k].map(f=>{const sN=(f.fileName||"").replace(/'/g,"\\'"), c=db.colors[`${f.repoName}/${f.fileName}`], d=c&&getContrastYIQ(c)==='#FFFFFF'?'text-white':'', chk=bulkSet.has(`${f.repoName}|${f.fileName}|${f.sha}`) ? 'checked':''; return `<tr class="border-b cms-border hover:bg-[var(--bg-hover)] transition ${d}" style="${c?`background-color:${c};`:''}"><td class="p-3 text-center"><input type="checkbox" class="accent-[#007AFF] w-4 h-4 cursor-pointer" onclick="toggleFileSelection('${f.repoName}','${sN}','${f.sha}',event)" ${chk}></td><td class="p-3"><a href="${f.url}" target="_blank" class="font-bold hover:text-[var(--accent)] text-[15px]">${f.name}</a><div class="mt-1 flex flex-wrap gap-1">${getTagsH(f.repoName,f.fileName)}${getLnkH(f.repoName,f.fileName)}</div></td><td class="p-3 text-xs opacity-70 line-clamp-2 max-w-[200px] leading-relaxed">${f.preview||''}</td><td class="p-3 text-xs opacity-80 whitespace-nowrap">${f.fullDate}</td><td class="p-3"><div class="flex gap-1 justify-center">${getActBtns(f.repoName,f.fileName,sN,f.sha,false)}</div></td></tr>`}).join('')}</table></div></details>`;
+                    } else { html += `<details open class="mb-6"><summary class="font-bold text-xl mb-4 border-b cms-border pb-2 cursor-pointer outline-none ${k==='📌 Đã ghim'?'text-[#FF9500]':''} flex items-center gap-2" onclick="const e = document.getElementById('upload-repo'); if(e) e.value='${k==='📌 Đã ghim'?'':username+'/'+k}'; event.stopPropagation();"><svg class="w-6 h-6"><use href="${k==='📌 Đã ghim'?'#icon-pin-filled':'#icon-folder'}"></use></svg>${k} <span class="cms-input text-xs px-2 py-0.5 rounded-full border cms-border">${groups[k].length}</span></summary><div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">${groups[k].map(f=>renderCard(f,'list')).join('')}</div></details>`; }
                 });
             } cont.innerHTML = html;
         }
@@ -632,7 +717,7 @@
         // 7. TASKS SIDEBAR
         // ==========================================
         function renderTasks() { 
-            const c=$('native-task-list'), b=$('task-count-badge'); if(!c) return; 
+            const c=document.getElementById('native-task-list'), b=document.getElementById('task-count-badge'); if(!c) return; 
             if(!Array.isArray(db.tasks)) db.tasks = [];
             let ac=db.tasks.filter(t=>!t.completed).length; 
             if(b) b.innerText=ac||'✓'; 
@@ -640,71 +725,94 @@
             c.innerHTML=db.tasks.sort((a,b)=>a.completed===b.completed?b.id-a.id:a.completed?1:-1).map(t=>`<div class="cms-card p-3 flex flex-col gap-2 border cms-border shadow-sm hover:scale-[1.01] transition group ${t.completed?'opacity-50':''}"><div class="flex gap-2"><input type="checkbox" class="mt-1 accent-[#007AFF] w-4 h-4 cursor-pointer" ${t.completed?'checked':''} onchange="toggleT(${t.id})"><span class="flex-1 text-sm font-medium leading-tight cursor-pointer" onclick="toggleT(${t.id})">${t.title}</span><button type="button" onclick="delT(${t.id})" class="text-red-500 font-bold px-1 opacity-0 group-hover:opacity-100 transition">✕</button></div>${t.image?`<img src="${t.image}" class="w-full rounded-lg border cms-border max-h-48 object-cover cursor-pointer" onclick="window.open('${t.image}')">`:''}</div>`).join(''); 
         }
         
-        function addNativeTask() { if(!requireToken())return; const input=$('native-task-input'); if(!input) return; const v=input.value.trim(); if(v){ db.tasks.unshift({id:Date.now(),title:v,completed:false}); input.value=''; _saveLocal(); renderTasks(); _syncSilent(); } }
+        function addNativeTask() { if(!requireToken())return; const input=document.getElementById('native-task-input'); if(!input) return; const v=input.value.trim(); if(v){ db.tasks.unshift({id:Date.now(),title:v,completed:false}); input.value=''; _saveLocal(); renderTasks(); _syncSilent(); } }
         function toggleT(id) { if(!requireToken())return; let t=db.tasks.find(x=>x.id===id); if(t){t.completed=!t.completed;_saveLocal();renderTasks();_syncSilent();} }
         function delT(id) { if(!requireToken())return; let t=db.tasks.find(x=>x.id===id); db.tasks=db.tasks.filter(x=>x.id!==id); _saveLocal(); renderTasks(); if(t?.image?.includes('task_images/')){ fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/task_images/img_${id}.png?t=${Date.now()}`,{headers:getHeaders()}).then(r=>r.json()).then(d=>{if(d.sha)fetch(d.url,{method:'DELETE',headers:{'Authorization':`Bearer ${getToken()}`},body:JSON.stringify({message:"Del Task",sha:d.sha})})}); } _syncSilent(); }
         
-        $('native-task-input')?.addEventListener('paste', e=>{ 
-            if(!requireToken())return e.preventDefault(); 
-            for(let i of e.clipboardData.items) if(i.type.indexOf('image')===0){ 
-                e.preventDefault(); const r=new FileReader(); 
-                r.onload=async ev=>{ 
-                    const b64=ev.target.result, tid=Date.now(), tit=$('native-task-input').value.trim()||'Ảnh dán'; 
-                    db.tasks.unshift({id:tid,title:tit+' (Đang tải...)',completed:false,image:b64}); 
-                    $('native-task-input').value=''; renderTasks(); 
-                    try{ 
-                        const res=await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/task_images/img_${tid}.png`,{method:'PUT',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:'Up img',content:b64.split(',')[1]})}); 
-                        if(res.ok){ let t=db.tasks.find(x=>x.id===tid); if(t){ t.title=tit; t.image=(await res.json()).content.download_url; _saveLocal(); renderTasks(); _syncSilent();} } 
-                    }catch(er){let t=db.tasks.find(x=>x.id===tid); if(t){t.title=tit+' (Lỗi)'; renderTasks();}} 
-                }; r.readAsDataURL(i.getAsFile()); break; 
-            } 
-        });
+        const nti = document.getElementById('native-task-input');
+        if(nti) {
+            nti.addEventListener('paste', e=>{ 
+                if(!requireToken())return e.preventDefault(); 
+                for(let i of e.clipboardData.items) if(i.type.indexOf('image')===0){ 
+                    e.preventDefault(); const r=new FileReader(); 
+                    r.onload=async ev=>{ 
+                        const b64=ev.target.result, tid=Date.now(), tit=document.getElementById('native-task-input').value.trim()||'Ảnh dán'; 
+                        db.tasks.unshift({id:tid,title:tit+' (Đang tải...)',completed:false,image:b64}); 
+                        document.getElementById('native-task-input').value=''; renderTasks(); 
+                        try{ 
+                            const res=await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/task_images/img_${tid}.png`,{method:'PUT',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:'Up img',content:b64.split(',')[1]})}); 
+                            if(res.ok){ let t=db.tasks.find(x=>x.id===tid); if(t){ t.title=tit; t.image=(await res.json()).content.download_url; _saveLocal(); renderTasks(); _syncSilent();} } 
+                        }catch(er){let t=db.tasks.find(x=>x.id===tid); if(t){t.title=tit+' (Lỗi)'; renderTasks();}} 
+                    }; r.readAsDataURL(i.getAsFile()); break; 
+                } 
+            });
+        }
 
         // ==========================================
         // 8. POMODORO WIDGET
         // ==========================================
         let pInt, pTime=1500;
-        $('pomo-start')?.addEventListener('click', async()=>{ if("Notification" in window&&Notification.permission!=="granted"&&Notification.permission!=="denied") await Notification.requestPermission(); const b=$('pomo-start'); if(b.innerText==='BẮT ĐẦU'){ b.innerText='DỪNG LẠI'; b.classList.replace('cms-btn-primary','bg-[#FF9500]'); b.style.color="#FFF"; pInt=setInterval(()=>{pTime--; const m=Math.floor(pTime/60),s=pTime%60; $('pomo-main-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; $('pomo-mini-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; document.title=`(${m<10?'0':''}${m}:${s<10?'0':''}${s}) CMS`; if(pTime<=0){clearInterval(pInt); pTime=1500; b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; alert("Hết giờ!"); try{$('pomo-audio').src=$('pomo-sound').value;$('pomo-audio').play();}catch(e){} const w=$('pomo-webhook-url').value; if(w) fetch(w.startsWith('http')?w:`https://ntfy.sh/${w}`,{method:'POST',body:`Nhiệm vụ: ${$('pomo-task').value||'Xong'}`,headers:{'Title':'🍅 CMS Pomo','Tags':'alarm_clock'}}); } },1000); } else { clearInterval(pInt); b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; } });
-        $('pomo-reset')?.addEventListener('click', ()=>{ clearInterval(pInt); pTime=parseInt(document.querySelector('.pomo-tab.active')?.getAttribute('data-time')||1500); const m=Math.floor(pTime/60),s=pTime%60; $('pomo-main-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; $('pomo-mini-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; const b=$('pomo-start'); b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; });
-        document.querySelectorAll('.pomo-tab').forEach(t=>t.addEventListener('click', e=>{ document.querySelectorAll('.pomo-tab').forEach(x=>{x.className='flex-1 cms-input py-1.5 rounded-lg text-xs font-bold pomo-tab border cms-border'}); e.target.className='flex-1 cms-btn-primary py-1.5 rounded-lg text-xs font-bold pomo-tab active'; pTime=parseInt(e.target.getAttribute('data-time')); $('pomo-reset').click(); }));
-        function saveWebhookSettings(){ localStorage.setItem('cms_pomo_webhook', $('pomo-webhook-url').value.trim()); alert('Lưu Topic thành công!'); $('webhook-settings').classList.add('hidden'); }
+        const btnStart = document.getElementById('pomo-start');
+        if(btnStart) {
+            btnStart.addEventListener('click', async()=>{ if("Notification" in window&&Notification.permission!=="granted"&&Notification.permission!=="denied") await Notification.requestPermission(); const b=document.getElementById('pomo-start'); if(b.innerText==='BẮT ĐẦU'){ b.innerText='DỪNG LẠI'; b.classList.replace('cms-btn-primary','bg-[#FF9500]'); b.style.color="#FFF"; pInt=setInterval(()=>{pTime--; const m=Math.floor(pTime/60),s=pTime%60; document.getElementById('pomo-main-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; document.getElementById('pomo-mini-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; document.title=`(${m<10?'0':''}${m}:${s<10?'0':''}${s}) CMS`; if(pTime<=0){clearInterval(pInt); pTime=1500; b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; alert("Hết giờ!"); try{document.getElementById('pomo-audio').src=document.getElementById('pomo-sound').value;document.getElementById('pomo-audio').play();}catch(e){} const w=document.getElementById('pomo-webhook-url').value; if(w) fetch(w.startsWith('http')?w:`https://ntfy.sh/${w}`,{method:'POST',body:`Nhiệm vụ: ${document.getElementById('pomo-task').value||'Xong'}`,headers:{'Title':'🍅 CMS Pomo','Tags':'alarm_clock'}}); } },1000); } else { clearInterval(pInt); b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; } });
+        }
+        const btnReset = document.getElementById('pomo-reset');
+        if(btnReset) {
+            btnReset.addEventListener('click', ()=>{ clearInterval(pInt); pTime=parseInt(document.querySelector('.pomo-tab.active')?.getAttribute('data-time')||1500); const m=Math.floor(pTime/60),s=pTime%60; document.getElementById('pomo-main-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; document.getElementById('pomo-mini-time').innerText=`${m<10?'0':''}${m}:${s<10?'0':''}${s}`; const b=document.getElementById('pomo-start'); b.innerText='BẮT ĐẦU'; b.classList.replace('bg-[#FF9500]','cms-btn-primary'); b.style.color=""; });
+        }
+        document.querySelectorAll('.pomo-tab').forEach(t=>t.addEventListener('click', e=>{ document.querySelectorAll('.pomo-tab').forEach(x=>{x.className='flex-1 cms-input py-1.5 rounded-lg text-xs font-bold pomo-tab border cms-border'}); e.target.className='flex-1 cms-btn-primary py-1.5 rounded-lg text-xs font-bold pomo-tab active'; pTime=parseInt(e.target.getAttribute('data-time')); document.getElementById('pomo-reset')?.click(); }));
+        function saveWebhookSettings(){ localStorage.setItem('cms_pomo_webhook', document.getElementById('pomo-webhook-url').value.trim()); alert('Lưu Topic thành công!'); document.getElementById('webhook-settings').classList.add('hidden'); }
 
         // ==========================================
         // 9. MODALS LOGIC
         // ==========================================
+        function _injectModals() {
+            const h = `
+            <div id="tag-modal-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-1 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-tag"></use></svg> Gắn Nhãn</h3><input type="text" id="tag-modal-input" onkeypress="if(event.key === 'Enter') saveTagModal()" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-sm font-bold text-[var(--accent)] mb-4 mt-4" placeholder="Ví dụ: AI, Note..."><div class="mb-6"><span class="text-[11px] font-bold text-muted uppercase mb-2 block tracking-wider">Gợi ý từ hệ thống</span><div id="tag-modal-suggestions" class="flex flex-wrap gap-2 max-h-40 overflow-y-auto kanban-scroll min-h-[40px]"></div></div><div class="flex justify-end gap-3"><button type="button" onclick="closeModal('tag-modal-overlay')" class="cms-btn px-5 py-2 rounded-lg text-sm font-bold">Hủy</button><button type="button" onclick="saveTagModal()" class="cms-btn-primary px-5 py-2 rounded-lg text-sm">Lưu</button></div></div></div>
+            <div id="link-modal-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-md w-full mx-4 flex flex-col max-h-[85vh] border cms-border"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-link"></use></svg> Link Tham Khảo</h3><div id="link-modal-list" class="flex-1 overflow-y-auto kanban-scroll space-y-3 mb-4 cms-input p-3 rounded-xl min-h-[100px] border cms-border"></div><button type="button" onclick="addLinkItem()" class="mb-5 cms-btn text-[var(--accent)] px-4 py-2.5 rounded-xl text-sm font-bold w-full shadow-sm">+ Thêm Link</button><div class="flex justify-end gap-3 mt-auto"><button type="button" onclick="closeModal('link-modal-overlay')" class="cms-btn px-5 py-2 rounded-lg text-sm font-bold">Hủy</button><button type="button" onclick="saveLinkModal()" class="cms-btn-primary px-5 py-2 rounded-lg text-sm">Lưu</button></div></div></div>
+            <div id="color-modal-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-palette"></use></svg> Đổi màu</h3><div class="flex gap-3 mb-6"><button type="button" onclick="applyColor('#FFF9B1')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:#FFF9B1"></button><button type="button" onclick="applyColor('#FCE6C1')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:#FCE6C1"></button><button type="button" onclick="applyColor('#E4F9E0')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:#E4F9E0"></button><button type="button" onclick="applyColor('#E0F2FE')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:#E0F2FE"></button><button type="button" onclick="applyColor('#F3E8FD')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:#F3E8FD"></button></div><div id="custom-colors-container" class="flex flex-wrap gap-3 mb-3 empty:hidden"></div><div class="flex items-center gap-2 cms-input p-2 rounded-xl border cms-border mb-4"><input type="color" id="new-color-picker" value="#333333" class="w-8 h-8 p-0 border-0 rounded cursor-pointer bg-transparent"><button type="button" onclick="addCustomColor()" class="flex-1 cms-btn text-xs font-bold py-1.5 rounded-lg">Thêm màu này</button></div><div class="flex justify-between items-center border-t cms-border pt-4 mt-2"><button type="button" onclick="removeColor()" class="text-red-500 bg-red-50 dark:bg-red-900/30 px-4 py-2 rounded-xl text-sm font-bold">Xóa màu</button><button type="button" onclick="closeModal('color-modal-overlay')" class="cms-btn px-5 py-2 rounded-lg text-sm font-bold">Đóng</button></div></div></div>
+            <div id="create-repo-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-folder"></use></svg> Tạo Kho (Repo)</h3><input type="text" id="new-repo-name" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-sm mb-6" placeholder="Tên Repo..."><div class="flex justify-end gap-3"><button type="button" onclick="closeModal('create-repo-overlay')" class="cms-btn px-4 py-2 rounded-lg font-bold text-sm">Hủy</button><button type="button" onclick="submitCreateRepo()" id="btn-submit-create-repo" class="cms-btn-primary px-4 py-2 rounded-lg text-sm">Tạo</button></div></div></div>
+            <div id="rename-repo-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-edit"></use></svg> Đổi tên Repo</h3><input type="hidden" id="rename-repo-old-name"><input type="text" id="rename-repo-new-name" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-sm mb-6"><div class="flex justify-end gap-3"><button type="button" onclick="closeModal('rename-repo-overlay')" class="cms-btn px-4 py-2 rounded-lg font-bold text-sm">Hủy</button><button type="button" onclick="submitRenameRepo()" id="btn-submit-rename-repo" class="cms-btn-primary px-4 py-2 rounded-lg text-sm">Lưu</button></div></div></div>
+            <div id="move-file-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-2 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-move"></use></svg> Chuyển Bài</h3><p id="move-file-desc" class="text-sm text-muted mb-4 truncate"></p><select id="move-target-repo" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-sm mb-6"></select><div class="flex justify-end gap-3"><button type="button" onclick="closeModal('move-file-overlay')" class="cms-btn px-4 py-2 rounded-lg font-bold text-sm">Hủy</button><button type="button" onclick="submitMoveFile()" id="btn-submit-move-file" class="cms-btn-primary px-4 py-2 rounded-lg text-sm">Chuyển</button></div></div></div>
+            <div id="bulk-move-overlay" class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm z-[999999] items-center justify-center transition-opacity"><div class="cms-card p-6 max-w-sm w-full mx-4 border cms-border"><h3 class="text-xl font-bold mb-4 flex items-center gap-2"><svg class="svg-icon"><use href="#icon-move"></use></svg> Chuyển Hàng Loạt</h3><p class="text-sm text-muted mb-2">Đang chọn <span id="bulk-move-count-display" class="font-bold text-[var(--accent)]">0</span> bài.</p><select id="bulk-move-target-repo" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-sm mb-2"></select><p id="bulk-move-status" class="text-[10px] text-[#007AFF] italic mb-4 h-4"></p><div class="flex justify-end gap-3"><button type="button" onclick="closeModal('bulk-move-overlay')" class="cms-btn px-4 py-2 rounded-lg font-bold text-sm">Hủy</button><button type="button" onclick="submitBulkMove()" id="btn-submit-bulk-move" class="cms-btn-primary px-4 py-2 rounded-lg text-sm">Chuyển</button></div></div></div>
+            `;
+            const container = document.getElementById('modals-container');
+            if(container && !container.innerHTML) container.innerHTML = h;
+        }
+
         function togglePin(r, f) { if(!requireToken())return; const k=`${r}/${f}`; if(!Array.isArray(db.pinned)) db.pinned=[]; if(db.pinned.includes(k)) db.pinned=db.pinned.filter(x=>x!==k); else db.pinned.push(k); _saveLocal(); renderRepos(); _syncSilent(); }
 
-        function openColorModal(r, f, s) { if(!requireToken()) return; editMeta.colorKey=`${r}/${f}`; editMeta.sha=s; renderCustomColorsList(); openModal('color-modal-overlay'); }
-        function renderCustomColorsList() { const c=$('custom-colors-container'); if(!c) return; if(!db.customCol.length){c.innerHTML='';c.classList.add('empty:hidden');return;} c.classList.remove('empty:hidden'); c.innerHTML=db.customCol.map((hex,i)=>`<div class="relative group"><button type="button" onclick="applyColor('${hex}')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:${hex}"></button><button type="button" onclick="removeCustomColor(${i})" class="absolute -top-1 -right-1 bg-red-500 text-white w-3 h-3 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 text-[8px] transition">✕</button></div>`).join(''); }
-        function addCustomColor() { if(!requireToken()) return; const v=$('new-color-picker').value.toUpperCase(); if(!db.customCol.includes(v)) { db.customCol.push(v); _saveLocal(); renderCustomColorsList(); _syncSilent(); } applyColor(v); }
+        function openColorModal(r, f, s) { if(!requireToken()) return; currentColorKey=`${r}/${f}`; currentColorSha=s; renderCustomColorsList(); openModal('color-modal-overlay'); }
+        function renderCustomColorsList() { const c=document.getElementById('custom-colors-container'); if(!c) return; if(!db.customCol.length){c.innerHTML='';c.classList.add('empty:hidden');return;} c.classList.remove('empty:hidden'); c.innerHTML=db.customCol.map((hex,i)=>`<div class="relative group"><button type="button" onclick="applyColor('${hex}')" class="w-8 h-8 rounded-full border shadow-sm hover:scale-110 transition" style="background:${hex}"></button><button type="button" onclick="removeCustomColor(${i})" class="absolute -top-1 -right-1 bg-red-500 text-white w-3 h-3 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 text-[8px] transition">✕</button></div>`).join(''); }
+        function addCustomColor() { if(!requireToken()) return; const v=document.getElementById('new-color-picker').value.toUpperCase(); if(!db.customCol.includes(v)) { db.customCol.push(v); _saveLocal(); renderCustomColorsList(); _syncSilent(); } applyColor(v); }
         function removeCustomColor(i) { if(!requireToken()) return; db.customCol.splice(i,1); renderCustomColorsList(); _saveLocal(); _syncSilent(); }
-        function applyColor(hex) { if(!requireToken()||!editMeta.colorKey) return; db.colors[editMeta.colorKey]=hex; _saveLocal(); renderRepos(); closeModal('color-modal-overlay'); _syncSilent(); }
-        function removeColor() { if(!requireToken()||!editMeta.colorKey) return; delete db.colors[editMeta.colorKey]; _saveLocal(); renderRepos(); closeModal('color-modal-overlay'); _syncSilent(); }
+        function applyColor(hex) { if(!requireToken()||!currentColorKey) return; db.colors[currentColorKey]=hex; _saveLocal(); renderRepos(); closeModal('color-modal-overlay'); _syncSilent(); }
+        function removeColor() { if(!requireToken()||!currentColorKey) return; delete db.colors[currentColorKey]; _saveLocal(); renderRepos(); closeModal('color-modal-overlay'); _syncSilent(); }
 
-        function openLinkModal(r, f, s) { if(!requireToken())return; editMeta.linkKey=`${r}/${f.replace(/\\'/g,"'").replace(/&quot;/g,'"')}`; editMeta.sha=s; editMeta.tempLinks=db.links[editMeta.linkKey]?JSON.parse(JSON.stringify(db.links[editMeta.linkKey])):[]; _updLUI(); openModal('link-modal-overlay'); }
-        function _updLUI() { const c=$('link-modal-list'); if(!c)return; c.innerHTML=editMeta.tempLinks.length?editMeta.tempLinks.map((l,i)=>`<div class="flex gap-2 cms-card p-2 rounded-xl border cms-border"><div class="flex-1 space-y-1"><input type="text" class="w-full text-xs font-bold border-b cms-border outline-none bg-transparent py-1 text-[var(--text-main)]" value="${l.title}" oninput="editMeta.tempLinks[${i}].title=this.value" placeholder="Tên hiển thị"><input type="text" class="w-full text-xs outline-none bg-transparent py-1 text-muted" value="${l.url}" oninput="editMeta.tempLinks[${i}].url=this.value" placeholder="URL"></div><button type="button" onclick="editMeta.tempLinks.splice(${i},1);_updLUI()" class="text-red-500 font-bold p-2 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg">✕</button></div>`).join(''):'<p class="text-xs text-muted text-center py-4">Trống</p>'; }
-        function addLinkItem() { editMeta.tempLinks.push({title:'Link '+(editMeta.tempLinks.length+1),url:''}); _updLUI(); }
-        async function saveLinkModal() { if(!requireToken()||!editMeta.linkKey)return; let vl=editMeta.tempLinks.filter(l=>l.title.trim()&&l.url.trim()); if(vl.length>0)db.links[editMeta.linkKey]=vl; else delete db.links[editMeta.linkKey]; closeModal('link-modal-overlay'); showToast("Lưu..."); try{await saveMeta();await saveDB();renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);} }
+        function openLinkModal(r, f, s) { if(!requireToken())return; currentEditLinkKey=`${r}/${f.replace(/\\'/g,"'").replace(/&quot;/g,'"')}`; currentEditLinkSha=s; window.tempModalLinks=db.links[currentEditLinkKey]?JSON.parse(JSON.stringify(db.links[currentEditLinkKey])):[]; _updLUI(); openModal('link-modal-overlay'); }
+        function _updLUI() { const c=document.getElementById('link-modal-list'); if(!c)return; c.innerHTML=window.tempModalLinks.length?window.tempModalLinks.map((l,i)=>`<div class="flex gap-2 cms-card p-2 rounded-xl border cms-border"><div class="flex-1 space-y-1"><input type="text" class="w-full text-xs font-bold border-b cms-border outline-none bg-transparent py-1 text-[var(--text-main)]" value="${l.title}" oninput="window.tempModalLinks[${i}].title=this.value" placeholder="Tên hiển thị"><input type="text" class="w-full text-xs outline-none bg-transparent py-1 text-muted" value="${l.url}" oninput="window.tempModalLinks[${i}].url=this.value" placeholder="URL"></div><button type="button" onclick="window.tempModalLinks.splice(${i},1);_updLUI()" class="text-red-500 font-bold p-2 hover:bg-red-50 dark:hover:bg-red-900/30 rounded-lg">✕</button></div>`).join(''):'<p class="text-xs text-muted text-center py-4">Trống</p>'; }
+        function addLinkItem() { window.tempModalLinks.push({title:'Link '+(window.tempModalLinks.length+1),url:''}); _updLUI(); }
+        async function saveLinkModal() { if(!requireToken()||!currentEditLinkKey)return; let vl=window.tempModalLinks.filter(l=>l.title.trim()&&l.url.trim()); if(vl.length>0)db.links[currentEditLinkKey]=vl; else delete db.links[currentEditLinkKey]; closeModal('link-modal-overlay'); showToast("Lưu..."); try{await saveMeta();await saveDB();renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);} }
 
-        function editFileTags(r, f, s) { if(!requireToken())return; editMeta.tagKey=`${r}/${f.replace(/\\'/g,"'").replace(/&quot;/g,'"')}`; editMeta.sha=s; $('tag-modal-input').value=(db.tags[editMeta.tagKey]||[]).join(', '); const tg=Array.from(new Set(Object.values(getSafeTagsData()).flat())).sort(); $('tag-modal-suggestions').innerHTML=tg.length?tg.map(t=>{const a=(db.tags[editMeta.tagKey]||[]).includes(t), sf=t.replace(/'/g,"\\'").replace(/"/g,"&quot;"); return `<button type="button" onclick="toggleModalTag('${sf}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition tag-suggest-btn ${a?'theme-bg-accent border-transparent':'cms-input text-muted border-theme hover:opacity-80'}" data-tag="${sf}">${t}</button>`}).join(''):'<span class="text-xs text-muted">Trống</span>'; openModal('tag-modal-overlay'); setTimeout(()=>$('tag-modal-input').focus(),100); }
-        function toggleModalTag(t) { t=t.replace(/\\'/g,"'").replace(/&quot;/g,'"'); const i=$('tag-modal-input'); let c=i.value.split(',').map(x=>x.trim()).filter(Boolean); if(c.includes(t)) c=c.filter(x=>x!==t); else c.push(t); i.value=c.join(', '); document.querySelectorAll('.tag-suggest-btn').forEach(b=>{const bt=b.getAttribute('data-tag').replace(/\\'/g,"'").replace(/&quot;/g,'"'); b.className=`px-3 py-1.5 text-xs font-bold rounded-lg border transition tag-suggest-btn ${c.includes(bt)?'theme-bg-accent border-transparent':'cms-input text-muted border-[var(--border)] hover:opacity-80'}`}); }
-        async function saveTagModal() { if(!requireToken()||!editMeta.tagKey)return; let nt=$('tag-modal-input').value.split(',').map(t=>t.trim()).filter(Boolean); if(nt.length>0)db.tags[editMeta.tagKey]=nt; else delete db.tags[editMeta.tagKey]; closeModal('tag-modal-overlay'); showToast("Đang lưu..."); try{await saveMeta();await saveDB();renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);} }
-        async function renameGlobalTag() { if(!requireToken()) return; const o=prompt("Nhập tên Nhãn CŨ:"); if(!o) return; const n=prompt("Tên Nhãn MỚI (để trống để Xóa):",o); if(n===null) return; let ch=false; for(let k in db.tags){let ts=db.tags[k]; if(Array.isArray(ts)){let i=ts.indexOf(o); if(i!==-1){if(n.trim()==="")ts.splice(i,1); else ts[i]=n.trim(); db.tags[k]=[...new Set(ts)]; if(!db.tags[k].length)delete db.tags[k]; ch=true;}}} if(ch){showToast("Đang lưu...");try{await saveMeta();await saveDB();if(st.tag===o)st.tag=n.trim()||'all';renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);}}else alert("Không tìm thấy."); }
+        function editFileTags(r, f, s) { if(!requireToken())return; currentEditTagKey=`${r}/${f.replace(/\\'/g,"'").replace(/&quot;/g,'"')}`; currentEditFileSha=s; document.getElementById('tag-modal-input').value=(db.tags[currentEditTagKey]||[]).join(', '); const tg=Array.from(new Set(Object.values(getSafeTagsData()).flat())).sort(); document.getElementById('tag-modal-suggestions').innerHTML=tg.length?tg.map(t=>{const a=(db.tags[currentEditTagKey]||[]).includes(t), sf=t.replace(/'/g,"\\'").replace(/"/g,"&quot;"); return `<button type="button" onclick="toggleModalTag('${sf}')" class="px-3 py-1.5 text-xs font-bold rounded-lg border transition tag-suggest-btn ${a?'bg-[var(--accent)] text-white border-transparent':'cms-input text-muted border-[var(--border)] hover:opacity-80'}" data-tag="${sf}">${t}</button>`}).join(''):'<span class="text-xs text-muted">Trống</span>'; openModal('tag-modal-overlay'); setTimeout(()=>document.getElementById('tag-modal-input').focus(),100); }
+        function toggleModalTag(t) { t=t.replace(/\\'/g,"'").replace(/&quot;/g,'"'); const i=document.getElementById('tag-modal-input'); let c=i.value.split(',').map(x=>x.trim()).filter(Boolean); if(c.includes(t)) c=c.filter(x=>x!==t); else c.push(t); i.value=c.join(', '); document.querySelectorAll('.tag-suggest-btn').forEach(b=>{const bt=b.getAttribute('data-tag').replace(/\\'/g,"'").replace(/&quot;/g,'"'); b.className=`px-3 py-1.5 text-xs font-bold rounded-lg border transition tag-suggest-btn ${c.includes(bt)?'bg-[var(--accent)] text-white border-transparent':'cms-input text-muted border-[var(--border)] hover:opacity-80'}`}); }
+        async function saveTagModal() { if(!requireToken()||!currentEditTagKey)return; let nt=document.getElementById('tag-modal-input').value.split(',').map(t=>t.trim()).filter(Boolean); if(nt.length>0)db.tags[currentEditTagKey]=nt; else delete db.tags[currentEditTagKey]; closeModal('tag-modal-overlay'); showToast("Đang lưu..."); try{await saveMeta();await saveDB();renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);} }
+        async function renameGlobalTag() { if(!requireToken()) return; const o=prompt("Nhập tên Nhãn CŨ:"); if(!o) return; const n=prompt("Tên Nhãn MỚI (để trống để Xóa):",o); if(n===null) return; let ch=false; for(let k in db.tags){let ts=db.tags[k]; if(Array.isArray(ts)){let i=ts.indexOf(o); if(i!==-1){if(n.trim()==="")ts.splice(i,1); else ts[i]=n.trim(); db.tags[k]=[...new Set(ts)]; if(!db.tags[k].length)delete db.tags[k]; ch=true;}}} if(ch){showToast("Đang lưu...");try{await saveMeta();await saveDB();if(activeTag===o)activeTag=n.trim()||'all';renderRepos();hideToast();}catch(e){showToast("Lỗi!",true);}}else alert("Không tìm thấy."); }
 
         function toggleFileSelection(r, f, sha, e) { if(e) e.stopPropagation(); f=f.replace(/\\'/g,"'").replace(/&quot;/g,'"'); const k=`${r}|${f}|${sha}`; if(bulkSet.has(k)) bulkSet.delete(k); else bulkSet.add(k); updateBulkActionBar(); }
-        function updateBulkActionBar() { const b=$('bulk-action-bar'), c=$('bulk-count'); if(bulkSet.size) {b.classList.remove('hidden');b.classList.add('flex');if(c)c.innerText=bulkSet.size;} else {b.classList.replace('flex','hidden');} }
+        function updateBulkActionBar() { const b=document.getElementById('bulk-action-bar'), c=document.getElementById('bulk-count'); if(bulkSet.size) {b.classList.remove('hidden');b.classList.add('flex');if(c)c.innerText=bulkSet.size;} else {b.classList.replace('flex','hidden');} }
         function clearBulkSelection() { bulkSet.clear(); updateBulkActionBar(); renderRepos(); }
-        function openBulkMoveModal() { if(!requireToken()) return; const s=$('bulk-move-target-repo'); s.innerHTML='<option disabled selected>-- Chọn Repo --</option>'; Object.keys(db.repos).forEach(r=>{if(r!=='📌 Đã ghim'&&r!==`${username}.github.io`)s.innerHTML+=`<option value="${r}">${r}</option>`}); s.innerHTML+=`<option value="${username}.github.io">${username}.github.io</option>`; $('bulk-move-count-display').innerText=bulkSet.size; openModal('bulk-move-overlay'); }
-        async function submitBulkMove() { const t=$('bulk-move-target-repo').value; if(!t) return alert("Chọn Repo!"); const tk=getToken(); if(!tk) return; if(!confirm(`Chuyển ${bulkSet.size} bài sang [${t}]?`)) return; const btn=$('btn-submit-bulk-move'); btn.innerText="⏳..."; btn.disabled=true; let sC=0, fC=0; const files=Array.from(bulkSet).map(k=>{const p=k.split('|');return{repo:p[0],file:p[1],sha:p[2]}}); try{ for(const f of files){ if(f.repo===t) continue; $('bulk-move-status').innerText=`Chuyển: ${f.file}...`; try{ const gR=await fetchText(`https://api.github.com/repos/${username}/${f.repo}/contents/${safeEnc(f.file)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(!gR) throw 1; const tS=await getFileShaSafe(`${username}/${t}`,f.file); const eC=await encodeB64(gR); const pB={message:`Bulk move`,content:eC}; if(tS) pB.sha=tS; const pR=await fetch(`https://api.github.com/repos/${username}/${t}/contents/${safeEnc(f.file)}`,{method:'PUT',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify(pB)}); if(!pR.ok) throw 1; const nMeta=await pR.json(); const oS=await getFileShaSafe(`${username}/${f.repo}`,f.file)||f.sha; await fetch(`https://api.github.com/repos/${username}/${f.repo}/contents/${safeEnc(f.file)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa bulk`,sha:oS})}); const oK=`${f.repo}/${f.file}`, nK=`${t}/${f.file}`; if(db.tags[oK]){db.tags[nK]=[...db.tags[oK]];delete db.tags[oK];} if(db.links[oK]){db.links[nK]=[...db.links[oK]];delete db.links[oK];} if(db.colors[oK]){db.colors[nK]=db.colors[oK];delete db.colors[oK];} if(db.titles[oK]){db.titles[nK]=db.titles[oK];delete db.titles[oK];} if(Array.isArray(db.pinned)&&db.pinned.includes(oK)){db.pinned=db.pinned.filter(x=>x!==oK);db.pinned.push(nK);} const idx=db.files.findIndex(x=>x.sha===f.sha||x.url.includes(`/${f.repo}/${f.file}`)); if(idx!==-1){db.files[idx].repoName=t;db.files[idx].sha=nMeta.content.sha;db.files[idx].url=`https://${username}.github.io/${t==username+'.github.io'?'':t+'/'}${f.file}`;} sC++; }catch(e){fC++;} await new Promise(r=>setTimeout(r,200)); } db.repos={}; db.files.forEach(f=>{if(!db.repos[f.repoName])db.repos[f.repoName]=[];db.repos[f.repoName].push(f);}); await saveMeta(); _saveLocal(); saveDB(); closeModal('bulk-move-overlay'); clearBulkSelection(); alert(`Xong!\nThành công: ${sC}\nThất bại: ${fC}`); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Chuyển Tất Cả";btn.disabled=false;$('bulk-move-status').innerText="";} }
+        function openBulkMoveModal() { if(!requireToken()) return; const s=document.getElementById('bulk-move-target-repo'); s.innerHTML='<option disabled selected>-- Chọn Repo --</option>'; Object.keys(db.repos).forEach(r=>{if(r!=='📌 Đã ghim'&&r!==`${username}.github.io`)s.innerHTML+=`<option value="${r}">${r}</option>`}); s.innerHTML+=`<option value="${username}.github.io">${username}.github.io</option>`; document.getElementById('bulk-move-count-display').innerText=bulkSet.size; openModal('bulk-move-overlay'); }
+        async function submitBulkMove() { const t=document.getElementById('bulk-move-target-repo').value; if(!t) return alert("Chọn Repo!"); const tk=getToken(); if(!tk) return; if(!confirm(`Chuyển ${bulkSet.size} bài sang [${t}]?`)) return; const btn=document.getElementById('btn-submit-bulk-move'); btn.innerText="⏳..."; btn.disabled=true; let sC=0, fC=0; const files=Array.from(bulkSet).map(k=>{const p=k.split('|');return{repo:p[0],file:p[1],sha:p[2]}}); try{ for(const f of files){ if(f.repo===t) continue; document.getElementById('bulk-move-status').innerText=`Chuyển: ${f.file}...`; try{ const gR=await fetchText(`https://api.github.com/repos/${username}/${f.repo}/contents/${safeEnc(f.file)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(!gR) throw 1; const tS=await getFileShaSafe(`${username}/${t}`,f.file); const eC=await encodeBase64UTF8Async(gR); const pB={message:`Bulk move`,content:eC}; if(tS) pB.sha=tS; const pR=await fetch(`https://api.github.com/repos/${username}/${t}/contents/${safeEnc(f.file)}`,{method:'PUT',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify(pB)}); if(!pR.ok) throw 1; const nMeta=await pR.json(); const oS=await getFileShaSafe(`${username}/${f.repo}`,f.file)||f.sha; await fetch(`https://api.github.com/repos/${username}/${f.repo}/contents/${safeEnc(f.file)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa bulk`,sha:oS})}); const oK=`${f.repo}/${f.file}`, nK=`${t}/${f.file}`; if(db.tags[oK]){db.tags[nK]=[...db.tags[oK]];delete db.tags[oK];} if(db.links[oK]){db.links[nK]=[...db.links[oK]];delete db.links[oK];} if(db.colors[oK]){db.colors[nK]=db.colors[oK];delete db.colors[oK];} if(db.titles[oK]){db.titles[nK]=db.titles[oK];delete db.titles[oK];} if(Array.isArray(db.pinned)&&db.pinned.includes(oK)){db.pinned=db.pinned.filter(x=>x!==oK);db.pinned.push(nK);} const idx=db.files.findIndex(x=>x.sha===f.sha||x.url.includes(`/${f.repo}/${f.file}`)); if(idx!==-1){db.files[idx].repoName=t;db.files[idx].sha=nMeta.content.sha;db.files[idx].url=`https://${username}.github.io/${t==username+'.github.io'?'':t+'/'}${f.file}`;} sC++; }catch(e){fC++;} await new Promise(r=>setTimeout(r,200)); } rebuildRepoMap(); await saveMeta(); _saveLocal(); saveDB(); closeModal('bulk-move-overlay'); clearBulkSelection(); alert(`Xong!\nThành công: ${sC}\nThất bại: ${fC}`); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Chuyển Tất Cả";btn.disabled=false;document.getElementById('bulk-move-status').innerText="";} }
 
-        function openMoveModal(r, f, sha) { if(!requireToken()) return; editMeta.mSR=r; editMeta.mFN=f.replace(/\\'/g,"'").replace(/&quot;/g,'"'); editMeta.mFS=sha; $('move-file-desc').innerText=`File: ${editMeta.mFN}`; const s=$('move-target-repo'); s.innerHTML='<option disabled selected>-- Chọn Repo --</option>'; Object.keys(db.repos).forEach(rp=>{if(rp!==editMeta.mSR&&rp!==`${username}.github.io`)s.innerHTML+=`<option value="${rp}">${rp}</option>`}); if(editMeta.mSR!==`${username}.github.io`)s.innerHTML+=`<option value="${username}.github.io">${username}.github.io</option>`; openModal('move-file-overlay'); setTimeout(()=>s.focus(),100); }
-        async function submitMoveFile() { const t=$('move-target-repo').value; if(!t||!requireToken()) return; const tk=getToken(), btn=$('btn-submit-move-file'); btn.innerText="⏳..."; btn.disabled=true; try{ const rC=await fetchText(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(!rC) throw Error("Lỗi đọc gốc"); const tS=await getFileShaSafe(`${username}/${t}`,editMeta.mFN); const pB={message:`Move từ ${editMeta.mSR}`,content:await encodeB64(rC)}; if(tS) pB.sha=tS; const pR=await fetch(`https://api.github.com/repos/${username}/${t}/contents/${safeEnc(editMeta.mFN)}`,{method:'PUT',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify(pB)}); if(!pR.ok) throw Error("Lỗi ghi đích"); const nM=await pR.json(); const oS=await getFileShaSafe(`${username}/${editMeta.mSR}`,editMeta.mFN)||editMeta.mFS; await fetch(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa do move`,sha:oS})}); const oK=`${editMeta.mSR}/${editMeta.mFN}`, nK=`${t}/${editMeta.mFN}`; let nS=false; if(db.tags[oK]){db.tags[nK]=[...db.tags[oK]];delete db.tags[oK];nS=true;} if(db.links[oK]){db.links[nK]=[...db.links[oK]];delete db.links[oK];nS=true;} if(db.colors[oK]){db.colors[nK]=db.colors[oK];delete db.colors[oK];nS=true;} if(db.titles[oK]){db.titles[nK]=db.titles[oK];delete db.titles[oK];nS=true;} if(Array.isArray(db.pinned)&&db.pinned.includes(oK)){db.pinned=db.pinned.filter(x=>x!==oK);db.pinned.push(nK);nS=true;} if(nS) await saveMeta(); const idx=db.files.findIndex(x=>x.sha===editMeta.mFS); if(idx!==-1){let f=db.files[idx]; f.repoName=t; f.sha=nM.content.sha; f.url=`https://${username}.github.io/${t===`${username}.github.io`?'':t+'/'}${editMeta.mFN}`; db.repos={}; db.files.forEach(f=>{if(!db.repos[f.repoName])db.repos[f.repoName]=[];db.repos[f.repoName].push(f);});} _saveLocal(); saveDB(); closeModal('move-file-overlay'); renderRepos(); alert("Chuyển thành công!"); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Chuyển";btn.disabled=false;} }
+        function openMoveModal(r, f, sha) { if(!requireToken()) return; editMeta.mSR=r; editMeta.mFN=f.replace(/\\'/g,"'").replace(/&quot;/g,'"'); editMeta.mFS=sha; document.getElementById('move-file-desc').innerText=`File: ${editMeta.mFN}`; const s=document.getElementById('move-target-repo'); s.innerHTML='<option disabled selected>-- Chọn Repo --</option>'; Object.keys(db.repos).forEach(rp=>{if(rp!==editMeta.mSR&&rp!==`${username}.github.io`)s.innerHTML+=`<option value="${rp}">${rp}</option>`}); if(editMeta.mSR!==`${username}.github.io`)s.innerHTML+=`<option value="${username}.github.io">${username}.github.io</option>`; openModal('move-file-overlay'); setTimeout(()=>s.focus(),100); }
+        async function submitMoveFile() { const t=document.getElementById('move-target-repo').value; if(!t||!requireToken()) return; const tk=getToken(), btn=document.getElementById('btn-submit-move-file'); btn.innerText="⏳..."; btn.disabled=true; try{ const rC=await fetchText(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(!rC) throw Error("Lỗi đọc gốc"); const tS=await getFileShaSafe(`${username}/${t}`,editMeta.mFN); const pB={message:`Move từ ${editMeta.mSR}`,content:await encodeBase64UTF8Async(rC)}; if(tS) pB.sha=tS; const pR=await fetch(`https://api.github.com/repos/${username}/${t}/contents/${safeEnc(editMeta.mFN)}`,{method:'PUT',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify(pB)}); if(!pR.ok) throw Error("Lỗi ghi đích"); const nM=await pR.json(); const oS=await getFileShaSafe(`${username}/${editMeta.mSR}`,editMeta.mFN)||editMeta.mFS; await fetch(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa do move`,sha:oS})}); const oK=`${editMeta.mSR}/${editMeta.mFN}`, nK=`${t}/${editMeta.mFN}`; let nS=false; if(db.tags[oK]){db.tags[nK]=[...db.tags[oK]];delete db.tags[oK];nS=true;} if(db.links[oK]){db.links[nK]=[...db.links[oK]];delete db.links[oK];nS=true;} if(db.colors[oK]){db.colors[nK]=db.colors[oK];delete db.colors[oK];nS=true;} if(db.titles[oK]){db.titles[nK]=db.titles[oK];delete db.titles[oK];nS=true;} if(Array.isArray(db.pinned)&&db.pinned.includes(oK)){db.pinned=db.pinned.filter(x=>x!==oK);db.pinned.push(nK);nS=true;} if(nS) await saveMeta(); const idx=db.files.findIndex(x=>x.sha===editMeta.mFS); if(idx!==-1){let f=db.files[idx]; f.repoName=t; f.sha=nM.content.sha; f.url=`https://${username}.github.io/${t===`${username}.github.io`?'':t+'/'}${editMeta.mFN}`; rebuildRepoMap(); } _saveLocal(); saveDB(); closeModal('move-file-overlay'); renderRepos(); alert("Chuyển thành công!"); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Chuyển";btn.disabled=false;} }
 
-        function openCreateRepoModal() { if(!requireToken()) return; $('new-repo-name').value=''; openModal('create-repo-overlay'); setTimeout(()=>$('new-repo-name').focus(),100); }
-        async function submitCreateRepo() { const tk=getToken(), n=$('new-repo-name').value.trim(); if(!n||!tk) return; const btn=$('btn-submit-create-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch('https://api.github.com/user/repos',{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n,auto_init:true})}); if(!r.ok) throw Error((await r.json()).message); try{await new Promise(x=>setTimeout(x,2000)); await fetch(`https://api.github.com/repos/${username}/${n}/pages`,{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Accept':'application/vnd.github.v3+json'},body:JSON.stringify({source:{branch:'main',path:'/'}})});}catch(e){} if(!db.repos[n]) db.repos[n]=[]; _saveLocal(); closeModal('create-repo-overlay'); renderRepos(); $('upload-repo').value=`${username}/${n}`; alert(`Tạo xong: ${n}`); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Tạo";btn.disabled=false;} }
+        function openCreateRepoModal() { if(!requireToken()) return; document.getElementById('new-repo-name').value=''; openModal('create-repo-overlay'); setTimeout(()=>document.getElementById('new-repo-name').focus(),100); }
+        async function submitCreateRepo() { const tk=getToken(), n=document.getElementById('new-repo-name').value.trim(); if(!n||!tk) return; const btn=document.getElementById('btn-submit-create-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch('https://api.github.com/user/repos',{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n,auto_init:true})}); if(!r.ok) throw Error((await r.json()).message); try{await new Promise(x=>setTimeout(x,2000)); await fetch(`https://api.github.com/repos/${username}/${n}/pages`,{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Accept':'application/vnd.github.v3+json'},body:JSON.stringify({source:{branch:'main',path:'/'}})});}catch(e){} if(!db.repos[n]) db.repos[n]=[]; _saveLocal(); closeModal('create-repo-overlay'); renderRepos(); document.getElementById('upload-repo').value=`${username}/${n}`; alert(`Tạo xong: ${n}`); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Tạo";btn.disabled=false;} }
 
-        function openRenameRepoModal(o) { if(!requireToken()) return; if(o===`${username}.github.io`) return alert("Lỗi"); $('rename-repo-old-name').value=o; $('rename-repo-new-name').value=o; openModal('rename-repo-overlay'); setTimeout(()=>$('rename-repo-new-name').focus(),100); }
-        async function submitRenameRepo() { const tk=getToken(), o=$('rename-repo-old-name').value, n=$('rename-repo-new-name').value.trim(); if(!n||n===o||!tk) return; const btn=$('btn-submit-rename-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch(`https://api.github.com/repos/${username}/${o}`,{method:'PATCH',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n})}); if(!r.ok) throw Error("Lỗi"); const nT={}, nL={}, nC={}, nTi={}; let nP=[]; for(let k in db.tags) nT[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.tags[k]; for(let k in db.links) nL[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.links[k]; for(let k in db.colors) nC[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.colors[k]; for(let k in db.titles) nTi[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.titles[k]; if(Array.isArray(db.pinned)) db.pinned.forEach(k=>nP.push(k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k)); db.tags=nT; db.links=nL; db.colors=nC; db.titles=nTi; db.pinned=nP; await saveMeta(); db.files.forEach(f=>{if(f.repoName===o){f.repoName=n;f.url=f.url.replace(`/${o}/`,`/${n}/`);}}); db.repos={}; db.files.forEach(f=>{if(!db.repos[f.repoName])db.repos[f.repoName]=[];db.repos[f.repoName].push(f);}); _saveLocal(); saveDB(); if($('upload-repo').value===`${username}/${o}`) $('upload-repo').value=`${username}/${n}`; closeModal('rename-repo-overlay'); renderRepos(); alert("Xong!"); }catch(e){alert(`Lỗi`);}finally{btn.innerText="Lưu";btn.disabled=false;} }
+        function openRenameRepoModal(o) { if(!requireToken()) return; if(o===`${username}.github.io`) return alert("Lỗi"); document.getElementById('rename-repo-old-name').value=o; document.getElementById('rename-repo-new-name').value=o; openModal('rename-repo-overlay'); setTimeout(()=>document.getElementById('rename-repo-new-name').focus(),100); }
+        async function submitRenameRepo() { const tk=getToken(), o=document.getElementById('rename-repo-old-name').value, n=document.getElementById('rename-repo-new-name').value.trim(); if(!n||n===o||!tk) return; const btn=document.getElementById('btn-submit-rename-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch(`https://api.github.com/repos/${username}/${o}`,{method:'PATCH',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n})}); if(!r.ok) throw Error("Lỗi"); const nT={}, nL={}, nC={}, nTi={}; let nP=[]; for(let k in db.tags) nT[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.tags[k]; for(let k in db.links) nL[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.links[k]; for(let k in db.colors) nC[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.colors[k]; for(let k in db.titles) nTi[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.titles[k]; if(Array.isArray(db.pinned)) db.pinned.forEach(k=>nP.push(k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k)); db.tags=nT; db.links=nL; db.colors=nC; db.titles=nTi; db.pinned=nP; await saveMeta(); db.files.forEach(f=>{if(f.repoName===o){f.repoName=n;f.url=f.url.replace(`/${o}/`,`/${n}/`);}}); rebuildRepoMap(); _saveLocal(); saveDB(); if(document.getElementById('upload-repo').value===`${username}/${o}`) document.getElementById('upload-repo').value=`${username}/${n}`; closeModal('rename-repo-overlay'); renderRepos(); alert("Xong!"); }catch(e){alert(`Lỗi`);}finally{btn.innerText="Lưu";btn.disabled=false;} }
 
         async function compileAllForNotebookLM() {
             if(!requireToken()||!confirm("🚀 XUẤT SIÊU SÁCH CHO NOTEBOOKLM (LẤY MỚI 100%)\nMất khoảng 20-30s. Bắt đầu?")) return;
@@ -715,15 +823,15 @@
                     const hFs=fs.filter(f=>f.name.endsWith('.html')&&!(rp.name===`${username}.github.io`&&(f.name==='index.html'||f.name==='fix-url.html'||f.name.endsWith('.json')))); if(hFs.length){ct+=`\n\n[KHO: ${rp.name.toUpperCase()}]\n\n`;}
                     for(const f of hFs){ tc++; showToast(`Đang trích xuất: ${f.name}...`); let sN=f.name; try{sN=decodeURIComponent(f.name);}catch(e){} const rC=await fetchText(`https://api.github.com/repos/${username}/${rp.name}/contents/${safeEnc(sN)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(rC){ const d=new DOMParser().parseFromString(rC,'text/html'); d.querySelectorAll('script,style,nav,header,footer,iframe,svg,button').forEach(x=>x.remove()); const ti=(db.titles&&db.titles[`${rp.name}/${f.name}`])||sN.replace('.html',''); ct+=`BÀI: ${ti}\n[Nội dung]\n${(d.body.innerText||d.body.textContent||"").replace(/\n{3,}/g,'\n\n').trim()}\n------------------------\n\n`; } await new Promise(r=>setTimeout(r,50)); } }
                 ct=ct.replace('====================================',`Tổng số bài: ${tc}\n====================================`);
-                showToast("Lưu Siêu Sách lên Github..."); const fn=`notebooklm_ALL.txt`, sS=await getFileShaSafe(`${username}/${username}.github.io`,fn); await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/${fn}`,{method:'PUT',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Đóng gói Siêu sách`,content:await encodeB64(ct),sha:sS||undefined})});
+                showToast("Lưu Siêu Sách lên Github..."); const fn=`notebooklm_ALL.txt`, sS=await getFileShaSafe(`${username}/${username}.github.io`,fn); await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/${fn}`,{method:'PUT',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Đóng gói Siêu sách`,content:await encodeBase64UTF8Async(ct),sha:sS||undefined})});
                 if(DRIVE_WEBHOOK_URL){ showToast("Đẩy lên Google Drive..."); try{await fetch(DRIVE_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:ct});}catch(e){} }
                 showToast("✅ Đóng gói xong!"); const u=`https://${username}.github.io/${fn}`; try{await navigator.clipboard.writeText(u);}catch(e){} setTimeout(()=>prompt(`🎉 XONG! Link đã Copy:\n(Dán vào NotebookLM)`,u),500);
             } catch(e) { alert(`Lỗi: ${e.message}`); } finally { hideToast(); }
         }
 
         async function copyEditorToSubstack() {
-            const c=$('upload-content').value; if(!c) return alert("Trống!");
-            const btn=$('btn-copy-editor'), oT=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
+            const c=document.getElementById('upload-content').value; if(!c) return alert("Trống!");
+            const btn=document.getElementById('btn-copy-editor'), oT=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
             try{
                 const d=new DOMParser().parseFromString(c,'text/html');
                 d.querySelectorAll('head,style,script,svg,iframe,nav,footer,header,meta,title').forEach(e=>e.remove());
@@ -734,55 +842,55 @@
         }
 
         async function confirmDeleteFromForm() {
-            if(!requireToken())return; const rp=$('original-repo').value, fs=$('original-sha').value; let fn=$('original-filename').value; try{fn=decodeURIComponent(fn);}catch(e){}
+            if(!requireToken())return; const rp=document.getElementById('original-repo').value, fs=document.getElementById('original-sha').value; let fn=document.getElementById('original-filename').value; try{fn=decodeURIComponent(fn);}catch(e){}
             if(!rp||!fn||!fs) return alert("Không tìm thấy gốc.");
             if(!confirm(`CẢNH BÁO: Xóa vĩnh viễn bài:\n[ ${fn} ]?`)) return;
-            const btn=$('btn-delete'), ot=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
+            const btn=document.getElementById('btn-delete'), ot=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
             try {
                 const res=await fetch(`https://api.github.com/repos/${rp}/contents/${safeEnc(fn)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa bài: ${fn}`,sha:fs})});
                 if(!res.ok) throw Error("Lỗi API");
                 db.files=db.files.filter(x=>x.sha!==fs); const rn=rp.split('/')[1]||rp.split('/')[0], k=`${rn}/${fn}`;
                 if(db.tags[k])delete db.tags[k]; if(db.links[k])delete db.links[k]; if(db.colors[k])delete db.colors[k]; if(db.titles[k])delete db.titles[k]; if(Array.isArray(db.pinned)) db.pinned=db.pinned.filter(x=>x!==k);
-                db.repos={}; db.files.forEach(x=>{if(!db.repos[x.repoName])db.repos[x.repoName]=[];db.repos[x.repoName].push(x);});
-                await saveMeta(); saveDB(); clearUploadForm(); renderRepos(); alert("Đã xóa!");
+                rebuildRepoMap();
+                await saveMeta(); saveDB(); clearUploadForm(); renderRepos(); renderRepoSuggestions(); alert("Đã xóa!");
             }catch(e){alert(`Lỗi: ${e.message}`);btn.innerHTML=ot;btn.disabled=false;}
         }
 
         // ==========================================
         // 11. HTML EDITOR CORE LOGIC
         // ==========================================
-        async function loadMainIndex() { if(!requireToken()) return; clearUploadForm(); $('upload-title').value='Trang chủ (index.html)'; $('upload-filename').value='index.html'; isSlugEdited=true; const st=$('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ $('upload-content').value=r.replace(WIDGET_REGEX,''); $('upload-repo').value=`${username}/${username}.github.io`; $('original-repo').value=`${username}/${username}.github.io`; $('original-filename').value=`index.html`; $('original-sha').value=await getFileShaSafe(`${username}/${username}.github.io`,'index.html')||""; $('btn-create').innerHTML='Lưu (Ctrl S)'; if($('btn-delete')) $('btn-delete').classList.remove('hidden'); st.innerText=`✅ Sẵn sàng!`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-green-600 border border-green-500/30"; }else throw Error("Không tìm thấy"); }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-red-500 border border-red-500/30"; } }
+        async function loadMainIndex() { if(!requireToken()) return; clearUploadForm(); document.getElementById('upload-title').value='Trang chủ (index.html)'; document.getElementById('upload-filename').value='index.html'; isSlugEdited=true; const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ document.getElementById('upload-content').value=r.replace(WIDGET_REGEX,''); document.getElementById('upload-repo').value=`${username}/${username}.github.io`; document.getElementById('original-repo').value=`${username}/${username}.github.io`; document.getElementById('original-filename').value=`index.html`; document.getElementById('original-sha').value=await getFileShaSafe(`${username}/${username}.github.io`,'index.html')||""; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); st.innerText=`✅ Sẵn sàng!`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; }else throw Error("Không tìm thấy"); }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } }
         
-        async function editRepoIndex(tR) { if(!requireToken()) return; clearUploadForm(); $('upload-title').value=`Trang chủ: ${tR}`; $('upload-filename').value='index.html'; isSlugEdited=true; if($('upload-section') && $('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); const st=$('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${tR}/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ $('upload-content').value=r.replace(WIDGET_REGEX,''); $('original-sha').value=await getFileShaSafe(`${username}/${tR}`,'index.html')||""; st.innerText="✅ Sẵn sàng!"; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-green-600 border border-green-500/30"; if($('btn-delete')) $('btn-delete').classList.remove('hidden'); }else{ $('upload-content').value=`<!DOCTYPE html>\n<html lang="vi"><head><meta charset="UTF-8"><title>${tR}</title><script src="https://cdn.tailwindcss.com"><\/script></head><body class="p-8"><h1 class="text-3xl font-bold">${tR}</h1></body></html>`; $('original-sha').value=""; st.innerText="⚠️ Chưa có file, đã tạo khung HTML."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-[#FF9500] border border-[#FF9500]/30"; } $('upload-repo').value=`${username}/${tR}`; $('original-repo').value=`${username}/${tR}`; $('original-filename').value=`index.html`; $('btn-create').innerHTML='Lưu (Ctrl S)'; }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-red-500 border border-red-500/30"; } }
+        async function editRepoIndex(tR) { if(!requireToken()) return; clearUploadForm(); document.getElementById('upload-title').value=`Trang chủ: ${tR}`; document.getElementById('upload-filename').value='index.html'; isSlugEdited=true; if(document.getElementById('upload-section') && document.getElementById('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${tR}/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ document.getElementById('upload-content').value=r.replace(WIDGET_REGEX,''); document.getElementById('original-sha').value=await getFileShaSafe(`${username}/${tR}`,'index.html')||""; st.innerText="✅ Sẵn sàng!"; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); }else{ document.getElementById('upload-content').value=`<!DOCTYPE html>\n<html lang="vi"><head><meta charset="UTF-8"><title>${tR}</title><script src="https://cdn.tailwindcss.com"><\/script></head><body class="p-8"><h1 class="text-3xl font-bold">${tR}</h1></body></html>`; document.getElementById('original-sha').value=""; st.innerText="⚠️ Chưa có file, đã tạo khung HTML."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-yellow-50 text-yellow-600 border border-yellow-500/30"; } document.getElementById('upload-repo').value=`${username}/${tR}`; document.getElementById('original-repo').value=`${username}/${tR}`; document.getElementById('original-filename').value=`index.html`; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } }
         
-        async function loadRepoIndex() { if(!requireToken()) return; const inp=$('upload-repo').value.trim(); if(!inp||inp===`${username}/`||inp===`${username}/${username}.github.io`) return alert("Nhập tên Repo!"); editRepoIndex(inp.split('/')[1]||inp.split('/')[0]); }
+        async function loadRepoIndex() { if(!requireToken()) return; const inp=document.getElementById('upload-repo').value.trim(); if(!inp||inp===`${username}/`||inp===`${username}/${username}.github.io`) return alert("Nhập tên Repo!"); editRepoIndex(inp.split('/')[1]||inp.split('/')[0]); }
         
         async function editFileContent(rN, f, sha) { 
             if(!requireToken()) return; f=f.replace(/\\'/g,"'").replace(/&quot;/g,'"'); 
-            if($('upload-section') && $('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); 
-            const st=$('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang nạp...`; 
+            if(document.getElementById('upload-section') && document.getElementById('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); 
+            const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang nạp...`; 
             try { 
                 let sN=f; try{sN=decodeURIComponent(f);}catch(e){} let fs=sha, c=""; 
                 const r=await fetchText(`https://api.github.com/repos/${username}/${rN}/contents/${safeEnc(sN)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); 
                 if(r){c=r.replace(WIDGET_REGEX,''); if(!fs)fs=await getFileShaSafe(`${username}/${rN}`,sN)||"";}else throw Error("File bị xóa."); 
-                $('upload-content').value=c; let rp=rN===username||rN===`${username}.github.io`?`${username}/${username}.github.io`:`${username}/${rN}`; $('upload-repo').value=rp; $('original-repo').value=rp; $('original-filename').value=sN; $('original-sha').value=fs; $('btn-create').innerHTML='Lưu (Ctrl S)'; if($('btn-delete')) $('btn-delete').classList.remove('hidden'); 
+                document.getElementById('upload-content').value=c; let rp=rN===username||rN===`${username}.github.io`?`${username}/${username}.github.io`:`${username}/${rN}`; document.getElementById('upload-repo').value=rp; document.getElementById('original-repo').value=rp; document.getElementById('original-filename').value=sN; document.getElementById('original-sha').value=fs; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); 
                 let rName=rN===username||rN===`${username}.github.io`?`${username}.github.io`:rN; if(rName.includes('/'))rName=rName.split('/')[1]||rName.split('/')[0]; 
-                $('upload-title').value=db.titles[`${rName}/${sN}`]||sN.replace('.html',''); $('upload-filename').value=sN.replace('.html',''); isSlugEdited=true; $('upload-tags').value=(db.tags[`${rName}/${sN}`]||[]).join(', '); syncUploadTagsUI(); uploadLinksTemp=db.links[`${rName}/${sN}`]?JSON.parse(JSON.stringify(db.links[`${rName}/${sN}`])):[]; renderUploadLinks(); 
-                st.innerText="✅ Đã nạp thành công."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-green-600 border border-green-500/30"; 
-            }catch(e){ st.innerText=`❌ Lỗi: ${e.message}`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-red-500 border border-red-500/30"; } 
+                document.getElementById('upload-title').value=db.titles[`${rName}/${sN}`]||sN.replace('.html',''); document.getElementById('upload-filename').value=sN.replace('.html',''); isSlugEdited=true; document.getElementById('upload-tags').value=(db.tags[`${rName}/${sN}`]||[]).join(', '); syncUploadTagsUI(); uploadLinksTemp=db.links[`${rName}/${sN}`]?JSON.parse(JSON.stringify(db.links[`${rName}/${sN}`])):[]; renderUploadLinks(); 
+                st.innerText="✅ Đã nạp thành công."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; 
+            }catch(e){ st.innerText=`❌ Lỗi: ${e.message}`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } 
         }
         
         async function createFile() {
-            if(!requireToken()) return; const t=getToken(); let rp=$('upload-repo').value.trim().replace(/\/$/,''); let rt=$('upload-title').value.trim(); let rs=$('upload-filename').value.trim(); let n=rs;
-            if(rs.toLowerCase()==='index'||rs.toLowerCase()==='index.html') n='index.html'; else if(rs.toLowerCase()!=='metadata.json'){ rs=rs.replace(/\.html$/i,''); let sN=slugify(rs); let tags=$('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean); if(tags.length&&sN){let ts=slugify(tags.join('-'));if(!sN.includes(ts))sN+='-'+ts;} if(!sN)sN=slugify(rt); if(!sN)return alert("Lỗi tên file!"); n=sN+'.html'; $('upload-filename').value=sN; }
-            let ct=$('upload-content').value; const oR=$('original-repo').value; let oN=$('original-filename').value; try{oN=decodeURIComponent(oN);}catch(e){} const oS=$('original-sha').value, st=$('upload-status'), btn=$('btn-create'); if(!rp||!n||!ct) return alert("Thiếu dữ liệu!");
+            if(!requireToken()) return; const t=getToken(); let rp=document.getElementById('upload-repo').value.trim().replace(/\/$/,''); let rt=document.getElementById('upload-title').value.trim(); let rs=document.getElementById('upload-filename').value.trim(); let n=rs;
+            if(rs.toLowerCase()==='index'||rs.toLowerCase()==='index.html') n='index.html'; else if(rs.toLowerCase()!=='metadata.json'){ rs=rs.replace(/\.html$/i,''); let sN=slugify(rs); let tags=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean); if(tags.length&&sN){let ts=slugify(tags.join('-'));if(!sN.includes(ts))sN+='-'+ts;} if(!sN)sN=slugify(rt); if(!sN)return alert("Lỗi tên file!"); n=sN+'.html'; document.getElementById('upload-filename').value=sN; }
+            let ct=document.getElementById('upload-content').value; const oR=document.getElementById('original-repo').value; let oN=document.getElementById('original-filename').value; try{oN=decodeURIComponent(oN);}catch(e){} const oS=document.getElementById('original-sha').value, st=document.getElementById('upload-status'), btn=document.getElementById('btn-create'); if(!rp||!n||!ct) return alert("Thiếu dữ liệu!");
             ct=ct.replace(WIDGET_REGEX,''); if(n.endsWith('.html')&&n!=='index.html'&&n!=='fix-url.html'){if(ct.includes('</body>'))ct=ct.replace('</body>',CMS_PIN_WIDGET+'</body>');else ct+=CMS_PIN_WIDGET;}
             try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI(); btn.innerHTML="⏳..."; btn.disabled=true; st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText="Đang lưu...";
             try {
-                let tS=await getFileShaSafe(rp,n); const b64=await encodeB64(ct); const bd={message:`Cập nhật: ${n}`,content:b64}; if(tS)bd.sha=tS;
+                let tS=await getFileShaSafe(rp,n); const b64=await encodeBase64UTF8Async(ct); const bd={message:`Cập nhật: ${n}`,content:b64}; if(tS)bd.sha=tS;
                 const res=await fetch(`https://api.github.com/repos/${rp}/contents/${safeEnc(n)}`,{method:'PUT',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify(bd)}); if(!res.ok) throw Error((await res.json()).message); const rd=await res.json();
                 let isR=oN&&oR&&(oN!==n||oR!==rp); if(isR&&oS){ await fetch(`https://api.github.com/repos/${oR}/contents/${safeEnc(oN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa file cũ`,sha:oS})}); const ok=`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`; if(db.tags[ok])delete db.tags[ok]; if(db.links[ok])delete db.links[ok]; if(db.colors[ok])delete db.colors[ok]; if(db.titles[ok])delete db.titles[ok]; if(Array.isArray(db.pinned)) db.pinned=db.pinned.filter(x=>x!==ok); }
-                let rO=rp.split('/')[0], rN=rp.split('/')[1]||rp.split('/')[0], nT=$('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean), fK=`${rN}/${n}`;
+                let rO=rp.split('/')[0], rN=rp.split('/')[1]||rp.split('/')[0], nT=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean), fK=`${rN}/${n}`;
                 if(nT.length)db.tags[fK]=[...new Set(nT)]; else delete db.tags[fK]; let fL=uploadLinksTemp.filter(x=>x.title.trim()&&x.url.trim()); if(fL.length)db.links[fK]=fL; else delete db.links[fK]; if(rt)db.titles[fK]=rt;
                 if(isR){ if(db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`])db.colors[fK]=db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`]; if(Array.isArray(db.pinned) && db.pinned.includes(`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`))db.pinned.push(fK); }
                 const tUrl=`https://${rO}.github.io/${rN===`${rO}.github.io`?'':rN+'/'}${n}`, dt=new Date(), pD=parseHTML(ct,n,tUrl);
@@ -790,9 +898,9 @@
                     if(isR&&oS)db.files=db.files.filter(x=>x.sha!==oS); let ei=db.files.findIndex(x=>x.sha===tS||x.sha===rd.content.sha);
                     if(ei!==-1){ let x=db.files[ei]; x.fileName=n;x.name=rt||decodeURIComponent(n.replace('.html',''));x.url=tUrl;x.timestamp=dt.getTime();x.fullDate=dt.toLocaleString('vi-VN');x.preview=pD.previewText;x.previewFeedHTML=pD.previewFeedHTML;x.tocHTML=pD.tocHTML;x.coverHTML=pD.coverHTML;x.fullText=pD.fullText;x.sha=rd.content.sha; }
                     else db.files.unshift({repoName:rN,name:rt||decodeURIComponent(n.replace('.html','')),fileName:n,sha:rd.content.sha,url:tUrl,downloadUrl:rd.content.download_url||"",timestamp:dt.getTime(),fullDate:dt.toLocaleString('vi-VN'),preview:pD.previewText,previewFeedHTML:pD.previewFeedHTML,tocHTML:pD.tocHTML,coverHTML:pD.coverHTML,fullText:pD.fullText});
-                    db.repos={}; db.files.forEach(x=>{if(!db.repos[x.repoName])db.repos[x.repoName]=[];db.repos[x.repoName].push(x);}); _saveLocal(); renderRepos(); saveDB();
-                } await saveMeta(); st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-green-600 border border-green-500/30"; st.innerText=`✅ THÀNH CÔNG!`; clearUploadForm(); setTimeout(()=>window.open(tUrl,'_blank'),1500);
-            }catch(e){ st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl theme-input text-red-500 border border-red-500/30"; st.innerText=`❌ Lỗi: ${e.message}`; }finally{ btn.innerHTML='Lưu (Ctrl S)'; btn.disabled=false; }
+                    rebuildRepoMap(); _saveLocal(); renderRepos(); saveDB();
+                } await saveMeta(); st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; st.innerText=`✅ THÀNH CÔNG!`; clearUploadForm(); setTimeout(()=>window.open(tUrl,'_blank'),1500);
+            }catch(e){ st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; st.innerText=`❌ Lỗi: ${e.message}`; }finally{ btn.innerHTML='Lưu (Ctrl S)'; btn.disabled=false; }
         }
     </script>
 </body>
