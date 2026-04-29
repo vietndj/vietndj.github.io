@@ -57,7 +57,7 @@
         <span id="sync-status-text">Đang đồng bộ...</span>
     </div>
 
-    <div id="login-screen" class="hidden fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)]">
+    <div id="login-screen" class="flex fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)]">
         <div class="cms-card p-10 max-w-sm w-full mx-4 text-center shadow-2xl border cms-border">
             <h2 class="text-2xl font-bold mb-2">Workspace</h2>
             <p class="text-sm text-muted mb-6">Nhập mã PIN truy cập</p>
@@ -176,7 +176,7 @@
 
                 <div id="recent-files-wrapper"></div>
                 <div id="repo-container" class="transition-all duration-400 min-h-[50vh] pb-10">
-                    <div class="text-center py-20 text-muted font-bold text-sm">Đang nạp bộ nhớ...</div>
+                    <div class="text-center py-20 text-muted font-bold text-sm">Đang tải dữ liệu...</div>
                 </div>
             </main>
 
@@ -238,9 +238,9 @@
         let editMeta = { tagKey: null, sha: null, linkKey: null, mSR: '', mFN: '', mFS: '' };
 
         // ==========================================
-        // 2. KHỞI TẠO (TRỰC TIẾP, BỎ ĐỢI DOMContentLoaded ĐỂ CHỐNG LỖI MÀN HÌNH TRẮNG)
+        // 2. KHỞI TẠO (TRỰC TIẾP, BỎ ĐỢI DOMContentLoaded)
         // ==========================================
-        function initApp() {
+        window.addEventListener('DOMContentLoaded', () => {
             _injectModals();
             let auth = false; try { if(localStorage.getItem("cms_auth") === "granted") auth = true; } catch(e) {}
             if(auth) unlockSystem(); else {
@@ -248,7 +248,7 @@
                 const inp = document.getElementById('pin-input'); if(inp) inp.focus();
             }
             try { const w = localStorage.getItem('cms_pomo_webhook'); if(w && document.getElementById('pomo-webhook-url')) document.getElementById('pomo-webhook-url').value = w; } catch(e) {}
-        }
+        });
 
         function safeSetLocal(key, value) {
             try { localStorage.setItem(key, value); } 
@@ -343,9 +343,7 @@
 
         function syncUploadTagsUI() { 
             try {
-                // Sửa lỗi .flat() thành vòng lặp forEach an toàn
                 const aT = new Set(); Object.values(getSafeTagsData()).forEach(a=>a.forEach(x=>aT.add(x))); const tg = Array.from(aT).sort();
-                
                 const inp = document.getElementById('upload-tags'); const cur = inp.value.split(',').map(x=>x.trim()).filter(Boolean); const sug = document.getElementById('upload-tag-suggestions');
                 if(!tg.length) sug.innerHTML='<span class="text-[10px] text-muted italic mt-2">Chưa có nhãn.</span>'; 
                 else sug.innerHTML = tg.map(t=>{ 
@@ -382,7 +380,7 @@
         });
 
         // ==========================================
-        // 4. API GITHUB VÀ HÀM MÃ HÓA BẢO VỆ QUOTA/UTF-8
+        // 4. API GITHUB VÀ HÀM MÃ HÓA
         // ==========================================
         const getToken = () => (document.getElementById('github-token')?.value || localStorage.getItem('github_pat') || '').replace(/\s+/g, '');
         const getHeaders = () => { const t = getToken(); return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : { 'Accept': 'application/vnd.github.v3+json' }; };
@@ -447,6 +445,29 @@
         // ==========================================
         // 5. DATABASE SYNC & BẢO VỆ QUOTA BỘ NHỚ
         // ==========================================
+        function initCMS() {
+            try { 
+                const c = JSON.parse(localStorage.getItem('cms_repo_data')); 
+                if(c) { 
+                    if(c.files) db.files = c.files;
+                    if(c.repos) db.repos = c.repos;
+                    if(c.tags) db.tags = c.tags;
+                    if(c.links) db.links = c.links;
+                    if(c.tasks) db.tasks = c.tasks;
+                    if(c.pinned) db.pinned = c.pinned;
+                    if(c.colors) db.colors = c.colors;
+                    if(c.customCol) db.customCol = c.customCol;
+                    if(c.titles) db.titles = c.titles;
+
+                    getSafeTagsData(); 
+                    if(Array.isArray(db.files) && db.files.length > 0) renderRepos(); 
+                    renderTasks(); 
+                } 
+            } catch(e) { console.error("INIT CMS ERR", e); }
+            fastLoadDB(); 
+            checkUrlPin(); 
+        }
+
         function rebuildRepoMap() { db.repos = {}; if(Array.isArray(db.files)) { db.files.forEach(f => { if(!db.repos[f.repoName]) db.repos[f.repoName] = []; db.repos[f.repoName].push(f); }); } }
 
         function _saveLocal() { 
@@ -474,7 +495,6 @@
         async function saveDB() { 
             const t=getToken(); if(!t) throw new Error("Missing Token"); 
             const sha=await getFileShaSafe(`${username}/${username}.github.io`, 'cms_db.json'); 
-            // KHÔNG LƯU previewFeedHTML VÀO cms_db.json ĐỂ TRÁNH LỖI OVERSIZE
             const leanDB = db.files.map(f => ({ repoName: f.repoName, name: f.name, fileName: f.fileName, sha: f.sha, url: f.url, timestamp: f.timestamp, fullDate: f.fullDate, preview: (f.preview||"").substring(0, 150) })); 
             const c=await encodeBase64UTF8Async(JSON.stringify({allFiles: leanDB})); 
             const b={message:"Auto-sync DB", content:c}; if(sha) b.sha=sha; 
@@ -743,4 +763,110 @@
         async function submitMoveFile() { const t=document.getElementById('move-target-repo').value; if(!t||!requireToken()) return; const tk=getToken(), btn=document.getElementById('btn-submit-move-file'); btn.innerText="⏳..."; btn.disabled=true; try{ const rC=await fetchText(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(!rC) throw Error("Lỗi đọc gốc"); const tS=await getFileShaSafe(`${username}/${t}`,editMeta.mFN); const pB={message:`Move từ ${editMeta.mSR}`,content:await encodeBase64UTF8Async(rC)}; if(tS) pB.sha=tS; const pR=await fetch(`https://api.github.com/repos/${username}/${t}/contents/${safeEnc(editMeta.mFN)}`,{method:'PUT',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify(pB)}); if(!pR.ok) throw Error("Lỗi ghi đích"); const nM=await pR.json(); const oS=await getFileShaSafe(`${username}/${editMeta.mSR}`,editMeta.mFN)||editMeta.mFS; await fetch(`https://api.github.com/repos/${username}/${editMeta.mSR}/contents/${safeEnc(editMeta.mFN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa do move`,sha:oS})}); const oK=`${editMeta.mSR}/${editMeta.mFN}`, nK=`${t}/${editMeta.mFN}`; let nS=false; if(db.tags[oK]){db.tags[nK]=[...db.tags[oK]];delete db.tags[oK];nS=true;} if(db.links[oK]){db.links[nK]=[...db.links[oK]];delete db.links[oK];nS=true;} if(db.colors[oK]){db.colors[nK]=db.colors[oK];delete db.colors[oK];nS=true;} if(db.titles[oK]){db.titles[nK]=db.titles[oK];delete db.titles[oK];nS=true;} if(Array.isArray(db.pinned)&&db.pinned.includes(oK)){db.pinned=db.pinned.filter(x=>x!==oK);db.pinned.push(nK);nS=true;} if(nS) await saveMeta(); const idx=db.files.findIndex(x=>x.sha===editMeta.mFS); if(idx!==-1){let f=db.files[idx]; f.repoName=t; f.sha=nM.content.sha; f.url=`https://${username}.github.io/${t===`${username}.github.io`?'':t+'/'}${editMeta.mFN}`; rebuildRepoMap(); } _saveLocal(); await saveDB(); closeModal('move-file-overlay'); renderRepos(); alert("Chuyển thành công!"); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Chuyển";btn.disabled=false;} }
 
         function openCreateRepoModal() { if(!requireToken()) return; document.getElementById('new-repo-name').value=''; openModal('create-repo-overlay'); setTimeout(()=>document.getElementById('new-repo-name').focus(),100); }
-        async function submitCreateRepo() { const tk=getToken(), n=document.getElementById('new-repo-name').value.trim(); if(!n||!tk) return; const btn=document.getElementById('btn-submit-create-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch('https://api.github.com/user/repos',{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({
+        async function submitCreateRepo() { const tk=getToken(), n=document.getElementById('new-repo-name').value.trim(); if(!n||!tk) return; const btn=document.getElementById('btn-submit-create-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch('https://api.github.com/user/repos',{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n,auto_init:true})}); if(!r.ok) throw Error((await r.json()).message); try{await new Promise(x=>setTimeout(x,2000)); await fetch(`https://api.github.com/repos/${username}/${n}/pages`,{method:'POST',headers:{'Authorization':`Bearer ${tk}`,'Accept':'application/vnd.github.v3+json'},body:JSON.stringify({source:{branch:'main',path:'/'}})});}catch(e){} if(!db.repos[n]) db.repos[n]=[]; _saveLocal(); closeModal('create-repo-overlay'); renderRepos(); document.getElementById('upload-repo').value=`${username}/${n}`; alert(`Tạo xong: ${n}`); }catch(e){alert(`Lỗi: ${e.message}`);}finally{btn.innerText="Tạo";btn.disabled=false;} }
+
+        function openRenameRepoModal(o) { if(!requireToken()) return; if(o===`${username}.github.io`) return alert("Lỗi"); document.getElementById('rename-repo-old-name').value=o; document.getElementById('rename-repo-new-name').value=o; openModal('rename-repo-overlay'); setTimeout(()=>document.getElementById('rename-repo-new-name').focus(),100); }
+        async function submitRenameRepo() { const tk=getToken(), o=document.getElementById('rename-repo-old-name').value, n=document.getElementById('rename-repo-new-name').value.trim(); if(!n||n===o||!tk) return; const btn=document.getElementById('btn-submit-rename-repo'); btn.innerText="⏳..."; btn.disabled=true; try{ const r=await fetch(`https://api.github.com/repos/${username}/${o}`,{method:'PATCH',headers:{'Authorization':`Bearer ${tk}`,'Content-Type':'application/json'},body:JSON.stringify({name:n})}); if(!r.ok) throw Error("Lỗi"); const nT={}, nL={}, nC={}, nTi={}; let nP=[]; for(let k in db.tags) nT[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.tags[k]; for(let k in db.links) nL[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.links[k]; for(let k in db.colors) nC[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.colors[k]; for(let k in db.titles) nTi[k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k]=db.titles[k]; if(Array.isArray(db.pinned)) db.pinned.forEach(k=>nP.push(k.startsWith(`${o}/`)?k.replace(`${o}/`,`${n}/`):k)); db.tags=nT; db.links=nL; db.colors=nC; db.titles=nTi; db.pinned=nP; await saveMeta(); db.files.forEach(f=>{if(f.repoName===o){f.repoName=n;f.url=f.url.replace(`/${o}/`,`/${n}/`);}}); rebuildRepoMap(); _saveLocal(); await saveDB(); if(document.getElementById('upload-repo').value===`${username}/${o}`) document.getElementById('upload-repo').value=`${username}/${n}`; closeModal('rename-repo-overlay'); renderRepos(); alert("Xong!"); }catch(e){alert(`Lỗi`);}finally{btn.innerText="Lưu";btn.disabled=false;} }
+
+        async function compileAllForNotebookLM() {
+            if(!requireToken()||!confirm("🚀 XUẤT SIÊU SÁCH CHO NOTEBOOKLM (LẤY MỚI 100%)\nMất khoảng 20-30s. Bắt đầu?")) return;
+            showToast("Lấy danh sách Repo..."); try {
+                const rs=await fetchJSON(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100&t=${Date.now()}`,{headers:getHeaders()}); if(!rs) throw Error("Lỗi API List");
+                let ct=`SIÊU SÁCH KIẾN THỨC: ${username.toUpperCase()}\n====================================\n\n`, tc=0;
+                for(let rp of rs){ const fs=await fetchJSON(`https://api.github.com/repos/${username}/${rp.name}/contents/?t=${Date.now()}`,{headers:getHeaders()}); if(!Array.isArray(fs))continue;
+                    const hFs=fs.filter(f=>f.name.endsWith('.html')&&!(rp.name===`${username}.github.io`&&(f.name==='index.html'||f.name==='fix-url.html'||f.name.endsWith('.json')))); if(hFs.length){ct+=`\n\n[KHO: ${rp.name.toUpperCase()}]\n\n`;}
+                    for(const f of hFs){ tc++; showToast(`Đang trích xuất: ${f.name}...`); let sN=f.name; try{sN=decodeURIComponent(f.name);}catch(e){} const rC=await fetchText(`https://api.github.com/repos/${username}/${rp.name}/contents/${safeEnc(sN)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(rC){ const d=new DOMParser().parseFromString(rC,'text/html'); d.querySelectorAll('script,style,nav,header,footer,iframe,svg,button').forEach(x=>x.remove()); const ti=(db.titles&&db.titles[`${rp.name}/${f.name}`])||sN.replace('.html',''); ct+=`BÀI: ${ti}\n[Nội dung]\n${(d.body.innerText||d.body.textContent||"").replace(/\n{3,}/g,'\n\n').trim()}\n------------------------\n\n`; } await new Promise(r=>setTimeout(r,50)); } }
+                ct=ct.replace('====================================',`Tổng số bài: ${tc}\n====================================`);
+                showToast("Lưu Siêu Sách lên Github..."); const fn=`notebooklm_ALL.txt`, sS=await getFileShaSafe(`${username}/${username}.github.io`,fn); 
+                const encodedChunked = await encodeBase64UTF8Async(ct);
+                await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/${fn}`,{method:'PUT',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Đóng gói Siêu sách`,content:encodedChunked,sha:sS||undefined})});
+                if(DRIVE_WEBHOOK_URL){ showToast("Đẩy lên Google Drive..."); try{await fetch(DRIVE_WEBHOOK_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:ct});}catch(e){} }
+                showToast("✅ Đóng gói xong!"); const u=`https://${username}.github.io/${fn}`; try{await navigator.clipboard.writeText(u);}catch(e){} setTimeout(()=>prompt(`🎉 XONG! Link đã Copy:\n(Dán vào NotebookLM)`,u),500);
+            } catch(e) { alert(`Lỗi: ${e.message}`); } finally { hideToast(); }
+        }
+
+        async function copyEditorToSubstack() {
+            const c=document.getElementById('upload-content').value; if(!c) return alert("Trống!");
+            const btn=document.getElementById('btn-copy-editor'), oT=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
+            try{
+                const d=new DOMParser().parseFromString(c,'text/html');
+                d.querySelectorAll('head,style,script,svg,iframe,nav,footer,header,meta,title').forEach(e=>e.remove());
+                d.body.querySelectorAll('*').forEach(e=>{const t=e.tagName.toLowerCase(),h=e.getAttribute('href'),s=e.getAttribute('src'),a=e.getAttribute('alt'); while(e.attributes.length>0)e.removeAttribute(e.attributes[0].name); if(t==='a'&&h)e.setAttribute('href',h); if(t==='img'&&s){e.setAttribute('src',s);e.setAttribute('alt',a||'');}});
+                await navigator.clipboard.write([new ClipboardItem({'text/html':new Blob([d.body.innerHTML],{type:'text/html'}),'text/plain':new Blob([d.body.textContent],{type:'text/plain'})})]);
+                btn.innerHTML="✅ Đã Copy"; btn.classList.add('text-[var(--accent)]');
+            }catch(e){alert("Lỗi: "+e.message);}finally{setTimeout(()=>{btn.innerHTML=oT;btn.classList.remove('text-[var(--accent)]');btn.disabled=false;},2000);}
+        }
+
+        async function confirmDeleteFromForm() {
+            if(!requireToken())return; const rp=document.getElementById('original-repo').value, fs=document.getElementById('original-sha').value; let fn=document.getElementById('original-filename').value; try{fn=decodeURIComponent(fn);}catch(e){}
+            if(!rp||!fn||!fs) return alert("Không tìm thấy gốc.");
+            if(!confirm(`CẢNH BÁO: Xóa vĩnh viễn bài:\n[ ${fn} ]?`)) return;
+            const btn=document.getElementById('btn-delete'), ot=btn.innerHTML; btn.innerHTML="⏳..."; btn.disabled=true;
+            try {
+                const res=await fetch(`https://api.github.com/repos/${rp}/contents/${safeEnc(fn)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${getToken()}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa bài: ${fn}`,sha:fs})});
+                if(!res.ok) throw Error("Lỗi API Github");
+                db.files=db.files.filter(x=>x.sha!==fs); const rn=rp.split('/')[1]||rp.split('/')[0], k=`${rn}/${fn}`;
+                if(db.tags[k])delete db.tags[k]; if(db.links[k])delete db.links[k]; if(db.colors[k])delete db.colors[k]; if(db.titles[k])delete db.titles[k]; if(Array.isArray(db.pinned)) db.pinned=db.pinned.filter(x=>x!==k);
+                rebuildRepoMap();
+                await saveMeta(); await saveDB(); clearUploadForm(); renderRepos(); renderRepoSuggestions(); alert("Đã xóa!");
+            }catch(e){alert(`Lỗi: ${e.message}`);btn.innerHTML=ot;btn.disabled=false;}
+        }
+
+        // ==========================================
+        // 11. HTML EDITOR CORE LOGIC
+        // ==========================================
+        async function loadMainIndex() { if(!requireToken()) return; clearUploadForm(); document.getElementById('upload-title').value='Trang chủ (index.html)'; document.getElementById('upload-filename').value='index.html'; isSlugEdited=true; const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${username}.github.io/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ document.getElementById('upload-content').value=r.replace(WIDGET_REGEX,''); document.getElementById('upload-repo').value=`${username}/${username}.github.io`; document.getElementById('original-repo').value=`${username}/${username}.github.io`; document.getElementById('original-filename').value=`index.html`; document.getElementById('original-sha').value=await getFileShaSafe(`${username}/${username}.github.io`,'index.html')||""; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); st.innerText=`✅ Sẵn sàng!`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; }else throw Error("Không tìm thấy"); }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } }
+        
+        async function editRepoIndex(tR) { if(!requireToken()) return; clearUploadForm(); document.getElementById('upload-title').value=`Trang chủ: ${tR}`; document.getElementById('upload-filename').value='index.html'; isSlugEdited=true; if(document.getElementById('upload-section') && document.getElementById('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang tải...`; try{ const r=await fetchText(`https://api.github.com/repos/${username}/${tR}/contents/index.html?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); if(r){ document.getElementById('upload-content').value=r.replace(WIDGET_REGEX,''); document.getElementById('original-sha').value=await getFileShaSafe(`${username}/${tR}`,'index.html')||""; st.innerText="✅ Sẵn sàng!"; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); }else{ document.getElementById('upload-content').value=`<!DOCTYPE html>\n<html lang="vi"><head><meta charset="UTF-8"><title>${tR}</title><script src="https://cdn.tailwindcss.com"><\/script></head><body class="p-8"><h1 class="text-3xl font-bold">${tR}</h1></body></html>`; document.getElementById('original-sha').value=""; st.innerText="⚠️ Chưa có file, đã tạo khung HTML."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-yellow-50 text-yellow-600 border border-yellow-500/30"; } document.getElementById('upload-repo').value=`${username}/${tR}`; document.getElementById('original-repo').value=`${username}/${tR}`; document.getElementById('original-filename').value=`index.html`; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; }catch(e){ st.innerText=`❌ Lỗi`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } }
+        
+        async function loadRepoIndex() { if(!requireToken()) return; const inp=document.getElementById('upload-repo').value.trim(); if(!inp||inp===`${username}/`||inp===`${username}/${username}.github.io`) return alert("Nhập tên Repo!"); editRepoIndex(inp.split('/')[1]||inp.split('/')[0]); }
+        
+        async function editFileContent(rN, f, sha) { 
+            if(!requireToken()) return; f=f.replace(/\\'/g,"'").replace(/&quot;/g,'"'); 
+            if(document.getElementById('upload-section') && document.getElementById('upload-section').classList.contains('hidden')) toggleUpload(); window.scrollTo({top:0,behavior:'smooth'}); 
+            const st=document.getElementById('upload-status'); st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText=`Đang nạp...`; 
+            try { 
+                let sN=f; try{sN=decodeURIComponent(f);}catch(e){} let fs=sha, c=""; 
+                const r=await fetchText(`https://api.github.com/repos/${username}/${rN}/contents/${safeEnc(sN)}?t=${Date.now()}`,{headers:{...getHeaders(),'Accept':'application/vnd.github.v3.raw'}}); 
+                if(r){c=r.replace(WIDGET_REGEX,''); if(!fs)fs=await getFileShaSafe(`${username}/${rN}`,sN)||"";}else throw Error("File bị xóa."); 
+                document.getElementById('upload-content').value=c; let rp=rN===username||rN===`${username}.github.io`?`${username}/${username}.github.io`:`${username}/${rN}`; document.getElementById('upload-repo').value=rp; document.getElementById('original-repo').value=rp; document.getElementById('original-filename').value=sN; document.getElementById('original-sha').value=fs; document.getElementById('btn-create').innerHTML='Lưu (Ctrl S)'; if(document.getElementById('btn-delete')) document.getElementById('btn-delete').classList.remove('hidden'); 
+                let rName=rN===username||rN===`${username}.github.io`?`${username}.github.io`:rN; if(rName.includes('/'))rName=rName.split('/')[1]||rName.split('/')[0]; 
+                document.getElementById('upload-title').value=db.titles[`${rName}/${sN}`]||sN.replace('.html',''); document.getElementById('upload-filename').value=sN.replace('.html',''); isSlugEdited=true; document.getElementById('upload-tags').value=(db.tags[`${rName}/${sN}`]||[]).join(', '); syncUploadTagsUI(); uploadLinksTemp=db.links[`${rName}/${sN}`]?JSON.parse(JSON.stringify(db.links[`${rName}/${sN}`])):[]; renderUploadLinks(); 
+                st.innerText="✅ Đã nạp thành công."; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; 
+            }catch(e){ st.innerText=`❌ Lỗi: ${e.message}`; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; } 
+        }
+        
+        async function createFile() {
+            if(!requireToken()) return; const t=getToken(); let rp=document.getElementById('upload-repo').value.trim().replace(/\/$/,''); let rt=document.getElementById('upload-title').value.trim(); let rs=document.getElementById('upload-filename').value.trim(); let n=rs;
+            if(rs.toLowerCase()==='index'||rs.toLowerCase()==='index.html') n='index.html'; else if(rs.toLowerCase()!=='metadata.json'){ rs=rs.replace(/\.html$/i,''); let sN=slugify(rs); let tags=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean); if(tags.length&&sN){let ts=slugify(tags.join('-'));if(!sN.includes(ts))sN+='-'+ts;} if(!sN)sN=slugify(rt); if(!sN)return alert("Lỗi tên file!"); n=sN+'.html'; document.getElementById('upload-filename').value=sN; }
+            let ct=document.getElementById('upload-content').value; const oR=document.getElementById('original-repo').value; let oN=document.getElementById('original-filename').value; try{oN=decodeURIComponent(oN);}catch(e){} const oS=document.getElementById('original-sha').value, st=document.getElementById('upload-status'), btn=document.getElementById('btn-create'); if(!rp||!n||!ct) return alert("Thiếu dữ liệu!");
+            ct=ct.replace(WIDGET_REGEX,''); if(n.endsWith('.html')&&n!=='index.html'&&n!=='fix-url.html'){if(ct.includes('</body>'))ct=ct.replace('</body>',CMS_PIN_WIDGET+'</body>');else ct+=CMS_PIN_WIDGET;}
+            try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI(); btn.innerHTML="⏳..."; btn.disabled=true; st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText="Đang lưu...";
+            try {
+                let tS=await getFileShaSafe(rp,n); const b64=await encodeBase64UTF8Async(ct); const bd={message:`Cập nhật: ${n}`,content:b64}; if(tS)bd.sha=tS;
+                const res=await fetch(`https://api.github.com/repos/${rp}/contents/${safeEnc(n)}`,{method:'PUT',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify(bd)}); if(!res.ok) throw Error((await res.json()).message); const rd=await res.json();
+                let isR=oN&&oR&&(oN!==n||oR!==rp); if(isR&&oS){ await fetch(`https://api.github.com/repos/${oR}/contents/${safeEnc(oN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa file cũ`,sha:oS})}); const ok=`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`; if(db.tags[ok])delete db.tags[ok]; if(db.links[ok])delete db.links[ok]; if(db.colors[ok])delete db.colors[ok]; if(db.titles[ok])delete db.titles[ok]; if(Array.isArray(db.pinned)) db.pinned=db.pinned.filter(x=>x!==ok); }
+                let rO=rp.split('/')[0], rN=rp.split('/')[1]||rp.split('/')[0], nT=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean), fK=`${rN}/${n}`;
+                if(nT.length)db.tags[fK]=[...new Set(nT)]; else delete db.tags[fK]; let fL=uploadLinksTemp.filter(x=>x.title.trim()&&x.url.trim()); if(fL.length)db.links[fK]=fL; else delete db.links[fK]; if(rt)db.titles[fK]=rt;
+                if(isR){ if(db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`])db.colors[fK]=db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`]; if(Array.isArray(db.pinned) && db.pinned.includes(`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`))db.pinned.push(fK); }
+                const tUrl=`https://${rO}.github.io/${rN===`${rO}.github.io`?'':rN+'/'}${n}`, dt=new Date(), pD=parseHTML(ct,n,tUrl);
+                if(n.endsWith('.html')&&n!=='index.html'){
+                    if(isR&&oS)db.files=db.files.filter(x=>x.sha!==oS); let ei=db.files.findIndex(x=>x.sha===tS||x.sha===rd.content.sha);
+                    if(ei!==-1){ let x=db.files[ei]; x.fileName=n;x.name=rt||decodeURIComponent(n.replace('.html',''));x.url=tUrl;x.timestamp=dt.getTime();x.fullDate=dt.toLocaleString('vi-VN');x.preview=pD.previewText;x.previewFeedHTML=pD.previewFeedHTML;x.tocHTML=pD.tocHTML;x.coverHTML=pD.coverHTML;x.fullText=pD.fullText;x.sha=rd.content.sha; }
+                    else db.files.unshift({repoName:rN,name:rt||decodeURIComponent(n.replace('.html','')),fileName:n,sha:rd.content.sha,url:tUrl,downloadUrl:rd.content.download_url||"",timestamp:dt.getTime(),fullDate:dt.toLocaleString('vi-VN'),preview:pD.previewText,previewFeedHTML:pD.previewFeedHTML,tocHTML:pD.tocHTML,coverHTML:pD.coverHTML,fullText:pD.fullText});
+                    rebuildRepoMap(); _saveLocal(); renderRepos(); 
+                    
+                    st.innerText="Đang lưu Database Lõi...";
+                    await saveDB();
+                } 
+                st.innerText="Đang lưu Metadata...";
+                await saveMeta();
+                
+                st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; st.innerText=`✅ THÀNH CÔNG!`; clearUploadForm(); setTimeout(()=>window.open(tUrl,'_blank'),1500);
+            }catch(e){ 
+                st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; st.innerText=`❌ Lỗi: ${e.message}`; 
+            }finally{ btn.innerHTML='Lưu (Ctrl S)'; btn.disabled=false; }
+        }
+    </script>
+</body>
+</html>
