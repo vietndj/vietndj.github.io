@@ -3,64 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>vietndj - Tin tức & Bài viết</title>
+    <title>vietndj - Reader</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>">
     
     <script src="https://cdn.tailwindcss.com"></script>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
-            --font-serif: 'Noto Serif', Georgia, Cambria, "Times New Roman", Times, serif;
+            --font-sans: 'Inter', system-ui, sans-serif;
+            --font-serif: 'Noto Serif', Georgia, serif;
         }
-        body { font-family: var(--font-sans); background-color: #FFFFFF; color: #242424; }
+        body { font-family: var(--font-sans); background-color: #FDFCF9; color: #242424; min-height: 100vh; }
         .font-serif { font-family: var(--font-serif); }
         
-        /* Custom Scrollbar cho sidebar */
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
         
-        /* Hiệu ứng mờ khi hover bài viết giống Medium */
-        .article-card { transition: opacity 0.2s ease; }
-        .article-card:hover h2 { opacity: 0.8; }
+        .cms-input { background-color: transparent; border: 1px solid #EAE0D0; color: #333; outline: none; transition: 0.2s; }
+        .cms-input:focus { border-color: #333; }
+        
+        .article-card { transition: opacity 0.2s ease, transform 0.2s ease; }
+        .article-card:hover h2 { opacity: 0.8; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px;}
+        .ribbon-container { width: 6px; overflow: hidden; border-radius: 4px; transition: width 0.2s; }
+        .article-card:hover .ribbon-container { width: 12px; }
     </style>
 </head>
 <body class="antialiased selection:bg-gray-200">
 
-    <header class="border-b border-gray-100 bg-white/95 backdrop-blur-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-4">
-                <h1 class="text-2xl font-bold tracking-tighter cursor-pointer font-serif" onclick="window.location.reload()">vietndj.</h1>
-            </div>
+    <header class="border-b border-[#EAE0D0] bg-[#FDFCF9]/95 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 md:px-6 h-16 flex items-center justify-between gap-4">
+            <h1 class="text-2xl font-bold tracking-tighter cursor-pointer font-serif shrink-0" onclick="window.location.reload()">vietndj.</h1>
             
-            <div class="flex items-center gap-6">
-                <a href="index.html" class="hidden sm:flex items-center gap-2 text-sm text-gray-500 hover:text-gray-900 transition font-medium">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg>
-                    Workspace
-                </a>
-                <button type="button" class="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center font-bold text-sm shadow-sm hover:opacity-80 transition">
-                    V
-                </button>
+            <div class="flex-1 max-w-xl relative">
+                <svg class="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <input type="text" id="search-input" oninput="st.q = this.value; renderFeed();" placeholder="Tìm kiếm bài viết..." class="w-full pl-9 pr-4 py-2 bg-white/50 border border-[#EAE0D0] rounded-full text-sm outline-none focus:border-gray-400 focus:bg-white transition shadow-inner">
             </div>
+
+            <a href="index.html" class="hidden md:flex items-center gap-1.5 text-xs text-gray-500 hover:text-gray-900 transition font-bold shrink-0 bg-white border border-[#EAE0D0] px-3 py-2 rounded-full">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path></svg> Workspace
+            </a>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-4 md:px-6 py-2 flex items-center gap-3 overflow-x-auto hide-scrollbar text-xs">
+            <span class="font-bold text-gray-400 uppercase tracking-wide shrink-0">Lọc:</span>
+            <select id="filter-repo" onchange="st.repo=this.value; renderFeed()" class="cms-input px-3 py-1.5 rounded-lg shrink-0 font-medium cursor-pointer">
+                <option value="all">Tất cả Repo</option>
+            </select>
+            <select id="filter-tag" onchange="st.tag=this.value; renderFeed()" class="cms-input px-3 py-1.5 rounded-lg shrink-0 font-medium cursor-pointer">
+                <option value="all">Tất cả Nhãn</option>
+            </select>
+            <select id="filter-month" onchange="st.month=this.value; renderFeed()" class="cms-input px-3 py-1.5 rounded-lg shrink-0 font-medium cursor-pointer">
+                <option value="all">Mọi thời gian</option>
+            </select>
+            
+            <button type="button" onclick="shuffleData()" class="ml-auto shrink-0 flex items-center gap-1 text-gray-500 hover:text-gray-900 font-bold transition px-2 py-1">
+                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"></path></svg> Trộn bài
+            </button>
         </div>
     </header>
 
-    <div class="max-w-7xl mx-auto px-6 mt-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 pb-24 relative">
-        
+    <div class="max-w-7xl mx-auto px-4 md:px-6 mt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 pb-24 relative">
         <main class="lg:col-span-8">
-            <div id="filter-status" class="hidden items-center gap-3 mb-8 pb-4 border-b border-gray-100">
-                <span class="text-sm text-gray-500 font-medium uppercase tracking-wide">Đang hiển thị chủ đề:</span>
-                <span id="active-tag-name" class="font-bold text-gray-900 text-lg"></span>
-                <button onclick="clearFilter()" class="text-xs text-gray-500 hover:text-red-500 ml-auto flex items-center gap-1 font-medium transition">
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg> Xóa bộ lọc
-                </button>
-            </div>
-
-            <div id="feed-container" class="flex flex-col gap-10">
+            <div id="feed-container" class="flex flex-col gap-8">
                 <div class="animate-pulse flex space-x-4">
                     <div class="flex-1 space-y-4 py-1">
                         <div class="h-4 bg-gray-200 rounded w-1/4"></div>
@@ -68,242 +75,216 @@
                         <div class="h-4 bg-gray-200 rounded w-full"></div>
                         <div class="h-4 bg-gray-200 rounded w-5/6"></div>
                     </div>
-                    <div class="h-28 w-28 bg-gray-200 rounded"></div>
                 </div>
             </div>
         </main>
 
         <aside class="hidden lg:block lg:col-span-4">
-            <div class="sticky top-28">
-                <div class="mb-10">
-                    <h3 class="font-bold text-gray-900 mb-4 font-sans text-sm">Chủ đề được đề xuất</h3>
-                    <div id="topics-container" class="flex flex-wrap gap-2">
-                        </div>
-                </div>
-
+            <div class="sticky top-[140px]">
                 <div>
-                    <h3 class="font-bold text-gray-900 mb-4 font-sans text-sm">Lựa chọn hàng đầu (Ghim)</h3>
-                    <div id="pinned-container" class="flex flex-col gap-6">
-                        </div>
+                    <h3 class="font-bold text-gray-900 mb-5 font-sans text-sm tracking-wide uppercase border-b border-[#EAE0D0] pb-2">📌 Được Ghim Nổi Bật</h3>
+                    <div id="pinned-container" class="flex flex-col gap-6"></div>
                 </div>
                 
-                <div class="mt-12 pt-6 border-t border-gray-100 flex flex-wrap gap-4 text-[13px] text-gray-400 font-medium">
-                    <a href="#" class="hover:text-gray-900 transition">vietndj CMS</a>
-                    <a href="index.html" class="hover:text-gray-900 transition">Workspace</a>
-                    <span>Serverless Architecture</span>
+                <div class="mt-12 pt-6 border-t border-[#EAE0D0] text-xs text-gray-400 font-medium">
+                    Vietndj Serverless Reader View &copy; 2026
                 </div>
             </div>
         </aside>
     </div>
 
     <script>
-        // TRẠNG THÁI
+        // --- TRẠNG THÁI HỆ THỐNG ---
         let db = { files: [], tags: {}, pinned: [] };
-        let activeTag = null;
-        let fileCache = [];
+        let shuffledFiles = []; // Mảng chứa các bài viết đã trộn
+        let st = { q: '', repo: 'all', tag: 'all', month: 'all' };
 
-        // KHỞI TẠO TỪ LOCALSTORAGE
+        // --- KHỞI TẠO TỪ LOCALSTORAGE ---
         window.addEventListener('DOMContentLoaded', () => {
             try {
                 const cachedData = localStorage.getItem('cms_repo_data');
                 if (cachedData) {
                     const parsed = JSON.parse(cachedData);
-                    if (parsed.files) db.files = parsed.files;
+                    let rawFiles = parsed.files || [];
                     if (parsed.tags) db.tags = parsed.tags;
                     if (parsed.pinned) db.pinned = parsed.pinned;
                     
-                    // Lọc bỏ các file rác/hệ thống
-                    fileCache = db.files.filter(f => 
-                        !['index.html', 'fix-url.html', 'fix-titles.html', 'cms_db.json', 'metadata.json'].includes(f.fileName)
-                    );
+                    // Lọc file rác
+                    db.files = rawFiles.filter(f => !['index.html', 'fix-url.html', 'fix-titles.html', 'cms_db.json', 'metadata.json'].includes(f.fileName));
                     
-                    renderFeed();
+                    initFilters();
+                    shuffleData(); // Gọi hàm xáo trộn ngay khi mở trang
                     renderSidebar();
                 } else {
-                    document.getElementById('feed-container').innerHTML = `<div class="text-center py-20 text-gray-500 font-serif">Chưa có dữ liệu bài viết. Hãy vào <a href="index.html" class="text-black underline">Workspace</a> để tạo data.</div>`;
+                    document.getElementById('feed-container').innerHTML = `<div class="text-center py-20 text-gray-500 font-serif border border-dashed border-gray-300 rounded-2xl">Data lõi trống. Hãy mở <a href="index.html" class="text-black font-bold underline">Workspace</a> và bấm "Khởi tạo/Tải DB Lõi".</div>`;
                 }
             } catch (error) {
                 console.error("Lỗi đọc dữ liệu:", error);
             }
         });
 
-        // TẠO THUMBNAIL ABSTRACT NHƯ MEDIUM
-        function generateThumbnail(f) {
-            // Danh sách các dải màu Gradient thanh lịch, hơi hướng editorial
-            const gradients = [
-                'from-[#E8D9CC] to-[#D5C2AD]', // Sand
-                'from-[#DDE4E9] to-[#BAC6D1]', // Slate
-                'from-[#E1E8D9] to-[#C4D0B4]', // Sage
-                'from-[#F0E6EF] to-[#D5C4D6]', // Lavender
-                'from-[#FFF0E6] to-[#E5CCBA]', // Peach
-                'from-[#E6F0F2] to-[#BCCCD0]', // Ice
-            ];
-            
-            // Hàm băm (hash) để luôn tạo ra một màu cố định cho cùng 1 bài viết
-            const hash = (f.fileName + f.repoName).split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
-            const selectedGradient = gradients[hash % gradients.length];
-            
-            // Lấy chữ cái đầu tiên của Tiêu đề làm Artwork
-            const letter = f.name ? f.name.charAt(0).toUpperCase() : 'V';
-
-            return `
-                <div class="w-full h-full bg-gradient-to-br ${selectedGradient} flex items-center justify-center overflow-hidden">
-                    <span class="text-5xl md:text-6xl font-serif font-bold text-gray-900 mix-blend-overlay opacity-30 select-none">
-                        ${letter}
-                    </span>
-                </div>
-            `;
+        // --- HÀM TIỆN ÍCH ---
+        function getReadTime(text) {
+            const length = text ? text.length : 100;
+            const minutes = Math.max(1, Math.ceil((length * 5) / 2000));
+            return `${minutes} min`;
         }
 
-        // ƯỚC TÍNH THỜI GIAN ĐỌC (Medium style)
-        function getReadTime(previewText) {
-            // Giả lập logic đếm từ: 200 từ/phút. Vì ta chỉ có preview, ta dùng một độ dài text để random ra con số tương đối hợp lý.
-            const length = previewText ? previewText.length : 100;
-            const minutes = Math.max(1, Math.ceil((length * 5) / 2000)); // Thuật toán giả định
-            return `${minutes} min read`;
+        // Tạo Ruy-băng Abstract sọc dọc từ Hash
+        function generateAbstractRibbon(f) {
+            const hash = (f.fileName + f.repoName).split('').reduce((a, b) => a + b.charCodeAt(0), 0);
+            const colors = ['#D35400', '#2980B9', '#27AE60', '#8E44AD', '#F39C12', '#16A085', '#34495E', '#C0392B'];
+            
+            let rects = '';
+            let currentX = 0;
+            // Vẽ 3-4 sọc màu với độ dày ngẫu nhiên
+            for(let i=0; i<4; i++) {
+                let color = colors[(hash + i * 3) % colors.length];
+                let width = ((hash + i) % 3) * 10 + 20; // % độ rộng
+                rects += `<rect x="${currentX}%" y="0" width="${width}%" height="100%" fill="${color}" opacity="0.85"/>`;
+                currentX += width;
+                if(currentX >= 100) break;
+            }
+            return `<svg width="100%" height="100%" preserveAspectRatio="none" class="absolute inset-0">${rects}</svg>`;
         }
 
-        // RENDER CỘT BÀI VIẾT (MAIN FEED)
+        // --- THUẬT TOÁN TRỘN (Fisher-Yates) ---
+        function shuffleData() {
+            shuffledFiles = [...db.files];
+            for (let i = shuffledFiles.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledFiles[i], shuffledFiles[j]] = [shuffledFiles[j], shuffledFiles[i]];
+            }
+            renderFeed();
+        }
+
+        // --- KHỞI TẠO OPTIONS BỘ LỌC ---
+        function initFilters() {
+            const repoSet = new Set();
+            const tagSet = new Set();
+            const monthSet = new Set();
+
+            // Quét dữ liệu
+            db.files.forEach(f => {
+                repoSet.add(f.repoName);
+                if(f.timestamp) {
+                    const d = new Date(f.timestamp);
+                    monthSet.add(`${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`);
+                }
+            });
+            Object.values(db.tags).forEach(arr => arr.forEach(t => tagSet.add(t)));
+
+            // Đổ vào Select HTML
+            const fRepo = document.getElementById('filter-repo');
+            Array.from(repoSet).sort().forEach(r => fRepo.innerHTML += `<option value="${r}">${r}</option>`);
+
+            const fTag = document.getElementById('filter-tag');
+            Array.from(tagSet).sort().forEach(t => fTag.innerHTML += `<option value="${t}">${t}</option>`);
+
+            const fMonth = document.getElementById('filter-month');
+            // Xếp tháng giảm dần
+            Array.from(monthSet).sort((a,b) => {
+                let [m1,y1] = a.split('/'); let [m2,y2] = b.split('/');
+                return new Date(y2, m2-1).getTime() - new Date(y1, m1-1).getTime();
+            }).forEach(m => fMonth.innerHTML += `<option value="${m}">Tháng ${m}</option>`);
+        }
+
+        // --- RENDER MAIN FEED (Đã áp dụng Filter) ---
         function renderFeed() {
             const container = document.getElementById('feed-container');
             
-            // Lọc theo Nhãn (Tag) nếu có
-            let displayFiles = fileCache;
-            if (activeTag) {
-                displayFiles = fileCache.filter(f => {
-                    const fileTags = db.tags[`${f.repoName}/${f.fileName}`] || [];
-                    return fileTags.includes(activeTag);
-                });
-            }
+            let filtered = shuffledFiles.filter(f => {
+                const fileTags = db.tags[`${f.repoName}/${f.fileName}`] || [];
+                let mRepo = st.repo === 'all' || f.repoName === st.repo;
+                let mTag = st.tag === 'all' || fileTags.includes(st.tag);
+                let mSearch = !st.q || (f.name || "").toLowerCase().includes(st.q.toLowerCase()) || (f.preview || "").toLowerCase().includes(st.q.toLowerCase());
+                
+                let mMonth = true;
+                if(st.month !== 'all' && f.timestamp) {
+                    const d = new Date(f.timestamp);
+                    const fm = `${String(d.getMonth() + 1).padStart(2, '0')}/${d.getFullYear()}`;
+                    mMonth = (fm === st.month);
+                }
 
-            // Sắp xếp Mới nhất lên đầu
-            displayFiles.sort((a, b) => (b.timestamp || 0) - (a.timestamp || 0));
+                return mRepo && mTag && mSearch && mMonth;
+            });
 
-            if (displayFiles.length === 0) {
-                container.innerHTML = `<div class="text-gray-500 py-10 font-serif">Không tìm thấy bài viết nào cho chủ đề này.</div>`;
+            if (filtered.length === 0) {
+                container.innerHTML = `<div class="text-gray-500 py-10 font-serif italic text-center">Không có bài viết nào khớp với bộ lọc.</div>`;
                 return;
             }
 
-            container.innerHTML = displayFiles.map(f => {
+            container.innerHTML = filtered.map(f => {
                 const tags = db.tags[`${f.repoName}/${f.fileName}`] || [];
-                const firstTag = tags.length > 0 ? tags[0] : f.repoName;
-                const dateSplit = f.fullDate ? f.fullDate.split(' ') : [''];
-                const displayDate = dateSplit.length > 1 ? dateSplit[1] : f.fullDate;
-                const readTime = getReadTime(f.preview);
+                const displayTag = tags.length > 0 ? tags[0] : f.repoName;
+                const isPinned = db.pinned.includes(`${f.repoName}/${f.fileName}`);
 
                 return `
-                    <article class="article-card flex flex-col md:flex-row gap-6 md:gap-8 justify-between items-start md:items-center pb-10 border-b border-gray-100">
-                        
-                        <div class="flex-1 min-w-0 order-2 md:order-1">
-                            <div class="flex items-center gap-2 mb-2.5">
-                                <div class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] font-bold font-sans">
-                                    ${f.repoName.charAt(0).toUpperCase()}
-                                </div>
-                                <span class="text-[13px] font-medium text-gray-900 hover:underline cursor-pointer">${f.repoName}</span>
+                    <article class="article-card flex gap-4 items-stretch relative bg-white p-5 rounded-xl border border-gray-100 shadow-[0_2px_10px_rgba(0,0,0,0.01)] hover:shadow-md">
+                        <div class="ribbon-container shrink-0 bg-gray-100 relative">
+                            ${generateAbstractRibbon(f)}
+                        </div>
+
+                        <div class="flex-1 min-w-0 py-1">
+                            <div class="flex items-center gap-2 mb-2 text-xs font-sans text-gray-500">
+                                <span class="font-bold text-gray-800">${f.repoName}</span>
+                                <span>·</span>
+                                <span>${f.fullDate ? f.fullDate.split(' ')[1] || f.fullDate.split(' ')[0] : 'N/A'}</span>
                             </div>
                             
                             <a href="${f.url}" target="_blank" class="block group">
-                                <h2 class="text-xl md:text-[22px] leading-tight font-bold text-gray-900 mb-2 font-serif group-hover:underline decoration-1 underline-offset-2">
+                                <h2 class="text-[20px] leading-snug font-bold text-gray-900 mb-2.5 font-serif group-hover:text-black">
                                     ${f.name}
                                 </h2>
-                                <p class="text-[15px] text-gray-500 leading-snug mb-4 line-clamp-2 md:line-clamp-3 font-serif">
-                                    ${f.preview || 'Nội dung bài viết đang được cập nhật...'}
+                                <p class="text-[14px] text-gray-600 leading-relaxed mb-4 line-clamp-2 md:line-clamp-3 font-serif">
+                                    ${f.preview || '...'}
                                 </p>
                             </a>
                             
-                            <div class="flex items-center gap-3 text-[13px] text-gray-500 font-sans">
-                                <span>${displayDate}</span>
-                                <span>·</span>
-                                <span>${readTime}</span>
-                                <span>·</span>
-                                <span class="bg-gray-100 px-2.5 py-1 rounded-full text-gray-700">${firstTag}</span>
-                                
-                                ${db.pinned.includes(`${f.repoName}/${f.fileName}`) ? `
-                                <span class="ml-auto text-yellow-500" title="Đã ghim">
-                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                </span>` : ''}
+                            <div class="flex items-center gap-3 text-[12px] text-gray-400 font-sans font-medium">
+                                <span class="bg-gray-50 border border-gray-100 px-2.5 py-1 rounded-md text-gray-600">${displayTag}</span>
+                                <span>${getReadTime(f.preview)}</span>
+                                ${isPinned ? `<span class="ml-auto text-yellow-500 flex items-center gap-1"><svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg> Ghim</span>` : ''}
                             </div>
-                        </div>
-
-                        <div class="w-full md:w-32 md:h-32 lg:w-40 lg:h-32 shrink-0 bg-gray-100 rounded order-1 md:order-2 overflow-hidden aspect-video md:aspect-square">
-                            <a href="${f.url}" target="_blank" class="block w-full h-full hover:opacity-90 transition">
-                                ${generateThumbnail(f)}
-                            </a>
                         </div>
                     </article>
                 `;
             }).join('');
         }
 
-        // RENDER CỘT BÊN PHẢI (SIDEBAR)
+        // --- RENDER SIDEBAR ---
         function renderSidebar() {
-            // 1. Render Topics (Tags)
-            const allTags = new Set();
-            Object.values(db.tags).forEach(arr => arr.forEach(t => allTags.add(t)));
-            const tagsArray = Array.from(allTags).sort().slice(0, 15); // Chỉ lấy 15 tag nổi bật
-
-            const topicsContainer = document.getElementById('topics-container');
-            if (tagsArray.length === 0) {
-                topicsContainer.innerHTML = '<span class="text-sm text-gray-400 italic">Chưa có chủ đề nào.</span>';
-            } else {
-                topicsContainer.innerHTML = tagsArray.map(t => `
-                    <button onclick="setFilter('${t.replace(/'/g, "\\'")}')" 
-                            class="px-4 py-2 bg-gray-50 hover:bg-gray-100 border border-gray-100 rounded-full text-[13px] font-medium text-gray-700 transition">
-                        ${t}
-                    </button>
-                `).join('');
-            }
-
-            // 2. Render Pinned Articles (Lựa chọn hàng đầu)
             const pinnedContainer = document.getElementById('pinned-container');
-            const pinnedFiles = fileCache.filter(f => db.pinned.includes(`${f.repoName}/${f.fileName}`));
+            
+            // Tìm bài viết ghim (Sử dụng db.files gốc để quét cho chính xác)
+            const pinnedFiles = db.files.filter(f => db.pinned.includes(`${f.repoName}/${f.fileName}`));
             
             if (pinnedFiles.length === 0) {
-                pinnedContainer.innerHTML = '<span class="text-sm text-gray-400 italic">Chưa có bài viết ghim.</span>';
-            } else {
-                pinnedContainer.innerHTML = pinnedFiles.map(f => {
-                    return `
-                        <div class="flex flex-col group cursor-pointer" onclick="window.open('${f.url}', '_blank')">
-                            <div class="flex items-center gap-2 mb-1.5">
-                                <div class="w-4 h-4 rounded-full bg-gray-200 text-gray-600 flex items-center justify-center text-[8px] font-bold font-sans">
-                                    ${f.repoName.charAt(0).toUpperCase()}
-                                </div>
-                                <span class="text-xs font-medium text-gray-900">${f.repoName}</span>
-                            </div>
-                            <h4 class="font-bold text-[15px] font-serif leading-tight group-hover:underline mb-1 text-gray-900">
-                                ${f.name}
-                            </h4>
-                            <span class="text-[11px] text-gray-500 font-sans">
-                                ${getReadTime(f.preview)}
-                            </span>
-                        </div>
-                    `;
-                }).join('');
+                pinnedContainer.innerHTML = '<span class="text-sm text-gray-400 italic">Chưa ghim bài viết nào.</span>';
+                return;
             }
-        }
 
-        // XỬ LÝ LỌC BÀI VIẾT THEO TAG
-        function setFilter(tag) {
-            activeTag = tag;
-            const filterBar = document.getElementById('filter-status');
-            const tagSpan = document.getElementById('active-tag-name');
-            
-            filterBar.classList.remove('hidden');
-            filterBar.classList.add('flex');
-            tagSpan.innerText = tag;
-            
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            renderFeed();
-        }
-
-        function clearFilter() {
-            activeTag = null;
-            const filterBar = document.getElementById('filter-status');
-            filterBar.classList.add('hidden');
-            filterBar.classList.remove('flex');
-            renderFeed();
+            pinnedContainer.innerHTML = pinnedFiles.map(f => {
+                return `
+                    <div class="flex flex-col group cursor-pointer border border-transparent hover:bg-white hover:border-gray-100 hover:shadow-sm p-3 -mx-3 rounded-xl transition" onclick="window.open('${f.url}', '_blank')">
+                        <div class="flex items-center gap-2 mb-1.5">
+                            <div class="w-4 h-4 rounded-sm bg-gray-200 text-gray-600 flex items-center justify-center text-[9px] font-bold font-sans">
+                                ${f.repoName.charAt(0).toUpperCase()}
+                            </div>
+                            <span class="text-xs font-medium text-gray-500">${f.repoName}</span>
+                        </div>
+                        <h4 class="font-bold text-[14px] font-serif leading-snug group-hover:underline mb-1.5 text-gray-900 line-clamp-2">
+                            ${f.name}
+                        </h4>
+                        <span class="text-[11px] text-gray-400 font-sans font-medium">
+                            ${f.fullDate ? f.fullDate.split(' ')[1] || f.fullDate.split(' ')[0] : ''} · ${getReadTime(f.preview)}
+                        </span>
+                    </div>
+                `;
+            }).join('');
         }
     </script>
+
 <script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}</script>
 </body>
 </html>
