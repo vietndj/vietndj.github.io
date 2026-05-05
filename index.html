@@ -9,6 +9,10 @@
         try { 
             const savedTheme = localStorage.getItem('cms_theme') || 'light'; 
             document.documentElement.setAttribute('data-theme', savedTheme); 
+            // KHÓA MÀN HÌNH BẰNG CSS TỪ SỚM NẾU ĐÃ ĐĂNG NHẬP
+            if (localStorage.getItem('cms_auth') === 'granted') {
+                document.documentElement.classList.add('auth-granted');
+            }
         } catch(e){}
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -43,6 +47,9 @@
         
         .fade-in { animation: fadeIn 0.4s forwards; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* NẾU ĐÃ LOGIN THÌ CSS SẼ TỰ ĐỘNG ẨN MÀN HÌNH NÀY NGAY LẬP TỨC */
+        html.auth-granted #login-screen { display: none !important; }
     </style>
 </head>
 <body class="antialiased">
@@ -67,7 +74,7 @@
         <symbol id="icon-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></symbol>
     </svg>
 
-    <!-- WIDGETS NỔI -->
+    <!-- UI WIDGETS NỔI -->
     <div id="bulk-action-bar" class="hidden fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[100] cms-card px-6 py-3 rounded-full shadow-2xl items-center gap-4 transition-all">
         <span class="text-sm font-bold whitespace-nowrap"><span id="bulk-count" class="text-[var(--accent)] text-base">0</span> chọn</span>
         <div class="h-4 w-px bg-[var(--border)]"></div>
@@ -277,7 +284,7 @@
     <div id="modals-container"></div>
 
     <script>
-        // MỌI JAVASCRIPT GỘP VÀO DUY NHẤT 1 BLOCK ĐỂ CHỐNG LỖI TRÙNG LẶP
+        // MỌI JAVASCRIPT GỘP VÀO DUY NHẤT 1 BLOCK
         const SECRET_PIN = "0070", username = 'vietndj', DRIVE_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzaSLNSuCFtaWG1ti3CHnEvqD_ZcuhuK9rkhbbOJIijVozlkJSqXlIkW8icGvtS6oVojQ/exec";
         const CMS_PIN_WIDGET = '\n<script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}<' + '/script>\n';
         const WIDGET_REGEX = new RegExp('\\n*<script id="cms-pin-widget">[\\s\\S]*?<\\/' + 'script>\\n*', 'gi');
@@ -302,7 +309,8 @@
             try { const w = localStorage.getItem('cms_pomo_webhook'); if(w && document.getElementById('pomo-webhook-url')) document.getElementById('pomo-webhook-url').value = w; } catch(e) {}
         }
         
-        document.addEventListener('DOMContentLoaded', initApp);
+        // CHẠY NGAY LẬP TỨC VÌ SCRIPT Ở CUỐI BODY (CHỐNG LỖI MÀN HÌNH TRẮNG 100%)
+        initApp();
 
         // 2. BẢO VỆ LOCALSTORAGE & LOGIN
         function safeSetLocal(key, value) {
