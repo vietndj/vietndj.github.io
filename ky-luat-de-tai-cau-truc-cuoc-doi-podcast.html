@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan Peterson - Tái Cấu Trúc Cuộc Đời 2024</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'dark',
+            mindmap: {
+                padding: 20
+            }
+        });
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        h1, h2, h3, .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        /* CSS Abstract Art Backgrounds */
+        .abstract-bg {
+            position: relative;
+            overflow: hidden;
+        }
+        .abstract-bg::before, .abstract-bg::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.4;
+            z-index: 0;
+            pointer-events: none;
+        }
+        .abstract-bg-1::before {
+            width: 400px; height: 400px;
+            background: linear-gradient(to right, #0ea5e9, #10b981);
+            top: -100px; left: -100px;
+        }
+        .abstract-bg-1::after {
+            width: 300px; height: 300px;
+            background: linear-gradient(to right, #8b5cf6, #d946ef);
+            bottom: -50px; right: -50px;
+        }
+        
+        .abstract-bg-2::before {
+            width: 500px; height: 500px;
+            background: linear-gradient(to right, #f59e0b, #ef4444);
+            top: 20%; right: -200px;
+            opacity: 0.2;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Flashcard Styles */
+        .flashcard-details > summary {
+            list-style: none;
+        }
+        .flashcard-details > summary::-webkit-details-marker {
+            display: none;
+        }
+        
+        /* Mindmap container */
+        .mindmap-container {
+            width: 100%;
+            overflow-x: auto;
+            border-radius: 1rem;
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem;
+            position: relative;
+        }
+        .mindmap-container svg {
+            min-width: 800px;
+            width: 100%;
+            height: auto;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        .gradient-text {
+            background: linear-gradient(to right, #34d399, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500 selection:text-white">
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-16 px-6 lg:px-12 abstract-bg abstract-bg-1 flex flex-col items-center text-center">
+        <div class="inline-block px-4 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-emerald-400 text-sm font-semibold mb-6 tracking-wide backdrop-blur-sm z-10">
+            🌱 TÂM LÝ HỌC THỰC CHIẾN & CHỮA LÀNH TỪ GỐC RỄ
+        </div>
+        <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 z-10 leading-tight">
+            NGỪNG DỐI TRÁ BẢN THÂN:<br/>
+            <span class="gradient-text">Kỷ Luật Để Tái Cấu Trúc Cuộc Đời</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 max-w-3xl mb-10 z-10 font-light">
+            Trích xuất tinh hoa từ cuộc trò chuyện giữa Jordan Peterson & Steven Bartlett. Đập tan sự hỗn loạn bằng những bước đi siêu nhỏ, đối diện với tổn thương và xây dựng lại bản sắc từ đống tro tàn.
+        </p>
+        
+        <a href="https://youtu.be/IRCZ1Mt2a8M" target="_blank" class="z-10 group relative inline-flex items-center justify-center gap-3 px-8 py-4 bg-red-600 text-white font-bold rounded-xl overflow-hidden transition-all hover:scale-105 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)]">
+            <i class="fa-brands fa-youtube text-2xl"></i>
+            <span>Xem Video Gốc: Jordan Peterson - Ngừng Tự Lừa Dối!</span>
+        </a>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-24">
+
+        <!-- 1. The Big Idea -->
+        <section id="big-idea" class="space-y-8 relative z-10">
+            <div class="text-center space-y-4">
+                <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
+                    <span class="text-emerald-400">🎯</span> [The Big Idea] Bức tranh toàn cảnh
+                </h2>
+                <div class="glass-card p-6 md:p-8 rounded-2xl max-w-4xl mx-auto border-l-4 border-l-emerald-500">
+                    <p class="text-xl md:text-2xl font-medium leading-relaxed text-slate-100">
+                        "Sự thật là liều thuốc giải độc duy nhất cho sự hỗn loạn. Trưởng thành không bắt đầu từ những bước nhảy vĩ đại, mà từ sự khiêm nhường tột cùng để làm <span class="text-emerald-400">những việc nhỏ bé đến mức nhục nhã</span>, đối diện với con quái vật bên trong và không bao giờ quay mặt đi."
+                    </p>
+                </div>
+            </div>
+
+            <!-- Mindmap -->
+            <div class="mt-12">
+                <h3 class="text-xl font-semibold mb-4 text-slate-300 text-center"><i class="fa-solid fa-network-wired mr-2"></i> Khung Xương Tri Thức (Mindmap)</h3>
+                <p class="text-sm text-slate-400 text-center mb-2 italic">Gợi ý: Cuộn ngang để xem toàn bộ sơ đồ trên thiết bị di động</p>
+                <div class="mindmap-container shadow-2xl">
+                    <pre class="mermaid">
+mindmap
+  root((Tái Cấu Trúc<br/>Cuộc Đời))
+    Sức mạnh<br/>Bước Siêu Nhỏ
+      Hạ cái tôi xuống đáy
+      Chia nhỏ đến mức không thể từ chối
+      Lãi kép của sự tự tin
+    Đối Diện<br/>Bóng Tối
+      Quy tắc không quay mặt đi
+      Phơi nhiễm nỗi sợ từ từ
+      Khóc để tái cấu trúc não bộ
+    Nghệ Thuật<br/>Gỡ Rối
+      Tuyệt đối không khuyên bảo vội
+      Trải hết bài ra bàn
+      Tìm con rắn thực sự
+    Bản Sắc<br/>Đích Thực
+      Trách nhiệm cá nhân
+      Sự cam kết hôn nhân
+      Phục vụ cộng đồng
+      Tránh bẫy vị kỷ
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Deep Insights -->
+        <section id="deep-insights" class="abstract-bg abstract-bg-2 relative pt-10">
+            <div class="text-center mb-12 relative z-10">
+                <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
+                    <span class="text-blue-400">🧠</span> [Deep Insights] Các Trụ cột Tri thức
+                </h2>
+                <p class="text-slate-400 mt-4">10 Bài học sâu sắc nhất được bóc tách đến tận cùng gốc rễ.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+                
+                <!-- Card 1 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-xl"><i class="fa-solid fa-microscope"></i></div>
+                        <h3 class="font-bold text-lg">1. Sự khiêm nhường tột cùng</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Bạn phải chia nhỏ nhiệm vụ xuống đến mức bạn *chắc chắn sẽ làm nó*, dù bước đó nhỏ đến mức trông có vẻ lố bịch và nhục nhã.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Khi khủng hoảng, lòng tự trọng bị vỡ vụn. Việc bắt đầu quá to tát sẽ kích hoạt cơ chế sợ hãi. Một thành công siêu nhỏ sẽ tạo ra "chứng cứ" cho não bộ rằng bạn có khả năng kiểm soát, kích hoạt chuỗi Lãi kép của sự tự tin.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Bệnh nhân 85 tuổi gãy cổ, trầm cảm không thể rời giường. Bước đầu tiên không phải đi bộ, mà chỉ là: "Ngồi dậy trong đúng 30 giây".
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-rose-500/20 flex items-center justify-center text-rose-400 text-xl"><i class="fa-solid fa-dragon"></i></div>
+                        <h3 class="font-bold text-lg">2. Đối mặt với "Con rồng" gia đình</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Việc dọn dẹp không chỉ là dọn vật lý, mà là chống lại sự hỗn loạn và độc hại đã tồn tại nhiều thế hệ.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Mọi rắc rối nhỏ đều liên kết với một mạng lưới tổn thương lớn ("con rồng"). Khi bạn sửa 1 ngăn kéo, bạn đang phá vỡ trạng thái cân bằng độc hại của gia đình, đối mặt với sự chống đối của những người muốn bạn mãi thất bại.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Chàng trai 30 tuổi dọn phòng. Anh ta chỉ dám đẩy cái máy hút bụi đến cửa phòng rồi để chéo ở đó suốt 1 tuần. Đó không phải lười, mà là rào cản tâm lý khi dám bước qua ranh giới sự lộn xộn của chính mình.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-400 text-xl"><i class="fa-solid fa-eye"></i></div>
+                        <h3 class="font-bold text-lg">3. Đừng bao giờ ngoảnh mặt đi</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Liệu pháp phơi nhiễm: Chữa nỗi sợ bằng cách nhìn thẳng vào rìa của nỗi sợ đó, thay vì lảng tránh.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Khi quay mặt đi trước nỗi sợ (atrocity), "con rồng" trong tâm trí tự động phóng to lên. Bằng cách định lượng khoảng cách an toàn (VD: đứng cách thang máy 100 mét) và tập trung nhìn vào nó, não bộ nhận ra mối đe dọa không giết chết mình.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ẩn dụ thực tế:</span>
+                            Nỗi sợ không phải là sợ cái thang máy. Bạn sợ sự nhục nhã hoặc một cái chết đau đớn. Thang máy chỉ là cánh cổng dẫn đến địa ngục tâm lý đó.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400 text-xl"><i class="fa-solid fa-ear-listen"></i></div>
+                        <h3 class="font-bold text-lg">4. Cạm bẫy của việc "Đưa Giải Pháp"</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Khi bạn đời phàn nàn, tuyệt đối KHÔNG ĐƯỢC giải quyết vấn đề ngay. Hãy im lặng và hỏi những câu hỏi ngốc nghếch.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Hệ thống cảnh báo đe dọa của phụ nữ nhạy cảm hơn. Họ cảm nhận "có gì đó sai" nhưng chưa hình dung rõ. Họ cần nói luyên thuyên ra nhiều thứ (trải bài ra bàn) để tự bản thân họ định vị được con rắn độc thực sự nằm ở đâu.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Nhân viên phàn nàn chán việc suốt 30 phút. Hóa ra vấn đề cốt lõi không phải do khối lượng công việc, mà là do họ không còn được làm việc gần vị sếp (CEO) như những ngày đầu khởi nghiệp.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-cyan-500/20 flex items-center justify-center text-cyan-400 text-xl"><i class="fa-solid fa-droplet"></i></div>
+                        <h3 class="font-bold text-lg">5. Khoa học của Nước mắt</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Khóc không phải yếu đuối. Đó là dung môi sinh học để phá vỡ một hệ thống niềm tin đã lỗi thời.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Khi đối diện với sự thật phũ phàng, cấu trúc tư duy cũ bị phá hủy. Nước mắt làm tan chảy sự cứng nhắc, đưa hệ thần kinh trở về trạng thái "linh hoạt" (plasticity) như thời thơ ấu, cho phép bạn tiếp thu bài học mới.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ẩn dụ thực tế:</span>
+                            Nước mắt là dấu hiệu con nhộng đã vỡ kén. Tư duy cũ phải "chết đi" thì sự hiểu biết mới mới có thể ra đời.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center text-orange-400 text-xl"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3 class="font-bold text-lg">6. Sửa chữa Hố sâu Sang chấn</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Sang chấn tuổi thơ giống như cái hố trong phòng ngủ. Bạn không thể lấy gỗ đậy nó lại, bạn phải lấp nó đi.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Bộ não liên tục gọi về quá khứ (nhớ lại chuyện buồn) VÌ bạn chưa xác định được con đường đúng đắn để đi tiếp. Bạn phải phân tích: "Mình đã rẽ sai ở đâu? Lẽ ra phải chọn con đường nào?". Khi vẽ được đường đi mới, não sẽ ngừng cảnh báo về quá khứ.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Cãi nhau với sếp nhưng thực chất tâm trí bạn đang dùng khuôn mẫu cảm xúc của một đứa trẻ 4 tuổi đối phó với người cha bạo hành.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center text-yellow-400 text-xl"><i class="fa-solid fa-ban"></i></div>
+                        <h3 class="font-bold text-lg">7. Đừng Lời Dối Trắng</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Lời nói dối nhỏ là viên gạch lát đường tới địa ngục của chủ nghĩa toàn trị và sự sụp đổ cá nhân.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Mọi lời nói dối làm sai lệch thực tại. Sống thật là cách đồng bộ bản thân với thực tại. Người chống lại thực tại (nói dối) luôn cầm chắc phần thua.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Vợ hỏi "Em mặc váy này béo không?". Thay vì nói dối "Không em", hãy dũng cảm nói: "Đừng hỏi anh những câu như thế", và bắt đầu xây dựng thói quen trung thực mua đồ giúp vợ với gu thẩm mỹ thật.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center text-indigo-400 text-xl"><i class="fa-solid fa-sitemap"></i></div>
+                        <h3 class="font-bold text-lg">8. Tháp Bản Sắc & Sự Thống Khổ</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Tỷ lệ trầm cảm ở người trẻ tăng vọt vì họ định vị bản sắc dựa trên sự bốc đồng và vị kỷ ngắn hạn.</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Càng tập trung vào bản thân, bạn càng khốn khổ. Sự trưởng thành là mở rộng tháp trách nhiệm: Tích hợp nội tâm -> Phục vụ Hôn nhân -> Dạy dỗ Con cái -> Cống hiến Cộng đồng -> Hướng tới Điều Tốt Đẹp Tối Thượng (Chúa).</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ẩn dụ thực tế:</span>
+                            Biến mình thành "cỗ máy tình dục ngắn hạn" hoặc chiều chuộng ham muốn tức thời giống như ném một căn phòng toàn trẻ lên 2 tuổi vào quản lý cuộc đời bạn.
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 9 -->
+                 <div class="glass-card p-6 rounded-2xl flex flex-col h-full hover:-translate-y-2 transition-transform duration-300">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-10 h-10 rounded-full bg-pink-500/20 flex items-center justify-center text-pink-400 text-xl"><i class="fa-solid fa-handshake-angle"></i></div>
+                        <h3 class="font-bold text-lg">9. Lời thề Hôn nhân là gì?</h3>
+                    </div>
+                    <div class="space-y-4 flex-grow text-sm">
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-key text-emerald-400 mr-1"></i> Bản chất:</strong> Lời thề không phải là sự lãng mạn, mà là bản cam kết: "Dù em/anh có phơi bày bao nhiêu con rắn độc dưới tận cùng địa ngục tâm hồn, tôi cũng sẽ không bỏ chạy."</p>
+                        <p><strong class="text-slate-300"><i class="fa-solid fa-gear text-blue-400 mr-1"></i> Cơ chế:</strong> Ai cũng mang trong mình bóng tối và sự dối trá. Lời thề tạo ra một "môi trường chứa đựng an toàn" để hai người dám lột trần sự thật, đối mặt xung đột, sửa chữa nó thay vì trốn tránh.</p>
+                        <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 mt-auto">
+                            <span class="text-amber-400 font-bold mb-1 block">💡 Ví dụ thực tế:</span>
+                            Xung đột trì hoãn là xung đột bị nhân lên nhiều lần. Hãy lôi nó ra bàn, cãi nhau sứt đầu mẻ trán cho đến tận cùng, sửa nó, và không bao giờ phải cãi lại chuyện đó nữa.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 3. Action Playbook -->
+        <section id="action-playbook" class="relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold flex items-center gap-3 mb-8">
+                <span class="text-amber-400">🚀</span> [Action Playbook] Sổ tay Thực chiến
+            </h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- If/Then Scenarios -->
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-t-amber-500">
+                    <h3 class="text-xl font-bold mb-6 text-amber-400"><i class="fa-solid fa-code-branch mr-2"></i> Kịch bản Nếu - Thì</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="border-l-2 border-slate-600 pl-4">
+                            <p class="font-semibold text-slate-200">🚩 NẾU bạn thấy mình đang rơi vào hố sâu bế tắc, trầm cảm và không muốn làm gì cả...</p>
+                            <p class="text-emerald-400 mt-2">✅ THÌ hãy làm một việc nhỏ đến mức bạn thấy nhục nhã. Chỉ cần nhìn vào 1 ngăn kéo lộn xộn trong 1 phút và tưởng tượng cách dọn nó. Không cần dọn ngay.</p>
+                        </div>
+                        <div class="border-l-2 border-slate-600 pl-4">
+                            <p class="font-semibold text-slate-200">🚩 NẾU vợ/chồng bạn đi làm về và bắt đầu xả vào mặt bạn hàng tá thứ khó chịu...</p>
+                            <p class="text-emerald-400 mt-2">✅ THÌ hãy ngậm miệng lại. Đóng vai người phỏng vấn Joe Rogan: "Ý em là sao? Em có thể nói rõ hơn không?". Hãy để họ trải hết bài ra bàn cho đến khi chính họ nhận ra cốt lõi vấn đề.</p>
+                        </div>
+                        <div class="border-l-2 border-slate-600 pl-4">
+                            <p class="font-semibold text-slate-200">🚩 NẾU bạn là nhân viên và muốn trình bày rắc rối cho Sếp...</p>
+                            <p class="text-emerald-400 mt-2">✅ THÌ tuyệt đối không mang rắc rối không. Phải mang theo ít nhất 1 giải pháp. Bạn sẽ thăng tiến nhanh đến mức không ngờ.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Micro Actions -->
+                <div class="glass-card p-8 rounded-2xl border-t-4 border-t-emerald-500">
+                    <h3 class="text-xl font-bold mb-6 text-emerald-400"><i class="fa-solid fa-bolt mr-2"></i> Hành động Micro (Trong 24h tới)</h3>
+                    <ul class="space-y-4">
+                        <li class="flex gap-4 items-start bg-slate-800/40 p-4 rounded-xl">
+                            <div class="flex-shrink-0 w-8 h-8 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold">1</div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Xác định Điểm mù trong nhà</h4>
+                                <p class="text-sm text-slate-400 mt-1">Chọn ĐÚNG MỘT góc nhỏ nhất trong phòng (1 cái kệ, 1 cái ví) mà bạn đã lờ đi từ lâu. Lôi hết đồ ra và sắp xếp lại. Chấp nhận sự khó chịu khi nhìn thấy đống lộn xộn.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start bg-slate-800/40 p-4 rounded-xl">
+                            <div class="flex-shrink-0 w-8 h-8 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold">2</div>
+                            <div>
+                                <h4 class="font-bold text-slate-200">Bài test "Nói thật 100%"</h4>
+                                <p class="text-sm text-slate-400 mt-1">Hôm nay, hãy rà soát mọi lời bạn định nói ra. Nếu thấy mình chuẩn bị nói dối trắng (white lie) để làm vừa lòng ai đó -> Dừng lại 3 giây. Nếu không thể nói thật, hãy im lặng.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Reality Check -->
+        <section id="reality-check" class="relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold flex items-center gap-3 mb-8">
+                <span class="text-rose-500">⚠️</span> [Reality Check] Nhận diện Cạm bẫy
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Red Flags -->
+                <div class="bg-rose-950/30 border border-rose-900/50 p-6 md:p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold text-rose-400 mb-4 flex items-center gap-2"><i class="fa-solid fa-flag"></i> Bẫy Vô Hình (Red Flags)</h3>
+                    <div class="space-y-4">
+                        <p class="text-slate-300 text-sm md:text-base">
+                            <span class="font-bold text-white block mb-1">Ảo tưởng "Anh sẽ sửa nó cho em"</span>
+                            Bản năng phái mạnh luôn muốn nhảy vào khắc phục vấn đề ngay lập tức để chứng minh năng lực. <br>
+                            <span class="text-rose-300 italic">Hậu quả:</span> Phụ nữ cảm thấy không được thấu hiểu. Bạn giải quyết sai vấn đề cốt lõi. Gây ra sự ức chế ngầm.
+                        </p>
+                        <hr class="border-rose-900/50">
+                        <p class="text-slate-300 text-sm md:text-base">
+                            <span class="font-bold text-white block mb-1">Cái bẫy của Từ vựng "Bắt nạt"</span>
+                            Nếu bạn đời từng là nạn nhân bắt nạt ở trường học, họ mang khuôn mẫu đó vào hôn nhân. Bất cứ khi nào bạn góp ý gay gắt, họ sẽ nhìn bạn qua "bộ lọc" của kẻ bắt nạt. Việc của bạn không phải gân cổ lên cãi lại, mà là thiền định xem "Mình có phần nào là kẻ bắt nạt thật không?".
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Guardrails -->
+                <div class="bg-slate-800/80 border border-slate-700 p-6 md:p-8 rounded-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-bl-full -z-10"></div>
+                    <h3 class="text-xl font-bold text-slate-100 mb-4 flex items-center gap-2"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Chốt Chặn Kỷ Luật (Guardrails)</h3>
+                    
+                    <ul class="space-y-4">
+                        <li class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <strong class="text-emerald-400 block mb-1">Quy tắc 8 giờ tối (Ngừng Chiến):</strong>
+                            <p class="text-sm text-slate-400">Không mang những vấn đề khủng hoảng, cãi vã phức tạp lên giường sau 8h tối. Bạn cần giấc ngủ để chiến đấu lâu dài. Tranh cãi lúc mệt mỏi chỉ đẻ ra thêm rắn độc.</p>
+                        </li>
+                        <li class="bg-slate-900/50 p-4 rounded-xl border border-slate-700">
+                            <strong class="text-emerald-400 block mb-1">Quy định "Họp Giao Ban Hôn Nhân":</strong>
+                            <p class="text-sm text-slate-400">Gia đình cũng là một doanh nghiệp. Hãy thiết lập cứng 90 phút mỗi tuần CHỈ ĐỂ LẮNG NGHE ĐỐI PHƯƠNG than phiền và vận hành gia đình. Nếu không trả 90 phút này, bạn sẽ trả lãi gộp ở tòa ly dị.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Active Recall -->
+        <section id="active-recall" class="relative z-10 abstract-bg abstract-bg-1 pt-12">
+            <div class="text-center mb-10">
+                <h2 class="text-3xl md:text-4xl font-bold flex items-center justify-center gap-3">
+                    <span class="text-purple-400">🃏</span> [Active Recall] Trạm Ôn Tập (Flashcards)
+                </h2>
+                <p class="text-slate-400 mt-3">Kiểm tra trí nhớ ngắn hạn. Hãy tự nhẩm câu trả lời trước khi ấn mở.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+                <!-- Flashcard Items -->
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Tại sao phải bắt đầu bằng những việc nhỏ đến mức nhục nhã?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Vì người đang ở đáy xã hội/tâm lý đã mất hết lòng tin. Bắt đầu nhỏ giúp họ có được bước đệm thành công đầu tiên, gạt bỏ sự tự ái để nhận ra vị trí thực sự của mình, từ đó kích hoạt Lãi kép tự tin.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Phụ nữ thực sự cần gì khi kể lể các rắc rối?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Họ cần một người nghe để "trải hết mọi giả thuyết" ra bàn. Hệ thống cảnh báo của họ phát hiện nguy hiểm, nhưng chưa biết đích xác là gì. Lắng nghe giúp họ tự khoanh vùng đúng vấn đề.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Nước mắt có vai trò sinh học và tâm lý gì?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Là dấu hiệu một hệ thống niềm tin/tư duy cũ không còn hiệu quả và "đang chết đi". Khóc đưa não bộ về trạng thái dẻo dai (plasticity) như trẻ nhỏ để tiếp thu bài học mới.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Bản chất của Sang chấn tâm lý (Trauma) là gì?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Giống như một cái hố trong não bộ bạn chưa lấp. Bạn đâm sầm vào tường ở quá khứ nhưng không giải quyết được. Hiện tại, bạn phản ứng với sếp/bạn đời bằng tư duy của đứa trẻ bị tổn thương năm xưa.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Xung đột bị trì hoãn sẽ dẫn đến điều gì?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Xung đột bị trì hoãn là xung đột bị nhân lên nhiều lần (Conflict delayed is conflict multiplied).
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Để giúp ai đó trị chứng ám ảnh sợ hãi, bước 1 là gì?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Tìm ra giới hạn khoảng cách mà sự tự tin của họ bằng đúng kích thước của nỗi sợ (ví dụ đứng cách thang máy 100m). Sau đó nhảy múa ở ranh giới đó và đảm bảo họ KHÔNG ĐƯỢC QUAY MẶT ĐI.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Tại sao nói dối nhỏ (White lie) lại tàn phá bản thân?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Vì mọi lời nói dối đều chống lại thực tại. Sự thật áp dụng được ở mọi tầng không gian và thời gian. Khi bạn nói dối, bạn báo hiệu cho não bộ rằng thực tại quá đáng sợ để đối mặt.
+                    </div>
+                </details>
+
+                <details class="flashcard-details group bg-slate-800/60 border border-slate-700 rounded-xl cursor-pointer">
+                    <summary class="font-semibold p-4 flex justify-between items-center text-slate-200">
+                        Giải pháp tối ưu cho chứng khủng hoảng bản sắc của giới trẻ?
+                        <i class="fa-solid fa-chevron-down text-slate-500 transition-transform group-open:rotate-180"></i>
+                    </summary>
+                    <div class="px-4 pb-4 text-emerald-400 text-sm border-t border-slate-700 pt-3">
+                        Giải pháp mở rộng (Subsidiary Solution): Nhận lãnh trách nhiệm tự nguyện. Thay vì định vị bằng tính dục hay sở thích cá nhân, hãy định vị bằng trách nhiệm chăm lo gia đình, vợ chồng và cống hiến xã hội. Tập trung vào bản thân gây ra đau khổ.
+                    </div>
+                </details>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 6. Footer -->
+    <footer class="h-[128px] bg-slate-900 border-t border-slate-800 mt-20 flex flex-col justify-center items-center px-4 relative z-10">
+        <div class="max-w-5xl w-full flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-center md:text-left">
+                <h4 class="text-slate-200 font-bold text-sm uppercase tracking-wider mb-1">Nguyễn Đức Việt</h4>
+                <p class="text-xs text-slate-400 max-w-md">Cập nhật kiến thức thực chiến nhất về Kỹ năng Quay Dựng, Xây kênh Niche và Tư duy phân tích Thuật toán Mạng xã hội kỷ nguyên mới.</p>
+            </div>
+            
+            <div class="flex items-center gap-5">
+                <a href="https://youtube.com/@vietndonline" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors text-2xl" title="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+                <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" class="text-slate-400 hover:text-white transition-colors text-2xl" title="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61580450902746" target="_blank" class="text-slate-400 hover:text-blue-500 transition-colors text-2xl" title="Facebook Page">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+<script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}</script>
+</body>
+</html>
