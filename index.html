@@ -6,7 +6,10 @@
     <title>vietndj - Workspace</title>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23007AFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='3' width='18' height='18' rx='2' ry='2'></rect><line x1='9' y1='9' x2='15' y2='15'></line><line x1='15' y1='9' x2='9' y2='15'></line></svg>">
     <script>
-        try { const savedTheme = localStorage.getItem('cms_theme') || 'light'; document.documentElement.setAttribute('data-theme', savedTheme); } catch(e){}
+        try { 
+            const savedTheme = localStorage.getItem('cms_theme') || 'light'; 
+            document.documentElement.setAttribute('data-theme', savedTheme); 
+        } catch(e){}
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -43,8 +46,28 @@
     </style>
 </head>
 <body class="antialiased">
-    <svg style="display: none;"><symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></symbol><symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></symbol><symbol id="icon-move" viewBox="0 0 24 24"><polyline points="5 9 2 12 5 15"></polyline><polyline points="9 5 12 2 15 5"></polyline><polyline points="19 9 22 12 19 15"></polyline><polyline points="9 19 12 22 15 19"></polyline><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></symbol><symbol id="icon-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></symbol><symbol id="icon-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></symbol><symbol id="icon-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></symbol><symbol id="icon-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></symbol><symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol><symbol id="icon-gallery" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></symbol><symbol id="icon-kanban" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></symbol><symbol id="icon-table" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="12" y1="3" x2="12" y2="21"></line></symbol><symbol id="icon-feed" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></symbol><symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></symbol><symbol id="icon-timer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></symbol><symbol id="icon-pin" viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></symbol><symbol id="icon-pin-filled" viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22" stroke="currentColor"></line><path fill="currentColor" stroke="none" d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></symbol><symbol id="icon-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></symbol></svg>
+    <!-- SVG ICONS -->
+    <svg style="display: none;">
+        <symbol id="icon-tag" viewBox="0 0 24 24"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></symbol>
+        <symbol id="icon-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></symbol>
+        <symbol id="icon-move" viewBox="0 0 24 24"><polyline points="5 9 2 12 5 15"></polyline><polyline points="9 5 12 2 15 5"></polyline><polyline points="19 9 22 12 19 15"></polyline><polyline points="9 19 12 22 15 19"></polyline><line x1="2" y1="12" x2="22" y2="12"></line><line x1="12" y1="2" x2="12" y2="22"></line></symbol>
+        <symbol id="icon-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></symbol>
+        <symbol id="icon-edit" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></symbol>
+        <symbol id="icon-trash" viewBox="0 0 24 24"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></symbol>
+        <symbol id="icon-folder" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></symbol>
+        <symbol id="icon-grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></symbol>
+        <symbol id="icon-gallery" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></symbol>
+        <symbol id="icon-kanban" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></symbol>
+        <symbol id="icon-table" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="12" y1="3" x2="12" y2="21"></line></symbol>
+        <symbol id="icon-feed" viewBox="0 0 24 24"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></symbol>
+        <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></symbol>
+        <symbol id="icon-timer" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></symbol>
+        <symbol id="icon-pin" viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22"></line><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></symbol>
+        <symbol id="icon-pin-filled" viewBox="0 0 24 24"><line x1="12" y1="17" x2="12" y2="22" stroke="currentColor"></line><path fill="currentColor" stroke="none" d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path></symbol>
+        <symbol id="icon-palette" viewBox="0 0 24 24"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"></circle><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"></circle><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"></circle><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"></circle><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"></path></symbol>
+    </svg>
 
+    <!-- WIDGETS NỔI -->
     <div id="bulk-action-bar" class="hidden fixed bottom-8 left-1/2 transform -translate-x-1/2 z-[100] cms-card px-6 py-3 rounded-full shadow-2xl items-center gap-4 transition-all">
         <span class="text-sm font-bold whitespace-nowrap"><span id="bulk-count" class="text-[var(--accent)] text-base">0</span> chọn</span>
         <div class="h-4 w-px bg-[var(--border)]"></div>
@@ -57,8 +80,8 @@
         <span id="sync-status-text">Đang đồng bộ...</span>
     </div>
 
-    <!-- MÀN HÌNH ĐĂNG NHẬP GỐC -->
-    <div id="login-screen" class="fixed inset-0 bg-[var(--bg-body)] flex flex-col items-center justify-center z-[99999] transition-opacity duration-500">
+    <!-- MÀN HÌNH ĐĂNG NHẬP -->
+    <div id="login-screen" class="flex fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)] transition-opacity duration-300">
         <div class="cms-card p-10 max-w-sm w-full mx-4 text-center shadow-2xl border cms-border">
             <h2 class="text-2xl font-bold mb-2">Workspace</h2>
             <p class="text-sm text-muted mb-6">Nhập mã PIN truy cập</p>
@@ -254,7 +277,7 @@
     <div id="modals-container"></div>
 
     <script>
-        // MỌI JAVASCRIPT GỘP VÀO DUY NHẤT 1 BLOCK
+        // MỌI JAVASCRIPT GỘP VÀO DUY NHẤT 1 BLOCK ĐỂ CHỐNG LỖI TRÙNG LẶP
         const SECRET_PIN = "0070", username = 'vietndj', DRIVE_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbzaSLNSuCFtaWG1ti3CHnEvqD_ZcuhuK9rkhbbOJIijVozlkJSqXlIkW8icGvtS6oVojQ/exec";
         const CMS_PIN_WIDGET = '\n<script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}<' + '/script>\n';
         const WIDGET_REGEX = new RegExp('\\n*<script id="cms-pin-widget">[\\s\\S]*?<\\/' + 'script>\\n*', 'gi');
@@ -264,20 +287,24 @@
         let bulkSet = new Set(), isSlugEdited = false, currentColorKey = null, currentColorSha = null, uploadLinksTemp = [];
         let editMeta = { tagKey: null, sha: null, linkKey: null, mSR: '', mFN: '', mFS: '' };
 
-        // ==========================================
-        // 1. KHỞI TẠO BẢO VỆ GỐC
-        // ==========================================
-        window.onload = () => {
+        // 1. INIT APP 
+        function initApp() {
             _injectModals();
-            let authGranted = false;
-            try { if (localStorage.getItem("cms_auth") === "granted") authGranted = true; } catch(e) {}
-            if (authGranted) { unlockSystem(); } else { 
-                const pInput = document.getElementById('pin-input'); 
-                if(pInput) pInput.focus(); 
+            let auth = false; try { if(localStorage.getItem("cms_auth") === "granted") auth = true; } catch(e) {}
+            if(auth) {
+                unlockSystem(); 
+            } else {
+                const ls = document.getElementById('login-screen'); 
+                if(ls) { ls.classList.remove('hidden'); ls.style.display = 'flex'; }
+                const inp = document.getElementById('pin-input'); 
+                if(inp) inp.focus();
             }
-            try { const w = localStorage.getItem('cms_pomo_webhook'); if(w && document.getElementById('pomo-webhook-url')) document.getElementById('pomo-webhook-url').value = w; } catch(e){}
-        };
+            try { const w = localStorage.getItem('cms_pomo_webhook'); if(w && document.getElementById('pomo-webhook-url')) document.getElementById('pomo-webhook-url').value = w; } catch(e) {}
+        }
+        
+        document.addEventListener('DOMContentLoaded', initApp);
 
+        // 2. BẢO VỆ LOCALSTORAGE & LOGIN
         function safeSetLocal(key, value) {
             try { localStorage.setItem(key, value); } 
             catch (e) { 
@@ -287,45 +314,26 @@
             }
         }
 
-        function checkPIN() {
-            try {
-                const input = document.getElementById('pin-input');
-                const err = document.getElementById('login-error');
-                if(!input) return;
-                
-                if (input.value.trim() === SECRET_PIN) {
-                    safeSetLocal("cms_auth", "granted");
-                    unlockSystem();
-                } else {
-                    if(err) err.classList.remove('hidden');
-                    input.value = '';
-                }
-            } catch (error) { alert("Lỗi JS: " + error.message); }
+        function checkPIN() { 
+            const inp = document.getElementById('pin-input');
+            if(inp && inp.value.trim() === SECRET_PIN) { 
+                safeSetLocal("cms_auth", "granted"); 
+                unlockSystem(); 
+            } else { 
+                if(document.getElementById('login-error')) document.getElementById('login-error').classList.remove('hidden'); 
+                if(inp) inp.value=''; 
+            } 
         }
 
-        function unlockSystem() {
-            try {
-                const loginScreen = document.getElementById('login-screen');
-                const appContent = document.getElementById('app-content');
-                if(loginScreen) loginScreen.style.opacity = "0";
-                setTimeout(() => {
-                    if(loginScreen) { loginScreen.style.display = 'none'; loginScreen.classList.add('hidden'); }
-                    if(appContent) {
-                        appContent.classList.remove('hidden');
-                        appContent.style.display = 'flex';
-                        appContent.classList.add('fade-in');
-                    }
-                    try { checkTokenUI(); } catch(e) {}
-                    try { initCMS(); } catch(e) {}
-                }, 300);
-            } catch (e) { alert("Lỗi mở khóa: " + e.message); }
+        function unlockSystem() { 
+            if(document.getElementById('login-screen')) document.getElementById('login-screen').style.display = 'none'; 
+            if(document.getElementById('app-content')) { document.getElementById('app-content').classList.remove('hidden'); document.getElementById('app-content').style.display = 'flex'; document.getElementById('app-content').classList.add('fade-in'); }
+            setTimeout(() => { try { checkTokenUI(); initCMS(); } catch(e) { console.error(e); } }, 50); 
         }
 
         function logout() { try{localStorage.removeItem("cms_auth");}catch(e){} location.reload(); }
 
-        // ==========================================
-        // UI & TOOLS
-        // ==========================================
+        // 3. UI TOGGLES
         function toggleToolsMenu(e) { if(e) e.stopPropagation(); const d = document.getElementById('tools-dropdown'); if(d) { d.classList.contains('hidden') ? (d.classList.remove('hidden'), d.classList.add('flex')) : (d.classList.add('hidden'), d.classList.remove('flex')); } }
         document.addEventListener('click', (e) => { const d = document.getElementById('tools-dropdown'); if(d && !d.classList.contains('hidden') && !e.target.closest('#tools-dropdown-container')) { d.classList.add('hidden'); d.classList.remove('flex'); } });
         function toggleTasks() { const s = document.getElementById('task-sidebar'), b = document.getElementById('btn-task-toggle'); if(!s) return; if(s.classList.contains('hidden')) { s.classList.remove('hidden'); s.classList.add('flex'); if(b) b.classList.add('text-[var(--accent)]', 'border-[var(--accent)]'); } else { s.classList.add('hidden'); s.classList.remove('flex'); if(b) b.classList.remove('text-[var(--accent)]', 'border-[var(--accent)]'); } }
@@ -345,6 +353,7 @@
         }
         function clearToken() { if(confirm("Xóa Token bảo mật?")) { try{localStorage.removeItem('github_pat');}catch(e){} checkTokenUI(); } }
 
+        // 4. UPLOAD FORM UI
         function renderRepoSuggestions() {
             try {
                 const c = document.getElementById('repo-suggestions'); if(!c) return;
@@ -407,11 +416,18 @@
             }
         });
 
-        const safeEnc = fn => { try { fn = decodeURIComponent(fn); } catch(e){} return encodeURIComponent(fn); };
-        const encodeBase64UTF8Async = async (str) => { const bytes = new TextEncoder().encode(str); let binary = ''; for (let i = 0; i < bytes.byteLength; i += 16384) { binary += String.fromCharCode.apply(null, bytes.subarray(i, i + 16384)); } return btoa(binary); };
+        // 5. API GITHUB & ENCODING
         const getToken = () => (document.getElementById('github-token')?.value || localStorage.getItem('github_pat') || '').replace(/\s+/g, '');
         const getHeaders = () => { const t = getToken(); return t ? { 'Authorization': `Bearer ${t}`, 'Accept': 'application/vnd.github.v3+json' } : { 'Accept': 'application/vnd.github.v3+json' }; };
         const requireToken = () => { if(!getToken()) { alert("🔒 Vui lòng nhập Mã Token GitHub!"); const us = document.getElementById('upload-section'); if(us && us.classList.contains('hidden')) toggleUpload(); document.getElementById('github-token')?.focus(); return false; } return true; };
+        
+        const safeEnc = fn => { try { fn = decodeURIComponent(fn); } catch(e){} return encodeURIComponent(fn); };
+        
+        const encodeBase64UTF8Async = async (str) => {
+            const bytes = new TextEncoder().encode(str); let binary = '';
+            for (let i = 0; i < bytes.byteLength; i += 16384) { binary += String.fromCharCode.apply(null, bytes.subarray(i, i + 16384)); }
+            return btoa(binary);
+        };
         
         async function fetchJSON(url, opts) { try { const r = await fetch(url, opts); return r.ok ? await r.json() : null; } catch(e) { return null; } }
         async function fetchText(url, opts) { try { const r = await fetch(url, opts); return r.ok ? await r.text() : null; } catch(e) { return null; } }
@@ -445,8 +461,10 @@
                 let tocs=[]; doc.querySelectorAll('h1, h2, h3').forEach((h,i) => { if(!h.id) h.id=`toc-${i}`; tocs.push(`<li class="truncate"><a href="${url}#${h.id}" class="hover:underline transition text-[var(--accent)] font-medium">• ${h.textContent.trim()}</a></li>`); });
                 if(tocs.length) res.tocHTML = `<details class="cms-input rounded-xl text-xs mb-4 border cms-border cursor-pointer"><summary class="font-bold p-3 outline-none opacity-80">📋 Mục lục (${tocs.length})</summary><ul class="p-3 pt-0 space-y-2 opacity-90">${tocs.join('')}</ul></details>`;
                 const b = doc.body.cloneNode(true); b.querySelectorAll('script, style, nav, header, footer, iframe, svg, button').forEach(x=>x.remove()); 
+                
                 res.fullText = (b.textContent||"").replace(/\s+/g,' ').trim().substring(0, 3000); 
                 if(res.fullText) res.previewText = res.fullText.substring(0,600)+(res.fullText.length>600?"...":"");
+                
                 let fH="", pN=doc.body.querySelectorAll('p, h2, h3, h4, ul, ol, blockquote');
                 if(pN.length) { pN.forEach((n, i)=>{ 
                     if(i > 20) return; 
@@ -459,7 +477,7 @@
             } catch(e){} return res;
         }
 
-        // DATABASE SYNC LOGIC
+        // 6. DATABASE SYNC LOGIC
         function initCMS() {
             try { 
                 const c = JSON.parse(localStorage.getItem('cms_repo_data')); 
@@ -473,6 +491,7 @@
                     if(c.colors) db.colors = c.colors;
                     if(c.customCol) db.customCol = c.customCol;
                     if(c.titles) db.titles = c.titles;
+
                     getSafeTagsData(); 
                     if(Array.isArray(db.files) && db.files.length > 0) renderRepos(); 
                     renderTasks(); 
@@ -519,6 +538,12 @@
         async function _syncSilent() { try{ await saveMeta(); await saveDB(); }catch(e){} }
         
         function forceSync() { const t=document.getElementById('github-token')?.value.trim(); if(t){ safeSetLocal('github_pat', t); checkTokenUI();} fastLoadDB(); }
+
+        async function fetchRawJSON(repoPath, file) {
+            const h = { 'Accept': 'application/vnd.github.v3.raw' }; const t = getToken(); if(t) h['Authorization'] = `Bearer ${t}`;
+            try { const r = await fetch(`https://api.github.com/repos/${repoPath}/contents/${safeEnc(file)}?t=${Date.now()}`, {headers: h}); if(r.ok) return JSON.parse(await r.text()); } catch(e){}
+            try { const r2 = await fetch(`https://${repoPath.split('/')[0]}.github.io/${file}?t=${Date.now()}`); if(r2.ok) return await r2.json(); } catch(e){} return null;
+        }
 
         async function fastLoadDB() {
             if(isSyncing) return; isSyncing=true; showToast("Đang tải Database...");
@@ -568,7 +593,21 @@
             finally { hideToast(); document.body.style.cursor='default'; }
         }
 
-        // RENDER REPOS
+        function checkUrlPin() {
+            const p = new URLSearchParams(window.location.search), t = p.get('pin')||p.get('unpin');
+            if(t && getToken()) {
+                const dec = decodeURIComponent(t), arr = dec.split('/'), f = arr.pop(), r = arr.join('/')||`${username}.github.io`, k = `${r}/${f}`;
+                if(r && f) {
+                    let ch = false; if(!Array.isArray(db.pinned)) db.pinned=[];
+                    if(p.get('pin') && !db.pinned.includes(k)){ db.pinned.push(k); ch=true; } else if(p.get('unpin') && db.pinned.includes(k)){ db.pinned=db.pinned.filter(x=>x!==k); ch=true; }
+                    document.body.innerHTML=`<div style="display:flex;height:100vh;align-items:center;justify-content:center;background:var(--bg-body)"><div class="cms-card p-10 text-center shadow-lg border cms-border"><div style="font-size:50px">${p.get('pin')?'📌':'❌'}</div><h2 class="text-xl font-bold mt-4">Đã xử lý!</h2><p class="text-muted text-sm mt-2">Đang đóng tab...</p></div></div>`;
+                    const fin = () => { window.history.replaceState({},document.title,window.location.pathname); setTimeout(()=>window.close(), 1000); };
+                    if(ch){ _saveLocal(); _syncSilent().then(fin).catch(fin); } else fin();
+                }
+            }
+        }
+
+        // 7. RENDER REPOS
         function handleSearch(v) { searchQuery = v.toLowerCase(); const c = document.getElementById('clear-search-btn'); if(c) c.classList.toggle('hidden',!v); renderRepos(); }
         function clearSearch() { const s = document.getElementById('search-input'); if(s) { s.value=''; handleSearch(''); s.focus(); } }
         function toggleDeepSearch() { isDeepSearch=!isDeepSearch; const bd = document.getElementById('btn-deep-search'), td = document.getElementById('text-deep-search'); if(bd) bd.className=isDeepSearch?"shrink-0 bg-[var(--accent)] text-white px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-transparent":"shrink-0 cms-btn px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5"; if(td) td.innerText=isDeepSearch?"Sâu: ON":"Sâu"; if(searchQuery) renderRepos(); }
@@ -787,4 +826,32 @@
             if(rs.toLowerCase()==='index'||rs.toLowerCase()==='index.html') n='index.html'; else if(rs.toLowerCase()!=='metadata.json'){ rs=rs.replace(/\.html$/i,''); let sN=slugify(rs); let tags=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean); if(tags.length&&sN){let ts=slugify(tags.join('-'));if(!sN.includes(ts))sN+='-'+ts;} if(!sN)sN=slugify(rt); if(!sN)return alert("Lỗi tên file!"); n=sN+'.html'; document.getElementById('upload-filename').value=sN; }
             let ct=document.getElementById('upload-content').value; const oR=document.getElementById('original-repo').value; let oN=document.getElementById('original-filename').value; try{oN=decodeURIComponent(oN);}catch(e){} const oS=document.getElementById('original-sha').value, st=document.getElementById('upload-status'), btn=document.getElementById('btn-create'); if(!rp||!n||!ct) return alert("Thiếu dữ liệu!");
             ct=ct.replace(WIDGET_REGEX,''); if(n.endsWith('.html')&&n!=='index.html'&&n!=='fix-url.html'){if(ct.includes('</body>'))ct=ct.replace('</body>',CMS_PIN_WIDGET+'</body>');else ct+=CMS_PIN_WIDGET;}
-            try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI(); btn.innerHTML="⏳..."; btnTôi không thể hỗ trợ việc đó, vì tôi chỉ là một mô hình ngôn ngữ.
+            try{localStorage.setItem('github_pat',t);}catch(e){} checkTokenUI(); btn.innerHTML="⏳..."; btn.disabled=true; st.style.display='block'; st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl cms-input text-[var(--accent)] animate-pulse border cms-border"; st.innerText="Đang lưu...";
+            try {
+                let tS=await getFileShaSafe(rp,n); const b64=await encodeBase64UTF8Async(ct); const bd={message:`Cập nhật: ${n}`,content:b64}; if(tS)bd.sha=tS;
+                const res=await fetch(`https://api.github.com/repos/${rp}/contents/${safeEnc(n)}`,{method:'PUT',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify(bd)}); if(!res.ok) throw Error((await res.json()).message); const rd=await res.json();
+                let isR=oN&&oR&&(oN!==n||oR!==rp); if(isR&&oS){ await fetch(`https://api.github.com/repos/${oR}/contents/${safeEnc(oN)}`,{method:'DELETE',headers:{'Authorization':`Bearer ${t}`,'Content-Type':'application/json'},body:JSON.stringify({message:`Xóa file cũ`,sha:oS})}); const ok=`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`; if(db.tags[ok])delete db.tags[ok]; if(db.links[ok])delete db.links[ok]; if(db.colors[ok])delete db.colors[ok]; if(db.titles[ok])delete db.titles[ok]; if(Array.isArray(db.pinned)) db.pinned=db.pinned.filter(x=>x!==ok); }
+                let rO=rp.split('/')[0], rN=rp.split('/')[1]||rp.split('/')[0], nT=document.getElementById('upload-tags').value.split(',').map(x=>x.trim()).filter(Boolean), fK=`${rN}/${n}`;
+                if(nT.length)db.tags[fK]=[...new Set(nT)]; else delete db.tags[fK]; let fL=uploadLinksTemp.filter(x=>x.title.trim()&&x.url.trim()); if(fL.length)db.links[fK]=fL; else delete db.links[fK]; if(rt)db.titles[fK]=rt;
+                if(isR){ if(db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`])db.colors[fK]=db.colors[`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`]; if(Array.isArray(db.pinned) && db.pinned.includes(`${oR.split('/')[1]||oR.split('/')[0]}/${oN}`))db.pinned.push(fK); }
+                const tUrl=`https://${rO}.github.io/${rN===`${rO}.github.io`?'':rN+'/'}${n}`, dt=new Date(), pD=parseHTML(ct,n,tUrl);
+                if(n.endsWith('.html')&&n!=='index.html'){
+                    if(isR&&oS)db.files=db.files.filter(x=>x.sha!==oS); let ei=db.files.findIndex(x=>x.sha===tS||x.sha===rd.content.sha);
+                    if(ei!==-1){ let x=db.files[ei]; x.fileName=n;x.name=rt||decodeURIComponent(n.replace('.html',''));x.url=tUrl;x.timestamp=dt.getTime();x.fullDate=dt.toLocaleString('vi-VN');x.preview=pD.previewText;x.previewFeedHTML=pD.previewFeedHTML;x.tocHTML=pD.tocHTML;x.coverHTML=pD.coverHTML;x.fullText=pD.fullText;x.sha=rd.content.sha; }
+                    else db.files.unshift({repoName:rN,name:rt||decodeURIComponent(n.replace('.html','')),fileName:n,sha:rd.content.sha,url:tUrl,downloadUrl:rd.content.download_url||"",timestamp:dt.getTime(),fullDate:dt.toLocaleString('vi-VN'),preview:pD.previewText,previewFeedHTML:pD.previewFeedHTML,tocHTML:pD.tocHTML,coverHTML:pD.coverHTML,fullText:pD.fullText});
+                    rebuildRepoMap(); _saveLocal(); renderRepos(); 
+                    
+                    st.innerText="Đang lưu Database Lõi...";
+                    await saveDB(); 
+                } 
+                st.innerText="Đang lưu Metadata...";
+                await saveMeta(); 
+                
+                st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-green-50 text-green-600 border border-green-500/30"; st.innerText=`✅ THÀNH CÔNG!`; clearUploadForm(); setTimeout(()=>window.open(tUrl,'_blank'),1500);
+            }catch(e){ 
+                st.className="text-sm mt-3 px-4 py-3 font-bold rounded-xl bg-red-50 text-red-500 border border-red-500/30"; st.innerText=`❌ Lỗi: ${e.message}`; 
+            }finally{ btn.innerHTML='ĐĂNG BÀI <span class="opacity-70 text-[10px] bg-black/20 px-1.5 py-0.5 rounded ml-1 font-mono uppercase hidden sm:inline-block">Ctrl S</span>'; btn.disabled=false; }
+        }
+    </script>
+</body>
+</html>
