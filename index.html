@@ -13,7 +13,9 @@
         /* CORE THEME ENGINE */
         :root { --bg-body: #F5F5F7; --bg-card: #FFFFFF; --bg-hover: #F2F2F7; --text-main: #1D1D1F; --text-muted: #86868B; --border: #E5E5EA; --accent: #007AFF; --font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
         [data-theme="dark"] { --bg-body: #000000; --bg-card: #1C1C1E; --bg-hover: #2C2C2E; --text-main: #F5F5F7; --text-muted: #98989D; --border: #38383A; --accent: #0A84FF; }
-        [data-theme="read"] { --bg-body: #F9F6EE; --bg-card: #FFFFFF; --bg-hover: #EBE5D9; --text-main: #292929; --text-muted: #6B6B6B; --border: #E8E0D1; --accent: #B85042; --font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif; }
+        
+        /* CHẾ ĐỘ SÁCH VỚI TỔ HỢP FONT MEDIUM.COM (CHỐNG LỖI DẤU TIẾNG VIỆT) */
+        [data-theme="read"] { --bg-body: #F9F6EE; --bg-card: #FFFFFF; --bg-hover: #EBE5D9; --text-main: #292929; --text-muted: #6B6B6B; --border: #E8E0D1; --accent: #B85042; --font-family: 'Charter', 'Bitstream Charter', 'Sitka Text', Cambria, Georgia, serif; }
 
         body { background-color: var(--bg-body); color: var(--text-main); font-family: var(--font-family); transition: background-color 0.3s, color 0.3s; min-height: 100vh; }
         .cms-card { background-color: var(--bg-card); border: 1px solid var(--border); border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.02); }
@@ -57,7 +59,7 @@
         <span id="sync-status-text">Đang đồng bộ...</span>
     </div>
 
-    <div id="login-screen" class="flex fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)]">
+    <div id="login-screen" class="hidden fixed inset-0 flex-col items-center justify-center z-[99999] bg-[var(--bg-body)]">
         <div class="cms-card p-10 max-w-sm w-full mx-4 text-center shadow-2xl border cms-border">
             <h2 class="text-2xl font-bold mb-2">Workspace</h2>
             <p class="text-sm text-muted mb-6">Nhập mã PIN truy cập</p>
@@ -91,7 +93,7 @@
                     <div class="flex gap-1 px-1 mb-3">
                         <button type="button" onclick="setTheme('light'); toggleToolsMenu();" class="flex-1 py-1.5 rounded text-[11px] font-bold cms-input hover:opacity-80 transition border cms-border">Sáng</button>
                         <button type="button" onclick="setTheme('dark'); toggleToolsMenu();" class="flex-1 py-1.5 rounded text-[11px] font-bold cms-input hover:opacity-80 transition border cms-border">Tối</button>
-                        <button type="button" onclick="setTheme('read'); toggleToolsMenu();" class="flex-1 py-1.5 rounded text-[11px] font-bold cms-input hover:opacity-80 transition border cms-border text-[#D35400]">Sách</button>
+                        <button type="button" onclick="setTheme('read'); toggleToolsMenu();" class="flex-1 py-1.5 rounded text-[11px] font-bold cms-input hover:opacity-80 transition border cms-border text-[#B85042]">Sách</button>
                     </div>
                     <hr class="cms-border my-1 border-t">
                     <button type="button" onclick="toggleWidget('vietndj-pomodoro-widget'); toggleToolsMenu();" class="text-left px-3 py-2.5 text-xs font-bold hover:bg-[var(--bg-hover)] rounded-lg transition">🍅 Pomodoro</button>
@@ -134,47 +136,88 @@
         <div class="flex flex-col lg:flex-row gap-6 px-4 md:px-6 lg:px-8 max-w-[1600px] mx-auto items-start w-full relative">
             <main class="flex-1 w-full min-w-0 flex flex-col gap-6">
                 
-                <section class="cms-card overflow-hidden">
-                    <button type="button" onclick="toggleUpload()" class="w-full px-6 py-4 flex justify-between items-center hover:bg-[var(--bg-hover)] transition outline-none">
-                        <span class="flex items-center gap-2 font-semibold text-[var(--accent)]"><svg class="svg-icon"><use href="#icon-edit"></use></svg> Soạn thảo HTML <span class="text-[10px] text-muted cms-input border cms-border px-1.5 py-0.5 rounded font-mono ml-2 uppercase hidden sm:inline-block">Ctrl E</span></span>
+                <section class="cms-card overflow-hidden transition-all">
+                    <button type="button" onclick="toggleUpload()" class="w-full px-6 py-4 flex justify-between items-center hover:bg-[var(--bg-hover)] transition outline-none focus:outline-none border-none bg-transparent">
+                        <span class="flex items-center gap-2 font-semibold text-[var(--accent)]"><svg class="svg-icon"><use href="#icon-edit"></use></svg> Viết Bài Mới <span class="text-[10px] text-muted cms-input border cms-border px-1.5 py-0.5 rounded font-mono ml-2 uppercase hidden sm:inline-block">Ctrl E</span></span>
                         <span id="upload-icon" class="text-muted transition-transform duration-300">▼</span>
                     </button>
-                    <div id="upload-section" class="hidden p-6 border-t cms-border bg-[var(--bg-card)]">
-                        <div class="flex flex-wrap justify-between items-center gap-2 mb-6">
-                            <div class="flex flex-wrap gap-2">
-                                <button type="button" onclick="loadMainIndex()" class="cms-btn px-4 py-2 text-xs font-bold rounded-lg shadow-sm">Sửa Root</button>
-                                <button type="button" onclick="loadRepoIndex()" class="cms-btn-primary px-4 py-2 text-xs rounded-lg shadow-sm">Sửa Index Repo</button>
+                    
+                    <div id="upload-section" class="hidden p-6 md:p-8 border-t cms-border bg-[var(--bg-card)]">
+                        
+                        <div class="flex flex-wrap justify-between items-center gap-4 mb-8">
+                            <div class="flex flex-wrap items-center gap-2 w-full md:w-auto">
+                                <div class="relative flex items-center">
+                                    <span class="absolute left-3 text-muted"><svg class="w-4 h-4"><use href="#icon-folder"></use></svg></span>
+                                    <input type="text" id="upload-repo" value="vietndj/" class="pl-9 pr-3 py-2 cms-input border cms-border rounded-xl text-sm font-bold text-[var(--accent)] w-36 focus:w-48 transition-all outline-none" placeholder="Repo...">
+                                </div>
+                                <button type="button" onclick="loadMainIndex()" class="cms-btn px-3 py-2 text-xs font-bold rounded-xl shadow-sm">Sửa Root</button>
+                                <button type="button" onclick="loadRepoIndex()" class="cms-btn-primary px-3 py-2 text-xs rounded-xl shadow-sm">Sửa Index</button>
                             </div>
-                            <div id="token-saved-badge" class="hidden text-green-500 bg-green-50 dark:bg-green-900/30 px-3 py-1.5 rounded-lg text-xs font-bold border border-green-200 dark:border-transparent">✓ API Connected <button type="button" onclick="clearToken()" class="underline ml-1">Xóa</button></div>
+                            
+                            <div class="flex items-center gap-2 ml-auto w-full md:w-auto">
+                                <div id="token-col"><input type="password" id="github-token" class="cms-input border cms-border px-3 py-2 rounded-xl text-xs w-full md:w-32 outline-none focus:border-[var(--accent)]" placeholder="Token GitHub..."></div>
+                                <div id="token-saved-badge" class="hidden text-green-500 bg-green-50 dark:bg-green-900/30 px-3 py-2 rounded-xl text-[10px] font-bold border border-green-200 dark:border-transparent whitespace-nowrap">✓ API OK <button type="button" onclick="clearToken()" class="underline ml-1">Xóa</button></div>
+                            </div>
                         </div>
+                        <div id="repo-suggestions" class="flex flex-wrap gap-1.5 mb-6 empty:hidden"></div>
+                        
                         <input type="hidden" id="original-repo"><input type="hidden" id="original-filename"><input type="hidden" id="original-sha">
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div id="token-col"><label class="block text-[11px] font-bold text-muted mb-1.5 uppercase">Mã Github</label><input type="password" id="github-token" class="w-full px-4 py-2.5 cms-input rounded-xl text-sm" placeholder="Nhập Token GitHub..."></div>
-                            <div><label class="block text-[11px] font-bold text-muted mb-1.5 uppercase">Kho (Repo)</label><input type="text" id="upload-repo" value="vietndj/" class="w-full px-4 py-2.5 cms-input rounded-xl text-sm font-bold text-[var(--accent)]"><div id="repo-suggestions" class="flex flex-wrap gap-1 mt-2 empty:hidden"></div></div>
+                        <div class="mb-5 relative">
+                            <input type="text" id="upload-title" 
+                                oninput="autoSlugify()" 
+                                onkeydown="if(event.key === 'Enter' || event.keyCode === 13) { event.preventDefault(); document.getElementById('upload-content').focus(); }" 
+                                placeholder="Nhập Tiêu đề bài viết..." 
+                                class="w-full px-2 py-3 bg-transparent text-2xl md:text-3xl font-black text-[var(--text-main)] outline-none placeholder:text-[var(--text-muted)] border-b-2 border-transparent focus:border-[var(--accent)] transition-colors opacity-90 focus:opacity-100">
                         </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
-                            <div class="md:col-span-2"><label class="block text-[11px] font-bold text-muted mb-1.5 uppercase">Tiêu đề bài viết</label><input type="text" id="upload-title" oninput="autoSlugify()" placeholder="Vd: Kiến thức..." class="w-full px-4 py-2.5 cms-input rounded-xl text-sm font-bold"></div>
-                            <div><label class="block text-[11px] font-bold text-muted mb-1.5 uppercase">Slug (URL)</label><input type="text" id="upload-filename" oninput="isSlugEdited=true" placeholder="kien-thuc..." class="w-full px-4 py-2.5 cms-input rounded-xl text-sm font-mono text-[var(--accent)]"></div>
+                        <div class="mb-6">
+                            <textarea id="upload-content" rows="18" class="w-full px-5 py-5 bg-[#1D1D1F] text-[#34C759] border-none rounded-2xl focus:ring-2 focus:ring-[var(--accent)] font-mono text-[14px] md:text-[15px] leading-relaxed outline-none shadow-inner" placeholder="Bắt đầu gõ hoặc dán mã HTML vào đây... (Mẹo: Ấn Enter ở ô Tiêu đề để trỏ chuột tự động nhảy xuống đây)"></textarea>
                         </div>
                         
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                            <div class="cms-input p-4 rounded-xl flex flex-col border cms-border"><label class="text-[11px] font-bold text-muted mb-2 uppercase flex items-center gap-1.5"><svg class="w-3 h-3"><use href="#icon-tag"></use></svg> Nhãn</label><input type="text" id="upload-tags" oninput="syncUploadTagsUI(); autoSlugify();" class="w-full px-3 py-2 cms-card border cms-border rounded-lg text-sm font-bold text-[var(--accent)] mb-3 outline-none" placeholder="Gõ tag (cách bằng dấu phẩy)..."><div id="upload-tag-suggestions" class="flex flex-wrap gap-1.5 kanban-scroll max-h-24 overflow-y-auto"></div></div>
-                            <div class="cms-input p-4 rounded-xl flex flex-col border cms-border"><div class="flex justify-between items-center mb-2"><label class="text-[11px] font-bold text-muted uppercase flex items-center gap-1.5"><svg class="w-3 h-3"><use href="#icon-link"></use></svg> Link tham khảo</label><button type="button" onclick="addUploadLink()" class="cms-btn text-[var(--accent)] px-2 py-1 rounded text-xs font-bold">+ Thêm</button></div><div id="upload-links-container" class="space-y-2 flex-1 max-h-32 overflow-y-auto kanban-scroll"></div></div>
+                        <div class="mb-6">
+                            <label class="text-[11px] font-bold text-muted mb-3 uppercase flex items-center gap-1.5 tracking-wider"><svg class="w-3 h-3"><use href="#icon-tag"></use></svg> Nhãn (Bấm để chọn nhanh)</label>
+                            <div id="upload-tag-suggestions" class="flex flex-wrap gap-2 p-4 rounded-xl border cms-border bg-[var(--bg-hover)] max-h-40 overflow-y-auto kanban-scroll"></div>
                         </div>
                         
-                        <div class="mb-5"><label class="block text-[11px] font-bold text-muted mb-1.5 uppercase">Nội dung HTML</label><textarea id="upload-content" rows="12" class="w-full px-4 py-3 bg-[#1D1D1F] text-[#34C759] border-none rounded-xl focus:ring-2 focus:ring-[var(--accent)] font-mono text-xs leading-relaxed outline-none"></textarea></div>
-                        <div class="flex flex-wrap gap-3 items-center">
-                            <button type="button" onclick="createFile()" id="btn-create" class="cms-btn-primary px-8 py-3 rounded-xl shadow-md">Lưu (Ctrl S)</button>
-                            <button type="button" onclick="copyEditorToSubstack()" id="btn-copy-editor" class="cms-btn px-6 py-3 rounded-xl font-bold flex items-center gap-2"><svg class="w-4 h-4"><use href="#icon-copy"></use></svg> Copy Substack</button>
-                            <button type="button" onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden bg-red-50 text-red-500 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 px-6 py-3 rounded-xl font-bold ml-auto transition"><svg class="w-4 h-4 inline pb-0.5"><use href="#icon-trash"></use></svg> Xóa</button>
+                        <details class="mb-6 cms-card border cms-border rounded-xl group">
+                            <summary class="px-4 py-3 text-xs font-bold text-muted uppercase tracking-wider cursor-pointer outline-none flex justify-between items-center select-none hover:bg-[var(--bg-hover)] rounded-xl group-open:rounded-b-none transition">
+                                <span class="flex items-center gap-2"><svg class="w-4 h-4"><use href="#icon-edit"></use></svg> Cấu hình phụ (Slug, Nhãn mới, Link URL)</span>
+                                <span class="group-open:rotate-180 transition-transform">▼</span>
+                            </summary>
+                            <div class="p-4 md:p-6 border-t cms-border grid grid-cols-1 md:grid-cols-2 gap-6 bg-[var(--bg-card)] rounded-b-xl">
+                                
+                                <div class="flex flex-col gap-5">
+                                    <div>
+                                        <label class="block text-[10px] font-bold text-muted mb-1.5 uppercase tracking-wider">Đường dẫn (Slug)</label>
+                                        <input type="text" id="upload-filename" oninput="isSlugEdited=true" placeholder="duong-dan-bai-viet..." class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-xs font-mono text-[var(--text-main)] outline-none">
+                                    </div>
+                                    <div>
+                                        <label class="block text-[10px] font-bold text-muted mb-1.5 uppercase tracking-wider">Gõ Thêm Nhãn Mới (Cách bằng dấu phẩy)</label>
+                                        <input type="text" id="upload-tags" oninput="syncUploadTagsUI(); autoSlugify();" class="w-full px-3 py-2 cms-input border cms-border rounded-lg text-xs font-bold text-[var(--accent)] outline-none" placeholder="Ví dụ: AI, Startup...">
+                                    </div>
+                                </div>
+                                
+                                <div class="flex flex-col gap-2 border-t md:border-t-0 md:border-l cms-border pt-4 md:pt-0 md:pl-6">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <label class="text-[10px] font-bold text-muted uppercase flex items-center gap-1.5 tracking-wider"><svg class="w-3 h-3"><use href="#icon-link"></use></svg> Link tham khảo</label>
+                                        <button type="button" onclick="addUploadLink()" class="cms-btn text-[var(--accent)] px-2 py-1.5 rounded text-[10px] font-bold border border-[var(--accent)]">+ Thêm URL</button>
+                                    </div>
+                                    <div id="upload-links-container" class="space-y-2 flex-1 max-h-32 overflow-y-auto kanban-scroll pr-1"></div>
+                                </div>
+                                
+                            </div>
+                        </details>
+                        
+                        <div class="flex flex-wrap gap-3 items-center pt-2 border-t cms-border">
+                            <button type="button" onclick="createFile()" id="btn-create" class="cms-btn-primary px-8 py-3.5 rounded-xl shadow-md text-[15px] hover:scale-[1.02] transition-transform mt-4">Lưu ĐĂNG BÀI (Ctrl S)</button>
+                            <button type="button" onclick="copyEditorToSubstack()" id="btn-copy-editor" class="cms-btn px-6 py-3.5 rounded-xl font-bold flex items-center gap-2 text-sm mt-4"><svg class="w-4 h-4"><use href="#icon-copy"></use></svg> Copy Substack</button>
+                            <button type="button" onclick="confirmDeleteFromForm()" id="btn-delete" class="hidden bg-red-50 text-red-500 hover:bg-red-100 dark:bg-red-900/30 dark:hover:bg-red-900/50 px-6 py-3.5 rounded-xl font-bold ml-auto transition text-sm mt-4"><svg class="w-4 h-4 inline pb-0.5"><use href="#icon-trash"></use></svg> Xóa bài</button>
                         </div>
-                        <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-2 rounded-lg"></p>
+                        <p id="upload-status" class="text-sm font-semibold mt-4 hidden px-4 py-3 rounded-xl"></p>
                     </div>
                 </section>
 
-                <div id="recent-files-wrapper"></div>
                 <div id="repo-container" class="transition-all duration-400 min-h-[50vh] pb-10">
                     <div class="text-center py-20 text-muted font-bold text-sm">Đang tải dữ liệu...</div>
                 </div>
