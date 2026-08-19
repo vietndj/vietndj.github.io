@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Art of Static Shot - Báo Cáo Phân Tích Đạo Diễn &amp; Ngôn Ngữ Điện Ảnh</title>
+<style>
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Bl'), local('GT America Black'), local('GT-America-LCGV-Standard-Black'), local('GTAmericaLCG-Bl');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+:root {
+    --bg-primary: #090c12;
+    --bg-surface: #101622;
+    --bg-card: #151e2e;
+    --bg-card-hover: #1b273b;
+    --border-subtle: #223048;
+    --border-accent: #38bdf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #38bdf8;
+    --accent-cyan: #06b6d4;
+    --accent-amber: #f59e0b;
+    --accent-gold: #d97706;
+    --accent-emerald: #10b981;
+    --font-heading: 'SVN-Acta', Georgia, 'Times New Roman', serif;
+    --font-body: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.65;
+    padding: 30px 20px;
+}
+
+.report-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header & Cover Banner */
+.cover-banner {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(56, 189, 248, 0.12) 40%, rgba(9, 12, 18, 0.95) 100%), var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cover-banner::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+h1.doc-title {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.doc-subtitle {
+    font-size: 16.5px;
+    color: var(--text-secondary);
+    max-width: 860px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-subtle);
+}
+
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.meta-label {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--text-muted);
+    font-weight: 700;
+}
+
+.meta-value {
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.meta-value a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.meta-value a:hover {
+    text-decoration: underline;
+}
+
+/* Sections */
+.section-block {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 32px 30px;
+    margin-bottom: 35px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+}
+
+h2.section-heading {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+h2.section-heading .sec-num {
+    color: var(--accent-blue);
+    font-size: 20px;
+}
+
+/* Tech Grid */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 20px;
+}
+
+.tech-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 22px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.tech-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--border-accent);
+}
+
+.tech-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.tech-desc {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Shot Card Styles */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 30px;
+    transition: border-color 0.2s;
+}
+
+.shot-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+}
+
+.shot-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.shot-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shot-badge {
+    background: var(--accent-blue);
+    color: #090c12;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 4px 12px;
+    border-radius: 8px;
+    letter-spacing: 0.5px;
+}
+
+.shot-main-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.time-badge {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 5px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.time-badge:hover {
+    background: var(--accent-blue);
+    color: #090c12;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.3);
+}
+
+/* Keyframes Gallery */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.keyframe-box {
+    background: #090c12;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.keyframe-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    border-color: var(--accent-blue);
+}
+
+.keyframe-box img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+}
+
+.keyframe-label {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(9, 12, 18, 0.85);
+    color: #f8fafc;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Transition Block */
+.transition-block {
+    background: #090c12;
+    border: 1px dashed var(--border-subtle);
+    border-radius: 10px;
+    padding: 16px;
+    margin: 22px 0 26px 0;
+    text-align: center;
+}
+
+.trans-title {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent-cyan);
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.trans-img-wrap {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+    transition: transform 0.2s;
+    max-width: 100%;
+}
+
+.trans-img-wrap:hover {
+    transform: scale(1.01);
+    border-color: var(--accent-cyan);
+}
+
+.trans-img-wrap img {
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Shot Details Table */
+.shot-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+    .shot-details-grid {
+        grid-template-columns: 1fr;
+    }
+    .keyframes-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-pane {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+
+.pane-label {
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    color: var(--text-muted);
+    font-weight: 700;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pane-text {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.pane-text strong {
+    color: var(--text-primary);
+}
+
+/* Director Script Table */
+.script-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 16px;
+    font-size: 13.5px;
+}
+
+.script-table th {
+    background: var(--bg-card);
+    color: var(--text-muted);
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.script-table td {
+    padding: 14px;
+    border-bottom: 1px solid var(--border-subtle);
+    vertical-align: top;
+    color: var(--text-secondary);
+}
+
+.script-table tr:hover td {
+    background: var(--bg-card-hover);
+    color: var(--text-primary);
+}
+
+.script-table .shot-col {
+    font-weight: 700;
+    color: var(--accent-blue);
+    white-space: nowrap;
+}
+
+/* Floating Video Player Button */
+.fab-video {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-blue);
+    color: #090c12;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 14px 22px;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(56, 189, 248, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 1000;
+    transition: all 0.2s ease;
+}
+
+.fab-video:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 30px rgba(56, 189, 248, 0.6);
+    background: #7dd3fc;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 7, 13, 0.94);
+    backdrop-filter: blur(12px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 92%;
+    max-height: 82vh;
+    border-radius: 12px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+    border: 1px solid var(--border-subtle);
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    margin-top: 16px;
+    font-size: 15px;
+    color: #ffffff;
+    font-family: var(--font-heading);
+    letter-spacing: 0.3px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 24px;
+    right: 30px;
+    color: #94a3b8;
+    font-size: 36px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.lightbox-close:hover {
+    color: #ffffff;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 7, 13, 0.95);
+    backdrop-filter: blur(14px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-box-wrap {
+    width: 100%;
+    max-width: 860px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.9);
+}
+
+.video-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 20px;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.video-modal-title {
+    font-family: var(--font-heading);
+    font-size: 16.5px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.video-modal-close {
+    color: #94a3b8;
+    font-size: 26px;
+    cursor: pointer;
+    transition: color 0.2s;
+    line-height: 1;
+}
+
+.video-modal-close:hover {
+    color: #ffffff;
+}
+
+.modal-video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 16/9;
+    background: #000;
+    outline: none;
+}
+
+/* Bottom Links Box */
+.bottom-links-card {
+    background: linear-gradient(135deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 22, 34, 0.95) 100%);
+    border: 1px solid var(--border-accent);
+    border-radius: 14px;
+    padding: 28px;
+    margin-top: 40px;
+}
+
+.bottom-links-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 12px;
+}
+
+.link-btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 13.5px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.link-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-blue);
+    transform: translateX(3px);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #0f172a !important;
+        padding: 0 !important;
+    }
+    .fab-video, .lightbox-modal, .video-modal, .time-badge {
+        display: none !important;
+    }
+    .section-block, .shot-card, .cover-banner {
+        background: #ffffff !important;
+        border: 1px solid #e2e8f0 !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+    }
+    h1.doc-title, h2.section-heading, .shot-main-title {
+        color: #0f172a !important;
+    }
+    .pane-text, .doc-subtitle, .meta-value {
+        color: #334155 !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="report-container">
+    <!-- Header Banner -->
+    <div class="cover-banner">
+        <div class="badge-tag">🎬 Báo Cáo Đạo Diễn &amp; Ngôn Ngữ Điện Ảnh</div>
+        <h1 class="doc-title">The Art of Static Shot</h1>
+        <p class="doc-subtitle">Bóc tách toàn diện nghệ thuật khung hình tĩnh (Static Lock-off Framing), nhịp thở đô thị Tokyo và triết lý thị giác đỉnh cao: <em>"Let the world move, Let the frame stay still."</em></p>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <span class="meta-label">Đạo Diễn / Tác Giả</span>
+                <span class="meta-value"><strong>@kenshoji.visuals</strong> (Ken Shoji - Tokyo)</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Thời Lượng &amp; Tỉ Lệ</span>
+                <span class="meta-value">28.12 Giây • 11 Phân Cảnh • 16:9 24fps</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Thiết Bị &amp; Màu Sắc</span>
+                <span class="meta-value">Nikon Z8 / Zf • N-Log Cinematic Grade • Tokyo Night</span>
+            </div>
+            <div class="meta-item">
+                <span class="meta-label">Bài Đăng Gốc</span>
+                <span class="meta-value"><a href="https://www.instagram.com/reel/DZOzwweTc5a/" target="_blank">Instagram Reel DZOzwweTc5a ↗</a></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 1: Philosophy & Core Techniques -->
+    <div class="section-block">
+        <h2 class="section-heading"><span class="sec-num">01.</span> Triết Lý Thị Giác &amp; 4 Kỹ Thuật Điện Ảnh Cốt Lõi</h2>
+        
+        <div class="tech-grid">
+            <div class="tech-card">
+                <div class="tech-title">📍 1. Static Lock-off (Khung Tĩnh Đón Bắt Chuyển Động)</div>
+                <div class="tech-desc">Thay vì di chuyển máy quay liên tục theo chủ thể, tác giả cố định máy quay tuyệt đối trên chân máy (Tripod). Khung hình tĩnh đóng vai trò như một 'sân khấu mở' để dòng người, tàu điện và ánh sáng đô thị tự do tràn vào, tạo nên sự chân thực và sống động tự nhiên nhất.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-title">⚡ 2. Velocity Contrast (Tương Phản Vận Tốc)</div>
+                <div class="tech-desc">Tạo điểm neo thị giác (Visual Anchor) bằng cách đặt một chủ thể bất động hoặc chi tiết kiến trúc tĩnh giữa dòng người đang di chuyển hối hả. Sự chênh lệch vận tốc giữa điểm tĩnh và luồng chuyển động xung quanh tạo ra chiều sâu triết lý về sự cô đơn và tĩnh lặng giữa lòng Tokyo.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-title">🏮 3. Practical Glow &amp; Teal-Amber Palette</div>
+                <div class="tech-desc">Khai thác tối đa ánh sáng thực tế (Practical Lights) từ đèn lồng đỏ Yokocho, đèn neon chữ Kanji, đèn pha ô tô và ánh sáng cửa hầm. Hòa sắc tương phản kinh điển giữa sắc ấm vàng hổ phách (Tungsten 3200K) và sắc lạnh xanh thẫm (Midnight Teal) tạo chiều sâu quang học chuẩn phim điện ảnh 35mm.</div>
+            </div>
+
+            <div class="tech-card">
+                <div class="tech-title">🥁 4. Visual Stutter &amp; Audio Pacing Sync</div>
+                <div class="tech-desc">Kỹ thuật cắt giật thị giác (Visual Stutter) xen kẽ giữa các cảnh tĩnh trường đoạn (5s - 11s) và các chuỗi micro-cuts siêu ngắn (0.2s) bắt đúng nhịp trống bass. Cấu trúc nhịp điệu: Khởi đầu nhanh ➔ Tĩnh lặng quan sát ➔ Đẩy cao trào giật nhịp ➔ Lắng đọng kết màn trường đoạn.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2: Storyboard Breakdown -->
+    <div class="section-block">
+        <h2 class="section-heading"><span class="sec-num">02.</span> Bảng Bóc Tách Chi Tiết 11 Phân Cảnh (Director Storyboard)</h2>
+
+        <div class="shot-card" id="shot-01">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 01</span>
+                    <h3 class="shot-main-title">Mở Màn: Cú Bứt Tốc Thị Giác & Tiêu Đề 'The Art of Static Shot'</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(0.0)">
+                    ⏱ [0.00s - 1.63s • 1.63s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_002_66f52422.jpg', 'Shot 01 - Khung Hình Bắt Đầu (0.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_002_66f52422.jpg" alt="Shot 01 Start">
+                    <span class="keyframe-label">Start • 0.00s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_004_5491ad4a.jpg', 'Shot 01 - Khung Hình Trung Tâm (Mở Màn: Cú Bứt Tốc Thị Giác & Tiêu Đề 'The Art of Static Shot')')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_004_5491ad4a.jpg" alt="Shot 01 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_006_6e867305.jpg', 'Shot 01 - Khung Hình Kết Thúc (1.63s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_006_6e867305.jpg" alt="Shot 01 End">
+                    <span class="keyframe-label">End • 1.63s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Đô thị Tokyo về đêm (Tokyo Urban Snapshots)<br><br>Mở màn bằng chuỗi cắt cảnh siêu tốc (Flash cuts) dồn dập bắt trọn từng nhịp beat nhạc điện tử hiện đại, lướt nhanh qua các lát cắt Tokyo về đêm rực rỡ trước khi dòng chữ tiêu đề trang nhã 'The art of static shot' hiện lên sắc sảo ở trung tâm khung hình. Thiết lập tiền đề tư duy: trước khi bước vào thế giới tĩnh lặng, người xem bị kích thích thị giác mạnh mẽ để tạo sự tò mò tối đa.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Fast-Paced Montage to Absolute Stillness (Tạo sự tương phản nhịp điệu cực hạn giữa động và tĩnh)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Dùng tốc độ cắt 2-4 frames/shot để tạo nhịp tim đập nhanh (Pacing contrast) trước khi 'hạ nhiệt' đưa người xem vào trạng thái chiêm nghiệm tĩnh. Dòng chữ tiêu đề đặt ở trung tâm với font chữ Sans-Serif tối giản chuẩn phong cách nhiếp ảnh Nhật Bản.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Nikon Z8 / Zf, tốc độ màn trập 1/50s (chuẩn 180° Shutter Angle), ISO 800-1600 trong ánh đèn đêm đô thị.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 01 (Out) ➔ Shot 02 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_008_04cc233e.jpg', 'Chuyển cảnh giữa Shot 01 và Shot 02')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_008_04cc233e.jpg" alt="Transition Shot 01 to 02">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Chớp sáng chuyển cảnh và các khung hình đường phố chuyển động nhanh bắt trọn ánh nhìn. • <strong>NoI (Next of In):</strong> Cắt dứt khoát sang Cảnh 02: Khung hình tĩnh đầu tiên của người quan sát giữa dòng người ga tàu.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-02">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 02</span>
+                    <h3 class="shot-main-title">Khung Hình Tĩnh Trường Đoạn: Người Quan Sát Giữa Dòng Người Ga Tàu</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(1.67)">
+                    ⏱ [1.67s - 6.83s • 5.17s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_010_bc3abfd8.jpg', 'Shot 02 - Khung Hình Bắt Đầu (1.67s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_010_bc3abfd8.jpg" alt="Shot 02 Start">
+                    <span class="keyframe-label">Start • 1.67s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_012_602a7b11.jpg', 'Shot 02 - Khung Hình Trung Tâm (Khung Hình Tĩnh Trường Đoạn: Người Quan Sát Giữa Dòng Người Ga Tàu)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_012_602a7b11.jpg" alt="Shot 02 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_014_6fa6963e.jpg', 'Shot 02 - Khung Hình Kết Thúc (6.83s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_014_6fa6963e.jpg" alt="Shot 02 End">
+                    <span class="keyframe-label">End • 6.83s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Ga tàu điện ngầm Tokyo / Lối cầu thang trung tâm<br><br>Cú máy tĩnh trường đoạn dài 5.17 giây tuyệt đối không rung lắc (Static Lock-off). Một nhân vật đứng bất động ngay giữa lối đi, trong khi dòng người Tokyo đang hối hả bước lên xuống cầu thang và sảnh chờ. Dòng người qua lại tạo thành các vệt chuyển động tự nhiên (Kinetic Motion), trong khi chủ thể và máy quay đứng yên như một tảng đá giữa dòng nước chảy xiết.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Velocity Contrast & Anchored Subject (Tương phản vận tốc: 1 điểm tĩnh vĩnh cửu đối lập với hàng trăm chuyển động ngẫu nhiên)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Khóa chặt máy quay trên tripod chân nặng. Bố cục nhân vật đứng ở 1/3 trung tâm, để dòng người tự do lấp đầy không gian xung quanh mà không cần can thiệp đạo diễn hiện trường.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Ống kính 35mm f/1.8 S, khẩu độ f/2.8 để giữ trường nét sâu (Deep DoF) từ chủ thể đến bậc cầu thang phía sau.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 02 (Out) ➔ Shot 03 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_016_f5b2d73c.jpg', 'Chuyển cảnh giữa Shot 02 và Shot 03')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_016_f5b2d73c.jpg" alt="Transition Shot 02 to 03">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Dòng người hối hả bước vào từ hai bên rìa khung hình cắt ngang không gian. • <strong>NoI (Next of In):</strong> Cắt sang Cảnh 03: Phối cảnh một điểm tụ ngã tư đường phố Tokyo lúc hoàng hôn.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-03">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 03</span>
+                    <h3 class="shot-main-title">Ngã Tư Tokyo Hoàng Hôn & Phối Cảnh Một Điểm Tụ (Leading Lines)</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(6.88)">
+                    ⏱ [6.88s - 8.75s • 1.88s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_018_bd290dcf.jpg', 'Shot 03 - Khung Hình Bắt Đầu (6.88s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_018_bd290dcf.jpg" alt="Shot 03 Start">
+                    <span class="keyframe-label">Start • 6.88s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_020_ac74eb8c.jpg', 'Shot 03 - Khung Hình Trung Tâm (Ngã Tư Tokyo Hoàng Hôn & Phối Cảnh Một Điểm Tụ (Leading Lines))')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_020_ac74eb8c.jpg" alt="Shot 03 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_022_a35729bd.jpg', 'Shot 03 - Khung Hình Kết Thúc (8.75s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_022_a35729bd.jpg" alt="Shot 03 End">
+                    <span class="keyframe-label">End • 8.75s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Ngã tư đường phố Tokyo / Giao lộ lúc chạng vạng<br><br>Bố cục điểm tụ sâu hút mắt giữa lòng phố Tokyo. Đèn pha ô tô và đèn tín hiệu giao thông bật sáng tạo nên các vệt sáng vàng cam ấm áp (Tungsten/Amber) tương phản với mặt đường nhựa và bầu trời xanh xám lạnh (Teal-Orange Harmony). Dòng người qua đường từ từ tiến vào và rời khỏi khung hình một cách tự nhiên.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> One-Point Perspective & Urban Color Contrast (Đường dẫn thị giác 1 điểm tụ kết hợp hòa sắc Teal-Amber)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Đặt máy quay ở tầm ngang ngực (Chest-level), căn chỉnh trục đối xứng của con đường thẳng tắp vào trung tâm khung hình để tạo cảm giác trật tự và quy củ đặc trưng của Nhật Bản.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 28mm f/2.0, kính lọc CPL phân cực nhẹ để kiểm soát độ phản xạ trên mặt kính ô tô.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 03 (Out) ➔ Shot 04 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_024_ad0a31e5.jpg', 'Chuyển cảnh giữa Shot 03 và Shot 04')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_024_ad0a31e5.jpg" alt="Transition Shot 03 to 04">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Xe cộ và người đi bộ bắt đầu bước vào vùng giao lộ từ hai mép khung hình. • <strong>NoI (Next of In):</strong> Sang Cảnh 04: Khung vòm kiến trúc đường hầm và bóng đổ tương phản cao.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-04">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 04</span>
+                    <h3 class="shot-main-title">Khung Lồng Khung Kiến Trúc & Nghệ Thuật Ngược Sáng Silhouette</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(8.79)">
+                    ⏱ [8.79s - 10.50s • 1.71s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_026_4c3815b2.jpg', 'Shot 04 - Khung Hình Bắt Đầu (8.79s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_026_4c3815b2.jpg" alt="Shot 04 Start">
+                    <span class="keyframe-label">Start • 8.79s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_028_f6be526e.jpg', 'Shot 04 - Khung Hình Trung Tâm (Khung Lồng Khung Kiến Trúc & Nghệ Thuật Ngược Sáng Silhouette)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_028_f6be526e.jpg" alt="Shot 04 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_030_d8e50a6d.jpg', 'Shot 04 - Khung Hình Kết Thúc (10.50s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_030_d8e50a6d.jpg" alt="Shot 04 End">
+                    <span class="keyframe-label">End • 10.50s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Cổng vòm lối đi ngầm / Gầm cầu vượt Shinjuku<br><br>Tận dụng vòm bê tông kiến trúc tạo thành khung lồng khung (Frame-within-a-Frame). Ánh sáng rực rỡ từ cửa hầm hắt ngược vào trong tạo bóng đổ ngược sáng (Silhouette) sắc nét của người bộ hành đang tản bộ qua đường hầm.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Architectural Tunnel Framing & Chiaroscuro Silhouette (Khung lồng khung kiến trúc kết hợp bóng đổ kịch tính)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Đo sáng điểm (Spot Metering) khóa vào vùng sáng bên ngoài cửa hầm để đẩy toàn bộ chi tiết bên trong vòm hầm và cơ thể nhân vật thành bóng đen tuyền (True Black Silhouette).<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 50mm f/1.8, khẩu f/4.0 để viền bóng silhouette đạt độ sắc nét quang học tối đa.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 04 (Out) ➔ Shot 05 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_032_d61b5f7a.jpg', 'Chuyển cảnh giữa Shot 04 và Shot 05')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_032_d61b5f7a.jpg" alt="Transition Shot 04 to 05">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Người đi bộ xuất hiện từ rìa bóng tối bước vào luồng sáng trung tâm. • <strong>NoI (Next of In):</strong> Sang Cảnh 05: Con hẻm ngõ nhỏ Yokocho lung linh ánh đèn lồng đỏ.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-05">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 05</span>
+                    <h3 class="shot-main-title">Con Hẻm Đêm Yokocho: Chiều Sâu Đô Thị & Hơi Nước Bốc Lên</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(10.54)">
+                    ⏱ [10.54s - 12.25s • 1.71s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_034_0cdd1765.jpg', 'Shot 05 - Khung Hình Bắt Đầu (10.54s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_034_0cdd1765.jpg" alt="Shot 05 Start">
+                    <span class="keyframe-label">Start • 10.54s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_036_42a95bb3.jpg', 'Shot 05 - Khung Hình Trung Tâm (Con Hẻm Đêm Yokocho: Chiều Sâu Đô Thị & Hơi Nước Bốc Lên)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_036_42a95bb3.jpg" alt="Shot 05 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_038_0b5721c1.jpg', 'Shot 05 - Khung Hình Kết Thúc (12.25s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_038_0b5721c1.jpg" alt="Shot 05 End">
+                    <span class="keyframe-label">End • 12.25s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Con hẻm ẩm thực đêm Omoide Yokocho / Golden Gai Tokyo<br><br>Con hẻm hẹp với những biển hiệu chữ Kanji phát sáng, đèn lồng đỏ ấm cúng và làn hơi nước bốc lên từ quán ăn ramen/izakaya. Một bóng người mặc áo khoác lướt qua ngõ, tạo cảm giác điện ảnh cổ điển (Neo-Noir Tokyo Cinema).</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Atmospheric Depth & Practical Light Glow (Tạo chiều sâu không gian qua lớp hơi nước và ánh sáng thực tế)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Tận dụng ánh sáng thực tế (Practical Lights) từ biển neon và đèn lồng để nhuộm màu không gian mà không cần thêm đèn phụ trợ. Hạt phim 35mm làm tăng tính thẩm mỹ mộc mạc.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 35mm f/1.4 mở lớn để đón trọn ánh sáng yếu, ISO 1250-1600.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 05 (Out) ➔ Shot 06 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_040_ba33667a.jpg', 'Chuyển cảnh giữa Shot 05 và Shot 06')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_040_ba33667a.jpg" alt="Transition Shot 05 to 06">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Làn khói hơi nước mờ ảo bay là là trước ống kính tạo chiều sâu khí quyển. • <strong>NoI (Next of In):</strong> Sang Cảnh 06: Góc nhìn kiến trúc hình học tối giản và không gian âm.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-06">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 06</span>
+                    <h3 class="shot-main-title">Hình Học Tối Giản Kiến Trúc & Không Gian Âm (Negative Space)</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(12.29)">
+                    ⏱ [12.29s - 14.00s • 1.71s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_042_0feb8ea9.jpg', 'Shot 06 - Khung Hình Bắt Đầu (12.29s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_042_0feb8ea9.jpg" alt="Shot 06 Start">
+                    <span class="keyframe-label">Start • 12.29s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_044_6faf5241.jpg', 'Shot 06 - Khung Hình Trung Tâm (Hình Học Tối Giản Kiến Trúc & Không Gian Âm (Negative Space))')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_044_6faf5241.jpg" alt="Shot 06 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_046_3b8314d3.jpg', 'Shot 06 - Khung Hình Kết Thúc (14.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_046_3b8314d3.jpg" alt="Shot 06 End">
+                    <span class="keyframe-label">End • 14.00s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Mặt tiền tòa nhà kính hiện đại Tokyo / Cửa sổ tầng cao<br><br>Đường nét kiến trúc thẳng đứng mạnh mẽ với mảng kính phản chiếu bầu trời xám bạc. Một nhân vật đơn độc di chuyển dọc theo mép tường ở 1/3 khung hình dưới, tạo sự cô đơn hiện đại (Urban Isolation & Negative Space).</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Negative Space & Urban Scale Contrast (Tương phản tỉ lệ: Con người nhỏ bé giữa hình học kiến trúc khổng lồ)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Áp dụng quy tắc 1/3 và tỷ lệ vàng (Golden Ratio) để nhấn mạnh sự nhỏ bé của con người trước quy mô đồ sộ của kiến trúc đô thị hiện đại.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 85mm f/2.8 nén phối cảnh (Lens Compression) giúp các mảng kính kiến trúc phẳng và đồ sộ hơn.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 06 (Out) ➔ Shot 07 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_048_7e5d53eb.jpg', 'Chuyển cảnh giữa Shot 06 và Shot 07')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_048_7e5d53eb.jpg" alt="Transition Shot 06 to 07">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Nhân vật bước ngang qua dải kính phản quang với nhịp chân thong thả. • <strong>NoI (Next of In):</strong> Sang Cảnh 07: Chuỗi nhịp gõ dồn dập (Mid-Montage Pulse).
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-07">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 07</span>
+                    <h3 class="shot-main-title">Cú Bứt Tốc Nhịp Độ Giữa Bài (Mid-Video Visual Stutter)</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(14.04)">
+                    ⏱ [14.04s - 15.17s • 1.13s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_050_3493bced.jpg', 'Shot 07 - Khung Hình Bắt Đầu (14.04s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_050_3493bced.jpg" alt="Shot 07 Start">
+                    <span class="keyframe-label">Start • 14.04s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_052_be825410.jpg', 'Shot 07 - Khung Hình Trung Tâm (Cú Bứt Tốc Nhịp Độ Giữa Bài (Mid-Video Visual Stutter))')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_052_be825410.jpg" alt="Shot 07 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_054_b8a74b48.jpg', 'Shot 07 - Khung Hình Kết Thúc (15.17s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_054_b8a74b48.jpg" alt="Shot 07 End">
+                    <span class="keyframe-label">End • 15.17s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Chuỗi lát cắt giao lộ và phố phường Tokyo<br><br>Chuỗi 4 micro-cuts siêu ngắn (0.2s - 0.3s mỗi cảnh) chuyển đổi chớp nhoáng giữa các góc máy tĩnh khác nhau: vệt sáng xe buýt lướt qua, bóng người qua vạch kẻ đường, đèn tín hiệu nhảy nhót, phản chiếu mặt nước đọng.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Visual Stutter & Rhythmic Sync (Cắt giật thị giác đồng bộ hoàn hảo với tiết tấu âm thanh)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Thủ pháp Visual Stutter (Cắt giật thị giác) tạo điểm nhấn cao trào giữa video, chứng minh rằng khung hình tĩnh khi ghép nối với nhịp dựng gãy gọn vẫn tạo ra năng lượng thị giác bùng nổ.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Khớp nối frame chính xác trên dòng thời gian (Timeline Edit) theo từng đỉnh sóng âm thanh (Audio Waveform Peak).
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 07 (Out) ➔ Shot 08 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_056_bf5515d8.jpg', 'Chuyển cảnh giữa Shot 07 và Shot 08')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_056_bf5515d8.jpg" alt="Transition Shot 07 to 08">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Nhát cắt liên hoàn đánh trúng từng nhịp bass của bài nhạc. • <strong>NoI (Next of In):</strong> Sang Cảnh 08: Góc nhìn cận cảnh người bộ hành đơn độc.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-08">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 08</span>
+                    <h3 class="shot-main-title">Góc Trung Toàn: Người Bộ Hành Đơn Độc Chờ Đèn Đỏ</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(15.21)">
+                    ⏱ [15.21s - 15.75s • 0.54s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_058_9f69d6cd.jpg', 'Shot 08 - Khung Hình Bắt Đầu (15.21s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_058_9f69d6cd.jpg" alt="Shot 08 Start">
+                    <span class="keyframe-label">Start • 15.21s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_060_5c4f721b.jpg', 'Shot 08 - Khung Hình Trung Tâm (Góc Trung Toàn: Người Bộ Hành Đơn Độc Chờ Đèn Đỏ)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_060_5c4f721b.jpg" alt="Shot 08 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_062_00bc9b25.jpg', 'Shot 08 - Khung Hình Kết Thúc (15.75s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_062_00bc9b25.jpg" alt="Shot 08 End">
+                    <span class="keyframe-label">End • 15.75s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Góc phố vắng Tokyo lúc nửa đêm<br><br>Góc nhìn tĩnh đặc tả một người đi bộ đứng chờ đèn đỏ bên cột đèn đường đơn độc. Hậu cảnh là ánh đèn mờ ảo của các tòa nhà cao tầng và bầu không khí tĩnh mịch.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Fleeting Solitude Frame (Ghi nhận khoảnh khắc cô độc thoáng qua của người dân đô thị)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Khung hình cô đọng, tạo khoảng lặng cảm xúc trước khi bước vào trường đoạn cao trào kết thúc.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 50mm f/1.8, bắt nét khóa chặt vào nhân vật trung tâm.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 08 (Out) ➔ Shot 09 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_064_2363d336.jpg', 'Chuyển cảnh giữa Shot 08 và Shot 09')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_064_2363d336.jpg" alt="Transition Shot 08 to 09">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Nhân vật đứng yên nhìn sang trái, chờ tín hiệu giao thông bật sáng. • <strong>NoI (Next of In):</strong> Sang Cảnh 09: Vệt chuyển động cắt ngang tiền cảnh.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-09">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 09</span>
+                    <h3 class="shot-main-title">Vệt Cắt Tiền Cảnh: Chiếc Xe Đạp Lướt Ngang Khung Hình</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(15.79)">
+                    ⏱ [15.79s - 16.33s • 0.54s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_066_816a5e72.jpg', 'Shot 09 - Khung Hình Bắt Đầu (15.79s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_066_816a5e72.jpg" alt="Shot 09 Start">
+                    <span class="keyframe-label">Start • 15.79s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_068_6a798b6e.jpg', 'Shot 09 - Khung Hình Trung Tâm (Vệt Cắt Tiền Cảnh: Chiếc Xe Đạp Lướt Ngang Khung Hình)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_068_6a798b6e.jpg" alt="Shot 09 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_070_5121491b.jpg', 'Shot 09 - Khung Hình Kết Thúc (16.33s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_070_5121491b.jpg" alt="Shot 09 End">
+                    <span class="keyframe-label">End • 16.33s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Lề đường phố Tokyo<br><br>Một người đi xe đạp phóng nhanh qua tiền cảnh từ trái sang phải, tạo thành một vệt mờ chuyển động (Motion Blur Wipe) che khuất rồi mở ra không gian phía sau.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Natural Foreground Wipe Transition (Chuyển cảnh bằng vật thể tiền cảnh lướt ngang tự nhiên)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Tận dụng vật thể tiền cảnh cắt ngang (Foreground Wipe) tạo sự chuyển tiếp tự nhiên không cần kỹ xảo đồ họa.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tốc độ màn trập 1/50s tạo độ nhòe chuyển động (Natural Motion Blur) mượt mà chuẩn điện ảnh 24fps.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 09 (Out) ➔ Shot 10 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_072_9c462f97.jpg', 'Chuyển cảnh giữa Shot 09 và Shot 10')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_072_9c462f97.jpg" alt="Transition Shot 09 to 10">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Bánh xe và thân người lướt sát mặt kính máy quay tạo chuyển động dứt khoát. • <strong>NoI (Next of In):</strong> Sang Cảnh 10: Tàu điện siêu tốc lướt qua sân ga.
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-10">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 10</span>
+                    <h3 class="shot-main-title">Năng Lượng Giải Phóng: Tàu Điện Vụt Qua Sân Ga</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(16.38)">
+                    ⏱ [16.38s - 16.92s • 0.54s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_074_4e8d5d8d.jpg', 'Shot 10 - Khung Hình Bắt Đầu (16.38s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_074_4e8d5d8d.jpg" alt="Shot 10 Start">
+                    <span class="keyframe-label">Start • 16.38s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_076_0d5945b7.jpg', 'Shot 10 - Khung Hình Trung Tâm (Năng Lượng Giải Phóng: Tàu Điện Vụt Qua Sân Ga)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_076_0d5945b7.jpg" alt="Shot 10 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_078_aecd4f04.jpg', 'Shot 10 - Khung Hình Kết Thúc (16.92s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_078_aecd4f04.jpg" alt="Shot 10 End">
+                    <span class="keyframe-label">End • 16.92s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Đường ray tàu điện Yamanote Line Tokyo<br><br>Toa tàu điện sáng đèn lao nhanh qua khung hình tĩnh, tạo nên những vệt sọc ánh sáng ngang liên tục (Horizontal Light Streaks), kết thúc chuỗi tăng tốc nhịp điệu.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Kinetic Climax to Absolute Serenity (Giải phóng toàn bộ năng lượng động trước khi bước vào đại cảnh kết màn)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Sự tương phản cực đại giữa tốc độ cao của đoàn tàu và góc máy hoàn toàn bất động tạo lực hút thị giác mãnh liệt.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Tiêu cự 35mm f/2.0, bảo vệ dải sáng highlight của đèn toa tàu.
+                    </div>
+                </div>
+            </div>
+    
+            <div class="transition-block">
+                <div class="trans-title">🔄 Chuyển Cảnh: Shot 10 (Out) ➔ Shot 11 (In)</div>
+                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_080_f595ea03.jpg', 'Chuyển cảnh giữa Shot 10 và Shot 11')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_080_f595ea03.jpg" alt="Transition Shot 10 to 11">
+                </div>
+                <div style="font-size:12.5px; color:var(--text-secondary); margin-top:8px;">
+                    <strong>MoI (Moment of In):</strong> Đầu tàu lao vào khung hình xé toạc màn đêm với ánh đèn rực rỡ. • <strong>NoI (Next of In):</strong> Chuyển sang Cảnh 11: Khung hình tĩnh tuyệt tác kết màn (Master Climax).
+                </div>
+            </div>
+            </div>
+        <div class="shot-card" id="shot-11">
+            <div class="shot-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge">SHOT 11</span>
+                    <h3 class="shot-main-title">Tuyệt Tác Kết Màn: Triết Lý Đạo Diễn 'Let the World Move, Let the Frame Stay Still'</h3>
+                </div>
+                <button class="time-badge" onclick="playVideoAt(16.96)">
+                    ⏱ [16.96s - 28.08s • 11.12s] ▶ Nhảy Đến Cảnh
+                </button>
+            </div>
+
+            <!-- Keyframes -->
+            <div class="keyframes-row">
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_082_438d98ca.jpg', 'Shot 11 - Khung Hình Bắt Đầu (16.96s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_082_438d98ca.jpg" alt="Shot 11 Start">
+                    <span class="keyframe-label">Start • 16.96s</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_084_7b77816e.jpg', 'Shot 11 - Khung Hình Trung Tâm (Tuyệt Tác Kết Màn: Triết Lý Đạo Diễn 'Let the World Move, Let the Frame Stay Still')')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_084_7b77816e.jpg" alt="Shot 11 Mid">
+                    <span class="keyframe-label">Mid Frame (Trọng tâm)</span>
+                </div>
+                <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_086_3d0172d9.jpg', 'Shot 11 - Khung Hình Kết Thúc (28.08s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_086_3d0172d9.jpg" alt="Shot 11 End">
+                    <span class="keyframe-label">End • 28.08s</span>
+                </div>
+            </div>
+
+            <!-- Details -->
+            <div class="shot-details-grid">
+                <div class="detail-pane">
+                    <div class="pane-label">👁 Bối Cảnh &amp; Diễn Biến Thị Giác</div>
+                    <div class="pane-text"><strong>Địa điểm:</strong> Góc nhìn toàn cảnh ngã tư Tokyo / Cầu vượt ngắm nhìn thành phố<br><br>Cú máy tĩnh dài nhất (11.12 giây) - Trái tim và linh hồn của toàn bộ tác phẩm. Khung hình tĩnh tuyệt mỹ thu trọn nhịp sống Tokyo: xe cộ trôi như dòng sông ánh sáng, người đi bộ rảo bước qua ngã tư, tán cây khẽ rung trong gió, các tòa nhà chọc trời đứng sừng sững. Dòng chữ triết lý cốt lõi xuất hiện trang nhã từng dòng: 'Let the world move, Let the frame stay still.' (Hãy để thế giới chuyển động, để khung hình đứng yên.) Khép lại bằng chữ ký nghệ thuật @kenshoji.visuals.</div>
+                </div>
+                <div class="detail-pane">
+                    <div class="pane-label">🎬 Ngôn Ngữ Đạo Diễn &amp; Ghi Chú Kỹ Thuật</div>
+                    <div class="pane-text">
+                        <strong>Kỹ thuật:</strong> Long-Take Master Static Frame & Philosophical Statement (Tuyên ngôn nghệ thuật: Khung hình tĩnh là chiếc khung lưu giữ sự sống)<br><br>
+                        <strong>Ý đồ đạo diễn:</strong> Giữ khung hình tĩnh trường đoạn hơn 11 giây đòi hỏi bố cục (Composition) phải đạt đến độ hoàn hảo về tỉ lệ, ánh sáng và nhịp điệu chuyển động nội tại (Internal Movement). Đây là bài học đạo diễn tối thượng: Máy quay không cần phải chuyển động để tạo ra sự sống; sự sống tự lấp đầy khung hình khi người quay biết cách kiên nhẫn quan sát.<br><br>
+                        <strong>Thông số máy &amp; Lens:</strong> Nikon Z8 / Zf với ống kính 35mm f/1.8 S, dải màu N-Log xử lý Cinematic LUT, tone ấm vàng hổ phách và xanh lam thẫm (Warm Amber & Midnight Blue), hạt phim 35mm hữu cơ (Organic Film Grain).
+                    </div>
+                </div>
+            </div>
+    </div>
+    </div>
+
+    <!-- Section 3: Shooting Script for Creators -->
+    <div class="section-block">
+        <h2 class="section-heading"><span class="sec-num">03.</span> Kịch Bản Thực Chiến Ứng Dụng (Shooting Script Cho Nhà Sáng Tạo)</h2>
+        <p style="color:var(--text-secondary); margin-bottom:16px;">Bảng tổng hợp kịch bản quay phim thực chiến áp dụng trực tiếp cho các dự án video du ký, thời trang đường phố, ẩm thực hoặc phim tài liệu ngắn:</p>
+        
+        <table class="script-table">
+            <thead>
+                <tr>
+                    <th style="width:70px;">Cảnh</th>
+                    <th style="width:130px;">Thời Gian</th>
+                    <th style="width:200px;">Góc Máy &amp; Tiêu Cự</th>
+                    <th>Nội Dung Hành Động &amp; Điểm Tựa Thị Giác</th>
+                    <th style="width:200px;">Âm Thanh &amp; Nhịp Dựng</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="shot-col">Shot 01</td>
+                    <td>0.00s - 1.63s</td>
+                    <td>Montage Rapid Cut (35mm)</td>
+                    <td>Chớp sáng tiêu đề 'The art of static shot', lướt nhanh lát cắt đêm Tokyo</td>
+                    <td>Beat dồn dập, tiếng xẹt điện tử mở màn</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 02</td>
+                    <td>1.67s - 6.83s</td>
+                    <td>Static Master (35mm f/2.8)</td>
+                    <td>Nhân vật đứng bất động giữa dòng người ga tàu hối hả lên cầu thang</td>
+                    <td>Tiếng bước chân rộn rã, tiếng thông báo ga ngầm</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 03</td>
+                    <td>6.88s - 8.75s</td>
+                    <td>One-Point Wide (28mm f/2.0)</td>
+                    <td>Ngã tư hoàng hôn, xe cộ và người đi bộ trôi qua điểm tụ ánh sáng</td>
+                    <td>Tiếng còi xe xa xa, tiếng động cơ êm ái</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 04</td>
+                    <td>8.79s - 10.50s</td>
+                    <td>Tunnel Silhouette (50mm f/4)</td>
+                    <td>Khung lồng khung vòm bê tông, bóng người đổ ngược sáng rực rỡ</td>
+                    <td>Tiếng vang vọng bước chân trong đường hầm</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 05</td>
+                    <td>10.54s - 12.25s</td>
+                    <td>Atmospheric Alley (35mm f/1.4)</td>
+                    <td>Con hẻm ngõ Yokocho, đèn lồng đỏ và hơi nước bốc lên từ quán ăn</td>
+                    <td>Tiếng xèo xèo nướng thịt, tiếng nói cười lao xao</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 06</td>
+                    <td>12.29s - 14.00s</td>
+                    <td>Negative Space (85mm f/2.8)</td>
+                    <td>Mặt kính tòa nhà cao tầng, nhân vật đơn độc rảo bước mép tường</td>
+                    <td>Tiếng gió nhẹ thổi qua khe cao ốc</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 07</td>
+                    <td>14.04s - 15.17s</td>
+                    <td>Micro Flash Cuts (35-50mm)</td>
+                    <td>Chuỗi 4 nhát cắt giật liên hoàn: đèn giao thông, vạch kẻ đường, bóng người</td>
+                    <td>4 nhịp gõ trống bass liên tục đánh trúng khung</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 08</td>
+                    <td>15.21s - 15.75s</td>
+                    <td>Medium Wide (50mm f/1.8)</td>
+                    <td>Người bộ hành đứng chờ đèn đỏ bên cột đèn đường vắng lặng</td>
+                    <td>Khoảng lặng âm thanh (Ambient Silence)</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 09</td>
+                    <td>15.79s - 16.33s</td>
+                    <td>Foreground Wipe (35mm f/2.8)</td>
+                    <td>Người đi xe đạp lướt nhanh sát mặt kính máy quay xé toạc khung hình</td>
+                    <td>Tiếng xích líp xe đạp và tiếng gió vút qua</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 10</td>
+                    <td>16.38s - 16.92s</td>
+                    <td>Kinetic Motion (35mm f/2.0)</td>
+                    <td>Đoàn tàu điện Yamanote Line lao vút qua với các dải sáng ngang rực rỡ</td>
+                    <td>Tiếng tàu điện gầm rú giải phóng năng lượng</td>
+                </tr>
+                <tr>
+                    <td class="shot-col">Shot 11</td>
+                    <td>16.96s - 28.08s</td>
+                    <td>Grand Master (35mm f/1.8)</td>
+                    <td>Cú máy tĩnh dài 11s ngắm toàn cảnh ngã tư Tokyo, dòng chữ triết lý xuất hiện</td>
+                    <td>Giai điệu piano du dương lắng đọng tâm hồn</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Bottom Links Box -->
+    <div class="bottom-links-card">
+        <div class="bottom-links-title">🔗 Liên Kết Mở File Cục Bộ &amp; Tra Cứu Trực Tuyến</div>
+        <p style="color:var(--text-secondary); margin-bottom:18px; font-size:13.5px;">Báo cáo đã được đóng gói hoàn chỉnh và đồng bộ lên toàn bộ hệ thống lưu trữ đám mây &amp; cổng điện ảnh:</p>
+        
+        <div class="links-grid">
+            <a class="link-btn" href="file:///Users/vietmac/Documents/CODE/Video%20phan%20tich/output_packages/IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot" target="_blank">
+                📁 Mở Thư Mục Gói Dự Án Trong Finder
+            </a>
+            <a class="link-btn" href="file:///Users/vietmac/Documents/CODE/Video%20phan%20tich/output_packages/IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot/The%20Art%20of%20Static%20Shot%20-%20@kenshoji.visuals.html" target="_blank">
+                🌐 Mở Báo Cáo HTML Trong Máy (Có Video)
+            </a>
+            <a class="link-btn" href="file:///Users/vietmac/Documents/CODE/Video%20phan%20tich/output_packages/IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot/The%20Art%20of%20Static%20Shot%20-%20@kenshoji.visuals.pdf" target="_blank">
+                📄 Mở Báo Cáo PDF Trong Máy
+            </a>
+            <a class="link-btn" href="file:///Users/vietmac/Documents/CODE/Video%20phan%20tich/output_packages/IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot/The%20Art%20of%20Static%20Shot%20-%20@kenshoji.visuals.mp4" target="_blank">
+                ▶ Mở Tệp Video MP4 Gốc
+            </a>
+            <a class="link-btn" href="https://vietndj.github.io/scene.html" target="_blank" style="border-color:var(--accent-blue);">
+                🚀 Mở Cổng Tra Cứu Điện Ảnh Trực Tuyến ↗
+            </a>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Video Button -->
+<button class="fab-video" onclick="openVideoModal(0)">
+    ▶ Xem Video Đầy Đủ
+</button>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(null)">&times;</span>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Zoomed Keyframe">
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<!-- Video Jump Modal -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="video-box-wrap" onclick="event.stopPropagation()">
+        <div class="video-modal-header">
+            <span class="video-modal-title">🎬 Video Trực Tuyến &amp; Nhảy Mốc Thời Gian</span>
+            <span class="video-modal-close" onclick="closeVideoModal(null)">&times;</span>
+        </div>
+        <video id="playerVideo" class="modal-video" controls playsinline>
+            <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Static%20Shot%20-%20%40kenshoji.visuals.mp4" type="video/mp4">
+        <source src="The Art of Static Shot - @kenshoji.visuals.mp4" type="video/mp4">
+            <source src="../videos/The Art of Static Shot - @kenshoji.visuals.mp4" type="video/mp4">
+            <source src="./videos/The Art of Static Shot - @kenshoji.visuals.mp4" type="video/mp4">
+            Trình duyệt không hỗ trợ thẻ video.
+        </video>
+    </div>
+</div>
+
+<script>
+function openLightbox(src, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = src;
+    cap.innerText = caption || '';
+    modal.classList.add('active');
+}
+
+function closeLightbox(e) {
+    if (!e || e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightboxModal').classList.remove('active');
+    }
+}
+
+function openVideoModal(timestamp) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    if (!modal || !video) return;
+    
+    modal.classList.add('active');
+    modal.style.display = 'flex';
+    
+    const targetTime = (typeof timestamp === 'number') ? timestamp : (parseFloat(timestamp) || 0);
+    
+    const applySeek = () => {
+        try {
+            if (targetTime > 0) {
+                video.currentTime = targetTime;
+            }
+        } catch(e) {
+            console.warn('Seek error:', e);
+        }
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(() => {
+                video.muted = true;
+                video.play().catch(err => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    if (video.readyState >= 1) {
+        applySeek();
+    } else {
+        video.addEventListener('loadedmetadata', applySeek, { once: true });
+        video.load();
+    }
+}
+
+function jumpToTime(sec) {
+    openVideoModal(sec);
+}
+
+function closeVideoModal(e) {
+    if (!e || e.target.id === 'videoModal' || e.target.classList.contains('video-modal-close')) {
+        const modal = document.getElementById('videoModal');
+        const video = document.getElementById('playerVideo');
+        video.pause();
+        modal.classList.remove('active');
+    }
+}
+
+function playVideoAt(seconds) {
+    openVideoModal(seconds);
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox(null);
+        closeVideoModal(null);
+    }
+});
+</script>
+
+</body>
+</html>

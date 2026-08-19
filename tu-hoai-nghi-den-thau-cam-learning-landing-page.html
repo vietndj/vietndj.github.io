@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ Hoài Nghi Đến Thấu Cảm | Learning Landing Page</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Space Grotesk', 'sans-serif'],
+                    },
+                    colors: {
+                        healing: {
+                            50: '#f2fbf5',
+                            100: '#e0f5e7',
+                            200: '#c2ebd1',
+                            500: '#4ade80',
+                            600: '#22c55e',
+                            800: '#166534',
+                            900: '#14532d'
+                        },
+                        warm: {
+                            50: '#fffcf7',
+                            100: '#fef3dd',
+                            800: '#92400e'
+                        },
+                        dark: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { scroll-behavior: smooth; }
+        
+        /* CSS Abstract Art Utilities */
+        .abstract-blob-1 {
+            background-image: radial-gradient(circle at 10% 20%, rgba(74, 222, 128, 0.1) 0%, transparent 40%),
+                              radial-gradient(circle at 90% 80%, rgba(254, 243, 221, 0.5) 0%, transparent 40%);
+        }
+        .abstract-pattern {
+            background-image: linear-gradient(#e0f5e7 1px, transparent 1px), linear-gradient(90deg, #e0f5e7 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .card-abstract-header {
+            background: linear-gradient(135deg, rgba(224,245,231,1) 0%, rgba(254,243,221,1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .card-abstract-header::after {
+            content: '';
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.4);
+            backdrop-filter: blur(5px);
+        }
+        .card-abstract-header::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            bottom: -10px;
+            width: 40px;
+            height: 40px;
+            transform: rotate(45deg);
+            background: rgba(34, 197, 94, 0.1);
+        }
+
+        /* Hide scrollbar for mermaid container */
+        #mermaid-wrapper::-webkit-scrollbar { display: none; }
+        #mermaid-wrapper { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-warm-50 text-dark font-sans antialiased abstract-blob-1">
+
+    <!-- HERO SECTION: THE BIG IDEA -->
+    <section class="max-w-6xl mx-auto px-6 pt-20 pb-16 relative">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+            <span class="inline-block py-1 px-3 rounded-full bg-healing-100 text-healing-800 font-semibold text-sm mb-4 tracking-wide">
+                🌱 TÂM LÝ HỌC & PHÁT TRIỂN BẢN THÂN
+            </span>
+            <h1 class="text-4xl md:text-5xl font-heading font-bold text-dark mb-6 leading-tight">
+                Từ Hoài Nghi Đến Thấu Cảm: <br> <span class="text-healing-600">Hành Trình Gỡ Bỏ Nhãn Mác</span>
+            </h1>
+            <p class="text-xl text-gray-600 leading-relaxed font-light">
+                <strong class="text-dark">Luận điểm cốt lõi:</strong> Cuộc sống không phải là chạy theo một bản danh sách kỳ vọng của xã hội để rồi thấy trống rỗng. Đó là hành trình bóc tách sự hoài nghi bản thân, nuôi dưỡng lòng trắc ẩn trong các mối quan hệ và dũng cảm thiết lập ranh giới để bảo vệ năng lượng của chính mình.
+            </p>
+        </div>
+
+        <!-- MINDMAP CONTAINER -->
+        <div class="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-gray-100 overflow-hidden relative">
+            <!-- Header of mindmap -->
+            <div class="bg-gray-50 border-b border-gray-100 px-6 py-4 flex justify-between items-center">
+                <h3 class="font-heading font-bold text-lg text-gray-700"><i class="fa-solid fa-sitemap mr-2 text-healing-600"></i> Bức Tranh Toàn Cảnh (Mindmap)</h3>
+                
+                <!-- Zoom Controls -->
+                <div class="flex gap-2 bg-white rounded-lg p-1 border border-gray-200 shadow-sm">
+                    <button onclick="zoomMindmap(0.1)" class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors" title="Phóng to">
+                        <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    </button>
+                    <div class="w-px bg-gray-200"></div>
+                    <button onclick="zoomMindmap(-0.1)" class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors" title="Thu nhỏ">
+                        <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    </button>
+                    <div class="w-px bg-gray-200"></div>
+                    <button onclick="resetMindmap()" class="w-8 h-8 flex items-center justify-center rounded hover:bg-gray-100 text-gray-600 transition-colors" title="Mặc định">
+                        <i class="fa-solid fa-compress"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mermaid Area -->
+            <div id="mermaid-outer" class="w-full h-[600px] overflow-hidden bg-white abstract-pattern relative cursor-grab active:cursor-grabbing flex items-center justify-center">
+                <div id="mermaid-container" class="transition-transform duration-200 ease-out origin-center" style="transform: scale(1);">
+                    <pre class="mermaid">
+mindmap
+  root((Từ Hoài Nghi<br>Đến Thấu Cảm))
+    Nhận Thức Bản Thân
+      Ảo Tưởng Kỳ Vọng Xã Hội
+      Hội Chứng Kẻ Mạo Danh
+      Tái Định Vị Mục Đích
+    Lăng Kính Mối Quan Hệ
+      Thấu Cảm Thay Vì Phán Xét
+      Vượt Qua "Mùa Đông Hôn Nhân"
+      Sức Mạnh Của Sự Yếu Đuối
+    Kỷ Luật & Năng Lượng
+      Quy Tắc Bình Oxy
+      Thiết Lập Ranh Giới Thép
+      Chuyển Hóa Nỗi Đau
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!-- Youtube Button -->
+        <div class="mt-8 flex justify-center">
+            <a href="https://youtu.be/D67eWcX2XYQ" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-2xl font-bold hover:bg-healing-600 hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+                <i class="fa-brands fa-youtube text-red-500 text-2xl"></i>
+                <span class="text-lg">Michelle Obama - Lời Khuyên Định Hình Lại Tư Duy</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SECTION 2: DEEP INSIGHTS -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="mb-12">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4 flex items-center gap-3">
+                <i class="fa-solid fa-brain text-healing-500"></i> 9 Trụ Cột Tri Thức Cốt Lõi
+            </h2>
+            <p class="text-gray-600 text-lg">Bóc tách tư duy từ bề mặt xuống tầng rễ sâu nhất.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Insight 1 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">1. Ảo Tưởng Kỳ Vọng</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Chạy theo những mục tiêu người khác coi là "đỉnh cao" (trường top, nghề danh giá) chỉ để nhận lại sự trống rỗng tận cùng khi chạm đích.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Não bộ khao khát cảm giác an toàn từ "Social Proof" (bằng chứng xã hội). Đám đông vỗ tay khiến não tiết ra Dopamine ngắn hạn, che mờ đi nhu cầu nội tâm thực sự.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ẩn dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">"Nó giống như việc bạn cố gắng trèo lên đỉnh của một chiếc thang rất cao, để rồi khi lên tới nơi mới nhận ra chiếc thang đang dựa nhầm bức tường."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 2 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">2. Hội Chứng Kẻ Mạo Danh</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Là tiếng nói thầm thì trong đầu: "Mình không đủ giỏi", "Họ sắp phát hiện ra mình chỉ đang ăn may thôi" dù bạn thực sự có năng lực.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Sinh ra từ một môi trường luôn đánh giá và gán mác. Khi bạn là thiểu số trong một môi trường tinh hoa, não bộ kích hoạt chế độ phòng vệ, liên tục quét các tín hiệu "nguy hiểm" (sự từ chối).</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ví dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">Michelle học tại Princeton - môi trường toàn người da trắng thượng lưu. Bà luôn phải làm việc gấp đôi chỉ để chứng minh mình "xứng đáng" ngồi ở chiếc ghế đó.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 3 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">3. Lăng Kính Thấu Cảm</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Nhìn xuyên qua sự xù xì, cay nghiệt của người khác để thấy được nỗi sợ hãi hoặc tổn thương sâu thẳm bên trong họ.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Thay vì để não bộ phản ứng bằng "Fight or Flight" (Chiến đấu hay bỏ chạy) trước sự xúc phạm, việc bật tư duy thấu cảm giúp chuyển quyền kiểm soát lên thùy trán, tạo ra phản ứng bình tĩnh và bao dung.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ẩn dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">"Một con chó sủa ầm ĩ và cắn người thường không phải vì nó mạnh mẽ, mà vì nó đang bị thương hoặc quá hoảng sợ góc kẹt."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 4 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">4. Mùa Đông Hôn Nhân</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Chấp nhận rằng trong một mối quan hệ dài hạn, sẽ có những khoảng thời gian (tính bằng năm) bạn cảm thấy "không thể chịu đựng nổi" đối phương.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Sự thay đổi về vai trò (đặc biệt khi có con) làm suy kiệt cả thể chất lẫn Oxytocin (hormone gắn kết). Sự thiếu vắng này tạo ra khoảng trống cho sự oán giận len lỏi.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ví dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">Michelle chia sẻ thẳng thắn có hẳn 10 năm đầu hôn nhân bà cảm thấy "muốn ném Barack ra ngoài cửa sổ" vì áp lực phân chia trách nhiệm gia đình.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 5 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">5. Quy Tắc Bình Oxy</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Tự chăm sóc bản thân và lấp đầy niềm vui của chính mình trước khi cố gắng hi sinh để chăm lo cho người thân.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Khi bạn liên tục hi sinh trong tình trạng kiệt sức, não bộ sẽ ghi sổ "nợ" ngầm (resentment). Bạn trao đi nhưng với một năng lượng độc hại, đòi hỏi sự đền đáp.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ẩn dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">"Giống như quy tắc trên máy bay: Khi có sự cố, bạn phải đeo mặt nạ oxy cho chính mình trước khi giúp đứa trẻ bên cạnh. Bạn không thể rót nước từ một chiếc bình rỗng."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 6 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">6. Ranh Giới Bảo Vệ</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Biết cách nói "Không" một cách dứt khoát để bảo vệ không gian tĩnh lặng và sức khỏe tinh thần của mình khỏi sự xâm phạm của người khác.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Việc liên tục để người khác vượt qua giới hạn làm tăng nồng độ Cortisol (stress). Ranh giới cứng giúp hệ thần kinh có không gian an toàn để phục hồi.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ví dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">Thiết lập quy tắc với ekip Nhà Trắng: Không làm việc vào giờ ăn tối cùng các con, bất kể lịch trình của Tổng thống bận rộn thế nào.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 7 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">7. Chuyển Hóa Nỗi Đau</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Nỗi buồn mất mát không bao giờ thực sự nhỏ lại hay biến mất, chúng ta chỉ đang học cách phát triển và xây dựng cuộc sống to lớn hơn xung quanh nó.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Sự kháng cự nỗi đau gây ra khủng hoảng kéo dài. Sự "chấp nhận" (Acceptance) tái cấu trúc lại nhận thức, cho phép não bộ lưu trữ nỗi đau như một phần của bản sắc thay vì một mối đe dọa.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ẩn dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">"Nỗi đau giống như hòn đá trong chiếc lọ. Hòn đá không hề nhỏ đi theo thời gian, nhưng chiếc lọ (cuộc đời bạn) đã lớn lên và chứa đựng thêm nhiều thứ khác."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 8 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">8. Sức Mạnh Sự Yếu Đuối</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Sự hoàn hảo tạo ra khoảng cách, sự chân thật và dám phơi bày tổn thương (vulnerability) mới là thứ tạo ra kết nối con người thực sự.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Khi bạn chia sẻ điểm yếu, "hiệu ứng Pratfall" (tâm lý học) được kích hoạt, khiến người khác thấy bạn đáng tin cậy, đồng cảm và dễ gần hơn là một hình mẫu không tì vết.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ví dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">Phá vỡ hình tượng hoàn hảo để công khai kể về quá trình phải làm thụ tinh ống nghiệm (IVF) và sảy thai, giúp hàng triệu phụ nữ thấy họ không cô đơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Insight 9 -->
+            <div class="bg-white rounded-2xl overflow-hidden shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                <div class="card-abstract-header h-24 p-5 flex items-end">
+                    <h3 class="font-heading font-bold text-xl text-gray-800 z-10">9. Mục Đích Di Động</h3>
+                </div>
+                <div class="p-6 flex-grow flex flex-col gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-healing-600 uppercase tracking-wider mb-1 block">Bản chất</span>
+                        <p class="text-gray-700 text-sm">Mục đích sống không phải là một "công việc" cố định suốt đời. Nó là một quá trình liên tục tiến hóa theo từng giai đoạn phát triển của bạn.</p>
+                    </div>
+                    <div>
+                        <span class="text-xs font-bold text-blue-600 uppercase tracking-wider mb-1 block">Cơ chế vận hành</span>
+                        <p class="text-gray-700 text-sm">Neuroplasticity (Độ dẻo dai của não) đòi hỏi sự thay đổi và thử thách mới. Nếu bạn bám chặt vào một danh tính cũ, não bộ sẽ rơi vào trạng thái trì trệ, mất đi ngọn lửa sống.</p>
+                    </div>
+                    <div class="mt-auto bg-warm-50 p-4 rounded-xl border border-warm-100">
+                        <span class="text-xs font-bold text-warm-800 uppercase tracking-wider mb-1 block"><i class="fa-regular fa-lightbulb mr-1"></i> Ví dụ thực tế</span>
+                        <p class="text-gray-800 text-sm italic">Hành trình chuyển đổi từ Luật sư -> Người hoạt động cộng đồng -> Đệ nhất Phu nhân -> Tác giả sách. Không có chức danh nào định nghĩa toàn bộ con người bà.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ACTION PLAYBOOK -->
+    <section class="bg-white py-16 border-y border-gray-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-12">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4 flex items-center gap-3">
+                    <i class="fa-solid fa-rocket text-blue-500"></i> Sổ Tay Thực Chiến
+                </h2>
+                <p class="text-gray-600 text-lg">Chuyển hóa lý thuyết thành các bước thực hành ngay lập tức.</p>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-10">
+                <!-- If-Then Scenarios -->
+                <div class="flex-1 bg-gray-50 p-8 rounded-3xl">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Kịch Bản "Nếu - Thì" (If - Then)</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-orange-400">
+                            <p class="text-gray-800 mb-2 font-medium"><strong class="text-orange-500">NẾU:</strong> Bạn đang cảm thấy lạc lối, chạy theo đám đông và không biết mình thích gì...</p>
+                            <p class="text-gray-600 text-sm"><strong class="text-healing-600">THÌ:</strong> Hãy dành 15 phút ngay tối nay, lấy giấy bút viết ra 3 điều khiến bạn cười thực sự trong tuần qua (không liên quan đến tiền bạc hay sự khen ngợi). Lặp lại trong 7 ngày để tìm ra "la bàn" nội tâm.</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-red-400">
+                            <p class="text-gray-800 mb-2 font-medium"><strong class="text-red-500">NẾU:</strong> Bạn và người thương đang rơi vào một cuộc cãi vã mất kiểm soát...</p>
+                            <p class="text-gray-600 text-sm"><strong class="text-healing-600">THÌ:</strong> Áp dụng quy tắc "Ngắt cầu dao vật lý". Hãy nói: "Mình cần 10 phút" và bước sang phòng khác. Uống 1 ngụm nước lạnh. Việc này ép hạch hạnh nhân (trung tâm cảm xúc) hạ nhiệt trước khi bạn thốt ra lời tổn thương vĩnh viễn.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border-l-4 border-blue-400">
+                            <p class="text-gray-800 mb-2 font-medium"><strong class="text-blue-500">NẾU:</strong> Tiếng nói "Kẻ mạo danh" vang lên chê bai bạn kém cỏi...</p>
+                            <p class="text-gray-600 text-sm"><strong class="text-healing-600">THÌ:</strong> Hãy đối thoại lại với nó bằng "Bằng chứng vật lý". Mở ngay thư mục/cuốn sổ lưu trữ những lời khen, những task khó bạn đã hoàn thành để chứng minh cho não bộ thấy: "Mình có năng lực thực sự".</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Micro Actions -->
+                <div class="flex-1 bg-healing-50 p-8 rounded-3xl border border-healing-100">
+                    <h3 class="text-2xl font-bold mb-6 text-gray-800">Hành Động Micro (Làm ngay trong 24h)</h3>
+                    <ul class="space-y-5">
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 rounded-full bg-healing-200 flex items-center justify-center text-healing-800 flex-shrink-0 mt-1">
+                                1
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Thực hiện "Kiểm Toán Năng Lượng"</h4>
+                                <p class="text-gray-600 text-sm mt-1">Mở mạng xã hội và <strong class="text-dark">Unfollow (bỏ theo dõi) hoặc Mute (tắt tiếng) đúng 3 tài khoản</strong> luôn khiến bạn cảm thấy tự ti, ghen tị hoặc FOMO. Cắt đứt nguồn cung cấp độc hại.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 rounded-full bg-healing-200 flex items-center justify-center text-healing-800 flex-shrink-0 mt-1">
+                                2
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Cài đặt "Giờ Giới Nghiêm Kỹ Thuật Số"</h4>
+                                <p class="text-gray-600 text-sm mt-1">Vào Cài đặt điện thoại, thiết lập chế độ Do Not Disturb (Không làm phiền) tự động bật từ <strong class="text-dark">8:00 Tối đến 7:00 Sáng</strong>. Cho phép hệ thần kinh của bạn được nghỉ ngơi tuyệt đối.</p>
+                            </div>
+                        </li>
+                        <li class="flex gap-4 items-start">
+                            <div class="w-10 h-10 rounded-full bg-healing-200 flex items-center justify-center text-healing-800 flex-shrink-0 mt-1">
+                                3
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Thực hành "Luật Bình Oxy"</h4>
+                                <p class="text-gray-600 text-sm mt-1">Ngay chiều nay, hãy đặt lịch cho <strong class="text-dark">chính bạn 30 phút</strong>. Đi dạo không điện thoại, ngâm bồn nước ấm, hoặc ngồi cafe một mình. Từ chối ít nhất 1 cuộc hẹn không cần thiết để làm việc này.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: REALITY CHECK -->
+    <section class="max-w-6xl mx-auto px-6 py-16">
+        <div class="mb-12 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">
+                ⚠️ Nhận Diện Cạm Bẫy & Kỷ Luật
+            </h2>
+            <p class="text-gray-600 text-lg">Lý do khiến 90% mọi người thất bại khi áp dụng ngoài đời thực.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Red Flags -->
+            <div class="bg-red-50 border-l-8 border-red-500 p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-flag text-red-500 text-2xl"></i>
+                    <h3 class="text-2xl font-bold text-gray-800">Bẫy Vô Hình (Red Flags)</h3>
+                </div>
+                <div class="mb-5">
+                    <h4 class="font-bold text-red-800 mb-2">Ảo tưởng "People-Pleasing" (Làm hài lòng tất cả)</h4>
+                    <p class="text-gray-700">Bạn tin rằng nếu mình đáp ứng mọi yêu cầu, không làm ai phật ý thì bạn sẽ được an toàn và yêu thương. <strong class="text-dark">Sai lầm!</strong> Sự thật là người khác sẽ càng lấn lướt, còn bạn thì cạn kiệt.</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg text-sm text-gray-600 italic">
+                    <strong class="text-gray-800 block mb-1">Ví dụ thất bại:</strong> Một nhân viên không dám nói "Không" với sếp, ôm đồm việc làm thêm giờ liên tục. Cuối cùng bị Burnout (cháy sạch), làm sai dự án lớn và vẫn bị sa thải, đánh mất cả sức khỏe lẫn sự nghiệp.
+                </div>
+            </div>
+
+            <!-- Guardrails -->
+            <div class="bg-gray-800 text-white border-l-8 border-healing-500 p-8 rounded-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <i class="fa-solid fa-shield-halved text-healing-500 text-2xl"></i>
+                    <h3 class="text-2xl font-bold text-white">Chốt Chặn Kỷ Luật (Guardrails)</h3>
+                </div>
+                <div class="mb-5">
+                    <h4 class="font-bold text-healing-400 mb-2">Quy tắc "Ma sát vật lý"</h4>
+                    <p class="text-gray-300">Đừng tin vào ý chí, vì ý chí sẽ cạn kiệt vào cuối ngày. Hãy thiết lập các rào cản vật lý (Friction) để bảo vệ ranh giới của bạn một cách máy móc.</p>
+                </div>
+                <ul class="space-y-3 text-gray-300 text-sm">
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-healing-500 mt-1"></i> <strong>Không gian cấm:</strong> Biến phòng ngủ thành vùng "Không màn hình". Cắm sạc điện thoại ở phòng khách. Mua một chiếc đồng hồ báo thức cơ học.</li>
+                    <li class="flex gap-2"><i class="fa-solid fa-check text-healing-500 mt-1"></i> <strong>Khoảng nghỉ bắt buộc:</strong> Nguyên tắc "Chờ 24h" trước khi đồng ý nhận thêm một dự án hay nhiệm vụ mới. Không bao giờ nói "Có" ngay trên bàn họp.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: ACTIVE RECALL (FLASHCARDS) -->
+    <section class="bg-warm-100 py-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-heading font-bold text-dark mb-4">
+                    🃏 Trạm Ôn Tập (Active Recall)
+                </h2>
+                <p class="text-gray-600 text-lg">Đọc và ghi nhớ ngay 15 insight cốt lõi. Không cần lật thẻ, đáp án nằm ngay bên dưới!</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- Generate 15 cards -->
+                <script>
+                    const flashcards = [
+                        { q: "Tại sao đạt mục tiêu xã hội lại thấy trống rỗng?", a: "Vì đó là mục tiêu đáp ứng 'Social Proof', không phải khao khát nội tâm." },
+                        { q: "Hội chứng kẻ mạo danh là gì?", a: "Cảm giác bản thân không xứng đáng, chỉ do ăn may dù có năng lực thật." },
+                        { q: "Nguồn gốc của kẻ mạo danh?", a: "Đến từ môi trường gán mác và định kiến, làm não bật chế độ phòng vệ." },
+                        { q: "Lăng kính thấu cảm là gì?", a: "Nhìn nhận sự công kích của người khác là biểu hiện nỗi sợ/tổn thương của chính họ." },
+                        { q: "Lợi ích của lăng kính thấu cảm?", a: "Chuyển từ phản ứng 'chiến đấu/bỏ chạy' sang sự bình tĩnh thấu hiểu." },
+                        { q: "Mùa đông hôn nhân là gì?", a: "Giai đoạn kéo dài (có thể tính bằng năm) cảm thấy xa cách, khó chịu về đối phương." },
+                        { q: "Nguyên nhân mùa đông hôn nhân?", a: "Áp lực vai trò mới (có con) làm cạn kiệt hormone gắn kết Oxytocin." },
+                        { q: "Quy tắc bình Oxy là gì?", a: "Tự nạp năng lượng cho mình trước khi cố hi sinh chăm sóc người khác." },
+                        { q: "Hậu quả nếu bỏ qua bình Oxy?", a: "Sự hi sinh trong kiệt sức sinh ra tâm lý 'đòi nợ', oán giận ngầm." },
+                        { q: "Tại sao cần ranh giới bảo vệ?", a: "Để bảo vệ không gian an toàn, giảm Cortisol do áp lực từ người khác." },
+                        { q: "Chấp nhận nỗi đau là gì?", a: "Không phải nó nhỏ đi, mà cuộc đời bạn xây dựng to lớn hơn để chứa đựng nó." },
+                        { q: "Sự hoàn hảo gây hại gì?", a: "Tạo khoảng cách. Sự yếu đuối chân thật (vulnerability) mới tạo kết nối." },
+                        { q: "Mục đích sống có cố định không?", a: "Không. Nó là mục đích 'di động', tiến hóa theo từng giai đoạn cuộc đời." },
+                        { q: "Hiệu ứng Pratfall là gì?", a: "Tâm lý học: Phơi bày điểm yếu giúp bạn trở nên đáng tin và dễ gần hơn." },
+                        { q: "Bẫy People-Pleasing là gì?", a: "Cố làm hài lòng tất cả để tìm an toàn, dẫn đến đánh mất chính mình và kiệt sức." }
+                    ];
+
+                    document.write(flashcards.map((card, i) => `
+                        <div class="bg-white p-4 rounded-xl shadow-sm border border-gray-200 flex flex-col h-full hover:-translate-y-1 transition-transform">
+                            <div class="text-xs font-bold text-gray-400 mb-2">Thẻ #${i+1}</div>
+                            <h4 class="font-bold text-gray-800 text-sm mb-3 leading-snug pb-3 border-b border-gray-100">${card.q}</h4>
+                            <p class="text-gray-600 text-sm mt-auto italic">👉 ${card.a}</p>
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: FOOTER (Height exactly 128px) -->
+    <footer class="h-[128px] bg-dark text-white border-t-4 border-healing-500 w-full">
+        <div class="max-w-6xl mx-auto px-6 h-full flex flex-col md:flex-row items-center justify-between gap-4">
+            <!-- Left Info -->
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-full bg-healing-500 text-dark flex items-center justify-center font-bold text-xl">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm tracking-wide">Mentor Kỹ Năng Thực Chiến</h4>
+                    <p class="text-xs text-gray-400 max-w-[300px] hidden md:block">Cập nhật kiến thức Quay Dựng, Xây kênh Niche và Tư duy Thuật toán MXH.</p>
+                </div>
+            </div>
+
+            <!-- Right Links -->
+            <div class="flex items-center gap-6">
+                <a href="https://youtube.com/@vietndonline" target="_blank" class="flex flex-col items-center gap-1 group text-gray-300 hover:text-red-500 transition-colors">
+                    <i class="fa-brands fa-youtube text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] uppercase font-bold tracking-wider">Youtube</span>
+                </a>
+                <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" class="flex flex-col items-center gap-1 group text-gray-300 hover:text-white transition-colors">
+                    <i class="fa-brands fa-tiktok text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] uppercase font-bold tracking-wider">Tiktok</span>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61580450902746" target="_blank" class="flex flex-col items-center gap-1 group text-gray-300 hover:text-blue-500 transition-colors">
+                    <i class="fa-brands fa-facebook text-2xl group-hover:scale-110 transition-transform"></i>
+                    <span class="text-[10px] uppercase font-bold tracking-wider">Facebook</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mermaid Initialization & Logic -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#e0f5e7',
+                primaryTextColor: '#1e293b',
+                primaryBorderColor: '#4ade80',
+                lineColor: '#94a3b8',
+                secondaryColor: '#fef3dd',
+                tertiaryColor: '#fffcf7'
+            },
+            fontFamily: 'Inter, sans-serif'
+        });
+
+        // Zoom Logic implementation
+        let currentScale = 1;
+        const scaleStep = 0.15;
+        const maxScale = 2.5;
+        const minScale = 0.5;
+
+        window.zoomMindmap = function(direction) {
+            const container = document.getElementById('mermaid-container');
+            currentScale += direction;
+            
+            // Limit bounds
+            if (currentScale > maxScale) currentScale = maxScale;
+            if (currentScale < minScale) currentScale = minScale;
+            
+            container.style.transform = `scale(${currentScale})`;
+        };
+
+        window.resetMindmap = function() {
+            const container = document.getElementById('mermaid-container');
+            currentScale = 1;
+            container.style.transform = `scale(${currentScale})`;
+            
+            // Reset position
+            container.style.top = '0px';
+            container.style.left = '0px';
+        };
+
+        // Simple Pan (Drag to move) implementation
+        const outer = document.getElementById('mermaid-outer');
+        const container = document.getElementById('mermaid-container');
+        let isDragging = false;
+        let startX, startY, startLeft, startTop;
+
+        container.style.position = 'relative';
+        container.style.top = '0px';
+        container.style.left = '0px';
+
+        outer.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startLeft = parseInt(container.style.left || 0, 10);
+            startTop = parseInt(container.style.top || 0, 10);
+            outer.style.cursor = 'grabbing';
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            outer.style.cursor = 'grab';
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            e.preventDefault();
+            const dx = e.clientX - startX;
+            const dy = e.clientY - startY;
+            container.style.left = `${startLeft + dx}px`;
+            container.style.top = `${startTop + dy}px`;
+        });
+    </script>
+</body>
+</html>
+```

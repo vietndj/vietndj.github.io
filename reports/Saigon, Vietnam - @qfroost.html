@@ -1,0 +1,2051 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn: Saigon, Vietnam - @qfroost</title>
+<style>
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+
+:root {
+    --bg-main: #0a0e17;
+    --bg-card: #131a29;
+    --bg-card-hover: #1a2438;
+    --border-color: #212c42;
+    --accent-amber: #f59e0b;
+    --accent-cyan: #06b6d4;
+    --accent-blue: #38bdf8;
+    --accent-rose: #f43f5e;
+    --accent-emerald: #10b981;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --font-heading: 'SVN-Acta', serif;
+    --font-body: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 15px;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1120px;
+    width: 100%;
+}
+
+/* Header Banner */
+.header-banner {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(6, 182, 212, 0.08) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 36px 32px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header-banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-amber), var(--accent-cyan));
+}
+
+.tag-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+}
+
+h1.main-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #ffffff;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-bottom: 22px;
+}
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.meta-item {
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid var(--border-color);
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+
+.meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.meta-value {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.meta-value a {
+    color: var(--accent-blue);
+    text-decoration: none;
+}
+
+.meta-value a:hover {
+    text-decoration: underline;
+}
+
+/* Section Titles */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 36px 0 18px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-title::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 20px;
+    background: var(--accent-amber);
+    border-radius: 3px;
+}
+
+/* Cards & Analysis Blocks */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: rgba(245, 158, 11, 0.4);
+}
+
+.analysis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+@media (max-width: 768px) {
+    .analysis-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.analysis-card {
+    background: rgba(10, 14, 23, 0.5);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px;
+}
+
+.analysis-card h3 {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    color: var(--accent-amber);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.analysis-card p {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Shot Breakdown List */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 22px;
+    margin-bottom: 24px;
+    position: relative;
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(33, 44, 66, 0.7);
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.shot-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.shot-badge {
+    background: var(--accent-amber);
+    color: #000;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.shot-heading {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.shot-time-btn {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.shot-time-btn:hover {
+    background: var(--accent-blue);
+    color: #000;
+}
+
+.shot-type {
+    font-size: 13px;
+    color: var(--accent-cyan);
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Keyframes Gallery */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.keyframe-box {
+    background: #060911;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.keyframe-box:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-blue);
+}
+
+.shot-thumb {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+}
+
+.keyframe-label {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+/* Shot Details Grid */
+.shot-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    font-size: 13.5px;
+}
+
+@media (max-width: 640px) {
+    .shot-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-block {
+    background: rgba(10, 14, 23, 0.6);
+    border: 1px solid rgba(33, 44, 66, 0.5);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.detail-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.detail-content {
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.detail-content strong {
+    color: var(--text-primary);
+}
+
+/* Transition Box */
+.transition-box {
+    background: rgba(10, 14, 23, 0.8);
+    border: 1px dashed var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    margin: 18px 0;
+    text-align: center;
+}
+
+.trans-img {
+    max-width: 480px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 8/3;
+    object-fit: contain;
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto 10px auto;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.trans-img:hover {
+    transform: scale(1.02);
+}
+
+.trans-caption {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Script Section */
+.script-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 14px;
+    font-size: 13.5px;
+}
+
+.script-table th, .script-table td {
+    padding: 12px 14px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.script-table th {
+    background: rgba(10, 14, 23, 0.8);
+    color: var(--accent-amber);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 0.5px;
+}
+
+.script-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Modal Lightbox */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 7, 12, 0.92);
+    backdrop-filter: blur(10px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-img-container {
+    max-width: 90vw;
+    max-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-img {
+    max-width: 100%;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid var(--border-color);
+}
+
+.modal-caption {
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 16px;
+    text-align: center;
+    max-width: 800px;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.modal-close-btn:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* Video Modal */
+.video-modal-box {
+    width: 90vw;
+    max-width: 720px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.9);
+}
+
+.modal-video {
+    width: 100%;
+    border-radius: 10px;
+    background: #000;
+    aspect-ratio: 4/3;
+}
+
+.video-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+/* Floating Action Button */
+.fab-video-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--accent-amber), #ea580c);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 14px 22px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 100;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.fab-video-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(245, 158, 11, 0.6);
+}
+
+/* Print Styles for Chrome Headless PDF */
+@media print {
+    body {
+        background: #0a0e17 !important;
+        color: #f8fafc !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 0 !important;
+    }
+    .fab-video-btn, .modal-overlay {
+        display: none !important;
+    }
+    .shot-card {
+        page-break-inside: avoid;
+        break-inside: avoid;
+        margin-bottom: 24px;
+    }
+    .header-banner {
+        page-break-inside: avoid;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Header Banner -->
+    <div class="header-banner">
+        <div class="tag-badge">🎬 Đạo Diễn &amp; Bóc Tách Khung Hình Điện Ảnh</div>
+        <h1 class="main-title">Saigon, Vietnam • Nghệ Thuật Kể Chuyện Thị Giác &amp; Tình Cảm Hồi Hương</h1>
+        <p class="subtitle">Bóc tách toàn diện 21 phân cảnh: Bố cục tỷ lệ vàng 4:3, nghệ thuật phối màu nhiệt đới cổ điển Kodak Portra, chuỗi cắt nhanh Fast-cut Montage đồng bộ nhịp điệu và thông điệp tái kết nối cội nguồn sâu sắc của Quyen Van (@qfroost).</p>
+        
+        <div class="meta-grid">
+            <div class="meta-item">
+                <div class="meta-label">Nhà Sáng Tạo</div>
+                <div class="meta-value"><a href="https://www.instagram.com/qfroost/" target="_blank">@qfroost</a> (Quyen Van)</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Nhiếp Ảnh / Quay Phim</div>
+                <div class="meta-value">@dhp.56</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Định Dạng &amp; Tỷ Lệ</div>
+                <div class="meta-value">4:3 Classic Cinematic (1440x1080)</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tổng Thời Lượng &amp; Cảnh</div>
+                <div class="meta-value">18.12s • 21 Phân Cảnh (Shots)</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Thời Khắc Ghi Hình</div>
+                <div class="meta-value">Nắng sớm ➔ Trưa nhiệt đới ➔ Hoàng hôn ➔ Đêm</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Tone Màu Chủ Đạo</div>
+                <div class="meta-value">Kodak Portra Gold, Teal &amp; Orange, Saigon Vintage</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section: Phân Tích Nghệ Thuật & Kỹ Thuật -->
+    <div class="section-title">1. Phân Tích Nghệ Thuật Thị Giác &amp; Ngôn Ngữ Điện Ảnh</div>
+    <div class="analysis-grid">
+        <div class="analysis-card">
+            <h3>🎨 Bảng Màu Nhiệt Đới &amp; Phong Cách Cổ Điển 4:3</h3>
+            <p>Tác phẩm lựa chọn tỷ lệ khung hình 4:3 cổ điển (Academy / Vintage Standard), tạo cảm giác hoài niệm và tôn vinh tính hội họa đường phố. Màu sắc được phân hạng (Color Grading) theo tông vàng nắng ấm (Warm Amber / Gold), xanh lam di sản và sắc đỏ gạch nung gợi nhắc những thước phim nhựa 35mm của thập niên 90.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>⚡ Chuỗi Cắt Nhanh Fast-Cut Montage 4-6 Khung Hình</h3>
+            <p>Đạo diễn sử dụng hai đợt cắt cảnh siêu tốc (Shots 05-09 và Shots 13-17) với mỗi cảnh chỉ kéo dài từ 4 đến 7 khung hình (0.17s - 0.29s). Kỹ thuật này nén trọn vẹn bản sắc văn hóa Sài Gòn (bánh xe máy, biển hiệu cũ, hoa văn gạch bông, khói hủ tiếu, băng cassette) vào một bản giao hưởng nhịp điệu kích thích tối đa thị giác người xem.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>🧘 Nhịp Thở Cảm Xúc (Breathing Rhythm &amp; Pacing)</h3>
+            <p>Cấu trúc video được thiết kế theo quy luật tương phản hoàn hảo: Mở đầu khoan thai (1.67s) ➔ Quan sát tĩnh lắng đọng (3.21s) ➔ Bùng nổ cắt nhanh (0.2s/shot) ➔ Hạ nhịp hoàng hôn (1.21s) ➔ Chuyển động chậm Slow-motion đêm (1.50s) ➔ Đại cảnh panorama kết thúc. Nhịp thở này giữ chân người xem 100% từ giây đầu đến giây cuối.</p>
+        </div>
+        <div class="analysis-card">
+            <h3>❤️ Chiều Sâu Nhân Văn &amp; Tình Yêu Cội Nguồn</h3>
+            <p>Không chỉ là một video thời trang đường phố đơn thuần, tác phẩm mang đậm thông điệp tự sự của một người con xa quê trở về ('reconnecting with my culture and my family'). Sự kết hợp giữa nụ cười hồn hậu của người bản địa, tiếng đài cassette xưa và ánh mắt xúc động của nhân vật chính biến từng khung hình thành một bức thư tình gửi Sài Gòn.</p>
+        </div>
+    </div>
+
+    <!-- Section: Bóc Tách Chi Tiết 21 Phân Cảnh -->
+    <div class="section-title">2. Bóc Tách Chi Tiết 21 Phân Cảnh (Storyboard Breakdown)</div>
+
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 01</span>
+                <span class="shot-heading">Mở Màn: Không Gian Sài Gòn Nắng Sớm & Dòng Tiêu Đề Điện Ảnh</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(0.0)">
+                ▶ 0.00s - 1.62s (1.67s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Extreme Wide Establishing Shot / Architectural Symmetry & Title Reveal • 📍 Góc phố kiến trúc di sản trung tâm Sài Gòn</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.jpg', 'Shot 01: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.jpg" class="shot-thumb" alt="Shot 01 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_004_3333cd75.jpg', 'Shot 01: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_004_3333cd75.jpg" class="shot-thumb" alt="Shot 01 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_006_43d6f3a5.jpg', 'Shot 01: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_006_43d6f3a5.jpg" class="shot-thumb" alt="Shot 01 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Toàn cảnh góc phố di sản Sài Gòn ngập tràn nắng sớm nhiệt đới. Kiến trúc cổ điển với các vòm cửa sổ thanh lịch và tán cây xanh rợp bóng mát. Dòng xe máy và người đi bộ bắt đầu ngày mới tạo nên nhịp sống đô thị đặc trưng. Dòng chữ tiêu đề trang nhã phong cách retro 'Saigon, Vietnam' xuất hiện thanh lịch ở trung tâm trên nền không gian đậm chất điện ảnh.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Dòng người và phương tiện chuyển động nhẹ nhàng từ mép phải sang trái dưới luồng nắng sớm.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Cắt dứt khoát sang Cảnh 2: Bước chân dạo phố phong cách của Quyen Van.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Sử dụng ống kính tiêu cự 35mm trên chân máy cố định (Static Lock-off). Đo sáng cân bằng để giữ trọn vẹn chi tiết tường vàng và luồng sáng tự nhiên rọi qua vòm lá.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Khẩu độ f/4 - f/5.6 để giữ độ nét sâu từ tiền cảnh bóng cây đến chi tiết hoa văn kiến trúc phía sau. Picture profile ấm áp giả lập màu phim Kodak Portra 400.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_007_aaeb41e2.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 01 sang Shot 02" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 01 (Out) ➔ Shot 02 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 01 (Out) ➔ Shot 02 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 02</span>
+                <span class="shot-heading">Bước Chân Hồi Hương: Dạo Bước Qua Con Phố Rêu Phong</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(1.67)">
+                ▶ 1.67s - 3.08s (1.46s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Medium Wide Tracking Shot / Street Movement • 📍 Vỉa hè rợp bóng cây cổ thụ trung tâm Sài Gòn</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_009_41234408.jpg', 'Shot 02: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_009_41234408.jpg" class="shot-thumb" alt="Shot 02 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_011_ec2763b9.jpg', 'Shot 02: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_011_ec2763b9.jpg" class="shot-thumb" alt="Shot 02 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_013_5aa86128.jpg', 'Shot 02: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_013_5aa86128.jpg" class="shot-thumb" alt="Shot 02 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Quyen Van bước đi thong dong trên vỉa hè lát gạch rêu phong trong bộ trang phục streetwear đương đại tối giản kết hợp áo khoác nhẹ màu be. Ánh mắt hướng về phía trước với sự tò mò và niềm xúc động sâu lắng khi tái kết nối với thành phố quê hương sau chuyến đi dài.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật bước từ trái sang trung tâm khung hình, tà áo chuyển động nhẹ theo từng sải chân tự tin.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Chuyển sang Cảnh 3: Không gian cà phê cóc vỉa hè - nét văn hóa bản sắc Sài Gòn.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Máy quay di chuyển lùi song song (Smooth Backward Tracking) bằng Gimbal/Steadicam với tốc độ đồng điệu bước chân nhân vật, duy trì khoảng cách trung cảnh cân đối.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính 35mm f/2.0 tạo hiệu ứng thị sai (Parallax) mượt mà giữa nhân vật và hàng cây phía sau.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_014_b0962d7a.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 02 sang Shot 03" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 02 (Out) ➔ Shot 03 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 02 (Out) ➔ Shot 03 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 03</span>
+                <span class="shot-heading">Văn Hóa Cà Phê Vỉa Hè: Nhịp Đập Thường Nhật Của Người Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(3.12)">
+                ▶ 3.12s - 6.29s (3.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Medium Long Shot / Cultural Ambience & Street Cafe • 📍 Góc quán cà phê cóc truyền thống</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_016_b4fc74ca.jpg', 'Shot 03: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_016_b4fc74ca.jpg" class="shot-thumb" alt="Shot 03 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_018_9099c95f.jpg', 'Shot 03: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_018_9099c95f.jpg" class="shot-thumb" alt="Shot 03 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_020_81fc42af.jpg', 'Shot 03: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_020_81fc42af.jpg" class="shot-thumb" alt="Shot 03 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Bức tranh chân thực về văn hóa cà phê vỉa hè Sài Gòn: những chiếc ghế nhựa thấp, ly cà phê sữa đá phin nhôm nhỏ giọt, những cụ ông đọc báo buổi sáng và câu chuyện rôm rả giữa những người bạn. Khói sương đá bốc lên mát lạnh tương phản với ánh nắng nhiệt đới.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Những giọt cà phê nhỏ giọt chầm chậm, nhân vật nâng ly thưởng thức với nụ cười nhẹ nhõm.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Cắt sang Cảnh 4: Cận cảnh chân dung biểu cảm xúc động của nhân vật chính.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Cú máy tĩnh dài 3.21s đóng vai trò 'nhịp thở' (Breathing Room) giúp người xem đắm chìm vào không khí thân thuộc và nhịp sống chậm rãi của Sài Gòn buổi sáng.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Tiêu cự 50mm f/2.0 giúp tách biệt ly cà phê và nhân vật khỏi bối cảnh ồn ào mà vẫn giữ được nét sinh động của quán nước.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_021_4b8b1d62.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 03 sang Shot 04" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 03 (Out) ➔ Shot 04 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 03 (Out) ➔ Shot 04 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-04">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 04</span>
+                <span class="shot-heading">Chân Dung Cảm Xúc: Sự Kết Nối Lại Với Cội Nguồn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(6.33)">
+                ▶ 6.33s - 7.79s (1.50s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Close-Up (CU) / Emotional Portrait & Catchlight • 📍 Không gian hiên nhà đón nắng tự nhiên</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_023_cb668dc7.jpg', 'Shot 04: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_023_cb668dc7.jpg" class="shot-thumb" alt="Shot 04 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_025_76dd45cb.jpg', 'Shot 04: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_025_76dd45cb.jpg" class="shot-thumb" alt="Shot 04 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_027_ac6f0aab.jpg', 'Shot 04: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_027_ac6f0aab.jpg" class="shot-thumb" alt="Shot 04 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Góc quay cận cảnh đặc tả gương mặt Quyen Van với biểu cảm thanh thản, ánh mắt long lanh phản chiếu ánh sáng trời (Catchlight). Làn gió nhẹ làm bay vài sợi tóc mai, thể hiện trọn vẹn thông điệp 'reconnecting with my culture and my family'.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật chớp mắt nhẹ và khẽ nghiêng đầu nhìn về phía ống kính với ánh mắt chan chứa cảm xúc.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Bắt đầu chuỗi Fast-Cut Montage 1 (Shots 05-09) theo nhịp beat trống dồn dập.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Ống kính chân dung 85mm f/1.8 tạo độ xóa phông bơ mịn (Creamy Bokeh), hướng trọn vẹn sự chú ý của khán giả vào biểu cảm gương mặt.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Sử dụng hắt sáng bạc/trắng tự nhiên nhẹ từ dưới lên để làm bừng sáng đôi mắt mà không tạo bóng gắt dưới cằm.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_028_899d3588.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 04 sang Shot 05" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 04 (Out) ➔ Shot 05 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 04 (Out) ➔ Shot 05 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-05">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 05</span>
+                <span class="shot-heading">Nhịp Nhanh 01: Vệt Bánh Xe Máy Lướt Qua Mặt Đường Ướt</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(7.83)">
+                ▶ 7.83s - 8.00s (0.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Extreme Close-Up (ECU) / Kinetic Action Burst • 📍 Lòng đường sau cơn mưa rào</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_030_70eb5726.jpg', 'Shot 05: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_030_70eb5726.jpg" class="shot-thumb" alt="Shot 05 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_032_2f5a9a02.jpg', 'Shot 05: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_032_2f5a9a02.jpg" class="shot-thumb" alt="Shot 05 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_034_82cf04dd.jpg', 'Shot 05: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_034_82cf04dd.jpg" class="shot-thumb" alt="Shot 05 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Góc quay cực cận sát mặt đường đặc tả chiếc lốp xe máy rẽ nước tạo vệt sóng li ti bắn tung tóe. Ánh nắng phản chiếu lấp lánh trên mặt nhựa đường loang loáng nước.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Bánh xe xoay tít lướt qua từ góc phải xuống góc trái.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Cắt chớp nhoáng (0.21s) sang Cảnh 6.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Tốc độ màn trập cao 1/1000s để bắt dính từng hạt nước bắn mà không bị nhòe mờ chuyển động.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Bảo vệ ống kính bằng filter UV chống nước bắn khi đặt máy sát mặt đường.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_035_d895cb29.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 05 sang Shot 06" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 05 (Out) ➔ Shot 06 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 05 (Out) ➔ Shot 06 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-06">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 06</span>
+                <span class="shot-heading">Nhịp Nhanh 02: Biển Hiệu Cũ Vẽ Tay Hẻm Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(8.04)">
+                ▶ 8.04s - 8.17s (0.17s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Snap Detail Shot / Vintage Typography • 📍 Con hẻm nhỏ Chợ Lớn / Quận 5</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_037_c7dede7d.jpg', 'Shot 06: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_037_c7dede7d.jpg" class="shot-thumb" alt="Shot 06 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_039_a4005db6.jpg', 'Shot 06: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_039_a4005db6.jpg" class="shot-thumb" alt="Shot 06 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_041_54173030.jpg', 'Shot 06: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_041_54173030.jpg" class="shot-thumb" alt="Shot 06 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Cú cắt chớp nhoáng 4 khung hình (0.17s) vào biển hiệu tiệm may/cắt tóc cổ bằng gỗ bạc màu với những nét chữ vẽ tay phong cách typography Sài Gòn thập niên 80-90.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Khung hình tĩnh chớp tắt tức thì theo tiếng trống snare.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 7: Chi tiết ánh sáng và tàn lửa.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Khung hình vuông vức, bố cục trung tâm trực diện tôn vinh tính di sản thị giác của chữ viết tay.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Độ tương phản cao (High Contrast) làm nổi bật thớ gỗ và lớp sơn bong tróc.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_042_48400c30.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 06 sang Shot 07" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 06 (Out) ➔ Shot 07 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 06 (Out) ➔ Shot 07 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-07">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 07</span>
+                <span class="shot-heading">Nhịp Nhanh 03: Tia Lửa Hàn & Đốm Sáng Vỉa Hè</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(8.21)">
+                ▶ 8.21s - 8.38s (0.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Macro Light Flash / Urban Sparks • 📍 Xưởng cơ khí nhỏ ven đường</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_044_0654d3c1.jpg', 'Shot 07: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_044_0654d3c1.jpg" class="shot-thumb" alt="Shot 07 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_046_22b4ce62.jpg', 'Shot 07: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_046_22b4ce62.jpg" class="shot-thumb" alt="Shot 07 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_048_f97cd001.jpg', 'Shot 07: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_048_f97cd001.jpg" class="shot-thumb" alt="Shot 07 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Cận cảnh chùm tia lửa hàn kim loại bắn tung tóe rực rỡ trong bóng tối của một xưởng sửa chữa vỉa hè, tạo hiệu ứng pháo hoa mini rực rỡ.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Chùm tia lửa bung tỏa hình nan quạt từ góc trái sang góc phải.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 8: Bàn tay nghệ nhân ẩm thực đường phố.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Dìm sáng vùng tối để chùm tia lửa đạt độ sáng tối đa, tạo cú sốc quang học nhẹ (Visual Pop).</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Khẩu độ khép f/8 để các tia lửa tạo hiệu ứng sao (Starburst effect).</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_049_f3f6d5ce.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 07 sang Shot 08" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 07 (Out) ➔ Shot 08 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 07 (Out) ➔ Shot 08 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-08">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 08</span>
+                <span class="shot-heading">Nhịp Nhanh 04: Bàn Tay Thoăn Thoắt Gói Bánh Tráng</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(8.42)">
+                ▶ 8.42s - 8.62s (0.25s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Extreme Close-Up (ECU) / Hand Craft & Street Food • 📍 Gánh hàng rong ẩm thực đường phố</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_051_54c1c217.jpg', 'Shot 08: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_051_54c1c217.jpg" class="shot-thumb" alt="Shot 08 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_053_3e415c4d.jpg', 'Shot 08: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_053_3e415c4d.jpg" class="shot-thumb" alt="Shot 08 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_055_5e8cc9fa.jpg', 'Shot 08: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_055_5e8cc9fa.jpg" class="shot-thumb" alt="Shot 08 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Đôi bàn tay nhanh nhẹn của người bán hàng thoăn thoắt gập chiếc bánh tráng nướng giòn rụm với hành lá, mỡ hành và trứng cút bốc khói thơm phức.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Thao tác gập bánh dứt khoát của người bán hàng.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 9: Đoàn xe máy tăng ga xuất phát.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Góc máy xiên 45 độ đón ánh sáng khói bếp mờ ảo.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính Macro 50mm f/2.8 lấy nét chuẩn vào vân tay và bề mặt bánh tráng.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_056_84d890a5.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 08 sang Shot 09" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 08 (Out) ➔ Shot 09 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 08 (Out) ➔ Shot 09 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-09">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 09</span>
+                <span class="shot-heading">Nhịp Nhanh 05: Làn Sóng Xe Máy Đồng Loạt Tăng Ga</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(8.67)">
+                ▶ 8.67s - 8.92s (0.29s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Dutch Angle Dynamic Shot / Traffic Wave • 📍 Giao lộ ngã tư đèn đỏ</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_058_81e49c7b.jpg', 'Shot 09: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_058_81e49c7b.jpg" class="shot-thumb" alt="Shot 09 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_060_069d604e.jpg', 'Shot 09: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_060_069d604e.jpg" class="shot-thumb" alt="Shot 09 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_062_fbf8bc54.jpg', 'Shot 09: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_062_fbf8bc54.jpg" class="shot-thumb" alt="Shot 09 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Khung hình nghiêng (Dutch Angle) ghi lại khoảnh khắc đèn xanh vừa bật, hàng chục chiếc xe máy đồng loạt vút ga phóng về phía trước tạo nên dòng chảy năng lượng bất tận.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Dòng xe lao thẳng về phía ống kính từ góc chéo dưới.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Cắt dứt khoát chuỗi Fast-cut sang Cảnh 10: Tòa nhà kiến trúc uy nghiêm.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Đặt máy góc thấp nghiêng 15 độ để khuếch đại cảm giác tốc độ và sự áp đảo không gian.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính góc rộng 24mm bao trọn chiều rộng của 4 làn xe máy.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_063_0619883a.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 09 sang Shot 10" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 09 (Out) ➔ Shot 10 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 09 (Out) ➔ Shot 10 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 10</span>
+                <span class="shot-heading">Kiến Trúc Uy Nghi: Góc Vòm Di Sản & Bầu Trời Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(8.96)">
+                ▶ 8.96s - 9.54s (0.62s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Low Angle Wide Shot / Heritage Architecture • 📍 Bưu điện Trung tâm / Nhà hát Thành phố</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_065_105dbde3.jpg', 'Shot 10: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_065_105dbde3.jpg" class="shot-thumb" alt="Shot 10 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_067_90e30e85.jpg', 'Shot 10: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_067_90e30e85.jpg" class="shot-thumb" alt="Shot 10 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_069_6c21967d.jpg', 'Shot 10: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_069_6c21967d.jpg" class="shot-thumb" alt="Shot 10 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Góc máy thấp ngước nhìn lên công trình kiến trúc thời thuộc địa với mái vòm tinh xảo, đồng hồ cổ và những bức phù điêu chạm khắc công phu vươn lên nền trời xanh thẳm.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Đàn chim bồ câu chao cánh lướt ngang qua đỉnh tháp chuông.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 11: Nhân vật chính tạo dáng thời trang tại chung cư cổ.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Canh khung hình đối xứng trục dọc hoàn hảo để thể hiện tính trang nghiêm, vĩnh cửu của di sản Sài Gòn.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính 24mm khép khẩu f/8 đảm bảo độ nét góc cạnh toàn bộ mặt tiền tòa nhà.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_070_d9ee231d.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 10 sang Shot 11" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 10 (Out) ➔ Shot 11 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 10 (Out) ➔ Shot 11 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 11</span>
+                <span class="shot-heading">Thời Trang Đương Đại Giữa Hành Lang Chung Cư Cổ</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(9.58)">
+                ▶ 9.58s - 10.08s (0.54s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Medium Full Shot / Fashion Editorial in Heritage Context • 📍 Hành lang chung cư Hào Sỹ Phường / Tôn Thất Đạm</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_072_62b1d0e6.jpg', 'Shot 11: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_072_62b1d0e6.jpg" class="shot-thumb" alt="Shot 11 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_074_c29e8085.jpg', 'Shot 11: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_074_c29e8085.jpg" class="shot-thumb" alt="Shot 11 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_076_150c1fe6.jpg', 'Shot 11: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_076_150c1fe6.jpg" class="shot-thumb" alt="Shot 11 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Quyen Van đứng tựa lan can sắt hoa văn cổ điển trên ban công chung cư cổ. Bức tường sơn vàng úa màu thời gian và những chậu cây cảnh tạo nên background thời trang (Fashion Editorial) đậm chất nghệ thuật.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật xoay người nhẹ nhìn lại phía sau lưng, ánh mắt bí ẩn và thu hút.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 12: Toàn cảnh vòng xoay giao thông nhìn từ trên cao.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Tận dụng ánh sáng tự nhiên hắt qua khe giếng trời để tạo khối sáng tối (Rim Light) ôm trọn đường nét trang phục.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính 50mm f/1.8 làm mờ nhẹ hậu cảnh hành lang sâu hun hút.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_077_b4c6d79c.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 11 sang Shot 12" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 11 (Out) ➔ Shot 12 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 11 (Out) ➔ Shot 12 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 12</span>
+                <span class="shot-heading">Bản Đồ Chuyển Động: Vòng Xoay Đô Thị Từ Tầng Cao</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(10.12)">
+                ▶ 10.12s - 10.83s (0.75s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 High Angle Shot (Bird's Eye) / Urban Roundabout Flow • 📍 Vòng xoay Ngã Sáu Phù Đổng / Hồ Con Rùa</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_079_dbf36196.jpg', 'Shot 12: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_079_dbf36196.jpg" class="shot-thumb" alt="Shot 12 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_081_28cd1145.jpg', 'Shot 12: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_081_28cd1145.jpg" class="shot-thumb" alt="Shot 12 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_083_490c1df2.jpg', 'Shot 12: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_083_490c1df2.jpg" class="shot-thumb" alt="Shot 12 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Góc nhìn từ tầng cao xuống vòng xoay trung tâm với các làn xe cộ di chuyển uốn lượn theo quỹ đạo tròn đồng tâm như một vũ điệu cơ học nhịp nhàng.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Những chiếc xe máy và ô tô vẽ nên những đường cong chuyển động liên tục.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Bắt đầu chuỗi Fast-Cut Montage 2 (Shots 13-17) - Bản giao hưởng ký ức.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Khung hình đặt máy thẳng góc 45 độ từ trên cao, tạo cảm giác người xem đang bao quát toàn bộ mạch máu giao thông thành phố.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Kính lọc phân cực CPL triệt tiêu bóng lóa trên kính chắn gió ô tô.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_084_1a588083.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 12 sang Shot 13" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 12 (Out) ➔ Shot 13 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 12 (Out) ➔ Shot 13 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 13</span>
+                <span class="shot-heading">Ký Ức 01: Hoa Văn Gạch Bông Cổ Điển Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(10.88)">
+                ▶ 10.88s - 11.04s (0.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Top-Down Macro / Heritage Floor Tiles • 📍 Nền nhà biệt thự cổ Quận 3</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_086_d2c4f7d2.jpg', 'Shot 13: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_086_d2c4f7d2.jpg" class="shot-thumb" alt="Shot 13 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_088_333bd517.jpg', 'Shot 13: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_088_333bd517.jpg" class="shot-thumb" alt="Shot 13 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_090_c5bd7f02.jpg', 'Shot 13: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_090_c5bd7f02.jpg" class="shot-thumb" alt="Shot 13 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Cận cảnh từ trên cao xuống nền sàn gạch bông hoa văn đối xứng màu lam và vàng mù tạt đặc trưng của kiến trúc Đông Dương.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Bước chân mang giày sneaker hiện đại đặt nhẹ xuống tâm hoa văn gạch.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 14: Bát hủ tiếu bốc khói.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Bố cục đối xứng 90 độ phẳng hoàn hảo (Flat-lay).</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Khẩu độ f/4 giữ nét toàn bộ bề mặt gạch men bóng.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_091_4b06c6dc.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 13 sang Shot 14" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 13 (Out) ➔ Shot 14 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 13 (Out) ➔ Shot 14 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 14</span>
+                <span class="shot-heading">Ký Ức 02: Bát Hủ Tiếu Gõ Nghi Ngút Khói Nghiêng</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(11.08)">
+                ▶ 11.08s - 11.25s (0.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Close-Up Steam Action / Culinary Heritage • 📍 Xe hủ tiếu gõ lề đường đêm</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_093_24251c66.jpg', 'Shot 14: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_093_24251c66.jpg" class="shot-thumb" alt="Shot 14 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_095_65ae2d31.jpg', 'Shot 14: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_095_65ae2d31.jpg" class="shot-thumb" alt="Shot 14 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_097_cafe7103.jpg', 'Shot 14: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_097_cafe7103.jpg" class="shot-thumb" alt="Shot 14 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Làn khói thơm bốc lên cuồn cuộn từ bát hủ tiếu nước lèo trong veo với vài lát thịt xá xíu, hẹ xanh và tỏi phi vàng ruộm dưới ánh đèn đường vàng ấm.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Đôi đũa tre gắp sợi hủ tiếu nâng lên giữa làn khói bốc.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 15: Chiếc radio cassette cổ.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Đèn nền (Backlight) chiếu từ phía sau bát nước dùng để làn khói hiện rõ và nổi khối sắc nét.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Shutter 1/250s bắt trọn chuyển động mềm mại của làn khói nước dùng.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_098_8b7607db.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 14 sang Shot 15" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 14 (Out) ➔ Shot 15 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 14 (Out) ➔ Shot 15 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 15</span>
+                <span class="shot-heading">Ký Ức 03: Cuộn Băng Cassette Xoay Tròn Giai Điệu Xưa</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(11.29)">
+                ▶ 11.29s - 11.50s (0.25s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Macro Nostalgia / Vintage Cassette Tape • 📍 Quán cà phê đồ cổ</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_100_395f20f3.jpg', 'Shot 15: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_100_395f20f3.jpg" class="shot-thumb" alt="Shot 15 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_102_e9d1cf47.jpg', 'Shot 15: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_102_e9d1cf47.jpg" class="shot-thumb" alt="Shot 15 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_104_3903604b.jpg', 'Shot 15: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_104_3903604b.jpg" class="shot-thumb" alt="Shot 15 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Cực cận bánh răng cuộn băng cassette màu nâu cánh gián đang chầm chậm xoay tròn bên trong chiếc đài cổ Sony, gợi nhớ những giai điệu tình ca Sài Gòn bất hủ.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Vòng quay đều đặn của dải từ băng cassette.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 16: Gương chiếu hậu phản chiếu phố phường.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Lấy nét chính xác vào trục quay bánh răng và dải băng từ óng ánh.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Ống kính Macro 100mm f/2.8 tái hiện từng hạt nhựa và vết xước thời gian.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_105_7fa13fdc.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 15 sang Shot 16" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 15 (Out) ➔ Shot 16 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 15 (Out) ➔ Shot 16 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-16">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 16</span>
+                <span class="shot-heading">Ký Ức 04: Phố Phường Soi Bóng Qua Gương Chiếu Hậu</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(11.54)">
+                ▶ 11.54s - 11.71s (0.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Point of View (POV) / Mirror Reflection • 📍 Trên xe máy di chuyển qua cầu Ba Son</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_107_396e5917.jpg', 'Shot 16: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_107_396e5917.jpg" class="shot-thumb" alt="Shot 16 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_109_d170663c.jpg', 'Shot 16: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_109_d170663c.jpg" class="shot-thumb" alt="Shot 16 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_111_0df1d04b.jpg', 'Shot 16: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_111_0df1d04b.jpg" class="shot-thumb" alt="Shot 16 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Khung cảnh phố phường lùi dần phía sau được phản chiếu trọn vẹn trong chiếc gương chiếu hậu xe máy tròn viền kim loại sáng bóng.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Dòng người và tòa cao ốc thu nhỏ lướt nhanh trong mặt gương.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 17: Nụ cười thân thiện của người dân bản địa.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Lấy nét khóa chặt vào mặt gương, để toàn bộ tay lái và người lái xe mờ nhẹ ở tiền cảnh.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Tốc độ màn trập 1/500s giữ độ sắc nét của hình ảnh phản chiếu khi xe đang di chuyển.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_112_16e5451e.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 16 sang Shot 17" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 16 (Out) ➔ Shot 17 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 16 (Out) ➔ Shot 17 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-17">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 17</span>
+                <span class="shot-heading">Ký Ức 05: Nụ Cười Hồn Hậu Của Người Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(11.75)">
+                ▶ 11.75s - 12.17s (0.46s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Medium Close Portrait / Human Warmth • 📍 Góc phố quen thuộc</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_114_1977ea9f.jpg', 'Shot 17: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_114_1977ea9f.jpg" class="shot-thumb" alt="Shot 17 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_116_a38c910d.jpg', 'Shot 17: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_116_a38c910d.jpg" class="shot-thumb" alt="Shot 17 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_118_9a8c8f75.jpg', 'Shot 17: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_118_9a8c8f75.jpg" class="shot-thumb" alt="Shot 17 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Gương mặt phúc hậu với nụ cười tươi rạng rỡ của một người lao động Sài Gòn đội chiếc nón lá/mũ cối quen thuộc, ánh mắt toát lên sự nồng hậu, hiếu khách đặc trưng của người phương Nam.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật nở nụ cười tươi và gật đầu chào ấm áp.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Chuyển sang Cảnh 18: Hoàng hôn vàng rực rỡ bên bờ sông Sài Gòn.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Bắt trọn khoảnh khắc tự nhiên không gượng gạo (Candid Capture), tạo nên sợi dây liên kết cảm xúc mạnh mẽ nhất của tác phẩm.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Tiêu cự 85mm f/1.8 bắt trọn ánh sáng rạng rỡ trên nụ cười người bản địa.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_119_87723141.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 17 sang Shot 18" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 17 (Out) ➔ Shot 18 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 17 (Out) ➔ Shot 18 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-18">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 18</span>
+                <span class="shot-heading">Hoàng Hôn Dát Vàng: Tĩnh Lặng Bên Bờ Sông Sài Gòn</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(12.21)">
+                ▶ 12.21s - 13.38s (1.21s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Tracking Wide Shot / Golden Sunset by Saigon River • 📍 Bến Bạch Đằng / Bờ kè sông Sài Gòn</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_121_06552847.jpg', 'Shot 18: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_121_06552847.jpg" class="shot-thumb" alt="Shot 18 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_123_c3e54ff3.jpg', 'Shot 18: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_123_c3e54ff3.jpg" class="shot-thumb" alt="Shot 18 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_125_5909f004.jpg', 'Shot 18: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_125_5909f004.jpg" class="shot-thumb" alt="Shot 18 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Khung cảnh tráng lệ của bờ sông Sài Gòn trong thời khắc hoàng hôn vàng rực rỡ (Golden Hour). Mặt trời màu cam đỏ rực rọi những dải sáng lấp lánh như dát vàng lên mặt nước sông. Phía chân trời là bóng dáng sừng sững của các tòa cao ốc Landmark 81 và Bitexco. Quyen Van đứng tựa lan can thả hồn theo dòng nước.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Một chiếc cano du lịch rẽ sóng lướt ngang qua vệt sáng mặt trời dát trên sông.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Chuyển sang Cảnh 19: Thời khắc chuyển giao giờ xanh (Blue Hour) lên đèn.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Đo sáng bảo vệ chi tiết mặt trời và các dải mây ráng đỏ, biến nhân vật và lan can thành bóng đen đổ khối (Silhouette) đầy chất thơ.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">White Balance chỉnh ấm 6000K để tôn vinh sắc vàng hổ phách của mặt trời lặn.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_126_3278e84a.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 18 sang Shot 19" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 18 (Out) ➔ Shot 19 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 18 (Out) ➔ Shot 19 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-19">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 19</span>
+                <span class="shot-heading">Thời Khắc Giờ Xanh: Ánh Sáng Neon Đa Sắc Phố Đêm</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(13.42)">
+                ▶ 13.42s - 14.83s (1.46s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Medium Close-Up (MCU) / Blue Hour Neon Glow • 📍 Góc phố chợ đêm / Phố đi bộ Nguyễn Huệ</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_128_6ed3dd18.jpg', 'Shot 19: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_128_6ed3dd18.jpg" class="shot-thumb" alt="Shot 19 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_130_d4f7428e.jpg', 'Shot 19: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_130_d4f7428e.jpg" class="shot-thumb" alt="Shot 19 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_132_2b331838.jpg', 'Shot 19: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_132_2b331838.jpg" class="shot-thumb" alt="Shot 19 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Khoảnh khắc chạng vạng chuyển giao giữa ngày và đêm (Blue Hour). Bầu trời chuyển sang màu lam thẫm bí ẩn, các bảng hiệu đèn neon màu đỏ mận và xanh cyan bắt đầu thắp sáng, rọi những vệt sáng lung linh lên gương mặt và trang phục của nhân vật.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật khẽ xoay người nhìn dòng xe cộ lên đèn, ánh sáng neon phản chiếu trong đáy mắt.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Sang Cảnh 20: Chuyển động chậm Slow-Motion giữa phố đêm rực rỡ.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Khai thác tối đa sự tương phản màu sắc bổ túc (Color Complementary) để tạo nên chất điện ảnh Hong Kong / Wong Kar-wai hiện đại.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Khẩu độ mở lớn f/1.4 thu trọn nguồn sáng yếu ban đêm mà không làm tăng nhiễu hạt ISO.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_133_df5dc034.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 19 sang Shot 20" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 19 (Out) ➔ Shot 20 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 19 (Out) ➔ Shot 20 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-20">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 20</span>
+                <span class="shot-heading">Đêm Sài Gòn Không Ngủ: Vũ Điệu Ánh Sáng Slow-Motion</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(14.88)">
+                ▶ 14.88s - 16.33s (1.50s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Slow Motion Tracking / Night City Bokeh • 📍 Phố đi bộ Bùi Viện / Nguyễn Huệ</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_135_b37de4cd.jpg', 'Shot 20: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_135_b37de4cd.jpg" class="shot-thumb" alt="Shot 20 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_137_9bbf2f16.jpg', 'Shot 20: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_137_9bbf2f16.jpg" class="shot-thumb" alt="Shot 20 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_139_6ea431fe.jpg', 'Shot 20: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_139_6ea431fe.jpg" class="shot-thumb" alt="Shot 20 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Cảnh quay Slow-Motion 60fps/120fps mượt mà ghi lại bước chân của Quyen Van hòa mình vào dòng người dạo phố đêm. Phía sau lưng là biển ánh sáng lộng lẫy từ đèn xe máy và bảng hiệu biến thành những quả cầu ánh sáng lung linh (Circular Bokeh Balls).</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Nhân vật bước đi chậm rãi qua ống kính, tà áo bay nhẹ giữa không gian lễ hội đêm.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Chuyển sang Cảnh 21 (Cảnh kết thúc): Toàn cảnh đêm Sài Gòn từ trên cao.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Sử dụng ống kính tiêu cự 85mm khẩu lớn f/1.4 để nén không gian và tạo các vòng bokeh tròn trịa, biến phố đêm thành một tác phẩm tranh trừu tượng ánh sáng.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Gimbal 3 trục giữ ổn định tuyệt đối trong khi bước chân di chuyển lùi mượt mà.</div>
+            </div>
+        </div>
+        
+        
+            <div class="transition-box">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_140_de26a4dc.jpg" class="trans-img" alt="Chuyển cảnh từ Shot 20 sang Shot 21" onclick="openLightbox(this.src, 'Chuyển cảnh: Shot 20 (Out) ➔ Shot 21 (In)')" />
+                <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 20 (Out) ➔ Shot 21 (In)</div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-21">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">Shot 21</span>
+                <span class="shot-heading">Cảnh Kết: Toàn Cảnh Sài Gòn Về Đêm & Lời Chào Hồi Hương</span>
+            </div>
+            <button class="shot-time-btn" onclick="jumpToVideo(16.38)">
+                ▶ 16.38s - 18.08s (1.75s)
+            </button>
+        </div>
+        
+        <div class="shot-type">📐 Extreme Wide Panorama / Night Skyline & Emotional Outro • 📍 Tầng cao nhìn về trung tâm thành phố và sông Sài Gòn</div>
+        
+        <!-- 3 Keyframes -->
+        <div class="keyframes-row">
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_142_6513b01b.jpg', 'Shot 21: Khung hình Bắt đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_142_6513b01b.jpg" class="shot-thumb" alt="Shot 21 Start" />
+                <span class="keyframe-label">START</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_144_1dad908c.jpg', 'Shot 21: Khung hình Trung tâm (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_144_1dad908c.jpg" class="shot-thumb" alt="Shot 21 Mid" />
+                <span class="keyframe-label">MID</span>
+            </div>
+            <div class="keyframe-box" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_146_c2fc0ebc.jpg', 'Shot 21: Khung hình Kết thúc (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_146_c2fc0ebc.jpg" class="shot-thumb" alt="Shot 21 End" />
+                <span class="keyframe-label">END</span>
+            </div>
+        </div>
+        
+        <!-- Shot Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-block">
+                <div class="detail-title">🎬 Mô Tả Khung Hình &amp; Bố Cục</div>
+                <div class="detail-content">Toàn cảnh panorama tráng lệ của Sài Gòn về đêm nhìn từ trên cao. Những dải ánh sáng đèn đường uốn lượn như những dòng sông phát sáng, các tòa nhà chọc trời lung linh dưới màn đêm nhiệt đới. Dòng chữ cảm ơn 'Saigon, Vietnam' và credit tác giả xuất hiện trang trọng, khép lại trọn vẹn hành trình hồi hương đầy ý nghĩa và tình yêu cội nguồn.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">⚡ Mồi Vào / Nối Ra (MOI ➔ NOI)</div>
+                <div class="detail-content">
+                    <strong>Mồi chuyển động (MOI):</strong> Thành phố rực sáng trong đêm, khung hình từ từ chuyển mờ dần (Fade to Black) trong dư âm xúc động của bản nhạc.<br>
+                    <strong>Nối cảnh kế (NOI):</strong> Video khép lại trong sự lắng đọng và tình cảm sâu sắc dành cho văn hóa và gia đình Việt Nam.
+                </div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">🎯 Kỹ Thuật Đạo Diễn (Director Technique)</div>
+                <div class="detail-content">Khóa chặt góc máy toàn cảnh (Locked-off Panorama) phơi sáng chuẩn xác để các dải đèn xe tạo thành vệt sáng rực rỡ mà bầu trời đêm vẫn giữ được độ đen tuyền huyền ảo.</div>
+            </div>
+            <div class="detail-block">
+                <div class="detail-title">📷 Thông Số Thiết Bị &amp; Setup (Gear &amp; Lighting)</div>
+                <div class="detail-content">Chân máy tripod chuyên dụng, ISO 100, khẩu độ f/8 để các ngọn đèn cao ốc phát tia sao lấp lánh (Star filter look).</div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+    <!-- Section: Kịch Bản Thực Chiến -->
+    <div class="section-title">3. Kịch Bản Thực Chiến Ứng Dụng (Shooting Script)</div>
+    <div class="card">
+        <p style="color: var(--text-secondary); margin-bottom: 16px;">Bảng tổng hợp kịch bản quay thực tế 4 giai đoạn dành cho nhà sáng tạo nội dung muốn ứng dụng phong cách điện ảnh du ký / thời trang hồi hương:</p>
+        <table class="script-table">
+            <thead>
+                <tr>
+                    <th>Giai Đoạn</th>
+                    <th>Thời Lượng</th>
+                    <th>Nội Dung Thị Giác</th>
+                    <th>Cảm Xúc &amp; Nhịp Điệu</th>
+                    <th>Ống Kính Đề Xuất</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Phần 1: Khởi Đầu &amp; Bản Sắc</strong></td>
+                    <td>0.0s - 7.8s (Shots 01-04)</td>
+                    <td>Góc phố di sản nắng sớm, bước chân dạo phố, cà phê cóc vỉa hè và ánh mắt chân dung xúc động.</td>
+                    <td>Khoan thai, hoài niệm, thân thuộc. Nhịp thở tĩnh lặng kết nối cảm xúc.</td>
+                    <td>35mm f/2.0 &amp; 85mm f/1.8</td>
+                </tr>
+                <tr>
+                    <td><strong>Phần 2: Bản Giao Hưởng Hối Hả</strong></td>
+                    <td>7.8s - 12.2s (Shots 05-17)</td>
+                    <td>Chuỗi Fast-cut 0.2s: bánh xe rẽ nước, biển hiệu cổ, tia lửa hàn, gạch bông, khói hủ tiếu, băng cassette, nụ cười người Sài Gòn.</td>
+                    <td>Dồn dập, bùng nổ, giàu năng lượng và kích thích thị giác tối đa theo beat nhạc.</td>
+                    <td>24mm f/2.8, Macro 50mm, 85mm f/1.8</td>
+                </tr>
+                <tr>
+                    <td><strong>Phần 3: Hoàng Hôn Chiêm Nghiệm</strong></td>
+                    <td>12.2s - 14.8s (Shots 18-19)</td>
+                    <td>Hoàng hôn vàng rực rỡ bên bờ sông Sài Gòn ➔ Chuyển giao sang Giờ Xanh (Blue Hour) và ánh đèn neon đa sắc.</td>
+                    <td>Lắng đọng, thơ mộng, đối lập màu sắc Teal &amp; Orange quyến rũ.</td>
+                    <td>50mm f/1.4 &amp; 35mm f/1.8</td>
+                </tr>
+                <tr>
+                    <td><strong>Phần 4: Đêm Lung Linh &amp; Khép Lại</strong></td>
+                    <td>14.8s - 18.1s (Shots 20-21)</td>
+                    <td>Dạo bước Slow-motion giữa quả cầu ánh sáng Bokeh đêm ➔ Đại cảnh panorama thành phố lung linh từ trên cao.</td>
+                    <td>Mộng ảo, tráng lệ, ấm áp và tự hào bản sắc nguồn cội.</td>
+                    <td>85mm f/1.4 &amp; 24mm f/8</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Modal Lightbox -->
+<div id="lightboxModal" class="modal-overlay" onclick="closeLightbox()">
+    <button class="modal-close-btn" onclick="closeLightbox()">&times;</button>
+    <div class="modal-img-container" onclick="event.stopPropagation()">
+        <img id="lightboxImg" class="modal-img" src="" alt="Enlarged view" />
+    </div>
+    <div id="lightboxCaption" class="modal-caption"></div>
+</div>
+
+<!-- Video Player Modal -->
+<div id="videoModal" class="modal-overlay" onclick="closeVideoModal()">
+    <button class="modal-close-btn" onclick="closeVideoModal()">&times;</button>
+    <div class="video-modal-box" onclick="event.stopPropagation()">
+        <div class="video-modal-header">
+            <span style="font-weight: 700; color: var(--accent-amber);">🎬 Trình Phát Video Phân Đoạn</span>
+            <span id="videoCurrentTime" style="color: var(--text-muted); font-size: 13px;">0.00s</span>
+        </div>
+        <video id="playerVideo" class="modal-video" controls playsinline>
+            <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Saigon%2C%20Vietnam%20-%20%40qfroost.mp4" type="video/mp4">
+        <source src="Saigon, Vietnam - @qfroost.mp4" type="video/mp4">
+            <source src="../videos/Saigon, Vietnam - @qfroost.mp4" type="video/mp4">
+            <source src="./videos/Saigon, Vietnam - @qfroost.mp4" type="video/mp4">
+            Trình duyệt không hỗ trợ thẻ video.
+        </video>
+    </div>
+</div>
+
+<!-- Floating Video Play Button -->
+<button class="fab-video-btn" onclick="openFullVideo()">
+    ▶ Xem Video Gốc
+</button>
+
+<script>
+// Lightbox functions
+function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption;
+    document.getElementById('lightboxModal').classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').classList.remove('active');
+}
+
+// Video Modal functions
+const videoModal = document.getElementById('videoModal');
+const playerVideo = document.getElementById('playerVideo');
+const videoCurrentTime = document.getElementById('videoCurrentTime');
+
+function jumpToVideo(sec) {
+    videoModal.classList.add('active');
+    playerVideo.currentTime = sec;
+    playerVideo.play();
+}
+
+function openFullVideo() {
+    videoModal.classList.add('active');
+    playerVideo.currentTime = 0;
+    playerVideo.play();
+}
+
+function closeVideoModal() {
+    videoModal.classList.remove('active');
+    playerVideo.pause();
+}
+
+playerVideo.addEventListener('timeupdate', () => {
+    videoCurrentTime.innerText = playerVideo.currentTime.toFixed(2) + 's';
+});
+
+// Keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    }
+});
+</script>
+
+</body>
+</html>

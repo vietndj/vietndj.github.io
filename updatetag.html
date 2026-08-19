@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tool Bơm Tags Tĩnh - vietndj</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root { --bg: #1D1D1F; --card: #2C2C2E; --accent: #34C759; --text: #FFFFFF; --text-muted: #8E8E93; }
+        body { background: var(--bg); color: var(--text); font-family: -apple-system, system-ui, sans-serif; }
+        .cms-card { background: var(--card); border: 1px solid #3A3A3C; border-radius: 16px; padding: 24px; }
+        input, textarea { background: #3A3A3C; border: 1px solid #48484A; border-radius: 8px; padding: 12px; width: 100%; color: white; outline: none; margin-bottom: 12px; font-family: monospace; font-size: 13px;}
+        input:focus, textarea:focus { border-color: var(--accent); }
+        button { background: var(--accent); color: white; font-weight: bold; padding: 14px 24px; border-radius: 12px; transition: all 0.2s; width: 100%; cursor: pointer;}
+        button:hover { opacity: 0.9; transform: scale(1.01); }
+        button:disabled { background: #48484A; cursor: not-allowed; opacity: 0.7; }
+        #log { margin-top: 20px; font-size: 13px; font-family: monospace; color: var(--text-muted); height: 150px; overflow-y: auto; background: #000; padding: 12px; border-radius: 8px; }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4">
+    <div class="cms-card max-w-2xl w-full shadow-2xl">
+        <h1 class="text-2xl font-bold mb-2 text-center text-[var(--accent)]">Data Injector V3</h1>
+        <p class="text-sm text-[var(--text-muted)] mb-6 text-center">Bơm trực tiếp JSON Data lên GitHub (Không cần AI API)</p>
+        
+        <label class="text-[10px] font-bold uppercase text-[var(--text-muted)] ml-1 mb-1 block">GitHub PAT</label>
+        <input type="password" id="gh_token" placeholder="ghp_xxxxxxxxxxxx">
+        
+        <label class="text-[10px] font-bold uppercase text-[var(--text-muted)] ml-1 mb-1 block">Dán khối JSON Gemini đưa cho bạn vào đây:</label>
+        <textarea id="json_data" rows="8" placeholder='Ví dụ: { "repo/bai-1.html": ["Não bộ", "Sức khỏe"] }'></textarea>
+        
+        <button id="btn-sync">🚀 BƠM DỮ LIỆU LÊN HỆ THỐNG</button>
+        <div id="status" class="mt-4 text-center font-bold text-sm h-5"></div>
+        <div id="log">Sẵn sàng...</div>
+    </div>
+
+    <script>
+        const username = 'vietndj';
+        const logger = msg => { const l = document.getElementById('log'); l.innerHTML += `<div>> ${msg}</div>`; l.scrollTop = l.scrollHeight; };
+        const setStatus = (msg, type) => { const s = document.getElementById('status'); s.innerText = msg; s.className = `mt-4 text-center font-bold text-sm ${type==='error'?'text-red-500':'text-green-500'}`; };
+        
+        document.getElementById('btn-sync').onclick = async () => {
+            const token = document.getElementById('gh_token').value.trim();
+            const rawJson = document.getElementById('json_data').value.trim();
+            if (!token || !rawJson) return alert("Thiếu Token hoặc chưa dán JSON!");
+            
+            let injectData;
+            try { injectData = JSON.parse(rawJson); } catch (e) { return alert("Lỗi: Dữ liệu JSON bạn dán vào không hợp lệ!"); }
+            
+            document.getElementById('btn-sync').disabled = true;
+            setStatus("Đang nạp metadata.json...", "loading");
+
+            try {
+                // 1. Kéo metadata.json về
+                const res = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, { headers: { 'Authorization': `Bearer ${token}`, 'Accept': 'application/vnd.github.v3+json' } });
+                if (!res.ok) throw new Error("Không lấy được metadata.json");
+                
+                const metaRaw = await res.json();
+                const metaContent = JSON.parse(decodeURIComponent(escape(atob(metaRaw.content))));
+                
+                // 2. Trộn dữ liệu: Giữ nguyên Tags cũ, chỉ ghi đè/thêm Tags mới từ JSON
+                if (!metaContent.tags) metaContent.tags = {};
+                Object.keys(injectData).forEach(key => {
+                    metaContent.tags[key] = injectData[key];
+                    logger(`Đã map tag cho: ${key}`);
+                });
+
+                // 3. Đẩy lại lên GitHub
+                setStatus("Đang lưu lên hệ thống...", "loading");
+                const b64 = btoa(unescape(encodeURIComponent(JSON.stringify(metaContent, null, 2))));
+                const putRes = await fetch(`https://api.github.com/repos/${username}/${username}.github.io/contents/metadata.json`, {
+                    method: 'PUT',
+                    headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ message: 'Bơm Tags từ AI Chat', content: b64, sha: metaRaw.sha })
+                });
+
+                if (putRes.ok) {
+                    setStatus("🎉 CẬP NHẬT THÀNH CÔNG!", "success");
+                    logger("Hoàn tất! Mở App CMS của bạn lên để kiểm tra.");
+                } else throw new Error("Lỗi khi ghi đè metadata.");
+
+            } catch (e) {
+                logger(`Lỗi: ${e.message}`);
+                setStatus("Thất bại!", "error");
+            } finally { document.getElementById('btn-sync').disabled = false; }
+        };
+    </script>
+</body>
+</html>

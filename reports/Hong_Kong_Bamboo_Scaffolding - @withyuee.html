@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Báo Cáo Phân Tích Đạo Diễn &amp; Quay Dựng: Hong Kong Bamboo Scaffolding</title>
+<style>
+
+@page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+}
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'SVN-Aeonik', sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+    font-size: 13px;
+    line-height: 1.55;
+    padding: 16px;
+}
+.header {
+    background: linear-gradient(135deg, #064e3b 0%, #0f172a 100%);
+    border-radius: 14px;
+    padding: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border: 1px solid #1e293b;
+}
+.badge {
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-top: 10px;
+    letter-spacing: -0.3px;
+}
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 16px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 12px 16px;
+    border-radius: 10px;
+}
+.meta-item {
+    font-size: 12px;
+}
+.meta-label {
+    color: #94a3b8;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.meta-val {
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-top: 2px;
+}
+
+.section-title {
+    font-size: 16px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 24px 0 14px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: #10b981;
+    border-radius: 2px;
+}
+
+.shot-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 16px;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.shot-img-col {
+    width: 130px;
+    flex-shrink: 0;
+}
+.img-box {
+    width: 130px;
+    height: 231px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #cbd5e1;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shot-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fbbf24;
+    font-weight: 800;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+.shot-time {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.shot-content {
+    flex: 1;
+}
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+.shot-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+}
+.shot-role-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #047857;
+    background: #d1fae5;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.info-row {
+    margin-bottom: 5px;
+    font-size: 12px;
+}
+.info-row strong {
+    color: #334155;
+    font-weight: 700;
+}
+.trans-box {
+    background: #f8fafc;
+    border-left: 3px solid #10b981;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 6px;
+    font-size: 11.5px;
+}
+
+.script-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+    page-break-inside: avoid;
+}
+.script-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+}
+.script-card.opt-1 {
+    border-top: 4px solid #10b981;
+}
+.script-card.opt-2 {
+    border-top: 4px solid #f59e0b;
+}
+.script-title {
+    font-weight: 800;
+    font-size: 13.5px;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+.script-desc {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.voiceover-line {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 6px 8px;
+    margin-bottom: 6px;
+    font-size: 11px;
+}
+.vo-tag {
+    font-weight: 700;
+    color: #059669;
+    font-size: 10px;
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="badge">DIRECTOR BREAKDOWN &amp; CINEMATOGRAPHY REPORT</span>
+    <h1>Báo Cáo Phân Tích Đạo Diễn: Hong Kong Bamboo Scaffolding (搭棚)</h1>
+    <div class="meta-grid">
+        <div class="meta-item">
+            <div class="meta-label">Creator / Nguồn</div>
+            <div class="meta-val">@withyuee &bull; Instagram</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Thời Lượng / Tỷ Lệ</div>
+            <div class="meta-val">23.93s &bull; Khung Dọc 9:16 (720x1280)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Tổng Phân Cảnh</div>
+            <div class="meta-val">16 Shots &bull; Rhythmic Cut (~1.3s)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Cấu Trúc Video</div>
+            <div class="meta-val">Infinite Seamless Loop (Vòng lặp)</div>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">BẢNG BÓC TÁCH CHI TIẾT 16 PHÂN CẢNH (DIRECTOR SHOT BREAKDOWN)</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_001_84d02fa0.jpg" alt="Shot 01" />
+            <span class="shot-badge">SHOT 01</span>
+            <span class="shot-time">2.00s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 01: 0.00s - 2.00s</div>
+            <div class="shot-role-tag">Visual Hook & Grandeur (Mở cảnh & Thiết lập không gian đồ sộ)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cực Toàn Cảnh (Extreme Wide Shot - EWS) &bull; Góc ngước thấp (Low-Angle Look Up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày mềm dịu (Soft Daylight), bóng cây xanh tiền cảnh làm nổi bật lưới tre xám vàng &bull; Xanh ngọc râm mát (Teal shadows) phối vàng tre cổ kính (Amber Bamboo).</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Tòa cao ốc đồ sộ bọc kín giàn giáo tre như một công trình điêu khắc khổng lồ. Dòng chữ typography 'a centuries-old art that built the city Hong Kong 香港' màu vàng gold xuất hiện trang trọng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bao quát toàn bộ kiến trúc ➔ <b>Nối In:</b> Cắt thẳng (Hard Cut) xuống mặt đường bắt trọn người thợ bắt đầu lắp dựng từng gióng tre.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_002_699421e3.jpg" alt="Shot 02" />
+            <span class="shot-badge">SHOT 02</span>
+            <span class="shot-time">2.67s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 02: 2.00s - 4.67s</div>
+            <div class="shot-role-tag">Craft Definition & Ground Work (Định danh nghề & Khởi điểm đường phố)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Đứng (Medium Full Shot) &bull; Góc ngang tầm mắt hơi thấp (Eye-Level / Low)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng phản chiếu từ vỉa hè gạch đỏ và đèn neon biển hiệu cửa tiệm phía sau &bull; Đỏ gạch vỉa hè (Terracotta Red) tương phản áo vàng thợ và xanh biển hiệu.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Người thợ áo vàng mũ bảo hộ trắng vắt vẻo trên gióng tre cách mặt đất hơn 2m, hai tay thoăn thoắt lắp ghép giàn giáo. Chữ tiêu đề 'Bamboo Scaffolding 搭棚 / 竹棚架' xuất hiện trang trọng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Khóa tư thế chân vững chãi trên gióng tre ➔ <b>Nối In:</b> Đẩy tầm mắt vút lên cao tầng nơi bó tre được kéo lên không trung.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_003_02cc6fea.jpg" alt="Shot 03" />
+            <span class="shot-badge">SHOT 03</span>
+            <span class="shot-time">1.33s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 03: 4.67s - 6.00s</div>
+            <div class="shot-role-tag">Vertical Hauling & Rhythm (Nhịp vận chuyển thẳng đứng & Đội ngũ trên cao)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Trục Dọc (Vertical Long Shot) &bull; Góc máy cao nhìn dọc thân tòa cao ốc</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng phản quang từ mặt kính cửa sổ và tường ốp gạch men hồng cam ấm áp &bull; Tone ấm gạch men (Warm Peach) đan xen màu trời xanh phản chiếu trên kính.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Bó tre dài được tời kéo thẳng đứng lơ lửng giữa không trung. Các người thợ ở từng tầng lầu khác nhau bám trụ giàn tre đón bắt vật liệu theo nhịp điệu âm nhạc dứt khoát.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bó tre nghiêng theo đà kéo ➔ <b>Nối In:</b> Match Cut chuyển động sang góc nhìn hẹp hơn khi bó tre vút qua ban công.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_004_1cc9b542.jpg" alt="Shot 04" />
+            <span class="shot-badge">SHOT 04</span>
+            <span class="shot-time">1.27s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 04: 6.00s - 7.27s</div>
+            <div class="shot-role-tag">Altitude Tension & Dynamics (Nhịp căng thẳng độ cao & Lơ lửng giữa trời)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Nghiêng (High-Angle Oblique Full Shot) &bull; Góc ngửa chếch nhìn lên tầng cao trên nền trời xanh</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng chiếu rọi trực diện, làm rực màu áo cam dạ quang của các thợ giàn giáo trên nền trời xanh thẳm &bull; Xanh da trời sâu (Deep Sky Blue) kết hợp cam neon an toàn (Hi-Vis Orange).</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Bó tre nằm ngang được nhấc bổng qua các tầng chót vót. 4 người thợ ở các cao độ khác nhau phối hợp kéo tời tay điêu luyện không cần máy móc cơ giới nặng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bó tre vượt qua tầm mắt người thợ áo cam ➔ <b>Nối In:</b> Đẩy lên đỉnh cao nhất của tòa nhà (Rooftop Peak).
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_005_2f20fc74.jpg" alt="Shot 05" />
+            <span class="shot-badge">SHOT 05</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 05: 7.27s - 8.57s</div>
+            <div class="shot-role-tag">Vertigo Apex (Đỉnh cao nghẹt thở & Ranh giới trời mây)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cực Toàn Cảnh Góc Cao (Extreme High Angle / Rooftop POV) &bull; Góc nhìn từ tòa đối diện nhìn sang mép sân thượng</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ngược nhẹ trên nền mây trời hoàng hôn và rặng núi xanh rì phía sau &bull; Vàng ráng chiều (Golden Hour Haze) hòa cùng xanh rừng nhiệt đới.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Người thợ ngồi thu mình trên mép gờ sân thượng tầng cao nhất (hơn 30 tầng lầu), bên dưới là các công nhân khác đu mình trên mạng lưới tre chênh vênh giữa vách tường đứng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Giữ độ tĩnh cheo leo trên đỉnh cao ➔ <b>Nối In:</b> Cắt giật (Shock Cut) xuống góc nhìn chủ quan sâu hút từ giàn tre xuống con hẻm.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_006_7779e4d0.jpg" alt="Shot 06" />
+            <span class="shot-badge">SHOT 06</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 06: 8.57s - 9.87s</div>
+            <div class="shot-role-tag">Spatial Depth & POV (Góc nhìn thợ giàn giáo & Chiều sâu hun hút)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Góc Nhìn Điểm Hút (One-Point Perspective High Angle) &bull; Góc nhìn từ giàn giáo cao nhìn thẳng xuống lòng ngõ hẻm</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng vàng rọi vào bức tường gạch đỏ cổ kính bên phải, tạo vệt sáng ấm áp tương phản bóng râm dưới hẻm &bull; Đỏ gạch nung (Red Brick), vàng tre tự nhiên và sắc trắng áo công nhân.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Người thợ đeo khẩu trang, mũ vàng ngồi trên gióng tre ngang tiền cảnh, tay thoăn thoắt buộc dây. Dưới lòng hẻm là dòng xe cộ và nhóm kỹ sư áo trắng nón vàng giám sát.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Thao tác siết dây mấu chốt ➔ <b>Nối In:</b> Cận cảnh chi tiết bao đựng cọc tre và cuộn dây buộc ni-lông.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_007_6ba7708a.jpg" alt="Shot 07" />
+            <span class="shot-badge">SHOT 07</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 07: 9.87s - 11.17s</div>
+            <div class="shot-role-tag">Materiality & Craft Tools (Chất liệu thô mộc & Công cụ truyền thống)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cận Cảnh Đặc Tả (Close-Up - CU) &bull; Góc ngang tĩnh (Static Eye-Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tán xạ mềm ngoài trời làm nổi bật thớ vải đay thô và độ bóng của các ống tre khô &bull; Nâu vải đay mộc mạc (Burlap Brown), vàng ống tre và đen tuyền dây cột.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Những bao tải vải gai đay chứa các đầu cọc tre ngắn sắc gọn, bên cạnh là chùm dây dải nhựa đen chuyên dụng dùng để thắt gút cổ truyền không dùng đinh ốc kim loại.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Chi tiết công cụ thô mộc ➔ <b>Nối In:</b> Cắt 90 độ từ trên cao nhìn xuống sàn xe tải bốc dỡ tre.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_008_05c4e95c.jpg" alt="Shot 08" />
+            <span class="shot-badge">SHOT 08</span>
+            <span class="shot-time">1.27s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 08: 11.17s - 12.43s</div>
+            <div class="shot-role-tag">Top-Down Geometry (Hình học từ trên cao & Lao động thủ công)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Góc Nhìn Trực Diện Trên Cao (Bird's Eye Top-Down View 90°) &bull; Góc chúc thẳng đứng 90 độ xuống mặt đường</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Vệt sơn chỉ đường màu trắng và vạch đôi vàng rực trên nền nhựa đường xám đen &bull; Đỏ áo thợ (Signal Red), vàng nón bảo hộ và vàng vạch sơn kẻ đường nổi bật.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Người thợ áo đỏ mũ vàng ngồi trực tiếp trên đống tre xếp lớp dày đặc trên thùng xe tải, tay thoăn thoắt chọn lọc và kéo từng cây tre thẳng tắp ra khỏi kiện hàng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Cánh tay nhấc cây tre lên ➔ <b>Nối In:</b> Bắt tiếp động tác hai người thợ luồn tre vào khung tường.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_009_2ebaf132.jpg" alt="Shot 09" />
+            <span class="shot-badge">SHOT 09</span>
+            <span class="shot-time">1.33s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 09: 12.43s - 13.77s</div>
+            <div class="shot-role-tag">Synchronized Teamwork (Nhịp phối hợp tay đôi & Sức mạnh cơ bắp)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Ngước Lên (Low Angle Medium Shot) &bull; Góc chếch 45 độ ngước nhìn nhóm thợ</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh nắng xiên tạo khối cơ bắp và bóng đổ hình học của mạng lưới tre lên mặt tường gạch đỏ &bull; Xanh áo phản quang (Cyan/Mint), đỏ gạch nung và vàng ấm thân tre.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Hai người thợ giàn giáo đứng hai bên gióng dọc, cùng lúc đón và đẩy một thân tre lớn ăn khớp vào khớp nối. Cả hai đều mang dây đai an toàn chuyên dụng và chùm dây buộc giắt sau lưng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Thân tre được lồng khít vào gá đỡ ➔ <b>Nối In:</b> Chuyển góc nhìn đóng khung từ con ngõ hẹp cổ điển.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_010_2bbfc03d.jpg" alt="Shot 10" />
+            <span class="shot-badge">SHOT 10</span>
+            <span class="shot-time">1.27s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 10: 13.77s - 15.03s</div>
+            <div class="shot-role-tag">Urban Sub-Framing (Đóng khung đô thị & Tương phản kiến trúc)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Khung Lồng Khung (Framed Alley Vista) &bull; Góc nhìn sâu qua khe hẹp hai dãy nhà (Deep Focus)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng rọi dọc khe hẹp giữa hai tòa nhà, làm nổi bật mảng cây xanh mướt và tòa cao ốc bọc tre phía xa &bull; Vàng đất tường nhà cũ (Ochre), xanh lá cây rực rỡ và xám bê tông.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Hai dãy nhà tập thể cũ kỹ với giàn phơi đồ, cục nóng điều hòa tạo thành một chiếc khung hình tự nhiên dẫn mắt thẳng vào tòa cao ốc hiện đại đang được bọc kín bởi giàn tre ở hậu cảnh.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Tầm nhìn lọt thỏm trong hẻm ➔ <b>Nối In:</b> Mở rộng ra mặt phố lớn với chiếc taxi đỏ biểu tượng lướt qua.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_011_cc185eb2.jpg" alt="Shot 11" />
+            <span class="shot-badge">SHOT 11</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 11: 15.03s - 16.33s</div>
+            <div class="shot-role-tag">Cultural Iconography (Biểu tượng văn hóa & Động lực đường phố)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Góc Thấp (Low Angle Street View) &bull; Góc thấp ngang mặt đường bắt chuyển động xe</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên phản chiếu bóng loáng trên nắp ca-pô chiếc xe taxi đỏ kinh điển Hong Kong (Toyota Crown Comfort) &bull; Đỏ tươi Taxi Hong Kong (Iconic Red), xám đá hoa cương và vàng tre.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Chiếc taxi màu đỏ mui bạc chạy lướt ngang qua khung hình. Toàn bộ mặt tiền tòa nhà phong cách châu Âu cổ điển phía sau được che phủ hoàn toàn bởi ma trận giàn tre đồ sộ.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Đuôi xe taxi trôi khỏi khung hình ➔ <b>Nối In:</b> Cắt sang ngã tư đường ray tàu điện với góc phố sầm uất.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_012_965809e5.jpg" alt="Shot 12" />
+            <span class="shot-badge">SHOT 12</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 12: 16.33s - 17.63s</div>
+            <div class="shot-role-tag">Daily Life Intersection (Giao lộ đô thị & Nhịp sống thường nhật)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Ngã Tư (Intersection Wide Shot) &bull; Góc thấp ngắm dòng người qua đường</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng vàng rọi chiếu các vạch kẻ vàng ngã tư và lưới bảo hộ màu xanh lục tươi mát &bull; Xanh lục lưới bảo vệ (Emerald Green mesh), đỏ taxi và vàng vạch qua đường.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Đường ray tàu điện leng keng (Ding Ding) cắt ngang mặt đường, người dân đi bộ qua đường dưới chân tòa nhà bọc tre nhiều tầng. Chiếc taxi đỏ xuất hiện như một dấu ấn thị giác quen thuộc.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Người bộ hành rẽ bước ➔ <b>Nối In:</b> Đưa người xem bước thẳng vào dưới 'mái vòm tre' trên vỉa hè.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_013_728e9f25.jpg" alt="Shot 13" />
+            <span class="shot-badge">SHOT 13</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 13: 17.63s - 18.93s</div>
+            <div class="shot-role-tag">Bamboo Arcade Tunnel (Đường hầm vòm tre & Trải nghiệm đắm chìm)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Góc Nhìn Chiều Sâu Một Điểm Tụ (One-Point Perspective) &bull; Góc nhìn thẳng trục giữa đường hầm vỉa hè</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh nắng xiên rọi qua các kẽ tre đan trên mái vòm, đổ những vệt sọc bóng sáng nghệ thuật xuống nền đá hoa cương vỉa hè &bull; Nâu tre vàng mộc mạc (Natural Bamboo Tan), ánh nắng vàng rực rỡ và tường trắng.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Hành lang vòm tre được dựng phủ kín lối đi bộ cho người dân tránh rơi đồ. Một người phụ nữ thong thả bước về phía ánh sáng cuối đường hầm.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bước chân tiến ra vùng sáng ➔ <b>Nối In:</b> Chuyển ra mặt đường nơi xe tải chở các thân tre khổng lồ sẵn sàng xuất phát.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_014_3d85444b.jpg" alt="Shot 14" />
+            <span class="shot-badge">SHOT 14</span>
+            <span class="shot-time">1.30s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 14: 18.93s - 20.23s</div>
+            <div class="shot-role-tag">Supply Chain Logistics (Chuỗi cung ứng vật liệu & Sức sống thương mại)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Góc Nghiêng (Medium Shot 45°) &bull; Góc ngang tầm mắt bên hông xe tải</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Biển hiệu bất động sản màu vàng chanh '新威地產' treo cao rực rỡ trên nền tường gạch men nâu đỏ &bull; Xanh dương thùng xe (Cobalt Blue), vàng biển hiệu chữ Hán và nâu gỗ tre.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Hai chiếc xe tải chở hàng trăm bó tre dài xếp ngay ngắn trên giá đỡ sắt xanh và trắng, phản ánh quy mô lưu thông nguyên liệu tre diễn ra hàng ngày tại Hong Kong.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Đuôi xe tải đậu tĩnh ➔ <b>Nối In:</b> Bắt trọn khoảnh khắc chiếc xe tải xanh chở tre lao nhanh trên cầu vượt.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_015_96b624d0.jpg" alt="Shot 15" />
+            <span class="shot-badge">SHOT 15</span>
+            <span class="shot-time">1.70s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 15: 20.23s - 21.93s</div>
+            <div class="shot-role-tag">Arterial Transit & Modern Clash (Huyết mạch giao thông & Giao thoa tre - kính)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Chuyển Động Lướt Ngang (Low-Angle Pan Tracking) &bull; Góc thấp nhìn lên thân cầu vượt</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Sự tương phản giữa kính phản quang xanh lạnh của tòa cao ốc tài chính ngân hàng với những thân tre mộc mạc trên xe &bull; Xanh kính hiện đại (Cyan Blue Glass) đối trọng với xanh xe tải và vàng tre.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Chiếc xe tải màu xanh dương chở đầy tre di chuyển trên cầu vượt đường bộ, lướt qua phía trước tòa nhà kính tài chính đồ sộ và trạm dừng xe buýt bên dưới.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Xe tải chạy hết chiều dài cầu vượt ➔ <b>Nối In:</b> Khóa toàn cảnh tòa cao ốc phủ tre để hoàn thành vòng lặp vô tận (Perfect Loop).
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_016_a96cf6cd.jpg" alt="Shot 16" />
+            <span class="shot-badge">SHOT 16</span>
+            <span class="shot-time">2.00s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 16: 21.93s - 23.93s</div>
+            <div class="shot-role-tag">Infinite Loop & Heritage Legacy (Vòng lặp bất tận & Tôn vinh di sản trăm năm)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cực Toàn Cảnh (Extreme Wide Shot - EWS) &bull; Khung tiền cảnh bậc thang đá & cổng vòm đèn tròn</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Bầu không khí xanh mát của hàng cọ và ánh sáng ban ngày dịu dàng ôm trọn công trình vĩ đại &bull; Xanh ngọc mờ ảo (Teal Vintage) và vàng gold cổ kính.</div>
+        <div class="info-row"><strong>Hành Động Diễn Xuất:</strong> Bậc thang đá và cổng vòm đèn tròn cổ kính làm bệ đỡ tiền cảnh hướng mắt lên toàn bộ tòa cao ốc bọc tre giữa mây trời. Dòng chữ 'Hong Kong 香港' màu vàng một lần nữa xuất hiện rực rỡ, nối liền 100% khớp chuyển động về Shot 01 tạo vòng lặp vô tận (Seamless Infinite Loop).</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Nối trực tiếp về Shot 01 không một vết gợn (Zero-Cut Seamless Loop).
+        </div>
+    </div>
+</div>
+
+<div class="section-title">KỊCH BẢN THOẠI ĐỀ XUẤT ỨNG DỤNG (VOICEOVER CONCEPTS)</div>
+<div class="script-container">
+    <div class="script-card opt-1">
+        <div class="script-title">PHƯƠNG ÁN 1: DI SẢN &amp; TRIẾT LÝ VĂN HÓA (HERITAGE DOCUMENTARY)</div>
+        <div class="script-desc">Phù hợp làm video tài liệu ngắn, tôn vinh nghệ thuật dựng giàn giáo tre (搭棚) - biểu tượng dẻo dai của Hong Kong.</div>
+        
+        <div class="voiceover-line">
+            <span class="vo-tag">[0.0s - 4.7s &bull; Shot 1-2]:</span> "Giữa những tòa cao ốc chọc trời của Hong Kong, có một nghệ thuật hàng trăm năm tuổi vẫn đang âm thầm nâng đỡ cả thành phố..."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[4.7s - 8.6s &bull; Shot 3-5]:</span> "Không cần đến máy móc cồng kềnh, những thân tre dẻo dai được đưa lên mây trời chỉ bằng sức người và những nút thắt truyền thống."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[8.6s - 15.0s &bull; Shot 6-10]:</span> "Từ bàn tay của những người thợ đu mình giữa không trung, tre hòa vào từng con hẻm, từng nếp nhà, tạo nên một bản sắc không thể trộn lẫn."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[15.0s - 23.9s &bull; Shot 11-16]:</span> "Dù hiện đại đến đâu, tre vẫn len lỏi qua từng góc phố, kết nối quá khứ với tương lai trong một vòng lặp bất tận của thời gian."
+        </div>
+    </div>
+    
+    <div class="script-card opt-2">
+        <div class="script-title">PHƯƠNG ÁN 2: CHIA SẺ KỸ THUẬT QUAY &amp; DỰNG LOOP (REEL CREATOR BTS)</div>
+        <div class="script-desc">Phù hợp cho Content Creator chia sẻ bí quyết bắt nhịp 1.3s, phối màu phim đô thị và kỹ thuật tạo Infinite Loop.</div>
+        
+        <div class="voiceover-line">
+            <span class="vo-tag">[0.0s - 4.7s &bull; Shot 1-2]:</span> "Cách tạo một video triệu view về văn hóa đường phố: Bắt đầu bằng một cú ngước đại cảnh và typo ấn tượng."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[4.7s - 8.6s &bull; Shot 3-5]:</span> "Đẩy cao trào bằng chuỗi cắt cảnh nhanh 1.3 giây theo phách nhạc, thay đổi liên tục giữa góc ngước và góc nhìn từ trên cao."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[8.6s - 15.0s &bull; Shot 6-10]:</span> "Đan xen giữa đặc tả công cụ thô mộc và góc máy đóng khung qua khe hẹp để tạo chiều sâu thị giác cực đại."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[15.0s - 23.9s &bull; Shot 11-16]:</span> "Và kết thúc bằng một góc quay đối xứng hoàn hảo với cảnh mở đầu để video tự động lặp lại không tì vết."
+        </div>
+    </div>
+</div>
+
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "Hong_Kong_Bamboo_Scaffolding - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

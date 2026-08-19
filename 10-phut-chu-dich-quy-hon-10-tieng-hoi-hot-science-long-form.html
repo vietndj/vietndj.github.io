@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sổ Tay Khoa Học Tình Yêu & Kết Nối | Paul Brunson</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+    <!-- Mermaid.js -->
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        serif: ['Lora', 'serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fdf8f6',
+                            100: '#f2e8e5',
+                            500: '#d97757',
+                            900: '#4a2c23',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FAFAFA;
+            color: #2D3748;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Abstract Art CSS Classes */
+        .art-shape-1 {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 99%, #fecfef 100%);
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            animation: morph 8s ease-in-out infinite;
+        }
+        .art-shape-2 {
+            background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+            animation: morph 6s ease-in-out infinite alternate;
+        }
+        .art-shape-3 {
+            background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+            border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%;
+            animation: morph 7s ease-in-out infinite alternate-reverse;
+        }
+        .art-shape-4 {
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            border-radius: 80% 20% 40% 60% / 40% 60% 80% 20%;
+        }
+        
+        @keyframes morph {
+            0% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+            100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+        }
+
+        .mindmap-container {
+            cursor: grab;
+        }
+        .mindmap-container:active {
+            cursor: grabbing;
+        }
+
+        /* Hide scrollbar for cleaner look but allow scroll */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-brand-100 selection:text-brand-900">
+
+    <!-- Hero Section -->
+    <header class="relative pt-20 pb-16 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 opacity-40">
+            <div class="absolute -top-40 -right-40 w-96 h-96 art-shape-1 opacity-50 blur-3xl"></div>
+            <div class="absolute top-20 -left-20 w-72 h-72 art-shape-2 opacity-50 blur-3xl"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-900 text-sm font-semibold mb-6">
+                <i class="ph-fill ph-brain"></i> Psychology & Relationships
+            </span>
+            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight leading-tight mb-6">
+                Khoa Học Của Sự Gắn Kết: <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-500 to-rose-400">Từ Rạn Nứt Đến Chữa Lành</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-600 font-serif max-w-2xl mx-auto italic">
+                "Tình yêu không phải là một phép màu ngẫu nhiên. Nó là một hệ phương trình, và tin vui là: Khi bạn thay đổi biến số, bạn sẽ thay đổi được kết quả."
+            </p>
+        </div>
+    </header>
+
+    <!-- 1. The Big Idea & Mindmap -->
+    <section class="max-w-6xl mx-auto px-6 py-12">
+        <div class="mb-10 text-center">
+            <h2 class="text-3xl font-bold text-gray-900 flex items-center justify-center gap-3">
+                <i class="ph-duotone ph-target text-brand-500"></i> 1. The Big Idea
+            </h2>
+            <p class="mt-4 text-gray-600 max-w-3xl mx-auto">
+                <strong class="text-brand-900">Luận điểm cốt lõi:</strong> Hầu hết chúng ta bước vào các mối quan hệ với "cặp kính mờ" do tuổi thơ nhào nặn. Tình yêu đích thực không nằm ở việc tìm đúng người một cách tình cờ, mà ở việc <strong>học kỹ năng</strong> thấu hiểu mô thức gắn bó, làm chủ ngôn ngữ giao tiếp và chủ đích xây dựng sự kết nối mỗi ngày.
+            </p>
+        </div>
+
+        <!-- Mindmap Container -->
+        <div class="relative bg-white rounded-3xl shadow-sm border border-gray-100 p-2 overflow-hidden group">
+            <!-- Zoom Controls -->
+            <div class="absolute top-4 right-4 z-10 flex gap-2 bg-white/90 p-2 rounded-xl shadow-sm border border-gray-100 backdrop-blur-sm">
+                <button id="zoom-in" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 hover:bg-brand-50 text-gray-700 hover:text-brand-500 transition-colors">
+                    <i class="ph-bold ph-magnifying-glass-plus text-xl"></i>
+                </button>
+                <button id="zoom-out" class="w-10 h-10 flex items-center justify-center rounded-lg bg-gray-50 hover:bg-brand-50 text-gray-700 hover:text-brand-500 transition-colors">
+                    <i class="ph-bold ph-magnifying-glass-minus text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Mermaid Wrapper -->
+            <div class="w-full h-[500px] overflow-hidden rounded-2xl bg-[#fcfaf9] flex items-center justify-center" id="mindmap-viewport">
+                <div id="mindmap-content" class="transition-transform duration-300 origin-center">
+                    <pre class="mermaid">
+                        graph LR
+                            %% Styles
+                            classDef root fill:#4a2c23,stroke:#fff,stroke-width:2px,color:#fff,rx:10px,ry:10px
+                            classDef branch1 fill:#d97757,stroke:#fff,color:#fff,rx:8px,ry:8px
+                            classDef branch2 fill:#e2a08c,stroke:#fff,color:#fff,rx:8px,ry:8px
+                            classDef branch3 fill:#739e82,stroke:#fff,color:#fff,rx:8px,ry:8px
+                            classDef leaf fill:#f2e8e5,stroke:#d97757,color:#4a2c23,rx:5px,ry:5px
+
+                            A["🧠 KHOA HỌC TÌNH YÊU"]:::root
+                            
+                            %% Nhánh 1
+                            A --> B["🔍 Thấu Hiểu Ký Ức"]:::branch1
+                            B --> B1("Mô Thức Gắn Bó (An Toàn/Lo Âu/Tránh Né)"):::leaf
+                            B --> B2("Chữa Lành Vết Thương Tuổi Thơ"):::leaf
+                            
+                            %% Nhánh 2
+                            A --> C["🎯 Chiến Lược Kết Nối"]:::branch2
+                            C --> C1("5 Ngôn Ngữ Tình Yêu"):::leaf
+                            C --> C2("Mối Quan Hệ Lỏng Lẻo (Weak Ties)"):::leaf
+                            C --> C3("Quyết Định, Đừng Trượt Dài"):::leaf
+                            
+                            %% Nhánh 3
+                            A --> D["🛡️ Bảo Vệ Khoảng Trời Chung"]:::branch3
+                            D --> D1("Thời Gian Chủ Đích"):::leaf
+                            D --> D2("Trò Chơi Bóng Bàn (Bidding)"):::leaf
+                            D --> D3("Thiết Lập Ranh Giới Khi Cãi Vã"):::leaf
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-6 flex justify-center">
+            <a href="https://youtu.be/H4EYLof2_HU?si=-E0jr0xu5aY7TvzK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-6 py-3 bg-red-50 hover:bg-red-100 text-red-600 rounded-full font-medium transition-all group border border-red-100">
+                <div class="w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <i class="ph-fill ph-play"></i>
+                </div>
+                World’s No.1 Matchmaker: Làm Thế Nào Để TÌM & GIỮ Tình Yêu Đích Thực!
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. Deep Insights -->
+    <section class="bg-brand-50/50 py-16 border-y border-brand-100">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 flex items-center justify-center gap-3">
+                    <i class="ph-duotone ph-lightbulb text-amber-500"></i> 2. Deep Insights: Các Trụ Cột Tri Thức
+                </h2>
+                <p class="mt-2 text-gray-600">Những bài học sâu sắc nhất bóc tách cơ chế tâm lý đằng sau các hành vi tưởng chừng vô lý.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Insight 1 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-1 opacity-20 -mr-6 -mt-6"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>1. Mô Thức Gắn Bó</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất (Core Logic):</strong> Cách bạn yêu hiện tại được "copy-paste" từ cách bạn nhìn thấy cha mẹ yêu nhau khi còn bé. Nó chia làm 3 kiểu: An toàn (thoải mái), Lo âu (đeo bám), Tránh né (cô lập).</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Tuổi thơ thiếu vắng sự vỗ về tạo ra não bộ quen với việc "tự sinh tồn" (tránh né). Người tránh né hay thu hút người lo âu vì sự đeo bám của người kia lấp đầy khoảng trống mà người tránh né không bao giờ dám tự thừa nhận.</p>
+                        <div class="bg-amber-50 p-4 rounded-xl border border-amber-100">
+                            <p class="text-sm text-amber-800"><i class="ph-fill ph-lightbulb text-amber-500 mr-1"></i> <strong>Ẩn dụ:</strong> Mô thức gắn bó giống như "Hệ điều hành" mặc định của một chiếc máy tính. Dù bạn có tải bao nhiêu app "Hẹn hò" mới, nếu không nâng cấp hệ điều hành từ rễ, máy tính vẫn sẽ bị sập nguồn khi gặp rủi ro.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 2 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-2 opacity-20 -mr-6 -mt-6"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>2. 5 Ngôn Ngữ Tình Yêu</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Mỗi người có một "kênh tiếp sóng" tình cảm riêng (Lời nói, Cử chỉ, Quà tặng, Hành động chăm sóc, Thời gian). Nếu bạn không phát đúng kênh, đối phương sẽ không nhận được tín hiệu.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Paul Brunson từng mâu thuẫn lớn với vợ vì cô ấy liên tục đòi quà (ông nghĩ cô ấy hư hỏng). Thực tế, bố cô ấy hồi nhỏ thể hiện tình yêu qua việc tặng quà. Quà tặng chính là "từ vựng" yêu thương duy nhất cô ấy hiểu.</p>
+                        <div class="bg-blue-50 p-4 rounded-xl border border-blue-100">
+                            <p class="text-sm text-blue-800"><i class="ph-fill ph-lightbulb text-blue-500 mr-1"></i> <strong>Ẩn dụ:</strong> Giống như bạn đang liên tục gào thét "Anh yêu em" bằng tiếng Pháp, nhưng vợ bạn lại chỉ hiểu tiếng Tây Ban Nha. Có cố gắng đến mấy cũng chỉ mang lại sự thất vọng.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 3 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-3 opacity-30 -mr-6 -mt-6"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>3. Nguyên Lý "Bỏ Thầu" (Bidding)</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Một mối quan hệ khỏe mạnh là một chuỗi liên tục những tương tác nhỏ nhoi hằng ngày (một câu hỏi thăm, một cái chạm). Chúng được gọi là các "gói thầu" cảm xúc.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Tình yêu hao mòn không phải vì một trận cãi vã lớn, mà vì hàng ngàn "gói thầu" nhỏ bị phớt lờ. Đôi khi, bạn phải kiên trì gửi tín hiệu 5-6 lần mới nhận được phản hồi từ một người đang mệt mỏi.</p>
+                        <div class="bg-emerald-50 p-4 rounded-xl border border-emerald-100">
+                            <p class="text-sm text-emerald-800"><i class="ph-fill ph-lightbulb text-emerald-500 mr-1"></i> <strong>Ẩn dụ:</strong> Tình yêu giống hệt một trận đấu tennis. Bạn không thể chỉ giao bóng một lần vào ngày cưới rồi bỏ về. Bạn phải liên tục đánh quả bóng qua lưới mỗi ngày, cho đến cuối đời.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 4 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-4 opacity-20 -mr-6 -mt-6"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>4. Sức Mạnh Của Vòng Tròn Mở</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Những cơ hội lớn nhất trong đời (người yêu tốt, công việc xịn) thường không đến từ những người bạn thân nhất (Strong ties), mà đến từ những mối quan hệ xã giao lỏng lẻo (Weak ties - người thứ 150 trong danh bạ).</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Nhóm bạn thân thường chia sẻ cùng một luồng thông tin với bạn. Những người quen xã giao sống ở một "hệ sinh thái" khác, họ là những cây cầu nối bạn với những vùng đất cơ hội hoàn toàn mới mẻ.</p>
+                        <div class="bg-purple-50 p-4 rounded-xl border border-purple-100">
+                            <p class="text-sm text-purple-800"><i class="ph-fill ph-lightbulb text-purple-500 mr-1"></i> <strong>Ví dụ:</strong> Oprah Winfrey hay tỷ phú Enver luôn tổ chức các bữa tối với 20-30 người không hề thân thiết. Đó không phải tiệc tùng, đó là cách họ "nạp" thông tin thế giới từ những vùng rìa mạng lưới.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 5 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-1 opacity-20 -mr-6 -mt-6" style="animation-delay: -2s;"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>5. Hẹn Hò Tối Giản</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Đừng bao giờ biến buổi hẹn đầu tiên thành một bữa tối hoành tráng tốn kém hay một chầu nhậu say khướt. Hãy biến nó thành một cuộc dạo bộ 30 phút hoặc uống một ly cà phê.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Việc dạo bộ tiết tiết ra Endorphins giúp hai người gắn kết tự nhiên. Trong khi đó, việc uống rượu (chất ức chế thần kinh) làm mờ đi tính xác thực. Càng tốn tiền cho buổi hẹn đầu, tâm lý bạn càng khắt khe soi mói đối phương như một buổi phỏng vấn.</p>
+                        <div class="bg-rose-50 p-4 rounded-xl border border-rose-100">
+                            <p class="text-sm text-rose-800"><i class="ph-fill ph-lightbulb text-rose-500 mr-1"></i> <strong>Ẩn dụ:</strong> Chi 3 triệu cho bữa tối hẹn hò đầu tiên giống như việc bạn bắt một sinh viên thực tập phải vận hành dự án lớn ngay ngày đầu. Áp lực kỳ vọng sẽ bóp nghẹt sự lãng mạn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 6 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-2 opacity-20 -mr-6 -mt-6" style="animation-delay: -4s;"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>6. Nghịch Lý Của Sự Lựa Chọn</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Thế hệ chúng ta có nhiều lựa chọn bạn tình nhất trong lịch sử nhân loại (nhờ Tinder, Bumble...), nhưng lại là thế hệ cô đơn và kém thỏa mãn nhất.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Tâm lý học chỉ ra rằng: Khi bộ não biết rằng nó có "vô hạn sự lựa chọn thay thế", nó sẽ tự động tước đi giá trị của lựa chọn hiện tại. Gặp khó khăn một chút, người ta sẽ chọn cách "Quẹt trái tìm người mới" thay vì sửa chữa.</p>
+                        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <p class="text-sm text-slate-800"><i class="ph-fill ph-lightbulb text-slate-500 mr-1"></i> <strong>Ẩn dụ:</strong> Càng có nhiều sự lựa chọn, bạn càng giống như một người chết đói đứng giữa một đại siêu thị khổng lồ, đi loanh quanh nhìn ngắm và cuối cùng đi ra tay không vì không biết ăn gì.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 7 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-3 opacity-20 -mr-6 -mt-6" style="animation-delay: -1s;"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>7. Decide vs. Slide (Quyết Định vs Trượt Dài)</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Rất nhiều cặp đôi kết hôn không phải vì họ cùng ngồi xuống ra quyết định chung, mà vì họ "tiện đà" (quen đủ lâu, đến tuổi, bị thúc giục).</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Khả năng cùng nhau đưa ra các quyết định nhỏ (ăn gì, đi du lịch ở đâu) mà không "giết nhau" là chỉ báo số một cho sự tương thích. Trượt dài (Slide) là trốn tránh xung đột, nhường đối phương quyết định mọi thứ để cho yên thân.</p>
+                        <div class="bg-indigo-50 p-4 rounded-xl border border-indigo-100">
+                            <p class="text-sm text-indigo-800"><i class="ph-fill ph-lightbulb text-indigo-500 mr-1"></i> <strong>Ví dụ:</strong> Những cặp đôi đính hôn kéo dài tới 2 năm có tỷ lệ ly hôn giảm mạnh xuống còn ~20%. Đơn giản vì 2 năm là khoảng thời gian đủ dài để test xem họ "Decide" hay "Slide" khi sóng gió ập đến.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 8 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-4 opacity-20 -mr-6 -mt-6" style="animation-delay: -3s;"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>8. Thời Gian Chủ Đích</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Ngồi xem Netflix cạnh nhau 4 tiếng mỗi tối KHÔNG được tính là thời gian chất lượng. Bạn đang dành thời gian cho màn hình, không phải cho đối tác.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Trung bình các cặp vợ chồng chỉ dành 1-2 giờ mỗi ngày ở bên nhau, và thường trong trạng thái mệt mỏi. Không có giao tiếp sâu sắc, bộ não sẽ tự động chuyển đối phương thành dạng "bạn cùng phòng" (roommate).</p>
+                        <div class="bg-cyan-50 p-4 rounded-xl border border-cyan-100">
+                            <p class="text-sm text-cyan-800"><i class="ph-fill ph-lightbulb text-cyan-500 mr-1"></i> <strong>Ví dụ:</strong> Dù bận rộn làm TV show, Paul Brunson vẫn duy trì quy tắc: Buổi sáng dắt tay con ra bến xe bus 10 phút, không mang điện thoại. Đó là 10 phút chủ đích quý hơn 10 tiếng hời hợt.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Insight 9 -->
+                <div class="glass-card rounded-3xl p-8 relative overflow-hidden group hover:-translate-y-1 transition-transform duration-300">
+                    <div class="absolute top-0 right-0 w-24 h-24 art-shape-1 opacity-20 -mr-6 -mt-6" style="animation-delay: -5s;"></div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
+                        <span>9. Sự Phân Hoá Sự Cô Đơn</span>
+                    </h3>
+                    <div class="space-y-4">
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Bản chất:</strong> Bạn tưởng nhóm người cô đơn nhất là thanh niên bị chối từ? Không. Nhóm đối mặt với sự khủng hoảng cô đơn lớn nhất là đàn ông 40-45 tuổi cực kỳ thành đạt nhưng đã ly hôn.</p>
+                        <p class="text-sm text-gray-700"><strong class="text-brand-900">Cơ chế:</strong> Ở vị trí CEO/sếp, họ quen với việc ra lệnh và được phục tùng (tưởng rằng đó là lòng trung thành). Nhưng khi về nhà đối diện bức tường vô tri, họ nhận ra mình mất hoàn toàn kỹ năng xây dựng sự gắn kết cảm xúc.</p>
+                        <div class="bg-orange-50 p-4 rounded-xl border border-orange-100">
+                            <p class="text-sm text-orange-800"><i class="ph-fill ph-lightbulb text-orange-500 mr-1"></i> <strong>Ẩn dụ:</strong> Giống như một con sư tử đầu đàn bị tách khỏi bầy. Hệ thần kinh của họ luôn ở trạng thái "tự bảo vệ" (self-preservation) khiến họ mất khả năng mở lòng và ôm ấp một cách thực sự (ôm chạm hờ trên lưng).</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. Action Playbook -->
+    <section class="py-16">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 flex items-center justify-center gap-3">
+                    <i class="ph-duotone ph-rocket-launch text-brand-500"></i> 3. Action Playbook: Sổ Tay Thực Chiến
+                </h2>
+                <p class="mt-2 text-gray-600">Đừng chỉ gật gù rồi để đấy. Đây là cách bạn mang những điều này vào cuộc sống ngay lập tức.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-sm border border-gray-100 p-8">
+                <h3 class="text-xl font-bold text-gray-900 border-b pb-4 mb-6"><i class="ph-fill ph-arrows-left-right text-gray-400 mr-2"></i>Kịch Bản Cấp Cứu (Nếu - Thì)</h3>
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 font-bold">1</div>
+                        <div>
+                            <p class="font-semibold text-gray-900"><span class="text-red-500 mr-1">NẾU</span>bạn và đối tác sắp lao vào một trận cãi vã lớn nảy lửa nảy lửa sau ngày làm việc mệt mỏi...</p>
+                            <p class="text-gray-700 mt-1"><span class="text-emerald-500 font-bold mr-1">THÌ</span> hãy bấm nút Pause. Cùng dời cuộc thảo luận sang một bối cảnh khác (VD: "Sáng thứ 7 tuần này lúc cùng đi bộ ra công viên, chúng ta sẽ nói chuyện này nhé"). Sai bối cảnh = Chết chắc.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 font-bold">2</div>
+                        <div>
+                            <p class="font-semibold text-gray-900"><span class="text-red-500 mr-1">NẾU</span>bạn chuẩn bị có buổi hẹn đầu tiên với một người mình rất thích...</p>
+                            <p class="text-gray-700 mt-1"><span class="text-emerald-500 font-bold mr-1">THÌ</span> hãy chủ động rủ họ đi dạo công viên 30 phút buổi sáng hoặc mua 2 cốc cafe mang đi. Tuyệt đối không nhà hàng sang chảnh, không rượu bia. Nếu họ từ chối, bạn vừa lọc được một "red flag".</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-brand-50 flex items-center justify-center text-brand-600 font-bold">3</div>
+                        <div>
+                            <p class="font-semibold text-gray-900"><span class="text-red-500 mr-1">NẾU</span>bạn cảm thấy mình đang làm tất cả vì gia đình nhưng bạn đời vẫn phàn nàn là bạn vô tâm...</p>
+                            <p class="text-gray-700 mt-1"><span class="text-emerald-500 font-bold mr-1">THÌ</span> dừng ngay việc bạn đang làm lại. Ngồi xuống và dò lại "Ngôn ngữ tình yêu" của họ. Bạn đang dùng "hành động phục vụ" trong khi họ thèm khát "lời khen ngợi"?</p>
+                        </div>
+                    </li>
+                </ul>
+
+                <h3 class="text-xl font-bold text-gray-900 border-b pb-4 mt-10 mb-6"><i class="ph-fill ph-lightning text-amber-400 mr-2"></i>Hành Động Nhỏ (Làm ngay trong 24h tới)</h3>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-3">
+                        <i class="ph-duotone ph-chat-circle-text text-2xl text-brand-500"></i>
+                        <p class="text-sm text-gray-700">Tối nay, hãy nhìn thẳng vào mắt người thương và hỏi: <strong>"Ngay lúc này, em/anh thực sự cảm thấy thế nào?"</strong> Lắng nghe 100% không phán xét.</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-2xl p-5 border border-gray-100 flex items-start gap-3">
+                        <i class="ph-duotone ph-device-mobile-slash text-2xl text-brand-500"></i>
+                        <p class="text-sm text-gray-700">Ăn một bữa tối không có sự xuất hiện của chiếc điện thoại. Để chúng ở một căn phòng khác. Trải nghiệm sự "ngượng ngùng" khi phải giao tiếp thật.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Reality Check -->
+    <section class="bg-slate-900 text-white py-16 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+            <!-- Simple pattern background -->
+            <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="dotPattern" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                        <circle cx="2" cy="2" r="1" fill="#ffffff"></circle>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#dotPattern)"></rect>
+            </svg>
+        </div>
+
+        <div class="max-w-5xl mx-auto px-6 relative z-10">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold flex items-center justify-center gap-3">
+                    <i class="ph-duotone ph-warning-octagon text-rose-400"></i> 4. Reality Check: Bắt Bệnh Kỷ Luật
+                </h2>
+                <p class="mt-2 text-slate-400">Lý thuyết thì hay, nhưng đây là lý do bạn sẽ tạch khi áp dụng ra đời thực.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Red Flags -->
+                <div class="bg-slate-800/80 rounded-3xl p-8 border border-slate-700">
+                    <h3 class="text-xl font-bold text-rose-400 mb-6 flex items-center gap-2">
+                        <i class="ph-fill ph-flag-banner"></i> Bẫy Vô Hình (Red Flags)
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Ảo tưởng "Cỏ láng giềng xanh hơn"</h4>
+                            <p class="text-sm text-slate-400">Điểm mù chí mạng của thời đại dating app. Chỉ cần đối tác có một thói quen xấu nhỏ (ví dụ: nhai to), não bạn lập tức nhớ đến "10,000 matches tiềm năng" trên mạng. Bạn từ bỏ việc sửa chữa và chuyển sang vứt bỏ.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Đo lường sai lầm từ Lần Hẹn Đầu</h4>
+                            <p class="text-sm text-slate-400">Vì đầu tư quá nhiều tiền bạc/công sức trang điểm cho buổi đầu, bạn vô thức biến nó thành "Phiên tòa phán xét" thay vì tìm hiểu. Bạn săm soi đôi giày anh ta đi thay vì nghe câu chuyện anh ta kể.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Guardrails -->
+                <div class="bg-slate-800/80 rounded-3xl p-8 border border-slate-700">
+                    <h3 class="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
+                        <i class="ph-fill ph-shield-check"></i> Chốt Chặn Kỷ Luật (Guardrails)
+                    </h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Quy tắc "Một Chủ Đề" (The 1-Topic Rule)</h4>
+                            <p class="text-sm text-slate-400">Khi cãi vã, con người có xu hướng lôi mọi tội lỗi từ 5 năm trước ra nói. Thiết lập quy tắc thép: Chỉ giải quyết ĐÚNG một vấn đề hiện tại. Ai lôi chuyện cũ ra, người đó bị thổi còi.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white mb-2">Luật Giới Hạn Tùy Chọn</h4>
+                            <p class="text-sm text-slate-400">Nếu bạn vẫn dùng dating app, hãy áp dụng luật: Chỉ chat với tối đa 3 người một lúc. Xóa app khỏi màn hình chính. Để não bộ bạn buộc phải tìm hiểu sâu 3 người này thay vì lướt vô hồn tìm kiếm ảo ảnh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Active Recall (Flashcards) -->
+    <section class="bg-[#fdfbf7] py-16">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="mb-12 text-center">
+                <h2 class="text-3xl font-bold text-gray-900 flex items-center justify-center gap-3">
+                    <i class="ph-duotone ph-cards text-indigo-500"></i> 5. Trạm Ôn Tập Nhỏ (Active Recall)
+                </h2>
+                <p class="mt-2 text-gray-600">Khắc sâu kiến thức bằng cách đọc nhanh các câu hỏi và đáp án trọng điểm.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Flashcard Items -->
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Đâu là 3 kiểu mô thức gắn bó cốt lõi?</div>
+                    <div class="text-gray-800 font-medium">A: An toàn (Secure) - Lo âu (Anxious) - Tránh né (Avoidant).</div>
+                </div>
+                
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Sai lầm kinh điển nhất của các cuộc hẹn đầu tiên là gì?</div>
+                    <div class="text-gray-800 font-medium">A: Biến nó thành buổi ăn tối đắt đỏ rườm rà. Nó tạo ra áp lực và tâm lý "phỏng vấn" thay vì kết nối tự nhiên.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Thay vì đi ăn tối, lựa chọn lý tưởng cho buổi hẹn đầu là?</div>
+                    <div class="text-gray-800 font-medium">A: Cùng nhau đi dạo bộ hoặc uống một ly cà phê ban ngày (Tăng endorphin, giảm ức chế thần kinh).</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Thuyết "Decide vs. Slide" nói về điều gì?</div>
+                    <div class="text-gray-800 font-medium">A: Mối quan hệ bền vững dựa trên sự chủ động "Ra Quyết Định" cùng nhau, thay vì "Trượt Dài" nhượng bộ cho xong chuyện.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Tín hiệu lớn nhất dẫn tới tỷ lệ ly hôn thấp là gì?</div>
+                    <div class="text-gray-800 font-medium">A: Thời gian đính hôn/tìm hiểu kéo dài (thường khoảng 2 năm) để kiểm chứng khả năng vượt sóng gió.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: "Gói thầu" (Bidding) trong tình cảm nghĩa là sao?</div>
+                    <div class="text-gray-800 font-medium">A: Là những nỗ lực tương tác nhỏ (một câu hỏi han, cái nắm tay) đòi hỏi sự phản hồi liên tục hằng ngày.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Nguồn gốc mô thức gắn bó của bạn đến từ đâu?</div>
+                    <div class="text-gray-800 font-medium">A: Từ chính khuôn mẫu tình yêu mà cha mẹ bạn đã "trình diễn" khi bạn còn là một đứa trẻ.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Tại sao "Người Tránh Né" thường yêu "Người Lo Âu"?</div>
+                    <div class="text-gray-800 font-medium">A: Sự theo đuổi cuồng nhiệt của người Lo Âu lấp đầy khoảng trống mà người Tránh Né không có khả năng tự bộc lộ.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Yếu tố nào hủy hoại sự trân trọng trong quá trình chọn lựa đối tác?</div>
+                    <div class="text-gray-800 font-medium">A: Nghịch lý lựa chọn - Ảo tưởng rằng mình luôn có vô vàn sự thay thế (từ Dating Apps).</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Cơ hội đổi đời và kết nối tuyệt vời nhất thường đến từ ai?</div>
+                    <div class="text-gray-800 font-medium">A: Từ "Weak ties" (Các mối quan hệ lỏng lẻo ngoài rìa), chứ không phải từ nhóm bạn thân (Strong ties).</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Dấu hiệu bạn KHÔNG CÓ thời gian chủ đích bên vợ/chồng là gì?</div>
+                    <div class="text-gray-800 font-medium">A: Khi ở cạnh nhau, cả hai luôn dán mắt vào điện thoại hoặc màn hình TV giống như hai cái bóng.</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: "Ngôn ngữ tình dục" có giống nhau ở cả hai giới không?</div>
+                    <div class="text-gray-800 font-medium">A: Không. Đàn ông thường kích thích trực tiếp (Visual), trong khi phụ nữ thường cần quá trình khơi gợi cảm xúc và bối cảnh.</div>
+                </div>
+                
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Bước đầu tiên cho một cuộc đối thoại khó khăn là gì?</div>
+                    <div class="text-gray-800 font-medium">A: Lựa chọn đúng Không gian và Bối cảnh (Không nói chuyện nhạy cảm lúc mệt mỏi, thiếu ngủ, hay ở nơi ồn ào).</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: Kỷ luật số 1 khi tranh cãi là gì?</div>
+                    <div class="text-gray-800 font-medium">A: Đặt ranh giới cứng (Boundaries) - ví dụ "Chỉ thảo luận đúng 1 chủ đề, không đào bới quá khứ".</div>
+                </div>
+
+                <div class="p-5 bg-white rounded-2xl border border-gray-100 shadow-sm">
+                    <div class="text-brand-600 font-bold text-sm mb-2 text-opacity-80">Q: "Tình yêu thương bằng quà tặng" có phải là thực dụng?</div>
+                    <div class="text-gray-800 font-medium">A: Không, đó chỉ đơn giản là 1 trong 5 ngôn ngữ tình yêu cốt lõi. Hãy học cách "nói" ngôn ngữ của đối phương.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Footer -->
+    <footer class="bg-gray-900 text-gray-400 h-32 flex items-center border-t border-gray-800">
+        <div class="max-w-6xl mx-auto px-6 w-full flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="text-sm">
+                <p class="font-semibold text-white mb-1">Cập nhật kiến thức thực chiến nhất</p>
+                <p class="text-xs text-gray-500">Về Kỹ năng Quay Dựng, Xây kênh Niche và Tư duy thuật toán MXH kỷ nguyên mới.</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://youtube.com/@vietndonline" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-red-500 hover:text-white transition-all">
+                    <i class="ph-fill ph-youtube-logo text-xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-black hover:text-white transition-all">
+                    <i class="ph-fill ph-tiktok-logo text-xl"></i>
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=61580845559993" target="_blank" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all">
+                    <i class="ph-fill ph-facebook-logo text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Mermaid
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#ffffff',
+                primaryTextColor: '#2D3748',
+                primaryBorderColor: '#e2e8f0',
+                lineColor: '#cbd5e1',
+                secondaryColor: '#f8fafc',
+                tertiaryColor: '#f1f5f9'
+            },
+            flowchart: {
+                curve: 'basis' // Curved lines
+            }
+        });
+
+        // Setup Zoom capabilities for Mindmap
+        document.addEventListener("DOMContentLoaded", () => {
+            const zoomInBtn = document.getElementById('zoom-in');
+            const zoomOutBtn = document.getElementById('zoom-out');
+            const mindmapContent = document.getElementById('mindmap-content');
+            const viewport = document.getElementById('mindmap-viewport');
+
+            let currentScale = 1;
+            const ZOOM_STEP = 0.2;
+            const MAX_ZOOM = 2;
+            const MIN_ZOOM = 0.5;
+
+            // Pan variables
+            let isDragging = false;
+            let startX, startY;
+            let translateX = 0, translateY = 0;
+
+            const updateTransform = () => {
+                mindmapContent.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentScale})`;
+            };
+
+            zoomInBtn.addEventListener('click', () => {
+                if (currentScale < MAX_ZOOM) {
+                    currentScale += ZOOM_STEP;
+                    updateTransform();
+                }
+            });
+
+            zoomOutBtn.addEventListener('click', () => {
+                if (currentScale > MIN_ZOOM) {
+                    currentScale -= ZOOM_STEP;
+                    updateTransform();
+                }
+            });
+
+            // Drag to pan feature
+            viewport.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                viewport.classList.add('cursor-grabbing');
+            });
+
+            window.addEventListener('mouseup', () => {
+                isDragging = false;
+                viewport.classList.remove('cursor-grabbing');
+            });
+
+            window.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                e.preventDefault();
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+            });
+            
+            // Support Touch Devices
+            viewport.addEventListener('touchstart', (e) => {
+                isDragging = true;
+                startX = e.touches[0].clientX - translateX;
+                startY = e.touches[0].clientY - translateY;
+            });
+            
+            window.addEventListener('touchend', () => {
+                isDragging = false;
+            });
+            
+            window.addEventListener('touchmove', (e) => {
+                if (!isDragging) return;
+                translateX = e.touches[0].clientX - startX;
+                translateY = e.touches[0].clientY - startY;
+                updateTransform();
+            });
+        });
+    </script>
+</body>
+</html>

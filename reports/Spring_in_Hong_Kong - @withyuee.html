@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn: Phân Tích Kỹ Thuật Cinematic Spring in Hong Kong (@withyuee)</title>
+<style>
+
+
+:root {
+    --bg-main: #0B0F17;
+    --bg-card: #151C28;
+    --bg-card-alt: #1E2838;
+    --accent: #E85D75;
+    --accent-gold: #F5A623;
+    --accent-blue: #38BDF8;
+    --accent-green: #34D399;
+    --text-primary: #F8FAFC;
+    --text-secondary: #94A3B8;
+    --text-muted: #64748B;
+    --border: #2D3A4F;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'SVN-Aeonik', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.55;
+    padding: 24px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.header {
+    background: linear-gradient(135deg, #1C2433 0%, #151A24 100%);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 6px;
+    letter-spacing: -0.5px;
+}
+
+.header-left p {
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.badge-tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-right: 6px;
+}
+
+.badge-pink { background: rgba(232, 93, 117, 0.2); color: #FF8FA3; border: 1px solid rgba(232, 93, 117, 0.4); }
+.badge-gold { background: rgba(245, 166, 35, 0.2); color: #FCD34D; border: 1px solid rgba(245, 166, 35, 0.4); }
+.badge-blue { background: rgba(56, 189, 248, 0.2); color: #7DD3FC; border: 1px solid rgba(56, 189, 248, 0.4); }
+
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.meta-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+}
+
+.meta-card .title {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.meta-card .value {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    page-break-inside: avoid;
+}
+
+.shot-header {
+    background: var(--bg-card-alt);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.shot-header .shot-num {
+    font-weight: 800;
+    font-size: 16px;
+    color: var(--accent-gold);
+}
+
+.shot-header .shot-time {
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-family: monospace;
+}
+
+.shot-body {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.shot-visuals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.keyframe-img {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    display: block;
+}
+
+.shot-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    font-size: 13.5px;
+}
+
+.info-row {
+    display: flex;
+    gap: 8px;
+}
+
+.info-label {
+    color: var(--text-muted);
+    min-width: 120px;
+    font-weight: 600;
+}
+
+.info-val {
+    color: var(--text-primary);
+    flex: 1;
+}
+
+.highlight-box {
+    background: rgba(232, 93, 117, 0.08);
+    border-left: 3px solid var(--accent);
+    padding: 10px 14px;
+    border-radius: 0 8px 8px 0;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #FDA4AF;
+}
+
+.transition-section {
+    margin-top: 28px;
+    page-break-before: auto;
+}
+
+.trans-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.trans-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    page-break-inside: avoid;
+}
+
+.trans-card img {
+    width: 100%;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border: 1px solid var(--border);
+}
+
+.trans-card p {
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+.scripts-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 24px;
+    page-break-inside: avoid;
+}
+
+.script-card {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    margin-top: 14px;
+}
+
+.script-card h3 {
+    font-size: 15px;
+    color: var(--accent-gold);
+    margin-bottom: 8px;
+}
+
+.script-card p {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-style: italic;
+}
+
+@media print {
+    body { background: #0B0F17; padding: 10px; }
+    .shot-card { page-break-inside: avoid; margin-bottom: 16px; }
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="header-left">
+            <div>
+                <span class="badge-tag badge-pink">CINEMATIC SHORT-FORM</span>
+                <span class="badge-tag badge-gold">SPRING COLOR PALETTE</span>
+                <span class="badge-tag badge-blue">IPHONE MASTERCLASS</span>
+            </div>
+            <h1 style="margin-top:8px;">Phân Tích Đạo Diễn: "Spring in Hong Kong"</h1>
+            <p>Tác giả: <strong>@withyuee (Andrew Yue)</strong> | Địa điểm: <em>U Lam Terrace & HKIA Cherry Blossom Garden, Hong Kong</em></p>
+        </div>
+    </div>
+
+    <div class="meta-grid">
+        <div class="meta-card">
+            <div class="title">Tổng thời lượng</div>
+            <div class="value">18.43s</div>
+        </div>
+        <div class="meta-card">
+            <div class="title">Tổng số phân cảnh</div>
+            <div class="value">10 Shots</div>
+        </div>
+        <div class="meta-card">
+            <div class="title">Thời lượng trung bình</div>
+            <div class="value">1.84s / shot</div>
+        </div>
+        <div class="meta-card">
+            <div class="title">Thiết bị & Tỷ lệ</div>
+            <div class="value">iPhone 9:16 HD</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Bóc Tách Chi Tiết Toàn Bộ 10 Phân Cảnh (Shot-by-Shot Director Breakdown)</h2>
+
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 01 / 10</div>
+            <div class="shot-time">00:00 - 00:01.70 (1.70s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="Shot 1">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Toàn cảnh (Long Shot) kết hợp Foreground Framing</strong> | Eye-level hướng dọc theo con dốc bậc thang cổ</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Slow Pedestal Down / Push-in mượt mà tạo chiều sâu 3D</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng tự nhiên khuếch tán ban ngày, ấm áp và tươi mới | <em>41.4% Vàng rực rỡ hoa mai/chuông vàng đối lập tường đá xám</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Khung cảnh ngõ dốc bậc thang U Lam Terrace được che phủ bởi tán hoa vàng rực rỡ</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Foreground Framing (Đóng khung tiền cảnh bằng hoa vàng), Depth Separation</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Hạ máy nhẹ nhàng làm mồi dẫn mắt người xem vào hướng di chuyển ngang của Shot 02
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 02 / 10</div>
+            <div class="shot-time">00:01.70 - 00:03.20 (1.50s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="Shot 2">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Trung toàn cảnh (Medium Long Shot)</strong> | High-angle nghiêng theo độ dốc cầu thang đá</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Pan & Tracking Right theo chuyển động bước đi của người dạo phố</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Nắng sớm chiếu xiên nhẹ qua tán lá tạo viền sáng mềm mại | <em>20.6% Vàng rực rỡ hòa quyện với rêu xanh và màu đá bậc thang</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Bóng dáng người đi bộ thong thả bước xuống bậc thang U Lam Terrace giữa 2 hàng hoa</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Match on Action, Leading Lines (Đường dẫn từ bậc thang)</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Match on Action nối chuyển động đi bộ dẫn vào cận cảnh cánh hoa đung đưa
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 03 / 10</div>
+            <div class="shot-time">00:03.20 - 00:04.67 (1.47s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="Shot 3">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Cận vừa (Medium Close-Up)</strong> | Low-angle hướng chếch lên tách hoa khỏi mặt đất bừa bộn</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Slow Tilt Down nhẹ nhàng nương theo độ đung đưa của cành hoa</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Backlight (ngược sáng nhẹ) làm cánh hoa phát sáng trong suốt (Translucent Glow) | <em>27.5% Vàng hoàng yến nổi bật trên phông nền cửa sổ sắt cổ điển Hong Kong</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Đặc tả chùm hoa chuông vàng nở rộ trước song sắt cửa sổ khu tập thể cũ</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Backlit Petals, Texture Contrast (Hoa mềm mại vs Sắt thép gỉ)</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Cú đung đưa của cành hoa chuẩn bị cho cú ngửa máy cực đại ở Shot 04
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 04 / 10</div>
+            <div class="shot-time">00:04.67 - 00:06.60 (1.93s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="Shot 4">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Góc cực thấp hướng thiên (Extreme Low Angle Wide)</strong> | Dutch Tilt / Worm's-eye View ngửa thẳng lên trời xanh</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Pan & Arc Left xoay nhẹ quanh trục thân cây tạo hiệu ứng Vertigo</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng ngập tràn thiên thanh, độ tương phản cao và trong trẻo | <em>57.3% Xanh da trời sâu thẳm đối lập hoàn hảo với 21.8% hoa vàng rực rỡ</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Tán cây hoa vàng vươn thẳng lên bầu trời giữa các khối nhà chọc trời Hong Kong</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Complementary Color Harmony (Vàng - Xanh dương), Urban Nature Juxtaposition</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Chuyển màu đột phá (Color Transition) chuẩn bị bước sang sắc hồng Cherry Blossom
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 05 / 10</div>
+            <div class="shot-time">00:06.60 - 00:08.53 (1.93s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="Shot 5">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Trung cảnh (Medium Shot)</strong> | Eye-level ngang tầm mắt ngắm hoa tại HKIA Cherry Blossom Garden</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Tilt Up chậm rãi từ cành hoa thấp lên vòm hoa râm mát</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng tán xạ dịu dàng (Soft Diffused Light) của ngày xuân | <em>Chuyển dịch sang tông Hồng phấn Pastel (6.7% Pink) thuần khiết</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Những cành hoa anh đào bung nở đầu tiên tại vườn hoa sân bay quốc tế Hong Kong (HKIA)</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Palette Shift (Chuyển sắc thái câu chuyện), Soft Focus Separation</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Tilt Up kết nối liền mạch với cú xoay mở rộng không gian ở Shot 06
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 06 / 10</div>
+            <div class="shot-time">00:08.53 - 00:10.60 (2.07s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="Shot 6">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Toàn cảnh góc thấp (Wide Low Angle)</strong> | Low-angle ngửa lên vòm hoa anh đào ngợp trời</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Dynamic Orbit & Push Up xoay nhẹ quanh vòm hoa tạo cảm giác choáng ngợp</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Độ sáng cao nhất video (Brightness 164.5), ánh dương rọi qua kẽ lá | <em>Sắc hồng tinh khôi bừng sáng trên nền trời xanh trong trẻo</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Vòm hoa anh đào nở rộ ngập tràn khung hình với bầu trời sân bay HKIA phía trên</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Canopy Immersion, High-Key Exposure</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Mở rộng góc nhìn để chuẩn bị hạ tầm mắt xuống dòng người ở Shot 07
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 07 / 10</div>
+            <div class="shot-time">00:10.60 - 00:12.53 (1.93s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="Shot 7">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Trung toàn cảnh (Medium Long Shot)</strong> | Eye-level ngang tầm mắt nhìn qua dòng người thưởng ngoạn</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Slow Pedestal & Tilt Up theo bước chân người dạo chơi</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng tự nhiên hài hòa, bóng đổ mềm mại dưới tàng cây | <em>Hòa trộn rực rỡ giữa 20.5% Hồng anh đào và 19.6% sắc màu mùa lễ hội</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Dòng người thong thả dạo bước, chụp ảnh dưới hàng cây hoa anh đào rợp bóng</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Human-Nature Interaction, Environmental Storytelling</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Dẫn dắt cảm xúc cộng đồng sang chi tiết đặc tả cảm xúc tĩnh ở Shot 08
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 08 / 10</div>
+            <div class="shot-time">00:12.53 - 00:14.63 (2.10s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="Shot 8">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Cận cảnh đặc tả (Close-Up)</strong> | Side-profile nghiêng 45 độ đón nắng xiên</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Pan Right mượt mà quét ngang chùm hoa bắt trọn cánh hoa mỏng manh</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Side Light (nắng xiên bên) tạo viền sáng Rim Light lấp lánh trên mép cánh hoa | <em>25.9% Hồng phấn đậm nét nhất với hiệu ứng xóa phông mượt mà (Creamy Bokeh)</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Đặc tả cận cảnh chùm hoa anh đào hồng phấn đung đưa trước gió</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Macro Bokeh Aesthetic, Rim Light Accentuation</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Chuyển động Pan quét ngang dẫn mắt vào khung hình đóng khung người ở Shot 09
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 09 / 10</div>
+            <div class="shot-time">00:14.63 - 00:16.47 (1.83s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="Shot 9">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Trung cảnh Frame-within-Frame (Khung trong khung)</strong> | Low-angle hướng chếch xuống lối đi lát đá</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Tilt Down nhẹ nhàng dõi theo cặp đôi dạo bước qua tán hoa</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng dịu ấm, tạo cảm giác điện ảnh lãng mạn đậm chất Hong Kong | <em>21.8% Hồng và 17.7% Vàng/Nâu đất ấm cúng, thư thái</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Cặp đôi dạo bước trong công viên hoa được đóng khung tự nhiên bởi cành anh đào rủ xuống</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Frame within Frame (Khung lồng khung), Narrative Romance</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> Nhịp thở chậm rãi chuẩn bị cho cú chốt hạ hoành tráng ở Shot 10
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="shot-card">
+        <div class="shot-header">
+            <div class="shot-num">PHÂN CẢNH 10 / 10</div>
+            <div class="shot-time">00:16.47 - 00:18.43 (1.97s)</div>
+        </div>
+        <div class="shot-body">
+            <div class="shot-visuals">
+                <img class="keyframe-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="Shot 10">
+            </div>
+            <div class="shot-info-grid">
+                <div class="info-row">
+                    <div class="info-label">Cỡ cảnh & Góc máy:</div>
+                    <div class="info-val"><strong>Toàn cảnh hướng thiên (Extreme Wide Establishing Shot)</strong> | Worm's-eye View ngửa thẳng lên bầu trời tự do</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Động tác máy:</div>
+                    <div class="info-val">Slow Pedestal Down giữ nhịp thở thanh bình và trọn vẹn kết thúc</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Ánh sáng & Màu sắc:</div>
+                    <div class="info-val">Ánh sáng ngập tràn hy vọng, độ trong trẻo tuyệt đối | <em>36.6% Trời xanh đối xứng hoàn hảo với 15.2% Hồng hoa anh đào</em></div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Nội dung thị giác:</div>
+                    <div class="info-val">Tán hoa anh đào rực rỡ vươn mình lên bầu trời bao la với tuyến cáp treo/máy bay phía xa</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Kỹ thuật trọng tâm:</div>
+                    <div class="info-val"><span style="color:#38BDF8; font-weight:600;">Hero Cinematic Ending, Visual Symmetry & Freedom</span></div>
+                </div>
+                <div class="highlight-box">
+                    <strong>Nghệ thuật nối cảnh (Mồi/Nối):</strong> End Card / Đóng vòng lặp nhịp nhàng của video ngắn
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="transition-section">
+        <h2 class="section-title">Nghệ Thuật Khớp Nối Chuyển Cảnh (Transition Match Breakdown)</h2>
+        <div class="trans-grid">
+
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_011_bd4b15e5.jpg" alt="Transition 1 to 2">
+            <p><strong>Khớp nối 01 ➔ 02:</strong> Nối từ Shot 01 (Out) sang Shot 02 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_012_7ef314de.jpg" alt="Transition 2 to 3">
+            <p><strong>Khớp nối 02 ➔ 03:</strong> Nối từ Shot 02 (Out) sang Shot 03 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_013_4bd2117b.jpg" alt="Transition 3 to 4">
+            <p><strong>Khớp nối 03 ➔ 04:</strong> Nối từ Shot 03 (Out) sang Shot 04 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_014_6e7997f5.jpg" alt="Transition 4 to 5">
+            <p><strong>Khớp nối 04 ➔ 05:</strong> Nối từ Shot 04 (Out) sang Shot 05 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_015_1ceb868b.jpg" alt="Transition 5 to 6">
+            <p><strong>Khớp nối 05 ➔ 06:</strong> Nối từ Shot 05 (Out) sang Shot 06 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_016_08d0eea8.jpg" alt="Transition 6 to 7">
+            <p><strong>Khớp nối 06 ➔ 07:</strong> Nối từ Shot 06 (Out) sang Shot 07 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_017_9020a9a4.jpg" alt="Transition 7 to 8">
+            <p><strong>Khớp nối 07 ➔ 08:</strong> Nối từ Shot 07 (Out) sang Shot 08 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_018_3be097b1.jpg" alt="Transition 8 to 9">
+            <p><strong>Khớp nối 08 ➔ 09:</strong> Nối từ Shot 08 (Out) sang Shot 09 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        <div class="trans-card">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_019_60d35c0a.jpg" alt="Transition 9 to 10">
+            <p><strong>Khớp nối 09 ➔ 10:</strong> Nối từ Shot 09 (Out) sang Shot 10 (In): Chuyển tiếp mượt mà về động tác máy và màu sắc.</p>
+        </div>
+    
+        </div>
+    </div>
+
+    <div class="scripts-section">
+        <h2 class="section-title">Kịch Bản Lời Thoại Tiếng Việt Ứng Dụng (Voiceover Adaptation)</h2>
+        
+        <div class="script-card">
+            <h3>Phương Án 1: Thơ Mộng & Chữa Lành (Chủ đề Du Lịch & Cảm Xúc Mùa Xuân)</h3>
+            <p>"Người ta thường nhớ về Hong Kong với những tòa nhà chọc trời vội vã. Nhưng chỉ khi mùa xuân chạm ngõ, len lỏi qua từng con dốc đá U Lam rực rỡ sắc hoa vàng, và khẽ đánh thức những nhành anh đào hồng phấn tại khu vườn nhỏ... bạn mới nhận ra: thành phố này cũng dịu dàng đến nao lòng."</p>
+        </div>
+
+        <div class="script-card">
+            <h3>Phương Án 2: Cinematic Vlog & Kỹ Thuật Kể Chuyện (Chủ đề Nhiếp Ảnh & Góc Nhìn Đạo Diễn)</h3>
+            <p>"Bí quyết bắt trọn mùa xuân Hong Kong chỉ bằng chiếc điện thoại: Hãy dùng những nhành hoa mai vàng làm khung tiền cảnh để tạo chiều sâu 3D trên các con dốc hẹp. Khi chuyển sang hoa anh đào, hãy hạ thấp góc máy hướng thẳng lên nền trời xanh – độ tương phản tự nhiên sẽ biến khung hình thường ngày thành một thước phim điện ảnh."</p>
+        </div>
+    </div>
+</div>
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "Spring_in_Hong_Kong - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

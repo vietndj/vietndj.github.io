@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Báo Cáo Phân Tích Đạo Diễn &amp; Quay Dựng: Gough Street &amp; Byredo Flagship (Central Hong Kong)</title>
+<style>
+
+@page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+}
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'SVN-Aeonik', sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+    font-size: 12.5px;
+    line-height: 1.5;
+    padding: 16px;
+}
+.header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 14px;
+    padding: 22px 24px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    border: 1px solid #334155;
+}
+.badge {
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 10.5px;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-top: 10px;
+    letter-spacing: -0.3px;
+}
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px 14px;
+    border-radius: 10px;
+}
+.meta-item {
+    font-size: 11.5px;
+}
+.meta-label {
+    color: #94a3b8;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.meta-val {
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-top: 2px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 20px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 16px;
+    background: #f59e0b;
+    border-radius: 2px;
+}
+
+.shot-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 14px;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+.shot-img-col {
+    width: 120px;
+    flex-shrink: 0;
+}
+.img-box {
+    width: 120px;
+    height: 213px;
+    background: #000;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #cbd5e1;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shot-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fbbf24;
+    font-weight: 800;
+    font-size: 9.5px;
+    padding: 2px 5px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+.shot-time {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 9.5px;
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+.shot-content {
+    flex: 1;
+}
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+.shot-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+}
+.shot-role-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #d97706;
+    background: #fef3c7;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+.info-row {
+    margin-bottom: 5px;
+    font-size: 11.5px;
+}
+.info-row strong {
+    color: #334155;
+    font-weight: 700;
+}
+.trans-box {
+    background: #f8fafc;
+    border-left: 3px solid #3b82f6;
+    padding: 6px 10px;
+    border-radius: 0 5px 5px 0;
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+.script-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 12px;
+    page-break-inside: avoid;
+}
+.script-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+}
+.script-card.opt-1 {
+    border-top: 4px solid #f59e0b;
+}
+.script-card.opt-2 {
+    border-top: 4px solid #06b6d4;
+}
+.script-title {
+    font-weight: 800;
+    font-size: 13px;
+    color: #0f172a;
+    margin-bottom: 6px;
+}
+.script-desc {
+    font-size: 11.5px;
+    color: #64748b;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.voiceover-line {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 6px 8px;
+    margin-bottom: 5px;
+    font-size: 11px;
+}
+.vo-tag {
+    font-weight: 700;
+    color: #0284c7;
+    font-size: 10px;
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="badge">DIRECTOR BREAKDOWN &amp; CINEMATOGRAPHY REPORT</span>
+    <h1>Báo Cáo Phân Tích Đạo Diễn: Gough Street &amp; Byredo Flagship (Hong Kong)</h1>
+    <div class="meta-grid">
+        <div class="meta-item">
+            <div class="meta-label">Creator</div>
+            <div class="meta-val">@withyuee (Andrew Yue)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Thời Lượng / Tỷ Lệ</div>
+            <div class="meta-val">39.47s &bull; Khung Dọc 9:16 (720x1280)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Tổng Phân Cảnh</div>
+            <div class="meta-val">29 Shots (Nhịp cắt trung bình 1.37s)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Phong Cách Visual</div>
+            <div class="meta-val">Urban Rhythm &amp; Architectural Minimalism</div>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">BẢNG BÓC TÁCH CHI TIẾT 29 PHÂN CẢNH (SHOT-BY-SHOT BREAKDOWN)</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_001_61880809.jpg" alt="Shot 01" />
+            <span class="shot-badge">SHOT 01</span>
+            <span class="shot-time">1.10s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 01: 0.00s - 1.10s</div>
+            <div class="shot-role-tag">Hook & Title Establishing (Mở màn & Định vị địa điểm)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Trục Phố (Wide Establishing Shot) • Khung Dọc 9:16 &bull; Ngang tầm mắt (Eye-Level Street View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày tự nhiên, tương phản sắc màu biển hiệu phố cổ Hồng Kông &bull; Tone màu đường phố điện ảnh ấm áp Kodak Vision3 / Portra 400, sắc vàng của text làm điểm nhấn.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Dòng người tản bộ trên phố cổ Gough Street lát đá, các biển hiệu cửa hàng vươn ra hai bên. Tiêu đề màu vàng gold 'Gough Street, Hong Kong / 香港歌賦街' xuất hiện ngay trung tâm tạo dấu ấn thị giác mạnh mẽ.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Dòng người tiến về phía trước theo trục sâu ➔ <b>Nối In:</b> Cắt thẳng (Hard Cut) vào con dốc bậc thang đá Shin Hing Street rợp bóng cây cổ thụ.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_002_673a5591.jpg" alt="Shot 02" />
+            <span class="shot-badge">SHOT 02</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 02: 1.10s - 2.50s</div>
+            <div class="shot-role-tag">Vertical Movement & Nature (Chuyển động trục đứng & Mảng xanh)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Toàn Cảnh Ngước (Low-Angle Medium Wide) &bull; Góc thấp hướng lên bậc thang (Low-Angle Staircase Look-up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng vàng rọi qua kẽ lá cây bồ đề cổ thụ (Dappled Sunlight) tạo các đốm sáng lung linh &bull; Xanh lục tự nhiên của tán cây cổ thụ hòa quyện cùng màu xám rêu phong của bậc đá.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Người đi bộ bước lên cầu thang đá Shin Hing Street rợp bóng cây xanh cổ thụ, bên cạnh là boutique thời trang và quán cà phê Le Labo cổ kính.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bước chân nhân vật vươn lên nấc thang trên ➔ <b>Nối In:</b> Cắt sang mặt tiền cửa hàng gốm sứ truyền thống Wing Cheong.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_003_8c0f7ed5.jpg" alt="Shot 03" />
+            <span class="shot-badge">SHOT 03</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 03: 2.50s - 3.87s</div>
+            <div class="shot-role-tag">Heritage Craft Store (Di sản gốm sứ truyền thống)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Chính Diện (Frontal Medium Long Shot) &bull; Trực diện vuông góc mặt tiền (Straight-on Eye-Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày đều, kết hợp ánh đèn ấm áp bên trong tủ kính tiệm gốm &bull; Xanh bạc hà (Mint Green) cổ điển của khung biển hiệu phối cùng chữ thư pháp đỏ son truyền thống.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt tiền cửa hàng gốm sứ thủ công 'Wing Cheong Porcelain Co. / 永恒祥瓷器', người đi bộ lướt qua trước vỉa hè lát gạch hoa văn.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Người đi bộ lướt ngang qua khung hình tạo cú gạt thị giác tự nhiên ➔ <b>Nối In:</b> Cắt sang mặt tiền flagship store Byredo mới khai trương.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_004_7edf7461.jpg" alt="Shot 04" />
+            <span class="shot-badge">SHOT 04</span>
+            <span class="shot-time">1.46s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 04: 3.87s - 5.33s</div>
+            <div class="shot-role-tag">Modern Architecture Hook (Điểm nhấn kiến trúc đương đại)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Đối Xứng (Symmetrical Architecture Wide) &bull; Chính diện trực diện (Frontal Eye-Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng kim loại phản chiếu tinh tế từ thép không gỉ kết hợp ánh đèn spotlight nội thất &bull; Ánh bạc kim loại tối giản (Stainless Steel Silver) hiện đại, sạch sẽ và sang trọng.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt tiền cửa hàng flagship BYREDO tại Gough Street với lớp cửa cuốn thép không gỉ gấp nếp (folded stainless steel) mang âm hưởng cửa xếp Hong Kong cổ điển, bên trong là tác phẩm điêu khắc nghệ thuật.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Logo BYREDO phát sáng trên mặt tiền thép ➔ <b>Nối In:</b> Cắt sang không gian ẩm thực đường phố truyền thống Sing Heung Yuen (勝香園).
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_005_5576bd48.jpg" alt="Shot 05" />
+            <span class="shot-badge">SHOT 05</span>
+            <span class="shot-time">1.34s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 05: 5.33s - 6.67s</div>
+            <div class="shot-role-tag">Street Food Culture (Văn hóa ẩm thực đường phố Dai Pai Dong)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Góc Thấp (Medium Low-Angle Shot) &bull; Ngang ngực hơi ngước nhẹ (Low Chest Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ngoài trời kết hợp bóng râm mát dưới tán bạt quán ăn &bull; Xanh lá cây của mái che kết hợp đỏ tươi của khay đĩa và màu kim loại bếp nấu nhộn nhịp.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Đầu bếp tại quán ăn đường phố ngoài trời Sing Heung Yuen (勝香園 Dai Pai Dong) đang đứng nấu ăn bên bếp lò, nồi inox và rổ nhựa đỏ, xanh.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Tay đầu bếp nhấc đũa nấu nướng ➔ <b>Nối In:</b> Cắt cận cảnh món mì sốt cà chua thịt bò trứ danh.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_006_3b298f59.jpg" alt="Shot 06" />
+            <span class="shot-badge">SHOT 06</span>
+            <span class="shot-time">1.36s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 06: 6.67s - 8.03s</div>
+            <div class="shot-role-tag">Sensory Food Close-up (Cận cảnh giác quan món ăn đặc sản)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cận Cảnh Món Ăn (Close-up Food Insert) &bull; Góc xiên 45 độ từ trên xuống (High-Angle 45° Food View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên làm nổi bật độ bóng bẩy, tươi mọng của nước sốt &bull; Đỏ mọng sốt cà chua (Tomato Crimson) tương phản với vàng óng của sợi mì trứng.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Bát mì cà chua bò (Tomato Beef Noodles) trứ danh của Sing Heung Yuen, đôi đũa gắp sợi mì vàng óng xoăn tít bốc khói nghi ngút.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Đũa nâng sợi mì lên cao ➔ <b>Nối In:</b> Cắt rộng sang toàn cảnh con dốc bậc thang Mee Lun Street dài thăm thẳm.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_007_d5c72e8d.jpg" alt="Shot 07" />
+            <span class="shot-badge">SHOT 07</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 07: 8.03s - 9.43s</div>
+            <div class="shot-role-tag">Spatial Transition & Depth (Chuyển tiếp không gian & Chiều sâu đô thị)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Trục Sâu Bậc Thang (Extreme Low-Angle Wide / Deep Staircase) &bull; Góc thấp ngước nhìn lên dốc cao (Low-Angle Worm's Eye View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng xiên chiều xuyên qua tán cây cổ thụ tạo vệt bóng râm trải dài &bull; Nâu gạch đá bậc thang hòa cùng xanh thẫm của tán lá rừng nhiệt đới giữa lòng phố.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Con dốc bậc thang đá Mee Lun Street rộng lớn rợp bóng cây cổ thụ, người dân và du khách đang tản bộ lên xuống nhộn nhịp.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Dòng người bước lên dốc ➔ <b>Nối In:</b> Cắt cận hơn vào chàng trai mặc áo thể thao kẻ sọc đang bước xuống.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_008_5d357f36.jpg" alt="Shot 08" />
+            <span class="shot-badge">SHOT 08</span>
+            <span class="shot-time">1.44s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 08: 9.43s - 10.87s</div>
+            <div class="shot-role-tag">Street Dynamic & Contrast (Nhịp bước đường phố & Tương phản chủ thể)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Bậc Thang (Medium Staircase Tracking) &bull; Góc thấp từ chân cầu thang (Low-Angle Look-Up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng rọi xiên tạo bóng đổ đổ dài trên mặt phẳng bậc đá hoa cương &bull; Đỏ đen thể thao tương phản với cam rực rỡ của áo người đi bộ phía xa.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Chàng trai mặc áo thể thao sọc đỏ đen và quần đùi trắng bước nhanh xuống bậc thang đá, hậu cảnh là người đàn ông áo cam ngồi nghỉ chân thanh thản dưới bóng cây.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Chân chủ thể hạ xuống nấc thang cuối ➔ <b>Nối In:</b> Cắt sang toàn cảnh con dốc nhìn từ trên cao xuống.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_009_b57da56a.jpg" alt="Shot 09" />
+            <span class="shot-badge">SHOT 09</span>
+            <span class="shot-time">1.36s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 09: 10.87s - 12.23s</div>
+            <div class="shot-role-tag">Aerial Perspective & Canopy (Toàn cảnh từ trên cao & Mái vòm xanh)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Từ Trên Cao (High-Angle Alley Perspective) &bull; Góc cao nhìn xuống toàn bộ con dốc (High-Angle Tilt-Down)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng nắng nhiệt đới lọc qua tán lá dày, tạo các vệt sáng vàng ấm &bull; Xanh lá cây nhiệt đới tự nhiên phủ rợp khung hình tạo cảm giác thanh bình.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Góc nhìn từ trên cao xuống toàn bộ con hẻm Mee Lun Street với tán cây cổ thụ che bóng mát, các thùng hàng và quán xá ven đường tạo cảm giác thư thái, tách biệt khỏi ồn ào.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Ánh nhìn phóng xa theo con dốc ➔ <b>Nối In:</b> Cắt vào tác phẩm điêu khắc nghệ thuật trong tủ kính BYREDO.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_010_72a19965.jpg" alt="Shot 10" />
+            <span class="shot-badge">SHOT 10</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 10: 12.23s - 13.63s</div>
+            <div class="shot-role-tag">Artistic Feature Hook (Tác phẩm điêu khắc nghệ thuật Byredo)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cận Cảnh Góc Nghiêng (Dutch Angle Medium Close-up) &bull; Góc xiên ngước nhẹ (Dutch Low Tilt-Up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Hệ thống chiếu sáng bảo tàng cao cấp (Gallery Accent Light) tôn vinh chất liệu sợi đan &bull; Màu sợi tự nhiên hữu cơ kết hợp ánh đỏ rượu vang và ánh bạc thép tối giản.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Tác phẩm nghệ thuật điêu khắc uốn lượn bằng chất liệu sợi đan hữu cơ bên trong tủ kính cửa hàng BYREDO, phía trên là logo chữ nổi BYREDO phát sáng trắng thanh lịch.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Camera lia nhẹ theo đường uốn lượn của tác phẩm ➔ <b>Nối In:</b> Cắt vào không gian nội thất tối giản, sang trọng của Byredo.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_011_2591b3aa.jpg" alt="Shot 11" />
+            <span class="shot-badge">SHOT 11</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 11: 13.63s - 15.00s</div>
+            <div class="shot-role-tag">Interior Architecture & Spatial Design (Thiết kế không gian nội thất Byredo)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Nội Thất Kiến Trúc (Interior Architectural Wide) &bull; Góc rộng ngang tầm mắt (Eye-Level Wide View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng phân tầng kiến trúc (Architectural Recessed Lighting) tinh tế và đồng đều &bull; Xám đá bazan thô mộc, gỗ sồi ấm áp và đỏ bordeaux quý phái.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Không gian cửa hàng BYREDO với bàn trưng bày đá bazan mài nhám, bồn rửa tay kim loại hình tròn và vách gỗ ấm áp phía sau, toát lên tinh thần tối giản Thụy Điển.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Không gian mở rộng theo trục sâu ➔ <b>Nối In:</b> Cắt sang góc cận cảnh bàn trải nghiệm đá nguyên khối.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_012_7d75a680.jpg" alt="Shot 12" />
+            <span class="shot-badge">SHOT 12</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 12: 15.00s - 16.40s</div>
+            <div class="shot-role-tag">Experiential Sink Station (Bàn trải nghiệm chăm sóc cơ thể)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Góc 45 Độ (Medium Interior 45° Shot) &bull; Ngang tầm ngực (Chest Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Spotlight chiếu rọi trực tiếp vào vòi nước kim loại và sản phẩm trưng bày &bull; Tương phản chất liệu giữa inox đánh bóng và đá granite xám mờ.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Bàn trải nghiệm đá khối vuông vức với vòi nước inox cao cấp, các chai dưỡng thể và nến thơm Byredo xếp ngay ngắn mời gọi tương tác.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Chi tiết vòi nước kim loại sáng bóng ➔ <b>Nối In:</b> Cắt cận cảnh hàng chai sữa tắm Byredo.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_013_b9124904.jpg" alt="Shot 13" />
+            <span class="shot-badge">SHOT 13</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 13: 16.40s - 17.77s</div>
+            <div class="shot-role-tag">Product Lineup Macro (Cận cảnh dòng sản phẩm Body Wash)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Cận Cảnh Sản Phẩm (Product Close-Up Lineup) &bull; Ngang tầm thân chai (Bottle Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ngược nhẹ (Backlight Translucency) làm dung dịch lấp lánh &bull; Vàng hổ phách (Amber Gold) ấm áp làm bừng sáng khung hình kim loại xám lạnh.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Hàng chai Body Wash / Hand Wash Byredo màu vàng hổ phách trong suốt xếp thẳng tắp bên cạnh bồn rửa inox hình nón độc đáo.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Ánh sáng xuyên qua chất lỏng vàng hổ phách ➔ <b>Nối In:</b> Cắt sang bàn tay nâng chai nước hoa Byredo nắp đá hoa cương.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_014_f91b8d15.jpg" alt="Shot 14" />
+            <span class="shot-badge">SHOT 14</span>
+            <span class="shot-time">1.43s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 14: 17.77s - 19.20s</div>
+            <div class="shot-role-tag">Hero Product & Local Memory (Sản phẩm biểu tượng & Dấu ấn bản địa)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Siêu Cận Cảnh Tay Cầm Sản Phẩm (Macro Hero Product Shot) &bull; Chính diện trực diện chai (Frontal Product View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng studio khuếch tán mềm làm rõ vân đá tự nhiên trên nắp chai &bull; Xanh ngọc bích (Jade Green) vân đá cẩm thạch kết hợp thủy tinh trong suốt và nhãn tối giản.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Bàn tay nâng chai nước hoa BYREDO phiên bản đặc biệt với nắp đá hoa cương xanh ngọc bích, phông nền là tấm kim loại khắc hoa văn hình học Hong Kong truyền thống.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bàn tay xoay nhẹ chai nước hoa ➔ <b>Nối In:</b> Cắt sang góc thử mùi nước hoa tại quầy trải nghiệm.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_015_82d67d25.jpg" alt="Shot 15" />
+            <span class="shot-badge">SHOT 15</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 15: 19.20s - 20.60s</div>
+            <div class="shot-role-tag">Olfactory Ritual & Testing (Nghi thức thử hương & Trải nghiệm khách hàng)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Qua Vai (Over-the-Shoulder Experience Shot) &bull; Góc xiên từ phía sau khách hàng (High Shoulder Angle)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng phản chiếu lung linh trên mặt quầy kính và chai nước hoa &bull; Tone màu gỗ ấm, da tay tự nhiên và thủy tinh nước hoa trong suốt.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Khách hàng đang xịt nước hoa lên que giấy thử mùi (fragrance blotter strip) trên quầy kính trưng bày các chai nước hoa cao cấp Byredo.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Que thử mùi đưa lên thưởng thức ➔ <b>Nối In:</b> Cắt sang kệ gỗ trưng bày đối xứng hoàn hảo.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_016_c374063b.jpg" alt="Shot 16" />
+            <span class="shot-badge">SHOT 16</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 16: 20.60s - 21.97s</div>
+            <div class="shot-role-tag">Symmetrical Product Gallery (Bộ sưu tập nước hoa đối xứng hoàn hảo)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Kệ Trưng Bày Đối Xứng (Symmetrical Display Gallery) &bull; Trực diện chính diện kệ gỗ (Frontal Shelf Center)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Đèn LED hắt sáng gián tiếp phía sau từng bục đá trắng trưng bày chai nước hoa &bull; Gỗ sồi vàng ấm, đế đá trắng tinh khôi và nắp chai đen tuyền tương phản mạnh.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Kệ gỗ tự nhiên chia ô đối xứng hoàn hảo trưng bày các chai nước hoa Byredo nắp đen kinh điển, các chai được đặt trên đế đá trắng phân tầng chuẩn phong cách gallery.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bố cục đối xứng tĩnh tại ➔ <b>Nối In:</b> Cắt sang góc phản chiếu khung cảnh phố xá qua cửa kính Byredo.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_017_d5aa42ed.jpg" alt="Shot 17" />
+            <span class="shot-badge">SHOT 17</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 17: 21.97s - 23.37s</div>
+            <div class="shot-role-tag">City Life Reflection (Sự phản chiếu nhịp sống đô thị Hong Kong)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Phản Chiếu Qua Kính (Reflective Window Medium Shot) &bull; Từ bên trong cửa hàng nhìn ra phố (Inside-Out Window View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Sự giao thoa ánh sáng giữa đèn nội thất ấm và ánh sáng ban ngày ngoài trời &bull; Đỏ rực của taxi Hong Kong nổi bật trên nền kiến trúc xám bạc hiện đại.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt kính cửa hàng Byredo phản chiếu hình ảnh chiếc xe taxi đỏ Hong Kong kinh điển đang chạy ngang qua trên phố Gough Street, bên cạnh là tác phẩm điêu khắc nội thất.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Taxi đỏ lướt qua khung kính ➔ <b>Nối In:</b> Cắt ra góc nhìn toàn cảnh bên ngoài người đi bộ ngắm tủ kính Byredo.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_018_04e69e32.jpg" alt="Shot 18" />
+            <span class="shot-badge">SHOT 18</span>
+            <span class="shot-time">1.43s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 18: 23.37s - 24.80s</div>
+            <div class="shot-role-tag">Urban Street Fashion & Facade (Thời trang dạo phố & Mặt tiền đẳng cấp)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Mặt Tiền Đường Phố (Exterior Street Facade Wide) &bull; Ngang tầm mắt hơi ngước (Slight Low Angle)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày tự nhiên kết hợp ánh đèn ấm từ cửa hàng hắt ra &bull; Xám kim loại hiện đại hòa cùng trang phục thanh lịch của người đi phố.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Những người trẻ sành điệu đi ngang qua mặt tiền cửa hàng Byredo với lớp cửa xếp inox gấp nếp sang trọng, thể hiện nhịp sống thời thượng của khu phố Central.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Người đi bộ bước ra khỏi khung hình ➔ <b>Nối In:</b> Cắt sang quán cà phê phong cách Nhật Bản EN Coffee yên bình.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_019_1c33fa70.jpg" alt="Shot 19" />
+            <span class="shot-badge">SHOT 19</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 19: 24.80s - 26.20s</div>
+            <div class="shot-role-tag">Zen Coffee Sanctuary (Không gian cà phê thiền vị Nhật Bản)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Mặt Tiền Quán Cà Phê (Exterior Coffee Facade Wide) &bull; Góc thấp từ chân bậc thềm (Low-Angle Frontal Look-Up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng vàng ấm từ bên trong quán hắt ra không gian ngõ nhỏ yên bình &bull; Tone gỗ sồi mộc mạc, cây xanh bonsai và sắc đỏ của chiếc ghế mini truyền thống.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt tiền quán cà phê EN Coffee với khung cửa gỗ mộc kiểu Nhật, bậc thềm đá, chậu cây bonsai và chiếc ghế gỗ đỏ truyền thống.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Khung cảnh tĩnh lặng bình yên ➔ <b>Nối In:</b> Cắt vào quầy bar pha chế cà phê hiện đại sáng bóng.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_020_048f1372.jpg" alt="Shot 20" />
+            <span class="shot-badge">SHOT 20</span>
+            <span class="shot-time">1.33s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 20: 26.20s - 27.53s</div>
+            <div class="shot-role-tag">Minimalist Coffee Bar Craft (Nghệ thuật pha chế quầy bar tối giản)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Quầy Bar Inox (Medium Interior Stainless Bar) &bull; Góc xiên ngang tầm mắt (Eye-Level Bar Perspective)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Đèn spotlight tập trung vào bề mặt kim loại sáng loáng, tạo cảm giác chuyên nghiệp &bull; Ánh bạc kim loại sáng loáng kết hợp ánh đèn vàng ấm áp và tone trần đen mờ.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Không gian quầy pha chế cà phê hiện đại bằng chất liệu thép không gỉ bóng loáng, barista đang tập trung chuẩn bị dụng cụ pha pour-over tinh tế.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Barista bắt đầu thao tác đong hạt ➔ <b>Nối In:</b> Cắt cận cảnh hành động múc hạt cà phê specialty.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_021_dae698b6.jpg" alt="Shot 21" />
+            <span class="shot-badge">SHOT 21</span>
+            <span class="shot-time">1.44s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 21: 27.53s - 28.97s</div>
+            <div class="shot-role-tag">Precision Coffee Brewing (Cận cảnh tỉ mỉ hạt cà phê Specialty)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Siêu Cận Cảnh Thao Tác (Macro Brewing Action Shot) &bull; Góc nhìn từ trên xuống 45 độ (High-Angle 45° Pour View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tập trung làm rõ từng hạt cà phê nâu óng và các nếp gấp của giấy lọc &bull; Nâu cánh gián óng ả của hạt cà phê nổi bật trên nền giấy lọc trắng tinh.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Bàn tay barista dùng muỗng múc hạt cà phê rang specialty cho vào phễu lọc giấy origami trắng đặt trên cân điện tử mini chính xác từng gram.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Hạt cà phê rơi vào lòng phễu lọc ➔ <b>Nối In:</b> Cắt sang góc ngồi ngắm phố qua khung cửa sổ kính quán cà phê.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_022_4ea72b25.jpg" alt="Shot 22" />
+            <span class="shot-badge">SHOT 22</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 22: 28.97s - 30.37s</div>
+            <div class="shot-role-tag">Slow Living Window View (Góc nhìn tĩnh lặng qua khung cửa sổ phố)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Khung Lồng Khung (Window View Medium Frame-in-Frame) &bull; Ngang tầm mắt người ngồi (Eye-Level Seated View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ngập tràn qua khung kính lớn, kết hợp đèn vàng ấm nội thất &bull; Gỗ nâu cánh gián, mây đan thủ công hòa cùng màu xanh mướt của thiên nhiên bên ngoài.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Góc bàn tròn và chiếc ghế mây đan bên khung cửa sổ kính lớn, nhìn thẳng ra con dốc bậc thang xanh mướt và những ngôi nhà cổ bên ngoài.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Khung cảnh bậc thang ngoài cửa sổ ➔ <b>Nối In:</b> Cắt sang góc ngước nhìn giàn giáo tre và chung cư cũ Hong Kong.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_023_d722334b.jpg" alt="Shot 23" />
+            <span class="shot-badge">SHOT 23</span>
+            <span class="shot-time">1.36s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 23: 30.37s - 31.73s</div>
+            <div class="shot-role-tag">Bamboo Scaffolding & Old Tenements (Giàn giáo tre & Chung cư cổ điển)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Góc Ngước Thẳng Đứng (Low-Angle Vertical Worm's Eye) &bull; Ngước thẳng 75 độ lên trời (Extreme Low-Angle Tilt-Up)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên chiếu rọi vào kết cấu giàn giáo tre và các ô cửa sổ chung cư cũ &bull; Tone vàng tre tự nhiên, xám bê tông phong trần và đen cổ điển của biển hiệu.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Camera ngước nhìn lên các tòa chung cư cổ điển với giàn giáo tre truyền thống (Bamboo Scaffolding), quần áo phơi ngoài ban công và biển hiệu tiệm xăm 'Mee Lun Tattoo'.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Giàn giáo tre vươn cao lên bầu trời ➔ <b>Nối In:</b> Cắt sang cửa tiệm mì bò nổi tiếng Kau Kee (Cửu Ký).
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_024_2b4a2689.jpg" alt="Shot 24" />
+            <span class="shot-badge">SHOT 24</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 24: 31.73s - 33.10s</div>
+            <div class="shot-role-tag">Legendary Eatery & Kinetic Wipe (Quán mì bò huyền thoại & Cú gạt thị giác)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Toàn Cảnh Mặt Tiền (Medium Long Eatery Shot) &bull; Ngang tầm mắt phố xá (Street Level)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày kết hợp ánh đèn rực rỡ từ cửa tiệm mì Cửu Ký tỏa ra vỉa hè &bull; Chữ vàng nhũ '腩牛記九' trên nền đá cẩm thạch trắng và sắc đen bóng bẩy của xe ô tô.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt tiền quán mì bò Cửu Ký (Kau Kee Restaurant / 腩牛記九) đông đúc, chiếc xe ô tô đen lướt ngang tiền cảnh tạo cú che khung hình (Foreground Kinetic Wipe) tự nhiên.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Xe ô tô đen lướt qua che khuất khung hình ➔ <b>Nối In:</b> Cắt sang mặt tiền đỏ rực của nhà hàng Brass Spoon.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_025_1c479369.jpg" alt="Shot 25" />
+            <span class="shot-badge">SHOT 25</span>
+            <span class="shot-time">1.40s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 25: 33.10s - 34.50s</div>
+            <div class="shot-role-tag">Crimson Arch Architecture (Cổng vòm đỏ rực & Thiết kế đương đại)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Chính Diện Cổng Vòm (Symmetrical Red Arch Wide) &bull; Trực diện chính diện (Frontal Symmetrical View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên làm rực rỡ sắc đỏ ngoại thất kết hợp ánh đèn ấm bên trong &bull; Đỏ son rực rỡ (Crimson Red) chiếm lĩnh thị giác, tạo điểm nhấn màu sắc cực mạnh.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Mặt tiền nhà hàng Brass Spoon với khung vòm đỏ son rực rỡ nổi bật, thực khách bước vào bên trong không gian ẩm thực ấm cúng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Người bước qua khung cửa đỏ ➔ <b>Nối In:</b> Cắt sang cửa hàng thời trang thiết kế vintage xanh lục.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_026_2a1b8ef5.jpg" alt="Shot 26" />
+            <span class="shot-badge">SHOT 26</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 26: 34.50s - 35.87s</div>
+            <div class="shot-role-tag">Vintage European Boutique (Cửa hiệu thời trang phong cách cổ điển)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Toàn Cảnh Góc Nghiêng Phố (Medium Long Angle Street Corner) &bull; Ngang tầm mắt hơi ngước (Slight Low-Angle Street View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng chiếu nghiêng vào các mảng tường gạch men xanh ngọc &bull; Xanh lục bảo (Emerald Green) quý phái kết hợp gạch men ốp tường phong cách châu Âu.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Cửa hàng boutique thời trang Le Labo & lân cận với khung cửa xanh lục bảo, chàng trai đội mũ lưỡi trai trắng tản bộ ngang qua vỉa hè.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bước chân người đi bộ tiến về phía trước ➔ <b>Nối In:</b> Cắt sang cặp đôi đang đi dạo dưới bóng râm hàng rào sắt.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_027_c83cb17a.jpg" alt="Shot 27" />
+            <span class="shot-badge">SHOT 27</span>
+            <span class="shot-time">1.36s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 27: 35.87s - 37.23s</div>
+            <div class="shot-role-tag">Romantic Stroll & Greenery (Cặp đôi dạo bước & Tán cây râm mát)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Theo Sau Chủ Thể (Tracking Rear Wide Shot) &bull; Ngang tầm vai theo sau (Over-the-Shoulder Walking View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng chiếu xiên qua tán cây tạo các đốm sáng lấp lánh trên trang phục &bull; Sự kết hợp giữa bóng râm mát lành và nắng vàng rực rỡ của buổi chiều Hong Kong.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Cặp đôi nắm tay nhau dạo bước dưới bóng mát của cây xanh và hàng rào sắt đen, phía trước là biển hiệu khu phố Gough Street.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Cặp đôi bước vào bóng mát ➔ <b>Nối In:</b> Cắt sang góc máy tĩnh nhìn lên con dốc bậc thang Mee Lun Street.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_028_fd255559.jpg" alt="Shot 28" />
+            <span class="shot-badge">SHOT 28</span>
+            <span class="shot-time">1.37s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 28: 37.23s - 38.60s</div>
+            <div class="shot-role-tag">Contemplative Alley Stillness (Khoảnh khắc lắng đọng con hẻm cổ)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Trục Sâu Con Hẻm (Deep Alley Perspective Shot) &bull; Ngang tầm mắt giữ tĩnh (Static Eye-Level Alley View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban trưa dịu nhẹ, cân bằng hoàn hảo giữa vùng tối sạp hàng và vùng sáng đỉnh dốc &bull; Tone màu đất, xi măng xám và xanh lá cây mộc mạc của khu dân cư lâu đời.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Con dốc bậc thang Mee Lun Street với các sạp hàng ăn và người dân đi dạo, camera giữ tĩnh để đón trọn nhịp sống chậm rãi, mộc mạc.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Khung cảnh phố thị lắng đọng ➔ <b>Nối In:</b> Cắt sang cảnh kết toàn cảnh Gough Street rực rỡ ánh nắng.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_029_489ca6bf.jpg" alt="Shot 29" />
+            <span class="shot-badge">SHOT 29</span>
+            <span class="shot-time">0.87s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 29: 38.60s - 39.47s</div>
+            <div class="shot-role-tag">Grand Finale Outro (Kết thúc hoành tráng & Đọng lại dư vị)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Kết Thúc (Outro Wide Establishing Shot) &bull; Ngang tầm mắt dọc phố (Eye-Level Wide View)</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng rực rỡ của phố thị Central với các biển hiệu lung linh &bull; Tone màu điện ảnh hoài cổ rực rỡ, sắc vàng kim loại của chữ định vị thương hiệu.</div>
+        <div class="info-row"><strong>Hành Động &amp; Bối Cảnh:</strong> Toàn cảnh góc phố Gough Street tấp nập với dòng người dạo phố, chữ vàng gold 'Gough Street, Hong Kong / 香港歌賦街' xuất hiện đóng lại video một cách trọn vẹn, mãn nhãn.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Giữ tĩnh 0.87s, kết thúc theo nhịp nhạc beat-drop fade out hoàn hảo.
+        </div>
+    </div>
+</div>
+
+<div class="section-title">KỊCH BẢN THOẠI ĐỀ XUẤT ỨNG DỤNG (VOICEOVER CONCEPTS)</div>
+<div class="script-container">
+    <div class="script-card opt-1">
+        <div class="script-title">PHƯƠNG ÁN 1: KHÁM PHÁ NGHỆ THUẬT ĐÔ THỊ (CITY VIBES &amp; LIFESTYLE)</div>
+        <div class="script-desc">Dành cho video vlog du lịch trải nghiệm, khám phá những góc phố nghệ thuật giao thoa giữa di sản truyền thống và kiến trúc hiện đại tại Central Hong Kong.</div>
+        
+        <div class="voiceover-line">
+            <span class="vo-tag">[0.0s - 5.3s &bull; Shot 1-4]:</span> "Nếu bạn muốn tìm thấy một Hong Kong vừa cổ kính vừa thời thượng, hãy ghé thăm Gough Street..."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[5.3s - 12.2s &bull; Shot 5-9]:</span> "Nơi một quán mì cà chua đường phố trứ danh nằm nép mình bên những con dốc bậc thang xanh mướt bóng cây."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[12.2s - 24.8s &bull; Shot 10-18]:</span> "Và cửa hàng flagship Byredo mới mở, nơi tinh thần tối giản Thụy Điển hòa quyện cùng ký ức cửa cuốn xếp kim loại của Hong Kong xưa."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[24.8s - 39.4s &bull; Shot 19-29]:</span> "Thưởng thức một ly pour-over tĩnh lặng, ngắm nhìn giàn giáo tre cao vút... Đó chính là nhịp đập sống động không thể trộn lẫn của Central."
+        </div>
+    </div>
+    
+    <div class="script-card opt-2">
+        <div class="script-title">PHƯƠNG ÁN 2: BẬT MÍ KỸ THUẬT QUAY FAST-CUT (CREATOR CINEMATOGRAPHY BTS)</div>
+        <div class="script-desc">Dành cho các nhà làm phim, sáng tạo nội dung chia sẻ bí quyết giữ chân người xem bằng kỹ thuật cắt dựng đồng điệu với nhịp nhạc (Beat-sync Fast-cut).</div>
+        
+        <div class="voiceover-line">
+            <span class="vo-tag">[0.0s - 5.3s &bull; Shot 1-4]:</span> "Bí quyết để làm video giới thiệu địa điểm cuốn hút: Hãy giữ nhịp cắt ổn định 1.3 giây theo từng phách nhạc."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[5.3s - 12.2s &bull; Shot 5-9]:</span> "Luôn xen kẽ giữa toàn cảnh phố xá và cận cảnh giác quan — như bát mì sốt cà chua đang bốc khói."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[12.2s - 24.8s &bull; Shot 10-18]:</span> "Khai thác tối đa tương phản chất liệu: Inox sáng bóng, đá bazan thô mộc và nắp đá ngọc bích sang trọng."
+        </div>
+        <div class="voiceover-line">
+            <span class="vo-tag">[24.8s - 39.4s &bull; Shot 19-29]:</span> "Và dùng các vật thể tiền cảnh lướt ngang như xe ô tô, bóng người đi bộ để tạo cú chuyển cảnh hoàn toàn tự nhiên."
+        </div>
+    </div>
+</div>
+
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "Gough_Street_Central_Hong_Kong - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

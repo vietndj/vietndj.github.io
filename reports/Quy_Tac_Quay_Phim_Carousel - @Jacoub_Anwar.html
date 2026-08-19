@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Báo Cáo Phân Tích Quy Tắc Quay Phim - Carousel Series</title>
+<style>
+
+@page { size: A4 portrait; margin: 10mm; }
+* { box-sizing: border-box; -webkit-print-color-adjust: exact !important; }
+body { font-family: 'SVN-Aeonik', sans-serif; color: #0f172a; background: #ffffff; margin: 0; padding: 0; font-size: 13px; line-height: 1.5; }
+.header { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius: 12px; padding: 22px 24px; color: #ffffff; margin-bottom: 16px; border-left: 5px solid #f59e0b; }
+.badge { display: inline-block; background: #f59e0b; color: #0f172a; font-weight: 800; font-size: 11px; padding: 4px 10px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; }
+h1 { font-size: 21px; font-weight: 800; color: #f8fafc; margin: 4px 0 6px 0; }
+.meta-row { display: flex; gap: 16px; font-size: 12px; color: #cbd5e1; flex-wrap: wrap; margin-top: 6px; }
+.meta-item b { color: #38bdf8; }
+.summary-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px 18px; margin-bottom: 16px; border-left: 4px solid #0284c7; }
+.summary-card h3 { margin: 0 0 6px 0; font-size: 14px; color: #0369a1; }
+.card { background: #ffffff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 14px; margin-bottom: 12px; display: flex; gap: 16px; page-break-inside: avoid; box-shadow: 0 1px 3px rgba(0,0,0,0.04); }
+.img-box { width: 140px; height: 175px; min-width: 140px; background: #000; border-radius: 8px; overflow: hidden; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; }
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
+.info { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 4px; }
+.slide-num { background: #0f172a; color: #fff; font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; }
+.slide-title { font-size: 15px; font-weight: 800; color: #0f172a; margin-top: 2px; }
+.slide-sub { font-size: 12px; font-weight: 600; color: #d97706; margin-bottom: 6px; }
+.tech-tag { font-size: 11px; color: #0284c7; background: #e0f2fe; padding: 3px 8px; border-radius: 4px; font-weight: 600; display: inline-block; margin-bottom: 6px; }
+.desc { font-size: 12px; color: #334155; line-height: 1.45; }
+.footer-note { font-size: 11px; color: #64748b; text-align: center; margin-top: 14px; border-top: 1px solid #e2e8f0; padding-top: 8px; }
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="badge">CINEMATOGRAPHY DIRECTORS BREAKDOWN</span>
+    <h1>Báo Cáo Phân Tích Quy Tắc Quay &amp; Ngôn Ngữ Điện Ảnh</h1>
+    <div class="meta-row">
+        <div class="meta-item">Kênh: <b>@mcjacoub (Jacoub Anwar)</b></div>
+        <div class="meta-item">Thiết bị: <b>Sony Cinema Line FX30</b></div>
+        <div class="meta-item">Định dạng: <b>Instagram Video Carousel Series</b></div>
+        <div class="meta-item">Quy mô: <b>7 Video Slides (81.18s)</b></div>
+    </div>
+</div>
+
+<div class="summary-card">
+    <h3>Triết Lý Cốt Lõi: "Less Camera Movement Looks Better - Movement in Story, Not in Camera"</h3>
+    <div style="font-size: 12.5px; color: #334155;">
+        Bộ bài giảng video đúc kết quy tắc vàng trong quay phim đường phố (Street Cinematography): Thay vì di chuyển máy quay liên tục (gimbal pan/tilt/roll thừa thãi), nhà làm phim tập trung vào <b>chuyển động nội tại của câu chuyện (Internal Movement / Mise-en-scène)</b>, giữ bố cục tĩnh phân lớp, kiểm soát đường chân trời và kiên nhẫn chờ đón khoảnh khắc.
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_001_35384a7a.jpg" alt="LESS CAMERA MOVEMENT LOOKS BETTER" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 01 [8.46s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">LESS CAMERA MOVEMENT LOOKS BETTER</div>
+            <div class="slide-sub">Không phải góc quay nào cũng cần di chuyển máy liên tục</div>
+            <div><span class="tech-tag">Kỹ thuật: Khóa máy tĩnh (Lock-off / Static Shot) & Phân lớp không gian (Deep Staging / Layering)</span></div>
+        </div>
+        <div class="desc">Khung hình được cố định tuyệt đối trong quầy chợ cổ tại Jakarta. Tiền cảnh là đôi chân người thợ may nghỉ ngơi, trung cảnh là chiếc tivi CRT phát bóng đá làm điểm nhấn thị giác (Focal Point), hậu cảnh là dòng người qua lại. Chuyển động đến từ nội tại khung cảnh (Internal Movement / Mise-en-scène) giúp thước phim chân thực, giàu cảm xúc mà không cần rung lắc hay lia máy.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_002_296672f6.jpg" alt="FOLLOW THE SUBJECT" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 02 [22.67s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">FOLLOW THE SUBJECT</div>
+            <div class="slide-sub">Góc bám theo chủ thể tạo cảm giác chân thực, đắm chìm</div>
+            <div><span class="tech-tag">Kỹ thuật: Bám theo chủ thể (Tracking / Follow Shot) & Đường dẫn thị giác (Leading Lines)</span></div>
+        </div>
+        <div class="desc">Máy quay theo sát người đạp xe ba gác (Becak) từ phía sau xuyên qua con hẻm sâu và hẹp. Hai bức tường gạch tạo thành đường hội tụ hút mắt về phía ánh sáng le lói cuối ngõ. Kỹ thuật đưa người xem vào góc nhìn đồng hành (Immersive POV), tạo chiều sâu không gian và sự tò mò cao độ.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_003_db4b14ed.jpg" alt="WAIT BEFORE PRESSING REC" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 03 [13.04s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">WAIT BEFORE PRESSING REC</div>
+            <div class="slide-sub">Bố cục khung hình sẵn và kiên nhẫn chờ khoảnh khắc vàng</div>
+            <div><span class="tech-tag">Kỹ thuật: Canh sẵn khung hình (Pre-framing) & Ánh sáng ngược (Backlight Accentuation)</span></div>
+        </div>
+        <div class="desc">Đạo diễn đặt sạp rau củ rực rỡ ở tiền cảnh tạo hiệu ứng xóa phông (Bokeh), giữ khung hình ổn định và kiên nhẫn chờ đợi. Khi người lái xe máy bật đèn pha tiến vào tâm điểm, ánh đèn pha cắt xuyên không gian chợ tạo thành một cú bắt sáng (Cinematic Lighting) đắt giá.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_004_225e139c.jpg" alt="KEEP YOUR HORIZON CLEAN" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 04 [10.54s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">KEEP YOUR HORIZON CLEAN</div>
+            <div class="slide-sub">Khung hình ngay ngắn, chuẩn trục giúp video dễ chịu</div>
+            <div><span class="tech-tag">Kỹ thuật: Cân bằng trục đường chân trời (Horizon Alignment) & Đặc tả kết cấu (Texture Close-up)</span></div>
+        </div>
+        <div class="desc">Trong góc quay siêu cận (Extreme Close-Up) đặc tả đôi bàn tay người thợ may già lướt qua máy may Singer cổ, việc giữ trục ngang và dọc của máy may song song với khung hình giúp loại bỏ cảm giác nghiêng ngả rối mắt, dẫn dắt trọn vẹn sự chú ý vào nếp nhăn lao động và từng đường kim mũi chỉ.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_005_d36eb7e0.jpg" alt="USE SLOW PUSH IN" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 05 [11.46s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">USE SLOW PUSH IN</div>
+            <div class="slide-sub">Một cú đẩy máy nhẹ nhàng đôi khi chạm cảm xúc hơn rất nhiều chuyển động</div>
+            <div><span class="tech-tag">Kỹ thuật: Đẩy máy tịnh tiến chậm (Subtle Slow Push-in) & Lớp phủ tiền cảnh (Foreground Wipe)</span></div>
+        </div>
+        <div class="desc">Máy quay đẩy tịnh tiến chậm rãi hướng về người cha đang nắm tay hai con nhỏ bước trên phố. Chiếc xe máy lướt qua tiền cảnh ở đầu shot tạo chiều sâu 3D tự nhiên, đồng thời chuyển động tiến nhẹ nhàng tạo lực hút tâm lý, truyền tải trọn vẹn sự ấm áp của khoảnh khắc gia đình.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_006_c8d6fb08.jpg" alt="WAIT FOR MOVEMENT" /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 06 [7.58s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">WAIT FOR MOVEMENT</div>
+            <div class="slide-sub">Không nhất thiết máy quay phải di chuyển, hãy đợi chuyển động trong khung hình</div>
+            <div><span class="tech-tag">Kỹ thuật: Khung hình tĩnh đón nhận hành động (Static Composition for Action) & Tương phản màu sắc</span></div>
+        </div>
+        <div class="desc">Góc nhìn từ trên cao (High Angle / Top-Down) bao trọn sạp trái cây tươi với tương phản màu sắc bắt mắt (Chanh vàng - Táo đỏ). Khung hình tĩnh hoàn toàn, chỉ cần bàn tay người mua vươn vào chọn quả là shot hình lập tức bừng sáng sức sống và tạo điểm nhấn thị giác tự nhiên.</div>
+    </div>
+</div>
+
+<div class="card">
+    <div class="img-box"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_007_1b5a9c06.jpg" alt="LESS GERAK. MORE MASAK." /></div>
+    <div class="info">
+        <div>
+            <div class="card-header">
+                <span class="slide-num">Slide 07 [7.42s | 1440x1080 (4:3)]</span>
+            </div>
+            <div class="slide-title">LESS GERAK. MORE MASAK.</div>
+            <div class="slide-sub">Bớt di chuyển vô định, đầu tư kỹ vào bố cục và ánh sáng trước khi bấm máy</div>
+            <div><span class="tech-tag">Kỹ thuật: Triết lý 'Masak' (Ủ khung hình chín) & Giao tiếp ánh mắt (Direct Eye Contact)</span></div>
+        </div>
+        <div class="desc">'Masak' là thuật ngữ chỉ việc tính toán kỹ lưỡng bố cục, đo sáng, lấy nét sắc nét vào mắt chủ thể (ở đây là chú mèo ngồi trên quầy hàng rong Indonesia) trước khi bấm máy. Khóa góc nhìn ngang tầm mắt (Eye-Level) tạo nên điểm dừng thị giác (Visual Pause) đắt giá khép lại bộ Carousel.</div>
+    </div>
+</div>
+
+<div class="footer-note">
+    Được tạo tự động bởi Hệ Thống Phân Tích Đạo Diễn &bull; Headless Chrome Engine &bull; Không lỗi font tiếng Việt
+</div>
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "carousel_slides/slide_01.mp4";
+const CAROUSEL_SLIDES_MAP = {1: 'carousel_slides/slide_01.mp4', 2: 'carousel_slides/slide_02.mp4', 3: 'carousel_slides/slide_03.mp4', 4: 'carousel_slides/slide_04.mp4', 5: 'carousel_slides/slide_05.mp4', 6: 'carousel_slides/slide_06.mp4', 7: 'carousel_slides/slide_07.mp4', 8: 'carousel_slides/slide_08.mp4'};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

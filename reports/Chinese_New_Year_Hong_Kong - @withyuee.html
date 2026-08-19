@@ -1,0 +1,1366 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Báo Cáo Phân Tích Đạo Diễn - @withyuee (Chinese New Year Hong Kong)</title>
+<style>
+
+
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+body {
+    font-family: 'SVN-Aeonik', sans-serif;
+    color: #0f172a;
+    background: #ffffff;
+    font-size: 11.5px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background: linear-gradient(135deg, #1e1b4b 0%, #991b1b 100%);
+    border-radius: 12px;
+    padding: 22px;
+    color: #ffffff;
+    margin-bottom: 18px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.badge {
+    background: #f59e0b;
+    color: #78350f;
+    font-weight: 800;
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 8px;
+}
+
+h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.meta-info {
+    font-size: 11px;
+    color: #fecdd3;
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.summary-card {
+    background: #fdf2f2;
+    border: 1px solid #fecaca;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 18px;
+}
+
+.summary-card h3 {
+    margin: 0 0 8px 0;
+    font-size: 13px;
+    font-weight: 700;
+    color: #991b1b;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.stat-box {
+    background: #ffffff;
+    border: 1px solid #fee2e2;
+    border-radius: 8px;
+    padding: 8px 10px;
+    text-align: center;
+}
+
+.stat-val {
+    font-size: 16px;
+    font-weight: 800;
+    color: #b91c1c;
+}
+
+.stat-lbl {
+    font-size: 9.5px;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.shot-card {
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 12px;
+    margin-bottom: 14px;
+    background: #ffffff;
+    page-break-inside: avoid;
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
+}
+
+.shot-title {
+    font-size: 13px;
+    font-weight: 800;
+    color: #0f172a;
+}
+
+.shot-time {
+    font-size: 11px;
+    font-weight: 700;
+    color: #dc2626;
+    background: #fef2f2;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.shot-content {
+    display: flex;
+    gap: 12px;
+}
+
+.shot-imgs {
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.img-frame {
+    width: 100%;
+    height: 125px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+    border: 1px solid #cbd5e1;
+}
+
+.img-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.shot-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-row {
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.info-label {
+    font-weight: 700;
+    color: #334155;
+}
+
+.takeaway-box {
+    background: #fffbeb;
+    border-left: 3px solid #f59e0b;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    font-size: 10.5px;
+    color: #92400e;
+    margin-top: 4px;
+}
+
+.trans-box {
+    margin-top: 8px;
+    background: #f8fafc;
+    border: 1px dashed #cbd5e1;
+    border-radius: 8px;
+    padding: 8px;
+    page-break-inside: avoid;
+}
+
+.trans-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+.trans-img {
+    width: 100%;
+    max-height: 140px;
+    border-radius: 6px;
+    overflow: hidden;
+    background: #000;
+}
+
+.trans-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.scripts-section {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-top: 20px;
+    page-break-inside: avoid;
+}
+
+.script-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 12px;
+    margin-top: 10px;
+}
+
+.script-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 6px;
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="badge">DIRECTOR BREAKDOWN & CINEMATIC ANALYSIS</span>
+    <h1>Phân Tích Đạo Diễn: Không Khí Tết Hong Kong (Chinese New Year)</h1>
+    <div class="meta-info">
+        <span><b>Tác giả:</b> @withyuee (Andrew Yue)</span>
+        <span><b>Thiết bị:</b> Shot on iPhone</span>
+        <span><b>Mã bài:</b> DUqQaPbkfcQ</span>
+        <span><b>Thời lượng:</b> 25.97s (18 Cảnh quay)</span>
+        <span><b>Địa điểm:</b> Lee Tung Ave, Mong Kok, Sheung Wan, Pottinger St</span>
+    </div>
+</div>
+
+<div class="summary-card">
+    <h3>TỔNG QUAN KỸ THUẬT & PHONG CÁCH QUAY DỰNG</h3>
+    <div>Video là một kiệt tác ghi lại không khí đón Tết Nguyên Đán tại Hong Kong với ngôn ngữ thị giác đậm chất điện ảnh đường phố: Nhịp cắt vàng 1.4s bám sát nhịp điệu âm nhạc rộn ràng; Động tác máy dọc đa dạng (Tilt/Pedestal/Truck) liên tục dẫn dắt ánh nhìn; Nghệ thuật khai thác gam màu Đỏ Son (Crimson) và Vàng Kim (Gold) trong bối cảnh chợ truyền thống và đại lộ ánh sáng Lee Tung Avenue.</div>
+    <div class="summary-grid">
+        <div class="stat-box">
+            <div class="stat-val">18</div>
+            <div class="stat-lbl">TỔNG SỐ SHOTS</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">1.44s</div>
+            <div class="stat-lbl">NHỊP CẮT TRUNG BÌNH</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">iPhone</div>
+            <div class="stat-lbl">THIẾT BỊ GHI HÌNH</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-val">9:16 Vertical</div>
+            <div class="stat-lbl">TỶ LỆ KHUNG HÌNH</div>
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 01: Lee Tung Avenue (Wan Chai)</span>
+        <span class="shot-time">0.00s - 1.57s (1.57s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_001_cbc24138.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Extreme Low Angle Wide (Góc cực thấp ngước nhìn)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Slow Pedestal Up + Tilt Up (Nâng trục máy dọc vòm lồng đèn)</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Warm Golden Red Glow (Ánh đèn lồng đỏ ấm áp trong bóng chiều)</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục đối xứng 1 điểm tụ (One-Point Perspective) tạo chiều sâu hun hút</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Mở màn trực diện gây choáng ngợp thị giác.<br/><b>Out:</b> Đẩy máy lên cao mồi cho cận cảnh đung đưa tiếp theo.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Dùng góc cực thấp với ống kính góc rộng 24mm trên iPhone để khuếch đại quy mô vòm lồng đèn đồ sộ.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 01 (Out) &rarr; Shot 02 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_002_f65a72d3.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 02: Lee Tung Avenue (Wan Chai)</span>
+        <span class="shot-time">1.57s - 2.57s (1.00s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_003_bafbc8e0.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Medium Close-up (Cận vừa lồng đèn lụa & tua rua vàng)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Down nhẹ theo nhịp rơi của tua rua</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Bokeh tròn mềm mại từ hàng trăm bóng đèn led vàng phía sau</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Quy tắc 1/3, đặt quả cầu lồng đèn làm trọng tâm thị giác tiền cảnh</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Bắt trọn chuyển động đung đưa.<br/><b>Out:</b> Trượt xuống mồi cho góc ngước kiến trúc.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tạo độ sâu trường ảnh (DoF) giả lập chất điện ảnh bằng cách đặt chủ thể thật gần ống kính.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 02 (Out) &rarr; Shot 03 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_004_b65662d0.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 03: The Peninsula Hong Kong (Tsim Sha Tsui)</span>
+        <span class="shot-time">2.57s - 3.93s (1.36s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_005_da750864.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Low Angle Architectural Wide (Góc thấp toà nhà di sản)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pedestal Up ngước nhìn kiến trúc thuộc địa cổ kính</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng tự nhiên làm nổi bật hoa văn đá hoa cương và lồng đèn đỏ</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Khung lồng khung (Framing through architectural pillars) tạo sự uy nghiêm</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Nhận chuyển động nâng từ shot 2.<br/><b>Out:</b> Dừng ở đỉnh toà nhà mồi chuyển sang chợ hoa.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tương phản thị giác mạnh mẽ giữa kiến trúc phương Tây cổ điển và văn hóa lễ hội Á Đông.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 03 (Out) &rarr; Shot 04 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_006_19d9f3f6.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 04: Mong Kok Flower Market (Chợ Hoa Mong Kok)</span>
+        <span class="shot-time">3.93s - 5.43s (1.50s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_007_a2625048.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Medium Shot (Tầm mắt lướt qua tán hoa đào Tết)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Down + Subtle Push In dẫn mắt vào không gian sầm uất</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng ban ngày khuếch tán, màu hồng đào và đỏ tươi nổi bật</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục tiền cảnh mờ (Foreground Layering) với cành hoa làm viền khung</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Cắt đổi bối cảnh nhanh theo nhịp nhạc.<br/><b>Out:</b> Đẩy vào tâm chợ mồi cho cú trượt ngang.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Sử dụng cành hoa làm tiền cảnh che khuất một phần ống kính để tạo cảm giác hòa mình vào dòng người.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 04 (Out) &rarr; Shot 05 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_008_c369c9a2.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 05: Mong Kok Flower Market</span>
+        <span class="shot-time">5.43s - 6.90s (1.47s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_009_f2d24998.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Medium Dolly / Truck Shot (Góc trượt ngang sạp hoa lan & đào)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Truck Left (Trượt ngang song song với luống hoa)</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Phản chiếu ánh sáng tự nhiên trên cánh hoa ướt sương mai</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> 3-Layer Depth (Tiền cảnh: Hoa lan -> Trung cảnh: Người mua -> Hậu cảnh: Phố)</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Chuyển động ngang liên tục mượt mà.<br/><b>Out:</b> Lướt qua chậu quất mồi cho cú cận cảnh.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Giữ tốc độ bước chân đều đặn (Ninja Walk) để động tác trượt không bị rung lắc trên điện thoại.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 05 (Out) &rarr; Shot 06 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_010_7a5a562d.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 06: Mong Kok Flower Market (Cây quất tài lộc)</span>
+        <span class="shot-time">6.90s - 8.20s (1.30s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_011_e202fae4.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Close-up Detail Shot (Cận cảnh chùm quả quất vàng trĩu cành)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Down dọc theo thân cây quất sum sê</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Rim Light (Ánh sáng ven) viền quanh vỏ quả bóng bẩy</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Đường xoắn ốc Fibonacci theo vị trí sắp xếp tự nhiên của chùm quả</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Điểm rơi thị giác vào màu cam tươi.<br/><b>Out:</b> Quét xuống gốc mồi cho tiệm thủ công.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Chọn quả quất căng bóng có lá xanh tương phản để tạo cảm giác căng tràn sức sống mùa xuân.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 06 (Out) &rarr; Shot 07 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_012_f5ddfffc.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 07: Chu Wing Kei (Tiệm gốm tre truyền thống Sheung Wan)</span>
+        <span class="shot-time">8.20s - 10.10s (1.90s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_013_81a32455.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Eye-level Medium Shot (Toàn cảnh quầy hàng đồ tre & lồng đèn)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pan Right / Truck Right khám phá không gian hoài cổ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng ấm của tiệm cổ hoà trộn với ánh sáng hắt ngoài phố</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Mật độ thị giác cao (Visual Density) với rọ tre, mẹt trúc và đèn lồng</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Chuyển đổi nhịp điệu từ tĩnh vật sang di sản văn hoá.<br/><b>Out:</b> Lia về phía các vật phẩm đỏ.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tôn vinh giá trị văn hoá thủ công truyền thống qua việc ghi lại trọn vẹn sự phong phú của không gian.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 07 (Out) &rarr; Shot 08 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_014_4013b4ef.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 08: Fa Yuen Street Market (Mong Kok)</span>
+        <span class="shot-time">10.10s - 11.53s (1.43s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_015_ac57ff21.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Close-up Macro Tracking (Cận cảnh hàng phong bao lì xì đỏ)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pan Right trượt nhanh qua các mẫu bao lì xì kim nhũ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Phản chiếu lấp lánh của lá nhũ vàng trên nền giấy đỏ son</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Đường dẫn ngang tuần tự lặp lại (Repetition Pattern)</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Tông đỏ áp đảo thị giác.<br/><b>Out:</b> Lướt qua góc quầy mồi cho không gian tiệm bánh.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tạo cảm giác rộn ràng đặc trưng của chợ Tết với sắc đỏ vàng phủ kín toàn bộ khung hình.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 08 (Out) &rarr; Shot 09 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_016_8a9dff11.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 09: Ki Tsui Cake Shop (Tiệm bánh gia truyền đường Fa Yuen)</span>
+        <span class="shot-time">11.53s - 12.93s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_017_4fbaf698.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Over-the-Shoulder Medium Shot (Góc nhìn thợ làm bánh truyền thống)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pan Left theo nhịp bàn tay thoăn thoắt nhào bột bánh tổ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng đèn vàng ấm áp kết hợp khói bột bay huyền ảo</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Trọng tâm vào đôi bàn tay lao động của nghệ nhân</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Bắt trọn âm thanh và chuyển động làm bánh.<br/><b>Out:</b> Lia xuống bàn mồi cho cú đóng dấu bánh.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Khai thác yếu tố con người và nghệ thuật ẩm thực truyền thống để tạo chiều sâu cảm xúc cho video.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 09 (Out) &rarr; Shot 10 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_018_b8d3812c.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 10: Ki Tsui Cake Shop</span>
+        <span class="shot-time">12.93s - 14.37s (1.44s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_019_900bfd49.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Top-Down Close-up (Góc nhìn từ trên xuống cận cảnh khuôn bánh)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Down tập trung vào chi tiết rắc mè vàng và đóng dấu đỏ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng chiếu thẳng làm nổi bật vân hoa văn trên mặt bánh</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục trung tâm (Center Framing) hoàn hảo</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Động tác ấn khuôn chuẩn xác.<br/><b>Out:</b> Nhấc khuôn mồi cho khay bánh nướng ra lò.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Góc quay Top-Down tạo cảm giác chân thực, trực quan và hấp dẫn thị giác người xem cực cao.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 10 (Out) &rarr; Shot 11 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_020_8809f19a.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 11: Ki Tsui Cake Shop</span>
+        <span class="shot-time">14.37s - 15.77s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_021_04b724b2.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Close-up Shot (Khay bánh vừa mới nướng vàng ươm)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pan Right lướt qua hàng bánh bốc khói nghi ngút</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng nghiêng tạo độ bóng bẩy và kết cấu giòn rụm của vỏ bánh</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục lưới đối xứng (Grid Alignment) xếp lớp đều đặn</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Tiếp nối chuỗi quy trình làm bánh hoàn hảo.<br/><b>Out:</b> Lia khỏi tiệm mồi cho chữ Phúc cửa nhà.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Cận cảnh đồ ăn với độ bóng và khói nóng kích thích mạnh mẽ cảm giác ấm cúng sum vầy gia đình.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 11 (Out) &rarr; Shot 12 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_022_5075f33c.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 12: Phố cổ Sheung Wan</span>
+        <span class="shot-time">15.77s - 17.13s (1.36s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_023_09ea0f20.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Low Angle Detail Shot (Câu đối đỏ chữ vàng may mắn)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Up theo dải liễn thư pháp treo trước cửa gỗ rêu phong</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng tự nhiên hắt chéo, tạo bóng đổ nổi khối chữ Hán dát kim</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Đường chéo dẫn hướng (Diagonal Leading Line) từ dưới lên góc trên</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Điểm nhấn văn hoá chúc xuân.<br/><b>Out:</b> Đẩy lên cao mồi cho không gian bậc thang cổ.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tương phản chất liệu giữa giấy đỏ mới tinh khôi và cánh cửa gỗ trăm tuổi mang đậm dấu ấn thời gian.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 12 (Out) &rarr; Shot 13 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_024_5b2f0259.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 13: Ladder Street (Đường Bậc Thang Lịch Sử Sheung Wan)</span>
+        <span class="shot-time">17.13s - 18.53s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_025_aa406269.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Low Angle Tracking Shot (Góc máy thấp trượt dọc bậc thang đá)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Pan Left / Truck Left song song với lan can và dãy đèn lồng</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng râm mát của tán cây cổ thụ hắt bóng nắng lốm đốm</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Độ dốc bậc thang tạo chiều sâu thẳng đứng (Vertical Steepness)</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Chuyển động lướt theo nhịp dốc.<br/><b>Out:</b> Lia qua đèn lồng mồi cho góc ngước hẻm phố.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Khai thác tối đa địa hình dốc bậc thang đặc trưng không thể trộn lẫn của Hong Kong xưa.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 13 (Out) &rarr; Shot 14 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_026_93fb8e5b.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 14: Hẻm phố cổ Hong Kong</span>
+        <span class="shot-time">18.53s - 20.00s (1.47s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_027_2b3444ca.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Extreme Low Angle Worm’s Eye View (Góc nhìn từ sát mặt đất)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Up ngước nhìn dải lồng đèn căng giữa các toà nhà cao tầng</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng hắt từ hẻm sâu lên vòm trời xanh thẳm</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục khe hẹp (Canyon Effect) giữa hai bức tường nhà cao vút</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Tầm nhìn từ đáy ngước lên đột ngột.<br/><b>Out:</b> Đẩy lên bầu trời mồi cho đường đá Pottinger.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Sử dụng hiệu ứng khe hẻm thị giác để nhấn mạnh sự đan xen giữa hiện đại và truyền thống.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 14 (Out) &rarr; Shot 15 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_028_f576a13c.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 15: Pottinger Street (Đường Đá Phiến Di Sản Central)</span>
+        <span class="shot-time">20.00s - 21.40s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_029_e621f9b3.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Medium Wide Dutch Angle / Low Angle</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Up dạo bước qua các quầy hàng trang trí Tết rực rỡ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng phản chiếu lung linh trên những phiến đá granite mài nhẵn</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Đường dốc bậc đá dẫn thẳng tầm mắt lên đỉnh phố nhộn nhịp</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Chuyển cảnh vào con đường di sản nổi tiếng nhất.<br/><b>Out:</b> Hướng về nghệ nhân thư pháp.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Các phiến đá không bằng phẳng tạo ra kết cấu bề mặt (Texture) tuyệt vời dưới ánh sáng chiều.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 15 (Out) &rarr; Shot 16 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_030_26ff55da.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 16: Quầy Thư Pháp Pottinger Street</span>
+        <span class="shot-time">21.40s - 22.80s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_031_98d2c6bb.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Macro Extreme Close-up (Cực cận đầu ngọn cọ mực tàu son)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Slow Tilt Up theo từng nét cọ lướt dẻo dai trên giấy đỏ</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Ánh sáng tập trung vào giọt mực đen son óng ánh trên nền giấy đỏ</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Trọng tâm tuyệt đối vào nghệ thuật viết chữ Phúc/Lộc</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Nhịp điệu lắng đọng tinh tế.<br/><b>Out:</b> Nhấc bút mồi cho đại cảnh hoàng hôn rực sáng.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tạo điểm nhấn linh hồn (Soul Shot) tôn vinh nét đẹp thư pháp thủ công ngàn năm tuổi.</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 16 (Out) &rarr; Shot 17 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_032_474bf183.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 17: Lee Tung Avenue (Hoàng Hôn / Giờ Vàng Blue Hour)</span>
+        <span class="shot-time">22.80s - 24.20s (1.40s)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_033_f1a4de99.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> High Angle Elevated Wide Shot (Góc cao bao quát đại lộ)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Down bao quát dòng người du xuân dưới biển lồng đèn phát sáng</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Đèn lồng đồng loạt bật sáng đỏ rực tương phản với bầu trời chạng vạng xanh tím (Blue Hour)</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục đại cảnh đối xứng đa tầng lớp người và ánh sáng</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Bùng nổ ánh sáng lễ hội ban đêm.<br/><b>Out:</b> Hạ dần mồi cho cú chốt toàn cảnh kết phim.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Tận dụng khoảnh khắc Giờ Xanh (Blue Hour) khi đèn phố vừa lên để đạt độ tương phản màu đỉnh cao (Complementary Teal & Orange/Red).</div>
+        </div>
+    </div>
+    
+            <div class="trans-box">
+                <div class="trans-title">Chuyển Cảnh: Shot 17 (Out) &rarr; Shot 18 (In)</div>
+                <div class="trans-img"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_034_5ad15346.jpg" /></div>
+            </div>
+            
+</div>
+
+<div class="shot-card">
+    <div class="shot-header">
+        <span class="shot-title">Shot 18: Lee Tung Avenue (Toàn Cảnh Đêm Giao Thừa)</span>
+        <span class="shot-time">24.20s - 25.97s (1.77s - Outro)</span>
+    </div>
+    <div class="shot-content">
+        <div class="shot-imgs">
+            <div class="img-frame"><img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_035_3687dd99.jpg" /></div>
+        </div>
+        <div class="shot-info">
+            <div class="info-row"><span class="info-label">Cỡ cảnh & Góc máy:</span> Grand Wide Angle Shot (Đại cảnh kết thúc hoành tráng)</div>
+            <div class="info-row"><span class="info-label">Động tác máy:</span> Tilt Up & Slow Hold (Nâng máy chậm hướng về vòm trời rực rỡ lồng đèn)</div>
+            <div class="info-row"><span class="info-label">Ánh sáng & Màu sắc:</span> Hàng nghìn đốm sáng đỏ lung linh như biển sao đêm giao thừa</div>
+            <div class="info-row"><span class="info-label">Bố cục & Chiều sâu:</span> Bố cục hoàn mỹ hướng thượng, để lại dư âm ấm áp trọn vẹn</div>
+            <div class="info-row"><span class="info-label">Kỹ thuật Mồi/Nối:</span> <b>In:</b> Tiếp nhận toàn bộ năng lượng thăng hoa của video.<br/><b>Out:</b> Đóng lại hành trình thị giác đầy cảm xúc.</div>
+            <div class="takeaway-box"><b>Đúc kết đạo diễn:</b> Giữ khung hình kết thúc lâu hơn (1.77s) để người xem lắng đọng và cảm nhận trọn vẹn lời chúc năm mới.</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="scripts-section">
+    <h3 style="margin:0 0 8px 0; font-size:14px; font-weight:800; color:#0f172a;">PHƯƠNG ÁN KỊCH BẢN THOẠI ỨNG DỤNG (VOICEOVER SCRIPTS)</h3>
+    
+    <div class="script-card">
+        <div class="script-title">Phương Án 1: Kịch Bản Cảm Xúc Hoài Niệm & Hương Vị Tết Phố Thị (Lifestyle & Culture)</div>
+        <div style="font-size:11px; color:#334155; line-height:1.6;">
+            <b>[0.0s - 5.4s]:</b> Có những ngày cuối năm, chỉ cần bước chân ra phố, ta đã ngửi thấy mùi của Tết đang len lỏi qua từng góc nhỏ.<br/>
+            <b>[5.4s - 12.9s]:</b> Là sắc đào rực rỡ ở chợ Mong Kok, là tiếng lách cách của khuôn bánh tổ gia truyền nóng hổi vừa mới ra lò, là hàng trăm phong bao lì xì đỏ thắm mang theo lời chúc bình an.<br/>
+            <b>[12.9s - 20.0s]:</b> Dưới những con dốc đá trăm năm, nhịp sống cổ kính và hiện đại hoà làm một.<br/>
+            <b>[20.0s - 25.9s]:</b> Chúc bạn một năm mới an yên, rực rỡ và đong đầy hạnh phúc như ánh lồng đèn đêm giao thừa!
+        </div>
+    </div>
+
+    <div class="script-card">
+        <div class="script-title">Phương Án 2: Kịch Bản Hướng Dẫn Kỹ Thuật Quay Mobile Filmmaking Tết Bằng Điện Thoại</div>
+        <div style="font-size:11px; color:#334155; line-height:1.6;">
+            <b>[0.0s - 5.4s]:</b> 3 mẹo quay video không khí Tết cực cinematic chỉ bằng chiếc điện thoại trong tay bạn!<br/>
+            <b>[5.4s - 12.9s]:</b> Thứ nhất, luôn tận dụng tiền cảnh cành hoa và góc máy thấp để tạo độ sâu 3 lớp. Thứ hai, quay cận cảnh chi tiết bàn tay nghệ nhân làm bánh hoặc viết thư pháp.<br/>
+            <b>[12.9s - 20.0s]:</b> Thứ ba, duy trì nhịp cắt nhanh 1.4s đồng bộ nhịp nhạc lễ hội.<br/>
+            <b>[20.0s - 25.9s]:</b> Và cuối cùng, hãy canh khung giờ vàng hoàng hôn khi đèn lồng vừa lên để bắt trọn khoảnh khắc lung linh nhất!
+        </div>
+    </div>
+</div>
+
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "Chinese_New_Year_Hong_Kong - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

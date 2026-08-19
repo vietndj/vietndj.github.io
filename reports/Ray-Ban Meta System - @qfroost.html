@@ -1,0 +1,2240 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ray-Ban Meta System - Báo Cáo Phân Tích Đạo Diễn &amp; Ngôn Ngữ Điện Ảnh</title>
+<style>
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta.ttf') format('truetype'),
+         local('GT America LCG Bl'), local('GT America Black'), local('GT-America-LCGV-Standard-Black'), local('GTAmericaLCG-Bl');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+:root {
+    --bg-primary: #0a0d14;
+    --bg-surface: #121824;
+    --bg-card: #172032;
+    --bg-card-hover: #1e2a42;
+    --border-subtle: #24324a;
+    --border-accent: #f59e0b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-amber: #f59e0b;
+    --accent-gold: #d97706;
+    --accent-orange: #ea580c;
+    --accent-crimson: #e11d48;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --font-heading: 'SVN-Acta', Georgia, 'Times New Roman', serif;
+    --font-body: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    line-height: 1.65;
+    padding: 30px 20px;
+}
+
+.report-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header & Cover Banner */
+.cover-banner {
+    background: linear-gradient(135deg, rgba(234, 88, 12, 0.18) 0%, rgba(217, 119, 6, 0.15) 50%, rgba(10, 13, 20, 0.95) 100%), var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    border-radius: 16px;
+    padding: 40px 36px;
+    margin-bottom: 35px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.cover-banner::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(245, 158, 11, 0.25) 0%, rgba(0,0,0,0) 70%);
+    pointer-events: none;
+}
+
+.badge-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(234, 88, 12, 0.15);
+    color: var(--accent-orange);
+    border: 1px solid rgba(234, 88, 12, 0.4);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+h1.doc-title {
+    font-family: var(--font-heading);
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.doc-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    max-width: 880px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.meta-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.meta-pill {
+    background: rgba(23, 32, 50, 0.9);
+    border: 1px solid var(--border-subtle);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.meta-pill strong {
+    color: var(--accent-amber);
+    font-weight: 700;
+}
+
+/* Section Titles */
+h2.section-heading {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 45px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 2px solid var(--border-subtle);
+    padding-bottom: 12px;
+}
+
+h2.section-heading span.num {
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-amber));
+    color: #ffffff;
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 800;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.overview-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 12px;
+    padding: 22px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.overview-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-amber);
+}
+
+.overview-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--accent-amber);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overview-card p {
+    color: var(--text-secondary);
+    font-size: 13.5px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+.overview-card strong {
+    color: var(--text-primary);
+}
+
+/* Storyboard Card */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    border-radius: 14px;
+    padding: 24px;
+    margin-bottom: 30px;
+    transition: border-color 0.2s;
+    page-break-inside: avoid;
+}
+
+.shot-card:hover {
+    border-color: rgba(245, 158, 11, 0.6);
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding-bottom: 14px;
+}
+
+.shot-title-wrap {
+    flex: 1;
+    min-width: 260px;
+}
+
+.shot-tag {
+    display: inline-block;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    font-size: 11.5px;
+    font-weight: 700;
+    padding: 3px 9px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.shot-tag:hover {
+    background: rgba(245, 158, 11, 0.3);
+}
+
+.shot-name {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.shot-meta-badges {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.badge {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-subtle);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.badge strong {
+    color: var(--accent-blue);
+}
+
+/* Shot Visual Thumbnails Grid */
+.shot-frames-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.shot-frame-item {
+    text-align: center;
+}
+
+.shot-thumb {
+    width: 100%;
+    max-width: 220px;
+    height: auto;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.shot-thumb:hover {
+    transform: scale(1.03);
+    border-color: var(--accent-amber);
+    box-shadow: 0 8px 24px rgba(245, 158, 11, 0.3);
+}
+
+.frame-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Shot Detail Tables */
+.shot-details-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: rgba(10, 13, 20, 0.4);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.shot-details-table td {
+    padding: 10px 14px;
+    font-size: 13.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    vertical-align: top;
+}
+
+.shot-details-table tr:last-child td {
+    border-bottom: none;
+}
+
+.shot-details-table td.col-label {
+    width: 140px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    background: rgba(245, 158, 11, 0.04);
+    border-right: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.shot-details-table td.col-val {
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+.shot-details-table td.col-val strong {
+    color: var(--text-primary);
+}
+
+/* Transition Block */
+.transition-block {
+    background: linear-gradient(180deg, rgba(23, 32, 50, 0.7) 0%, rgba(18, 24, 36, 0.9) 100%);
+    border: 1px dashed var(--border-subtle);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 20px 0 35px 0;
+    text-align: center;
+}
+
+.trans-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.trans-img {
+    max-width: 440px;
+    width: 100%;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    border: 1px solid var(--border-subtle);
+    margin: 0 auto 12px auto;
+    display: block;
+    cursor: pointer;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+.trans-img:hover {
+    transform: scale(1.02);
+    border-color: var(--accent-blue);
+}
+
+.trans-desc {
+    font-size: 13px;
+    color: var(--text-secondary);
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Practical Script Section */
+.script-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background: var(--bg-surface);
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border-subtle);
+}
+
+.script-table th {
+    background: var(--bg-card);
+    color: var(--accent-amber);
+    font-weight: 700;
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.script-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    font-size: 13px;
+    color: var(--text-secondary);
+    vertical-align: top;
+}
+
+.script-table tr:last-child td {
+    border-bottom: none;
+}
+
+.script-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 7, 12, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.lightbox-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90vw;
+    max-height: 82vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.lightbox-caption {
+    margin-top: 15px;
+    color: #e2e8f0;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    max-width: 800px;
+    padding: 6px 16px;
+    background: rgba(23, 32, 50, 0.8);
+    border-radius: 20px;
+    border: 1px solid var(--border-subtle);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: 300;
+    cursor: pointer;
+    line-height: 1;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: background 0.2s;
+}
+
+.lightbox-close:hover {
+    background: rgba(225, 29, 72, 0.8);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 36px;
+    cursor: pointer;
+    padding: 16px 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    user-select: none;
+    transition: background 0.2s;
+}
+
+.lightbox-nav:hover {
+    background: rgba(245, 158, 11, 0.8);
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+/* Video Player Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(5, 7, 12, 0.94);
+    backdrop-filter: blur(12px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.video-modal.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-video-container {
+    position: relative;
+    max-width: 420px;
+    width: 90vw;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--border-subtle);
+}
+
+.modal-video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 9/16;
+}
+
+.video-modal-info {
+    padding: 12px 16px;
+    background: var(--bg-surface);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.video-modal-title {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--accent-amber);
+}
+
+.video-modal-close {
+    position: absolute;
+    top: -45px;
+    right: 0;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--accent-orange), var(--accent-amber));
+    color: #ffffff;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 30px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(234, 88, 12, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    z-index: 999;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(234, 88, 12, 0.6);
+}
+
+/* Print Styles for PDF Engine */
+@media print {
+    body {
+        background-color: #0a0d14 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+        padding: 15px !important;
+    }
+    .floating-video-btn, .lightbox-modal, .video-modal {
+        display: none !important;
+    }
+    .shot-card {
+        page-break-inside: avoid !important;
+        border: 1px solid #24324a !important;
+        margin-bottom: 25px !important;
+    }
+    .cover-banner {
+        page-break-inside: avoid !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="report-container">
+
+    <!-- Cover Banner -->
+    <div class="cover-banner">
+        <div class="badge-tag">🎬 GIÁM ĐỐC NGHỆ THUẬT &amp; ĐẠO DIỄN HÌNH ẢNH • DIRECTOR BREAKDOWN</div>
+        <h1 class="doc-title">Ray-Ban Meta System • Nghệ Thuật Kể Chuyện Đa Góc Nhìn &amp; Nhịp Dựng Hyperlapse</h1>
+        <p class="doc-subtitle">Bóc tách toàn diện 23 phân cảnh mẫu mực trong video quảng bá kính thông minh Ray-Ban Meta của đạo diễn kiêm nhà sáng tạo @qfroost (Quyen Van): Bố cục đối xứng Wes Anderson, kỹ thuật chia khung đa điểm nhìn (Multi-Perspective Split-Screen 2-Split &amp; 3-Split), nhịp tua nhanh Hyperlapse và cú twist hài hước 24 Hours Early tại thủ đô Lisbon.</p>
+        
+        <div class="meta-pills">
+            <div class="meta-pill">🎬 <strong>Creator:</strong> @qfroost (Quyen Van / Q)</div>
+            <div class="meta-pill">👓 <strong>Đối tác:</strong> Ray-Ban Meta Smart Glasses</div>
+            <div class="meta-pill">📍 <strong>Bối cảnh:</strong> Lisbon, Bồ Đào Nha (Alfama, Praça do Comércio)</div>
+            <div class="meta-pill">⏱️ <strong>Thời lượng:</strong> 30.50 giây (732 Frames @ 24fps)</div>
+            <div class="meta-pill">🎞️ <strong>Tổng số phân cảnh:</strong> 23 Shots bóc tách chi tiết</div>
+            <div class="meta-pill">📐 <strong>Tỷ lệ khung hình:</strong> 9:16 Vertical Cinema (1080x1920)</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Overview & Film Language -->
+    <h2 class="section-heading"><span class="num">1</span> Phân Tích Ngôn Ngữ Điện Ảnh &amp; Chiến Lược Kể Chuyện Thương Hiệu</h2>
+    
+    <div class="overview-grid">
+        <div class="overview-card">
+            <h3>🎨 Bố Cục Đối Xứng Wes Anderson &amp; Bảng Màu Pastel</h3>
+            <p><strong>Cấu trúc hình học hoàn hảo:</strong> Mở màn và kết thúc bằng các khung hình đối xứng trục dọc tuyệt đối (Cảnh 1 ban công, Cảnh 14 hành lang vòm, Cảnh 23 bờ biển).</p>
+            <p><strong>Bảng màu điện ảnh Lisbon:</strong> Kết hợp sắc đào ấm áp, vàng mù tạt cổ kính, xanh ngọc của sông Tagus và sọc hồng cam pastel của trang phục nhân vật.</p>
+        </div>
+        
+        <div class="overview-card">
+            <h3>🔲 Kỹ Thuật Chia Khung Đa Điểm Nhìn (2-Split &amp; 3-Split)</h3>
+            <p><strong>Đồng bộ trải nghiệm đa chiều:</strong> Tầng trên hiển thị góc nhìn thứ nhất (POV trực tiếp từ kính Ray-Ban Meta) trong khi tầng dưới hiển thị góc máy thứ ba (Third-Person Tracking) của Q.</p>
+            <p><strong>Cú Shot 3 tầng (3-Split) đỉnh cao:</strong> Phân cảnh 11 xếp lớp 3 dải thị giác: Mặt đường hoa cương Bồ Đào Nha - Rặng cây xanh nhà ngói đỏ - Bước chân Q lướt ngang bờ tường đá.</p>
+        </div>
+
+        <div class="overview-card">
+            <h3>⚡ Kỹ Thuật Tua Nhanh Hyperlapse &amp; Speed Ramping</h3>
+            <p><strong>Khẩu lệnh kích hoạt rảnh tay:</strong> Kích hoạt tính năng ghi hình bằng giọng nói <em>"Hey Meta, start the hyperlapse"</em> đi kèm cú zoom cận đèn LED chỉ báo sáng bừng.</p>
+            <p><strong>Nhịp dựng tăng tốc 4x-8x:</strong> Đưa khán giả vào một hành trình thị giác lốc xoáy lướt qua những con dốc và tuyến xe điện cổ điển của Lisbon mà không gây rung lắc nhờ chống rung EIS.</p>
+        </div>
+
+        <div class="overview-card">
+            <h3>🎧 Tích Hợp Sản Phẩm Như Một Động Lực Kể Chuyện</h3>
+            <p><strong>Không quảng cáo thô thiển:</strong> Mọi tính năng cốt lõi của Ray-Ban Meta (Camera POV 12MP, Khẩu lệnh Meta AI, Loa nghe nhạc mở Open-ear) đều là chìa khóa giải quyết nút thắt câu chuyện.</p>
+            <p><strong>Cú Twist kết thúc 24 Hours Early:</strong> Cú lật kèo hài hước deadpan: Nhân vật vội vã chạy thục mạng chỉ để nhận ra mình đến sớm... hẳn 1 ngày (24 tiếng), tạo dư âm vui vẻ khó quên.</p>
+        </div>
+    </div>
+
+    <!-- Section 2: Shot-by-Shot Storyboard Breakdown -->
+    <h2 class="section-heading"><span class="num">2</span> Bảng Bóc Tách Phân Cảnh Chi Tiết (Storyboard Breakdown)</h2>
+
+    <!-- Shot Card 01 -->
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(0.00)">▶ Shot 01 (0.00s - 2.42s)</span>
+                <h3 class="shot-name">Mở Màn Đối Xứng Wes Anderson: Ban Công Phố Cổ Lisbon & Dòng Tiêu Đề '24 Hours Early'</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>2.42s</strong></span>
+                <span class="badge">Phân loại: <strong>Extreme Symmetrical Balcony Establishing Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_002_7fa52771.jpg" class="shot-thumb" alt="Shot 01 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_002_7fa52771.jpg', 'Shot 01 Start • Mở Màn Đối Xứng Wes Anderson: Ban Công Phố Cổ Lisbon & Dòng Tiêu Đề '24 Hours Early'')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_004_a140cebe.jpg" class="shot-thumb" alt="Shot 01 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_004_a140cebe.jpg', 'Shot 01 Keyframe Mid • Mở Màn Đối Xứng Wes Anderson: Ban Công Phố Cổ Lisbon & Dòng Tiêu Đề '24 Hours Early'')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_006_c802aff9.jpg" class="shot-thumb" alt="Shot 01 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_006_c802aff9.jpg', 'Shot 01 End Frame • Mở Màn Đối Xứng Wes Anderson: Ban Công Phố Cổ Lisbon & Dòng Tiêu Đề '24 Hours Early'')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Ban công tòa nhà kiến trúc cổ điển màu pastel đào, Phố cổ Lisbon, Bồ Đào Nha</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình đối xứng hình học trục dọc hoàn hảo đậm chất điện ảnh Wes Anderson. Q bước ra từ hai cánh cửa ban công gỗ mở rộng, mặc áo sơ mi kẻ sọc hồng cam pastel và quần thụng, đón ánh nắng sớm chan hòa. Dòng chữ tiêu đề typographic màu cam nổi bật 'WITH RAY-BAN META - 24 HOURS EARLY', đi kèm 'This is Q' và 'DIRECTED BY Q' ở khung dưới.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Wes Anderson Pastel Symmetrical Hook & Typographic Title Card (Thiết lập phong cách thị giác đối xứng và giới thiệu nhân vật chính)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Đặt máy quay tĩnh tuyệt đối (Static Lock-off) vuông góc chính diện 90 độ với ban công. Cân bằng đường nét khung cửa sổ trên và dưới để đạt tỷ lệ vàng kiến trúc đối xứng hoàn mỹ.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính 35mm f/2.8 Cinema Prime, đo sáng cân bằng vào mảng tường màu be ấm để giữ trọn chi tiết hoa văn lan can sắt rèn nghệ thuật.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 01 ➔ Shot 02</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_008_0ea66c10.jpg" class="trans-img" alt="Transition Shot 01 to 02" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_008_0ea66c10.jpg', 'So Sánh Chuyển Cảnh: Shot 01 ➔ Shot 02')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Hai cánh cửa mở toang, Q bước ra ban công hít thở không khí sớm mai.<br><strong>Điểm nối (Out):</strong> Cắt sang Cảnh 2: Góc nghiêng thấp đặc tả nét mặt ngỡ ngàng khi nhìn xuống đường.</p>
+        </div>
+        
+    <!-- Shot Card 02 -->
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(2.42)">▶ Shot 02 (2.42s - 3.17s)</span>
+                <h3 class="shot-name">Góc Nhìn Nghiêng Từ Ban Công: Phát Hiện Chậm Trễ & Ánh Nhìn Xuống Phố</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.75s</strong></span>
+                <span class="badge">Phân loại: <strong>Low-Angle Profile Medium Close-Up</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_010_9dc3562c.jpg" class="shot-thumb" alt="Shot 02 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_010_9dc3562c.jpg', 'Shot 02 Start • Góc Nhìn Nghiêng Từ Ban Công: Phát Hiện Chậm Trễ & Ánh Nhìn Xuống Phố')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_012_2070d56b.jpg" class="shot-thumb" alt="Shot 02 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_012_2070d56b.jpg', 'Shot 02 Keyframe Mid • Góc Nhìn Nghiêng Từ Ban Công: Phát Hiện Chậm Trễ & Ánh Nhìn Xuống Phố')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_014_e397ccd8.jpg" class="shot-thumb" alt="Shot 02 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_014_e397ccd8.jpg', 'Shot 02 End Frame • Góc Nhìn Nghiêng Từ Ban Công: Phát Hiện Chậm Trễ & Ánh Nhìn Xuống Phố')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Ban công tầng 2 nhìn xuống quảng trường và nhà thờ cổ Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc máy đặt sát mép tường đá rêu phong, đặc tả góc nghiêng của Q đang tựa tay vào lan can gỗ xanh ngọc và quay đầu nhìn xuống phố. Hậu cảnh mở ra không gian sâu với các tòa nhà cổ màu vàng và nhà thờ mái vòm trắng của Lisbon.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Architectural Depth of Field & Character Realization (Kéo giãn chiều sâu không gian đô thị và biểu cảm thức tỉnh)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Sử dụng đường viền tường đá bên trái làm khung tiền cảnh tự nhiên (Natural Dirty Framing), tạo cảm giác chân thực như một lát cắt điện ảnh đời thường.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 50mm f/2.0, khẩu độ mở vừa đủ để làm mờ nhẹ hậu cảnh phố xá nhưng vẫn giữ rõ phom dáng kính Ray-Ban Meta trên mặt.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 02 ➔ Shot 03</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_016_b018959c.jpg" class="trans-img" alt="Transition Shot 02 to 03" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_016_b018959c.jpg', 'So Sánh Chuyển Cảnh: Shot 02 ➔ Shot 03')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Đầu Q quay ngoắt từ ngoài nhìn vào ống kính với vẻ mặt bừng tỉnh, nhận ra đã muộn giờ.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 3: Góc máy bên trong phòng tối nhìn xuyên qua khung cửa ra ban công.</p>
+        </div>
+        
+    <!-- Shot Card 03 -->
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(3.17)">▶ Shot 03 (3.17s - 3.62s)</span>
+                <h3 class="shot-name">Khung Cửa Pháp Đối Xứng: Khoảnh Khắc Bàng Hoàng Trong Căn Phòng</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.46s</strong></span>
+                <span class="badge">Phân loại: <strong>Symmetrical Interior-to-Exterior Doorway Framing (French Doors)</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_018_d2a554e8.jpg" class="shot-thumb" alt="Shot 03 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_018_d2a554e8.jpg', 'Shot 03 Start • Khung Cửa Pháp Đối Xứng: Khoảnh Khắc Bàng Hoàng Trong Căn Phòng')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_020_daaed8f9.jpg" class="shot-thumb" alt="Shot 03 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_020_daaed8f9.jpg', 'Shot 03 Keyframe Mid • Khung Cửa Pháp Đối Xứng: Khoảnh Khắc Bàng Hoàng Trong Căn Phòng')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_022_fa7d67d3.jpg" class="shot-thumb" alt="Shot 03 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_022_fa7d67d3.jpg', 'Shot 03 End Frame • Khung Cửa Pháp Đối Xứng: Khoảnh Khắc Bàng Hoàng Trong Căn Phòng')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Gian phòng khách nhìn xuyên ra ban công nắng sớm</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc máy đặt trong bóng tối của căn phòng nhìn ngược ra khung cửa sổ gỗ cao vút (French Doors) tràn ngập ánh sáng. Q đứng quay lưng vươn hai tay hoảng hốt bấu vào lan can khi nghe thông báo 'Q is late'.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Frame-within-a-Frame Interior Silhouette (Kỹ thuật lồng khung trong khung tạo sự kịch tính và cảm giác bị giới hạn thời gian)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Giữ trục đối xứng trung tâm nghiêm ngặt giữa hai cánh cửa gỗ vàng. Tương phản mạnh mẽ giữa nội thất tối và ngoại thất rực rỡ bên ngoài.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 35mm f/2.8, bảo vệ vùng Highlight ban công không bị cháy sáng.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 03 ➔ Shot 04</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_024_2394ced9.jpg" class="trans-img" alt="Transition Shot 03 to 04" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_024_2394ced9.jpg', 'So Sánh Chuyển Cảnh: Shot 03 ➔ Shot 04')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Hai tay Q vung rộng sang hai bên trong tư thế giật mình.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 4: Góc cận siêu tốc kiểm tra đồng hồ đeo tay.</p>
+        </div>
+        
+    <!-- Shot Card 04 -->
+    <div class="shot-card" id="shot-04">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(3.62)">▶ Shot 04 (3.62s - 4.21s)</span>
+                <h3 class="shot-name">Kiểm Tra Đồng Hồ Gấp Gáp: Kích Hoạt Tình Huống Khẩn Cấp</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.58s</strong></span>
+                <span class="badge">Phân loại: <strong>Close-Up (CU)</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_026_734c2cb2.jpg" class="shot-thumb" alt="Shot 04 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_026_734c2cb2.jpg', 'Shot 04 Start • Kiểm Tra Đồng Hồ Gấp Gáp: Kích Hoạt Tình Huống Khẩn Cấp')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_028_12d0f695.jpg" class="shot-thumb" alt="Shot 04 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_028_12d0f695.jpg', 'Shot 04 Keyframe Mid • Kiểm Tra Đồng Hồ Gấp Gáp: Kích Hoạt Tình Huống Khẩn Cấp')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_030_4665fa94.jpg" class="shot-thumb" alt="Shot 04 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_030_4665fa94.jpg', 'Shot 04 End Frame • Kiểm Tra Đồng Hồ Gấp Gáp: Kích Hoạt Tình Huống Khẩn Cấp')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Ban công ngoài trời, góc máy cận cánh tay</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc máy cận chếch bên vai đặc tả cánh tay áo sọc hồng cam giơ nhanh chiếc đồng hồ mặt vuông dây đen lên kiểm tra. Q nghiêng đầu nhìn chằm chằm vào mặt đồng hồ với biểu cảm khẩn trương.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Narrative Urgency Trigger & Fast Cut (Cú cắt nhịp nhanh đẩy cao trào cấp bách của cốt truyện)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Góc máy cận đặt thấp tạo cảm giác chuyển động lao về phía trước, ánh sáng ven (Rim Light) làm nổi bật đường nét gọng kính Ray-Ban bóng bẩy.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 85mm f/2.0, bắt nét chính xác vào mặt đồng hồ và gọng kính.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 04 ➔ Shot 05</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_032_a979d8e2.jpg" class="trans-img" alt="Transition Shot 04 to 05" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_032_a979d8e2.jpg', 'So Sánh Chuyển Cảnh: Shot 04 ➔ Shot 05')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Cánh tay giơ phắt lên vào giữa khung hình và ngón tay gõ nhẹ.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 5: Chuyển thẳng sang góc nhìn thứ nhất (POV) lao xuống đường phố.</p>
+        </div>
+        
+    <!-- Shot Card 05 -->
+    <div class="shot-card" id="shot-05">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(4.21)">▶ Shot 05 (4.21s - 6.17s)</span>
+                <h3 class="shot-name">Góc Nhìn Thứ Nhất (POV) Kính Ray-Ban Meta: Lao Xuống Phố Cổ Lisbon</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.96s</strong></span>
+                <span class="badge">Phân loại: <strong>First-Person POV Tracking</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_034_cf7aaf98.jpg" class="shot-thumb" alt="Shot 05 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_034_cf7aaf98.jpg', 'Shot 05 Start • Góc Nhìn Thứ Nhất (POV) Kính Ray-Ban Meta: Lao Xuống Phố Cổ Lisbon')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_036_93ad799b.jpg" class="shot-thumb" alt="Shot 05 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_036_93ad799b.jpg', 'Shot 05 Keyframe Mid • Góc Nhìn Thứ Nhất (POV) Kính Ray-Ban Meta: Lao Xuống Phố Cổ Lisbon')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_038_22225cac.jpg" class="shot-thumb" alt="Shot 05 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_038_22225cac.jpg', 'Shot 05 End Frame • Góc Nhìn Thứ Nhất (POV) Kính Ray-Ban Meta: Lao Xuống Phố Cổ Lisbon')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Ngã ba đường ray xe điện Tram, Phố cổ Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình góc nhìn thứ nhất (POV) quay trực tiếp từ camera tích hợp trên kính Ray-Ban Meta (hiển thị watermark 'Made with Ray-Ban | Meta'). Người xem trực tiếp trải nghiệm bước chân gấp gáp của Q lao ra ngã ba đường ray xe điện giữa các tòa nhà cổ điển.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>First-Person Immersion & Smart Glasses POV Integration (Nhập vai góc nhìn người đeo, giới thiệu chất lượng camera góc rộng của kính)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Độ ổn định hình ảnh mượt mà của hệ thống chống rung điện tử tích hợp trên gọng kính Ray-Ban Meta, tạo chuyển động tự nhiên khi bước đi nhanh.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Camera góc rộng 12MP Ultra-wide tích hợp trên gọng kính Ray-Ban Meta, tỷ lệ khung hình 9:16 native.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 05 ➔ Shot 06</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_040_baac588f.jpg" class="trans-img" alt="Transition Shot 05 to 06" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_040_baac588f.jpg', 'So Sánh Chuyển Cảnh: Shot 05 ➔ Shot 06')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Góc nhìn POV lướt nhanh qua các khúc cua đường ray và góc phố.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 6: Góc máy toàn cảnh đường phố tĩnh với xe buýt vàng.</p>
+        </div>
+        
+    <!-- Shot Card 06 -->
+    <div class="shot-card" id="shot-06">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(6.17)">▶ Shot 06 (6.17s - 7.17s)</span>
+                <h3 class="shot-name">Hành Lang Đô Thị Đối Xứng: Nhịp Thở Tĩnh Lặng Giữa Cơn Hối Hả</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.00s</strong></span>
+                <span class="badge">Phân loại: <strong>Static Full Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_042_65550c62.jpg" class="shot-thumb" alt="Shot 06 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_042_65550c62.jpg', 'Shot 06 Start • Hành Lang Đô Thị Đối Xứng: Nhịp Thở Tĩnh Lặng Giữa Cơn Hối Hả')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_044_a55f66b7.jpg" class="shot-thumb" alt="Shot 06 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_044_a55f66b7.jpg', 'Shot 06 Keyframe Mid • Hành Lang Đô Thị Đối Xứng: Nhịp Thở Tĩnh Lặng Giữa Cơn Hối Hả')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_046_4e48f490.jpg" class="shot-thumb" alt="Shot 06 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_046_4e48f490.jpg', 'Shot 06 End Frame • Hành Lang Đô Thị Đối Xứng: Nhịp Thở Tĩnh Lặng Giữa Cơn Hối Hả')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Tuyến phố thẳng tắp với đường ray xe điện trung tâm Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Bố cục đối xứng một điểm tụ nhìn dọc theo con phố dài với đường dây điện tram chằng chịt trên nền trời. Phía xa là chiếc xe buýt vàng Lisbon đang chuyển động. Q bình tĩnh rảo bước dứt khoát trên vỉa hè.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Static Pacing Contrast & Urban Geometry (Tạo khoảng lặng thị giác tương phản trước khi kích hoạt tính năng AI)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Đặt chân máy tại chính giữa đường ray, căn chỉnh đường chân trời và các cột đèn đối xứng hai bên mép khung.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 50mm f/4.0 trên chân máy để lấy nét sâu toàn bộ chiều dài con phố.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 06 ➔ Shot 07</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_048_e239515e.jpg" class="trans-img" alt="Transition Shot 06 to 07" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_048_e239515e.jpg', 'So Sánh Chuyển Cảnh: Shot 06 ➔ Shot 07')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Nhân vật bước đi đều nhịp từ bên phải vào khung hình, lồng tiếng 'But he doesn't panic'.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 7: Góc máy bên hông theo dõi bước chân xuống bậc thang đá.</p>
+        </div>
+        
+    <!-- Shot Card 07 -->
+    <div class="shot-card" id="shot-07">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(7.17)">▶ Shot 07 (7.17s - 8.38s)</span>
+                <h3 class="shot-name">Theo Dõi Bước Chân Xuống Dốc Đá Cổ: Chuẩn Bị Ra Khẩu Lệnh</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.21s</strong></span>
+                <span class="badge">Phân loại: <strong>Medium Tracking Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_050_055bfe56.jpg" class="shot-thumb" alt="Shot 07 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_050_055bfe56.jpg', 'Shot 07 Start • Theo Dõi Bước Chân Xuống Dốc Đá Cổ: Chuẩn Bị Ra Khẩu Lệnh')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_052_0104636e.jpg" class="shot-thumb" alt="Shot 07 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_052_0104636e.jpg', 'Shot 07 Keyframe Mid • Theo Dõi Bước Chân Xuống Dốc Đá Cổ: Chuẩn Bị Ra Khẩu Lệnh')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_054_8f51c699.jpg" class="shot-thumb" alt="Shot 07 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_054_8f51c699.jpg', 'Shot 07 End Frame • Theo Dõi Bước Chân Xuống Dốc Đá Cổ: Chuẩn Bị Ra Khẩu Lệnh')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Bậc thang đá dốc đứng Alfama rực nắng vàng</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc máy nghiêng theo dõi chuyển động bước xuống bậc thang đá cổ kính của Q. Nắng sớm đổ bóng dài trên nền đá hoa cương, làm nổi bật áo sơ mi kẻ hồng và dáng đi tự tin, không hề bối rối.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Kinetic Momentum & Anticipation Build-up (Duy trì động lượng chuyển động và tạo sự chờ đợi cho hành động tiếp theo)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Gimbal di chuyển mượt mà song song với tốc độ bước chân của nhân vật, giữ khoảng cách cự ly trung bình ổn định.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 35mm f/2.0 trên Gimbal DJI Ronin RS3, lấy nét theo mắt (Eye-AF Tracking).</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 07 ➔ Shot 08</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_056_97251477.jpg" class="trans-img" alt="Transition Shot 07 to 08" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_056_97251477.jpg', 'So Sánh Chuyển Cảnh: Shot 07 ➔ Shot 08')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Bước chân rảo nhanh xuống dốc bậc thang, tay chuẩn bị đưa lên kính.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 8: Cận cảnh Q nhìn thẳng ống kính ra khẩu lệnh điều khiển giọng nói.</p>
+        </div>
+        
+    <!-- Shot Card 08 -->
+    <div class="shot-card" id="shot-08">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(8.38)">▶ Shot 08 (8.38s - 10.08s)</span>
+                <h3 class="shot-name">Ra Khẩu Lệnh Giọng Nói: 'Hey Meta, Start The Hyperlapse'</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.71s</strong></span>
+                <span class="badge">Phân loại: <strong>Medium Close-Up (MCU)</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_058_42f8fcef.jpg" class="shot-thumb" alt="Shot 08 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_058_42f8fcef.jpg', 'Shot 08 Start • Ra Khẩu Lệnh Giọng Nói: 'Hey Meta, Start The Hyperlapse'')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_060_c4b5c2f4.jpg" class="shot-thumb" alt="Shot 08 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_060_c4b5c2f4.jpg', 'Shot 08 Keyframe Mid • Ra Khẩu Lệnh Giọng Nói: 'Hey Meta, Start The Hyperlapse'')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_062_f11ec345.jpg" class="shot-thumb" alt="Shot 08 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_062_f11ec345.jpg', 'Shot 08 End Frame • Ra Khẩu Lệnh Giọng Nói: 'Hey Meta, Start The Hyperlapse'')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Bức tường đá vàng cổ kính Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc cận trung chân dung Q vừa đi vừa ngoảnh mặt nhìn vào ống kính và cất giọng dõng dạc ra lệnh cho chiếc kính thông minh: 'Hey Meta, start the hyperlapse'. Nắng vàng rọi nghiêng góc 45 độ tôn rõ từng chi tiết trên gọng kính Ray-Ban Wayfarer đen bóng.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Interactive AI Voice Command Showcase (Trình diễn tính năng điều khiển rảnh tay bằng giọng nói Hands-free Meta AI)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Cú máy theo sát mặt nhân vật, bắt trọn khoảnh khắc ra lệnh tự nhiên không gượng gạo, tạo nhịp nối hoàn hảo sang hiệu ứng kỹ xảo tiếp theo.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 50mm f/1.8, thu âm trực tiếp micro định hướng không dây DJI Mic 2 bắt trọn giọng nói rõ ràng.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 08 ➔ Shot 09</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_064_bd64853c.jpg" class="trans-img" alt="Transition Shot 08 to 09" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_064_bd64853c.jpg', 'So Sánh Chuyển Cảnh: Shot 08 ➔ Shot 09')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Khẩu hình Q phát âm chuẩn xác câu lệnh, ánh mắt tự tin giao tiếp trực diện với khán giả.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 9: Cú macro siêu cận bắt sáng đèn LED kích hoạt ghi hình.</p>
+        </div>
+        
+    <!-- Shot Card 09 -->
+    <div class="shot-card" id="shot-09">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(10.08)">▶ Shot 09 (10.08s - 10.79s)</span>
+                <h3 class="shot-name">Siêu Cận Cảnh Gọng Kính: Đèn LED Trắng Sáng Bừng Báo Hiệu Ghi Hình</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.71s</strong></span>
+                <span class="badge">Phân loại: <strong>Extreme Close-Up (ECU) Macro</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_066_8f97381e.jpg" class="shot-thumb" alt="Shot 09 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_066_8f97381e.jpg', 'Shot 09 Start • Siêu Cận Cảnh Gọng Kính: Đèn LED Trắng Sáng Bừng Báo Hiệu Ghi Hình')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_068_1d747c9b.jpg" class="shot-thumb" alt="Shot 09 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_068_1d747c9b.jpg', 'Shot 09 Keyframe Mid • Siêu Cận Cảnh Gọng Kính: Đèn LED Trắng Sáng Bừng Báo Hiệu Ghi Hình')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_070_7b248451.jpg" class="shot-thumb" alt="Shot 09 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_070_7b248451.jpg', 'Shot 09 End Frame • Siêu Cận Cảnh Gọng Kính: Đèn LED Trắng Sáng Bừng Báo Hiệu Ghi Hình')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Đặc tả siêu cận chi tiết khớp nối gọng kính Ray-Ban Meta</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình macro siêu chi tiết vào biểu tượng logo Ray-Ban dập nổi màu bạc và chiếc đèn LED chỉ báo ghi hình (Capture LED). Ngay khi nhận khẩu lệnh, đèn LED tròn màu trắng phát sáng rực rỡ, kèm theo âm thanh SFX phản hồi công nghệ cao.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Macro Tech Credibility & Visual Sound SFX Cue (Điểm nhấn kỹ thuật xác thực phần cứng và kích hoạt chuỗi hành động tốc độ cao)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Ống kính Macro 90mm lấy nét chính xác đến từng micromet vào chấm đèn LED. Tăng nhẹ độ tương phản để ánh sáng đèn LED trở thành điểm phát quang duy nhất.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính Sony FE 90mm f/2.8 Macro G OSS, chiếu sáng cục bộ bằng đèn bỏ túi Aputure MC.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 09 ➔ Shot 10</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_072_bee83e93.jpg" class="trans-img" alt="Transition Shot 09 to 10" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_072_bee83e93.jpg', 'So Sánh Chuyển Cảnh: Shot 09 ➔ Shot 10')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Đèn LED chớp sáng trắng tinh khôi, ánh mắt phía sau tròng kính phản chiếu sắc sảo.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 10: Bùng nổ chuỗi phân cảnh chia khung đa điểm nhìn Hyperlapse (Split-Screen).</p>
+        </div>
+        
+    <!-- Shot Card 10 -->
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(10.79)">▶ Shot 10 (10.79s - 11.17s)</span>
+                <h3 class="shot-name">Bố Cục Chia Đôi (2-Split): Tốc Độ Hyperlapse POV & Bước Chân Băng Phố</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.38s</strong></span>
+                <span class="badge">Phân loại: <strong>2-Panel Split-Screen Kinetic Hyperlapse (Vertical 50</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_074_8bee5fed.jpg" class="shot-thumb" alt="Shot 10 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_074_8bee5fed.jpg', 'Shot 10 Start • Bố Cục Chia Đôi (2-Split): Tốc Độ Hyperlapse POV & Bước Chân Băng Phố')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_076_f4908d6c.jpg" class="shot-thumb" alt="Shot 10 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_076_f4908d6c.jpg', 'Shot 10 Keyframe Mid • Bố Cục Chia Đôi (2-Split): Tốc Độ Hyperlapse POV & Bước Chân Băng Phố')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_078_db337d92.jpg" class="shot-thumb" alt="Shot 10 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_078_db337d92.jpg', 'Shot 10 End Frame • Bố Cục Chia Đôi (2-Split): Tốc Độ Hyperlapse POV & Bước Chân Băng Phố')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Tuyến phố trung tâm Lisbon & Vạch kẻ sang đường</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Màn hình chia đôi theo chiều ngang (2 tầng): Tầng trên là góc nhìn thứ nhất (POV Hyperlapse) lướt như bay qua làn đường xe chạy; Tầng dưới là góc máy toàn cảnh tele đối xứng bắt trọn Q đang sải bước nhanh qua vạch kẻ đường phía trước chiếc xe buýt vàng và xe tải.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Dual-Perspective Speed Ramp Synchronization (Đồng bộ hóa nhịp chuyển động siêu tốc giữa góc nhìn thứ nhất và góc nhìn thứ ba)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Căn chỉnh tốc độ di chuyển của hai camera khớp hoàn hảo theo nhịp beat âm nhạc, tạo cảm giác người xem vừa được trải nghiệm trực tiếp vừa được quan sát từ xa.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Xử lý hậu kỳ Speed Ramping 500% kết hợp Motion Blur trong Adobe Premiere / After Effects.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 10 ➔ Shot 11</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_080_332a262e.jpg" class="trans-img" alt="Transition Shot 10 to 11" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_080_332a262e.jpg', 'So Sánh Chuyển Cảnh: Shot 10 ➔ Shot 11')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Hai tầng khung hình cùng chuyển động với tốc độ gấp 4x-6x bình thường.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 11: Mở rộng thành bố cục chia 3 tầng (3-Split) độc đáo.</p>
+        </div>
+        
+    <!-- Shot Card 11 -->
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(11.17)">▶ Shot 11 (11.17s - 11.83s)</span>
+                <h3 class="shot-name">Bố Cục Chia Ba (3-Split): Vũ Điệu Thị Giác 3 Tầng Kiến Trúc & Thiên Nhiên</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.67s</strong></span>
+                <span class="badge">Phân loại: <strong>3-Panel Split-Screen Multi-Perspective (Vertical 33</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_082_d0cb1a79.jpg" class="shot-thumb" alt="Shot 11 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_082_d0cb1a79.jpg', 'Shot 11 Start • Bố Cục Chia Ba (3-Split): Vũ Điệu Thị Giác 3 Tầng Kiến Trúc & Thiên Nhiên')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_084_19fc8bc4.jpg" class="shot-thumb" alt="Shot 11 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_084_19fc8bc4.jpg', 'Shot 11 Keyframe Mid • Bố Cục Chia Ba (3-Split): Vũ Điệu Thị Giác 3 Tầng Kiến Trúc & Thiên Nhiên')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_086_945984b0.jpg" class="shot-thumb" alt="Shot 11 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_086_945984b0.jpg', 'Shot 11 End Frame • Bố Cục Chia Ba (3-Split): Vũ Điệu Thị Giác 3 Tầng Kiến Trúc & Thiên Nhiên')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Vỉa hè lát đá hoa cương Bồ Đào Nha, Tường đá cẩm thạch & Rặng cây xanh</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình 9:16 được chia thành 3 dải ngang hoàn mỹ: Dải 1 (Trên): POV Hyperlapse lướt nhanh trên mặt đường lát đá Calçada Portuguesa; Dải 2 (Giữa): Tán thông xanh mướt nổi bật trên nền những ngôi nhà ngói đỏ rực rỡ; Dải 3 (Dưới): Q bước đi dứt khoát ngang qua bờ tường đá cẩm thạch vàng nhạt thẳng tắp.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Tri-Color Layered Graphic Composition (Nghệ thuật xếp lớp đồ họa 3 dải: Màu đường phố - Màu thiên nhiên - Chuyển động nhân vật)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Đây là cú shot mang tính biểu tượng cao nhất về mặt ngôn ngữ dựng phim ngắn, kết hợp nhịp nhàng giữa bảng màu kiến trúc đặc trưng của Lisbon và chuyển động nhân vật.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Đồng bộ hóa 3 luồng video 4K, chia tỷ lệ khung hình 1:3 cho mỗi dải ngang, căn chuẩn đường chân trời song song.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 11 ➔ Shot 12</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_088_b01bed5e.jpg" class="trans-img" alt="Transition Shot 11 to 12" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_088_b01bed5e.jpg', 'So Sánh Chuyển Cảnh: Shot 11 ➔ Shot 12')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Cả 3 tầng chuyển động ngang đồng bộ từ phải sang trái cực kỳ mượt mà.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 12: Chuyển sang khung cảnh cầu treo 25 de Abril ven sông Tagus.</p>
+        </div>
+        
+    <!-- Shot Card 12 -->
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(11.83)">▶ Shot 12 (11.83s - 12.33s)</span>
+                <h3 class="shot-name">Bố Cục Chia Đôi (2-Split): Di Tích Lịch Sử & Toàn Cảnh Cầu Treo 25 de Abril</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.50s</strong></span>
+                <span class="badge">Phân loại: <strong>2-Panel Split-Screen</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_090_0c46aed3.jpg" class="shot-thumb" alt="Shot 12 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_090_0c46aed3.jpg', 'Shot 12 Start • Bố Cục Chia Đôi (2-Split): Di Tích Lịch Sử & Toàn Cảnh Cầu Treo 25 de Abril')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_092_c2053aa6.jpg" class="shot-thumb" alt="Shot 12 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_092_c2053aa6.jpg', 'Shot 12 Keyframe Mid • Bố Cục Chia Đôi (2-Split): Di Tích Lịch Sử & Toàn Cảnh Cầu Treo 25 de Abril')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_094_6e4990d7.jpg" class="shot-thumb" alt="Shot 12 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_094_6e4990d7.jpg', 'Shot 12 End Frame • Bố Cục Chia Đôi (2-Split): Di Tích Lịch Sử & Toàn Cảnh Cầu Treo 25 de Abril')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Đại lộ ven sông Tagus & Cầu Ponte 25 de Abril</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Tầng trên: POV Hyperlapse lao qua vòm đá chạm trổ phong cách Manueline của tu viện; Tầng dưới: Góc tele rộng bắt trọn Q đi dạo bên bờ sông Tagus xanh ngắt với hậu cảnh là cây cầu treo đỏ 25 de Abril và cần cẩu cảng biển.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Landmark Scale Juxtaposition (Đặt cạnh biểu tượng lịch sử cổ kính và công trình thế kỷ hiện đại)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Màu đỏ của cầu 25 de Abril tương phản mạnh mẽ với màu xanh ngọc của mặt nước và sắc hồng của áo nhân vật.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tầng dưới dùng ống kính 70-200mm f/2.8 nén hậu cảnh để kéo cây cầu treo khổng lồ lại gần bờ kè.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 12 ➔ Shot 13</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_096_73079530.jpg" class="trans-img" alt="Transition Shot 12 to 13" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_096_73079530.jpg', 'So Sánh Chuyển Cảnh: Shot 12 ➔ Shot 13')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Chuyển động dạt dào của sóng nước hòa cùng bước chân nhẹ nhàng của Q.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 13: Bố cục chia đôi với tòa dinh thự vàng rực rỡ.</p>
+        </div>
+        
+    <!-- Shot Card 13 -->
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(12.33)">▶ Shot 13 (12.33s - 12.75s)</span>
+                <h3 class="shot-name">Bố Cục Chia Đôi (2-Split): Góc Nhìn Quán Cà Phê & Tòa Nhà Vàng Mù Tạt</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.42s</strong></span>
+                <span class="badge">Phân loại: <strong>2-Panel Split-Screen</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_098_bf94c959.jpg" class="shot-thumb" alt="Shot 13 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_098_bf94c959.jpg', 'Shot 13 Start • Bố Cục Chia Đôi (2-Split): Góc Nhìn Quán Cà Phê & Tòa Nhà Vàng Mù Tạt')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_100_59bedd53.jpg" class="shot-thumb" alt="Shot 13 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_100_59bedd53.jpg', 'Shot 13 Keyframe Mid • Bố Cục Chia Đôi (2-Split): Góc Nhìn Quán Cà Phê & Tòa Nhà Vàng Mù Tạt')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_102_12c7347e.jpg" class="shot-thumb" alt="Shot 13 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_102_12c7347e.jpg', 'Shot 13 End Frame • Bố Cục Chia Đôi (2-Split): Góc Nhìn Quán Cà Phê & Tòa Nhà Vàng Mù Tạt')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Phố đi bộ lát đá và thảm cỏ dinh thự vàng</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Tầng trên: POV lướt nhanh qua các dãy bàn ghế cà phê ngoài trời và cột mốc giao thông; Tầng dưới: Q bước đi thanh thoát trước tòa dinh thự sơn màu vàng mù tạt rực rỡ với hàng cây bách xanh cắt tỉa gọn gàng.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Color Blocking & Pacing Climax (Chặn màu tương phản vàng rực - xanh lá đẩy nhịp điệu lên đỉnh điểm trước khi dừng lại)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Sử dụng màu vàng hoàng gia làm điểm kết cho chuỗi Hyperlapse, chuẩn bị cho cú chuyển cảnh sang không gian tráng lệ tiếp theo.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Chỉnh Color Grading Kodak 2383 LUT để màu vàng mù tạt lên sâu và ấm áp.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 13 ➔ Shot 14</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_104_adec57ed.jpg" class="trans-img" alt="Transition Shot 13 to 14" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_104_adec57ed.jpg', 'So Sánh Chuyển Cảnh: Shot 13 ➔ Shot 14')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Bước chân Q lướt ngang qua thảm cỏ xanh mướt.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 14: Cú one-shot điện ảnh đột phá bên trong hành lang vòm Praça do Comércio.</p>
+        </div>
+        
+    <!-- Shot Card 14 -->
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(12.75)">▶ Shot 14 (12.75s - 14.29s)</span>
+                <h3 class="shot-name">Hành Lang Vòm Praça Do Comércio: Đỉnh Cao Bố Cục Một Điểm Tụ & Ánh Sáng Xuyên Vòm</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.54s</strong></span>
+                <span class="badge">Phân loại: <strong>Extreme Symmetrical One-Point Perspective Archway Tracking Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_106_e1781600.jpg" class="shot-thumb" alt="Shot 14 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_106_e1781600.jpg', 'Shot 14 Start • Hành Lang Vòm Praça Do Comércio: Đỉnh Cao Bố Cục Một Điểm Tụ & Ánh Sáng Xuyên Vòm')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_108_bb6d1543.jpg" class="shot-thumb" alt="Shot 14 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_108_bb6d1543.jpg', 'Shot 14 Keyframe Mid • Hành Lang Vòm Praça Do Comércio: Đỉnh Cao Bố Cục Một Điểm Tụ & Ánh Sáng Xuyên Vòm')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_110_2232439d.jpg" class="shot-thumb" alt="Shot 14 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_110_2232439d.jpg', 'Shot 14 End Frame • Hành Lang Vòm Praça Do Comércio: Đỉnh Cao Bố Cục Một Điểm Tụ & Ánh Sáng Xuyên Vòm')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Dãy hành lang vòm đá vôi tráng lệ Quảng trường Thương mại Praça do Comércio, Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình điện ảnh một điểm tụ (One-point perspective) sâu hun hút với hàng chục vòm cung đá vôi cổ kính nối tiếp nhau đến vô tận. Dãy đèn lồng sắt rèn treo thẳng tắp chính giữa trần vòm. Q sải bước tự tin từ bóng râm bên trái xuyên qua luồng sáng mặt trời chói rọi, kèm lồng tiếng 'And just like that, he's early'.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Masterwork Architectural Vanishing Point & Light Beam Crossing (Bố cục điểm tụ mẫu mực điện ảnh và chuyển động cắt qua vệt sáng)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Căn góc máy tại vị trí trung tâm tuyệt đối của hành lang. Để nhân vật bước qua luồng ánh sáng tự nhiên (Volumetric Lighting) tạo hiệu ứng hào quang lộng lẫy.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính 24mm f/2.8 Cinema Prime, giữ nguyên tỷ lệ khung hình 9:16 mở rộng trần vòm.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 14 ➔ Shot 15</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_112_a187e3ad.jpg" class="trans-img" alt="Transition Shot 14 to 15" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_112_a187e3ad.jpg', 'So Sánh Chuyển Cảnh: Shot 14 ➔ Shot 15')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Q bước từ trái sang phải cắt ngang qua luồng sáng sớm rọi xiên qua các cột vòm.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 15: Cú lia máy POV ngước lên trần vòm đón ánh nắng.</p>
+        </div>
+        
+    <!-- Shot Card 15 -->
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(14.29)">▶ Shot 15 (14.29s - 15.71s)</span>
+                <h3 class="shot-name">POV Ngước Nhìn Kiến Trúc Vòm Nắng: Tận Hưởng Không Gian Hoàng Gia</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.42s</strong></span>
+                <span class="badge">Phân loại: <strong>First-Person POV Dutch Tilt</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_114_15699a0b.jpg" class="shot-thumb" alt="Shot 15 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_114_15699a0b.jpg', 'Shot 15 Start • POV Ngước Nhìn Kiến Trúc Vòm Nắng: Tận Hưởng Không Gian Hoàng Gia')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_116_345adca9.jpg" class="shot-thumb" alt="Shot 15 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_116_345adca9.jpg', 'Shot 15 Keyframe Mid • POV Ngước Nhìn Kiến Trúc Vòm Nắng: Tận Hưởng Không Gian Hoàng Gia')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_118_2869450f.jpg" class="shot-thumb" alt="Shot 15 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_118_2869450f.jpg', 'Shot 15 End Frame • POV Ngước Nhìn Kiến Trúc Vòm Nắng: Tận Hưởng Không Gian Hoàng Gia')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Mặt tiền các cột vòm đá hoa cương vàng của quảng trường</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc nhìn thứ nhất từ kính Ray-Ban Meta lia nghiêng từ dưới ngước lên những vòm đá vôi vàng rực rỡ đang tắm mình trong nắng mai. Bóng đổ hình học sắc nét của các gờ phào chỉ tạo nên một bức tranh kiến trúc sống động.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Architectural POV Wonder & Dynamic Light Sweep (Truyền tải cảm giác choáng ngợp thư thái khi người đeo ngắm nhìn vẻ đẹp xung quanh)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Góc lia máy chậm rãi tự nhiên (Organic Tilt) mô phỏng chính xác cử động đầu của con người khi thưởng ngoạn kiến trúc.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Camera Ray-Ban Meta tự động cân bằng trắng (Auto White Balance) giữ trọn sắc vàng ấm 4800K của đá vôi.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 15 ➔ Shot 16</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_120_3da33ca2.jpg" class="trans-img" alt="Transition Shot 15 to 16" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_120_3da33ca2.jpg', 'So Sánh Chuyển Cảnh: Shot 15 ➔ Shot 16')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Cú ngước nhìn từ từ của người đeo kính như đang chiêm ngưỡng vẻ đẹp công trình.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 16: Q bước ra khỏi bóng vòm tiến về phía quảng trường mở.</p>
+        </div>
+        
+    <!-- Shot Card 16 -->
+    <div class="shot-card" id="shot-16">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(15.71)">▶ Shot 16 (15.71s - 16.54s)</span>
+                <h3 class="shot-name">Bước Ra Khoảng Sáng: Khởi Đầu Khoảnh Khắc 'Savor The Moment'</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.83s</strong></span>
+                <span class="badge">Phân loại: <strong>Symmetrical Static Exit Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_122_27a89cb4.jpg" class="shot-thumb" alt="Shot 16 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_122_27a89cb4.jpg', 'Shot 16 Start • Bước Ra Khoảng Sáng: Khởi Đầu Khoảnh Khắc 'Savor The Moment'')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_124_d7cde6c0.jpg" class="shot-thumb" alt="Shot 16 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_124_d7cde6c0.jpg', 'Shot 16 Keyframe Mid • Bước Ra Khoảng Sáng: Khởi Đầu Khoảnh Khắc 'Savor The Moment'')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_126_cd2fd437.jpg" class="shot-thumb" alt="Shot 16 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_126_cd2fd437.jpg', 'Shot 16 End Frame • Bước Ra Khoảng Sáng: Khởi Đầu Khoảnh Khắc 'Savor The Moment'')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Lối ra từ hành lang vòm hướng về bờ sông Tagus</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình tĩnh đối xứng bắt trọn khoảnh khắc Q bước chân dứt khoát từ bóng tối của hành lang vòm đá vươn mình ra không gian quảng trường ngập tràn ánh nắng chói chang, lồng tiếng 'He savors the moment'.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Shadow-to-Light Transition & Mood Shift (Chuyển đổi trạng thái từ gấp gáp sang thư thái, chậm rãi)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Tận dụng độ tương phản giữa vùng tối của vòm đá và vùng trời sáng bừng bên ngoài để tạo điểm nhấn giải phóng thị giác.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Cảm biến dải tương phản động cao (High Dynamic Range) để giữ chi tiết cả trong bóng râm lẫn vùng sáng ngoài trời.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 16 ➔ Shot 17</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_128_86b286c7.jpg" class="trans-img" alt="Transition Shot 16 to 17" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_128_86b286c7.jpg', 'So Sánh Chuyển Cảnh: Shot 16 ➔ Shot 17')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Q bước ra khỏi bóng râm, toàn thân bừng sáng dưới ánh mặt trời.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 17: Cận cảnh Q ngước lên trời yêu cầu phát nhạc thư giãn.</p>
+        </div>
+        
+    <!-- Shot Card 17 -->
+    <div class="shot-card" id="shot-17">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(16.54)">▶ Shot 17 (16.54s - 20.08s)</span>
+                <h3 class="shot-name">Cận Cảnh Tôn Nghiêm (Hero Shot): 'Hey Meta, Play Some Relaxing Music'</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>3.54s</strong></span>
+                <span class="badge">Phân loại: <strong>Low-Angle Hero Close-Up</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_130_1cb182bf.jpg" class="shot-thumb" alt="Shot 17 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_130_1cb182bf.jpg', 'Shot 17 Start • Cận Cảnh Tôn Nghiêm (Hero Shot): 'Hey Meta, Play Some Relaxing Music'')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_132_bef8a204.jpg" class="shot-thumb" alt="Shot 17 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_132_bef8a204.jpg', 'Shot 17 Keyframe Mid • Cận Cảnh Tôn Nghiêm (Hero Shot): 'Hey Meta, Play Some Relaxing Music'')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_134_c5490c40.jpg" class="shot-thumb" alt="Shot 17 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_134_c5490c40.jpg', 'Shot 17 End Frame • Cận Cảnh Tôn Nghiêm (Hero Shot): 'Hey Meta, Play Some Relaxing Music'')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Bờ kè quảng trường hướng lên nền trời xanh trong vắt</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc máy thấp hướng thẳng lên gương mặt rạng ngời của Q trên nền trời xanh pastel. Ánh nắng sớm viền sáng rực rỡ lên mái tóc và gọng kính Ray-Ban Meta. Q nở nụ cười nhẹ nhàng và cất giọng ra lệnh: 'Hey Meta, play some relaxing music'. Tiếng nhạc lofi acoustic êm dịu vang lên qua loa Open-ear.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Heroic Serenity & Audio Feature Highlight (Khẳng định tính năng phát nhạc rảnh tay qua hệ thống loa Open-ear cao cấp tích hợp)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Đây là trường đoạn dài nhất video (3.54s), cho phép khán giả cùng nhân vật 'hít thở' và đắm chìm vào giai điệu âm nhạc êm dịu.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính 50mm f/1.4, góc máy thấp 30 độ, tấm phản quang bạc hắt nhẹ vào bóng mắt.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 17 ➔ Shot 18</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_136_c03cbd9b.jpg" class="trans-img" alt="Transition Shot 17 to 18" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_136_c03cbd9b.jpg', 'So Sánh Chuyển Cảnh: Shot 17 ➔ Shot 18')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Q ngước mặt tận hưởng làn gió mát lành, môi mỉm cười thư thái.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 18: Góc nhìn POV hướng ra biển cả bao la.</p>
+        </div>
+        
+    <!-- Shot Card 18 -->
+    <div class="shot-card" id="shot-18">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(20.08)">▶ Shot 18 (20.08s - 21.54s)</span>
+                <h3 class="shot-name">POV Tiến Ra Bờ Sông Tagus: Chiêm Ngưỡng Đại Dương & Cầu Treo Xa Xăm</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.46s</strong></span>
+                <span class="badge">Phân loại: <strong>First-Person POV Waterfront Establishing</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_138_e74d13a0.jpg" class="shot-thumb" alt="Shot 18 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_138_e74d13a0.jpg', 'Shot 18 Start • POV Tiến Ra Bờ Sông Tagus: Chiêm Ngưỡng Đại Dương & Cầu Treo Xa Xăm')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_140_aa83b2df.jpg" class="shot-thumb" alt="Shot 18 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_140_aa83b2df.jpg', 'Shot 18 Keyframe Mid • POV Tiến Ra Bờ Sông Tagus: Chiêm Ngưỡng Đại Dương & Cầu Treo Xa Xăm')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_142_79eedac0.jpg" class="shot-thumb" alt="Shot 18 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_142_79eedac0.jpg', 'Shot 18 End Frame • POV Tiến Ra Bờ Sông Tagus: Chiêm Ngưỡng Đại Dương & Cầu Treo Xa Xăm')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Bờ kè đá Cais das Colunas, Praça do Comércio</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc nhìn thứ nhất từ kính Ray-Ban Meta ghi lại bước chân Q tiến sát mép bờ kè đá. Bóng của người đeo kính đổ dài trên mặt sân lát đá hoa cương. Phía trước là mặt nước sông Tagus phẳng lặng lấp lánh ánh bạc, xa xa là cây cầu 25 de Abril và các cung điện ven biển.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Scenic Panorama & Shadow Self-Inclusion (Góc nhìn phong cảnh mở rộng và sự hiện diện tinh tế qua bóng đổ của nhân vật)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Bóng đổ dài của buổi sớm mai tạo một đường dẫn thị giác từ dưới đáy khung hình hướng thẳng ra trung tâm mặt nước biển.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Camera Ray-Ban Meta với góc rộng 12MP bao quát trọn vẹn đường chân trời biển cả.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 18 ➔ Shot 19</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_144_d29fc7a0.jpg" class="trans-img" alt="Transition Shot 18 to 19" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_144_d29fc7a0.jpg', 'So Sánh Chuyển Cảnh: Shot 18 ➔ Shot 19')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Bóng người tiến sát tới các khối đá bờ kè, dừng lại ngắm nhìn.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 19: Cận cảnh góc nghiêng tay chỉnh gọng kính thư giãn.</p>
+        </div>
+        
+    <!-- Shot Card 19 -->
+    <div class="shot-card" id="shot-19">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(21.54)">▶ Shot 19 (21.54s - 22.50s)</span>
+                <h3 class="shot-name">Cận Cảnh Góc Nghiêng: Đôi Tay Chạm Gọng Kính & Cảm Nhận Âm Nhạc</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>0.96s</strong></span>
+                <span class="badge">Phân loại: <strong>Close-Up Profile</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_146_afc8aad8.jpg" class="shot-thumb" alt="Shot 19 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_146_afc8aad8.jpg', 'Shot 19 Start • Cận Cảnh Góc Nghiêng: Đôi Tay Chạm Gọng Kính & Cảm Nhận Âm Nhạc')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_148_daac1f51.jpg" class="shot-thumb" alt="Shot 19 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_148_daac1f51.jpg', 'Shot 19 Keyframe Mid • Cận Cảnh Góc Nghiêng: Đôi Tay Chạm Gọng Kính & Cảm Nhận Âm Nhạc')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_150_626de044.jpg" class="shot-thumb" alt="Shot 19 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_150_626de044.jpg', 'Shot 19 End Frame • Cận Cảnh Góc Nghiêng: Đôi Tay Chạm Gọng Kính & Cảm Nhận Âm Nhạc')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Dưới bóng cây xanh bên bờ sông</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Góc cận chân dung nghiêng 3/4 bắt trọn khoảnh khắc Q đưa hai ngón tay lên chỉnh gọng kính Ray-Ban Meta đen bóng. Tròng kính phản chiếu ánh nắng lấp lánh, hậu cảnh là những tán cây xanh mướt lung linh tia sáng Bokeh.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Tactile Hardware Elegance & Emotional Connection (Tôn vinh cảm giác chạm cao cấp và sự gắn kết cảm xúc với sản phẩm)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Lấy nét chính xác tuyệt đối vào logo Ray-Ban kim loại ở góc gọng và ánh mắt đầy cảm xúc của nhân vật.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 85mm f/1.8 tạo Bokeh tròn xoe mượt mà từ những đốm nắng qua kẽ lá.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 19 ➔ Shot 20</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_152_4d90ec85.jpg" class="trans-img" alt="Transition Shot 19 to 20" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_152_4d90ec85.jpg', 'So Sánh Chuyển Cảnh: Shot 19 ➔ Shot 20')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Ngón tay khẽ chạm vào càng kính, mắt nhắm nhẹ phiêu theo giai điệu nhạc.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 20: Chuyển sang bố cục chia đôi dạo bước trên con dốc cổ.</p>
+        </div>
+        
+    <!-- Shot Card 20 -->
+    <div class="shot-card" id="shot-20">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(22.50)">▶ Shot 20 (22.50s - 23.75s)</span>
+                <h3 class="shot-name">Bố Cục Chia Đôi (2-Split): Tản Bộ Thư Thái Trên Con Dốc Cổ Alfama</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.25s</strong></span>
+                <span class="badge">Phân loại: <strong>2-Panel Split-Screen Relaxed Stroll (Vertical 50</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_154_83cc5055.jpg" class="shot-thumb" alt="Shot 20 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_154_83cc5055.jpg', 'Shot 20 Start • Bố Cục Chia Đôi (2-Split): Tản Bộ Thư Thái Trên Con Dốc Cổ Alfama')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_156_f70b805e.jpg" class="shot-thumb" alt="Shot 20 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_156_f70b805e.jpg', 'Shot 20 Keyframe Mid • Bố Cục Chia Đôi (2-Split): Tản Bộ Thư Thái Trên Con Dốc Cổ Alfama')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_158_9bf76444.jpg" class="shot-thumb" alt="Shot 20 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_158_9bf76444.jpg', 'Shot 20 End Frame • Bố Cục Chia Đôi (2-Split): Tản Bộ Thư Thái Trên Con Dốc Cổ Alfama')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Con dốc đá uốn lượn giữa các tòa nhà màu vàng chanh Alfama</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Tầng trên: POV bước thong thả lên con dốc đá lát cuội râm mát giữa hai dãy nhà cổ; Tầng dưới: Q đút hai tay vào túi quần, khoan thai tản bộ lên dốc nhìn ngắm những bức tường phủ hoa văn nghệ thuật đường phố.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Leisurely Split-Screen Stroll (Đồng điệu hóa nhịp điệu thư giãn giữa trải nghiệm chủ quan và khách quan)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Sử dụng độ dốc của con phố tạo các đường chéo bố cục mạnh mẽ, mang lại chiều sâu thị giác sinh động.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Đồng bộ hai máy quay ở tốc độ chuẩn 24fps thời gian thực để tôn vinh sự thảnh thơi.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 20 ➔ Shot 21</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_160_0003b5f1.jpg" class="trans-img" alt="Transition Shot 20 to 21" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_160_0003b5f1.jpg', 'So Sánh Chuyển Cảnh: Shot 20 ➔ Shot 21')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Chuyển động bước đi nhịp nhàng, chậm rãi, thư thả không còn chút vội vã.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 21: Góc máy tĩnh bên cầu thang hoa giấy và gốc cây uốn lượn.</p>
+        </div>
+        
+    <!-- Shot Card 21 -->
+    <div class="shot-card" id="shot-21">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(23.75)">▶ Shot 21 (23.75s - 25.21s)</span>
+                <h3 class="shot-name">Cầu Thang Đá Nghệ Thuật: Gốc Cây Bonsai Cổ Thụ & Giàn Hoa Giấy Đỏ Rực</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.46s</strong></span>
+                <span class="badge">Phân loại: <strong>Static Full Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_162_727b5c40.jpg" class="shot-thumb" alt="Shot 21 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_162_727b5c40.jpg', 'Shot 21 Start • Cầu Thang Đá Nghệ Thuật: Gốc Cây Bonsai Cổ Thụ & Giàn Hoa Giấy Đỏ Rực')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_164_0b32b1b8.jpg" class="shot-thumb" alt="Shot 21 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_164_0b32b1b8.jpg', 'Shot 21 Keyframe Mid • Cầu Thang Đá Nghệ Thuật: Gốc Cây Bonsai Cổ Thụ & Giàn Hoa Giấy Đỏ Rực')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_166_268ecdb7.jpg" class="shot-thumb" alt="Shot 21 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_166_268ecdb7.jpg', 'Shot 21 End Frame • Cầu Thang Đá Nghệ Thuật: Gốc Cây Bonsai Cổ Thụ & Giàn Hoa Giấy Đỏ Rực')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Cầu thang đá Beco de Santa Helena, khu Alfama</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Bố cục tranh vẽ tuyệt đẹp: Q tựa tay vào lan can sắt xanh rêu bên những bậc thang đá cổ kính. Bên cạnh là thân cây cổ thụ uốn lượn như tác phẩm bonsai khổng lồ, giàn hoa giấy đỏ hồng rực rỡ và bức tường vàng với dòng chữ graffiti nghệ thuật 'NO BECO'.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Pictorial Scenic Masterpiece (Bố cục hội họa đỉnh cao kết hợp kiến trúc di sản, thiên nhiên nhiệt đới và phong cách nhân vật)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Góc máy tĩnh tuyệt đối tôn vinh vẻ đẹp nguyên bản của không gian, để nhân vật hòa mình làm một phần của tác phẩm nghệ thuật đô thị.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Tiêu cự 35mm f/2.8, cân bằng màu sắc tôn vinh sắc đỏ hoa giấy trên nền vàng ấm của tường đá.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 21 ➔ Shot 22</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_168_1a95eb9b.jpg" class="trans-img" alt="Transition Shot 21 to 22" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_168_1a95eb9b.jpg', 'So Sánh Chuyển Cảnh: Shot 21 ➔ Shot 22')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Q đứng dựa lan can ngước nhìn lên tán lá xanh và hoa đỏ rực rỡ.<br><strong>Điểm nối (Out):</strong> Sang Cảnh 22: Bố cục chia đôi nhìn xuống toàn cảnh mái ngói đỏ Lisbon.</p>
+        </div>
+        
+    <!-- Shot Card 22 -->
+    <div class="shot-card" id="shot-22">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(25.21)">▶ Shot 22 (25.21s - 26.79s)</span>
+                <h3 class="shot-name">Bố Cục Chia Đôi (2-Split): Biển Báo Giao Thông & Toàn Cảnh Mái Ngói Đỏ</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>1.58s</strong></span>
+                <span class="badge">Phân loại: <strong>2-Panel Split-Screen Rooftop Contrast</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_170_8a47c2dd.jpg" class="shot-thumb" alt="Shot 22 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_170_8a47c2dd.jpg', 'Shot 22 Start • Bố Cục Chia Đôi (2-Split): Biển Báo Giao Thông & Toàn Cảnh Mái Ngói Đỏ')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_172_e1a53869.jpg" class="shot-thumb" alt="Shot 22 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_172_e1a53869.jpg', 'Shot 22 Keyframe Mid • Bố Cục Chia Đôi (2-Split): Biển Báo Giao Thông & Toàn Cảnh Mái Ngói Đỏ')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_174_c109986d.jpg" class="shot-thumb" alt="Shot 22 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_174_c109986d.jpg', 'Shot 22 End Frame • Bố Cục Chia Đôi (2-Split): Biển Báo Giao Thông & Toàn Cảnh Mái Ngói Đỏ')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Đỉnh đồi Miradouro nhìn xuống toàn cảnh vịnh Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Tầng trên: POV đi ngang qua cột biển báo tròn cấm đỗ xe màu xanh đỏ và hàng rào sắt uốn nhìn ra biển; Tầng dưới: Q bước xuống cầu thang tròn của đài quan sát với hậu cảnh là cả một biển mái ngói đỏ terracotta và rừng cây xanh của đồi lâu đài Castelo de São Jorge.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Rooftop Vista Juxtaposition & Dramatic Question Hook (Thiết lập câu hỏi kích thích sự tò mò của khán giả trước cú lật kèo)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Tận dụng tầm nhìn bao quát toàn thành phố từ trên cao (Miradouro View) làm nền tảng cho sự thảnh thơi tột cùng trước khi sự thật lộ diện.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính 24-70mm f/2.8 bắt trọn cả chi tiết kiến trúc bậc thang tròn lẫn biển mái ngói phía xa.</td>
+            </tr>
+        </table>
+    </div>
+    
+        <div class="transition-block">
+            <div class="trans-title">🔄 Chuyển Cảnh: Shot 22 ➔ Shot 23</div>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_176_c294cf25.jpg" class="trans-img" alt="Transition Shot 22 to 23" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_176_c294cf25.jpg', 'So Sánh Chuyển Cảnh: Shot 22 ➔ Shot 23')" />
+            <p class="trans-desc"><strong>Điểm mồi (In):</strong> Q bước xuống từng bậc thang, lồng tiếng bắt đầu hỏi: 'What is it?'<br><strong>Điểm nối (Out):</strong> Sang Cảnh 23: Cú twist hài hước bùng nổ ở phân cảnh kết thúc bên bờ biển.</p>
+        </div>
+        
+    <!-- Shot Card 23 -->
+    <div class="shot-card" id="shot-23">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-tag" onclick="openVideoPlayer(26.79)">▶ Shot 23 (26.79s - 30.50s)</span>
+                <h3 class="shot-name">Cú Twist Hài Hước Kinh Điển: Đến Sớm... Hẳn 24 Tiếng! (One Day Early)</h3>
+            </div>
+            <div class="shot-meta-badges">
+                <span class="badge">Thời lượng: <strong>3.71s</strong></span>
+                <span class="badge">Phân loại: <strong>Extreme Wide Symmetrical Waterfront Shot</strong></span>
+            </div>
+        </div>
+
+        <div class="shot-frames-row">
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_178_a43b2a77.jpg" class="shot-thumb" alt="Shot 23 Start Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_178_a43b2a77.jpg', 'Shot 23 Start • Cú Twist Hài Hước Kinh Điển: Đến Sớm... Hẳn 24 Tiếng! (One Day Early)')" />
+                <span class="frame-label">Start Frame</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_180_52efed10.jpg" class="shot-thumb" alt="Shot 23 Mid Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_180_52efed10.jpg', 'Shot 23 Keyframe Mid • Cú Twist Hài Hước Kinh Điển: Đến Sớm... Hẳn 24 Tiếng! (One Day Early)')" />
+                <span class="frame-label">Mid Keyframe</span>
+            </div>
+            <div class="shot-frame-item">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_182_9957ff2f.jpg" class="shot-thumb" alt="Shot 23 End Frame" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_182_9957ff2f.jpg', 'Shot 23 End Frame • Cú Twist Hài Hước Kinh Điển: Đến Sớm... Hẳn 24 Tiếng! (One Day Early)')" />
+                <span class="frame-label">End Frame</span>
+            </div>
+        </div>
+
+        <table class="shot-details-table">
+            <tr>
+                <td class="col-label">📍 Địa Điểm</td>
+                <td class="col-val">Bờ kè đá vuông vức đối diện mặt biển mênh mông, Lisbon</td>
+            </tr>
+            <tr>
+                <td class="col-label">👁️ Mô Tả Thị Giác</td>
+                <td class="col-val">Khung hình đại cảnh góc rộng đối xứng tuyệt đối. Q ngồi lọt thỏm chính giữa góc kè đá hoa cương vuông vức với biển trời bao la phẳng lặng phía sau. Sau khi kiểm tra điện thoại/đồng hồ, Q bỗng vung hai tay lên trời trong tư thế ngửa người bất lực và cười trừ khi giọng đọc vang lên: 'Turns out... he got here one day early!'.</td>
+            </tr>
+            <tr>
+                <td class="col-label">🎬 Kỹ Thuật Điện Ảnh</td>
+                <td class="col-val"><strong>Deadpan Comedic Climax & Symmetrical Horizon Punchline (Cú lật kèo hài hước deadpan tạo ấn tượng khó phai cho người xem)</strong></td>
+            </tr>
+            <tr>
+                <td class="col-label">🎥 Ghi Chú Đạo Diễn</td>
+                <td class="col-val">Căn đường chân trời biển nằm đúng tỷ lệ 1/3 trên khung hình. Nhân vật ngồi chính giữa trục đối xứng tạo cảm giác đơn độc một cách hài hước và duyên dáng.</td>
+            </tr>
+            <tr>
+                <td class="col-label">⚙️ Thông Số &amp; Thiết Bị</td>
+                <td class="col-val">Ống kính 24mm f/4.0 trên chân máy tĩnh, góc nhìn rộng bao la tôn lên sự nhỏ bé đầy hóm hỉnh của nhân vật.</td>
+            </tr>
+        </table>
+    </div>
+    
+    <!-- Section 3: Practical Shooting Script -->
+    <h2 class="section-heading"><span class="num">3</span> Kịch Bản Thực Chiến &amp; Công Thức Kể Chuyện Thương Hiệu (Shooting Script)</h2>
+    
+    <div class="overview-card" style="margin-bottom: 25px;">
+        <p style="font-size: 14.5px; color: var(--text-primary); margin-bottom: 12px;"><strong>CÔNG THỨC 5 BƯỚC SẢN XUẤT VIDEO SHORT-FORM QUẢNG BÁ CÔNG NGHỆ:</strong></p>
+        <ol style="margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+            <li><strong>Hook Đối Xứng &amp; Tình Huống Kịch Tính (0s - 4s):</strong> Bắt đầu bằng bố cục đối xứng màu pastel bắt mắt, tạo tình huống trớ trêu khẩn cấp (Ngủ quên, trễ hẹn).</li>
+            <li><strong>Giải Pháp Rảnh Tay Bằng Khẩu Lệnh AI (4s - 10s):</strong> Giới thiệu tính năng công nghệ như một chiếc chìa khóa gỡ rối vấn đề (Hands-free Voice AI Control).</li>
+            <li><strong>Vũ Điệu Thị Giác Hyperlapse &amp; Multi-Split Screen (10s - 14s):</strong> Bùng nổ năng lượng thị giác với màn hình chia 2-tầng, 3-tầng kết hợp góc nhìn POV và toàn cảnh thứ ba.</li>
+            <li><strong>Khoảnh Khắc Tận Hưởng &amp; Cảm Xúc Lắng Đọng (14s - 26s):</strong> Chuyển nhịp thở sang thư thái, trải nghiệm âm thanh mở Open-ear và cảnh quan thiên nhiên tráng lệ.</li>
+            <li><strong>Cú Twist Hài Hước Giải Tỏa (26s - 30.5s):</strong> Kết thúc bằng sự lật kèo bất ngờ, khiến người xem mỉm cười và chia sẻ tự nhiên.</li>
+        </ol>
+    </div>
+
+    <table class="script-table">
+        <thead>
+            <tr>
+                <th style="width: 100px;">Thời Gian</th>
+                <th style="width: 180px;">Phân Đoạn</th>
+                <th>Hình Ảnh &amp; Bố Cục (Visual)</th>
+                <th>Âm Thanh &amp; Lời Thoại (Audio / VO)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>0.00s - 4.21s</strong></td>
+                <td><span class="shot-tag" onclick="openVideoPlayer(0)">Mở Màn &amp; Báo Động</span></td>
+                <td>Q bước ra ban công đối xứng Wes Anderson, phát hiện trễ giờ, hốt hoảng xem đồng hồ đeo tay.</td>
+                <td><em>"This is Q, and he overslept. Q is late so Q needs to start moving."</em> (Tiếng chuông đồng hồ &amp; bước chân giật mình).</td>
+            </tr>
+            <tr>
+                <td><strong>4.21s - 10.79s</strong></td>
+                <td><span class="shot-tag" onclick="openVideoPlayer(4.21)">Khẩu Lệnh AI &amp; Kích Hoạt</span></td>
+                <td>Q lao xuống phố, bình tĩnh ngoảnh lại ra lệnh cho kính. Zoom cận đèn LED trắng sáng bừng trên gọng kính.</td>
+                <td><em>"But he doesn't panic. He just says: 'Hey Meta, start the hyperlapse'."</em> (Tiếng bíp xác nhận kích hoạt hệ thống).</td>
+            </tr>
+            <tr>
+                <td><strong>10.79s - 14.29s</strong></td>
+                <td><span class="shot-tag" onclick="openVideoPlayer(10.79)">Vũ Điệu Hyperlapse Đa Khung</span></td>
+                <td>Màn hình chia đôi (2-Split) và chia ba (3-Split) lướt siêu tốc 6x qua đường ray tram, rặng thông và cầu treo 25 de Abril.</td>
+                <td>Nhịp trống điện tử dồn dập (Fast-paced Electronic Riser) đẩy cao trào tốc độ.</td>
+            </tr>
+            <tr>
+                <td><strong>14.29s - 26.79s</strong></td>
+                <td><span class="shot-tag" onclick="openVideoPlayer(14.29)">Đến Sớm &amp; Tận Hưởng Âm Nhạc</span></td>
+                <td>Q sải bước qua hành lang vòm tráng lệ, ngước nhìn trời xanh yêu cầu phát nhạc, tản bộ thảnh thơi ngắm biển và hoa giấy.</td>
+                <td><em>"And just like that, he's early. So Q does the only reasonable thing: he savors the moment. 'Hey Meta, play some relaxing music'."</em> (Nhạc lofi acoustic êm dịu vang lên).</td>
+            </tr>
+            <tr>
+                <td><strong>26.79s - 30.50s</strong></td>
+                <td><span class="shot-tag" onclick="openVideoPlayer(26.79)">Cú Twist 24 Giờ Hài Hước</span></td>
+                <td>Q ngồi cô đơn trên bờ kè đá mênh mông, ngửa người vung hai tay bất lực khi nhận ra mình đến sớm hẳn 1 ngày!</td>
+                <td><em>"What is it? Turns out... he got here one day early!"</em> (Tiếng bass ngắt đột ngột kèm tiếng cười sảng khoái).</td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+    <span class="lightbox-nav lightbox-prev" onclick="prevLightbox(event)">&#10094;</span>
+    <span class="lightbox-nav lightbox-next" onclick="nextLightbox(event)">&#10095;</span>
+    <img id="lightboxImg" class="lightbox-content" src="" alt="Enlarged Shot View" />
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<!-- Video Player Modal -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="modal-video-container" onclick="event.stopPropagation()">
+        <span class="video-modal-close" onclick="closeVideoModal(event)">&times;</span>
+        <video id="playerVideo" class="modal-video" controls playsinline>
+            <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Ray-Ban%20Meta%20System%20-%20%40qfroost.mp4" type="video/mp4">
+        <source src="Ray-Ban Meta System - @qfroost.mp4" type="video/mp4">
+            <source src="../videos/Ray-Ban Meta System - @qfroost.mp4" type="video/mp4">
+            <source src="./videos/Ray-Ban Meta System - @qfroost.mp4" type="video/mp4">
+            Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+        <div class="video-modal-info">
+            <span class="video-modal-title">Ray-Ban Meta System • @qfroost</span>
+            <span id="videoCurrentTime" style="color: var(--text-secondary); font-size: 12px;">0.00s</span>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Video Button -->
+<button class="floating-video-btn" onclick="openVideoPlayer(0)">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    Xem Video Gốc
+</button>
+
+<script>
+// Lightbox Gallery
+let currentImgIndex = 0;
+const allImages = Array.from(document.querySelectorAll('.shot-thumb, .trans-img'));
+
+function openLightbox(src, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = src;
+    cap.innerText = caption;
+    modal.classList.add('active');
+    currentImgIndex = allImages.findIndex(i => i.src === src);
+}
+
+function closeLightbox(e) {
+    if (e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightboxModal').classList.remove('active');
+    }
+}
+
+function prevLightbox(e) {
+    e.stopPropagation();
+    if (currentImgIndex > 0) {
+        currentImgIndex--;
+        const item = allImages[currentImgIndex];
+        document.getElementById('lightboxImg').src = item.src;
+        document.getElementById('lightboxCaption').innerText = item.alt || '';
+    }
+}
+
+function nextLightbox(e) {
+    e.stopPropagation();
+    if (currentImgIndex < allImages.length - 1) {
+        currentImgIndex++;
+        const item = allImages[currentImgIndex];
+        document.getElementById('lightboxImg').src = item.src;
+        document.getElementById('lightboxCaption').innerText = item.alt || '';
+    }
+}
+
+// Video Player Modal
+function openVideoPlayer(timeSec) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    modal.classList.add('active');
+    if (timeSec !== undefined) {
+        video.currentTime = timeSec;
+    }
+    video.play();
+}
+
+function closeVideoModal(e) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    video.pause();
+    modal.classList.remove('active');
+}
+
+// Keyboard Navigation
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        document.getElementById('lightboxModal').classList.remove('active');
+        closeVideoModal();
+    } else if (e.key === 'ArrowLeft') {
+        prevLightbox(e);
+    } else if (e.key === 'ArrowRight') {
+        nextLightbox(e);
+    }
+});
+</script>
+
+</body>
+</html>

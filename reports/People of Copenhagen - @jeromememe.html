@@ -1,0 +1,1513 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn: People of Copenhagen - @jeromememe</title>
+<style>
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta'), local('SVN-Acta-Regular'), local('SVN-Acta-Bold');
+}
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN-Aeonik-Regular'), local('SVN-Aeonik-Bold');
+}
+
+:root {
+    --bg-main: #0c1017;
+    --bg-card: #141b28;
+    --bg-card-hover: #1b2537;
+    --border-color: #233047;
+    --accent-amber: #f59e0b;
+    --accent-cyan: #06b6d4;
+    --accent-blue: #38bdf8;
+    --accent-rose: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --font-heading: 'SVN-Acta', 'SVN-Aeonik', serif;
+    --font-body: 'SVN-Aeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 15px;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, rgba(20, 27, 40, 0.95), rgba(12, 16, 23, 0.95));
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.report-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+.report-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-item strong {
+    color: var(--text-primary);
+}
+
+/* Concept & Overview Cards */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.overview-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.overview-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--accent-amber);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overview-card p, .overview-card ul {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.overview-card ul {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.overview-card li {
+    margin-bottom: 6px;
+}
+
+/* Section Headings */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: #ffffff;
+    margin: 36px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Shot Breakdown Cards */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.shot-card:hover {
+    border-color: var(--accent-blue);
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shot-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shot-number {
+    background: var(--accent-amber);
+    color: #000;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.shot-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.shot-timestamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.shot-timestamp:hover {
+    background: var(--accent-blue);
+    color: #000;
+}
+
+/* Keyframes visual strip */
+.keyframe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.kf-item {
+    background: #090d14;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    cursor: pointer;
+}
+
+.kf-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.kf-item:hover img {
+    transform: scale(1.03);
+}
+
+.kf-label {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+/* Shot Details Table / Grid */
+.shot-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+    .shot-details-grid {
+        grid-template-columns: 1fr;
+    }
+    .keyframe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-box {
+    background: rgba(9, 13, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.detail-box h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-cyan);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-box p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.highlight-text {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Transition comparison container */
+.transition-block {
+    margin-top: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.transition-block h5 {
+    font-size: 12.5px;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trans-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Lightbox Modal */
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal-content-wrap {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.modal-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.modal-video {
+    max-width: 85vw;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+}
+
+.modal-caption {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 28px;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+/* Floating Video Player Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--accent-amber), #ea580c);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 22px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.4);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 900;
+    transition: transform 0.2s ease;
+}
+
+.floating-video-btn:hover {
+    transform: scale(1.05);
+}
+
+@media print {
+    body {
+        background: #ffffff;
+        color: #111827;
+        padding: 0;
+    }
+    .shot-card, .overview-card, .report-header {
+        background: #ffffff;
+        border: 1px solid #e5e7eb;
+        color: #111827;
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+    .report-title, .section-title, .shot-title {
+        color: #111827 !important;
+    }
+    .shot-details-grid, .detail-box {
+        background: #f9fafb;
+        color: #374151;
+        border: 1px solid #e5e7eb;
+    }
+    .detail-box p, .overview-card p, .overview-card ul {
+        color: #374151 !important;
+    }
+    .floating-video-btn, .modal-backdrop {
+        display: none !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Report Header -->
+    <header class="report-header">
+        <div class="report-badge">🇩🇰 Báo Cáo Phân Tích Đạo Diễn • Director Breakdown</div>
+        <h1 class="report-title">People of Copenhagen: Nghệ Thuật Quan Sát Cuộc Sống & Triết Lý Hygge</h1>
+        <p style="color: var(--text-secondary); font-size: 15px; max-width: 800px; margin-bottom: 12px;">
+            Bóc tách 15 phân cảnh chuẩn mực điện ảnh của tác giả <strong>@jeromememe</strong>: Cách làm chủ góc quay tĩnh, nghệ thuật tương phản màu sắc Bắc Âu (Teal & Orange), chuyển cảnh che khuất tiền cảnh và tư duy bắt trọn nhịp thở mùa hè Copenhagen.
+        </p>
+        
+        <div class="report-meta">
+            <div class="meta-item">👤 Tác giả: <strong>@jeromememe</strong></div>
+            <div class="meta-item">⏱ Thời lượng: <strong>23.84s (15 Shots)</strong></div>
+            <div class="meta-item">🎞 Tốc độ khung hình: <strong>25 fps (596 frames)</strong></div>
+            <div class="meta-item">📐 Tỉ lệ khung hình: <strong>4:3 (1440x1080)</strong></div>
+            <div class="meta-item">📍 Địa điểm: <strong>Copenhagen, Đan Mạch</strong></div>
+        </div>
+    </header>
+
+    <!-- Overview Grid -->
+    <div class="overview-grid">
+        <div class="overview-card">
+            <h3>🎨 1. Bảng Màu & Ánh Sáng (Color & Light)</h3>
+            <p>
+                Video khai thác triệt để <strong>ánh sáng tự nhiên mùa hè Bắc Âu</strong>:
+            </p>
+            <ul>
+                <li><strong>Tương phản Teal & Orange tự nhiên</strong>: Làn nước biển xanh ngọc bích đối lập với màu ngói cam cổ kính Nyhavn và ánh hoàng hôn ấm áp.</li>
+                <li><strong>Chuyển giao thời gian mạch lạc</strong>: Bắt đầu từ trưa hè rực nắng (Havnebadet) ➔ Chiều tà dịu êm (Nyhavn, Superkilen) ➔ Hoàng hôn vàng dát ngọc ➔ Giờ xanh (Blue Hour) ➔ Đêm lửa trại quây quần.</li>
+                <li><strong>Màu sắc kiến trúc đặc trưng</strong>: Tôn vinh các mảng màu thương hiệu (Màu xanh container Urban Rigger, tượng bạch tuộc đen, đồi topo đen-trắng Superkilen).</li>
+            </ul>
+        </div>
+
+        <div class="overview-card">
+            <h3>🎬 2. Triết Lý Góc Quay (Cinematic Language)</h3>
+            <p>
+                Áp dụng nguyên tắc <strong>"Static Frame Observational Cinematography"</strong>:
+            </p>
+            <ul>
+                <li><strong>Khung hình tĩnh có chủ đích (Locked Tripod)</strong>: Để chuyển động của con người (nhảy cầu, trượt ván, bơi lội, đạp xe) tự diễn ra sinh động trong khung hình.</li>
+                <li><strong>Phân lớp không gian 3 tầng (3-Layer Depth)</strong>: Tiền cảnh (người đạp xe, cọc gỗ, ván chèo) ➔ Trung cảnh (nhân vật chính) ➔ Hậu cảnh (kiến trúc di sản & cao ốc hiện đại).</li>
+                <li><strong>Bố cục hình học & Đường dẫn (Leading Lines)</strong>: Tận dụng các vệt sơn uốn lượn tại Superkilen và cấu trúc đối xứng container Urban Rigger.</li>
+            </ul>
+        </div>
+
+        <div class="overview-card">
+            <h3>✂️ 3. Kỹ Thuật Chuyển Cảnh (Transition Flow)</h3>
+            <p>
+                Nhịp cắt <strong>nhanh gọn 1.3s - 1.8s</strong> liền mạch không dùng kỹ xảo đồ họa:
+            </p>
+            <ul>
+                <li><strong>Action Cut & Momentum</strong>: Cắt theo hướng lao mình của vận động viên nhảy cầu hoặc hướng trượt của xe scooter.</li>
+                <li><strong>Foreground Occlusion Wipe</strong>: Xe đạp băng qua tiền cảnh quét sạch màn hình để đổi sang bối cảnh mới tại kênh nước.</li>
+                <li><strong>Concept Match Cut</strong>: Bạch tuộc điêu khắc công viên nối sang logo bạch tuộc tiệm bánh Hart Bageri.</li>
+                <li><strong>Climax Outro</strong>: Khép lại bằng ánh lửa bập bùng ấm áp - biểu tượng bất hủ của khái niệm "Hygge".</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section Shot Breakdown -->
+    <h2 class="section-title">🎬 Bóc Tách Chi Tiết 15 Phân Cảnh (Director Storyboard & Script)</h2>
+
+    <div class="shot-card" id="shot-1">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 01</span>
+                <span class="shot-title">Cảnh Mở Màn: Nhảy Cầu Bể Bơi Cảng Biển Havnebadet</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(0.0)">
+                ⏱ 0.00s - 1.20s (1.24s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_002_c4d4b5a4.jpg', 'Shot 01 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_002_c4d4b5a4.jpg" alt="Shot 1 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_004_11657e95.jpg', 'Shot 01 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_004_11657e95.jpg" alt="Shot 1 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_006_b1f70076.jpg', 'Shot 01 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_006_b1f70076.jpg" alt="Shot 1 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Wide Shot (EWS) / Architectural Framing</span></p>
+                <p><strong>Địa điểm:</strong> Bể bơi công cộng bến cảng Havnebadet Islands Brygge</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh bến cảng Copenhagen mùa hè ngập tràn ánh nắng. Nhóm bạn trẻ mặc đồ bơi đứng tắm nắng trên bục gỗ nổi. Một chàng trai lấy đà phóng người lộn nhào xuống làn nước biển xanh ngọc. Phía sau là tòa nhà kiến trúc kính hiện đại phản chiếu ánh nắng. Dòng chữ tiêu đề thanh lịch 'people of COPENHAGEN - SUMMER, 2026' xuất hiện trang nhã ở trung tâm.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Chàng trai lao mình xuống nước bên phải khung hình, mặt nước bắt đầu tung bọt trắng xóa.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Cắt dứt khoát sang Cảnh 2 tại kênh Nyhavn với chiếc thuyền du lịch đang lướt ngang qua mặt nước.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Action Momentum Cut & Architectural Establishing (Thiết lập không gian bằng hành động thể thao)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt máy quay trên chân máy cố định (Static Tripod) với tiêu cự tele tầm trung (50mm - 85mm) để nén không gian giữa bục nhảy và tòa cao ốc phía sau. Canh góc chụp ngang tầm mắt để giữ đường chân trời phẳng tuyệt đối.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Khẩu độ f/5.6 - f/8 để giữ toàn bộ độ nét sâu từ nhóm người nhảy đến vân tường tòa nhà. Shutter Speed 1/500s để bắt dính giọt nước bắn khi nhảy.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 01 (Out) ➔ Shot 02 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_008_754169a7.jpg" class="trans-img" alt="Transition 1 to 2" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_008_754169a7.jpg', 'So Sánh Chuyển Cảnh Shot 01 sang Shot 02')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-2">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 02</span>
+                <span class="shot-title">Bến Kênh Huyền Thoại Nyhavn & Những Ngôi Nhà Màu Sắc</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(1.24)">
+                ⏱ 1.24s - 2.52s (1.32s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_010_de523103.jpg', 'Shot 02 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_010_de523103.jpg" alt="Shot 2 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_012_7dd7aa9a.jpg', 'Shot 02 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_012_7dd7aa9a.jpg" alt="Shot 2 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_014_046532c9.jpg', 'Shot 02 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_014_046532c9.jpg" alt="Shot 2 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Wide Shot (WS) / Canal Landscape</span></p>
+                <p><strong>Địa điểm:</strong> Kênh Nyhavn lịch sử trung tâm Copenhagen</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Toàn cảnh góc phố Nyhavn biểu tượng với dãy nhà cổ mái ngói cam, tường vàng nghệ, xanh pastel và đỏ gạch. Dưới lòng kênh, một con tàu gỗ cổ kính neo đậu cạnh bến đỗ, một thuyền du lịch mui trần chở đầy du khách đang chầm chậm lướt qua ở góc dưới. Khách bộ hành ngồi kín các quán cafe ven bờ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Mũi thuyền du lịch trôi từ trái sang phải ở mép dưới khung hình.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 3: Cận cảnh nhóm 4 bạn trẻ đang ngồi trò chuyện ngay mép cầu cảng lát đá của Nyhavn.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Spatial Zoom-in Progression (Thu hẹp cự ly không gian từ Toàn cảnh bến cảng vào nhóm nhân vật ven bờ)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng quy tắc bố cục 1/3: 2/3 phần trên là dãy nhà sắc màu rực rỡ dưới nền trời xanh, 1/3 phần dưới là mặt nước kênh rọi bóng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Sử dụng kính lọc CPL (Circular Polarizer) để triệt tiêu độ chói mặt nước và đẩy độ bão hòa màu sắc của các mảng tường cổ lên tối đa.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 02 (Out) ➔ Shot 03 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_016_9bc49673.jpg" class="trans-img" alt="Transition 2 to 3" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_016_9bc49673.jpg', 'So Sánh Chuyển Cảnh Shot 02 sang Shot 03')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-3">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 03</span>
+                <span class="shot-title">Khoảnh Khắc Tĩnh Lặng & Trò Chuyện Ven Cầu Tàu</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(2.56)">
+                ⏱ 2.56s - 3.96s (1.44s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_018_53407011.jpg', 'Shot 03 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_018_53407011.jpg" alt="Shot 3 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_020_6df7044f.jpg', 'Shot 03 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_020_6df7044f.jpg" alt="Shot 3 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_022_d87792d2.jpg', 'Shot 03 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_022_d87792d2.jpg" alt="Shot 3 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Shot (MS) / Low Angle Dockside</span></p>
+                <p><strong>Địa điểm:</strong> Bờ kè lát đá cuội Nyhavn</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Góc quay từ sau lưng chếch góc nhóm 4 người trẻ tuổi ngồi thảnh thơi trên thanh gỗ kè bờ kênh. Chiếc túi giấy kraft và túi xách đặt bên cạnh, ô che mưa gập lại. Phía sau lưng họ là mặt nước phẳng lặng và dãy nhà cổ đang đón tia nắng chiều vàng ươm dịu nhẹ (Golden Glow).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Nhóm bạn trẻ ngồi yên chuyện trò, bóng nắng chiều chiếu sáng bờ vai áo trắng của chàng trai ở giữa.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Chuyển sang Cảnh 4: Kiến trúc container nổi Urban Rigger trên mặt nước với nhóm người đang bơi lội.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Atmospheric Continuity & Color Temperature Shift (Duy trì không khí thư giãn, nối chuyển mảng màu nước)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Hạ thấp góc máy đặt ngang mặt sàn đá cuội để đưa các khối đá vào tiền cảnh (Foreground), tạo cảm giác người xem đang ngồi cùng nhóm bạn.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính 35mm f/2.0 tạo độ sâu trường ảnh vừa đủ để tách nhóm bạn nổi bật nhẹ khỏi dãy nhà phía xa.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 03 (Out) ➔ Shot 04 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_024_af211f2b.jpg" class="trans-img" alt="Transition 3 to 4" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_024_af211f2b.jpg', 'So Sánh Chuyển Cảnh Shot 03 sang Shot 04')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-4">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 04</span>
+                <span class="shot-title">Kiến Trúc Nhà Nổi Container Urban Rigger Bên Bờ Vịnh</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(4.0)">
+                ⏱ 4.00s - 5.28s (1.32s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_026_eafb4ea6.jpg', 'Shot 04 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_026_eafb4ea6.jpg" alt="Shot 4 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_028_f54cd65f.jpg', 'Shot 04 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_028_f54cd65f.jpg" alt="Shot 4 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_030_4ee53425.jpg', 'Shot 04 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_030_4ee53425.jpg" alt="Shot 4 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Full Shot (FS) / Modern Floating Architecture</span></p>
+                <p><strong>Địa điểm:</strong> Khu ký túc xá nổi Urban Rigger (Refshaleøen)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Công trình nhà nổi xanh ngọc bích độc đáo ghép từ các container vận chuyển hàng hải. Một chiếc thuyền gỗ nhỏ mui trần cập mạn nhà. Dưới làn nước trong vắt, người lớn và trẻ em đang bám vào thanh phao chắn màu vàng nổi bật để bơi lội và sưởi nắng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Mặt nước dập dềnh phản chiếu hình khối container xanh ngọc, các nhân vật bơi nhẹ về phía góc phải.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Cắt chuyển động sang Cảnh 5 tại sân trượt ván Skateboard với một bạn trẻ nhảy vút lên không trung.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Energy Contrast Cut (Tương phản năng lượng: Từ nhịp bơi êm ả sang cú bật nhảy Skate năng động)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Khai thác tối đa gam màu đối lập giữa màu xanh ngọc (Cyan Container), màu vàng chanh (Pha buoy) và màu lam đậm của nước biển.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Chụp ở góc máy chính diện đối xứng (Symmetrical Frontal View) để tôn vinh hình khối kiến trúc của Bjarke Ingels.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 04 (Out) ➔ Shot 05 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_032_2a5f5474.jpg" class="trans-img" alt="Transition 4 to 5" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_032_2a5f5474.jpg', 'So Sánh Chuyển Cảnh Shot 04 sang Shot 05')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-5">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 05</span>
+                <span class="shot-title">Sân Trượt Ván Skatepark Dưới Tán Cây & Tranh Tường Graffiti</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(5.32)">
+                ⏱ 5.32s - 6.88s (1.60s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_034_edac0568.jpg', 'Shot 05 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_034_edac0568.jpg" alt="Shot 5 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_036_a510ca84.jpg', 'Shot 05 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_036_a510ca84.jpg" alt="Shot 5 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_038_c7f3393a.jpg', 'Shot 05 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_038_c7f3393a.jpg" alt="Shot 5 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Wide Low Shot (WLS) / Action Sport Capture</span></p>
+                <p><strong>Địa điểm:</strong> Khu công viên Fælledparken / Nørrebro Skatepark</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh sân trượt máng U (Mini Ramp) bằng bê tông giữa rặng thông xanh. Một nam thanh niên cởi trần mặc quần đùi đỏ thực hiện cú nhảy trượt điêu luyện trên vành máng. Phía đối diện, 3 em nhỏ đội mũ bảo hiểm đang chăm chú đứng trên xe scooter theo dõi người anh lớn.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Vận động viên trượt tiếp đất trượt xuống đáy máng cong từ góc trái sang trung tâm.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 6: Toàn cảnh bể bơi bến cảng rộng lớn với hàng chục người dân đang phơi nắng trên sàn gỗ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Kinetic Apex Cut (Cắt cảnh ngay tại đỉnh cao của chuyển động không gian)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt máy góc thấp sát mặt sàn lòng máng trượt hướng ngược lên trời (Low-angle Tilt Up) nhằm làm tăng độ cao của cú nhảy.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Sử dụng ống kính góc rộng 24mm để ôm trọn cả máng trượt, bức tường tranh nghệ thuật và những người xem đứng quanh.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 05 (Out) ➔ Shot 06 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_040_2f67494f.jpg" class="trans-img" alt="Transition 5 to 6" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_040_2f67494f.jpg', 'So Sánh Chuyển Cảnh Shot 05 sang Shot 06')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-6">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 06</span>
+                <span class="shot-title">Toàn Cảnh Bể Bơi Bến Cảng Nắng Ấm & Khói Nhà Máy CopenHill</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(6.92)">
+                ⏱ 6.92s - 8.36s (1.48s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_042_23b73192.jpg', 'Shot 06 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_042_23b73192.jpg" alt="Shot 6 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_044_7cadef62.jpg', 'Shot 06 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_044_7cadef62.jpg" alt="Shot 6 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_046_b44ac1d4.jpg', 'Shot 06 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_046_b44ac1d4.jpg" alt="Shot 6 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">High Angle Wide Shot (HAWS) / Harbor Bath Panorama</span></p>
+                <p><strong>Địa điểm:</strong> Bến cảng Kalvebod Bølge / Islands Brygge</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Góc máy từ trên cao bao quát toàn bộ khu bể bơi cảng biển. Cầu tàu gỗ hình chữ U vây quanh vùng nước trong xanh, chật kín người dân Copenhagen mặc bikini tắm nắng. Phía hậu cảnh là ngôi nhà gỗ sơn đỏ mận và ống khói xả luồng hơi nước trắng tinh khôi của nhà máy xử lý rác Amager Bakke (CopenHill).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Những người bơi lội đang sải tay bơi nhẹ từ góc trái dưới lên giữa hồ nước.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Chuyển sang Cảnh 7: Cận hơn vào góc tòa chung cư cao cấp ven kênh với các bạn nhỏ nhảy ùm xuống nước.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Atmospheric Horizon Match (Đồng bộ đường chân trời và sự hiện diện của làn nước mát)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng vị trí đặt máy từ tầng cao hoặc cầu đi bộ để có góc nhìn chim bay (Elevated Perspective), tạo ấn tượng về mật độ và lối sống hưởng thụ ngoài trời.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Cân bằng sáng bảo vệ vùng Highlight trên làn mây trắng và cột khói nhà máy.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 06 (Out) ➔ Shot 07 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_048_ec1d0f3d.jpg" class="trans-img" alt="Transition 6 to 7" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_048_ec1d0f3d.jpg', 'So Sánh Chuyển Cảnh Shot 06 sang Shot 07')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-7">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 07</span>
+                <span class="shot-title">Chung Cư Hiện Đại Bên Kênh Đào & Trò Chơi Nhảy Cầu Của Trẻ Em</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(8.4)">
+                ⏱ 8.40s - 10.16s (1.80s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_050_94eb08df.jpg', 'Shot 07 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_050_94eb08df.jpg" alt="Shot 7 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_052_90a51b00.jpg', 'Shot 07 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_052_90a51b00.jpg" alt="Shot 7 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_054_c761d398.jpg', 'Shot 07 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_054_c761d398.jpg" alt="Shot 7 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Wide Shot (MWS) / Urban Living by Water</span></p>
+                <p><strong>Địa điểm:</strong> Khu đô thị cảng Sluseholmen / Havnevigen</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Kiến trúc ban công giật cấp ziczac độc đáo bằng gạch xám hiện đại. Dưới chân tòa nhà, các bồn hoa dại mùa hè nở rộ. Hai đứa trẻ đứng trên bờ kè lấy đà nhảy xuống nước tạo sóng bắn tung tóe, trong khi góc phải có 2 bạn nhỏ đang thong thả chèo ván chèo đứng (SUP Paddleboard).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Hai đứa trẻ lao thẳng xuống nước bên góc trái, bọt nước tung lên trắng xóa.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 8: Bức tượng điêu khắc Bạch Tuộc Đen khổng lồ ở công viên Superkilen.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Visual Surprise Cut (Chuyển bất ngờ từ làn nước xanh mát sang hình khối điêu khắc kỳ thú trên cạn)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Căn góc máy sao cho cọc gỗ tiêu cự ở tiền cảnh (Foreground Post) tạo cảm giác chiều sâu 3 lớp rõ rệt: Cọc gỗ ➔ Mặt nước có SUP ➔ Tòa nhà chung cư.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính 50mm giữ tỷ lệ hình học chuẩn của ban công tòa nhà không bị biến dạng méo góc.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 07 (Out) ➔ Shot 08 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_056_82b3237a.jpg" class="trans-img" alt="Transition 7 to 8" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_056_82b3237a.jpg', 'So Sánh Chuyển Cảnh Shot 07 sang Shot 08')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-8">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 08</span>
+                <span class="shot-title">Công Viên Superkilen & Điêu Khắc Cầu Trượt Bạch Tuộc Đen</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(10.2)">
+                ⏱ 10.20s - 11.96s (1.80s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_058_94b389a6.jpg', 'Shot 08 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_058_94b389a6.jpg" alt="Shot 8 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_060_1cbca4c1.jpg', 'Shot 08 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_060_1cbca4c1.jpg" alt="Shot 8 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_062_8001da3d.jpg', 'Shot 08 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_062_8001da3d.jpg" alt="Shot 8 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Full Shot (FS) / Public Art & Play</span></p>
+                <p><strong>Địa điểm:</strong> Quảng trường đen Den Sorte Plads - Công viên Superkilen (Nørrebro)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Tác phẩm điêu khắc cầu trượt hình con bạch tuộc màu đen tuyền khổng lồ đặt giữa quảng trường. Bốn đứa trẻ nhỏ mặc áo phông xanh lá, sọc ngang đang nô đùa chui qua các xúc tu và trượt xuống. Phía sau là tòa nhà gạch nung đỏ cổ điển phủ dây leo xanh mát.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Cậu bé áo xanh lá chạy từ bên phải xúc tu vòng ra phía trước quảng trường.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 9: Cảnh tiệm bánh Hart Bageri với logo chú bạch tuộc trên cửa kính và người đi xe đạp lướt qua.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Subject Shape Match Cut (Match Cut ý niệm: Bạch tuộc Superkilen ➔ Logo hình chú bạch tuộc trên cửa kính Hart Bageri)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đây là cú Match Cut đỉnh cao về mặt biểu tượng (Concept Match Cut). Đạo diễn cố ý liên kết hình ảnh chú bạch tuộc ngoài đời với logo thương hiệu nổi tiếng tiếp theo.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tốc độ màn trập 1/250s bắt trọn bước chạy nhanh của trẻ nhỏ mà không bị nhòe mờ.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 08 (Out) ➔ Shot 09 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_064_a3e29209.jpg" class="trans-img" alt="Transition 8 to 9" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_064_a3e29209.jpg', 'So Sánh Chuyển Cảnh Shot 08 sang Shot 09')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-9">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 09</span>
+                <span class="shot-title">Tiệm Bánh Nổi Tiếng Hart Bageri & Nhịp Xe Đạp Lướt Qua</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(12.0)">
+                ⏱ 12.00s - 12.92s (0.96s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_066_d27ba974.jpg', 'Shot 09 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_066_d27ba974.jpg" alt="Shot 9 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_068_ea55114c.jpg', 'Shot 09 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_068_ea55114c.jpg" alt="Shot 9 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_070_57fd91f5.jpg', 'Shot 09 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_070_57fd91f5.jpg" alt="Shot 9 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Shot (MS) / Foreground Wipe Pass</span></p>
+                <p><strong>Địa điểm:</strong> Tiệm bánh thủ công Hart Bageri (Istedgade / Nørrebro)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Mặt tiền tiệm bánh phong cách gạch cổ ấm cúng với biển hiệu chữ nổi 'HART' và hình vẽ neon chú bạch tuộc trên kính. Thực khách ngồi thư thái dưới ô che nắng uống cafe. Đúng lúc đó, một người đàn ông đi xe đạp mang balo xanh lướt vút qua tiền cảnh từ phải sang trái làm lớp chuyển cảnh tự nhiên (Wipe).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Người đi xe đạp lướt qua che khuất 50% góc nhìn từ phải qua trái.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Cắt mượt mà sang Cảnh 10: Chiếc ca-nô trắng đang lướt nhanh trên mặt nước bến cảng.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Foreground Occlusion Wipe (Chuyển cảnh cắt che khuất bằng chủ thể chuyển động tiền cảnh)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Tận dụng lưu lượng xe đạp đặc trưng của thủ đô Copenhagen để tạo nhịp cắt chuyển cảnh sinh động đầy tính đời sống (Dynamic Street Pacing).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Lấy nét sẵn (Pre-focus) vào nhóm thực khách ngồi cafe bên bàn để người đi xe đạp đi qua tạo vệt mờ tiền cảnh (Foreground Blur).</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 09 (Out) ➔ Shot 10 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_072_756e1421.jpg" class="trans-img" alt="Transition 9 to 10" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_072_756e1421.jpg', 'So Sánh Chuyển Cảnh Shot 09 sang Shot 10')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 10</span>
+                <span class="shot-title">Ca-Nô Trắng Lướt Trên Sóng Nước Bến Cảng Hiện Đại</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(12.96)">
+                ⏱ 12.96s - 14.64s (1.72s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_074_930bd9b1.jpg', 'Shot 10 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_074_930bd9b1.jpg" alt="Shot 10 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_076_3069f1ff.jpg', 'Shot 10 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_076_3069f1ff.jpg" alt="Shot 10 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_078_63a23145.jpg', 'Shot 10 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_078_63a23145.jpg" alt="Shot 10 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Tracking Medium Wide Shot / Boat Movement</span></p>
+                <p><strong>Địa điểm:</strong> Kênh cảng phía trước tòa nhà kính hiện đại</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Chiếc thuyền máy màu trắng tinh khôi chở 3 chàng trai cởi trần tận hưởng gió biển lướt ngang qua bờ kè đá cuội. Phía sau là cầu thang dốc và khối kiến trúc mặt kính thép hoành tráng phản quang ánh trời xanh biếc.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Chiếc thuyền trôi dần sang góc trái của khung hình.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 11: Cận cảnh biển tên URBAN RIGGER của khu nhà nổi container.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Directional Vector Flow (Chuyển động dẫn hướng trôi mượt mà từ phải sang trái)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p> lia máy nhẹ nhàng (Smooth Pan) bám theo tốc độ lướt của thuyền để giữ con thuyền ở 1/3 dưới khung hình.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tăng độ phơi sáng vùng tối (Shadow Compensation) để giữ rõ chi tiết khối đá kè bờ và mặt kính tòa nhà.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 10 (Out) ➔ Shot 11 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_080_df7edb53.jpg" class="trans-img" alt="Transition 10 to 11" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_080_df7edb53.jpg', 'So Sánh Chuyển Cảnh Shot 10 sang Shot 11')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 11</span>
+                <span class="shot-title">Ký Túc Xá Nổi Urban Rigger & Hai Người Bơi Lội</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(14.68)">
+                ⏱ 14.68s - 16.64s (2.00s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_082_4c53f8e1.jpg', 'Shot 11 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_082_4c53f8e1.jpg" alt="Shot 11 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_084_01857ae3.jpg', 'Shot 11 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_084_01857ae3.jpg" alt="Shot 11 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_086_fa4e9261.jpg', 'Shot 11 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_086_fa4e9261.jpg" alt="Shot 11 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Symmetrical Medium Full Shot / Architectural Geometry</span></p>
+                <p><strong>Địa điểm:</strong> Khu nhà nổi Urban Rigger ven biển</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Bố cục đối xứng hoàn hảo với dòng chữ in hoa đậm nét 'URBAN RIGGER' trên bề mặt tôn dập sóng của container màu xanh mint. Trên tầng thượng là khu vườn mini và ghế ngồi thư giãn. Dưới chân công trình, hai cô gái đang thảnh thơi bơi ngửa trên mặt nước phẳng lặng như gương.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Hai người bơi lội tiếp tục bơi ngang từ phải sang trái ở phần đáy khung hình.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 12: Đồi dốc uốn lượn trắng đen ở công viên Superkilen.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Geometric Symmetry & Color Rhythm (Bố cục đối xứng trục trung tâm kết hợp chuyển động thư thái)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Canh khung hình sao cho chữ URBAN và RIGGER chia đều 2 bên khe cửa kính trung tâm, tạo cảm giác trật tự và mỹ cảm kiến trúc Scandinavia tuyệt đối.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Độ sâu trường ảnh f/8 giúp chữ 'URBAN RIGGER' và người bơi bên dưới đều đạt độ sắc nét tuyệt đối.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 11 (Out) ➔ Shot 12 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_088_66d6828e.jpg" class="trans-img" alt="Transition 11 to 12" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_088_66d6828e.jpg', 'So Sánh Chuyển Cảnh Shot 11 sang Shot 12')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 12</span>
+                <span class="shot-title">Ngọn Đồi Đường Cong Topo Độc Bản Tại Superkilen</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(16.68)">
+                ⏱ 16.68s - 18.80s (2.16s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_090_602fe9f4.jpg', 'Shot 12 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_090_602fe9f4.jpg" alt="Shot 12 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_092_f60b7ce4.jpg', 'Shot 12 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_092_f60b7ce4.jpg" alt="Shot 12 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_094_d78bbd7e.jpg', 'Shot 12 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_094_d78bbd7e.jpg" alt="Shot 12 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">One-Point Perspective Long Shot / Graphic Lines</span></p>
+                <p><strong>Địa điểm:</strong> Đồi kẻ sọc trắng công viên Superkilen (Nørrebro)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Ngọn đồi nhân tạo uốn lượn nổi tiếng với những đường kẻ sơn trắng topography chạy dọc sống đồi đen. Một đứa trẻ đứng trên đỉnh đồi quan sát, trong khi một em nhỏ đội mũ bảo hiểm cam đang trượt xe scooter lao xuống dốc theo đường cong uốn lượn. Bên cạnh là những cây tùng bách xanh sẫm vươn thẳng lên trời.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Bé trai trượt scooter lao thẳng về phía ống kính ở chân dốc.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Cắt sang Cảnh 13: Cảnh hoàng hôn rực rỡ bên bến cảng với đoàn người ngồi ngắm mặt trời lặn.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Leading Lines to Subject (Sử dụng đường cong dẫn hướng thị giác vào chuyển động lao dốc)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Chọn tiêu cự tele nén hình (85mm - 105mm) để làm tôn lên độ dốc gồ ghề của ngọn đồi và tạo hiệu ứng đồ họa quang học (Op-Art) ấn tượng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Đặt máy quay thấp gần mặt đất để tăng cảm giác tốc độ khi xe scooter lao xuống dốc.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 12 (Out) ➔ Shot 13 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_096_be03f246.jpg" class="trans-img" alt="Transition 12 to 13" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_096_be03f246.jpg', 'So Sánh Chuyển Cảnh Shot 12 sang Shot 13')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 13</span>
+                <span class="shot-title">Hoàng Hôn Vàng Rực Rỡ & Những Bóng Đen Thảnh Thơi Ven Vịnh</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(18.84)">
+                ⏱ 18.84s - 20.36s (1.56s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_098_d2810660.jpg', 'Shot 13 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_098_d2810660.jpg" alt="Shot 13 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_100_60c213f6.jpg', 'Shot 13 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_100_60c213f6.jpg" alt="Shot 13 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_102_859562eb.jpg', 'Shot 13 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_102_859562eb.jpg" alt="Shot 13 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Wide Silhouette Shot / Golden Sunset</span></p>
+                <p><strong>Địa điểm:</strong> Khu bến cảng hoàng hôn Copenhagen Harbour</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Bầu trời rực sáng trong ánh hoàng hôn màu vàng cam ấm áp rực rỡ, những dải mây bồng bềnh đón ánh sáng cuối ngày. Dưới bến, hàng chục người dân ngồi trên ghế xếp ngắm cảnh, bóng dáng của họ tạo thành những hình khối bóng đen (Silhouette) đầy chất thơ. Xa xa, một chiếc cano rẽ sóng tạo vệt nước lấp lánh như dát vàng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Chiếc ca-nô rẽ sóng chạy từ phải sang trái qua luồng sáng phản chiếu của mặt trời.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 14: Con phố cổ lên đèn trong giờ xanh (Blue Hour) với tháp chuông nhà thờ cổ kính.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Golden Hour Palette to Blue Hour Transition (Chuyển dịch thời khắc ngoạn mục từ Ánh vàng hoàng hôn sang Sắc xanh chạng vạng)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đo sáng điểm vào vùng mây trời hoàng hôn để dìm toàn bộ người ngồi ở tiền cảnh thành bóng đen đổ khối hoàn hảo (Pure Silhouette).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>White Balance chỉnh ấm ở mức 5600K - 6000K để tôn vinh sắc vàng hổ phách của mặt trời lặn.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 13 (Out) ➔ Shot 14 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_104_c83abe74.jpg" class="trans-img" alt="Transition 13 to 14" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_104_c83abe74.jpg', 'So Sánh Chuyển Cảnh Shot 13 sang Shot 14')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 14</span>
+                <span class="shot-title">Phố Cổ Trong Ánh Hoàng Hôn Xanh & Ánh Đèn Cửa Hiệu Ấm Áp</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(20.4)">
+                ⏱ 20.40s - 22.12s (1.76s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_106_d33f1416.jpg', 'Shot 14 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_106_d33f1416.jpg" alt="Shot 14 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_108_7ba68897.jpg', 'Shot 14 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_108_7ba68897.jpg" alt="Shot 14 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_110_8218bc5d.jpg', 'Shot 14 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_110_8218bc5d.jpg" alt="Shot 14 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Long Street Shot / One-Point Perspective</span></p>
+                <p><strong>Địa điểm:</strong> Khu phố cổ mua sắm Strøget / Latin Quarter</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh con phố đi bộ lát đá cổ kính trong thời khắc chuyển giao chiều tà (Blue Hour). Các cửa hiệu thời trang và nhà hàng thắp sáng những dây đèn vàng lung linh ấm áp. Khách bộ hành thong dong dạo bước giữa lòng đường. Ở cuối tầm nhìn trung tâm là ngọn tháp chuông nhà thờ cổ kính vươn cao kiêu hãnh.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Những cặp đôi thong thả bước chân về phía ống kính, ánh đèn ấm áp tỏa sáng hai bên vỉa hè.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 15 (Cảnh Kết): Đốm lửa trại bập bùng giữa vòng tròn bạn bè quây quần lúc màn đêm buông xuống.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Cool & Warm Color Contrast (Tương phản nhiệt độ màu: Nền trời xanh thẫm đối lập ánh đèn vàng ấm)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Bố cục phối cảnh một điểm tụ (One-Point Perspective) với tháp chuông nhà thờ đóng vai trò là chiếc neo thị giác (Visual Anchor) ở trung tâm.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Mở khẩu lớn f/1.8 để thu đủ ánh sáng yếu ban đêm mà không phải đẩy ISO quá cao gây nhiễu hạt.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 14 (Out) ➔ Shot 15 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_112_4b1b0d1a.jpg" class="trans-img" alt="Transition 14 to 15" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_112_4b1b0d1a.jpg', 'So Sánh Chuyển Cảnh Shot 14 sang Shot 15')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 15</span>
+                <span class="shot-title">Cảnh Kết: Lửa Trại Bập Bùng & Tinh Thần Hygge Quây Quần</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(22.16)">
+                ⏱ 22.16s - 23.80s (1.68s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_114_1d40a0b6.jpg', 'Shot 15 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_114_1d40a0b6.jpg" alt="Shot 15 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_116_bef6d666.jpg', 'Shot 15 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_116_bef6d666.jpg" alt="Shot 15 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_118_0ff59f8d.jpg', 'Shot 15 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_118_0ff59f8d.jpg" alt="Shot 15 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close Group Shot / Fireplace Climax</span></p>
+                <p><strong>Địa điểm:</strong> Khu ẩm thực đường phố Reffen Street Food ven biển</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh buổi tối mùa hè ấm áp bên bếp lửa trại bằng kim loại đang cháy rực bập bùng. Những người bạn ngồi quây quần trên ghế gỗ xung quanh ngọn lửa, uống bia, trò chuyện và mỉm cười thư thái. Hậu cảnh phía xa là bầu trời hoàng hôn tím thẫm và những dải đèn lồng giăng lối khắp bến cảng, khép lại trọn vẹn tinh thần sống chậm 'Hygge' của Đan Mạch.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Ngọn lửa bập bùng tỏa ánh sáng bập bùng lên gương mặt rạng rỡ của nhóm bạn bè.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Video kết thúc trong sự lắng đọng và dư âm ấm áp của lối sống chậm rãi, quan sát và tận hưởng.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Motivated Fireplace Warmth & Emotional Outro (Khép lại câu chuyện bằng ngọn lửa ấm cúng - biểu tượng bất diệt của văn hóa Hygge)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Để ngọn lửa ở tiền cảnh (Foreground Flame) đóng vai trò là nguồn sáng chính chiếu lên mặt các nhân vật. Tốc độ khung hình 25fps giữ nhịp nhảy của đốm lửa chân thực tự nhiên.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Cài đặt Picture Profile chuẩn trung tính hoặc Log để giữ được chi tiết của cả tia lửa sáng rực lẫn bóng tối quanh khuôn mặt.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="modal-backdrop" onclick="closeLightbox()">
+        <div class="modal-content-wrap" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImg" class="modal-img" src="" alt="Enlarged Shot" />
+            <div id="lightboxCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal-backdrop" onclick="closeVideoModal()">
+        <div class="modal-content-wrap" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeVideoModal()">&times;</button>
+            <video id="playerVideo" class="modal-video" controls playsinline>
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People%20of%20Copenhagen%20-%20%40jeromememe.mp4" type="video/mp4">
+        <source src="People of Copenhagen - @jeromememe.mp4" type="video/mp4">
+                Trình duyệt không hỗ trợ thẻ video.
+            </video>
+            <div id="videoModalCaption" class="modal-caption">People of Copenhagen - @jeromememe</div>
+        </div>
+    </div>
+
+    <!-- Floating Video Action Button -->
+    <button class="floating-video-btn" onclick="openFullVideo()">
+        ▶ Phát Video Gốc
+    </button>
+
+</div>
+
+<script>
+function openLightbox(src, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    if (modal && img) {
+        img.src = src;
+        cap.innerText = caption || '';
+        modal.classList.add('open');
+    }
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    if (modal) modal.classList.remove('open');
+}
+
+function openFullVideo() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    if (modal && video) {
+        modal.classList.add('open');
+        video.currentTime = 0;
+        video.play().catch(e => console.log(e));
+    }
+}
+
+function playVideoAtTimestamp(seconds) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    const cap = document.getElementById('videoModalCaption');
+    if (modal && video) {
+        modal.classList.add('open');
+        video.currentTime = seconds;
+        if (cap) cap.innerText = 'Đang phát từ ' + seconds.toFixed(2) + 's';
+        video.play().catch(e => console.log(e));
+    }
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    if (video) video.pause();
+    if (modal) modal.classList.remove('open');
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    }
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video — Trợ lý kịch bản video 3 module</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg:#0d0d0d; --surface:#181818; --s2:#222; --border:#2c2c2c;
+      --text:#e8e8e8; --muted:#777; --dim:#999;
+      --a:#3b82f6; --a-dim:rgba(59,130,246,.12); --a-glow:rgba(59,130,246,.25);
+      --ubg:#1c2235; --uborder:#283047;
+      --g:#22c55e; --g-dim:rgba(34,197,94,.1);
+    }
+    html,body{height:100%}
+    body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg);color:var(--text);
+      display:flex;flex-direction:column;height:100vh;overflow:hidden}
+
+    /* ── HEADER ── */
+    header{display:flex;align-items:center;justify-content:space-between;
+      padding:13px 20px;background:var(--surface);border-bottom:1px solid var(--border);
+      flex-shrink:0;z-index:50}
+    .hl{display:flex;align-items:center;gap:12px}
+    .av-w{position:relative;width:38px;height:38px}
+    .av{width:38px;height:38px;border-radius:11px;
+      background:linear-gradient(135deg,#3b82f6,#6366f1);
+      display:flex;align-items:center;justify-content:center;
+      font-size:16px;font-weight:800;color:#fff;position:relative;z-index:2;
+      box-shadow:0 0 14px rgba(59,130,246,.3)}
+    .av-ring{position:absolute;inset:-4px;border-radius:14px;
+      border:2px solid var(--a);opacity:0;transition:opacity .3s}
+    .av-ring.on{opacity:1;animation:rp 1.6s ease-in-out infinite}
+    @keyframes rp{0%,100%{box-shadow:0 0 0 0 var(--a-glow)}50%{box-shadow:0 0 0 7px transparent}}
+    .hd-title{font-size:14px;font-weight:700;display:flex;align-items:center;gap:7px}
+    .badge{font-size:9px;font-weight:700;padding:2px 7px;border-radius:999px;
+      background:var(--a-dim);color:var(--a);border:1px solid rgba(59,130,246,.25);
+      letter-spacing:.5px;text-transform:uppercase}
+    .hd-sub{font-size:11px;color:var(--dim);display:flex;align-items:center;gap:5px;margin-top:2px}
+    .dot-live{width:6px;height:6px;border-radius:50%;background:var(--g);
+      animation:blink 2.2s ease-in-out infinite}
+    @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+    /* Mode badge */
+    .mode-badge{display:flex;align-items:center;gap:5px;padding:4px 10px;border-radius:8px;
+      border:1px solid var(--border);background:var(--s2);
+      font-size:11px;font-weight:600;color:var(--muted);cursor:pointer;transition:all .2s}
+    .mode-badge.on{border-color:rgba(34,197,94,.3);background:var(--g-dim);color:var(--g)}
+    .mode-dot{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+    .mode-badge.on .mode-dot{background:var(--g)}
+    .hr{display:flex;align-items:center;gap:8px}
+    .icon-btn{width:34px;height:34px;border-radius:9px;border:1px solid var(--border);
+      background:transparent;color:var(--muted);display:flex;align-items:center;justify-content:center;
+      cursor:pointer;font-size:13px;transition:all .2s}
+    .icon-btn:hover{background:var(--s2);color:var(--text)}
+
+    /* ── PROGRESS ── */
+    .pt{height:2px;background:var(--border);flex-shrink:0}
+    .pf{height:100%;background:linear-gradient(90deg,var(--a),#6366f1);
+      width:0%;transition:width .6s cubic-bezier(.4,0,.2,1)}
+
+    /* ── CHAT ── */
+    #chat{flex:1;overflow-y:auto;padding:28px 16px 0;scroll-behavior:smooth}
+    #chat::-webkit-scrollbar{width:4px}
+    #chat::-webkit-scrollbar-thumb{background:#333;border-radius:999px}
+    .cw{max-width:660px;margin:0 auto;display:flex;flex-direction:column;gap:18px;padding-bottom:20px}
+    .msg{display:flex;gap:10px;animation:rise .28s ease-out}
+    @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+    .msg.user{flex-direction:row-reverse}
+    .mav{width:30px;height:30px;border-radius:9px;display:flex;align-items:center;
+      justify-content:center;font-size:12px;flex-shrink:0;margin-top:2px}
+    .mav.nova{background:linear-gradient(135deg,#3b82f6,#6366f1);font-weight:800;color:#fff}
+    .mav.human{background:var(--s2);border:1px solid var(--border);color:var(--muted)}
+    .bubble{max-width:82%;background:var(--surface);border:1px solid var(--border);
+      border-radius:4px 16px 16px 16px;padding:12px 15px;font-size:13.5px;
+      line-height:1.72;color:var(--text)}
+    .msg.user .bubble{background:var(--ubg);border-color:var(--uborder);
+      border-radius:16px 4px 16px 16px;color:#c9d8f8}
+    .bm{font-size:10px;color:var(--muted);margin-top:7px;display:flex;align-items:center;gap:4px}
+    .qlabel{display:block;font-size:10px;font-weight:700;color:var(--muted);
+      text-transform:uppercase;letter-spacing:.6px;margin-bottom:5px}
+    .h{color:var(--a);font-weight:600}
+    .hg{color:#4ade80;font-weight:600}
+
+    /* Typewriter cursor (blue) */
+    .cur{display:inline-block;width:2px;height:13px;background:var(--a);
+      margin-left:2px;vertical-align:middle;animation:cb .75s step-end infinite}
+    @keyframes cb{0%,100%{opacity:1}50%{opacity:0}}
+    /* Live AI stream cursor (green) */
+    .stream-cur{display:inline-block;width:2px;height:14px;background:var(--g);
+      vertical-align:middle;margin-left:1px;border-radius:1px;
+      animation:cb .55s step-end infinite}
+
+    /* ACK chip */
+    .chip{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;
+      color:#4ade80;background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.18);
+      border-radius:6px;padding:2px 8px;margin-bottom:8px}
+
+    /* Thinking */
+    .tb{background:var(--surface);border:1px solid var(--border);
+      border-radius:4px 16px 16px 16px;padding:11px 14px;
+      display:flex;align-items:center;gap:9px;font-size:12px;color:var(--muted);font-style:italic}
+    .dots{display:flex;gap:4px}
+    .d{width:5px;height:5px;border-radius:50%;background:var(--a);
+      animation:db 1.4s ease-in-out infinite}
+    .d:nth-child(2){animation-delay:.16s}
+    .d:nth-child(3){animation-delay:.32s}
+    @keyframes db{0%,80%,100%{transform:scale(.65);opacity:.4}40%{transform:scale(1);opacity:1}}
+
+    /* Framework badge */
+    .fw-card{background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.2);
+      border-radius:12px;padding:14px 16px;margin:10px 0 4px}
+    .fw-title{font-size:11px;font-weight:700;color:var(--a);letter-spacing:.4px;
+      text-transform:uppercase;margin-bottom:8px;display:flex;align-items:center;gap:6px}
+    .fw-name{font-size:15px;font-weight:700;color:var(--text);margin-bottom:4px}
+    .fw-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+    /* Prompt box */
+    .pbox{background:#0a0a0a;border:1px solid var(--border);border-radius:12px;
+      padding:14px;font-family:'Courier New',monospace;font-size:11px;line-height:1.65;
+      color:#8a9ab8;max-height:340px;overflow-y:auto;white-space:pre-wrap;
+      word-break:break-word;margin-top:12px;position:relative}
+    .pbox::-webkit-scrollbar{width:4px}
+    .pbox::-webkit-scrollbar-thumb{background:#333}
+    .cpbtn{position:sticky;top:0;left:100%;display:block;width:fit-content;
+      margin-left:auto;margin-bottom:8px;padding:5px 12px;border-radius:7px;
+      background:var(--s2);border:1px solid var(--border);color:var(--dim);
+      font-size:11px;font-weight:600;cursor:pointer;transition:all .2s;
+      font-family:'Inter',sans-serif}
+    .cpbtn:hover{background:var(--a);color:#fff;border-color:var(--a)}
+
+    /* Open AI buttons */
+    .btn-row{display:flex;gap:8px;margin-top:12px}
+    .open-ai-btn{display:flex;align-items:center;justify-content:center;gap:8px;
+      flex:1;padding:12px 10px;border-radius:12px;border:none;
+      color:#fff;font-size:13px;font-weight:700;cursor:pointer;transition:all .2s;
+      font-family:'Inter',sans-serif;white-space:nowrap}
+    .open-ai-btn.chatgpt{background:linear-gradient(135deg,#3b82f6,#6366f1)}
+    .open-ai-btn.gemini{background:linear-gradient(135deg,#1a73e8,#0d9488)}
+    .open-ai-btn:hover{opacity:.9;transform:translateY(-1px)}
+
+    /* ── INPUT ── */
+    #inp-area{flex-shrink:0;padding:10px 16px 18px;
+      background:linear-gradient(to top,var(--bg) 75%,transparent)}
+    #qtags{display:flex;gap:7px;overflow-x:auto;padding-bottom:2px;margin-bottom:9px}
+    #qtags::-webkit-scrollbar{display:none}
+    .qt{flex-shrink:0;padding:5px 11px;border-radius:8px;background:var(--surface);
+      border:1px solid var(--border);color:var(--dim);font-size:11.5px;cursor:pointer;
+      transition:all .18s;white-space:nowrap;font-family:'Inter',sans-serif}
+    .qt:hover{border-color:var(--a);color:var(--a);background:var(--a-dim)}
+    .irow{display:flex;align-items:center;gap:9px;background:var(--surface);
+      border:1px solid var(--border);border-radius:14px;padding:9px 9px 9px 15px;
+      transition:border-color .2s,box-shadow .2s}
+    .irow:focus-within{border-color:var(--a);box-shadow:0 0 0 3px var(--a-dim)}
+    #uin{flex:1;background:transparent;border:none;outline:none;color:var(--text);
+      font-size:13.5px;font-family:'Inter',sans-serif}
+    #uin::placeholder{color:var(--muted)}
+    #sbtn{width:36px;height:36px;border-radius:10px;background:var(--a);border:none;
+      color:#fff;font-size:13px;display:flex;align-items:center;justify-content:center;
+      cursor:pointer;transition:all .2s;flex-shrink:0}
+    #sbtn:hover:not(:disabled){background:#2563eb;transform:scale(1.06)}
+    #sbtn:disabled{opacity:.35;cursor:default;transform:none}
+
+    /* ── TOAST ── */
+    #toast{position:fixed;bottom:90px;left:50%;
+      transform:translateX(-50%) translateY(16px);
+      background:var(--g);color:#fff;padding:9px 18px;border-radius:12px;
+      font-size:13px;font-weight:600;opacity:0;pointer-events:none;
+      transition:all .28s;z-index:999;white-space:nowrap}
+    #toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+    @media(min-width:768px){
+      #chat{padding:36px 32px 0}
+      #inp-area{padding:10px 32px 22px}
+    }
+  </style>
+
+  
+
+
+  
+
+
+  
+
+
+  <!-- Injected SVN-Aeonik Font from typo repo -->
+  <style>
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+      font-weight: bold;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-MEDIUM.TTF') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-LIGHT.TTF') format('truetype');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-THIN.TTF') format('truetype');
+      font-weight: 100;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-THIN.TTF') format('truetype');
+      font-weight: 200;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-BLACK.TTF') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'SVN-Aeonik';
+      src: url('https://fedu.vn/typo/fonts/SVN-AEONIK-BLACK.TTF') format('truetype');
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    * {
+      font-family: 'SVN-Aeonik', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    }
+  </style>
+
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="hl">
+    <div class="av-w">
+      <div class="av"><i class="fa-solid fa-layer-group" style="font-size:15px"></i></div>
+      <div class="av-ring" id="av-ring"></div>
+    </div>
+    <div>
+      <div class="hd-title">Video <span class="badge">Script</span></div>
+      <div class="hd-sub"><span class="dot-live"></span>Kịch bản video 3 module · Hook - Body - CTA</div>
+    </div>
+  </div>
+  <div class="hr">
+    <div class="mode-badge" id="mbadge">
+      <span class="mode-dot" id="mdot"></span>
+      <span id="mtext">Offline</span>
+    </div>
+  </div>
+</header>
+
+<!-- ── PROGRESS ── -->
+<div class="pt"><div class="pf" id="prog"></div></div>
+
+<!-- ── CHAT ── -->
+<div id="chat"><div class="cw" id="cw"></div></div>
+
+<!-- ── INPUT ── -->
+<div id="inp-area">
+  <div id="qtags"></div>
+  <div class="irow">
+    <input id="uin" type="text" autocomplete="off"
+      placeholder="Nhập câu trả lời của bạn..."
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey)send()">
+    <button id="sbtn" onclick="send()"><i class="fas fa-arrow-up"></i></button>
+  </div>
+</div>
+
+<!-- ── TOAST ── -->
+<div id="toast"></div>
+
+<script>
+const Q = [
+  {
+    q: 'Hiện tại, bạn đang muốn làm video quảng cáo cho <span class="h">lĩnh vực / sản phẩm nào?</span>',
+    h: ['📦 Mỹ phẩm / Thời trang', '🎓 Khóa học / Dịch vụ tư vấn', '🏠 Bất động sản / Gia dụng']
+  },
+  {
+    q: 'Đâu là <span class="h">rào cản tâm lý hoặc nỗi sợ lớn nhất</span> khiến khách hàng chưa chịu mua sản phẩm này?',
+    h: ['Sợ giá cao, không hiệu quả', 'Sợ kích ứng da, hàng giả', 'Sợ học xong không làm được']
+  }
+];
+
+// Dynamic thinking states for high-tech AI feel
+const THINKING_STEPS = {
+  0: [
+    'Đang phân loại ngành hàng và chọn framework quảng cáo chuyển đổi...',
+    'Đang phân tích cấu trúc đối thủ cạnh tranh trên nền tảng dọc...',
+    'Đang định vị chân dung khách hàng mục tiêu từ sản phẩm...',
+    'Đang kết nối mô hình phân tích phễu nội dung...'
+  ],
+  1: [
+    'Đang bóc tách rào cản tâm lý và phân tích cơ chế phòng vệ khách hàng...',
+    'Đang đối chiếu dữ liệu insight để thiết kế Hook chặn ngón tay...',
+    'Đang tính toán điểm thắt nút kích hoạt hành động mua hàng...',
+    'Đang tối ưu hóa mức độ thuyết phục lý tính trong thông điệp...'
+  ],
+  2: [
+    'Đang khởi tạo thuật toán đóng gói kịch bản quảng cáo...',
+    'Đang tích hợp cấu trúc 3 module Hook-Body-CTA độc lập...',
+    'Đang cân đối tỷ lệ phân bổ từ ngữ (strictly dưới 200 từ)...',
+    'Đang thiết lập nhịp điệu cắt cảnh [//] tối ưu tỷ lệ giữ chân...'
+  ]
+};
+
+// Intelligent randomized fallback responses
+const FR_RESPONSES = {
+  0: [
+    ans => `Lĩnh vực <strong>"${ans}"</strong> là một ngách có độ nhiễu thông tin rất cao trên nền tảng dọc. Tôi đã xác lập Framework tối ưu để định hình thông điệp của bạn không bị lẫn lộn giữa hàng ngàn video khác.`,
+    ans => `Phân tích dữ liệu ngành hàng <strong>"${ans}"</strong>: Khách hàng phân khúc này có xu hướng lướt rất nhanh nhưng bộ lọc đề kháng quảng cáo cực nhạy. Cấu trúc kịch bản sẽ được tối ưu để vượt qua điều này.`,
+    ans => `Ghi nhận thông tin về ngành <strong>"${ans}"</strong>. Framework marketing xương sống đã được thiết lập nhằm đảm bảo kịch bản tập trung tối đa vào mục tiêu chuyển đổi thực tế.`
+  ],
+  1: [
+    ans => `Rào cản tâm lý <strong>"${ans}"</strong> là một insight cực kỳ đắt giá. Đây là điểm thắt nút chính mà chúng ta sẽ dùng làm chất liệu để viết các Hook phá vỡ sự đề kháng của khách hàng ngay giây đầu tiên.`,
+    ans => `Insight <strong>"${ans}"</strong> rất phổ biến nhưng ít bên xử lý khéo léo. Trong video quảng cáo dọc, việc gọi tên và hóa giải rào cản này trong 5 giây đầu sẽ giữ chân người xem lâu hơn 40%.`,
+    ans => `Đã ghi nhận rào cản <strong>"${ans}"</strong>. Tôi sẽ tích hợp điểm chạm này trực tiếp vào kịch bản để tạo ra sự đồng cảm cao độ từ phía khách hàng trước khi đưa ra lời kêu gọi hành động (CTA).`
+  ]
+};
+
+function getThinkMsg(stepIdx) {
+  const arr = THINKING_STEPS[stepIdx] || ['Đang xử lý dữ liệu...'];
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+function getFallbackResponse(stepIdx, ans) {
+  const arr = FR_RESPONSES[stepIdx];
+  if (!arr) return '';
+  const fn = arr[Math.floor(Math.random() * arr.length)];
+  return fn(ans);
+}
+
+function getFallbackHints(fwCode) {
+  if (fwCode === 'PAS') {
+    return ['Sợ kích ứng da, hàng giả', 'Sợ sản phẩm không giống hình quảng cáo', 'Sợ mua về không biết cách dùng'];
+  } else if (fwCode === 'AIDA') {
+    return ['Lười học, không có thời gian', 'Sợ học xong không áp dụng thực tế được', 'Sợ giá cao so với chất lượng'];
+  } else {
+    return ['Sợ làm video không ai xem', 'Sợ người quen phán xét', 'Không biết bắt đầu từ đâu'];
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  STATE
+// ══════════════════════════════════════════════════════════
+let step = 0, userData = { industry: '', framework: '', frameworkReason: '', painPoint: '' };
+let busy = false;
+
+// API key — shared with Leo
+const GEMINI_KEY = 'AIzaSyB_DnMYS9pCfWY4vMVREFqcwtxPUCaMdIc';
+
+const cw = document.getElementById('cw');
+const uin = document.getElementById('uin');
+const sbtn = document.getElementById('sbtn');
+const qtags = document.getElementById('qtags');
+const prog = document.getElementById('prog');
+const ring = document.getElementById('av-ring');
+
+// ══════════════════════════════════════════════════════════
+//  AI ENGINE — Gemini Flash
+// ══════════════════════════════════════════════════════════
+const AI = {
+  mode: 'fallback', key: '',
+  GURL: '', GNURL: '',
+
+  async init() {
+    this.mode = 'fallback';
+    this.badge();
+    
+    // Randomize assistant name on initialization
+    const ASSISTANT_NAMES = ['Nova', 'Kael', 'Astra', 'Juno', 'Orion', 'Vesper', 'Lyra', 'Zephyr', 'Apex', 'Helius'];
+    window.assistantName = ASSISTANT_NAMES[Math.floor(Math.random() * ASSISTANT_NAMES.length)];
+    
+    // Update dynamic UI texts
+    document.title = `${window.assistantName} — Trợ lý kịch bản video quảng cáo`;
+    const titleEl = document.querySelector('.hd-title');
+    if (titleEl) titleEl.innerHTML = `${window.assistantName} <span class="badge">Script</span>`;
+    const avEl = document.querySelector('.av');
+    if (avEl) {
+      avEl.innerHTML = window.assistantName[0];
+      avEl.style.fontWeight = '800';
+      avEl.style.fontSize = '16px';
+    }
+  },
+
+  badge() {
+    const mb = document.getElementById('mbadge');
+    const md = document.getElementById('mdot');
+    const mt = document.getElementById('mtext');
+    mb.classList.add('on'); md.style.background = 'var(--g)'; mt.textContent = 'AI · Local Engine';
+  },
+
+  async stream(stepIdx, answer, el) {
+    await chunk(el, getFallbackResponse(stepIdx, answer), 3, 16);
+  },
+
+  async hints(industry, nextIdx) {
+    return null;
+  }
+};
+
+// ══════════════════════════════════════════════════════════
+//  CHUNK TYPEWRITER
+// ══════════════════════════════════════════════════════════
+function chunk(el, html, n = 3, ms = 16) {
+  return new Promise(res => {
+    el.innerHTML = '';
+    const tokens = [];
+    const re = /(<[^>]+>|&[^;]+;|[\s\S])/g;
+    let m;
+    while ((m = re.exec(html)) !== null) tokens.push(m[0]);
+    let i = 0;
+    const CUR = '<span class="cur"></span>';
+    function tick() {
+      if (i >= tokens.length) { el.innerHTML = html; res(); return; }
+      let added = 0;
+      while (i < tokens.length && added < n) {
+        i++;
+        if (!tokens[i - 1].startsWith('<')) added++;
+      }
+      el.innerHTML = tokens.slice(0, i).join('') + CUR;
+      scrollB();
+      const last = tokens[i - 1] || '';
+      const delay = last === '.' || last === '!' || last === '?' ? 120 : last === ',' ? 60 : ms;
+      setTimeout(tick, delay);
+    }
+    tick();
+  });
+}
+
+// ══════════════════════════════════════════════════════════
+//  MESSAGE RENDERERS
+// ══════════════════════════════════════════════════════════
+async function novaSay(html) {
+  busy = true; active(true); setIn(false);
+  const row = mkRow('nova');
+  const txt = row.querySelector('.txt');
+  cw.appendChild(row); scrollB();
+  await chunk(txt, html, 3, 16);
+  busy = false; active(false);
+}
+
+function userSay(text) {
+  const row = mkRow('user');
+  row.querySelector('.txt').textContent = text;
+  cw.appendChild(row); scrollB();
+}
+
+function showThink(msg) {
+  const id = 't' + Date.now();
+  const el = document.createElement('div');
+  el.id = id; el.className = 'msg';
+  el.innerHTML = `<div class="mav nova"><i class="fas fa-bolt" style="font-size:11px"></i></div>
+    <div class="tb"><div class="dots"><div class="d"></div><div class="d"></div><div class="d"></div></div><span>${msg}</span></div>`;
+  cw.appendChild(el); scrollB(); return id;
+}
+
+function mkRow(who) {
+  const r = document.createElement('div');
+  r.className = 'msg' + (who === 'user' ? ' user' : '');
+  const u = who === 'user';
+  r.innerHTML = `<div class="mav ${u ? 'human' : 'nova'}">${u ? '<i class="fas fa-user" style="font-size:11px"></i>' : '<i class="fas fa-layer-group" style="font-size:10px"></i>'}</div>
+    <div class="bubble"><div class="txt"></div>
+    <div class="bm"><i class="fas fa-check-double" style="color:${u ? '#555' : 'var(--a)'}"></i> ${now()}</div></div>`;
+  return r;
+}
+
+// ══════════════════════════════════════════════════════════
+function detectFramework(answer) {
+  const txt = answer.toLowerCase();
+  if (txt.includes('vật lý') || txt.includes('bán lẻ') || txt.includes('sản phẩm') || txt.includes('mỹ phẩm') || txt.includes('thời trang') || txt.includes('gia dụng')) {
+    return {
+      name: 'PAS — Vấn đề · Kích động · Giải pháp',
+      code: 'PAS',
+      desc: 'Phù hợp nhất cho sản phẩm vật lý giải quyết nỗi đau vật chất hoặc nhu cầu cấp bách (mụn, béo, hỏng hóc, rụng tóc...). PAS đi từ Vấn đề -> Xoáy sâu nỗi đau -> Đưa ra Giải pháp tối ưu.'
+    };
+  } else if (txt.includes('dịch vụ') || txt.includes('khóa học') || txt.includes('đào tạo') || txt.includes('chuyên gia') || txt.includes('tư vấn') || txt.includes('bất động sản')) {
+    return {
+      name: 'AIDA — Chú ý · Thích thú · Khao khát · Hành động',
+      code: 'AIDA',
+      desc: 'Phù hợp nhất cho dịch vụ, khóa học, bán tri thức, tư vấn, sản phẩm giá trị cao cần xây dựng niềm tin lớn. AIDA dẫn dắt từ Chú ý -> Thích thú -> Khao khát -> Chốt hành động.'
+    };
+  } else {
+    return {
+      name: 'HRR — Hook · Retain · Reward',
+      code: 'HRR',
+      desc: 'Phù hợp nhất cho xây kênh thương hiệu kết hợp bán hàng khéo léo. HRR gây tò mò cực mạnh đầu video (Hook) -> Giữ chân bằng thông điệp trung tâm (Retain) -> Trao kết quả bất ngờ ở cuối (Reward).'
+    };
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  FLOW
+// ══════════════════════════════════════════════════════════
+async function askQ(n, customHints) {
+  const label = n === 0 ? 'Bước 1 / 2' : 'Bước 2 / 2';
+  await novaSay(`<span class="qlabel">${label}</span>${Q[n].q}`);
+  tags(customHints || Q[n].h); setIn(true); uin.focus();
+}
+
+async function send() {
+  const val = uin.value.trim();
+  if (!val || busy || step > 2) return;
+
+  userSay(val);
+  uin.value = '';
+  clearTags();
+  setIn(false);
+
+  const s = step; step++;
+  setP(step, 3);
+
+  const thinkDelay = 700 + Math.min(val.length * 12, 1400) + Math.random() * 300;
+  const tid = showThink(getThinkMsg(s));
+  active(true);
+
+  // Step 0: detect framework + get hints for step 1 concurrently
+  let dynHints = null;
+  if (s === 0) {
+    const fw = detectFramework(val);
+    userData.industry = val;
+    userData.framework = fw.name;
+    userData.frameworkReason = fw.desc;
+    userData.fwCode = fw.code;
+
+    // Fetch dynamic hints while waiting
+    const hintWindow = Math.max(thinkDelay, 800) + 600;
+    const [, hints] = await Promise.all([
+      sleep(thinkDelay),
+      AI.mode !== 'fallback'
+        ? Promise.race([
+            AI.hints(val, 1).catch(() => null),
+            sleep(hintWindow).then(() => null)
+          ])
+        : Promise.resolve(null)
+    ]);
+    dynHints = hints;
+
+    rm(tid); active(false);
+
+    // Show AI reaction
+    const row = mkRow('nova');
+    const txt = row.querySelector('.txt');
+    cw.appendChild(row); active(true);
+
+    if (AI.mode !== 'fallback') {
+      try { await AI.stream(s, val, txt); }
+      catch (e) { txt.textContent = getFallbackResponse(s, val); }
+    } else {
+      txt.textContent = getFallbackResponse(s, val);
+    }
+    active(false);
+
+    // Show framework card
+    await sleep(300);
+    await novaSay(
+      `Với ngành hàng này, framework marketing xương sống được chọn là:<br><br>` +
+      `<div class="fw-card">` +
+      `<div class="fw-title"><i class="fas fa-chart-network"></i> Framework</div>` +
+      `<div class="fw-name">${fw.name}</div>` +
+      `<div class="fw-desc">${fw.desc}</div>` +
+      `</div>`
+    );
+
+    await sleep(350);
+    await askQ(1, dynHints || getFallbackHints(userData.fwCode));
+
+  } else if (s === 1) {
+    userData.painPoint = val;
+
+    await sleep(thinkDelay);
+    rm(tid); active(false);
+
+    // AI reaction
+    const row = mkRow('nova');
+    const txt = row.querySelector('.txt');
+    cw.appendChild(row); active(true);
+
+    if (AI.mode !== 'fallback') {
+      try { await AI.stream(s, val, txt); }
+      catch (e) { txt.textContent = getFallbackResponse(s, val); }
+    } else {
+      txt.textContent = getFallbackResponse(s, val);
+    }
+    active(false);
+
+    await sleep(500);
+    const tid2 = showThink(getThinkMsg(2));
+    active(true);
+    await sleep(1800);
+    rm(tid2); active(false);
+
+    await genPrompt();
+  }
+}
+
+// ══════════════════════════════════════════════════════════
+//  GENERATION
+// ══════════════════════════════════════════════════════════
+async function genPrompt() {
+  setP(3, 3);
+
+  await novaSay(
+    `<span class="hg"><i class="fas fa-check-circle"></i> Dữ liệu đã đầy đủ!</span><br><br>` +
+    `<span style="color:var(--muted);font-size:12.5px">Mega Prompt đã được đóng gói với framework <strong style="color:var(--a)">${userData.fwCode}</strong> và insight về rào cản tâm lý của khách hàng. Copy và paste vào ChatGPT/Claude để bắt đầu:</span>`
+  );
+
+  const prompt = buildPrompt();
+
+  const pid = 'pr' + Date.now();
+  const row = document.createElement('div');
+  row.className = 'msg';
+  row.innerHTML = `
+    <div class="mav nova" style="background:linear-gradient(135deg,#22c55e,#0d9488)"><i class="fas fa-code" style="font-size:10px"></i></div>
+    <div class="bubble" style="max-width:100%;border-color:#22c55e22">
+      <div style="font-size:12px;color:var(--muted);margin-bottom:8px">Copy và paste vào <strong style="color:var(--text)">ChatGPT / Claude / Gemini</strong>:</div>
+      <div class="pbox" id="${pid}"><button class="cpbtn" onclick="copyP('${pid}')"><i class="fas fa-copy"></i> Copy</button>${esc(prompt)}</div>
+      <div class="btn-row">
+        <button class="open-ai-btn chatgpt" onclick="copyAndOpen('${pid}')">
+          <i class="fas fa-robot" style="font-size:12px"></i> ChatGPT
+        </button>
+        <button class="open-ai-btn gemini" onclick="copyAndOpenGemini('${pid}')">
+          <i class="fas fa-gem" style="font-size:12px"></i> Gemini
+        </button>
+      </div>
+    </div>`;
+  cw.appendChild(row);
+
+  clearTags();
+  uin.disabled = true; uin.placeholder = '✓ Mega Prompt đã sẵn sàng'; sbtn.disabled = true;
+
+  const rb = document.createElement('button');
+  rb.className = 'qt';
+  rb.innerHTML = '<i class="fas fa-redo" style="margin-right:6px;font-size:10px"></i>Thiết lập lại';
+  rb.onclick = () => location.reload();
+  qtags.appendChild(rb);
+  scrollB();
+}
+
+// ══════════════════════════════════════════════════════════
+//  PROMPT BUILDER (Nova logic — giống bản gốc)
+// ══════════════════════════════════════════════════════════
+function buildPrompt() {
+  const d = userData;
+  const name = window.assistantName || 'Nova';
+  
+  // 1. Random Tone style description
+  const TONE_STYLES = [
+    { name: 'Đanh thép & Thực chiến', desc: 'đi thẳng vào vấn đề, sử dụng các động từ mạnh mẽ, nhịp độ nhanh và dứt khoát' },
+    { name: 'Cuốn hút & Bắt trend', desc: 'ngôn từ hiện đại, trẻ trung, bắt nhịp nhanh với thị hiếu người xem video ngắn hiện nay' },
+    { name: 'Thuyết phục & Chiều sâu', desc: 'tập trung vào giá trị cốt lõi, lập luận chặt chẽ, tạo niềm tin lớn bằng ngôn ngữ chuyên gia' },
+    { name: 'Hài hước & Châm biếm nhẹ', desc: 'sử dụng phép so sánh phóng đại hóm hỉnh để tạo sự thích thú và bất ngờ cho người xem' },
+    { name: 'Kể chuyện & Gợi mở cảm xúc', desc: 'phong cách storytelling, tạo sự đồng cảm sâu sắc với nỗi đau trước khi giới thiệu giải pháp' }
+  ];
+  const chosenTone = TONE_STYLES[Math.floor(Math.random() * TONE_STYLES.length)];
+  
+  // 2. Random Separators
+  const DIVIDERS = [
+    '═══════════════════════════════════════════',
+    '───────────────────────────────────────────',
+    '❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖❖',
+    '◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆'
+  ];
+  const div = DIVIDERS[Math.floor(Math.random() * DIVIDERS.length)];
+  
+  // 3. Random Bullets
+  const BULLETS = [
+    { main: '▸', sub: '▪', arrow: '=>' },
+    { main: '✦', sub: '▫', arrow: '→' },
+    { main: '❖', sub: '•', arrow: '->' }
+  ];
+  const bul = BULLETS[Math.floor(Math.random() * BULLETS.length)];
+  
+  // 4. Random Intro phrasing
+  const INTRUS = [
+    `Bạn là ${name} — Giám đốc Sáng tạo kiêm Chuyên gia biên kịch Video Quảng cáo chuyển đổi (Conversion Ad Video Director).`,
+    `Hãy đóng vai trò là ${name} — Senior Copywriter kiêm Creative Director chuyên trách video ngắn thương mại dưới 60s.`,
+    `Nhập vai ${name} — Chuyên gia sản xuất kịch bản TikTok Ads & Reels chuyển đổi cao.`
+  ];
+  const chosenIntro = INTRUS[Math.floor(Math.random() * INTRUS.length)];
+
+  return `${chosenIntro} 
+Nhiệm vụ của bạn là đồng hành thiết kế kịch bản video quảng cáo ngắn (dưới 60 giây, tối đa 200 từ) có tỷ lệ chuyển đổi cao. 
+
+Quy trình làm việc của chúng ta gồm 5 bước tương tác tuyến tính. Hãy tuân thủ nghiêm ngặt quy tắc: "Chỉ hiển thị nội dung của bước hiện tại, tuyệt đối không hiển thị trước câu hỏi hay nội dung của bước sau".
+
+Hãy đọc kỹ quy trình 5 bước dưới đây:
+
+${div}
+QUY TRÌNH HỘP THOẠI 5 BƯỚC
+${div}
+
+${bul.main} BƯỚC 1: THU THẬP DỮ LIỆU BAN ĐẦU (AI đặt Câu hỏi 1, 2, 3)
+Ở phản hồi đầu tiên, bạn chỉ được hiển thị 3 câu hỏi này và dừng lại chờ câu trả lời. Tuyệt đối không hiển thị thêm bất kỳ nội dung nào khác.
+${bul.sub} Câu hỏi 1: Sản phẩm hoặc dịch vụ bạn muốn quảng cáo là gì?
+${bul.sub} Câu hỏi 2: Rào cản tâm lý hoặc nỗi sợ lớn nhất khiến khách hàng chưa chịu mua sản phẩm này là gì?
+${bul.sub} Câu hỏi 3: Bạn muốn chọn Framework Marketing nào dưới đây để làm xương sống cho kịch bản?
+  *Giải thích các Framework cho người dùng lựa chọn:
+   + PAS (Problem - Agitate - Solution): Vấn đề -> Xoáy sâu nỗi đau -> Đưa ra giải pháp. Phù hợp nhất cho sản phẩm vật lý giải quyết nỗi đau vật chất hoặc nhu cầu cấp bách (mụn, béo, hỏng hóc, rụng tóc...).
+   + AIDA (Attention - Interest - Desire - Action): Thu hút -> Thích thú -> Khao khát -> Hành động. Phù hợp nhất cho dịch vụ, khóa học, bán tri thức, tư vấn, sản phẩm giá trị cao cần xây dựng niềm tin lớn.
+   + HRR (Hook - Retain - Reward): Gây tò mò cực mạnh đầu video -> Giữ chân bằng thông điệp trung tâm -> Trao kết quả bất ngờ ở cuối. Phù hợp nhất cho xây kênh thương hiệu kết hợp bán hàng khéo léo, tối ưu giữ chân người xem.
+(AI dừng lại chờ người dùng nhập câu trả lời cho Câu 1, 2, 3).
+
+${bul.main} BƯỚC 2: PHỎNG VẤN USP (AI đặt Câu hỏi 4 & 5)
+Sau khi nhận được câu trả lời cho câu 1, 2, 3. Bạn hãy phân tích sản phẩm của người dùng và đặt 2 câu hỏi tiếp theo để khai thác thông tin. Bạn bắt buộc phải tự suy luận dựa trên sản phẩm của họ để đưa ra gợi ý mẫu thực tế (Phương án A, B, C, D) và luôn có thêm phương án E để họ tự nhập:
+${bul.sub} Câu hỏi 4: Lợi thế cạnh tranh lớn nhất (USP) hoặc điểm khác biệt của sản phẩm này là gì?
+  + Phương án A: [AI tự gợi ý mẫu dựa trên sản phẩm]
+  + Phương án B: [AI tự gợi ý mẫu dựa trên sản phẩm]
+  + Phương án C: [AI tự gợi ý mẫu dựa trên sản phẩm]
+  + Phương án D: [AI tự gợi ý mẫu dựa trên sản phẩm]
+  + Phương án E: Nhập mô tả USP của riêng bạn (tự viết).
+${bul.sub} Câu hỏi 5: Lợi thế đặc biệt đó của sản phẩm sẽ giải quyết rào cản tâm lý của khách hàng (ở Câu hỏi 2) như thế nào?
+  + Phương án A: [AI tự gợi ý giải pháp dựa trên rào cản]
+  + Phương án B: [AI tự gợi ý giải pháp dựa trên rào cản]
+  + Phương án C: [AI tự gợi ý giải pháp dựa trên rào cản]
+  + Phương án D: [AI tự gợi ý giải pháp dựa trên rào cản]
+  + Phương án E: Nhập mô tả cách giải quyết rào cản của riêng bạn (tự viết).
+(AI dừng lại chờ người dùng trả lời Câu 4 & 5).
+
+${bul.main} BƯỚC 3: TẠO BODY CỐ ĐỊNH & VÒNG LẶP MỞ (Phê duyệt Body)
+Viết phần Body lõi cố định (~100-120 từ) theo công thức Framework đã chọn ở định dạng:
+[BODY - TÊN FRAMEWORK] (xx từ)
+---
+Ý 1... [//]
+Ý 2... [//]
+...
+(Chú ý: dùng ký hiệu [//] ở cuối mỗi câu thoại ngắn 2-3 giây để đánh dấu nhịp cắt cảnh, không viết chữ [CẮT CẢNH]).
+
+Sau đó đưa ra các lựa chọn phê duyệt (Không đánh số thứ tự câu hỏi):
+"Vui lòng chọn một trong các phương án sau để xử lý phần Body:
+${bul.sub} Lựa chọn A: Đồng ý và chuyển sang Bước đề xuất Hook.
+${bul.sub} Lựa chọn B: Thử viết lại Body này bằng một công thức khác (PAS / AIDA / HRR).
+${bul.sub} Lựa chọn C: Nhập trực tiếp yêu cầu chỉnh sửa của riêng bạn tại đây."
+(AI dừng lại chờ người dùng trả lời).
+
+${bul.main} BƯỚC 4: ĐỀ XUẤT 5 HOOK CHẶN NGÓN TAY (Chọn Hook)
+Đưa ra 5 phương án Hook (~30-40 từ/cái) tương ứng với 5 hướng tiếp cận khác nhau để kích thích tò mò:
+  (1) Đâm thẳng nỗi đau
+  (2) Lật ngược định kiến
+  (3) Bằng chứng xã hội thực tế
+  (4) Góc nhìn cá nhân (POV) / Kể chuyện
+  (5) Câu hỏi gây tranh cãi
+
+Yêu cầu lựa chọn (Không đánh số thứ tự câu hỏi):
+"Vui lòng chọn một Hook (từ 1 đến 5) hoặc nhập yêu cầu điều chỉnh Hook của bạn."
+(AI dừng lại chờ người dùng trả lời).
+
+${bul.main} BƯỚC 5: ĐỀ XUẤT 3 CTA CHỐT HẠ (Chọn CTA)
+Đưa ra 3 phương án CTA chốt sale cực mạnh (~20-30 từ) kết nối mượt mà từ Hook và Body đã chọn.
+
+Yêu cầu lựa chọn (Không đánh số thứ tự câu hỏi):
+"Vui lòng chọn một CTA (từ 1 đến 3) hoặc nhập yêu cầu điều chỉnh CTA của bạn."
+(AI dừng lại chờ người dùng trả lời).
+
+${bul.main} BƯỚC TRIỂN KHAI: LẮP RÁP KỊCH BẢN QUẢNG CÁO HOÀN CHỈNH
+Lắp ráp Hook + Body + CTA thành một kịch bản hoàn chỉnh, đếm chính xác số từ (bắt buộc dưới 200 từ) và trình bày theo định dạng chuẩn:
+
+=== KỊCH BẢN VIDEO QUẢNG CÁO ===
+Tổng: XX từ | ~XX giây | Nhịp cắt: XX cảnh [//]
+
+- HOOK (XX từ / ~Xs)
+[Nội dung hook]
+${bul.arrow} Hướng dẫn quay: [mô tả góc quay, biểu cảm]
+${bul.arrow} Text overlay: [chữ hiện trên màn hình nếu có]
+
+- BODY (XX từ / ~Xs) — [TÊN FRAMEWORK]
+[Nội dung Body chia nhỏ từng câu ngắn kết thúc bằng ký hiệu [//]]
+${bul.arrow} B-roll gợi ý: [các cảnh quay chèn phụ hoạ]
+
+- CTA (XX từ / ~Xs)
+[Nội dung CTA]
+${bul.arrow} Hành động: [mô tả hành động của nhân vật]
+
+BẮT BUỘC:
+${bul.sub} Đếm chính xác tổng số từ. Vi phạm giới hạn 200 từ = THẤT BẠI.
+${bul.sub} Giọng điệu của bạn: ${chosenTone.name} (${chosenTone.desc}).
+
+${div}
+
+Nếu đã hiểu rõ vai trò Chuyên gia viết kịch bản quảng cáo và quy tắc phân luồng, hãy xác nhận ngắn gọn bằng cách đặt ngay Câu hỏi 1, Câu hỏi 2 và Câu hỏi 3 cho tôi để bắt đầu BƯỚC 1!`;
+}
+
+// ══════════════════════════════════════════════════════════
+//  UTILS
+// ══════════════════════════════════════════════════════════
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;') }
+function now() { const d = new Date(); return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0') }
+function rm(id) { document.getElementById(id)?.remove() }
+function scrollB() { const c = document.getElementById('chat'); c.scrollTop = c.scrollHeight }
+function active(on) { ring.classList.toggle('on', on) }
+function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
+function setIn(on) { uin.disabled = !on; sbtn.disabled = !on; uin.placeholder = on ? 'Nhập câu trả lời của bạn...' : 'Video AI đang xử lý...' }
+function setP(cur, tot) { prog.style.width = ((cur / tot) * 100) + '%' }
+function tags(h) {
+  qtags.innerHTML = '';
+  (h || []).forEach(t => {
+    const b = document.createElement('button');
+    b.className = 'qt'; b.textContent = t;
+    b.onclick = () => { uin.value = t; send(); };
+    qtags.appendChild(b);
+  });
+}
+function clearTags() { qtags.innerHTML = '' }
+function toast(msg) {
+  const t = document.getElementById('toast');
+  t.innerHTML = msg; t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+function copyP(id) {
+  const el = document.getElementById(id);
+  const btn = el.querySelector('.cpbtn'); btn.style.display = 'none';
+  const text = el.innerText.trim(); btn.style.display = '';
+  (navigator.clipboard?.writeText(text) ?? Promise.reject()).catch(() => {
+    const ta = Object.assign(document.createElement('textarea'), { value: text });
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+  });
+  toast('<i class="fas fa-check-circle"></i> Đã sao chép Mega Prompt!');
+}
+function copyAndOpen(id) {
+  copyP(id);
+  window.open('https://chatgpt.com', '_blank');
+}
+function copyAndOpenGemini(id) {
+  copyP(id);
+  window.open('https://gemini.google.com', '_blank');
+}
+
+// ══════════════════════════════════════════════════════════
+//  BOOT
+// ══════════════════════════════════════════════════════════
+window.addEventListener('load', async () => {
+  await AI.init();
+  await sleep(220);
+
+  // ── Kiểm tra dữ liệu từ Plan ──
+  const shared = loadShared();
+  if (shared) {
+    await bootFromPlan(shared);
+  } else {
+    await bootNormal();
+  }
+});
+
+function loadShared() {
+  try {
+    const s = JSON.parse(localStorage.getItem('fedu_shared') || 'null');
+    if (!s || s.source !== 'plan') return null;
+    // Dữ liệu hết hạn sau 24h
+    if (Date.now() - s.ts > 86400000) return null;
+    return s;
+  } catch(e) { return null; }
+}
+
+// ── Boot thông thường (không có Plan data) ──
+async function bootNormal() {
+  const aiTag = AI.mode !== 'fallback'
+    ? ` <span style="color:#4ade80;font-size:12px">· AI Gemini Flash đang chạy</span>`
+    : '';
+  await novaSay(
+    `Chào bạn! Tôi là <span class="h">${window.assistantName || 'Nova'} AI</span>${aiTag} — trợ lý lên kịch bản video quảng cáo chuyển đổi.<br><br>` +
+    `Nhiệm vụ của tôi là đồng hành thiết kế video quảng cáo dưới 60 giây phân tách 3 module: <strong>Hook linh hoạt — Body cố định — CTA linh hoạt</strong>.<br><br>` +
+    `<span class="hg">Chỉ 2 câu hỏi khởi tạo.</span> Bắt đầu nào —`
+  );
+  await askQ(0);
+}
+
+// ── Boot thông minh (có Plan data) ──
+async function bootFromPlan(shared) {
+  const aiTag = AI.mode !== 'fallback'
+    ? ` <span style="color:#4ade80;font-size:12px">· AI Gemini Flash</span>` : '';
+
+  await novaSay(
+    `<span class="hg"><i class="fas fa-bolt"></i> Phát hiện dữ liệu từ Plan AI!</span><br><br>` +
+    `Tôi là <span class="h">${window.assistantName || 'Nova'} AI</span>${aiTag}. Tôi đang phân tích dữ liệu bạn đã nhập ở bước Plan và <span class="h">tự động suy luận chiến lược kịch bản</span>…`
+  );
+
+  // Dùng Gemini infer 2 trường cần cho video
+  const tid = showThink('Đang phân tích dữ liệu Plan và suy ra framework phù hợp...');
+  active(true);
+
+  let inferred = null;
+  if (AI.mode !== 'fallback') {
+    try {
+      inferred = await AI.inferFromPlan(shared);
+    } catch(e) {}
+  }
+
+  // Fallback inference nếu không có AI
+  if (!inferred) {
+    inferred = fallbackInfer(shared);
+  }
+
+  rm(tid); active(false);
+  await sleep(300);
+
+  // Hiển thị confirm card
+  await showConfirmCard(shared, inferred);
+}
+
+// ── Gemini suy ra từ Plan data ──
+AI.inferFromPlan = async function(shared) {
+  const p = `Dữ liệu từ bước Plan:
+- Sản phẩm MVP: "${shared.product}"
+- Nỗi đau khách hàng: "${shared.painPoint}"
+- Kẽ hở đối thủ: "${shared.marketGap}"
+- Upsell: "${shared.upsell}"
+
+Hãy suy ra 2 thông tin sau cho kịch bản video ngắn TikTok/Reels:
+1. "industry": Phân loại ngành hàng ngắn gọn (ví dụ: "Dịch vụ / Khóa học / Chuyên gia")
+2. "painPoint": Rào cản tâm lý / định kiến lớn nhất khiến KH chưa mua (1 câu ngắn, đúng văn nói)
+
+Trả về JSON: {"industry":"...","painPoint":"..."}`;
+
+  const r = await fetch(this.GNURL + this.key, {
+    method: 'POST', headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({ contents: [{parts: [{text: p}]}],
+      generationConfig: {maxOutputTokens: 120, temperature: .4}})
+  });
+  const j = await r.json();
+  const raw = j.candidates?.[0]?.content?.parts?.[0]?.text || '';
+  const m = raw.match(/\{[\s\S]*?\}/);
+  return m ? JSON.parse(m[0]) : null;
+};
+
+// ── Fallback inference không cần AI ──
+function fallbackInfer(shared) {
+  const p = shared.product.toLowerCase();
+  let industry = '🎓 Dịch vụ / Khóa học / Chuyên gia';
+  if (p.includes('vật lý') || p.includes('sản phẩm') || p.includes('hàng')) {
+    industry = '📦 Bán lẻ / Sản phẩm vật lý';
+  } else if (p.includes('viral') || p.includes('giải trí') || p.includes('kênh')) {
+    industry = '🎬 Xây kênh Viral / Giải trí';
+  }
+  return { industry, painPoint: shared.painPoint };
+}
+
+// ── Hiển thị card xác nhận ──
+async function showConfirmCard(shared, inferred) {
+  const fw = detectFramework(inferred.industry);
+
+  const row = mkRow('nova');
+  const txt = row.querySelector('.txt');
+  txt.innerHTML = `
+    <div style="font-size:11px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px">
+      <i class="fas fa-database" style="margin-right:5px"></i>Dữ liệu đã suy ra từ Plan
+    </div>
+    <div style="background:rgba(59,130,246,.06);border:1px solid rgba(59,130,246,.18);border-radius:10px;padding:12px 14px;margin-bottom:12px">
+      <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:7px">
+        <span style="color:var(--muted);min-width:105px;font-size:11px">Ngành hàng</span>
+        <span style="color:var(--text);font-weight:500;font-size:12.5px">${esc(inferred.industry)}</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:baseline;margin-bottom:7px">
+        <span style="color:var(--muted);min-width:105px;font-size:11px">Framework</span>
+        <span style="color:var(--a);font-weight:600;font-size:12.5px">${esc(fw.code)} — ${esc(fw.name.split('—')[0].trim())}</span>
+      </div>
+      <div style="display:flex;gap:8px;align-items:baseline">
+        <span style="color:var(--muted);min-width:105px;font-size:11px">Rào cản KH</span>
+        <span style="color:var(--text);font-weight:500;font-size:12.5px">${esc(inferred.painPoint.slice(0,70))}</span>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button id="btn-confirm-video" style="flex:1;padding:11px;border-radius:10px;
+        background:linear-gradient(135deg,var(--a),#6366f1);border:none;color:#fff;
+        font-size:13px;font-weight:700;cursor:pointer;font-family:'Inter',sans-serif"
+        onclick="confirmAndGenerate()">
+        <i class="fas fa-check"></i> Xác nhận &amp; Tạo Prompt ngay
+      </button>
+      <button style="padding:11px 14px;border-radius:10px;background:var(--s2);
+        border:1px solid var(--border);color:var(--muted);font-size:12px;
+        cursor:pointer;font-family:'Inter',sans-serif"
+        onclick="rejectAndAskManual()">
+        <i class="fas fa-edit"></i> Nhập lại
+      </button>
+    </div>`;
+  cw.appendChild(row);
+  scrollB();
+
+  // Lưu tạm để dùng khi xác nhận
+  window._planInferred = { ...inferred, fw };
+}
+
+// ── Xác nhận và tạo prompt ngay ──
+async function confirmAndGenerate() {
+  document.getElementById('btn-confirm-video')?.closest('.msg')?.remove?.();
+  const inf = window._planInferred;
+
+  // Điền userData
+  userData.industry = inf.industry;
+  userData.framework = inf.fw.name;
+  userData.frameworkReason = inf.fw.desc;
+  userData.fwCode = inf.fw.code;
+  userData.painPoint = inf.painPoint;
+
+  setP(3, 3);
+
+  // Hiển thị framework card
+  await novaSay(
+    `Framework marketing được xác định từ dữ liệu Plan:<br><br>` +
+    `<div class="fw-card">` +
+    `<div class="fw-title"><i class="fas fa-chart-network"></i> Framework</div>` +
+    `<div class="fw-name">${inf.fw.name}</div>` +
+    `<div class="fw-desc">${inf.fw.desc}</div>` +
+    `</div>`
+  );
+
+  await sleep(500);
+  const tid2 = showThink('Đang đóng gói Mega Prompt cá nhân hóa...');
+  active(true);
+  await sleep(1600);
+  rm(tid2); active(false);
+
+  await genPrompt();
+}
+
+// ── Nhập lại thủ công ──
+async function rejectAndAskManual() {
+  document.querySelector('.msg:last-of-type')?.remove?.();
+  await bootNormal();
+}
+</script>
+</body>
+</html>

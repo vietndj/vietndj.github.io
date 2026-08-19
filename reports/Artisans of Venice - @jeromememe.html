@@ -1,0 +1,2215 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn: Artisans of Venice - @jeromememe</title>
+<style>
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: local('GT America LCG Bl'), local('GT America Black'), local('GT-America-LCGV-Standard-Black'), local('GTAmericaLCG-Bl');
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    --bg-main: #0c1017;
+    --bg-card: #141b28;
+    --bg-card-hover: #1b2537;
+    --border-color: #233047;
+    --accent-amber: #f59e0b;
+    --accent-gold: #fbbf24;
+    --accent-cyan: #06b6d4;
+    --accent-blue: #38bdf8;
+    --accent-rose: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --font-heading: 'SVN-Acta', serif;
+    --font-body: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 15px;
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+/* Header */
+.report-header {
+    background: linear-gradient(135deg, rgba(20, 27, 40, 0.95), rgba(12, 16, 23, 0.95));
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 32px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.report-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 16px;
+}
+
+.report-title {
+    font-family: var(--font-heading);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-top: 14px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-color);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.meta-item strong {
+    color: var(--text-primary);
+}
+
+/* Concept & Overview Cards */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.overview-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.overview-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: var(--accent-amber);
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overview-card p, .overview-card ul {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.overview-card ul {
+    padding-left: 18px;
+    margin-top: 8px;
+}
+
+.overview-card li {
+    margin-bottom: 6px;
+}
+
+/* Section Headings */
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    color: #ffffff;
+    margin: 36px 0 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Shot Breakdown Cards */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.shot-card:hover {
+    border-color: var(--accent-blue);
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.shot-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.shot-number {
+    background: var(--accent-amber);
+    color: #000;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.shot-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.shot-timestamp {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.shot-timestamp:hover {
+    background: var(--accent-blue);
+    color: #000;
+}
+
+/* Keyframes visual strip */
+.keyframe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.kf-item {
+    background: #090d14;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    position: relative;
+    cursor: pointer;
+}
+
+.kf-item img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.kf-item:hover img {
+    transform: scale(1.03);
+}
+
+.kf-label {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+/* Shot Details Grid */
+.shot-details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 14px;
+}
+
+@media (max-width: 768px) {
+    .shot-details-grid {
+        grid-template-columns: 1fr;
+    }
+    .keyframe-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.detail-box {
+    background: rgba(9, 13, 20, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.detail-box h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-cyan);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.detail-box p {
+    font-size: 13.5px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.highlight-text {
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Transition comparison container */
+.transition-block {
+    margin-top: 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.transition-block h5 {
+    font-size: 12.5px;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.trans-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+/* Lightbox Modal */
+.modal-backdrop {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(4, 6, 10, 0.85);
+    backdrop-filter: blur(12px);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.modal-backdrop.open {
+    display: flex;
+}
+
+.modal-content-wrap {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.modal-img {
+    max-width: 85vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.modal-video {
+    max-width: 85vw;
+    max-height: 75vh;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    outline: none;
+}
+
+.modal-caption {
+    margin-top: 12px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+}
+
+.modal-close-btn {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Floating Video Player Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #000;
+    font-weight: 700;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    border: none;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-video-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(245, 158, 11, 0.6);
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #111827 !important;
+        padding: 0;
+    }
+    .container {
+        max-width: 100% !important;
+    }
+    .shot-card, .overview-card, .report-header {
+        background: #ffffff !important;
+        border: 1px solid #e5e7eb !important;
+        box-shadow: none !important;
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+    .report-title, .section-title, .shot-title {
+        color: #111827 !important;
+    }
+    .shot-details-grid, .detail-box {
+        background: #f9fafb;
+        color: #374151;
+        border: 1px solid #e5e7eb;
+    }
+    .detail-box p, .overview-card p, .overview-card ul {
+        color: #374151 !important;
+    }
+    .floating-video-btn, .modal-backdrop {
+        display: none !important;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Report Header -->
+    <header class="report-header">
+        <div class="report-badge">🛶 Báo Cáo Phân Tích Đạo Diễn • Director Breakdown</div>
+        <h1 class="report-title">Artisans of Venice: Bản Trường Ca Tôn Vinh Nghề Thủ Công Di Sản & Nghệ Thuật Điện Ảnh</h1>
+        <p style="color: var(--text-secondary); font-size: 15px; max-width: 850px; margin-bottom: 12px;">
+            Bóc tách toàn diện 26 phân cảnh chuẩn mực điện ảnh của tác giả <strong>@jeromememe</strong>: Nghệ thuật kiểm soát ánh sáng xưởng (Chiaroscuro & Rembrandt), nhịp dựng Staccato dồn dập, sự giao thoa giữa chuyển động cơ khí và cảm xúc con người, tôn vinh các làng nghề huyền thoại Venice (Thủy tinh Murano, Ren Burano, Cọc chèo Forcola, Mặt nạ Carnival, Gấm nhung Bevilacqua, Đóng thuyền Squero).
+        </p>
+        
+        <div class="report-meta">
+            <div class="meta-item">👤 Tác giả: <strong>@jeromememe (Jerome Teo)</strong></div>
+            <div class="meta-item">⏱ Thời lượng: <strong>21.04s (26 Shots)</strong></div>
+            <div class="meta-item">🎞 Tốc độ khung hình: <strong>25 fps (526 frames)</strong></div>
+            <div class="meta-item">📐 Tỉ lệ khung hình: <strong>4:3 (720x540 / Classic Film Aspect Ratio)</strong></div>
+            <div class="meta-item">📍 Địa điểm: <strong>Venice, Murano, Burano (Ý)</strong></div>
+        </div>
+    </header>
+
+    <!-- Overview Grid -->
+    <div class="overview-grid">
+        <div class="overview-card">
+            <h3>🎨 1. Bảng Màu & Ánh Sáng (Color & Light)</h3>
+            <p>
+                Video khai thác nghệ thuật ánh sáng tương phản <strong>Chiaroscuro & Nguồn sáng hội họa Baroque</strong>:
+            </p>
+            <ul>
+                <li><strong>Ánh sáng xiên cửa sổ vòm (Motivated Window Light)</strong>: Tận dụng nguồn sáng tự nhiên rọi qua các khung cửa sổ Gothic hắt lên bụi gỗ lơ lửng và thớ da bóng dầu.</li>
+                <li><strong>Sắc lửa ấm áp đối lập bóng đêm (Fire & Shadow Contrast)</strong>: Lò nung Murano cam rực và tia lửa rèn xé tan bóng tối tĩnh mịch của căn xưởng cổ kính.</li>
+                <li><strong>Vàng kim hoàng gia & Lam ngọc Venice (Gold Leaf & Venetian Teal)</strong>: Điểm xuyết lá vàng 24K óng ả trên nền gỗ mộc, vải nhung sẫm màu và làn nước kênh chạng vạng.</li>
+            </ul>
+        </div>
+
+        <div class="overview-card">
+            <h3>🎬 2. Ngôn Ngữ Góc Quay (Cinematic Language)</h3>
+            <p>
+                Sự kết hợp bậc thầy giữa <strong>Góc siêu cận (ECU)</strong> và <strong>Khung hình tĩnh khóa chặt (Locked Static Frame)</strong>:
+            </p>
+            <ul>
+                <li><strong>Khung hình cố định tôn vinh chuyển động nội tại</strong>: Máy quay tuyệt đối đứng yên để đôi bàn tay, lưỡi dao, ngọn lửa và thoi dệt tự do nhảy múa trong khung hình.</li>
+                <li><strong>Tỉ lệ khung hình cổ điển 4:3 (Classic Academy Ratio)</strong>: Loại bỏ các khoảng trống thừa hai bên, tập trung toàn bộ sự chú ý của người xem vào trung tâm thao tác.</li>
+                <li><strong>Độ sâu trường ảnh nông (Shallow Depth of Field)</strong>: Khẩu độ lớn f/1.4 - f/2.8 xóa nhòa hậu cảnh lộn xộn, biến các chi tiết đồ nghề thành những đốm bokeh lung linh.</li>
+            </ul>
+        </div>
+
+        <div class="overview-card">
+            <h3>✂️ 3. Nhịp Dựng & Kỹ Thuật Nối Cảnh (Editing Rhythm)</h3>
+            <p>
+                Nhịp cắt <strong>biến thiên đa tầng (0.32s - 1.72s)</strong> với kỹ thuật Staccato Montage:
+            </p>
+            <ul>
+                <li><strong>Mở đầu thiết lập ➔ Chuỗi nhịp nhanh dồn dập ➔ Lắng đọng cảm xúc</strong>: Nhịp dựng mô phỏng nhịp tim của người thợ khi tập trung cao độ.</li>
+                <li><strong>Kinetic & Tactile Match Cut</strong>: Lưỡi đục gỗ (Shot 2) ➔ Kìm kéo thủy tinh (Shot 3) ➔ Ngòi cọ dát vàng (Shot 4) ➔ Lược chải cẩm thạch (Shot 5) ➔ Nhát búa tóe lửa (Shot 6).</li>
+                <li><strong>Đỉnh cao cảm xúc con người (Human Climax)</strong>: Sau chuỗi hành động cơ học là nụ cười tự hào của người nghệ nhân già và bóng thuyền Gondola trôi êm ả lúc hoàng hôn.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Section Shot Breakdown -->
+    <h2 class="section-title">🎬 Bóc Tách Chi Tiết 26 Phân Cảnh (Director Storyboard & Script)</h2>
+
+    <div class="shot-card" id="shot-1">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 01</span>
+                <span class="shot-title">Mở Màn: Không Gian Xưởng Thủ Công Cổ Kính & Dòng Tiêu Đề Venice</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(0.0)">
+                ⏱ 0.00s - 1.04s (1.04s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_002_a927da23.jpg', 'Shot 01 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_002_a927da23.jpg" alt="Shot 1 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_004_a9c26649.jpg', 'Shot 01 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_004_a9c26649.jpg" alt="Shot 1 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_006_50edaa56.jpg', 'Shot 01 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_006_50edaa56.jpg" alt="Shot 1 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Wide Establishing Shot / Title Reveal</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng chế tác truyền thống (Atelier Bottega), Venice</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh bên trong xưởng thủ công cổ kính ngập tràn ánh sáng vàng hổ phách từ cửa sổ vòm kiểu Gothic. Dụng cụ nghề, phôi gỗ, bột màu và các tác phẩm dở dang phủ kín kệ gỗ. Dòng chữ tiêu đề trang nhã 'artisans of VENICE - CARNIVAL, 2026' xuất hiện thanh lịch ở trung tâm trên nền không gian đậm chất điện ảnh.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Ánh sáng tự nhiên chiếu rọi qua luồng bụi gỗ lơ lửng, máy quay tĩnh giữ trọn không gian di sản.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Cắt dứt khoát sang Cảnh 2: Cận cảnh đôi bàn tay nghệ nhân điêu khắc đang gọt phoi gỗ gondola.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Atmospheric Visual Establishing & Text Hook (Thiết lập bầu không khí hoài niệm và điểm nhấn văn bản cổ điển)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng ống kính tiêu cự 35mm trên chân máy cố định (Static Lock-off). Đo sáng bảo vệ chi tiết vùng cửa sổ để tạo hiệu ứng viền sáng (Rim Light) tự nhiên bao quanh các kệ gỗ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Khẩu độ f/2.8 để tạo độ mềm mại cho hậu cảnh, tốc độ màn trập 1/50s (chuẩn 180° Shutter Angle) giữ độ mượt chuyển động hạt bụi.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 01 (Out) ➔ Shot 02 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_008_1aaeb96b.jpg" class="trans-img" alt="Transition 1 to 2" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_008_1aaeb96b.jpg', 'So Sánh Chuyển Cảnh Shot 01 sang Shot 02')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-2">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 02</span>
+                <span class="shot-title">Đôi Tay Nghệ Nhân Tạc Mộc Cọc Chèo Gondola (Forcola)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(1.04)">
+                ⏱ 1.04s - 1.84s (0.80s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_010_9d7ed695.jpg', 'Shot 02 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_010_9d7ed695.jpg" alt="Shot 2 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_012_ca8fbbb7.jpg', 'Shot 02 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_012_ca8fbbb7.jpg" alt="Shot 2 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_014_71f3880c.jpg', 'Shot 02 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_014_71f3880c.jpg" alt="Shot 2 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Close-Up (ECU) / Woodcraft Action</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng mộc chế tác cọc chèo Gondola truyền thống</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Góc siêu cận đặc tả lưỡi đục thép sắc bén gọt ngọt xớt từng lớp phoi gỗ óc chó xoăn tít. Đôi bàn tay gân guốc, hằn in dấu ấn thời gian của người nghệ nhân Venice điều khiển lưỡi đục với sự chính xác tuyệt đối.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Lưỡi đục đẩy mạnh về phía góc trên bên phải, phoi gỗ mỏng văng ra.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Chuyển sang Cảnh 3: Luồng lửa rực đỏ uốn nắn thủy tinh Murano nóng chảy.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Kinetic Craft Cutting (Cắt cảnh bắt nhịp theo lực đẩy cơ học của bàn tay lao động)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt máy quay nghiêng góc thấp 45 độ sát mặt bàn gỗ để đón ánh sáng xiên (Side Light), làm nổi bật vân gỗ nổi khối và những hạt bụi gỗ li ti.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính Macro 90mm hoặc 100mm f/2.8, lấy nét tay chính xác vào lưỡi thép tiếp xúc với thớ gỗ.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 02 (Out) ➔ Shot 03 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_016_cbc68ab1.jpg" class="trans-img" alt="Transition 2 to 3" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_016_cbc68ab1.jpg', 'So Sánh Chuyển Cảnh Shot 02 sang Shot 03')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-3">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 03</span>
+                <span class="shot-title">Nghệ Thuật Thổi Thủy Tinh Hỏa Thuật Đảo Murano</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(1.84)">
+                ⏱ 1.84s - 2.60s (0.76s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_018_5c37458e.jpg', 'Shot 03 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_018_5c37458e.jpg" alt="Shot 3 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_020_f9e860b8.jpg', 'Shot 03 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_020_f9e860b8.jpg" alt="Shot 3 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_022_492dc28a.jpg', 'Shot 03 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_022_492dc28a.jpg" alt="Shot 3 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Glassblowing Furnace Heat</span></p>
+                <p><strong>Địa điểm:</strong> Lò nung thủy tinh đảo Murano (Fornace)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khối thủy tinh nóng chảy đỏ rực như nham thạch được nghệ nhân dùng kìm sắt uốn nắn điêu luyện trên đầu ống thổi. Ánh lửa cam rực sáng tương phản mãnh liệt với bóng tối xung quanh lò nung.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Đầu kìm sắt kẹp và kéo giãn dải thủy tinh nóng đỏ về phía trung tâm.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 4: Ngòi cọ lông mềm quét dải nhũ vàng óng lên mặt nạ hóa trang Carnival.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Color Temperature & Matter Contrast (Tương phản rực lửa sang chi tiết tinh xảo của bột vàng)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng kính lọc giảm sáng ND để bảo vệ chi tiết khối thủy tinh phát sáng, tránh bị cháy sáng vùng trung tâm ngọn lửa.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>White Balance thiết lập 3200K (Tungsten) để giữ trọn vẹn gam màu cam cháy rực rỡ của lò nung Murano.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 03 (Out) ➔ Shot 04 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_024_98d34f75.jpg" class="trans-img" alt="Transition 3 to 4" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_024_98d34f75.jpg', 'So Sánh Chuyển Cảnh Shot 03 sang Shot 04')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-4">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 04</span>
+                <span class="shot-title">Nghệ Thuật Dát Vàng Mặt Nạ Lễ Hội Carnival Venice</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(2.6)">
+                ⏱ 2.60s - 3.00s (0.40s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_026_394ff78a.jpg', 'Shot 04 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_026_394ff78a.jpg" alt="Shot 4 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_028_02a157c6.jpg', 'Shot 04 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_028_02a157c6.jpg" alt="Shot 4 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_030_f256cb9a.jpg', 'Shot 04 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_030_f256cb9a.jpg" alt="Shot 4 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Close-Up (ECU) / Mask Gilding</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng chế tác mặt nạ Mascareri truyền thống</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Đầu cọ tỉa siêu mảnh lướt êm ái trên bề mặt mặt nạ thạch cao, phủ từng đường nét nhũ vàng 24K óng ánh lên những đường nét hoa văn Baroque uốn lượn.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Đường cọ vuốt cong mềm mại từ trái sang phải trên gò má mặt nạ.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 5: Bể nhúng nhuộm giấy vân đá cẩm thạch (Ebru/Marbling).</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Graphic Curve Continuity (Nối tiếp đường cong hội họa sang đường vân nước cẩm thạch)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Khung hình tĩnh khóa chặt, ánh sáng ven nhẹ nhàng tôn vinh chất liệu nhũ kim loại phản chiếu.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính Macro 85mm f/2.0 bắt trọn từng sợi lông cọ và hạt bụi vàng lấp lánh.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 04 (Out) ➔ Shot 05 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_032_ea623cef.jpg" class="trans-img" alt="Transition 4 to 5" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_032_ea623cef.jpg', 'So Sánh Chuyển Cảnh Shot 04 sang Shot 05')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-5">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 05</span>
+                <span class="shot-title">Kỹ Thuật Nhúng Giấy Vân Đá Cẩm Thạch Thủy Ấn (Carta Marmorizzata)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(3.0)">
+                ⏱ 3.00s - 3.32s (0.32s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_034_2a0b9b48.jpg', 'Shot 05 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_034_2a0b9b48.jpg" alt="Shot 5 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_036_a694124f.jpg', 'Shot 05 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_036_a694124f.jpg" alt="Shot 5 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_038_82c8b4b4.jpg', 'Shot 05 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_038_82c8b4b4.jpg" alt="Shot 5 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Top-Down Shot (Bird's Eye) / Paper Marbling</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng đóng sách & giấy thủ công truyền thống</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Góc nhìn từ trên cao thẳng đứng xuống bể dung dịch keo rong biển. Nghệ nhân dùng lược chải gỗ rẽ các giọt màu chàm và đỏ son thành các dải vân xoáy cẩm thạch ảo diệu.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Chiếc lược chải kéo dải màu gợn sóng từ trên xuống mép dưới.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 6: Nhát búa rèn đập xuống thanh kim loại phát ra tia lửa sáng.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Top-down Fluid Dynamics to Heavy Impact (Chuyển tiếp từ nhịp lướt êm dịu sang va đập cơ khí)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Khung hình thẳng đứng 90 độ (Overhead flat-lay) tạo tính hình học đối xứng và thị giác thôi miên người xem.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Đèn Softbox chiếu đều từ trên cao để mặt nước không bị phản chiếu bóng đèn.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 05 (Out) ➔ Shot 06 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_040_ef90a601.jpg" class="trans-img" alt="Transition 5 to 6" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_040_ef90a601.jpg', 'So Sánh Chuyển Cảnh Shot 05 sang Shot 06')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-6">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 06</span>
+                <span class="shot-title">Thợ Rèn Đúc Mũi Thuyền Gondola Bằng Kim Loại (Ferro di Prua)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(3.32)">
+                ⏱ 3.32s - 4.08s (0.76s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_042_c7197a46.jpg', 'Shot 06 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_042_c7197a46.jpg" alt="Shot 6 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_044_fab162e3.jpg', 'Shot 06 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_044_fab162e3.jpg" alt="Shot 6 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_046_bd46744f.jpg', 'Shot 06 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_046_bd46744f.jpg" alt="Shot 6 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close-Up (MCU) / Metal Blacksmithing</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng rèn sắt nghệ thuật bến cảng Venice</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Người thợ rèn cơ bắp vung búa đập dứt khoát lên phôi thép đỏ rực đang uốn hình chiếc mỏ thuyền sắt 6 răng (Ferro). Tia lửa sắt văng ra rực rỡ giữa không gian mờ tối.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Cú đập búa dội xuống tạo chùm tia lửa bung tỏa sang hai bên.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 7: Đôi tay nhẹ nhàng luồn sợi ren đăng ten Burano tinh xảo.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Impact Climax to Delicate Silence (Tương phản cực độ: Búa thép nặng nề sang sợi ren mềm mại)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Bắt đúng khoảnh khắc búa chạm kim loại (Apex of Impact), tốc độ 25fps ghi lại chuyển động chân thực đầy sức nặng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tăng tốc độ màn trập 1/250s để bắt rõ từng tia lửa bắn ra mà không bị vệt nhòe quá dài.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 06 (Out) ➔ Shot 07 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_048_699e6450.jpg" class="trans-img" alt="Transition 6 to 7" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_048_699e6450.jpg', 'So Sánh Chuyển Cảnh Shot 06 sang Shot 07')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-7">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 07</span>
+                <span class="shot-title">Nghệ Nhân Đan Ren Đăng Ten Cổ Truyền Đảo Burano (Merletto)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(4.08)">
+                ⏱ 4.08s - 5.04s (0.96s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_050_f0a0666e.jpg', 'Shot 07 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_050_f0a0666e.jpg" alt="Shot 7 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_052_3b8a0ffc.jpg', 'Shot 07 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_052_3b8a0ffc.jpg" alt="Shot 7 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_054_4ff9a330.jpg', 'Shot 07 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_054_4ff9a330.jpg" alt="Shot 7 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Burano Lace Weaving</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng dệt may & ren thủ công đảo Burano</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Đôi bàn tay nhăn nheo của một cụ bà nghệ nhân lão luyện đảo Burano thoăn thoắt di chuyển các con thoi gỗ nhỏ li ti trên gối đệm đan ren, tạo nên tấm đăng ten hoa văn mạng nhện tinh xảo.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Đầu ngón tay xoắn nhẹ sợi chỉ trắng rồi ghim vào đệm mẫu.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 8: Không gian xưởng đóng thuyền cổ kính Squero di San Trovaso bên bờ kênh.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Rhythmic Micro-motion to Architectural Space (Nối nhịp cử động tay vào bối cảnh di sản kiến trúc)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Ánh sáng tự nhiên dịu nhẹ từ cửa sổ hắt lên gối ren trắng muốt, tạo sắc thái thanh bình và tôn nghiêm của nghề thủ công trăm năm.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 50mm f/1.8 tạo hậu cảnh mờ nhòe nhẹ nhàng phía sau.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 07 (Out) ➔ Shot 08 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_056_8843723d.jpg" class="trans-img" alt="Transition 7 to 8" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_056_8843723d.jpg', 'So Sánh Chuyển Cảnh Shot 07 sang Shot 08')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-8">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 08</span>
+                <span class="shot-title">Xưởng Đóng Thuyền Gỗ Cổ Squero di San Trovaso Từ Thế Kỷ 17</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(5.04)">
+                ⏱ 5.04s - 6.24s (1.20s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_058_78b6a071.jpg', 'Shot 08 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_058_78b6a071.jpg" alt="Shot 8 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_060_5cb2d697.jpg', 'Shot 08 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_060_5cb2d697.jpg" alt="Shot 8 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_062_ecd14626.jpg', 'Shot 08 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_062_ecd14626.jpg" alt="Shot 8 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Wide Shot (WS) / Historic Shipyard Squero</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng đóng thuyền gỗ Squero di San Trovaso (Kênh Dorsoduro)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Toàn cảnh xưởng mộc thuyền gỗ với kiến trúc mái dốc bằng gỗ vùng núi Alps đặc trưng bên bờ kênh xanh ngắt. Hai người thợ mộc đang gọt giũa và quét hắc ín đen tuyền lên thân chiếc thuyền Gondola truyền thống.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Người thợ cúi người đẩy lưỡi bào gỗ dọc theo sống lưng thân thuyền cong.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 9: Chiếc búa nhỏ gõ tách từng viên đá khảm khảm kính Mosaic (Tesserae).</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Heritage Environment Establishing (Cố định không gian di sản trước khi bước vào chuỗi nhịp nhanh)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt máy quay bên kia bờ kênh để lấy trọn vẹn cả kiến trúc xưởng gỗ, mặt nước kênh và chiếc thuyền gondola đang hoàn thiện.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Sử dụng ống kính 28mm hoặc 35mm để giữ độ thẳng hàng của các thanh gỗ xưởng.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 08 (Out) ➔ Shot 09 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_064_6a7381dd.jpg" class="trans-img" alt="Transition 8 to 9" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_064_6a7381dd.jpg', 'So Sánh Chuyển Cảnh Shot 08 sang Shot 09')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-9">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 09</span>
+                <span class="shot-title">Nghệ Thuật Khảm Thủy Tinh Màu Mosaic Nhà Thờ Venice (Tesserae)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(6.24)">
+                ⏱ 6.24s - 6.68s (0.44s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_066_ff123cb5.jpg', 'Shot 09 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_066_ff123cb5.jpg" alt="Shot 9 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_068_442cfa43.jpg', 'Shot 09 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_068_442cfa43.jpg" alt="Shot 9 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_070_eaf6e67d.jpg', 'Shot 09 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_070_eaf6e67d.jpg" alt="Shot 9 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Close-Up (ECU) / Mosaic Smalti Cutting</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng khảm tranh kính Orsoni Venezia 1888</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Chiếc búa mỏ nhọn (Martellina) gõ chuẩn xác lên thanh đe sắt, chẻ đôi thỏi thủy tinh nung màu xanh coban dát vàng lá thành các viên đá khảm hình lập phương nhỏ xíu.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Viên đá khảm vỡ đôi nảy nhẹ trên mặt đe kim loại.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 10: Chuỗi dựng nhịp nhanh (Staccato Montage) bóc tách thần thái tập trung cao độ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Percussive Action Hook (Kích hoạt chuỗi cắt nhanh bằng hành động búa gõ dứt khoát)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Bắt trọn khoảnh khắc vật lý khi vật liệu nứt vỡ dưới tác động chính xác của búa thủ công.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tốc độ màn trập 1/200s, khẩu f/2.8.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 09 (Out) ➔ Shot 10 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_072_e7ea2a88.jpg" class="trans-img" alt="Transition 9 to 10" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_072_e7ea2a88.jpg', 'So Sánh Chuyển Cảnh Shot 09 sang Shot 10')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 10</span>
+                <span class="shot-title">Chuỗi Dựng Nhịp Nhanh: Ánh Mắt Tập Trung Cực Độ Của Bậc Thầy Nghề</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(6.68)">
+                ⏱ 6.68s - 7.64s (0.96s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_074_662ed034.jpg', 'Shot 10 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_074_662ed034.jpg" alt="Shot 10 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_076_fa4fbe68.jpg', 'Shot 10 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_076_fa4fbe68.jpg" alt="Shot 10 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_078_b422908f.jpg', 'Shot 10 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_078_b422908f.jpg" alt="Shot 10 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Fast Staccato Montage / Eyes & Focus</span></p>
+                <p><strong>Địa điểm:</strong> Nhiều xưởng thủ công Venice đan xen</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Chuỗi cắt nhanh dồn dập đặc tả ánh mắt sắc lẹm, vầng trán nhăn lại vì tập trung và đôi môi mím chặt của các nghệ nhân già Venice khi thực hiện các thao tác đòi hỏi độ chính xác từng milimet.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Ánh mắt chớp nhẹ dõi theo mũi dao điêu khắc.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 11: Ngọn lửa bùng cháy rực rỡ bên trong miệng lò nung thủy tinh Murano.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Human Emotion & Intensity Montage (Đẩy cao trào cảm xúc qua ánh mắt đam mê của người thợ)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng kỹ thuật cắt nhịp gắt (Match on Action / Graphic Match) để nối các ánh nhìn ở cùng một vị trí khung hình.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự tele 85mm bắt trọn biểu cảm gương mặt trong không gian xưởng thiếu sáng.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 10 (Out) ➔ Shot 11 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_080_75e3edf3.jpg" class="trans-img" alt="Transition 10 to 11" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_080_75e3edf3.jpg', 'So Sánh Chuyển Cảnh Shot 10 sang Shot 11')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 11</span>
+                <span class="shot-title">Miệng Lò Nung Thủy Tinh Rực Sáng Giữa Bóng Tối</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(7.64)">
+                ⏱ 7.64s - 8.24s (0.60s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_082_804a81b8.jpg', 'Shot 11 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_082_804a81b8.jpg" alt="Shot 11 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_084_40cc8976.jpg', 'Shot 11 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_084_40cc8976.jpg" alt="Shot 11 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_086_63970167.jpg', 'Shot 11 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_086_63970167.jpg" alt="Shot 11 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Kiln Fire Glow</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng lò nung Murano</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Góc quay thẳng vào cửa vòm lò nung thủy tinh, nơi ngọn lửa gas đang cuộn xoáy rực rỡ với gam màu cam san hô và vàng chanh, làm mềm dẻo các thanh thủy tinh màu.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Cây gậy sắt đưa khối thủy tinh đỏ lừ rút ra khỏi miệng lò.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 12: Con dao rọc da thuộc trượt mượt mà trên tấm da bò Venice.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Light Flare to Precision Cut (Chuyển tiếp từ ánh sáng rực rỡ sang đường cắt da êm ru)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Căn chỉnh vùng sáng để miệng lò tạo luồng sáng ven (Rim Lighting) ấm áp bao trùm khung hình.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Khẩu độ khép f/4 để giữ chi tiết ngọn lửa cuộn xoáy.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 11 (Out) ➔ Shot 12 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_088_0792c2d8.jpg" class="trans-img" alt="Transition 11 to 12" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_088_0792c2d8.jpg', 'So Sánh Chuyển Cảnh Shot 11 sang Shot 12')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 12</span>
+                <span class="shot-title">Nghệ Thuật Cắt Khâu Da Thuộc Thủ Công Kiểu Ý</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(8.24)">
+                ⏱ 8.24s - 8.80s (0.56s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_090_e74b471a.jpg', 'Shot 12 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_090_e74b471a.jpg" alt="Shot 12 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_092_6d617e02.jpg', 'Shot 12 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_092_6d617e02.jpg" alt="Shot 12 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_094_a3e86835.jpg', 'Shot 12 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_094_a3e86835.jpg" alt="Shot 12 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Leather Crafting</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng đồ da thủ công truyền thống (Cuoieria)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Lưỡi dao bán nguyệt sắc bén của thợ da rọc một đường thẳng tắp trên tấm da bò mộc màu nâu da bò (Tan Leather), để lộ thớ da mịn màng thượng hạng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Lưỡi dao hoàn tất đường cắt ở mép dưới bên phải.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 13: Chiếc chổi lông sóc áp lá vàng 24K siêu mỏng lên khung gương chạm trổ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Linear Movement Match Cut (Nối tiếp chuyển động trượt của dao sang chuyển động quét cọ dát vàng)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Góc máy xiên nghiêng để ánh sáng ven làm nổi bật độ bóng dầu tự nhiên của chất liệu da cao cấp.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 50mm f/2.0.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 12 (Out) ➔ Shot 13 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_096_ad4caea8.jpg" class="trans-img" alt="Transition 12 to 13" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_096_ad4caea8.jpg', 'So Sánh Chuyển Cảnh Shot 12 sang Shot 13')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 13</span>
+                <span class="shot-title">Nghệ Thuật Dát Vàng Lá Lên Khung Gỗ Hoàng Gia (Doratura)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(8.8)">
+                ⏱ 8.80s - 9.48s (0.68s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_098_68b92ea6.jpg', 'Shot 13 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_098_68b92ea6.jpg" alt="Shot 13 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_100_f1af06bd.jpg', 'Shot 13 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_100_f1af06bd.jpg" alt="Shot 13 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_102_4d2d8720.jpg', 'Shot 13 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_102_4d2d8720.jpg" alt="Shot 13 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Close-Up (ECU) / Gold Leaf Gilding (Doratura)</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng phục chế đồ gỗ hoàng gia Venice (Battiloro)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Bằng cây chổi lông sóc nhiễm tĩnh điện, nghệ nhân nhẹ nhàng nâng một lá vàng 24K mỏng như cánh ve và đặt êm ái lên lớp keo đất đỏ (Bolo) của khung gương Baroque chạm khắc.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Lá vàng khẽ rung rinh rồi áp dính hoàn hảo vào đường viền gỗ cong.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 14: Bàn tay nghệ nhân nhào ép bột giấy bồi Papier-Mâché vào khuôn mặt nạ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Delicate Material Placement (Kỹ thuật xử lý chất liệu siêu mỏng nhạy cảm với hơi thở)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Giữ máy quay tuyệt đối tĩnh trên chân máy nặng để không tạo rung động gió làm bay lá vàng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính Macro 100mm f/2.8, ánh sáng mềm từ tản sáng lớn bên hông.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 13 (Out) ➔ Shot 14 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_104_28746318.jpg" class="trans-img" alt="Transition 13 to 14" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_104_28746318.jpg', 'So Sánh Chuyển Cảnh Shot 13 sang Shot 14')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 14</span>
+                <span class="shot-title">Kỹ Thuật Ép Giấy Bồi Cổ Truyền Làm Phôi Mặt Nạ Carnival</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(9.48)">
+                ⏱ 9.48s - 10.36s (0.88s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_106_cdfff53c.jpg', 'Shot 14 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_106_cdfff53c.jpg" alt="Shot 14 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_108_6f5fafcd.jpg', 'Shot 14 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_108_6f5fafcd.jpg" alt="Shot 14 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_110_f1580ade.jpg', 'Shot 14 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_110_f1580ade.jpg" alt="Shot 14 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close-Up (MCU) / Papier-Mâché Molding</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng mặt nạ thạch cao</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Nghệ nhân dùng các ngón tay miết chặt từng lớp giấy bồi tẩm hồ dán tự nhiên vào các hốc mắt, sóng mũi của khuôn thạch cao âm bản hình chim ưng (Medico della Peste).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Ngón tay cái miết một đường dứt khoát quanh vành mắt mặt nạ.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 15: Trục quay ép gỗ của máy in ấn kiểu Gutenberg dập xuống mặt giấy.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Tactile Pressure Match (Nối tiếp thao tác ép tay sang lực ép cơ khí)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Góc máy trung cận ngang tầm mặt bàn giúp người xem cảm nhận được độ dẻo của sợi giấy bồi.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 35mm f/2.0 bắt trọn cả khuôn mặt nghệ nhân và đôi bàn tay thao tác.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 14 (Out) ➔ Shot 15 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_112_01b0b41f.jpg" class="trans-img" alt="Transition 14 to 15" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_112_01b0b41f.jpg', 'So Sánh Chuyển Cảnh Shot 14 sang Shot 15')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 15</span>
+                <span class="shot-title">Máy In Chữ Kim Loại & Khắc Gỗ Cổ Truyền Kiểu Gutenberg</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(10.36)">
+                ⏱ 10.36s - 10.72s (0.36s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_114_748b5253.jpg', 'Shot 15 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_114_748b5253.jpg" alt="Shot 15 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_116_60365505.jpg', 'Shot 15 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_116_60365505.jpg" alt="Shot 15 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_118_ae334b48.jpg', 'Shot 15 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_118_ae334b48.jpg" alt="Shot 15 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Shot (MS) / Ancient Printing Press</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng in ấn thủ công cổ xưa (Stamperia)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Nghệ nhân kéo cần gạt gỗ sồi của cỗ máy in thủ công thế kỷ 18, bàn ép sắt nặng nề đè xuống tờ giấy xơ bông để in bản khắc axit hình bản đồ Venice cổ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Cần gạt gỗ xoay vòng tạo lực ép cực đại xuống tấm bảng in.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 16: Chuỗi vi nhịp (Micro-cuts) các chi tiết dao đục và lửa rèn.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Rotational Energy Cut (Chuyển động quay cơ khí dẫn dắt vào chuỗi bùng nổ nhịp độ)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Bố cục đường chéo tận dụng thanh đòn bẩy gỗ làm đường dẫn thị giác xuyên suốt khung hình.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 24mm bao quát cỗ máy in gỗ đồ sộ.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 15 (Out) ➔ Shot 16 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_120_9b50c5d1.jpg" class="trans-img" alt="Transition 15 to 16" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_120_9b50c5d1.jpg', 'So Sánh Chuyển Cảnh Shot 15 sang Shot 16')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-16">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 16</span>
+                <span class="shot-title">Vi Cảnh Cắt: Lưỡi Đục Khía Sâu Vào Thớ Gỗ Dẻ Gai</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(10.72)">
+                ⏱ 10.72s - 11.24s (0.52s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_122_4a1242b6.jpg', 'Shot 16 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_122_4a1242b6.jpg" alt="Shot 16 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_124_94202d43.jpg', 'Shot 16 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_124_94202d43.jpg" alt="Shot 16 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_126_639f6ba8.jpg', 'Shot 16 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_126_639f6ba8.jpg" alt="Shot 16 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Micro Action Cut / Chisel Slicing Wood Grain</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng mộc cọc chèo Gondola</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Cận cảnh cực đại lưỡi thép đục sâu một rãnh chữ V sắc nét trên thân cọc chèo Forcola, phoi gỗ bắn nhẹ ra ngoài.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Lưỡi thép hoàn tất nhát đục tạo âm vang giòn giã.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 17: Cây kéo sắt cắt dải thủy tinh Murano dẻo quánh.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Micro Rhythmic Burst (Bùng nổ nhịp cắt nhanh ở cấp độ micro-second)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Tối đa hóa cảm giác xúc giác (Tactile sensation) bằng cách căn chỉnh độ sắc nét đến từng dăm gỗ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính Macro 100mm, khẩu f/3.5.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 16 (Out) ➔ Shot 17 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_128_447bc1b6.jpg" class="trans-img" alt="Transition 16 to 17" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_128_447bc1b6.jpg', 'So Sánh Chuyển Cảnh Shot 16 sang Shot 17')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-17">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 17</span>
+                <span class="shot-title">Vi Cảnh Cắt: Kéo Sắt Tỉa Dải Thủy Tinh Nóng Chảy</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(11.24)">
+                ⏱ 11.24s - 11.68s (0.44s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_130_c9751ebb.jpg', 'Shot 17 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_130_c9751ebb.jpg" alt="Shot 17 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_132_81d053df.jpg', 'Shot 17 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_132_81d053df.jpg" alt="Shot 17 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_134_9fd3aed7.jpg', 'Shot 17 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_134_9fd3aed7.jpg" alt="Shot 17 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Micro Action Cut / Glass Shears Trimming Molten Form</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng thổi thủy tinh Murano</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Lưỡi kéo sắt bản lớn bấm dứt khoát cắt đứt đầu dải thủy tinh nóng dẻo, sợi thủy tinh thừa rơi êm xuống khay hứng kim loại.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Mũi kéo khép lại dứt điểm, thủy tinh phát sáng đỏ cam.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 18: Ngòi cọ vẽ họa tiết đỏ thắm lên chiếc mặt nạ Bauta truyền thống.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Severing Cut Action (Nhát cắt của kéo tương ứng với nhát cắt chuyển cảnh trong phim)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đo sáng vào lưỡi kéo kim loại tương phản với khối thủy tinh phát quang.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tốc độ màn trập 1/250s bắt dính giọt thủy tinh rơi.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 17 (Out) ➔ Shot 18 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_136_ba977491.jpg" class="trans-img" alt="Transition 17 to 18" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_136_ba977491.jpg', 'So Sánh Chuyển Cảnh Shot 17 sang Shot 18')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-18">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 18</span>
+                <span class="shot-title">Họa Sĩ Vẽ Hoa Văn Sơn Dầu Lên Mặt Nạ Quý Tộc Venice (Bauta)</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(11.68)">
+                ⏱ 11.68s - 12.76s (1.08s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_138_2b29a876.jpg', 'Shot 18 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_138_2b29a876.jpg" alt="Shot 18 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_140_75882f94.jpg', 'Shot 18 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_140_75882f94.jpg" alt="Shot 18 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_142_b913a512.jpg', 'Shot 18 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_142_b913a512.jpg" alt="Shot 18 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Fine Mask Painting</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng vẽ mặt nạ nghệ thuật</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Nữ họa sĩ tài hoa nín thở vẽ những họa tiết baroque đỏ thắm và nhũ vàng đối xứng lên vầng trán chiếc mặt nạ trắng muốt. Ánh sáng từ chiếc đèn bàn cổ rọi bóng nghiêng tuyệt mỹ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Ngòi cọ hoàn tất nét vẽ hoa văn đuôi phụng ở góc trán.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 19: Chiếc bào gỗ đẩy dài làm phẳng mái chèo Gondola (Remo).</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Artistic Precision & Flow (Nối tiếp đường cọ uyển chuyển sang đường bào gỗ thênh thang)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Sử dụng ánh sáng tạt một bên (Rembrandt Lighting) tôn lên vẻ đẹp kiêu kỳ của chiếc mặt nạ lễ hội.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 50mm f/1.4 cho bokeh đèn vàng lung linh ở hậu cảnh.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 18 (Out) ➔ Shot 19 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_144_bc5fdfc0.jpg" class="trans-img" alt="Transition 18 to 19" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_144_bc5fdfc0.jpg', 'So Sánh Chuyển Cảnh Shot 18 sang Shot 19')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-19">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 19</span>
+                <span class="shot-title">Bào Nhẵn Mái Chèo Gỗ Dài Bằng Bào Gỗ Cầm Tay Truyền Thống</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(12.76)">
+                ⏱ 12.76s - 13.64s (0.88s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_146_42a3cc13.jpg', 'Shot 19 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_146_42a3cc13.jpg" alt="Shot 19 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_148_4d5c7446.jpg', 'Shot 19 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_148_4d5c7446.jpg" alt="Shot 19 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_150_89f11c77.jpg', 'Shot 19 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_150_89f11c77.jpg" alt="Shot 19 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Long Shot (MLS) / Oar Planing (Remo)</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng mộc chế tạo mái chèo Gondola</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Người nghệ nhân dùng hai tay đẩy chiếc bào gỗ lớn lướt dọc theo chiều dài mái chèo gỗ sồi dài 4 mét. Lớp vỏ bào mỏng tanh cuộn tròn liên tục rơi rụng xuống sàn xưởng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Bào gỗ lướt hết hành trình đẩy tới mép ngoài khung hình.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 20: Con thoi khung cửi dệt nhung gấm tơ tằm Bevilacqua lướt ngang.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Linear Stroke Match (Đồng bộ hành trình trượt dài của bào gỗ sang nhịp thoi dệt)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt máy quay dọc theo chiều dài mái chèo để tạo chiều sâu hút mắt (Vanishing Point).</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 35mm f/2.8 giữ nét sâu từ đầu bàn đến cuối xưởng.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 19 (Out) ➔ Shot 20 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_152_c0e1113a.jpg" class="trans-img" alt="Transition 19 to 20" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_152_c0e1113a.jpg', 'So Sánh Chuyển Cảnh Shot 19 sang Shot 20')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-20">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 20</span>
+                <span class="shot-title">Khung Cửi Dệt Gấm Nhung Hoàng Gia Tessitura Luigi Bevilacqua</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(13.64)">
+                ⏱ 13.64s - 14.36s (0.72s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_154_96249aed.jpg', 'Shot 20 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_154_96249aed.jpg" alt="Shot 20 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_156_501c21e4.jpg', 'Shot 20 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_156_501c21e4.jpg" alt="Shot 20 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_158_f81d2a9d.jpg', 'Shot 20 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_158_f81d2a9d.jpg" alt="Shot 20 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close-Up (MCU) / Velvet Jacquard Weaving</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng dệt nhung gấm Bevilacqua (kênh đào Santa Croce)</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Con thoi gỗ bóng loáng mang sợi tơ tằm óng ả phóng qua lại giữa hàng ngàn sợi chỉ dọc trên khung cửi Jacquard gỗ từ thế kỷ 18, dệt nên những hoa văn nhung gấm tinh mỹ.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Thoi dệt phóng từ trái sang phải, lược dệt dập mạnh xuống tấm vải.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 21: Nghệ nhân thổi luồng hơi vào ống thổi thủy tinh làm phồng bóng thủy tinh đỏ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Rhythmic Mechanical Motion (Nối nhịp đập khung cửi vào nhịp thở thổi thủy tinh)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Ánh sáng chiếu xiên làm óng ánh các sợi tơ tằm đan xen, tôn vinh thương hiệu vải nhung lừng danh nhất Venice.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 50mm f/2.0.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 20 (Out) ➔ Shot 21 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_160_256bd59a.jpg" class="trans-img" alt="Transition 20 to 21" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_160_256bd59a.jpg', 'So Sánh Chuyển Cảnh Shot 20 sang Shot 21')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-21">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 21</span>
+                <span class="shot-title">Nghệ Nhân Dồn Hơi Thổi Phồng Khối Thủy Tinh Cầu Vồng</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(14.36)">
+                ⏱ 14.36s - 15.08s (0.72s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_162_60f58501.jpg', 'Shot 21 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_162_60f58501.jpg" alt="Shot 21 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_164_52d2d79c.jpg', 'Shot 21 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_164_52d2d79c.jpg" alt="Shot 21 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_166_4691d8ae.jpg', 'Shot 21 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_166_4691d8ae.jpg" alt="Shot 21 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close-Up (MCU) / Glassblowing Expansion</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng thổi thủy tinh Murano</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Hai má phồng to, người nghệ nhân dồn toàn bộ hơi thở vào ống thổi sắt. Ở đầu bên kia, quả cầu thủy tinh màu hổ phách đang nở to và xoay tròn đều đặn dưới bàn tay điêu luyện.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Quả cầu thủy tinh nở căng tròn và chuyển dần sang màu cam trong suốt.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 22: Thao tác gắn phụ kiện đồng thau đúc lên mạn thuyền gondola.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Expansion to Construction Link (Từ hình khối giãn nở sang kết cấu lắp ráp vững chắc)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Bắt trọn biểu cảm gương mặt căng tràn sức sống của người thợ thổi thủy tinh đối lập với quả cầu phát quang.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính 50mm f/1.8, phơi sáng bù trừ -0.7 EV để không mất chi tiết da mặt.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 21 (Out) ➔ Shot 22 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_168_f8fdd5cf.jpg" class="trans-img" alt="Transition 21 to 22" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_168_f8fdd5cf.jpg', 'So Sánh Chuyển Cảnh Shot 21 sang Shot 22')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-22">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 22</span>
+                <span class="shot-title">Lắp Ráp Phụ Kiện Đồng Thau Thủ Công Lên Thân Thuyền Gondola</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(15.08)">
+                ⏱ 15.08s - 15.96s (0.88s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_170_80d71534.jpg', 'Shot 22 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_170_80d71534.jpg" alt="Shot 22 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_172_fb7f1977.jpg', 'Shot 22 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_172_fb7f1977.jpg" alt="Shot 22 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_174_b61f5ba8.jpg', 'Shot 22 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_174_b61f5ba8.jpg" alt="Shot 22 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Close-Up (CU) / Bronze Hardware Fitting</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng Squero di San Trovaso</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Người thợ dùng tuốc nơ vít vặn chặt đinh ốc đồng thau bóng loáng, gắn chiếc bản lề chạm khắc đầu rồng biển (Cavallo Marino) vào mạn thuyền gỗ sơn đen bóng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Đinh ốc đồng siết chặt vào mộng gỗ, ánh kim loại lấp lánh phản chiếu mặt nước.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 23: Nghệ nhân đính chùm lông công rực rỡ lên vương miện mặt nạ Carnival.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Finishing Touch Match (Chuỗi các thao tác hoàn thiện tác phẩm đỉnh cao)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Tương phản thị giác tuyệt vời giữa chất gỗ mun đen tuyền và chi tiết đồng thau vàng rực.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 85mm f/2.0.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 22 (Out) ➔ Shot 23 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_176_879cf91f.jpg" class="trans-img" alt="Transition 22 to 23" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_176_879cf91f.jpg', 'So Sánh Chuyển Cảnh Shot 22 sang Shot 23')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-23">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 23</span>
+                <span class="shot-title">Chăm Chút Vương Miện Lông Vũ & Nhung Lụa Mặt Nạ Dạ Hội</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(15.96)">
+                ⏱ 15.96s - 16.96s (1.00s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_178_e15ef52c.jpg', 'Shot 23 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_178_e15ef52c.jpg" alt="Shot 23 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_180_5f5eada1.jpg', 'Shot 23 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_180_5f5eada1.jpg" alt="Shot 23 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_182_34145ac1.jpg', 'Shot 23 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_182_34145ac1.jpg" alt="Shot 23 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Close-Up (MCU) / Carnival Mask Feather Headdress</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng chế tác phục trang lễ hội Venice</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Nghệ nhân dùng tay khẽ chỉnh lại từng nhánh lông đà điểu và lông công óng ánh màu ngọc bích đính trên chiếc vương miện mặt nạ kiêu sa, chuẩn bị cho đêm hội hóa trang Carnival.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Bàn tay khẽ buông khỏi nhánh lông vũ bồng bềnh đung đưa.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 24: Toàn cảnh xưởng thủ công ngập tràn các hiện vật và tác phẩm hoàn mỹ.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Detail to Grand Atelier Reveal (Từ chi tiết kiệt tác mở rộng ra toàn bộ không gian sáng tạo)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Chuyển động nhẹ nhàng của lông vũ tạo nhịp thở lắng đọng trước khi bước vào cảnh kết.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 50mm f/1.4 cho độ sâu trường ảnh nông mượt mà.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 23 (Out) ➔ Shot 24 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_184_1a40e70e.jpg" class="trans-img" alt="Transition 23 to 24" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_184_1a40e70e.jpg', 'So Sánh Chuyển Cảnh Shot 23 sang Shot 24')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-24">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 24</span>
+                <span class="shot-title">Toàn Cảnh Xưởng Thủ Công Di Sản: Nơi Thời Gian Ngưng Đọng</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(16.96)">
+                ⏱ 16.96s - 18.00s (1.04s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_186_bfbd7a3d.jpg', 'Shot 24 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_186_bfbd7a3d.jpg" alt="Shot 24 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_188_dda240ed.jpg', 'Shot 24 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_188_dda240ed.jpg" alt="Shot 24 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_190_67126b9a.jpg', 'Shot 24 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_190_67126b9a.jpg" alt="Shot 24 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Wide Atmospheric Pan / Workshop Sanctuary</span></p>
+                <p><strong>Địa điểm:</strong> Xưởng nghệ nhân Venice</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh bao quát căn phòng xưởng với hàng trăm chiếc mặt nạ lộng lẫy treo trên tường, những pho tượng gỗ dở dang, giá phơi giấy hoa văn và những pho sách cổ bọc da. Ánh nắng chiều Venice rọi xiên qua khung kính mờ ảo.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Tia nắng chiều chiếu sáng chiếc bàn làm việc ở góc trung tâm.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 25: Chân dung cận cảnh người nghệ nhân ngẩng đầu mỉm cười tự hào.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Spatial Contextualization (Tôn vinh không gian lưu giữ linh hồn và di sản văn hóa Venice)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Góc máy tĩnh rộng bao quát, để người xem chiêm ngưỡng mật độ chi tiết dày đặc của một đời cống hiến cho nghệ thuật.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Ống kính 24mm f/4.0 đảm bảo độ nét toàn dải từ tiền cảnh đến hậu cảnh.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 24 (Out) ➔ Shot 25 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_192_143a98a0.jpg" class="trans-img" alt="Transition 24 to 25" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_192_143a98a0.jpg', 'So Sánh Chuyển Cảnh Shot 24 sang Shot 25')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-25">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 25</span>
+                <span class="shot-title">Chân Dung Bậc Thầy Nghệ Nhân: Nụ Cười Của Tình Yêu & Lòng Tự Hào</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(18.0)">
+                ⏱ 18.00s - 19.72s (1.72s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_194_6999a1eb.jpg', 'Shot 25 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_194_6999a1eb.jpg" alt="Shot 25 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_196_55f66e13.jpg', 'Shot 25 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_196_55f66e13.jpg" alt="Shot 25 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_198_07ae9717.jpg', 'Shot 25 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_198_07ae9717.jpg" alt="Shot 25 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Medium Portrait Shot / Master Artisan's Pride</span></p>
+                <p><strong>Địa điểm:</strong> Bàn làm việc xưởng thủ công</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Bậc thầy nghệ nhân tóc bạc ngẩng đầu lên khỏi bàn làm việc, khẽ lau giọt mồ hôi trên trán và nở nụ cười hiền hậu, tràn đầy lòng kiêu hãnh bên cạnh tác phẩm vừa hoàn thành. Đôi mắt ông ánh lên niềm đam mê bất tận với nghề thủ công di sản.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Nụ cười ấm áp của người nghệ nhân tỏa sáng trong ánh đèn vàng ấm áp.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Sang Cảnh 26 (Cảnh Kết): Chiếc thuyền gondola rẽ nước lướt nhẹ trên dòng kênh Venice lúc hoàng hôn.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Human Connection & Emotional Climax (Khắc họa linh hồn con người - yếu tố cốt lõi của mọi nghề thủ công)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Đặt góc máy ngang tầm mắt (Eye-Level Portrait), khẩu độ mở lớn để tôn vinh gương mặt phúc hậu và những nếp nhăn thời gian của nghệ nhân.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 85mm f/1.8 bắt trọn ánh mắt rực rỡ và nụ cười chân thành.</p>
+            </div>
+        </div>
+    
+        <div class="transition-block">
+            <h5>⚡ So Sánh Chuyển Cảnh: Shot 25 (Out) ➔ Shot 26 (In)</h5>
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_200_288eae02.jpg" class="trans-img" alt="Transition 25 to 26" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_200_288eae02.jpg', 'So Sánh Chuyển Cảnh Shot 25 sang Shot 26')" loading="lazy" />
+        </div>
+        </div>
+
+    <div class="shot-card" id="shot-26">
+        <div class="shot-header">
+            <div class="shot-title-wrap">
+                <span class="shot-number">SHOT 26</span>
+                <span class="shot-title">Cảnh Kết: Chiếc Thuyền Gondola Lướt Êm Trên Kênh Đào Venice Lúc Chạng Vạng</span>
+            </div>
+            <div class="shot-timestamp" onclick="playVideoAtTimestamp(19.72)">
+                ⏱ 19.72s - 21.04s (1.32s) ▶
+            </div>
+        </div>
+
+        <!-- Keyframes 3-strip -->
+        <div class="keyframe-grid">
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_202_e9831aaf.jpg', 'Shot 26 - Khung Đầu (Start Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_202_e9831aaf.jpg" alt="Shot 26 Start" loading="lazy" />
+                <span class="kf-label">Start Frame</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_204_78c40911.jpg', 'Shot 26 - Khung Giữa (Mid Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_204_78c40911.jpg" alt="Shot 26 Mid" loading="lazy" />
+                <span class="kf-label">Mid Keyframe</span>
+            </div>
+            <div class="kf-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_206_a907424c.jpg', 'Shot 26 - Khung Cuối (End Frame)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_206_a907424c.jpg" alt="Shot 26 End" loading="lazy" />
+                <span class="kf-label">End Frame</span>
+            </div>
+        </div>
+
+        <!-- Details Grid -->
+        <div class="shot-details-grid">
+            <div class="detail-box">
+                <h4>📐 Cỡ Cảnh & Bối Cảnh</h4>
+                <p><strong>Cỡ cảnh:</strong> <span class="highlight-text">Extreme Wide Shot (EWS) / Twilight Canal Outro</span></p>
+                <p><strong>Địa điểm:</strong> Kênh đào Grand Canal / Cầu Accademia, Venice</p>
+                <p style="margin-top: 6px;"><strong>Mô tả thị giác:</strong> Khung cảnh Venice thơ mộng trong giờ xanh (Blue Hour). Chiếc thuyền gondola đen tuyền với chiếc cọc chèo Forcola và mỏ sắt Ferro sáng bóng chầm chậm lướt qua dòng nước màu lam ngọc. Xa xa là mái vòm nhà thờ Santa Maria della Salute lên đèn vàng ấm áp, khép lại trọn vẹn bản trường ca tôn vinh những đôi tay tài hoa Venice.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🔄 Kỹ Thuật Mồi - Nối & Chuyển Cảnh</h4>
+                <p><strong>Mồi cảnh (Outgoing):</strong> Mái chèo gondola khẽ khuấy làn nước tạo những vòng sóng lan tỏa ra ngoài khung hình.</p>
+                <p><strong>Nối cảnh (Incoming):</strong> Video kết thúc trong sự lắng đọng và lòng khâm phục sâu sắc đối với những nghệ nhân thủ công Venice.</p>
+                <p style="margin-top: 6px;"><strong>Kỹ thuật chuyển:</strong> <span class="highlight-text" style="color: var(--accent-amber);">Poetic Horizon Resolution & Symbolism (Khép lại bằng biểu tượng trường tồn của thành phố Venice trên mặt nước)</span></p>
+            </div>
+
+            <div class="detail-box">
+                <h4>🎥 Lời Khuyên Đạo Diễn (Director Notes)</h4>
+                <p>Góc máy tĩnh rộng từ trên cầu nhìn xuống dòng kênh, để con thuyền gondola tự do lướt qua khung hình làm chủ thể kể chuyện cuối cùng.</p>
+            </div>
+
+            <div class="detail-box">
+                <h4>⚙️ Thông Số Kỹ Thuật & Thiết Bị</h4>
+                <p>Tiêu cự 35mm f/2.0, cân bằng trắng 4800K để bắt trọn sự giao thoa màu sắc giữa nền trời xanh thẫm và ánh đèn phố cổ.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="modal-backdrop" onclick="closeLightbox()">
+        <div class="modal-content-wrap" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeLightbox()">&times;</button>
+            <img id="lightboxImg" class="modal-img" src="" alt="Enlarged Shot" />
+            <div id="lightboxCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal" class="modal-backdrop" onclick="closeVideoModal()">
+        <div class="modal-content-wrap" onclick="event.stopPropagation()">
+            <button class="modal-close-btn" onclick="closeVideoModal()">&times;</button>
+            <video id="playerVideo" class="modal-video" controls playsinline>
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Artisans%20of%20Venice%20-%20%40jeromememe.mp4" type="video/mp4">
+        <source src="Artisans of Venice - @jeromememe.mp4" type="video/mp4">
+                <source src="../videos/Artisans of Venice - @jeromememe.mp4" type="video/mp4">
+                <source src="./videos/Artisans of Venice - @jeromememe.mp4" type="video/mp4">
+                Trình duyệt không hỗ trợ thẻ video.
+            </video>
+            <div id="videoModalCaption" class="modal-caption">Artisans of Venice - @jeromememe</div>
+        </div>
+    </div>
+
+    <!-- Floating Video Action Button -->
+    <button class="floating-video-btn" onclick="openFullVideo()">
+        ▶ Phát Video Gốc
+    </button>
+
+</div>
+
+<script>
+function openLightbox(src, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    if (modal && img) {
+        img.src = src;
+        cap.innerText = caption || '';
+        modal.classList.add('open');
+    }
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('lightboxModal');
+    if (modal) modal.classList.remove('open');
+}
+
+function openFullVideo() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    if (modal && video) {
+        modal.classList.add('open');
+        video.currentTime = 0;
+        video.play().catch(e => console.log(e));
+    }
+}
+
+function playVideoAtTimestamp(seconds) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    const cap = document.getElementById('videoModalCaption');
+    if (modal && video) {
+        modal.classList.add('open');
+        video.currentTime = seconds;
+        if (cap) cap.innerText = 'Đang phát từ ' + seconds.toFixed(2) + 's';
+        video.play().catch(e => console.log(e));
+    }
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    if (video) video.pause();
+    if (modal) modal.classList.remove('open');
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    }
+});
+</script>
+
+</body>
+</html>

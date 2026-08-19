@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<title>Báo Cáo Phân Tích Đạo Diễn &amp; Quay Dựng: The Art of Noticing - Hong Kong</title>
+<style>
+
+@page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
+}
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'SVN-Aeonik', sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+    font-size: 12.5px;
+    line-height: 1.55;
+    padding: 16px;
+}
+.header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    border-radius: 14px;
+    padding: 22px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border: 1px solid #334155;
+}
+.badge {
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 11px;
+    letter-spacing: 0.8px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+h1 {
+    font-size: 21px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-top: 10px;
+    letter-spacing: -0.3px;
+}
+.meta-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 14px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 14px;
+    border-radius: 10px;
+}
+.meta-item {
+    font-size: 11.5px;
+}
+.meta-label {
+    color: #94a3b8;
+    font-size: 10.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.meta-val {
+    font-weight: 700;
+    color: #f1f5f9;
+    margin-top: 2px;
+}
+
+.section-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #0f172a;
+    margin: 22px 0 12px 0;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background: #f59e0b;
+    border-radius: 2px;
+}
+
+.shot-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 14px;
+    display: flex;
+    gap: 14px;
+    page-break-inside: avoid;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+.shot-img-col {
+    width: 130px;
+    flex-shrink: 0;
+}
+.img-box {
+    width: 130px;
+    height: 231px;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid #cbd5e1;
+}
+.img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shot-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    color: #fbbf24;
+    font-weight: 800;
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+.shot-time {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 9.5px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.shot-content {
+    flex: 1;
+}
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 6px;
+    margin-bottom: 8px;
+}
+.shot-title {
+    font-size: 14px;
+    font-weight: 800;
+    color: #0f172a;
+}
+.shot-role-tag {
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #d97706;
+    background: #fef3c7;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+.info-row {
+    margin-bottom: 5px;
+    font-size: 11.5px;
+}
+.info-row strong {
+    color: #334155;
+    font-weight: 700;
+}
+.trans-box {
+    background: #f8fafc;
+    border-left: 3px solid #3b82f6;
+    padding: 6px 10px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+.summary-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 10px;
+}
+.summary-item {
+    background: #f8fafc;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+}
+.summary-item-title {
+    font-weight: 800;
+    color: #0284c7;
+    margin-bottom: 4px;
+    font-size: 12px;
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+    <span class="badge">DIRECTOR BREAKDOWN &amp; CINEMATOGRAPHY REPORT</span>
+    <h1>Báo Cáo Phân Tích Toàn Diện: The Art of Noticing - Hong Kong</h1>
+    <div class="meta-grid">
+        <div class="meta-item">
+            <div class="meta-label">Creator</div>
+            <div class="meta-val">@withyuee (Andrew Yue)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Thời Lượng / Tỷ Lệ</div>
+            <div class="meta-val">25.63s &bull; Khung Dọc 9:16</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Tổng Phân Cảnh</div>
+            <div class="meta-val">14 Shots (Nhịp chuẩn 1.82s)</div>
+        </div>
+        <div class="meta-item">
+            <div class="meta-label">Phong Cách Visual</div>
+            <div class="meta-val">Street Documentary &bull; Lofi Retro</div>
+        </div>
+    </div>
+</div>
+
+<div class="summary-box">
+    <div class="section-title" style="margin-top:0;">TỔNG HỢP 4 NGUYÊN TẮC CỐT LÕI CỦA VIDEO</div>
+    <div class="summary-grid">
+        <div class="summary-item">
+            <div class="summary-item-title">1. NHỊP CẮT THỊ GIÁC (1.8s)</div>
+            <p>100% các phân cảnh đều duy trì thời lượng từ 1.73s - 2.07s. Đây là nhịp cắt vàng giúp khán giả kịp thẩm thấu thông điệp thị giác mà không bị nhàm chán, tạo độ cuốn hút liên tục.</p>
+        </div>
+        <div class="summary-item">
+            <div class="summary-item-title">2. ĐỘNG TÁC MÁY (MICRO-MOTION)</div>
+            <p>Không dùng góc máy tĩnh tuyệt đối mà kết hợp chuyển động vi mô: Tilt Up ngước nhìn dốc/giàn giáo tre, Truck/Push theo trục hành lang, Floating Camera dập dềnh theo sóng biển.</p>
+        </div>
+        <div class="summary-item">
+            <div class="summary-item-title">3. BỐ CỤC &amp; QUAN SÁT</div>
+            <p>Ứng dụng triệt để: Khung lồng khung (ô cửa kính, phà gỗ, sạp vải), Phối cảnh 1 điểm tụ (cầu vượt, gầm cầu), và bắt lấy các điểm chạm cảm xúc đời thường (xoa đầu mèo, đọc báo giấy).</p>
+        </div>
+    </div>
+</div>
+
+<div class="section-title">BẢNG BÓC TÁCH CHI TIẾT 14 PHÂN CẢNH (SHOT-BY-SHOT BREAKDOWN)</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="Shot 01" />
+            <span class="shot-badge">SHOT 01</span>
+            <span class="shot-time">2.07s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 01: 0.00s - 2.07s</div>
+            <div class="shot-role-tag">Hook & Master Establishing (Mở màn & Định vị không gian)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Rộng (Extreme Long Shot) • Bến cảng Avenue of Stars &bull; Ngang tầm mắt hơi ngước (Eye-level to Low Angle Tilt Up)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Up / Pedestal Up nhẹ nhàng từ mặt sàn ván gỗ lên bầu trời</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Quy tắc 1/3 & Tương phản quy mô: Đứa trẻ chạy chơi ở tiền cảnh 1/3 dưới, tòa tháp IFC2 cao chọc trời đặt chuẩn đường 1/3 trái. Chữ vàng 'the art of noticing - HONG KONG' ở trung tâm.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Bắt lấy sự tương phản giữa bước chạy ngây thơ của trẻ nhỏ và sự hùng vĩ tráng lệ của trung tâm tài chính toàn cầu.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày dịu nhẹ, sương mờ vịnh biển Victoria Harbour tạo chiều sâu không gian (Atmospheric Haze) &bull; Tone vàng nhạt pastel ấm áp, xanh lam mờ của bầu trời vịnh biển.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Đứa trẻ chạy lướt về bên trái ➔ <b>Nối In:</b> Cắt thẳng vào bậc thang đá cổ kính phố Pottinger Street.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="Shot 02" />
+            <span class="shot-badge">SHOT 02</span>
+            <span class="shot-time">1.97s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 02: 2.07s - 4.03s</div>
+            <div class="shot-role-tag">Gentle Micro-Moment (Khoảnh khắc dịu dàng đời thường)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Bậc Thang (Medium Low Shot) • Phố dốc Central &bull; Ngang tầm mắt nhân vật ngồi xổm (Eye-Level to subject)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Up / Push In trôi nhẹ nhàng giữ chắc hành động vuốt ve</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Quy tắc 1/3 & Đường dẫn: Người đàn ông và chú mèo nằm ở 1/3 dưới phải, bậc thang dốc dẫn mắt lên trên. Mảng tường dán đầy poster nghệ thuật Graffiti tạo background giàu họa tiết.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Phát hiện 'sự dịu dàng ẩn giấu giữa lòng phố thị' — hành động ngồi xổm xoa đầu chú mèo mướp trên bậc thang công cộng.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tán xạ hẻm phố dịu mắt, bóng râm mát dưới hiên tiệm &bull; Tương phản giữa sắc xanh lá - hồng của poster Graffiti và tone xám ấm của đá lát.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Cú xoa tay của người đàn ông ➔ <b>Nối In:</b> Nhìn toàn cảnh con dốc bậc thang với cụm người tụ tập sinh hoạt.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="Shot 03" />
+            <span class="shot-badge">SHOT 03</span>
+            <span class="shot-time">1.83s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 03: 4.03s - 5.87s</div>
+            <div class="shot-role-tag">Community Gathering (Sinh hoạt cộng đồng dốc phố)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Trục Dọc (Vertical Long Shot) • Con dốc bậc thang xanh &bull; Góc nhìn từ dưới dốc ngước lên (Low-to-High Perspective)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Down / Floating Pan trôi nhẹ từ vòm lá xanh xuống cụm người</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục trung tâm & Khung lồng khung: Dãy nhà cổ hai bên tạo khung kẹp con dốc ở giữa, các bậc thang tạo đường dẫn hút mắt lên tán cây xanh đỉnh dốc.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Quan sát nếp sống gắn kết của người lớn tuổi bản địa — tụ tập tập thể dục, trò chuyện trên các con dốc lịch sử.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng sớm xuyên qua tán lá cây cổ thụ rọi thành những đốm sáng lung linh (Dappled Sunlight) &bull; Xanh lục của tán cây kết hợp sắc áo đỏ/vàng của người dân và màu gạch nung.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bước chân di chuyển của nhóm người ➔ <b>Nối In:</b> Cắt sang luồng người đi bộ hối hả trước giàn giáo tre khổng lồ.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="Shot 04" />
+            <span class="shot-badge">SHOT 04</span>
+            <span class="shot-time">1.73s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 04: 5.87s - 7.60s</div>
+            <div class="shot-role-tag">Urban Contrast & Heritage (Di sản giàn giáo tre độc bản)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Phân Tầng (Multi-Layered Wide Shot) • Ngã tư sầm uất &bull; Ngang tầm mắt hướng chếch lên (Eye-level looking up)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Pan / Truck Right lướt theo dòng người đi bộ qua đường</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Phân lớp 3 tầng (3-Layer Depth): Tiền cảnh bóng người đi lướt qua ống kính -> Trung cảnh cột đèn giao thông & người qua đường -> Hậu cảnh giàn giáo tre (Bamboo Scaffolding) vươn cao ngút ngàn.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Tìm kiếm biểu tượng văn hóa xây dựng truyền thống độc nhất vô nhị của Hong Kong đan xen trong nhịp sống hiện đại.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên đô thị kết hợp ánh đèn biển hiệu neon vàng - đỏ &bull; Vàng tre nứa mộc mạc tương phản với tone xám đen của quần áo người đi bộ.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Dòng người bước lướt qua mép khung hình ➔ <b>Nối In:</b> Cắt sang hành lang cầu vượt ngập tràn ánh nắng hình học.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="Shot 05" />
+            <span class="shot-badge">SHOT 05</span>
+            <span class="shot-time">1.87s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 05: 7.60s - 9.47s</div>
+            <div class="shot-role-tag">Graphic Light & Geometry (Hình học ánh sáng & Nhịp điệu)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Phối Cảnh Sâu (Deep Perspective Wide Shot) • Cầu vượt bộ hành &bull; Chính diện trục thẳng đứng (Direct Frontal Axis)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Truck / Push thẳng theo trục hành lang tạo hiệu ứng dẫn hướng mạnh</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Phối cảnh 1 điểm tụ (One-point Perspective): Mái vòm vàng, lan can và các vệt nắng kẻ sọc hội tụ thẳng về bóng người đơn độc bước đi ở cuối con đường.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Nhìn thấy 'họa tiết của ánh sáng' — bắt trọn khoảnh khắc mặt trời chiếu đúng góc tạo thành những dải ô cờ vàng rực rỡ.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng vàng rực rọi qua mái vòm kính màu vàng, in bóng đổ các ô vuông nhịp điệu rực rỡ lên sàn nhà (Rhythmic Shadow Pattern) &bull; Tone vàng hổ phách (Amber Yellow) rực rỡ thống trị toàn bộ khung hình.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Bước chân nhân vật tiến sâu vào điểm tụ ➔ <b>Nối In:</b> Cắt sang góc nghiêng người nghệ sĩ vẽ chân dung bên bờ vịnh.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="Shot 06" />
+            <span class="shot-badge">SHOT 06</span>
+            <span class="shot-time">1.77s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 06: 9.47s - 11.23s</div>
+            <div class="shot-role-tag">The Quiet Craftsman (Lao động nghệ thuật thầm lặng)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Toàn Cảnh (Medium Long Shot) • Bờ kè ven vịnh &bull; Ngang tầm mắt ngồi (Sitting Eye-Level)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Máy tĩnh trôi nhẹ (Static with organic float)</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Quy tắc 1/3 & Không gian thở (Negative Space): Nghệ sĩ áo đỏ ngồi tập trung ở 1/3 bên trái, khoảng không thoáng đãng bờ sông và công trình phía xa chiếm 2/3 bên phải.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Bắt trọn sự tập trung cao độ, nhẫn nại của người thợ vẽ ký họa giữa dòng đời hối hả.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ngoài trời mờ dịu, phản xạ mặt nước bờ vịnh &bull; Điểm nhấn áo đỏ rực rỡ (Ruby Red Pop) trên nền bờ kè xám xi măng và màu trời mờ.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Nét bút chấm mực của họa sĩ ➔ <b>Nối In:</b> Cắt sang góc ngước người thợ leo giàn giáo tre.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="Shot 07" />
+            <span class="shot-badge">SHOT 07</span>
+            <span class="shot-time">1.80s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 07: 11.23s - 13.03s</div>
+            <div class="shot-role-tag">Vertical Acrobatics (Sự điêu luyện trên tầm cao)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Toàn Cảnh Góc Ngước (Low-Angle Tilt-Up Shot) &bull; Góc thấp nhìn thẳng lên cao (Low-Angle Heroic View)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Up nâng góc máy theo nhịp trèo của người thợ</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Đường chéo & Lưới hình học (Diagonal Lines & Grids): Các thân tre đan chéo chia cắt khung hình thành các hình tam giác vững chãi, người thợ áo vàng leo ở điểm 1/3 trên phải.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Kỹ thuật 'Look Up' — người làm phim đường phố luôn ngước nhìn lên những gì diễn ra trên cao để tìm những góc nhìn bất ngờ.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ban ngày chiếu rọi từng mắt giàn giáo tre mộc mạc &bull; Màu tre vàng mộc tương phản với bảng hiệu chữ đỏ 'Love Sandwiches' và nền gạch hồng.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Động tác vươn tay buộc giàn giáo ➔ <b>Nối In:</b> Cắt sang cô gái cầm máy ảnh đứng trên cầu vượt hiện đại.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="Shot 08" />
+            <span class="shot-badge">SHOT 08</span>
+            <span class="shot-time">1.80s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 08: 13.03s - 14.83s</div>
+            <div class="shot-role-tag">The Observer (Người quan sát ngắm nhìn thành phố)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Hiện Đại (Modern Urban Wide Shot) • Cầu bộ hành cao ốc &bull; Góc ngang tầm mắt sau lưng (Over-the-Shoulder / Profile)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Up / Push nhẹ nhàng mở rộng tầm nhìn về phía các tòa nhà chọc trời</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Đường dẫn cong (Leading Curve): Lan can cầu vượt màu trắng uốn lượn dẫn thẳng mắt người xem từ góc dưới trái đến nhân vật cầm máy ảnh ngắm nhìn tháp cao ốc.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Bắt lấy khoảnh khắc 'Metacinema' — một người đam mê nhiếp ảnh đang đứng ngắm nhìn và ghi lại linh hồn thành phố.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng hoàng hôn chạng vạng (Blue Hour / Dusk), đèn neon và cửa sổ cao ốc bắt đầu bừng sáng &bull; Tone xanh lam hoàng hôn (Cool Blue) tương phản ánh đèn vàng ấm áp từ các ô cửa sổ cao ốc.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Cô gái giơ máy ảnh bấm chụp ➔ <b>Nối In:</b> Cắt sang không gian bên trong quán ăn truyền thống Cha Chaan Teng.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="Shot 09" />
+            <span class="shot-badge">SHOT 09</span>
+            <span class="shot-time">1.73s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 09: 14.83s - 16.57s</div>
+            <div class="shot-role-tag">Retro Nostalgia & Solitude (Hoài niệm & Khoảng lặng quán trà)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Quán Ăn (Interior Medium Shot) • Quán Cha Chaan Teng &bull; Trực diện chính diện (Frontal Symmetrical View)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Máy tĩnh giữ trọn cảm xúc tĩnh tại (Static Frame / Subtle float)</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Khung lồng khung & Đối xứng (Frame in Frame): Các ô cửa sổ kính retro lớn đóng vai trò như một bức tranh bao bọc cô gái ngồi thưởng thức bữa ăn ở trung tâm bên dưới.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Bắt lấy 'khoảng lặng giữa phố xá' — vẻ đẹp bình yên, trầm ngâm của một người trẻ bên ô cửa sổ quán ăn mang đậm dấu ấn thời gian.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ngoài trời lọc qua những ô kính màu vàng - xanh lá kinh điển tạo bầu không khí ấm cúng, hoài cổ &bull; Xanh ngọc bích, vàng hổ phách từ ô kính màu kết hợp tone nâu gỗ hoài niệm Wong Kar-wai.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Tay cô gái cầm tách trà ➔ <b>Nối In:</b> Cắt sang không gian đối xứng hùng vĩ dưới gầm cầu vượt biển.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="Shot 10" />
+            <span class="shot-badge">SHOT 10</span>
+            <span class="shot-time">1.80s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 10: 16.57s - 18.37s</div>
+            <div class="shot-role-tag">Architectural Tunnel & Motion (Đường hầm kiến trúc & Chuyển động sông nước)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Đường Hầm Trụ Cầu (Symmetrical Tunnel Long Shot) &bull; Chính diện ngang tầm mắt (Dead Center Eye-Level)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Push chậm thẳng tắp vào trung tâm luồng nước (Symmetrical Dolly In)</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Đối xứng tuyệt đối & Đường dẫn: Hai trụ bê tông khổng lồ của cầu vượt tạo thành đường hầm vút sâu, con thuyền màu đỏ rẽ sóng lướt qua tâm điểm, người đàn ông ngồi thư thái góc phải tiền cảnh.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Kỹ thuật 'Bẫy khoảnh khắc' (The Trap Shot) — đặt khung hình đối xứng kiến trúc hoàn hảo và bấm máy đúng lúc chiếc thuyền lướt qua làm bừng sáng khung cảnh.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng ban ngày phản chiếu từ mặt nước lấp lánh hắt lên trần bê tông &bull; Xám bê tông trầm mặc tương phản với vệt đỏ rực rỡ của chiếc thuyền và xanh lam của mặt nước.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Chiếc thuyền lướt qua tâm trục ➔ <b>Nối In:</b> Cắt sang bậc thang đá nở hoa rực rỡ với họa sĩ và chú chó.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="Shot 11" />
+            <span class="shot-badge">SHOT 11</span>
+            <span class="shot-time">1.87s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 11: 18.37s - 20.23s</div>
+            <div class="shot-role-tag">Poetic Harmony (Sự giao hòa thơ mộng giữa thiên nhiên & con người)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Dốc Hoa (Flower Slope Long Shot) &bull; Góc thấp từ chân dốc nhìn lên (Low-Angle Look-Up)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Pan / Tilt Up mở rộng từ chú chó và họa sĩ lên vòm hoa nở rộ</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Phối cảnh bậc thang dốc cao & Tương phản màu sắc: Cụ ông ngồi vẽ và chú chó trắng ở tiền cảnh bậc đá, giàn hoa vàng và hoa giấy hồng tạo thành bức tranh thiên nhiên rực rỡ trên nền đá xám.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Phát hiện sự sống nở hoa giữa lòng đô thị bê tông — góc phố bình yên nơi con người, thú cưng và hoa cỏ cùng hòa quyện.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Nắng rực rỡ rọi thẳng vào tán hoa vàng và giàn hoa giấy hồng tím rực nở &bull; Vàng tươi của hoa, hồng tím hoa giấy, trắng tinh của chú chó và xám rêu phong của tường đá cổ.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Chú chó trắng bước sang trái ➔ <b>Nối In:</b> Cắt sang người đàn ông đọc báo trên phà gỗ bập bềnh sóng nước.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="Shot 12" />
+            <span class="shot-badge">SHOT 12</span>
+            <span class="shot-time">1.84s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 12: 20.23s - 22.07s</div>
+            <div class="shot-role-tag">Analog Slow Life (Nhịp sống chậm cổ điển trên sông nước)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cảnh Khoang Thuyền (Interior Boat Medium Shot) • Phà gỗ Star Ferry / Sampan &bull; Ngang tầm mắt ngồi (Sitting Eye-Level)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Floating Camera dập dềnh theo nhịp sóng nước tự nhiên</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Khung lồng khung (Frame in Frame): Cột gỗ và mái thuyền tạo thành khung hình chữ nhật bao quanh người đàn ông đang chăm chú mở tờ báo giấy in khổ lớn, phía xa là du thuyền trắng và cao ốc mờ ảo.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Bắt lấy thói quen văn hóa đọc báo giấy truyền thống trên phương tiện thủy cổ điển — biểu tượng sống động của sự chậm rãi, thư thái.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ngoài khơi hắt vào khoang thuyền gỗ mộc mạc &bull; Nâu gỗ mộc mạc của thuyền, xanh ngọc bích của nước biển và tone trắng áo người đàn ông.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Nhân vật lật trang báo giấy ➔ <b>Nối In:</b> Cắt sang chiếc taxi đỏ lướt qua cửa tiệm thịt quay Hồng Kông.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="Shot 13" />
+            <span class="shot-badge">SHOT 13</span>
+            <span class="shot-time">1.80s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 13: 22.07s - 23.87s</div>
+            <div class="shot-role-tag">Iconic Street Pulse (Nhịp đập biểu tượng phố thị)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Trung Cận Cảnh Tiệm Phố (Street Medium Close-Up) • Tiệm thịt quay Siu Mei &bull; Ngang tầm mắt vỉa hè (Street Eye-Level)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Pan Left lướt theo chiếc xe taxi đỏ đỗ lướt qua</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Tương phản màu sắc & Chuyển động lướt tiền cảnh: Thân xe taxi đỏ bóng loáng chiếm 1/2 khung hình tiền cảnh, phía sau là người thợ mặc áo blouse trắng đang thao tác bên lò quay.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Kết hợp hai 'icon' nhận diện nổi tiếng nhất của văn hóa thị giác Hồng Kông: Chiếc Taxi đỏ Crown Comfort và Tiệm thịt quay truyền thống Siu Mei.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng đèn vàng rực rỡ từ tủ kính treo vịt quay / xá xíu vàng óng &bull; Đỏ tươi đặc trưng Taxi (Hong Kong Red) kết hợp tone vàng mật ong của thịt quay.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Đuôi xe taxi trôi qua ➔ <b>Nối In:</b> Cắt sang khung hình cụ bà đọc báo giữa sạp vải ngập tràn sắc màu.
+        </div>
+    </div>
+</div>
+
+<div class="shot-card">
+    <div class="shot-img-col">
+        <div class="img-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="Shot 14" />
+            <span class="shot-badge">SHOT 14</span>
+            <span class="shot-time">1.76s</span>
+        </div>
+    </div>
+    <div class="shot-content">
+        <div class="shot-header">
+            <div class="shot-title">Shot 14: 23.87s - 25.63s</div>
+            <div class="shot-role-tag">Soul of Heritage & Poetic Outro (Linh hồn di sản & Cái kết lắng đọng)</div>
+        </div>
+        <div class="info-row"><strong>Cỡ Cảnh &amp; Góc Máy:</strong> Toàn Cảnh Sạp Vải Cổ (Heritage Full Shot) • Tiệm 'Hữu Ký Bố Hành' (有記布行) &bull; Trực diện chính diện (Dead Center Frontal View)</div>
+        <div class="info-row"><strong>Động Tác Máy (Motion):</strong> Tilt Down / Slow Push In nhẹ nhàng hướng về người cụ già</div>
+        <div class="info-row"><strong>Bố Cục (Composition):</strong> Bố cục Trung tâm & Bao bọc bởi Họa tiết (Surrounded by Textures): Biển hiệu thư pháp chữ Hán đỏ 'Hữu Ký Bố Hành' nổi bật ở đỉnh, hàng trăm cuộn vải đủ sắc màu xếp tầng lớp ôm trọn cụ bà ngồi đọc báo ở trung tâm.</div>
+        <div class="info-row"><strong>Cách Quan Sát &amp; Bắt Khoảnh Khắc:</strong> Lựa chọn shot kết hoàn hảo — một hình ảnh biểu tượng cho sự bền bỉ của ký ức, lao động truyền thống và nét đẹp tĩnh tại trường tồn của người Hồng Kông xưa.</div>
+        <div class="info-row"><strong>Ánh Sáng &amp; Màu Sắc:</strong> Ánh sáng tự nhiên ban ngày chan hòa làm nổi bật từng thớ vải và màu mực bảng hiệu &bull; Đỏ thư pháp, màu vải thổ cẩm đa sắc, vàng be hoài niệm của tiệm tạp hóa thế kỷ trước.</div>
+        <div class="trans-box">
+            <b>Mồi Out:</b> Giữ tĩnh khung hình sạp vải cổ điển, mờ dần kết thúc video trọn vẹn.
+        </div>
+    </div>
+</div>
+
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "The_Art_of_Noticing_Hong_Kong - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

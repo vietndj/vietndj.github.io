@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi" class="bg-[#F4F7F6] text-slate-800 font-sans antialiased">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản Đồ Hạnh Phúc Nguyên Bản</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#d1fae5',
+                primaryTextColor: '#064e3b',
+                primaryBorderColor: '#059669',
+                lineColor: '#10b981',
+                secondaryColor: '#f0fdf4',
+                tertiaryColor: '#fff'
+            }
+        });
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="max-w-5xl mx-auto p-4 sm:p-8 md:p-12">
+
+    <!-- 1. 🎯 [The Big Idea] -->
+    <section class="mb-16 animate-fade-in-up">
+        <div class="mb-8 text-center">
+            <h1 class="text-3xl md:text-4xl font-extrabold text-emerald-900 mb-4 tracking-tight">🎯 The Big Idea</h1>
+            <p class="text-lg md:text-xl text-emerald-800 font-medium max-w-3xl mx-auto leading-relaxed bg-emerald-50 p-6 rounded-2xl border border-emerald-100 shadow-sm">
+                Hạnh phúc không phải là một "vật phẩm" bạn nỗ lực tích lũy thêm từ bên ngoài, mà là trạng thái nguyên bản tự lộ diện sau khi bạn sử dụng "Kỷ luật Khấu trừ" để gọt bỏ những kỳ vọng ảo tưởng và tiếng ồn sinh tồn của tâm trí.
+            </p>
+        </div>
+
+        <div class="relative w-full h-[450px] rounded-2xl overflow-hidden bg-white border border-slate-200 shadow-sm mt-8">
+            <div class="absolute top-4 right-4 z-10 flex gap-2">
+                <button onclick="zoomMap(0.15)" class="w-10 h-10 flex items-center justify-center bg-white/90 backdrop-blur border border-emerald-200 rounded-xl shadow-sm hover:bg-emerald-50 text-emerald-800 font-black text-xl transition-colors" aria-label="Phóng to">+</button>
+                <button onclick="zoomMap(-0.15)" class="w-10 h-10 flex items-center justify-center bg-white/90 backdrop-blur border border-emerald-200 rounded-xl shadow-sm hover:bg-emerald-50 text-emerald-800 font-black text-xl transition-colors" aria-label="Thu nhỏ">−</button>
+            </div>
+            
+            <div id="mindmap-wrapper" class="w-full h-full flex items-center justify-center cursor-move overflow-hidden bg-slate-50">
+                <div id="mindmap-container" class="transition-transform duration-300 origin-center scale-100">
+                    <pre class="mermaid">
+                        %%{init: {'flowchart': {'curve': 'basis'}}}%%
+                        graph LR
+                            classDef core fill:#10b981,stroke:#047857,stroke-width:3px,rx:12,ry:12,color:#ffffff,font-weight:bold;
+                            classDef node1 fill:#d1fae5,stroke:#059669,stroke-width:2px,rx:10,ry:10,color:#064e3b,font-weight:bold;
+                            classDef node2 fill:#f0fdf4,stroke:#34d399,stroke-width:1px,rx:8,ry:8,color:#065f46;
+                            
+                            A(TƯ DUY HẠNH PHÚC):::core
+                            
+                            A --> B(Chiến Lược Khấu Trừ):::node1
+                            A --> C(Phương Trình Thực Tại):::node1
+                            A --> D(Gỡ Rối Tâm Trí):::node1
+                            
+                            B --> B1(Loại bỏ Căng thẳng):::node2
+                            B --> B2(Khôi phục Mặc định):::node2
+                            
+                            C --> C1(Chấp nhận Khách quan):::node2
+                            C --> C2(Hạ bớt Kỳ vọng):::node2
+                            
+                            D --> D1(Viết để Giải phóng):::node2
+                            D --> D2(Khoảng Lặng Không Gian Âm):::node2
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center mt-6">
+            <a href="https://www.youtube.com/watch?v=47wZCt0YG_A" target="_blank" class="inline-flex items-center gap-2 bg-slate-100 text-slate-700 hover:bg-red-50 hover:text-red-600 px-5 py-2.5 rounded-full font-semibold transition-all shadow-sm border border-slate-200">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Bản gốc: Giải mã Não bộ & Hạnh phúc Nguyên bản - Mo Gawdat x Simon Sinek
+            </a>
+        </div>
+    </section>
+
+    <!-- 2. 🧠 [Deep Insights] -->
+    <section class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 border-b-2 border-emerald-200 pb-3">🧠 Deep Insights</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- Item 1 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">👶</span> 1. Hệ điều hành Mặc định
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Con người sinh ra đã được nạp sẵn OS "Hạnh phúc". Mọi đau khổ chỉ là những "app rác" bạn tự cài thêm dọc đường.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Khi ngừng cài thêm khao khát và xóa bớt những áp lực không cần thiết, tâm trí tự động nảy bật về trạng thái cân bằng gốc.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Hard-reset (Khôi phục cài đặt gốc) chiếc smartphone đang giật lag để nó chạy mượt mà như lúc mới bóc hộp.
+                </div>
+            </div>
+
+            <!-- Item 2 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">➖</span> 2. Phương pháp Khấu trừ
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Đừng làm danh sách "Những thứ tôi muốn có để vui". Hãy liệt kê "Những thứ đang làm tôi mệt mỏi" và thẳng tay gạch bỏ chúng.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Hạnh phúc không sinh ra từ việc chắp vá thêm tiện nghi, nó nảy mầm từ khoảng không trống rỗng khi gánh nặng được lấy đi.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Dọn dẹp tủ quần áo. Cảm giác nhẹ nhõm đến từ việc vứt bỏ đồ cũ, chứ không phải nhồi nhét thêm đồ hiệu vào chiếc tủ đã chật cứng.
+                </div>
+            </div>
+
+            <!-- Item 3 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">⚖️</span> 3. Phương trình Kỳ vọng
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Hạnh phúc = Trải nghiệm thực tại (Trừ đi) Kỳ vọng của bạn về cách thế giới vận hành.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Sự bực tức không đến từ cơn mưa, mà đến từ kỳ vọng "hôm nay trời phải nắng". Sự chấp nhận dập tắt sự chênh lệch này.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Trẻ con khóc lóc ăn vạ không phải do đói, mà vì kỳ vọng "cứ khóc là sẽ được bế" của nó bị phá vỡ.
+                </div>
+            </div>
+
+            <!-- Item 4 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🦖</span> 4. Cỗ máy Sinh tồn
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Não bộ không được sinh ra để làm bạn hạnh phúc. Nó là cỗ máy sinh tồn chuyên đi quét rủi ro và phóng đại nguy hiểm.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Khi bạn an toàn, não rảnh rỗi sẽ tự tạo ra "hổ tưởng tượng" (deadline, sợ bị phán xét) để có lý do kích hoạt cơ chế phòng vệ.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Còi báo cháy quá nhạy, chỉ một chút khói từ bánh mì nướng mà nó hú ầm ĩ bắt bạn sơ tán cả tòa nhà.
+                </div>
+            </div>
+
+            <!-- Item 5 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🗣️</span> 5. Vắt kiệt Tiếng ồn
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Đừng chạy trốn những suy nghĩ tiêu cực, hãy đối mặt và thách thức não bộ xả hết ra cho đến khi cạn kiệt ý tưởng.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Khi bạn liên tục hỏi não "Còn gì tồi tệ hơn nữa không?", đến một lúc nào đó, nó sẽ tự thấy vô lý và rơi vào khoảng lặng.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Ngồi nghe một người say rượu than vãn, cứ để họ nói hết cỡ, mệt lả rồi họ sẽ tự động lăn ra ngủ.
+                </div>
+            </div>
+
+            <!-- Item 6 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">📝</span> 6. Tải dữ liệu ra Giấy
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Suy nghĩ quẩn quanh ban đêm là cách não "nhắc nhở" vì nó sợ bạn quên. Viết ra giấy là cách xuất biên lai nhận thông tin.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Chuyển dữ liệu vô hình thành thực thể vật lý. Khi thấy mọi thứ trên giấy, não yên tâm xóa tác vụ đó khỏi bộ nhớ ngắn hạn.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Ấn "Ctrl + S" lưu file Word vào ổ cứng (SSD), giải phóng bộ nhớ RAM để máy tính hết bị treo logo.
+                </div>
+            </div>
+
+            <!-- Item 7 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🧘‍♂️</span> 7. Không gian Âm
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Năng suất đỉnh cao nhất không đến từ việc lấp kín từng phút trong lịch trình, mà đến từ khoảng trống không-làm-gì-cả.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Khi ý thức (sự tập trung) được nghỉ ngơi, tiềm thức mới có cơ hội xâu chuỗi hàng vạn dữ liệu rời rạc thành một giải pháp đột phá.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Bạn không nảy ra big idea khi đang căng mắt sửa từng pixel trên Photoshop; nó đến lúc bạn đang ngẩn ngơ vòi sen trong nhà tắm.
+                </div>
+            </div>
+
+            <!-- Item 8 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">⏳</span> 8. Giãn nở Thời gian
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Bận rộn khiến thời gian trôi đi nhanh nhòe nhoẹt. Sự Hiện Diện (Presence) là phép thuật duy nhất kéo giãn chiều dài của một ngày.</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Sống trong ảo tưởng (quá khứ/tương lai) làm mù cảm quan thực tế. Nếm rõ vị cafe, nghe rõ tiếng ly lách cách giúp não ghi nhận "sự sống".</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Cầm lái đi trên cung đường về quê quen thuộc bạn sẽ không nhớ gì. Nhưng phượt một cung đường mới toanh, một buổi sáng tưởng dài như một tuần.
+                </div>
+            </div>
+
+            <!-- Item 9 -->
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:border-emerald-300 hover:shadow-md transition-all group">
+                <h3 class="text-lg font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                    <span class="text-2xl group-hover:scale-110 transition-transform">🧭</span> 9. La Bàn > Đích Đến
+                </h3>
+                <p class="mb-2 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Bản chất:</strong> Đừng sống theo chế độ "Target-driven" (áp lực KPIs). Hãy sống theo "Mission-driven" (Hệ tư duy quá trình và đà tiến lên).</p>
+                <p class="mb-4 text-sm text-slate-700 leading-relaxed"><strong class="text-slate-900">Cơ chế:</strong> Ám ảnh mục tiêu tạo ra sự trống rỗng khi đạt được nó. Tận hưởng quá trình tạo ra đà tăng tốc (momentum) liên tục không điểm dừng.</p>
+                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-sm">
+                    <strong class="text-emerald-700">💡 Ẩn dụ:</strong> Tàu ngầm không đi thành đường thẳng tắp tới đích. Nó đi ngoằn ngoèo nhưng liên tục thả kính tiềm vọng lên để chỉnh lại hướng Bắc.
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 3. 🚀 [Action Playbook] -->
+    <section class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 border-b-2 border-emerald-200 pb-3">🚀 Action Playbook</h2>
+        <div class="flex flex-col md:flex-row gap-6">
+            
+            <div class="flex-1 space-y-6">
+                <h3 class="text-xl font-bold text-emerald-800 mb-4">Kịch bản "Nếu - Thì"</h3>
+                
+                <div class="bg-blue-50/50 p-5 rounded-2xl border-l-4 border-blue-500">
+                    <h4 class="font-bold text-blue-900 mb-2">Bối cảnh 1: Kẹt xe, làm đổ cafe, hoặc trễ giờ.</h4>
+                    <p class="text-slate-700"><strong>NẾU</strong> cơn bực tức, nóng máu bắt đầu sôi lên và muốn chửi thề...</p>
+                    <p class="text-slate-700 mt-2"><strong>THÌ</strong> hít một hơi, nói to ra miệng thần chú: <em>"Này, nếu đây là chuyện tồi tệ nhất xảy ra với mình trong hôm nay, thì mình vẫn còn quá may mắn, đang lời chán!"</em></p>
+                </div>
+
+                <div class="bg-purple-50/50 p-5 rounded-2xl border-l-4 border-purple-500">
+                    <h4 class="font-bold text-purple-900 mb-2">Bối cảnh 2: Nằm trằn trọc, overthinking cắn rứt.</h4>
+                    <p class="text-slate-700"><strong>NẾU</strong> não bộ liên tục phát lại những cuộc hội thoại cũ hoặc lo sợ ngày mai, nằm nhắm mắt 15 phút vẫn trắng đêm...</p>
+                    <p class="text-slate-700 mt-2"><strong>THÌ</strong> lập tức bật đèn nhỏ, lấy sổ và bút (tuyệt đối không dùng điện thoại), viết sạch mọi lo lắng ra giấy. Ép não cung cấp thêm đến khi nó trống rỗng.</p>
+                </div>
+            </div>
+
+            <div class="flex-1 bg-emerald-800 text-white p-6 rounded-2xl shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 opacity-10 text-9xl">⚡</div>
+                <h3 class="text-xl font-bold mb-4 relative z-10">Micro-Actions (Trong 24h Tới)</h3>
+                <ul class="space-y-4 relative z-10">
+                    <li class="flex gap-3 bg-emerald-700/50 p-4 rounded-xl">
+                        <div class="text-emerald-300 font-black text-xl">01</div>
+                        <div>
+                            <strong class="block text-emerald-100 text-lg mb-1">Cài đặt "15 phút Chân không"</strong>
+                            <p class="text-emerald-50/80 text-sm">Sáng mai, tắt wifi hoặc bật Do Not Disturb. Tự pha một ly cafe/trà. Ngồi yên cảm nhận toàn bộ âm thanh, hơi nóng, mùi hương mà không màn hình, không podcast.</p>
+                        </div>
+                    </li>
+                    <li class="flex gap-3 bg-emerald-700/50 p-4 rounded-xl">
+                        <div class="text-emerald-300 font-black text-xl">02</div>
+                        <div>
+                            <strong class="block text-emerald-100 text-lg mb-1">Danh sách Trừ (Delete List)</strong>
+                            <p class="text-emerald-50/80 text-sm">Viết ra giấy 3 nguồn gây stress nhất trong tuần qua (Một mối quan hệ độc hại, task vô nghĩa, thói quen thức khuya). Chọn 1 thứ và quyết định từ chối/gạch bỏ nó trong tuần tới.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 4. ⚠️ [Reality Check] -->
+    <section class="mb-16">
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-8 border-b-2 border-red-200 pb-3">⚠️ Reality Check</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <div class="bg-red-50 p-6 rounded-2xl border border-red-100">
+                <h3 class="text-lg font-bold text-red-900 mb-4 flex items-center gap-2"><span class="text-2xl">🕳️</span> Cạm bẫy Tâm lý</h3>
+                <ul class="space-y-4">
+                    <li class="flex gap-3 items-start">
+                        <span class="text-red-500 mt-1">✖</span>
+                        <p class="text-slate-700 text-sm"><strong class="text-slate-900">Giải quyết bề mặt bằng Tiền:</strong> Buồn chán -> Mua đồ/Ăn uống vô tội vạ. Nó chỉ bịt tạm triệu chứng, không diệt gốc rễ sự rỗng tuếch bên trong.</p>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <span class="text-red-500 mt-1">✖</span>
+                        <p class="text-slate-700 text-sm"><strong class="text-slate-900">Sợ hãi Khoảng lặng:</strong> Bạn liên tục lôi điện thoại ra lướt TikTok khi đi thang máy, đi vệ sinh vì não bạn sợ cảm giác phải ở một mình với chính nó.</p>
+                    </li>
+                    <li class="flex gap-3 items-start">
+                        <span class="text-red-500 mt-1">✖</span>
+                        <p class="text-slate-700 text-sm"><strong class="text-slate-900">Nô lệ của Dữ liệu:</strong> Đeo nhẫn thông minh đo giấc ngủ, app theo dõi calo. Ban đầu rất vui, sau đó bạn bị stress và ám ảnh vì chính những con số đó.</p>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-slate-900 p-6 rounded-2xl border border-slate-700 text-slate-100 shadow-xl">
+                <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2"><span class="text-2xl">🛡️</span> Chốt chặn Kỷ luật</h3>
+                <p class="text-sm text-slate-400 mb-5">Đừng dùng ý chí, hãy dùng thiết kế Môi trường & Hệ thống giới hạn vật lý để bảo vệ tâm trí:</p>
+                <div class="space-y-4">
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-600">
+                        <strong class="block text-emerald-400 mb-1">1. Giới hạn Không gian (Vùng Cấm)</strong>
+                        <p class="text-sm text-slate-300">Biến phòng ngủ (hoặc ít nhất là chiếc giường) thành "Vùng cấm màn hình". Mua một chiếc đồng hồ cơ báo thức. Để cục sạc điện thoại ngoài phòng khách.</p>
+                    </div>
+                    <div class="bg-slate-800 p-4 rounded-xl border border-slate-600">
+                        <strong class="block text-emerald-400 mb-1">2. Khóa cứng Thời gian</strong>
+                        <p class="text-sm text-slate-300">Sử dụng tính năng <em>Downtime/App Limits</em> của điện thoại: Khóa toàn bộ mạng xã hội và app giải trí từ 21:30 tối đến 07:00 sáng hôm sau. Không đàm phán.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. 🌐 [Footer] -->
+    <footer class="h-[128px] w-full bg-slate-900 text-emerald-50 flex flex-col justify-center items-center px-4 md:px-8 text-center rounded-2xl shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 bg-emerald-900/20"></div>
+        <p class="text-sm md:text-base font-medium mb-3 relative z-10 text-emerald-100 max-w-2xl">
+            Cập nhật kiến thức thực chiến nhất về Kỹ năng Quay Dựng, Xây kênh Niche và Tư duy phân tích Thuật toán Mạng xã hội kỷ nguyên mới.
+        </p>
+        <div class="flex gap-6 relative z-10 font-semibold tracking-wide">
+            <a href="https://youtube.com/@vietndonline" target="_blank" class="text-white hover:text-emerald-400 hover:-translate-y-1 transition-all">Youtube</a>
+            <span class="text-slate-600">|</span>
+            <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" class="text-white hover:text-emerald-400 hover:-translate-y-1 transition-all">Tiktok</a>
+            <span class="text-slate-600">|</span>
+            <a href="https://www.facebook.com/profile.php?id=61580845559993" target="_blank" class="text-white hover:text-emerald-400 hover:-translate-y-1 transition-all">Facebook</a>
+        </div>
+    </footer>
+
+    <script>
+        // Zoom Logic for Mindmap
+        let currentScale = 1;
+        const container = document.getElementById('mindmap-container');
+        const wrapper = document.getElementById('mindmap-wrapper');
+
+        function zoomMap(step) {
+            currentScale += step;
+            if (currentScale < 0.5) currentScale = 0.5;
+            if (currentScale > 2.5) currentScale = 2.5;
+            container.style.transform = `scale(${currentScale})`;
+        }
+
+        // Simple Pan (Drag to scroll) logic for the wrapper
+        let isDown = false;
+        let startX;
+        let startY;
+        let scrollLeft;
+        let scrollTop;
+
+        wrapper.addEventListener('mousedown', (e) => {
+            isDown = true;
+            wrapper.classList.add('cursor-grabbing');
+            wrapper.classList.remove('cursor-move');
+            startX = e.pageX - wrapper.offsetLeft;
+            startY = e.pageY - wrapper.offsetTop;
+            scrollLeft = wrapper.scrollLeft;
+            scrollTop = wrapper.scrollTop;
+        });
+        
+        wrapper.addEventListener('mouseleave', () => {
+            isDown = false;
+            wrapper.classList.remove('cursor-grabbing');
+            wrapper.classList.add('cursor-move');
+        });
+        
+        wrapper.addEventListener('mouseup', () => {
+            isDown = false;
+            wrapper.classList.remove('cursor-grabbing');
+            wrapper.classList.add('cursor-move');
+        });
+        
+        wrapper.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - wrapper.offsetLeft;
+            const y = e.pageY - wrapper.offsetTop;
+            const walkX = (x - startX) * 2;
+            const walkY = (y - startY) * 2;
+            wrapper.scrollLeft = scrollLeft - walkX;
+            wrapper.scrollTop = scrollTop - walkY;
+        });
+    </script>
+</body>
+</html>

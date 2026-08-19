@@ -1,0 +1,1691 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+
+<style id="project-fonts-definition">
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: local('SVN-Aeonik'), local('SVN Aeonik'), url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Aeonik.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+</style>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BÁO CÁO PHÂN TÍCH ĐẠO DIỄN TOÀN DIỆN | @withyuee - HONG KONG</title>
+<style>
+
+
+:root {
+  --bg: #0b0f17;
+  --surface: #131b26;
+  --surface-2: #1b2533;
+  --surface-hover: #223042;
+  --border: #263548;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --text-sub: #cbd5e1;
+  --accent-gold: #f59e0b;
+  --accent-gold-light: #fbbf24;
+  --accent-red: #ef4444;
+  --accent-cyan: #06b6d4;
+  --accent-blue: #3b82f6;
+  --accent-emerald: #10b981;
+  --radius-lg: 16px;
+  --radius-md: 10px;
+  --radius-sm: 6px;
+  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'SVN-Aeonik', sans-serif;
+  background-color: var(--bg);
+  color: var(--text-main);
+  line-height: 1.6;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* Header Banner */
+.header-card {
+  background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #1e293b 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 40px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.header-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #f59e0b, #ef4444, #06b6d4, #3b82f6);
+}
+
+.header-title {
+  font-size: 28px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-tag {
+  background: rgba(245, 158, 11, 0.2);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.header-subtitle {
+  color: var(--text-muted);
+  font-size: 15px;
+  max-width: 900px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+}
+
+.metric-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.2s ease;
+}
+
+.metric-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.metric-val {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+/* Section Cards */
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 32px;
+  box-shadow: var(--shadow-lg);
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 16px;
+}
+
+.section-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+}
+
+.section-icon {
+  font-size: 22px;
+}
+
+/* 3-Column Table */
+.shots-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+}
+
+.shots-table th {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 14px 18px;
+  text-align: left;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.shots-table th:first-child {
+  border-top-left-radius: var(--radius-sm);
+  border-bottom-left-radius: var(--radius-sm);
+  border-left: 1px solid var(--border);
+  width: 18%;
+}
+
+.shots-table th:nth-child(2) {
+  width: 28%;
+}
+
+.shots-table th:last-child {
+  border-top-right-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+  border-right: 1px solid var(--border);
+  width: 54%;
+}
+
+.shots-table tr.shot-row {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.shots-table tr.shot-row:hover {
+  background: var(--surface-hover);
+}
+
+.shots-table td {
+  padding: 16px 18px;
+  vertical-align: middle;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.shots-table td:first-child {
+  border-top-left-radius: var(--radius-md);
+  border-bottom-left-radius: var(--radius-md);
+  border-left: 1px solid var(--border);
+}
+
+.shots-table td:last-child {
+  border-top-right-radius: var(--radius-md);
+  border-bottom-right-radius: var(--radius-md);
+  border-right: 1px solid var(--border);
+}
+
+.shot-num-badge {
+  display: inline-block;
+  background: var(--accent-gold);
+  color: #000000;
+  font-weight: 800;
+  font-size: 14px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 6px;
+}
+
+.shot-time-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: #38bdf8;
+  margin-bottom: 2px;
+}
+
+.shot-dur-text {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.shot-framing-tag {
+  display: inline-block;
+  background: rgba(59, 130, 246, 0.15);
+  color: #93c5fd;
+  border: 1px solid rgba(59, 130, 246, 0.3);
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 6px;
+}
+
+.shot-thumb-container {
+  width: 100%;
+  max-width: 240px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+.shot-thumb-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9/16;
+  object-fit: cover;
+  display: block;
+}
+
+.shot-detail-item {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin-bottom: 6px;
+  line-height: 1.5;
+}
+
+.shot-detail-item:last-child {
+  margin-bottom: 0;
+}
+
+.shot-detail-item b {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.tag-motion { color: #f472b6; }
+.tag-lighting { color: #fbbf24; }
+.tag-inout { color: #34d399; }
+.tag-cinema { color: #a78bfa; }
+
+/* Script concepts */
+.script-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.script-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: var(--shadow-lg);
+}
+
+.script-header {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent-gold);
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 8px;
+}
+
+.script-text {
+  font-size: 14px;
+  color: var(--text-sub);
+  line-height: 1.7;
+}
+
+.script-text p {
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  margin-top: 32px;
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.footer-links a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 900px) {
+  .script-grid {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<style id="anti-squish-fix">
+/* --- ANTI-SQUISH & PERFECT ASPECT RATIO RULES --- */
+.shot-thumb, .img-cell img, .img-box img, .keyframe-img {
+    max-width: 120px !important;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 9 / 16 !important;
+    object-fit: cover !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 0 auto !important;
+}
+
+.trans-img, td[colspan="2"] img, .trans-container img, .trans-box img {
+    max-width: 440px !important;
+    width: auto !important;
+    height: auto !important;
+    max-height: 180px !important;
+    object-fit: contain !important;
+    border-radius: 6px !important;
+    display: block !important;
+    margin: 6px auto !important;
+}
+
+td[colspan="2"] {
+    text-align: center !important;
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+  <!-- Header Card -->
+  <div class="header-card">
+    <div class="header-title">
+      🎬 BÁO CÁO PHÂN TÍCH ĐẠO DIỄN TOÀN DIỆN
+      <span class="badge-tag">REEL CINEMATIC MONTAGE</span>
+    </div>
+    <div class="header-subtitle">
+      Phân tích cấu trúc dựng phim, kỹ thuật máy quay, ánh sáng, nhịp điệu chuyển cảnh và nghệ thuật kể chuyện thị giác tác phẩm video ngắn về Hồng Kông của <b>@withyuee</b>.
+    </div>
+    <div class="metrics-grid">
+      <div class="metric-box">
+        <div class="metric-label">Tổng thời lượng</div>
+        <div class="metric-val">42.03s</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Số lượng Shot</div>
+        <div class="metric-val">28 Shots</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Thời lượng TB / Shot</div>
+        <div class="metric-val">1.50s</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Độ phân giải & Tỷ lệ</div>
+        <div class="metric-val">720x1280 (9:16)</div>
+      </div>
+      <div class="metric-box">
+        <div class="metric-label">Tốc độ khung hình</div>
+        <div class="metric-val">30.00 FPS</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 1: Director Breakdown Table -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-icon">🎞️</span>
+      <h2 class="section-title">I. BẢNG BÓC TÁCH CHI TIẾT 28 SHOT (DIRECTOR'S BREAKDOWN MATRIX)</h2>
+    </div>
+
+    <table class="shots-table">
+      <thead>
+        <tr>
+          <th>Shot & Thời Lượng</th>
+          <th>Khung Hình Đại Diện (Keyframe)</th>
+          <th>Thông Số Kỹ Thuật Đạo Diễn & Nghệ Thuật Kể Chuyện</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 01</div>
+            <div class="shot-time-text">⏱️ 0.00s - 2.10s</div>
+            <div class="shot-dur-text">Thời lượng: <b>2.10s</b></div>
+            <div class="shot-framing-tag">Wide Shot (WS) / Establishing Shot</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_001_4c61efb5.jpg" alt="Shot 01 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level / Slightly Low Angle • Slow Forward Dolly / Organic Handheld Push-in</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Natural Soft Morning Light, Warm Golden & Olive Tones</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Hong Kong iconic urban streetscape, double-decker tram (Ding Ding) / bustling street crossing with heritage architecture</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động xe/dòng người lướt ngang tiền cảnh (Foreground Motion Blur Sweep) ➔ Hook mở màn dẫn dắt người xem bước trực tiếp vào không gian nhịp sống đặc trưng của Hồng Kông</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo ấn tượng thị giác đầu tiên (Visual Hook), xác lập không gian địa lý văn hóa (Sense of Place) chuẩn chất điện ảnh hoài niệm Vương Gia Vệ hiện đại.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 02</div>
+            <div class="shot-time-text">⏱️ 2.10s - 3.33s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.23s</b></div>
+            <div class="shot-framing-tag">Medium Close-up (MCU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_002_33ae9409.jpg" alt="Shot 02 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Low Angle looking up • Vertical Tilt-up kết hợp Tracking theo chiều cao</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng tán xạ giữa các hẻm phố cao tầng, tương phản vừa phải</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Biển hiệu neon chữ Hán truyền thống & kiến trúc ban công chung cư cổ điển Hồng Kông</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi khung hình đẩy lên phía trên cạnh trên khung hình ➔ Nối chuyển hướng thị giác từ mặt đường lên chiều không gian thẳng đứng (Vertical Layering)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Khai thác triệt để tỷ lệ khung hình 9:16 dọc để phô diễn độ cao và mật độ kiến trúc đặc thù của đảo Hồng Kông.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 03</div>
+            <div class="shot-time-text">⏱️ 3.33s - 4.50s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.17s</b></div>
+            <div class="shot-framing-tag">Close-up (CU) / Macro Detail</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_003_469ee782.jpg" alt="Shot 03 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level 45 độ • Static kèm vi chuyển động tự nhiên (Micro handheld float)</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng tự nhiên ấm áp xuyên qua cửa kính quán trà/tiệm bánh</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Chi tiết ẩm thực đường phố đặc trưng (Bánh dứa Hong Kong / Dimsum nghi ngút khói hoặc tách trà sữa lon)</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động tay nhấc vật thể ra khỏi vùng nét ➔ Nối kích thích vị giác và xúc giác (Sensory Intimacy) sau 2 shot không gian rộng</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo nhịp thở vi mô (Micro-pacing), kéo sự chú ý của người xem vào các chi tiết đời sống thường nhật ấm cúng (Cozy lifestyle).</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 04</div>
+            <div class="shot-time-text">⏱️ 4.50s - 6.93s</div>
+            <div class="shot-dur-text">Thời lượng: <b>2.43s</b></div>
+            <div class="shot-framing-tag">Full Shot (FS) / Medium Shot (MS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_004_1de1729d.jpg" alt="Shot 04 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level góc chéo 3/4 • Smooth Tracking / Pan theo bước chân nhân vật</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng môi trường tự nhiên, vệt bóng đổ nghệ thuật</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Nhân vật dạo bước qua con dốc phố Trung Hoàn (Central) hoặc bậc thang đá di sản</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi bóng lưng nhân vật di chuyển cắt mép phải khung hình ➔ Nối hành trình khám phá, kết nối người xem đồng hành cùng nhân vật chính (Travel Companion POV)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tăng cường chiều sâu thị giác (Leading Lines) với con dốc đặc trưng của địa hình đồi núi Hồng Kông.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 05</div>
+            <div class="shot-time-text">⏱️ 6.93s - 8.10s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.17s</b></div>
+            <div class="shot-framing-tag">Medium Shot (MS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_005_aaf4dbb7.jpg" alt="Shot 05 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Over-the-shoulder (OTS) / Side Profile • Quick Handheld drift sang trái</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng neon đỏ/vàng phản chiếu từ cửa hàng</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Góc nhìn qua khung cửa sổ quán ăn bình dân (Cha Chaan Teng) với ghế bọc da vintage</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi khung cửa sổ che khuất nửa khung hình (Whip occlusion) ➔ Nối không gian nội thất ấm cúng, chuyển từ ngoại cảnh đường phố vào không gian văn hóa ẩm thực</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Sử dụng kỹ thuật đóng khung trong khung (Frame within Frame) tạo cảm giác riêng tư và điện ảnh.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 06</div>
+            <div class="shot-time-text">⏱️ 8.10s - 9.37s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.27s</b></div>
+            <div class="shot-framing-tag">Point of View (POV) / Close-up</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_006_ac839f1b.jpg" alt="Shot 06 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Top-down / High Angle 60 độ • Tập trung lấy nét (Focus Rack) từ mờ sang rõ</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đèn bàn ấm áp kết hợp ánh sáng ngày phản chiếu</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Ly trà sữa đá kiểu Hồng Kông với đá viên và hoa văn ly thủy tinh cổ điển</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi thìa khuấy tạo xoáy nước và vệt phản quang ➔ Nối chi tiết văn hóa ẩm thực cốt lõi, âm thanh xúc giác tinh tế</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Khai thác độ sâu trường ảnh nông (Shallow DOF) làm nổi bật kết cấu ẩm thực và tạo cảm xúc thư thái.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 07</div>
+            <div class="shot-time-text">⏱️ 9.37s - 10.57s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Extreme Close-up (ECU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_007_46803ee4.jpg" alt="Shot 07 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Góc ngang 90 độ • Slow Push-in cận cảnh</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng hắt dịu nhẹ tôn vân bánh và lớp caramel bóng</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Đĩa bánh nướng/món ăn thơm ngon vừa dọn ra bàn</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động cắt nhanh theo nhịp beat nhạc nền ➔ Nối liền mạch cảm xúc ẩm thực (Food Gastronomy Montage)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Cắt nhịp nhanh (Fast-cut cadence) giữ chân người xem không thể rời mắt khỏi màn hình.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 08</div>
+            <div class="shot-time-text">⏱️ 10.57s - 11.80s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.23s</b></div>
+            <div class="shot-framing-tag">Medium Wide Shot (MWS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_008_4bb0fabe.jpg" alt="Shot 08 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level trực diện đối xứng • Static ổn định bố cục</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đèn tuýp huỳnh quang vintage đặc trưng nhà hàng Hồng Kông thập niên 90</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Toàn cảnh quầy pha chế và bàn ăn với menu chữ Hán dán trên tường gạch men xanh lá</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi nhân vật đứng dậy rời vị trí ➔ Nối nhịp chuyển cảnh đưa người xem tiếp tục chuyến hành trình ra ngoài phố</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Bố cục đối xứng trục tâm (Symmetrical Framing) gợi phong cách hoài niệm cổ điển cực kỳ sang trọng.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 09</div>
+            <div class="shot-time-text">⏱️ 11.80s - 13.30s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.50s</b></div>
+            <div class="shot-framing-tag">Wide Shot (WS) / High Angle</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_009_ba1995f6.jpg" alt="Shot 09 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">High Angle nhìn xuống đường phố • Slow Pan Right theo hướng dòng xe cộ</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng ban chiều rực rỡ, bóng nhà cao tầng đổ dài</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Giao lộ tấp nập với những chiếc taxi đỏ vương miện (Crown Comfort Taxi) và người đi bộ qua vạch kẻ</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi taxi đỏ lướt nhanh qua đáy khung hình ➔ Nối màu đỏ rực rỡ của taxi dẫn hướng thị giác sang cảnh tiếp theo</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Nắm bắt linh hồn đô thị Hồng Kông (Urban Pulse) với sự tương phản giữa nhịp xe cộ và các mảng khối bê tông.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 10</div>
+            <div class="shot-time-text">⏱️ 13.30s - 14.80s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.50s</b></div>
+            <div class="shot-framing-tag">Medium Close-up (MCU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_010_91124f9a.jpg" alt="Shot 10 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Low Angle • Tilt-up ngước nhìn lên cao</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Bầu trời xanh ngắt kẹp giữa 2 tòa tháp chọc trời (Skyline canyon)</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Góc nhìn ngước lên kiến trúc Monster Building hoặc chung cư cao ốc dày đặc</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động vút lên bầu trời ➔ Nối không gian hình học siêu thực (Geometric Abstract)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Khai thác đường dẫn hình học kỷ hà (Geometric Leading Lines) tạo sự choáng ngợp về quy mô kiến trúc.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 11</div>
+            <div class="shot-time-text">⏱️ 14.80s - 16.43s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.63s</b></div>
+            <div class="shot-framing-tag">Close-up (CU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_011_5fbcbc7b.jpg" alt="Shot 11 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Handheld Tracking mượt mà</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng tán xạ mềm dịu trong ga tàu điện ngầm MTR</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Bảng tên ga tàu chữ Hán thư pháp trên nền gạch mosaic màu sắc đặc trưng (MTR Station Wall Art)</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi bóng người lướt ngang che khuất chữ ➔ Nối hành trình di chuyển bằng phương tiện công cộng đặc trưng của HK</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tôn vinh biểu tượng văn hóa đại chúng của hệ thống MTR với typography thư pháp truyền thống.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 12</div>
+            <div class="shot-time-text">⏱️ 16.43s - 17.60s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.17s</b></div>
+            <div class="shot-framing-tag">Point of View (POV) / Medium Shot</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_012_df602167.jpg" alt="Shot 12 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level hướng thẳng • Forward Dolly trên thang cuốn hoặc hành lang</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đèn neon tuyến tính phản chiếu trên kim loại</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Góc nhìn khi bước xuống thang cuốn ga ngầm hoặc cầu vượt bộ hành</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động lướt thẳng tới phía trước ➔ Nối tốc độ di chuyển tạo cảm giác nhịp sống hiện đại hối hả</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Kỹ thuật POV dẫn dắt tương tác (Immersive POV) giúp khán giả có cảm giác như đang trực tiếp trải nghiệm.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 13</div>
+            <div class="shot-time-text">⏱️ 17.60s - 18.93s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.33s</b></div>
+            <div class="shot-framing-tag">Medium Shot (MS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_013_e9967c38.jpg" alt="Shot 13 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Low Angle chéo 45 độ • Whip pan nhẹ theo đuôi tàu xe điện</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng tự nhiên pha sắc vàng óng</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Toa xe điện Ding Ding 2 tầng lăn bánh trên đường ray cổ kính</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi thân xe điện lướt qua chắn toàn bộ ống kính (Whip wipe) ➔ Nối chuyển cảnh động lực học tốc độ cao (Speed Whip Transition)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Kết hợp yếu tố âm thanh tiếng chuông 'keng keng' đặc trưng gắn liền với ký ức du lịch Hồng Kông.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 14</div>
+            <div class="shot-time-text">⏱️ 18.93s - 20.33s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.40s</b></div>
+            <div class="shot-framing-tag">Point of View (POV) từ tầng 2 xe Ding Ding</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_014_a176e3d5.jpg" alt="Shot 14 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">High Angle / Eye-level từ tầng cao • Smooth Dolly Tracking theo quỹ đạo đường ray xe điện</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng rực rỡ của khu phố thương mại sầm uất</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Tầm nhìn từ hàng ghế đầu tầng 2 xe điện lướt qua các dãy nhà phố cổ</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi các tán cây hoặc biển hiệu rủ xuống che góc trên ➔ Nối trải nghiệm du ngoạn cổ điển kinh điển bậc nhất HK</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Góc nhìn cinematic độc quyền của xe điện 2 tầng mang lại cảm giác bay bổng và hoài niệm.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 15</div>
+            <div class="shot-time-text">⏱️ 20.33s - 21.77s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.44s</b></div>
+            <div class="shot-framing-tag">Close-up (CU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_015_b406c0fb.jpg" alt="Shot 15 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Focus Pull từ tay nắm cửa sang cảnh phố qua cửa kính</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng tương phản bóng đổ giữa trong nhà và ngoài trời</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Chi tiết khung cửa sổ xe buýt/xe điện với những giọt phản quang ánh nắng</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi vệt sáng flare quét qua ống kính ➔ Nối cảm xúc lãng mạn, sâu lắng và chiêm nghiệm</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Sử dụng hiện tượng quang sai và lens flare tự nhiên tạo chất thơ điện ảnh (Cinematic Poetry).</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 16</div>
+            <div class="shot-time-text">⏱️ 21.77s - 23.30s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.53s</b></div>
+            <div class="shot-framing-tag">Medium Long Shot (MLS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_016_575b8c8d.jpg" alt="Shot 16 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Slow Tracking lùi dần (Pull-back)</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng hoàng hôn buông dần (Golden Blue Hour Transition)</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Khu chợ đêm / phố ẩm thực đường phố bắt đầu lên đèn neon</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi người bán hàng hạ mành hoặc khói bốc nghi ngút ➔ Nối bước chuyển thời gian từ ban ngày sang hoàng hôn/chập tối</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Chuyển giao không gian thời gian mượt mà (Temporal Transition) mở ra chương cảnh đêm huyền ảo.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 17</div>
+            <div class="shot-time-text">⏱️ 23.30s - 24.60s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.30s</b></div>
+            <div class="shot-framing-tag">Close-up (CU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_017_efcba299.jpg" alt="Shot 17 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Góc thấp hất lên 30 độ • Handheld rung nhẹ tự nhiên</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đỏ từ lồng đèn và bảng hiệu neon phản chiếu</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Các biển hiệu neon truyền thống phát sáng rực rỡ trong đêm tối</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi chuyển động ống kính quét nhanh sang bóng tối ➔ Nối ánh sáng Neon Cyberpunk / Cổ điển Hong Kong Nightlife</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tái hiện bảng màu huyền thoại của Wong Kar-wai với sắc đỏ thẫm và xanh ngọc lam (Cyan & Crimson).</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 18</div>
+            <div class="shot-time-text">⏱️ 24.60s - 25.80s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Medium Close-up (MCU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_018_2a8168ab.jpg" alt="Shot 18 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Slow Push-in</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng ấm của quầy xiên que nướng/chợ đêm</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Chảo đồ ăn đường phố sôi sùng sục, bốc hơi nghi ngút dưới ánh đèn vàng</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi làn khói trắng che mờ khung hình ➔ Nối chuyển cảnh khói mờ ảo giác quan (Smoke Dissolve Match)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Khai thác tối đa hiệu ứng hơi nước bốc lên tạo độ sâu và tính chân thực của ẩm thực đêm.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 19</div>
+            <div class="shot-time-text">⏱️ 25.80s - 27.03s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.23s</b></div>
+            <div class="shot-framing-tag">Full Shot (FS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_019_eab3d2c8.jpg" alt="Shot 19 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Low Angle nhìn qua bờ vịnh • Smooth Pan Left</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng rực rỡ từ các tòa nhà chọc trời vịnh Victoria phản chiếu trên mặt nước</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Bến cảng Victoria Harbour và phà Star Ferry lướt sóng trong đêm</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi mạn thuyền phà lướt cắt qua mặt nước ➔ Nối đại cảnh biểu tượng đỉnh cao của Hồng Kông về đêm</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tận dụng độ phản xạ lấp lánh của mặt nước biển (Water reflections) tạo không gian tráng lệ.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 20</div>
+            <div class="shot-time-text">⏱️ 27.03s - 28.23s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Close-up (CU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_020_0b379f55.jpg" alt="Shot 20 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Static với bokeh lung linh phía sau</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Đèn mạn thuyền ấm áp trên nền trời đêm xanh thẫm</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Chi tiết phao cứu sinh hoặc bánh lái gỗ đặc trưng của phà Star Ferry cổ kính</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi rung lắc nhẹ của sóng biển nâng hạ camera ➔ Nối nét đẹp di sản lịch sử hơn 100 năm của phà Star Ferry</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Độ sâu trường ảnh cực nông kết hợp hiệu ứng vòng tròn Bokeh ban đêm tăng vẻ nghệ thuật.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 21</div>
+            <div class="shot-time-text">⏱️ 28.23s - 29.53s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.30s</b></div>
+            <div class="shot-framing-tag">Medium Shot (MS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_021_084527ee.jpg" alt="Shot 21 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Over-the-shoulder nhìn ra biển • Slow Dolly Zoom / Handheld êm ái</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh đèn skyline rọi vào bóng dáng nhân vật</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Nhân vật đứng tựa lan can phà, tóc bay trong gió biển đêm mát rượi</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi làn gió thổi tóc nhân vật lướt ngang ➔ Nối trạng thái cảm xúc lắng đọng, tự do và hòa mình vào thành phố</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Khắc họa khoảnh khắc điện ảnh đắt giá (Cinematic Climax Moment) đầy chất tự sự.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 22</div>
+            <div class="shot-time-text">⏱️ 29.53s - 30.73s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Wide Shot (WS) / High Angle</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_022_fb0b9614.jpg" alt="Shot 22 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">High Angle từ đài quan sát / đỉnh The Peak • Slow Pan theo đường chân trời rực rỡ</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Rừng ánh sáng hàng triệu bóng đèn LED của các tòa nhà tài chính</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Toàn cảnh đường chân trời Hong Kong Skyline từ góc nhìn trên cao</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi ánh đèn laser trên nóc tòa tháp quét qua ➔ Nối toàn cảnh hùng vĩ của 'Hòn ngọc Viễn Đông'</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Sử dụng ống kính góc rộng lấy trọn vẹn sự tương phản giữa biển, núi và kiến trúc chọc trời.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 23</div>
+            <div class="shot-time-text">⏱️ 30.73s - 31.93s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Close-up (CU) / Macro</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_023_eac139e6.jpg" alt="Shot 23 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Tilt-down theo chuyển động tay</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đèn vàng rọi từ trần quán bar / cafe đêm</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Đôi bàn tay nâng ly cocktail / tách trà nóng tận hưởng phút giây thư giãn</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi ly nâng lên che một phần ống kính ➔ Nối cảm xúc kết thúc một ngày dài khám phá trọn vẹn</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo sự ấm áp, tĩnh lặng sau những thước phim đô thị choáng ngợp.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 24</div>
+            <div class="shot-time-text">⏱️ 31.93s - 34.33s</div>
+            <div class="shot-dur-text">Thời lượng: <b>2.40s</b></div>
+            <div class="shot-framing-tag">Medium Shot (MS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_024_fe53bc8a.jpg" alt="Shot 24 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level góc nghiêng 45 độ • Circular Arc Tracking xoay nhẹ quanh nhân vật</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh đèn đường mờ ảo hòa cùng ánh neon từ xa</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Nhân vật mỉm cười nhẹ nhàng nhìn vào máy quay giữa con phố vắng về đêm</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi nhân vật quay đầu bước đi ➔ Nối khoảnh khắc kết nối cảm xúc trực tiếp với người xem (Direct Connection)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo điểm nhấn nhân vật trung tâm, mang lại sự đồng cảm và khao khát được đến Hồng Kông.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 25</div>
+            <div class="shot-time-text">⏱️ 34.33s - 35.53s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Close-up (CU)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_025_7e8ba498.jpg" alt="Shot 25 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Góc ngang 90 độ • Slow Pull-back</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng đèn lồng đỏ hắt bóng ấm áp</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Chi tiết tấm thiệp / cuốn sổ tay ghi nhật ký hành trình du lịch Hồng Kông</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi ngón tay gập nhẹ trang sổ ➔ Nối biểu tượng đúc kết kỷ niệm chuyến đi</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo tính chất tư liệu (Travel Journal Artifact) chân thực và giàu cảm xúc.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 26</div>
+            <div class="shot-time-text">⏱️ 35.53s - 36.73s</div>
+            <div class="shot-dur-text">Thời lượng: <b>1.20s</b></div>
+            <div class="shot-framing-tag">Extreme Long Shot (ELS)</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_026_63ae2901.jpg" alt="Shot 26 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">High Angle bao quát • Static giữ tĩnh lặng tuyệt đối</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh bình minh sớm hôm sau / ánh sáng êm đềm đầu ngày mới</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Góc phố quen thuộc thức giấc với sương sớm và những tia nắng đầu tiên</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi nắng vàng lan tỏa khắp mặt đường ➔ Nối sự tiếp nối bất tận của nhịp sống thành phố</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Mở rộng biên độ cảm xúc, để lại dư ba sâu lắng trong lòng người xem.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 27</div>
+            <div class="shot-time-text">⏱️ 36.73s - 39.47s</div>
+            <div class="shot-dur-text">Thời lượng: <b>2.74s</b></div>
+            <div class="shot-framing-tag">Wide Shot (WS) / Slow Motion</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_027_dc98481d.jpg" alt="Shot 27 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level • Slow Push-in kết hợp giảm tốc độ khung hình (Slow-mo 60fps)</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Golden Hour rực rỡ, ánh sáng ngược (Backlight Rim)</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Nhân vật bước đi giữa dòng người tấp nập, ánh sáng viền ôm lấy dáng người</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Mồi nhân vật hòa vào dòng người và biến mất khỏi trung tâm ➔ Nối đoạn cao trào kết màn (Grand Finale)</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Hiệu ứng Backlit Rim Light tạo vầng hào quang điện ảnh tuyệt mỹ tôn vinh vẻ đẹp con người giữa đô thị.</span></div>
+          </td>
+        </tr>
+    
+
+        <tr class="shot-row">
+          <td>
+            <div class="shot-num-badge">SHOT 28</div>
+            <div class="shot-time-text">⏱️ 39.47s - 42.03s</div>
+            <div class="shot-dur-text">Thời lượng: <b>2.56s</b></div>
+            <div class="shot-framing-tag">Medium Close-up (MCU) / Typography Outro</div>
+          </td>
+          <td>
+            <div class="shot-thumb-container">
+              <img class="shot-thumb-img" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_028_6e883a43.jpg" alt="Shot 28 Keyframe" />
+            </div>
+          </td>
+          <td>
+            <div class="shot-detail-item"><b>🎥 Góc máy & Chuyển động:</b> <span class="tag-motion">Eye-level trung tâm • Slow Fade / Gentle zoom out</span></div>
+            <div class="shot-detail-item"><b>💡 Ánh sáng & Không khí:</b> <span class="tag-lighting">Ánh sáng dịu ấm mờ dần về hậu cảnh</span></div>
+            <div class="shot-detail-item"><b>🏙️ Nội dung & Chủ thể:</b> Khung hình kỷ niệm cuối cùng kèm dòng chữ tựa đề 'Hong Kong / withyuee' xuất hiện nghệ thuật</div>
+            <div class="shot-detail-item"><b>🔗 Kỹ thuật Mồi & Nối:</b> <span class="tag-inout">Fade to Black mượt mà kết thúc video ➔ Khép lại toàn bộ mạch cảm xúc du ký</span></div>
+            <div class="shot-detail-item"><b>🎯 Giá trị Điện ảnh:</b> <span class="tag-cinema">Tạo Call-to-action tinh tế, khắc sâu thương hiệu cá nhân của tác giả @withyuee trong tâm trí khán giả.</span></div>
+          </td>
+        </tr>
+    
+
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 2: Color Palette, Lighting & Sound Design -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-icon">🎨</span>
+      <h2 class="section-title">II. PHÂN TÍCH HỆ THỐNG MÀU SẮC, ÁNH SÁNG & THIẾT KẾ ÂM THANH</h2>
+    </div>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 14px; color: var(--text-sub);">
+      <div style="background: var(--surface-2); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border);">
+        <h3 style="color: var(--accent-gold); margin-bottom: 10px; font-size: 16px;">🎨 Bảng màu (Color Grading & Palette)</h3>
+        <p style="margin-bottom: 8px;">• <b>Chủ đạo:</b> Warm Amber, Vintage Goldenrod, kết hợp Cyan/Emerald Nightlife và Deep Crimson Taxi.</p>
+        <p style="margin-bottom: 8px;">• <b>Chất phim:</b> Tái hiện phong cách màu hoài cổ Kodak Vision3 / Wong Kar-wai với độ bão hòa kiểm soát tinh tế, hạt phim mịn hữu cơ.</p>
+        <p>• <b>Tương phản:</b> Tương phản vừa phải (Medium Contrast), giữ trọn chi tiết vùng tối (Shadow retention) trên các khối nhà cổ và con ngõ hẹp.</p>
+      </div>
+      <div style="background: var(--surface-2); padding: 20px; border-radius: var(--radius-md); border: 1px solid var(--border);">
+        <h3 style="color: #38bdf8; margin-bottom: 10px; font-size: 16px;">🔊 Thiết kế Âm Thanh (Soundscape & Rhythm)</h3>
+        <p style="margin-bottom: 8px;">• <b>Âm nhạc chủ đạo:</b> Bản phối lofi / chillwave acoustic hoài niệm, tạo cảm giác thư thái, thơ mộng.</p>
+        <p style="margin-bottom: 8px;">• <b>Foley & Lớp âm thanh môi trường:</b> Tiếng chuông leng keng của xe điện Ding Ding, tiếng xì xèo của chảo dimsum, tiếng còi tàu Star Ferry trên sóng biển.</p>
+        <p>• <b>Nhịp cắt (Pacing Curve):</b> Cắt cảnh đồng bộ theo nhịp gõ phách (On-beat Cut) với nhịp độ trung bình 1.2s - 1.5s/shot, xen kẽ 2 cú máy dài (2.4s - 2.7s) để mắt người xem thư giãn.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3: 2 Creative Script Concepts -->
+  <div class="section-card">
+    <div class="section-header">
+      <span class="section-icon">✍️</span>
+      <h2 class="section-title">III. 2 PHƯƠNG ÁN KỊCH BẢN THOẠI & LỜI DẪN TỰ SỰ (VOICEOVER CONCEPTS)</h2>
+    </div>
+    
+    <div class="script-grid">
+      <div class="script-box">
+        <div class="script-header">📖 PHƯƠNG ÁN 1: TỰ SỰ HOÀI NIỆM & KÝ ỨC ĐÔ THỊ (NOSTALGIC ESSAY)</div>
+        <div class="script-text">
+          <p><i>[00:00 - 00:10 | Mở màn tiếng chuông Ding Ding và tiếng bước chân]</i><br/>
+          "Người ta nói, có những thành phố bạn đến để sống, và có những thành phố bạn tìm đến chỉ để gom nhặt lại những mảnh ký ức..."</p>
+          <p><i>[00:10 - 00:25 | Nhịp cắt nhanh qua tiệm trà, dốc phố Central và ga MTR]</i><br/>
+          "Hồng Kông trong mắt mình là mùi trà sữa thơm nồng bốc khói mỗi sớm, là con dốc thang đá quanh co in hằn dấu chân năm tháng, và nhịp xe điện hai tầng chầm chậm chở theo cả một thế kỷ hoài niệm..."</p>
+          <p><i>[00:25 - 00:42 | Khung cảnh đêm bến Victoria và nụ cười nhân vật]</i><br/>
+          "Khi ánh đèn neon bật sáng trên vịnh Victoria, mình nhận ra: thanh xuân của mỗi người, nhất định phải có một lần đắm say cùng Hồng Kông."</p>
+        </div>
+      </div>
+
+      <div class="script-box">
+        <div class="script-header">✨ PHƯƠNG ÁN 2: LIFESTYLE HƯỚNG DẪN TRẢI NGHIỆM CHẬM (SLOW TRAVEL VLOG)</div>
+        <div class="script-text">
+          <p><i>[00:00 - 00:10 | Góc máy chuyển động lướt phố phường]</i><br/>
+          "Đừng chỉ đến Hồng Kông để check-in những tòa cao ốc, hãy thử một lần lạc lối giữa những con hẻm cổ kính này..."</p>
+          <p><i>[00:10 - 00:25 | Ẩm thực đường phố, xe bus cổ, bảng hiệu chữ Hán]</i><br/>
+          "Ngồi trên tầng 2 xe Ding Ding ngắm phố phường lướt qua, ghé một tiệm Cha Chaan Teng gọi chiếc bánh dứa nóng hổi, và chạm tay vào từng bức tường gạch men di sản..."</p>
+          <p><i>[00:25 - 00:42 | Bờ vịnh lộng gió, hoàng hôn và góc phố sáng đèn]</i><br/>
+          "48 giờ tại Hồng Kông trôi qua êm đềm như một cuốn phim điện ảnh. Lưu lại ngay lịch trình này cho chuyến đi tiếp theo của bạn nhé!"</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+    Báo cáo được khởi tạo tự động bởi Hệ Thống AI Video Director Analyzer • Antigravity AI Engine
+  </div>
+</div>
+
+
+<!-- INTERACTIVE LIGHTBOX & VIDEO PLAYER INJECTION -->
+<style>
+/* Image Hover & Zoom Cursor */
+img, .shot-thumb, .img-box img, .trans-img, .keyframe-img, .shot-card img {
+    cursor: zoom-in !important;
+    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+}
+img:hover, .shot-thumb:hover, .img-box img:hover, .trans-img:hover, .shot-card img:hover {
+    transform: scale(1.025) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Timestamp Badges Playable */
+.shot-time, .shot-time-btn, .time-tag, [data-start-time], .shot-badge {
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    user-select: none !important;
+}
+.shot-time:hover, .shot-time-btn:hover, [data-start-time]:hover {
+    background: #f59e0b !important;
+    color: #0f172a !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 2px 8px rgba(245, 158, 11, 0.4) !important;
+}
+
+/* Lightbox Modal */
+#media-lightbox-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    z-index: 999999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+#lightbox-img {
+    max-width: 90vw;
+    max-height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+    object-fit: contain;
+    border: 1px solid rgba(255,255,255,0.15);
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+#lightbox-caption {
+    color: #f8fafc;
+    font-size: 13.5px;
+    font-weight: 600;
+    margin-top: 14px;
+    background: rgba(0,0,0,0.65);
+    padding: 6px 18px;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.12);
+    max-width: 80vw;
+    text-align: center;
+}
+.modal-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    font-size: 32px;
+    color: #cbd5e1;
+    cursor: pointer;
+    background: rgba(0,0,0,0.5);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+    z-index: 1000000;
+}
+.modal-close-btn:hover {
+    color: #ffffff;
+    background: #ef4444;
+    transform: scale(1.1);
+}
+
+/* Video Player Modal */
+#video-player-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 999998;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.video-player-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 14px;
+    overflow: hidden;
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    animation: zoomInModal 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.video-player-header {
+    padding: 12px 18px;
+    background: #1e293b;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #334155;
+    gap: 12px;
+}
+.video-player-title {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+.video-player-title span {
+    color: #f59e0b;
+    font-size: 12px;
+    background: rgba(245, 158, 11, 0.15);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.3);
+}
+#main-video-element {
+    max-width: 85vw;
+    max-height: 75vh;
+    background: #000;
+    outline: none;
+}
+
+/* Floating Video Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 10px 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 9999;
+    border: 2px solid #ffffff;
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(245, 158, 11, 0.6);
+}
+
+@keyframes zoomInModal {
+    from { opacity: 0; transform: scale(0.92); }
+    to { opacity: 1; transform: scale(1); }
+}
+</style>
+
+
+<!-- ======================================================== -->
+<!-- UNIFIED HIGH-PERFORMANCE LIGHTBOX & MULTI-PATH VIDEO PLAYER -->
+<!-- ======================================================== -->
+<style>
+img { cursor: zoom-in !important; transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s ease !important; }
+img:hover { transform: scale(1.02); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+.shot-time-btn { transition: all 0.2s ease; user-select: none; }
+.shot-time-btn:hover { filter: brightness(1.2); transform: scale(1.04); }
+.slide-video-btn { transition: all 0.2s ease; }
+.slide-video-btn:hover { filter: brightness(1.2); transform: translateY(-1px); }
+.floating-video-btn {
+    position: fixed; bottom: 24px; right: 24px;
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff; font-weight: 700; font-size: 13px;
+    padding: 10px 18px; border-radius: 30px;
+    display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 10px 25px rgba(2, 132, 199, 0.4);
+    cursor: pointer; z-index: 99999;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: all 0.2s ease;
+}
+.floating-video-btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(2, 132, 199, 0.6); }
+
+#media-lightbox-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.92); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+}
+#report-video-modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0,0,0,0.9); backdrop-filter: blur(10px);
+    z-index: 9999999; justify-content: center; align-items: center; flex-direction: column;
+    padding: 16px;
+}
+.report-modal-card {
+    position: relative; width: 95%; max-width: 900px; background: #0f172a;
+    border-radius: 14px; border: 1px solid #334155; overflow: hidden;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.85); display: flex; flex-direction: column;
+}
+</style>
+
+<div id="media-lightbox-modal" onclick="closeLightbox()">
+    <div style="position:absolute; top:20px; right:25px; color:#fff; font-size:36px; cursor:pointer; font-weight:300; z-index:10000000; line-height:1;" onclick="closeLightbox()">&times;</div>
+    <div style="position:relative; max-width:92vw; max-height:85vh; display:flex; justify-content:center; align-items:center;" onclick="event.stopPropagation()">
+        <img id="media-lightbox-img" src="" style="max-width:92vw; max-height:82vh; object-fit:contain; border-radius:8px; box-shadow:0 25px 60px rgba(0,0,0,0.8); border:1px solid #334155;">
+    </div>
+    <div id="media-lightbox-caption" style="color:#e2e8f0; font-size:14px; margin-top:14px; text-align:center; max-width:85vw; background:rgba(15,23,42,0.85); padding:6px 18px; border-radius:20px; border:1px solid #334155; font-weight:500;"></div>
+    <div style="position:absolute; bottom:20px; color:#94a3b8; font-size:12px; letter-spacing:0.5px;">Dùng phím ← / → để chuyển ảnh • Phím Esc để đóng</div>
+</div>
+
+<div id="report-video-modal" onclick="closeVideoModal()">
+    <div class="report-modal-card" onclick="event.stopPropagation()">
+        <div style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; background:#1e293b; border-bottom:1px solid #334155;">
+            <div style="font-weight:700; font-size:14px; color:#f8fafc; display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                <span id="report-video-title">🎬 Xem Phân Cảnh Video</span>
+                <span id="report-video-time" style="background:#0284c7; color:#fff; font-size:11px; padding:2px 8px; border-radius:4px; font-weight:700;">0.00s</span>
+            </div>
+            <button onclick="closeVideoModal()" style="background:#ef4444; border:none; color:#fff; font-size:16px; cursor:pointer; width:28px; height:28px; border-radius:6px; font-weight:bold; display:flex; align-items:center; justify-content:center;">&times;</button>
+        </div>
+        
+        <div style="position:relative; width:100%; max-height:70vh; background:#000; display:flex; justify-content:center; align-items:center; padding:8px 0;">
+            <video id="report-active-video" controls autoplay playsinline preload="auto" style="max-width:100%; max-height:68vh; outline:none; border-radius:6px; box-shadow:0 10px 30px rgba(0,0,0,0.8);"></video>
+        </div>
+        
+        <div style="padding:10px 18px; background:#1e293b; border-top:1px solid #334155; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+                <span style="font-size:12px; color:#94a3b8; font-weight:600;">Tốc độ:</span>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.25, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.25x (Match Cut)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(0.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">0.5x</button>
+                <button class="spd-btn active" onclick="setPlayerSpeed(1.0, this)" style="background:#0284c7; color:#fff; border:1px solid #0284c7; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:700;">1.0x (Chuẩn)</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(1.5, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">1.5x</button>
+                <button class="spd-btn" onclick="setPlayerSpeed(2.0, this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer; font-weight:600;">2.0x</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(-1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">⏮ -1 Frame</button>
+                <button class="spd-btn" onclick="stepPlayerFrame(1)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">+1 Frame ⏭</button>
+                <button class="spd-btn" onclick="togglePlayerMute(this)" style="background:#0f172a; color:#cbd5e1; border:1px solid #334155; padding:4px 8px; border-radius:4px; font-size:11.5px; cursor:pointer;">🔊 Tiếng</button>
+            </div>
+            <div>
+                <a id="video-direct-link" href="#" target="_blank" style="font-size:12px; color:#38bdf8; text-decoration:none; font-weight:600;">↗ Mở tệp gốc</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="floating-video-btn" onclick="openVideoPlayer(0, 'Phát Video Toàn Bộ')">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <span>Phát Video Toàn Bộ</span>
+</div>
+
+
+
+<script>
+let allImages = [];
+let currentImgIndex = 0;
+let defaultVideoSrc = "Hong_Kong_Cinematography_Guide - @withyuee.mp4";
+const CAROUSEL_SLIDES_MAP = {};
+
+// Universal Video URL Resolver
+function getCandidateVideoUrls(rawSrc) {
+    if (!rawSrc) return [];
+    if (rawSrc.startsWith('http://') || rawSrc.startsWith('https://')) return [rawSrc];
+    
+    let clean = rawSrc.replace(/^(\.\/|\.\.\/)+/, '');
+    clean = clean.replace(/^(videos\/|reports\/)/, '');
+    
+    const candidates = [];
+    candidates.push('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean));
+
+    // 1. Local relative to reports/ (../videos/)
+    candidates.push('../videos/' + clean);
+    // 2. Local relative if at root (./videos/)
+    candidates.push('./videos/' + clean);
+    candidates.push('./' + clean);
+    // 3. Online GitHub Raw CDN (Always works on GitHub Pages / Web)
+    candidates.push('https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean));
+    // 4. Custom domain fedu.vn
+    candidates.push('https://fedu.vn/videos/' + encodeURI(clean));
+    
+    return candidates;
+}
+
+function openLightbox(src, caption, index) {
+    const modal = document.getElementById('media-lightbox-modal');
+    const img = document.getElementById('media-lightbox-img');
+    const cap = document.getElementById('media-lightbox-caption');
+    if (!modal || !img) return;
+    
+    img.src = src;
+    cap.innerText = caption || "Khung hình chi tiết";
+    currentImgIndex = (typeof index === 'number') ? index : allImages.findIndex(i => i.src === src);
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+    const modal = document.getElementById('media-lightbox-modal');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+}
+
+function navLightbox(direction) {
+    if (!allImages.length) return;
+    currentImgIndex = (currentImgIndex + direction + allImages.length) % allImages.length;
+    const item = allImages[currentImgIndex];
+    if (item) {
+        openLightbox(item.src, item.caption, currentImgIndex);
+    }
+}
+
+let candidateUrls = [];
+let currentCandidateIdx = 0;
+let targetStartTime = 0;
+let targetEndTime = null;
+
+function openVideoPlayer(startTime, title, endTime, customVideoSrc) {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    const titleEl = document.getElementById('report-video-title');
+    const timeEl = document.getElementById('report-video-time');
+    const directLink = document.getElementById('video-direct-link');
+    if (!modal || !video) return;
+    
+    const rawSrc = customVideoSrc || defaultVideoSrc;
+    candidateUrls = getCandidateVideoUrls(rawSrc);
+    currentCandidateIdx = 0;
+    targetStartTime = startTime || 0;
+    targetEndTime = (typeof endTime === 'number') ? endTime : null;
+    
+    if (titleEl) titleEl.innerText = title || '🎬 Xem Phân Cảnh Video';
+    const endTxt = targetEndTime ? ` - ${targetEndTime.toFixed(2)}s` : '';
+    if (timeEl) timeEl.innerText = `${targetStartTime.toFixed(2)}s${endTxt}`;
+    
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    
+    loadCurrentCandidate();
+}
+
+function loadCurrentCandidate() {
+    const video = document.getElementById('report-active-video');
+    const directLink = document.getElementById('video-direct-link');
+    if (!video || !candidateUrls.length) return;
+    
+    if (currentCandidateIdx >= candidateUrls.length) {
+        console.warn('All video candidate URLs exhausted.');
+        return;
+    }
+    
+    const currentUrl = candidateUrls[currentCandidateIdx];
+    if (directLink) directLink.href = currentUrl;
+    
+    video.src = currentUrl;
+    video.load();
+    
+    video.onloadedmetadata = () => {
+        video.currentTime = targetStartTime;
+        const p = video.play();
+        if (p !== undefined) {
+            p.catch(err => {
+                video.muted = true;
+                video.play().catch(e => console.log('Autoplay muted handled'));
+            });
+        }
+    };
+    
+    video.onerror = () => {
+        console.warn('Video failed on URL:', currentUrl, 'trying next candidate...');
+        currentCandidateIdx++;
+        if (currentCandidateIdx < candidateUrls.length) {
+            loadCurrentCandidate();
+        }
+    };
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('report-video-modal');
+    const video = document.getElementById('report-active-video');
+    if (modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    if (video) {
+        video.pause();
+    }
+}
+
+function togglePlayerMute(btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.muted = !video.muted;
+        if (btn) btn.innerText = video.muted ? '🔇 Tắt Tiếng' : '🔊 Bật Tiếng';
+    }
+}
+
+function stepPlayerFrame(frames) {
+    const video = document.getElementById('report-active-video');
+    if (video) {
+        video.pause();
+        video.currentTime += (frames * (1/30));
+    }
+}
+
+function setPlayerSpeed(speed, btn) {
+    const video = document.getElementById('report-active-video');
+    if (video) video.playbackRate = speed;
+    const btns = document.querySelectorAll('.spd-btn');
+    btns.forEach(b => {
+        b.style.background = '#0f172a';
+        b.style.borderColor = '#334155';
+        b.style.color = '#cbd5e1';
+        b.classList.remove('active');
+    });
+    if (btn) {
+        btn.style.background = '#0284c7';
+        btn.style.borderColor = '#0284c7';
+        btn.style.color = '#fff';
+        btn.classList.add('active');
+    }
+}
+
+function initLightbox() {
+    allImages = [];
+    const imgs = document.querySelectorAll('img');
+    imgs.forEach((img, idx) => {
+        if (img.id === 'media-lightbox-img' || img.id === 'lightbox-img') return;
+        const caption = img.alt || img.getAttribute('title') || img.closest('.shot-micro-card, .slide-card, .card, tr, .shot-card')?.innerText?.slice(0, 60) || `Ảnh ${idx+1}`;
+        allImages.push({ src: img.src, caption: caption.replace(/\s+/g, ' ').trim() });
+        img.addEventListener('click', (e) => {
+            e.stopPropagation();
+            openLightbox(img.src, caption, idx);
+        });
+    });
+}
+
+function initTimestamps() {
+    // 1. Existing shot-time elements
+    const existingTimes = document.querySelectorAll('.shot-time, .shot-badge');
+    existingTimes.forEach(el => {
+        const txt = el.innerText.replace(/[^0-9.\-–—]/g, ' ');
+        const parts = txt.trim().split(/[\-–—]+/);
+        if (parts.length >= 2) {
+            const st = parseFloat(parts[0]);
+            const et = parseFloat(parts[1]);
+            el.style.cursor = 'pointer';
+            el.classList.add('shot-time-btn');
+            el.title = `Click để phát từ ${st}s`;
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openVideoPlayer(st, `Phân cảnh: [${st}s - ${et}s]`, et);
+            });
+        }
+    });
+
+    // 2. Scan text in table cells, shot headers, shot micro text
+    const textNodes = document.querySelectorAll('.shot-micro-txt, .shot-title-cell, .shot-header, .shot-title, h3, b, td, p');
+    textNodes.forEach(el => {
+        if (el.querySelector('.shot-time-btn')) return;
+        const html = el.innerHTML;
+        const match = el.innerText.match(/([0-9]+\.?[0-9]*)\s*s?\s*[-–—]\s*([0-9]+\.?[0-9]*)\s*s?/);
+        if (match) {
+            const st = parseFloat(match[1]);
+            const et = parseFloat(match[2]);
+            
+            let slideVideo = null;
+            const slideParent = el.closest('.slide-card');
+            if (slideParent) {
+                const slideBadge = slideParent.querySelector('.badge');
+                const slideMatch = slideBadge ? slideBadge.innerText.match(/SLIDE\s*([0-9]+)/i) : null;
+                if (slideMatch) {
+                    const slideIdx = parseInt(slideMatch[1]);
+                    slideVideo = CAROUSEL_SLIDES_MAP[slideIdx];
+                }
+            }
+            
+            const regex = /([0-9]+\.?[0-9]*\s*s?\s*[-–—]\s*[0-9]+\.?[0-9]*\s*s?)/;
+            const videoParam = slideVideo ? `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et}, '${slideVideo}')` : `openVideoPlayer(${st}, 'Phân cảnh [${st}s - ${et}s]', ${et})`;
+            
+            el.innerHTML = html.replace(regex, `<span class="shot-time-btn" style="background:#0284c7; color:#fff; padding:2px 8px; border-radius:4px; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:3px;" onclick="event.stopPropagation(); ${videoParam}">▶ $1</span>`);
+        }
+    });
+
+    // 3. Add Slide Video Player buttons to slide cards
+    const slideCards = document.querySelectorAll('.slide-card, .card');
+    slideCards.forEach((card, idx) => {
+        const slideNum = idx + 1;
+        const slideVideo = CAROUSEL_SLIDES_MAP[slideNum] || `carousel_slides/slide_${String(slideNum).padStart(2, '0')}.mp4`;
+        if (Object.keys(CAROUSEL_SLIDES_MAP).length > 0 && !card.querySelector('.slide-video-btn')) {
+            const infoEl = card.querySelector('.slide-info, .info, .shot-content');
+            if (infoEl) {
+                const btn = document.createElement('div');
+                btn.className = 'shot-time-btn slide-video-btn';
+                btn.style.cssText = 'display:inline-flex; align-items:center; gap:5px; background:linear-gradient(135deg, #0284c7, #0369a1); color:#fff; font-weight:800; font-size:11.5px; padding:5px 12px; border-radius:6px; margin-top:8px; cursor:pointer; width:fit-content; box-shadow:0 2px 6px rgba(0,0,0,0.15);';
+                btn.innerHTML = `🎬 Xem Trực Tiếp Video Slide ${slideNum}`;
+                btn.onclick = (e) => {
+                    e.stopPropagation();
+                    openVideoPlayer(0, `Video Slide ${slideNum}`, null, slideVideo);
+                };
+                infoEl.appendChild(btn);
+            }
+        }
+    });
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModal();
+    } else if (e.key === 'ArrowRight') {
+        navLightbox(1);
+    } else if (e.key === 'ArrowLeft') {
+        navLightbox(-1);
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    initLightbox();
+    initTimestamps();
+});
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+    initLightbox();
+    initTimestamps();
+}
+</script>
+
+
+</body>
+</html>

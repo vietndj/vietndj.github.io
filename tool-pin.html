@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tool Cập nhật Nút Ghim Hàng loạt</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .console-log { font-family: ui-monospace, SFMono-Regular, Consolas, monospace; font-size: 13px; line-height: 1.6; }
+        .log-info { color: #86868B; }
+        .log-success { color: #34C759; }
+        .log-error { color: #FF3B30; font-weight: bold; }
+        .log-warning { color: #FF9500; }
+    </style>
+</head>
+<body class="bg-[#F5F5F7] min-h-screen flex flex-col items-center p-4 md:p-8">
+
+    <div class="bg-white rounded-[24px] shadow-sm p-8 w-full max-w-3xl border border-gray-100">
+        <h1 class="text-2xl font-bold text-[#1D1D1F] mb-2 flex items-center gap-2">
+            📌 Tool Cập nhật Nút Ghim (Bản Tối Ưu iPad)
+        </h1>
+        <p class="text-sm text-[#86868B] mb-8">Tự động quét Database Lõi và gắn Nút Ghim vào toàn bộ bài viết. Đã khắc phục 100% lỗi Copy/Paste trên iPad.</p>
+
+        <div class="space-y-4">
+            <input type="password" id="github-token" placeholder="Nhập Token GitHub (PAT)..." class="w-full px-4 py-3 bg-[#F2F2F7] border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-[#007AFF] text-sm text-center tracking-widest font-mono transition">
+            
+            <button id="btn-start" onclick="startBatchUpdate()" class="w-full bg-[#007AFF] hover:bg-blue-600 text-white font-bold py-3.5 rounded-xl transition shadow-sm">
+                🚀 Bắt Đầu Quét & Cập nhật
+            </button>
+        </div>
+
+        <div id="console-box" class="mt-8 bg-[#1D1D1F] rounded-xl p-5 h-[400px] overflow-y-auto console-log space-y-1.5 shadow-inner">
+            <div class="log-info">Sẵn sàng hoạt động. Vui lòng nhập Token và bấm Bắt đầu...</div>
+        </div>
+    </div>
+
+    <script>
+        /* Bắt lỗi hiển thị ra màn hình thay vì im lặng */
+        window.onerror = function(msg, url, line) {
+            alert("Lỗi Hệ thống JS: " + msg + " (Dòng: " + line + ")");
+            return false;
+        };
+
+        const username = 'vietndj';
+        
+        /* CHIA NHỎ MÃ THÀNH TỪNG DÒNG NGẮN ĐỂ CHỐNG LỖI IPAD NUỐT CHỮ */
+        /* BẺ GÃY CÁC TỪ KHÓA NHẠY CẢM ĐỂ CMS KHÔNG NHẬN DIỆN NHẦM */
+        const S1 = "<sc" + "ript id=\"cms-pin-widget\">";
+        const S2 = "</sc" + "ript>";
+        
+        const WIDGET_LINES = [
+            "",
+            "",
+            S1,
+            "  if(localStorage.getItem('cms_auth') === 'granted') {",
+            "    const path = window.location.pathname.split('/').filter(Boolean);",
+            "    let repo = 'vietndj.github.io', file = 'index.html';",
+            "    if (path.length > 1) { repo = path[0]; file = path.pop(); }",
+            "    else if (path.length === 1) { if (path[0].endsWith('.html')) file = path[0]; else repo = path[0]; }",
+            "    const fileKey = repo + '/' + decodeURIComponent(file);",
+            "    let isPinned = false;",
+            "    try { const dbStr = localStorage.getItem('cms_repo_data'); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}",
+            "    const btn = document.createElement('a');",
+            "    btn.href = 'https://vietndj.github.io/?' + (isPinned ? 'unpin=' : 'pin=') + encodeURIComponent(fileKey);",
+            "    btn.innerHTML = isPinned ? '❌ Bỏ ghim' : '📌 Ghim bài';",
+            "    btn.style.cssText = 'position:fixed;top:15px;right:15px;background:' + (isPinned ? '#FF3B30' : '#FF9500') + ';color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;';",
+            "    btn.onmouseover = () => btn.style.transform = 'scale(1.05)';",
+            "    btn.onmouseout = () => btn.style.transform = 'scale(1)';",
+            "    btn.onclick = function(e) {",
+            "      e.preventDefault();",
+            "      window.open(this.href, '_blank');",
+            "      isPinned = !isPinned;",
+            "      this.innerHTML = isPinned ? '❌ Bỏ ghim' : '📌 Ghim bài';",
+            "      this.style.background = isPinned ? '#FF3B30' : '#FF9500';",
+            "      this.href = 'https://vietndj.github.io/?' + (isPinned ? 'unpin=' : 'pin=') + encodeURIComponent(fileKey);",
+            "    };",
+            "    document.body.appendChild(btn);",
+            "  }",
+            S2,
+            "",
+            ""
+        ];
+        
+        const CMS_PIN_WIDGET = WIDGET_LINES.join("\n");
+        const WIDGET_REGEX = new RegExp('\\n*<sc' + 'ript id="cms-pin-widget">[\\s\\S]*?</sc' + 'ript>\\n*', 'gi');
+        const TAG_BODY_END = '</bo' + 'dy>';
+
+        function log(msg, type) {
+            if(!type) type = 'info';
+            const box = document.getElementById('console-box');
+            if(!box) return;
+            const div = document.createElement('div');
+            div.className = 'log-' + type;
+            div.innerText = '[' + new Date().toLocaleTimeString('vi-VN') + '] ' + msg;
+            box.appendChild(div);
+            box.scrollTop = box.scrollHeight;
+        }
+
+        async function encodeBase64UTF8Async(str) {
+            const blob = new Blob([new TextEncoder().encode(str)]);
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result.split(',')[1]);
+                reader.onerror = reject;
+                reader.readAsDataURL(blob);
+            });
+        }
+
+        async function getFileShaSafe(repoPath, fileName, token) {
+            try {
+                const res = await fetch('https://api.github.com/repos/' + repoPath + '/contents/' + encodeURIComponent(fileName) + '?t=' + Date.now(), {
+                    headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3+json' }
+                });
+                if(res.ok) { const data = await res.json(); if(!Array.isArray(data)) return data.sha; }
+            } catch(e) {}
+            return null;
+        }
+
+        window.onload = () => {
+            try {
+                const savedToken = localStorage.getItem('github_pat');
+                if(savedToken) {
+                    document.getElementById('github-token').value = savedToken;
+                    log('Đã tự động nạp Token từ bộ nhớ đệm.', 'success');
+                }
+            } catch(e){}
+        };
+
+        async function startBatchUpdate() {
+            const tokenInput = document.getElementById('github-token');
+            if(!tokenInput) return alert("Lỗi giao diện.");
+            const token = tokenInput.value.trim();
+            if(!token) return alert("Vui lòng nhập Token GitHub!");
+
+            try { localStorage.setItem('github_pat', token); } catch(e){}
+
+            const btn = document.getElementById('btn-start');
+            btn.disabled = true;
+            btn.innerHTML = "⏳ Đang chạy. Vui lòng không đóng trang...";
+            btn.classList.replace('bg-[#007AFF]', 'bg-gray-400');
+            btn.classList.replace('hover:bg-blue-600', 'hover:bg-gray-400');
+
+            document.getElementById('console-box').innerHTML = '';
+            let successCount = 0;
+            let failCount = 0;
+
+            try {
+                log('Bắt đầu tải Database Lõi (cms_db.json)...', 'info');
+                
+                const resDb = await fetch('https://api.github.com/repos/' + username + '/' + username + '.github.io/contents/cms_db.json?t=' + Date.now(), {
+                    headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3.raw' }
+                });
+
+                if(!resDb.ok) throw new Error("Không thể đọc Database. Hãy khởi tạo DB bên trang chủ CMS trước.");
+                
+                const db = JSON.parse(await resDb.text());
+                const allFiles = db.allFiles || [];
+                
+                /* Lọc bỏ file hệ thống */
+                const validFiles = allFiles.filter(f => f.fileName.endsWith('.html') && f.fileName !== 'index.html' && f.fileName !== 'fix-url.html' && f.fileName !== 'fix-titles.html' && !f.fileName.startsWith('tool-'));
+                
+                if(validFiles.length === 0) throw new Error("Không tìm thấy bài viết nào cần cập nhật.");
+
+                log('Đã tìm thấy ' + validFiles.length + ' bài viết hợp lệ. Bắt đầu xử lý...', 'success');
+                log('---------------------------------------------------', 'info');
+
+                for(let i = 0; i < validFiles.length; i++) {
+                    const f = validFiles[i];
+                    let safeFileName = f.fileName; try { safeFileName = decodeURIComponent(f.fileName); } catch(e){}
+                    
+                    log('[' + (i+1) + '/' + validFiles.length + '] Đang xử lý: ' + safeFileName + ' (Kho: ' + f.repoName + ')...', 'warning');
+
+                    try {
+                        const fileRes = await fetch('https://api.github.com/repos/' + username + '/' + f.repoName + '/contents/' + encodeURIComponent(safeFileName) + '?t=' + Date.now(), {
+                            headers: { 'Authorization': 'Bearer ' + token, 'Accept': 'application/vnd.github.v3.raw' }
+                        });
+
+                        if(!fileRes.ok) {
+                            log('   --> Bỏ qua: Không tìm thấy file gốc (404).', 'error');
+                            failCount++;
+                            continue;
+                        }
+
+                        let htmlContent = await fileRes.text();
+                        
+                        /* Xóa sạch widget cũ bằng Regex tự lắp ráp */
+                        htmlContent = htmlContent.replace(WIDGET_REGEX, '');
+                        
+                        /* Chèn widget mới vào cuối body */
+                        if(htmlContent.includes(TAG_BODY_END)) {
+                            htmlContent = htmlContent.replace(TAG_BODY_END, CMS_PIN_WIDGET + '\n' + TAG_BODY_END);
+                        } else {
+                            htmlContent += CMS_PIN_WIDGET; 
+                        }
+
+                        const currentSha = await getFileShaSafe(username + '/' + f.repoName, safeFileName, token);
+                        const base64Content = await encodeBase64UTF8Async(htmlContent);
+
+                        const putRes = await fetch('https://api.github.com/repos/' + username + '/' + f.repoName + '/contents/' + encodeURIComponent(safeFileName), {
+                            method: 'PUT',
+                            headers: { 'Authorization': 'Bearer ' + token, 'Content-Type': 'application/json' },
+                            body: JSON.stringify({
+                                message: '🔧 CMS Tool: Cập nhật Widget Pin mới',
+                                content: base64Content,
+                                sha: currentSha || undefined
+                            })
+                        });
+
+                        if(putRes.ok) {
+                            log('   --> Thành công!', 'success');
+                            successCount++;
+                        } else {
+                            const errData = await putRes.json();
+                            log('   --> Lỗi lưu đè: ' + errData.message, 'error');
+                            failCount++;
+                        }
+
+                    } catch(err) {
+                        log('   --> Lỗi: ' + err.message, 'error');
+                        failCount++;
+                    }
+
+                    /* Chống sập API Limit của GitHub (Nghỉ 0.5s) */
+                    await new Promise(r => setTimeout(r, 500));
+                }
+
+                log('---------------------------------------------------', 'info');
+                log('🎉 CHIẾN DỊCH HOÀN TẤT!', 'success');
+                log('- Cập nhật thành công: ' + successCount + ' bài.', 'success');
+                if (failCount > 0) log('- Thất bại/Bỏ qua: ' + failCount + ' bài.', 'error');
+                
+                alert('Hoàn tất!\nĐã cập nhật thành công ' + successCount + ' bài viết.');
+
+            } catch (e) {
+                log('❌ LỖI HỆ THỐNG: ' + e.message, 'error');
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = "🚀 Chạy Lại Tool";
+                btn.classList.replace('bg-gray-400', 'bg-[#007AFF]');
+                btn.classList.replace('hover:bg-gray-400', 'hover:bg-blue-600');
+            }
+        }
+    </script>
+
+
+<script id="cms-pin-widget">
+  if(localStorage.getItem("cms_auth") === "granted") {
+    const path = window.location.pathname.split("/").filter(Boolean);
+    let repo = "vietndj.github.io", file = "index.html";
+    if (path.length > 1) { repo = path[0]; file = path.pop(); }
+    else if (path.length === 1) { if (path[0].endsWith(".html")) file = path[0]; else repo = path[0]; }
+    const fileKey = repo + "/" + decodeURIComponent(file);
+    let isPinned = false;
+    try { const dbStr = localStorage.getItem("cms_repo_data"); if(dbStr){ const db = JSON.parse(dbStr); if(Array.isArray(db.pinnedDataCache) && db.pinnedDataCache.includes(fileKey)) isPinned = true; } } catch(e){}
+    const btn = document.createElement("a");
+    btn.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    btn.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+    btn.style.cssText = "position:fixed;top:15px;right:15px;background:" + (isPinned ? "#FF3B30" : "#FF9500") + ";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";
+    btn.onmouseover = () => btn.style.transform = "scale(1.05)";
+    btn.onmouseout = () => btn.style.transform = "scale(1)";
+    btn.onclick = function(e) {
+      e.preventDefault();
+      window.open(this.href, "_blank");
+      isPinned = !isPinned;
+      this.innerHTML = isPinned ? "❌ Bỏ ghim" : "📌 Ghim bài";
+      this.style.background = isPinned ? "#FF3B30" : "#FF9500";
+      this.href = "https://vietndj.github.io/?" + (isPinned ? "unpin=" : "pin=") + encodeURIComponent(fileKey);
+    };
+    document.body.appendChild(btn);
+  }
+</script>
+
+</body>
+</html>

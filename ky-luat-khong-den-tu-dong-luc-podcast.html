@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Nhất Quán - Actionable Playbook</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0fdfa',
+                            100: '#ccfbf1',
+                            500: '#14b8a6',
+                            600: '#0d9488',
+                            900: '#134e4a',
+                            950: '#042f2e',
+                        },
+                        dark: {
+                            bg: '#0B1120',
+                            card: '#1E293B',
+                            border: '#334155'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        body {
+            background-color: #0B1120;
+            color: #F8FAFC;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* CSS Abstract Art cho các khối */
+        .art-mesh-1 { background: radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%), radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%); }
+        .art-mesh-2 { background: radial-gradient(at 0% 100%, hsla(253,16%,7%,1) 0, transparent 50%), radial-gradient(at 50% 100%, hsla(160,100%,25%,1) 0, transparent 50%), radial-gradient(at 100% 100%, hsla(190,100%,25%,1) 0, transparent 50%); }
+        .art-mesh-3 { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); position: relative; overflow: hidden; }
+        .art-mesh-3::before { content: ''; position: absolute; width: 150%; height: 150%; background: conic-gradient(from 90deg at 50% 50%, #312e81 0%, #1e1b4b 50%, #312e81 100%); animation: spin 20s linear infinite; opacity: 0.3; }
+        
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; height: 8px; }
+        ::-webkit-scrollbar-track { background: #0B1120; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+        /* Zoomable Mindmap Container */
+        .mindmap-wrapper {
+            cursor: grab;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid #334155;
+            position: relative;
+        }
+        .mindmap-wrapper:active { cursor: grabbing; }
+        
+        /* Flashcard Styles */
+        .flashcard {
+            background: linear-gradient(145deg, #1E293B, #0f172a);
+            border: 1px solid #334155;
+            transition: all 0.3s ease;
+        }
+        .flashcard:hover {
+            transform: translateY(-5px);
+            border-color: #14b8a6;
+            box-shadow: 0 10px 30px -10px rgba(20, 184, 166, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar / Header -->
+    <header class="fixed w-full top-0 z-50 bg-dark-bg/80 backdrop-blur-md border-b border-dark-border">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2 text-brand-500 font-bold text-xl tracking-tight">
+                <i class="ph-fill ph-rocket-launch text-2xl"></i>
+                <span>Actionable<span class="text-white">Playbook</span></span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-300">
+                <a href="#big-idea" class="hover:text-brand-500 transition">1. Khung Xương</a>
+                <a href="#insights" class="hover:text-brand-500 transition">2. Trụ Cột</a>
+                <a href="#playbook" class="hover:text-brand-500 transition">3. Thực Chiến</a>
+                <a href="#reality" class="hover:text-brand-500 transition">4. Cạm Bẫy</a>
+                <a href="#recall" class="hover:text-brand-500 transition">5. Ôn Tập</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-20">
+        
+        <!-- SECTION 1: THE BIG IDEA & MINDMAP -->
+        <section id="big-idea" class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-500 text-sm font-semibold mb-6 border border-brand-500/20">
+                    <i class="ph ph-target"></i> The Big Idea
+                </div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6 leading-tight bg-clip-text text-transparent bg-gradient-to-r from-white to-slate-400">
+                    Kỷ luật không đến từ Động lực.<br>Nó đến từ Hệ Thống.
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                    Đừng cố gắng dùng ý chí để ép bản thân làm việc khó. Luận điểm cốt lõi ở đây là: Hãy thiết kế một hệ sinh thái tự động hóa các quyết định của bạn. Khi hệ thống đúng, sự nhất quán (consistency) sẽ trở thành bản năng.
+                </p>
+                <a href="https://www.youtube.com/watch?v=-eS14mBhnhA" target="_blank" class="inline-flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-medium transition shadow-lg shadow-red-600/20">
+                    <i class="ph-fill ph-youtube-logo text-2xl"></i>
+                    Cách ép bản thân duy trì sự nhất quán (Matt Gray)
+                </a>
+            </div>
+
+            <!-- Mindmap Container -->
+            <div class="w-full relative group">
+                <div class="absolute top-4 left-4 z-10 flex gap-2">
+                    <button id="zoom-in" class="bg-dark-card p-2 rounded border border-dark-border hover:bg-slate-700"><i class="ph ph-magnifying-glass-plus"></i></button>
+                    <button id="zoom-out" class="bg-dark-card p-2 rounded border border-dark-border hover:bg-slate-700"><i class="ph ph-magnifying-glass-minus"></i></button>
+                    <button id="zoom-reset" class="bg-dark-card p-2 rounded border border-dark-border hover:bg-slate-700"><i class="ph ph-arrows-out"></i></button>
+                </div>
+                <div class="absolute top-4 right-4 z-10 bg-dark-card/80 px-3 py-1 text-xs rounded border border-dark-border backdrop-blur">
+                    Cuộn chuột để Zoom • Kéo thả để Pan
+                </div>
+                <!-- Mermaid Block -->
+                <div class="mindmap-wrapper w-full h-[600px]" id="mindmap-container">
+                    <pre class="mermaid w-full h-full flex items-center justify-center">
+mindmap
+  root((Hệ Thống<br/>Nhất Quán))
+    Thiết Kế (Cấp 1)
+      Toán học Lãi kép
+        1% tốt hơn mỗi ngày
+        Chấp nhận khoảng hẫng
+      Môi trường Không ma sát
+        Dọn dẹp hỗn loạn
+        Lập trình thói quen
+      Thắng từ Đêm trước
+        Kế hoạch không dựa vào cảm xúc
+        Hành động khả thi tối thiểu
+    Trở Thành (Cấp 2)
+      Kết nối Thể chất - Tinh thần
+        Tập luyện tạo Năng lượng
+        Cơ bắp kỷ luật
+      Nạp lại Năng lượng
+        Nghỉ ngơi không phải yếu đuối
+        Chuyến đi làm sạch tâm hồn
+      Kiểm toán Mối quan hệ
+        Cắt bỏ Kẻ hút năng lượng
+        Chọn lọc bạn trình độ cao
+    Nhân Bản (Cấp 3)
+      Áp lực Giải trình
+        Tuyên bố công khai
+        Tận dụng nỗi sợ mất mặt
+      Tốc độ Hơn Hoàn hảo
+        Ra mắt bản nháp 80%
+        Học nhanh qua Feedback
+      Lãi kép Thói quen
+        Một thói quen tốt kéo theo chuỗi hệ thống
+                    </pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: DEEP INSIGHTS -->
+        <section id="insights" class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 text-blue-400 text-sm font-semibold mb-4 border border-blue-500/20">
+                    <i class="ph ph-brain"></i> Deep Insights
+                </div>
+                <h2 class="text-3xl font-bold">9 Trụ Cột Tri Thức</h2>
+                <p class="text-slate-400 mt-2">Bóc tách logic, cơ chế và ví dụ thực chiến từ một Founder.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Card 1 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 art-mesh-1 w-full opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-trend-up text-brand-500"></i> Sự đánh lừa của Toán học</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Việc tiến bộ 1% mỗi ngày không tạo ra thay đổi thấy được trong ngắn hạn, nhưng tạo ra sự bùng nổ theo cấp số nhân trong dài hạn (Lãi kép).</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Não bộ khao khát phần thưởng ngay lập tức. Khi không thấy kết quả sau vài ngày, ta bỏ cuộc (The Gap). Kỷ luật là việc nhắm mắt đi qua "khoảng hẫng" này.</p>
+                            <div class="bg-blue-900/20 p-3 rounded-lg border border-blue-500/20">
+                                <span class="text-blue-400 font-bold block mb-1">💡 Ví dụ thực tế:</span>
+                                Lăn quả cầu tuyết. Ban đầu phải tự đẩy rất mệt, nhưng khi đủ lớn, nó tự lăn và cuốn phăng mọi thứ. Nhìn lại sau 1 năm, bạn sẽ sốc vì 1% nhỏ nhoi đó.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 art-mesh-2 w-full opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-broom text-brand-500"></i> Môi trường Không Ma Sát</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> "Sự xóa bỏ = Sự đơn giản hóa". Môi trường vật lý/số hóa thế nào thì tâm trí bạn thế ấy.</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Sự xao nhãng hút cạn năng lượng ý chí (Willpower). Việc tạo ra một không gian "frictionless" giúp bạn trượt thẳng vào luồng làm việc mà không cần cố gắng.</p>
+                            <div class="bg-blue-900/20 p-3 rounded-lg border border-blue-500/20">
+                                <span class="text-blue-400 font-bold block mb-1">💡 Câu chuyện từ video:</span>
+                                Khi bắt đầu lập nghiệp, bàn làm việc của Matt là mớ hỗn độn, Slack nhảy liên tục, check mail 5 lần/ngày -> Phải mượn chất kích thích để giảm stress. Dọn dẹp môi trường là cứu lấy doanh nghiệp.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 art-mesh-3 w-full opacity-80 group-hover:opacity-100 transition duration-500"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-moon-stars text-brand-500"></i> Thắng từ đêm hôm trước</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Đừng thức dậy rồi mới nghĩ xem hôm nay làm gì. Hãy lên kế hoạch vượt qua Cảm Xúc (Plan over your mood).</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Buổi sáng là lúc năng lượng sáng tạo cao nhất, đừng dùng nó để ra quyết định quản lý. Quyết định trước từ tối qua để sáng dậy chỉ việc "Thực thi như cái máy".</p>
+                            <div class="bg-blue-900/20 p-3 rounded-lg border border-blue-500/20">
+                                <span class="text-blue-400 font-bold block mb-1">💡 Ẩn dụ thực tế:</span>
+                                Giống như việc xếp sẵn bộ đồ tập gym ở cuối giường từ tối hôm trước. Sáng ra, ma sát để đi tập giảm xuống bằng không.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-r from-emerald-900 to-teal-900 w-full relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white to-transparent"></div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-steps text-emerald-500"></i> Hành động tối thiểu (MVA)</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Động lực sinh ra TỪ hành động, chứ không phải có động lực mới hành động.</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Một task quá to ("Viết bài báo") gây ra phản ứng tâm lý tê liệt. Chia nhỏ nó thành "hành động khả thi tối thiểu" sẽ đánh lừa não bộ bắt đầu.</p>
+                            <div class="bg-emerald-900/20 p-3 rounded-lg border border-emerald-500/20">
+                                <span class="text-emerald-400 font-bold block mb-1">💡 Ví dụ thực tế:</span>
+                                Đừng ép mình "Viết bài". Hãy ép mình: Nghĩ tiêu đề -> Lên gạch đầu dòng -> Viết Intro -> Edit. Tích tick vào check-list nhỏ tạo ra đà tâm lý (Momentum).
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-br from-orange-900 to-red-900 w-full relative overflow-hidden">
+                        <svg class="absolute inset-0 w-full h-full opacity-30" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="a" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M0 0h20v20H0z" fill="none"/><circle cx="2" cy="2" r="1" fill="#fff"/></pattern></defs><rect width="100%" height="100%" fill="url(#a)"/></svg>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-barbell text-orange-500"></i> Sinh lý học của Kỷ luật</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Thể chất và tinh thần xài chung một "cơ bắp". Tập thể dục không phải là tùy chọn, nó là bắt buộc.</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Năng lượng quyết định tốc độ thực thi. Vận động tiết ra các chất sinh hóa giúp tăng tự tin và đè bẹp sự trì hoãn.</p>
+                            <div class="bg-orange-900/20 p-3 rounded-lg border border-orange-500/20">
+                                <span class="text-orange-400 font-bold block mb-1">💡 Bí mật não bộ:</span>
+                                Tiếng nói bảo bạn "thôi bỏ đi" ở rep đẩy tạ thứ 8 CHÍNH LÀ tiếng nói bảo bạn "nghỉ đi, mai làm" khi đối mặt với task khó thứ 3 trong ngày. Rèn một được hai.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-tr from-purple-900 to-indigo-900 w-full"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-battery-charging text-purple-500"></i> Tái tạo như một Pro</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Nghỉ ngơi không phải là yếu đuối. Văn hóa "Hustle" mù quáng chỉ dẫn đến sự tự hủy hoại.</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Nghỉ ngơi mang lại sự rõ ràng (Clarity). Một người sếp kiệt sức sẽ đưa ra quyết định sai lầm và làm khổ nhân sự.</p>
+                            <div class="bg-purple-900/20 p-3 rounded-lg border border-purple-500/20">
+                                <span class="text-purple-400 font-bold block mb-1">💡 Bài học sương máu:</span>
+                                Từng tự hào làm 18h/ngày, thức trắng đêm, kết quả là trở nên khó ưa, 4 nhân viên nghỉ việc, công ty suýt sập. Giải pháp: Cứ 6 tuần làm 1 chuyến "Soul trip" (Trở về thiên nhiên) từ 4-7 ngày.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Card 7 -->
+                 <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-r from-pink-900 to-rose-900 w-full"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-users-three text-pink-500"></i> Bộ Lọc Môi Trường Xã Hội</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Tương lai của bạn chính là những người bạn đang chơi cùng.</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Năng lượng có tính lây lan. Ở cạnh những "Energy vampires" (kẻ hút năng lượng) sẽ kéo tụt mọi nỗ lực kỷ luật cá nhân của bạn.</p>
+                            <div class="bg-pink-900/20 p-3 rounded-lg border border-pink-500/20">
+                                <span class="text-pink-400 font-bold block mb-1">💡 Hành động thực tế:</span>
+                                Tuổi 20 sa đọa vào chất kích thích do sai vòng bạn bè. Cần thực hiện một cuộc "Friend Audit" (Kiểm toán bạn bè) vô tình nhẫn: Cắt đứt kẻ độc hại, đưa mình vào vòng tinh hoa.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-l from-yellow-900 to-amber-900 w-full"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-megaphone text-yellow-500"></i> Đòn Bẩy Giải Trình</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Muốn chắc chắn làm được việc khó? Hãy dùng "Áp lực đám đông" (Public Accountability).</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Con người rất sợ mất mặt và tổn hại danh tiếng. Hãy biến nỗi sợ đó thành công cụ ép bản thân phải hành động.</p>
+                            <div class="bg-yellow-900/20 p-3 rounded-lg border border-yellow-500/20">
+                                <span class="text-yellow-400 font-bold block mb-1">💡 Chiêu trò tâm lý:</span>
+                                Quyết định viết sách -> Tuyên bố ngay trên mạng xã hội cho mọi người biết. Khi đã hứa công khai, bạn sẽ "làm mọi cách" để thực hiện cam kết đó.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 9 -->
+                <div class="bg-dark-card rounded-2xl border border-dark-border overflow-hidden flex flex-col group">
+                    <div class="h-24 bg-gradient-to-bl from-cyan-900 to-blue-900 w-full"></div>
+                    <div class="p-6 flex-1 flex flex-col">
+                        <h3 class="text-xl font-bold mb-4 text-white flex items-center gap-2"><i class="ph-fill ph-rocket text-cyan-500"></i> Tốc Độ > Hoàn Hảo</h3>
+                        <div class="space-y-4 text-sm text-slate-300 flex-1">
+                            <p><strong class="text-white block mb-1">Bản chất:</strong> Launch the messy first draft (Ra mắt bản nháp lộn xộn đầu tiên).</p>
+                            <p><strong class="text-white block mb-1">Cơ chế:</strong> Bạn không thể tối ưu hóa thứ chưa tồn tại. Tốc độ học hỏi qua Feedback thực tế quan trọng hơn việc giấu giếm làm cho hoàn hảo ở nhà.</p>
+                            <div class="bg-cyan-900/20 p-3 rounded-lg border border-cyan-500/20">
+                                <span class="text-cyan-400 font-bold block mb-1">💡 Case study:</span>
+                                Khóa Founder OS đình đám ban đầu mang tên "Soulful Entrepreneur", website xấu xí, màu sắc thảm họa. Nhưng nhờ dám tung ra lúc hoàn thiện 80%, nó mới được đập đi xây lại thành công như nay.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECTION 3: ACTION PLAYBOOK -->
+        <section id="playbook" class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="bg-gradient-to-br from-brand-950 to-dark-bg rounded-3xl p-8 md:p-12 border border-brand-900 relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-12 opacity-10"><i class="ph-fill ph-strategy text-9xl text-brand-500"></i></div>
+                <div class="relative z-10">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/20 text-brand-400 text-sm font-semibold mb-6">
+                        <i class="ph-fill ph-lightning"></i> Action Playbook
+                    </div>
+                    <h2 class="text-3xl font-bold mb-8">Sổ Tay Thực Chiến Trong 24h</h2>
+                    
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- IF THEN -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-slate-200 border-b border-brand-900 pb-2">Kịch bản "Nếu - Thì"</h3>
+                            <ul class="space-y-4">
+                                <li class="bg-dark-card/50 p-4 rounded-xl border border-dark-border/50">
+                                    <span class="text-red-400 font-bold block mb-1">NẾU:</span> Bạn ngồi vào bàn làm việc mà mãi không tập trung nổi, hay với tay cầm điện thoại...
+                                    <span class="text-brand-400 font-bold block mt-2 mb-1">THÌ:</span> Lỗi do Môi trường. Hãy áp dụng "Frictionless Focus": Tắt sạch noti, cất điện thoại sang phòng khác, chỉ để 1 tab làm việc duy nhất.
+                                </li>
+                                <li class="bg-dark-card/50 p-4 rounded-xl border border-dark-border/50">
+                                    <span class="text-red-400 font-bold block mb-1">NẾU:</span> Bạn thấy một dự án quá ngợp, cứ chần chừ ngày này qua ngày khác...
+                                    <span class="text-brand-400 font-bold block mt-2 mb-1">THÌ:</span> Áp dụng "Hành động tối thiểu". Đừng bắt tay làm dự án. Hãy chia nhỏ ra và tự bảo não bộ: "Chỉ làm đúng 5 phút để gõ ra cái Outline thôi".
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <!-- MICRO ACTIONS -->
+                        <div>
+                            <h3 class="text-xl font-semibold mb-4 text-slate-200 border-b border-brand-900 pb-2">Micro-actions (Làm ngay!)</h3>
+                            <div class="space-y-4">
+                                <label class="flex items-start gap-3 p-4 bg-brand-900/20 rounded-xl border border-brand-500/30 cursor-pointer hover:bg-brand-900/40 transition">
+                                    <input type="checkbox" class="mt-1 w-5 h-5 accent-brand-500 rounded">
+                                    <div>
+                                        <span class="font-bold text-brand-300 block">Khai tử "Energy Vampire" trên MXH</span>
+                                        <span class="text-sm text-slate-400">Ngay bây giờ: Mở Facebook/Tiktok, Unfollow ít nhất 3 kênh/người hay than vãn, drama. Sạch mắt = Sạch tâm.</span>
+                                    </div>
+                                </label>
+                                <label class="flex items-start gap-3 p-4 bg-brand-900/20 rounded-xl border border-brand-500/30 cursor-pointer hover:bg-brand-900/40 transition">
+                                    <input type="checkbox" class="mt-1 w-5 h-5 accent-brand-500 rounded">
+                                    <div>
+                                        <span class="font-bold text-brand-300 block">Viết kế hoạch 3 task cho ngày mai (Tối nay)</span>
+                                        <span class="text-sm text-slate-400">Tối nay trước khi ngủ, viết ra đúng 3 việc MVA (Minimum Viable Action) cần làm sáng mai. Đặt giấy lên bàn phím laptop.</span>
+                                    </div>
+                                </label>
+                                <label class="flex items-start gap-3 p-4 bg-brand-900/20 rounded-xl border border-brand-500/30 cursor-pointer hover:bg-brand-900/40 transition">
+                                    <input type="checkbox" class="mt-1 w-5 h-5 accent-brand-500 rounded">
+                                    <div>
+                                        <span class="font-bold text-brand-300 block">Public Accountability</span>
+                                        <span class="text-sm text-slate-400">Đăng 1 story facebook cam kết: "Tôi sẽ hoàn thành việc X vào thứ 6 tuần này, nếu không tôi đãi anh em 1 chầu cafe".</span>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: REALITY CHECK -->
+        <section id="reality" class="max-w-7xl mx-auto px-6 mb-24">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="w-full md:w-1/3">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-500 text-sm font-semibold mb-4 border border-red-500/20">
+                        <i class="ph-fill ph-warning"></i> Reality Check
+                    </div>
+                    <h2 class="text-3xl font-bold mb-4">Sự Thật Phũ Phàng</h2>
+                    <p class="text-slate-400">Lý do vì sao 90% người xem video xong, gật gù tâm đắc nhưng ngày mai vẫn ngựa quen đường cũ.</p>
+                </div>
+                
+                <div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <!-- Red Flag -->
+                    <div class="bg-[#2A1616] border border-red-900/50 p-6 rounded-2xl relative">
+                        <div class="absolute -top-4 -right-4 text-red-500/20 text-6xl"><i class="ph-fill ph-flag-banner"></i></div>
+                        <h4 class="font-bold text-red-400 mb-2 flex items-center gap-2"><i class="ph ph-flag text-xl"></i> Bẫy Ảo Tưởng (Red Flag)</h4>
+                        <p class="text-sm text-slate-300 mb-3">
+                            <strong class="text-white block mb-1">Chờ đợi cảm hứng:</strong> "Hôm nay mệt quá, chắc não mình cần nghỉ, mai làm bù". Đây là lời nói dối ngọt ngào nhất.
+                        </p>
+                        <div class="text-xs bg-black/30 p-2 rounded text-slate-400 italic">
+                            Cái chết thực sự: Nghỉ 1 ngày sẽ kéo theo ngày thứ 2, thứ 3. Chuỗi Lãi kép bị gãy hoàn toàn.
+                        </div>
+                    </div>
+
+                    <!-- Guardrail -->
+                    <div class="bg-[#0D241C] border border-emerald-900/50 p-6 rounded-2xl relative">
+                        <div class="absolute -top-4 -right-4 text-emerald-500/20 text-6xl"><i class="ph-fill ph-shield-check"></i></div>
+                        <h4 class="font-bold text-emerald-400 mb-2 flex items-center gap-2"><i class="ph ph-shield text-xl"></i> Chốt Chặn Kỷ Luật (Guardrails)</h4>
+                        <p class="text-sm text-slate-300 mb-3">
+                            <strong class="text-white block mb-1">Giới hạn vật lý:</strong> Đừng dùng "ý chí" để đấu với Tiktok. Hãy dùng rào cản vật lý.
+                        </p>
+                        <div class="text-xs bg-black/30 p-2 rounded text-slate-400 italic">
+                            Quy tắc cứng: Khi làm việc sâu (Deep work), Wifi điện thoại TẮT MẶC ĐỊNH. Đặt sạc điện thoại ở một phòng khác. Không có ngoại lệ.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: ACTIVE RECALL (FLASHCARDS) -->
+        <section id="recall" class="max-w-7xl mx-auto px-6 mb-12">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-400 text-sm font-semibold mb-4 border border-purple-500/20">
+                    <i class="ph-fill ph-cards"></i> Active Recall
+                </div>
+                <h2 class="text-3xl font-bold">Trạm Ôn Tập Tương Tác</h2>
+                <p class="text-slate-400 mt-2">Duyệt qua 15 câu hỏi trọng điểm. Câu trả lời nằm ngay bên dưới để bạn khắc sâu vào não.</p>
+            </div>
+
+            <!-- CSS Grid for Flashcards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+                
+                <!-- Thẻ sinh tự động bằng loop logic -->
+                <!-- Thẻ 1 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">1. Quy tắc 1% mỗi ngày tạo ra điều gì sau 1 năm?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Tốt hơn 37 lần (Lãi kép).
+                    </div>
+                </div>
+                <!-- Thẻ 2 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">2. Sai lầm lớn nhất về Động lực là gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Nghĩ rằng phải có động lực mới hành động. Thực tế, hành động TRƯỚC tạo ra động lực.
+                    </div>
+                </div>
+                <!-- Thẻ 3 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">3. Làm sao để đánh lừa não bộ bắt đầu một dự án lớn?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Áp dụng MVA (Hành động khả thi tối thiểu) - chia nhỏ task.
+                    </div>
+                </div>
+                <!-- Thẻ 4 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">4. "The Gap" (Khoảng hẫng) là khái niệm gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Khoảng thời gian bạn nỗ lực nhưng chưa thấy kết quả ngay (dễ gây nản lòng).
+                    </div>
+                </div>
+                <!-- Thẻ 5 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">5. Nguyên tắc "Frictionless Focus" yêu cầu gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Xóa bỏ mọi ma sát/xao nhãng (dọn bàn, tắt noti) để môi trường tối giản.
+                    </div>
+                </div>
+                <!-- Thẻ 6 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">6. Thời điểm tốt nhất để lên kế hoạch trong ngày là khi nào?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Đêm hôm trước (Win the day the night before).
+                    </div>
+                </div>
+                <!-- Thẻ 7 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">7. Tại sao tập luyện thể chất lại liên quan đến kỷ luật công việc?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Chúng xài chung một nhóm "cơ bắp ý chí". Rèn 1 được 2.
+                    </div>
+                </div>
+                <!-- Thẻ 8 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">8. Giải pháp chống Burn-out của giới Founder là gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Thực hiện "Soul Trip" (Chuyến đi thiên nhiên) mỗi 6 tuần.
+                    </div>
+                </div>
+                <!-- Thẻ 9 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">9. Thuật ngữ "Friend Audit" nghĩa là gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Kiểm toán lại bạn bè: Loại bỏ kẻ hút năng lượng, ở gần người xuất sắc.
+                    </div>
+                </div>
+                <!-- Thẻ 10 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">10. Bạn bị kẹt ở mức Hoàn hảo. Phải làm gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        "Launch the messy first draft" - Ra mắt ngay khi xong 80% để nhận feedback.
+                    </div>
+                </div>
+                <!-- Thẻ 11 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">11. Vũ khí để ép bản thân làm việc khó là gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Áp lực giải trình công khai (Public Accountability).
+                    </div>
+                </div>
+                <!-- Thẻ 12 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">12. Cái giá của việc "Giữ thể diện" trong kỷ luật?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Nỗi sợ mất mặt khi đã hứa công khai sẽ đè bẹp sự lười biếng.
+                    </div>
+                </div>
+                <!-- Thẻ 13 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">13. Cốt lõi của kỷ luật khác với làm việc vất vả ra sao?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Vất vả là cày kéo tay. Kỷ luật hệ thống là đòn bẩy tự động.
+                    </div>
+                </div>
+                <!-- Thẻ 14 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">14. Ví dụ từ việc cai rượu của Matt Gray chỉ ra điều gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Lãi kép thói quen: 1 thói quen tốt kéo theo chuỗi hệ thống thay đổi đời.
+                    </div>
+                </div>
+                <!-- Thẻ 15 -->
+                <div class="flashcard rounded-xl p-5 flex flex-col justify-between h-48 group">
+                    <div class="text-sm font-semibold text-slate-200 mb-2">15. Nếu chỉ nhớ 1 câu trong video này, đó là gì?</div>
+                    <div class="text-xs text-brand-400 opacity-60 group-hover:opacity-100 transition duration-300 font-medium bg-dark-bg p-2 rounded border border-dark-border">
+                        Thiết kế Hệ thống > Dựa vào Động lực (Design System > Rely on Motivation).
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark-card border-t border-dark-border h-[128px] flex items-center justify-center">
+        <div class="max-w-7xl mx-auto px-6 w-full flex flex-col md:flex-row items-center justify-between gap-4">
+            <div class="text-center md:text-left">
+                <h4 class="font-bold text-white mb-1">Vietndonline</h4>
+                <p class="text-xs text-slate-400 max-w-sm">Cập nhật kiến thức thực chiến về Quay Dựng, Xây kênh Niche và Phân tích Thuật toán MXH.</p>
+            </div>
+            
+            <div class="flex gap-4">
+                <a href="https://youtube.com/@vietndonline" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-red-600 hover:text-white transition duration-300">
+                    <i class="ph-fill ph-youtube-logo text-xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@nguyenducviet.viral" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-black hover:text-white transition duration-300">
+                    <i class="ph-fill ph-tiktok-logo text-xl"></i>
+                </a>
+                <a href="https://web.facebook.com/profile.php?id=61580450902746" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-300 hover:bg-blue-600 hover:text-white transition duration-300">
+                    <i class="ph-fill ph-facebook-logo text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MermaidJS Setup -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        
+        mermaid.initialize({ 
+            startOnLoad: true, 
+            theme: 'dark',
+            securityLevel: 'loose',
+            mindmap: {
+                padding: 10,
+                maxNodeWidth: 200,
+            }
+        });
+
+        // Đợi Mermaid Render xong rồi gắn chức năng Zoom/Pan cơ bản
+        setTimeout(() => {
+            const container = document.getElementById('mindmap-container');
+            const svg = container.querySelector('svg');
+            
+            if (!svg) return;
+            
+            // Fix svg width to fill container better
+            svg.style.width = '100%';
+            svg.style.height = '100%';
+            
+            let scale = 1;
+            let panning = false;
+            let pointX = 0;
+            let pointY = 0;
+            let start = { x: 0, y: 0 };
+            
+            const g = svg.querySelector('g') || svg;
+
+            function setTransform() {
+                g.style.transform = `translate(${pointX}px, ${pointY}px) scale(${scale})`;
+                g.style.transformOrigin = 'center';
+                g.style.transition = panning ? 'none' : 'transform 0.2s ease';
+            }
+
+            // Mouse wheel zoom
+            container.onwheel = function(e) {
+                e.preventDefault();
+                const xs = (e.clientX - pointX) / scale;
+                const ys = (e.clientY - pointY) / scale;
+                const delta = (e.wheelDelta ? e.wheelDelta : -e.deltaY);
+                (delta > 0) ? (scale *= 1.2) : (scale /= 1.2);
+                pointX = e.clientX - xs * scale;
+                pointY = e.clientY - ys * scale;
+                setTransform();
+            }
+
+            // Panning
+            container.onmousedown = function(e) {
+                e.preventDefault();
+                start = { x: e.clientX - pointX, y: e.clientY - pointY };
+                panning = true;
+            }
+            
+            container.onmouseup = function() { panning = false; }
+            container.onmouseleave = function() { panning = false; }
+            
+            container.onmousemove = function(e) {
+                if (!panning) return;
+                e.preventDefault();
+                pointX = (e.clientX - start.x);
+                pointY = (e.clientY - start.y);
+                setTransform();
+            }
+
+            // Controls
+            document.getElementById('zoom-in').onclick = () => { scale *= 1.2; setTransform(); };
+            document.getElementById('zoom-out').onclick = () => { scale /= 1.2; setTransform(); };
+            document.getElementById('zoom-reset').onclick = () => { scale = 1; pointX = 0; pointY = 0; setTransform(); };
+            
+        }, 1500); // Đợi 1.5s cho an toàn
+    </script>
+
+<script id="cms-pin-widget">if(localStorage.getItem("cms_auth")==="granted"){const p=window.location.pathname.split("/").filter(Boolean);let r="vietndj.github.io",f="index.html";if(p.length>1){r=p[0];f=p.pop()}else if(p.length===1){if(p[0].endsWith(".html"))f=p[0];else r=p[0]}const k=r+"/"+decodeURIComponent(f);let isP=false;try{const d=JSON.parse(localStorage.getItem("cms_repo_data"));if(d&&d.pinned&&d.pinned.includes(k))isP=true;}catch(e){}const b=document.createElement("a");b.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k);b.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";b.style.cssText="position:fixed;top:15px;right:15px;background:"+(isP?"#FF3B30":"#FF9500")+";color:white;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:12px;z-index:99999;text-decoration:none;box-shadow:0 4px 10px rgba(0,0,0,0.15);transition:all 0.2s ease;cursor:pointer;";b.onclick=function(e){e.preventDefault();window.open(this.href,"_blank");isP=!isP;this.innerHTML=isP?"❌ Bỏ ghim":"📌 Ghim bài";this.style.background=isP?"#FF3B30":"#FF9500";this.href="https://vietndj.github.io/?"+(isP?"unpin=":"pin=")+encodeURIComponent(k)};document.body.appendChild(b);}</script>
+</body>
+</html>

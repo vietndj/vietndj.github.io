@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Remotion Auto-Edit Guide | Hướng Dẫn Motion Graphics Bằng Code</title>
+  <meta name="description" content="Tài liệu toàn diện về logic hoạt động, kiến trúc, cài đặt và tích hợp Remotion vào hệ thống Auto-Edit video ngắn cho AI Agent và Developer." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome & Prism.js for Syntax Highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" />
+
+  <style>
+    :root {
+      --bg-main: #060913;
+      --bg-card: #0d1322;
+      --bg-code: #090e1a;
+      --accent-cyan: #38bdf8;
+      --accent-gold: #f59e0b;
+      --accent-green: #10b981;
+      --accent-red: #ef4444;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(56, 189, 248, 0.3);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Ambient Background Glow */
+    .ambient-glow {
+      position: fixed;
+      top: -200px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.12) 0%, rgba(139, 92, 246, 0.05) 50%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Container Layout */
+    .layout-wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 48px;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 992px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+    }
+
+    /* Sidebar Navigation */
+    .sidebar {
+      position: sticky;
+      top: 40px;
+      height: calc(100vh - 80px);
+      overflow-y: auto;
+      padding-right: 16px;
+    }
+
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 28px;
+      text-decoration: none;
+    }
+
+    .sidebar-brand i {
+      color: var(--accent-cyan);
+      font-size: 24px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .toc-item a {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      border-left: 2px solid transparent;
+    }
+
+    .toc-item a:hover {
+      color: var(--accent-cyan);
+      background: rgba(56, 189, 248, 0.06);
+      border-left-color: var(--accent-cyan);
+      transform: translateX(4px);
+    }
+
+    /* Main Content */
+    .content-area {
+      min-width: 0;
+    }
+
+    /* Hero Header */
+    .hero-banner {
+      background: linear-gradient(145deg, rgba(13, 19, 34, 0.9) 0%, rgba(20, 29, 48, 0.8) 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: 24px;
+      padding: 44px;
+      margin-bottom: 48px;
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.05));
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      color: var(--accent-cyan);
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: 38px;
+      font-weight: 900;
+      line-height: 1.25;
+      letter-spacing: -1px;
+      margin-bottom: 16px;
+      background: linear-gradient(90deg, #ffffff, #cbd5e1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      margin-bottom: 28px;
+      max-width: 800px;
+    }
+
+    .action-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 22px;
+      border-radius: 12px;
+      font-size: 14px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #38bdf8 0%, #2563eb 100%);
+      color: #ffffff;
+      box-shadow: 0 10px 25px -5px rgba(56, 189, 248, 0.4);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(56, 189, 248, 0.6);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-main);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Section Cards */
+    .doc-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 20px;
+      padding: 36px;
+      margin-bottom: 36px;
+      scroll-margin-top: 40px;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ffffff;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 16px;
+    }
+
+    .section-title i {
+      color: var(--accent-cyan);
+    }
+
+    h3 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #e2e8f0;
+      margin: 24px 0 12px 0;
+    }
+
+    p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+
+    /* Tables */
+    .styled-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 20px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .styled-table th {
+      background: rgba(255, 255, 255, 0.04);
+      color: #94a3b8;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      padding: 14px 18px;
+      text-align: left;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .styled-table td {
+      padding: 14px 18px;
+      color: #e2e8f0;
+      font-size: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .styled-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Code Blocks */
+    .code-container {
+      position: relative;
+      margin: 18px 0;
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-code);
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #94a3b8;
+    }
+
+    .copy-btn {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      cursor: pointer;
+      font-size: 13px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 0.2s;
+    }
+
+    .copy-btn:hover {
+      color: var(--accent-cyan);
+    }
+
+    pre[class*="language-"] {
+      margin: 0 !important;
+      padding: 20px !important;
+      background: var(--bg-code) !important;
+      font-family: 'JetBrains Mono', monospace !important;
+      font-size: 13.5px !important;
+      line-height: 1.6 !important;
+    }
+
+    /* Mermaid Diagrams */
+    .mermaid-box {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-subtle);
+      border-radius: 14px;
+      padding: 24px;
+      margin: 20px 0;
+      display: flex;
+      justify-content: center;
+    }
+
+    /* Feature Badges & Callouts */
+    .alert-box {
+      background: rgba(56, 189, 248, 0.08);
+      border-left: 4px solid var(--accent-cyan);
+      border-radius: 0 12px 12px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+      color: #e2e8f0;
+      font-size: 14.5px;
+    }
+
+    .alert-box strong {
+      color: var(--accent-cyan);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      color: #64748b;
+      font-size: 13px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow"></div>
+
+  <div class="layout-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+      <a href="#" class="sidebar-brand">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <span>Remotion Docs</span>
+      </a>
+
+      <ul class="toc-list">
+        <li class="toc-item"><a href="#overview">1. Bản chất & Triết lý</a></li>
+        <li class="toc-item"><a href="#comparison">2. So sánh với JS Cũ</a></li>
+        <li class="toc-item"><a href="#architecture">3. Kiến trúc & Core Hooks</a></li>
+        <li class="toc-item"><a href="#pipeline">4. Quy trình Auto-Edit 4 Bước</a></li>
+        <li class="toc-item"><a href="#installation">5. Hướng dẫn Cài đặt</a></li>
+        <li class="toc-item"><a href="#boilerplate">6. Bộ Code Boilerplate</a></li>
+        <li class="toc-item"><a href="#cli-commands">7. Lệnh CLI Thiết Yếu</a></li>
+        <li class="toc-item"><a href="#golden-rules">8. Quy Tắc Vàng Cho AI</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="content-area">
+      <!-- Hero Banner -->
+      <section class="hero-banner">
+        <div class="hero-tag">
+          <i class="fa-solid fa-code"></i> Programmatic Video Creation
+        </div>
+        <h1 class="hero-title">Remotion Engine Trong Hệ Thống Auto-Edit Video</h1>
+        <p class="hero-desc">
+          Tài liệu chuẩn hóa về kiến trúc, cơ chế hoạt động frame-by-frame và cách tích hợp Remotion vào pipeline biên tập video tự động bằng AI Agent.
+        </p>
+
+        <div class="action-group">
+          <a href="remotion.md" class="btn-action btn-primary" download>
+            <i class="fa-solid fa-download"></i> Tải Tệp Raw Markdown (.md)
+          </a>
+          <a href="https://drive.google.com/file/d/14xoFh4yKTz5-vpgXe2aWgxsbtOhqoAZb/view" target="_blank" class="btn-action btn-secondary">
+            <i class="fa-brands fa-google-drive"></i> Mở Trên Google Drive
+          </a>
+        </div>
+      </section>
+
+      <!-- Section 1 -->
+      <section id="overview" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-circle-nodes"></i> 1. Bản chất & Triết lý hoạt động của Remotion</h2>
+        <p>
+          <strong>Remotion</strong> là một framework mã nguồn mở cho phép biến mã nguồn <strong>React, TypeScript, HTML, CSS và Canvas/SVG</strong> thành video MP4 chất lượng cao.
+        </p>
+        
+        <div class="alert-box">
+          <strong>Nguyên lý cốt lõi:</strong> Mỗi video là một React Component. Mỗi khung hình (frame) là một trạng thái render xác định của DOM:  
+          <br /><code>Visual State = f(currentFrame)</code>
+        </div>
+      </section>
+
+      <!-- Section 2 -->
+      <section id="comparison" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-scale-balanced"></i> 2. So sánh Remotion và Script JS/Canvas Cũ</h2>
+        
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Tiêu chí</th>
+              <th>Script Vanilla JS + Puppeteer Cũ</th>
+              <th>Remotion Framework</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Cơ chế Render</strong></td>
+              <td>Quay màn hình thời gian thực (Real-time stream)</td>
+              <td>Deterministic Frame-by-Frame (Chụp từng frame rời rạc)</td>
+            </tr>
+            <tr>
+              <td><strong>Hiện tượng Drop Frame</strong></td>
+              <td>Dễ bị giật/lag nếu CPU nghẽn ➔ Lệch tiếng</td>
+              <td>100% Không bao giờ mất frame dù máy mạnh hay yếu</td>
+            </tr>
+            <tr>
+              <td><strong>Xem trước (Preview)</strong></td>
+              <td>Khó tua ngược dòng thời gian</td>
+              <td>Remotion Studio kéo timeline mượt mà từng frame</td>
+            </tr>
+            <tr>
+              <td><strong>Hệ sinh thái</strong></td>
+              <td>DOM thủ công, dễ rối code</td>
+              <td>Thừa hưởng toàn bộ React, Lucide icons, Three.js, Lottie</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Section 3 -->
+      <section id="architecture" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-cubes"></i> 3. Kiến trúc & Các Hook Cốt Lõi</h2>
+        
+        <h3>A. Hook <code>useCurrentFrame()</code></h3>
+        <p>Hook cơ bản nhất trong Remotion, trả về chỉ số khung hình hiện tại (0, 1, 2, ..., N):</p>
+        <div class="code-container">
+          <div class="code-header">
+            <span>TypeScript (TSX)</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-typescript">import { useCurrentFrame, useVideoConfig } from "remotion";
+
+export const MyComponent: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { fps, width, height } = useVideoConfig();
+  return <div>Khung hình hiện tại: {frame}</div>;
+};</code></pre>
+        </div>
+
+        <h3>B. Hàm nội suy toán học <code>interpolate()</code></h3>
+        <p>Biến đổi mượt mà giữa các khoảng frame thành giá trị hiển thị (opacity, scale, vị trí):</p>
+        <div class="code-container">
+          <div class="code-header">
+            <span>TypeScript (TSX)</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-typescript">import { interpolate } from "remotion";
+
+// Khi frame từ 0 -> 15: opacity tăng từ 0 -> 1
+// Khi frame từ 140 -> 156: opacity giảm từ 1 -> 0
+const opacity = interpolate(
+  frame,
+  [0, 15, 140, 156],
+  [0, 1, 1, 0],
+  { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+);</code></pre>
+        </div>
+
+        <h3>C. Chuyển động vật lý <code>spring()</code></h3>
+        <p>Tạo hiệu ứng nảy tự nhiên như giao diện iOS/SaaS cao cấp:</p>
+        <div class="code-container">
+          <div class="code-header">
+            <span>TypeScript (TSX)</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-typescript">import { spring, useCurrentFrame, useVideoConfig } from "remotion";
+
+const frame = useCurrentFrame();
+const { fps } = useVideoConfig();
+
+const scale = spring({
+  frame,
+  fps,
+  config: { damping: 14, mass: 0.6, stiffness: 120 },
+});</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 4 -->
+      <section id="pipeline" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-diagram-project"></i> 4. Quy trình Auto-Edit 4 Bước</h2>
+        
+        <div class="mermaid-box">
+          <pre class="mermaid">
+flowchart LR
+    A[1. Video/Audio Input] --> B[Whisper: Bóc tách Word Timestamps]
+    B --> C[2. AI: Phân tích Visual Hooks]
+    C --> D[3. AI: Sinh mã React TSX]
+    D --> E[4. CLI: Render MP4 / ProRes]
+          </pre>
+        </div>
+
+        <p><strong>Công thức quy đổi mốc thời gian:</strong></p>
+        <div class="alert-box">
+          <code>startFrame = Math.round(startSeconds * FPS)</code><br />
+          <code>endFrame = Math.round(endSeconds * FPS)</code>
+        </div>
+      </section>
+
+      <!-- Section 5 -->
+      <section id="installation" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-terminal"></i> 5. Hướng dẫn Cài đặt & Khởi tạo</h2>
+        
+        <p>Chạy các lệnh sau trong terminal để khởi tạo project Remotion tự động (Non-interactive):</p>
+        <div class="code-container">
+          <div class="code-header">
+            <span>PowerShell / Bash</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-bash"># 1. Tạo project blank không cần bấm phím tương tác
+npx -y create-video@latest --yes --blank remotion_studio --no-tailwind
+
+# 2. Di chuyển vào thư mục
+cd remotion_studio
+
+# 3. Cài đặt các thư viện icon & tiện ích thiết yếu
+npm install lucide-react clsx</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 6 -->
+      <section id="boilerplate" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-file-code"></i> 6. Bộ Mã Nguồn Mẫu (Boilerplate)</h2>
+        
+        <h3>A. Cấu hình <code>src/types.ts</code></h3>
+        <div class="code-container">
+          <div class="code-header">
+            <span>src/types.ts</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-typescript">export interface VideoConfig {
+  fps: number;
+  width: number;
+  height: number;
+  durationInFrames: number;
+}
+
+export const VIDEO_CONFIG: VideoConfig = {
+  fps: 30,
+  width: 1080,
+  height: 1920, // 9:16 Vertical Video (Reels/Shorts/TikTok)
+  durationInFrames: 450, // 15s * 30 fps
+};</code></pre>
+        </div>
+
+        <h3>B. Ghép nối <code>src/Composition.tsx</code></h3>
+        <div class="code-container">
+          <div class="code-header">
+            <span>src/Composition.tsx</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-typescript">import React from "react";
+import { AbsoluteFill, staticFile, Video } from "remotion";
+import { Scene1_ZeroSales } from "./components/Scene1_ZeroSales";
+import { Scene2_MissingStructure } from "./components/Scene2_MissingStructure";
+import { Scene3_WorkshopEvent } from "./components/Scene3_WorkshopEvent";
+import { Captions } from "./components/Captions";
+
+export const FullVideoComposition: React.FC = () => {
+  return (
+    <AbsoluteFill style={{ backgroundColor: "#020617" }}>
+      {/* Background Footage */}
+      <Video src={staticFile("footage.mp4")} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+      {/* Dark Overlay Vignette */}
+      <AbsoluteFill style={{ background: "rgba(0,0,0,0.35)", pointerEvents: "none" }} />
+      {/* Motion Graphics */}
+      <Scene1_ZeroSales />
+      <Scene2_MissingStructure />
+      <Scene3_WorkshopEvent />
+      <Captions />
+    </AbsoluteFill>
+  );
+};</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 7 -->
+      <section id="cli-commands" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-bolt"></i> 7. Các Lệnh CLI Render Thiết Yếu</h2>
+        
+        <div class="code-container">
+          <div class="code-header">
+            <span>CLI Commands</span>
+            <button class="copy-btn" onclick="copyCode(this)"><i class="fa-regular fa-copy"></i> Sao chép</button>
+          </div>
+          <pre><code class="language-bash"># 1. Bật giao diện xem trước Studio (Preview Player)
+npx remotion preview
+
+# 2. Render video hoàn chỉnh đa luồng
+npx remotion render FullVideoWithBroll out/final.mp4 --concurrency=4
+
+# 3. Render lớp Overlay nền trong suốt (Alpha ProRes 4444)
+npx remotion render MotionGraphicsOverlayOnly out/overlay.mov --codec=prores --prores-profile=4444
+
+# 4. Render 1 frame ảnh tĩnh kiểm tra
+npx remotion still FullVideoWithBroll out/preview_frame.png --frame=75</code></pre>
+        </div>
+      </section>
+
+      <!-- Section 8 -->
+      <section id="golden-rules" class="doc-section">
+        <h2 class="section-title"><i class="fa-solid fa-crown"></i> 8. Quy Tắc Vàng Cho AI Agent Khi Viết Code</h2>
+        
+        <ul style="list-style-type: none; display: flex; flex-direction: column; gap: 14px; margin-top: 16px;">
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-check" style="color: var(--accent-green); margin-top: 4px;"></i>
+            <span><strong>Luôn chặn biên interpolate:</strong> Thêm <code>{ extrapolateLeft: "clamp", extrapolateRight: "clamp" }</code> vào mọi hàm nội suy.</span>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-check" style="color: var(--accent-green); margin-top: 4px;"></i>
+            <span><strong>Giải phóng DOM khi ngoài phạm vi:</strong> Đặt <code>if (frame < start || frame > end) return null;</code> ở đầu mỗi component.</span>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-check" style="color: var(--accent-green); margin-top: 4px;"></i>
+            <span><strong>Sử dụng vật lý lò xo (Spring):</strong> Luôn ưu tiên <code>spring()</code> cho hiệu ứng xuất hiện thay vì CSS keyframe tuyến tính.</span>
+          </li>
+          <li style="display: flex; gap: 12px; align-items: flex-start;">
+            <i class="fa-solid fa-check" style="color: var(--accent-green); margin-top: 4px;"></i>
+            <span><strong>Tách nhỏ từng Scene:</strong> Mỗi phân cảnh tạo một file <code>.tsx</code> độc lập trong <code>src/components/</code> để dễ bảo trì.</span>
+          </li>
+        </ul>
+      </section>
+
+      <footer>
+        <p>© 2026 VietNDJ | Remotion Engine Documentation. Đã biên soạn tự động cho hệ thống Auto-Edit.</p>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Scripts: Prism & Mermaid -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-typescript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+  </script>
+  
+  <script>
+    function copyCode(btn) {
+      const pre = btn.closest('.code-container').querySelector('pre');
+      const text = pre.innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.innerHTML = '<i class="fa-solid fa-check" style="color:#10b981;"></i> Đã chép!';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fa-regular fa-copy"></i> Sao chép';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>
