@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>@Neeraj Khurana Video, Lighting & Photography DcJBTCoT6UT Video by photoknack.in - Báo Cáo Phân Tích Đạo Diễn</title>
+<title>Master Studio Lighting Breakdown - Kỹ Thuật Đánh Đèn Chuyên Nghiệp 3 Điểm Trong Studio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
@@ -21,6 +21,8 @@
     --accent-blue: #38bdf8;
     --accent-amber: #f59e0b;
     --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --accent-purple: #c084fc;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Be Vietnam Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -37,7 +39,7 @@ body {
     background-color: var(--bg-main);
     color: var(--text-primary);
     font-family: var(--font-body);
-    line-height: 1.5;
+    line-height: 1.55;
     font-size: 14px;
     overflow-x: hidden;
 }
@@ -233,7 +235,9 @@ video#mainPlayer {
     color: var(--text-secondary);
 }
 
-.meta-tags-flex strong { color: #fff; }
+.meta-tags-flex strong {
+    color: #fff;
+}
 
 .overview-card {
     background: #0e1420;
@@ -307,17 +311,31 @@ video#mainPlayer {
 .storyboard-container {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 20px;
 }
 
 .shot-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 14px;
+    padding: 16px;
     display: flex;
-    gap: 16px;
+    gap: 18px;
     transition: transform 0.15s, border-color 0.15s;
+}
+
+@media (max-width: 768px) {
+    .shot-card {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .shot-media-col {
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+    .shot-thumb-wrap {
+        max-height: 240px;
+    }
 }
 
 .shot-card:hover {
@@ -331,8 +349,8 @@ video#mainPlayer {
 }
 
 .shot-media-col {
-    width: 120px;
-    min-width: 120px;
+    width: 135px;
+    min-width: 135px;
     flex-shrink: 0;
 }
 
@@ -363,7 +381,11 @@ video#mainPlayer {
     opacity: 0.7;
 }
 
-.play-overlay svg { width: 32px; height: 32px; color: #fff; }
+.play-overlay svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
 
 .zoom-btn {
     position: absolute;
@@ -399,17 +421,22 @@ video#mainPlayer {
     min-width: 0;
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .shot-card-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 8px;
     border-bottom: 1px solid #1a2436;
     padding-bottom: 8px;
-    margin-bottom: 8px;
+}
+
+.shot-title-wrap {
+    flex: 1;
+    min-width: 200px;
 }
 
 .shot-badge-num {
@@ -421,9 +448,16 @@ video#mainPlayer {
     padding: 2px 6px;
     border-radius: 4px;
     margin-right: 6px;
+    display: inline-block;
 }
 
-.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
+.shot-heading {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: inline;
+    line-height: 1.4;
+}
 
 .time-jump-btn {
     background: rgba(56, 189, 248, 0.12);
@@ -431,30 +465,144 @@ video#mainPlayer {
     border: 1px solid rgba(56, 189, 248, 0.3);
     padding: 4px 10px;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
+    white-space: nowrap;
+}
+
+.shot-narrative-box {
+    background: #121a29;
+    border-left: 3px solid #38bdf8;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+.narrative-tag {
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-right: 4px;
+    display: block;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.critique-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+@media (max-width: 640px) {
+    .critique-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+.critique-box {
+    padding: 8px 10px;
+    border-radius: 6px;
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+
+.critique-good {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.critique-good .critique-title {
+    color: var(--accent-emerald);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.critique-good .critique-content {
+    color: #cbd5e1;
+}
+
+.critique-bad {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.critique-bad .critique-title {
+    color: var(--accent-amber);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.critique-bad .critique-content {
+    color: #cbd5e1;
+}
+
+.takeaway-box {
+    background: rgba(192, 132, 252, 0.08);
+    border: 1px solid rgba(192, 132, 252, 0.25);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+
+.takeaway-title {
+    color: var(--accent-purple);
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.takeaway-content {
+    color: #e2e8f0;
 }
 
 .props-list {
-    font-size: 12.5px;
+    font-size: 12px;
     color: #cbd5e1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 8px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 12px;
+    background: #0b1019;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid #182234;
+}
+
+@media (max-width: 640px) {
+    .props-list {
+        grid-template-columns: 1fr;
+    }
 }
 
 .prop-label { font-weight: 700; color: #94a3b8; }
 .prop-val { color: #e2e8f0; }
 
-.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
-.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
+
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 4px;
+}
+
+.tag-pill {
+    background: #162032;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     gap: 12px;
 }
 
@@ -464,6 +612,8 @@ video#mainPlayer {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
 }
 
 .grid-img-wrap {
@@ -533,6 +683,18 @@ video#mainPlayer {
     border-radius: 3px;
     text-align: center;
     font-family: var(--font-mono);
+}
+
+.grid-title-snippet {
+    padding: 6px 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #cbd5e1;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .drawer-backdrop {
@@ -613,8 +775,9 @@ video#mainPlayer {
 
 .drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .drawer-info { flex: 1; min-width: 0; }
-.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
-.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-shot-title { font-weight: 700; font-size: 12.5px; color: var(--accent-blue); }
+.drawer-shot-headline { font-size: 11.5px; color: #fff; margin: 1px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.drawer-shot-time { font-size: 11px; color: var(--accent-amber); font-family: var(--font-mono); }
 .drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
 
 #lightboxModal {
@@ -648,6 +811,7 @@ video#mainPlayer {
     padding: 6px 16px;
     border-radius: 20px;
     border: 1px solid #334155;
+    max-width: 90vw;
 }
 
 .lightbox-close {
@@ -688,12 +852,12 @@ video#mainPlayer {
     <div class="content-scroll-col">
         <div class="report-header-banner">
             <div class="header-top-row">
-                <span class="genre-badge">DIRECTOR BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">3 SHOTS &bull; 7.50s</span>
+                <span class="genre-badge">DIRECTOR STORYBOARD BREAKDOWN</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">3 SHOTS &bull; 16.97s</span>
             </div>
-            <h1 class="report-title">@Neeraj Khurana Video, Lighting & Photography DcJBTCoT6UT Video by photoknack.in - Báo Cáo Phân Tích Đạo Diễn</h1>
+            <h1 class="report-title">Master Studio Lighting Breakdown - Kỹ Thuật Đánh Đèn Chuyên Nghiệp 3 Điểm Trong Studio</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <strong>@Neeraj</strong></span>
+                <span>Tác giả: <strong>@photoknack.in (Neeraj Khurana)</strong></span>
                 <span>Tệp: <strong>IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -701,13 +865,7 @@ video#mainPlayer {
 
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-            <div>
-<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-<div>
-<h3>TỔNG QUAN PHONG CÁCH THỊ GIÁC:</h3>
-<div>Video sở hữu ngôn ngữ điện ảnh chuẩn mực với 3 phân cảnh được tính toán kỹ lưỡng. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên tương phản với nguồn sáng ấm cục bộ, tạo nhịp thở thị giác mượt mà và cảm xúc sâu lắng.</div>
-</div>
-</div>
+            <div>Báo cáo bóc tách 3 phân cảnh chuẩn mực về nghệ thuật đánh đèn Studio thương mại. Chuyên gia Neeraj Khurana thị phạm chính xác vị trí đặt đèn chính (Key Light), đèn viền (Rim Light) và tản sáng (Softbox) để tạo khối sắc nét cho chủ thể và tôn vinh chất liệu sản phẩm.</div>
         </div>
 
         <div class="action-toolbar">
@@ -722,58 +880,58 @@ video#mainPlayer {
             
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.5, 'SHOT 01')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                <div class="shot-thumb-wrap" onclick="playShot(0.0, 10.07, 'SHOT 01')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
-                    <span class="thumb-time-badge">0.00s - 2.50s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg', 'SHOT 01 [0.0s - 10.07s] • Hook thị giác mở màn (10.10s): Khóa chặt sự chú ý trong 2s đầu bằng Góc cận tập trung (Close-Up / Detail Shot)')">🔍</button>
+                    <span class="thumb-time-badge">0.00s - 10.07s</span>
                 </div>
             </div>
             <div class="shot-info-col">
                 <div class="shot-card-header">
                     <div class="shot-title-wrap">
                         <span class="shot-badge-num">SHOT 01</span>
-                        <h4 class="shot-heading">SHOT 01</h4>
+                        <h4 class="shot-heading">Hook thị giác mở màn (10.10s): Khóa chặt sự chú ý trong 2s đầu bằng Góc cận tập trung (Close-Up / Detail Shot)</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(0.0, 2.5, 'SHOT 01')">
-                        ▶ 0.00s ➔ 2.50s (2.50s)
+                    <button class="time-jump-btn" onclick="playShot(0.0, 10.07, 'SHOT 01')">
+                        ▶ 0.00s ➔ 10.07s (10.10s)
                     </button>
                 </div>
+
+                <div class="shot-narrative-box">
+                    <span class="narrative-tag">📝 Mô tả đối tượng &amp; Diễn biến:</span>
+                    <span class="narrative-text">Mở đầu tác phẩm, đối tượng xuất hiện ở vị trí trung tâm trong bối cảnh Thiết lập đèn Studio, định hình ngay nhịp thở và không gian thị giác.</span>
+                </div>
+
+                <div class="critique-container">
+                    <div class="critique-box critique-good">
+                        <div class="critique-title">✅ Điểm Sáng Thị Giác (Hiệu quả):</div>
+                        <div class="critique-content">Tạo điểm nhấn thị giác rõ nét; Low-key Lighting tạo độ tương phản sáng tối tách bạch chủ thể khỏi hậu cảnh.</div>
+                    </div>
+                    <div class="critique-box critique-bad">
+                        <div class="critique-title">⚠️ Hạn Chế / Cần Lưu Ý:</div>
+                        <div class="critique-content">Thời lượng shot chỉ 10.10s, cần đảm bảo eye-trace của người xem không bị nhảy lệch khi chuyển sang cảnh kế tiếp.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-box">
+                    <div class="takeaway-title">💡 Bài Học Đúc Kết Thực Chiến:</div>
+                    <div class="takeaway-content">Luôn đặt khung hình có lực hút thị giác mạnh nhất (Visual Hook) vào 2 giây đầu để tối đa hóa tỷ lệ giữ chân (Retention Rate).</div>
+                </div>
+
                 <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(0.0, 10.07, 'SHOT 01')">
-<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg', 'SHOT 01 [0.0s - 10.07s]')">🔍</button>
-<span class="thumb-time-badge">0.00s - 10.07s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 01</span>
-<h4 class="shot-heading">SHOT 01</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(0.0, 10.07, 'SHOT 01')">
-                        ▶ 0.00s ➔ 10.07s (10.07s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">59.0 / 62.8</span></div>
-</div>
-<div class="tags-row">
-<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 1</span><span class="tag-pill">10.1s</span>
-</div>
-</div>
-</div>
+                    <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Thiết lập đèn Studio</span></div>
+                    <div class="prop-item"><span class="prop-label">🎥 Góc &amp; Tiêu cự:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div>
+                    <div class="prop-item"><span class="prop-label">💡 Ánh sáng &amp; Màu:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
+                    <div class="prop-item"><span class="prop-label">🔄 Chuyển cảnh:</span> <span class="prop-val">Match Cut theo nhịp chuyển động</span></div>
                 </div>
+
                 <div class="tags-row">
-                    
+                    <span class="tag-pill">9:16 Vertical</span>
+                    <span class="tag-pill">Shot 01</span>
+                    <span class="tag-pill">⏱ 10.10s</span>
                 </div>
             </div>
         </div>
@@ -781,58 +939,58 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(2.5, 5.0, 'SHOT 02')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                <div class="shot-thumb-wrap" onclick="playShot(10.1, 16.03, 'SHOT 02')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
-                    <span class="thumb-time-badge">2.50s - 5.00s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_02_mid.jpg', 'SHOT 02 [10.1s - 16.03s] • Nén tiêu cự & Chiều sâu tầng lớp (5.97s): Xếp chồng không gian đa chiều')">🔍</button>
+                    <span class="thumb-time-badge">10.10s - 16.03s</span>
                 </div>
             </div>
             <div class="shot-info-col">
                 <div class="shot-card-header">
                     <div class="shot-title-wrap">
                         <span class="shot-badge-num">SHOT 02</span>
-                        <h4 class="shot-heading">SHOT 02</h4>
+                        <h4 class="shot-heading">Nén tiêu cự & Chiều sâu tầng lớp (5.97s): Xếp chồng không gian đa chiều</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(2.5, 5.0, 'SHOT 02')">
-                        ▶ 2.50s ➔ 5.00s (2.50s)
+                    <button class="time-jump-btn" onclick="playShot(10.1, 16.03, 'SHOT 02')">
+                        ▶ 10.10s ➔ 16.03s (5.97s)
                     </button>
                 </div>
+
+                <div class="shot-narrative-box">
+                    <span class="narrative-tag">📝 Mô tả đối tượng &amp; Diễn biến:</span>
+                    <span class="narrative-text">Chủ thể di chuyển qua khung hình với các lớp tiền cảnh và hậu cảnh tương hỗ trong bối cảnh Thiết lập đèn Studio.</span>
+                </div>
+
+                <div class="critique-container">
+                    <div class="critique-box critique-good">
+                        <div class="critique-title">✅ Điểm Sáng Thị Giác (Hiệu quả):</div>
+                        <div class="critique-content">Tận dụng tỷ lệ dọc 9:16 để xếp tầng lớp (Layering) tạo chiều sâu 3D sống động mà không bị phẳng hình.</div>
+                    </div>
+                    <div class="critique-box critique-bad">
+                        <div class="critique-title">⚠️ Hạn Chế / Cần Lưu Ý:</div>
+                        <div class="critique-content">Mật độ chi tiết ở rìa khung hình hơi dày, cần kiểm soát vùng an toàn (Safe Zone) trên màn hình điện thoại.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-box">
+                    <div class="takeaway-title">💡 Bài Học Đúc Kết Thực Chiến:</div>
+                    <div class="takeaway-content">Sắp đặt ít nhất 3 lớp không gian (Tiền cảnh - Chủ thể - Hậu cảnh) để biến khung hình dọc hẹp thành một không gian có chiều sâu vô tận.</div>
+                </div>
+
                 <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(10.1, 16.03, 'SHOT 02')">
-<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg', 'SHOT 02 [10.1s - 16.03s]')">🔍</button>
-<span class="thumb-time-badge">10.10s - 16.03s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 02</span>
-<h4 class="shot-heading">SHOT 02</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(10.1, 16.03, 'SHOT 02')">
-                        ▶ 10.10s ➔ 16.03s (5.93s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">71.2 / 65.2</span></div>
-</div>
-<div class="tags-row">
-<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 2</span><span class="tag-pill">5.97s</span>
-</div>
-</div>
-</div>
+                    <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Thiết lập đèn Studio</span></div>
+                    <div class="prop-item"><span class="prop-label">🎥 Góc &amp; Tiêu cự:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div>
+                    <div class="prop-item"><span class="prop-label">💡 Ánh sáng &amp; Màu:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
+                    <div class="prop-item"><span class="prop-label">🔄 Chuyển cảnh:</span> <span class="prop-val">Match Cut theo nhịp chuyển động</span></div>
                 </div>
+
                 <div class="tags-row">
-                    
+                    <span class="tag-pill">9:16 Vertical</span>
+                    <span class="tag-pill">Shot 02</span>
+                    <span class="tag-pill">⏱ 5.97s</span>
                 </div>
             </div>
         </div>
@@ -840,58 +998,58 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(5.0, 7.5, 'SHOT 03')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                <div class="shot-thumb-wrap" onclick="playShot(16.07, 16.97, 'SHOT 03')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
-                    <span class="thumb-time-badge">5.00s - 7.50s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg', 'SHOT 03 [16.07s - 16.97s] • Cú máy kết thúc (0.93s): Lắng đọng cảm xúc và hoàn tất thông điệp tác phẩm')">🔍</button>
+                    <span class="thumb-time-badge">16.07s - 16.97s</span>
                 </div>
             </div>
             <div class="shot-info-col">
                 <div class="shot-card-header">
                     <div class="shot-title-wrap">
                         <span class="shot-badge-num">SHOT 03</span>
-                        <h4 class="shot-heading">SHOT 03</h4>
+                        <h4 class="shot-heading">Cú máy kết thúc (0.93s): Lắng đọng cảm xúc và hoàn tất thông điệp tác phẩm</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(5.0, 7.5, 'SHOT 03')">
-                        ▶ 5.00s ➔ 7.50s (2.50s)
+                    <button class="time-jump-btn" onclick="playShot(16.07, 16.97, 'SHOT 03')">
+                        ▶ 16.07s ➔ 16.97s (0.93s)
                     </button>
                 </div>
+
+                <div class="shot-narrative-box">
+                    <span class="narrative-tag">📝 Mô tả đối tượng &amp; Diễn biến:</span>
+                    <span class="narrative-text">Nhịp chuyển động chậm dần về trạng thái cân bằng, tôn vinh trọn vẹn vẻ đẹp của Kiểm soát bóng đổ và khép lại câu chuyện.</span>
+                </div>
+
+                <div class="critique-container">
+                    <div class="critique-box critique-good">
+                        <div class="critique-title">✅ Điểm Sáng Thị Giác (Hiệu quả):</div>
+                        <div class="critique-content">Bố cục cân đối, dải màu hoàn thiện tạo cảm giác viên mãn và dư âm thị giác khó quên.</div>
+                    </div>
+                    <div class="critique-box critique-bad">
+                        <div class="critique-title">⚠️ Hạn Chế / Cần Lưu Ý:</div>
+                        <div class="critique-content">Thời lượng kết thúc vừa vặn, tránh kéo dài quá 2 giây trên short-form để không làm giảm Completion Rate.</div>
+                    </div>
+                </div>
+
+                <div class="takeaway-box">
+                    <div class="takeaway-title">💡 Bài Học Đúc Kết Thực Chiến:</div>
+                    <div class="takeaway-content">Shot kết thúc là cơ hội vàng để neo đậu cảm xúc; hãy dùng cú máy chuyển động mượt hoặc hình ảnh biểu tượng để tạo dấu ấn sâu sắc.</div>
+                </div>
+
                 <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(16.07, 16.97, 'SHOT 03')">
-<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg', 'SHOT 03 [16.07s - 16.97s]')">🔍</button>
-<span class="thumb-time-badge">16.07s - 16.97s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 03</span>
-<h4 class="shot-heading">SHOT 03</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(16.07, 16.97, 'SHOT 03')">
-                        ▶ 16.07s ➔ 16.97s (0.90s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">18.1 / 17.9</span></div>
-</div>
-<div class="tags-row">
-<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 3</span><span class="tag-pill">0.93s</span>
-</div>
-</div>
-</div>
+                    <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Thiết lập đèn Studio</span></div>
+                    <div class="prop-item"><span class="prop-label">🎥 Góc &amp; Tiêu cự:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div>
+                    <div class="prop-item"><span class="prop-label">💡 Ánh sáng &amp; Màu:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div>
+                    <div class="prop-item"><span class="prop-label">🔄 Chuyển cảnh:</span> <span class="prop-val">Match Cut theo nhịp chuyển động</span></div>
                 </div>
+
                 <div class="tags-row">
-                    
+                    <span class="tag-pill">9:16 Vertical</span>
+                    <span class="tag-pill">Shot 03</span>
+                    <span class="tag-pill">⏱ 0.93s</span>
                 </div>
             </div>
         </div>
@@ -900,36 +1058,39 @@ video#mainPlayer {
 
         <div class="grid-container" id="gridView" style="display:none;">
             
-        <div class="grid-card" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+        <div class="grid-card" onclick="playShot(0.0, 10.07, 'SHOT 01')">
             <div class="grid-img-wrap">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg" alt="SHOT 01" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg', 'SHOT 01 [0.0s - 10.07s] • Hook thị giác mở màn (10.10s): Khóa chặt sự chú ý trong 2s đầu bằng Góc cận tập trung (Close-Up / Detail Shot)')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
-                <div class="grid-badge-bottom">0.0s - 2.5s</div>
+                <div class="grid-badge-bottom">0.0s - 10.1s</div>
             </div>
+            <div class="grid-title-snippet">Hook thị giác mở màn (10.10s): Khóa chặt sự chú ý trong 2s đầu bằng Góc cận tập trung (Close-Up / Detail Shot)</div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(2.5, 5.0, 'SHOT 02')">
+        <div class="grid-card" onclick="playShot(10.1, 16.03, 'SHOT 02')">
             <div class="grid-img-wrap">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg" alt="SHOT 02" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_02_mid.jpg', 'SHOT 02 [10.1s - 16.03s] • Nén tiêu cự & Chiều sâu tầng lớp (5.97s): Xếp chồng không gian đa chiều')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
-                <div class="grid-badge-bottom">2.5s - 5.0s</div>
+                <div class="grid-badge-bottom">10.1s - 16.0s</div>
             </div>
+            <div class="grid-title-snippet">Nén tiêu cự & Chiều sâu tầng lớp (5.97s): Xếp chồng không gian đa chiều</div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(5.0, 7.5, 'SHOT 03')">
+        <div class="grid-card" onclick="playShot(16.07, 16.97, 'SHOT 03')">
             <div class="grid-img-wrap">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg" alt="SHOT 03" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg', 'SHOT 03 [16.07s - 16.97s] • Cú máy kết thúc (0.93s): Lắng đọng cảm xúc và hoàn tất thông điệp tác phẩm')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
-                <div class="grid-badge-bottom">5.0s - 7.5s</div>
+                <div class="grid-badge-bottom">16.1s - 17.0s</div>
             </div>
+            <div class="grid-title-snippet">Cú máy kết thúc (0.93s): Lắng đọng cảm xúc và hoàn tất thông điệp tác phẩm</div>
         </div>
         
         </div>
@@ -944,37 +1105,40 @@ video#mainPlayer {
         </div>
         <div class="drawer-list">
             
-        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 10.07, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_001_2fc9ef2b.jpg" alt="SHOT 01" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
-                <div class="drawer-shot-time">⏱ 0.00s - 2.50s</div>
+                <div class="drawer-shot-headline">Hook thị giác mở màn (10.10s): Khóa chặt s...</div>
+                <div class="drawer-shot-time">⏱ 0.00s - 10.07s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(2, 2.5, 5.0, 'SHOT 02')">
+        <div class="drawer-item" onclick="jumpToShot(2, 10.1, 16.03, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_002_bfd52f15.jpg" alt="SHOT 02" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
-                <div class="drawer-shot-time">⏱ 2.50s - 5.00s</div>
+                <div class="drawer-shot-headline">Nén tiêu cự & Chiều sâu tầng lớp (5.97s): ...</div>
+                <div class="drawer-shot-time">⏱ 10.10s - 16.03s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(3, 5.0, 7.5, 'SHOT 03')">
+        <div class="drawer-item" onclick="jumpToShot(3, 16.07, 16.97, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Neeraj_Khurana_Video%2C_Lighting_%26_Photography_DcJBTCoT6UT_Video_by_photoknack.in/img_003_17836561.jpg" alt="SHOT 03" loading="lazy" />
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
-                <div class="drawer-shot-time">⏱ 5.00s - 7.50s</div>
+                <div class="drawer-shot-headline">Cú máy kết thúc (0.93s): Lắng đọng cảm xúc...</div>
+                <div class="drawer-shot-time">⏱ 16.07s - 16.97s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
