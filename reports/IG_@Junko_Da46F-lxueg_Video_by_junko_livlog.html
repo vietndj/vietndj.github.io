@@ -21,7 +21,6 @@
     --accent-blue: #38bdf8;
     --accent-amber: #f59e0b;
     --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Be Vietnam Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -43,13 +42,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Scrollbars */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
-/* App Layout - Split Screen on Desktop, Single Stack on Mobile */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -101,7 +98,6 @@ body {
     }
 }
 
-/* Sticky Video Section */
 .video-player-container {
     position: relative;
     width: 100%;
@@ -132,7 +128,6 @@ video#mainPlayer {
     outline: none;
 }
 
-/* Video Controls Toolbar */
 .video-controls-panel {
     padding: 12px 16px;
     background: #0b111c;
@@ -192,14 +187,12 @@ video#mainPlayer {
     font-weight: 800;
 }
 
-/* Header Banner */
 .report-header-banner {
     background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative;
 }
 
 .header-top-row {
@@ -240,11 +233,8 @@ video#mainPlayer {
     color: var(--text-secondary);
 }
 
-.meta-tags-flex strong {
-    color: #fff;
-}
+.meta-tags-flex strong { color: #fff; }
 
-/* Overview Box */
 .overview-card {
     background: #0e1420;
     border: 1px solid var(--border-color);
@@ -257,7 +247,6 @@ video#mainPlayer {
     line-height: 1.6;
 }
 
-/* Action & View Switcher Bar */
 .action-toolbar {
     display: flex;
     align-items: center;
@@ -313,10 +302,8 @@ video#mainPlayer {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-/* Storyboard Detailed Cards */
 .storyboard-container {
     display: flex;
     flex-direction: column;
@@ -364,11 +351,6 @@ video#mainPlayer {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.2s;
-}
-
-.shot-thumb-wrap:hover .shot-img {
-    transform: scale(1.04);
 }
 
 .play-overlay {
@@ -379,19 +361,9 @@ video#mainPlayer {
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.15s;
 }
 
-.play-overlay svg {
-    width: 32px;
-    height: 32px;
-    color: #fff;
-}
-
-.shot-thumb-wrap:hover .play-overlay {
-    opacity: 1;
-    background: rgba(0,0,0,0.15);
-}
+.play-overlay svg { width: 32px; height: 32px; color: #fff; }
 
 .zoom-btn {
     position: absolute;
@@ -404,11 +376,7 @@ video#mainPlayer {
     height: 24px;
     font-size: 11px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #fff;
-    z-index: 2;
 }
 
 .thumb-time-badge {
@@ -455,12 +423,7 @@ video#mainPlayer {
     margin-right: 6px;
 }
 
-.shot-heading {
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #fff;
-    display: inline;
-}
+.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
 
 .time-jump-btn {
     background: rgba(56, 189, 248, 0.12);
@@ -472,15 +435,6 @@ video#mainPlayer {
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
-}
-
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #041324;
 }
 
 .props-list {
@@ -492,47 +446,16 @@ video#mainPlayer {
     margin-bottom: 8px;
 }
 
-.prop-item {
-    line-height: 1.45;
-}
+.prop-label { font-weight: 700; color: #94a3b8; }
+.prop-val { color: #e2e8f0; }
 
-.prop-label {
-    font-weight: 700;
-    color: #94a3b8;
-}
+.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
 
-.prop-val {
-    color: #e2e8f0;
-}
-
-.tags-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: auto;
-}
-
-.tag-pill {
-    background: #162032;
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 4px;
-}
-
-/* Visual Keyframe Grid View */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 12px;
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 14px;
-    }
 }
 
 .grid-card {
@@ -541,12 +464,6 @@ video#mainPlayer {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-blue);
 }
 
 .grid-img-wrap {
@@ -573,12 +490,9 @@ video#mainPlayer {
     color: #fff;
     background: rgba(0,0,0,0.3);
     opacity: 0;
-    transition: opacity 0.15s;
 }
 
-.grid-card:hover .grid-play-icon {
-    opacity: 1;
-}
+.grid-card:hover .grid-play-icon { opacity: 1; }
 
 .grid-zoom-btn {
     position: absolute;
@@ -591,10 +505,6 @@ video#mainPlayer {
     font-size: 10px;
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .grid-badge-top {
@@ -625,7 +535,6 @@ video#mainPlayer {
     font-family: var(--font-mono);
 }
 
-/* Drawer Menu (Shot Navigation) */
 .drawer-backdrop {
     position: fixed;
     inset: 0;
@@ -637,10 +546,7 @@ video#mainPlayer {
     transition: all 0.25s ease;
 }
 
-.drawer-backdrop.open {
-    opacity: 1;
-    visibility: visible;
-}
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
 
 .drawer-panel {
     position: fixed;
@@ -658,9 +564,7 @@ video#mainPlayer {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.drawer-backdrop.open .drawer-panel {
-    transform: translateX(0);
-}
+.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
 
 .drawer-header {
     padding: 16px 20px;
@@ -670,22 +574,8 @@ video#mainPlayer {
     justify-content: space-between;
 }
 
-.drawer-title {
-    font-weight: 800;
-    font-size: 15px;
-    color: #fff;
-}
-
-.drawer-close-btn {
-    background: #1e293b;
-    border: none;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
+.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
+.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
 
 .drawer-list {
     flex: 1;
@@ -705,7 +595,6 @@ video#mainPlayer {
     border: 1px solid #1e2d48;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.15s;
 }
 
 .drawer-item:hover, .drawer-item:active {
@@ -722,35 +611,12 @@ video#mainPlayer {
     background: #000;
 }
 
-.drawer-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.drawer-info { flex: 1; min-width: 0; }
+.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
+.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
 
-.drawer-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.drawer-shot-title {
-    font-weight: 700;
-    font-size: 13px;
-    color: #fff;
-}
-
-.drawer-shot-time {
-    font-size: 11.5px;
-    color: var(--accent-amber);
-    font-family: var(--font-mono);
-}
-
-.drawer-play-arrow {
-    font-size: 13px;
-    color: var(--accent-blue);
-}
-
-/* Lightbox Modal */
 #lightboxModal {
     position: fixed;
     inset: 0;
@@ -791,14 +657,12 @@ video#mainPlayer {
     color: #fff;
     font-size: 32px;
     cursor: pointer;
-    font-weight: 300;
 }
 </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Left Column: Video Sticky Studio Player -->
     <div class="video-sidebar-col">
         <div class="video-player-container">
             <video id="mainPlayer" controls autoplay playsinline preload="auto" loop></video>
@@ -821,13 +685,11 @@ video#mainPlayer {
         </div>
     </div>
 
-    <!-- Right Column: Content Scroll -->
     <div class="content-scroll-col">
-        <!-- Header Banner -->
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">15 SHOTS &bull; 18.60s</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">15 SHOTS &bull; 37.50s</span>
             </div>
             <h1 class="report-title">@Junko Da46F-lxueg Video by junko livlog - Báo Cáo Phân Tích Đạo Diễn</h1>
             <div class="meta-tags-flex">
@@ -837,42 +699,36 @@ video#mainPlayer {
             </div>
         </div>
 
-        <!-- Overview -->
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
             <div>
+<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
+<div>
 <h3>TỔNG QUAN PHONG CÁCH THỊ GIÁC:</h3>
 <div>Video sở hữu ngôn ngữ điện ảnh chuẩn mực với 15 phân cảnh được tính toán kỹ lưỡng. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên tương phản với nguồn sáng ấm cục bộ, tạo nhịp thở thị giác mượt mà và cảm xúc sâu lắng.</div>
 </div>
+</div>
         </div>
 
-        <!-- View Switcher & Action Toolbar -->
         <div class="action-toolbar">
             <div class="view-tabs-group">
-                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">
-                    📋 Bóc Tách Chi Tiết
-                </button>
-                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">
-                    🖼️ Lưới Soi Ảnh (15)
-                </button>
+                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
+                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (15)</button>
             </div>
-            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">
-                📑 Mục Lục Shot
-            </button>
+            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
         </div>
 
-        <!-- Detailed Storyboard View -->
         <div class="storyboard-container" id="storyboardView">
             
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(0.0, 0.73, 'SHOT 01')">
+                <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.5, 'SHOT 01')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg', 'SHOT 01 [0.0s - 0.73s]')">🔍</button>
-                    <span class="thumb-time-badge">0.00s - 0.73s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
+                    <span class="thumb-time-badge">0.00s - 2.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -881,15 +737,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 01</span>
                         <h4 class="shot-heading">SHOT 01</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(0.0, 0.73, 'SHOT 01')">
-                        ▶ 0.00s ➔ 0.73s (0.73s)
+                    <button class="time-jump-btn" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+                        ▶ 0.00s ➔ 2.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">62.8 / 38.2</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(0.0, 0.73, 'SHOT 01')">
+<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg', 'SHOT 01 [0.0s - 0.73s]')">🔍</button>
+<span class="thumb-time-badge">0.00s - 0.73s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 01</span>
+<h4 class="shot-heading">SHOT 01</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(0.0, 0.73, 'SHOT 01')">
+                        ▶ 0.00s ➔ 0.73s (0.73s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">62.8 / 38.2</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 1</span><span class="tag-pill">0.77s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 1</span><span class="tag-pill">0.77s</span>
+                    
                 </div>
             </div>
         </div>
@@ -897,13 +781,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(0.77, 1.77, 'SHOT 02')">
+                <div class="shot-thumb-wrap" onclick="playShot(2.5, 5.0, 'SHOT 02')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg', 'SHOT 02 [0.77s - 1.77s]')">🔍</button>
-                    <span class="thumb-time-badge">0.77s - 1.77s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
+                    <span class="thumb-time-badge">2.50s - 5.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -912,15 +796,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 02</span>
                         <h4 class="shot-heading">SHOT 02</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(0.77, 1.77, 'SHOT 02')">
-                        ▶ 0.77s ➔ 1.77s (1.00s)
+                    <button class="time-jump-btn" onclick="playShot(2.5, 5.0, 'SHOT 02')">
+                        ▶ 2.50s ➔ 5.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">112.7 / 54.8</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(0.77, 1.77, 'SHOT 02')">
+<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg', 'SHOT 02 [0.77s - 1.77s]')">🔍</button>
+<span class="thumb-time-badge">0.77s - 1.77s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 02</span>
+<h4 class="shot-heading">SHOT 02</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(0.77, 1.77, 'SHOT 02')">
+                        ▶ 0.77s ➔ 1.77s (1.00s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">112.7 / 54.8</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 2</span><span class="tag-pill">1.03s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 2</span><span class="tag-pill">1.03s</span>
+                    
                 </div>
             </div>
         </div>
@@ -928,13 +840,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(1.8, 3.7, 'SHOT 03')">
+                <div class="shot-thumb-wrap" onclick="playShot(5.0, 7.5, 'SHOT 03')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg', 'SHOT 03 [1.8s - 3.7s]')">🔍</button>
-                    <span class="thumb-time-badge">1.80s - 3.70s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
+                    <span class="thumb-time-badge">5.00s - 7.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -943,15 +855,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 03</span>
                         <h4 class="shot-heading">SHOT 03</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(1.8, 3.7, 'SHOT 03')">
-                        ▶ 1.80s ➔ 3.70s (1.90s)
+                    <button class="time-jump-btn" onclick="playShot(5.0, 7.5, 'SHOT 03')">
+                        ▶ 5.00s ➔ 7.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">106.7 / 93.9</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(1.8, 3.7, 'SHOT 03')">
+<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg', 'SHOT 03 [1.8s - 3.7s]')">🔍</button>
+<span class="thumb-time-badge">1.80s - 3.70s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 03</span>
+<h4 class="shot-heading">SHOT 03</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(1.8, 3.7, 'SHOT 03')">
+                        ▶ 1.80s ➔ 3.70s (1.90s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">106.7 / 93.9</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 3</span><span class="tag-pill">1.93s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 3</span><span class="tag-pill">1.93s</span>
+                    
                 </div>
             </div>
         </div>
@@ -959,13 +899,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(3.73, 4.83, 'SHOT 04')">
+                <div class="shot-thumb-wrap" onclick="playShot(7.5, 10.0, 'SHOT 04')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg', 'SHOT 04 [3.73s - 4.83s]')">🔍</button>
-                    <span class="thumb-time-badge">3.73s - 4.83s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
+                    <span class="thumb-time-badge">7.50s - 10.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -974,15 +914,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 04</span>
                         <h4 class="shot-heading">SHOT 04</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(3.73, 4.83, 'SHOT 04')">
-                        ▶ 3.73s ➔ 4.83s (1.10s)
+                    <button class="time-jump-btn" onclick="playShot(7.5, 10.0, 'SHOT 04')">
+                        ▶ 7.50s ➔ 10.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">68.0 / 55.4</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(3.73, 4.83, 'SHOT 04')">
+<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg', 'SHOT 04 [3.73s - 4.83s]')">🔍</button>
+<span class="thumb-time-badge">3.73s - 4.83s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 04</span>
+<h4 class="shot-heading">SHOT 04</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(3.73, 4.83, 'SHOT 04')">
+                        ▶ 3.73s ➔ 4.83s (1.10s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">68.0 / 55.4</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 4</span><span class="tag-pill">1.13s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 4</span><span class="tag-pill">1.13s</span>
+                    
                 </div>
             </div>
         </div>
@@ -990,13 +958,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(4.87, 6.97, 'SHOT 05')">
+                <div class="shot-thumb-wrap" onclick="playShot(10.0, 12.5, 'SHOT 05')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg', 'SHOT 05 [4.87s - 6.97s]')">🔍</button>
-                    <span class="thumb-time-badge">4.87s - 6.97s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
+                    <span class="thumb-time-badge">10.00s - 12.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1005,15 +973,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 05</span>
                         <h4 class="shot-heading">SHOT 05</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(4.87, 6.97, 'SHOT 05')">
-                        ▶ 4.87s ➔ 6.97s (2.10s)
+                    <button class="time-jump-btn" onclick="playShot(10.0, 12.5, 'SHOT 05')">
+                        ▶ 10.00s ➔ 12.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">124.3 / 86.3</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(4.87, 6.97, 'SHOT 05')">
+<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg', 'SHOT 05 [4.87s - 6.97s]')">🔍</button>
+<span class="thumb-time-badge">4.87s - 6.97s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 05</span>
+<h4 class="shot-heading">SHOT 05</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(4.87, 6.97, 'SHOT 05')">
+                        ▶ 4.87s ➔ 6.97s (2.10s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">124.3 / 86.3</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 5</span><span class="tag-pill">2.13s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 5</span><span class="tag-pill">2.13s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1021,13 +1017,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(7.0, 8.47, 'SHOT 06')">
+                <div class="shot-thumb-wrap" onclick="playShot(12.5, 15.0, 'SHOT 06')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg', 'SHOT 06 [7.0s - 8.47s]')">🔍</button>
-                    <span class="thumb-time-badge">7.00s - 8.47s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
+                    <span class="thumb-time-badge">12.50s - 15.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1036,15 +1032,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 06</span>
                         <h4 class="shot-heading">SHOT 06</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(7.0, 8.47, 'SHOT 06')">
-                        ▶ 7.00s ➔ 8.47s (1.47s)
+                    <button class="time-jump-btn" onclick="playShot(12.5, 15.0, 'SHOT 06')">
+                        ▶ 12.50s ➔ 15.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">139.9 / 87.3</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(7.0, 8.47, 'SHOT 06')">
+<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg', 'SHOT 06 [7.0s - 8.47s]')">🔍</button>
+<span class="thumb-time-badge">7.00s - 8.47s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 06</span>
+<h4 class="shot-heading">SHOT 06</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(7.0, 8.47, 'SHOT 06')">
+                        ▶ 7.00s ➔ 8.47s (1.47s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">139.9 / 87.3</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 6</span><span class="tag-pill">1.5s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 6</span><span class="tag-pill">1.5s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1052,13 +1076,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(8.5, 9.6, 'SHOT 07')">
+                <div class="shot-thumb-wrap" onclick="playShot(15.0, 17.5, 'SHOT 07')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg', 'SHOT 07 [8.5s - 9.6s]')">🔍</button>
-                    <span class="thumb-time-badge">8.50s - 9.60s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
+                    <span class="thumb-time-badge">15.00s - 17.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1067,15 +1091,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 07</span>
                         <h4 class="shot-heading">SHOT 07</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(8.5, 9.6, 'SHOT 07')">
-                        ▶ 8.50s ➔ 9.60s (1.10s)
+                    <button class="time-jump-btn" onclick="playShot(15.0, 17.5, 'SHOT 07')">
+                        ▶ 15.00s ➔ 17.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">28.3 / 46.7</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.5, 9.6, 'SHOT 07')">
+<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg', 'SHOT 07 [8.5s - 9.6s]')">🔍</button>
+<span class="thumb-time-badge">8.50s - 9.60s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 07</span>
+<h4 class="shot-heading">SHOT 07</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.5, 9.6, 'SHOT 07')">
+                        ▶ 8.50s ➔ 9.60s (1.10s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">28.3 / 46.7</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 7</span><span class="tag-pill">1.13s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 7</span><span class="tag-pill">1.13s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1083,13 +1135,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(9.63, 10.97, 'SHOT 08')">
+                <div class="shot-thumb-wrap" onclick="playShot(17.5, 20.0, 'SHOT 08')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg', 'SHOT 08 [9.63s - 10.97s]')">🔍</button>
-                    <span class="thumb-time-badge">9.63s - 10.97s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg', 'SHOT 08 [17.5s - 20.0s]')">🔍</button>
+                    <span class="thumb-time-badge">17.50s - 20.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1098,15 +1150,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 08</span>
                         <h4 class="shot-heading">SHOT 08</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(9.63, 10.97, 'SHOT 08')">
-                        ▶ 9.63s ➔ 10.97s (1.34s)
+                    <button class="time-jump-btn" onclick="playShot(17.5, 20.0, 'SHOT 08')">
+                        ▶ 17.50s ➔ 20.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">57.5 / 40.7</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(9.63, 10.97, 'SHOT 08')">
+<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg', 'SHOT 08 [9.63s - 10.97s]')">🔍</button>
+<span class="thumb-time-badge">9.63s - 10.97s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 08</span>
+<h4 class="shot-heading">SHOT 08</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(9.63, 10.97, 'SHOT 08')">
+                        ▶ 9.63s ➔ 10.97s (1.34s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">57.5 / 40.7</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 8</span><span class="tag-pill">1.37s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 8</span><span class="tag-pill">1.37s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1114,13 +1194,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(11.0, 12.63, 'SHOT 09')">
+                <div class="shot-thumb-wrap" onclick="playShot(20.0, 22.5, 'SHOT 09')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg', 'SHOT 09 [11.0s - 12.63s]')">🔍</button>
-                    <span class="thumb-time-badge">11.00s - 12.63s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg', 'SHOT 09 [20.0s - 22.5s]')">🔍</button>
+                    <span class="thumb-time-badge">20.00s - 22.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1129,15 +1209,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 09</span>
                         <h4 class="shot-heading">SHOT 09</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(11.0, 12.63, 'SHOT 09')">
-                        ▶ 11.00s ➔ 12.63s (1.63s)
+                    <button class="time-jump-btn" onclick="playShot(20.0, 22.5, 'SHOT 09')">
+                        ▶ 20.00s ➔ 22.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">46.0 / 40.5</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.0, 12.63, 'SHOT 09')">
+<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg', 'SHOT 09 [11.0s - 12.63s]')">🔍</button>
+<span class="thumb-time-badge">11.00s - 12.63s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 09</span>
+<h4 class="shot-heading">SHOT 09</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.0, 12.63, 'SHOT 09')">
+                        ▶ 11.00s ➔ 12.63s (1.63s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">46.0 / 40.5</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 9</span><span class="tag-pill">1.67s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 9</span><span class="tag-pill">1.67s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1145,13 +1253,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(12.67, 13.47, 'SHOT 10')">
+                <div class="shot-thumb-wrap" onclick="playShot(22.5, 25.0, 'SHOT 10')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg', 'SHOT 10 [12.67s - 13.47s]')">🔍</button>
-                    <span class="thumb-time-badge">12.67s - 13.47s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg', 'SHOT 10 [22.5s - 25.0s]')">🔍</button>
+                    <span class="thumb-time-badge">22.50s - 25.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1160,15 +1268,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 10</span>
                         <h4 class="shot-heading">SHOT 10</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(12.67, 13.47, 'SHOT 10')">
-                        ▶ 12.67s ➔ 13.47s (0.80s)
+                    <button class="time-jump-btn" onclick="playShot(22.5, 25.0, 'SHOT 10')">
+                        ▶ 22.50s ➔ 25.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">101.8 / 108.0</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(12.67, 13.47, 'SHOT 10')">
+<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg', 'SHOT 10 [12.67s - 13.47s]')">🔍</button>
+<span class="thumb-time-badge">12.67s - 13.47s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 10</span>
+<h4 class="shot-heading">SHOT 10</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(12.67, 13.47, 'SHOT 10')">
+                        ▶ 12.67s ➔ 13.47s (0.80s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">101.8 / 108.0</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 10</span><span class="tag-pill">0.83s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 10</span><span class="tag-pill">0.83s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1176,13 +1312,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(13.5, 14.8, 'SHOT 11')">
+                <div class="shot-thumb-wrap" onclick="playShot(25.0, 27.5, 'SHOT 11')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg', 'SHOT 11 [13.5s - 14.8s]')">🔍</button>
-                    <span class="thumb-time-badge">13.50s - 14.80s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg', 'SHOT 11 [25.0s - 27.5s]')">🔍</button>
+                    <span class="thumb-time-badge">25.00s - 27.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1191,15 +1327,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 11</span>
                         <h4 class="shot-heading">SHOT 11</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(13.5, 14.8, 'SHOT 11')">
-                        ▶ 13.50s ➔ 14.80s (1.30s)
+                    <button class="time-jump-btn" onclick="playShot(25.0, 27.5, 'SHOT 11')">
+                        ▶ 25.00s ➔ 27.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">39.4 / 41.9</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(13.5, 14.8, 'SHOT 11')">
+<img alt="SHOT 11" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg', 'SHOT 11 [13.5s - 14.8s]')">🔍</button>
+<span class="thumb-time-badge">13.50s - 14.80s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 11</span>
+<h4 class="shot-heading">SHOT 11</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(13.5, 14.8, 'SHOT 11')">
+                        ▶ 13.50s ➔ 14.80s (1.30s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">39.4 / 41.9</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 11</span><span class="tag-pill">1.33s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 11</span><span class="tag-pill">1.33s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1207,13 +1371,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(14.83, 15.6, 'SHOT 12')">
+                <div class="shot-thumb-wrap" onclick="playShot(27.5, 30.0, 'SHOT 12')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg', 'SHOT 12 [14.83s - 15.6s]')">🔍</button>
-                    <span class="thumb-time-badge">14.83s - 15.60s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg', 'SHOT 12 [27.5s - 30.0s]')">🔍</button>
+                    <span class="thumb-time-badge">27.50s - 30.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1222,15 +1386,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 12</span>
                         <h4 class="shot-heading">SHOT 12</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(14.83, 15.6, 'SHOT 12')">
-                        ▶ 14.83s ➔ 15.60s (0.77s)
+                    <button class="time-jump-btn" onclick="playShot(27.5, 30.0, 'SHOT 12')">
+                        ▶ 27.50s ➔ 30.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">99.2 / 94.8</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(14.83, 15.6, 'SHOT 12')">
+<img alt="SHOT 12" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg', 'SHOT 12 [14.83s - 15.6s]')">🔍</button>
+<span class="thumb-time-badge">14.83s - 15.60s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 12</span>
+<h4 class="shot-heading">SHOT 12</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(14.83, 15.6, 'SHOT 12')">
+                        ▶ 14.83s ➔ 15.60s (0.77s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">99.2 / 94.8</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 12</span><span class="tag-pill">0.8s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 12</span><span class="tag-pill">0.8s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1238,13 +1430,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(15.63, 16.33, 'SHOT 13')">
+                <div class="shot-thumb-wrap" onclick="playShot(30.0, 32.5, 'SHOT 13')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg', 'SHOT 13 [15.63s - 16.33s]')">🔍</button>
-                    <span class="thumb-time-badge">15.63s - 16.33s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg', 'SHOT 13 [30.0s - 32.5s]')">🔍</button>
+                    <span class="thumb-time-badge">30.00s - 32.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1253,15 +1445,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 13</span>
                         <h4 class="shot-heading">SHOT 13</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(15.63, 16.33, 'SHOT 13')">
-                        ▶ 15.63s ➔ 16.33s (0.70s)
+                    <button class="time-jump-btn" onclick="playShot(30.0, 32.5, 'SHOT 13')">
+                        ▶ 30.00s ➔ 32.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">139.6 / 47.4</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(15.63, 16.33, 'SHOT 13')">
+<img alt="SHOT 13" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg', 'SHOT 13 [15.63s - 16.33s]')">🔍</button>
+<span class="thumb-time-badge">15.63s - 16.33s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 13</span>
+<h4 class="shot-heading">SHOT 13</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(15.63, 16.33, 'SHOT 13')">
+                        ▶ 15.63s ➔ 16.33s (0.70s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">139.6 / 47.4</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 13</span><span class="tag-pill">0.73s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 13</span><span class="tag-pill">0.73s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1269,13 +1489,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(16.37, 17.1, 'SHOT 14')">
+                <div class="shot-thumb-wrap" onclick="playShot(32.5, 35.0, 'SHOT 14')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg', 'SHOT 14 [16.37s - 17.1s]')">🔍</button>
-                    <span class="thumb-time-badge">16.37s - 17.10s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg', 'SHOT 14 [32.5s - 35.0s]')">🔍</button>
+                    <span class="thumb-time-badge">32.50s - 35.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1284,15 +1504,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 14</span>
                         <h4 class="shot-heading">SHOT 14</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(16.37, 17.1, 'SHOT 14')">
-                        ▶ 16.37s ➔ 17.10s (0.73s)
+                    <button class="time-jump-btn" onclick="playShot(32.5, 35.0, 'SHOT 14')">
+                        ▶ 32.50s ➔ 35.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">142.0 / 47.0</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(16.37, 17.1, 'SHOT 14')">
+<img alt="SHOT 14" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg', 'SHOT 14 [16.37s - 17.1s]')">🔍</button>
+<span class="thumb-time-badge">16.37s - 17.10s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 14</span>
+<h4 class="shot-heading">SHOT 14</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(16.37, 17.1, 'SHOT 14')">
+                        ▶ 16.37s ➔ 17.10s (0.73s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">142.0 / 47.0</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 14</span><span class="tag-pill">0.77s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 14</span><span class="tag-pill">0.77s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1300,13 +1548,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(17.13, 18.6, 'SHOT 15')">
+                <div class="shot-thumb-wrap" onclick="playShot(35.0, 37.5, 'SHOT 15')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg', 'SHOT 15 [17.13s - 18.6s]')">🔍</button>
-                    <span class="thumb-time-badge">17.13s - 18.60s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg', 'SHOT 15 [35.0s - 37.5s]')">🔍</button>
+                    <span class="thumb-time-badge">35.00s - 37.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1315,185 +1563,212 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 15</span>
                         <h4 class="shot-heading">SHOT 15</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(17.13, 18.6, 'SHOT 15')">
-                        ▶ 17.13s ➔ 18.60s (1.47s)
+                    <button class="time-jump-btn" onclick="playShot(35.0, 37.5, 'SHOT 15')">
+                        ▶ 35.00s ➔ 37.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">154.4 / 91.7</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(17.13, 18.6, 'SHOT 15')">
+<img alt="SHOT 15" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg', 'SHOT 15 [17.13s - 18.6s]')">🔍</button>
+<span class="thumb-time-badge">17.13s - 18.60s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 15</span>
+<h4 class="shot-heading">SHOT 15</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(17.13, 18.6, 'SHOT 15')">
+                        ▶ 17.13s ➔ 18.60s (1.47s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">154.4 / 91.7</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 15</span><span class="tag-pill">1.5s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 15</span><span class="tag-pill">1.5s</span>
+                    
                 </div>
             </div>
         </div>
         
         </div>
 
-        <!-- Visual Grid View (Hidden by default) -->
         <div class="grid-container" id="gridView" style="display:none;">
             
-        <div class="grid-card" onclick="playShot(0.0, 0.73, 'SHOT 01')">
+        <div class="grid-card" onclick="playShot(0.0, 2.5, 'SHOT 01')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg', 'SHOT 01 [0.0s - 0.73s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
-                <div class="grid-badge-bottom">0.0s - 0.7s</div>
+                <div class="grid-badge-bottom">0.0s - 2.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(0.77, 1.77, 'SHOT 02')">
+        <div class="grid-card" onclick="playShot(2.5, 5.0, 'SHOT 02')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg', 'SHOT 02 [0.77s - 1.77s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
-                <div class="grid-badge-bottom">0.8s - 1.8s</div>
+                <div class="grid-badge-bottom">2.5s - 5.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(1.8, 3.7, 'SHOT 03')">
+        <div class="grid-card" onclick="playShot(5.0, 7.5, 'SHOT 03')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg', 'SHOT 03 [1.8s - 3.7s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
-                <div class="grid-badge-bottom">1.8s - 3.7s</div>
+                <div class="grid-badge-bottom">5.0s - 7.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(3.73, 4.83, 'SHOT 04')">
+        <div class="grid-card" onclick="playShot(7.5, 10.0, 'SHOT 04')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg', 'SHOT 04 [3.73s - 4.83s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
-                <div class="grid-badge-bottom">3.7s - 4.8s</div>
+                <div class="grid-badge-bottom">7.5s - 10.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(4.87, 6.97, 'SHOT 05')">
+        <div class="grid-card" onclick="playShot(10.0, 12.5, 'SHOT 05')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg', 'SHOT 05 [4.87s - 6.97s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
-                <div class="grid-badge-bottom">4.9s - 7.0s</div>
+                <div class="grid-badge-bottom">10.0s - 12.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(7.0, 8.47, 'SHOT 06')">
+        <div class="grid-card" onclick="playShot(12.5, 15.0, 'SHOT 06')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg', 'SHOT 06 [7.0s - 8.47s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
-                <div class="grid-badge-bottom">7.0s - 8.5s</div>
+                <div class="grid-badge-bottom">12.5s - 15.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(8.5, 9.6, 'SHOT 07')">
+        <div class="grid-card" onclick="playShot(15.0, 17.5, 'SHOT 07')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg', 'SHOT 07 [8.5s - 9.6s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
-                <div class="grid-badge-bottom">8.5s - 9.6s</div>
+                <div class="grid-badge-bottom">15.0s - 17.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(9.63, 10.97, 'SHOT 08')">
+        <div class="grid-card" onclick="playShot(17.5, 20.0, 'SHOT 08')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg', 'SHOT 08 [9.63s - 10.97s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg', 'SHOT 08 [17.5s - 20.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
-                <div class="grid-badge-bottom">9.6s - 11.0s</div>
+                <div class="grid-badge-bottom">17.5s - 20.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(11.0, 12.63, 'SHOT 09')">
+        <div class="grid-card" onclick="playShot(20.0, 22.5, 'SHOT 09')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg', 'SHOT 09 [11.0s - 12.63s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg', 'SHOT 09 [20.0s - 22.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
-                <div class="grid-badge-bottom">11.0s - 12.6s</div>
+                <div class="grid-badge-bottom">20.0s - 22.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(12.67, 13.47, 'SHOT 10')">
+        <div class="grid-card" onclick="playShot(22.5, 25.0, 'SHOT 10')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg', 'SHOT 10 [12.67s - 13.47s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg', 'SHOT 10 [22.5s - 25.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
-                <div class="grid-badge-bottom">12.7s - 13.5s</div>
+                <div class="grid-badge-bottom">22.5s - 25.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(13.5, 14.8, 'SHOT 11')">
+        <div class="grid-card" onclick="playShot(25.0, 27.5, 'SHOT 11')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg', 'SHOT 11 [13.5s - 14.8s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg', 'SHOT 11 [25.0s - 27.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
-                <div class="grid-badge-bottom">13.5s - 14.8s</div>
+                <div class="grid-badge-bottom">25.0s - 27.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(14.83, 15.6, 'SHOT 12')">
+        <div class="grid-card" onclick="playShot(27.5, 30.0, 'SHOT 12')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg', 'SHOT 12 [14.83s - 15.6s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg', 'SHOT 12 [27.5s - 30.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
-                <div class="grid-badge-bottom">14.8s - 15.6s</div>
+                <div class="grid-badge-bottom">27.5s - 30.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(15.63, 16.33, 'SHOT 13')">
+        <div class="grid-card" onclick="playShot(30.0, 32.5, 'SHOT 13')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg', 'SHOT 13 [15.63s - 16.33s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg', 'SHOT 13 [30.0s - 32.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
-                <div class="grid-badge-bottom">15.6s - 16.3s</div>
+                <div class="grid-badge-bottom">30.0s - 32.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(16.37, 17.1, 'SHOT 14')">
+        <div class="grid-card" onclick="playShot(32.5, 35.0, 'SHOT 14')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg', 'SHOT 14 [16.37s - 17.1s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg', 'SHOT 14 [32.5s - 35.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
-                <div class="grid-badge-bottom">16.4s - 17.1s</div>
+                <div class="grid-badge-bottom">32.5s - 35.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(17.13, 18.6, 'SHOT 15')">
+        <div class="grid-card" onclick="playShot(35.0, 37.5, 'SHOT 15')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg', 'SHOT 15 [17.13s - 18.6s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg', 'SHOT 15 [35.0s - 37.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
-                <div class="grid-badge-bottom">17.1s - 18.6s</div>
+                <div class="grid-badge-bottom">35.0s - 37.5s</div>
             </div>
         </div>
         
@@ -1501,7 +1776,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Jump Drawer Menu -->
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
@@ -1510,181 +1784,181 @@ video#mainPlayer {
         </div>
         <div class="drawer-list">
             
-        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 0.73, 'SHOT 01')">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_001_1cea280e.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
-                <div class="drawer-shot-time">⏱ 0.00s - 0.73s</div>
+                <div class="drawer-shot-time">⏱ 0.00s - 2.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(2, 0.77, 1.77, 'SHOT 02')">
+        <div class="drawer-item" onclick="jumpToShot(2, 2.5, 5.0, 'SHOT 02')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_002_13f83164.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
-                <div class="drawer-shot-time">⏱ 0.77s - 1.77s</div>
+                <div class="drawer-shot-time">⏱ 2.50s - 5.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(3, 1.8, 3.7, 'SHOT 03')">
+        <div class="drawer-item" onclick="jumpToShot(3, 5.0, 7.5, 'SHOT 03')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_003_f2f6bef6.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
-                <div class="drawer-shot-time">⏱ 1.80s - 3.70s</div>
+                <div class="drawer-shot-time">⏱ 5.00s - 7.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(4, 3.73, 4.83, 'SHOT 04')">
+        <div class="drawer-item" onclick="jumpToShot(4, 7.5, 10.0, 'SHOT 04')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_004_cc568df1.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
-                <div class="drawer-shot-time">⏱ 3.73s - 4.83s</div>
+                <div class="drawer-shot-time">⏱ 7.50s - 10.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(5, 4.87, 6.97, 'SHOT 05')">
+        <div class="drawer-item" onclick="jumpToShot(5, 10.0, 12.5, 'SHOT 05')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_005_b42bd7dc.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
-                <div class="drawer-shot-time">⏱ 4.87s - 6.97s</div>
+                <div class="drawer-shot-time">⏱ 10.00s - 12.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(6, 7.0, 8.47, 'SHOT 06')">
+        <div class="drawer-item" onclick="jumpToShot(6, 12.5, 15.0, 'SHOT 06')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_006_a3d610e5.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
-                <div class="drawer-shot-time">⏱ 7.00s - 8.47s</div>
+                <div class="drawer-shot-time">⏱ 12.50s - 15.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(7, 8.5, 9.6, 'SHOT 07')">
+        <div class="drawer-item" onclick="jumpToShot(7, 15.0, 17.5, 'SHOT 07')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_007_a130ffe0.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
-                <div class="drawer-shot-time">⏱ 8.50s - 9.60s</div>
+                <div class="drawer-shot-time">⏱ 15.00s - 17.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(8, 9.63, 10.97, 'SHOT 08')">
+        <div class="drawer-item" onclick="jumpToShot(8, 17.5, 20.0, 'SHOT 08')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_008_2d480ba9.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
-                <div class="drawer-shot-time">⏱ 9.63s - 10.97s</div>
+                <div class="drawer-shot-time">⏱ 17.50s - 20.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(9, 11.0, 12.63, 'SHOT 09')">
+        <div class="drawer-item" onclick="jumpToShot(9, 20.0, 22.5, 'SHOT 09')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_009_df4cece6.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
-                <div class="drawer-shot-time">⏱ 11.00s - 12.63s</div>
+                <div class="drawer-shot-time">⏱ 20.00s - 22.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(10, 12.67, 13.47, 'SHOT 10')">
+        <div class="drawer-item" onclick="jumpToShot(10, 22.5, 25.0, 'SHOT 10')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_010_608284fa.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
-                <div class="drawer-shot-time">⏱ 12.67s - 13.47s</div>
+                <div class="drawer-shot-time">⏱ 22.50s - 25.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(11, 13.5, 14.8, 'SHOT 11')">
+        <div class="drawer-item" onclick="jumpToShot(11, 25.0, 27.5, 'SHOT 11')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_011_459d9e08.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
-                <div class="drawer-shot-time">⏱ 13.50s - 14.80s</div>
+                <div class="drawer-shot-time">⏱ 25.00s - 27.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(12, 14.83, 15.6, 'SHOT 12')">
+        <div class="drawer-item" onclick="jumpToShot(12, 27.5, 30.0, 'SHOT 12')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_012_a3de5db2.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
-                <div class="drawer-shot-time">⏱ 14.83s - 15.60s</div>
+                <div class="drawer-shot-time">⏱ 27.50s - 30.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(13, 15.63, 16.33, 'SHOT 13')">
+        <div class="drawer-item" onclick="jumpToShot(13, 30.0, 32.5, 'SHOT 13')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_013_4f9203f7.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
-                <div class="drawer-shot-time">⏱ 15.63s - 16.33s</div>
+                <div class="drawer-shot-time">⏱ 30.00s - 32.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(14, 16.37, 17.1, 'SHOT 14')">
+        <div class="drawer-item" onclick="jumpToShot(14, 32.5, 35.0, 'SHOT 14')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_014_b3304df2.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
-                <div class="drawer-shot-time">⏱ 16.37s - 17.10s</div>
+                <div class="drawer-shot-time">⏱ 32.50s - 35.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(15, 17.13, 18.6, 'SHOT 15')">
+        <div class="drawer-item" onclick="jumpToShot(15, 35.0, 37.5, 'SHOT 15')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Junko_Da46F-lxueg_Video_by_junko_livlog/img_015_f8947780.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
-                <div class="drawer-shot-time">⏱ 17.13s - 18.60s</div>
+                <div class="drawer-shot-time">⏱ 35.00s - 37.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
@@ -1693,7 +1967,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
@@ -1704,18 +1977,15 @@ video#mainPlayer {
 const rawVideoSrc = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Da46F-lxueg.mp4";
 let currentEndTime = null;
 
-// Multi-Source Candidate Resolver
 function getCandidateUrls(src) {
     if (!src) return [];
     if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    
     let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
     return [
         'https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean),
         '../videos/' + clean,
         './videos/' + clean,
-        './' + clean,
-        'https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean)
+        './' + clean
     ];
 }
 
@@ -1738,10 +2008,8 @@ player.onerror = () => {
     }
 };
 
-// Initialize video
 loadVideoCandidate();
 
-// Play Shot Function
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
@@ -1749,7 +2017,6 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    
     player.currentTime = startTime;
     const p = player.play();
     if (p !== undefined) {
@@ -1758,19 +2025,15 @@ function playShot(startTime, endTime, label) {
             player.play().catch(err => console.log('Autoplay muted triggered'));
         });
     }
-    
-    // Highlight Card
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
 
-    // On mobile, scroll up to video smoothly if needed
     if (window.innerWidth < 1024) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-// Speed & Frame Controls
 function setSpeed(speed, btn) {
     player.playbackRate = speed;
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
@@ -1787,13 +2050,11 @@ function toggleMute(btn) {
     if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
 }
 
-// View Switcher
 function switchView(view) {
     const sb = document.getElementById('storyboardView');
     const grid = document.getElementById('gridView');
     const tabDetail = document.getElementById('tabDetailBtn');
     const tabGrid = document.getElementById('tabGridBtn');
-    
     if (view === 'grid') {
         sb.style.display = 'none';
         grid.style.display = 'grid';
@@ -1807,7 +2068,6 @@ function switchView(view) {
     }
 }
 
-// Drawer Navigation
 function toggleDrawer(open) {
     const drawer = document.getElementById('drawerBackdrop');
     if (open) drawer.classList.add('open');
@@ -1824,7 +2084,6 @@ function jumpToShot(shotNum, st, et, label) {
     }
 }
 
-// Lightbox Modal
 function openLightbox(src, caption) {
     const modal = document.getElementById('lightboxModal');
     const img = document.getElementById('lightboxImg');
@@ -1838,7 +2097,6 @@ function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
 
-// Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeLightbox();
@@ -1851,6 +2109,5 @@ document.addEventListener('keydown', (e) => {
     }
 });
 </script>
-
 </body>
 </html>

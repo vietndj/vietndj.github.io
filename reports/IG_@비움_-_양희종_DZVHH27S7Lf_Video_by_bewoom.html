@@ -21,7 +21,6 @@
     --accent-blue: #38bdf8;
     --accent-amber: #f59e0b;
     --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Be Vietnam Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -43,13 +42,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Scrollbars */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
-/* App Layout - Split Screen on Desktop, Single Stack on Mobile */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -101,7 +98,6 @@ body {
     }
 }
 
-/* Sticky Video Section */
 .video-player-container {
     position: relative;
     width: 100%;
@@ -132,7 +128,6 @@ video#mainPlayer {
     outline: none;
 }
 
-/* Video Controls Toolbar */
 .video-controls-panel {
     padding: 12px 16px;
     background: #0b111c;
@@ -192,14 +187,12 @@ video#mainPlayer {
     font-weight: 800;
 }
 
-/* Header Banner */
 .report-header-banner {
     background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative;
 }
 
 .header-top-row {
@@ -240,11 +233,8 @@ video#mainPlayer {
     color: var(--text-secondary);
 }
 
-.meta-tags-flex strong {
-    color: #fff;
-}
+.meta-tags-flex strong { color: #fff; }
 
-/* Overview Box */
 .overview-card {
     background: #0e1420;
     border: 1px solid var(--border-color);
@@ -257,7 +247,6 @@ video#mainPlayer {
     line-height: 1.6;
 }
 
-/* Action & View Switcher Bar */
 .action-toolbar {
     display: flex;
     align-items: center;
@@ -313,10 +302,8 @@ video#mainPlayer {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-/* Storyboard Detailed Cards */
 .storyboard-container {
     display: flex;
     flex-direction: column;
@@ -364,11 +351,6 @@ video#mainPlayer {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.2s;
-}
-
-.shot-thumb-wrap:hover .shot-img {
-    transform: scale(1.04);
 }
 
 .play-overlay {
@@ -379,19 +361,9 @@ video#mainPlayer {
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.15s;
 }
 
-.play-overlay svg {
-    width: 32px;
-    height: 32px;
-    color: #fff;
-}
-
-.shot-thumb-wrap:hover .play-overlay {
-    opacity: 1;
-    background: rgba(0,0,0,0.15);
-}
+.play-overlay svg { width: 32px; height: 32px; color: #fff; }
 
 .zoom-btn {
     position: absolute;
@@ -404,11 +376,7 @@ video#mainPlayer {
     height: 24px;
     font-size: 11px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #fff;
-    z-index: 2;
 }
 
 .thumb-time-badge {
@@ -455,12 +423,7 @@ video#mainPlayer {
     margin-right: 6px;
 }
 
-.shot-heading {
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #fff;
-    display: inline;
-}
+.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
 
 .time-jump-btn {
     background: rgba(56, 189, 248, 0.12);
@@ -472,15 +435,6 @@ video#mainPlayer {
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
-}
-
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #041324;
 }
 
 .props-list {
@@ -492,47 +446,16 @@ video#mainPlayer {
     margin-bottom: 8px;
 }
 
-.prop-item {
-    line-height: 1.45;
-}
+.prop-label { font-weight: 700; color: #94a3b8; }
+.prop-val { color: #e2e8f0; }
 
-.prop-label {
-    font-weight: 700;
-    color: #94a3b8;
-}
+.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
 
-.prop-val {
-    color: #e2e8f0;
-}
-
-.tags-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: auto;
-}
-
-.tag-pill {
-    background: #162032;
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 4px;
-}
-
-/* Visual Keyframe Grid View */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 12px;
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 14px;
-    }
 }
 
 .grid-card {
@@ -541,12 +464,6 @@ video#mainPlayer {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-blue);
 }
 
 .grid-img-wrap {
@@ -573,12 +490,9 @@ video#mainPlayer {
     color: #fff;
     background: rgba(0,0,0,0.3);
     opacity: 0;
-    transition: opacity 0.15s;
 }
 
-.grid-card:hover .grid-play-icon {
-    opacity: 1;
-}
+.grid-card:hover .grid-play-icon { opacity: 1; }
 
 .grid-zoom-btn {
     position: absolute;
@@ -591,10 +505,6 @@ video#mainPlayer {
     font-size: 10px;
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .grid-badge-top {
@@ -625,7 +535,6 @@ video#mainPlayer {
     font-family: var(--font-mono);
 }
 
-/* Drawer Menu (Shot Navigation) */
 .drawer-backdrop {
     position: fixed;
     inset: 0;
@@ -637,10 +546,7 @@ video#mainPlayer {
     transition: all 0.25s ease;
 }
 
-.drawer-backdrop.open {
-    opacity: 1;
-    visibility: visible;
-}
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
 
 .drawer-panel {
     position: fixed;
@@ -658,9 +564,7 @@ video#mainPlayer {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.drawer-backdrop.open .drawer-panel {
-    transform: translateX(0);
-}
+.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
 
 .drawer-header {
     padding: 16px 20px;
@@ -670,22 +574,8 @@ video#mainPlayer {
     justify-content: space-between;
 }
 
-.drawer-title {
-    font-weight: 800;
-    font-size: 15px;
-    color: #fff;
-}
-
-.drawer-close-btn {
-    background: #1e293b;
-    border: none;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
+.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
+.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
 
 .drawer-list {
     flex: 1;
@@ -705,7 +595,6 @@ video#mainPlayer {
     border: 1px solid #1e2d48;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.15s;
 }
 
 .drawer-item:hover, .drawer-item:active {
@@ -722,35 +611,12 @@ video#mainPlayer {
     background: #000;
 }
 
-.drawer-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.drawer-info { flex: 1; min-width: 0; }
+.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
+.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
 
-.drawer-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.drawer-shot-title {
-    font-weight: 700;
-    font-size: 13px;
-    color: #fff;
-}
-
-.drawer-shot-time {
-    font-size: 11.5px;
-    color: var(--accent-amber);
-    font-family: var(--font-mono);
-}
-
-.drawer-play-arrow {
-    font-size: 13px;
-    color: var(--accent-blue);
-}
-
-/* Lightbox Modal */
 #lightboxModal {
     position: fixed;
     inset: 0;
@@ -791,14 +657,12 @@ video#mainPlayer {
     color: #fff;
     font-size: 32px;
     cursor: pointer;
-    font-weight: 300;
 }
 </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Left Column: Video Sticky Studio Player -->
     <div class="video-sidebar-col">
         <div class="video-player-container">
             <video id="mainPlayer" controls autoplay playsinline preload="auto" loop></video>
@@ -821,13 +685,11 @@ video#mainPlayer {
         </div>
     </div>
 
-    <!-- Right Column: Content Scroll -->
     <div class="content-scroll-col">
-        <!-- Header Banner -->
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">12 SHOTS &bull; 17.10s</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">12 SHOTS &bull; 30.00s</span>
             </div>
             <h1 class="report-title">@비움 - 양희종 DZVHH27S7Lf Video by bewoom - Báo Cáo Phân Tích Đạo Diễn</h1>
             <div class="meta-tags-flex">
@@ -837,42 +699,36 @@ video#mainPlayer {
             </div>
         </div>
 
-        <!-- Overview -->
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
             <div>
+<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
+<div>
 <h3>TỔNG QUAN PHONG CÁCH THỊ GIÁC:</h3>
 <div>Video sở hữu ngôn ngữ điện ảnh chuẩn mực với 12 phân cảnh được tính toán kỹ lưỡng. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên tương phản với nguồn sáng ấm cục bộ, tạo nhịp thở thị giác mượt mà và cảm xúc sâu lắng.</div>
 </div>
+</div>
         </div>
 
-        <!-- View Switcher & Action Toolbar -->
         <div class="action-toolbar">
             <div class="view-tabs-group">
-                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">
-                    📋 Bóc Tách Chi Tiết
-                </button>
-                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">
-                    🖼️ Lưới Soi Ảnh (12)
-                </button>
+                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
+                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (12)</button>
             </div>
-            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">
-                📑 Mục Lục Shot
-            </button>
+            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
         </div>
 
-        <!-- Detailed Storyboard View -->
         <div class="storyboard-container" id="storyboardView">
             
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(0.0, 1.79, 'SHOT 01')">
+                <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.5, 'SHOT 01')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg', 'SHOT 01 [0.0s - 1.79s]')">🔍</button>
-                    <span class="thumb-time-badge">0.00s - 1.79s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
+                    <span class="thumb-time-badge">0.00s - 2.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -881,15 +737,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 01</span>
                         <h4 class="shot-heading">SHOT 01</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(0.0, 1.79, 'SHOT 01')">
-                        ▶ 0.00s ➔ 1.79s (1.79s)
+                    <button class="time-jump-btn" onclick="playShot(0.0, 2.5, 'SHOT 01')">
+                        ▶ 0.00s ➔ 2.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc trung bình linh hoạt (Medium Tracking Shot) — Theo dõi hành động nhân vật</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">131.0 / 59.6</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(0.0, 1.79, 'SHOT 01')">
+<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg', 'SHOT 01 [0.0s - 1.79s]')">🔍</button>
+<span class="thumb-time-badge">0.00s - 1.79s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 01</span>
+<h4 class="shot-heading">SHOT 01</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(0.0, 1.79, 'SHOT 01')">
+                        ▶ 0.00s ➔ 1.79s (1.79s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc trung bình linh hoạt (Medium Tracking Shot) — Theo dõi hành động nhân vật</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">131.0 / 59.6</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 1</span><span class="tag-pill">1.84s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 1</span><span class="tag-pill">1.84s</span>
+                    
                 </div>
             </div>
         </div>
@@ -897,13 +781,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(1.84, 3.0, 'SHOT 02')">
+                <div class="shot-thumb-wrap" onclick="playShot(2.5, 5.0, 'SHOT 02')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg', 'SHOT 02 [1.84s - 3.0s]')">🔍</button>
-                    <span class="thumb-time-badge">1.84s - 3.00s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
+                    <span class="thumb-time-badge">2.50s - 5.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -912,15 +796,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 02</span>
                         <h4 class="shot-heading">SHOT 02</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(1.84, 3.0, 'SHOT 02')">
-                        ▶ 1.84s ➔ 3.00s (1.16s)
+                    <button class="time-jump-btn" onclick="playShot(2.5, 5.0, 'SHOT 02')">
+                        ▶ 2.50s ➔ 5.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">113.3 / 71.2</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(1.84, 3.0, 'SHOT 02')">
+<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg', 'SHOT 02 [1.84s - 3.0s]')">🔍</button>
+<span class="thumb-time-badge">1.84s - 3.00s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 02</span>
+<h4 class="shot-heading">SHOT 02</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(1.84, 3.0, 'SHOT 02')">
+                        ▶ 1.84s ➔ 3.00s (1.16s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">113.3 / 71.2</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 2</span><span class="tag-pill">1.21s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 2</span><span class="tag-pill">1.21s</span>
+                    
                 </div>
             </div>
         </div>
@@ -928,13 +840,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(3.04, 4.25, 'SHOT 03')">
+                <div class="shot-thumb-wrap" onclick="playShot(5.0, 7.5, 'SHOT 03')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg', 'SHOT 03 [3.04s - 4.25s]')">🔍</button>
-                    <span class="thumb-time-badge">3.04s - 4.25s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
+                    <span class="thumb-time-badge">5.00s - 7.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -943,15 +855,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 03</span>
                         <h4 class="shot-heading">SHOT 03</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(3.04, 4.25, 'SHOT 03')">
-                        ▶ 3.04s ➔ 4.25s (1.21s)
+                    <button class="time-jump-btn" onclick="playShot(5.0, 7.5, 'SHOT 03')">
+                        ▶ 5.00s ➔ 7.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">101.7 / 62.6</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(3.04, 4.25, 'SHOT 03')">
+<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg', 'SHOT 03 [3.04s - 4.25s]')">🔍</button>
+<span class="thumb-time-badge">3.04s - 4.25s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 03</span>
+<h4 class="shot-heading">SHOT 03</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(3.04, 4.25, 'SHOT 03')">
+                        ▶ 3.04s ➔ 4.25s (1.21s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">101.7 / 62.6</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 3</span><span class="tag-pill">1.25s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 3</span><span class="tag-pill">1.25s</span>
+                    
                 </div>
             </div>
         </div>
@@ -959,13 +899,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(4.3, 5.13, 'SHOT 04')">
+                <div class="shot-thumb-wrap" onclick="playShot(7.5, 10.0, 'SHOT 04')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg', 'SHOT 04 [4.3s - 5.13s]')">🔍</button>
-                    <span class="thumb-time-badge">4.30s - 5.13s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
+                    <span class="thumb-time-badge">7.50s - 10.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -974,15 +914,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 04</span>
                         <h4 class="shot-heading">SHOT 04</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(4.3, 5.13, 'SHOT 04')">
-                        ▶ 4.30s ➔ 5.13s (0.83s)
+                    <button class="time-jump-btn" onclick="playShot(7.5, 10.0, 'SHOT 04')">
+                        ▶ 7.50s ➔ 10.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">98.4 / 66.2</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(4.3, 5.13, 'SHOT 04')">
+<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg', 'SHOT 04 [4.3s - 5.13s]')">🔍</button>
+<span class="thumb-time-badge">4.30s - 5.13s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 04</span>
+<h4 class="shot-heading">SHOT 04</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(4.3, 5.13, 'SHOT 04')">
+                        ▶ 4.30s ➔ 5.13s (0.83s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">98.4 / 66.2</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 4</span><span class="tag-pill">0.88s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 4</span><span class="tag-pill">0.88s</span>
+                    
                 </div>
             </div>
         </div>
@@ -990,13 +958,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(5.17, 6.51, 'SHOT 05')">
+                <div class="shot-thumb-wrap" onclick="playShot(10.0, 12.5, 'SHOT 05')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg', 'SHOT 05 [5.17s - 6.51s]')">🔍</button>
-                    <span class="thumb-time-badge">5.17s - 6.51s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
+                    <span class="thumb-time-badge">10.00s - 12.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1005,15 +973,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 05</span>
                         <h4 class="shot-heading">SHOT 05</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(5.17, 6.51, 'SHOT 05')">
-                        ▶ 5.17s ➔ 6.51s (1.34s)
+                    <button class="time-jump-btn" onclick="playShot(10.0, 12.5, 'SHOT 05')">
+                        ▶ 10.00s ➔ 12.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">74.0 / 47.6</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(5.17, 6.51, 'SHOT 05')">
+<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg', 'SHOT 05 [5.17s - 6.51s]')">🔍</button>
+<span class="thumb-time-badge">5.17s - 6.51s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 05</span>
+<h4 class="shot-heading">SHOT 05</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(5.17, 6.51, 'SHOT 05')">
+                        ▶ 5.17s ➔ 6.51s (1.34s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">74.0 / 47.6</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 5</span><span class="tag-pill">1.38s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 5</span><span class="tag-pill">1.38s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1021,13 +1017,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(6.55, 7.84, 'SHOT 06')">
+                <div class="shot-thumb-wrap" onclick="playShot(12.5, 15.0, 'SHOT 06')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg', 'SHOT 06 [6.55s - 7.84s]')">🔍</button>
-                    <span class="thumb-time-badge">6.55s - 7.84s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
+                    <span class="thumb-time-badge">12.50s - 15.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1036,15 +1032,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 06</span>
                         <h4 class="shot-heading">SHOT 06</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(6.55, 7.84, 'SHOT 06')">
-                        ▶ 6.55s ➔ 7.84s (1.29s)
+                    <button class="time-jump-btn" onclick="playShot(12.5, 15.0, 'SHOT 06')">
+                        ▶ 12.50s ➔ 15.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">109.8 / 52.9</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(6.55, 7.84, 'SHOT 06')">
+<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg', 'SHOT 06 [6.55s - 7.84s]')">🔍</button>
+<span class="thumb-time-badge">6.55s - 7.84s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 06</span>
+<h4 class="shot-heading">SHOT 06</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(6.55, 7.84, 'SHOT 06')">
+                        ▶ 6.55s ➔ 7.84s (1.29s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">109.8 / 52.9</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 6</span><span class="tag-pill">1.33s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 6</span><span class="tag-pill">1.33s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1052,13 +1076,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(7.88, 9.05, 'SHOT 07')">
+                <div class="shot-thumb-wrap" onclick="playShot(15.0, 17.5, 'SHOT 07')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg', 'SHOT 07 [7.88s - 9.05s]')">🔍</button>
-                    <span class="thumb-time-badge">7.88s - 9.05s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
+                    <span class="thumb-time-badge">15.00s - 17.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1067,15 +1091,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 07</span>
                         <h4 class="shot-heading">SHOT 07</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(7.88, 9.05, 'SHOT 07')">
-                        ▶ 7.88s ➔ 9.05s (1.17s)
+                    <button class="time-jump-btn" onclick="playShot(15.0, 17.5, 'SHOT 07')">
+                        ▶ 15.00s ➔ 17.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">111.9 / 58.4</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(7.88, 9.05, 'SHOT 07')">
+<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg', 'SHOT 07 [7.88s - 9.05s]')">🔍</button>
+<span class="thumb-time-badge">7.88s - 9.05s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 07</span>
+<h4 class="shot-heading">SHOT 07</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(7.88, 9.05, 'SHOT 07')">
+                        ▶ 7.88s ➔ 9.05s (1.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">111.9 / 58.4</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 7</span><span class="tag-pill">1.21s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 7</span><span class="tag-pill">1.21s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1083,13 +1135,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(9.09, 10.26, 'SHOT 08')">
+                <div class="shot-thumb-wrap" onclick="playShot(17.5, 20.0, 'SHOT 08')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg', 'SHOT 08 [9.09s - 10.26s]')">🔍</button>
-                    <span class="thumb-time-badge">9.09s - 10.26s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg', 'SHOT 08 [17.5s - 20.0s]')">🔍</button>
+                    <span class="thumb-time-badge">17.50s - 20.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1098,15 +1150,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 08</span>
                         <h4 class="shot-heading">SHOT 08</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(9.09, 10.26, 'SHOT 08')">
-                        ▶ 9.09s ➔ 10.26s (1.17s)
+                    <button class="time-jump-btn" onclick="playShot(17.5, 20.0, 'SHOT 08')">
+                        ▶ 17.50s ➔ 20.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">41.1 / 29.3</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(9.09, 10.26, 'SHOT 08')">
+<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg', 'SHOT 08 [9.09s - 10.26s]')">🔍</button>
+<span class="thumb-time-badge">9.09s - 10.26s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 08</span>
+<h4 class="shot-heading">SHOT 08</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(9.09, 10.26, 'SHOT 08')">
+                        ▶ 9.09s ➔ 10.26s (1.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">41.1 / 29.3</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 8</span><span class="tag-pill">1.21s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 8</span><span class="tag-pill">1.21s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1114,13 +1194,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(10.3, 11.43, 'SHOT 09')">
+                <div class="shot-thumb-wrap" onclick="playShot(20.0, 22.5, 'SHOT 09')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg', 'SHOT 09 [10.3s - 11.43s]')">🔍</button>
-                    <span class="thumb-time-badge">10.30s - 11.43s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg', 'SHOT 09 [20.0s - 22.5s]')">🔍</button>
+                    <span class="thumb-time-badge">20.00s - 22.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1129,15 +1209,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 09</span>
                         <h4 class="shot-heading">SHOT 09</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(10.3, 11.43, 'SHOT 09')">
-                        ▶ 10.30s ➔ 11.43s (1.13s)
+                    <button class="time-jump-btn" onclick="playShot(20.0, 22.5, 'SHOT 09')">
+                        ▶ 20.00s ➔ 22.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">55.2 / 38.3</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(10.3, 11.43, 'SHOT 09')">
+<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg', 'SHOT 09 [10.3s - 11.43s]')">🔍</button>
+<span class="thumb-time-badge">10.30s - 11.43s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 09</span>
+<h4 class="shot-heading">SHOT 09</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(10.3, 11.43, 'SHOT 09')">
+                        ▶ 10.30s ➔ 11.43s (1.13s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">55.2 / 38.3</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 9</span><span class="tag-pill">1.17s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 9</span><span class="tag-pill">1.17s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1145,13 +1253,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(11.47, 12.68, 'SHOT 10')">
+                <div class="shot-thumb-wrap" onclick="playShot(22.5, 25.0, 'SHOT 10')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg', 'SHOT 10 [11.47s - 12.68s]')">🔍</button>
-                    <span class="thumb-time-badge">11.47s - 12.68s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg', 'SHOT 10 [22.5s - 25.0s]')">🔍</button>
+                    <span class="thumb-time-badge">22.50s - 25.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1160,15 +1268,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 10</span>
                         <h4 class="shot-heading">SHOT 10</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(11.47, 12.68, 'SHOT 10')">
-                        ▶ 11.47s ➔ 12.68s (1.21s)
+                    <button class="time-jump-btn" onclick="playShot(22.5, 25.0, 'SHOT 10')">
+                        ▶ 22.50s ➔ 25.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">77.2 / 45.0</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.47, 12.68, 'SHOT 10')">
+<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg', 'SHOT 10 [11.47s - 12.68s]')">🔍</button>
+<span class="thumb-time-badge">11.47s - 12.68s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 10</span>
+<h4 class="shot-heading">SHOT 10</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.47, 12.68, 'SHOT 10')">
+                        ▶ 11.47s ➔ 12.68s (1.21s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Balanced Diffused Lighting (Ánh sáng tự nhiên cân bằng, độ tương phản dịu)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Vàng ấm / Cam Hổ Phách (Warm Tungsten / Amber Mood)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">77.2 / 45.0</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 10</span><span class="tag-pill">1.25s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 10</span><span class="tag-pill">1.25s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1176,13 +1312,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(12.72, 14.43, 'SHOT 11')">
+                <div class="shot-thumb-wrap" onclick="playShot(25.0, 27.5, 'SHOT 11')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg', 'SHOT 11 [12.72s - 14.43s]')">🔍</button>
-                    <span class="thumb-time-badge">12.72s - 14.43s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg', 'SHOT 11 [25.0s - 27.5s]')">🔍</button>
+                    <span class="thumb-time-badge">25.00s - 27.50s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1191,15 +1327,43 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 11</span>
                         <h4 class="shot-heading">SHOT 11</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(12.72, 14.43, 'SHOT 11')">
-                        ▶ 12.72s ➔ 14.43s (1.71s)
+                    <button class="time-jump-btn" onclick="playShot(25.0, 27.5, 'SHOT 11')">
+                        ▶ 25.00s ➔ 27.50s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">62.0 / 42.1</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(12.72, 14.43, 'SHOT 11')">
+<img alt="SHOT 11" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg', 'SHOT 11 [12.72s - 14.43s]')">🔍</button>
+<span class="thumb-time-badge">12.72s - 14.43s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 11</span>
+<h4 class="shot-heading">SHOT 11</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(12.72, 14.43, 'SHOT 11')">
+                        ▶ 12.72s ➔ 14.43s (1.71s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Trung tính Chuẩn Điện Ảnh (Muted Film Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">62.0 / 42.1</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 11</span><span class="tag-pill">1.75s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 11</span><span class="tag-pill">1.75s</span>
+                    
                 </div>
             </div>
         </div>
@@ -1207,13 +1371,13 @@ video#mainPlayer {
 
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(14.47, 17.1, 'SHOT 12')">
+                <div class="shot-thumb-wrap" onclick="playShot(27.5, 30.0, 'SHOT 12')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg', 'SHOT 12 [14.47s - 17.1s]')">🔍</button>
-                    <span class="thumb-time-badge">14.47s - 17.10s</span>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg', 'SHOT 12 [27.5s - 30.0s]')">🔍</button>
+                    <span class="thumb-time-badge">27.50s - 30.00s</span>
                 </div>
             </div>
             <div class="shot-info-col">
@@ -1222,152 +1386,179 @@ video#mainPlayer {
                         <span class="shot-badge-num">SHOT 12</span>
                         <h4 class="shot-heading">SHOT 12</h4>
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(14.47, 17.1, 'SHOT 12')">
-                        ▶ 14.47s ➔ 17.10s (2.63s)
+                    <button class="time-jump-btn" onclick="playShot(27.5, 30.0, 'SHOT 12')">
+                        ▶ 27.50s ➔ 30.00s (2.50s)
                     </button>
                 </div>
                 <div class="props-list">
-                    <div class="prop-item"><span class="prop-label">Góc máy & Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Xanh lạnh Điện Ảnh (Cool Teal / Cyber Cinematic Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">64.5 / 43.9</span></div>
+                    <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(14.47, 17.1, 'SHOT 12')">
+<img alt="SHOT 12" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg', 'SHOT 12 [14.47s - 17.1s]')">🔍</button>
+<span class="thumb-time-badge">14.47s - 17.10s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 12</span>
+<h4 class="shot-heading">SHOT 12</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(14.47, 17.1, 'SHOT 12')">
+                        ▶ 14.47s ➔ 17.10s (2.63s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="prop-item"><span class="prop-label">Góc máy &amp; Bố cục:</span> <span class="prop-val">Góc cận tập trung (Close-Up / Detail Shot) — Nhấn mạnh vào điểm chạm cảm xúc</span></div><div class="prop-item"><span class="prop-label">Thiết kế ánh sáng:</span> <span class="prop-val">Low-key Lighting (Ánh sáng tối, bóng đổ sâu, vệt sáng cục bộ từ đèn/neon)</span></div><div class="prop-item"><span class="prop-label">Xử lý màu sắc (Color Grade):</span> <span class="prop-val">Tông màu Xanh lạnh Điện Ảnh (Cool Teal / Cyber Cinematic Tone)</span></div><div class="prop-item"><span class="prop-label">Độ sáng / Tương phản:</span> <span class="prop-val">64.5 / 43.9</span></div>
+</div>
+<div class="tags-row">
+<span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 12</span><span class="tag-pill">2.67s</span>
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
-                    <span class="tag-pill">9:16 Vertical</span><span class="tag-pill">Shot 12</span><span class="tag-pill">2.67s</span>
+                    
                 </div>
             </div>
         </div>
         
         </div>
 
-        <!-- Visual Grid View (Hidden by default) -->
         <div class="grid-container" id="gridView" style="display:none;">
             
-        <div class="grid-card" onclick="playShot(0.0, 1.79, 'SHOT 01')">
+        <div class="grid-card" onclick="playShot(0.0, 2.5, 'SHOT 01')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg', 'SHOT 01 [0.0s - 1.79s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
-                <div class="grid-badge-bottom">0.0s - 1.8s</div>
+                <div class="grid-badge-bottom">0.0s - 2.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(1.84, 3.0, 'SHOT 02')">
+        <div class="grid-card" onclick="playShot(2.5, 5.0, 'SHOT 02')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg', 'SHOT 02 [1.84s - 3.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
-                <div class="grid-badge-bottom">1.8s - 3.0s</div>
+                <div class="grid-badge-bottom">2.5s - 5.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(3.04, 4.25, 'SHOT 03')">
+        <div class="grid-card" onclick="playShot(5.0, 7.5, 'SHOT 03')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg', 'SHOT 03 [3.04s - 4.25s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
-                <div class="grid-badge-bottom">3.0s - 4.2s</div>
+                <div class="grid-badge-bottom">5.0s - 7.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(4.3, 5.13, 'SHOT 04')">
+        <div class="grid-card" onclick="playShot(7.5, 10.0, 'SHOT 04')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg', 'SHOT 04 [4.3s - 5.13s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
-                <div class="grid-badge-bottom">4.3s - 5.1s</div>
+                <div class="grid-badge-bottom">7.5s - 10.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(5.17, 6.51, 'SHOT 05')">
+        <div class="grid-card" onclick="playShot(10.0, 12.5, 'SHOT 05')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg', 'SHOT 05 [5.17s - 6.51s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
-                <div class="grid-badge-bottom">5.2s - 6.5s</div>
+                <div class="grid-badge-bottom">10.0s - 12.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(6.55, 7.84, 'SHOT 06')">
+        <div class="grid-card" onclick="playShot(12.5, 15.0, 'SHOT 06')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg', 'SHOT 06 [6.55s - 7.84s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
-                <div class="grid-badge-bottom">6.5s - 7.8s</div>
+                <div class="grid-badge-bottom">12.5s - 15.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(7.88, 9.05, 'SHOT 07')">
+        <div class="grid-card" onclick="playShot(15.0, 17.5, 'SHOT 07')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg', 'SHOT 07 [7.88s - 9.05s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
-                <div class="grid-badge-bottom">7.9s - 9.1s</div>
+                <div class="grid-badge-bottom">15.0s - 17.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(9.09, 10.26, 'SHOT 08')">
+        <div class="grid-card" onclick="playShot(17.5, 20.0, 'SHOT 08')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg', 'SHOT 08 [9.09s - 10.26s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg', 'SHOT 08 [17.5s - 20.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
-                <div class="grid-badge-bottom">9.1s - 10.3s</div>
+                <div class="grid-badge-bottom">17.5s - 20.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(10.3, 11.43, 'SHOT 09')">
+        <div class="grid-card" onclick="playShot(20.0, 22.5, 'SHOT 09')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg', 'SHOT 09 [10.3s - 11.43s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg', 'SHOT 09 [20.0s - 22.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
-                <div class="grid-badge-bottom">10.3s - 11.4s</div>
+                <div class="grid-badge-bottom">20.0s - 22.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(11.47, 12.68, 'SHOT 10')">
+        <div class="grid-card" onclick="playShot(22.5, 25.0, 'SHOT 10')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg', 'SHOT 10 [11.47s - 12.68s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg', 'SHOT 10 [22.5s - 25.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
-                <div class="grid-badge-bottom">11.5s - 12.7s</div>
+                <div class="grid-badge-bottom">22.5s - 25.0s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(12.72, 14.43, 'SHOT 11')">
+        <div class="grid-card" onclick="playShot(25.0, 27.5, 'SHOT 11')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg', 'SHOT 11 [12.72s - 14.43s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg', 'SHOT 11 [25.0s - 27.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
-                <div class="grid-badge-bottom">12.7s - 14.4s</div>
+                <div class="grid-badge-bottom">25.0s - 27.5s</div>
             </div>
         </div>
         
 
-        <div class="grid-card" onclick="playShot(14.47, 17.1, 'SHOT 12')">
+        <div class="grid-card" onclick="playShot(27.5, 30.0, 'SHOT 12')">
             <div class="grid-img-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg', 'SHOT 12 [14.47s - 17.1s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg', 'SHOT 12 [27.5s - 30.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
-                <div class="grid-badge-bottom">14.5s - 17.1s</div>
+                <div class="grid-badge-bottom">27.5s - 30.0s</div>
             </div>
         </div>
         
@@ -1375,7 +1566,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Jump Drawer Menu -->
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
@@ -1384,145 +1574,145 @@ video#mainPlayer {
         </div>
         <div class="drawer-list">
             
-        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 1.79, 'SHOT 01')">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_001_b845004a.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
-                <div class="drawer-shot-time">⏱ 0.00s - 1.79s</div>
+                <div class="drawer-shot-time">⏱ 0.00s - 2.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(2, 1.84, 3.0, 'SHOT 02')">
+        <div class="drawer-item" onclick="jumpToShot(2, 2.5, 5.0, 'SHOT 02')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_002_6e8ee906.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
-                <div class="drawer-shot-time">⏱ 1.84s - 3.00s</div>
+                <div class="drawer-shot-time">⏱ 2.50s - 5.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(3, 3.04, 4.25, 'SHOT 03')">
+        <div class="drawer-item" onclick="jumpToShot(3, 5.0, 7.5, 'SHOT 03')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_003_485c41c7.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
-                <div class="drawer-shot-time">⏱ 3.04s - 4.25s</div>
+                <div class="drawer-shot-time">⏱ 5.00s - 7.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(4, 4.3, 5.13, 'SHOT 04')">
+        <div class="drawer-item" onclick="jumpToShot(4, 7.5, 10.0, 'SHOT 04')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_004_1f0b2de9.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
-                <div class="drawer-shot-time">⏱ 4.30s - 5.13s</div>
+                <div class="drawer-shot-time">⏱ 7.50s - 10.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(5, 5.17, 6.51, 'SHOT 05')">
+        <div class="drawer-item" onclick="jumpToShot(5, 10.0, 12.5, 'SHOT 05')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_005_f10df54d.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
-                <div class="drawer-shot-time">⏱ 5.17s - 6.51s</div>
+                <div class="drawer-shot-time">⏱ 10.00s - 12.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(6, 6.55, 7.84, 'SHOT 06')">
+        <div class="drawer-item" onclick="jumpToShot(6, 12.5, 15.0, 'SHOT 06')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_006_be869b63.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
-                <div class="drawer-shot-time">⏱ 6.55s - 7.84s</div>
+                <div class="drawer-shot-time">⏱ 12.50s - 15.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(7, 7.88, 9.05, 'SHOT 07')">
+        <div class="drawer-item" onclick="jumpToShot(7, 15.0, 17.5, 'SHOT 07')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_007_bb455a93.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
-                <div class="drawer-shot-time">⏱ 7.88s - 9.05s</div>
+                <div class="drawer-shot-time">⏱ 15.00s - 17.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(8, 9.09, 10.26, 'SHOT 08')">
+        <div class="drawer-item" onclick="jumpToShot(8, 17.5, 20.0, 'SHOT 08')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_008_66686ea3.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
-                <div class="drawer-shot-time">⏱ 9.09s - 10.26s</div>
+                <div class="drawer-shot-time">⏱ 17.50s - 20.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(9, 10.3, 11.43, 'SHOT 09')">
+        <div class="drawer-item" onclick="jumpToShot(9, 20.0, 22.5, 'SHOT 09')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_009_52a5da49.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
-                <div class="drawer-shot-time">⏱ 10.30s - 11.43s</div>
+                <div class="drawer-shot-time">⏱ 20.00s - 22.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(10, 11.47, 12.68, 'SHOT 10')">
+        <div class="drawer-item" onclick="jumpToShot(10, 22.5, 25.0, 'SHOT 10')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_010_7bbb97e7.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
-                <div class="drawer-shot-time">⏱ 11.47s - 12.68s</div>
+                <div class="drawer-shot-time">⏱ 22.50s - 25.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(11, 12.72, 14.43, 'SHOT 11')">
+        <div class="drawer-item" onclick="jumpToShot(11, 25.0, 27.5, 'SHOT 11')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_011_8e9c7701.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
-                <div class="drawer-shot-time">⏱ 12.72s - 14.43s</div>
+                <div class="drawer-shot-time">⏱ 25.00s - 27.50s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
         
 
-        <div class="drawer-item" onclick="jumpToShot(12, 14.47, 17.1, 'SHOT 12')">
+        <div class="drawer-item" onclick="jumpToShot(12, 27.5, 30.0, 'SHOT 12')">
             <div class="drawer-thumb">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EB%B9%84%EC%9B%80_-_%EC%96%91%ED%9D%AC%EC%A2%85_DZVHH27S7Lf_Video_by_bewoom/img_012_406eee61.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
-                <div class="drawer-shot-time">⏱ 14.47s - 17.10s</div>
+                <div class="drawer-shot-time">⏱ 27.50s - 30.00s</div>
             </div>
             <div class="drawer-play-arrow">▶</div>
         </div>
@@ -1531,7 +1721,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
@@ -1542,18 +1731,15 @@ video#mainPlayer {
 const rawVideoSrc = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVHH27S7Lf.mp4";
 let currentEndTime = null;
 
-// Multi-Source Candidate Resolver
 function getCandidateUrls(src) {
     if (!src) return [];
     if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    
     let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
     return [
         'https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean),
         '../videos/' + clean,
         './videos/' + clean,
-        './' + clean,
-        'https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean)
+        './' + clean
     ];
 }
 
@@ -1576,10 +1762,8 @@ player.onerror = () => {
     }
 };
 
-// Initialize video
 loadVideoCandidate();
 
-// Play Shot Function
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
@@ -1587,7 +1771,6 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    
     player.currentTime = startTime;
     const p = player.play();
     if (p !== undefined) {
@@ -1596,19 +1779,15 @@ function playShot(startTime, endTime, label) {
             player.play().catch(err => console.log('Autoplay muted triggered'));
         });
     }
-    
-    // Highlight Card
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
 
-    // On mobile, scroll up to video smoothly if needed
     if (window.innerWidth < 1024) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-// Speed & Frame Controls
 function setSpeed(speed, btn) {
     player.playbackRate = speed;
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
@@ -1625,13 +1804,11 @@ function toggleMute(btn) {
     if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
 }
 
-// View Switcher
 function switchView(view) {
     const sb = document.getElementById('storyboardView');
     const grid = document.getElementById('gridView');
     const tabDetail = document.getElementById('tabDetailBtn');
     const tabGrid = document.getElementById('tabGridBtn');
-    
     if (view === 'grid') {
         sb.style.display = 'none';
         grid.style.display = 'grid';
@@ -1645,7 +1822,6 @@ function switchView(view) {
     }
 }
 
-// Drawer Navigation
 function toggleDrawer(open) {
     const drawer = document.getElementById('drawerBackdrop');
     if (open) drawer.classList.add('open');
@@ -1662,7 +1838,6 @@ function jumpToShot(shotNum, st, et, label) {
     }
 }
 
-// Lightbox Modal
 function openLightbox(src, caption) {
     const modal = document.getElementById('lightboxModal');
     const img = document.getElementById('lightboxImg');
@@ -1676,7 +1851,6 @@ function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
 
-// Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeLightbox();
@@ -1689,6 +1863,5 @@ document.addEventListener('keydown', (e) => {
     }
 });
 </script>
-
 </body>
 </html>

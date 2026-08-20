@@ -21,7 +21,6 @@
     --accent-blue: #38bdf8;
     --accent-amber: #f59e0b;
     --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Be Vietnam Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -43,13 +42,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Scrollbars */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
-/* App Layout - Split Screen on Desktop, Single Stack on Mobile */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -101,7 +98,6 @@ body {
     }
 }
 
-/* Sticky Video Section */
 .video-player-container {
     position: relative;
     width: 100%;
@@ -132,7 +128,6 @@ video#mainPlayer {
     outline: none;
 }
 
-/* Video Controls Toolbar */
 .video-controls-panel {
     padding: 12px 16px;
     background: #0b111c;
@@ -192,14 +187,12 @@ video#mainPlayer {
     font-weight: 800;
 }
 
-/* Header Banner */
 .report-header-banner {
     background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative;
 }
 
 .header-top-row {
@@ -240,11 +233,8 @@ video#mainPlayer {
     color: var(--text-secondary);
 }
 
-.meta-tags-flex strong {
-    color: #fff;
-}
+.meta-tags-flex strong { color: #fff; }
 
-/* Overview Box */
 .overview-card {
     background: #0e1420;
     border: 1px solid var(--border-color);
@@ -257,7 +247,6 @@ video#mainPlayer {
     line-height: 1.6;
 }
 
-/* Action & View Switcher Bar */
 .action-toolbar {
     display: flex;
     align-items: center;
@@ -313,10 +302,8 @@ video#mainPlayer {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-/* Storyboard Detailed Cards */
 .storyboard-container {
     display: flex;
     flex-direction: column;
@@ -364,11 +351,6 @@ video#mainPlayer {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.2s;
-}
-
-.shot-thumb-wrap:hover .shot-img {
-    transform: scale(1.04);
 }
 
 .play-overlay {
@@ -379,19 +361,9 @@ video#mainPlayer {
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.15s;
 }
 
-.play-overlay svg {
-    width: 32px;
-    height: 32px;
-    color: #fff;
-}
-
-.shot-thumb-wrap:hover .play-overlay {
-    opacity: 1;
-    background: rgba(0,0,0,0.15);
-}
+.play-overlay svg { width: 32px; height: 32px; color: #fff; }
 
 .zoom-btn {
     position: absolute;
@@ -404,11 +376,7 @@ video#mainPlayer {
     height: 24px;
     font-size: 11px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #fff;
-    z-index: 2;
 }
 
 .thumb-time-badge {
@@ -455,12 +423,7 @@ video#mainPlayer {
     margin-right: 6px;
 }
 
-.shot-heading {
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #fff;
-    display: inline;
-}
+.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
 
 .time-jump-btn {
     background: rgba(56, 189, 248, 0.12);
@@ -472,15 +435,6 @@ video#mainPlayer {
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
-}
-
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #041324;
 }
 
 .props-list {
@@ -492,47 +446,16 @@ video#mainPlayer {
     margin-bottom: 8px;
 }
 
-.prop-item {
-    line-height: 1.45;
-}
+.prop-label { font-weight: 700; color: #94a3b8; }
+.prop-val { color: #e2e8f0; }
 
-.prop-label {
-    font-weight: 700;
-    color: #94a3b8;
-}
+.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
 
-.prop-val {
-    color: #e2e8f0;
-}
-
-.tags-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: auto;
-}
-
-.tag-pill {
-    background: #162032;
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 4px;
-}
-
-/* Visual Keyframe Grid View */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 12px;
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 14px;
-    }
 }
 
 .grid-card {
@@ -541,12 +464,6 @@ video#mainPlayer {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-blue);
 }
 
 .grid-img-wrap {
@@ -573,12 +490,9 @@ video#mainPlayer {
     color: #fff;
     background: rgba(0,0,0,0.3);
     opacity: 0;
-    transition: opacity 0.15s;
 }
 
-.grid-card:hover .grid-play-icon {
-    opacity: 1;
-}
+.grid-card:hover .grid-play-icon { opacity: 1; }
 
 .grid-zoom-btn {
     position: absolute;
@@ -591,10 +505,6 @@ video#mainPlayer {
     font-size: 10px;
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .grid-badge-top {
@@ -625,7 +535,6 @@ video#mainPlayer {
     font-family: var(--font-mono);
 }
 
-/* Drawer Menu (Shot Navigation) */
 .drawer-backdrop {
     position: fixed;
     inset: 0;
@@ -637,10 +546,7 @@ video#mainPlayer {
     transition: all 0.25s ease;
 }
 
-.drawer-backdrop.open {
-    opacity: 1;
-    visibility: visible;
-}
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
 
 .drawer-panel {
     position: fixed;
@@ -658,9 +564,7 @@ video#mainPlayer {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.drawer-backdrop.open .drawer-panel {
-    transform: translateX(0);
-}
+.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
 
 .drawer-header {
     padding: 16px 20px;
@@ -670,22 +574,8 @@ video#mainPlayer {
     justify-content: space-between;
 }
 
-.drawer-title {
-    font-weight: 800;
-    font-size: 15px;
-    color: #fff;
-}
-
-.drawer-close-btn {
-    background: #1e293b;
-    border: none;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
+.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
+.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
 
 .drawer-list {
     flex: 1;
@@ -705,7 +595,6 @@ video#mainPlayer {
     border: 1px solid #1e2d48;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.15s;
 }
 
 .drawer-item:hover, .drawer-item:active {
@@ -722,35 +611,12 @@ video#mainPlayer {
     background: #000;
 }
 
-.drawer-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.drawer-info { flex: 1; min-width: 0; }
+.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
+.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
 
-.drawer-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.drawer-shot-title {
-    font-weight: 700;
-    font-size: 13px;
-    color: #fff;
-}
-
-.drawer-shot-time {
-    font-size: 11.5px;
-    color: var(--accent-amber);
-    font-family: var(--font-mono);
-}
-
-.drawer-play-arrow {
-    font-size: 13px;
-    color: var(--accent-blue);
-}
-
-/* Lightbox Modal */
 #lightboxModal {
     position: fixed;
     inset: 0;
@@ -791,14 +657,12 @@ video#mainPlayer {
     color: #fff;
     font-size: 32px;
     cursor: pointer;
-    font-weight: 300;
 }
 </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Left Column: Video Sticky Studio Player -->
     <div class="video-sidebar-col">
         <div class="video-player-container">
             <video id="mainPlayer" controls autoplay playsinline preload="auto" loop></video>
@@ -821,9 +685,7 @@ video#mainPlayer {
         </div>
     </div>
 
-    <!-- Right Column: Content Scroll -->
     <div class="content-scroll-col">
-        <!-- Header Banner -->
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR BREAKDOWN</span>
@@ -837,28 +699,22 @@ video#mainPlayer {
             </div>
         </div>
 
-        <!-- Overview -->
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-            <div>Bóc tách toàn diện 21 phân cảnh mẫu mực điện ảnh du ký: Bố cục tỷ lệ 4:3 cổ điển, bảng màu nhiệt đới Kodak Portra, 2 đợt cắt nhanh Fast-cut Montage 4-6 frames đồng bộ nhịp nhạc, chuyển động Slow-motion đêm và thông điệp tái kết nối cội nguồn sâu sắc.</div>
+            <div>
+<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
+<div>Bóc tách toàn diện 21 phân cảnh mẫu mực điện ảnh du ký: Bố cục tỷ lệ 4:3 cổ điển, bảng màu nhiệt đới Kodak Portra, 2 đợt cắt nhanh Fast-cut Montage 4-6 frames đồng bộ nhịp nhạc, chuyển động Slow-motion đêm và thông điệp tái kết nối cội nguồn sâu sắc.</div>
+</div>
         </div>
 
-        <!-- View Switcher & Action Toolbar -->
         <div class="action-toolbar">
             <div class="view-tabs-group">
-                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">
-                    📋 Bóc Tách Chi Tiết
-                </button>
-                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">
-                    🖼️ Lưới Soi Ảnh (21)
-                </button>
+                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
+                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (21)</button>
             </div>
-            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">
-                📑 Mục Lục Shot
-            </button>
+            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
         </div>
 
-        <!-- Detailed Storyboard View -->
         <div class="storyboard-container" id="storyboardView">
             
         <div class="shot-card" id="shot-card-1">
@@ -884,6 +740,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(0.0, 1.62, 'SHOT 01')">
+<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.jpg', 'SHOT 01 [0.0s - 1.62s]')">🔍</button>
+<span class="thumb-time-badge">0.00s - 1.62s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 01</span>
+<h4 class="shot-heading">SHOT 01</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(0.0, 1.62, 'SHOT 01')">
+                        ▶ 0.00s ➔ 1.62s (1.62s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 01</span>
@@ -936,6 +814,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 01 (Out) ➔ Shot 02 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -967,6 +850,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(1.67, 3.08, 'SHOT 02')">
+<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_009_41234408.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_009_41234408.jpg', 'SHOT 02 [1.67s - 3.08s]')">🔍</button>
+<span class="thumb-time-badge">1.67s - 3.08s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 02</span>
+<h4 class="shot-heading">SHOT 02</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(1.67, 3.08, 'SHOT 02')">
+                        ▶ 1.67s ➔ 3.08s (1.41s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 02</span>
@@ -1019,6 +924,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 02 (Out) ➔ Shot 03 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1050,6 +960,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(3.12, 6.29, 'SHOT 03')">
+<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_016_b4fc74ca.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_016_b4fc74ca.jpg', 'SHOT 03 [3.12s - 6.29s]')">🔍</button>
+<span class="thumb-time-badge">3.12s - 6.29s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 03</span>
+<h4 class="shot-heading">SHOT 03</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(3.12, 6.29, 'SHOT 03')">
+                        ▶ 3.12s ➔ 6.29s (3.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 03</span>
@@ -1102,6 +1034,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 03 (Out) ➔ Shot 04 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1133,6 +1070,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(6.33, 7.79, 'SHOT 04')">
+<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_023_cb668dc7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_023_cb668dc7.jpg', 'SHOT 04 [6.33s - 7.79s]')">🔍</button>
+<span class="thumb-time-badge">6.33s - 7.79s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 04</span>
+<h4 class="shot-heading">SHOT 04</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(6.33, 7.79, 'SHOT 04')">
+                        ▶ 6.33s ➔ 7.79s (1.46s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 04</span>
@@ -1185,6 +1144,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 04 (Out) ➔ Shot 05 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1216,6 +1180,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(7.83, 8.0, 'SHOT 05')">
+<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_030_70eb5726.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_030_70eb5726.jpg', 'SHOT 05 [7.83s - 8.0s]')">🔍</button>
+<span class="thumb-time-badge">7.83s - 8.00s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 05</span>
+<h4 class="shot-heading">SHOT 05</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(7.83, 8.0, 'SHOT 05')">
+                        ▶ 7.83s ➔ 8.00s (0.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 05</span>
@@ -1268,6 +1254,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 05 (Out) ➔ Shot 06 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1299,6 +1290,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.04, 8.17, 'SHOT 06')">
+<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_037_c7dede7d.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_037_c7dede7d.jpg', 'SHOT 06 [8.04s - 8.17s]')">🔍</button>
+<span class="thumb-time-badge">8.04s - 8.17s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 06</span>
+<h4 class="shot-heading">SHOT 06</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.04, 8.17, 'SHOT 06')">
+                        ▶ 8.04s ➔ 8.17s (0.13s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 06</span>
@@ -1351,6 +1364,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 06 (Out) ➔ Shot 07 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1382,6 +1400,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.21, 8.38, 'SHOT 07')">
+<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_044_0654d3c1.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_044_0654d3c1.jpg', 'SHOT 07 [8.21s - 8.38s]')">🔍</button>
+<span class="thumb-time-badge">8.21s - 8.38s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 07</span>
+<h4 class="shot-heading">SHOT 07</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.21, 8.38, 'SHOT 07')">
+                        ▶ 8.21s ➔ 8.38s (0.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 07</span>
@@ -1434,6 +1474,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 07 (Out) ➔ Shot 08 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1465,6 +1510,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.42, 8.62, 'SHOT 08')">
+<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_051_54c1c217.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_051_54c1c217.jpg', 'SHOT 08 [8.42s - 8.62s]')">🔍</button>
+<span class="thumb-time-badge">8.42s - 8.62s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 08</span>
+<h4 class="shot-heading">SHOT 08</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.42, 8.62, 'SHOT 08')">
+                        ▶ 8.42s ➔ 8.62s (0.20s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 08</span>
@@ -1517,6 +1584,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 08 (Out) ➔ Shot 09 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1548,6 +1620,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.67, 8.92, 'SHOT 09')">
+<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_058_81e49c7b.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_058_81e49c7b.jpg', 'SHOT 09 [8.67s - 8.92s]')">🔍</button>
+<span class="thumb-time-badge">8.67s - 8.92s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 09</span>
+<h4 class="shot-heading">SHOT 09</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.67, 8.92, 'SHOT 09')">
+                        ▶ 8.67s ➔ 8.92s (0.25s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 09</span>
@@ -1600,6 +1694,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 09 (Out) ➔ Shot 10 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1631,6 +1730,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.96, 9.54, 'SHOT 10')">
+<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_065_105dbde3.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_065_105dbde3.jpg', 'SHOT 10 [8.96s - 9.54s]')">🔍</button>
+<span class="thumb-time-badge">8.96s - 9.54s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 10</span>
+<h4 class="shot-heading">SHOT 10</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.96, 9.54, 'SHOT 10')">
+                        ▶ 8.96s ➔ 9.54s (0.58s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 10</span>
@@ -1683,6 +1804,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 10 (Out) ➔ Shot 11 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1714,6 +1840,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(9.58, 10.08, 'SHOT 11')">
+<img alt="SHOT 11" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_072_62b1d0e6.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_072_62b1d0e6.jpg', 'SHOT 11 [9.58s - 10.08s]')">🔍</button>
+<span class="thumb-time-badge">9.58s - 10.08s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 11</span>
+<h4 class="shot-heading">SHOT 11</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(9.58, 10.08, 'SHOT 11')">
+                        ▶ 9.58s ➔ 10.08s (0.50s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 11</span>
@@ -1766,6 +1914,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 11 (Out) ➔ Shot 12 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1797,6 +1950,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(10.12, 10.83, 'SHOT 12')">
+<img alt="SHOT 12" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_079_dbf36196.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_079_dbf36196.jpg', 'SHOT 12 [10.12s - 10.83s]')">🔍</button>
+<span class="thumb-time-badge">10.12s - 10.83s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 12</span>
+<h4 class="shot-heading">SHOT 12</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(10.12, 10.83, 'SHOT 12')">
+                        ▶ 10.12s ➔ 10.83s (0.71s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 12</span>
@@ -1849,6 +2024,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 12 (Out) ➔ Shot 13 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1880,6 +2060,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(10.88, 11.04, 'SHOT 13')">
+<img alt="SHOT 13" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_086_d2c4f7d2.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_086_d2c4f7d2.jpg', 'SHOT 13 [10.88s - 11.04s]')">🔍</button>
+<span class="thumb-time-badge">10.88s - 11.04s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 13</span>
+<h4 class="shot-heading">SHOT 13</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(10.88, 11.04, 'SHOT 13')">
+                        ▶ 10.88s ➔ 11.04s (0.16s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 13</span>
@@ -1932,6 +2134,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 13 (Out) ➔ Shot 14 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1963,6 +2170,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.08, 11.25, 'SHOT 14')">
+<img alt="SHOT 14" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_093_24251c66.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_093_24251c66.jpg', 'SHOT 14 [11.08s - 11.25s]')">🔍</button>
+<span class="thumb-time-badge">11.08s - 11.25s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 14</span>
+<h4 class="shot-heading">SHOT 14</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.08, 11.25, 'SHOT 14')">
+                        ▶ 11.08s ➔ 11.25s (0.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 14</span>
@@ -2015,6 +2244,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 14 (Out) ➔ Shot 15 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2046,6 +2280,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.29, 11.5, 'SHOT 15')">
+<img alt="SHOT 15" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_100_395f20f3.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_100_395f20f3.jpg', 'SHOT 15 [11.29s - 11.5s]')">🔍</button>
+<span class="thumb-time-badge">11.29s - 11.50s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 15</span>
+<h4 class="shot-heading">SHOT 15</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.29, 11.5, 'SHOT 15')">
+                        ▶ 11.29s ➔ 11.50s (0.21s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 15</span>
@@ -2098,6 +2354,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 15 (Out) ➔ Shot 16 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2129,6 +2390,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.54, 11.71, 'SHOT 16')">
+<img alt="SHOT 16" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_107_396e5917.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_107_396e5917.jpg', 'SHOT 16 [11.54s - 11.71s]')">🔍</button>
+<span class="thumb-time-badge">11.54s - 11.71s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 16</span>
+<h4 class="shot-heading">SHOT 16</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.54, 11.71, 'SHOT 16')">
+                        ▶ 11.54s ➔ 11.71s (0.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 16</span>
@@ -2181,6 +2464,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 16 (Out) ➔ Shot 17 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2212,6 +2500,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.75, 12.17, 'SHOT 17')">
+<img alt="SHOT 17" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_114_1977ea9f.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_114_1977ea9f.jpg', 'SHOT 17 [11.75s - 12.17s]')">🔍</button>
+<span class="thumb-time-badge">11.75s - 12.17s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 17</span>
+<h4 class="shot-heading">SHOT 17</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.75, 12.17, 'SHOT 17')">
+                        ▶ 11.75s ➔ 12.17s (0.42s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 17</span>
@@ -2264,6 +2574,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 17 (Out) ➔ Shot 18 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2295,6 +2610,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(12.21, 13.38, 'SHOT 18')">
+<img alt="SHOT 18" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_121_06552847.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_121_06552847.jpg', 'SHOT 18 [12.21s - 13.38s]')">🔍</button>
+<span class="thumb-time-badge">12.21s - 13.38s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 18</span>
+<h4 class="shot-heading">SHOT 18</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(12.21, 13.38, 'SHOT 18')">
+                        ▶ 12.21s ➔ 13.38s (1.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 18</span>
@@ -2347,6 +2684,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 18 (Out) ➔ Shot 19 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2378,6 +2720,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(13.42, 14.83, 'SHOT 19')">
+<img alt="SHOT 19" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_128_6ed3dd18.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_128_6ed3dd18.jpg', 'SHOT 19 [13.42s - 14.83s]')">🔍</button>
+<span class="thumb-time-badge">13.42s - 14.83s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 19</span>
+<h4 class="shot-heading">SHOT 19</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(13.42, 14.83, 'SHOT 19')">
+                        ▶ 13.42s ➔ 14.83s (1.41s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 19</span>
@@ -2430,6 +2794,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 19 (Out) ➔ Shot 20 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2461,6 +2830,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(14.88, 16.33, 'SHOT 20')">
+<img alt="SHOT 20" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_135_b37de4cd.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_135_b37de4cd.jpg', 'SHOT 20 [14.88s - 16.33s]')">🔍</button>
+<span class="thumb-time-badge">14.88s - 16.33s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 20</span>
+<h4 class="shot-heading">SHOT 20</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(14.88, 16.33, 'SHOT 20')">
+                        ▶ 14.88s ➔ 16.33s (1.45s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 20</span>
@@ -2513,6 +2904,11 @@ video#mainPlayer {
 <div class="trans-caption">So sánh điểm nối chuyển cảnh: Shot 20 (Out) ➔ Shot 21 (In)</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2544,6 +2940,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(16.38, 18.08, 'SHOT 21')">
+<img alt="SHOT 21" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_142_6513b01b.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_142_6513b01b.jpg', 'SHOT 21 [16.38s - 18.08s]')">🔍</button>
+<span class="thumb-time-badge">16.38s - 18.08s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 21</span>
+<h4 class="shot-heading">SHOT 21</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(16.38, 18.08, 'SHOT 21')">
+                        ▶ 16.38s ➔ 18.08s (1.70s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-title-group">
 <span class="shot-badge">Shot 21</span>
@@ -2592,6 +3010,11 @@ video#mainPlayer {
 </div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2601,7 +3024,6 @@ video#mainPlayer {
         
         </div>
 
-        <!-- Visual Grid View (Hidden by default) -->
         <div class="grid-container" id="gridView" style="display:none;">
             
         <div class="grid-card" onclick="playShot(0.0, 1.62, 'SHOT 01')">
@@ -2838,7 +3260,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Jump Drawer Menu -->
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
@@ -3102,7 +3523,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
@@ -3113,18 +3533,15 @@ video#mainPlayer {
 const rawVideoSrc = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Saigon%2C%20Vietnam%20-%20%40qfroost.mp4";
 let currentEndTime = null;
 
-// Multi-Source Candidate Resolver
 function getCandidateUrls(src) {
     if (!src) return [];
     if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    
     let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
     return [
         'https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean),
         '../videos/' + clean,
         './videos/' + clean,
-        './' + clean,
-        'https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean)
+        './' + clean
     ];
 }
 
@@ -3147,10 +3564,8 @@ player.onerror = () => {
     }
 };
 
-// Initialize video
 loadVideoCandidate();
 
-// Play Shot Function
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
@@ -3158,7 +3573,6 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    
     player.currentTime = startTime;
     const p = player.play();
     if (p !== undefined) {
@@ -3167,19 +3581,15 @@ function playShot(startTime, endTime, label) {
             player.play().catch(err => console.log('Autoplay muted triggered'));
         });
     }
-    
-    // Highlight Card
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
 
-    // On mobile, scroll up to video smoothly if needed
     if (window.innerWidth < 1024) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-// Speed & Frame Controls
 function setSpeed(speed, btn) {
     player.playbackRate = speed;
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
@@ -3196,13 +3606,11 @@ function toggleMute(btn) {
     if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
 }
 
-// View Switcher
 function switchView(view) {
     const sb = document.getElementById('storyboardView');
     const grid = document.getElementById('gridView');
     const tabDetail = document.getElementById('tabDetailBtn');
     const tabGrid = document.getElementById('tabGridBtn');
-    
     if (view === 'grid') {
         sb.style.display = 'none';
         grid.style.display = 'grid';
@@ -3216,7 +3624,6 @@ function switchView(view) {
     }
 }
 
-// Drawer Navigation
 function toggleDrawer(open) {
     const drawer = document.getElementById('drawerBackdrop');
     if (open) drawer.classList.add('open');
@@ -3233,7 +3640,6 @@ function jumpToShot(shotNum, st, et, label) {
     }
 }
 
-// Lightbox Modal
 function openLightbox(src, caption) {
     const modal = document.getElementById('lightboxModal');
     const img = document.getElementById('lightboxImg');
@@ -3247,7 +3653,6 @@ function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
 
-// Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeLightbox();
@@ -3260,6 +3665,5 @@ document.addEventListener('keydown', (e) => {
     }
 });
 </script>
-
 </body>
 </html>

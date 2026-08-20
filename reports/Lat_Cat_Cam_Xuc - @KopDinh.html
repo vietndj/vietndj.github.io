@@ -21,7 +21,6 @@
     --accent-blue: #38bdf8;
     --accent-amber: #f59e0b;
     --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
     --font-heading: 'Plus Jakarta Sans', sans-serif;
     --font-body: 'Be Vietnam Pro', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
@@ -43,13 +42,11 @@ body {
     overflow-x: hidden;
 }
 
-/* Custom Scrollbars */
 ::-webkit-scrollbar { width: 6px; height: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-main); }
 ::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
 
-/* App Layout - Split Screen on Desktop, Single Stack on Mobile */
 .app-container {
     display: flex;
     flex-direction: column;
@@ -101,7 +98,6 @@ body {
     }
 }
 
-/* Sticky Video Section */
 .video-player-container {
     position: relative;
     width: 100%;
@@ -132,7 +128,6 @@ video#mainPlayer {
     outline: none;
 }
 
-/* Video Controls Toolbar */
 .video-controls-panel {
     padding: 12px 16px;
     background: #0b111c;
@@ -192,14 +187,12 @@ video#mainPlayer {
     font-weight: 800;
 }
 
-/* Header Banner */
 .report-header-banner {
     background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 20px;
     margin-bottom: 20px;
-    position: relative;
 }
 
 .header-top-row {
@@ -240,11 +233,8 @@ video#mainPlayer {
     color: var(--text-secondary);
 }
 
-.meta-tags-flex strong {
-    color: #fff;
-}
+.meta-tags-flex strong { color: #fff; }
 
-/* Overview Box */
 .overview-card {
     background: #0e1420;
     border: 1px solid var(--border-color);
@@ -257,7 +247,6 @@ video#mainPlayer {
     line-height: 1.6;
 }
 
-/* Action & View Switcher Bar */
 .action-toolbar {
     display: flex;
     align-items: center;
@@ -313,10 +302,8 @@ video#mainPlayer {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25);
 }
 
-/* Storyboard Detailed Cards */
 .storyboard-container {
     display: flex;
     flex-direction: column;
@@ -364,11 +351,6 @@ video#mainPlayer {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.2s;
-}
-
-.shot-thumb-wrap:hover .shot-img {
-    transform: scale(1.04);
 }
 
 .play-overlay {
@@ -379,19 +361,9 @@ video#mainPlayer {
     justify-content: center;
     align-items: center;
     opacity: 0.7;
-    transition: opacity 0.15s;
 }
 
-.play-overlay svg {
-    width: 32px;
-    height: 32px;
-    color: #fff;
-}
-
-.shot-thumb-wrap:hover .play-overlay {
-    opacity: 1;
-    background: rgba(0,0,0,0.15);
-}
+.play-overlay svg { width: 32px; height: 32px; color: #fff; }
 
 .zoom-btn {
     position: absolute;
@@ -404,11 +376,7 @@ video#mainPlayer {
     height: 24px;
     font-size: 11px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     color: #fff;
-    z-index: 2;
 }
 
 .thumb-time-badge {
@@ -455,12 +423,7 @@ video#mainPlayer {
     margin-right: 6px;
 }
 
-.shot-heading {
-    font-size: 14.5px;
-    font-weight: 700;
-    color: #fff;
-    display: inline;
-}
+.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
 
 .time-jump-btn {
     background: rgba(56, 189, 248, 0.12);
@@ -472,15 +435,6 @@ video#mainPlayer {
     font-weight: 700;
     font-family: var(--font-mono);
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
-}
-
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #041324;
 }
 
 .props-list {
@@ -492,47 +446,16 @@ video#mainPlayer {
     margin-bottom: 8px;
 }
 
-.prop-item {
-    line-height: 1.45;
-}
+.prop-label { font-weight: 700; color: #94a3b8; }
+.prop-val { color: #e2e8f0; }
 
-.prop-label {
-    font-weight: 700;
-    color: #94a3b8;
-}
+.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
+.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
 
-.prop-val {
-    color: #e2e8f0;
-}
-
-.tags-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 4px;
-    margin-top: auto;
-}
-
-.tag-pill {
-    background: #162032;
-    color: #94a3b8;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 4px;
-}
-
-/* Visual Keyframe Grid View */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     gap: 12px;
-}
-
-@media (min-width: 1024px) {
-    .grid-container {
-        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-        gap: 14px;
-    }
 }
 
 .grid-card {
@@ -541,12 +464,6 @@ video#mainPlayer {
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    transition: transform 0.15s, border-color 0.15s;
-}
-
-.grid-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--accent-blue);
 }
 
 .grid-img-wrap {
@@ -573,12 +490,9 @@ video#mainPlayer {
     color: #fff;
     background: rgba(0,0,0,0.3);
     opacity: 0;
-    transition: opacity 0.15s;
 }
 
-.grid-card:hover .grid-play-icon {
-    opacity: 1;
-}
+.grid-card:hover .grid-play-icon { opacity: 1; }
 
 .grid-zoom-btn {
     position: absolute;
@@ -591,10 +505,6 @@ video#mainPlayer {
     font-size: 10px;
     width: 20px;
     height: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .grid-badge-top {
@@ -625,7 +535,6 @@ video#mainPlayer {
     font-family: var(--font-mono);
 }
 
-/* Drawer Menu (Shot Navigation) */
 .drawer-backdrop {
     position: fixed;
     inset: 0;
@@ -637,10 +546,7 @@ video#mainPlayer {
     transition: all 0.25s ease;
 }
 
-.drawer-backdrop.open {
-    opacity: 1;
-    visibility: visible;
-}
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
 
 .drawer-panel {
     position: fixed;
@@ -658,9 +564,7 @@ video#mainPlayer {
     transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.drawer-backdrop.open .drawer-panel {
-    transform: translateX(0);
-}
+.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
 
 .drawer-header {
     padding: 16px 20px;
@@ -670,22 +574,8 @@ video#mainPlayer {
     justify-content: space-between;
 }
 
-.drawer-title {
-    font-weight: 800;
-    font-size: 15px;
-    color: #fff;
-}
-
-.drawer-close-btn {
-    background: #1e293b;
-    border: none;
-    color: #fff;
-    width: 28px;
-    height: 28px;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-}
+.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
+.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
 
 .drawer-list {
     flex: 1;
@@ -705,7 +595,6 @@ video#mainPlayer {
     border: 1px solid #1e2d48;
     border-radius: 8px;
     cursor: pointer;
-    transition: background 0.15s;
 }
 
 .drawer-item:hover, .drawer-item:active {
@@ -722,35 +611,12 @@ video#mainPlayer {
     background: #000;
 }
 
-.drawer-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.drawer-info { flex: 1; min-width: 0; }
+.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
+.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
 
-.drawer-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.drawer-shot-title {
-    font-weight: 700;
-    font-size: 13px;
-    color: #fff;
-}
-
-.drawer-shot-time {
-    font-size: 11.5px;
-    color: var(--accent-amber);
-    font-family: var(--font-mono);
-}
-
-.drawer-play-arrow {
-    font-size: 13px;
-    color: var(--accent-blue);
-}
-
-/* Lightbox Modal */
 #lightboxModal {
     position: fixed;
     inset: 0;
@@ -791,14 +657,12 @@ video#mainPlayer {
     color: #fff;
     font-size: 32px;
     cursor: pointer;
-    font-weight: 300;
 }
 </style>
 </head>
 <body>
 
 <div class="app-container">
-    <!-- Left Column: Video Sticky Studio Player -->
     <div class="video-sidebar-col">
         <div class="video-player-container">
             <video id="mainPlayer" controls autoplay playsinline preload="auto" loop></video>
@@ -821,9 +685,7 @@ video#mainPlayer {
         </div>
     </div>
 
-    <!-- Right Column: Content Scroll -->
     <div class="content-scroll-col">
-        <!-- Header Banner -->
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR BREAKDOWN</span>
@@ -837,28 +699,22 @@ video#mainPlayer {
             </div>
         </div>
 
-        <!-- Overview -->
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-            <div>Bóc tách 36 phân cảnh với triết lý không kỹ xảo màu mè, tôn trọng nhịp thở đời thực (Real-time 24fps), cú máy tĩnh đỉnh cao 25.7s và nghệ thuật quan sát tĩnh lặng của Kop Dinh.</div>
+            <div>
+<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
+<div>Bóc tách 36 phân cảnh với triết lý không kỹ xảo màu mè, tôn trọng nhịp thở đời thực (Real-time 24fps), cú máy tĩnh đỉnh cao 25.7s và nghệ thuật quan sát tĩnh lặng của Kop Dinh.</div>
+</div>
         </div>
 
-        <!-- View Switcher & Action Toolbar -->
         <div class="action-toolbar">
             <div class="view-tabs-group">
-                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">
-                    📋 Bóc Tách Chi Tiết
-                </button>
-                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">
-                    🖼️ Lưới Soi Ảnh (36)
-                </button>
+                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
+                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (36)</button>
             </div>
-            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">
-                📑 Mục Lục Shot
-            </button>
+            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
         </div>
 
-        <!-- Detailed Storyboard View -->
         <div class="storyboard-container" id="storyboardView">
             
         <div class="shot-card" id="shot-card-1">
@@ -884,6 +740,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(0.0, 6.76, 'SHOT 01')">
+<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_001_63c5522e.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_001_63c5522e.jpg', 'SHOT 01 [0.0s - 6.76s]')">🔍</button>
+<span class="thumb-time-badge">0.00s - 6.76s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 01</span>
+<h4 class="shot-heading">SHOT 01</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(0.0, 6.76, 'SHOT 01')">
+                        ▶ 0.00s ➔ 6.76s (6.76s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 01</div>
 <div class="shot-time">0.00s - 6.76s (6.76s)</div>
@@ -923,6 +801,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Mặt nước sóng sánh tĩnh tại ➔ <b>Nối In:</b> Cắt thẳng vào nhịp chuyển động đời thường của con người.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -954,6 +837,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(6.76, 8.68, 'SHOT 02')">
+<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_003_b0b34390.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_003_b0b34390.jpg', 'SHOT 02 [6.76s - 8.68s]')">🔍</button>
+<span class="thumb-time-badge">6.76s - 8.68s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 02</span>
+<h4 class="shot-heading">SHOT 02</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(6.76, 8.68, 'SHOT 02')">
+                        ▶ 6.76s ➔ 8.68s (1.92s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 02</div>
 <div class="shot-time">6.76s - 8.68s (1.92s)</div>
@@ -993,6 +898,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Động tác tay của nhân vật ➔ <b>Nối In:</b> Cắt sang góc cận chi tiết tiếp nối hành vi.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1024,6 +934,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(8.68, 9.47, 'SHOT 03')">
+<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_005_06775dc8.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_005_06775dc8.jpg', 'SHOT 03 [8.68s - 9.47s]')">🔍</button>
+<span class="thumb-time-badge">8.68s - 9.47s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 03</span>
+<h4 class="shot-heading">SHOT 03</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(8.68, 9.47, 'SHOT 03')">
+                        ▶ 8.68s ➔ 9.47s (0.79s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 03</div>
 <div class="shot-time">8.68s - 9.47s (0.79s)</div>
@@ -1063,6 +995,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Điểm dừng của mắt ➔ <b>Nối In:</b> Mở rộng trường nhìn ra bối cảnh mới.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1094,6 +1031,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(9.47, 11.64, 'SHOT 04')">
+<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_007_dc8903bd.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_007_dc8903bd.jpg', 'SHOT 04 [9.47s - 11.64s]')">🔍</button>
+<span class="thumb-time-badge">9.47s - 11.64s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 04</span>
+<h4 class="shot-heading">SHOT 04</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(9.47, 11.64, 'SHOT 04')">
+                        ▶ 9.47s ➔ 11.64s (2.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 04</div>
 <div class="shot-time">9.47s - 11.64s (2.17s)</div>
@@ -1133,6 +1092,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Bóng người lướt qua rìa khung ➔ <b>Nối In:</b> Cắt vào trường đoạn tĩnh lặng kéo dài.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1164,6 +1128,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(11.64, 18.69, 'SHOT 05')">
+<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_009_b31f351c.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_009_b31f351c.jpg', 'SHOT 05 [11.64s - 18.69s]')">🔍</button>
+<span class="thumb-time-badge">11.64s - 18.69s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 05</span>
+<h4 class="shot-heading">SHOT 05</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(11.64, 18.69, 'SHOT 05')">
+                        ▶ 11.64s ➔ 18.69s (7.05s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 05</div>
 <div class="shot-time">11.64s - 18.69s (7.05s)</div>
@@ -1203,6 +1189,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Sự tĩnh lặng tuyệt đối ➔ <b>Nối In:</b> Chuyển sang cử chỉ lao động/sinh hoạt đời thường.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1234,6 +1225,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(18.69, 23.69, 'SHOT 06')">
+<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_011_9368ecca.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_011_9368ecca.jpg', 'SHOT 06 [18.69s - 23.69s]')">🔍</button>
+<span class="thumb-time-badge">18.69s - 23.69s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 06</span>
+<h4 class="shot-heading">SHOT 06</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(18.69, 23.69, 'SHOT 06')">
+                        ▶ 18.69s ➔ 23.69s (5.00s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 06</div>
 <div class="shot-time">18.69s - 23.69s (5.01s)</div>
@@ -1273,6 +1286,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Nhân vật đổi hướng mắt ➔ <b>Nối In:</b> Nối chuyển động sang góc nhìn mới.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1304,6 +1322,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(23.69, 25.73, 'SHOT 07')">
+<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_013_511eaf7e.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_013_511eaf7e.jpg', 'SHOT 07 [23.69s - 25.73s]')">🔍</button>
+<span class="thumb-time-badge">23.69s - 25.73s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 07</span>
+<h4 class="shot-heading">SHOT 07</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(23.69, 25.73, 'SHOT 07')">
+                        ▶ 23.69s ➔ 25.73s (2.04s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 07</div>
 <div class="shot-time">23.69s - 25.73s (2.04s)</div>
@@ -1343,6 +1383,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Hướng di chuyển sang phải ➔ <b>Nối In:</b> Cắt vào góc cận tương ứng.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1374,6 +1419,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(25.73, 26.69, 'SHOT 08')">
+<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_015_8aff6328.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_015_8aff6328.jpg', 'SHOT 08 [25.73s - 26.69s]')">🔍</button>
+<span class="thumb-time-badge">25.73s - 26.69s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 08</span>
+<h4 class="shot-heading">SHOT 08</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(25.73, 26.69, 'SHOT 08')">
+                        ▶ 25.73s ➔ 26.69s (0.96s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 08</div>
 <div class="shot-time">25.73s - 26.69s (0.96s)</div>
@@ -1413,6 +1480,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Điểm sáng trung tâm ➔ <b>Nối In:</b> Mở ra không gian mở rộng lớn.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1444,6 +1516,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(26.69, 31.7, 'SHOT 09')">
+<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_017_08684140.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_017_08684140.jpg', 'SHOT 09 [26.69s - 31.7s]')">🔍</button>
+<span class="thumb-time-badge">26.69s - 31.70s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 09</span>
+<h4 class="shot-heading">SHOT 09</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(26.69, 31.7, 'SHOT 09')">
+                        ▶ 26.69s ➔ 31.70s (5.01s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 09</div>
 <div class="shot-time">26.69s - 31.70s (5.01s)</div>
@@ -1483,6 +1577,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Xe cộ trôi hết khung ➔ <b>Nối In:</b> Cắt vào chi tiết tĩnh vật tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1514,6 +1613,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(31.7, 35.62, 'SHOT 10')">
+<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_019_78f47ce7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_019_78f47ce7.jpg', 'SHOT 10 [31.7s - 35.62s]')">🔍</button>
+<span class="thumb-time-badge">31.70s - 35.62s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 10</span>
+<h4 class="shot-heading">SHOT 10</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(31.7, 35.62, 'SHOT 10')">
+                        ▶ 31.70s ➔ 35.62s (3.92s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 10</div>
 <div class="shot-time">31.70s - 35.62s (3.92s)</div>
@@ -1553,6 +1674,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Nụ cười/ánh mắt lướt qua ➔ <b>Nối In:</b> Cắt vào góc nhìn vi mô.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1584,6 +1710,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(35.62, 36.75, 'SHOT 11')">
+<img alt="SHOT 11" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_021_50f90f4a.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_021_50f90f4a.jpg', 'SHOT 11 [35.62s - 36.75s]')">🔍</button>
+<span class="thumb-time-badge">35.62s - 36.75s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 11</span>
+<h4 class="shot-heading">SHOT 11</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(35.62, 36.75, 'SHOT 11')">
+                        ▶ 35.62s ➔ 36.75s (1.13s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 11</div>
 <div class="shot-time">35.62s - 36.75s (1.13s)</div>
@@ -1623,6 +1771,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Khối hình học ➔ <b>Nối In:</b> Góc nhìn không gian tiếp diễn.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1654,6 +1807,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(36.75, 38.66, 'SHOT 12')">
+<img alt="SHOT 12" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_023_9456e3f9.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_023_9456e3f9.jpg', 'SHOT 12 [36.75s - 38.66s]')">🔍</button>
+<span class="thumb-time-badge">36.75s - 38.66s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 12</span>
+<h4 class="shot-heading">SHOT 12</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(36.75, 38.66, 'SHOT 12')">
+                        ▶ 36.75s ➔ 38.66s (1.91s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 12</div>
 <div class="shot-time">36.75s - 38.66s (1.92s)</div>
@@ -1693,6 +1868,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Chuyển động lướt qua ➔ <b>Nối In:</b> Cắt vào không gian tĩnh lặng.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1724,6 +1904,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(38.66, 40.96, 'SHOT 13')">
+<img alt="SHOT 13" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_025_09741f4c.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_025_09741f4c.jpg', 'SHOT 13 [38.66s - 40.96s]')">🔍</button>
+<span class="thumb-time-badge">38.66s - 40.96s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 13</span>
+<h4 class="shot-heading">SHOT 13</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(38.66, 40.96, 'SHOT 13')">
+                        ▶ 38.66s ➔ 40.96s (2.30s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 13</div>
 <div class="shot-time">38.66s - 40.96s (2.29s)</div>
@@ -1763,6 +1965,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Tĩnh ➔ <b>Nối In:</b> Không gian mở rộng.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1794,6 +2001,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(40.96, 45.75, 'SHOT 14')">
+<img alt="SHOT 14" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_027_b6733ec2.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_027_b6733ec2.jpg', 'SHOT 14 [40.96s - 45.75s]')">🔍</button>
+<span class="thumb-time-badge">40.96s - 45.75s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 14</span>
+<h4 class="shot-heading">SHOT 14</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(40.96, 45.75, 'SHOT 14')">
+                        ▶ 40.96s ➔ 45.75s (4.79s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 14</div>
 <div class="shot-time">40.96s - 45.75s (4.80s)</div>
@@ -1833,6 +2062,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Cử động chậm ➔ <b>Nối In:</b> Trường đoạn dài 14s tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1864,6 +2098,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(45.75, 59.64, 'SHOT 15')">
+<img alt="SHOT 15" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_029_81e7c497.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_029_81e7c497.jpg', 'SHOT 15 [45.75s - 59.64s]')">🔍</button>
+<span class="thumb-time-badge">45.75s - 59.64s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 15</span>
+<h4 class="shot-heading">SHOT 15</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(45.75, 59.64, 'SHOT 15')">
+                        ▶ 45.75s ➔ 59.64s (13.89s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 15</div>
 <div class="shot-time">45.75s - 59.64s (13.89s)</div>
@@ -1903,6 +2159,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Hết một chu kỳ cảm xúc ➔ <b>Nối In:</b> Nhịp cắt ngắn sang bối cảnh mới.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -1934,6 +2195,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(59.64, 60.77, 'SHOT 16')">
+<img alt="SHOT 16" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_031_a958ab87.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_031_a958ab87.jpg', 'SHOT 16 [59.64s - 60.77s]')">🔍</button>
+<span class="thumb-time-badge">59.64s - 60.77s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 16</span>
+<h4 class="shot-heading">SHOT 16</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(59.64, 60.77, 'SHOT 16')">
+                        ▶ 59.64s ➔ 60.77s (1.13s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 16</div>
 <div class="shot-time">59.64s - 60.77s (1.13s)</div>
@@ -1973,6 +2256,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Chớp mắt ➔ <b>Nối In:</b> Khám phá tiếp.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2004,6 +2292,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(60.77, 62.94, 'SHOT 17')">
+<img alt="SHOT 17" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_033_4b431014.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_033_4b431014.jpg', 'SHOT 17 [60.77s - 62.94s]')">🔍</button>
+<span class="thumb-time-badge">60.77s - 62.94s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 17</span>
+<h4 class="shot-heading">SHOT 17</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(60.77, 62.94, 'SHOT 17')">
+                        ▶ 60.77s ➔ 62.94s (2.17s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 17</div>
 <div class="shot-time">60.77s - 62.94s (2.17s)</div>
@@ -2043,6 +2353,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Cử chỉ kết thúc ➔ <b>Nối In:</b> Cận cảnh.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2074,6 +2389,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(62.94, 64.36, 'SHOT 18')">
+<img alt="SHOT 18" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_035_b895797d.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_035_b895797d.jpg', 'SHOT 18 [62.94s - 64.36s]')">🔍</button>
+<span class="thumb-time-badge">62.94s - 64.36s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 18</span>
+<h4 class="shot-heading">SHOT 18</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(62.94, 64.36, 'SHOT 18')">
+                        ▶ 62.94s ➔ 64.36s (1.42s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 18</div>
 <div class="shot-time">62.94s - 64.36s (1.42s)</div>
@@ -2113,6 +2450,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Điểm nét ➔ <b>Nối In:</b> Toàn cảnh tiếp nối.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2144,6 +2486,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(64.36, 71.7, 'SHOT 19')">
+<img alt="SHOT 19" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_037_103f9ee0.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_037_103f9ee0.jpg', 'SHOT 19 [64.36s - 71.7s]')">🔍</button>
+<span class="thumb-time-badge">64.36s - 71.70s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 19</span>
+<h4 class="shot-heading">SHOT 19</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(64.36, 71.7, 'SHOT 19')">
+                        ▶ 64.36s ➔ 71.70s (7.34s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 19</div>
 <div class="shot-time">64.36s - 71.70s (7.34s)</div>
@@ -2183,6 +2547,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Tĩnh lặng ➔ <b>Nối In:</b> Nhịp cắt đổi cảnh.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2214,6 +2583,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(71.7, 72.57, 'SHOT 20')">
+<img alt="SHOT 20" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_039_11386170.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_039_11386170.jpg', 'SHOT 20 [71.7s - 72.57s]')">🔍</button>
+<span class="thumb-time-badge">71.70s - 72.57s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 20</span>
+<h4 class="shot-heading">SHOT 20</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(71.7, 72.57, 'SHOT 20')">
+                        ▶ 71.70s ➔ 72.57s (0.87s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 20</div>
 <div class="shot-time">71.70s - 72.57s (0.88s)</div>
@@ -2253,6 +2644,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Sắc đỏ/ấm ➔ <b>Nối In:</b> Chuyển cảnh sáng.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2284,6 +2680,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(72.57, 74.07, 'SHOT 21')">
+<img alt="SHOT 21" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_041_2edc29ed.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_041_2edc29ed.jpg', 'SHOT 21 [72.57s - 74.07s]')">🔍</button>
+<span class="thumb-time-badge">72.57s - 74.07s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 21</span>
+<h4 class="shot-heading">SHOT 21</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(72.57, 74.07, 'SHOT 21')">
+                        ▶ 72.57s ➔ 74.07s (1.50s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 21</div>
 <div class="shot-time">72.57s - 74.07s (1.50s)</div>
@@ -2323,6 +2741,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Vệt nắng ➔ <b>Nối In:</b> Trường đoạn 11s tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2354,6 +2777,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(74.07, 85.25, 'SHOT 22')">
+<img alt="SHOT 22" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_043_20e8b034.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_043_20e8b034.jpg', 'SHOT 22 [74.07s - 85.25s]')">🔍</button>
+<span class="thumb-time-badge">74.07s - 85.25s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 22</span>
+<h4 class="shot-heading">SHOT 22</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(74.07, 85.25, 'SHOT 22')">
+                        ▶ 74.07s ➔ 85.25s (11.18s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 22</div>
 <div class="shot-time">74.07s - 85.25s (11.18s)</div>
@@ -2393,6 +2838,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Sự lắng đọng tuyệt đối ➔ <b>Nối In:</b> Chuyển động sinh hoạt tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2424,6 +2874,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(85.25, 88.38, 'SHOT 23')">
+<img alt="SHOT 23" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_045_7a39172c.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_045_7a39172c.jpg', 'SHOT 23 [85.25s - 88.38s]')">🔍</button>
+<span class="thumb-time-badge">85.25s - 88.38s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 23</span>
+<h4 class="shot-heading">SHOT 23</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(85.25, 88.38, 'SHOT 23')">
+                        ▶ 85.25s ➔ 88.38s (3.13s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 23</div>
 <div class="shot-time">85.25s - 88.38s (3.13s)</div>
@@ -2463,6 +2935,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Trôi khung ➔ <b>Nối In:</b> Cận cảnh.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2494,6 +2971,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(88.38, 89.63, 'SHOT 24')">
+<img alt="SHOT 24" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_047_2edc9a83.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_047_2edc9a83.jpg', 'SHOT 24 [88.38s - 89.63s]')">🔍</button>
+<span class="thumb-time-badge">88.38s - 89.63s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 24</span>
+<h4 class="shot-heading">SHOT 24</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(88.38, 89.63, 'SHOT 24')">
+                        ▶ 88.38s ➔ 89.63s (1.25s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 24</div>
 <div class="shot-time">88.38s - 89.63s (1.25s)</div>
@@ -2533,6 +3032,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Tĩnh ➔ <b>Nối In:</b> Trường đoạn 12.6s.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2564,6 +3068,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(89.63, 102.27, 'SHOT 25')">
+<img alt="SHOT 25" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_049_f2278da4.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_049_f2278da4.jpg', 'SHOT 25 [89.63s - 102.27s]')">🔍</button>
+<span class="thumb-time-badge">89.63s - 102.27s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 25</span>
+<h4 class="shot-heading">SHOT 25</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(89.63, 102.27, 'SHOT 25')">
+                        ▶ 89.63s ➔ 102.27s (12.64s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 25</div>
 <div class="shot-time">89.63s - 102.27s (12.64s)</div>
@@ -2603,6 +3129,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Lắng sâu ➔ <b>Nối In:</b> Cắt nhanh tạo tương phản.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2634,6 +3165,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(102.27, 103.73, 'SHOT 26')">
+<img alt="SHOT 26" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_051_7a644af2.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_051_7a644af2.jpg', 'SHOT 26 [102.27s - 103.73s]')">🔍</button>
+<span class="thumb-time-badge">102.27s - 103.73s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 26</span>
+<h4 class="shot-heading">SHOT 26</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(102.27, 103.73, 'SHOT 26')">
+                        ▶ 102.27s ➔ 103.73s (1.46s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 26</div>
 <div class="shot-time">102.27s - 103.73s (1.46s)</div>
@@ -2673,6 +3226,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Tối ➔ <b>Nối In:</b> Bừng sáng ở trường đoạn 27.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2704,6 +3262,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(103.73, 129.46, 'SHOT 27')">
+<img alt="SHOT 27" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_053_bb1cb6e7.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_053_bb1cb6e7.jpg', 'SHOT 27 [103.73s - 129.46s]')">🔍</button>
+<span class="thumb-time-badge">103.73s - 129.46s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 27</span>
+<h4 class="shot-heading">SHOT 27</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(103.73, 129.46, 'SHOT 27')">
+                        ▶ 103.73s ➔ 129.46s (25.73s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 27</div>
 <div class="shot-time">103.73s - 129.46s (25.73s)</div>
@@ -2743,6 +3323,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Ánh nắng trôi dần ➔ <b>Nối In:</b> Cắt sang chuyển động bình dị tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2774,6 +3359,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(129.46, 131.67, 'SHOT 28')">
+<img alt="SHOT 28" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_055_5a38780d.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_055_5a38780d.jpg', 'SHOT 28 [129.46s - 131.67s]')">🔍</button>
+<span class="thumb-time-badge">129.46s - 131.67s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 28</span>
+<h4 class="shot-heading">SHOT 28</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(129.46, 131.67, 'SHOT 28')">
+                        ▶ 129.46s ➔ 131.67s (2.21s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 28</div>
 <div class="shot-time">129.46s - 131.67s (2.21s)</div>
@@ -2813,6 +3420,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Chuyển động ➔ <b>Nối In:</b> Chi tiết cận cảnh.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2844,6 +3456,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(131.67, 132.76, 'SHOT 29')">
+<img alt="SHOT 29" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_057_02d23875.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_057_02d23875.jpg', 'SHOT 29 [131.67s - 132.76s]')">🔍</button>
+<span class="thumb-time-badge">131.67s - 132.76s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 29</span>
+<h4 class="shot-heading">SHOT 29</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(131.67, 132.76, 'SHOT 29')">
+                        ▶ 131.67s ➔ 132.76s (1.09s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 29</div>
 <div class="shot-time">131.67s - 132.76s (1.08s)</div>
@@ -2883,6 +3517,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Nét ➔ <b>Nối In:</b> Trường đoạn dài 14s.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2914,6 +3553,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(132.76, 146.6, 'SHOT 30')">
+<img alt="SHOT 30" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_059_297b3272.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_059_297b3272.jpg', 'SHOT 30 [132.76s - 146.6s]')">🔍</button>
+<span class="thumb-time-badge">132.76s - 146.60s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 30</span>
+<h4 class="shot-heading">SHOT 30</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(132.76, 146.6, 'SHOT 30')">
+                        ▶ 132.76s ➔ 146.60s (13.84s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 30</div>
 <div class="shot-time">132.76s - 146.60s (13.85s)</div>
@@ -2953,6 +3614,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Không khí lắng dịu ➔ <b>Nối In:</b> Không gian tiếp nối.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -2984,6 +3650,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(146.6, 151.19, 'SHOT 31')">
+<img alt="SHOT 31" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_061_1c8b2f22.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_061_1c8b2f22.jpg', 'SHOT 31 [146.6s - 151.19s]')">🔍</button>
+<span class="thumb-time-badge">146.60s - 151.19s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 31</span>
+<h4 class="shot-heading">SHOT 31</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(146.6, 151.19, 'SHOT 31')">
+                        ▶ 146.60s ➔ 151.19s (4.59s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 31</div>
 <div class="shot-time">146.60s - 151.19s (4.59s)</div>
@@ -3023,6 +3711,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Người bước qua ➔ <b>Nối In:</b> Góc nhìn tĩnh tiếp theo.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3054,6 +3747,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(151.19, 154.2, 'SHOT 32')">
+<img alt="SHOT 32" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_063_6cf7811b.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_063_6cf7811b.jpg', 'SHOT 32 [151.19s - 154.2s]')">🔍</button>
+<span class="thumb-time-badge">151.19s - 154.20s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 32</span>
+<h4 class="shot-heading">SHOT 32</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(151.19, 154.2, 'SHOT 32')">
+                        ▶ 151.19s ➔ 154.20s (3.01s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 32</div>
 <div class="shot-time">151.19s - 154.20s (3.00s)</div>
@@ -3093,6 +3808,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Tĩnh ➔ <b>Nối In:</b> Nối chuyển động.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3124,6 +3844,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(154.2, 155.82, 'SHOT 33')">
+<img alt="SHOT 33" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_065_2b1b17fd.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_065_2b1b17fd.jpg', 'SHOT 33 [154.2s - 155.82s]')">🔍</button>
+<span class="thumb-time-badge">154.20s - 155.82s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 33</span>
+<h4 class="shot-heading">SHOT 33</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(154.2, 155.82, 'SHOT 33')">
+                        ▶ 154.20s ➔ 155.82s (1.62s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 33</div>
 <div class="shot-time">154.20s - 155.82s (1.63s)</div>
@@ -3163,6 +3905,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Pan lướt ➔ <b>Nối In:</b> Cú máy dài 11s.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3194,6 +3941,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(155.82, 166.75, 'SHOT 34')">
+<img alt="SHOT 34" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_067_1e3ede31.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_067_1e3ede31.jpg', 'SHOT 34 [155.82s - 166.75s]')">🔍</button>
+<span class="thumb-time-badge">155.82s - 166.75s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 34</span>
+<h4 class="shot-heading">SHOT 34</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(155.82, 166.75, 'SHOT 34')">
+                        ▶ 155.82s ➔ 166.75s (10.93s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 34</div>
 <div class="shot-time">155.82s - 166.75s (10.93s)</div>
@@ -3233,6 +4002,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Sự tĩnh lặng tuyệt đối ➔ <b>Nối In:</b> Dấu phẩy thị giác áp chót.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3264,6 +4038,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(166.75, 167.54, 'SHOT 35')">
+<img alt="SHOT 35" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_069_733b37da.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_069_733b37da.jpg', 'SHOT 35 [166.75s - 167.54s]')">🔍</button>
+<span class="thumb-time-badge">166.75s - 167.54s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 35</span>
+<h4 class="shot-heading">SHOT 35</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(166.75, 167.54, 'SHOT 35')">
+                        ▶ 166.75s ➔ 167.54s (0.79s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 35</div>
 <div class="shot-time">166.75s - 167.54s (0.79s)</div>
@@ -3303,6 +4099,11 @@ video#mainPlayer {
 <div class="trans-desc"><b>Mồi Out:</b> Chớp mắt ➔ <b>Nối In:</b> Khép lại toàn bộ tác phẩm.</div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3334,6 +4135,28 @@ video#mainPlayer {
                 </div>
                 <div class="props-list">
                     <div class="raw-card-content">
+<div class="shot-media-col">
+<div class="shot-thumb-wrap" onclick="playShot(167.54, 176.01, 'SHOT 36')">
+<img alt="SHOT 36" class="shot-img" loading="lazy" src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_071_915be61e.jpg"/>
+<div class="play-overlay">
+<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+</div>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_071_915be61e.jpg', 'SHOT 36 [167.54s - 176.01s]')">🔍</button>
+<span class="thumb-time-badge">167.54s - 176.01s</span>
+</div>
+</div>
+<div class="shot-info-col">
+<div class="shot-card-header">
+<div class="shot-title-wrap">
+<span class="shot-badge-num">SHOT 36</span>
+<h4 class="shot-heading">SHOT 36</h4>
+</div>
+<button class="time-jump-btn" onclick="playShot(167.54, 176.01, 'SHOT 36')">
+                        ▶ 167.54s ➔ 176.01s (8.47s)
+                    </button>
+</div>
+<div class="props-list">
+<div class="raw-card-content">
 <div class="shot-header">
 <div class="shot-badge">SHOT 36</div>
 <div class="shot-time">167.54s - 176.01s (8.47s)</div>
@@ -3368,6 +4191,11 @@ video#mainPlayer {
 </div>
 </div>
 </div>
+</div>
+<div class="tags-row">
+</div>
+</div>
+</div>
                 </div>
                 <div class="tags-row">
                     
@@ -3377,7 +4205,6 @@ video#mainPlayer {
         
         </div>
 
-        <!-- Visual Grid View (Hidden by default) -->
         <div class="grid-container" id="gridView" style="display:none;">
             
         <div class="grid-card" onclick="playShot(0.0, 6.76, 'SHOT 01')">
@@ -3779,7 +4606,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Jump Drawer Menu -->
 <div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
@@ -4223,7 +5049,6 @@ video#mainPlayer {
     </div>
 </div>
 
-<!-- Lightbox Modal -->
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
     <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
@@ -4234,18 +5059,15 @@ video#mainPlayer {
 const rawVideoSrc = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Lat_Cat_Cam_Xuc%20-%20%40KopDinh.mp4";
 let currentEndTime = null;
 
-// Multi-Source Candidate Resolver
 function getCandidateUrls(src) {
     if (!src) return [];
     if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    
     let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
     return [
         'https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean),
         '../videos/' + clean,
         './videos/' + clean,
-        './' + clean,
-        'https://raw.githubusercontent.com/vietndj/vietndj.github.io/master/videos/' + encodeURI(clean)
+        './' + clean
     ];
 }
 
@@ -4268,10 +5090,8 @@ player.onerror = () => {
     }
 };
 
-// Initialize video
 loadVideoCandidate();
 
-// Play Shot Function
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
@@ -4279,7 +5099,6 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    
     player.currentTime = startTime;
     const p = player.play();
     if (p !== undefined) {
@@ -4288,19 +5107,15 @@ function playShot(startTime, endTime, label) {
             player.play().catch(err => console.log('Autoplay muted triggered'));
         });
     }
-    
-    // Highlight Card
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
 
-    // On mobile, scroll up to video smoothly if needed
     if (window.innerWidth < 1024) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
-// Speed & Frame Controls
 function setSpeed(speed, btn) {
     player.playbackRate = speed;
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
@@ -4317,13 +5132,11 @@ function toggleMute(btn) {
     if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
 }
 
-// View Switcher
 function switchView(view) {
     const sb = document.getElementById('storyboardView');
     const grid = document.getElementById('gridView');
     const tabDetail = document.getElementById('tabDetailBtn');
     const tabGrid = document.getElementById('tabGridBtn');
-    
     if (view === 'grid') {
         sb.style.display = 'none';
         grid.style.display = 'grid';
@@ -4337,7 +5150,6 @@ function switchView(view) {
     }
 }
 
-// Drawer Navigation
 function toggleDrawer(open) {
     const drawer = document.getElementById('drawerBackdrop');
     if (open) drawer.classList.add('open');
@@ -4354,7 +5166,6 @@ function jumpToShot(shotNum, st, et, label) {
     }
 }
 
-// Lightbox Modal
 function openLightbox(src, caption) {
     const modal = document.getElementById('lightboxModal');
     const img = document.getElementById('lightboxImg');
@@ -4368,7 +5179,6 @@ function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
 
-// Keyboard Shortcuts
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         closeLightbox();
@@ -4381,6 +5191,5 @@ document.addEventListener('keydown', (e) => {
     }
 });
 </script>
-
 </body>
 </html>
