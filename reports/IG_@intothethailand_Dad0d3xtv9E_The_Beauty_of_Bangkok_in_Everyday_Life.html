@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>The Beauty of Bangkok in Everyday Life - Director Breakdown</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-main: #070a0f;
+    --bg-card: #0e1420;
+    --bg-card-hover: #151e30;
+    --bg-surface: #121928;
+    --border-color: #1e293b;
+    --border-active: #38bdf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-blue: #38bdf8;
+    --accent-amber: #f59e0b;
+    --accent-emerald: #10b981;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.5;
+    font-size: 14px;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-main); }
+::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+@media (min-width: 1024px) {
+    .app-container {
+        flex-direction: row;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .video-sidebar-col {
+        width: 440px;
+        min-width: 440px;
+        max-width: 480px;
+        height: 100vh;
+        overflow-y: auto;
+        border-right: 1px solid var(--border-color);
+        background: var(--bg-surface);
+        display: flex;
+        flex-direction: column;
+        z-index: 30;
+    }
+    .content-scroll-col {
+        flex: 1;
+        height: 100vh;
+        overflow-y: auto;
+        padding: 24px 32px 60px;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 1023px) {
+    .video-sidebar-col {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(14, 20, 32, 0.95);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+    }
+    .content-scroll-col {
+        width: 100%;
+        padding: 16px 14px 80px;
+    }
+}
+
+.video-player-container {
+    position: relative;
+    width: 100%;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+    .video-player-container {
+        aspect-ratio: 9/16;
+        max-height: 60vh;
+    }
+}
+@media (max-width: 1023px) {
+    .video-player-container {
+        max-height: 38vh;
+        aspect-ratio: 16/9;
+    }
+}
+
+video#mainPlayer {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    outline: none;
+}
+
+.video-controls-panel {
+    padding: 12px 16px;
+    background: #0b111c;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.current-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.status-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 11.5px;
+}
+
+.speed-buttons-row {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+}
+
+.ctrl-btn {
+    background: #162032;
+    color: #cbd5e1;
+    border: 1px solid #283750;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.15s;
+}
+
+.ctrl-btn:hover, .ctrl-btn:active {
+    background: #25334d;
+    color: #fff;
+}
+
+.ctrl-btn.active {
+    background: var(--accent-blue);
+    color: #041324;
+    border-color: var(--accent-blue);
+    font-weight: 800;
+}
+
+.report-header-banner {
+    background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.header-top-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.genre-badge {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-amber);
+    border: 1px solid rgba(245, 158, 11, 0.3);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.report-title {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.meta-tags-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 12.5px;
+    color: var(--text-secondary);
+}
+
+.meta-tags-flex strong {
+    color: #fff;
+}
+
+.overview-card {
+    background: #0e1420;
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.action-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--bg-main);
+    padding: 10px 0;
+}
+
+.view-tabs-group {
+    display: flex;
+    gap: 4px;
+    background: #0f1624;
+    padding: 4px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.view-tab-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.15s;
+}
+
+.view-tab-btn.active {
+    background: #1e293b;
+    color: #fff;
+    font-weight: 700;
+}
+
+.drawer-trigger-btn {
+    background: linear-gradient(135deg, #0284c7, #0369a1);
+    color: #fff;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 12.5px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.storyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    gap: 16px;
+    transition: transform 0.15s, border-color 0.15s;
+}
+
+.shot-card:hover {
+    background: var(--bg-card-hover);
+    border-color: #2e3e5a;
+}
+
+.shot-card.active-playing {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.shot-media-col {
+    width: 125px;
+    min-width: 125px;
+    flex-shrink: 0;
+}
+
+.shot-thumb-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.shot-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+}
+
+.play-overlay svg {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+}
+
+.zoom-btn {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.65);
+    border: none;
+    border-radius: 4px;
+    width: 24px;
+    height: 24px;
+    font-size: 11px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.thumb-time-badge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    right: 6px;
+    background: rgba(15, 23, 42, 0.85);
+    font-size: 9.5px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    padding: 2px 4px;
+    border-radius: 3px;
+    text-align: center;
+    font-family: var(--font-mono);
+}
+
+.shot-info-col {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.shot-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    border-bottom: 1px solid #1a2436;
+    padding-bottom: 6px;
+    margin-bottom: 6px;
+}
+
+.shot-badge-num {
+    background: #1e293b;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    font-weight: 800;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+}
+
+.shot-heading {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #fff;
+    display: inline;
+}
+
+.shot-sub-en {
+    font-size: 11.5px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.time-jump-btn {
+    background: rgba(56, 189, 248, 0.12);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    cursor: pointer;
+}
+
+.props-list {
+    font-size: 12.5px;
+    color: #cbd5e1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-bottom: 8px;
+}
+
+.prop-label { font-weight: 700; color: #94a3b8; }
+.prop-val { color: #e2e8f0; }
+
+.director-insight-pill {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    border-radius: 6px;
+    padding: 8px 10px;
+    font-size: 12px;
+    color: #a7f3d0;
+    line-height: 1.5;
+    margin-bottom: 8px;
+}
+
+.tags-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: auto;
+}
+
+.tag-pill {
+    background: #162032;
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 4px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.grid-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.grid-img-wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9/16;
+    background: #000;
+}
+
+.grid-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.grid-play-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #fff;
+    background: rgba(0,0,0,0.3);
+    opacity: 0;
+}
+
+.grid-card:hover .grid-play-icon { opacity: 1; }
+
+.grid-zoom-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(0,0,0,0.7);
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.grid-badge-top {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--accent-blue);
+    font-size: 9px;
+    font-weight: 800;
+    padding: 1px 5px;
+    border-radius: 3px;
+    font-family: var(--font-mono);
+}
+
+.grid-badge-bottom {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    right: 4px;
+    background: rgba(15, 23, 42, 0.85);
+    color: var(--accent-amber);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 3px;
+    text-align: center;
+    font-family: var(--font-mono);
+}
+
+.drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25s ease;
+}
+
+.drawer-backdrop.open { opacity: 1; visibility: visible; }
+
+.drawer-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 85vw;
+    background: #0f172a;
+    border-left: 1px solid var(--border-color);
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
+
+.drawer-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
+.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
+
+.drawer-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 10px;
+    background: #131d30;
+    border: 1px solid #1e2d48;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.drawer-item:hover, .drawer-item:active {
+    background: #1c2b47;
+    border-color: var(--accent-blue);
+}
+
+.drawer-thumb {
+    width: 44px;
+    height: 58px;
+    border-radius: 4px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #000;
+}
+
+.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.drawer-info { flex: 1; min-width: 0; }
+.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
+.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
+.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
+
+#lightboxModal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
+    z-index: 200;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#lightboxImg {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    border: 1px solid #334155;
+}
+
+#lightboxCaption {
+    color: #e2e8f0;
+    font-size: 13.5px;
+    margin-top: 14px;
+    text-align: center;
+    background: rgba(15, 23, 42, 0.85);
+    padding: 6px 16px;
+    border-radius: 20px;
+    border: 1px solid #334155;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="video-sidebar-col">
+        <div class="video-player-container">
+            <video id="mainPlayer" controls autoplay playsinline preload="auto" loop></video>
+        </div>
+        <div class="video-controls-panel">
+            <div class="current-status-bar">
+                <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
+                <a id="directVidLink" href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+            </div>
+            <div class="speed-buttons-row">
+                <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+                <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">🔊 Tiếng</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-scroll-col">
+        <div class="report-header-banner">
+            <div class="header-top-row">
+                <span class="genre-badge">CINEMATIC DIRECTOR BREAKDOWN</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">7 SHOTS &bull; 14.23s</span>
+            </div>
+            <h1 class="report-title">The Beauty of Bangkok in Everyday Life</h1>
+            <div class="meta-tags-flex">
+                <span>Tác giả: <strong>@intothethailand (Manu)</strong></span>
+                <span>Chủ đề: <strong>Vẻ đẹp đời thường Bangkok &bull; Nén tiêu cự &bull; Match Cut</strong></span>
+                <span>Khung hình: <strong>9:16 Vertical HD (30 FPS)</strong></span>
+            </div>
+        </div>
+
+        <div class="overview-card">
+            <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
+            <div>Tác phẩm ngắn 14.23 giây là một bức tranh điện ảnh hoàn mỹ khắc họa nhịp sống Bangkok qua 7 phân cảnh. Video vận dụng xuất sắc nghệ thuật <strong>nén tiêu cự telephoto (85mm - 200mm)</strong> để kéo gần biểu tượng thần thoại (Voi Erawan, Phật Wat Paknam) vào nhịp sống thường nhật (7-Eleven, xe Tuk-Tuk, ga tàu hỏa Talat Phlu), kết hợp cùng kỹ thuật dựng <strong>Match Cut kiến trúc &amp; chuyển động</strong> mượt mà đỉnh cao.</div>
+        </div>
+
+        <div class="action-toolbar">
+            <div class="view-tabs-group">
+                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
+                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (7)</button>
+            </div>
+            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
+        </div>
+
+        <div class="storyboard-container" id="storyboardView">
+            
+    <div class="shot-card" id="shot-card-1">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.67, 'SHOT 01')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg', 'SHOT 01 [0.0s - 2.67s] • Giao Lộ Siam Đa Tầng, Hai Tuyến Tàu BTS & Dòng Chữ 'EVERY DAY LIFE Bangkok'')">🔍</button>
+                <span class="thumb-time-badge">0.00s - 2.67s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 01</span>
+                    <h4 class="shot-heading">Giao Lộ Siam Đa Tầng, Hai Tuyến Tàu BTS & Dòng Chữ 'EVERY DAY LIFE Bangkok'</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(0.0, 2.67, 'SHOT 01')">
+                    ▶ 0.00s ➔ 2.67s (2.67s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Multi-tier Siam Transit Crossing & Double BTS Skytrain Flow</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Cầu đi bộ trên cao Siam / Ratchaprasong Skywalk, Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Elevated Medium-Wide Tracking (50mm - 70mm) • Tỷ lệ 9:16 Vertical HD</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Ánh sáng cuối ngày (Golden Twilight Glow), phản chiếu ánh vàng trên kính các tòa nhà cao tầng và bầu trời lam dịu — Warm Urban Documentary Tone • Điểm xuyết sắc xanh biển của tàu BTS, biển Krungthai và đèn tín hiệu giao thông</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục chia tầng dọc 3 lớp (3-Tier Layering): Tầng trên cùng là 2 tầng cầu cạn tàu BTS, tầng giữa là chữ tiêu đề và cầu bộ hành, tầng dưới là dòng xe máy, xe tuk-tuk và xe buýt tấp nập.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Mở màn video bằng một 'Visual Hook' hoàn hảo bộc lộ sự tráng lệ và nhịp thở đô thị Bangkok. Góc máy từ trên cao thu trọn giao lộ đa tầng sầm uất: Hai đoàn tàu BTS Skytrain lướt qua nhau ở hai cao độ khác nhau, bên dưới là đoàn xe máy và tuk-tuk dừng chờ đèn đỏ. Dòng chữ 'EVERY DAY LIFE / Bangkok' xuất hiện đầy tự hào, định vị ngay thông điệp: Đây là nhịp sống thường nhật nhưng mang vẻ đẹp điện ảnh kỳ ảo của thủ đô Thái Lan.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Cầu đi bộ trên cao Siam / Ratchaprasong Skywalk</span>
+                <span class="tag-pill">2.67s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-2">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(2.67, 4.47, 'SHOT 02')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_02_mid.jpg', 'SHOT 02 [2.67s - 4.47s] • Tượng Voi Thần Ba Đầu Erawan Khổng Lồ Sừng Sững Sau Khu Phố 7-Eleven')">🔍</button>
+                <span class="thumb-time-badge">2.67s - 4.47s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 02</span>
+                    <h4 class="shot-heading">Tượng Voi Thần Ba Đầu Erawan Khổng Lồ Sừng Sững Sau Khu Phố 7-Eleven</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(2.67, 4.47, 'SHOT 02')">
+                    ▶ 2.67s ➔ 4.47s (1.80s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Colossal Three-Headed Erawan Elephant & 7-Eleven Neighborhood Juxtaposition</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Bảo tàng Erawan Museum (Samut Prakan / Bangkok)</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Extreme Telephoto Lens Compression (135mm - 200mm) • Khung hình dọc 9:16</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Ánh sáng tự nhiên khuếch tán ban ngày (Diffused Overcast Sky), làm nổi bật nước đồng xanh cổ kính (Green Patina Bronze) của tượng voi — Tông màu đối lập: Sắc xanh gỉ đồng uy nghiêm của Voi thần hòa cùng biển hiệu 7-Eleven đỏ-xanh lá và cờ đỏ phất phới</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Khung lồng Khung (Frame within a Frame): Dầm cầu vượt bê tông và các cột điện, mạng lưới dây cáp chằng chịt đóng khung tượng Voi Thần ba đầu Airavata khổng lồ cao 44 mét ở hậu cảnh.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Cú máy kinh điển ứng dụng hiệu ứng nén tiêu cự telephoto (Telephoto Compression). Tác giả đứng từ một con ngõ nhỏ bình dị có cửa hàng tiện lợi 7-Eleven, quán cóc vỉa hè và dòng xe máy chạy qua, chĩa ống kính tầm xa về phía Bảo tàng Erawan. Bức tượng Voi thần 3 đầu bằng đồng nguyên khối khổng lồ hiện lên sừng sững như một sinh vật huyền bí trong phim khoa học viễn tưởng đang ngự trị ngay phía sau nhịp sống thường nhật của người dân.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Bảo tàng Erawan Museum (Samut Prakan / Bangkok)</span>
+                <span class="tag-pill">1.80s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-3">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(4.47, 6.67, 'SHOT 03')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg', 'SHOT 03 [4.47s - 6.67s] • Đại Phật Hoàng Kim Wat Paknam Trong Ánh Hoàng Hôn Đỏ Rực & Thuyền Đuôi Dài Chao Phraya')">🔍</button>
+                <span class="thumb-time-badge">4.47s - 6.67s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 03</span>
+                    <h4 class="shot-heading">Đại Phật Hoàng Kim Wat Paknam Trong Ánh Hoàng Hôn Đỏ Rực & Thuyền Đuôi Dài Chao Phraya</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(4.47, 6.67, 'SHOT 03')">
+                    ▶ 4.47s ➔ 6.67s (2.20s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Giant Golden Buddha Wat Paknam at Fiery Sunset & Canal Long-tail Boats</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Kênh đào Phasi Charoen / Wat Paknam Bhasicharoen, Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Medium Telephoto (85mm) • Ngược sáng Hoàng Hôn Tuyệt Mỹ (Golden Hour Backlight)</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Ánh sáng ngược rực rỡ (Intense Golden-Orange Sunburst), mặt trời tròn vành vạnh như quả cầu lửa rọi bóng xuống mặt nước óng ánh vàng — Bảng màu Hoàng Hôn Điện Ảnh (Fiery Amber & Deep Crimson Sunset) • Tương phản bóng đổ Silhouette huyền bí</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Bất Đối Xứng Hoàn Hảo (Asymmetric Balance): Tượng Đại Phật mạ vàng ngồi uy nghiêm góc trái, mặt trời rực đỏ ở góc trên bên phải, dòng kênh lấp lánh ở nửa dưới với 2 chiếc thuyền đuôi dài rẽ sóng ngược chiều nhau.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Một trong những khung hình đẹp nhất về Bangkok: Mặt trời hoàng hôn rực rỡ như hòn than hồng chiếu rọi toàn bộ bầu trời sắc cam hổ phách. Tượng Đại Phật Wat Paknam cao 69 mét ngự bên bờ kênh, đón ánh tà dương lấp lánh. Hai chiếc thuyền đuôi dài (Long-tail boat) chở khách lướt đi trên mặt nước nhuộm vàng, tạo nên những vệt sóng phản chiếu ánh sáng lấp lánh như dát vàng.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Kênh đào Phasi Charoen / Wat Paknam Bhasicharoen</span>
+                <span class="tag-pill">2.20s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-4">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(6.67, 8.63, 'SHOT 04')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_04_mid.jpg', 'SHOT 04 [6.67s - 8.63s] • Hành Lang Phố Đi Bộ Chong Nonsi, Xe Xiên Nướng Đậm Vị & Biển Hiệu 7-Eleven')">🔍</button>
+                <span class="thumb-time-badge">6.67s - 8.63s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 04</span>
+                    <h4 class="shot-heading">Hành Lang Phố Đi Bộ Chong Nonsi, Xe Xiên Nướng Đậm Vị & Biển Hiệu 7-Eleven</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(6.67, 8.63, 'SHOT 04')">
+                    ▶ 6.67s ➔ 8.63s (1.97s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Chong Nonsi BTS Pedestrian Walkway, Street Food Cart & Urban Pulse</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Vỉa hè ga BTS Chong Nonsi (Khu Silom / Sathorn), Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Eye-Level Normal Street Lens (50mm) • Khung hình đi bộ tự nhiên (Street Pedestrian Perspective)</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Ánh sáng ban ngày tự nhiên, điểm xuyết ánh đèn quầy hàng ăn và chiếc ô dù sọc đỏ trắng ấm áp — Chân thực sống động (Authentic Street Tone) • Nổi bật màu xanh-đỏ của 7-Eleven và sắc vàng óng của các món xiên que nướng</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Dẫn Hướng Chiều Sâu (Leading Linear Perspective): Lối đi vỉa hè hẹp với xe xiên que nướng bên phải, dòng người đi bộ về phía trước, cầu thang cuốn BTS Chong Nonsi và tòa nhà chọc trời ở hậu cảnh.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Đưa người xem chạm vào hương vị và âm thanh chân thực nhất của đường phố Bangkok: Một quầy xe đẩy bán xúc xích và thịt xiên nướng kiểu Thái thơm phức dưới chiếc ô che lớn. Nhóm bạn trẻ và người dân địa phương thong thả rảo bước qua vỉa hè tiến về ga tàu điện Chong Nonsi. Khung hình tràn ngập sức sống đô thị hiện đại đan xen văn hóa ẩm thực đường phố đặc trưng.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Vỉa hè ga BTS Chong Nonsi (Khu Silom / Sathorn)</span>
+                <span class="tag-pill">1.97s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-5">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(8.63, 10.17, 'SHOT 05')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_05_mid.jpg', 'SHOT 05 [8.63s - 10.17s] • Nhà Sư Áo Vàng Đi Dưới Nắng Chiều Vàng Vụa Trong Tu Viện Chùa Wat Pho')">🔍</button>
+                <span class="thumb-time-badge">8.63s - 10.17s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 05</span>
+                    <h4 class="shot-heading">Nhà Sư Áo Vàng Đi Dưới Nắng Chiều Vàng Vụa Trong Tu Viện Chùa Wat Pho</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(8.63, 10.17, 'SHOT 05')">
+                    ▶ 8.63s ➔ 10.17s (1.53s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Monk in Saffron Robe Walking Through Sun-Drenched Monastery Courtyard</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Khuôn viên tu viện cổ kính (Chùa Wat Pho / Wat Arun), Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Medium-Long Telephoto (70mm - 100mm) • Góc thấp dẫn hướng (Low Leading Angle)</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Nắng chiều xiên rực rỡ (Low Golden Sunbeam), rọi bóng dài trên nền gạch láng bóng phản chiếu sắc cam hổ phách ấm áp — Saffron Gold & Pure White • Sắc áo cà sa vàng cam rực rỡ nổi bật tuyệt đối trên nền tường trắng và mái ngói đỏ thẫm</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Một Điểm Tụ (One-Point Perspective Corridor): Dãy hành lang tường trắng thẳng tắp kéo dài vào chiều sâu, hàng cây cảnh bonsai chậu sứ xếp thẳng hàng, nhà sư bước đi ở trục 1/3 trung tâm.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Khoảnh khắc tĩnh lặng tuyệt đối giữa lòng thủ đô náo nhiệt: Một nhà sư Phật giáo Theravada trong tà áo cà sa màu vàng nghệ bước đi chậm rãi dọc hành lang chùa dưới ánh nắng chiều vàng óng ả. Mặt đường lát đá sau cơn mưa phản chiếu ánh nắng lấp lánh, tạo nên một vệt sáng dẫn lối thiêng liêng. Đây là linh hồn tâm linh cốt lõi của văn hóa Thái Lan.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Khuôn viên tu viện cổ kính (Chùa Wat Pho / Wat Arun)</span>
+                <span class="tag-pill">1.53s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-6">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(10.17, 12.0, 'SHOT 06')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_06_mid.jpg', 'SHOT 06 [10.17s - 12.0s] • Xe Tuk-Tuk Đỏ Lướt Giữa Phố Người Hoa Yaowarat Rực Rỡ Biển Hiệu Neon')">🔍</button>
+                <span class="thumb-time-badge">10.17s - 12.00s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 06</span>
+                    <h4 class="shot-heading">Xe Tuk-Tuk Đỏ Lướt Giữa Phố Người Hoa Yaowarat Rực Rỡ Biển Hiệu Neon</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(10.17, 12.0, 'SHOT 06')">
+                    ▶ 10.17s ➔ 12.00s (1.83s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Iconic Red Tuk-Tuk Frontal Cruise in Bustling Yaowarat Chinatown</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Đường Yaowarat (Chinatown), Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Frontal Tracking / Telephoto Compression (85mm) • Góc nhìn trực diện cuốn hút</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Ánh sáng đô thị chiều tà, phản chiếu các dải biển hiệu đèn lồng, tiệm vàng và bảng quảng cáo rực rỡ sắc màu — Festive Vibrant Palette (Đỏ son, Vàng kim, Xanh lá cây) • Đậm chất điện ảnh Vương Gia Vệ (Wong Kar-wai Urban Vibe)</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Đối Xứng Trung Tâm (Center-Weighted Focus): Chiếc xe Tuk-Tuk đỏ rực nổi bật ở tim đường, hai bên là xe taxi vàng-xanh và rừng biển hiệu chữ Hán / Thái (Hòa Thành Hưng, UOB, TTB) xếp tầng vươn cao.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Cú máy bắt trọn biểu tượng du lịch số 1 của Bangkok: Chiếc xe Tuk-Tuk ba bánh màu đỏ tươi tiến thẳng về phía máy quay trên đường Yaowarat. Người lái xe nở nụ cười và giơ tay vẫy chào thân thiện. Phía sau là các xe taxi màu xanh lá - vàng đặc trưng và hệ thống biển hiệu tiệm vàng, nhà hàng chữ Hán đỏ rực treo dày đặc như trong một bộ phim kinh điển về châu Á thập niên 90.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Đường Yaowarat (Chinatown)</span>
+                <span class="tag-pill">1.83s</span>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="shot-card" id="shot-card-7">
+        <div class="shot-media-col">
+            <div class="shot-thumb-wrap" onclick="playShot(12.0, 14.23, 'SHOT 07')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                <div class="play-overlay">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                </div>
+                <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_07_mid.jpg', 'SHOT 07 [12.0s - 14.23s] • Ga Tàu Hỏa Talat Phlu Cổ Kính, Đường Ray Chữ S & Vệt Nắng Cuối Chiều')">🔍</button>
+                <span class="thumb-time-badge">12.00s - 14.23s</span>
+            </div>
+        </div>
+        <div class="shot-info-col">
+            <div class="shot-card-header">
+                <div class="shot-title-wrap">
+                    <span class="shot-badge-num">SHOT 07</span>
+                    <h4 class="shot-heading">Ga Tàu Hỏa Talat Phlu Cổ Kính, Đường Ray Chữ S & Vệt Nắng Cuối Chiều</h4>
+                </div>
+                <button class="time-jump-btn" onclick="playShot(12.0, 14.23, 'SHOT 07')">
+                    ▶ 12.00s ➔ 14.23s (2.23s)
+                </button>
+            </div>
+            <div class="shot-sub-en">Talat Phlu Historic Railway Station, Curving S-Track & Golden Sun Farewell</div>
+            <div class="props-list">
+                <div class="prop-item"><span class="prop-label">📍 Bối cảnh:</span> <span class="prop-val">Ga xe lửa Talat Phlu (Khu Thonburi), Bangkok</span></div>
+                <div class="prop-item"><span class="prop-label">🎥 Góc & Tiêu cự:</span> <span class="prop-val">Low-Angle Leading S-Curve Track (50mm - 85mm) • Góc kết thúc hoài niệm (Nostalgic Finale)</span></div>
+                <div class="prop-item"><span class="prop-label">💡 Ánh sáng & Màu:</span> <span class="prop-val">Nắng hoàng hôn vàng rực (Late Golden Hour Sunbeams), nhuộm vàng tán cây bàng và phản chiếu vệt sáng trên thanh ray kim loại — Nostalgic Vintage Amber & Foliage Green • Màu đá ballast ấm áp, sắc xanh nhiệt đới của cây chuối và cây bàng</span></div>
+                <div class="prop-item"><span class="prop-label">📐 Bố cục:</span> <span class="prop-val">Bố cục Đường Cong Dẫn Hướng Chữ S (Leading S-Curve Line): Hai thanh ray tàu hỏa uốn lượn mềm mại từ góc dưới màn hình dẫn sâu vào tán cây xanh, bên trái là sân ga Talat Phlu với biển tên gỗ và dòng người đi bộ về phía hoàng hôn.</span></div>
+            </div>
+            <div class="director-insight-pill">
+                <strong>🎬 Phân tích:</strong> Cái kết trọn vẹn và giàu chất thơ cho toàn bộ video: Ánh nắng chiều tà xuyên qua tán lá cây bàng khổng lồ, rải một lớp vàng óng ả lên đường ray xe lửa uốn lượn tại ga Talat Phlu. Người dân địa phương thong thả tản bộ trên thềm ga, một chiếc xe máy băng qua đường ray giữa bóng râm của những rặng chuối xanh mát. Khung cảnh mang lại cảm giác bình yên, hoài niệm và đọng lại dư vị sâu lắng trong lòng người xem.
+            </div>
+            <div class="tags-row">
+                <span class="tag-pill">9:16 Vertical</span>
+                <span class="tag-pill">Ga xe lửa Talat Phlu (Khu Thonburi)</span>
+                <span class="tag-pill">2.23s</span>
+            </div>
+        </div>
+    </div>
+    
+        </div>
+
+        <div class="grid-container" id="gridView" style="display:none;">
+            
+    <div class="grid-card" onclick="playShot(0.0, 2.67, 'SHOT 01')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg', 'SHOT 01 • Giao Lộ Siam Đa Tầng, Hai Tuyến Tàu BTS & Dòng Chữ 'EVERY DAY LIFE Bangkok'')">🔍</button>
+            <div class="grid-badge-top">SHOT 01</div>
+            <div class="grid-badge-bottom">0.0s - 2.7s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(2.67, 4.47, 'SHOT 02')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_02_mid.jpg', 'SHOT 02 • Tượng Voi Thần Ba Đầu Erawan Khổng Lồ Sừng Sững Sau Khu Phố 7-Eleven')">🔍</button>
+            <div class="grid-badge-top">SHOT 02</div>
+            <div class="grid-badge-bottom">2.7s - 4.5s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(4.47, 6.67, 'SHOT 03')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg', 'SHOT 03 • Đại Phật Hoàng Kim Wat Paknam Trong Ánh Hoàng Hôn Đỏ Rực & Thuyền Đuôi Dài Chao Phraya')">🔍</button>
+            <div class="grid-badge-top">SHOT 03</div>
+            <div class="grid-badge-bottom">4.5s - 6.7s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(6.67, 8.63, 'SHOT 04')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_04_mid.jpg', 'SHOT 04 • Hành Lang Phố Đi Bộ Chong Nonsi, Xe Xiên Nướng Đậm Vị & Biển Hiệu 7-Eleven')">🔍</button>
+            <div class="grid-badge-top">SHOT 04</div>
+            <div class="grid-badge-bottom">6.7s - 8.6s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(8.63, 10.17, 'SHOT 05')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_05_mid.jpg', 'SHOT 05 • Nhà Sư Áo Vàng Đi Dưới Nắng Chiều Vàng Vụa Trong Tu Viện Chùa Wat Pho')">🔍</button>
+            <div class="grid-badge-top">SHOT 05</div>
+            <div class="grid-badge-bottom">8.6s - 10.2s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(10.17, 12.0, 'SHOT 06')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_06_mid.jpg', 'SHOT 06 • Xe Tuk-Tuk Đỏ Lướt Giữa Phố Người Hoa Yaowarat Rực Rỡ Biển Hiệu Neon')">🔍</button>
+            <div class="grid-badge-top">SHOT 06</div>
+            <div class="grid-badge-bottom">10.2s - 12.0s</div>
+        </div>
+    </div>
+    
+
+    <div class="grid-card" onclick="playShot(12.0, 14.23, 'SHOT 07')">
+        <div class="grid-img-wrap">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+            <div class="grid-play-icon">▶</div>
+            <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_07_mid.jpg', 'SHOT 07 • Ga Tàu Hỏa Talat Phlu Cổ Kính, Đường Ray Chữ S & Vệt Nắng Cuối Chiều')">🔍</button>
+            <div class="grid-badge-top">SHOT 07</div>
+            <div class="grid-badge-bottom">12.0s - 14.2s</div>
+        </div>
+    </div>
+    
+        </div>
+    </div>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-header">
+            <div class="drawer-title">📑 MỤC LỤC PHÂN CẢNH (7 SHOTS)</div>
+            <button class="drawer-close-btn" onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+            
+    <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.67, 'SHOT 01')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 01: Giao Lộ Siam Đa Tầng, Hai Tu...</div>
+            <div class="drawer-shot-time">⏱ 0.00s - 2.67s (2.67s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(2, 2.67, 4.47, 'SHOT 02')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 02: Tượng Voi Thần Ba Đầu Erawan...</div>
+            <div class="drawer-shot-time">⏱ 2.67s - 4.47s (1.80s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(3, 4.47, 6.67, 'SHOT 03')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 03: Đại Phật Hoàng Kim Wat Pakna...</div>
+            <div class="drawer-shot-time">⏱ 4.47s - 6.67s (2.20s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(4, 6.67, 8.63, 'SHOT 04')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 04: Hành Lang Phố Đi Bộ Chong No...</div>
+            <div class="drawer-shot-time">⏱ 6.67s - 8.63s (1.97s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(5, 8.63, 10.17, 'SHOT 05')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 05: Nhà Sư Áo Vàng Đi Dưới Nắng ...</div>
+            <div class="drawer-shot-time">⏱ 8.63s - 10.17s (1.53s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(6, 10.17, 12.0, 'SHOT 06')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 06: Xe Tuk-Tuk Đỏ Lướt Giữa Phố ...</div>
+            <div class="drawer-shot-time">⏱ 10.17s - 12.00s (1.83s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+
+    <div class="drawer-item" onclick="jumpToShot(7, 12.0, 14.23, 'SHOT 07')">
+        <div class="drawer-thumb">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+        </div>
+        <div class="drawer-info">
+            <div class="drawer-shot-title">SHOT 07: Ga Tàu Hỏa Talat Phlu Cổ Kín...</div>
+            <div class="drawer-shot-time">⏱ 12.00s - 14.23s (2.23s)</div>
+        </div>
+        <div class="drawer-play-arrow">▶</div>
+    </div>
+    
+        </div>
+    </div>
+</div>
+
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<script>
+const rawVideoSrc = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life.mp4";
+let currentEndTime = null;
+
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
+}
+
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+
+function loadVideoCandidate() {
+    if (candidateIdx >= candidateUrls.length) return;
+    const url = candidateUrls[candidateIdx];
+    player.src = url;
+    document.getElementById('directVidLink').href = url;
+    player.load();
+}
+
+player.onerror = () => {
+    candidateIdx++;
+    if (candidateIdx < candidateUrls.length) {
+        loadVideoCandidate();
+    }
+};
+
+loadVideoCandidate();
+
+function playShot(startTime, endTime, label) {
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    const tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
+        tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
+    }
+    player.currentTime = startTime;
+    const p = player.play();
+    if (p !== undefined) {
+        p.catch(e => {
+            player.muted = true;
+            player.play().catch(err => console.log('Autoplay muted triggered'));
+        });
+    }
+    document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
+    const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
+    if (matchCard) matchCard.classList.add('active-playing');
+
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function setSpeed(speed, btn) {
+    player.playbackRate = speed;
+    document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    player.pause();
+    player.currentTime += (frames * (1/30));
+}
+
+function toggleMute(btn) {
+    player.muted = !player.muted;
+    if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
+}
+
+function switchView(view) {
+    const sb = document.getElementById('storyboardView');
+    const grid = document.getElementById('gridView');
+    const tabDetail = document.getElementById('tabDetailBtn');
+    const tabGrid = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabDetail.classList.remove('active');
+        tabGrid.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabDetail.classList.add('active');
+        tabGrid.classList.remove('active');
+    }
+}
+
+function toggleDrawer(open) {
+    const drawer = document.getElementById('drawerBackdrop');
+    if (open) drawer.classList.add('open');
+    else drawer.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    const targetCard = document.getElementById('shot-card-' + shotNum);
+    if (targetCard) {
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function openLightbox(src, caption) {
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = src;
+    cap.innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    } else if (e.key === ' ') {
+        if (document.activeElement.tagName !== 'INPUT') {
+            e.preventDefault();
+            player.paused ? player.play() : player.pause();
+        }
+    }
+});
+</script>
+</body>
+</html>
