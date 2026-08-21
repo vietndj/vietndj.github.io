@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B-Roll Bank Master | Kho Cảnh Trám Chuẩn Điện Ảnh Fedu</title>
+    <meta name="description" content="Thư viện quản lý cảnh trám thông minh của Nguyễn Đức Việt (VietMac) - Phân loại theo 8 loại B-roll Fedu Master và Hệ thống ráp kịch bản thoại tự động.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f5f3ff',
+                            100: '#ede9fe',
+                            500: '#8b5cf6',
+                            600: '#7c3aed',
+                            700: '#6d28d9',
+                            900: '#4c1d95'
+                        },
+                        dark: {
+                            900: '#0b0f19',
+                            800: '#111827',
+                            700: '#1f2937',
+                            600: '#374151'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0b0f19;
+            color: #f3f4f6;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        .glass {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-card {
+            background: rgba(31, 41, 55, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(139, 92, 246, 0.4);
+            box-shadow: 0 16px 32px -8px rgba(139, 92, 246, 0.15);
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #7c3aed, #4f46e5);
+            color: #ffffff;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+        }
+        .cat-pill.active {
+            border-color: #8b5cf6;
+            background: rgba(139, 92, 246, 0.2);
+            color: #c4b5fd;
+            font-weight: 700;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #4b5563;
+        }
+        .badge-cutaway { background: rgba(59, 130, 246, 0.15); color: #93c5fd; border: 1px solid rgba(59, 130, 246, 0.3); }
+        .badge-sequence { background: rgba(168, 85, 247, 0.15); color: #d8b4fe; border: 1px solid rgba(168, 85, 247, 0.3); }
+        .badge-pov { background: rgba(20, 184, 166, 0.15); color: #5eead4; border: 1px solid rgba(20, 184, 166, 0.3); }
+        .badge-in_situ { background: rgba(239, 68, 68, 0.15); color: #fca5a5; border: 1px solid rgba(239, 68, 68, 0.3); }
+        .badge-intercut { background: rgba(99, 102, 241, 0.15); color: #a5b4fc; border: 1px solid rgba(99, 102, 241, 0.3); }
+        .badge-metaphor { background: rgba(245, 158, 11, 0.15); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.3); }
+        .badge-negative_space { background: rgba(148, 163, 184, 0.15); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.3); }
+        .badge-archival { background: rgba(16, 185, 129, 0.15); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.3); }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-purple-500 selection:text-white flex flex-col">
+
+    <!-- TOP NAVIGATION -->
+    <nav class="sticky top-0 z-40 glass border-b border-slate-800/80 px-4 lg:px-8 py-3.5 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 text-white font-extrabold text-lg">
+                B
+            </div>
+            <div>
+                <div class="flex items-center gap-2">
+                    <span class="font-extrabold text-lg tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-purple-300">B-ROLL BANK</span>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">FEDU MASTER</span>
+                </div>
+                <p class="text-xs text-slate-400">Thư viện cảnh trám điện ảnh • Nguyễn Đức Việt</p>
+            </div>
+        </div>
+
+        <!-- Mode / Links -->
+        <div class="flex items-center gap-3">
+            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600/20 text-red-300 border border-red-500/30 hover:bg-red-600/30 text-xs font-semibold transition">
+                <i data-lucide="youtube" class="w-3.5 h-3.5 text-red-400"></i> Playlist YouTube
+            </a>
+            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/20 text-indigo-300 border border-indigo-500/30 hover:bg-indigo-600/30 text-xs font-semibold transition">
+                <i data-lucide="book-open" class="w-3.5 h-3.5 text-indigo-400"></i> 8 Loại B-Roll Fedu
+            </a>
+            <button onclick="toggleTheme()" class="p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white border border-slate-700 transition" title="Đổi giao diện">
+                <i data-lucide="moon" id="theme-icon" class="w-4 h-4"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO HEADER -->
+    <header class="relative px-4 lg:px-8 py-10 overflow-hidden bg-gradient-to-b from-purple-950/40 via-dark-900 to-dark-900 border-b border-slate-800/60">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/20 text-xs font-medium mb-3">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        90 Video Sẵn Sàng Sản Xuất • Phân Loại Đa Trục
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                        Quản Lý & Khai Thác <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-amber-300">B-Roll Chuẩn Điện Ảnh</span>
+                    </h1>
+                    <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+                        Hệ thống định danh 8 loại cảnh trám theo tâm lý học tiếp nhận thị giác. Tra cứu siêu tốc theo bối cảnh, góc máy, hoặc dán kịch bản thoại để tự động bóc tách phân cảnh.
+                    </p>
+                </div>
+
+                <!-- Live Metrics -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                        <div class="text-2xl font-black text-white font-mono" id="stat-total">90</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng Cảnh Trám</div>
+                    </div>
+                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                        <div class="text-2xl font-black text-purple-400 font-mono" id="stat-vertical">82</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dọc 9:16 Shorts</div>
+                    </div>
+                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                        <div class="text-2xl font-black text-indigo-400 font-mono" id="stat-horizontal">8</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ngang 16:9 4K</div>
+                    </div>
+                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                        <div class="text-2xl font-black text-emerald-400 font-mono">8/8</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Nhóm B-Roll</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MAIN NAVIGATION TABS -->
+            <div class="mt-8 flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-slate-900/90 border border-slate-800 w-fit">
+                <button onclick="switchMainTab('library')" id="tab-btn-library" class="tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition">
+                    <i data-lucide="layout-grid" class="w-4 h-4"></i> Thư Viện Cảnh Trám (90)
+                </button>
+                <button onclick="switchMainTab('script-matcher')" id="tab-btn-script" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
+                    <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i> Ráp Kịch Bản Thoại Thông Minh (AI)
+                </button>
+                <button onclick="switchMainTab('handbook')" id="tab-btn-handbook" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
+                    <i data-lucide="graduation-cap" class="w-4 h-4 text-indigo-400"></i> Sổ Tay 8 Loại B-Roll Fedu
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- TAB 1: THƯ VIỆN B-ROLL -->
+    <main id="tab-content-library" class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
+        
+        <!-- SEARCH & FILTER TOOLBAR -->
+        <div class="glass p-5 rounded-2xl border border-slate-800 space-y-4">
+            <!-- Search Bar -->
+            <div class="relative">
+                <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2"></i>
+                <input type="text" id="search-input" oninput="handleSearch()" placeholder="Tìm kiếm nhanh: tên cảnh, hành động (gõ phím, nước cam, cafe), bối cảnh (ban công, FPT), mẫu câu thoại, từ khóa..." 
+                       class="w-full bg-slate-900/80 text-white pl-12 pr-10 py-3 rounded-xl border border-slate-700/80 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/20 text-sm placeholder-slate-500 transition">
+                <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- 8 B-Roll Category Pills -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="cat-pills-container">
+                <button onclick="filterCategory('all')" class="cat-pill active shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold transition" data-cat="all">
+                    Tất cả (90)
+                </button>
+                <button onclick="filterCategory('cutaway')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="cutaway">
+                    ✂️ 1. Cutaway (Insert)
+                </button>
+                <button onclick="filterCategory('sequence')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="sequence">
+                    🎞️ 2. Sequence (Montage)
+                </button>
+                <button onclick="filterCategory('pov')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="pov">
+                    👁️ 3. Góc POV
+                </button>
+                <button onclick="filterCategory('in_situ')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="in_situ">
+                    🎬 4. Thoại In-situ
+                </button>
+                <button onclick="filterCategory('intercut')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="intercut">
+                    ⚖️ 5. Dựng Intercut
+                </button>
+                <button onclick="filterCategory('metaphor')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="metaphor">
+                    ♟️ 6. Metaphor (Ẩn dụ)
+                </button>
+                <button onclick="filterCategory('negative_space')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="negative_space">
+                    ⏸️ 7. Negative Space
+                </button>
+                <button onclick="filterCategory('archival')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="archival">
+                    ⏳ 8. Archival / Timeline
+                </button>
+            </div>
+
+            <!-- Multi-axis Selectors & Sort -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-slate-800/80">
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Tỉ lệ khung hình</label>
+                    <select id="filter-orientation" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2 focus:outline-none focus:border-purple-500">
+                        <option value="all">Tất cả định dạng</option>
+                        <option value="vertical">📱 Dọc 9:16 (Shorts/Reel)</option>
+                        <option value="horizontal">🖥️ Ngang 16:9 (Cinematic)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Bối cảnh / Vị trí</label>
+                    <select id="filter-location" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2 focus:outline-none focus:border-purple-500">
+                        <option value="all">Tất cả địa điểm</option>
+                        <option value="Home Studio">🏠 Home Studio (Bàn gỗ)</option>
+                        <option value="Ban công">🌿 Ban công Times City</option>
+                        <option value="FPT">🎓 Giảng đường FPT</option>
+                        <option value="Bếp">☕ Bếp / Barista / Nước cam</option>
+                        <option value="Lương Yên">🎬 Ngoại cảnh Lương Yên</option>
+                        <option value="Gym">💪 Phòng Gym / Lái xe</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Góc máy / Cự ly</label>
+                    <select id="filter-shot" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2 focus:outline-none focus:border-purple-500">
+                        <option value="all">Tất cả góc quay</option>
+                        <option value="Close-up">🔍 Cận cảnh (CU / ECU)</option>
+                        <option value="Medium">👤 Trung cảnh (MCU / MS)</option>
+                        <option value="POV">👁️ Góc nhìn thứ nhất (POV)</option>
+                        <option value="Top-down">📐 Góc từ trên xuống (Top-down)</option>
+                        <option value="Movement">⚡ Chuyển động (Movement Cut)</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Sắp xếp theo</label>
+                    <select id="sort-by" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2 focus:outline-none focus:border-purple-500">
+                        <option value="id_asc">Mặc định (ID 1-90)</option>
+                        <option value="dur_desc">Thời lượng (Dài -> Ngắn)</option>
+                        <option value="dur_asc">Thời lượng (Ngắn -> Dài)</option>
+                        <option value="title_asc">Tên cảnh (A -> Z)</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- STATUS BAR -->
+        <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+            <div>
+                Đang hiển thị <span id="filtered-count" class="font-bold text-purple-400">90</span> / 90 clip B-roll
+            </div>
+            <div class="flex items-center gap-2">
+                <button onclick="setViewMode('grid')" id="view-grid-btn" class="p-1.5 rounded-lg bg-purple-600/30 text-purple-300 border border-purple-500/40">
+                    <i data-lucide="grid" class="w-4 h-4"></i>
+                </button>
+                <button onclick="setViewMode('list')" id="view-list-btn" class="p-1.5 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 hover:text-white">
+                    <i data-lucide="list" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- VIDEO GRID CONTAINER -->
+        <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            <!-- Rendered by JS -->
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div id="empty-state" class="hidden text-center py-20 glass rounded-2xl border border-slate-800">
+            <i data-lucide="film" class="w-12 h-12 text-slate-600 mx-auto mb-3"></i>
+            <h3 class="text-lg font-bold text-slate-300">Không tìm thấy cảnh trám phù hợp</h3>
+            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Hãy thử xóa từ khóa tìm kiếm hoặc bỏ chọn bớt bộ lọc để hiển thị toàn bộ 90 video.</p>
+            <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition">
+                Đặt lại toàn bộ bộ lọc
+            </button>
+        </div>
+    </main>
+
+    <!-- TAB 2: AI SCRIPT-TO-BROLL MATCHER -->
+    <main id="tab-content-script" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
+        <div class="glass p-6 sm:p-8 rounded-2xl border border-purple-500/30 relative overflow-hidden">
+            <div class="absolute -right-20 -top-20 w-64 h-64 rounded-full bg-purple-600/10 blur-3xl pointer-events-none"></div>
+            
+            <div class="max-w-3xl">
+                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-semibold mb-3">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Công Cụ AI Đạo Diễn
+                </span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ráp Cảnh Trám Thông Minh Theo Kịch Bản Thoại</h2>
+                <p class="text-sm text-slate-300 mt-1">
+                    Dán bất kỳ đoạn thoại nào của anh Việt vào đây. Thuật toán sẽ tự động phân tích ngữ cảnh, bóc tách từng câu, đối soát với 90 clip B-roll và đề xuất bảng phân cảnh chính xác nhất kèm link demo.
+                </p>
+            </div>
+
+            <!-- PRESET PROMPTS / SCRIPTS -->
+            <div class="mt-6">
+                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Hoặc thử nhanh kịch bản mẫu:</label>
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="loadSampleScript(1)" class="px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-purple-600/20 text-slate-300 hover:text-purple-200 border border-slate-700 text-xs transition">
+                        🎯 Kịch bản 1: "Thoát Bẫy Quá Tải & Xây Dựng Hệ Thống"
+                    </button>
+                    <button onclick="loadSampleScript(2)" class="px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-purple-600/20 text-slate-300 hover:text-purple-200 border border-slate-700 text-xs transition">
+                        ⚡ Kịch bản 2: "Kỷ Luật Sáng Sớm & Năng Lượng Deep Work"
+                    </button>
+                    <button onclick="loadSampleScript(3)" class="px-3 py-1.5 rounded-lg bg-slate-800/80 hover:bg-purple-600/20 text-slate-300 hover:text-purple-200 border border-slate-700 text-xs transition">
+                        🎬 Kịch bản 3: "Bí Quyết Chuyển Cảnh Triệu View Fedu"
+                    </button>
+                </div>
+            </div>
+
+            <!-- TEXT AREA INPUT -->
+            <div class="mt-4 space-y-3">
+                <textarea id="script-input" rows="6" placeholder="Dán kịch bản thoại của bạn vào đây (ví dụ: Mỗi sáng tôi đều dành 10 phút uống một cốc nước cam tươi. Sau đó mở laptop bắt tay vào viết những dòng note ý tưởng đầu tiên. Đừng để sự chần chừ và mớ tab hỗn loạn cản bước bạn...)"
+                          class="w-full bg-slate-900/90 text-white p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-purple-500 focus:ring-2 focus:ring-purple-500/30 text-sm leading-relaxed placeholder-slate-500 font-sans"></textarea>
+                
+                <div class="flex flex-wrap items-center justify-between gap-3">
+                    <div class="text-xs text-slate-400 flex items-center gap-2">
+                        <i data-lucide="info" class="w-4 h-4 text-purple-400"></i>
+                        Gợi ý: Xuống dòng giữa các câu để AI phân đoạn chính xác nhất theo từng nhịp thở thoại.
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <button onclick="clearScript()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
+                            Xóa trắng
+                        </button>
+                        <button onclick="analyzeAndMatchScript()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-500/25 flex items-center gap-2 transition">
+                            <i data-lucide="wand-2" class="w-4 h-4"></i> Phân Tích & Ráp B-Roll Ngay
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MATCHING RESULTS CONTAINER -->
+        <div id="script-results-container" class="space-y-4">
+            <!-- Rendered by JS after analysis -->
+        </div>
+    </main>
+
+    <!-- TAB 3: SỔ TAY 8 LOẠI B-ROLL FEDU -->
+    <main id="tab-content-handbook" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-8">
+        <div class="glass p-8 rounded-2xl border border-indigo-500/30">
+            <div class="max-w-3xl">
+                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-bold">
+                    GIÁO TRÌNH ĐIỆN ẢNH MASTER
+                </span>
+                <h2 class="text-3xl font-extrabold text-white mt-3">Bộ Khung 8 Loại B-Roll Chuẩn Fedu</h2>
+                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                    Được đúc kết từ khoa học thần kinh (Neuroscience) và tâm lý học nhận thức của Allan Paivio (Thuyết mã hóa kép) kết hợp kinh nghiệm đạo diễn thực chiến của Nguyễn Đức Việt.
+                </p>
+            </div>
+
+            <!-- 8 CARDS GRID -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                <!-- Card 1 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-blue-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">✂️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">LOẠI 1</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">1. Cutaway (Insert Shot)</h3>
+                    <p class="text-xs text-blue-300 font-semibold">"Nói gì, hình nấy" • Cảnh chèn minh họa trực diện</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Cảnh quay tĩnh hoặc cận cảnh chi tiết vật thể, thao tác ngón tay bấm phím, hoa, cốc nước. Chèn ngay khi nhắc đến từ khóa để giảm tải lượng nhận thức cho vỏ não trước trán.
+                    </p>
+                    <div class="p-3 rounded-lg bg-blue-950/40 border border-blue-900 text-[11px] text-blue-200">
+                        <strong>Tác dụng:</strong> Giảm rủi ro thoát video (Drop-off) 20% trong 3-5 giây đầu tiên.
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-purple-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">🎞️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">LOẠI 2</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">2. Sequence (Montage)</h3>
+                    <p class="text-xs text-purple-300 font-semibold">"Băng chuyền hành động" • Chuỗi quy trình liên hoàn</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Nhiều góc máy khác nhau (Rộng - Trung - Cận) nối tiếp nhau nhịp nhàng để miêu tả trọn vẹn một hành động (như vắt nước cam, nén cà phê, nấu mỳ, gõ máy tính).
+                    </p>
+                    <div class="p-3 rounded-lg bg-purple-950/40 border border-purple-900 text-[11px] text-purple-200">
+                        <strong>Tác dụng:</strong> Hiệu ứng ASMR & Dopamine vi phạm kỳ vọng, giữ tỷ lệ xem hết (Completion Rate) vượt 70%.
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-teal-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">👁️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 font-bold border border-teal-500/30">LOẠI 3</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">3. Góc POV (Point Of View)</h3>
+                    <p class="text-xs text-teal-300 font-semibold">"Mượn mắt khán giả" • Góc nhìn thứ nhất</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Máy quay đặt ngang tầm mắt chĩa xuống đôi tay (lái xe, viết sổ, cầm vô lăng). Người xem cảm giác mình chính là người đang trực tiếp hành động.
+                    </p>
+                    <div class="p-3 rounded-lg bg-teal-950/40 border border-teal-900 text-[11px] text-teal-200">
+                        <strong>Tác dụng:</strong> Kích hoạt nơ-ron gương (Mirror Neurons), tăng 40% tỷ lệ chuyển đổi (Conversion Rate).
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-red-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">🎬</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 font-bold border border-red-500/30">LOẠI 4</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">4. Thoại In-Situ (Walk-and-Talk)</h3>
+                    <p class="text-xs text-red-300 font-semibold">"Vừa làm vừa nói" • Thoại hiện trường sống động</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Người nói trực tiếp thực hiện công việc (vừa giảng bài tại FPT, vừa xếp cây, vừa đứng ban công ngắm phố) thỉnh thoảng tương tác ánh mắt với máy quay.
+                    </p>
+                    <div class="p-3 rounded-lg bg-red-950/40 border border-red-900 text-[11px] text-red-200">
+                        <strong>Tác dụng:</strong> Xóa bỏ cảm giác quảng cáo lộ liễu, biến nội dung thành trải nghiệm tự nhiên và nâng tầm Social Proof.
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-indigo-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">⚖️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">LOẠI 5</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">5. Dựng Intercut (Docu-Style)</h3>
+                    <p class="text-xs text-indigo-300 font-semibold">"Nửa tĩnh, nửa động" • Dựng luân phiên A-roll/B-roll</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Cắt xen kẽ liên tục giữa người nói chính (A-roll tĩnh) và các thao tác kỹ thuật, điều chỉnh đèn studio, phỏng vấn thực địa.
+                    </p>
+                    <div class="p-3 rounded-lg bg-indigo-950/40 border border-indigo-900 text-[11px] text-indigo-200">
+                        <strong>Tác dụng:</strong> Phá vỡ sự đơn điệu của video Talking Head truyền thống, tạo nhịp thở điện ảnh phóng sự.
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-amber-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">♟️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">LOẠI 6</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">6. Metaphor (Ẩn Dụ Thị Giác)</h3>
+                    <p class="text-xs text-amber-300 font-semibold">"Mượn vật thay lời" • Biểu tượng hóa ý niệm</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Mượn hình ảnh biểu tượng gián tiếp (cà phê nhỏ giọt = thời gian trôi/sự bế tắc; bàn làm việc ngập note = áp lực quá tải não bộ; phóng máy bay = hiện thực hóa ý tưởng).
+                    </p>
+                    <div class="p-3 rounded-lg bg-amber-950/40 border border-amber-900 text-[11px] text-amber-200">
+                        <strong>Tác dụng:</strong> Khắc sâu thông điệp triết lý, neo cảm xúc mạnh mẽ vào tiềm thức người xem.
+                    </div>
+                </div>
+
+                <!-- Card 7 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">⏸️</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-300 font-bold border border-slate-500/30">LOẠI 7</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">7. Negative Space (Khoảng Lặng)</h3>
+                    <p class="text-xs text-slate-300 font-semibold">"Khoảng lặng đắt giá" • Thư giãn thị giác</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Khung hình có nhiều khoảng trống (bầu trời, ban công tĩnh, góc phòng yên ả, uống nước cam thư thái). Không có chuyển động dồn dập.
+                    </p>
+                    <div class="p-3 rounded-lg bg-slate-950/40 border border-slate-800 text-[11px] text-slate-300">
+                        <strong>Tác dụng:</strong> Tạo điểm nghỉ cho não bộ kịp tiêu hóa bài học quan trọng trước khi sang phân đoạn tiếp theo.
+                    </div>
+                </div>
+
+                <!-- Card 8 -->
+                <div class="p-6 rounded-2xl bg-slate-900/80 border border-emerald-500/30 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="text-2xl">⏳</span>
+                        <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">LOẠI 8</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-white">8. Archival / Timeline (Tư Liệu)</h3>
+                    <p class="text-xs text-emerald-300 font-semibold">"Cỗ máy thời gian" • Tư liệu thực chứng</p>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Màn hình Timeline CapCut/Premiere đang chạy, thao tác kéo layer, tài liệu lịch sử, số liệu thống kê chứng minh cho câu nói.
+                    </p>
+                    <div class="p-3 rounded-lg bg-emerald-950/40 border border-emerald-900 text-[11px] text-emerald-200">
+                        <strong>Tác dụng:</strong> Bằng chứng không thể chối cãi, bảo chứng độ tin cậy tuyệt đối cho phương pháp giảng dạy.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-auto border-t border-slate-800/80 py-8 px-4 text-center text-xs text-slate-500 bg-slate-950">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div>
+                © 2026 <strong class="text-slate-300">B-Roll Bank Master</strong> • Phát triển bởi <span class="text-purple-400 font-semibold">Nguyễn Đức Việt (VietMac)</span> & Antigravity.
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://vietndj.github.io" class="hover:text-purple-400 transition">vietndj.github.io</a>
+                <a href="https://fedu.vn" target="_blank" class="hover:text-purple-400 transition">Fedu.vn</a>
+                <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hover:text-red-400 transition">YouTube Playlist</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- VIDEO DETAIL DRAWER / MODAL -->
+    <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="glass max-w-4xl w-full max-h-[90vh] rounded-2xl border border-slate-700 flex flex-col overflow-hidden shadow-2xl">
+            <!-- Modal Header -->
+            <div class="p-4 sm:px-6 border-b border-slate-800 flex items-center justify-between bg-slate-900/90">
+                <div class="flex items-center gap-3">
+                    <span id="modal-category-badge" class="px-2.5 py-1 rounded-full text-xs font-bold badge-cutaway">Cutaway</span>
+                    <h3 id="modal-title" class="text-base sm:text-lg font-bold text-white truncate max-w-md sm:max-w-xl">Tiêu đề B-Roll</h3>
+                </div>
+                <button onclick="closeModal()" class="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">
+                    <i data-lucide="x" class="w-4 h-4"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body -->
+            <div class="p-4 sm:p-6 overflow-y-auto space-y-6 flex-1">
+                <!-- Video / Player Container -->
+                <div class="bg-black rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-slate-800" id="modal-player-container">
+                    <!-- Embedded YouTube Player or Thumbnail Preview -->
+                </div>
+
+                <!-- Info Grid -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-slate-400 text-[10px] font-semibold uppercase">Định Dạng</div>
+                        <div class="font-bold text-white mt-0.5" id="modal-orientation">Dọc 9:16 (Shorts)</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-slate-400 text-[10px] font-semibold uppercase">Thời Lượng</div>
+                        <div class="font-bold text-white font-mono mt-0.5" id="modal-duration">00:15</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-slate-400 text-[10px] font-semibold uppercase">Góc Quay</div>
+                        <div class="font-bold text-white mt-0.5" id="modal-shot">Close-up (CU)</div>
+                    </div>
+                    <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
+                        <div class="text-slate-400 text-[10px] font-semibold uppercase">Bối Cảnh</div>
+                        <div class="font-bold text-white mt-0.5 truncate" id="modal-location">Home Studio</div>
+                    </div>
+                </div>
+
+                <!-- Director's Breakdown Note -->
+                <div class="p-4 rounded-xl bg-purple-950/30 border border-purple-900/60 space-y-1.5">
+                    <div class="text-xs font-bold text-purple-300 flex items-center gap-1.5">
+                        <i data-lucide="clapperboard" class="w-3.5 h-3.5"></i> Lời Khuyên Của Đạo Diễn (Tâm Lý Học Tiếp Nhận)
+                    </div>
+                    <p class="text-xs text-purple-100/90 leading-relaxed" id="modal-director-note">
+                        Mô tả chi tiết cách dùng cảnh này trong kịch bản.
+                    </p>
+                </div>
+
+                <!-- Dialogue Cues -->
+                <div class="space-y-2">
+                    <div class="text-xs font-bold text-slate-300 flex items-center justify-between">
+                        <span>🎯 Các Câu Thoại Khớp Nhất Trong Kịch Bản:</span>
+                        <span class="text-[10px] text-slate-500">Bấm vào câu để sao chép</span>
+                    </div>
+                    <div class="space-y-1.5" id="modal-dialogue-cues">
+                        <!-- Cues items rendered by JS -->
+                    </div>
+                </div>
+
+                <!-- Technical Details -->
+                <div class="p-3.5 rounded-xl bg-slate-900/40 border border-slate-800 text-[11px] text-slate-400 flex flex-wrap items-center justify-between gap-2">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="file-video" class="w-3.5 h-3.5 text-slate-500"></i>
+                        <span class="font-mono" id="modal-filename">filename.mp4</span>
+                    </div>
+                    <div id="modal-yt-btn-container">
+                        <!-- YouTube link button -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl glass border border-purple-500 text-xs font-semibold text-white shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
+        <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i>
+        <span id="toast-msg">Đã sao chép!</span>
+    </div>
+
+    <!-- DATASET EMBEDDED SAFELY -->
+    <script>
+        const MASTER_DATA = {"version": "1.0.0", "total_videos": 90, "vertical_count": 82, "horizontal_count": 8, "playlist_url": "https://www.youtube.com/playlist?list=PLPs82ezbs9Lo", "playlist_id": "PLPs82ezbs9Lo", "categories": {"cutaway": {"id": "cutaway", "name": "1. Cutaway (Insert Shot)", "badge": "Minh họa trực diện", "icon": "✂️", "color": "blue", "desc": "'Nói gì, hình nấy' - Cảnh chèn đặc tả vật thể/thao tác đúng vào từ khóa để giảm tải nhận thức và giấu vết cắt."}, "sequence": {"id": "sequence", "name": "2. Sequence (Montage)", "badge": "Băng chuyền hành động", "icon": "🎞️", "color": "purple", "desc": "Chuỗi hành động liên hoàn nhiều góc máy (Rộng - Trung - Cận) mô tả trọn vẹn một quy trình mượt mà, giữ retention >70%."}, "pov": {"id": "pov", "name": "3. POV (Point Of View)", "badge": "Mượn mắt khán giả", "icon": "👁️", "color": "teal", "desc": "Góc nhìn thứ nhất mượn mắt người xem, kích hoạt nơ-ron gương giúp khán giả cảm giác chính mình đang trải nghiệm."}, "in_situ": {"id": "in_situ", "name": "4. Thoại In-Situ (Walk-and-Talk)", "badge": "Vừa làm vừa nói", "icon": "🎬", "color": "red", "desc": "Người nói vừa thực hiện thao tác công việc thực tế vừa chia sẻ, tạo cảm giác chân thực sống động và tăng uy tín chuyên gia."}, "intercut": {"id": "intercut", "name": "5. Dựng Intercut (Docu-Style)", "badge": "Nửa tĩnh, nửa động", "icon": "⚖️", "color": "indigo", "desc": "Dựng luân phiên giữa A-roll (người ngồi nói tĩnh) và B-roll thao tác hiện trường sinh động để duy trì nhịp thở thị giác."}, "metaphor": {"id": "metaphor", "name": "6. Metaphor (Visual Metaphor)", "badge": "Mượn vật thay lời", "icon": "♟️", "color": "amber", "desc": "Ẩn dụ thị giác: mượn hình ảnh biểu tượng (cà phê nhỏ giọt = thời gian/chờ đợi, note lộn xộn = quá tải não bộ) để khắc sâu thông điệp."}, "negative_space": {"id": "negative_space", "name": "7. Negative Space (Breathing Room)", "badge": "Khoảng lặng đắt giá", "icon": "⏸️", "color": "slate", "desc": "Khoảng trống thư giãn thị giác, tạo điểm dừng cảm xúc sau chuỗi thông tin dồn dập, giúp não bộ người xem kịp tiêu hóa bài học."}, "archival": {"id": "archival", "name": "8. Archival / Timeline (Tư liệu)", "badge": "Cỗ máy thời gian", "icon": "⏳", "color": "emerald", "desc": "Hình ảnh màn hình dựng timeline, tư liệu thực chứng, bản thảo viết tay hoặc meme chứng minh luận điểm."}}, "videos": [{"id": 1, "filename": "0306 Broll luong yen - Chuyển cây.mp4", "title": "Chăm Sóc Cây Xanh - Nuôi Dưỡng Sự Điềm Tĩnh", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Medium Close-up (MCU)", "location": "Studio cây xanh / Lương Yên", "action": "Chuyển chậu cây, tỉa cành và sắp xếp không gian xanh", "mood": "Thiên nhiên / Điềm tĩnh / Zen", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 10.8, "duration": "00:10", "size_mb": 24.41, "thumbnail": "thumb_001.jpg", "video_id": "NpXuAsH5GxA", "youtube_url": "https://www.youtube.com/watch?v=NpXuAsH5GxA", "director_note": "Minh họa cho sự chăm sóc lâu dài, gieo trồng nhân quả hoặc nuôi dưỡng một dự án từ lúc còn non trẻ.", "dialogue_cues": ["Xây dựng một sự nghiệp hay nhân hiệu cũng giống như trồng một cái cây non...", "Bạn không thể ép cái cây lớn nhanh trong một đêm bằng cách kéo ngọn nó lên.", "Kiên nhẫn tưới tắm mỗi ngày bằng sự kỷ luật không ồn ào."], "keywords": ["xếp cây", "trồng cây", "chăm sóc", "kiên nhẫn", "thiên nhiên", "zen", "phát triển"]}, {"id": 2, "filename": "0306 Broll luong yen - pan cam chuyen canh.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 2.7, "duration": "00:02", "size_mb": 4.47, "thumbnail": "thumb_002.jpg", "video_id": "06xiLEDCHqI", "youtube_url": "https://www.youtube.com/watch?v=06xiLEDCHqI", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 3, "filename": "0306 Broll luong yen dong lap - di ra - match cut.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 5.5, "duration": "00:05", "size_mb": 8.84, "thumbnail": "thumb_003.jpg", "video_id": "MLtEPQpyFW8", "youtube_url": "https://www.youtube.com/watch?v=MLtEPQpyFW8", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 4, "filename": "Ánh sáng 2 đèn - spotlight.mp4", "title": "Setup Ánh Sáng Studio - 2 Đèn & Spotlight Chuyên Nghiệp", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Bật đèn keylight, chỉnh nhiệt độ màu và hướng sáng spotlight", "mood": "Điện ảnh / Chuyên nghiệp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 25.0, "duration": "00:25", "size_mb": 67.57, "thumbnail": "thumb_004.jpg", "video_id": "uCi4amJfGb8", "youtube_url": "https://www.youtube.com/watch?v=uCi4amJfGb8", "director_note": "Dùng khi nói về chuẩn bị thiết bị, nâng cấp chất lượng hình ảnh hoặc kỹ thuật setup phòng quay.", "dialogue_cues": ["Ánh sáng chính là yếu tố phân định giữa một video nghiệp dư và một thước phim điện ảnh...", "Chỉ cần bố trí đúng 2 nguồn sáng chính, chủ thể sẽ nổi bật hoàn toàn khỏi phông nền.", "Setup góc quay chuẩn giúp bạn tự tin xuất hiện trước ống kính."], "keywords": ["setup đèn", "ánh sáng", "lighting", "spotlight", "studio", "chuyên nghiệp", "điện ảnh"]}, {"id": 5, "filename": "BRoll - Thái cam.mp4", "title": "Quy Trình Vắt Nước Cam - Thư Giãn Tươi Mới", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Top-down / Close-up", "location": "Bếp Home Studio", "action": "Thái lát và ép nước cam tươi", "mood": "Tươi sáng / Tràn đầy năng lượng", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 19.3, "duration": "00:19", "size_mb": 55.74, "thumbnail": "thumb_005.jpg", "video_id": "kr1Eluyfta0", "youtube_url": "https://www.youtube.com/watch?v=kr1Eluyfta0", "director_note": "Chuỗi hành động tạo cảm giác 'Oddly Satisfying', kích thích dopamine thị giác và giữ retention vượt 70%.", "dialogue_cues": ["Mỗi sáng bắt đầu bằng một thói quen nhỏ giúp tái nạp 100% năng lượng...", "Đừng bắt não bộ làm việc kiệt quệ mà không có thời gian phục hồi sinh học.", "Tập trung vào dinh dưỡng và sự tỉnh táo là nền tảng của mọi phiên Deep Work."], "keywords": ["uống cam", "nước cam", "thái cam", "năng lượng", "sức khỏe", "sáng sớm", "thói quen"]}, {"id": 6, "filename": "BRoll FPT Dạy học.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 75.3, "duration": "01:15", "size_mb": 216.39, "thumbnail": "thumb_006.jpg", "video_id": "JhC826LIJTs", "youtube_url": "https://www.youtube.com/watch?v=JhC826LIJTs", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 7, "filename": "BRoll Lấy nước - FPT - Học viên quay - bố cục kém.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 26.0, "duration": "00:26", "size_mb": 75.37, "thumbnail": "thumb_007.jpg", "video_id": "L-FP3mR0LzU", "youtube_url": "https://www.youtube.com/watch?v=L-FP3mR0LzU", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 8, "filename": "Broll - Chuỗi 2 - nhiễu loạn, quá tải.mp4", "title": "Cảnh Trám: Chuỗi 2 - nhiễu loạn, quá tải", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 21.3, "duration": "00:21", "size_mb": 61.54, "thumbnail": "thumb_008.jpg", "video_id": "341CuU86G84", "youtube_url": "https://www.youtube.com/watch?v=341CuU86G84", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 9, "filename": "Broll - Chuỗi mở lap gõ máy tinh.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 18.4, "duration": "00:18", "size_mb": 55.22, "thumbnail": "thumb_009.jpg", "video_id": "WnNzCZFqhR4", "youtube_url": "https://www.youtube.com/watch?v=WnNzCZFqhR4", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 10, "filename": "Broll - Day fpt.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 4.6, "duration": "00:04", "size_mb": 7.9, "thumbnail": "thumb_010.jpg", "video_id": "9JvaFTC_KJY", "youtube_url": "https://www.youtube.com/watch?v=9JvaFTC_KJY", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 11, "filename": "Broll - Mắt mở - close up.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 15.7, "duration": "00:15", "size_mb": 45.67, "thumbnail": "thumb_011.jpg", "video_id": "zs0bIRMEgus", "youtube_url": "https://www.youtube.com/watch?v=zs0bIRMEgus", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 12, "filename": "Broll - Mặt nạ de tach nen ae qua lai.mp4", "title": "Cảnh Trám: Mặt nạ de tach nen ae qua lai", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 22.5, "duration": "00:22", "size_mb": 65.38, "thumbnail": "thumb_012.jpg", "video_id": "ZrZ5ZXV5sNM", "youtube_url": "https://www.youtube.com/watch?v=ZrZ5ZXV5sNM", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 13, "filename": "Broll - Ngồi uống cam - sáng.mp4", "title": "Ngồi Thưởng Thức Nước Cam - Khoảnh Khắc Nạp Năng Lượng", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Cầm cốc nước cam nhâm nhi thư thái", "mood": "Thư thái / Bình yên", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 92.9, "duration": "01:32", "size_mb": 265.08, "thumbnail": "thumb_013.jpg", "video_id": "LpoKWh5RAec", "youtube_url": "https://www.youtube.com/watch?v=LpoKWh5RAec", "director_note": "Dùng khi chuyển đổi từ phần lý thuyết căng thẳng sang giải pháp nhẹ nhàng, giúp nhịp video hạ cánh mềm.", "dialogue_cues": ["Nạp lại năng lượng trước khi bước vào ca làm việc quan trọng tiếp theo...", "Những khoảnh khắc nhỏ này chính là lúc bạn nảy ra những ý tưởng đột phá nhất.", "Cân bằng giữa hiệu suất cao và sự thư giãn chủ động."], "keywords": ["thư giãn", "nước cam", "nghỉ ngơi", "tập trung", "refresh"]}, {"id": 14, "filename": "Broll - Ngồi uống cam chill.mp4", "title": "Ngồi Thưởng Thức Nước Cam - Khoảnh Khắc Nạp Năng Lượng", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Cầm cốc nước cam nhâm nhi thư thái", "mood": "Thư thái / Bình yên", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 94.0, "duration": "01:34", "size_mb": 272.41, "thumbnail": "thumb_014.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng khi chuyển đổi từ phần lý thuyết căng thẳng sang giải pháp nhẹ nhàng, giúp nhịp video hạ cánh mềm.", "dialogue_cues": ["Nạp lại năng lượng trước khi bước vào ca làm việc quan trọng tiếp theo...", "Những khoảnh khắc nhỏ này chính là lúc bạn nảy ra những ý tưởng đột phá nhất.", "Cân bằng giữa hiệu suất cao và sự thư giãn chủ động."], "keywords": ["thư giãn", "nước cam", "nghỉ ngơi", "tập trung", "refresh"]}, {"id": 15, "filename": "Broll - Ngồi uống cam nghỉ ngơi.mp4", "title": "Ngồi Thưởng Thức Nước Cam - Khoảnh Khắc Nạp Năng Lượng", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Cầm cốc nước cam nhâm nhi thư thái", "mood": "Thư thái / Bình yên", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 14.3, "duration": "00:14", "size_mb": 43.06, "thumbnail": "thumb_015.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng khi chuyển đổi từ phần lý thuyết căng thẳng sang giải pháp nhẹ nhàng, giúp nhịp video hạ cánh mềm.", "dialogue_cues": ["Nạp lại năng lượng trước khi bước vào ca làm việc quan trọng tiếp theo...", "Những khoảnh khắc nhỏ này chính là lúc bạn nảy ra những ý tưởng đột phá nhất.", "Cân bằng giữa hiệu suất cao và sự thư giãn chủ động."], "keywords": ["thư giãn", "nước cam", "nghỉ ngơi", "tập trung", "refresh"]}, {"id": 16, "filename": "Broll - Nguyên nhân chính ở bạn - 01 co tieng.mp4", "title": "Cảnh Trám: Nguyên nhân chính ở bạn - 01 co tieng", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 7.5, "duration": "00:07", "size_mb": 22.32, "thumbnail": "thumb_016.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 17, "filename": "Broll - Nguyên nhân chính ở bạn - ko tiếng.mp4", "title": "Cảnh Trám: Nguyên nhân chính ở bạn - ko tiếng", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 8.6, "duration": "00:08", "size_mb": 25.51, "thumbnail": "thumb_017.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 18, "filename": "Broll - Sequence 01 - chần chừ.mp4", "title": "Ẩn Dụ Về Sự Chần Chừ & Nhồi Nhét Quá Tải", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Tay đặt lên phím rồi dừng lại, nhồi nhét tài liệu", "mood": "Trăn trở / Do dự / Bế tắc", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 21.1, "duration": "00:21", "size_mb": 57.62, "thumbnail": "thumb_018.jpg", "video_id": "", "youtube_url": "", "director_note": "Khơi gợi nỗi sợ trì hoãn (Procrastination) của khán giả, tạo điểm chạm cảm xúc để dẫn vào giải pháp hành động.", "dialogue_cues": ["Kẻ thù lớn nhất cản bước bạn không phải là đối thủ, mà chính là sự chần chừ trong đầu bạn...", "Bạn đã dành bao nhiêu tháng trời để lên kế hoạch hoàn hảo mà chưa từng dám bấm nút bắt đầu?", "Nỗi sợ thất bại đang biến những ý tưởng tuyệt vời nhất của bạn thành con số không."], "keywords": ["chần chừ", "do dự", "bế tắc", "trì hoãn", "nỗi sợ", "nhồi nhét", "áp lực"]}, {"id": 19, "filename": "Broll - Tương phản trong ngoài .mp4", "title": "Cảnh Trám: Tương phản trong ngoài ", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 20.6, "duration": "00:20", "size_mb": 59.16, "thumbnail": "thumb_019.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 20, "filename": "Broll - Xếp cây - nói - nhan tin cho hoc vien.mp4", "title": "Chăm Sóc Cây Xanh - Nuôi Dưỡng Sự Điềm Tĩnh", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Close-up (MCU)", "location": "Studio cây xanh / Lương Yên", "action": "Chuyển chậu cây, tỉa cành và sắp xếp không gian xanh", "mood": "Thiên nhiên / Điềm tĩnh / Zen", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 10.8, "duration": "00:10", "size_mb": 24.41, "thumbnail": "thumb_020.jpg", "video_id": "", "youtube_url": "", "director_note": "Minh họa cho sự chăm sóc lâu dài, gieo trồng nhân quả hoặc nuôi dưỡng một dự án từ lúc còn non trẻ.", "dialogue_cues": ["Xây dựng một sự nghiệp hay nhân hiệu cũng giống như trồng một cái cây non...", "Bạn không thể ép cái cây lớn nhanh trong một đêm bằng cách kéo ngọn nó lên.", "Kiên nhẫn tưới tắm mỗi ngày bằng sự kỷ luật không ồn ào."], "keywords": ["xếp cây", "trồng cây", "chăm sóc", "kiên nhẫn", "thiên nhiên", "zen", "phát triển"]}, {"id": 21, "filename": "Broll - Xếp cây - nói.mp4", "title": "Chăm Sóc Cây Xanh - Nuôi Dưỡng Sự Điềm Tĩnh", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Close-up (MCU)", "location": "Studio cây xanh / Lương Yên", "action": "Chuyển chậu cây, tỉa cành và sắp xếp không gian xanh", "mood": "Thiên nhiên / Điềm tĩnh / Zen", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 10.8, "duration": "00:10", "size_mb": 24.41, "thumbnail": "thumb_021.jpg", "video_id": "", "youtube_url": "", "director_note": "Minh họa cho sự chăm sóc lâu dài, gieo trồng nhân quả hoặc nuôi dưỡng một dự án từ lúc còn non trẻ.", "dialogue_cues": ["Xây dựng một sự nghiệp hay nhân hiệu cũng giống như trồng một cái cây non...", "Bạn không thể ép cái cây lớn nhanh trong một đêm bằng cách kéo ngọn nó lên.", "Kiên nhẫn tưới tắm mỗi ngày bằng sự kỷ luật không ồn ào."], "keywords": ["xếp cây", "trồng cây", "chăm sóc", "kiên nhẫn", "thiên nhiên", "zen", "phát triển"]}, {"id": 22, "filename": "Broll - Xếp cây.mp4", "title": "Chăm Sóc Cây Xanh - Nuôi Dưỡng Sự Điềm Tĩnh", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Medium Close-up (MCU)", "location": "Studio cây xanh / Lương Yên", "action": "Chuyển chậu cây, tỉa cành và sắp xếp không gian xanh", "mood": "Thiên nhiên / Điềm tĩnh / Zen", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 6.6, "duration": "00:06", "size_mb": 14.3, "thumbnail": "thumb_022.jpg", "video_id": "", "youtube_url": "", "director_note": "Minh họa cho sự chăm sóc lâu dài, gieo trồng nhân quả hoặc nuôi dưỡng một dự án từ lúc còn non trẻ.", "dialogue_cues": ["Xây dựng một sự nghiệp hay nhân hiệu cũng giống như trồng một cái cây non...", "Bạn không thể ép cái cây lớn nhanh trong một đêm bằng cách kéo ngọn nó lên.", "Kiên nhẫn tưới tắm mỗi ngày bằng sự kỷ luật không ồn ào."], "keywords": ["xếp cây", "trồng cây", "chăm sóc", "kiên nhẫn", "thiên nhiên", "zen", "phát triển"]}, {"id": 23, "filename": "Broll - ấn phím B.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 2.7, "duration": "00:02", "size_mb": 6.76, "thumbnail": "thumb_023.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 24, "filename": "Broll - chuỗi 2 - chần chừ.mp4", "title": "Ẩn Dụ Về Sự Chần Chừ & Nhồi Nhét Quá Tải", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Tay đặt lên phím rồi dừng lại, nhồi nhét tài liệu", "mood": "Trăn trở / Do dự / Bế tắc", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 13.8, "duration": "00:13", "size_mb": 39.99, "thumbnail": "thumb_024.jpg", "video_id": "", "youtube_url": "", "director_note": "Khơi gợi nỗi sợ trì hoãn (Procrastination) của khán giả, tạo điểm chạm cảm xúc để dẫn vào giải pháp hành động.", "dialogue_cues": ["Kẻ thù lớn nhất cản bước bạn không phải là đối thủ, mà chính là sự chần chừ trong đầu bạn...", "Bạn đã dành bao nhiêu tháng trời để lên kế hoạch hoàn hảo mà chưa từng dám bấm nút bắt đầu?", "Nỗi sợ thất bại đang biến những ý tưởng tuyệt vời nhất của bạn thành con số không."], "keywords": ["chần chừ", "do dự", "bế tắc", "trì hoãn", "nỗi sợ", "nhồi nhét", "áp lực"]}, {"id": 25, "filename": "Broll - chuỗi 9 - guồng quay đều đặn.mp4", "title": "Cảnh Trám: chuỗi 9 - guồng quay đều đặn", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 55.4, "duration": "00:55", "size_mb": 157.1, "thumbnail": "thumb_025.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 26, "filename": "Broll - chuyen canh Practive ads qc  bang chuyen canh.mp4", "title": "Cảnh Trám: chuyen canh Practive ads qc  bang chuyen canh", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 4.3, "duration": "00:04", "size_mb": 11.96, "thumbnail": "thumb_026.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 27, "filename": "Broll - chuyển cảnh 02.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 5.5, "duration": "00:05", "size_mb": 14.81, "thumbnail": "thumb_027.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 28, "filename": "Broll - chuyển cảnh 04.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 3.1, "duration": "00:03", "size_mb": 10.1, "thumbnail": "thumb_028.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 29, "filename": "Broll - chuyển cảnh thực chiến 1.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 1.4, "duration": "00:01", "size_mb": 4.65, "thumbnail": "thumb_029.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 30, "filename": "Broll - cut away   - bấm B - C0313.MP4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 12.8, "duration": "00:12", "size_mb": 96.01, "thumbnail": "thumb_030.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 31, "filename": "Broll - demo sequence - LÀM VIỆC 2.0.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 125.3, "duration": "02:05", "size_mb": 206.07, "thumbnail": "thumb_031.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 32, "filename": "Broll - demo sequence - LÀM VIỆC.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 22.2, "duration": "00:22", "size_mb": 93.99, "thumbnail": "thumb_032.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 33, "filename": "Broll - demo sequence - S04 CHECK DT.mp4", "title": "Cảnh Trám: demo sequence - S04 CHECK DT", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 11.0, "duration": "00:11", "size_mb": 46.17, "thumbnail": "thumb_033.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 34, "filename": "Broll - demo sequence - VIẾT NOTE 02.mp4", "title": "Viết Sổ Ghi Chép Ý Tưởng - Lập Kế Hoạch Chiến Lược", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "POV / Close-up Cận Cảnh", "location": "Bàn làm việc gỗ sồi", "action": "Cầm bút viết ghi chú, phác thảo tư duy lên sổ tay", "mood": "Tư duy / Sáng tạo", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 15.9, "duration": "00:15", "size_mb": 36.85, "thumbnail": "thumb_034.jpg", "video_id": "", "youtube_url": "", "director_note": "Góc cận ngòi bút lướt trên trang giấy kích thích cảm giác sáng tạo thủ công, tăng tính chân thật và chiều sâu.", "dialogue_cues": ["Trước khi mở máy tính làm việc, tôi luôn viết cấu trúc kịch bản ra sổ...", "Viết tay giúp não bộ sàng lọc những suy nghĩ rác và cô đọng ý tưởng sắc bén nhất.", "Một bản kế hoạch rõ ràng trên giấy sẽ tiết kiệm 80% thời gian thực thi."], "keywords": ["viết sổ", "ghi chép", "kế hoạch", "ý tưởng", "sổ tay", "chiến lược", "sáng tạo"]}, {"id": 35, "filename": "Broll - demo sequence - VIẾT NOTE.mp4", "title": "Viết Sổ Ghi Chép Ý Tưởng - Lập Kế Hoạch Chiến Lược", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "POV / Close-up Cận Cảnh", "location": "Bàn làm việc gỗ sồi", "action": "Cầm bút viết ghi chú, phác thảo tư duy lên sổ tay", "mood": "Tư duy / Sáng tạo", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 16.9, "duration": "00:16", "size_mb": 71.34, "thumbnail": "thumb_035.jpg", "video_id": "", "youtube_url": "", "director_note": "Góc cận ngòi bút lướt trên trang giấy kích thích cảm giác sáng tạo thủ công, tăng tính chân thật và chiều sâu.", "dialogue_cues": ["Trước khi mở máy tính làm việc, tôi luôn viết cấu trúc kịch bản ra sổ...", "Viết tay giúp não bộ sàng lọc những suy nghĩ rác và cô đọng ý tưởng sắc bén nhất.", "Một bản kế hoạch rõ ràng trên giấy sẽ tiết kiệm 80% thời gian thực thi."], "keywords": ["viết sổ", "ghi chép", "kế hoạch", "ý tưởng", "sổ tay", "chiến lược", "sáng tạo"]}, {"id": 36, "filename": "Broll - edit timeline.mp4", "title": "Màn Hình Dựng Phim & Thao Tác Máy Ảnh Chuyên Sâu", "category_id": "archival", "category_name": "8. Archival / Timeline (Tư liệu)", "category_badge": "Cỗ máy thời gian", "category_icon": "⏳", "category_color": "emerald", "shot_type": "Extreme Close-up (ECU) / Screen Recording", "location": "Phòng dựng phim Home Studio", "action": "Kéo cắt clip trên Timeline, tinh chỉnh keyframe và chuyển cảnh", "mood": "Kỹ thuật / Tập trung cao / Pro Editor", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 37.4, "duration": "00:37", "size_mb": 117.05, "thumbnail": "thumb_036.jpg", "video_id": "", "youtube_url": "", "director_note": "Tư liệu thực chứng hoàn hảo cho các video dạy dựng phim, hướng dẫn workflow hoặc tối ưu hóa thời gian sản xuất.", "dialogue_cues": ["Nhìn vào dòng Timeline này, bạn sẽ thấy cách tôi sắp xếp từng lớp âm thanh và hình ảnh...", "Một quy trình dựng phim thông minh sẽ cắt giảm 70% thời gian ngồi trước máy tính.", "Từng vết cắt đều có chủ đích tâm lý học để dẫn dắt cảm xúc người xem."], "keywords": ["timeline", "dựng phim", "capcut", "premiere", "máy ảnh", "kỹ thuật", "editor"]}, {"id": 37, "filename": "Broll - mắt với capcut.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 11.2, "duration": "00:11", "size_mb": 32.56, "thumbnail": "thumb_037.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 38, "filename": "Broll - negative space sân uông nước cam.MP4", "title": "Negative Space - Không Gian Tĩnh Lặng & Thời Gian Trôi", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Wide / Medium Shot", "location": "Góc Studio Tĩnh Lặng", "action": "Khung cảnh tĩnh lặng với ánh sáng nhẹ trôi qua", "mood": "Tĩnh lặng / Thiền định / Nghỉ ngơi thị giác", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 11.7, "duration": "00:11", "size_mb": 75.64, "thumbnail": "thumb_038.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng trống tĩnh lặng tuyệt đối, tạo điểm dừng cho mắt nghỉ ngơi giữa các đoạn thoại dồn dập.", "dialogue_cues": ["Dành một khoảng lặng để suy ngẫm về những gì bạn vừa nghe...", "Trong một thế giới đầy tiếng ồn, sự tĩnh lặng chính là sức mạnh xa xỉ nhất.", "Hãy cho phép bản thân được thở và tái tạo năng lượng."], "keywords": ["negative space", "tĩnh lặng", "thời gian trôi", "nghỉ ngơi", "không gian", "thiền"]}, {"id": 39, "filename": "Broll - negative space.mp4", "title": "Negative Space - Không Gian Tĩnh Lặng & Thời Gian Trôi", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Wide / Medium Shot", "location": "Góc Studio Tĩnh Lặng", "action": "Khung cảnh tĩnh lặng với ánh sáng nhẹ trôi qua", "mood": "Tĩnh lặng / Thiền định / Nghỉ ngơi thị giác", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 7.1, "duration": "00:07", "size_mb": 22.82, "thumbnail": "thumb_039.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng trống tĩnh lặng tuyệt đối, tạo điểm dừng cho mắt nghỉ ngơi giữa các đoạn thoại dồn dập.", "dialogue_cues": ["Dành một khoảng lặng để suy ngẫm về những gì bạn vừa nghe...", "Trong một thế giới đầy tiếng ồn, sự tĩnh lặng chính là sức mạnh xa xỉ nhất.", "Hãy cho phép bản thân được thở và tái tạo năng lượng."], "keywords": ["negative space", "tĩnh lặng", "thời gian trôi", "nghỉ ngơi", "không gian", "thiền"]}, {"id": 40, "filename": "Broll - nhồi nhét .mp4", "title": "Ẩn Dụ Về Sự Chần Chừ & Nhồi Nhét Quá Tải", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Tay đặt lên phím rồi dừng lại, nhồi nhét tài liệu", "mood": "Trăn trở / Do dự / Bế tắc", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 23.4, "duration": "00:23", "size_mb": 64.51, "thumbnail": "thumb_040.jpg", "video_id": "", "youtube_url": "", "director_note": "Khơi gợi nỗi sợ trì hoãn (Procrastination) của khán giả, tạo điểm chạm cảm xúc để dẫn vào giải pháp hành động.", "dialogue_cues": ["Kẻ thù lớn nhất cản bước bạn không phải là đối thủ, mà chính là sự chần chừ trong đầu bạn...", "Bạn đã dành bao nhiêu tháng trời để lên kế hoạch hoàn hảo mà chưa từng dám bấm nút bắt đầu?", "Nỗi sợ thất bại đang biến những ý tưởng tuyệt vời nhất của bạn thành con số không."], "keywords": ["chần chừ", "do dự", "bế tắc", "trì hoãn", "nỗi sợ", "nhồi nhét", "áp lực"]}, {"id": 41, "filename": "Broll - phi máy bay.mp4", "title": "Phóng Máy Bay Giấy - Khởi Phát Ý Tưởng & Ước Mơ", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Medium Shot (MS)", "location": "Home Studio", "action": "Gấp và phóng chiếc máy bay giấy bay lượn", "mood": "Bay bổng / Sáng tạo / Tự do", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 8.6, "duration": "00:08", "size_mb": 25.18, "thumbnail": "thumb_041.jpg", "video_id": "", "youtube_url": "", "director_note": "Hình ảnh biểu tượng tuyệt vời cho việc phát hành sản phẩm (Launch), giải phóng ý tưởng ra thế giới.", "dialogue_cues": ["Đừng giữ mãi ý tưởng trong ngăn kéo, hãy phóng nó ra thế giới...", "Mọi dự án vĩ đại đều bắt đầu từ một cánh máy bay giấy đơn sơ.", "Hành động nhỏ hôm nay là khởi đầu cho chuyến bay xa ngày mai."], "keywords": ["máy bay", "ý tưởng", "khởi nghiệp", "launch", "sáng tạo", "tự do"]}, {"id": 42, "filename": "Broll - working với note lộn xộn.mp4", "title": "Viết Sổ Ghi Chép Ý Tưởng - Lập Kế Hoạch Chiến Lược", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "POV / Close-up Cận Cảnh", "location": "Bàn làm việc gỗ sồi", "action": "Cầm bút viết ghi chú, phác thảo tư duy lên sổ tay", "mood": "Tư duy / Sáng tạo", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 114.4, "duration": "01:54", "size_mb": 330.12, "thumbnail": "thumb_042.jpg", "video_id": "", "youtube_url": "", "director_note": "Góc cận ngòi bút lướt trên trang giấy kích thích cảm giác sáng tạo thủ công, tăng tính chân thật và chiều sâu.", "dialogue_cues": ["Trước khi mở máy tính làm việc, tôi luôn viết cấu trúc kịch bản ra sổ...", "Viết tay giúp não bộ sàng lọc những suy nghĩ rác và cô đọng ý tưởng sắc bén nhất.", "Một bản kế hoạch rõ ràng trên giấy sẽ tiết kiệm 80% thời gian thực thi."], "keywords": ["viết sổ", "ghi chép", "kế hoạch", "ý tưởng", "sổ tay", "chiến lược", "sáng tạo"]}, {"id": 43, "filename": "Broll - đứng chill - FPT.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 34.6, "duration": "00:34", "size_mb": 91.18, "thumbnail": "thumb_043.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 44, "filename": "Broll -Laptop - fpt - học viên quay.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 9.4, "duration": "00:09", "size_mb": 25.17, "thumbnail": "thumb_044.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 45, "filename": "Broll Chill ban công và nói - ngắn.mp4", "title": "Thoại In-situ Tại Ban Công - Chia Sẻ Trực Diện", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Shot (MS)", "location": "Ban công Times City", "action": "Đứng ngắm cảnh / Thoại ban công", "mood": "Zen / Chill / Suy ngẫm", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 41.5, "duration": "00:41", "size_mb": 120.22, "thumbnail": "thumb_045.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng thở thị giác cực kỳ đắt giá sau một chuỗi luận điểm dồn dập. Giúp người xem thẩm thấu tri thức.", "dialogue_cues": ["Đôi khi, việc dừng lại để nhìn lại toàn cảnh quan trọng hơn là cứ cắm đầu chạy tiếp...", "Khi bạn cảm thấy quá tải với mớ bòng bong hàng ngày, hãy dành 5 phút nhìn ra ngoài...", "Tự do thực sự không phải là làm nhiều hơn, mà là làm chủ được khoảng lặng của chính mình."], "keywords": ["ban công", "chill", "nghỉ ngơi", "khoảng lặng", "suy tư", "tự do", "times city"]}, {"id": 46, "filename": "Broll Chill ban công và nói(1).mp4", "title": "Thoại In-situ Tại Ban Công - Chia Sẻ Trực Diện", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Shot (MS)", "location": "Ban công Times City", "action": "Đứng ngắm cảnh / Thoại ban công", "mood": "Zen / Chill / Suy ngẫm", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 41.5, "duration": "00:41", "size_mb": 120.19, "thumbnail": "thumb_046.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng thở thị giác cực kỳ đắt giá sau một chuỗi luận điểm dồn dập. Giúp người xem thẩm thấu tri thức.", "dialogue_cues": ["Đôi khi, việc dừng lại để nhìn lại toàn cảnh quan trọng hơn là cứ cắm đầu chạy tiếp...", "Khi bạn cảm thấy quá tải với mớ bòng bong hàng ngày, hãy dành 5 phút nhìn ra ngoài...", "Tự do thực sự không phải là làm nhiều hơn, mà là làm chủ được khoảng lặng của chính mình."], "keywords": ["ban công", "chill", "nghỉ ngơi", "khoảng lặng", "suy tư", "tự do", "times city"]}, {"id": 47, "filename": "Broll Chill ban công và nói.mp4", "title": "Thoại In-situ Tại Ban Công - Chia Sẻ Trực Diện", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Shot (MS)", "location": "Ban công Times City", "action": "Đứng ngắm cảnh / Thoại ban công", "mood": "Zen / Chill / Suy ngẫm", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 253.5, "duration": "04:13", "size_mb": 731.68, "thumbnail": "thumb_047.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng thở thị giác cực kỳ đắt giá sau một chuỗi luận điểm dồn dập. Giúp người xem thẩm thấu tri thức.", "dialogue_cues": ["Đôi khi, việc dừng lại để nhìn lại toàn cảnh quan trọng hơn là cứ cắm đầu chạy tiếp...", "Khi bạn cảm thấy quá tải với mớ bòng bong hàng ngày, hãy dành 5 phút nhìn ra ngoài...", "Tự do thực sự không phải là làm nhiều hơn, mà là làm chủ được khoảng lặng của chính mình."], "keywords": ["ban công", "chill", "nghỉ ngơi", "khoảng lặng", "suy tư", "tự do", "times city"]}, {"id": 48, "filename": "Broll chuỗi 7 - bế tắc, chảy chậm.mp4", "title": "Ẩn Dụ Về Sự Chần Chừ & Nhồi Nhét Quá Tải", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Tay đặt lên phím rồi dừng lại, nhồi nhét tài liệu", "mood": "Trăn trở / Do dự / Bế tắc", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 484.8, "duration": "08:04", "size_mb": 557.09, "thumbnail": "thumb_048.jpg", "video_id": "", "youtube_url": "", "director_note": "Khơi gợi nỗi sợ trì hoãn (Procrastination) của khán giả, tạo điểm chạm cảm xúc để dẫn vào giải pháp hành động.", "dialogue_cues": ["Kẻ thù lớn nhất cản bước bạn không phải là đối thủ, mà chính là sự chần chừ trong đầu bạn...", "Bạn đã dành bao nhiêu tháng trời để lên kế hoạch hoàn hảo mà chưa từng dám bấm nút bắt đầu?", "Nỗi sợ thất bại đang biến những ý tưởng tuyệt vời nhất của bạn thành con số không."], "keywords": ["chần chừ", "do dự", "bế tắc", "trì hoãn", "nỗi sợ", "nhồi nhét", "áp lực"]}, {"id": 49, "filename": "Broll layer - vào CHUYEN CANH ẤN.mp4", "title": "Cảnh Trám: layer - vào CHUYEN CANH ẤN", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 15.0, "duration": "00:15", "size_mb": 37.4, "thumbnail": "thumb_049.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 50, "filename": "Cafe - Quickshot Barista.mp4", "title": "Pha Cà Phê Barista - Nén & Chiết Xuất Đậm Đà", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Góc Barista Home Studio", "action": "Thao tác nén bột cà phê và bấm máy chiết xuất", "mood": "Chuyên nghiệp / Đẳng cấp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 11.5, "duration": "00:11", "size_mb": 36.06, "thumbnail": "thumb_050.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuỗi hình ảnh cực bắt mắt, tạo nhịp điệu dứt khoát và phong cách sống chỉn chu của creator.", "dialogue_cues": ["Chuẩn bị một ly cà phê chuẩn vị để bắt đầu ngày làm việc hiệu quả...", "Quy trình đòi hỏi sự chính xác từng gram và lực nén chuẩn mực.", "Thói quen tạo nên sự tập trung cao độ cho cả ngày dài."], "keywords": ["barista", "chiết xuất", "cà phê", "nén cà phê", "chuyên nghiệp", "thói quen"]}, {"id": 51, "filename": "Cafe - nhỏ giọt.mp4", "title": "Cà Phê Nhỏ Giọt - Ẩn Dụ Thời Gian & Bế Tắc", "category_id": "metaphor", "category_name": "6. Metaphor (Visual Metaphor)", "category_badge": "Mượn vật thay lời", "category_icon": "♟️", "category_color": "amber", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Bàn gỗ", "action": "Từng giọt cà phê đen rơi chậm rãi", "mood": "Trầm lắng / Ẩn dụ thời gian", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 12.9, "duration": "00:12", "size_mb": 37.83, "thumbnail": "thumb_051.jpg", "video_id": "", "youtube_url": "", "director_note": "Ẩn dụ thị giác xuất sắc cho cảm giác chờ đợi, sự bế tắc, hoặc quá trình tích lũy chậm rãi nhưng bền bỉ.", "dialogue_cues": ["Cảm giác công việc của bạn cứ nhỏ giọt từng chút một mà không thấy lối ra...", "Mọi sự chuyển hóa lớn đều bắt đầu từ những tích lũy nhỏ giọt không nhìn thấy bằng mắt thường.", "Thời gian trôi qua rất nhanh, nhưng nếu bạn không có hệ thống, kết quả vẫn sẽ chỉ giậm chân tại chỗ."], "keywords": ["cà phê", "nhỏ giọt", "thời gian", "chờ đợi", "bế tắc", "tích lũy", "chậm rãi"]}, {"id": 52, "filename": "Cafe chill.mp4", "title": "Pha Cà Phê Barista - Nén & Chiết Xuất Đậm Đà", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Góc Barista Home Studio", "action": "Thao tác nén bột cà phê và bấm máy chiết xuất", "mood": "Chuyên nghiệp / Đẳng cấp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 83.3, "duration": "01:23", "size_mb": 241.31, "thumbnail": "thumb_052.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuỗi hình ảnh cực bắt mắt, tạo nhịp điệu dứt khoát và phong cách sống chỉn chu của creator.", "dialogue_cues": ["Chuẩn bị một ly cà phê chuẩn vị để bắt đầu ngày làm việc hiệu quả...", "Quy trình đòi hỏi sự chính xác từng gram và lực nén chuẩn mực.", "Thói quen tạo nên sự tập trung cao độ cho cả ngày dài."], "keywords": ["barista", "chiết xuất", "cà phê", "nén cà phê", "chuyên nghiệp", "thói quen"]}, {"id": 53, "filename": "DESK_OTS_Typing_Take1.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Over-the-Shoulder (OTS)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 70.2, "duration": "01:10", "size_mb": 405.74, "thumbnail": "thumb_053.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 54, "filename": "DESK_Side_take1.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 151.9, "duration": "02:31", "size_mb": 870.46, "thumbnail": "thumb_054.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 55, "filename": "DESK_Side_water take1.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 36.8, "duration": "00:36", "size_mb": 216.38, "thumbnail": "thumb_055.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 56, "filename": "DESK_Top_Take3.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Top-down / Flatlay", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 597.1, "duration": "09:57", "size_mb": 3420.38, "thumbnail": "thumb_056.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 57, "filename": "Dạy học.mp4", "title": "Giảng Dạy & Tương Tác Tại Giảng Đường FPT", "category_id": "in_situ", "category_name": "4. Thoại In-Situ (Walk-and-Talk)", "category_badge": "Vừa làm vừa nói", "category_icon": "🎬", "category_color": "red", "shot_type": "Medium Shot (MS)", "location": "Giảng đường Đại học FPT", "action": "Đứng lớp chia sẻ, tương tác với sinh viên và hướng dẫn máy móc", "mood": "Sư phạm / Truyền cảm hứng / Uy tín cao", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 75.3, "duration": "01:15", "size_mb": 216.39, "thumbnail": "thumb_057.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh xây dựng Social Proof (Bằng chứng xã hội) cực mạnh. Tăng ngay 200% độ uy tín cho người nói khi bàn về kiến thức.", "dialogue_cues": ["Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT...", "Kinh nghiệm thực chiến qua nhiều năm đào tạo cho thấy sai lầm lớn nhất của các bạn là...", "Lý thuyết chỉ có giá trị khi nó được kiểm chứng qua các buổi thực hành thực tế."], "keywords": ["fpt", "dạy học", "giảng đường", "sinh viên", "đào tạo", "uy tín", "chuyên gia"]}, {"id": 58, "filename": "EYE_open_take1(1).mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 44.8, "duration": "00:44", "size_mb": 257.53, "thumbnail": "thumb_058.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 59, "filename": "EYE_open_take1(3).mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 44.8, "duration": "00:44", "size_mb": 256.32, "thumbnail": "thumb_059.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 60, "filename": "EYE_open_take1.2 one eye.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 3.1, "duration": "00:03", "size_mb": 18.32, "thumbnail": "thumb_060.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 61, "filename": "EYE_open_take1.3 haft face.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 9.9, "duration": "00:09", "size_mb": 34.58, "thumbnail": "thumb_061.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 62, "filename": "EYE_open_take1.4 tow eye.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 10.3, "duration": "00:10", "size_mb": 36.45, "thumbnail": "thumb_062.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 63, "filename": "EYE_open_take1.mp4", "title": "Đặc Tả Ánh Mắt Mở Ra - Đột Phá Nhận Thức", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Extreme Close-up (ECU)", "location": "Home Studio Dark Room", "action": "Đôi mắt mở to, tập trung ánh nhìn vào màn hình", "mood": "Thức tỉnh / Tập trung cao độ", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 44.8, "duration": "00:44", "size_mb": 256.33, "thumbnail": "thumb_063.jpg", "video_id": "", "youtube_url": "", "director_note": "Extreme Close-up ánh mắt tạo cú hích cảm xúc mạnh mẽ, dùng ngay tại khoảnh khắc 'Aha Moment' hoặc mở đầu video.", "dialogue_cues": ["Khoảnh khắc bạn nhận ra toàn bộ cách làm trước đây của mình đã hoàn toàn lỗi thời...", "Chỉ cần mở rộng góc nhìn, bạn sẽ thấy cơ hội ở khắp mọi nơi.", "Hãy nhìn thẳng vào sự thật mà bấy lâu nay bạn đang cố tình né tránh."], "keywords": ["ánh mắt", "mở mắt", "nhận thức", "thức tỉnh", "tập trung", "đột phá", "aha moment"]}, {"id": 64, "filename": "HAND_Typing_Close_Take2.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 212.0, "duration": "03:32", "size_mb": 1214.15, "thumbnail": "thumb_064.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 65, "filename": "HAND_Typing_top take 1.mp4", "title": "Gõ Phím & Lướt Màn Hình - Tập Trung Tuyệt Đối", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Top-down / Flatlay", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 38.4, "duration": "00:38", "size_mb": 218.49, "thumbnail": "thumb_065.jpg", "video_id": "", "youtube_url": "", "director_note": "Cảnh chèn kinh điển cho các đoạn nói về coding, viết lách, xây dựng hệ thống tự động hoặc dựng phim.", "dialogue_cues": ["Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa...", "Khi bạn bước vào trạng thái dòng chảy (Flow State), thời gian dường như dừng lại.", "Tập trung cao độ để biến ý tưởng thành sản phẩm thực tế."], "keywords": ["gõ phím", "laptop", "deep work", "làm việc", "coding", "tập trung", "bàn gỗ"]}, {"id": 66, "filename": "NOTE_Writing_POV_Take1.mp4", "title": "Viết Sổ Ghi Chép Ý Tưởng - Lập Kế Hoạch Chiến Lược", "category_id": "pov", "category_name": "3. POV (Point Of View)", "category_badge": "Mượn mắt khán giả", "category_icon": "👁️", "category_color": "teal", "shot_type": "POV / Close-up Cận Cảnh", "location": "Bàn làm việc gỗ sồi", "action": "Cầm bút viết ghi chú, phác thảo tư duy lên sổ tay", "mood": "Tư duy / Sáng tạo", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 96.8, "duration": "01:36", "size_mb": 326.38, "thumbnail": "thumb_066.jpg", "video_id": "", "youtube_url": "", "director_note": "Góc cận ngòi bút lướt trên trang giấy kích thích cảm giác sáng tạo thủ công, tăng tính chân thật và chiều sâu.", "dialogue_cues": ["Trước khi mở máy tính làm việc, tôi luôn viết cấu trúc kịch bản ra sổ...", "Viết tay giúp não bộ sàng lọc những suy nghĩ rác và cô đọng ý tưởng sắc bén nhất.", "Một bản kế hoạch rõ ràng trên giấy sẽ tiết kiệm 80% thời gian thực thi."], "keywords": ["viết sổ", "ghi chép", "kế hoạch", "ý tưởng", "sổ tay", "chiến lược", "sáng tạo"]}, {"id": 67, "filename": "NOTE_Writing_Top_Take1.mp4", "title": "Viết Sổ Ghi Chép Ý Tưởng - Lập Kế Hoạch Chiến Lược", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "POV / Close-up Cận Cảnh", "location": "Bàn làm việc gỗ sồi", "action": "Cầm bút viết ghi chú, phác thảo tư duy lên sổ tay", "mood": "Tư duy / Sáng tạo", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 124.7, "duration": "02:04", "size_mb": 422.98, "thumbnail": "thumb_067.jpg", "video_id": "", "youtube_url": "", "director_note": "Góc cận ngòi bút lướt trên trang giấy kích thích cảm giác sáng tạo thủ công, tăng tính chân thật và chiều sâu.", "dialogue_cues": ["Trước khi mở máy tính làm việc, tôi luôn viết cấu trúc kịch bản ra sổ...", "Viết tay giúp não bộ sàng lọc những suy nghĩ rác và cô đọng ý tưởng sắc bén nhất.", "Một bản kế hoạch rõ ràng trên giấy sẽ tiết kiệm 80% thời gian thực thi."], "keywords": ["viết sổ", "ghi chép", "kế hoạch", "ý tưởng", "sổ tay", "chiến lược", "sáng tạo"]}, {"id": 68, "filename": "Nấu mỳ .mp4", "title": "Nấu Mỳ & Thưởng Thức - Cuộc Sống Tự Do Của Creator", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Sequence / Medium Shot", "location": "Bếp Home Studio", "action": "Đun nước sôi, nấu bát mỳ thơm nóng và thưởng thức", "mood": "Gần gũi / Đời thường / Chân thật", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 424.9, "duration": "07:04", "size_mb": 1225.29, "thumbnail": "thumb_068.jpg", "video_id": "", "youtube_url": "", "director_note": "Tạo sự đồng cảm sâu sắc với cuộc sống của người làm sáng tạo độc lập (Solo Creator / Solopreneur).", "dialogue_cues": ["Sau những giờ làm việc căng thẳng, một bữa ăn đơn giản là quá đủ để nạp lại tinh thần...", "Cuộc sống của một solopreneur không hào nhoáng như mạng xã hội, nó chân thực và tự do.", "Tự nấu cho mình một bữa ăn và tận hưởng sự bình yên tuyệt đối."], "keywords": ["nấu mỳ", "ăn mỳ", "cuộc sống", "đời thường", "solo creator", "chân thật", "tự do"]}, {"id": 69, "filename": "Negative space - thời gian trôi.mp4", "title": "Negative Space - Không Gian Tĩnh Lặng & Thời Gian Trôi", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Wide / Medium Shot", "location": "Góc Studio Tĩnh Lặng", "action": "Khung cảnh tĩnh lặng với ánh sáng nhẹ trôi qua", "mood": "Tĩnh lặng / Thiền định / Nghỉ ngơi thị giác", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 131.0, "duration": "02:11", "size_mb": 379.75, "thumbnail": "thumb_069.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng trống tĩnh lặng tuyệt đối, tạo điểm dừng cho mắt nghỉ ngơi giữa các đoạn thoại dồn dập.", "dialogue_cues": ["Dành một khoảng lặng để suy ngẫm về những gì bạn vừa nghe...", "Trong một thế giới đầy tiếng ồn, sự tĩnh lặng chính là sức mạnh xa xỉ nhất.", "Hãy cho phép bản thân được thở và tái tạo năng lượng."], "keywords": ["negative space", "tĩnh lặng", "thời gian trôi", "nghỉ ngơi", "không gian", "thiền"]}, {"id": 70, "filename": "Nén + chiết xuất cafe.mp4", "title": "Pha Cà Phê Barista - Nén & Chiết Xuất Đậm Đà", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Góc Barista Home Studio", "action": "Thao tác nén bột cà phê và bấm máy chiết xuất", "mood": "Chuyên nghiệp / Đẳng cấp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 56.1, "duration": "00:56", "size_mb": 161.28, "thumbnail": "thumb_070.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuỗi hình ảnh cực bắt mắt, tạo nhịp điệu dứt khoát và phong cách sống chỉn chu của creator.", "dialogue_cues": ["Chuẩn bị một ly cà phê chuẩn vị để bắt đầu ngày làm việc hiệu quả...", "Quy trình đòi hỏi sự chính xác từng gram và lực nén chuẩn mực.", "Thói quen tạo nên sự tập trung cao độ cho cả ngày dài."], "keywords": ["barista", "chiết xuất", "cà phê", "nén cà phê", "chuyên nghiệp", "thói quen"]}, {"id": 71, "filename": "Ngồi ăn Mỳ uống cafe.mp4", "title": "Pha Cà Phê Barista - Nén & Chiết Xuất Đậm Đà", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Close-up (CU)", "location": "Góc Barista Home Studio", "action": "Thao tác nén bột cà phê và bấm máy chiết xuất", "mood": "Chuyên nghiệp / Đẳng cấp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 331.6, "duration": "05:31", "size_mb": 952.34, "thumbnail": "thumb_071.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuỗi hình ảnh cực bắt mắt, tạo nhịp điệu dứt khoát và phong cách sống chỉn chu của creator.", "dialogue_cues": ["Chuẩn bị một ly cà phê chuẩn vị để bắt đầu ngày làm việc hiệu quả...", "Quy trình đòi hỏi sự chính xác từng gram và lực nén chuẩn mực.", "Thói quen tạo nên sự tập trung cao độ cho cả ngày dài."], "keywords": ["barista", "chiết xuất", "cà phê", "nén cà phê", "chuyên nghiệp", "thói quen"]}, {"id": 72, "filename": "OTS - Working laptop.mp4", "title": "Cảnh Trám: OTS - Working laptop", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 194.0, "duration": "03:14", "size_mb": 561.43, "thumbnail": "thumb_072.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 73, "filename": "Phone Cam StartRecord Take1.mp4", "title": "Cảnh Trám: Phone Cam StartRecord Take1", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 19.5, "duration": "00:19", "size_mb": 92.22, "thumbnail": "thumb_073.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 74, "filename": "S05 - Lắp đèn.mp4", "title": "Setup Ánh Sáng Studio - 2 Đèn & Spotlight Chuyên Nghiệp", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Bật đèn keylight, chỉnh nhiệt độ màu và hướng sáng spotlight", "mood": "Điện ảnh / Chuyên nghiệp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 27.7, "duration": "00:27", "size_mb": 61.62, "thumbnail": "thumb_074.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng khi nói về chuẩn bị thiết bị, nâng cấp chất lượng hình ảnh hoặc kỹ thuật setup phòng quay.", "dialogue_cues": ["Ánh sáng chính là yếu tố phân định giữa một video nghiệp dư và một thước phim điện ảnh...", "Chỉ cần bố trí đúng 2 nguồn sáng chính, chủ thể sẽ nổi bật hoàn toàn khỏi phông nền.", "Setup góc quay chuẩn giúp bạn tự tin xuất hiện trước ống kính."], "keywords": ["setup đèn", "ánh sáng", "lighting", "spotlight", "studio", "chuyên nghiệp", "điện ảnh"]}, {"id": 75, "filename": "S06 - Thao tác máy ảnh.mp4", "title": "Màn Hình Dựng Phim & Thao Tác Máy Ảnh Chuyên Sâu", "category_id": "archival", "category_name": "8. Archival / Timeline (Tư liệu)", "category_badge": "Cỗ máy thời gian", "category_icon": "⏳", "category_color": "emerald", "shot_type": "Extreme Close-up (ECU) / Screen Recording", "location": "Phòng dựng phim Home Studio", "action": "Kéo cắt clip trên Timeline, tinh chỉnh keyframe và chuyển cảnh", "mood": "Kỹ thuật / Tập trung cao / Pro Editor", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 4.6, "duration": "00:04", "size_mb": 11.1, "thumbnail": "thumb_075.jpg", "video_id": "", "youtube_url": "", "director_note": "Tư liệu thực chứng hoàn hảo cho các video dạy dựng phim, hướng dẫn workflow hoặc tối ưu hóa thời gian sản xuất.", "dialogue_cues": ["Nhìn vào dòng Timeline này, bạn sẽ thấy cách tôi sắp xếp từng lớp âm thanh và hình ảnh...", "Một quy trình dựng phim thông minh sẽ cắt giảm 70% thời gian ngồi trước máy tính.", "Từng vết cắt đều có chủ đích tâm lý học để dẫn dắt cảm xúc người xem."], "keywords": ["timeline", "dựng phim", "capcut", "premiere", "máy ảnh", "kỹ thuật", "editor"]}, {"id": 76, "filename": "S07 - POV Đi tập.mp4", "title": "POV Lái Xe & Đi Tập Rèn Luyện Thân Tâm", "category_id": "pov", "category_name": "3. POV (Point Of View)", "category_badge": "Mượn mắt khán giả", "category_icon": "👁️", "category_color": "teal", "shot_type": "Point Of View (POV)", "location": "Phòng Gym & Đường phố", "action": "Cầm vô lăng lái xe và bước chân vào phòng tập thể lực", "mood": "Mạnh mẽ / Kỷ luật / Năng động", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 149.1, "duration": "02:29", "size_mb": 358.42, "thumbnail": "thumb_076.jpg", "video_id": "", "youtube_url": "", "director_note": "Kích hoạt tinh thần rèn luyện thể chất, kỷ luật cá nhân và lối sống năng động của người làm chủ cuộc sống.", "dialogue_cues": ["Kỷ luật không đến từ động lực nhất thời, nó được rèn giũa qua từng buổi tập luyện...", "Khi bạn kiểm soát được thân thể của mình, bạn mới kiểm soát được tâm trí và sự nghiệp.", "Trên đường đi đến mục tiêu, sự bền bỉ là vũ khí tối thượng duy nhất."], "keywords": ["tập gym", "lái xe", "pov", "kỷ luật", "rèn luyện", "thể thao", "năng động"]}, {"id": 77, "filename": "S08 - lai xe POV.mp4", "title": "POV Lái Xe & Đi Tập Rèn Luyện Thân Tâm", "category_id": "pov", "category_name": "3. POV (Point Of View)", "category_badge": "Mượn mắt khán giả", "category_icon": "👁️", "category_color": "teal", "shot_type": "Point Of View (POV)", "location": "Phòng Gym & Đường phố", "action": "Cầm vô lăng lái xe và bước chân vào phòng tập thể lực", "mood": "Mạnh mẽ / Kỷ luật / Năng động", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 18.2, "duration": "00:18", "size_mb": 43.43, "thumbnail": "thumb_077.jpg", "video_id": "", "youtube_url": "", "director_note": "Kích hoạt tinh thần rèn luyện thể chất, kỷ luật cá nhân và lối sống năng động của người làm chủ cuộc sống.", "dialogue_cues": ["Kỷ luật không đến từ động lực nhất thời, nó được rèn giũa qua từng buổi tập luyện...", "Khi bạn kiểm soát được thân thể của mình, bạn mới kiểm soát được tâm trí và sự nghiệp.", "Trên đường đi đến mục tiêu, sự bền bỉ là vũ khí tối thượng duy nhất."], "keywords": ["tập gym", "lái xe", "pov", "kỷ luật", "rèn luyện", "thể thao", "năng động"]}, {"id": 78, "filename": "ST - Broll - Laptop.mp4", "title": "Cảnh Trám: ST - Laptop", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "horizontal", "resolution": "3840x2160", "duration_sec": 12.3, "duration": "00:12", "size_mb": 41.64, "thumbnail": "thumb_078.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 79, "filename": "ST - Vào mở laptop - màu dep.mp4", "title": "Cảnh Trám: ST - Vào mở laptop - màu dep", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 44.2, "duration": "00:44", "size_mb": 253.03, "thumbnail": "thumb_079.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 80, "filename": "ST - setup lighting.mp4", "title": "Setup Ánh Sáng Studio - 2 Đèn & Spotlight Chuyên Nghiệp", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Bật đèn keylight, chỉnh nhiệt độ màu và hướng sáng spotlight", "mood": "Điện ảnh / Chuyên nghiệp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 14.1, "duration": "00:14", "size_mb": 49.29, "thumbnail": "thumb_080.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng khi nói về chuẩn bị thiết bị, nâng cấp chất lượng hình ảnh hoặc kỹ thuật setup phòng quay.", "dialogue_cues": ["Ánh sáng chính là yếu tố phân định giữa một video nghiệp dư và một thước phim điện ảnh...", "Chỉ cần bố trí đúng 2 nguồn sáng chính, chủ thể sẽ nổi bật hoàn toàn khỏi phông nền.", "Setup góc quay chuẩn giúp bạn tự tin xuất hiện trước ống kính."], "keywords": ["setup đèn", "ánh sáng", "lighting", "spotlight", "studio", "chuyên nghiệp", "điện ảnh"]}, {"id": 81, "filename": "ST- bật điện thoại , bật cam demo .mp4", "title": "Cảnh Trám: ST- bật điện thoại , bật cam demo ", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 8.4, "duration": "00:08", "size_mb": 37.46, "thumbnail": "thumb_081.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 82, "filename": "Set ánh sáng cho talking head style.mp4", "title": "Cảnh Trám: Set ánh sáng cho talking head style", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 30.3, "duration": "00:30", "size_mb": 108.93, "thumbnail": "thumb_082.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 83, "filename": "Vắt cam multicam.mp4", "title": "Quy Trình Vắt Nước Cam - Thư Giãn Tươi Mới", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Top-down / Close-up", "location": "Bếp Home Studio", "action": "Thái lát và ép nước cam tươi", "mood": "Tươi sáng / Tràn đầy năng lượng", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 712.1, "duration": "11:52", "size_mb": 1052.9, "thumbnail": "thumb_083.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuỗi hành động tạo cảm giác 'Oddly Satisfying', kích thích dopamine thị giác và giữ retention vượt 70%.", "dialogue_cues": ["Mỗi sáng bắt đầu bằng một thói quen nhỏ giúp tái nạp 100% năng lượng...", "Đừng bắt não bộ làm việc kiệt quệ mà không có thời gian phục hồi sinh học.", "Tập trung vào dinh dưỡng và sự tỉnh táo là nền tảng của mọi phiên Deep Work."], "keywords": ["uống cam", "nước cam", "thái cam", "năng lượng", "sức khỏe", "sáng sớm", "thói quen"]}, {"id": 84, "filename": "Walking - Balcony - Home - sequence meditation.mp4", "title": "Ban Công Chill & Trầm Tư - Times City", "category_id": "negative_space", "category_name": "7. Negative Space (Breathing Room)", "category_badge": "Khoảng lặng đắt giá", "category_icon": "⏸️", "category_color": "slate", "shot_type": "Medium Shot (MS)", "location": "Ban công Times City", "action": "Đứng ngắm cảnh / Thoại ban công", "mood": "Zen / Chill / Suy ngẫm", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 35.2, "duration": "00:35", "size_mb": 117.97, "thumbnail": "thumb_084.jpg", "video_id": "", "youtube_url": "", "director_note": "Khoảng thở thị giác cực kỳ đắt giá sau một chuỗi luận điểm dồn dập. Giúp người xem thẩm thấu tri thức.", "dialogue_cues": ["Đôi khi, việc dừng lại để nhìn lại toàn cảnh quan trọng hơn là cứ cắm đầu chạy tiếp...", "Khi bạn cảm thấy quá tải với mớ bòng bong hàng ngày, hãy dành 5 phút nhìn ra ngoài...", "Tự do thực sự không phải là làm nhiều hơn, mà là làm chủ được khoảng lặng của chính mình."], "keywords": ["ban công", "chill", "nghỉ ngơi", "khoảng lặng", "suy tư", "tự do", "times city"]}, {"id": 85, "filename": "broll - cho video mo Chuyển cảnh thực chiến .mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 12.3, "duration": "00:12", "size_mb": 34.69, "thumbnail": "thumb_085.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 86, "filename": "broll - chuyen canh Practice chuyển cảnh lương yên.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 4.5, "duration": "00:04", "size_mb": 15.04, "thumbnail": "thumb_086.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 87, "filename": "broll - mở chuyển cảnh thục chiến - gật đầu -  đi xe máy - Demo.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 9.1, "duration": "00:09", "size_mb": 17.73, "thumbnail": "thumb_087.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 88, "filename": "broll - nguyen tac chuyen Chuyển cảnh thực chiến.mp4", "title": "Kỹ Thuật Chuyển Cảnh Thực Chiến - Cut Match Cut & Motion", "category_id": "intercut", "category_name": "5. Dựng Intercut (Docu-Style)", "category_badge": "Nửa tĩnh, nửa động", "category_icon": "⚖️", "category_color": "indigo", "shot_type": "Movement Cut / Close-up", "location": "Studio & Ngoại cảnh Lương Yên", "action": "Bấm phím B, quẹt tay chuyển cảnh, đổi góc quay động", "mood": "Nhanh / Kịch tính / Điện ảnh", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 2.9, "duration": "00:02", "size_mb": 9.22, "thumbnail": "thumb_088.jpg", "video_id": "", "youtube_url": "", "director_note": "Chuyển động liên tục (Motion Continuity) dùng để kết nối giữa 2 phân cảnh kịch bản khác nhau không bị giật cục.", "dialogue_cues": ["Bí quyết để video giữ chân người xem nằm ở các điểm nối chuyển cảnh vô hình...", "Chỉ cần một phím tắt duy nhất, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.", "Chuyển cảnh mượt mà giúp khán giả bị cuốn từ giây đầu tiên đến giây cuối cùng."], "keywords": ["chuyển cảnh", "phím b", "match cut", "kỹ thuật dựng", "premiere", "capcut", "thực chiến"]}, {"id": 89, "filename": "ko ekip ko phong thu broll.mp4", "title": "Cảnh Trám: ko ekip ko phong thu broll", "category_id": "cutaway", "category_name": "1. Cutaway (Insert Shot)", "category_badge": "Minh họa trực diện", "category_icon": "✂️", "category_color": "blue", "shot_type": "Close-up (CU)", "location": "Home Studio Times City", "action": "Thao tác làm việc tập trung", "mood": "Deep Work / Tập trung", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 8.5, "duration": "00:08", "size_mb": 25.87, "thumbnail": "thumb_089.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng làm cảnh cắt minh họa trực diện cho câu thoại, giúp giấu vết cắt và neo thị giác người xem.", "dialogue_cues": ["Để làm được điều này, bạn cần nắm vững quy trình cốt lõi...", "Khi nhìn sâu vào chi tiết, bạn sẽ thấy sự khác biệt nằm ở cách thực thi.", "Đây chính là bước then chốt giúp tối ưu hóa hiệu suất làm việc."], "keywords": ["thao tác", "làm việc", "quy trình", "chi tiết", "thực chiến"]}, {"id": 90, "filename": "lighting podcast - dt.mp4", "title": "Setup Ánh Sáng Studio - 2 Đèn & Spotlight Chuyên Nghiệp", "category_id": "sequence", "category_name": "2. Sequence (Montage)", "category_badge": "Băng chuyền hành động", "category_icon": "🎞️", "category_color": "purple", "shot_type": "Medium Close-up (MCU)", "location": "Home Studio", "action": "Bật đèn keylight, chỉnh nhiệt độ màu và hướng sáng spotlight", "mood": "Điện ảnh / Chuyên nghiệp", "orientation": "vertical", "resolution": "2160x3840", "duration_sec": 22.8, "duration": "00:22", "size_mb": 80.34, "thumbnail": "thumb_090.jpg", "video_id": "", "youtube_url": "", "director_note": "Dùng khi nói về chuẩn bị thiết bị, nâng cấp chất lượng hình ảnh hoặc kỹ thuật setup phòng quay.", "dialogue_cues": ["Ánh sáng chính là yếu tố phân định giữa một video nghiệp dư và một thước phim điện ảnh...", "Chỉ cần bố trí đúng 2 nguồn sáng chính, chủ thể sẽ nổi bật hoàn toàn khỏi phông nền.", "Setup góc quay chuẩn giúp bạn tự tin xuất hiện trước ống kính."], "keywords": ["setup đèn", "ánh sáng", "lighting", "spotlight", "studio", "chuyên nghiệp", "điện ảnh"]}]};
+        let currentVideos = MASTER_DATA.videos || [];
+        let activeCategory = 'all';
+        let currentViewMode = 'grid';
+        let selectedVideoId = null;
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            renderVideos(currentVideos);
+        });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            if (html.classList.contains('dark')) {
+                html.classList.remove('dark');
+                document.getElementById('theme-icon').setAttribute('data-lucide', 'sun');
+            } else {
+                html.classList.add('dark');
+                document.getElementById('theme-icon').setAttribute('data-lucide', 'moon');
+            }
+            lucide.createIcons();
+        }
+
+        function switchMainTab(tabId) {
+            document.getElementById('tab-content-library').classList.add('hidden');
+            document.getElementById('tab-content-script').classList.add('hidden');
+            document.getElementById('tab-content-handbook').classList.add('hidden');
+
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active', 'text-white'));
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.add('text-slate-300'));
+
+            if (tabId === 'library') {
+                document.getElementById('tab-content-library').classList.remove('hidden');
+                document.getElementById('tab-btn-library').classList.add('active');
+            } else if (tabId === 'script-matcher') {
+                document.getElementById('tab-content-script').classList.remove('hidden');
+                document.getElementById('tab-btn-script').classList.add('active');
+            } else if (tabId === 'handbook') {
+                document.getElementById('tab-content-handbook').classList.remove('hidden');
+                document.getElementById('tab-btn-handbook').classList.add('active');
+            }
+            lucide.createIcons();
+        }
+
+        function filterCategory(catId) {
+            activeCategory = catId;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                if (btn.getAttribute('data-cat') === catId) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            applyFilters();
+        }
+
+        function handleSearch() {
+            const val = document.getElementById('search-input').value.trim();
+            const clearBtn = document.getElementById('clear-search-btn');
+            if (val) {
+                clearBtn.classList.remove('hidden');
+            } else {
+                clearBtn.classList.add('hidden');
+            }
+            applyFilters();
+        }
+
+        function clearSearch() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            const orient = document.getElementById('filter-orientation').value;
+            const loc = document.getElementById('filter-location').value;
+            const shot = document.getElementById('filter-shot').value;
+            const sort = document.getElementById('sort-by').value;
+
+            let result = MASTER_DATA.videos.filter(v => {
+                // Category
+                if (activeCategory !== 'all' && v.category_id !== activeCategory) return false;
+                // Orientation
+                if (orient !== 'all' && v.orientation !== orient) return false;
+                // Location
+                if (loc !== 'all' && !v.location.toLowerCase().includes(loc.toLowerCase())) return false;
+                // Shot type
+                if (shot !== 'all' && !v.shot_type.toLowerCase().includes(shot.toLowerCase())) return false;
+                // Search query
+                if (query) {
+                    const fullText = (v.title + ' ' + v.filename + ' ' + v.action + ' ' + v.location + ' ' + v.mood + ' ' + v.director_note + ' ' + v.dialogue_cues.join(' ') + ' ' + v.keywords.join(' ')).toLowerCase();
+                    if (!fullText.includes(query)) return false;
+                }
+                return true;
+            });
+
+            // Sorting
+            if (sort === 'dur_desc') {
+                result.sort((a, b) => b.duration_sec - a.duration_sec);
+            } else if (sort === 'dur_asc') {
+                result.sort((a, b) => a.duration_sec - b.duration_sec);
+            } else if (sort === 'title_asc') {
+                result.sort((a, b) => a.title.localeCompare(b.title));
+            } else {
+                result.sort((a, b) => a.id - b.id);
+            }
+
+            currentVideos = result;
+            document.getElementById('filtered-count').innerText = result.length;
+
+            const empty = document.getElementById('empty-state');
+            const grid = document.getElementById('video-grid');
+
+            if (result.length === 0) {
+                grid.innerHTML = '';
+                empty.classList.remove('hidden');
+            } else {
+                empty.classList.add('hidden');
+                renderVideos(result);
+            }
+        }
+
+        function resetAllFilters() {
+            document.getElementById('search-input').value = '';
+            document.getElementById('clear-search-btn').classList.add('hidden');
+            document.getElementById('filter-orientation').value = 'all';
+            document.getElementById('filter-location').value = 'all';
+            document.getElementById('filter-shot').value = 'all';
+            document.getElementById('sort-by').value = 'id_asc';
+            filterCategory('all');
+        }
+
+        function setViewMode(mode) {
+            currentViewMode = mode;
+            const gridBtn = document.getElementById('view-grid-btn');
+            const listBtn = document.getElementById('view-list-btn');
+
+            if (mode === 'grid') {
+                gridBtn.className = 'p-1.5 rounded-lg bg-purple-600/30 text-purple-300 border border-purple-500/40';
+                listBtn.className = 'p-1.5 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 hover:text-white';
+                document.getElementById('video-grid').className = 'grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5';
+            } else {
+                listBtn.className = 'p-1.5 rounded-lg bg-purple-600/30 text-purple-300 border border-purple-500/40';
+                gridBtn.className = 'p-1.5 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 hover:text-white';
+                document.getElementById('video-grid').className = 'grid grid-cols-1 gap-3';
+            }
+            renderVideos(currentVideos);
+        }
+
+        function renderVideos(list) {
+            const container = document.getElementById('video-grid');
+            if (currentViewMode === 'list') {
+                container.innerHTML = list.map(v => `
+                    <div class="glass-card p-3 rounded-xl flex items-center justify-between gap-4 cursor-pointer hover:border-purple-500" onclick="openModal(${v.id})">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <div class="w-16 h-12 bg-slate-900 rounded-lg overflow-hidden shrink-0 relative">
+                                <img src="broll_thumbnails/${v.thumbnail}" alt="${v.title}" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=300'">
+                                <span class="absolute bottom-0.5 right-0.5 bg-black/80 text-[9px] font-mono text-white px-1 rounded">${v.duration}</span>
+                            </div>
+                            <div class="min-w-0">
+                                <div class="flex items-center gap-2">
+                                    <span class="text-xs font-bold text-white truncate">${v.title}</span>
+                                    <span class="text-[10px] px-2 py-0.5 rounded-full badge-${v.category_id} font-semibold shrink-0">${v.category_badge}</span>
+                                </div>
+                                <div class="text-[11px] text-slate-400 truncate mt-0.5">
+                                    ${v.shot_type} • ${v.location} • ${v.orientation === 'vertical' ? '📱 9:16' : '🖥️ 16:9'}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 shrink-0">
+                            ${v.video_id ? `<span class="text-[10px] text-red-400 bg-red-950/40 px-2 py-0.5 rounded border border-red-900/60 font-semibold">YouTube</span>` : ''}
+                            <button class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 text-xs text-white font-semibold transition">Chi tiết</button>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                container.innerHTML = list.map(v => `
+                    <div class="glass-card rounded-2xl overflow-hidden flex flex-col group cursor-pointer" onclick="openModal(${v.id})">
+                        <!-- Thumbnail Box -->
+                        <div class="relative aspect-video bg-slate-900 overflow-hidden">
+                            <img src="broll_thumbnails/${v.thumbnail}" alt="${v.title}" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=400'">
+                            
+                            <!-- Badges overlay -->
+                            <div class="absolute top-2 left-2 flex items-center gap-1.5">
+                                <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold shadow-lg badge-${v.category_id}">
+                                    ${v.category_icon} ${v.category_badge}
+                                </span>
+                            </div>
+
+                            <div class="absolute top-2 right-2 flex items-center gap-1">
+                                <span class="px-2 py-0.5 rounded-md bg-black/70 backdrop-blur-sm text-[10px] font-bold text-white border border-white/10">
+                                    ${v.orientation === 'vertical' ? '📱 9:16' : '🖥️ 16:9'}
+                                </span>
+                            </div>
+
+                            <!-- Duration & YT Tag -->
+                            <div class="absolute bottom-2 right-2 flex items-center gap-1.5">
+                                ${v.video_id ? `<span class="px-1.5 py-0.5 rounded bg-red-600 text-[10px] font-bold text-white flex items-center gap-0.5"><i data-lucide="play" class="w-2.5 h-2.5 fill-current"></i> YT</span>` : ''}
+                                <span class="px-2 py-0.5 rounded bg-black/80 font-mono text-[11px] font-bold text-white">
+                                    ${v.duration}
+                                </span>
+                            </div>
+
+                            <!-- Hover Play Overlay -->
+                            <div class="absolute inset-0 bg-purple-900/30 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+                                <div class="w-10 h-10 rounded-full bg-white/90 text-purple-950 flex items-center justify-center shadow-xl transform scale-75 group-hover:scale-100 transition">
+                                    <i data-lucide="play" class="w-5 h-5 fill-current ml-0.5"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+                            <div>
+                                <div class="text-[11px] text-slate-400 flex items-center justify-between">
+                                    <span>${v.shot_type}</span>
+                                    <span class="truncate max-w-[120px]">${v.location}</span>
+                                </div>
+                                <h3 class="text-sm font-bold text-white mt-1 line-clamp-1 group-hover:text-purple-300 transition">
+                                    ${v.title}
+                                </h3>
+                                <p class="text-xs text-slate-400 mt-1 line-clamp-2 leading-relaxed">
+                                    ${v.director_note}
+                                </p>
+                            </div>
+
+                            <!-- Dialogue Sample Cue -->
+                            <div class="pt-2 border-t border-slate-800/80">
+                                <div class="text-[10px] text-slate-500 font-semibold uppercase">Mẫu câu thoại:</div>
+                                <p class="text-[11px] text-purple-300/90 italic truncate mt-0.5">
+                                    "${v.dialogue_cues[0] || 'Phù hợp làm cảnh chuyển tiếp...'}"
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            lucide.createIcons();
+        }
+
+        function openModal(id) {
+            const v = MASTER_DATA.videos.find(x => x.id === id);
+            if (!v) return;
+            selectedVideoId = id;
+
+            document.getElementById('modal-title').innerText = v.title;
+            const badge = document.getElementById('modal-category-badge');
+            badge.className = `px-2.5 py-1 rounded-full text-xs font-bold badge-${v.category_id}`;
+            badge.innerHTML = `${v.category_icon} ${v.category_name}`;
+
+            document.getElementById('modal-orientation').innerText = v.orientation === 'vertical' ? '📱 Dọc 9:16 (Shorts/Reel)' : '🖥️ Ngang 16:9 (Cinematic 4K)';
+            document.getElementById('modal-duration').innerText = `${v.duration} (${v.duration_sec}s)`;
+            document.getElementById('modal-shot').innerText = v.shot_type;
+            document.getElementById('modal-location').innerText = v.location;
+            document.getElementById('modal-director-note').innerText = v.director_note;
+            document.getElementById('modal-filename').innerText = v.filename;
+
+            // Player Setup
+            const playerBox = document.getElementById('modal-player-container');
+            if (v.video_id) {
+                playerBox.innerHTML = `
+                    <iframe src="https://www.youtube.com/embed/${v.video_id}?autoplay=1&rel=0" 
+                            title="${v.title}" 
+                            class="w-full h-full" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                `;
+            } else {
+                playerBox.innerHTML = `
+                    <div class="relative w-full h-full flex flex-col items-center justify-center bg-slate-950 p-6 text-center">
+                        <img src="broll_thumbnails/${v.thumbnail}" class="absolute inset-0 w-full h-full object-cover opacity-30 blur-sm">
+                        <div class="relative z-10 space-y-2">
+                            <i data-lucide="video" class="w-10 h-10 text-purple-400 mx-auto animate-bounce"></i>
+                            <h4 class="text-sm font-bold text-white">Video Cục Bộ Sẵn Sàng Sản Xuất</h4>
+                            <p class="text-xs text-slate-300 font-mono">/Users/vietmac/Documents/BROLL BANK/${v.filename}</p>
+                            <span class="inline-block px-3 py-1 rounded-full bg-purple-600/30 text-purple-300 text-[11px] font-semibold border border-purple-500/40">Độ phân giải: ${v.resolution} • ${v.size_mb} MB</span>
+                        </div>
+                    </div>
+                `;
+            }
+
+            // YouTube button
+            const ytBox = document.getElementById('modal-yt-btn-container');
+            if (v.video_id) {
+                ytBox.innerHTML = `
+                    <a href="https://www.youtube.com/watch?v=${v.video_id}" target="_blank" class="inline-flex items-center gap-1 px-3 py-1 rounded-lg bg-red-600/20 text-red-300 border border-red-500/40 hover:bg-red-600 text-xs font-semibold hover:text-white transition">
+                        <i data-lucide="external-link" class="w-3 h-3"></i> Mở trên YouTube
+                    </a>
+                `;
+            } else {
+                ytBox.innerHTML = `
+                    <span class="text-[11px] text-slate-500 italic">Đang đồng bộ YouTube</span>
+                `;
+            }
+
+            // Dialogue Cues
+            const cuesBox = document.getElementById('modal-dialogue-cues');
+            cuesBox.innerHTML = v.dialogue_cues.map(c => `
+                <div onclick="copyText('${c.replace(/'/g, "\\'")}')" class="p-2.5 rounded-lg bg-slate-900/80 hover:bg-purple-950/40 border border-slate-800 hover:border-purple-500/50 cursor-pointer text-xs text-slate-200 flex items-center justify-between gap-2 group transition">
+                    <span class="italic">"${c}"</span>
+                    <i data-lucide="copy" class="w-3.5 h-3.5 text-slate-500 group-hover:text-purple-300 shrink-0"></i>
+                </div>
+            `).join('');
+
+            const modal = document.getElementById('video-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+            lucide.createIcons();
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('video-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.getElementById('modal-player-container').innerHTML = '';
+            }, 300);
+        }
+
+        function copyText(txt) {
+            navigator.clipboard.writeText(txt).then(() => {
+                showToast('Đã sao chép câu thoại vào Clipboard!');
+            });
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toast-msg').innerText = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2500);
+        }
+
+        // SCRIPT MATCHER ALGORITHM
+        const SAMPLE_SCRIPTS = {
+            1: `Có bao giờ bạn mở máy tính lên và bị ngập trong hàng tá tab trình duyệt cùng lúc?
+Sự nhiễu loạn thông tin đang âm thầm bào mòn khả năng tập trung sâu của bạn.
+Trước khi bắt đầu, tôi luôn dành 5 phút viết cấu trúc kịch bản ra sổ tay.
+Bắt tay vào gõ những dòng mã đầu tiên của hệ thống tự động hóa.
+Đôi khi, việc dừng lại bước ra ban công nhìn toàn cảnh quan trọng hơn là cứ cắm đầu chạy tiếp.
+Một ly cà phê nhỏ giọt là lời nhắc nhở rằng mọi thành quả lớn đều bắt đầu từ sự tích lũy kiên nhẫn.`,
+            2: `Mỗi sáng thức dậy bằng một thói quen nhỏ giúp tái nạp 100% năng lượng.
+Tôi tự tay thái lát và ép một cốc nước cam tươi mát lành.
+Cầm vô lăng lái xe đến phòng tập rèn luyện kỷ luật thân thể trước giờ làm việc.
+Khi bước vào trạng thái dòng chảy Deep Work, thời gian dường như dừng lại.
+Bí quyết để duy trì phong độ đỉnh cao là cân bằng giữa hiệu suất cao và sự thư giãn chủ động.`,
+            3: `Khi tôi đứng lớp chia sẻ cho hàng trăm bạn sinh viên tại FPT về kỹ thuật làm video ngắn.
+Sai lầm lớn nhất của các bạn là dựng phim bị giật cục và thiếu điểm nối vô hình.
+Chỉ cần một phím tắt duy nhất phím B trên bàn phím, toàn bộ nhịp điệu video sẽ thay đổi hoàn toàn.
+Nhìn vào dòng Timeline này, bạn sẽ thấy cách tôi sắp xếp từng lớp âm thanh và hình ảnh.
+Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay.`
+        };
+
+        function loadSampleScript(idx) {
+            document.getElementById('script-input').value = SAMPLE_SCRIPTS[idx] || '';
+            analyzeAndMatchScript();
+        }
+
+        function clearScript() {
+            document.getElementById('script-input').value = '';
+            document.getElementById('script-results-container').innerHTML = '';
+        }
+
+        function analyzeAndMatchScript() {
+            const text = document.getElementById('script-input').value.trim();
+            if (!text) {
+                showToast('Vui lòng dán nội dung kịch bản thoại vào ô nhập!');
+                return;
+            }
+
+            // Split into sentences / paragraphs
+            const rawLines = text.split(/\n+|(?<=[.!?])\s+/).map(l => l.trim()).filter(l => l.length > 5);
+            if (rawLines.length === 0) return;
+
+            const resultsContainer = document.getElementById('script-results-container');
+            
+            const matchedStoryboard = rawLines.map((line, lineIdx) => {
+                const lineLower = line.toLowerCase();
+                
+                // Score all 90 videos against this line
+                let bestMatch = null;
+                let maxScore = -1;
+
+                MASTER_DATA.videos.forEach(v => {
+                    let score = 0;
+                    // keyword hits
+                    v.keywords.forEach(kw => {
+                        if (lineLower.includes(kw.toLowerCase())) score += 5;
+                    });
+                    // dialogue cue hits
+                    v.dialogue_cues.forEach(cue => {
+                        const words = cue.toLowerCase().split(/\s+/);
+                        words.forEach(w => {
+                            if (w.length > 3 && lineLower.includes(w)) score += 2;
+                        });
+                    });
+                    // category specific heuristics
+                    if ((lineLower.includes('ban công') || lineLower.includes('dừng lại') || lineLower.includes('khoảng lặng')) && v.category_id === 'negative_space') score += 10;
+                    if ((lineLower.includes('nước cam') || lineLower.includes('thái cam') || lineLower.includes('vắt cam')) && v.keywords.includes('nước cam')) score += 12;
+                    if ((lineLower.includes('cà phê') || lineLower.includes('nhỏ giọt') || lineLower.includes('thời gian')) && v.keywords.includes('cà phê')) score += 12;
+                    if ((lineLower.includes('gõ phím') || lineLower.includes('laptop') || lineLower.includes('deep work') || lineLower.includes('mã')) && v.keywords.includes('gõ phím')) score += 10;
+                    if ((lineLower.includes('sổ') || lineLower.includes('viết') || lineLower.includes('ghi chép')) && v.keywords.includes('viết sổ')) score += 10;
+                    if ((lineLower.includes('fpt') || lineLower.includes('sinh viên') || lineLower.includes('đứng lớp')) && v.keywords.includes('fpt')) score += 12;
+                    if ((lineLower.includes('phím b') || lineLower.includes('chuyển cảnh') || lineLower.includes('timeline') || lineLower.includes('dựng')) && v.keywords.includes('chuyển cảnh')) score += 12;
+                    if ((lineLower.includes('tập') || lineLower.includes('lái xe') || lineLower.includes('gym')) && v.keywords.includes('tập gym')) score += 12;
+                    if ((lineLower.includes('quá tải') || lineLower.includes('nhiễu loạn') || lineLower.includes('stress') || lineLower.includes('bế tắc')) && v.keywords.includes('quá tải')) score += 12;
+
+                    if (score > maxScore) {
+                        maxScore = score;
+                        bestMatch = v;
+                    }
+                });
+
+                // fallback default if no specific keywords matched
+                if (!bestMatch || maxScore <= 0) {
+                    const fallbackCategories = ['cutaway', 'sequence', 'in_situ', 'metaphor'];
+                    const chosenCat = fallbackCategories[lineIdx % fallbackCategories.length];
+                    bestMatch = MASTER_DATA.videos.find(v => v.category_id === chosenCat) || MASTER_DATA.videos[0];
+                }
+
+                return {
+                    beatIndex: lineIdx + 1,
+                    sentence: line,
+                    video: bestMatch,
+                    score: maxScore
+                };
+            });
+
+            // Render Storyboard breakdown
+            resultsContainer.innerHTML = `
+                <div class="glass p-6 rounded-2xl border border-slate-800 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-800 pb-4">
+                        <div>
+                            <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Kết Quả Phân Tích Kịch Bản</div>
+                            <h3 class="text-xl font-black text-white mt-0.5">Bảng Phân Cảnh B-Roll Chi Tiết (${matchedStoryboard.length} Beats)</h3>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="copyStoryboardShotlist()" class="px-4 py-2 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold flex items-center gap-1.5 shadow-lg shadow-purple-500/20 transition">
+                                <i data-lucide="copy" class="w-3.5 h-3.5"></i> Sao Chép Shotlist Dựng Phim
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4">
+                        ${matchedStoryboard.map(item => `
+                            <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800 hover:border-purple-500/40 transition flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+                                <div class="flex items-start gap-3.5 flex-1 min-w-0">
+                                    <div class="w-8 h-8 rounded-full bg-purple-600/30 border border-purple-500/50 text-purple-300 font-bold flex items-center justify-center text-xs shrink-0 mt-0.5 font-mono">
+                                        ${item.beatIndex}
+                                    </div>
+                                    <div class="space-y-1 min-w-0">
+                                        <div class="text-sm font-semibold text-white">
+                                            "${item.sentence}"
+                                        </div>
+                                        <div class="flex flex-wrap items-center gap-2 text-xs">
+                                            <span class="px-2 py-0.5 rounded badge-${item.video.category_id} font-bold text-[10px]">
+                                                ${item.video.category_icon} ${item.video.category_name}
+                                            </span>
+                                            <span class="text-slate-400 text-[11px]">${item.video.shot_type}</span>
+                                            <span class="text-slate-500">•</span>
+                                            <span class="text-slate-400 text-[11px]">${item.video.location}</span>
+                                        </div>
+                                        <div class="text-[11px] text-purple-300/80 italic">
+                                            💡 Đạo diễn: ${item.video.director_note}
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Recommended Video Thumbnail / Demo Button -->
+                                <div class="flex items-center gap-3 shrink-0 self-end md:self-center">
+                                    <div class="w-24 h-16 bg-slate-950 rounded-lg overflow-hidden relative cursor-pointer group" onclick="openModal(${item.video.id})">
+                                        <img src="broll_thumbnails/${item.video.thumbnail}" class="w-full h-full object-cover group-hover:scale-110 transition" onerror="this.src='https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=200'">
+                                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+                                            <i data-lucide="play" class="w-4 h-4 text-white fill-current"></i>
+                                        </div>
+                                        <span class="absolute bottom-1 right-1 bg-black/80 text-[8px] font-mono text-white px-1 rounded">${item.video.duration}</span>
+                                    </div>
+                                    <button onclick="openModal(${item.video.id})" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600 text-xs font-semibold text-white transition">
+                                        Xem Demo
+                                    </button>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+            window.latestStoryboard = matchedStoryboard;
+            lucide.createIcons();
+        }
+
+        function copyStoryboardShotlist() {
+            if (!window.latestStoryboard) return;
+            const text = window.latestStoryboard.map(b => 
+                `BEAT ${b.beatIndex}: "${b.sentence}"
+  -> B-ROLL: [${b.video.category_name}] ${b.video.title}
+  -> FILE: ${b.video.filename} (${b.video.duration})
+  -> GÓC MÁY: ${b.video.shot_type} | BỐI CẢNH: ${b.video.location}
+  -> LINK DEMO: ${b.video.video_id ? 'https://www.youtube.com/watch?v=' + b.video.video_id : 'Cục bộ'}
+`
+            ).join('
+');
+
+            navigator.clipboard.writeText(text).then(() => {
+                showToast('Đã sao chép toàn bộ Shotlist phân cảnh B-Roll!');
+            });
+        }
+    </script>
+</body>
+</html>
