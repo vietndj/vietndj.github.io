@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Kịch Bản Voice-Over Thực Chiến - Góc Phòng & Ban Công</title>
+  <style>
+    :root {
+      --bg: #0F172A;
+      --card-bg: #1E293B;
+      --card-border: #334155;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --accent: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --badge-bg: #0369A1;
+      --highlight: #F59E0B;
+      --table-header: #0F172A;
+      --table-stripe: #1E293B;
+      --table-hover: #334155;
+      --border-subtle: #475569;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 32px 20px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    .rule-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .rule-item {
+      flex: 1;
+      min-width: 240px;
+    }
+    .rule-item strong {
+      color: var(--accent);
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .rule-item span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .script-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+    }
+    .script-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .script-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #FFFFFF;
+    }
+    .script-meta {
+      display: flex;
+      gap: 12px;
+    }
+    .meta-tag {
+      background: #334155;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: #CBD5E1;
+      font-weight: 500;
+    }
+    .meta-tag.highlight {
+      background: var(--accent);
+      color: #0F172A;
+      font-weight: 700;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      font-size: 14px;
+    }
+    th, td {
+      padding: 14px 16px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+    th {
+      background-color: var(--table-header);
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+    }
+    tr:hover {
+      background-color: var(--table-hover);
+    }
+    .time-col {
+      white-space: nowrap;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 13px;
+      width: 110px;
+    }
+    .shot-col {
+      width: 220px;
+    }
+    .shot-badge {
+      display: inline-block;
+      background: #0284C7;
+      color: #FFF;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .shot-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .dialogue-col {
+      color: #F1F5F9;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+    .dialogue-text {
+      color: #FDE047;
+      font-weight: 600;
+      font-style: italic;
+    }
+    .word-count {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-left: 6px;
+      font-style: normal;
+    }
+    .timing-col {
+      width: 180px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    .timing-item {
+      margin-bottom: 4px;
+    }
+    .timing-item strong {
+      color: #E2E8F0;
+    }
+    .footer-tips {
+      background: #0F172A;
+      border: 1px solid var(--card-border);
+      padding: 20px;
+      border-radius: 8px;
+      margin-top: 32px;
+    }
+    .footer-tips h3 {
+      color: var(--highlight);
+      font-size: 16px;
+      margin-bottom: 12px;
+    }
+    .footer-tips ol {
+      padding-left: 20px;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+    .footer-tips li {
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-badge">🎬 Shooting Script & Timeline Breakdown</div>
+      <h1>Kịch Bản Voice-Over Thực Chiến (Góc Phòng & Ban Công)</h1>
+      <p class="subtitle">Bối cảnh: Sàn gỗ phòng ngủ, cửa lùa kính đen, chậu Monstera & ban công xanh mát</p>
+    </header>
+
+    <div class="rule-box">
+      <div class="rule-item">
+        <strong>⏱ Thời lượng mỗi cảnh:</strong>
+        <span>Dài 5.5s - 7.0s (Quay tĩnh, đủ nhịp thở mắt)</span>
+      </div>
+      <div class="rule-item">
+        <strong>🎙 Tốc độ đọc tự nhiên:</strong>
+        <span>1 câu = 6 đến 11 từ (Đọc thong thả trong 2.5s - 3.5s)</span>
+      </div>
+      <div class="rule-item">
+        <strong>🌿 Khoảng lặng (Foley Sound):</strong>
+        <span>Chừa 2.5s - 3.5s cho tiếng kéo cửa kính, ASMR lá cây</span>
+      </div>
+    </div>
+
+    <!-- KỊCH BẢN 1 -->
+    <div class="script-section">
+      <div class="script-header">
+        <div class="script-title">Kịch Bản 1: "Góc Chữa Lành Khi Bí Ý Tưởng"</div>
+        <div class="script-meta">
+          <span class="meta-tag">Tone: Rủ rỉ, trầm ấm</span>
+          <span class="meta-tag">5 Cảnh</span>
+          <span class="meta-tag highlight">32 Giây / 48 Từ</span>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Cỡ cảnh & Vị trí</th>
+            <th>Thao tác hình ảnh (Action Cut)</th>
+            <th>Lời thoại Voice-over</th>
+            <th>Nhịp đọc & Âm thanh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-col">0.0 - 6.5s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Trung toàn (Medium Wide)</span>
+              <div class="shot-desc">Góc thấp ngang sàn gỗ, thấy ghế nan và cửa kính.</div>
+            </td>
+            <td>Đang ngồi ghế gỗ nan, buông máy tính xuống cạnh ghế, đứng dậy.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Ngồi máy 4 tiếng mà không ra được chữ nào..."</span>
+              <span class="word-count">(11 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.5s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.0s</strong> (Tiếng thở dài + đặt máy)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">6.5 - 13.0s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cận cảnh (Close-Up)</span>
+              <div class="shot-desc">Góc ngang ngực, bắt tay kéo khóa cửa kính.</div>
+            </td>
+            <td><strong>[Action Cut]:</strong> Tay gạt chốt → Trượt cánh cửa kính mở toang ra ban công.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"...thì tốt nhất là đứng dậy bước ra ngoài."</span>
+              <span class="word-count">(9 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.0s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.5s</strong> (Tiếng cửa kính trượt 'rào' + gió)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">13.0 - 19.5s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cận qua kẽ lá (Dirty Shot)</span>
+              <div class="shot-desc">Camera đặt sau lá Monstera, lấy nét ra ban công.</div>
+            </td>
+            <td>Bước chân ra sàn gỗ ban công, ngồi xuống ghế nan ngoài trời ngắm cây.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Góc ban công này cứu mình không biết bao nhiêu lần."</span>
+              <span class="word-count">(10 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.2s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.3s</strong> (Tiếng bước chân sàn gỗ)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">19.5 - 26.0s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cực cận (Macro)</span>
+              <div class="shot-desc">Dí sát máy vào chậu đá mài và phiến lá xanh.</div>
+            </td>
+            <td>Chạm nhẹ vào gân lá Monstera → Cầm bình xịt nước phun sương lên lá.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Nhìn màu xanh vài phút, tự nhiên đầu óc nó dịu lại."</span>
+              <span class="word-count">(11 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.5s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.0s</strong> (Tiếng xịt nước phì phì ASMR)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">26.0 - 32.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Toàn cảnh kết (Wide)</span>
+              <div class="shot-desc">Từ ban công nhìn ngược vào phòng qua cửa kính.</div>
+            </td>
+            <td>Cầm cốc nước bước ngược vào phòng, kéo hờ cánh cửa kính lại.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Quay lại bàn làm việc thôi. Thông não rồi!"</span>
+              <span class="word-count">(7 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>2.2s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.8s</strong> (Tiếng khép cửa + Nhạc kết)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KỊCH BẢN 2 -->
+    <div class="script-section">
+      <div class="script-header">
+        <div class="script-title">Kịch Bản 2: "Set Góc Quay Triệu View Tại Nhà"</div>
+        <div class="script-meta">
+          <span class="meta-tag">Tone: Bốp chát, chia sẻ nghề</span>
+          <span class="meta-tag">4 Cảnh</span>
+          <span class="meta-tag highlight">26 Giây / 41 Từ</span>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Cỡ cảnh & Vị trí</th>
+            <th>Thao tác hình ảnh (Action Cut)</th>
+            <th>Lời thoại Voice-over</th>
+            <th>Nhịp đọc & Âm thanh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-col">0.0 - 6.5s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Toàn cảnh (Wide)</span>
+              <div class="shot-desc">Góc cửa phòng nhìn thẳng ra ban công xanh.</div>
+            </td>
+            <td>Kéo rèm cửa sang một bên, ánh sáng tràn vào phòng khách.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Không cần thuê studio tiền triệu, tận dụng ngay góc cây này:"</span>
+              <span class="word-count">(11 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.5s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.0s</strong> (Tiếng rèm vải rào nhẹ)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">6.5 - 13.0s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cận cảnh (Close-Up)</span>
+              <div class="shot-desc">Chân máy sát chậu Monstera chắn 1/3 khung hình.</div>
+            </td>
+            <td>Ngồi xuống ghế băng gỗ, mở laptop lên đùi, lá xanh rung rinh tiền cảnh.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Mẹo 1: Dùng lá cây làm tiền cảnh để khung hình có chiều sâu."</span>
+              <span class="word-count">(13 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>4.0s</strong></div>
+              <div class="timing-item">• Lặng: <strong>2.5s</strong> (Tiếng mở nắp máy 'cạch')</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">13.0 - 19.5s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Trung cận (MCU)</span>
+              <div class="shot-desc">Góc nghiêng 45° từ ngoài ban công quay vào mặt.</div>
+            </td>
+            <td>Ngồi nhìn màn hình, ánh sáng tự nhiên từ cửa kính rọi xiên một bên mặt.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Mẹo 2: Mở toang cửa lấy ánh sáng xiên tự nhiên."</span>
+              <span class="word-count">(9 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.0s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.5s</strong> (Tiếng gõ phím lách cách)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">19.5 - 26.0s<br><small>(6.5 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cực cận (Macro)</span>
+              <div class="shot-desc">Góc thấp ngang sàn gỗ, thấy chân và chậu cây.</div>
+            </td>
+            <td>Nhấp ngụm cafe, gật đầu tự tin nhìn vào máy.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Thử ngay góc này xem video có khác bọt không nhé!"</span>
+              <span class="word-count">(10 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.2s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.3s</strong> (Tiếng đặt cốc + Nhạc dồn)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- KỊCH BẢN 3 -->
+    <div class="script-section">
+      <div class="script-header">
+        <div class="script-title">Kịch Bản 3: "Buổi Sáng 15 Phút"</div>
+        <div class="script-meta">
+          <span class="meta-tag">Tone: Nhẹ nhàng, năng lượng sớm</span>
+          <span class="meta-tag">5 Cảnh</span>
+          <span class="meta-tag highlight">30 Giây / 46 Từ</span>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Cỡ cảnh & Vị trí</th>
+            <th>Thao tác hình ảnh (Action Cut)</th>
+            <th>Lời thoại Voice-over</th>
+            <th>Nhịp đọc & Âm thanh</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="time-col">0.0 - 6.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cận cảnh (Close-Up)</span>
+              <div class="shot-desc">Góc cửa kính phản chiếu bóng cây xanh.</div>
+            </td>
+            <td>Tay trượt mở cửa kính, đón gió sớm vào phòng.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Thói quen đầu tiên mỗi sáng trước khi mở máy tính:"</span>
+              <span class="word-count">(10 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.2s</strong></div>
+              <div class="timing-item">• Lặng: <strong>2.8s</strong> (Tiếng trượt cửa kính)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">6.0 - 12.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Toàn cảnh (Wide)</span>
+              <div class="shot-desc">Từ trong nhà nhìn bao quát giàn cây ban công.</div>
+            </td>
+            <td>Cầm bình nước bước ra, tưới nhẹ từng chậu cây xanh.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Dành đúng 5 phút tưới lại mấy chậu cây ngoài ban công."</span>
+              <span class="word-count">(11 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.5s</strong></div>
+              <div class="timing-item">• Lặng: <strong>2.5s</strong> (Tiếng nước chảy róc rách)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">12.0 - 18.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Cực cận (Macro)</span>
+              <div class="shot-desc">Dí sát ngọn cây nguyệt quế và giọt nước trên lá.</div>
+            </td>
+            <td>Giọt nước đọng trên kẽ lá xanh rơi xuống đất.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Mùi đất ẩm với lá cây làm người ta tỉnh táo cực kỳ."</span>
+              <span class="word-count">(11 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.5s</strong></div>
+              <div class="timing-item">• Lặng: <strong>2.5s</strong> (Tiếng gió xào xạc)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">18.0 - 24.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Trung cận (MCU)</span>
+              <div class="shot-desc">Góc ngoài ghế nan ban công cạnh chậu đá mài.</div>
+            </td>
+            <td>Ngồi nhấp ngụm cafe, nhìn ngắm góc vườn nhỏ.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Không cần vội vã, nạp đủ năng lượng rồi mới làm việc."</span>
+              <span class="word-count">(10 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>3.2s</strong></div>
+              <div class="timing-item">• Lặng: <strong>2.8s</strong> (Tiếng đặt ly lên gỗ)</div>
+            </td>
+          </tr>
+          <tr>
+            <td class="time-col">24.0 - 30.0s<br><small>(6.0 giây)</small></td>
+            <td class="shot-col">
+              <span class="shot-badge">Góc qua vai (OTS)</span>
+              <div class="shot-desc">Từ ban công vào phòng, ngồi xuống ghế mở laptop.</div>
+            </td>
+            <td>Bật máy lên bắt đầu làm việc.</td>
+            <td class="dialogue-col">
+              <span class="dialogue-text">"Chúc anh em một ngày làm việc hiệu quả nhé!"</span>
+              <span class="word-count">(9 từ)</span>
+            </td>
+            <td class="timing-col">
+              <div class="timing-item">• Đọc: <strong>2.8s</strong></div>
+              <div class="timing-item">• Lặng: <strong>3.2s</strong> (Tiếng gõ phím rộn rã kết)</div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="footer-tips">
+      <h3>💡 3 Bước Thực Hành Trên CapCut Mobile (15 Phút Có Video):</h3>
+      <ol>
+        <li><strong>Bước 1 (Quay gom 10 phút):</strong> Đặt camera ở 4 góc tĩnh (sát lá Monstera, góc cửa lùa kính, ngoài ban công, cận tay kéo cửa/xịt nước). Mỗi góc bấm quay 1 shot dài 10s.</li>
+        <li><strong>Bước 2 (Cắt nhịp 3 phút):</strong> Thả footage vào CapCut Mobile, cắt tỉa mỗi cảnh đúng 6.0s - 6.5s.</li>
+        <li><strong>Bước 3 (Thu Voice-to-Picture 2 phút):</strong> Bấm tính năng "Lồng tiếng" (Voiceover) trên CapCut → vừa nhìn preview chạy vừa đọc câu thoại ngắn tương ứng.</li>
+      </ol>
+    </div>
+  </div>
+</body>
+</html>
