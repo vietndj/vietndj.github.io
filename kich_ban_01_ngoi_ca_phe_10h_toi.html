@@ -14,12 +14,12 @@
       --bg-card: #172033;
       --bg-card-hover: #1e2a44;
       --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-accent: #e11d4888;
+      --border-accent: #38bdf888;
       --text-primary: #f8fafc;
       --text-secondary: #94a3b8;
       --text-muted: #64748b;
-      --accent: #e11d48;
-      --accent-glow: #e11d4825;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
       --cyan: #38bdf8;
       --cyan-glow: rgba(56, 189, 248, 0.15);
       --amber: #f59e0b;
@@ -48,7 +48,7 @@
     }
     .brand-group { display: flex; align-items: center; gap: 10px; }
     .brand-badge {
-      background: linear-gradient(135deg, #e11d48, #2563eb);
+      background: linear-gradient(135deg, #0284c7, #2563eb);
       color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
     }
     .header-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
@@ -69,6 +69,31 @@
     .hub-link:hover { background: var(--cyan); color: #000; }
     .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
     
+    /* Original Message Box */
+    .original-message-box {
+      background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;
+    }
+    .orig-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .orig-title-group { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .orig-badge { background: var(--cyan-glow); color: var(--cyan); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--cyan); }
+    .orig-meta { font-size: 12px; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; }
+    .orig-content-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 20px; }
+    @media (max-width: 900px) { .orig-content-grid { grid-template-columns: 1fr; } }
+    .raw-text-panel {
+      background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);
+      padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #e2e8f0; white-space: pre-wrap; line-height: 1.6; max-height: 320px; overflow-y: auto;
+    }
+    .ref-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: all 0.2s ease; }
+    .ref-item:hover { border-color: var(--cyan); transform: translateY(-2px); }
+    .ref-thumb-box { position: relative; width: 100%; aspect-ratio: 16 / 10; min-height: 140px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .ref-thumb-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .ref-label-badge { position: absolute; top: 8px; left: 8px; background: rgba(0,0,0,0.75); color: var(--cyan); border: 1px solid var(--cyan); font-size: 9.5px; font-weight: 700; padding: 2px 6px; border-radius: 4px; z-index: 2; }
+    .ref-caption { padding: 10px 12px; font-size: 11.5px; }
+    .ref-caption strong { color: #fff; display: block; margin-bottom: 3px; font-size: 12px; }
+    .ref-caption span { color: var(--text-muted); font-size: 11px; line-height: 1.4; display: block; }
+
     /* Hero */
     .hero { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; }
     .hero-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -83,7 +108,7 @@
     .metric-value { font-size: 16px; font-weight: 800; color: var(--text-primary); }
     
     /* 3 Tiers Box */
-    .tiers-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-bottom: 28px; }
+    .tiers-box { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin-top: 20px; }
     .tier-card { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); padding: 16px 18px; }
     .tier-card.t1 { border-left: 4px solid #ef4444; }
     .tier-card.t2 { border-left: 4px solid #f59e0b; }
@@ -98,7 +123,7 @@
     .scene-block { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 20px; margin-bottom: 30px; scroll-margin-top: 70px; }
     .scene-header { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle); margin-bottom: 16px; flex-wrap: wrap; }
     .scene-title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-    .scene-num-badge { background: linear-gradient(135deg, var(--accent), #2563eb); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
+    .scene-num-badge { background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff; font-size: 12px; font-weight: 800; padding: 4px 10px; border-radius: 6px; }
     .scene-main-title { font-size: 17px; font-weight: 800; color: #fff; }
     .scene-time-badge { background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; font-family: 'JetBrains Mono', monospace; }
     .scene-intent-box { background: rgba(0, 0, 0, 0.25); border-left: 3px solid var(--accent); padding: 8px 12px; border-radius: 0 6px 6px 0; font-size: 12px; color: var(--text-secondary); margin-bottom: 16px; }
@@ -137,30 +162,134 @@
       font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s;
     }
     .opt-tab-btn.active {
-      background: var(--accent); color: #fff; border-color: var(--accent); box-shadow: 0 0 14px rgba(225, 29, 72, 0.4);
+      background: var(--accent); color: #000; border-color: var(--accent); box-shadow: 0 0 14px rgba(56, 189, 248, 0.4);
     }
     .opt-content { display: none; }
     .opt-content.active { display: grid; }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content {
+      background: var(--bg-card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: var(--radius-lg);
+      max-width: 860px; width: 100%; max-height: 92vh; overflow: hidden; display: flex; gap: 22px; padding: 22px; position: relative;
+    }
+    @media (max-width: 700px) { .lightbox-content { flex-direction: column; overflow-y: auto; } }
+    .lightbox-img-box { flex: 1; max-width: 350px; aspect-ratio: 9 / 16; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img-box img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
+    .lightbox-details { flex: 1.2; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+    .lightbox-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 20px; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; }
+    .lightbox-close:hover { background: #ef4444; border-color: #ef4444; }
   </style>
 </head>
 <body>
   <header class="top-header">
     <div class="brand-group">
       <span class="brand-badge">Bảng Phân Cảnh AI</span>
-      <div class="header-title">🎬 Kịch Bản 01: Ngồi Cà Phê 10h Tối (Style Trà Đá)</div>
+      <div class="header-title">🎬 Kịch Bản 01 • Ngồi Cà Phê 10h Tối (Style Trà Đá)</div>
     </div>
     <div class="header-controls">
       <a href="9_kich_ban_thuc_chien.html" class="hub-link">🏛️ Master Hub 9 Kịch Bản</a>
-      <a href="#scene-1" class="nav-btn">Cảnh 1 (A-Roll)</a>
-      <a href="#scene-2" class="nav-btn">Cảnh 2 (A-Roll)</a>
-      <a href="#scene-3" class="nav-btn">Cảnh 3 (B-Roll)</a>
-      <a href="#scene-4" class="nav-btn">Cảnh 4 (B-Roll)</a>
+      <a href="#orig-msg" class="nav-btn">📩 Kịch Bản Gốc</a>
+      <a href="#scene-1" class="nav-btn">Cảnh 1</a>
+      <a href="#scene-2" class="nav-btn">Cảnh 2</a>
+      <a href="#scene-3" class="nav-btn">Cảnh 3</a>
+      <a href="#scene-4" class="nav-btn">Cảnh 4</a>
       <a href="#scene-5" class="nav-btn">Cảnh 5 (A-Roll Chốt)</a>
       <button class="action-btn" onclick="window.print()">📄 In / PDF</button>
     </div>
   </header>
 
   <div class="container">
+    <!-- KHỐI TIN NHẮN & YÊU CẦU GỐC ĐẦU VÀO -->
+    <section class="original-message-box" id="orig-msg">
+      <div class="orig-header">
+        <div class="orig-title-group">
+          <h2 style="font-size: 16px; font-weight: 800; color: #fff;">📩 Kịch Bản Gốc & Bối Cảnh Thực Chiến</h2>
+          <span class="orig-badge">kich_ban_01_ngoi_ca_phe_10h_toi</span>
+        </div>
+        <div class="orig-meta">
+          <span>📱 Nguồn: <b>Kịch Bản Thực Chiến 01 • Telegram Bot / Chat Input</b></span>
+          <span>⏱️ Đồng bộ: <b>21/08/2026</b></span>
+        </div>
+      </div>
+
+      <div class="orig-content-grid">
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            💬 Kịch bản gốc & Lời thoại nhận được:
+          </div>
+          <div class="raw-text-panel">KỊCH BẢN 01 • NGỒI CÀ PHÊ 10H TỐI
+Tiêu đề: Ngồi Cà Phê 10h Tối Không Dám Về Nhà
+Bối cảnh: Quán cà phê đêm • Chạm vào: Sợ về nhà vì áp lực doanh số tụt dốc, bế tắc cách làm cũ
+
+3 TẦNG SỰ THẬT:
+• Tầng 1 (Đãi bôi): "Đi cà phê thư giãn để lấy lại cảm hứng làm việc."
+• Tầng 2 (Cảm giác thật): "Sợ về nhà nhìn mặt vợ con, doanh số cả tuần nay đứng im."
+• Tầng 3 (Ngượng miệng): "Biết là cách làm cũ sắp chết rồi nhưng sợ không dám thay đổi. Không tự làm video thì vài tháng nữa chỉ có dẹp tiệm."
+
+5 CẢNH QUAY THỰC CHIẾN (VĂN NÓI TRÀ ĐÁ):
+- Cảnh 1 (A-Roll 4s): "10 giờ đêm ở quán cà phê..."
+- Cảnh 2 (A-Roll 4s): "...Người ngoài tưởng mình rảnh rỗi đi chill."
+- Cảnh 3 (B-Roll 5s): "Nhưng thật ra là sợ về nhà. Doanh số tụt, nhân viên chờ lương."
+- Cảnh 4 (B-Roll 4s): "Cứ cắm đầu làm theo cách cũ thì chỉ có đóng cửa."
+- Cảnh 5 (A-Roll Chốt 5s): "Muốn sống thì phải thay đổi. Cầm máy lên quay thôi!" </div>
+        </div>
+
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            🖼️ Bối cảnh tham chiếu (Cloudflare R2):
+          </div>
+          <div class="ref-gallery">
+            
+            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg', 'Ảnh Bối Cảnh Quán Cà Phê Đêm', 'Không gian quán cà phê vắng về đêm, ánh đèn vàng ấm, ly cà phê tan đá và laptop.', '📍 THAM CHIẾU BỐI CẢNH')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 Tham Chiếu</span>
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_01_classroom.jpg" alt="Ảnh Bối Cảnh Quán Cà Phê Đêm" loading="lazy">
+              </div>
+              <div class="ref-caption">
+                <strong>Ảnh Bối Cảnh Quán Cà Phê Đêm</strong>
+                <span>Không gian quán cà phê vắng về đêm, ánh đèn vàng ấm, ly cà phê tan đá và laptop.</span>
+              </div>
+            </div>
+
+            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg', 'Ảnh Nhân Vật Mặc Định (Anh Việt)', 'Anh Việt - Áo khoác/thun tối giản, micro cài áo, thần thái tự nhiên, chân thật.', '📍 THAM CHIẾU BỐI CẢNH')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 Tham Chiếu</span>
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/tu_dot_tien_den_tu_tin_xuat_hien/assets/reference/ref_02_character.jpg" alt="Ảnh Nhân Vật Mặc Định (Anh Việt)" loading="lazy">
+              </div>
+              <div class="ref-caption">
+                <strong>Ảnh Nhân Vật Mặc Định (Anh Việt)</strong>
+                <span>Anh Việt - Áo khoác/thun tối giản, micro cài áo, thần thái tự nhiên, chân thật.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Tầng Sự Thật -->
+      <div class="tiers-box">
+        
+          <div class="tier-card t1">
+            <div class="tier-card-head">Tầng 1: Đãi bôi</div>
+            <div class="tier-card-content">"Đi cà phê thư giãn để lấy lại cảm hứng làm việc."</div>
+          </div>
+
+          <div class="tier-card t2">
+            <div class="tier-card-head">Tầng 2: Cảm giác thật</div>
+            <div class="tier-card-content">"Sợ về nhà nhìn mặt vợ con, doanh số cả tuần nay đứng im."</div>
+          </div>
+
+          <div class="tier-card t3">
+            <div class="tier-card-head">Tầng 3: Ngượng miệng</div>
+            <div class="tier-card-content">"Biết là cách làm cũ sắp chết rồi nhưng sợ không dám thay đổi. Không tự làm video thì vài tháng nữa chỉ có dẹp tiệm."</div>
+          </div>
+      </div>
+    </section>
+
     <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-tags">
@@ -170,28 +299,12 @@
         <span class="tag tag-cyan">🏷️ Văn Nói Trà Đá Cực Gọn</span>
       </div>
       <h1>Kịch Bản 01 • Ngồi Cà Phê 10h Tối</h1>
-      <p style="color: var(--text-secondary); font-size: 13px;">Chạm vào: Áp lực FOMO & Kiệt sức cày cuốc đêm • Thoại băm nhỏ 5-12 từ, cỡ cảnh & góc máy biến chuyển rõ rệt qua từng beat.</p>
+      <p style="color: var(--text-secondary); font-size: 13px;">Chạm vào: Sợ về nhà vì doanh số tụt, nhân viên chờ lương • Bối cảnh quán cà phê đêm</p>
       <div class="metrics-bar">
         <div><span class="metric-label">Tổng Thời Lượng</span><div class="metric-value">20 - 22 Giây</div></div>
         <div><span class="metric-label">Số Cảnh Chính</span><div class="metric-value">5 Cảnh (A-Roll + B-Roll)</div></div>
-        <div><span class="metric-label">Độ Dài Câu Thoại</span><div class="metric-value">7 - 13 Từ / Cảnh</div></div>
+        <div><span class="metric-label">Độ Dài Câu Thoại</span><div class="metric-value">5 - 12 Từ / Cảnh</div></div>
         <div><span class="metric-label">A-Roll Chốt Cuối</span><div class="metric-value">2 Phương Án Tùy Chọn</div></div>
-      </div>
-    </section>
-
-    <!-- 3 TIERS OF TRUTH -->
-    <section class="tiers-box">
-      <div class="tier-card t1">
-        <div class="tier-card-head">❌ Tầng 1: Đãi bôi</div>
-        <div class="tier-card-content">"Ra cà phê đêm đổi gió cho dễ tập trung làm việc."</div>
-      </div>
-      <div class="tier-card t2">
-        <div class="tier-card-head">⚠️ Tầng 2: Cảm giác thật</div>
-        <div class="tier-card-content">"Ở nhà nằm một chỗ thấy tội lỗi, ra quán ngồi ngáp vặt cũng đỡ cắn rứt."</div>
-      </div>
-      <div class="tier-card t3">
-        <div class="tier-card-head">✅ Tầng 3: Ngượng miệng</div>
-        <div class="tier-card-content">"Mệt lả người rồi nhưng không dám nghỉ, sợ dừng lại một cái là bạn bè nó vượt mặt hết."</div>
       </div>
     </section>
 
@@ -200,430 +313,479 @@
     <section class="scene-block" id="scene-1">
       <div class="scene-header">
         <div class="scene-title-group">
-          <span class="scene-num-badge">CẢNH 1</span>
-          <h3 class="scene-main-title">A-Roll 1 (Selfie): Cà Phê Đêm 10h</h3>
-          <span class="tag tag-cyan">Cầm Máy Selfie Vlog</span>
+          <span class="scene-num-badge">Cảnh 1 • A-Roll</span>
+          <h2 class="scene-main-title">Selfie Mở Đầu Tại Quán Cà Phê Đêm</h2>
         </div>
-        <span class="scene-time-badge">⏱️ 00:00 - 00:03 (3s)</span>
+        <span class="scene-time-badge">⏱️ 00:00 - 00:04 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Cầm máy selfie góc quán cafe đêm, cười trừ tự sự để hút người xem vào cảm xúc bế tắc.</div>
+      <div class="scene-intent-box">🎬 <b>Ý đồ phân cảnh:</b> Mở đầu tự nhiên bằng cú máy cầm tay selfie góc cao, thể hiện khung cảnh quán cà phê đêm vắng lặng.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
-            <div class="voice-text">"10h đêm rồi... ngồi đây không phải vì chăm đâu anh em ạ."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase;">Lời Thoại Thực Chiến (Trà Đá Style):</div>
+            <div class="voice-text">"10 giờ đêm ở quán cà phê..."</div>
           </div>
         </div>
-        <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg" alt="1.1">
+        
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg', 'Cảnh 1 • 1.1 Đầu cảnh', 'Cầm máy selfie, phía sau là không gian quán cà phê vắng về đêm.', 'A-Roll')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg" alt="1.1 Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">1.1 Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Toàn cảnh góc cao 30°</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Toàn cảnh góc cao 30°</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Cầm máy selfie, phía sau là không gian quán cà phê vắng về đêm.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc cao 30° selfie, ánh sáng đèn vàng ấm.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.1</span><span class="tag tag-cyan">Góc rộng mở màn</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Selfie góc cao 30°, hậu cảnh quán cafe</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Lia nhẹ handheld</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt 1/3 phải, cười trừ tự giễu</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mở màn chân thực, phá vỡ vỏ bọc chăm chỉ.</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat2.jpg', 'Cảnh 1 • 1.2 Cao trào', 'Đặc tả ly cà phê đá tan gần hết trên bàn gỗ tối màu.', 'A-Roll')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat2.jpg" alt="1.2 Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">1.2 Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cực cận ly cà phê</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cực cận ly cà phê</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Đặc tả ly cà phê đá tan gần hết trên bàn gỗ tối màu.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Cận cảnh macro 45°, đá tan giọt nước chảy quanh ly.</div>
+            </div>
           </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat2.jpg" alt="1.2">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat3.jpg', 'Cảnh 1 • 1.3 Chuyển cảnh', 'Hạ điện thoại xuống mặt bàn gỗ cạnh laptop đang mở.', 'A-Roll')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat3.jpg" alt="1.3 Chuyển cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">1.3 Chuyển cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Góc ngang mặt bàn</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Góc ngang mặt bàn</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Hạ điện thoại xuống mặt bàn gỗ cạnh laptop đang mở.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Ngang mặt bàn, lệch trục 40° so với beat 1.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.2</span><span class="tag tag-cyan">Cực cận ly cafe</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Đặc tả cực cận 60° (Extreme Close-Up)</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in dồn vào ly cafe tan đá</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ống hút khuấy nhẹ trong ly nước đá tan</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhấn mạnh thời gian ngồi lâu và sự bồn chồn.</div>
-          </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat3.jpg" alt="1.3">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 1.3</span><span class="tag tag-cyan">Cận cảnh ngắt nhịp</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang mặt bàn (Desk level)</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Hạ điện thoại xuống mặt bàn</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tay giữ chắc cạnh bàn cafe</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mồi nối hạ máy chuẩn bị Cảnh 2.</div>
-          </div>
-        </div>
       </div>
     </section>
+
     <!-- SCENE 2 -->
     <section class="scene-block" id="scene-2">
       <div class="scene-header">
         <div class="scene-title-group">
-          <span class="scene-num-badge">CẢNH 2</span>
-          <h3 class="scene-main-title">A-Roll 2 (Tại Bàn): Kể Thật Cảm Xúc</h3>
-          <span class="tag tag-cyan">Trung Cận Tại Bàn</span>
+          <span class="scene-num-badge">Cảnh 2 • A-Roll</span>
+          <h2 class="scene-main-title">Bàn Cà Phê & Cảm Giác Lạc Lõng</h2>
         </div>
-        <span class="scene-time-badge">⏱️ 00:03 - 00:07 (4s)</span>
+        <span class="scene-time-badge">⏱️ 00:04 - 00:08 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Đặt máy xuống bàn cafe, mặt trầm lại kể chuyện thật lòng như đang tâm sự.</div>
+      <div class="scene-intent-box">🎬 <b>Ý đồ phân cảnh:</b> Thoại tiếp nối chuyển động đặt máy, chuyển sang góc nhìn thứ ba ngồi trầm ngâm bên laptop.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
-            <div class="voice-text">"Ở nhà nằm lướt điện thoại thì thấy tội lỗi, ra đây nhìn vào máy tính cho đỡ bất an."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase;">Lời Thoại Thực Chiến (Trà Đá Style):</div>
+            <div class="voice-text">"...Người ngoài tưởng mình rảnh rỗi đi chill."</div>
           </div>
         </div>
-        <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat1.jpg" alt="2.1">
+        
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat1.jpg', 'Cảnh 2 • 2.1 Đầu cảnh', 'Ngồi một mình góc quán cà phê đêm, không gian vắng lặng.', 'A-Roll')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat1.jpg" alt="2.1 Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">2.1 Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Toàn cảnh sau lưng</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Toàn cảnh sau lưng</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Ngồi một mình góc quán cà phê đêm, không gian vắng lặng.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc rộng sau lưng 45°, ánh đèn đường hắt qua kính.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.1</span><span class="tag tag-cyan">Toàn cảnh quán</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc cao sau lưng bao quát góc quán</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Trôi nhẹ ngang</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Nhân vật ngồi trước laptop sáng đèn</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Không gian quán cafe đêm vắng lặng.</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat2.jpg', 'Cảnh 2 • 2.2 Cao trào', 'Nhìn chằm chằm vào biểu đồ doanh số đỏ lòm trên laptop.', 'A-Roll')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat2.jpg" alt="2.2 Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">2.2 Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Qua vai nhìn màn hình</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Qua vai nhìn màn hình</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Nhìn chằm chằm vào biểu đồ doanh số đỏ lòm trên laptop.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc qua vai trái 30°, chiều sâu trường ảnh nông.</div>
+            </div>
           </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat2.jpg" alt="2.2">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat3.jpg', 'Cảnh 2 • 2.3 Chuyển cảnh', 'Tay cầm ly cà phê lắc nhẹ, đá va vào thành cốc.', 'A-Roll')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat3.jpg" alt="2.3 Chuyển cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">2.3 Chuyển cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cận cảnh cầm ly cà phê</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cận cảnh cầm ly cà phê</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Tay cầm ly cà phê lắc nhẹ, đá va vào thành cốc.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc ngang tầm tay, chuẩn bị cắt sang màn hình.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.2</span><span class="tag tag-cyan">Trung cận qua vai</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc qua vai trái 30°, zoom màn hình</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld nhịp thở nhẹ</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Bờ vai chiếm 1/3, ngón tay gõ vài phím</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Vẻ ngoài bận rộn đối lập với sự trống rỗng.</div>
-          </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene2_beat3.jpg" alt="2.3">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 2.3</span><span class="tag tag-cyan">Cận cảnh xoa trán</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc thấp ngang mặt bàn</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tay đưa lên xoa trán mệt mỏi</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Động tác xoa trán mồi chuyển B-Roll 3</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chuyển mượt sang cảm xúc kiệt sức.</div>
-          </div>
-        </div>
       </div>
     </section>
+
     <!-- SCENE 3 -->
     <section class="scene-block" id="scene-3">
       <div class="scene-header">
         <div class="scene-title-group">
-          <span class="scene-num-badge">CẢNH 3</span>
-          <h3 class="scene-main-title">B-Roll 1: Kiệt Sức Nhưng Không Dám Nghỉ</h3>
-          <span class="tag tag-cyan">Đặc Tả Mệt Mỏi</span>
+          <span class="scene-num-badge">Cảnh 3 • B-Roll</span>
+          <h2 class="scene-main-title">Màn Hình Doanh Số Đứng Im & Nỗi Bất An</h2>
         </div>
-        <span class="scene-time-badge">⏱️ 00:07 - 00:12 (5s)</span>
+        <span class="scene-time-badge">⏱️ 00:08 - 00:13 (5s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> B-Roll chèn cảnh bàn tay xoa trán và màn hình laptop sáng giữa đêm.</div>
+      <div class="scene-intent-box">🎬 <b>Ý đồ phân cảnh:</b> B-Roll đặc tả số liệu sụt giảm trên màn hình và phản ứng siết chặt tay bế tắc.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
-            <div class="voice-text">"Thấy bạn bè kiếm tiền kinh quá, mình mệt lả rồi mà không dám ngủ."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase;">Lời Thoại Thực Chiến (Trà Đá Style):</div>
+            <div class="voice-text">"Nhưng thật ra là sợ về nhà. Doanh số tụt, nhân viên chờ lương."</div>
           </div>
         </div>
-        <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat1.jpg" alt="3.1">
+        
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat1.jpg', 'Cảnh 3 • 3.1 Đầu cảnh', 'Góc nhìn thẳng màn hình trang quản trị đơn hàng đỏ lòm.', 'B-Roll')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat1.jpg" alt="3.1 Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">3.1 Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">POV Màn hình laptop</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">POV Màn hình laptop</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Góc nhìn thẳng màn hình trang quản trị đơn hàng đỏ lòm.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc nhìn trực diện 90°, màn hình sáng trong đêm.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.1</span><span class="tag tag-cyan">Cận tay xoa trán</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện 90° vào gương mặt mệt mỏi</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Đôi mắt nhắm nghiền xoa trán</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Sức nặng của áp lực đồng trang lứa (FOMO).</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat2.jpg', 'Cảnh 3 • 3.2 Cao trào', 'Ngón tay lướt cuộn trang liên tục nhưng số đơn vẫn là 0.', 'B-Roll')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat2.jpg" alt="3.2 Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">3.2 Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cực cận ngón tay lướt chuột</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cực cận ngón tay lướt chuột</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Ngón tay lướt cuộn trang liên tục nhưng số đơn vẫn là 0.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Cực cận macro ngón tay trên trackpad/chuột.</div>
+            </div>
           </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat2.jpg" alt="3.2">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat3.jpg', 'Cảnh 3 • 3.3 Chuyển cảnh', 'Bàn tay siết chặt đặt trên mặt bàn gỗ cạnh laptop.', 'B-Roll')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat3.jpg" alt="3.3 Chuyển cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">3.3 Chuyển cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Nắm tay siết chặt</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Nắm tay siết chặt</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Bàn tay siết chặt đặt trên mặt bàn gỗ cạnh laptop.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc nghiêng thấp 30°, thể hiện áp lực tâm lý dồn nén.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.2</span><span class="tag tag-cyan">Cực cận màn hình</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Cực cận zoom 165% vào dòng code/task</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Màn hình sáng rực trong bóng tối</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Con trỏ chuột nhấp nháy đứng yên</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Khắc họa sự bế tắc, cạn kiệt ý tưởng.</div>
-          </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene3_beat3.jpg" alt="3.3">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 3.3</span><span class="tag tag-cyan">Nắm chặt cốc nước</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang mặt bàn gỗ</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Bàn tay nắm chặt cốc nước lạnh</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Cú siết tay dồn nén cảm xúc</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chuẩn bị hướng mắt nhìn ra cửa kính Cảnh 4.</div>
-          </div>
-        </div>
       </div>
     </section>
+
     <!-- SCENE 4 -->
     <section class="scene-block" id="scene-4">
       <div class="scene-header">
         <div class="scene-title-group">
-          <span class="scene-num-badge">CẢNH 4</span>
-          <h3 class="scene-main-title">B-Roll 2: Nỗi Sợ Bị Bỏ Lại Phía Sau</h3>
-          <span class="tag tag-cyan">Góc Nghiêng Cửa Kính</span>
+          <span class="scene-num-badge">Cảnh 4 • B-Roll</span>
+          <h2 class="scene-main-title">Nhìn Ra Phố Đêm & Quyết Định Thay Đổi</h2>
         </div>
-        <span class="scene-time-badge">⏱️ 00:12 - 00:16 (4s)</span>
+        <span class="scene-time-badge">⏱️ 00:13 - 00:17 (4s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Góc nghiêng suy tư bên cửa kính đêm nhìn ánh đèn đường phố.</div>
+      <div class="scene-intent-box">🎬 <b>Ý đồ phân cảnh:</b> Góc nghiêng suy tư bên cửa sổ kính phản chiếu ánh đèn đường, ánh mắt thông suốt chuyển sang hành động.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 700; text-transform: uppercase;">Lời Thoại Trà Đá:</div>
-            <div class="voice-text">"Sợ chỉ cần dừng lại một ngày là bị bỏ lại phía sau."</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase;">Lời Thoại Thực Chiến (Trà Đá Style):</div>
+            <div class="voice-text">"Cứ cắm đầu làm theo cách cũ thì chỉ có đóng cửa."</div>
           </div>
         </div>
-        <span class="tag tag-cyan">J-Cut -0.4s</span>
       </div>
       <div class="beats-grid">
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 Đầu cảnh (In-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat1.jpg" alt="4.1">
+        
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat1.jpg', 'Cảnh 4 • 4.1 Đầu cảnh', 'Ngồi tựa cằm nhìn ra đường phố đêm qua cửa kính lớn.', 'B-Roll')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat1.jpg" alt="4.1 Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">4.1 Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Góc nghiêng 90° cửa kính</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Góc nghiêng 90° cửa kính</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Ngồi tựa cằm nhìn ra đường phố đêm qua cửa kính lớn.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc ngang 90°, ánh đèn xe cộ lướt qua kính.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.1</span><span class="tag tag-cyan">Góc nghiêng cửa kính</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 90° phản chiếu ánh đèn</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Arc shot xoay nhẹ</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tựa cằm nhìn ra phố đêm vắng</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cảm giác cô độc và nỗi sợ tụt hậu.</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat2.jpg', 'Cảnh 4 • 4.2 Cao trào', 'Đặc tả ánh mắt kiên định, dứt khoát không thể tiếp tục cách cũ.', 'B-Roll')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat2.jpg" alt="4.2 Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">4.2 Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cực cận ánh mắt</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cực cận ánh mắt</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Đặc tả ánh mắt kiên định, dứt khoát không thể tiếp tục cách cũ.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Cận chân dung ánh mắt phản chiếu ánh sáng đêm.</div>
+            </div>
           </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-main">🔥 Chi tiết (Main Action)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat2.jpg" alt="4.2">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat3.jpg', 'Cảnh 4 • 4.3 Chuyển cảnh', 'Quay đầu dứt khoát về phía ống kính máy quay.', 'B-Roll')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat3.jpg" alt="4.3 Chuyển cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">4.3 Chuyển cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Quay đầu về camera</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Quay đầu về camera</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Quay đầu dứt khoát về phía ống kính máy quay.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc ba phần tư 45°, động tác xoay người dứt khoát.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.2</span><span class="tag tag-cyan">Cực cận ánh mắt</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Cực cận zoom 170% vào đôi mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Push-in chậm chắt lọc cảm xúc</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh mắt đăm chiêu nhìn xa xăm</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhận thức trần trụi về vòng xoáy kiệt sức.</div>
-          </div>
-        </div>
-
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-out">🔄 Mồi chuyển (Out-point)</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene4_beat3.jpg" alt="4.3">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 4.3</span><span class="tag tag-cyan">Quay người dứt khoát</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc 3/4 ngang tầm mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Pan theo động tác quay đầu nhanh</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Quay mặt về thẳng camera</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Mồi chuyển hoàn hảo sang A-Roll chốt.</div>
-          </div>
-        </div>
       </div>
     </section>
-    <!-- SCENE 5 -->
+
+    <!-- SCENE 5 (2 OPTIONS) -->
     <section class="scene-block" id="scene-5">
       <div class="scene-header">
         <div class="scene-title-group">
-          <span class="scene-num-badge">CẢNH 5</span>
-          <h3 class="scene-main-title">A-Roll 3 (Chốt Hạ): 2 Phương Án Tùy Chọn</h3>
-          <span class="tag tag-emerald">2 Options Chọn Linh Hoạt</span>
+          <span class="scene-num-badge">Cảnh 5 • A-Roll Chốt</span>
+          <h2 class="scene-main-title">A-Roll Chốt Hạ • Kêu Gọi Hành Động (2 Options)</h2>
         </div>
-        <span class="scene-time-badge">⏱️ 00:16 - 00:20 (4s)</span>
+        <span class="scene-time-badge">⏱️ 00:17 - 00:22 (5s)</span>
       </div>
-      <div class="scene-intent-box"><strong>🎯 Ý Đồ Đạo Diễn:</strong> Chốt hạ sâu sắc: Cày đêm không phải để giàu mà là liều thuốc an thần cho sự bất an.</div>
+      <div class="scene-intent-box">🎬 <b>Ý đồ phân cảnh:</b> Hai phương án thể hiện câu chốt: Option 1 nói trực diện đanh thép, Option 2 đang thao tác ngước đầu lên chốt.</div>
       <div class="audio-box">
         <div class="voice-content">
           <div class="voice-icon">🎙️</div>
           <div>
-            <div style="font-size: 10.5px; color: var(--emerald); font-weight: 700; text-transform: uppercase;">Lời Thoại Chốt Hạ:</div>
-            <div class="voice-text">"Nhiều khi cày đêm chẳng phải để giàu lên, mà chỉ để bớt sợ thôi!"</div>
+            <div style="font-size: 10.5px; color: var(--cyan); font-weight: 800; text-transform: uppercase;">Lời Thoại Chốt Hạ:</div>
+            <div class="voice-text">"Muốn sống thì phải thay đổi. Cầm máy lên quay thôi!"</div>
           </div>
         </div>
-        <span class="tag tag-emerald">Chốt Đanh Gọn</span>
       </div>
 
-      <!-- TABS CHỌN PHƯƠNG ÁN -->
+      <!-- Option Switcher Tabs -->
       <div class="opt-tabs">
-        <button class="opt-tab-btn active" onclick="switchOpt(1)">🔘 Phương Án 1: Trực Diện Chốt (Frontal Talking Head)</button>
-        <button class="opt-tab-btn" onclick="switchOpt(2)">🔘 Phương Án 2: Đang Thao Tác Ngước Đầu Lên Chốt (Action-to-Camera)</button>
+        <button class="opt-tab-btn active" id="btn-opt1" onclick="switchOpt(1)">🎯 Phương Án 1: Trực Diện Chốt Đanh Thép</button>
+        <button class="opt-tab-btn" id="btn-opt2" onclick="switchOpt(2)">🔄 Phương Án 2: Đang Thao Tác Ngước Đầu Lên Chốt</button>
       </div>
 
-      <!-- OPTION 1 CONTENT -->
-      <div class="beats-grid opt-content active" id="opt1-grid">
+      <!-- Option 1 Content -->
+      <div class="beats-grid opt-content active" id="content-opt1">
         
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.1A</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg" alt="5.1A">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg', 'Cảnh 5 (Option 1) • 5.1A Đầu cảnh', 'Nhìn thẳng vào ống kính máy ảnh với vẻ mặt điềm đạm, cương quyết.', 'A-ROLL TRỰC DIỆN')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg" alt="5.1A Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.1A Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Trung cận trực diện</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Trung cận trực diện</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Nhìn thẳng vào ống kính máy ảnh với vẻ mặt điềm đạm, cương quyết.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Trực diện ngang tầm mắt (Frontal eye level).</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.1A</span><span class="tag tag-emerald">5.1A • Trực diện</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt (Center)</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Handheld vững chắc</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt trung tâm khóa mắt ống kính</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nhìn thẳng người xem nói câu chốt.</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat2.jpg', 'Cảnh 5 (Option 1) • 5.2A Cao trào', 'Nói câu chốt đanh thép, ánh mắt quyết tâm truyền cảm hứng.', 'A-ROLL TRỰC DIỆN')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat2.jpg" alt="5.2A Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.2A Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cận cảnh trực diện nói</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cận cảnh trực diện nói</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Nói câu chốt đanh thép, ánh mắt quyết tâm truyền cảm hứng.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Cận trực diện, khẩu hình rõ ràng, dứt khoát.</div>
+            </div>
           </div>
-        </div>
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.2A</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat2.jpg" alt="5.2A">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat3.jpg', 'Cảnh 5 (Option 1) • 5.3A Kết thúc', 'Mỉm cười nhẹ và gật đầu tự tin kết thúc video.', 'A-ROLL TRỰC DIỆN')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat3.jpg" alt="5.3A Kết thúc" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.3A Kết thúc</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Mỉm cười tự tin gật đầu</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Mỉm cười tự tin gật đầu</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Mỉm cười nhẹ và gật đầu tự tin kết thúc video.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Trung cận, thần thái chuyên nghiệp, giải tỏa áp lực.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.2A</span><span class="tag tag-emerald">5.2A • Quyết tâm</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện hất nhẹ 5°</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Punch-in nhẹ 10% dồn lực</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt chiếm trọn khung hình</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Nói chắc nịch: '...mà chỉ để bớt sợ thôi!'.</div>
-          </div>
-        </div>
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.3A</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat3.jpg" alt="5.3A">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.3A</span><span class="tag tag-emerald">5.3A • Kết thúc</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Ngang tầm mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Tĩnh giữ frame 0.5s</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Thở phào nhẹ, mỉm cười tự tin</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Dừng 0.5s kết thúc video.</div>
-          </div>
-        </div>
       </div>
 
-      <!-- OPTION 2 CONTENT -->
-      <div class="beats-grid opt-content" id="opt2-grid">
+      <!-- Option 2 Content -->
+      <div class="beats-grid opt-content" id="content-opt2">
         
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.1B</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat1.jpg" alt="5.1B">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat1.jpg', 'Cảnh 5 (Option 2) • 5.1B Đầu cảnh', 'Góc nghiêng 45° đang cúi đầu gập màn hình laptop dứt khoát.', 'A-ROLL NGƯỚC ĐẦU')">
+              <span class="beat-badge-top badge-in">Đầu Cảnh</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat1.jpg" alt="5.1B Đầu cảnh" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.1B Đầu cảnh</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Cúi đầu đóng laptop</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Cúi đầu đóng laptop</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Góc nghiêng 45° đang cúi đầu gập màn hình laptop dứt khoát.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc nghiêng 45°, tập trung vào hành động kết thúc sự trì hoãn.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.1B</span><span class="tag tag-emerald">5.1B • Đang gõ phím</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Góc nghiêng 45° từ trên xuống</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Đang cắm cúi gõ phím laptop</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Tập trung nhìn màn hình máy tính</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Bắt đầu như 1 cú B-Roll làm việc đêm.</div>
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat2.jpg', 'Cảnh 5 (Option 2) • 5.2B Cao trào', 'Dừng tay, ngước mắt nhìn thẳng vào ống kính máy quay.', 'A-ROLL NGƯỚC ĐẦU')">
+              <span class="beat-badge-top badge-main">Cao Trào</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat2.jpg" alt="5.2B Cao trào" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.2B Cao trào</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Ngước đầu nhìn camera</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Ngước đầu nhìn camera</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Dừng tay, ngước mắt nhìn thẳng vào ống kính máy quay.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Dynamic Tilt-up từ mặt bàn lên thẳng ánh mắt.</div>
+            </div>
           </div>
-        </div>
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.2B</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat2.jpg" alt="5.2B">
+          <div class="beat-card">
+            <div class="beat-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat3.jpg', 'Cảnh 5 (Option 2) • 5.3B Kết thúc', 'Đứng thẳng người/ngồi thẳng lưng nói câu chốt dứt khoát.', 'A-ROLL NGƯỚC ĐẦU')">
+              <span class="beat-badge-top badge-out">Mồi Chuyển</span>
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat3.jpg" alt="5.3B Kết thúc" loading="lazy">
+            </div>
+            <div class="beat-content">
+              <div class="beat-header">
+                <span class="beat-id-title">5.3B Kết thúc</span>
+                <span style="font-size:11px; color:var(--cyan); font-weight:700;">Nói thẳng vào camera</span>
+              </div>
+              <table class="specs-table">
+                <tr><td class="spec-name">Góc máy:</td><td class="spec-val">Nói thẳng vào camera</td></tr>
+                <tr><td class="spec-name">Mô tả:</td><td class="spec-val">Đứng thẳng người/ngồi thẳng lưng nói câu chốt dứt khoát.</td></tr>
+              </table>
+              <div class="director-note-box">💡 <b>Ghi chú đạo diễn:</b> Góc trực diện, phong thái mạnh mẽ, tự tin làm lại.</div>
+            </div>
           </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.2B</span><span class="tag tag-emerald">5.2B • Ngước đầu</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Tilt-up từ bàn phím lên mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Dừng tay gõ, ngước nhìn thẳng máy</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Ánh mắt khóa vào ống kính camera</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Cú ngước đầu bất ngờ tạo sự chân thực.</div>
-          </div>
-        </div>
-        <div class="beat-card">
-          <div class="beat-img-container">
-            <span class="beat-badge-top badge-in">🔰 5.3B</span>
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_opt2_beat3.jpg" alt="5.3B">
-          </div>
-          <div class="beat-content">
-            <div class="beat-header"><span class="beat-id-title">Khung Hình 5.3B</span><span class="tag tag-emerald">5.3B • Nhìn thẳng chốt</span></div>
-            <table class="specs-table">
-              <tr><td class="spec-name">Góc Máy</td><td class="spec-val">Trực diện ngang tầm mắt</td></tr>
-              <tr><td class="spec-name">Động Tác</td><td class="spec-val">Ngồi thẳng lưng nói câu chốt</td></tr>
-              <tr><td class="spec-name">Bố Cục</td><td class="spec-val">Gương mặt sáng rõ, quyết đoán</td></tr>
-            </table>
-            <div class="director-note-box"><strong>💡 Đạo Diễn:</strong> Chốt hạ dứt khoát trước khi hết video.</div>
-          </div>
-        </div>
       </div>
     </section>
+
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+      <div class="lightbox-img-box">
+        <img id="lightbox-img" src="" alt="Frame Detail">
+      </div>
+      <div class="lightbox-details">
+        <div id="lightbox-badge" style="display:inline-block; font-size:11px; font-weight:800; color:var(--cyan); text-transform:uppercase;"></div>
+        <h3 id="lightbox-title" style="font-size:18px; color:#fff; margin-bottom:8px;"></h3>
+        <p id="lightbox-desc" style="font-size:13px; color:var(--text-secondary); line-height:1.6;"></p>
+      </div>
+    </div>
   </div>
 
   <script>
-    function switchOpt(optNum) {
-      const btns = document.querySelectorAll('.opt-tab-btn');
-      const grids = document.querySelectorAll('.opt-content');
-      
-      btns.forEach((b, i) => {
-        if (i === optNum - 1) b.classList.add('active');
-        else b.classList.remove('active');
-      });
-      
-      grids.forEach((g, i) => {
-        if (i === optNum - 1) g.classList.add('active');
-        else g.classList.remove('active');
-      });
+    function openLightbox(imgUrl, title, desc, badge) {
+      document.getElementById('lightbox-img').src = imgUrl;
+      document.getElementById('lightbox-title').innerText = title;
+      document.getElementById('lightbox-desc').innerText = desc;
+      document.getElementById('lightbox-badge').innerText = badge || 'STORYBOARD BEAT';
+      document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox(e) {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+    function switchOpt(opt) {
+      document.querySelectorAll('.opt-tab-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelectorAll('.opt-content').forEach(content => content.classList.remove('active'));
+      if(opt === 1) {
+        document.getElementById('btn-opt1').classList.add('active');
+        document.getElementById('content-opt1').classList.add('active');
+      } else {
+        document.getElementById('btn-opt2').classList.add('active');
+        document.getElementById('content-opt2').classList.add('active');
+      }
     }
   </script>
 </body>
