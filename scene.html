@@ -3438,11 +3438,31 @@ const portalData = [
 // Automatically determines whether we need '../' (if inside subfolder) or './' (if at root)
 function getResolvedPath(rootRelPath) {
     if (!rootRelPath) return '';
-    rootRelPath = rootRelPath.replace(/\\/g, '/');
+    rootRelPath = rootRelPath.replace(/\/g, '/');
     if (rootRelPath.startsWith('http://') || rootRelPath.startsWith('https://')) {
         return rootRelPath;
     }
-    return './' + rootRelPath.replace(/^(\.\/|\.\.\/)/, '');
+    const cleanRel = rootRelPath.replace(/^(\.\/|\.\.\/)+/, '');
+    
+    // Check if we are running at root vs subfolder
+    const pathName = window.location.pathname.replace(/\/g, '/');
+    if (pathName.includes('/Quản gia/') || pathName.includes('/Quan%20gia/')) {
+        return '../' + cleanRel;
+    }
+    return './' + cleanRel;
+}
+
+function getEncodedPath(rootRelPath) {
+    const raw = getResolvedPath(rootRelPath);
+    if (!raw) return '';
+    if (raw.startsWith('http://') || raw.startsWith('https://')) return raw;
+    // Encode filename portion to handle spaces, @, and unicode
+    const parts = raw.split('/');
+    const encodedParts = parts.map(p => {
+        if (p === '.' || p === '..') return p;
+        return encodeURIComponent(p);
+    });
+    return encodedParts.join('/');
 }
 
 // Environment detection (Local file://, Localhost vs Online GitHub Pages)
@@ -3677,7 +3697,7 @@ function renderCaseCards(filterText = '') {
         const card = document.createElement('div');
         card.className = 'case-row-card';
         
-        const resolvedHtmlPath = getResolvedPath(pkg.root_html_rel);
+        const resolvedHtmlPath = getEncodedPath(pkg.root_html_rel);
         const resolvedPdfPath = getResolvedPath(pkg.root_pdf_rel || pkg.main_pdf_rel);
         
         // Buttons
@@ -3741,7 +3761,8 @@ function renderCaseCards(filterText = '') {
 function openCaseReport(index) {
     const pkg = portalData[index];
     if (!pkg) return;
-    const resolvedUrl = getResolvedPath(pkg.root_html_rel);
+    const rawUrl = getResolvedPath(pkg.root_html_rel);
+    const encodedUrl = getEncodedPath(pkg.root_html_rel);
     
     const modal = document.getElementById('appModal');
     const modalTitle = document.getElementById('modalTitle');
@@ -3749,10 +3770,16 @@ function openCaseReport(index) {
     
     modalTitle.innerHTML = `
         <span>📄 ${escapeHtml(pkg.title_vi)} - Báo Cáo Phân Tích Đạo Diễn</span>
-        <a href="${resolvedUrl}" target="_blank" style="color:var(--accent-blue); font-size:12px; margin-left:12px; text-decoration:none; font-weight:normal;">[Mở tab riêng ↗]</a>
+        <a href="${encodedUrl}" target="_blank" style="color:var(--accent-blue); font-size:12px; margin-left:12px; text-decoration:none; font-weight:bold; background:rgba(56,189,248,0.15); padding:4px 8px; border-radius:4px;">[Mở Toàn Trang / Tab Mới ↗]</a>
     `;
     
-    modalBody.innerHTML = `<iframe src="${resolvedUrl}" style="width:100%; height:100%; border:none;"></iframe>`;
+    modalBody.innerHTML = `
+        <div style="background:#0f172a; color:#94a3b8; font-size:12px; padding:6px 12px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid #1e293b;">
+            <span>💡 Mẹo: Báo cáo hỗ trợ xem đầy đủ trên máy tính và điện thoại.</span>
+            <a href="${encodedUrl}" target="_blank" style="color:#38bdf8; text-decoration:underline;">Mở trang riêng biệt ↗</a>
+        </div>
+        <iframe src="${encodedUrl}" style="width:100%; height:calc(100% - 30px); border:none;" onload="this.style.opacity='1'" onerror="this.outerHTML='<div style=padding:30px;text-align:center;color:#fff>Không thể nhúng frame. <a href=${encodedUrl} target=_blank style=color:#38bdf8>Bấm vào đây để mở trực tiếp ↗</a></div>'"></iframe>
+    `;
     modal.classList.add('open');
 }
 
