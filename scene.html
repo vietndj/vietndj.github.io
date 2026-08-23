@@ -3466,12 +3466,12 @@ const portalData = [
 // Smart Multi-Environment Path Resolver
 function getResolvedPath(rootRelPath) {
     if (!rootRelPath) return '';
-    rootRelPath = rootRelPath.split('\').join('/');
+    rootRelPath = rootRelPath.replace(/\\/g, '/');
     if (rootRelPath.startsWith('http://') || rootRelPath.startsWith('https://')) {
         return rootRelPath;
     }
     const cleanRel = rootRelPath.replace(/^(\.\/|\.\.\/)+/, '');
-    const pathName = window.location.pathname.split('\').join('/');
+    const pathName = window.location.pathname.replace(/\\/g, '/');
     if (pathName.includes('/Quản gia/') || pathName.includes('/Quan%20gia/')) {
         return '../' + cleanRel;
     }
