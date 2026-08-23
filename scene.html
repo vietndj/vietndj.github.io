@@ -3438,14 +3438,14 @@ const portalData = [
 // Automatically determines whether we need '../' (if inside subfolder) or './' (if at root)
 function getResolvedPath(rootRelPath) {
     if (!rootRelPath) return '';
-    rootRelPath = rootRelPath.replace(/\/g, '/');
+    rootRelPath = rootRelPath.split('\\').join('/');
     if (rootRelPath.startsWith('http://') || rootRelPath.startsWith('https://')) {
         return rootRelPath;
     }
     const cleanRel = rootRelPath.replace(/^(\.\/|\.\.\/)+/, '');
     
     // Check if we are running at root vs subfolder
-    const pathName = window.location.pathname.replace(/\/g, '/');
+    const pathName = window.location.pathname.split('\\').join('/');
     if (pathName.includes('/Quản gia/') || pathName.includes('/Quan%20gia/')) {
         return '../' + cleanRel;
     }
