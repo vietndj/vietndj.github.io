@@ -598,7 +598,7 @@ main.content-area {
 }
 
 /* ==========================================================================
-   SMART FILTER PANEL & 3x3 COMPACT GRID SYSTEM (ADVANCED OPTIMIZATIONS)
+   SMART FILTER PANEL & LARGE SPLIT-CARD SYSTEM (LEFT: BIG 9:16 IMAGE, RIGHT: TEXT)
    ========================================================================== */
 
 .filter-counter-badge {
@@ -905,124 +905,83 @@ mark.search-highlight {
     font-weight: inherit;
 }
 
-/* Grid Layouts: Standard 3x3, Ultra-Dense 4-Col, List View */
+/* ==========================================================================
+   GRID LAYOUTS & SPLIT-CARD SYSTEM (IMAGE LEFT, TEXT RIGHT)
+   ========================================================================== */
+
+/* Default: 2 Column Large Split-Cards Grid (Rộng rãi, ảnh to) */
 .case-grid-3x3 {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
     margin-bottom: 28px;
 }
 
-.case-grid-3x3.mode-grid4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 16px;
-}
-
-.case-grid-3x3.mode-list {
+/* Mode: 1 Column Full Width (Siêu rộng, xem tối đa chi tiết) */
+.case-grid-3x3.mode-grid4, .case-grid-3x3.mode-list {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 20px;
 }
 
-@media (max-width: 1350px) {
-    .case-grid-3x3.mode-grid4 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 1100px) {
-    .case-grid-3x3, .case-grid-3x3.mode-grid4 {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-@media (max-width: 680px) {
-    .case-grid-3x3, .case-grid-3x3.mode-grid4, .case-grid-3x3.mode-list {
+@media (max-width: 1180px) {
+    .case-grid-3x3 {
         grid-template-columns: 1fr;
     }
 }
 
-/* Vertical Cinematic Showcase Card */
+/* The Big Split-Card (Image Left, Text Right) */
 .case-card-compact {
-    background: #0e1522;
-    border: 1px solid #1c283c;
-    border-radius: 16px;
-    padding: 14px;
-    transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #0f1624;
+    border: 1px solid #1e2c44;
+    border-radius: 18px;
+    padding: 16px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
+    align-items: stretch;
     position: relative;
     overflow: hidden;
 }
 
 .case-card-compact:hover {
-    border-color: rgba(56, 189, 248, 0.55);
-    background: #141f32;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    border-color: rgba(56, 189, 248, 0.6);
+    background: #141f33;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.55);
     transform: translateY(-3px);
 }
 
-/* List Mode Layout */
-.case-grid-3x3.mode-list .case-card-compact {
-    flex-direction: row;
-    align-items: center;
-    gap: 20px;
-    padding: 14px 18px;
-}
-
-.case-grid-3x3.mode-list .case-card-thumbs {
-    width: 220px;
-    margin-bottom: 0;
+/* LEFT COLUMN: Large 9:16 Duo-Poster (~310px - 340px) */
+.case-card-media-col {
+    width: 320px;
+    min-width: 320px;
     flex-shrink: 0;
+    display: flex;
 }
 
-.case-grid-3x3.mode-list .thumb-box {
-    height: 140px;
-}
-
-.case-grid-3x3.mode-list .case-card-body {
-    margin-bottom: 0;
-    flex: 1;
-}
-
-.case-grid-3x3.mode-list .case-card-actions {
-    width: 200px;
-    border-top: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 0;
-    padding-left: 18px;
-    flex-shrink: 0;
-}
-
-/* Dual 9:16 Vertical Thumbnails (Hook & Key Shot Recognition) */
-.case-card-thumbs {
-    position: relative;
-    margin-bottom: 12px;
-}
-
-.thumbs-pair-grid {
+.thumbs-duo-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    text-decoration: none;
-    cursor: pointer;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
 }
 
-.thumb-box {
+.thumb-frame-vertical {
     position: relative;
-    border-radius: 10px;
+    border-radius: 12px;
     overflow: hidden;
     background: #06090e;
     aspect-ratio: 9/16;
-    height: 220px; /* Tỉ lệ dọc 9:16 cao ráo, thoáng đãng, nhìn trọn vẹn khung hình */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    height: 275px; /* Chiều cao lớn 275px, ảnh to rõ ràng cực kỳ dễ nhìn */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 }
 
-.thumb-box img {
+.thumb-frame-vertical img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1031,266 +990,329 @@ mark.search-highlight {
     transition: transform 0.35s ease, filter 0.2s ease;
 }
 
-.thumb-box:hover img {
+.thumb-frame-vertical:hover img {
     transform: scale(1.06);
-    filter: brightness(1.05);
+    filter: brightness(1.06);
 }
 
-/* Minimalist Bottom Tags */
-.thumb-tag-hook {
+/* Minimalist Clean Badges */
+.badge-tag-hook {
     position: absolute;
-    bottom: 6px;
-    left: 6px;
-    background: rgba(2, 132, 199, 0.88);
+    bottom: 8px;
+    left: 8px;
+    background: rgba(2, 132, 199, 0.92);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     color: #ffffff;
-    font-size: 8.5px;
+    font-size: 9px;
     font-weight: 800;
     font-family: var(--font-mono);
-    padding: 2px 6px;
+    padding: 2px 7px;
     border-radius: 4px;
     letter-spacing: 0.4px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     pointer-events: none;
 }
 
-.thumb-tag-key {
+.badge-tag-key {
     position: absolute;
-    bottom: 6px;
-    left: 6px;
-    background: rgba(217, 119, 6, 0.9);
+    bottom: 8px;
+    left: 8px;
+    background: rgba(217, 119, 6, 0.94);
     backdrop-filter: blur(6px);
     -webkit-backdrop-filter: blur(6px);
     color: #ffffff;
-    font-size: 8.5px;
+    font-size: 9px;
     font-weight: 800;
     font-family: var(--font-mono);
-    padding: 2px 6px;
+    padding: 2px 7px;
     border-radius: 4px;
     letter-spacing: 0.4px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.25);
     box-shadow: 0 2px 6px rgba(0,0,0,0.5);
     pointer-events: none;
 }
 
-/* Quick Zoom Peek Icon on Hover */
-.thumb-zoom-overlay {
+/* Hover Quick Zoom Button */
+.thumb-zoom-float-btn {
     position: absolute;
-    top: 6px;
-    right: 6px;
-    background: rgba(15, 23, 42, 0.8);
+    top: 8px;
+    right: 8px;
+    background: rgba(15, 23, 42, 0.82);
     backdrop-filter: blur(4px);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    width: 24px;
-    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    width: 26px;
+    height: 26px;
     border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 12px;
     cursor: pointer;
     opacity: 0;
     transform: scale(0.9);
     transition: all 0.18s ease;
 }
 
-.thumb-box:hover .thumb-zoom-overlay {
+.thumb-frame-vertical:hover .thumb-zoom-float-btn {
     opacity: 1;
     transform: scale(1);
 }
 
-.thumb-zoom-overlay:hover {
+.thumb-zoom-float-btn:hover {
     background: var(--accent-blue);
     color: #0b0f17;
     border-color: var(--accent-blue);
 }
 
-/* Card Body Details */
-.case-card-body {
+/* RIGHT COLUMN: Rich Structured Content */
+.case-card-info-col {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 12px;
+    justify-content: space-between;
+    min-width: 0;
 }
 
-.card-meta-header {
+.info-top-meta {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 6px;
-    gap: 6px;
+    margin-bottom: 8px;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
-.card-index-num {
+.meta-left-tags {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.case-index-tag {
     font-size: 11px;
     font-weight: 800;
     color: var(--accent-blue);
     font-family: var(--font-mono);
-    background: rgba(56, 189, 248, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
+    background: rgba(56, 189, 248, 0.12);
+    padding: 2px 7px;
+    border-radius: 5px;
+    border: 1px solid rgba(56, 189, 248, 0.25);
 }
 
-.card-shots-num {
-    font-size: 11px;
+.creator-badge-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #cbd5e1;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.04);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.15s ease;
+}
+
+.creator-badge-link:hover {
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+}
+
+.creator-badge-plain {
+    font-size: 12px;
+    font-weight: 600;
+    color: #cbd5e1;
+}
+
+.ig-icon-pill {
+    background: rgba(192, 132, 252, 0.18);
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: var(--accent-purple);
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.shots-total-badge {
+    font-size: 11.5px;
     font-weight: 700;
     color: var(--accent-amber);
     font-family: var(--font-mono);
-    background: rgba(245, 158, 11, 0.1);
-    padding: 2px 6px;
-    border-radius: 4px;
-    border: 1px solid rgba(245, 158, 11, 0.2);
+    background: rgba(245, 158, 11, 0.12);
+    padding: 2px 8px;
+    border-radius: 5px;
+    border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
-.card-creator-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    color: #94a3b8;
-    font-size: 11.5px;
-    font-weight: 600;
+.case-heading-link {
     text-decoration: none;
-    transition: color 0.15s ease;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 160px;
+    margin-bottom: 8px;
+    display: block;
 }
 
-.card-creator-link:hover {
-    color: var(--accent-blue);
-}
-
-.card-creator-link .ig-badge-tag {
-    background: rgba(192, 132, 252, 0.15);
-    border: 1px solid rgba(192, 132, 252, 0.3);
-    color: var(--accent-purple);
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 4px;
-    border-radius: 4px;
-    margin-left: 2px;
-}
-
-.card-title-link {
-    text-decoration: none;
-    margin-bottom: 6px;
-}
-
-.card-title-text {
+.case-heading-title {
     font-family: var(--font-heading);
-    font-size: 14.5px;
+    font-size: 16px;
     font-weight: 800;
     color: #ffffff;
-    line-height: 1.35;
+    line-height: 1.38;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    min-height: 38px;
     transition: color 0.15s;
 }
 
-.card-title-link:hover .card-title-text {
+.case-heading-link:hover .case-heading-title {
     color: var(--accent-blue);
 }
 
-.card-tech-text {
-    font-size: 11.5px;
+.case-synopsis-text {
+    font-size: 13px;
     color: #94a3b8;
-    line-height: 1.45;
+    line-height: 1.5;
+    margin-bottom: 10px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+}
+
+.case-tech-highlight {
     background: #090e17;
-    padding: 6px 9px;
-    border-radius: 6px;
-    border: 1px solid #192334;
+    border: 1px solid #1a2638;
+    border-radius: 8px;
+    padding: 8px 12px;
+    margin-bottom: 12px;
+    font-size: 12px;
+    line-height: 1.45;
 }
 
-.card-tech-text b {
+.tech-label {
     color: var(--accent-amber);
+    font-weight: 700;
+    margin-bottom: 2px;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
 }
 
-/* Card Actions Area */
-.case-card-actions {
+.tech-desc {
+    color: #cbd5e1;
+}
+
+/* Actions Row */
+.case-bottom-actions {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
     padding-top: 10px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.btn-open-main {
+.btn-primary-launch {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 7px;
     background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    padding: 8px 14px;
+    padding: 8px 16px;
     border-radius: 8px;
     font-size: 13px;
     font-weight: 700;
     text-decoration: none;
     font-family: var(--font-body);
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
-    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.35);
+    border: 1px solid rgba(56, 189, 248, 0.4);
     transition: all 0.18s ease;
-    width: 100%;
 }
 
-.btn-open-main:hover {
+.btn-primary-launch:hover {
     background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
     color: #0b0f17;
-    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.5);
     transform: translateY(-1px);
 }
 
-.btn-open-main .btn-arrow {
+.btn-primary-launch .launch-arrow {
     transition: transform 0.18s ease;
 }
 
-.btn-open-main:hover .btn-arrow {
+.btn-primary-launch:hover .launch-arrow {
     transform: translate(2px, -2px);
 }
 
-.card-sub-links {
+.secondary-meta-links {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 6px;
+    gap: 8px;
     flex-wrap: wrap;
+    font-size: 12px;
+}
+
+.sub-label {
+    color: #475569;
     font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 .sub-meta-link, .sub-meta-btn {
     background: none;
     border: none;
-    color: #64748b;
-    font-size: 11px;
+    color: #94a3b8;
+    font-size: 12px;
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    padding: 1px 3px;
-    border-radius: 3px;
+    padding: 2px 4px;
+    border-radius: 4px;
     font-family: var(--font-body);
     transition: all 0.15s ease;
 }
 
 .sub-meta-link:hover, .sub-meta-btn:hover {
     color: var(--accent-blue);
-    background: rgba(56, 189, 248, 0.08);
+    background: rgba(56, 189, 248, 0.1);
 }
 
 .meta-dot-sep {
     color: #334155;
-    font-size: 9px;
+    font-size: 10px;
+}
+
+/* Responsive on Mobile (< 768px): Stack Vertically */
+@media (max-width: 768px) {
+    .case-card-compact {
+        flex-direction: column;
+        gap: 14px;
+        padding: 14px;
+    }
+    .case-card-media-col {
+        width: 100%;
+        min-width: 100%;
+    }
+    .thumb-frame-vertical {
+        height: 230px;
+    }
+    .case-bottom-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .btn-primary-launch {
+        width: 100%;
+    }
 }
 
 /* Pagination & Load More Bar */
@@ -5394,55 +5416,66 @@ function applyFilters(resetPagination = true) {
         
         const card = document.createElement('div');
         card.className = 'case-card-compact';
-        card.innerHTML = `
-            <!-- 9:16 Vertical Duo-Poster Showcase -->
-            <div class="case-card-thumbs">
-                <div class="thumbs-pair-grid">
-                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Click mở báo cáo phân tích">
+                card.innerHTML = `
+            <!-- Left Column: Large 9:16 Vertical Duo-Poster Showcase -->
+            <div class="case-card-media-col">
+                <div class="thumbs-duo-container">
+                    <div class="thumb-frame-vertical" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
                         <img src="${thumb1}" alt="Hook Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
-                        <span class="thumb-tag-hook">HOOK • 0.0s</span>
-                        <button class="thumb-zoom-overlay" onclick="event.stopPropagation(); openImgLightbox('${thumb1}', '${escapeHtml(pkg.title_vi)} - Khung hình Hook mở đầu')" title="Soi ảnh lớn">🔍</button>
+                        <span class="badge-tag-hook">HOOK • 0.0s</span>
+                        <button class="thumb-zoom-float-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb1}', '${escapeHtml(pkg.title_vi)} - Khung hình Hook mở đầu')" title="Soi ảnh lớn">🔍</button>
                     </div>
-                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Click mở báo cáo phân tích">
+                    <div class="thumb-frame-vertical" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
                         <img src="${thumb2}" alt="Key Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_03_mid.jpg';">
-                        <span class="thumb-tag-key">KEY SHOT</span>
-                        <button class="thumb-zoom-overlay" onclick="event.stopPropagation(); openImgLightbox('${thumb2}', '${escapeHtml(pkg.title_vi)} - Khung hình Key Shot cao trào')" title="Soi ảnh lớn">🔍</button>
+                        <span class="badge-tag-key">KEY SHOT</span>
+                        <button class="thumb-zoom-float-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb2}', '${escapeHtml(pkg.title_vi)} - Khung hình Key Shot cao trào')" title="Soi ảnh lớn">🔍</button>
                     </div>
                 </div>
             </div>
             
-            <div class="case-card-body">
-                <div class="card-meta-header">
-                    <span class="card-index-num">#${String(idx + 1).padStart(2, '0')}</span>
-                    ${igLink ? `
-                        <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem Instagram của ${escapeHtml(pkg.creator)}">
-                            <span>👤 ${highlightText(pkg.creator, searchVal)}</span>
-                            <span class="ig-badge-tag">📸 IG ↗</span>
-                        </a>
-                    ` : `<span class="card-creator-link">👤 ${highlightText(pkg.creator, searchVal)}</span>`}
-                    <span class="card-shots-num">🎬 ${pkg.shots_count || 0} shots</span>
+            <!-- Right Column: Rich Analysis Details -->
+            <div class="case-card-info-col">
+                <div class="info-top-meta">
+                    <div class="meta-left-tags">
+                        <span class="case-index-tag">#${String(idx + 1).padStart(2, '0')}</span>
+                        ${igLink ? `
+                            <a href="${igLink}" target="_blank" rel="noopener" class="creator-badge-link" title="Xem Instagram của ${escapeHtml(pkg.creator)}">
+                                <span>👤 ${highlightText(pkg.creator, searchVal)}</span>
+                                <span class="ig-icon-pill">📸 IG ↗</span>
+                            </a>
+                        ` : `<span class="creator-badge-plain">👤 ${highlightText(pkg.creator, searchVal)}</span>`}
+                    </div>
+                    <span class="shots-total-badge">🎬 ${pkg.shots_count || 0} phân cảnh</span>
                 </div>
                 
-                <a href="${resolvedHtmlPath}" target="_blank" class="card-title-link">
-                    <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${highlightText(pkg.title_vi, searchVal)}</h3>
+                <a href="${resolvedHtmlPath}" target="_blank" class="case-heading-link">
+                    <h3 class="case-heading-title" title="${escapeHtml(pkg.title_vi)}">${highlightText(pkg.title_vi, searchVal)}</h3>
                 </a>
-                <div class="card-tech-text">
-                    <b>🎯 Kỹ thuật:</b> ${highlightText(pkg.key_tech, searchVal)}
+                
+                ${pkg.desc_vi ? `
+                    <p class="case-synopsis-text">${escapeHtml(pkg.desc_vi)}</p>
+                ` : ''}
+                
+                <div class="case-tech-highlight">
+                    <div class="tech-label">🎯 Kỹ thuật trọng tâm:</div>
+                    <div class="tech-desc">${highlightText(pkg.key_tech, searchVal)}</div>
                 </div>
-            </div>
-            
-            <div class="case-card-actions">
-                ${htmlPath ? `
-                    <a class="btn-open-main" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích (Tab Mới)">
-                        <span>📄 Mở Báo Cáo Phân Tích</span>
-                        <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                    </a>
-                ` : ''}
-                ${subLinks.length > 0 ? `
-                    <div class="card-sub-links">
-                        ${subLinks.join('<span class="meta-dot-sep">•</span>')}
-                    </div>
-                ` : ''}
+                
+                <div class="case-bottom-actions">
+                    ${htmlPath ? `
+                        <a class="btn-primary-launch" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích (Tab Mới)">
+                            <span>📄 Mở Báo Cáo Phân Tích</span>
+                            <svg class="launch-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    ` : ''}
+                    
+                    ${subLinks.length > 0 ? `
+                        <div class="secondary-meta-links">
+                            <span class="sub-label">Tùy chọn:</span>
+                            ${subLinks.join('<span class="meta-dot-sep">•</span>')}
+                        </div>
+                    ` : ''}
+                </div>
             </div>
         `;
         container.appendChild(card);
