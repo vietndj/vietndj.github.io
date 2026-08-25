@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phân Tích Đạo Diễn: Joe Rogan & Elon Musk Podcast | Master Breakdown</title>
+<style>
+@font-face {
+  font-family: 'SVN-Acta';
+  src: url('data:,') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'SVN-Acta';
+  src: url('data:,') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GT America';
+  src: url('data:,') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'GT America';
+  src: url('data:,') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --bg-primary: #0a0c10;
+  --bg-surface: #12161f;
+  --bg-card: #181e2b;
+  --border-color: #262f42;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --accent-gold: #f59e0b;
+  --accent-amber: #d97706;
+  --accent-cyan: #06b6d4;
+  --accent-green: #10b981;
+  --accent-rose: #f43f5e;
+  --font-serif: 'SVN-Acta', Georgia, serif;
+  --font-sans: 'GT America', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 80px;
+}
+
+/* Header Banner */
+.header-hero {
+  background: linear-gradient(180deg, #141b29 0%, #0a0c10 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 40px 24px 30px;
+  text-align: center;
+  position: relative;
+}
+.badge-tag {
+  display: inline-block;
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 4px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.header-title {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.25;
+  margin-bottom: 12px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.header-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  max-width: 760px;
+  margin: 0 auto 20px;
+}
+.meta-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.chip {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 6px 14px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.chip b { color: var(--text-main); }
+
+/* Layout Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Sticky Video Player Box */
+.player-container {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-bottom: 32px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+.player-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 18px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.85rem;
+}
+.player-wrapper {
+  position: relative;
+  background: #000;
+  display: flex;
+  justify-content: center;
+}
+video {
+  width: 100%;
+  max-height: 540px;
+  display: block;
+}
+.player-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  background: var(--bg-surface);
+  gap: 10px;
+  border-top: 1px solid var(--border-color);
+}
+.speed-buttons {
+  display: flex;
+  gap: 6px;
+}
+.speed-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.speed-btn.active, .speed-btn:hover {
+  background: var(--accent-amber);
+  color: #fff;
+  border-color: var(--accent-amber);
+}
+
+/* Jump Menu / Drawer Bar */
+.jump-bar {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 12px 4px 16px;
+  margin-bottom: 24px;
+  scrollbar-width: thin;
+}
+.jump-pill {
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 16px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.jump-pill:hover, .jump-pill.active {
+  background: var(--accent-amber);
+  color: #fff;
+  border-color: var(--accent-amber);
+}
+
+/* Shot Breakdown Cards */
+.shot-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  margin-bottom: 32px;
+  overflow: hidden;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.shot-card:hover {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+.shot-card-header {
+  padding: 18px 24px;
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.shot-num-badge {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: bold;
+  background: var(--accent-gold);
+  color: #000;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+.shot-card-title {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: #fff;
+  font-weight: bold;
+  flex: 1;
+  min-width: 260px;
+}
+.shot-timestamp {
+  color: var(--accent-cyan);
+  font-size: 0.85rem;
+  font-weight: bold;
+  background: rgba(6, 182, 212, 0.1);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid rgba(6, 182, 212, 0.2);
+}
+
+/* Gallery Keyframes Start - Mid - End */
+.shot-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px 24px 10px;
+}
+@media (max-width: 768px) {
+  .shot-gallery { grid-template-columns: 1fr; }
+}
+.frame-box {
+  background: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  position: relative;
+  cursor: pointer;
+}
+.frame-box img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s;
+}
+.frame-box:hover img {
+  transform: scale(1.03);
+}
+.frame-label {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+/* Shot Content Body */
+.shot-body {
+  padding: 16px 24px 24px;
+}
+.reason-box {
+  background: rgba(245, 158, 11, 0.08);
+  border-left: 4px solid var(--accent-gold);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 16px;
+  font-size: 0.92rem;
+  color: #fef08a;
+}
+.action-box {
+  color: var(--text-main);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+/* 2-Way Evaluation Grid */
+.eval-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+@media (max-width: 640px) {
+  .eval-grid { grid-template-columns: 1fr; }
+}
+.eval-box {
+  padding: 14px 16px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+}
+.eval-good {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+.eval-good h4 {
+  color: var(--accent-green);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.eval-bad {
+  background: rgba(244, 63, 94, 0.08);
+  border: 1px solid rgba(244, 63, 94, 0.25);
+}
+.eval-bad h4 {
+  color: var(--accent-rose);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Takeaway Box */
+.takeaway-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.takeaway-box b { color: var(--accent-gold); }
+
+/* Technical Spec Bar */
+.tech-spec-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-top: 14px;
+  border-top: 1px solid var(--border-color);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+.tech-spec-item {
+  background: var(--bg-primary);
+  padding: 4px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+.tech-spec-item b { color: var(--text-main); }
+
+/* Lightbox Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.modal-content {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 40px;
+}
+</style>
+</head>
+<body>
+
+<header class="header-hero">
+  <div class="badge-tag">🎬 Cinematic Director Breakdown • Studio Masterclass</div>
+  <h1 class="header-title">Joe Rogan & Elon Musk Podcast</h1>
+  <p class="header-subtitle">Phân tích toàn diện ngôn ngữ điện ảnh, bố cục đa góc máy (Multi-Cam Setup), kỹ thuật ánh sáng Studio Low-Key và nhịp dựng đối thoại triệu view.</p>
+  <div class="meta-chips">
+    <div class="chip">Host: <b>Joe Rogan</b></div>
+    <div class="chip">Guest: <b>Elon Musk</b></div>
+    <div class="chip">Kênh: <b>@StartupTM</b></div>
+    <div class="chip">Độ phân giải: <b>1080p / 720p HD</b></div>
+    <div class="chip">Tổng phân cảnh: <b>12 Visual Beats</b></div>
+    <div class="chip">Tiêu chuẩn: <b>SVN-Acta & GT America</b></div>
+  </div>
+</header>
+
+<main class="container">
+
+  <!-- Sticky Video Player -->
+  <section class="player-container">
+    <div class="player-header">
+      <span>📹 <b>Trình Phát Video Khảo Sát Đạo Diễn</b></span>
+      <span style="color: var(--text-muted);">Format: H.264 MP4 720p</span>
+    </div>
+    <div class="player-wrapper">
+      <video id="mainVideo" controls poster="extracted_shots/shot_01_mid.jpg">
+        <source src="Joe Rogan Elon Musk Podcast - @StartupTM.mp4" type="video/mp4">
+        Trình duyệt không hỗ trợ video thẻ tag HTML5.
+      </video>
+    </div>
+    <div class="player-controls">
+      <div class="speed-buttons">
+        <button class="speed-btn" onclick="setSpeed(0.25)">0.25x (Phân tích nét)</button>
+        <button class="speed-btn" onclick="setSpeed(0.5)">0.5x (Slow-mo)</button>
+        <button class="speed-btn active" onclick="setSpeed(1.0)">1.0x (Chuẩn)</button>
+        <button class="speed-btn" onclick="setSpeed(1.5)">1.5x</button>
+      </div>
+      <div style="font-size: 0.8rem; color: var(--text-muted);">
+        Phím tắt: <b>Space</b> (Play/Pause) • <b>J/L</b> (Tua ±5s)
+      </div>
+    </div>
+  </section>
+
+  <!-- Jump Bar -->
+  <nav class="jump-bar">
+    <a class="jump-pill" href="#shot-01">Beat 01: Medium</a>
+    <a class="jump-pill" href="#shot-02">Beat 02: Close-Up</a>
+    <a class="jump-pill" href="#shot-03">Beat 03: Medium</a>
+    <a class="jump-pill" href="#shot-04">Beat 04: Medium</a>
+    <a class="jump-pill" href="#shot-05">Beat 05: Close-Up</a>
+    <a class="jump-pill" href="#shot-06">Beat 06: Medium</a>
+    <a class="jump-pill" href="#shot-07">Beat 07: Medium</a>
+    <a class="jump-pill" href="#shot-08">Beat 08: Close-Up</a>
+    <a class="jump-pill" href="#shot-09">Beat 09: Medium</a>
+    <a class="jump-pill" href="#shot-10">Beat 10: Tight</a>
+    <a class="jump-pill" href="#shot-11">Beat 11: Tight</a>
+    <a class="jump-pill" href="#shot-12">Beat 12: Medium</a>
+  </nav>
+
+  <!-- Shot Breakdown List -->
+  <div class="shots-list">
+
+    <!-- Shot 01 -->
+    <article class="shot-card" id="shot-01">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 01 / 12</span>
+        <h3 class="shot-card-title">Cold Open & Hook Ngang Tầm Mắt: Thiết Lập Vị Thế Đối Thoại Trực Diện</h3>
+        <span class="shot-timestamp">⏱ 00:00:02 - 00:00:18</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_start.jpg')">
+          <img src="extracted_shots/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+          <span class="frame-label">START (00:00:02)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_mid.jpg')">
+          <img src="extracted_shots/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+          <span class="frame-label">MID (00:00:10)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_01_end.jpg')">
+          <img src="extracted_shots/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+          <span class="frame-label">END (00:00:18)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Góc máy ngang tầm mắt (Eye-Level) kết hợp cự ly cận vừa (Medium Close-Up) loại bỏ hoàn toàn khoảng cách ước lệ, buộc người xem thâm nhập ngay vào luồng tư duy của Joe Rogan.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan đeo tai nghe Audio-Technica studio, ngồi trước micro Shure SM7B, mở màn podcast với câu hỏi gợi mở đầy khiêu khích trí tuệ.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Ánh sáng Key-light từ góc 45 độ làm nổi bật cấu trúc khối sọ và biểu cảm chân thực; phông nền lam gỗ dọc tối màu tạo đường dẫn thị giác thanh lịch và chiều sâu tách biệt.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Khoảng cách mic Shure SM7B che khuất một phần ngực và cằm của chủ thể nếu góc máy không được căn chỉnh bù trừ góc nhìn.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Với video phỏng vấn / podcast, hãy luôn khóa góc mắt chủ thể ở 1/3 trên khung hình và dùng Key-light mềm để tạo vẻ uy tín, chân thực tuyệt đối.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (MCU)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level Straight</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm f/2.0 Portrait Lens</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Low-Key 3-Point Studio + Warm Amber Sconce Accents</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Hard Cut (0.0s) - Direct Dialogue Switch</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>19.1</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>30.6</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 02 -->
+    <article class="shot-card" id="shot-02">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 02 / 12</span>
+        <h3 class="shot-card-title">Khẩu Độ Nông f/2.0 Nén Không Gian: Tập Trung Tối Đa Vào Khẩu Hình</h3>
+        <span class="shot-timestamp">⏱ 00:00:22 - 00:00:42</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_start.jpg')">
+          <img src="extracted_shots/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+          <span class="frame-label">START (00:00:22)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_mid.jpg')">
+          <img src="extracted_shots/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+          <span class="frame-label">MID (00:00:32)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_02_end.jpg')">
+          <img src="extracted_shots/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+          <span class="frame-label">END (00:00:42)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Việc mở khẩu lớn xóa mờ hoàn toàn các chi tiết hậu cảnh giúp người xem không bị phân tâm, neo chặt thị giác vào cử động môi và nhãn quang của Host.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan nghiêng người về phía trước, tăng cường áp lực đối thoại và điều chỉnh âm sắc giọng nói qua cự ly mic gần.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Đèn vòm đồng thau nền tạo hai điểm sáng Bokeh ấm áp cân xứng, phá vỡ sự u tối của hậu cảnh tối màu.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Phần viền tai nghe màu đen dễ bị nuốt chửng vào nền tối nếu thiếu đèn ven (Rim light / Hair light) hỗ trợ ở phía sau đỉnh đầu.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Luôn bổ sung một nguồn sáng Rim Light nhẹ tách biệt tóc/tai nghe khỏi phông nền màu tối để giữ cấu trúc hình khối 3D.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up (CU)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Slight Low Angle (5°)</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm Prime</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Rembrandt Studio Key Light + Warm Dome Background Light</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Dialogue Reaction Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.5</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>31.1</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 03 -->
+    <article class="shot-card" id="shot-03">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 03 / 12</span>
+        <h3 class="shot-card-title">Guest Close-Up & Rim-Light Tách Lớp: Khắc Họa Chân Dung Elon Musk</h3>
+        <span class="shot-timestamp">⏱ 00:00:46 - 00:01:08</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_start.jpg')">
+          <img src="extracted_shots/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+          <span class="frame-label">START (00:00:46)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_mid.jpg')">
+          <img src="extracted_shots/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+          <span class="frame-label">MID (00:00:58)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_03_end.jpg')">
+          <img src="extracted_shots/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+          <span class="frame-label">END (00:01:08)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Ánh sáng ven tóc (Rim light) sắc nét kết hợp đèn nền đồng thau làm nổi bật hình thể và biểu cảm tư duy đặc trưng của Elon Musk.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk xuất hiện trong khung hình với áo thun in hoạ tiết hình học, mỉm cười nhẹ và chuẩn bị phản biện luận điểm.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Bố cục 1/3 chuẩn mực (Rule of Thirds), không gian nhìn (Look Room) hướng sang trái tạo thế đối trọng hoàn hảo với góc nhìn của Joe Rogan.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Mảng hoa văn áo phông của khách mời có độ tương phản cao đôi khi thu hút mắt người xem trước khi họ chú ý đến nét mặt.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Khuyên khách mời mặc trang phục màu đơn sắc, tối giản họa tiết để gương mặt luôn là tâm điểm thị giác số 1.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (MCU)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level Profile-3/4</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm f/1.8</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Softbox Key + Subtle Cool Rim Light + Amber Wall Fixture</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Reverse Angle Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.7</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>32.0</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 04 -->
+    <article class="shot-card" id="shot-04">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 04 / 12</span>
+        <h3 class="shot-card-title">Active Listening Reaction Cut: Duy Trì Nhịp Thở và Sự Thấu Cảm Phi Ngôn Ngữ</h3>
+        <span class="shot-timestamp">⏱ 00:01:15 - 00:01:38</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_start.jpg')">
+          <img src="extracted_shots/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+          <span class="frame-label">START (00:01:15)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_mid.jpg')">
+          <img src="extracted_shots/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+          <span class="frame-label">MID (00:01:25)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_04_end.jpg')">
+          <img src="extracted_shots/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+          <span class="frame-label">END (00:01:38)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Cắt cảnh phản hồi (Reaction Cut) đúng khoảnh khắc khách mời nhấn nhá giúp khán giả cảm nhận được sức nặng và độ nghiêm túc của câu chuyện.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan gật đầu nhẹ, ánh mắt tập trung cao độ, lắng nghe mà không ngắt lời Elon Musk.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Cắt cảnh giữ vững trục 180 độ (180-Degree Rule), đảm bảo tính liên tục không gian và hướng nhìn tự nhiên của người xem.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Thời lượng giữ Reaction shot quá dài (>4s) khi chủ thể không nói có thể làm loãng nhịp độ nếu câu thoại của khách mời đang dồn dập.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Reaction cut lý tưởng chỉ nên kéo dài 1.5 - 2.5 giây ngay tại điểm nhấn cảm xúc hoặc mấu chốt của luận điểm.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up (Reaction)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Low-Key Ambient + Warm Accent Sconces</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>L-Cut (Audio leads video switch)</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.7</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>31.8</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 05 -->
+    <article class="shot-card" id="shot-05">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 05 / 12</span>
+        <h3 class="shot-card-title">The Micro-Pause & Cognitive Framing: Tận Dụng Khoảng Lặng Trí Tuệ</h3>
+        <span class="shot-timestamp">⏱ 00:01:45 - 00:02:10</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_start.jpg')">
+          <img src="extracted_shots/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+          <span class="frame-label">START (00:01:45)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_mid.jpg')">
+          <img src="extracted_shots/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+          <span class="frame-label">MID (00:01:58)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_05_end.jpg')">
+          <img src="extracted_shots/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+          <span class="frame-label">END (00:02:10)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình cận cảnh giữ trọn khoảng lặng 3 giây khi Elon Musk suy ngẫm tạo nên kịch tính điện ảnh và chiều sâu tư duy.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk hướng mắt nhìn xuống suy ngẫm, micro Shure SM7B thu trọn từng hơi thở và ngữ điệu chậm rãi.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Độ tương phản ánh sáng tạo khối trên gò má và trán; nhãn quang có đốm sáng Catchlight chứng minh nguồn sáng Key-light kích thước lớn.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Góc cản của cánh tay đòn micro (Boom arm) hơi dày chiếm một góc dưới khung hình.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Đừng vội cắt máy khi nhân vật im lặng suy nghĩ; khoảng lặng (dramatic pause) chính là vàng trong nghệ thuật phỏng vấn đỉnh cao.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up Dramatic</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>105mm Macro/Telephoto</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Directional Soft Key Light + Ambient Spill</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Natural Breath Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>19.8</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>29.0</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 06 -->
+    <article class="shot-card" id="shot-06">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 06 / 12</span>
+        <h3 class="shot-card-title">Deep Dive Tech Exposition: Ngôn Ngữ Hình Thể & Diễn Biến Cảm Xúc</h3>
+        <span class="shot-timestamp">⏱ 00:02:20 - 00:02:48</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_start.jpg')">
+          <img src="extracted_shots/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+          <span class="frame-label">START (00:02:20)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_mid.jpg')">
+          <img src="extracted_shots/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+          <span class="frame-label">MID (00:02:35)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_06_end.jpg')">
+          <img src="extracted_shots/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+          <span class="frame-label">END (00:02:48)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình mở rộng nhẹ sang Medium Close-Up bắt trọn cử chỉ tay khi Elon Musk giải thích các khái niệm kỹ thuật phức tạp.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk vung nhẹ tay minh họa cho dòng chảy năng lượng và quy mô sản xuất hàng loạt của Tesla & SpaceX.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Cử chỉ bàn tay nằm trọn trong vùng an toàn (Action Safe Area), bổ trợ trực quan cho ngôn ngữ nói.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Chuyển động tay nhanh đôi khi bị Motion Blur nhẹ do tốc độ màn trập 1/50s (chuẩn 180-degree shutter).</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Khi quay nhân vật hay dùng cử chỉ tay biểu cảm, hãy giữ khoảng headroom và side-room vừa đủ để không bị cắt cụt bàn tay.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up with Hand Gestures</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Profile 45°</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>70mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Three-Point Balanced Studio Lighting</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Action Match Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>19.4</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>27.2</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 07 -->
+    <article class="shot-card" id="shot-07">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 07 / 12</span>
+        <h3 class="shot-card-title">Socratic Interrogation Shot: Góc Máy Hạ Thấp Tôn Vẻ Uy Quyền Phản Biện</h3>
+        <span class="shot-timestamp">⏱ 00:03:00 - 00:03:30</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_start.jpg')">
+          <img src="extracted_shots/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+          <span class="frame-label">START (00:03:00)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_mid.jpg')">
+          <img src="extracted_shots/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+          <span class="frame-label">MID (00:03:15)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_07_end.jpg')">
+          <img src="extracted_shots/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+          <span class="frame-label">END (00:03:30)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Góc máy hạ thấp nhẹ 5 độ làm Joe Rogan trông vững chãi và quyền lực như một triết gia đặt câu hỏi hóc búa.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan nhíu mày, đưa ra câu hỏi phản biện về giới hạn năng lượng và độ bền của vật liệu.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Sự cân bằng hoàn hảo giữa hai đèn chùm đồng thau phía sau tạo thế cân bằng đối xứng giả (Pseudo-Symmetry).</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Màu xanh rêu của ghế sofa hậu cảnh có độ bão hòa hơi thấp, chưa tôn hết sự sang trọng của chất liệu nhung.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Đặt máy quay thấp hơn mắt chủ thể 3-5cm khi muốn tôn lên sự thâm trầm, quyết đoán và uy quyền của nhân vật.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up Low-Angle</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Low-Angle (+5° Tilt Up)</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Contrast Ratio 4:1 (Chiaroscuro Feel)</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Interrogative Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.9</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>32.6</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 08 -->
+    <article class="shot-card" id="shot-08">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 08 / 12</span>
+        <h3 class="shot-card-title">Shared Humor & Tension Release: Phá Vỡ Áp Lực Bằng Nụ Cười Đồng Điệu</h3>
+        <span class="shot-timestamp">⏱ 00:03:45 - 00:04:15</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_start.jpg')">
+          <img src="extracted_shots/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+          <span class="frame-label">START (00:03:45)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_mid.jpg')">
+          <img src="extracted_shots/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+          <span class="frame-label">MID (00:04:00)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_08_end.jpg')">
+          <img src="extracted_shots/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+          <span class="frame-label">END (00:04:15)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Chuyển cảnh bắt đúng khoảnh khắc bật cười giải tỏa toàn bộ căng thẳng học thuật tích tụ trong các phân đoạn trước.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk bật cười sảng khoái trước câu bông đùa hóm hỉnh của Joe Rogan về du hành liên hành tinh.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Nụ cười rạng rỡ bắt sáng Catchlight trong mắt; nhịp cơ mặt tự nhiên 100% không gượng ép.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Khi cười người chuyển động lùi ra sau làm điểm nét nông f/1.8 bị trượt nhẹ trong tích tắc.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Khép khẩu f/2.8 hoặc bật tính năng Eye Autofocus tracking thời gian thực để tránh mất nét khi chủ thể chuyển động cảm xúc mạnh.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Close-Up Emotion Cut</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>High-Key Accent on Facial Highlight</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Laughter J-Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.1</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>30.9</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 09 -->
+    <article class="shot-card" id="shot-09">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 09 / 12</span>
+        <h3 class="shot-card-title">Acoustic Architecture & Spatial Depth: Phân Tích Thiết Kế Phim Trường</h3>
+        <span class="shot-timestamp">⏱ 00:04:30 - 00:05:00</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_start.jpg')">
+          <img src="extracted_shots/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+          <span class="frame-label">START (00:04:30)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_mid.jpg')">
+          <img src="extracted_shots/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+          <span class="frame-label">MID (00:04:45)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_09_end.jpg')">
+          <img src="extracted_shots/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+          <span class="frame-label">END (00:05:00)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Cấu trúc nan gỗ sọc dọc kết hợp cây xanh và ánh đèn ấm định hình phong cách phòng thu Podcast triệu đô đẳng cấp thế giới.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Khung hình khai thác toàn bộ trường sâu của studio, thể hiện không gian ấm cúng nhưng cách âm chuyên nghiệp.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Đường dẫn phối cảnh nan gỗ dọc kéo ánh mắt hội tụ về trung tâm; tông màu tối tạo cảm giác riêng tư tuyệt đối (Intimate Atmosphere).</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Logo kênh 'Startup' ở góc trái trên có màu trắng hơi sáng, thi thoảng tranh chấp điểm nhìn với nhân vật.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Thiết kế phòng thu podcast hiện đại nên dùng gỗ lam dọc + đèn vàng ấm tán sắc để triệt tiêu dội âm và tạo background điện ảnh sang trọng.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Shot (Studio Environment Context)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>50mm Standard</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Volumetric Atmosphere + Architectural Accent</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Contextual Establishing Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.5</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>32.8</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 10 -->
+    <article class="shot-card" id="shot-10">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 10 / 12</span>
+        <h3 class="shot-card-title">High-Stakes AI Speculation: Ánh Nhìn Trực Diện Đầy Trăn Trở Tương Lai</h3>
+        <span class="shot-timestamp">⏱ 00:05:15 - 00:05:45</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_start.jpg')">
+          <img src="extracted_shots/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+          <span class="frame-label">START (00:05:15)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_mid.jpg')">
+          <img src="extracted_shots/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+          <span class="frame-label">MID (00:05:30)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_10_end.jpg')">
+          <img src="extracted_shots/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+          <span class="frame-label">END (00:05:45)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Cận cảnh cực độ (Extreme Close-Up feeling) lột tả sự nghiêm túc khi thảo luận về rủi ro trí tuệ nhân tạo AGI đối với nhân loại.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk nhìn thẳng vào ống kính/đối phương, nét mặt đăm chiêu cảnh báo về tốc độ phát triển của siêu trí tuệ nhân tạo.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Ánh sáng viền đổ bóng sắc nét nhấn mạnh các nếp nhăn suy tư quanh khóe mắt, gia tăng sức nặng lời nói.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Mảng tối bên gò má trái hơi mất chi tiết (crushed shadows) do độ tương phản môi trường cao.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Tăng cường độ đèn Fill-light mềm ở mức 20% công suất để giữ lại chi tiết vùng shadow khi bàn về các chủ đề nghiêm trọng.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Tight Close-Up (TCU)</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>135mm Cinematic Telephoto</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>High-Contrast Chiaroscuro</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Dramatic Pause Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>20.4</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>31.4</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 11 -->
+    <article class="shot-card" id="shot-11">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 11 / 12</span>
+        <h3 class="shot-card-title">Consciousness & Simulation Thesis: Triết Học Về Bản Thể Thực Tại</h3>
+        <span class="shot-timestamp">⏱ 00:06:00 - 00:06:30</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_start.jpg')">
+          <img src="extracted_shots/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+          <span class="frame-label">START (00:06:00)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_mid.jpg')">
+          <img src="extracted_shots/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+          <span class="frame-label">MID (00:06:15)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_11_end.jpg')">
+          <img src="extracted_shots/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+          <span class="frame-label">END (00:06:30)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Khung hình cô đọng khoảnh khắc triết học đỉnh cao: Khả năng thực tại chúng ta đang sống là một thế giới mô phỏng (Simulation Theory).
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Elon Musk nhấn mạnh xác suất 1 trên hàng tỷ chúng ta đang ở thực tại gốc, kết hợp với phản ứng kinh ngạc của Joe Rogan.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Góc máy thu hẹp khoảng cách tâm lý, người xem cảm giác như đang ngồi cùng bàn với hai bộ óc đại tài.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Phản xạ ánh sáng trên tròng mắt của nhân vật có hình dạng đèn Softbox vuông hơi lộ nguồn sáng nhân tạo.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Dùng đèn Softbox tròn (Octabox) hoặc Lantern để phản xạ Catchlight trong mắt tròn tự nhiên như ánh sáng mặt trời.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Tight Close-Up</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Direct Eye-Level</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Soft Key + Subtle Backlight</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Philosophical Resonance Cut</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>18.5</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>30.7</b></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Shot 12 -->
+    <article class="shot-card" id="shot-12">
+      <div class="shot-card-header">
+        <span class="shot-num-badge">BEAT 12 / 12</span>
+        <h3 class="shot-card-title">Resolution & The Unbroken Dialogue: Nhịp Dựng Thoát Ly Đầy Dư Vị</h3>
+        <span class="shot-timestamp">⏱ 00:06:45 - 00:07:15</span>
+      </div>
+
+      <div class="shot-gallery">
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_start.jpg')">
+          <img src="extracted_shots/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+          <span class="frame-label">START (00:06:45)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_mid.jpg')">
+          <img src="extracted_shots/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+          <span class="frame-label">MID (00:07:00)</span>
+        </div>
+        <div class="frame-box" onclick="openLightbox('extracted_shots/shot_12_end.jpg')">
+          <img src="extracted_shots/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+          <span class="frame-label">END (00:07:15)</span>
+        </div>
+      </div>
+
+      <div class="shot-body">
+        <div class="reason-box">
+          <b>💡 Tại sao hiệu quả nhất:</b> Khép lại phân đoạn đối thoại bằng góc máy trung tính, nhịp cắt chậm rãi đưa khán giả về trạng thái chiêm nghiệm sâu sắc.
+        </div>
+
+        <div class="action-box">
+          <b>🎬 Mô tả đối tượng & Diễn biến:</b> Joe Rogan và Elon Musk kết thúc phân đoạn tranh biện, chuẩn bị chuyển sang chủ đề tiếp theo trong tâm thế đồng thuận cao.
+        </div>
+
+        <div class="eval-grid">
+          <div class="eval-box eval-good">
+            <h4>✅ Điểm Sáng Thị Giác (Khen)</h4>
+            <p>Màu sắc studio đạt độ hòa sắc (Color Harmony) tuyệt đối giữa da người (Skin tone ~3200K) và đèn trang trí hậu cảnh.</p>
+          </div>
+          <div class="eval-box eval-bad">
+            <h4>⚠️ Điểm Hạn Chế / Cần Lưu Ý (Chê)</h4>
+            <p>Chuyển động máy quay tĩnh 100% trong suốt thời gian dài có thể cần bổ sung Camera Slider chậm để tăng tính điện ảnh.</p>
+          </div>
+        </div>
+
+        <div class="takeaway-box">
+          <span>🎯</span>
+          <div><b>Bài Học Thực Chiến:</b> Với podcast dài, hãy kết hợp ít nhất 1 góc máy di động trượt Slider siêu êm để tạo cảm giác phim tài liệu điện ảnh mượt mà.</div>
+        </div>
+
+        <div class="tech-spec-bar">
+          <div class="tech-spec-item">Cỡ cảnh: <b>Medium Close-Up Resolution</b></div>
+          <div class="tech-spec-item">Góc máy: <b>Eye-Level Neutral</b></div>
+          <div class="tech-spec-item">Tiêu cự: <b>85mm</b></div>
+          <div class="tech-spec-item">Ánh sáng: <b>Golden Hour Ambient Studio Glow</b></div>
+          <div class="tech-spec-item">Chuyển cảnh: <b>Dissolve to Next Segment</b></div>
+          <div class="tech-spec-item">Độ sáng: <b>21.0</b></div>
+          <div class="tech-spec-item">Độ tương phản: <b>33.2</b></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</main>
+
+<!-- Lightbox Modal -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeLightbox()">
+  <img class="modal-content" id="modalImg" src="" alt="Full Resolution Keyframe">
+</div>
+
+<footer class="footer">
+  <p>© 2026 AI Video Analysis Studio • Đạo diễn & Biên tập Hình ảnh: <b>anh Việt (NOVA-CORE)</b></p>
+  <p style="margin-top: 6px; font-size: 0.75rem; color: #64748b;">Generated with SVN-Acta & GT America Typography • Chrome Headless High-Fidelity Engine</p>
+</footer>
+
+<script>
+const video = document.getElementById('mainVideo');
+
+function setSpeed(speed) {
+  if (video) {
+    video.playbackRate = speed;
+    document.querySelectorAll('.speed-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.textContent.includes(speed + 'x'));
+    });
+  }
+}
+
+function openLightbox(src) {
+  const overlay = document.getElementById('modalOverlay');
+  const img = document.getElementById('modalImg');
+  if (overlay && img) {
+    img.src = src;
+    overlay.style.display = 'flex';
+  }
+}
+
+function closeLightbox() {
+  const overlay = document.getElementById('modalOverlay');
+  if (overlay) overlay.style.display = 'none';
+}
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+    e.preventDefault();
+    if (video.paused) video.play(); else video.pause();
+  }
+  if (e.key === 'j') video.currentTime -= 5;
+  if (e.key === 'l') video.currentTime += 5;
+});
+</script>
+
+</body>
+</html>
