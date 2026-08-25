@@ -597,7 +597,7 @@ main.content-area {
     color: #6ee7b7;
 }
 
-/* Case Studies Cards */
+/* Case Studies Cards Modernized */
 .case-cards-container {
     display: flex;
     flex-direction: column;
@@ -608,166 +608,265 @@ main.content-area {
 .case-row-card {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 20px 24px;
-    transition: all 0.2s ease;
+    border-radius: 16px;
+    padding: 18px 20px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     gap: 22px;
-    align-items: flex-start;
+    align-items: stretch;
+    position: relative;
 }
 
 .case-row-card:hover {
-    border-color: var(--border-active);
-    background: var(--bg-card-hover);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border-color: rgba(56, 189, 248, 0.45);
+    background: #162032;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
-.case-index-badge {
-    width: 36px;
-    height: 36px;
-    background: #182234;
-    border: 1px solid #283750;
-    color: var(--accent-blue);
+/* Left: Thumbnails Column */
+.case-thumbs-col {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+    width: 200px;
+}
+
+.case-index-pill {
     font-family: var(--font-mono);
-    font-weight: 800;
-    font-size: 14px;
-    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 2px 8px;
+    border-radius: 6px;
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+}
+
+.case-thumbs-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px;
+    flex: 1;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.thumb-frame {
+    position: relative;
+    border-radius: 9px;
+    overflow: hidden;
+    background: #0b0f17;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    aspect-ratio: 9/16;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
+.thumb-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.35s ease;
+}
+
+.case-row-card:hover .thumb-frame img {
+    transform: scale(1.06);
+}
+
+.thumb-tag {
+    position: absolute;
+    bottom: 4px;
+    left: 4px;
+    background: rgba(11, 15, 23, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    color: #e2e8f0;
+    font-size: 9px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    padding: 2px 4px;
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.2px;
+}
+
+/* Right: Main Content */
 .case-main-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
 }
 
-.case-title-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
-    gap: 10px;
+.case-header-wrap {
+    margin-bottom: 6px;
+}
+
+.case-title-link {
+    text-decoration: none;
+    display: inline-block;
 }
 
 .case-title-text {
     font-family: var(--font-heading);
-    font-size: 17px;
+    font-size: 16.5px;
     font-weight: 800;
     color: #ffffff;
     line-height: 1.35;
+    transition: color 0.15s ease;
+}
+
+.case-title-link:hover .case-title-text {
+    color: var(--accent-blue);
+}
+
+.case-meta-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 5px;
+    flex-wrap: wrap;
 }
 
 .case-creator-tag {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    font-size: 12.5px;
+    gap: 4px;
+    font-size: 12px;
     color: var(--accent-blue);
     font-weight: 600;
     background: rgba(56, 189, 248, 0.1);
-    padding: 3px 10px;
+    padding: 2px 8px;
     border-radius: 6px;
     border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
+.case-shots-badge {
+    font-size: 11.5px;
+    color: var(--accent-amber);
+    font-weight: 600;
+    background: rgba(245, 158, 11, 0.1);
+    padding: 2px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
 .case-desc-text {
-    font-size: 13.8px;
+    font-size: 13.5px;
     color: #cbd5e1;
     line-height: 1.55;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 }
 
 .case-tech-box {
     background: #0d131f;
     border: 1px solid #1a2538;
     border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 12.5px;
+    padding: 7px 12px;
+    font-size: 12.3px;
     color: #94a3b8;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
+    line-height: 1.45;
 }
 
 .case-tech-box b {
     color: var(--accent-amber);
 }
 
-.case-actions-bar {
+/* Action Area: 1 Primary Button + Meta Text Links */
+.case-action-row {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
     align-items: center;
-    padding-top: 8px;
-    border-top: 1px solid #1a2538;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Action Buttons */
-.action-btn {
+/* Single Primary Button */
+.primary-report-btn {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
-    padding: 7px 14px;
+    gap: 7px;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #ffffff;
+    padding: 7px 16px;
     border-radius: 8px;
     font-size: 13px;
     font-weight: 700;
+    text-decoration: none;
+    font-family: var(--font-body);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    transition: all 0.18s ease;
+}
+
+.primary-report-btn:hover {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
+    transform: translateY(-1px);
+    color: #0b0f17;
+}
+
+.primary-report-btn .btn-arrow {
+    transition: transform 0.18s ease;
+}
+
+.primary-report-btn:hover .btn-arrow {
+    transform: translate(2px, -2px);
+}
+
+/* Secondary Meta Text Links (Clean, No Visual Clutter) */
+.case-secondary-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.secondary-label {
+    font-size: 11px;
+    color: #475569;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.meta-link, .meta-link-btn {
+    background: none;
+    border: none;
+    color: #94a3b8;
+    font-size: 12px;
+    font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
+    padding: 2px 4px;
+    border-radius: 4px;
     font-family: var(--font-body);
+    transition: all 0.15s ease;
 }
 
-.btn-report {
-    background: rgba(56, 189, 248, 0.15);
-    border-color: rgba(56, 189, 248, 0.35);
+.meta-link:hover, .meta-link-btn:hover {
     color: var(--accent-blue);
-}
-.btn-report:hover {
-    background: var(--accent-blue);
-    color: #0b0f17;
+    background: rgba(56, 189, 248, 0.08);
 }
 
-.btn-video {
-    background: rgba(245, 158, 11, 0.15);
-    border-color: rgba(245, 158, 11, 0.35);
-    color: var(--accent-amber);
+.meta-sep {
+    color: #334155;
+    font-size: 10px;
 }
-.btn-video:hover {
-    background: var(--accent-amber);
-    color: #0b0f17;
-}
-
-.btn-pdf {
-    background: rgba(244, 63, 94, 0.15);
-    border-color: rgba(244, 63, 94, 0.35);
-    color: var(--accent-rose);
-}
-.btn-pdf:hover {
-    background: var(--accent-rose);
-    color: #fff;
-}
-
-.btn-ig {
-    background: rgba(192, 132, 252, 0.15);
-    border-color: rgba(192, 132, 252, 0.35);
-    color: var(--accent-purple);
-}
-.btn-ig:hover {
-    background: var(--accent-purple);
-    color: #0b0f17;
-}
-
-.btn-drive {
-    background: rgba(16, 185, 129, 0.15);
-    border-color: rgba(16, 185, 129, 0.35);
-    color: var(--accent-emerald);
-}
-.btn-drive:hover {
-    background: var(--accent-emerald);
-    color: #0b0f17;
-}
-
 
 .carousel-tabs-bar {
     display: flex;
@@ -954,7 +1053,11 @@ main.content-area {
     main.content-area { padding: 20px; height: auto; }
     .diag-row { grid-template-columns: 1fr; }
     .checklist-items { grid-template-columns: 1fr; }
-    .case-row-card { flex-direction: column; }
+    .case-row-card { flex-direction: column; gap: 16px; padding: 16px; }
+    .case-thumbs-col { width: 100%; }
+    .case-thumbs-pair { max-width: 260px; }
+    .case-action-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .primary-report-btn { width: 100%; justify-content: center; }
 }
 </style>
 </head>
@@ -990,7 +1093,7 @@ main.content-area {
         <a href="#preflight-checklist" class="nav-link"><span class="icon">📋</span> Checklist 8 Bước Trước REC</a>
         
         <div class="nav-group-title">Thư Viện So Sánh</div>
-        <a href="#case-library" class="nav-link"><span class="icon">📚</span> 60+ Case Studies Có Link Online</a>
+        <a href="#case-library" class="nav-link"><span class="icon">📚</span> 85+ Case Studies Phân Tích</a>
     </nav>
     
     <div class="sidebar-footer">
@@ -1398,11 +1501,11 @@ main.content-area {
     <section class="section-anchor" id="case-library">
         <div class="section-head">
             <span class="section-tag" style="background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); border-color: var(--accent-purple);">CASE STUDIES</span>
-            <h2 class="section-title">📚 Thư Viện 60+ Dự Án Phân Tích Thực Chiến (Tên Tiếng Việt &amp; Link Online)</h2>
+            <h2 class="section-title">📚 Thư Viện 85+ Dự Án Phân Tích Thực Chiến (Trực Quan &amp; Mở Trực Tiếp)</h2>
         </div>
         
         <p style="color: var(--text-secondary); margin-bottom: 20px;">
-            Mỗi case study đều có <b>tên tiếng Việt mô tả nội dung chính</b>, kèm nút xem nhanh <b>Báo Cáo HTML &amp; Video MP4 trực tiếp trong trang</b> (không mất đoạn đọc), nút xem <b>Bản in PDF</b>, và đường link <b>Instagram / Google Drive</b> để mở trên mọi trình duyệt/điện thoại:
+            Mỗi case study đều có <b>2 ảnh khung hình đại diện (Hook &amp; Key Shot)</b> để nhận diện nhanh, kèm nút chính <b>Mở Báo Cáo HTML trực tiếp trong tab mới</b> và các tùy chọn phụ (Video gốc, Instagram, Drive):
         </p>
         
         <div class="case-cards-container" id="caseCardsContainer">
@@ -1453,6 +1556,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZB9Ls3No6p.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZB9Ls3No6p_Video_by_jade.got.curious/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZB9Ls3No6p_Video_by_jade.got.curious/shot_03_mid.jpg"
     ]
   },
   {
@@ -1477,6 +1584,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DYXiic5xMeC.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DYXiic5xMeC_Video_by_jade.got.curious/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DYXiic5xMeC_Video_by_jade.got.curious/shot_03_mid.jpg"
     ]
   },
   {
@@ -1501,6 +1612,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZwO5X6N_MS.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious/shot_03_mid.jpg"
     ]
   },
   {
@@ -1525,6 +1640,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZa9pzKRsAU.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg"
     ]
   },
   {
@@ -1549,6 +1668,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcbAqchxJ2t.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DcbAqchxJ2t_Video_by_jade.got.curious/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jade_Sheng_DcbAqchxJ2t_Video_by_jade.got.curious/shot_03_mid.jpg"
     ]
   },
   {
@@ -1568,7 +1691,11 @@ const portalData = [
     "root_html_rel": "reports/Bao_Cao_Boi_Canh_Thuc_Chien_R2.html",
     "root_vid_rel": "",
     "root_pdf_rel": "",
-    "all_vids": []
+    "all_vids": [],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_01.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_03.jpg"
+    ]
   },
   {
     "id": "Chay_Bo_Times_City_Self_Practice",
@@ -1587,7 +1714,11 @@ const portalData = [
     "root_html_rel": "reports/Chay_Bo_Times_City - @Self_Practice.html",
     "root_vid_rel": "",
     "root_pdf_rel": "",
-    "all_vids": []
+    "all_vids": [],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_001_d3929600.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_003_f4a21091.jpg"
+    ]
   },
   {
     "id": "Visual_Storytelling_Carousel_@withyuee",
@@ -1606,7 +1737,11 @@ const portalData = [
     "root_html_rel": "reports/Visual_Storytelling_Carousel - @withyuee.html",
     "root_vid_rel": "",
     "root_pdf_rel": "",
-    "all_vids": []
+    "all_vids": [],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_001_f678a262.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_003_ab7e9aa6.jpg"
+    ]
   },
   {
     "id": "Hong_Kong_Urban_Transitions_@withyuee",
@@ -1630,6 +1765,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Urban_Transitions%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_001_f338d92e.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_003_5bd4e9f3.jpg"
     ]
   },
   {
@@ -1654,6 +1793,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Cinematography_Guide%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_001_4c61efb5.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_003_469ee782.jpg"
     ]
   },
   {
@@ -1678,6 +1821,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Bamboo_Scaffolding%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_001_84d02fa0.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_003_02cc6fea.jpg"
     ]
   },
   {
@@ -1702,6 +1849,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Mua%20Sua%20Do%20Hai%20Duong%20-%20%40thodiahaiduongne.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_start.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_end.jpg"
     ]
   },
   {
@@ -1726,6 +1877,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/7673468312290037012.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_03_mid.jpg"
     ]
   },
   {
@@ -1746,7 +1901,11 @@ const portalData = [
     "main_pdf_rel": "https://drive.google.com/open?id=1u045f-gZwguqSyrrc1isvfHpmv5ayhlh",
     "root_html_rel": "reports/Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino.html",
     "root_vid_rel": "videos/Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=1u045f-gZwguqSyrrc1isvfHpmv5ayhlh"
+    "root_pdf_rel": "https://drive.google.com/open?id=1u045f-gZwguqSyrrc1isvfHpmv5ayhlh",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@colecoppolino_DcJiRCrTlG1/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@colecoppolino_DcJiRCrTlG1/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape",
@@ -1766,7 +1925,11 @@ const portalData = [
     "main_vid_name": "Hong_Kong_Cinematic_Cityscape - @withyuee.mp4",
     "root_html_rel": "reports/Hong_Kong_Cinematic_Cityscape - @withyuee.html",
     "root_vid_rel": "videos/Hong_Kong_Cinematic_Cityscape - @withyuee.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=1--w7tAhgT3lzX2Fx1c6W9X4Y95ALEcnR"
+    "root_pdf_rel": "https://drive.google.com/open?id=1--w7tAhgT3lzX2Fx1c6W9X4Y95ALEcnR",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@daiki.shino_Dbk4X4tjJ8A_London_Cinematic_Video_Postcards_Carousel",
@@ -1784,7 +1947,11 @@ const portalData = [
     "shots_count": 10,
     "root_html_rel": "reports/London Cinematic Video Postcards - @daiki.shino.html",
     "root_vid_rel": "",
-    "root_pdf_rel": "https://drive.google.com/open?id=19PtUG7wn0y2ThvpbYzwWFKFJCEMp5Q87"
+    "root_pdf_rel": "https://drive.google.com/open?id=19PtUG7wn0y2ThvpbYzwWFKFJCEMp5Q87",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@daiki.shino_Dbk4X4tjJ8A_London_Cinematic_Video_Postcards_Carousel/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@daiki.shino_Dbk4X4tjJ8A_London_Cinematic_Video_Postcards_Carousel/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
@@ -1802,7 +1969,11 @@ const portalData = [
     "shots_count": 9,
     "root_html_rel": "reports/Tokyo_Slow_Life_Magic_Moments - @ioana_iftode.html",
     "root_vid_rel": "",
-    "root_pdf_rel": "https://drive.google.com/open?id=1izg7-5uzCOvcXkk33kO6lMWaPHnQ0yEB"
+    "root_pdf_rel": "https://drive.google.com/open?id=1izg7-5uzCOvcXkk33kO6lMWaPHnQ0yEB",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple",
@@ -1820,7 +1991,11 @@ const portalData = [
     "shots_count": 1,
     "root_html_rel": "reports/The_Goal_Is_Simple_Gym_Motivation - @willwfit.html",
     "root_vid_rel": "videos/The_Goal_Is_Simple_Gym_Motivation - @willwfit.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=1j-P8ipfO_qX10Jlqylv9utImgfEjDfAR"
+    "root_pdf_rel": "https://drive.google.com/open?id=1j-P8ipfO_qX10Jlqylv9utImgfEjDfAR",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
@@ -1838,7 +2013,11 @@ const portalData = [
     "shots_count": 10,
     "root_html_rel": "reports/Tokyo_Slow_Life_Visual_Diaries - @ioana_iftode.html",
     "root_vid_rel": "",
-    "root_pdf_rel": "https://drive.google.com/open?id=1rBfwXEg_Uzp49DJu7Z_UTc4h4CnBlb5d"
+    "root_pdf_rel": "https://drive.google.com/open?id=1rBfwXEg_Uzp49DJu7Z_UTc4h4CnBlb5d",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine",
@@ -1856,7 +2035,11 @@ const portalData = [
     "shots_count": 1,
     "root_html_rel": "reports/Aesthetic_Routine - @iamlukeluquire.html",
     "root_vid_rel": "videos/Aesthetic_Routine - @iamlukeluquire.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=1Dy6qh1VrWmJKJjzUgNtV4neBhhZQ9BQN"
+    "root_pdf_rel": "https://drive.google.com/open?id=1Dy6qh1VrWmJKJjzUgNtV4neBhhZQ9BQN",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva",
@@ -1874,7 +2057,11 @@ const portalData = [
     "shots_count": 1,
     "root_html_rel": "reports/Y_Tuong_Thanh_Hien_Thuc_Canva - @lifeofriza.html",
     "root_vid_rel": "videos/Y_Tuong_Thanh_Hien_Thuc_Canva - @lifeofriza.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=158we9MqMn-Y6hBwt-AyH4kjJvW7N9sBF"
+    "root_pdf_rel": "https://drive.google.com/open?id=158we9MqMn-Y6hBwt-AyH4kjJvW7N9sBF",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@madisonkjan_Da7V4egSQxv_Vietnam_Travel_Cinematic",
@@ -1892,7 +2079,11 @@ const portalData = [
     "shots_count": 1,
     "root_html_rel": "reports/The_Next_Station_Is_Vietnam - @madisonkjan.html",
     "root_vid_rel": "videos/The_Next_Station_Is_Vietnam - @madisonkjan.mp4",
-    "root_pdf_rel": "https://drive.google.com/open?id=1qC5AiDov6bR0sYQlX2kQFRYqJUtxhHbo"
+    "root_pdf_rel": "https://drive.google.com/open?id=1qC5AiDov6bR0sYQlX2kQFRYqJUtxhHbo",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@madisonkjan_Da7V4egSQxv_Vietnam_Travel_Cinematic/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@madisonkjan_Da7V4egSQxv_Vietnam_Travel_Cinematic/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "FB_@KopDinh_1398467868829887_Lat_Cat_Cam_Xuc_Kop_Dinh",
@@ -1916,6 +2107,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Lat_Cat_Cam_Xuc%20-%20%40KopDinh.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_001_63c5522e.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Lat_Cat_Cam_Xuc_-_%40KopDinh/img_003_b0b34390.jpg"
     ]
   },
   {
@@ -1940,6 +2135,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Chinese_New_Year_Hong_Kong%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_001_cbc24138.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chinese_New_Year_Hong_Kong_-_%40withyuee/img_003_bafbc8e0.jpg"
     ]
   },
   {
@@ -1992,6 +2191,10 @@ const portalData = [
         "name": "Slide 08 (Tổng kết)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_08_DO8aMjNkcW7.mp4"
       }
+    ],
+    "thumbnails": [
+      "extracted_shots/slide_01_mid.jpg",
+      "extracted_shots/slide_03_mid.jpg"
     ]
   },
   {
@@ -2016,6 +2219,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Gough_Street_Central_Hong_Kong%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_001_61880809.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Gough_Street_Central_Hong_Kong_-_%40withyuee/img_003_8c0f7ed5.jpg"
     ]
   },
   {
@@ -2040,6 +2247,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Spring_in_Hong_Kong%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg"
     ]
   },
   {
@@ -2064,6 +2275,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg"
     ]
   },
   {
@@ -2094,7 +2309,11 @@ const portalData = [
     "shots_count": 19,
     "root_html_rel": "reports/Aesthetic_Routine_Fitness - @samuelaitken_.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Aesthetic_Routine_Fitness%20-%20%40samuelaitken_.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Aesthetic_Routine_Fitness_-_%40samuelaitken/img_001_b0c92ce2.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Aesthetic_Routine_Fitness_-_%40samuelaitken/img_003_450cd1cb.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DbLToEpPPzm_Video_by_jazziesillona",
@@ -2124,7 +2343,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Hong_Kong_Bakery_Egg_Tart - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Bakery_Egg_Tart%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DbLToEpPPzm_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DbLToEpPPzm_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_001_94f415b0.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_003_08e95b41.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DZzwqWBvfwT_Video_by_jazziesillona",
@@ -2154,7 +2377,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Hong_Kong_Neon_Street_Night - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Neon_Street_Night%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DZzwqWBvfwT_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DZzwqWBvfwT_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_001_a370a673.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_003_5aac8ee0.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DZchNiZvH6m_Video_by_jazziesillona",
@@ -2184,7 +2411,11 @@ const portalData = [
     "shots_count": 14,
     "root_html_rel": "reports/Hong_Kong_Coffee_Morning_Routine - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Coffee_Morning_Routine%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Coffee_Morning_Routine_-_%40jazziesillona/img_001_31ef20c4.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Coffee_Morning_Routine_-_%40jazziesillona/img_003_1f07c601.jpg"
+    ]
   },
   {
     "id": "IG_@by.bennnj_DbKauxkoJU_",
@@ -2204,7 +2435,11 @@ const portalData = [
     "shots_count": 0,
     "root_html_rel": "reports/Making_Beginner_Cameras_Look_Cinematic - @by.bennnj.html",
     "root_vid_rel": "",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Making_Beginner_Cameras_Look_Cinematic_-_%40by.bennnj/img_001_7dd798e3.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Making_Beginner_Cameras_Look_Cinematic_-_%40by.bennnj/img_003_0f92bae8.jpg"
+    ]
   },
   {
     "id": "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic",
@@ -2234,7 +2469,11 @@ const portalData = [
     "shots_count": 36,
     "root_html_rel": "reports/Making_Beginner_Cameras_Look_Cinematic - @by.bennnj.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Making_Beginner_Cameras_Look_Cinematic%20-%20%40by.bennnj.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Making_Beginner_Cameras_Look_Cinematic_-_%40by.bennnj/img_001_7dd798e3.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Making_Beginner_Cameras_Look_Cinematic_-_%40by.bennnj/img_003_0f92bae8.jpg"
+    ]
   },
   {
     "id": "IG_@Katsuki_DaP3EE-qgAQ_Video_by_mkxpresar",
@@ -2264,7 +2503,11 @@ const portalData = [
     "shots_count": 3,
     "root_html_rel": "reports/Cinematic_Train_Japan - @Katsuki.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Cinematic_Train_Japan%20-%20%40Katsuki.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Katsuki_DaP3EE-qgAQ_Video_by_mkxpresar/Bao_Cao_Phan_Tich_Dao_Dien.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Katsuki_DaP3EE-qgAQ_Video_by_mkxpresar/Bao_Cao_Phan_Tich_Dao_Dien.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_001_1a64c4c7.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_003_716d7781.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DYcM_9FPr7I_Video_by_jazziesillona",
@@ -2294,7 +2537,11 @@ const portalData = [
     "shots_count": 14,
     "root_html_rel": "reports/Hong_Kong_Rainy_Day_Cinematic - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Rainy_Day_Cinematic%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DYcM_9FPr7I_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DYcM_9FPr7I_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_001_a101e3ca.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_003_172f4445.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DXoss18j011_Video_by_jazziesillona",
@@ -2328,7 +2575,11 @@ const portalData = [
     "shots_count": 14,
     "root_html_rel": "reports/Tai_Hang_Hong_Kong_Street - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Tai_Hang_Hong_Kong_Street%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DXoss18j011_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DXoss18j011_Video_by_jazziesillona/Bao_Cao_Phan_Tich_Dao_Dien.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_015_0f87c40e.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_017_781ec86d.jpg"
+    ]
   },
   {
     "id": "IG_@jazziesillona_DXUG_1TjwJu_Carousel_Analysis",
@@ -2378,7 +2629,11 @@ const portalData = [
     "shots_count": 6,
     "root_html_rel": "reports/Visual_Stopping_Power_Carousel - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Stopping_Power_Carousel_-_%40jazziesillona/img_001_3ed9942d.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Stopping_Power_Carousel_-_%40jazziesillona/img_003_8c9d0578.jpg"
+    ]
   },
   {
     "id": "IG_@jazziesillona_DW8lBR9Dzop_Carousel_Analysis",
@@ -2436,7 +2691,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Street_Photography_Carousel - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@jazziesillona_DW8lBR9Dzop_Carousel_Analysis/Bao_Cao_Phan_Tich_Carousel.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@jazziesillona_DW8lBR9Dzop_Carousel_Analysis/Bao_Cao_Phan_Tich_Carousel.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Street_Photography_Carousel_-_%40jazziesillona/img_001_e7c4fa90.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Street_Photography_Carousel_-_%40jazziesillona/img_003_e0df5078.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DWnsVqWj2XN_Carousel_Analysis",
@@ -2490,7 +2749,11 @@ const portalData = [
     "shots_count": 7,
     "root_html_rel": "reports/Everyday_Filming_Logic_Carousel - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "carousel_slides/slide_01_mid.jpg",
+      "carousel_slides/slide_03_mid.jpg"
+    ]
   },
   {
     "id": "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
@@ -2532,7 +2795,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Mood_and_Tone_Carousel - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01_DWrDQgoj7Uw.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Mood_and_Tone_Carousel_-_%40jazziesillona/img_001_0dc61289.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Mood_and_Tone_Carousel_-_%40jazziesillona/img_011_b22e8cde.jpg"
+    ]
   },
   {
     "id": "IG_@Jakarta_Videographer_Jacoub_Anwar_DbnwnkrAVQ9_Carousel_Analysis",
@@ -2590,7 +2857,11 @@ const portalData = [
     "shots_count": 7,
     "root_html_rel": "reports/Quy_Tac_Quay_Phim_Carousel - @Jacoub_Anwar.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_001_35384a7a.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Tac_Quay_Phim_Carousel_-_%40Jacoub_Anwar/img_003_db4b14ed.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DWERTvEjy7k_Video_by_jazziesillona",
@@ -2620,7 +2891,11 @@ const portalData = [
     "shots_count": 7,
     "root_html_rel": "reports/Hong_Kong_Fruit_Market - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Fruit_Market%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Fruit_Market_-_%40jazziesillona/img_001_8ad2ff57.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Fruit_Market_-_%40jazziesillona/img_003_8d21100e.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
@@ -2678,7 +2953,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Urban_Texture_Carousel - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Urban_Texture_Carousel_-_%40jazziesillona/img_001_e012a6d8.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Urban_Texture_Carousel_-_%40jazziesillona/img_003_25d59c75.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DUPo66yklxb_Video_by_jazziesillona",
@@ -2708,7 +2987,11 @@ const portalData = [
     "shots_count": 8,
     "root_html_rel": "reports/Humans_of_Hong_Kong - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Humans_of_Hong_Kong%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Humans_of_Hong_Kong_-_%40jazziesillona/img_001_e2b91628.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Humans_of_Hong_Kong_-_%40jazziesillona/img_003_5686bd41.jpg"
+    ]
   },
   {
     "id": "IG_@Jazzie_DUS5DYCEgyg_Video_by_jazziesillona",
@@ -2738,7 +3021,11 @@ const portalData = [
     "shots_count": 41,
     "root_html_rel": "reports/Mat_Chuoc_x_Pho_Hong_Kong - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Mat_Chuoc_x_Pho_Hong_Kong%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DUS5DYCEgyg_Video_by_jazziesillona/Bao_Cao_Phan_Tich.pdf"
+    "root_pdf_rel": "../Video phan tich/output_packages/IG_@Jazzie_DUS5DYCEgyg_Video_by_jazziesillona/Bao_Cao_Phan_Tich.pdf",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Mat_Chuoc_x_Pho_Hong_Kong_-_%40jazziesillona/img_001_92858f86.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Mat_Chuoc_x_Pho_Hong_Kong_-_%40jazziesillona/img_005_c3be7d28.jpg"
+    ]
   },
   {
     "id": "IG_@jazziesillona_DbIA2jwPHCV",
@@ -2768,7 +3055,11 @@ const portalData = [
     "shots_count": 4,
     "root_html_rel": "reports/Hong_Kong_Alleyways_Cinematic - @jazziesillona.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Alleyways_Cinematic%20-%20%40jazziesillona.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Alleyways_Cinematic_-_%40jazziesillona/img_001_00ff8166.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Alleyways_Cinematic_-_%40jazziesillona/img_003_ef0401c7.jpg"
+    ]
   },
   {
     "id": "IG_@Ben_Db6a3tHoWTS_Video_by_by.bennnj",
@@ -2798,7 +3089,11 @@ const portalData = [
     "shots_count": 2,
     "root_html_rel": "reports/Storyboard_Analysis - @by.bennnj.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Storyboard_Analysis%20-%20%40by.bennnj.mp4",
-    "root_pdf_rel": ""
+    "root_pdf_rel": "",
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Storyboard_Analysis_-_%40by.bennnj/img_001_9ac1a2d2.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Storyboard_Analysis_-_%40by.bennnj/img_003_a8b3e854.jpg"
+    ]
   },
   {
     "id": "REMAKE_Byjxson_Quang_Cao_Dong_Ho_Bam_Gio",
@@ -2822,6 +3117,10 @@ const portalData = [
         "name": "Video Mẫu Gốc (@byjxson)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Project%20100%20Day%2001%20-%20%40byjxson.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@byjxson_Dal3RFpA5nI_Project_100_Day_01/shot_01_start.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@byjxson_Dal3RFpA5nI_Project_100_Day_01/shot_01_end.jpg"
     ]
   },
   {
@@ -2846,6 +3145,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life/shot_03_mid.jpg"
     ]
   },
   {
@@ -2870,6 +3173,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dau0C9AzXc8.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Rilo_Dau0C9AzXc8_Video_by_17th.visuals/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Rilo_Dau0C9AzXc8_Video_by_17th.visuals/shot_03_mid.jpg"
     ]
   },
   {
@@ -2894,6 +3201,10 @@ const portalData = [
         "name": "Video Master",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DY2XJzdioZg.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Simeon_Kraeft_DY2XJzdioZg_Video_by_simeonkraeft/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Simeon_Kraeft_DY2XJzdioZg_Video_by_simeonkraeft/shot_03_mid.jpg"
     ]
   },
   {
@@ -2918,6 +3229,10 @@ const portalData = [
         "name": "Video Master (DaH_rTUTe14)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaH_rTUTe14.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg"
     ]
   },
   {
@@ -2942,6 +3257,10 @@ const portalData = [
         "name": "Video Master (DaXdrAVzGcc)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaXdrAVzGcc.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_03_mid.jpg"
     ]
   },
   {
@@ -2966,6 +3285,10 @@ const portalData = [
         "name": "Video Master (DbnlAB5Twrw)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbnlAB5Twrw.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_03_mid.jpg"
     ]
   },
   {
@@ -2990,6 +3313,10 @@ const portalData = [
         "name": "Video Master (DcGbEVFznin)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcGbEVFznin.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_03_mid.jpg"
     ]
   },
   {
@@ -3014,6 +3341,10 @@ const portalData = [
         "name": "Video Master (DZN-FfdyPgH)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZN-FfdyPgH.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_03_mid.jpg"
     ]
   },
   {
@@ -3038,6 +3369,10 @@ const portalData = [
         "name": "Video Master (Da46F-lxueg)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Da46F-lxueg.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_03_mid.jpg"
     ]
   },
   {
@@ -3062,6 +3397,10 @@ const portalData = [
         "name": "Video Master (DY5aQaoABsy)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DY5aQaoABsy.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_03_mid.jpg"
     ]
   },
   {
@@ -3086,6 +3425,10 @@ const portalData = [
         "name": "Video Master (DbS3HNNIKR7)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbS3HNNIKR7.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_03_mid.jpg"
     ]
   },
   {
@@ -3110,6 +3453,10 @@ const portalData = [
         "name": "Video Master (DaAm8suhCau)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaAm8suhCau.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_03_mid.jpg"
     ]
   },
   {
@@ -3134,6 +3481,10 @@ const portalData = [
         "name": "Video Master (DbomJ6-Tpry)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbomJ6-Tpry.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_03_mid.jpg"
     ]
   },
   {
@@ -3158,6 +3509,10 @@ const portalData = [
         "name": "Video Master (DcLwG_mKyKM)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcLwG_mKyKM.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_03_mid.jpg"
     ]
   },
   {
@@ -3182,6 +3537,10 @@ const portalData = [
         "name": "Video Master (DZVHH27S7Lf)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVHH27S7Lf.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_03_mid.jpg"
     ]
   },
   {
@@ -3206,6 +3565,10 @@ const portalData = [
         "name": "Video Master (DZVAYFwvo4y)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVAYFwvo4y.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_03_mid.jpg"
     ]
   },
   {
@@ -3230,6 +3593,10 @@ const portalData = [
         "name": "Video Master (DcJBTCoT6UT)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJBTCoT6UT.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg"
     ]
   },
   {
@@ -3282,6 +3649,10 @@ const portalData = [
         "name": "Slide 08 (slide_08)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg"
     ]
   },
   {
@@ -3306,6 +3677,10 @@ const portalData = [
         "name": "Video Master (DYwzs3zRRkv)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DYwzs3zRRkv.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_03_mid.jpg"
     ]
   },
   {
@@ -3330,6 +3705,10 @@ const portalData = [
         "name": "Video Master (DaC90d3tWuV)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaC90d3tWuV.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_03_mid.jpg"
     ]
   },
   {
@@ -3349,7 +3728,11 @@ const portalData = [
     "root_html_rel": "reports/IG_@creator_DaC90d3tWuV_Video_DaC90d3tWuV.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaC90d3tWuV.mp4",
     "root_pdf_rel": "",
-    "all_vids": []
+    "all_vids": [],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@local_creator_video_video",
@@ -3373,6 +3756,10 @@ const portalData = [
         "name": "Video Master (video)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/video.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_001_64380ecb.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_003_0fe2b694.jpg"
     ]
   },
   {
@@ -3397,6 +3784,10 @@ const portalData = [
         "name": "Video Master (Db7P1GeOxvq)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db7P1GeOxvq.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_03_mid.jpg"
     ]
   },
   {
@@ -3416,7 +3807,11 @@ const portalData = [
     "root_html_rel": "reports/IG_@creator_Db7P1GeOxvq_Video_Db7P1GeOxvq.html",
     "root_vid_rel": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db7P1GeOxvq.mp4",
     "root_pdf_rel": "",
-    "all_vids": []
+    "all_vids": [],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_01_mid.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_02_mid.jpg"
+    ]
   },
   {
     "id": "IG_@local_creator_video_ig_video_ig",
@@ -3440,6 +3835,10 @@ const portalData = [
         "name": "Video Master (video_ig)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/video_ig.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_001_3c289bad.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_003_7c3a7180.jpg"
     ]
   },
   {
@@ -3464,6 +3863,10 @@ const portalData = [
         "name": "Master Concat Video (76.1s)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Kyoto%20Slow%20Life%20Visual%20Diaries%20-%20%40ioana_iftode.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Kyoto_Slow_Life_Visual_Diaries_-_%40ioana_iftode/img_056_2c7f6609.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Kyoto_Slow_Life_Visual_Diaries_-_%40ioana_iftode/img_006_b84c134c.jpg"
     ]
   },
   {
@@ -3488,6 +3891,10 @@ const portalData = [
         "name": "Video Full MP4 (13.8s)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Project%20100%20Day%2001%20-%20%40byjxson.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Project_100_Day_01_-_%40byjxson/img_002_311c68c6.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Project_100_Day_01_-_%40byjxson/img_006_b30f0d67.jpg"
     ]
   },
   {
@@ -3512,6 +3919,10 @@ const portalData = [
         "name": "Video Full MP4 (23s)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Visual%20Sequence%20-%20%40bryanhynes.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_080_ae283717.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_082_406f7de9.jpg"
     ]
   },
   {
@@ -3536,6 +3947,10 @@ const portalData = [
         "name": "Video Full MP4 (28s)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Static%20Shot%20-%20%40kenshoji.visuals.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_002_66f52422.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Static_Shot_-_%40kenshoji.visuals/img_006_6e867305.jpg"
     ]
   },
   {
@@ -3560,6 +3975,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Power%20of%20Composition%20-%20%40minhmigoi.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Power_of_Composition_-_%40minhmigoi/img_002_4ee0b6c4.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Power_of_Composition_-_%40minhmigoi/img_006_df195b94.jpg"
     ]
   },
   {
@@ -3584,6 +4003,10 @@ const portalData = [
         "name": "Video Full MP4 (74s)",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Camera%20Angles%20Mastery%20-%20%40mcjacoub.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Camera_Angles_Mastery_-_%40mcjacoub/img_028_b372b147.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Camera_Angles_Mastery_-_%40mcjacoub/img_030_d98291c4.jpg"
     ]
   },
   {
@@ -3608,6 +4031,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Saigon%2C%20Vietnam%20-%20%40qfroost.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Saigon%2C_Vietnam_-_%40qfroost/img_006_43d6f3a5.jpg"
     ]
   },
   {
@@ -3632,6 +4059,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Ray-Ban%20Meta%20System%20-%20%40qfroost.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_002_7fa52771.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Ray-Ban_Meta_System_-_%40qfroost/img_006_c802aff9.jpg"
     ]
   },
   {
@@ -3656,6 +4087,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Quy_Trinh_Sang_Tao_Adobe_Firefly%20-%20%40qfroost.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Trinh_Sang_Tao_Adobe_Firefly_-_%40qfroost/img_002_8f1351ef.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Quy_Trinh_Sang_Tao_Adobe_Firefly_-_%40qfroost/img_006_6e9310da.jpg"
     ]
   },
   {
@@ -3680,6 +4115,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People%20of%20Bhutan%20-%20%40jeromememe.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Bhutan_-_%40jeromememe/img_002_c7376907.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Bhutan_-_%40jeromememe/img_006_f8001919.jpg"
     ]
   },
   {
@@ -3704,6 +4143,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People_of_Porto%20-%20%40jeromememe.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Porto_-_%40jeromememe/img_006_f8001919.jpg"
     ]
   },
   {
@@ -3728,6 +4171,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Artisans%20of%20Venice%20-%20%40jeromememe.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_002_a927da23.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Artisans_of_Venice_-_%40jeromememe/img_006_50edaa56.jpg"
     ]
   },
   {
@@ -3752,6 +4199,10 @@ const portalData = [
         "name": "Video Full MP4",
         "rel_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People%20of%20Copenhagen%20-%20%40jeromememe.mp4"
       }
+    ],
+    "thumbnails": [
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_002_c4d4b5a4.jpg",
+      "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/People_of_Copenhagen_-_%40jeromememe/img_006_b1f70076.jpg"
     ]
   }
 ];
@@ -4006,59 +4457,89 @@ function renderCaseCards(filterText = '') {
         
         const htmlPath = pkg.root_html_rel || pkg.main_html_rel || '';
         const resolvedHtmlPath = getResolvedPath(htmlPath);
-        const resolvedPdfPath = getResolvedPath(pkg.root_pdf_rel || pkg.main_pdf_rel);
         
-        // Buttons
-        let reportBtn = '';
-        if (htmlPath) {
-            reportBtn = `
-                <button class="action-btn btn-report" onclick="openCaseReport(${index})">📄 Xem Báo Cáo HTML</button>
-                <a class="action-btn" style="background:#0284c7; color:#fff; font-weight:700; padding:7px 12px; border-radius:8px; text-decoration:none;" href="${resolvedHtmlPath}" target="_blank" title="Mở trực tiếp file HTML">🌐 Mở File HTML ↗</a>
-            `;
+        // Thumbnails (2 keyframe images)
+        let thumbs = pkg.thumbnails || [];
+        if (!thumbs || thumbs.length === 0) {
+            const folder = pkg.folder_name || pkg.id || '';
+            thumbs = [
+                `https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${folder}/shot_01_mid.jpg`,
+                `https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${folder}/shot_02_mid.jpg`
+            ];
         }
+        const thumb1 = getResolvedPath(thumbs[0] || '');
+        const thumb2 = getResolvedPath(thumbs[1] || thumbs[0] || '');
         
-        let videoBtn = '';
+        // Secondary Links (Clean, subtle text/icon links, NO visual clutter)
+        let metaLinks = [];
+        
         const vidPath = pkg.root_vid_rel || pkg.main_vid_rel || '';
         if (vidPath || (pkg.all_vids && pkg.all_vids.length > 0)) {
-            const vidLabel = (pkg.all_vids && pkg.all_vids.length > 1) ? `🎬 Xem ${pkg.all_vids.length} Slides Video (Tua Chậm)` : `🎬 Xem Video MP4 (Tua Chậm)`;
-            videoBtn = `<button class="action-btn btn-video" onclick="openCaseVideo(${index})">${vidLabel}</button>`;
+            const vidCount = (pkg.all_vids && pkg.all_vids.length > 1) ? ` (${pkg.all_vids.length} clips)` : '';
+            metaLinks.push(`<button class="meta-link-btn" onclick="openCaseVideo(${index})">🎬 Video gốc${vidCount}</button>`);
         }
         
-        let pdfBtn = '';
-        if (pkg.gdrive_pdf) {
-            pdfBtn = `<a class="action-btn btn-pdf" href="${pkg.gdrive_pdf}" target="_blank">📥 Đọc PDF Drive</a>`;
-        }
-        
-        let igBtn = '';
         if (pkg.ig_url) {
-            igBtn = `<a class="action-btn btn-ig" href="${pkg.ig_url}" target="_blank">📸 Xem Trên Instagram ↗</a>`;
+            metaLinks.push(`<a class="meta-link" href="${pkg.ig_url}" target="_blank" rel="noopener">📸 Instagram ↗</a>`);
         }
         
-        let gdriveBtn = '';
         if (pkg.gdrive_folder) {
-            gdriveBtn = `<a class="action-btn btn-drive" href="${pkg.gdrive_folder}" target="_blank">☁️ Google Drive ↗</a>`;
+            metaLinks.push(`<a class="meta-link" href="${pkg.gdrive_folder}" target="_blank" rel="noopener">☁️ Drive ↗</a>`);
         }
+        
+        if (pkg.gdrive_pdf) {
+            metaLinks.push(`<a class="meta-link" href="${pkg.gdrive_pdf}" target="_blank" rel="noopener">📥 PDF ↗</a>`);
+        }
+        
+        const secondaryLinksHtml = metaLinks.length > 0 ? `
+            <div class="case-secondary-links">
+                <span class="secondary-label">Tùy chọn:</span>
+                ${metaLinks.join('<span class="meta-sep">•</span>')}
+            </div>
+        ` : '';
         
         card.innerHTML = `
-            <div class="case-index-badge">${String(count).padStart(2, '0')}</div>
+            <div class="case-thumbs-col">
+                <div class="case-index-pill">#${String(count).padStart(2, '0')}</div>
+                <a href="${resolvedHtmlPath}" target="_blank" class="case-thumbs-pair" title="Mở Báo Cáo Phân Tích (Tab mới)">
+                    <div class="thumb-frame">
+                        <img src="${thumb1}" alt="Shot 01" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
+                        <span class="thumb-tag">Shot 01</span>
+                    </div>
+                    <div class="thumb-frame">
+                        <img src="${thumb2}" alt="Key Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_03_mid.jpg';">
+                        <span class="thumb-tag">Key Shot</span>
+                    </div>
+                </a>
+            </div>
+            
             <div class="case-main-content">
-                <div class="case-title-row">
-                    <div class="case-title-text">${escapeHtml(pkg.title_vi)}</div>
-                    <span class="case-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>
+                <div class="case-header-wrap">
+                    <div class="case-title-row">
+                        <a href="${resolvedHtmlPath}" target="_blank" class="case-title-link">
+                            <h3 class="case-title-text">${escapeHtml(pkg.title_vi)}</h3>
+                        </a>
+                    </div>
+                    <div class="case-meta-row">
+                        <span class="case-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>
+                        <span class="case-shots-badge">🎬 ${pkg.shots_count || 0} phân cảnh</span>
+                    </div>
                 </div>
                 
                 <p class="case-desc-text">${escapeHtml(pkg.desc_vi)}</p>
                 
                 <div class="case-tech-box">
-                    <b>🎯 Kỹ thuật trọng tâm:</b> ${escapeHtml(pkg.key_tech)} &nbsp;•&nbsp; <b>Quy mô:</b> ${pkg.shots_count} shots/slides
+                    <b>🎯 Kỹ thuật trọng tâm:</b> ${escapeHtml(pkg.key_tech)}
                 </div>
                 
-                <div class="case-actions-bar">
-                    ${reportBtn}
-                    ${videoBtn}
-                    ${pdfBtn}
-                    ${igBtn}
-                    ${gdriveBtn}
+                <div class="case-action-row">
+                    ${htmlPath ? `
+                        <a class="primary-report-btn" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích trong Tab Mới">
+                            <span>📄 Mở Báo Cáo Phân Tích</span>
+                            <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        </a>
+                    ` : ''}
+                    ${secondaryLinksHtml}
                 </div>
             </div>
         `;
