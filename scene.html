@@ -598,7 +598,7 @@ main.content-area {
 }
 
 /* ==========================================================================
-   SMART FILTER PANEL & 3x3 COMPACT GRID SYSTEM
+   SMART FILTER PANEL & 3x3 COMPACT GRID SYSTEM (ADVANCED OPTIMIZATIONS)
    ========================================================================== */
 
 .filter-counter-badge {
@@ -733,6 +733,42 @@ main.content-area {
     color: #fff;
 }
 
+/* View Mode Switcher */
+.view-mode-group {
+    display: flex;
+    align-items: center;
+    background: #182234;
+    border: 1px solid #283750;
+    border-radius: 8px;
+    padding: 2px;
+    gap: 2px;
+}
+
+.view-mode-btn {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.view-mode-btn:hover {
+    color: #fff;
+    background: #25334d;
+}
+
+.view-mode-btn.active {
+    background: var(--accent-blue);
+    color: #0b0f17;
+}
+
 .reset-filter-btn {
     background: #202d42;
     border: 1px solid #334460;
@@ -802,7 +838,7 @@ main.content-area {
     font-weight: 700;
 }
 
-/* Filter Status Bar */
+/* Filter Status & Removable Filter Pills */
 .filter-status-bar {
     display: flex;
     align-items: center;
@@ -811,6 +847,8 @@ main.content-area {
     padding-top: 8px;
     font-size: 12px;
     color: var(--text-muted);
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .result-counter {
@@ -830,22 +868,75 @@ main.content-area {
     font-family: var(--font-mono);
 }
 
-/* 3x3 Responsive Grid */
+.active-filter-pills {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.filter-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: #38bdf8;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.filter-pill-close {
+    cursor: pointer;
+    font-weight: bold;
+    color: #94a3b8;
+    transition: color 0.15s;
+}
+.filter-pill-close:hover { color: #f43f5e; }
+
+/* Search Match Highlight */
+mark.search-highlight {
+    background: rgba(245, 158, 11, 0.35);
+    color: #fef08a;
+    padding: 0 2px;
+    border-radius: 3px;
+    font-weight: inherit;
+}
+
+/* Grid Layouts: Standard 3x3, Ultra-Dense 4-Col, List View */
 .case-grid-3x3 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 16px;
-    margin-bottom: 36px;
+    margin-bottom: 24px;
 }
 
-@media (max-width: 1200px) {
-    .case-grid-3x3 {
+.case-grid-3x3.mode-grid4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.case-grid-3x3.mode-list {
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+@media (max-width: 1380px) {
+    .case-grid-3x3.mode-grid4 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 1100px) {
+    .case-grid-3x3, .case-grid-3x3.mode-grid4 {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
 @media (max-width: 700px) {
-    .case-grid-3x3 {
+    .case-grid-3x3, .case-grid-3x3.mode-grid4, .case-grid-3x3.mode-list {
         grid-template-columns: 1fr;
     }
 }
@@ -871,7 +962,39 @@ main.content-area {
     transform: translateY(-2px);
 }
 
-/* Dual Thumbnails Area */
+/* List Mode Layout for Compact Card */
+.case-grid-3x3.mode-list .case-card-compact {
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+}
+
+.case-grid-3x3.mode-list .case-card-thumbs {
+    width: 140px;
+    margin-bottom: 0;
+    flex-shrink: 0;
+}
+
+.case-grid-3x3.mode-list .thumb-box {
+    max-height: 95px;
+}
+
+.case-grid-3x3.mode-list .case-card-body {
+    margin-bottom: 0;
+    flex: 1;
+}
+
+.case-grid-3x3.mode-list .case-card-actions {
+    width: 180px;
+    border-top: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0;
+    padding-left: 16px;
+    flex-shrink: 0;
+}
+
+/* Dual Thumbnails Area (Hook & Key Shot Recognition) */
 .case-card-thumbs {
     position: relative;
     margin-bottom: 10px;
@@ -903,23 +1026,69 @@ main.content-area {
     transition: transform 0.3s ease;
 }
 
-.case-card-compact:hover .thumb-box img {
-    transform: scale(1.06);
+.thumb-box:hover img {
+    transform: scale(1.08);
 }
 
-.thumb-tag {
+/* Visual Tags for Hook & Key Shot */
+.thumb-tag-hook {
     position: absolute;
     bottom: 3px;
     left: 3px;
-    background: rgba(11, 15, 23, 0.85);
-    backdrop-filter: blur(4px);
-    color: #e2e8f0;
-    font-size: 8.5px;
-    font-weight: 700;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.9), rgba(14, 165, 233, 0.9));
+    color: #fff;
+    font-size: 8px;
+    font-weight: 800;
     font-family: var(--font-mono);
-    padding: 1px 4px;
+    padding: 2px 5px;
     border-radius: 3px;
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.thumb-tag-key {
+    position: absolute;
+    bottom: 3px;
+    left: 3px;
+    background: linear-gradient(135deg, rgba(217, 119, 6, 0.92), rgba(245, 158, 11, 0.92));
+    color: #0b0f17;
+    font-size: 8px;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    padding: 2px 5px;
+    border-radius: 3px;
+    letter-spacing: 0.3px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+/* Quick Zoom Peek Button */
+.thumb-zoom-btn {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    background: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.15s;
+}
+
+.thumb-box:hover .thumb-zoom-btn {
+    opacity: 1;
+}
+.thumb-zoom-btn:hover {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    border-color: var(--accent-blue);
 }
 
 .card-top-badges {
@@ -963,50 +1132,6 @@ main.content-area {
     display: flex;
     flex-direction: column;
     margin-bottom: 10px;
-}
-
-.card-creator-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--accent-blue);
-    font-size: 11.5px;
-    font-weight: 600;
-    text-decoration: none;
-    margin-bottom: 4px;
-    transition: all 0.15s ease;
-    max-width: 100%;
-}
-.card-creator-link:hover {
-    color: #38bdf8;
-}
-.ig-badge-tag {
-    background: rgba(192, 132, 252, 0.15);
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    color: var(--accent-purple);
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 5px;
-    border-radius: 4px;
-    transition: all 0.15s;
-    flex-shrink: 0;
-}
-.card-creator-link:hover .ig-badge-tag {
-    background: linear-gradient(135deg, #c084fc, #f43f5e);
-    color: #0b0f17;
-    border-color: transparent;
-}
-.card-creator-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    color: var(--accent-blue);
-    font-weight: 600;
-    margin-bottom: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .card-title-link {
@@ -1124,6 +1249,140 @@ main.content-area {
 .meta-dot-sep {
     color: #334155;
     font-size: 9px;
+}
+
+/* Pagination & Load More Bar */
+.load-more-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111827;
+    border: 1px solid #1f2d42;
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 36px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.load-progress-info {
+    font-size: 12.5px;
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.load-more-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-load-more {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    color: #fff;
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    padding: 7px 16px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.18s;
+}
+.btn-load-more:hover {
+    background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+    color: #0b0f17;
+}
+
+.btn-show-all {
+    background: #1e293b;
+    color: #cbd5e1;
+    border: 1px solid #334155;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.18s;
+}
+.btn-show-all:hover {
+    background: #334155;
+    color: #fff;
+}
+
+/* Darkroom Image Lightbox Styles */
+.img-lightbox-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(5, 8, 14, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    z-index: 99999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.img-lightbox-backdrop.open {
+    display: flex;
+    animation: fadeIn 0.2s ease;
+}
+
+.img-lightbox-dialog {
+    position: relative;
+    max-width: 92vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img-lightbox-large {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    object-fit: contain;
+}
+
+.img-lightbox-caption {
+    margin-top: 12px;
+    color: #e2e8f0;
+    font-size: 13px;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 6px 16px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 85vw;
+}
+
+.img-lightbox-close {
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #ef4444;
+    color: #fff;
+    border: 2px solid #fff;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+.img-lightbox-close:hover {
+    background: #dc2626;
+    transform: scale(1.1);
 }
 
 .carousel-tabs-bar {
@@ -1407,12 +1666,12 @@ main.content-area {
             </div>
         </div>
         
-        <!-- Smart Realtime Filter Panel -->
+        <!-- Smart Realtime Filter Panel with 3x3 Density & Multi-Layer Filtering -->
         <div class="filter-control-panel">
             <div class="filter-main-bar">
                 <div class="filter-search-box">
                     <span class="search-icon">🔍</span>
-                    <input type="text" id="caseSearchInput" class="filter-input" placeholder="Tìm kiếm nhanh tên video, creator, kỹ thuật, bối cảnh...">
+                    <input type="text" id="caseSearchInput" class="filter-input" placeholder="Tìm kiếm nhanh tên video, creator, kỹ thuật, bối cảnh (Gõ '/' để tìm)...">
                     <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="Xóa tìm kiếm">✕</button>
                 </div>
                 
@@ -1437,6 +1696,13 @@ main.content-area {
                         </select>
                     </div>
                     
+                    <!-- View Mode Switcher (Density Optimizer) -->
+                    <div class="view-mode-group">
+                        <button class="view-mode-btn active" id="modeGrid3Btn" onclick="setViewMode('grid3')" title="Chế độ Lưới 3 Cột (3x3 Chuẩn)">🔲 3x3</button>
+                        <button class="view-mode-btn" id="modeGrid4Btn" onclick="setViewMode('grid4')" title="Chế độ Lưới 4 Cột Đặc (Ultra-Dense)">▤ 4 Cột</button>
+                        <button class="view-mode-btn" id="modeListBtn" onclick="setViewMode('list')" title="Chế độ Danh Sách Tinh Gọn">☰ List</button>
+                    </div>
+                    
                     <button class="reset-filter-btn" onclick="resetAllFilters()" title="Đặt lại bộ lọc về mặc định">
                         <span>🔄 Đặt lại</span>
                     </button>
@@ -1457,18 +1723,33 @@ main.content-area {
                 </div>
             </div>
             
-            <!-- Active Filter Status & Result Count -->
+            <!-- Active Filter Status & Removable Filter Pills -->
             <div class="filter-status-bar">
                 <div class="result-counter">
                     <span class="dot-active">●</span> Hiển thị: <b id="resultCountText" class="highlight-count">87</b> / <span id="maxTotalText">87</span> dự án phân tích
                 </div>
-                <div id="activeFilterTags" class="active-filter-tags"></div>
+                <div id="activeFilterPills" class="active-filter-pills"></div>
             </div>
         </div>
         
-        <!-- 3x3 Dense Grid Container -->
+        <!-- 3x3 / 4x4 / List Container -->
         <div class="case-grid-3x3" id="caseCardsContainer">
             <!-- Populated dynamically by JavaScript -->
+        </div>
+        
+        <!-- Smart Pagination / Load More Bar -->
+        <div class="load-more-bar" id="loadMoreBar" style="display:none;">
+            <div class="load-progress-info">
+                Đang hiển thị <span id="visibleCountText">18</span> / <span id="totalMatchesText">87</span> bài phân tích
+            </div>
+            <div class="load-more-actions">
+                <button class="btn-load-more" id="btnLoadMore" onclick="loadMoreCards()">
+                    <span>📥 Xem Thêm (+18 Dự Án)</span>
+                </button>
+                <button class="btn-show-all" onclick="showAllCards()">
+                    <span>✨ Hiển Thị Tất Cả</span>
+                </button>
+            </div>
         </div>
     </section>
 
@@ -4758,12 +5039,18 @@ function escapeHtml(str) {
               .replace(/'/g, '&#039;');
 }
 
-// Smart Multi-Faceted Realtime Filter & 3x3 Grid Renderer
+// ==========================================================================
+// ADVANCED MULTI-LAYER INSTANT FILTERING, 3x3 DENSITY & LIGHTBOX DARKROOM
+// ==========================================================================
+
 let currentFilterState = {
     search: '',
     creator: '',
     technique: '',
-    chip: 'all'
+    chip: 'all',
+    viewMode: 'grid3',
+    pageSize: 18,
+    currentPage: 1
 };
 
 // Initialize Creator Dropdown Options
@@ -4817,8 +5104,83 @@ function matchTechnique(pkgTech = '', filterType = '') {
     return t.includes(filterType.toLowerCase());
 }
 
-// Master Filter Function (Realtime < 2ms)
-function applyFilters() {
+// Search Highlighter Helper
+function highlightText(text, keyword) {
+    if (!keyword || !text) return escapeHtml(text);
+    const escaped = escapeHtml(text);
+    const regex = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+    return escaped.replace(regex, '<mark class="search-highlight">$1</mark>');
+}
+
+// Change View Mode (3x3 Grid, 4-Col Ultra Dense, Compact List)
+function setViewMode(mode) {
+    currentFilterState.viewMode = mode;
+    const container = document.getElementById('caseCardsContainer');
+    if (!container) return;
+    
+    container.className = 'case-grid-3x3';
+    if (mode === 'grid4') container.classList.add('mode-grid4');
+    if (mode === 'list') container.classList.add('mode-list');
+    
+    document.querySelectorAll('.view-mode-btn').forEach(b => b.classList.remove('active'));
+    if (mode === 'grid3') document.getElementById('modeGrid3Btn')?.classList.add('active');
+    if (mode === 'grid4') document.getElementById('modeGrid4Btn')?.classList.add('active');
+    if (mode === 'list') document.getElementById('modeListBtn')?.classList.add('active');
+    
+    syncUrlHash();
+}
+
+// Sync State with URL Hash for Bookmark & Share
+function syncUrlHash() {
+    const params = [];
+    if (currentFilterState.search) params.push(`q=${encodeURIComponent(currentFilterState.search)}`);
+    if (currentFilterState.creator) params.push(`creator=${encodeURIComponent(currentFilterState.creator)}`);
+    if (currentFilterState.technique) params.push(`tech=${encodeURIComponent(currentFilterState.technique)}`);
+    if (currentFilterState.chip && currentFilterState.chip !== 'all') params.push(`chip=${encodeURIComponent(currentFilterState.chip)}`);
+    if (currentFilterState.viewMode && currentFilterState.viewMode !== 'grid3') params.push(`view=${currentFilterState.viewMode}`);
+    
+    if (params.length > 0) {
+        history.replaceState(null, '', '#' + params.join('&'));
+    } else {
+        history.replaceState(null, '', window.location.pathname);
+    }
+}
+
+// Restore State from URL Hash
+function restoreStateFromHash() {
+    const hash = window.location.hash.substring(1);
+    if (!hash) return;
+    
+    const params = new URLSearchParams(hash);
+    const q = params.get('q') || '';
+    const creator = params.get('creator') || '';
+    const tech = params.get('tech') || '';
+    const chip = params.get('chip') || 'all';
+    const view = params.get('view') || 'grid3';
+    
+    if (q) {
+        const input = document.getElementById('caseSearchInput');
+        if (input) input.value = q;
+    }
+    if (creator) {
+        const sel = document.getElementById('creatorFilter');
+        if (sel) sel.value = creator;
+    }
+    if (tech) {
+        const sel = document.getElementById('techniqueFilter');
+        if (sel) sel.value = tech;
+    }
+    if (chip && chip !== 'all') {
+        const chipBtn = document.querySelector(`.chip-btn[data-chip="${chip}"]`);
+        if (chipBtn) setQuickChip(chip, chipBtn);
+    }
+    if (view) {
+        setViewMode(view);
+    }
+}
+
+// Master Filter Function (Realtime Multi-Layer < 2ms)
+function applyFilters(resetPagination = true) {
     const searchVal = (document.getElementById('caseSearchInput')?.value || '').trim().toLowerCase();
     const creatorVal = document.getElementById('creatorFilter')?.value || '';
     const techDropdownVal = document.getElementById('techniqueFilter')?.value || '';
@@ -4827,45 +5189,48 @@ function applyFilters() {
     currentFilterState.creator = creatorVal;
     currentFilterState.technique = techDropdownVal;
     
+    if (resetPagination) {
+        currentFilterState.currentPage = 1;
+    }
+    
     // Toggle clear search button
     const clearBtn = document.getElementById('clearSearchBtn');
     if (clearBtn) {
         clearBtn.style.display = searchVal ? 'block' : 'none';
     }
     
-    const container = document.getElementById('caseCardsContainer');
-    if (!container) return;
-    container.innerHTML = '';
+    // Render Active Removable Filter Pills
+    renderActiveFilterPills();
     
-    let matchCount = 0;
-    
+    // Filter matching data
+    const matched = [];
     portalData.forEach((pkg, index) => {
         // 1. Text Search Filter
         if (searchVal) {
             const searchable = ((pkg.title_vi || '') + ' ' + (pkg.creator || '') + ' ' + (pkg.desc_vi || '') + ' ' + (pkg.key_tech || '') + ' ' + (pkg.id || '')).toLowerCase();
             if (!searchable.includes(searchVal)) return;
         }
-        
         // 2. Creator Filter
-        if (creatorVal && (pkg.creator || '').trim() !== creatorVal) {
-            return;
-        }
-        
+        if (creatorVal && (pkg.creator || '').trim() !== creatorVal) return;
         // 3. Dropdown Technique Filter
-        if (techDropdownVal && !matchTechnique(pkg.key_tech, techDropdownVal)) {
-            return;
-        }
-        
+        if (techDropdownVal && !matchTechnique(pkg.key_tech, techDropdownVal)) return;
         // 4. Quick Chip Filter
         if (currentFilterState.chip && currentFilterState.chip !== 'all') {
-            if (!matchTechnique(pkg.key_tech, currentFilterState.chip)) {
-                return;
-            }
+            if (!matchTechnique(pkg.key_tech, currentFilterState.chip)) return;
         }
         
-        matchCount++;
-        
-        // Render Compact Card
+        matched.push({ pkg, index });
+    });
+    
+    const totalMatches = matched.length;
+    const limit = currentFilterState.currentPage * currentFilterState.pageSize;
+    const pagedItems = matched.slice(0, limit);
+    
+    const container = document.getElementById('caseCardsContainer');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    pagedItems.forEach(({ pkg, index }, idx) => {
         const htmlPath = pkg.root_html_rel || pkg.main_html_rel || '';
         const resolvedHtmlPath = getResolvedPath(htmlPath);
         
@@ -4896,44 +5261,43 @@ function applyFilters() {
             subLinks.push(`<a class="sub-meta-link" href="${pkg.gdrive_pdf}" target="_blank" rel="noopener">📥 PDF ↗</a>`);
         }
         
+        const igLink = pkg.ig_url || (pkg.creator && pkg.creator.startsWith('@') ? `https://www.instagram.com/${pkg.creator.replace('@', '').split(' ')[0].replace(/[^a-zA-Z0-9._]/g, '')}/` : '');
+        
         const card = document.createElement('div');
         card.className = 'case-card-compact';
         card.innerHTML = `
             <div class="case-card-thumbs">
                 <div class="card-top-badges">
-                    <span class="index-badge-pill">#${String(matchCount).padStart(2, '0')}</span>
+                    <span class="index-badge-pill">#${String(idx + 1).padStart(2, '0')}</span>
                     <span class="shots-count-pill">🎬 ${pkg.shots_count || 0} shots</span>
                 </div>
-                <a href="${resolvedHtmlPath}" target="_blank" class="thumbs-pair-grid" title="Mở Báo Cáo Phân Tích">
-                    <div class="thumb-box">
-                        <img src="${thumb1}" alt="Shot 01" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
-                        <span class="thumb-tag">Shot 01</span>
+                <div class="thumbs-pair-grid">
+                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
+                        <img src="${thumb1}" alt="Hook Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
+                        <span class="thumb-tag-hook">HOOK • 0.0s</span>
+                        <button class="thumb-zoom-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb1}', '${escapeHtml(pkg.title_vi)} - Khung hình Hook mở đầu')">🔍</button>
                     </div>
-                    <div class="thumb-box">
+                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
                         <img src="${thumb2}" alt="Key Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_03_mid.jpg';">
-                        <span class="thumb-tag">Key Shot</span>
+                        <span class="thumb-tag-key">KEY SHOT</span>
+                        <button class="thumb-zoom-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb2}', '${escapeHtml(pkg.title_vi)} - Khung hình Key Shot cao trào')">🔍</button>
                     </div>
-                </a>
+                </div>
             </div>
             
             <div class="case-card-body">
-                ${(() => {
-                const igLink = pkg.ig_url || (pkg.creator && pkg.creator.startsWith('@') ? `https://www.instagram.com/${pkg.creator.replace('@', '').split(' ')[0].replace(/[^a-zA-Z0-9._]/g, '')}/` : '');
-                if (igLink) {
-                    return `
-                        <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem bài gốc / profile Instagram của ${escapeHtml(pkg.creator)}">
-                            <span>👤 ${escapeHtml(pkg.creator)}</span>
-                            <span class="ig-badge-tag">📸 Xem IG ↗</span>
-                        </a>
-                    `;
-                }
-                return `<span class="card-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>`;
-            })()}
+                ${igLink ? `
+                    <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem Instagram của ${escapeHtml(pkg.creator)}">
+                        <span>👤 ${highlightText(pkg.creator, searchVal)}</span>
+                        <span class="ig-badge-tag">📸 Xem IG ↗</span>
+                    </a>
+                ` : `<span class="card-creator-tag">👤 ${highlightText(pkg.creator, searchVal)}</span>`}
+                
                 <a href="${resolvedHtmlPath}" target="_blank" class="card-title-link">
-                    <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${escapeHtml(pkg.title_vi)}</h3>
+                    <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${highlightText(pkg.title_vi, searchVal)}</h3>
                 </a>
                 <div class="card-tech-text">
-                    <b>🎯 Kỹ thuật:</b> ${escapeHtml(pkg.key_tech)}
+                    <b>🎯 Kỹ thuật:</b> ${highlightText(pkg.key_tech, searchVal)}
                 </div>
             </div>
             
@@ -4956,12 +5320,24 @@ function applyFilters() {
     
     // Update Counter Badges
     const resultCountEl = document.getElementById('resultCountText');
-    if (resultCountEl) resultCountEl.innerText = matchCount;
+    if (resultCountEl) resultCountEl.innerText = totalMatches;
     const topCountEl = document.getElementById('topCountDisplay');
-    if (topCountEl) topCountEl.innerText = matchCount;
+    if (topCountEl) topCountEl.innerText = totalMatches;
+    
+    // Pagination / Load More Bar Logic
+    const loadMoreBar = document.getElementById('loadMoreBar');
+    if (loadMoreBar) {
+        if (totalMatches > limit) {
+            loadMoreBar.style.display = 'flex';
+            document.getElementById('visibleCountText').innerText = pagedItems.length;
+            document.getElementById('totalMatchesText').innerText = totalMatches;
+        } else {
+            loadMoreBar.style.display = 'none';
+        }
+    }
     
     // Empty state handling
-    if (matchCount === 0) {
+    if (totalMatches === 0) {
         container.innerHTML = `
             <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #111827; border: 1px dashed #283750; border-radius: 14px;">
                 <div style="font-size: 36px; margin-bottom: 10px;">🔍</div>
@@ -4971,17 +5347,76 @@ function applyFilters() {
             </div>
         `;
     }
+    
+    syncUrlHash();
+}
+
+// Render Removable Active Filter Pills (1-Touch Dismiss)
+function renderActiveFilterPills() {
+    const container = document.getElementById('activeFilterPills');
+    if (!container) return;
+    container.innerHTML = '';
+    
+    const pills = [];
+    if (currentFilterState.search) {
+        pills.push({ label: `🔍 "${currentFilterState.search}"`, onRemove: 'clearSearch()' });
+    }
+    if (currentFilterState.creator) {
+        pills.push({ label: `👤 ${currentFilterState.creator}`, onRemove: 'removeCreatorFilter()' });
+    }
+    if (currentFilterState.technique) {
+        pills.push({ label: `🎯 ${currentFilterState.technique}`, onRemove: 'removeTechniqueFilter()' });
+    }
+    if (currentFilterState.chip && currentFilterState.chip !== 'all') {
+        pills.push({ label: `🏷️ ${currentFilterState.chip}`, onRemove: 'resetChipFilter()' });
+    }
+    
+    pills.forEach(p => {
+        const span = document.createElement('span');
+        span.className = 'filter-pill';
+        span.innerHTML = `<span>${escapeHtml(p.label)}</span><span class="filter-pill-close" onclick="${p.onRemove}" title="Xóa bộ lọc này">✕</span>`;
+        container.appendChild(span);
+    });
+}
+
+function removeCreatorFilter() {
+    const sel = document.getElementById('creatorFilter');
+    if (sel) sel.value = '';
+    restoreStateFromHash();
+applyFilters();
+}
+
+function removeTechniqueFilter() {
+    const sel = document.getElementById('techniqueFilter');
+    if (sel) sel.value = '';
+    restoreStateFromHash();
+applyFilters();
+}
+
+function resetChipFilter() {
+    const allChipBtn = document.querySelector('.chip-btn[data-chip="all"]');
+    setQuickChip('all', allChipBtn);
+}
+
+// Pagination Controls
+function loadMoreCards() {
+    currentFilterState.currentPage++;
+    applyFilters(false);
+}
+
+function showAllCards() {
+    currentFilterState.pageSize = 9999;
+    applyFilters(false);
 }
 
 // Quick Chip Click Handler
 function setQuickChip(chipKey, btnElement) {
     currentFilterState.chip = chipKey;
-    
     const chipBtns = document.querySelectorAll('.chip-btn');
     chipBtns.forEach(b => b.classList.remove('active'));
     if (btnElement) btnElement.classList.add('active');
-    
-    applyFilters();
+    restoreStateFromHash();
+applyFilters();
 }
 
 // Clear Search Input
@@ -4991,7 +5426,8 @@ function clearSearch() {
         input.value = '';
         input.focus();
     }
-    applyFilters();
+    restoreStateFromHash();
+applyFilters();
 }
 
 // Reset All Filters
@@ -5004,12 +5440,12 @@ function resetAllFilters() {
     if (creatorSelect) creatorSelect.value = '';
     if (techSelect) techSelect.value = '';
     
-    currentFilterState = {
-        search: '',
-        creator: '',
-        technique: '',
-        chip: 'all'
-    };
+    currentFilterState.search = '';
+    currentFilterState.creator = '';
+    currentFilterState.technique = '';
+    currentFilterState.chip = 'all';
+    currentFilterState.currentPage = 1;
+    currentFilterState.pageSize = 18;
     
     const chipBtns = document.querySelectorAll('.chip-btn');
     chipBtns.forEach(b => {
@@ -5020,8 +5456,44 @@ function resetAllFilters() {
         }
     });
     
-    applyFilters();
+    restoreStateFromHash();
+applyFilters();
 }
+
+// Darkroom Image Lightbox Functions
+function openImgLightbox(imgUrl, captionText = '') {
+    const modal = document.getElementById('imgLightboxModal');
+    const img = document.getElementById('lightboxLargeImg');
+    const cap = document.getElementById('imgLightboxCaption');
+    if (!modal || !img) return;
+    
+    img.src = imgUrl;
+    if (cap) cap.innerText = captionText;
+    modal.classList.add('open');
+}
+
+function closeImgLightbox(event) {
+    if (event && event.target && event.target.id !== 'imgLightboxModal' && !event.target.classList.contains('img-lightbox-close')) {
+        return;
+    }
+    const modal = document.getElementById('imgLightboxModal');
+    if (modal) modal.classList.remove('open');
+}
+
+// Keyboard shortcuts for Pro Experience
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeImgLightbox();
+        closeModal();
+    } else if (e.key === '/' && document.activeElement.id !== 'caseSearchInput' && document.activeElement.id !== 'globalSearch') {
+        e.preventDefault();
+        const mainSearch = document.getElementById('caseSearchInput') || document.getElementById('globalSearch');
+        if (mainSearch) {
+            mainSearch.focus();
+            mainSearch.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+});
 
 // Backward compatibility alias
 function renderCaseCards(filterText = '') {
@@ -5029,7 +5501,8 @@ function renderCaseCards(filterText = '') {
         const input = document.getElementById('caseSearchInput');
         if (input) input.value = filterText;
     }
-    applyFilters();
+    restoreStateFromHash();
+applyFilters();
 }
 
 function openCaseReport(index) {
@@ -5227,7 +5700,8 @@ document.getElementById('globalSearch').addEventListener('input', (e) => {
     const val = e.target.value.trim();
     const caseSearch = document.getElementById('caseSearchInput');
     if (caseSearch) caseSearch.value = val;
-    applyFilters();
+    restoreStateFromHash();
+applyFilters();
     // Scroll to case library if searching
     if (val) {
         document.getElementById('case-library')?.scrollIntoView({ behavior: 'smooth' });
@@ -5261,10 +5735,19 @@ document.querySelector('.content-area').addEventListener('scroll', () => {
 showDiagnosis(0);
 loadChecklistState();
 populateCreatorDropdown();
+restoreStateFromHash();
 applyFilters();
 
 // Live Input Search Listener
 document.getElementById('caseSearchInput')?.addEventListener('input', () => applyFilters());
 </script>
+<!-- Darkroom High-Resolution Image Lightbox Modal -->
+<div class="img-lightbox-backdrop" id="imgLightboxModal" onclick="closeImgLightbox(event)">
+    <div class="img-lightbox-dialog">
+        <button class="img-lightbox-close" onclick="closeImgLightbox()" title="Đóng (Esc)">✕</button>
+        <img id="lightboxLargeImg" src="" alt="Soi khung hình điện ảnh" class="img-lightbox-large">
+        <div class="img-lightbox-caption" id="imgLightboxCaption"></div>
+    </div>
+</div>
 </body>
 </html>
