@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Kịch Bản: Bắt Đầu Với Thứ Vớ Vẩn - Anh Việt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090D16;
+      --card-bg: #111827;
+      --card-inner: #1A2234;
+      --card-border: #243048;
+      --card-border-active: #38BDF8;
+      --text-main: #F8FAFC;
+      --text-muted: #94A3B8;
+      --accent: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --badge-talking: #0284C7;
+      --badge-walk: #10B981;
+      --badge-broll: #F59E0B;
+      --warning: #F59E0B;
+      --success: #10B981;
+      --font-heading: 'Plus Jakarta Sans', sans-serif;
+      --font-body: 'Be Vietnam Pro', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      padding: 16px 12px 100px;
+      font-size: 16px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    /* Floating Control Bar (Font size & Teleprompter speed) */
+    .tele-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(17, 24, 39, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 8px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      margin-bottom: 20px;
+    }
+
+    .tele-title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .tele-controls {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ctrl-btn {
+      background: #1E293B;
+      border: 1px solid #334155;
+      color: #F1F5F9;
+      padding: 6px 10px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ctrl-btn:active {
+      background: var(--accent);
+      color: #041324;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(145deg, #131E33 0%, #0E1626 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 18px;
+      padding: 20px 16px;
+      margin-bottom: 20px;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: var(--font-heading);
+      font-size: 22px;
+      font-weight: 800;
+      color: #FFFFFF;
+      line-height: 1.35;
+      margin-bottom: 8px;
+    }
+
+    .meta-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .meta-info span {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    /* Quick Stats Card */
+    .stats-card {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      color: #CBD5E1;
+    }
+
+    /* Beat / Shot Cards */
+    .shot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .shot-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 16px 14px;
+      transition: all 0.2s ease;
+      position: relative;
+    }
+
+    .shot-card:hover, .shot-card:active {
+      border-color: var(--card-border-active);
+      background: #141E33;
+    }
+
+    .shot-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .shot-num {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      background: rgba(56, 189, 248, 0.12);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .shot-tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+
+    .tag-talking {
+      background: rgba(2, 132, 199, 0.2);
+      color: #38BDF8;
+      border: 1px solid rgba(56, 189, 248, 0.3);
+    }
+
+    .tag-walk {
+      background: rgba(16, 185, 129, 0.2);
+      color: #34D399;
+      border: 1px solid rgba(52, 211, 153, 0.3);
+    }
+
+    .tag-broll {
+      background: rgba(245, 158, 11, 0.2);
+      color: #FBBF24;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+    }
+
+    .shot-action {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      font-style: italic;
+      background: rgba(0, 0, 0, 0.25);
+      padding: 6px 10px;
+      border-radius: 8px;
+    }
+
+    .shot-line {
+      font-size: 17px;
+      font-weight: 600;
+      color: #FFFFFF;
+      line-height: 1.55;
+      letter-spacing: 0.15px;
+    }
+
+    .shot-line strong, .shot-line b {
+      color: #FDE047;
+      font-weight: 800;
+      text-shadow: 0 0 12px rgba(253, 224, 71, 0.25);
+    }
+
+    .punchline-card {
+      background: linear-gradient(145deg, #1C2B47 0%, #152238 100%);
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.15);
+    }
+
+    .punchline-card .shot-line {
+      font-size: 18px;
+      color: #F8FAFC;
+    }
+
+    /* Bottom sticky action bar */
+    .bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(11, 15, 25, 0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid var(--card-border);
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      z-index: 99;
+    }
+
+    .bot-btn {
+      flex: 1;
+      max-width: 200px;
+      background: #1E293B;
+      border: 1px solid #334155;
+      color: #FFFFFF;
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .bot-btn-primary {
+      background: linear-gradient(135deg, #0284C7, #0369A1);
+      border-color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Sticky Reading Bar -->
+    <div class="tele-bar">
+      <div class="tele-title">🎬 BẮT ĐẦU VỚI THỨ VỚ VẨN</div>
+      <div class="tele-controls">
+        <button class="ctrl-btn" onclick="adjustFont(-1)">A-</button>
+        <button class="ctrl-btn" onclick="adjustFont(1)">A+</button>
+        <button class="ctrl-btn" onclick="toggleAutoScroll()" id="scrollBtn">▶ Tự cuộn</button>
+      </div>
+    </div>
+
+    <!-- Header Banner -->
+    <header>
+      <div class="badge-pill">🔥 KỊCH BẢN VIDEO MARKETING TRIỆU VIEW</div>
+      <h1>Bắt Đầu Với Thứ Vớ Vẩn</h1>
+      <div class="meta-info">
+        <span>👤 <strong>Anh Việt</strong></span>
+        <span>⏱ <strong>~65 Giây (13 Shots)</strong></span>
+        <span>📍 <strong>Home Studio &amp; Times City</strong></span>
+      </div>
+    </header>
+
+    <!-- Key Takeaway -->
+    <div class="stats-card">
+      💡 <strong>Thông điệp cốt lõi:</strong> Đồng tiền thời đại là SỰ CHÚ Ý. Người càng giỏi càng sợ mất mặt (Thuế Thể Diện). Hãy hack não bằng cách làm cái video đầu tiên thật vớ vẩn để mở sương mù bản đồ như trong game Đế Chế!
+    </div>
+
+    <!-- Shot Breakdown List -->
+    <div class="shot-list">
+
+      <!-- SHOT 01 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 01</span>
+          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+        </div>
+        <div class="shot-action">📍 Tĩnh tại bên bàn gỗ, ánh mắt thấu suốt, giọng đĩnh đạc</div>
+        <div class="shot-line">
+          Đồng tiền lưu hành mạnh nhất bây giờ là <b>SỰ CHÚ Ý</b>. Ai làm kinh doanh cũng hiểu nếu không lên video thì khách hàng sẽ quên mình. Nhưng người càng nhiều tri thức, càng có vị thế thì cái <b>"thuế thể diện"</b> lại càng cao: sợ nói dở, sợ mất hình tượng, nghĩ mình giỏi rồi cần gì phải lên video. Để rồi cái giá phải trả là: hoặc phải đóng khoản thuế rất đắt bằng tiền quảng cáo để người ta biết tới mình, hoặc là đứng nhìn đối thủ lấy sạch sự chú ý của thị trường.
+        </div>
+      </div>
+
+      <!-- SHOT 02 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 02</span>
+          <span class="shot-tag tag-walk">WALK &amp; TALK • CÂY XANH</span>
+        </div>
+        <div class="shot-action">📍 Bước đi thong thả dọc hành lang cây xanh, phong thái thong dong</div>
+        <div class="shot-line">
+          Với những món đồ mua theo cảm xúc, người ta chỉ cần làm clip vui vẻ để lan tỏa diện rộng. Nhưng nếu bạn bán giải pháp chuyên môn hay dịch vụ giá trị cao, khách hàng chỉ chi tiền khi có <b>NIỀM TIN</b>. Và đó là lý do bạn bắt buộc phải làm <b>Video Marketing</b>: dùng giá trị thật để định vị vị thế lâu dài.
+        </div>
+      </div>
+
+      <!-- SHOT 03 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 03</span>
+          <span class="shot-tag tag-broll">IN-SITU B-ROLL • ĐIỆN THOẠI</span>
+        </div>
+        <div class="shot-action">📍 Cầm điện thoại lướt xem các video mẫu</div>
+        <div class="shot-line">
+          Để làm được điều đó, bước bắt buộc đầu tiên là phải <b>NẠP DỮ LIỆU</b>: xem đối thủ làm thế nào, phân tích những mẫu video thành công, học cách kể chuyện của những người đi trước.
+        </div>
+      </div>
+
+      <!-- SHOT 04 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 04</span>
+          <span class="shot-tag tag-broll">IN-SITU B-ROLL • TRIPOD</span>
+        </div>
+        <div class="shot-action">📍 Đặt máy lên tripod, chạm nhẹ ngón tay vào nút quay</div>
+        <div class="shot-line">
+          Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ, tưởng như mọi thứ đã quá rõ ràng để làm một video để đời... cho đến khi bấm nút REC.
+        </div>
+      </div>
+
+      <!-- SHOT 05 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 05</span>
+          <span class="shot-tag tag-broll">IN-SITU B-ROLL • ỐNG KÍNH</span>
+        </div>
+        <div class="shot-action">📍 Nhìn thẳng ống kính máy quay, nụ cười tự trào</div>
+        <div class="shot-line">
+          Mặt thì cứng đờ, giọng thì run, nói năng gượng gạo... Bình thường ngồi tư vấn cho khách thì nói hay như rót mật vào tai, thế mà đứng trước ống kính thì bao nhiêu sự tự nhiên biến đâu mất sạch.
+        </div>
+      </div>
+
+      <!-- SHOT 06 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 06</span>
+          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+        </div>
+        <div class="shot-action">📍 Bàn gỗ, giọng chậm rãi bóc tách tâm lý</div>
+        <div class="shot-line">
+          Cảm giác lúc đó hụt hẫng vô cùng... bởi vì đã nạp quá nhiều thứ hoàn hảo đến mức cảm thấy <b>xấu hổ vì sự non nớt của chính mình</b>.
+        </div>
+      </div>
+
+      <!-- SHOT 07 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 07</span>
+          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+        </div>
+        <div class="shot-action">📍 Bàn gỗ, tay diễn đạt tự nhiên, ánh mắt sắc sảo</div>
+        <div class="shot-line">
+          Nạp nhiều khiến cái <b>MẮT</b> của bạn nhìn đâu cũng thấy phải thật xịn, cái <b>ĐẦU</b> thì nghĩ ra toàn thứ hoàn hảo... trong khi cái <b>MIỆNG</b> thì chưa quen nói trước ống kính, cái <b>MẶT</b> thì chưa quen biểu cảm. Tiêu chuẩn trong đầu thì vọt lên mây xanh, mà kỹ năng thực tế thì vẫn là của một người mới bắt đầu.
+        </div>
+      </div>
+
+      <!-- SHOT 08 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 08</span>
+          <span class="shot-tag tag-walk">WALK &amp; TALK • HÀNH LANG</span>
+        </div>
+        <div class="shot-action">📍 Bước đi thong dong, nụ cười nhẹ</div>
+        <div class="shot-line">
+          Nó giống như việc ăn ngon quen mồm: Cái lưỡi thì sành ăn, nhưng cái tay thì chưa biết nấu. Tự nấu thấy dở một cái... là bỏ luôn căn bếp.
+        </div>
+      </div>
+
+      <!-- SHOT 09 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 09</span>
+          <span class="shot-tag tag-talking">TALKING HEAD • CẬN CẢNH</span>
+        </div>
+        <div class="shot-action">📍 Cận cảnh gương mặt, giọng điềm đạm mà đanh thép</div>
+        <div class="shot-line">
+          Người ta mất <b>5 năm luyện tập</b> để nói chuyện tự nhiên như thở, bạn xem có 60 giây rồi đòi mình bật máy lên phải hay ngay... thì làm sao mà có được? Não bạn thì hiểu ngay, nhưng để cái miệng và gương mặt bạn nói chuyện mượt mà trước ống kính... bắt buộc phải trả giá bằng <b>hàng chục lần quay hỏng</b>.
+        </div>
+      </div>
+
+      <!-- SHOT 10 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 10</span>
+          <span class="shot-tag tag-broll">IN-SITU B-ROLL • CLIP CŨ</span>
+        </div>
+        <div class="shot-action">📍 Chỉ vào một video marketing đời đầu còn mộc mạc</div>
+        <div class="shot-line">
+          Cái video marketing đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn, thông điệp còn thô... Nhưng may là ngày đó tôi <b>ĐÃ DÁM ĐĂNG LÊN</b>, chứ không giấu nó trong máy.
+        </div>
+      </div>
+
+      <!-- SHOT 11 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 11</span>
+          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+        </div>
+        <div class="shot-action">📍 Ánh mắt thấu suốt, giải thích cơ chế khoa học</div>
+        <div class="shot-line">
+          Bắt đầu bằng một video vớ vẩn thực ra là cách bạn <b>"hack não"</b> của chính mình. Bởi vì não bộ chỉ có thể tìm cách sửa chữa một thứ <b>ĐANG HOẠT ĐỘNG</b>, chứ nó không bao giờ có thể tối ưu một thứ <b>CHƯA TỒN TẠI</b>.
+        </div>
+      </div>
+
+      <!-- SHOT 12 -->
+      <div class="shot-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 12</span>
+          <span class="shot-tag tag-walk">WALK &amp; TALK • ĐẾ CHẾ</span>
+        </div>
+        <div class="shot-action">📍 Dừng chân nhìn máy quay, nụ cười trải nghiệm</div>
+        <div class="shot-line">
+          Giống như chơi <b>Đế Chế</b>: Ban đầu bản đồ đen xì, phải xua dân đi dò đường thì sương mù mới tan. Ra ngoài có thể gặp sư tử cắn mất máu, nhưng cũng sẽ thấy mỏ quả, mỏ vàng. <b>Không mở bản đồ thì mãi mãi không bao giờ lên đời được.</b>
+        </div>
+      </div>
+
+      <!-- SHOT 13 -->
+      <div class="shot-card punchline-card">
+        <div class="shot-header">
+          <span class="shot-num">SHOT 13 • PUNCHLINE</span>
+          <span class="shot-tag tag-talking" style="background: var(--accent); color: #041324;">CHỐT HẠ</span>
+        </div>
+        <div class="shot-action">📍 Bàn gỗ, nụ cười an nhiên, kết dứt khoát</div>
+        <div class="shot-line">
+          Muốn lên đời Video Marketing... <b>cứ bắt đầu thật vớ vẩn đi</b>. Nhớ nhé, <b>phải thật vớ vẩn trước đã!</b>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bottom Navigation -->
+  <div class="bottom-bar">
+    <a href="https://fedu.vn/scene.html" class="bot-btn">🏛️ Cổng Tra Cứu</a>
+    <button class="bot-btn bot-btn-primary" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">⬆ Về Đầu Trang</button>
+  </div>
+
+  <script>
+    let currentFontSize = 17;
+    let isScrolling = false;
+    let scrollInterval = null;
+
+    function adjustFont(delta) {
+      currentFontSize = Math.max(14, Math.min(24, currentFontSize + delta));
+      document.querySelectorAll('.shot-line').forEach(el => {
+        el.style.fontSize = currentFontSize + 'px';
+      });
+    }
+
+    function toggleAutoScroll() {
+      const btn = document.getElementById('scrollBtn');
+      if (isScrolling) {
+        clearInterval(scrollInterval);
+        isScrolling = false;
+        btn.innerText = '▶ Tự cuộn';
+        btn.style.background = '#1E293B';
+      } else {
+        isScrolling = true;
+        btn.innerText = '⏸ Dừng';
+        btn.style.background = 'var(--accent)';
+        btn.style.color = '#041324';
+        scrollInterval = setInterval(() => {
+          window.scrollBy({ top: 1, behavior: 'smooth' });
+          if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+            toggleAutoScroll();
+          }
+        }, 35);
+      }
+    }
+  </script>
+</body>
+</html>
