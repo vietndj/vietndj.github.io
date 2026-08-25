@@ -909,21 +909,21 @@ mark.search-highlight {
 .case-grid-3x3 {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 16px;
-    margin-bottom: 24px;
+    gap: 20px;
+    margin-bottom: 28px;
 }
 
 .case-grid-3x3.mode-grid4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 12px;
+    gap: 16px;
 }
 
 .case-grid-3x3.mode-list {
     grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 14px;
 }
 
-@media (max-width: 1380px) {
+@media (max-width: 1350px) {
     .case-grid-3x3.mode-grid4 {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
@@ -935,19 +935,19 @@ mark.search-highlight {
     }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 680px) {
     .case-grid-3x3, .case-grid-3x3.mode-grid4, .case-grid-3x3.mode-list {
         grid-template-columns: 1fr;
     }
 }
 
-/* Compact Case Card */
+/* Vertical Cinematic Showcase Card */
 .case-card-compact {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 13px;
-    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #0e1522;
+    border: 1px solid #1c283c;
+    border-radius: 16px;
+    padding: 14px;
+    transition: all 0.24s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -956,28 +956,28 @@ mark.search-highlight {
 }
 
 .case-card-compact:hover {
-    border-color: rgba(56, 189, 248, 0.5);
-    background: #162236;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
-    transform: translateY(-2px);
+    border-color: rgba(56, 189, 248, 0.55);
+    background: #141f32;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
 }
 
-/* List Mode Layout for Compact Card */
+/* List Mode Layout */
 .case-grid-3x3.mode-list .case-card-compact {
     flex-direction: row;
     align-items: center;
-    gap: 16px;
-    padding: 12px 16px;
+    gap: 20px;
+    padding: 14px 18px;
 }
 
 .case-grid-3x3.mode-list .case-card-thumbs {
-    width: 140px;
+    width: 220px;
     margin-bottom: 0;
     flex-shrink: 0;
 }
 
 .case-grid-3x3.mode-list .thumb-box {
-    max-height: 95px;
+    height: 140px;
 }
 
 .case-grid-3x3.mode-list .case-card-body {
@@ -986,152 +986,194 @@ mark.search-highlight {
 }
 
 .case-grid-3x3.mode-list .case-card-actions {
-    width: 180px;
+    width: 200px;
     border-top: none;
-    border-left: 1px solid rgba(255, 255, 255, 0.06);
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
     padding-top: 0;
-    padding-left: 16px;
+    padding-left: 18px;
     flex-shrink: 0;
 }
 
-/* Dual Thumbnails Area (Hook & Key Shot Recognition) */
+/* Dual 9:16 Vertical Thumbnails (Hook & Key Shot Recognition) */
 .case-card-thumbs {
     position: relative;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .thumbs-pair-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 6px;
+    gap: 8px;
     text-decoration: none;
     cursor: pointer;
 }
 
 .thumb-box {
     position: relative;
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    background: #080c14;
+    background: #06090e;
     aspect-ratio: 9/16;
-    max-height: 130px;
+    height: 220px; /* Tỉ lệ dọc 9:16 cao ráo, thoáng đãng, nhìn trọn vẹn khung hình */
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .thumb-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    transition: transform 0.3s ease;
+    transition: transform 0.35s ease, filter 0.2s ease;
 }
 
 .thumb-box:hover img {
-    transform: scale(1.08);
+    transform: scale(1.06);
+    filter: brightness(1.05);
 }
 
-/* Visual Tags for Hook & Key Shot */
+/* Minimalist Bottom Tags */
 .thumb-tag-hook {
     position: absolute;
-    bottom: 3px;
-    left: 3px;
-    background: linear-gradient(135deg, rgba(2, 132, 199, 0.9), rgba(14, 165, 233, 0.9));
-    color: #fff;
-    font-size: 8px;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(2, 132, 199, 0.88);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 8.5px;
     font-weight: 800;
     font-family: var(--font-mono);
-    padding: 2px 5px;
-    border-radius: 3px;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    pointer-events: none;
 }
 
 .thumb-tag-key {
     position: absolute;
-    bottom: 3px;
-    left: 3px;
-    background: linear-gradient(135deg, rgba(217, 119, 6, 0.92), rgba(245, 158, 11, 0.92));
-    color: #0b0f17;
-    font-size: 8px;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(217, 119, 6, 0.9);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: #ffffff;
+    font-size: 8.5px;
     font-weight: 800;
     font-family: var(--font-mono);
-    padding: 2px 5px;
-    border-radius: 3px;
-    letter-spacing: 0.3px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    pointer-events: none;
 }
 
-/* Quick Zoom Peek Button */
-.thumb-zoom-btn {
+/* Quick Zoom Peek Icon on Hover */
+.thumb-zoom-overlay {
     position: absolute;
-    top: 4px;
-    right: 4px;
-    background: rgba(15, 23, 42, 0.75);
+    top: 6px;
+    right: 6px;
+    background: rgba(15, 23, 42, 0.8);
     backdrop-filter: blur(4px);
     color: #fff;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    width: 20px;
-    height: 20px;
-    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 10px;
+    font-size: 11px;
     cursor: pointer;
     opacity: 0;
-    transition: all 0.15s;
+    transform: scale(0.9);
+    transition: all 0.18s ease;
 }
 
-.thumb-box:hover .thumb-zoom-btn {
+.thumb-box:hover .thumb-zoom-overlay {
     opacity: 1;
+    transform: scale(1);
 }
-.thumb-zoom-btn:hover {
+
+.thumb-zoom-overlay:hover {
     background: var(--accent-blue);
     color: #0b0f17;
     border-color: var(--accent-blue);
 }
 
-.card-top-badges {
-    position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    pointer-events: none;
-    z-index: 2;
-}
-
-.index-badge-pill {
-    background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(56, 189, 248, 0.4);
-    color: var(--accent-blue);
-    font-size: 10px;
-    font-weight: 800;
-    font-family: var(--font-mono);
-    padding: 1px 6px;
-    border-radius: 4px;
-}
-
-.shots-count-pill {
-    background: rgba(15, 23, 42, 0.88);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(245, 158, 11, 0.4);
-    color: var(--accent-amber);
-    font-size: 10px;
-    font-weight: 700;
-    padding: 1px 6px;
-    border-radius: 4px;
-}
-
-/* Card Content Area */
+/* Card Body Details */
 .case-card-body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+}
+
+.card-meta-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    gap: 6px;
+}
+
+.card-index-num {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+    background: rgba(56, 189, 248, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+.card-shots-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    font-family: var(--font-mono);
+    background: rgba(245, 158, 11, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.2);
+}
+
+.card-creator-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #94a3b8;
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.15s ease;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+}
+
+.card-creator-link:hover {
+    color: var(--accent-blue);
+}
+
+.card-creator-link .ig-badge-tag {
+    background: rgba(192, 132, 252, 0.15);
+    border: 1px solid rgba(192, 132, 252, 0.3);
+    color: var(--accent-purple);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 4px;
+    border-radius: 4px;
+    margin-left: 2px;
 }
 
 .card-title-link {
@@ -1141,8 +1183,8 @@ mark.search-highlight {
 
 .card-title-text {
     font-family: var(--font-heading);
-    font-size: 14px;
-    font-weight: 700;
+    font-size: 14.5px;
+    font-weight: 800;
     color: #ffffff;
     line-height: 1.35;
     display: -webkit-box;
@@ -1158,17 +1200,17 @@ mark.search-highlight {
 }
 
 .card-tech-text {
-    font-size: 11px;
+    font-size: 11.5px;
     color: #94a3b8;
-    line-height: 1.4;
+    line-height: 1.45;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
-    background: #0d131f;
-    padding: 5px 8px;
+    background: #090e17;
+    padding: 6px 9px;
     border-radius: 6px;
-    border: 1px solid #1a2538;
+    border: 1px solid #192334;
 }
 
 .card-tech-text b {
@@ -1180,7 +1222,7 @@ mark.search-highlight {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    padding-top: 8px;
+    padding-top: 10px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
@@ -1188,16 +1230,16 @@ mark.search-highlight {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 7px;
     background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    padding: 7px 12px;
-    border-radius: 7px;
-    font-size: 12.5px;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 13px;
     font-weight: 700;
     text-decoration: none;
     font-family: var(--font-body);
-    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
     border: 1px solid rgba(56, 189, 248, 0.35);
     transition: all 0.18s ease;
     width: 100%;
@@ -1206,7 +1248,7 @@ mark.search-highlight {
 .btn-open-main:hover {
     background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
     color: #0b0f17;
-    box-shadow: 0 5px 16px rgba(56, 189, 248, 0.45);
+    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
     transform: translateY(-1px);
 }
 
@@ -5266,32 +5308,33 @@ function applyFilters(resetPagination = true) {
         const card = document.createElement('div');
         card.className = 'case-card-compact';
         card.innerHTML = `
+            <!-- 9:16 Vertical Duo-Poster Showcase -->
             <div class="case-card-thumbs">
-                <div class="card-top-badges">
-                    <span class="index-badge-pill">#${String(idx + 1).padStart(2, '0')}</span>
-                    <span class="shots-count-pill">🎬 ${pkg.shots_count || 0} shots</span>
-                </div>
                 <div class="thumbs-pair-grid">
-                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
+                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Click mở báo cáo phân tích">
                         <img src="${thumb1}" alt="Hook Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
                         <span class="thumb-tag-hook">HOOK • 0.0s</span>
-                        <button class="thumb-zoom-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb1}', '${escapeHtml(pkg.title_vi)} - Khung hình Hook mở đầu')">🔍</button>
+                        <button class="thumb-zoom-overlay" onclick="event.stopPropagation(); openImgLightbox('${thumb1}', '${escapeHtml(pkg.title_vi)} - Khung hình Hook mở đầu')" title="Soi ảnh lớn">🔍</button>
                     </div>
-                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Mở Báo Cáo Phân Tích">
+                    <div class="thumb-box" onclick="window.open('${resolvedHtmlPath}', '_blank')" title="Click mở báo cáo phân tích">
                         <img src="${thumb2}" alt="Key Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_03_mid.jpg';">
                         <span class="thumb-tag-key">KEY SHOT</span>
-                        <button class="thumb-zoom-btn" onclick="event.stopPropagation(); openImgLightbox('${thumb2}', '${escapeHtml(pkg.title_vi)} - Khung hình Key Shot cao trào')">🔍</button>
+                        <button class="thumb-zoom-overlay" onclick="event.stopPropagation(); openImgLightbox('${thumb2}', '${escapeHtml(pkg.title_vi)} - Khung hình Key Shot cao trào')" title="Soi ảnh lớn">🔍</button>
                     </div>
                 </div>
             </div>
             
             <div class="case-card-body">
-                ${igLink ? `
-                    <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem Instagram của ${escapeHtml(pkg.creator)}">
-                        <span>👤 ${highlightText(pkg.creator, searchVal)}</span>
-                        <span class="ig-badge-tag">📸 Xem IG ↗</span>
-                    </a>
-                ` : `<span class="card-creator-tag">👤 ${highlightText(pkg.creator, searchVal)}</span>`}
+                <div class="card-meta-header">
+                    <span class="card-index-num">#${String(idx + 1).padStart(2, '0')}</span>
+                    ${igLink ? `
+                        <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem Instagram của ${escapeHtml(pkg.creator)}">
+                            <span>👤 ${highlightText(pkg.creator, searchVal)}</span>
+                            <span class="ig-badge-tag">📸 IG ↗</span>
+                        </a>
+                    ` : `<span class="card-creator-link">👤 ${highlightText(pkg.creator, searchVal)}</span>`}
+                    <span class="card-shots-num">🎬 ${pkg.shots_count || 0} shots</span>
+                </div>
                 
                 <a href="${resolvedHtmlPath}" target="_blank" class="card-title-link">
                     <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${highlightText(pkg.title_vi, searchVal)}</h3>
@@ -5305,7 +5348,7 @@ function applyFilters(resetPagination = true) {
                 ${htmlPath ? `
                     <a class="btn-open-main" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích (Tab Mới)">
                         <span>📄 Mở Báo Cáo Phân Tích</span>
-                        <svg class="btn-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                        <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                     </a>
                 ` : ''}
                 ${subLinks.length > 0 ? `
