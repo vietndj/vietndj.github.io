@@ -965,6 +965,37 @@ main.content-area {
     margin-bottom: 10px;
 }
 
+.card-creator-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--accent-blue);
+    font-size: 11.5px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-bottom: 4px;
+    transition: all 0.15s ease;
+    max-width: 100%;
+}
+.card-creator-link:hover {
+    color: #38bdf8;
+}
+.ig-badge-tag {
+    background: rgba(192, 132, 252, 0.15);
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: var(--accent-purple);
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    transition: all 0.15s;
+    flex-shrink: 0;
+}
+.card-creator-link:hover .ig-badge-tag {
+    background: linear-gradient(135deg, #c084fc, #f43f5e);
+    color: #0b0f17;
+    border-color: transparent;
+}
 .card-creator-tag {
     display: inline-flex;
     align-items: center;
@@ -4886,7 +4917,18 @@ function applyFilters() {
             </div>
             
             <div class="case-card-body">
-                <span class="card-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>
+                ${(() => {
+                const igLink = pkg.ig_url || (pkg.creator && pkg.creator.startsWith('@') ? `https://www.instagram.com/${pkg.creator.replace('@', '').split(' ')[0].replace(/[^a-zA-Z0-9._]/g, '')}/` : '');
+                if (igLink) {
+                    return `
+                        <a href="${igLink}" target="_blank" rel="noopener" class="card-creator-link" title="Xem bài gốc / profile Instagram của ${escapeHtml(pkg.creator)}">
+                            <span>👤 ${escapeHtml(pkg.creator)}</span>
+                            <span class="ig-badge-tag">📸 Xem IG ↗</span>
+                        </a>
+                    `;
+                }
+                return `<span class="card-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>`;
+            })()}
                 <a href="${resolvedHtmlPath}" target="_blank" class="card-title-link">
                     <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${escapeHtml(pkg.title_vi)}</h3>
                 </a>
