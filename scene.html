@@ -597,275 +597,502 @@ main.content-area {
     color: #6ee7b7;
 }
 
-/* Case Studies Cards Modernized */
-.case-cards-container {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-    margin-bottom: 30px;
+/* ==========================================================================
+   SMART FILTER PANEL & 3x3 COMPACT GRID SYSTEM
+   ========================================================================== */
+
+.filter-counter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.35);
+    color: #6ee7b7;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    font-family: var(--font-mono);
 }
 
-.case-row-card {
+.dot-live {
+    color: var(--accent-emerald);
+    animation: pulse 1.8s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+/* Filter Control Panel */
+.filter-control-panel {
+    background: #111827;
+    border: 1px solid #1f2d42;
+    border-radius: 14px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.filter-main-bar {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.filter-search-box {
+    flex: 1;
+    min-width: 240px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 12px;
+    font-size: 14px;
+    color: var(--text-muted);
+    pointer-events: none;
+}
+
+.filter-input {
+    width: 100%;
+    background: #182234;
+    border: 1px solid #283750;
+    border-radius: 8px;
+    padding: 9px 34px 9px 36px;
+    color: #fff;
+    font-size: 13px;
+    font-family: var(--font-body);
+    outline: none;
+    transition: all 0.2s;
+}
+
+.filter-input:focus {
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    background: #1e2a40;
+}
+
+.clear-search-btn {
+    position: absolute;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    cursor: pointer;
+    display: none;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+.clear-search-btn:hover { color: #fff; background: #283750; }
+
+.filter-select-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.select-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #182234;
+    border: 1px solid #283750;
+    border-radius: 8px;
+    padding: 2px 8px 2px 10px;
+}
+
+.select-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-secondary);
+    white-space: nowrap;
+}
+
+.filter-dropdown {
+    background: transparent;
+    border: none;
+    color: #f8fafc;
+    font-size: 12.5px;
+    font-family: var(--font-body);
+    padding: 7px 4px;
+    outline: none;
+    cursor: pointer;
+    max-width: 180px;
+}
+
+.filter-dropdown option {
+    background: #131d2e;
+    color: #fff;
+}
+
+.reset-filter-btn {
+    background: #202d42;
+    border: 1px solid #334460;
+    color: #cbd5e1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    white-space: nowrap;
+}
+.reset-filter-btn:hover {
+    background: #2a3a54;
+    color: #fff;
+}
+
+/* Quick Chips Bar */
+.quick-chips-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    flex-wrap: wrap;
+}
+
+.chips-label {
+    font-size: 11.5px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.chips-list {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.chip-btn {
+    background: #182234;
+    border: 1px solid #283750;
+    color: #94a3b8;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.chip-btn:hover {
+    background: #223048;
+    color: #fff;
+    border-color: #3b82f6;
+}
+
+.chip-btn.active {
+    background: rgba(56, 189, 248, 0.18);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+    font-weight: 700;
+}
+
+/* Filter Status Bar */
+.filter-status-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding-top: 8px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.result-counter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.dot-active {
+    color: var(--accent-blue);
+    font-size: 10px;
+}
+
+.highlight-count {
+    color: var(--accent-amber);
+    font-size: 13px;
+    font-family: var(--font-mono);
+}
+
+/* 3x3 Responsive Grid */
+.case-grid-3x3 {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 36px;
+}
+
+@media (max-width: 1200px) {
+    .case-grid-3x3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .case-grid-3x3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Compact Case Card */
+.case-card-compact {
     background: var(--bg-card);
     border: 1px solid var(--border-color);
-    border-radius: 16px;
-    padding: 18px 20px;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    border-radius: 14px;
+    padding: 13px;
+    transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     display: flex;
-    gap: 22px;
-    align-items: stretch;
+    flex-direction: column;
+    justify-content: space-between;
     position: relative;
+    overflow: hidden;
 }
 
-.case-row-card:hover {
-    border-color: rgba(56, 189, 248, 0.45);
-    background: #162032;
-    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+.case-card-compact:hover {
+    border-color: rgba(56, 189, 248, 0.5);
+    background: #162236;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     transform: translateY(-2px);
 }
 
-/* Left: Thumbnails Column */
-.case-thumbs-col {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    flex-shrink: 0;
-    width: 200px;
+/* Dual Thumbnails Area */
+.case-card-thumbs {
+    position: relative;
+    margin-bottom: 10px;
 }
 
-.case-index-pill {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-blue);
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    padding: 2px 8px;
-    border-radius: 6px;
-    display: inline-flex;
-    align-items: center;
-    width: fit-content;
-}
-
-.case-thumbs-pair {
+.thumbs-pair-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 7px;
-    flex: 1;
+    gap: 6px;
     text-decoration: none;
     cursor: pointer;
 }
 
-.thumb-frame {
+.thumb-box {
     position: relative;
-    border-radius: 9px;
+    border-radius: 8px;
     overflow: hidden;
-    background: #0b0f17;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: #080c14;
     aspect-ratio: 9/16;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    max-height: 130px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.thumb-frame img {
+.thumb-box img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: transform 0.35s ease;
+    transition: transform 0.3s ease;
 }
 
-.case-row-card:hover .thumb-frame img {
+.case-card-compact:hover .thumb-box img {
     transform: scale(1.06);
 }
 
 .thumb-tag {
     position: absolute;
-    bottom: 4px;
-    left: 4px;
+    bottom: 3px;
+    left: 3px;
     background: rgba(11, 15, 23, 0.85);
     backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
     color: #e2e8f0;
-    font-size: 9px;
+    font-size: 8.5px;
     font-weight: 700;
     font-family: var(--font-mono);
-    padding: 2px 4px;
-    border-radius: 4px;
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    letter-spacing: 0.2px;
+    padding: 1px 4px;
+    border-radius: 3px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-/* Right: Main Content */
-.case-main-content {
+.card-top-badges {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.index-badge-pill {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    color: var(--accent-blue);
+    font-size: 10px;
+    font-weight: 800;
+    font-family: var(--font-mono);
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+.shots-count-pill {
+    background: rgba(15, 23, 42, 0.88);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    color: var(--accent-amber);
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 4px;
+}
+
+/* Card Content Area */
+.case-card-body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-width: 0;
-}
-
-.case-header-wrap {
-    margin-bottom: 6px;
-}
-
-.case-title-link {
-    text-decoration: none;
-    display: inline-block;
-}
-
-.case-title-text {
-    font-family: var(--font-heading);
-    font-size: 16.5px;
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.35;
-    transition: color 0.15s ease;
-}
-
-.case-title-link:hover .case-title-text {
-    color: var(--accent-blue);
-}
-
-.case-meta-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 5px;
-    flex-wrap: wrap;
-}
-
-.case-creator-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 12px;
-    color: var(--accent-blue);
-    font-weight: 600;
-    background: rgba(56, 189, 248, 0.1);
-    padding: 2px 8px;
-    border-radius: 6px;
-    border: 1px solid rgba(56, 189, 248, 0.2);
-}
-
-.case-shots-badge {
-    font-size: 11.5px;
-    color: var(--accent-amber);
-    font-weight: 600;
-    background: rgba(245, 158, 11, 0.1);
-    padding: 2px 8px;
-    border-radius: 6px;
-    border: 1px solid rgba(245, 158, 11, 0.2);
-}
-
-.case-desc-text {
-    font-size: 13.5px;
-    color: #cbd5e1;
-    line-height: 1.55;
     margin-bottom: 10px;
 }
 
-.case-tech-box {
-    background: #0d131f;
-    border: 1px solid #1a2538;
-    border-radius: 8px;
-    padding: 7px 12px;
-    font-size: 12.3px;
-    color: #94a3b8;
-    margin-bottom: 12px;
-    line-height: 1.45;
+.card-creator-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
-.case-tech-box b {
+.card-title-link {
+    text-decoration: none;
+    margin-bottom: 6px;
+}
+
+.card-title-text {
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    min-height: 38px;
+    transition: color 0.15s;
+}
+
+.card-title-link:hover .card-title-text {
+    color: var(--accent-blue);
+}
+
+.card-tech-text {
+    font-size: 11px;
+    color: #94a3b8;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    background: #0d131f;
+    padding: 5px 8px;
+    border-radius: 6px;
+    border: 1px solid #1a2538;
+}
+
+.card-tech-text b {
     color: var(--accent-amber);
 }
 
-/* Action Area: 1 Primary Button + Meta Text Links */
-.case-action-row {
+/* Card Actions Area */
+.case-card-actions {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 12px;
-    padding-top: 10px;
+    flex-direction: column;
+    gap: 8px;
+    padding-top: 8px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-/* Single Primary Button */
-.primary-report-btn {
+.btn-open-main {
     display: inline-flex;
     align-items: center;
-    gap: 7px;
+    justify-content: center;
+    gap: 6px;
     background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
     color: #ffffff;
-    padding: 7px 16px;
-    border-radius: 8px;
-    font-size: 13px;
+    padding: 7px 12px;
+    border-radius: 7px;
+    font-size: 12.5px;
     font-weight: 700;
     text-decoration: none;
     font-family: var(--font-body);
-    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+    box-shadow: 0 3px 10px rgba(2, 132, 199, 0.3);
     border: 1px solid rgba(56, 189, 248, 0.35);
     transition: all 0.18s ease;
+    width: 100%;
 }
 
-.primary-report-btn:hover {
+.btn-open-main:hover {
     background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-    box-shadow: 0 6px 18px rgba(56, 189, 248, 0.45);
-    transform: translateY(-1px);
     color: #0b0f17;
+    box-shadow: 0 5px 16px rgba(56, 189, 248, 0.45);
+    transform: translateY(-1px);
 }
 
-.primary-report-btn .btn-arrow {
+.btn-open-main .btn-arrow {
     transition: transform 0.18s ease;
 }
 
-.primary-report-btn:hover .btn-arrow {
+.btn-open-main:hover .btn-arrow {
     transform: translate(2px, -2px);
 }
 
-/* Secondary Meta Text Links (Clean, No Visual Clutter) */
-.case-secondary-links {
+.card-sub-links {
     display: flex;
     align-items: center;
-    gap: 8px;
+    justify-content: center;
+    gap: 6px;
     flex-wrap: wrap;
-    font-size: 12px;
-    color: var(--text-muted);
-}
-
-.secondary-label {
     font-size: 11px;
-    color: #475569;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
 }
 
-.meta-link, .meta-link-btn {
+.sub-meta-link, .sub-meta-btn {
     background: none;
     border: none;
-    color: #94a3b8;
-    font-size: 12px;
+    color: #64748b;
+    font-size: 11px;
     font-weight: 500;
     cursor: pointer;
     text-decoration: none;
-    padding: 2px 4px;
-    border-radius: 4px;
+    padding: 1px 3px;
+    border-radius: 3px;
     font-family: var(--font-body);
     transition: all 0.15s ease;
 }
 
-.meta-link:hover, .meta-link-btn:hover {
+.sub-meta-link:hover, .sub-meta-btn:hover {
     color: var(--accent-blue);
     background: rgba(56, 189, 248, 0.08);
 }
 
-.meta-sep {
+.meta-dot-sep {
     color: #334155;
-    font-size: 10px;
+    font-size: 9px;
 }
 
 .carousel-tabs-bar {
@@ -1080,20 +1307,20 @@ main.content-area {
     </div>
     
     <nav class="nav-scroll">
-        <div class="nav-group-title">Khám Phá &amp; Quy Tắc</div>
-        <a href="#overview" class="nav-link active"><span class="icon">📌</span> Tổng Quan Dự Án</a>
+        <div class="nav-group-title">Kho Phân Tích Trực Tuyến</div>
+        <a href="#case-library" class="nav-link active"><span class="icon">📚</span> 87+ Thư Viện Case Studies</a>
+        <a href="#overview" class="nav-link"><span class="icon">📌</span> Giới Thiệu Cổng Điện Ảnh</a>
+        
+        <div class="nav-group-title">Tác Nghiệp &amp; Chẩn Đoán</div>
+        <a href="#diagnostic-hub" class="nav-link"><span class="icon">🩺</span> Bác Sĩ Cảnh Quay (Chẩn Đoán)</a>
+        <a href="#preflight-checklist" class="nav-link"><span class="icon">📋</span> Checklist 8 Bước Trước REC</a>
+        
+        <div class="nav-group-title">Ngôn Ngữ Điện Ảnh</div>
         <a href="#scale-angles" class="nav-link"><span class="icon">📐</span> 1. Cỡ Cảnh &amp; Góc Máy</a>
         <a href="#camera-moves" class="nav-link"><span class="icon">🎥</span> 2. Động Tác Máy &amp; Bố Cục</a>
         <a href="#match-cuts" class="nav-link"><span class="icon">✂️</span> 3. Kỹ Thuật Mồi - Nối (Out/In)</a>
         <a href="#camera-settings" class="nav-link"><span class="icon">💡</span> 4. Thông Số Manual &amp; Ánh Sáng</a>
         <a href="#visual-rhythm" class="nav-link"><span class="icon">🎵</span> 5. Nhịp Điệu &amp; ASMR Foley</a>
-        
-        <div class="nav-group-title">Tác Nghiệp Thực Tế</div>
-        <a href="#diagnostic-hub" class="nav-link"><span class="icon">🩺</span> Bác Sĩ Cảnh Quay (Chẩn Đoán)</a>
-        <a href="#preflight-checklist" class="nav-link"><span class="icon">📋</span> Checklist 8 Bước Trước REC</a>
-        
-        <div class="nav-group-title">Thư Viện So Sánh</div>
-        <a href="#case-library" class="nav-link"><span class="icon">📚</span> 85+ Case Studies Phân Tích</a>
     </nav>
     
     <div class="sidebar-footer">
@@ -1136,7 +1363,85 @@ main.content-area {
         </div>
     </div>
 
-    <!-- Section 1: Cỡ Cảnh & Góc Máy -->
+    
+    <!-- TOP SECTION: Case Studies Library & Smart Realtime Filters -->
+    <section class="section-anchor" id="case-library" style="margin-top: 10px;">
+        <div class="section-head" style="justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+                <span class="section-tag" style="background: rgba(56, 189, 248, 0.2); color: var(--accent-blue); border-color: var(--accent-blue);">TRA CỨU TRỰC TIẾP</span>
+                <h2 class="section-title">🎬 Thư Viện 87+ Báo Cáo Phân Tích Điện Ảnh</h2>
+            </div>
+            <div class="filter-counter-badge" id="quickCounterBadge">
+                <span class="dot-live">●</span> <span id="topCountDisplay">87</span> Báo Cáo Sẵn Sàng
+            </div>
+        </div>
+        
+        <!-- Smart Realtime Filter Panel -->
+        <div class="filter-control-panel">
+            <div class="filter-main-bar">
+                <div class="filter-search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" id="caseSearchInput" class="filter-input" placeholder="Tìm kiếm nhanh tên video, creator, kỹ thuật, bối cảnh...">
+                    <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="Xóa tìm kiếm">✕</button>
+                </div>
+                
+                <div class="filter-select-group">
+                    <div class="select-wrap">
+                        <span class="select-label">👤 Tác giả:</span>
+                        <select id="creatorFilter" class="filter-dropdown" onchange="applyFilters()">
+                            <option value="">Tất cả tác giả (87)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="select-wrap">
+                        <span class="select-label">🎯 Kỹ thuật:</span>
+                        <select id="techniqueFilter" class="filter-dropdown" onchange="applyFilters()">
+                            <option value="">Tất cả kỹ thuật</option>
+                            <option value="lighting">💡 Ánh sáng &amp; Màu sắc (Lighting/Color)</option>
+                            <option value="composition">📐 Bố cục &amp; Góc máy (Framing/Angles)</option>
+                            <option value="match_cut">✂️ Match Cut &amp; Nhịp chuyển (Motion Cut)</option>
+                            <option value="routine_ugc">📱 Routine &amp; UGC (Đời thường/Lifestyle)</option>
+                            <option value="carousel">🎬 Carousel Đa Slide (Multi-Clips)</option>
+                            <option value="location">📍 Bối cảnh Thực tế (Times City/Studio)</option>
+                        </select>
+                    </div>
+                    
+                    <button class="reset-filter-btn" onclick="resetAllFilters()" title="Đặt lại bộ lọc về mặc định">
+                        <span>🔄 Đặt lại</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Quick Chips Bar (1-Touch Filter) -->
+            <div class="quick-chips-bar">
+                <span class="chips-label">Lọc nhanh:</span>
+                <div class="chips-list">
+                    <button class="chip-btn active" data-chip="all" onclick="setQuickChip('all', this)">✨ Tất cả (87)</button>
+                    <button class="chip-btn" data-chip="lighting" onclick="setQuickChip('lighting', this)">💡 Ánh sáng &amp; Khối</button>
+                    <button class="chip-btn" data-chip="composition" onclick="setQuickChip('composition', this)">📐 Bố cục &amp; Tiêu cự</button>
+                    <button class="chip-btn" data-chip="match_cut" onclick="setQuickChip('match_cut', this)">✂️ Kinetic Match Cut</button>
+                    <button class="chip-btn" data-chip="routine_ugc" onclick="setQuickChip('routine_ugc', this)">📱 Routine &amp; UGC</button>
+                    <button class="chip-btn" data-chip="carousel" onclick="setQuickChip('carousel', this)">🎬 Carousel Series</button>
+                    <button class="chip-btn" data-chip="location" onclick="setQuickChip('location', this)">📍 Kho Bối Cảnh</button>
+                </div>
+            </div>
+            
+            <!-- Active Filter Status & Result Count -->
+            <div class="filter-status-bar">
+                <div class="result-counter">
+                    <span class="dot-active">●</span> Hiển thị: <b id="resultCountText" class="highlight-count">87</b> / <span id="maxTotalText">87</span> dự án phân tích
+                </div>
+                <div id="activeFilterTags" class="active-filter-tags"></div>
+            </div>
+        </div>
+        
+        <!-- 3x3 Dense Grid Container -->
+        <div class="case-grid-3x3" id="caseCardsContainer">
+            <!-- Populated dynamically by JavaScript -->
+        </div>
+    </section>
+
+<!-- Section 1: Cỡ Cảnh & Góc Máy -->
     <section class="section-anchor" id="scale-angles">
         <div class="section-head">
             <span class="section-tag">MODULE 01</span>
@@ -1497,23 +1802,7 @@ main.content-area {
         </div>
     </section>
 
-    <!-- Section 8: 20 Case Studies Cards -->
-    <section class="section-anchor" id="case-library">
-        <div class="section-head">
-            <span class="section-tag" style="background: rgba(192, 132, 252, 0.2); color: var(--accent-purple); border-color: var(--accent-purple);">CASE STUDIES</span>
-            <h2 class="section-title">📚 Thư Viện 85+ Dự Án Phân Tích Thực Chiến (Trực Quan &amp; Mở Trực Tiếp)</h2>
-        </div>
-        
-        <p style="color: var(--text-secondary); margin-bottom: 20px;">
-            Mỗi case study đều có <b>2 ảnh khung hình đại diện (Hook &amp; Key Shot)</b> để nhận diện nhanh, kèm nút chính <b>Mở Báo Cáo HTML trực tiếp trong tab mới</b> và các tùy chọn phụ (Video gốc, Instagram, Drive):
-        </p>
-        
-        <div class="case-cards-container" id="caseCardsContainer">
-            <!-- Populated by JavaScript -->
-        </div>
-    </section>
-    
-</main>
+    </main>
 
 <!-- In-Page Interactive Modal Viewer (For HTML Reports & Videos) -->
 <div class="modal-backdrop" id="appModal">
@@ -4438,27 +4727,117 @@ function escapeHtml(str) {
               .replace(/'/g, '&#039;');
 }
 
-// Render Case Studies Cards
-function renderCaseCards(filterText = '') {
+// Smart Multi-Faceted Realtime Filter & 3x3 Grid Renderer
+let currentFilterState = {
+    search: '',
+    creator: '',
+    technique: '',
+    chip: 'all'
+};
+
+// Initialize Creator Dropdown Options
+function populateCreatorDropdown() {
+    const creatorSelect = document.getElementById('creatorFilter');
+    if (!creatorSelect) return;
+    
+    const creatorsMap = {};
+    portalData.forEach(pkg => {
+        const cr = (pkg.creator || '').trim();
+        if (cr) {
+            creatorsMap[cr] = (creatorsMap[cr] || 0) + 1;
+        }
+    });
+    
+    const sortedCreators = Object.keys(creatorsMap).sort((a, b) => a.localeCompare(b));
+    
+    creatorSelect.innerHTML = `<option value="">Tất cả tác giả (${portalData.length})</option>`;
+    sortedCreators.forEach(cr => {
+        const count = creatorsMap[cr];
+        const opt = document.createElement('option');
+        opt.value = cr;
+        opt.textContent = `${cr} (${count})`;
+        creatorSelect.appendChild(opt);
+    });
+}
+
+// Check Technique Match
+function matchTechnique(pkgTech = '', filterType = '') {
+    if (!filterType || filterType === 'all') return true;
+    const t = (pkgTech || '').toLowerCase();
+    
+    if (filterType === 'lighting') {
+        return t.includes('light') || t.includes('color') || t.includes('cinematic') || t.includes('chiaroscuro') || t.includes('palette') || t.includes('gold');
+    }
+    if (filterType === 'composition') {
+        return t.includes('framing') || t.includes('angle') || t.includes('focal') || t.includes('composition') || t.includes('wide') || t.includes('telephoto') || t.includes('depth') || t.includes('lens') || t.includes('triad');
+    }
+    if (filterType === 'match_cut') {
+        return t.includes('cut') || t.includes('transition') || t.includes('kinetic') || t.includes('motion') || t.includes('whip') || t.includes('pan');
+    }
+    if (filterType === 'routine_ugc') {
+        return t.includes('routine') || t.includes('ugc') || t.includes('life') || t.includes('vlog') || t.includes('daily') || t.includes('faceless') || t.includes('pacing');
+    }
+    if (filterType === 'carousel') {
+        return t.includes('carousel') || t.includes('slide') || t.includes('series') || t.includes('5-slide') || t.includes('album');
+    }
+    if (filterType === 'location') {
+        return t.includes('location') || t.includes('times city') || t.includes('b-roll') || t.includes('studio') || t.includes('hầm') || t.includes('cdn');
+    }
+    return t.includes(filterType.toLowerCase());
+}
+
+// Master Filter Function (Realtime < 2ms)
+function applyFilters() {
+    const searchVal = (document.getElementById('caseSearchInput')?.value || '').trim().toLowerCase();
+    const creatorVal = document.getElementById('creatorFilter')?.value || '';
+    const techDropdownVal = document.getElementById('techniqueFilter')?.value || '';
+    
+    currentFilterState.search = searchVal;
+    currentFilterState.creator = creatorVal;
+    currentFilterState.technique = techDropdownVal;
+    
+    // Toggle clear search button
+    const clearBtn = document.getElementById('clearSearchBtn');
+    if (clearBtn) {
+        clearBtn.style.display = searchVal ? 'block' : 'none';
+    }
+    
     const container = document.getElementById('caseCardsContainer');
     if (!container) return;
     container.innerHTML = '';
     
-    let count = 0;
+    let matchCount = 0;
+    
     portalData.forEach((pkg, index) => {
-        const textToSearch = ((pkg.title_vi || '') + ' ' + (pkg.creator || '') + ' ' + (pkg.desc_vi || '') + ' ' + (pkg.key_tech || '') + ' ' + (pkg.id || '')).toLowerCase();
-        if (filterText && !textToSearch.includes(filterText.toLowerCase())) {
+        // 1. Text Search Filter
+        if (searchVal) {
+            const searchable = ((pkg.title_vi || '') + ' ' + (pkg.creator || '') + ' ' + (pkg.desc_vi || '') + ' ' + (pkg.key_tech || '') + ' ' + (pkg.id || '')).toLowerCase();
+            if (!searchable.includes(searchVal)) return;
+        }
+        
+        // 2. Creator Filter
+        if (creatorVal && (pkg.creator || '').trim() !== creatorVal) {
             return;
         }
-        count++;
         
-        const card = document.createElement('div');
-        card.className = 'case-row-card';
+        // 3. Dropdown Technique Filter
+        if (techDropdownVal && !matchTechnique(pkg.key_tech, techDropdownVal)) {
+            return;
+        }
         
+        // 4. Quick Chip Filter
+        if (currentFilterState.chip && currentFilterState.chip !== 'all') {
+            if (!matchTechnique(pkg.key_tech, currentFilterState.chip)) {
+                return;
+            }
+        }
+        
+        matchCount++;
+        
+        // Render Compact Card
         const htmlPath = pkg.root_html_rel || pkg.main_html_rel || '';
         const resolvedHtmlPath = getResolvedPath(htmlPath);
         
-        // Thumbnails (2 keyframe images)
         let thumbs = pkg.thumbnails || [];
         if (!thumbs || thumbs.length === 0) {
             const folder = pkg.folder_name || pkg.id || '';
@@ -4470,81 +4849,145 @@ function renderCaseCards(filterText = '') {
         const thumb1 = getResolvedPath(thumbs[0] || '');
         const thumb2 = getResolvedPath(thumbs[1] || thumbs[0] || '');
         
-        // Secondary Links (Clean, subtle text/icon links, NO visual clutter)
-        let metaLinks = [];
-        
+        // Sub Meta Links (Extremely minimal)
+        let subLinks = [];
         const vidPath = pkg.root_vid_rel || pkg.main_vid_rel || '';
         if (vidPath || (pkg.all_vids && pkg.all_vids.length > 0)) {
-            const vidCount = (pkg.all_vids && pkg.all_vids.length > 1) ? ` (${pkg.all_vids.length} clips)` : '';
-            metaLinks.push(`<button class="meta-link-btn" onclick="openCaseVideo(${index})">🎬 Video gốc${vidCount}</button>`);
+            subLinks.push(`<button class="sub-meta-btn" onclick="openCaseVideo(${index})">🎬 Video</button>`);
         }
-        
         if (pkg.ig_url) {
-            metaLinks.push(`<a class="meta-link" href="${pkg.ig_url}" target="_blank" rel="noopener">📸 Instagram ↗</a>`);
+            subLinks.push(`<a class="sub-meta-link" href="${pkg.ig_url}" target="_blank" rel="noopener">📸 IG ↗</a>`);
         }
-        
         if (pkg.gdrive_folder) {
-            metaLinks.push(`<a class="meta-link" href="${pkg.gdrive_folder}" target="_blank" rel="noopener">☁️ Drive ↗</a>`);
+            subLinks.push(`<a class="sub-meta-link" href="${pkg.gdrive_folder}" target="_blank" rel="noopener">☁️ Drive ↗</a>`);
         }
-        
         if (pkg.gdrive_pdf) {
-            metaLinks.push(`<a class="meta-link" href="${pkg.gdrive_pdf}" target="_blank" rel="noopener">📥 PDF ↗</a>`);
+            subLinks.push(`<a class="sub-meta-link" href="${pkg.gdrive_pdf}" target="_blank" rel="noopener">📥 PDF ↗</a>`);
         }
         
-        const secondaryLinksHtml = metaLinks.length > 0 ? `
-            <div class="case-secondary-links">
-                <span class="secondary-label">Tùy chọn:</span>
-                ${metaLinks.join('<span class="meta-sep">•</span>')}
-            </div>
-        ` : '';
-        
+        const card = document.createElement('div');
+        card.className = 'case-card-compact';
         card.innerHTML = `
-            <div class="case-thumbs-col">
-                <div class="case-index-pill">#${String(count).padStart(2, '0')}</div>
-                <a href="${resolvedHtmlPath}" target="_blank" class="case-thumbs-pair" title="Mở Báo Cáo Phân Tích (Tab mới)">
-                    <div class="thumb-frame">
+            <div class="case-card-thumbs">
+                <div class="card-top-badges">
+                    <span class="index-badge-pill">#${String(matchCount).padStart(2, '0')}</span>
+                    <span class="shots-count-pill">🎬 ${pkg.shots_count || 0} shots</span>
+                </div>
+                <a href="${resolvedHtmlPath}" target="_blank" class="thumbs-pair-grid" title="Mở Báo Cáo Phân Tích">
+                    <div class="thumb-box">
                         <img src="${thumb1}" alt="Shot 01" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_01_mid.jpg';">
                         <span class="thumb-tag">Shot 01</span>
                     </div>
-                    <div class="thumb-frame">
+                    <div class="thumb-box">
                         <img src="${thumb2}" alt="Key Shot" loading="lazy" onerror="this.onerror=null; this.src='https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/${pkg.folder_name || pkg.id}/shot_03_mid.jpg';">
                         <span class="thumb-tag">Key Shot</span>
                     </div>
                 </a>
             </div>
             
-            <div class="case-main-content">
-                <div class="case-header-wrap">
-                    <div class="case-title-row">
-                        <a href="${resolvedHtmlPath}" target="_blank" class="case-title-link">
-                            <h3 class="case-title-text">${escapeHtml(pkg.title_vi)}</h3>
-                        </a>
+            <div class="case-card-body">
+                <span class="card-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>
+                <a href="${resolvedHtmlPath}" target="_blank" class="card-title-link">
+                    <h3 class="card-title-text" title="${escapeHtml(pkg.title_vi)}">${escapeHtml(pkg.title_vi)}</h3>
+                </a>
+                <div class="card-tech-text">
+                    <b>🎯 Kỹ thuật:</b> ${escapeHtml(pkg.key_tech)}
+                </div>
+            </div>
+            
+            <div class="case-card-actions">
+                ${htmlPath ? `
+                    <a class="btn-open-main" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích (Tab Mới)">
+                        <span>📄 Mở Báo Cáo Phân Tích</span>
+                        <svg class="btn-arrow" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+                    </a>
+                ` : ''}
+                ${subLinks.length > 0 ? `
+                    <div class="card-sub-links">
+                        ${subLinks.join('<span class="meta-dot-sep">•</span>')}
                     </div>
-                    <div class="case-meta-row">
-                        <span class="case-creator-tag">👤 ${escapeHtml(pkg.creator)}</span>
-                        <span class="case-shots-badge">🎬 ${pkg.shots_count || 0} phân cảnh</span>
-                    </div>
-                </div>
-                
-                <p class="case-desc-text">${escapeHtml(pkg.desc_vi)}</p>
-                
-                <div class="case-tech-box">
-                    <b>🎯 Kỹ thuật trọng tâm:</b> ${escapeHtml(pkg.key_tech)}
-                </div>
-                
-                <div class="case-action-row">
-                    ${htmlPath ? `
-                        <a class="primary-report-btn" href="${resolvedHtmlPath}" target="_blank" title="Mở Báo Cáo Phân Tích trong Tab Mới">
-                            <span>📄 Mở Báo Cáo Phân Tích</span>
-                            <svg class="btn-arrow" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
-                        </a>
-                    ` : ''}
-                    ${secondaryLinksHtml}
-                </div>
+                ` : ''}
             </div>
         `;
         container.appendChild(card);
     });
+    
+    // Update Counter Badges
+    const resultCountEl = document.getElementById('resultCountText');
+    if (resultCountEl) resultCountEl.innerText = matchCount;
+    const topCountEl = document.getElementById('topCountDisplay');
+    if (topCountEl) topCountEl.innerText = matchCount;
+    
+    // Empty state handling
+    if (matchCount === 0) {
+        container.innerHTML = `
+            <div style="grid-column: 1 / -1; text-align: center; padding: 48px 20px; background: #111827; border: 1px dashed #283750; border-radius: 14px;">
+                <div style="font-size: 36px; margin-bottom: 10px;">🔍</div>
+                <h3 style="color: #f8fafc; font-size: 16px; margin-bottom: 6px;">Không tìm thấy dự án phân tích phù hợp</h3>
+                <p style="color: #94a3b8; font-size: 13px; margin-bottom: 16px;">Vui lòng thử đổi từ khóa tìm kiếm hoặc chọn tác giả / kỹ thuật khác.</p>
+                <button onclick="resetAllFilters()" style="background: #0284c7; color: #fff; border: none; padding: 7px 16px; border-radius: 8px; font-weight: 600; cursor: pointer;">Xóa bộ lọc &amp; Xem tất cả</button>
+            </div>
+        `;
+    }
+}
+
+// Quick Chip Click Handler
+function setQuickChip(chipKey, btnElement) {
+    currentFilterState.chip = chipKey;
+    
+    const chipBtns = document.querySelectorAll('.chip-btn');
+    chipBtns.forEach(b => b.classList.remove('active'));
+    if (btnElement) btnElement.classList.add('active');
+    
+    applyFilters();
+}
+
+// Clear Search Input
+function clearSearch() {
+    const input = document.getElementById('caseSearchInput');
+    if (input) {
+        input.value = '';
+        input.focus();
+    }
+    applyFilters();
+}
+
+// Reset All Filters
+function resetAllFilters() {
+    const searchInput = document.getElementById('caseSearchInput');
+    const creatorSelect = document.getElementById('creatorFilter');
+    const techSelect = document.getElementById('techniqueFilter');
+    
+    if (searchInput) searchInput.value = '';
+    if (creatorSelect) creatorSelect.value = '';
+    if (techSelect) techSelect.value = '';
+    
+    currentFilterState = {
+        search: '',
+        creator: '',
+        technique: '',
+        chip: 'all'
+    };
+    
+    const chipBtns = document.querySelectorAll('.chip-btn');
+    chipBtns.forEach(b => {
+        if (b.getAttribute('data-chip') === 'all') {
+            b.classList.add('active');
+        } else {
+            b.classList.remove('active');
+        }
+    });
+    
+    applyFilters();
+}
+
+// Backward compatibility alias
+function renderCaseCards(filterText = '') {
+    if (filterText) {
+        const input = document.getElementById('caseSearchInput');
+        if (input) input.value = filterText;
+    }
+    applyFilters();
 }
 
 function openCaseReport(index) {
@@ -4740,7 +5183,13 @@ document.getElementById('appModal').addEventListener('click', (e) => {
 // Search Box Live Filter
 document.getElementById('globalSearch').addEventListener('input', (e) => {
     const val = e.target.value.trim();
-    renderCaseCards(val);
+    const caseSearch = document.getElementById('caseSearchInput');
+    if (caseSearch) caseSearch.value = val;
+    applyFilters();
+    // Scroll to case library if searching
+    if (val) {
+        document.getElementById('case-library')?.scrollIntoView({ behavior: 'smooth' });
+    }
 });
 
 // ScrollSpy Navigation
@@ -4769,7 +5218,11 @@ document.querySelector('.content-area').addEventListener('scroll', () => {
 // Initialize
 showDiagnosis(0);
 loadChecklistState();
-renderCaseCards();
+populateCreatorDropdown();
+applyFilters();
+
+// Live Input Search Listener
+document.getElementById('caseSearchInput')?.addEventListener('input', () => applyFilters());
 </script>
 </body>
 </html>
