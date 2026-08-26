@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khóa Học Video Offline K2 — Kho Tài Nguyên & Giáo Trình Masterclass</title>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Phosphor Icons -->
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/bold/style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"/>
+
+  <style>
+    /* ==========================================================================
+       FONT DEFINITIONS: ONLY INTEGRAL CF, ACTA, AEONIK
+       ========================================================================== */
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('./fonts/SVN-AEONIK-REGULAR.TTF') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('./fonts/SVN-AEONIK-REGULARITALIC.TTF') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('./fonts/SVN-AEONIK-MEDIUM.TTF') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('./fonts/SVN-AEONIK-BOLD.TTF') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Aeonik';
+      src: url('./fonts/SVN-AEONIK-BLACK.TTF') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Integral CF';
+      src: url('./fonts/SVN-IntegralCF-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Integral CF';
+      src: url('./fonts/SVN-IntegralCF-Heavy.ttf') format('truetype');
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'Acta';
+      src: url('./fonts/SVN-Acta-Book.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Acta';
+      src: url('./fonts/SVN-Acta-Medium.ttf') format('truetype');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Acta';
+      src: url('./fonts/SVN-Acta-Bold.ttf') format('truetype');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Acta';
+      src: url('./fonts/SVN-Acta-BoldItalic.ttf') format('truetype');
+      font-weight: 700;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* GLOBAL TYPOGRAPHY */
+    body {
+      font-family: 'Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #090D16;
+      color: #E2E8F0;
+    }
+
+    .font-integral {
+      font-family: 'Integral CF', 'Aeonik', sans-serif;
+      letter-spacing: -0.02em;
+    }
+
+    .font-acta {
+      font-family: 'Acta', Georgia, serif;
+    }
+
+    .font-aeonik {
+      font-family: 'Aeonik', sans-serif;
+    }
+
+    /* Custom Glass & Gradients */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .glass-card {
+      background: rgba(18, 26, 47, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(56, 189, 248, 0.35);
+      box-shadow: 0 12px 30px -10px rgba(56, 189, 248, 0.15);
+      transform: translateY(-2px);
+    }
+
+    .glass-tag {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background-color: #000;
+    }
+
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #090D16;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1E293B;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Gradient Text */
+    .gradient-text-sky {
+      background: linear-gradient(135deg, #38BDF8 0%, #818CF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-gold {
+      background: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .gradient-text-emerald {
+      background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-200 antialiased selection:bg-sky-500 selection:text-white pb-24">
+
+  <!-- BACKGROUND DECORATIONS -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-sky-600/10 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[35%] -left-40 w-[600px] h-[600px] bg-indigo-600/10 blur-[140px] rounded-full"></div>
+    <div class="absolute top-[70%] -right-40 w-[600px] h-[600px] bg-purple-600/10 blur-[140px] rounded-full"></div>
+  </div>
+
+  <!-- STICKY HEADER & NAVIGATION -->
+  <header class="sticky top-0 z-50 glass-panel border-b border-slate-800/80 px-4 lg:px-8 py-3.5">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center shadow-lg shadow-sky-500/20">
+          <i class="ph-bold ph-video-camera text-white text-xl"></i>
+        </div>
+        <div>
+          <div class="font-integral text-xs tracking-wider text-sky-400">VIETMAC STUDIO</div>
+          <div class="font-aeonik font-bold text-sm text-white flex items-center gap-1.5">
+            LỚP OFFLINE K2 <span class="text-xs px-1.5 py-0.5 rounded bg-sky-500/20 text-sky-300 font-normal">MASTERCLASS</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Nav Buttons for Desktop -->
+      <nav class="hidden md:flex items-center space-x-1 text-xs font-aeonik font-medium text-slate-300">
+        <a href="#slide-buoi-1" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">01. Slide</a>
+        <a href="#text-animate" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">02. Text Animate</a>
+        <a href="#quay-2-cam" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">03. Quay 2 Cam</a>
+        <a href="#font-video" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">04. Font Chữ</a>
+        <a href="#miss-idea" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">05. Miss Idea</a>
+        <a href="#miss-video-ads" class="px-3 py-1.5 rounded-lg hover:text-white hover:bg-slate-800/60 transition">06. Video Ads</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <a href="https://drive.google.com/open?id=1WkH-1OIvT1MSCszlHNMe5BXFM9OImFK5" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-aeonik font-bold text-xs shadow-lg shadow-sky-500/25 transition transform active:scale-95">
+        <i class="ph-bold ph-google-drive-logo text-base"></i>
+        <span>DRIVE TÀI NGUYÊN K2</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 pt-12 pb-14 text-center">
+    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-tag text-xs font-aeonik text-sky-400 mb-6 border border-sky-500/20 shadow-inner">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      TÀI NGUYÊN & GIÁO TRÌNH THỰC CHIẾN • VIETMAC OFFLINE K2
+    </div>
+
+    <h1 class="font-integral text-3xl sm:text-5xl lg:text-6xl text-white tracking-tight uppercase leading-none max-w-5xl mx-auto">
+      KHO TÀI NGUYÊN & <span class="gradient-text-sky">BÀI HỌC MASTERCLASS</span>
+    </h1>
+
+    <p class="font-acta text-lg sm:text-2xl text-slate-300 mt-6 max-w-3xl mx-auto italic leading-relaxed">
+      “Toàn bộ slide giáo trình, bộ hiệu ứng chữ động, preset dựng video 2 máy, bộ font chuẩn điện ảnh và hệ thống trợ lý AI cố vấn nội dung từ Anh Việt.”
+    </p>
+
+    <!-- Stat Badges Bar -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mt-10">
+      <div class="glass-card rounded-2xl p-4 text-center">
+        <div class="font-integral text-2xl text-sky-400">06</div>
+        <div class="font-aeonik text-xs text-slate-400 mt-1 uppercase font-medium">Chuyên Đề Thực Chiến</div>
+      </div>
+      <div class="glass-card rounded-2xl p-4 text-center">
+        <div class="font-integral text-2xl text-emerald-400">04+</div>
+        <div class="font-aeonik text-xs text-slate-400 mt-1 uppercase font-medium">Bộ Tài Nguyên Tải Về</div>
+      </div>
+      <div class="glass-card rounded-2xl p-4 text-center">
+        <div class="font-integral text-2xl text-amber-400">05</div>
+        <div class="font-aeonik text-xs text-slate-400 mt-1 uppercase font-medium">Video Bài Giảng HD</div>
+      </div>
+      <div class="glass-card rounded-2xl p-4 text-center">
+        <div class="font-integral text-2xl text-purple-400">02</div>
+        <div class="font-aeonik text-xs text-slate-400 mt-1 uppercase font-medium">Trợ Lý AI Độc Quyền</div>
+      </div>
+    </div>
+
+    <!-- Main Folder Action Banner -->
+    <div class="mt-8 max-w-4xl mx-auto bg-gradient-to-r from-sky-950/60 via-slate-900/80 to-indigo-950/60 border border-sky-500/30 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-left shadow-xl">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-2xl bg-sky-500/20 border border-sky-500/40 flex items-center justify-center flex-shrink-0">
+          <i class="ph-fill ph-folder-notch-open text-sky-400 text-2xl"></i>
+        </div>
+        <div>
+          <div class="font-aeonik font-bold text-white text-base">Thư Mục Tổng: "tài nguyên lơp offline k2"</div>
+          <div class="font-aeonik text-xs text-slate-400 mt-0.5">Bao gồm toàn bộ Slide, Font chữ, Preset Motion, GIF Demo và File thực hành 2 Cam.</div>
+        </div>
+      </div>
+      <a href="https://drive.google.com/open?id=1WkH-1OIvT1MSCszlHNMe5BXFM9OImFK5" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 font-aeonik font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-lg shadow-sky-500/20 transition whitespace-nowrap">
+        <i class="ph-bold ph-arrow-square-out text-base"></i>
+        Mở Folder Google Drive
+      </a>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 space-y-16">
+
+    <!-- =========================================================================
+         SECTION 01: SLIDE BUỔI 1
+         ========================================================================= -->
+    <section id="slide-buoi-1" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">MỤC 01</span>
+        <span class="font-acta italic text-slate-400 text-sm">Giáo trình lý thuyết & Tư duy kiến trúc</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+            SLIDE BÀI GIẢNG BUỔI 1: TƯ DUY NỘI DUNG & THIẾT LẬP HỆ THỐNG
+          </h2>
+          <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+            “Giải mã kiến trúc video ngắn chuyển đổi cao, bóc trần những hiểu lầm phổ biến về thiết bị và định hình công thức sản xuất video đều đặn không mệt mỏi.”
+          </p>
+
+          <div class="space-y-3 pt-2 text-sm font-aeonik text-slate-300">
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+              <i class="ph-fill ph-check-circle text-sky-400 text-lg mt-0.5 flex-shrink-0"></i>
+              <span><strong>Tư duy Talking Head lõi:</strong> Tại sao khuôn mặt và giọng nói của bạn là tem bảo hành duy nhất đối thủ không thể sao chép.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+              <i class="ph-fill ph-check-circle text-sky-400 text-lg mt-0.5 flex-shrink-0"></i>
+              <span><strong>Thiết lập 1 sải tay:</strong> Tối giản quy trình quay, triệt tiêu ma sát kỹ thuật để biến việc quay video thành thói quen hàng ngày.</span>
+            </div>
+            <div class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/50 border border-slate-800">
+              <i class="ph-fill ph-check-circle text-sky-400 text-lg mt-0.5 flex-shrink-0"></i>
+              <span><strong>Cấu trúc kịch bản 3 nhịp:</strong> Hook 3s đầu giữ chân thị giác ➔ Luồng kiến thức cô đọng ➔ B-roll minh chứng thực tế.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Card -->
+        <div class="lg:col-span-5 bg-gradient-to-b from-slate-800/80 to-slate-900/90 border border-slate-700/80 rounded-2xl p-6 flex flex-col justify-between shadow-2xl">
+          <div>
+            <div class="flex items-center justify-between pb-4 border-b border-slate-700/60">
+              <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-xl bg-red-500/20 text-red-400 border border-red-500/30 flex items-center justify-center">
+                  <i class="ph-fill ph-file-pdf text-2xl"></i>
+                </div>
+                <div>
+                  <div class="font-aeonik font-bold text-white text-base">Slide buổi 1.pdf</div>
+                  <div class="font-aeonik text-xs text-slate-400">Dung lượng: ~22 MB • Định dạng PDF HD</div>
+                </div>
+              </div>
+              <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-300 font-aeonik text-[10px] font-bold uppercase">Ready</span>
+            </div>
+
+            <div class="py-4 space-y-2 text-xs font-aeonik text-slate-300">
+              <div class="flex justify-between">
+                <span class="text-slate-400">Khóa học:</span>
+                <span class="font-medium text-slate-200">Video Offline K2</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Tác giả:</span>
+                <span class="font-medium text-slate-200">Anh Việt (VietMac)</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-slate-400">Chất lượng:</span>
+                <span class="font-medium text-sky-400">Vector High-Res Slide</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="space-y-2.5 pt-2">
+            <a href="https://drive.google.com/open?id=1O4Dzjyh_dvFJ-O-peTmwxJyykiYuD0Vw" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-aeonik font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-lg shadow-sky-500/25 transition">
+              <i class="ph-bold ph-download-simple text-base"></i>
+              TẢI SLIDE BUỔI 1 (GOOGLE DRIVE)
+            </a>
+            <a href="https://drive.google.com/file/d/1O4Dzjyh_dvFJ-O-peTmwxJyykiYuD0Vw/view" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl glass-tag hover:bg-slate-700/60 text-slate-300 hover:text-white font-aeonik text-xs font-medium flex items-center justify-center gap-2 transition">
+              <i class="ph-bold ph-eye text-base"></i>
+              Xem Trực Tuyến Trên Drive
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 02: TÀI NGUYÊN HIỆU ỨNG CHỮ (TEXT ANIMATE)
+         ========================================================================= -->
+    <section id="text-animate" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">MỤC 02</span>
+        <span class="font-acta italic text-slate-400 text-sm">Visual Dynamics & Motion Typography</span>
+      </div>
+
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+          TÀI NGUYÊN HIỆU ỨNG CHỮ: TEXT ANIMATE MOTION PRESET
+        </h2>
+        <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+          “Bộ preset chữ động chuyên nghiệp tạo điểm nhấn thị giác giật nảy theo lời thoại, giữ chân người xem từng giây với phong cách công nghệ hiện đại.”
+        </p>
+      </div>
+
+      <!-- Video & Demo Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8 items-start">
+        <!-- Video Tutorial YouTube -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="video-responsive shadow-2xl">
+            <iframe src="https://www.youtube.com/embed/6Oiugt77imE" title="Hướng dẫn hiệu ứng chữ Text Animate" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="flex items-center justify-between text-xs font-aeonik text-slate-400 px-1">
+            <span class="flex items-center gap-1.5"><i class="ph-bold ph-youtube-logo text-red-400 text-base"></i> Video Hướng Dẫn Kỹ Thuật Text Animate</span>
+            <span>Thời lượng: Chi tiết từng bước</span>
+          </div>
+        </div>
+
+        <!-- GIF Demo & Download Details -->
+        <div class="lg:col-span-5 space-y-4">
+          <!-- GIF Preview Card -->
+          <div class="glass-card rounded-2xl p-4 border border-slate-700/60 overflow-hidden">
+            <div class="flex items-center justify-between mb-3">
+              <span class="font-aeonik font-bold text-xs text-white uppercase flex items-center gap-1.5">
+                <i class="ph-bold ph-sparkle text-amber-400"></i> DEMO HIỆU ỨNG CHỮ
+              </span>
+              <span class="text-[10px] font-aeonik px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 font-bold">Công nghệ</span>
+            </div>
+            
+            <div class="rounded-xl overflow-hidden border border-slate-800 bg-black/60 aspect-video flex items-center justify-center">
+              <img src="./assets/text_animation_demo.gif" alt="Text Animation Demo Công Nghệ" class="w-full h-full object-contain">
+            </div>
+            
+            <p class="font-acta text-xs text-slate-400 italic mt-3 text-center">
+              *Demo chuyển động chữ `Text Animation 01(1) cong nghe.gif`
+            </p>
+          </div>
+
+          <!-- Download Action Card -->
+          <div class="bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-emerald-500/30 rounded-2xl p-5 space-y-4 shadow-xl">
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center flex-shrink-0">
+                  <i class="ph-fill ph-file-zip text-2xl"></i>
+                </div>
+                <div>
+                  <div class="font-aeonik font-bold text-white text-sm">tai nguyen skool text animate.zip</div>
+                  <div class="font-aeonik text-xs text-slate-400">Dung lượng: 6.0 MB • Full Package</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-2">
+              <a href="https://drive.google.com/open?id=1ktHmAKTylrOOhxHDE6PAorhDh_D_SOBc" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-slate-950 font-aeonik font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-lg shadow-emerald-500/25 transition">
+                <i class="ph-bold ph-download-simple text-base"></i>
+                TẢI BỘ TEXT ANIMATE (ZIP)
+              </a>
+              <a href="https://drive.google.com/open?id=10LNcD0JZ8zLJam9t2KILwUiti3rrPQ8L" target="_blank" rel="noopener noreferrer" class="w-full py-2.5 px-4 rounded-xl glass-tag hover:bg-slate-700/60 text-slate-300 hover:text-white font-aeonik text-xs font-medium flex items-center justify-center gap-2 transition">
+                <i class="ph-bold ph-image text-base"></i>
+                Tải Riêng File GIF Demo (6.6 MB)
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Step-by-Step Guide -->
+      <div class="mt-8 pt-8 border-t border-slate-800/80">
+        <h3 class="font-integral text-lg text-white uppercase mb-4 flex items-center gap-2">
+          <i class="ph-bold ph-list-numbers text-sky-400"></i> HƯỚNG DẪN 4 BƯỚC ỨNG DỤNG HIỆU ỨNG CHỮ
+        </h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-aeonik">
+          <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+            <div class="font-integral text-sky-400 text-base">BƯỚC 01</div>
+            <div class="font-bold text-white">Giải nén & Cài đặt Font</div>
+            <p class="text-slate-400 leading-relaxed">Tải file ZIP về máy, giải nén và cài đặt toàn bộ các font chữ đi kèm trong thư mục font để tránh lỗi hiển thị.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+            <div class="font-integral text-emerald-400 text-base">BƯỚC 02</div>
+            <div class="font-bold text-white">Import Preset Vào Timeline</div>
+            <p class="text-slate-400 leading-relaxed">Kéo thả template text animation vào track phía trên video nói chính (Talking Head) tại vị trí từ khóa quan trọng.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+            <div class="font-integral text-amber-400 text-base">BƯỚC 03</div>
+            <div class="font-bold text-white">Khớp Nhịp Voice & Keyframe</div>
+            <p class="text-slate-400 leading-relaxed">Căn chỉnh điểm chữ bung ra trùng khớp 100% với trọng âm khi nói, thời gian chuyển động lý tưởng từ 0.2s - 0.4s.</p>
+          </div>
+          <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+            <div class="font-integral text-purple-400 text-base">BƯỚC 04</div>
+            <div class="font-bold text-white">Ghép Hiệu Ứng Âm Thanh SFX</div>
+            <p class="text-slate-400 leading-relaxed">Bổ sung âm thanh Whoosh, Pop hoặc Click nhẹ dưới timeline audio ngay khoảnh khắc chữ xuất hiện để kích thích đa giác quan.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 03: QUY TRÌNH EDIT VIDEO 2 CAM (TALKING HEAD)
+         ========================================================================= -->
+    <section id="quay-2-cam" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">MỤC 03</span>
+        <span class="font-acta italic text-slate-400 text-sm">Multi-Camera Production & Editing Masterclass</span>
+      </div>
+
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+          QUY TRÌNH QUAY & EDIT VIDEO 2 CAM: TALKING HEAD ĐỈNH CAO
+        </h2>
+        <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+          “Bí quyết ngồi quay hàng trăm video mà không cần học thuộc lòng kịch bản, cắt ghép mượt mà với 2 góc máy như đàm đạo chuyên nghiệp.”
+        </p>
+      </div>
+
+      <!-- Why Talking Head Box -->
+      <div class="mt-6 p-6 rounded-2xl bg-gradient-to-r from-amber-950/40 via-slate-900/60 to-slate-900/60 border border-amber-500/30 space-y-3">
+        <div class="font-integral text-amber-400 text-sm uppercase flex items-center gap-2">
+          <i class="ph-bold ph-megaphone text-base"></i> DÀNH CHO NHỮNG BẠN MỚI: TẠI SAO TALKING HEAD LÀ ĐỊNH DẠNG BẮT BUỘC PHẢI LÀM?
+        </div>
+        <p class="font-acta text-slate-300 italic text-base">
+          Talking Head hiểu đơn giản là định dạng "người thật việc thật" — bạn ngồi nói chuyện trực tiếp với ống kính máy quay.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs font-aeonik">
+          <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-amber-400 font-bold">👉 Cảm giác giao tiếp 1-1:</span> Khán giả thấy như bạn đang nói chuyện riêng với họ, tạo độ tin tưởng (trust) cực kỳ cao.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-amber-400 font-bold">👉 Tỷ lệ chuyển đổi tốt nhất:</span> Rất phù hợp để truyền đạt kiến thức chuyên môn, xây dựng nhân hiệu hoặc bán hàng.
+          </div>
+          <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-amber-400 font-bold">👉 Siêu tiết kiệm chi phí:</span> Setup đúng 1 lần, bạn có thể ngồi quay hàng trăm video mà không tốn thêm chi phí bối cảnh.
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Core Setup Principles -->
+      <div class="mt-8 space-y-6">
+        <h3 class="font-integral text-lg text-white uppercase flex items-center gap-2">
+          <i class="ph-bold ph-gear-six text-sky-400"></i> 3 NGUYÊN TẮC VÀNG ĐẬP TAN RÀO CẢN CẮM RÚT & QUÊN KỊCH BẢN
+        </h3>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <!-- Card 1 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-3 relative">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center font-integral text-lg">
+              1️⃣
+            </div>
+            <h4 class="font-integral text-base text-white">SETUP "MỘT SẢI TAY"</h4>
+            <p class="font-aeonik text-xs text-slate-300 leading-relaxed">
+              <strong>Nguyên tắc:</strong> Cố định mọi thứ tại bàn làm việc, tất cả thiết bị chỉ nằm trọn trong một sải tay. Khi nào có ý tưởng là ngồi vào ghế bấm quay luôn, không phải tháo lắp, thay đổi hay di chuyển bất cứ thứ gì.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-3 relative">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center font-integral text-lg">
+              2️⃣
+            </div>
+            <h4 class="font-integral text-base text-white">DẢI NHẠY SÁNG (DYNAMIC RANGE)</h4>
+            <p class="font-aeonik text-xs text-slate-300 leading-relaxed">
+              <strong>Nguyên tắc 2 đèn:</strong> 1 đèn chính góc 45° tạo khối mặt + 1 đèn ven đánh sau tóc tạo quầng sáng tách nền.<br><br>
+              <strong class="text-amber-300">Lưu ý điện thoại:</strong> Dải nhạy sáng ngắn, nếu tương phản quá gắt sẽ bị bệt và nhiễu hạt (noise). <strong>Giải pháp:</strong> Bắt buộc bật đèn trần hoặc thêm đèn phụ để nâng ánh sáng tổng thể phòng lên.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card rounded-2xl p-6 border border-slate-800 space-y-3 relative">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-integral text-lg">
+              3️⃣
+            </div>
+            <h4 class="font-integral text-base text-white">SINGLE-LINE & QUAY 2 CAM</h4>
+            <p class="font-aeonik text-xs text-slate-300 leading-relaxed">
+              <strong>Kỹ thuật ngắt dòng:</strong> Kịch bản in ra, mỗi câu trên 1 dòng.<br>
+              🔸 Cúi đọc nhẩm ➔ Ngước nhìn cam ➔ Đếm thầm "1-2" rồi nói.<br>
+              🔸 Nói xong ➔ Đếm thầm "1-2" ➔ Cúi xem câu tiếp.<br>
+              <strong>2 Cam lệch 30°:</strong> Lúc hậu kỳ lật qua lại giữa 2 góc cam, khán giả thấy mạch nói cực kỳ mượt mà, không ai phát hiện bạn đang nhìn giấy!
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2 Video Demonstrations -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-10">
+        <!-- Video 1: Setup 2 Cam -->
+        <div class="space-y-3">
+          <div class="font-aeonik font-bold text-sm text-white flex items-center justify-between">
+            <span class="flex items-center gap-2"><i class="ph-fill ph-video text-sky-400"></i> Video 1: Hướng Dẫn Setup & Quay 2 Cam</span>
+            <span class="text-xs text-slate-400">Talking Head Thực Chiến</span>
+          </div>
+          <div class="video-responsive shadow-2xl">
+            <iframe src="https://www.youtube.com/embed/DgaMQVfO7h4" title="Hướng dẫn setup 2 cam và talking head" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Video 2: Edit on PC -->
+        <div class="space-y-3">
+          <div class="font-aeonik font-bold text-sm text-white flex items-center justify-between">
+            <span class="flex items-center gap-2"><i class="ph-fill ph-desktop text-emerald-400"></i> Video 2: Cách Edit 2 Cam Trên PC</span>
+            <span class="text-xs text-slate-400">Hậu Kỳ Cắt Ghép Mượt Mà</span>
+          </div>
+          <div class="video-responsive shadow-2xl">
+            <iframe src="https://www.youtube.com/embed/td_1upcBOjk" title="Cách edit 2 cam trên PC" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practical Practice Folder Download -->
+      <div class="mt-8 bg-gradient-to-r from-slate-900 to-slate-800/80 border border-slate-700/80 rounded-2xl p-5 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+            <i class="ph-fill ph-folder-user text-2xl"></i>
+          </div>
+          <div>
+            <div class="font-aeonik font-bold text-white text-base">File Đính Kèm Thực Hành Dựng 2 Cam</div>
+            <div class="font-aeonik text-xs text-slate-400">Thư mục Drive chứa toàn bộ footage gốc 2 góc cam mẫu để bạn kéo vào phần mềm dựng thử ngay.</div>
+          </div>
+        </div>
+        <a href="https://drive.google.com/drive/folders/1NmxIBetOOkKTtH14BuKwx6GNcDrRoEh3?usp=sharing" target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-aeonik font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-lg shadow-amber-500/20 transition whitespace-nowrap">
+          <i class="ph-bold ph-folder-open text-base"></i>
+          Mở Thư Mục Thực Hành (Drive)
+        </a>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 04: BỘ FONT CHỮ TIÊU CHUẨN CHO VIDEO
+         ========================================================================= -->
+    <section id="font-video" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">MỤC 04</span>
+        <span class="font-acta italic text-slate-400 text-sm">Typography & Brand Visual Identity</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-8 space-y-4">
+          <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+            BỘ FONT CHỮ DỰNG VIDEO CHUẨN ĐIỆN ẢNH (TEXT ANIMATION FONT)
+          </h2>
+          <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+            “Bộ 4 font chữ việt hóa kinh điển giúp định hình tính cách video, nâng tầm thẩm mỹ và tạo độ nhận diện thương hiệu mạnh mẽ trên mọi nền tảng.”
+          </p>
+
+          <!-- 4 Fonts Preview Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <!-- Aeonik -->
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-aeonik font-bold text-white text-base">01. SVN-Aeonik</span>
+                <span class="px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[10px] font-aeonik font-bold">Font Chính</span>
+              </div>
+              <div class="font-aeonik text-slate-300 text-sm">Aeonik Regular / Medium / Bold / Black</div>
+              <p class="text-xs text-slate-400">Font Sans-Serif hiện đại, hình học chuẩn xác, đọc rõ từng chữ trên màn hình điện thoại di động.</p>
+            </div>
+
+            <!-- Integral CF -->
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-integral text-white text-base">02. INTEGRAL CF</span>
+                <span class="px-2 py-0.5 rounded bg-red-500/20 text-red-300 text-[10px] font-aeonik font-bold">Headline</span>
+              </div>
+              <div class="font-integral text-slate-300 text-xs">INTEGRAL BOLD / HEAVY</div>
+              <p class="text-xs text-slate-400">Font Display chữ in hoa cực mạnh, độ đầm cao, tạo cảm giác đanh thép cho các câu hook giật tít.</p>
+            </div>
+
+            <!-- Acta -->
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-acta text-white text-base italic font-bold">03. SVN-Acta Display</span>
+                <span class="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[10px] font-aeonik font-bold">Editorial</span>
+              </div>
+              <div class="font-acta text-slate-300 text-sm italic">Acta Book / Medium / Bold / Italic</div>
+              <p class="text-xs text-slate-400">Font Serif sang trọng, thanh lịch, mang lại cảm giác uy tín, tri thức và chiều sâu cho chuyên gia.</p>
+            </div>
+
+            <!-- Noe Display -->
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-acta text-white text-base font-bold">04. SVN-Noe Display</span>
+                <span class="px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[10px] font-aeonik font-bold">Luxury</span>
+              </div>
+              <div class="font-acta text-slate-300 text-sm">Noe Display Medium / Bold / Black</div>
+              <p class="text-xs text-slate-400">Font Serif độ tương phản nét dày nét mỏng cao, cực kỳ ăn ý với các chủ đề Lifestyle, Làm đẹp và Nghệ thuật.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Download Font Card -->
+        <div class="lg:col-span-4 bg-gradient-to-b from-slate-800/90 to-slate-900/90 border border-purple-500/30 rounded-2xl p-6 space-y-5 shadow-2xl">
+          <div class="flex items-center gap-3 pb-3 border-b border-slate-700">
+            <div class="w-12 h-12 rounded-xl bg-purple-500/20 text-purple-400 border border-purple-500/30 flex items-center justify-center flex-shrink-0">
+              <i class="ph-fill ph-text-aa text-2xl"></i>
+            </div>
+            <div>
+              <div class="font-aeonik font-bold text-white text-base">text animation font.zip</div>
+              <div class="font-aeonik text-xs text-slate-400">Dung lượng: 2.3 MB • Trọn Bộ Font</div>
+            </div>
+          </div>
+
+          <div class="space-y-2 text-xs font-aeonik text-slate-300">
+            <div class="flex items-center gap-2">
+              <i class="ph-bold ph-check text-emerald-400"></i> Việt hóa 100% không lỗi dấu tiếng Việt
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="ph-bold ph-check text-emerald-400"></i> Tương thích CapCut PC, Premiere, After Effects
+            </div>
+            <div class="flex items-center gap-2">
+              <i class="ph-bold ph-check text-emerald-400"></i> Tối ưu hiển thị màn hình dọc 9:16
+            </div>
+          </div>
+
+          <a href="https://drive.google.com/open?id=1IJ2os7D_DCrNUns8v-cbqYXyXzOn9xDH" target="_blank" rel="noopener noreferrer" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-400 hover:to-indigo-500 text-white font-aeonik font-bold text-xs uppercase flex items-center justify-center gap-2 shadow-lg shadow-purple-500/25 transition">
+            <i class="ph-bold ph-download-simple text-base"></i>
+            TẢI BỘ FONT ĐIỆN ẢNH (ZIP)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 05: CÔNG CỤ VIẾT KỊCH BẢN: MISS IDEA
+         ========================================================================= -->
+    <section id="miss-idea" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-pink-500/20 text-pink-300 border border-pink-500/30">MỤC 05</span>
+        <span class="font-acta italic text-slate-400 text-sm">AI Content Mentor & Narrative Architecture</span>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div class="lg:col-span-7 space-y-4">
+          <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+            CÔNG CỤ VIẾT KỊCH BẢN: MISS IDEA — TALKING HEAD & CẢNH TRÁM
+          </h2>
+          <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+            “Miss Idea là Trợ Lý Cố Vấn Nội Dung (Mentor AI) đồng hành dắt tay bạn tự lên kịch bản video ngắn chuẩn định dạng Talking Head kết hợp các cảnh quay trám (B-roll) minh họa thực tế.”
+          </p>
+
+          <div class="space-y-4 pt-2 text-sm font-aeonik text-slate-300">
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div class="font-integral text-pink-400 text-xs">01. NÓI CHÍNH TRỰC DIỆN (TALKING HEAD LÕI)</div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Giúp bạn lấy chính uy tín cá nhân ra làm <strong>"Tem bảo hành"</strong> đắt giá nhất. Người xem sẽ tin bạn trước khi tin sản phẩm.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div class="font-integral text-sky-400 text-xs">02. KỸ THUẬT CHÈN CẢNH TRÁM (B-ROLL)</div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Tự động hướng dẫn bạn thời điểm chèn các cảnh quay phụ thực tế (thao tác tay, phản hồi khách hàng, chi tiết sản phẩm). Cảnh trám đóng vai trò là <strong>bằng chứng trực quan 100%</strong>, đập tan mọi nghi ngờ và giữ chân thị giác người xem không bị lướt qua.
+              </p>
+            </div>
+
+            <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800 space-y-1.5">
+              <div class="font-integral text-emerald-400 text-xs">03. THANH LỌC 100% NGÔN NGỮ AI HÀO NHOÁNG</div>
+              <p class="text-xs text-slate-300 leading-relaxed">
+                Bóc tách các từ ngữ sáo rỗng, hô hào đa cấp để lời thoại <strong>mộc mạc tự nhiên như hai người đang uống trà bàn việc</strong>!
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video YouTube Miss Idea -->
+        <div class="lg:col-span-5 space-y-3">
+          <div class="font-aeonik font-bold text-xs text-slate-300 flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><i class="ph-fill ph-play-circle text-pink-400 text-base"></i> Video Hướng Dẫn Sử Dụng Miss Idea</span>
+          </div>
+          <div class="video-responsive shadow-2xl">
+            <iframe src="https://www.youtube.com/embed/xBQwAw6oJZ8" title="Hướng dẫn công cụ Miss Idea" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+          <div class="p-4 rounded-2xl bg-pink-950/20 border border-pink-500/30 text-xs font-aeonik text-pink-200">
+            <i class="ph-bold ph-lightbulb text-amber-400 mr-1"></i>
+            <strong>Mẹo thực chiến:</strong> Sử dụng Miss Idea để bóc tách ý tưởng thô từ một tình huống thực tế của bạn trước khi bật máy quay.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SECTION 06: CÔNG CỤ KỊCH BẢN QUẢNG CÁO: MISS VIDEO ADS
+         ========================================================================= -->
+    <section id="miss-video-ads" class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden">
+      <div class="flex items-center gap-3 mb-4">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-violet-500/20 text-violet-300 border border-violet-500/30">MỤC 06</span>
+        <span class="font-acta italic text-slate-400 text-sm">Chrome Extension & High-Converting Video Ads</span>
+      </div>
+
+      <div class="space-y-4 max-w-4xl">
+        <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+          CÔNG CỤ VIẾT KỊCH BẢN QUẢNG CÁO: MISS VIDEO ADS EXTENSION
+        </h2>
+        <p class="font-acta text-lg text-slate-300 italic leading-relaxed">
+          “Nữ Biên Kịch AI Chuyên Nghiệp đồng hành 1-1 ngay trên trình duyệt Chrome — Tự động nạp bộ Mega-Prompt chuyển đổi triệu view vào ChatGPT & Google Gemini.”
+        </p>
+      </div>
+
+      <!-- Video Miss Video Ads -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8 items-start">
+        <div class="lg:col-span-6 space-y-3">
+          <div class="font-aeonik font-bold text-xs text-slate-300 flex items-center justify-between">
+            <span class="flex items-center gap-1.5"><i class="ph-fill ph-film-slate text-violet-400 text-base"></i> Video Hướng Dẫn Sử Dụng Extension Miss Video Ads</span>
+          </div>
+          <div class="video-responsive shadow-2xl">
+            <iframe src="https://www.youtube.com/embed/CO9qM6BmVLo" title="Hướng dẫn Miss Video Ads" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+
+        <!-- Extension Core Breakdown -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="p-5 rounded-2xl bg-gradient-to-r from-violet-950/40 via-slate-900/60 to-slate-900/60 border border-violet-500/30 space-y-3">
+            <div class="font-integral text-violet-400 text-xs uppercase flex items-center gap-2">
+              <i class="ph-bold ph-puzzle-piece text-base"></i> PHẦN 1: WHAT — MISS VIDEO ADS LÀ GÌ?
+            </div>
+            <div class="space-y-2 text-xs font-aeonik text-slate-300">
+              <div>🎨 <strong>Giao diện:</strong> Chạy ở không gian độc lập Side Panel (mép phải trình duyệt) với tông màu tím hiện đại, tinh tế.</div>
+              <div>🤖 <strong>Bản chất công nghệ:</strong> Là cầu nối tự động hóa (Automation Prompt Injector), tự động nạp bộ Mega-Prompt chuyên sâu về Marketing vào ChatGPT (chatgpt.com) hoặc Google Gemini (gemini.google.com).</div>
+              <div>🎯 <strong>Mục tiêu tối thượng:</strong> Đưa bạn qua Quy trình hội thoại 6 bước tiêu chuẩn, biến một ý tưởng sơ khai thành kịch bản video ads hoàn chỉnh (dưới 60 giây, chuẩn AIDA / PAS / HRR) giúp tối ưu tỷ lệ giữ chân khách hàng và chốt đơn cao nhất.</div>
+            </div>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3">
+            <div class="font-integral text-amber-400 text-xs uppercase flex items-center gap-2">
+              <i class="ph-bold ph-shield-check text-base"></i> BỘ QUY TẮC "KHÓA CỨNG" AI (STRICT RULES)
+            </div>
+            <div class="space-y-2 text-xs font-aeonik text-slate-300">
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-prohibit text-red-400 mt-0.5"></i>
+                <span><strong>Tuyệt đối CẤM AI xưng tên riêng</strong> trong lời thoại đọc trước máy quay hoặc phân cảnh B-roll.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-shuffle text-sky-400 mt-0.5"></i>
+                <span><strong>Tự động ngẫu nhiên hóa Tone giọng:</strong> Đanh thép, Bắt trend, Thuyết phục, Hài hước, Storytelling để kịch bản không bao giờ bị trùng lặp.</span>
+              </div>
+              <div class="flex items-start gap-2">
+                <i class="ph-bold ph-rows text-emerald-400 mt-0.5"></i>
+                <span><strong>Trích xuất Timeline Roadmap dọc:</strong> Cực kỳ trực quan khi in ra hoặc cầm điện thoại đi quay thực tế.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Problem & Solution Comparison Table -->
+      <div class="mt-8 pt-8 border-t border-slate-800/80">
+        <h3 class="font-integral text-base text-white uppercase mb-4 flex items-center gap-2">
+          <i class="ph-bold ph-scales text-sky-400"></i> PHẦN 2: WHY — SO SÁNH GIỮA PROMPT TỰ VIẾT VÀ MISS VIDEO ADS
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs font-aeonik">
+          <!-- Rào cản thông thường -->
+          <div class="p-5 rounded-2xl bg-red-950/20 border border-red-500/20 space-y-3">
+            <div class="font-integral text-red-400 text-xs uppercase flex items-center gap-2">
+              <i class="ph-bold ph-x-circle text-base"></i> 4 RÀO CẢN KHI TỰ PROMPT CHO AI
+            </div>
+            <ul class="space-y-2 text-slate-300">
+              <li>❌ <strong>AI viết chung chung, sáo rỗng:</strong> Lời thoại như robot, dùng nhiều từ hô hào, đa cấp.</li>
+              <li>❌ <strong>Không giữ chân được khách 3 giây đầu:</strong> Viết mở đầu quá dài, người xem lướt qua ngay.</li>
+              <li>❌ <strong>Xưng hô gượng gạo:</strong> AI tự động nhét tên bạn vào lời thoại đọc trước camera.</li>
+              <li>❌ <strong>Quên câu lệnh (Prompt):</strong> Phải gõ hàng trăm dòng lệnh rườm rà mỗi khi đổi sản phẩm mới.</li>
+            </ul>
+          </div>
+
+          <!-- Giải pháp Miss Video Ads -->
+          <div class="p-5 rounded-2xl bg-emerald-950/20 border border-emerald-500/20 space-y-3">
+            <div class="font-integral text-emerald-400 text-xs uppercase flex items-center gap-2">
+              <i class="ph-bold ph-check-circle text-base"></i> GIẢI PHÁP ĐỘT PHÁ TỪ MISS VIDEO ADS
+            </div>
+            <ul class="space-y-2 text-slate-300">
+              <li>✅ <strong>Cá nhân hóa trải nghiệm:</strong> Tự nhận diện tên bạn, xưng hô gần gũi như đồng nghiệp riêng.</li>
+              <li>✅ <strong>Tự động hóa 100% nhập lệnh:</strong> Bấm chọn công thức, nạp Prompt chiến lược sang ChatGPT/Gemini trong 1 giây.</li>
+              <li>✅ <strong>Khóa chặt quy tắc vàng:</strong> Cấm sáo rỗng, cấm xưng tên ngớ ngẩn, ép AI xuất kịch bản chuẩn bán hàng.</li>
+              <li>✅ <strong>Roadmap chuẩn quay:</strong> Phân tách rõ ràng Cột Hình Ảnh B-roll và Cột Lời Thoại Talking Head.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================================================
+         SUMMARY DOWNLOAD HUB: QUICK ACCESS MATRIX
+         ========================================================================= -->
+    <section class="glass-panel rounded-3xl p-6 sm:p-10 relative overflow-hidden border border-sky-500/30">
+      <div class="text-center max-w-3xl mx-auto mb-8 space-y-2">
+        <span class="font-integral text-xs px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 border border-sky-500/30">DOWNLOAD MATRIX</span>
+        <h2 class="font-integral text-2xl sm:text-3xl text-white uppercase">
+          TỔNG HỢP TOÀN BỘ LINK TẢI TÀI NGUYÊN K2
+        </h2>
+        <p class="font-acta text-slate-300 italic text-base">
+          “Tải nhanh từng tài nguyên hoặc truy cập thư mục Google Drive gốc bên dưới.”
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 font-aeonik">
+        <!-- Item 1 -->
+        <a href="https://drive.google.com/open?id=1O4Dzjyh_dvFJ-O-peTmwxJyykiYuD0Vw" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-red-500/20 text-red-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+              <i class="ph-fill ph-file-pdf"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-sky-400 transition">Slide buổi 1.pdf</div>
+              <div class="text-[10px] text-slate-400">Dung lượng: ~22 MB</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-download-simple text-slate-400 group-hover:text-sky-400 text-lg transition"></i>
+        </a>
+
+        <!-- Item 2 -->
+        <a href="https://drive.google.com/open?id=1ktHmAKTylrOOhxHDE6PAorhDh_D_SOBc" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+              <i class="ph-fill ph-file-zip"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-emerald-400 transition">tai nguyen skool text animate.zip</div>
+              <div class="text-[10px] text-slate-400">Dung lượng: 6.0 MB</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-download-simple text-slate-400 group-hover:text-emerald-400 text-lg transition"></i>
+        </a>
+
+        <!-- Item 3 -->
+        <a href="https://drive.google.com/open?id=1IJ2os7D_DCrNUns8v-cbqYXyXzOn9xDH" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+              <i class="ph-fill ph-text-aa"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-purple-400 transition">text animation font.zip</div>
+              <div class="text-[10px] text-slate-400">Dung lượng: 2.3 MB</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-download-simple text-slate-400 group-hover:text-purple-400 text-lg transition"></i>
+        </a>
+
+        <!-- Item 4 -->
+        <a href="https://drive.google.com/open?id=10LNcD0JZ8zLJam9t2KILwUiti3rrPQ8L" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+              <i class="ph-fill ph-image"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-amber-400 transition">Text Animation Demo.gif</div>
+              <div class="text-[10px] text-slate-400">Dung lượng: 6.6 MB</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-download-simple text-slate-400 group-hover:text-amber-400 text-lg transition"></i>
+        </a>
+
+        <!-- Item 5 -->
+        <a href="https://drive.google.com/drive/folders/1NmxIBetOOkKTtH14BuKwx6GNcDrRoEh3?usp=sharing" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center text-xl group-hover:scale-110 transition">
+              <i class="ph-fill ph-video-camera"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-sky-400 transition">Thư Mục Thực Hành 2 Cam</div>
+              <div class="text-[10px] text-slate-400">Cloud Folder • Full Footage</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-arrow-square-out text-slate-400 group-hover:text-sky-400 text-lg transition"></i>
+        </a>
+
+        <!-- Item 6: Master Folder -->
+        <a href="https://drive.google.com/open?id=1WkH-1OIvT1MSCszlHNMe5BXFM9OImFK5" target="_blank" rel="noopener noreferrer" class="glass-card rounded-2xl p-5 flex items-center justify-between group bg-sky-950/40 border-sky-500/40">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-indigo-600 text-white flex items-center justify-center text-xl group-hover:scale-110 transition shadow-lg shadow-sky-500/30">
+              <i class="ph-fill ph-google-drive-logo"></i>
+            </div>
+            <div>
+              <div class="font-bold text-white text-xs group-hover:text-sky-300 transition">Thư Mục Gốc K2 (All In One)</div>
+              <div class="text-[10px] text-sky-400 font-medium">Toàn bộ tài nguyên K2</div>
+            </div>
+          </div>
+          <i class="ph-bold ph-arrow-square-out text-sky-400 text-lg transition"></i>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 max-w-7xl mx-auto px-4 lg:px-8 mt-20 pt-8 border-t border-slate-800/80 text-center space-y-4">
+    <div class="flex items-center justify-center space-x-2">
+      <div class="w-7 h-7 rounded-lg bg-sky-500 flex items-center justify-center text-slate-950 font-integral text-xs">
+        V
+      </div>
+      <span class="font-integral text-sm tracking-wider text-white">VIETMAC • FEDU STUDIO</span>
+    </div>
+    <p class="font-acta text-slate-400 italic text-sm max-w-xl mx-auto">
+      “Kỷ nguyên video ngắn không dành cho người phức tạp hóa. Hãy đơn giản hóa quy trình, tập trung vào sự chân thành và bấm máy mỗi ngày.”
+    </p>
+    <div class="font-aeonik text-xs text-slate-400 pt-2">
+      © 2026 Khóa Học Video Offline K2. Biên soạn và phát triển bởi Anh Việt (VietMac).
+    </div>
+  </footer>
+
+</body>
+</html>
