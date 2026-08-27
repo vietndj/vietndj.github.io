@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Kịch Bản: Bắt Đầu Với Thứ Vớ Vẩn - Anh Việt</title>
+  <title>Kịch Bản & B-Roll: Bắt Đầu Với Thứ Vớ Vẩn - Anh Việt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -49,7 +49,7 @@
       margin: 0 auto;
     }
 
-    /* Floating Control Bar (Font size & Teleprompter speed) */
+    /* Floating Control Bar */
     .tele-bar {
       position: sticky;
       top: 10px;
@@ -65,7 +65,7 @@
       align-items: center;
       gap: 10px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      margin-bottom: 20px;
+      margin-bottom: 16px;
     }
 
     .tele-title {
@@ -100,6 +100,42 @@
     .ctrl-btn:active {
       background: var(--accent);
       color: #041324;
+    }
+
+    /* View Switcher Tabs */
+    .tab-switcher {
+      display: flex;
+      background: #111827;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 4px;
+      margin-bottom: 20px;
+      gap: 4px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-heading);
+      font-size: 13.5px;
+      font-weight: 700;
+      padding: 10px;
+      border-radius: 9px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+
+    .tab-btn.active {
+      background: #1E293B;
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      border: 1px solid rgba(56, 189, 248, 0.4);
     }
 
     /* Header */
@@ -160,6 +196,14 @@
       margin-bottom: 20px;
       font-size: 13.5px;
       color: #CBD5E1;
+    }
+
+    /* View Content */
+    .view-content {
+      display: none;
+    }
+    .view-content.active-view {
+      display: block;
     }
 
     /* Beat / Shot Cards */
@@ -266,6 +310,63 @@
       color: #F8FAFC;
     }
 
+    /* B-Roll Item Cards */
+    .broll-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+      margin-bottom: 14px;
+    }
+
+    .broll-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .broll-badge {
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #FBBF24;
+      background: rgba(245, 158, 11, 0.15);
+      border: 1px solid rgba(245, 158, 11, 0.3);
+      padding: 3px 8px;
+      border-radius: 6px;
+    }
+
+    .broll-title {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+    }
+
+    .broll-detail-row {
+      font-size: 13.5px;
+      color: #CBD5E1;
+      margin-bottom: 6px;
+      line-height: 1.5;
+    }
+
+    .broll-detail-row strong {
+      color: var(--accent);
+    }
+
+    .broll-loc-tag {
+      display: inline-block;
+      background: #1E293B;
+      color: #34D399;
+      font-size: 11.5px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+
     /* Bottom sticky action bar */
     .bottom-bar {
       position: fixed;
@@ -313,7 +414,7 @@
 
     <!-- Sticky Reading Bar -->
     <div class="tele-bar">
-      <div class="tele-title">🎬 BẮT ĐẦU VỚI THỨ VỚ VẨN</div>
+      <div class="tele-title" id="barTitle">🎬 BẮT ĐẦU VỚI THỨ VỚ VẨN</div>
       <div class="tele-controls">
         <button class="ctrl-btn" onclick="adjustFont(-1)">A-</button>
         <button class="ctrl-btn" onclick="adjustFont(1)">A+</button>
@@ -332,168 +433,284 @@
       </div>
     </header>
 
-    <!-- Key Takeaway -->
-    <div class="stats-card">
-      💡 <strong>Thông điệp cốt lõi:</strong> Đồng tiền thời đại là SỰ CHÚ Ý. Người càng giỏi càng sợ mất mặt (Thuế Thể Diện). Hãy hack não bằng cách làm cái video đầu tiên thật vớ vẩn để mở sương mù bản đồ như trong game Đế Chế!
+    <!-- Tab Switcher -->
+    <div class="tab-switcher">
+      <button class="tab-btn active" onclick="switchView('scriptView', this)">📜 Kịch Bản Thoại (13 Shots)</button>
+      <button class="tab-btn" onclick="switchView('brollView', this)">🎬 Danh Sách B-Roll Cần Quay</button>
     </div>
 
-    <!-- Shot Breakdown List -->
-    <div class="shot-list">
-
-      <!-- SHOT 01 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 01</span>
-          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
-        </div>
-        <div class="shot-action">📍 Tĩnh tại bên bàn gỗ, ánh mắt thấu suốt, giọng đĩnh đạc</div>
-        <div class="shot-line">
-          Đồng tiền lưu hành mạnh nhất bây giờ là <b>SỰ CHÚ Ý</b>. Ai làm kinh doanh cũng hiểu nếu không lên video thì khách hàng sẽ quên mình. Nhưng người càng nhiều tri thức, càng có vị thế thì cái <b>"thuế thể diện"</b> lại càng cao: sợ nói dở, sợ mất hình tượng, nghĩ mình giỏi rồi cần gì phải lên video. Để rồi cái giá phải trả là: hoặc phải đóng khoản thuế rất đắt bằng tiền quảng cáo để người ta biết tới mình, hoặc là đứng nhìn đối thủ lấy sạch sự chú ý của thị trường.
-        </div>
+    <!-- VIEW 1: SCRIPT -->
+    <div id="scriptView" class="view-content active-view">
+      <!-- Key Takeaway -->
+      <div class="stats-card">
+        💡 <strong>Thông điệp cốt lõi:</strong> Đồng tiền thời đại là SỰ CHÚ Ý. Người càng giỏi càng sợ mất mặt (Thuế Thể Diện). Hãy hack não bằng cách làm cái video đầu tiên thật vớ vẩn để mở sương mù bản đồ như trong game Đế Chế!
       </div>
 
-      <!-- SHOT 02 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 02</span>
-          <span class="shot-tag tag-walk">WALK &amp; TALK • CÂY XANH</span>
+      <div class="shot-list">
+
+        <!-- SHOT 01 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 01</span>
+            <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+          </div>
+          <div class="shot-action">📍 Tĩnh tại bên bàn gỗ, ánh mắt thấu suốt, giọng đĩnh đạc</div>
+          <div class="shot-line">
+            Đồng tiền lưu hành mạnh nhất bây giờ là <b>SỰ CHÚ Ý</b>. Ai làm kinh doanh cũng hiểu nếu không lên video thì khách hàng sẽ quên mình. Nhưng người càng nhiều tri thức, càng có vị thế thì cái <b>"thuế thể diện"</b> lại càng cao: sợ nói dở, sợ mất hình tượng, nghĩ mình giỏi rồi cần gì phải lên video. Để rồi cái giá phải trả là: hoặc phải đóng khoản thuế rất đắt bằng tiền quảng cáo để người ta biết tới mình, hoặc là đứng nhìn đối thủ lấy sạch sự chú ý của thị trường.
+          </div>
         </div>
-        <div class="shot-action">📍 Bước đi thong thả dọc hành lang cây xanh, phong thái thong dong</div>
-        <div class="shot-line">
-          Với những món đồ mua theo cảm xúc, người ta chỉ cần làm clip vui vẻ để lan tỏa diện rộng. Nhưng nếu bạn bán giải pháp chuyên môn hay dịch vụ giá trị cao, khách hàng chỉ chi tiền khi có <b>NIỀM TIN</b>. Và đó là lý do bạn bắt buộc phải làm <b>Video Marketing</b>: dùng giá trị thật để định vị vị thế lâu dài.
+
+        <!-- SHOT 02 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 02</span>
+            <span class="shot-tag tag-walk">WALK &amp; TALK • CÂY XANH</span>
+          </div>
+          <div class="shot-action">📍 Bước đi thong thả dọc hành lang cây xanh, phong thái thong dong</div>
+          <div class="shot-line">
+            Với những món đồ mua theo cảm xúc, người ta chỉ cần làm clip vui vẻ để lan tỏa diện rộng. Nhưng nếu bạn bán giải pháp chuyên môn hay dịch vụ giá trị cao, khách hàng chỉ chi tiền khi có <b>NIỀM TIN</b>. Và đó là lý do bạn bắt buộc phải làm <b>Video Marketing</b>: dùng giá trị thật để định vị vị thế lâu dài.
+          </div>
         </div>
+
+        <!-- SHOT 03 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 03</span>
+            <span class="shot-tag tag-broll">IN-SITU B-ROLL • ĐIỆN THOẠI</span>
+          </div>
+          <div class="shot-action">📍 Cầm điện thoại lướt xem các video mẫu</div>
+          <div class="shot-line">
+            Để làm được điều đó, bước bắt buộc đầu tiên là phải <b>NẠP DỮ LIỆU</b>: xem đối thủ làm thế nào, phân tích những mẫu video thành công, học cách kể chuyện của những người đi trước.
+          </div>
+        </div>
+
+        <!-- SHOT 04 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 04</span>
+            <span class="shot-tag tag-broll">IN-SITU B-ROLL • TRIPOD</span>
+          </div>
+          <div class="shot-action">📍 Đặt máy lên tripod, chạm nhẹ ngón tay vào nút quay</div>
+          <div class="shot-line">
+            Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ, tưởng như mọi thứ đã quá rõ ràng để làm một video để đời... cho đến khi bấm nút REC.
+          </div>
+        </div>
+
+        <!-- SHOT 05 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 05</span>
+            <span class="shot-tag tag-broll">IN-SITU B-ROLL • ỐNG KÍNH</span>
+          </div>
+          <div class="shot-action">📍 Nhìn thẳng ống kính máy quay, nụ cười tự trào</div>
+          <div class="shot-line">
+            Mặt thì cứng đờ, giọng thì run, nói năng gượng gạo... Bình thường ngồi tư vấn cho khách thì nói hay như rót mật vào tai, thế mà đứng trước ống kính thì bao nhiêu sự tự nhiên biến đâu mất sạch.
+          </div>
+        </div>
+
+        <!-- SHOT 06 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 06</span>
+            <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+          </div>
+          <div class="shot-action">📍 Bàn gỗ, giọng chậm rãi bóc tách tâm lý</div>
+          <div class="shot-line">
+            Cảm giác lúc đó hụt hẫng vô cùng... bởi vì đã nạp quá nhiều thứ hoàn hảo đến mức cảm thấy <b>xấu hổ vì sự non nớt của chính mình</b>.
+          </div>
+        </div>
+
+        <!-- SHOT 07 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 07</span>
+            <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+          </div>
+          <div class="shot-action">📍 Bàn gỗ, tay diễn đạt tự nhiên, ánh mắt sắc sảo</div>
+          <div class="shot-line">
+            Nạp nhiều khiến cái <b>MẮT</b> của bạn nhìn đâu cũng thấy phải thật xịn, cái <b>ĐẦU</b> thì nghĩ ra toàn thứ hoàn hảo... trong khi cái <b>MIỆNG</b> thì chưa quen nói trước ống kính, cái <b>MẶT</b> thì chưa quen biểu cảm. Tiêu chuẩn trong đầu thì vọt lên mây xanh, mà kỹ năng thực tế thì vẫn là của một người mới bắt đầu.
+          </div>
+        </div>
+
+        <!-- SHOT 08 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 08</span>
+            <span class="shot-tag tag-walk">WALK &amp; TALK • HÀNH LANG</span>
+          </div>
+          <div class="shot-action">📍 Bước đi thong dong, nụ cười nhẹ</div>
+          <div class="shot-line">
+            Nó giống như việc ăn ngon quen mồm: Cái lưỡi thì sành ăn, nhưng cái tay thì chưa biết nấu. Tự nấu thấy dở một cái... là bỏ luôn căn bếp.
+          </div>
+        </div>
+
+        <!-- SHOT 09 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 09</span>
+            <span class="shot-tag tag-talking">TALKING HEAD • CẬN CẢNH</span>
+          </div>
+          <div class="shot-action">📍 Cận cảnh gương mặt, giọng điềm đạm mà đanh thép</div>
+          <div class="shot-line">
+            Người ta mất <b>5 năm luyện tập</b> để nói chuyện tự nhiên như thở, bạn xem có 60 giây rồi đòi mình bật máy lên phải hay ngay... thì làm sao mà có được? Não bạn thì hiểu ngay, nhưng để cái miệng và gương mặt bạn nói chuyện mượt mà trước ống kính... bắt buộc phải trả giá bằng <b>hàng chục lần quay hỏng</b>.
+          </div>
+        </div>
+
+        <!-- SHOT 10 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 10</span>
+            <span class="shot-tag tag-broll">IN-SITU B-ROLL • CLIP CŨ</span>
+          </div>
+          <div class="shot-action">📍 Chỉ vào một video marketing đời đầu còn mộc mạc</div>
+          <div class="shot-line">
+            Cái video marketing đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn, thông điệp còn thô... Nhưng may là ngày đó tôi <b>ĐÃ DÁM ĐĂNG LÊN</b>, chứ không giấu nó trong máy.
+          </div>
+        </div>
+
+        <!-- SHOT 11 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 11</span>
+            <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+          </div>
+          <div class="shot-action">📍 Ánh mắt thấu suốt, giải thích cơ chế khoa học</div>
+          <div class="shot-line">
+            Bắt đầu bằng một video vớ vẩn thực ra là cách bạn <b>"hack não"</b> của chính mình. Bởi vì não bộ chỉ có thể tìm cách sửa chữa một thứ <b>ĐANG HOẠT ĐỘNG</b>, chứ nó không bao giờ có thể tối ưu một thứ <b>CHƯA TỒN TẠI</b>.
+          </div>
+        </div>
+
+        <!-- SHOT 12 -->
+        <div class="shot-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 12</span>
+            <span class="shot-tag tag-walk">WALK &amp; TALK • ĐẾ CHẾ</span>
+          </div>
+          <div class="shot-action">📍 Dừng chân nhìn máy quay, nụ cười trải nghiệm</div>
+          <div class="shot-line">
+            Giống như chơi <b>Đế Chế</b>: Ban đầu bản đồ đen xì, phải xua dân đi dò đường thì sương mù mới tan. Ra ngoài có thể gặp sư tử cắn mất máu, nhưng cũng sẽ thấy mỏ quả, mỏ vàng. <b>Không mở bản đồ thì mãi mãi không bao giờ lên đời được.</b>
+          </div>
+        </div>
+
+        <!-- SHOT 13 -->
+        <div class="shot-card punchline-card">
+          <div class="shot-header">
+            <span class="shot-num">SHOT 13 • PUNCHLINE</span>
+            <span class="shot-tag tag-talking" style="background: var(--accent); color: #041324;">CHỐT HẠ</span>
+          </div>
+          <div class="shot-action">📍 Bàn gỗ, nụ cười an nhiên, kết dứt khoát</div>
+          <div class="shot-line">
+            Muốn lên đời Video Marketing... <b>cứ bắt đầu thật vớ vẩn đi</b>. Nhớ nhé, <b>phải thật vớ vẩn trước đã!</b>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIEW 2: B-ROLL SHOT LIST -->
+    <div id="brollView" class="view-content">
+      <div class="stats-card" style="border-left-color: #F59E0B;">
+        🎬 <strong>Checklist B-Roll &amp; Cảnh Trám:</strong> Gồm 4 cảnh In-situ B-roll có thoại trong kịch bản + 5 cảnh Cảnh Trám đệm quay nhanh quanh bàn gỗ &amp; phòng quay để chèn cắt nhịp khi dựng.
       </div>
 
-      <!-- SHOT 03 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 03</span>
-          <span class="shot-tag tag-broll">IN-SITU B-ROLL • ĐIỆN THOẠI</span>
+      <!-- IN-SITU B-ROLL -->
+      <h3 style="font-family: var(--font-heading); font-size: 16px; color: #FDE047; margin: 18px 0 12px;">📌 PHẦN 1: 4 CẢNH IN-SITU B-ROLL (THOẠI TRỰC TIẾP TRONG CẢNH)</h3>
+
+      <!-- BROLL 1 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge">SHOT 03 • IN-SITU B-ROLL</span>
+          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
         </div>
-        <div class="shot-action">📍 Cầm điện thoại lướt xem các video mẫu</div>
-        <div class="shot-line">
-          Để làm được điều đó, bước bắt buộc đầu tiên là phải <b>NẠP DỮ LIỆU</b>: xem đối thủ làm thế nào, phân tích những mẫu video thành công, học cách kể chuyện của những người đi trước.
-        </div>
+        <div class="broll-title">1. Tay cầm điện thoại lướt xem các video mẫu</div>
+        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Medium Close-Up hoặc Over-the-shoulder nhìn xéo vào màn hình điện thoại đang lướt Reels/TikTok.</div>
+        <div class="broll-detail-row"><strong>Hành động:</strong> Anh Việt vừa lướt ngón tay xem video đối thủ/kênh lớn, vừa nói câu thoại: <em>"Để làm được điều đó, bước bắt buộc đầu tiên là phải NẠP DỮ LIỆU..."</em></div>
       </div>
 
-      <!-- SHOT 04 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 04</span>
-          <span class="shot-tag tag-broll">IN-SITU B-ROLL • TRIPOD</span>
+      <!-- BROLL 2 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge">SHOT 04 • IN-SITU B-ROLL</span>
+          <span class="broll-loc-tag">LOC_025 / PHÒNG QUAY</span>
         </div>
-        <div class="shot-action">📍 Đặt máy lên tripod, chạm nhẹ ngón tay vào nút quay</div>
-        <div class="shot-line">
-          Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ, tưởng như mọi thứ đã quá rõ ràng để làm một video để đời... cho đến khi bấm nút REC.
-        </div>
+        <div class="broll-title">2. Thao tác gá máy lên Tripod &amp; Chạm nút quay</div>
+        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Cận cảnh (Close-Up) vào ngàm kẹp tripod và đầu ngón tay chạm nút REC đỏ trên màn hình/máy quay.</div>
+        <div class="broll-detail-row"><strong>Hành động:</strong> Thao tác dứt khoát, năng lượng hừng hực, vừa thao tác vừa nói: <em>"Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ..."</em></div>
       </div>
 
-      <!-- SHOT 05 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 05</span>
-          <span class="shot-tag tag-broll">IN-SITU B-ROLL • ỐNG KÍNH</span>
+      <!-- BROLL 3 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge">SHOT 05 • IN-SITU B-ROLL</span>
+          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
         </div>
-        <div class="shot-action">📍 Nhìn thẳng ống kính máy quay, nụ cười tự trào</div>
-        <div class="shot-line">
-          Mặt thì cứng đờ, giọng thì run, nói năng gượng gạo... Bình thường ngồi tư vấn cho khách thì nói hay như rót mật vào tai, thế mà đứng trước ống kính thì bao nhiêu sự tự nhiên biến đâu mất sạch.
-        </div>
+        <div class="broll-title">3. Nhìn thẳng ống kính, biểu cảm sượng đơ &amp; Cười tự trào</div>
+        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Medium Close-Up trực diện 1-1 qua màn hình máy quay (như nhìn vào gương).</div>
+        <div class="broll-detail-row"><strong>Hành động:</strong> Biểu cảm diễn tả lại sự cứng đờ, chớp mắt ngập ngừng, sau đó bật cười tự trào: <em>"Mặt thì cứng đờ, giọng thì run, nói năng gượng gạo..."</em></div>
       </div>
 
-      <!-- SHOT 06 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 06</span>
-          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+      <!-- BROLL 4 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge">SHOT 10 • IN-SITU B-ROLL</span>
+          <span class="broll-loc-tag">LOC_023 / MÀN HÌNH MÁY TÍNH</span>
         </div>
-        <div class="shot-action">📍 Bàn gỗ, giọng chậm rãi bóc tách tâm lý</div>
-        <div class="shot-line">
-          Cảm giác lúc đó hụt hẫng vô cùng... bởi vì đã nạp quá nhiều thứ hoàn hảo đến mức cảm thấy <b>xấu hổ vì sự non nớt của chính mình</b>.
-        </div>
+        <div class="broll-title">4. Chỉ tay vào màn hình mở lại video marketing cũ đầu tay</div>
+        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Góc rộng vừa (Medium Shot) lấy được cả anh Việt và góc màn hình laptop/PC đang bật video clip cũ mộc mạc.</div>
+        <div class="broll-detail-row"><strong>Hành động:</strong> Chỉ tay vào màn hình, cười tự hào nhẹ nhõm: <em>"Cái video marketing đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn... Nhưng may là ngày đó tôi ĐÃ DÁM ĐĂNG LÊN."</em></div>
       </div>
 
-      <!-- SHOT 07 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 07</span>
-          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+      <!-- OVERLAY B-ROLL -->
+      <h3 style="font-family: var(--font-heading); font-size: 16px; color: #38BDF8; margin: 24px 0 12px;">📌 PHẦN 2: 5 CẢNH TRÁM CHÈN ĐỆM (OVERLAY B-ROLL KHÔNG THOẠI)</h3>
+
+      <!-- BROLL OVERLAY 1 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 01</span>
+          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
         </div>
-        <div class="shot-action">📍 Bàn gỗ, tay diễn đạt tự nhiên, ánh mắt sắc sảo</div>
-        <div class="shot-line">
-          Nạp nhiều khiến cái <b>MẮT</b> của bạn nhìn đâu cũng thấy phải thật xịn, cái <b>ĐẦU</b> thì nghĩ ra toàn thứ hoàn hảo... trong khi cái <b>MIỆNG</b> thì chưa quen nói trước ống kính, cái <b>MẶT</b> thì chưa quen biểu cảm. Tiêu chuẩn trong đầu thì vọt lên mây xanh, mà kỹ năng thực tế thì vẫn là của một người mới bắt đầu.
-        </div>
+        <div class="broll-title">Bàn tay gõ phím &amp; rê chuột cắt Timeline (Cơ bắp dựng phim)</div>
+        <div class="broll-detail-row"><strong>Mô tả:</strong> Top-down 45 độ quay bàn tay gõ phím tắt và rê chuột bên mặt bàn gỗ mộc. Dùng chèn đè lên Shot 07 hoặc Shot 09 khi nói về luyện tập cơ bắp.</div>
       </div>
 
-      <!-- SHOT 08 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 08</span>
-          <span class="shot-tag tag-walk">WALK &amp; TALK • HÀNH LANG</span>
+      <!-- BROLL OVERLAY 2 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 02</span>
+          <span class="broll-loc-tag">LOC_024 / CỬA SỔ</span>
         </div>
-        <div class="shot-action">📍 Bước đi thong dong, nụ cười nhẹ</div>
-        <div class="shot-line">
-          Nó giống như việc ăn ngon quen mồm: Cái lưỡi thì sành ăn, nhưng cái tay thì chưa biết nấu. Tự nấu thấy dở một cái... là bỏ luôn căn bếp.
-        </div>
+        <div class="broll-title">Uống ngụm trà / nước nhìn ra cửa sổ cây xanh tĩnh tại</div>
+        <div class="broll-detail-row"><strong>Mô tả:</strong> Interior-to-Exterior Medium Shot. Anh Việt nâng ly trà, ánh mắt suy tư nhìn tán lá xanh đung đưa ngoài cửa sổ. Dùng chèn ngắt nhịp ở Shot 06 hoặc Shot 11.</div>
       </div>
 
-      <!-- SHOT 09 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 09</span>
-          <span class="shot-tag tag-talking">TALKING HEAD • CẬN CẢNH</span>
+      <!-- BROLL OVERLAY 3 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 03</span>
+          <span class="broll-loc-tag">MÀN HÌNH ĐIỆN THOẠI</span>
         </div>
-        <div class="shot-action">📍 Cận cảnh gương mặt, giọng điềm đạm mà đanh thép</div>
-        <div class="shot-line">
-          Người ta mất <b>5 năm luyện tập</b> để nói chuyện tự nhiên như thở, bạn xem có 60 giây rồi đòi mình bật máy lên phải hay ngay... thì làm sao mà có được? Não bạn thì hiểu ngay, nhưng để cái miệng và gương mặt bạn nói chuyện mượt mà trước ống kính... bắt buộc phải trả giá bằng <b>hàng chục lần quay hỏng</b>.
-        </div>
+        <div class="broll-title">Ngón tay cái vuốt lướt màn hình thần tốc (Thumbs Swipe)</div>
+        <div class="broll-detail-row"><strong>Mô tả:</strong> Macro cận cảnh ngón tay cái vuốt nhanh qua hàng chục video trên TikTok/Reels, ánh sáng màn hình hắt lên vân tay. Dùng chèn đè lên Shot 09 (đoạn 60 giây).</div>
       </div>
 
-      <!-- SHOT 10 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 10</span>
-          <span class="shot-tag tag-broll">IN-SITU B-ROLL • CLIP CŨ</span>
+      <!-- BROLL OVERLAY 4 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 04</span>
+          <span class="broll-loc-tag">LOC_025 / PHÒNG QUAY</span>
         </div>
-        <div class="shot-action">📍 Chỉ vào một video marketing đời đầu còn mộc mạc</div>
-        <div class="shot-line">
-          Cái video marketing đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn, thông điệp còn thô... Nhưng may là ngày đó tôi <b>ĐÃ DÁM ĐĂNG LÊN</b>, chứ không giấu nó trong máy.
-        </div>
+        <div class="broll-title">Cảnh quay mờ ảo xuyên qua phiến lá Monstera (Shoot-through leaf)</div>
+        <div class="broll-detail-row"><strong>Mô tả:</strong> Đặt máy sau phiến lá Monstera xẻ nghệ thuật, lấy nét vào anh Việt đang bước đi hoặc ngồi chỉnh đèn quay. Dùng chèn đè lên Shot 02 hoặc Shot 08.</div>
       </div>
 
-      <!-- SHOT 11 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 11</span>
-          <span class="shot-tag tag-talking">TALKING HEAD • BÀN GỖ</span>
+      <!-- BROLL OVERLAY 5 -->
+      <div class="broll-card">
+        <div class="broll-card-header">
+          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 05</span>
+          <span class="broll-loc-tag">LOC_001 / NGOẠI CẢNH TIMES CITY</span>
         </div>
-        <div class="shot-action">📍 Ánh mắt thấu suốt, giải thích cơ chế khoa học</div>
-        <div class="shot-line">
-          Bắt đầu bằng một video vớ vẩn thực ra là cách bạn <b>"hack não"</b> của chính mình. Bởi vì não bộ chỉ có thể tìm cách sửa chữa một thứ <b>ĐANG HOẠT ĐỘNG</b>, chứ nó không bao giờ có thể tối ưu một thứ <b>CHƯA TỒN TẠI</b>.
-        </div>
-      </div>
-
-      <!-- SHOT 12 -->
-      <div class="shot-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 12</span>
-          <span class="shot-tag tag-walk">WALK &amp; TALK • ĐẾ CHẾ</span>
-        </div>
-        <div class="shot-action">📍 Dừng chân nhìn máy quay, nụ cười trải nghiệm</div>
-        <div class="shot-line">
-          Giống như chơi <b>Đế Chế</b>: Ban đầu bản đồ đen xì, phải xua dân đi dò đường thì sương mù mới tan. Ra ngoài có thể gặp sư tử cắn mất máu, nhưng cũng sẽ thấy mỏ quả, mỏ vàng. <b>Không mở bản đồ thì mãi mãi không bao giờ lên đời được.</b>
-        </div>
-      </div>
-
-      <!-- SHOT 13 -->
-      <div class="shot-card punchline-card">
-        <div class="shot-header">
-          <span class="shot-num">SHOT 13 • PUNCHLINE</span>
-          <span class="shot-tag tag-talking" style="background: var(--accent); color: #041324;">CHỐT HẠ</span>
-        </div>
-        <div class="shot-action">📍 Bàn gỗ, nụ cười an nhiên, kết dứt khoát</div>
-        <div class="shot-line">
-          Muốn lên đời Video Marketing... <b>cứ bắt đầu thật vớ vẩn đi</b>. Nhớ nhé, <b>phải thật vớ vẩn trước đã!</b>
-        </div>
+        <div class="broll-title">Bước đi thong dong dưới hàng cây râm mát (Dò đường bản đồ)</div>
+        <div class="broll-detail-row"><strong>Mô tả:</strong> Wide Tracking Shot từ phía sau lưng anh Việt bước đi thong thả dưới vòm cây xanh ngập nắng. Dùng chèn đè lên Shot 12 (đoạn mở bản đồ Đế Chế).</div>
       </div>
 
     </div>
@@ -511,9 +728,19 @@
     let isScrolling = false;
     let scrollInterval = null;
 
+    function switchView(viewId, btn) {
+      document.querySelectorAll('.view-content').forEach(v => v.classList.remove('active-view'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(viewId).classList.add('active-view');
+      btn.classList.add('active');
+      const barTitle = document.getElementById('barTitle');
+      barTitle.innerText = viewId === 'scriptView' ? '📜 KỊCH BẢN THOẠI (13 SHOTS)' : '🎬 CHECKLIST B-ROLL HIỆN TRƯỜNG';
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    }
+
     function adjustFont(delta) {
       currentFontSize = Math.max(14, Math.min(24, currentFontSize + delta));
-      document.querySelectorAll('.shot-line').forEach(el => {
+      document.querySelectorAll('.shot-line, .broll-detail-row').forEach(el => {
         el.style.fontSize = currentFontSize + 'px';
       });
     }
