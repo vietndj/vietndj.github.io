@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kịch Bản Quay 2 Cam Sony Studio • Bắt Đầu Với Thứ Vớ Vẩn 4.0</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#bef264',
+                        brand: '#38bdf8',
+                        sony: '#f97316',
+                        dark: '#070b12',
+                        card: '#0f172a',
+                        cardinner: '#162036',
+                        cardborder: '#1e293b'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #070b12;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(15, 23, 42, 0.92);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-highlight {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+            border: 1px solid rgba(56, 189, 248, 0.4);
+        }
+        .cam-badge-a {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+        }
+        .cam-badge-b {
+            background: rgba(249, 115, 22, 0.15);
+            color: #fb923c;
+            border: 1px solid rgba(249, 115, 22, 0.35);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+        }
+        .cam-sync-badge {
+            background: rgba(190, 242, 100, 0.15);
+            color: #bef264;
+            border: 1px solid rgba(190, 242, 100, 0.35);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 800;
+            padding: 0.2rem 0.6rem;
+            border-radius: 0.5rem;
+        }
+        .tab-nav-btn.active {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #38bdf8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .tab-section {
+            display: none;
+        }
+        .tab-section.active-tab {
+            display: block;
+        }
+        .teleprompter-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+        .shot-card {
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .shot-card:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-brand selection:text-slate-950 pb-28">
+
+    <!-- Sticky Reading & Control Bar -->
+    <header class="border-b border-slate-800 bg-slate-950/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-4 py-2.5 flex flex-col md:flex-row md:items-center justify-between gap-2.5">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider bg-orange-500 text-slate-950 font-mono">2-CAM SONY SETUP</span>
+                        <span class="text-xs text-slate-400 font-mono">batdauvoithuvovan - 4.0 (4p19s)</span>
+                    </div>
+                    <h1 class="text-base md:text-lg font-extrabold text-white mt-0.5" id="pageMainTitle">Kịch Bản Quay 2 Máy Sony Studio</h1>
+                </div>
+            </div>
+            
+            <!-- Tab Controls -->
+            <div class="flex items-center gap-1.5 overflow-x-auto pb-1 md:pb-0">
+                <button onclick="showTab('tab-setup-guide', this)" class="tab-nav-btn active px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-camera-rotate text-brand"></i> Sơ Đồ 2 Cam
+                </button>
+                <button onclick="showTab('tab-shooting-script', this)" class="tab-nav-btn px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-film text-neon"></i> 9 Chặng Bấm Máy
+                </button>
+                <button onclick="showTab('tab-checklist', this)" class="tab-nav-btn px-3 py-1.5 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-list-check text-amber-400"></i> Checklist Bấm Máy
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-6 space-y-8">
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: SƠ ĐỒ THIẾT LẬP 2 MÁY SONY (SETUP 1 LẦN ĂN TOÀN BỘ) -->
+        <!-- ========================================================================= -->
+        <div id="tab-setup-guide" class="tab-section active-tab space-y-6">
+            
+            <!-- Banner Tổng Quan -->
+            <div class="glass-highlight rounded-3xl p-5 md:p-7 shadow-2xl space-y-4">
+                <div class="flex items-center gap-3">
+                    <div class="p-3 bg-brand/10 text-brand rounded-2xl border border-brand/30">
+                        <i class="fa-solid fa-sliders text-2xl"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-lg md:text-xl font-extrabold text-white">Chiến Lược Quay 2 Máy Sony Đồng Thời</h2>
+                        <p class="text-xs md:text-sm text-slate-400">Diễn 1 lần có ngay 2 góc (Chính diện biểu cảm + Cận cảnh thao tác tay) • Cắt ghép Intercut siêu mượt</p>
+                    </div>
+                </div>
+
+                <!-- Sơ Đồ Trực Quan Bàn Gỗ -->
+                <div class="p-4 bg-slate-950/80 rounded-2xl border border-slate-800 space-y-3 font-mono text-xs text-slate-300">
+                    <div class="text-center font-bold text-brand pb-2 border-b border-slate-800 flex items-center justify-center gap-2">
+                        <i class="fa-solid fa-network-wired"></i> BỐ TRÍ KHÔNG GIAN BÀN GỖ (LOC_023)
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4 pt-1">
+                        <div class="p-3.5 bg-slate-900/90 rounded-xl border border-brand/30 space-y-2">
+                            <span class="cam-badge-a font-bold block w-max"><i class="fa-solid fa-camera"></i> MÁY A • SONY CHÍNH DIỆN (A-ROLL THẦN THÁI)</span>
+                            <ul class="space-y-1 text-slate-300 list-disc list-inside">
+                                <li><strong>Vị trí:</strong> Đặt tripod chéo 30° ngang cằm/ngực anh Việt.</li>
+                                <li><strong>Ống kính:</strong> 35mm f/1.4 hoặc 50mm (khẩu f/1.8 - f/2.0).</li>
+                                <li><strong>Lấy nét:</strong> Bật Eye-AF (tự động bám mắt).</li>
+                                <li><strong>Nhiệm vụ:</strong> Bắt trọn thần thái tự sự, ánh mắt nhìn thẳng lens, biểu cảm mặt cứng đơ rồi cười tự trào.</li>
+                            </ul>
+                        </div>
+                        <div class="p-3.5 bg-slate-900/90 rounded-xl border border-orange-500/30 space-y-2">
+                            <span class="cam-badge-b font-bold block w-max"><i class="fa-solid fa-camera"></i> MÁY B • SONY CẬN TAY (B-ROLL THỰC CHIẾN)</span>
+                            <ul class="space-y-1 text-slate-300 list-disc list-inside">
+                                <li><strong>Vị trí:</strong> Đặt chéo 60° hoặc Top-Down 45° chĩa xuống mặt gỗ.</li>
+                                <li><strong>Ống kính:</strong> 50mm / 85mm (khẩu f/2.2 - f/2.8).</li>
+                                <li><strong>Lấy nét:</strong> Khóa nét (MF) vào đôi tay và màn hình điện thoại.</li>
+                                <li><strong>Nhiệm vụ:</strong> Cận ngón tay vuốt nạp dữ liệu, ấn nút xóa video, gõ phím `Ctrl + K`, nâng ly trà.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="p-3 bg-emerald-950/40 rounded-xl border border-emerald-500/30 text-emerald-300 flex items-center gap-2">
+                        <i class="fa-solid fa-bolt text-base"></i>
+                        <span><strong>Mẹo Sync Âm Thanh:</strong> Trước khi diễn mỗi chặng, vỗ tay 1 cái thật đanh <strong>"ĐỐP"</strong> trước 2 ống kính để timeline CapCut/Premiere tự động căn khớp 100%!</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thiết lập Ánh Sáng -->
+            <div class="glass-panel rounded-2xl p-5 border border-slate-800 space-y-3">
+                <h3 class="font-bold text-white text-sm uppercase tracking-wider flex items-center gap-2">
+                    <i class="fa-solid fa-lightbulb text-amber-400"></i> Setup Ánh Sáng 3 Điểm Chuẩn Studio
+                </h3>
+                <div class="grid md:grid-cols-3 gap-3 text-xs text-slate-300 font-mono">
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <strong class="text-amber-300 block mb-1">1. Key Light (Đèn chính):</strong>
+                        Đèn Amaran + Softbox cầu đặt chéo 45° bên trái mặt, chiếu sáng dịu 5500K tôn khối 3D.
+                    </div>
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <strong class="text-brand block mb-1">2. Rim / Window Light:</strong>
+                        Vệt nắng xiên từ cửa sổ bên phải rọi lên thớ gỗ (`LOC_024`) và viền tóc/vai.
+                    </div>
+                    <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                        <strong class="text-purple-300 block mb-1">3. Background Practical:</strong>
+                        Đèn bàn mộc hoặc dải led hắt nền studio tạo chiều sâu không gian điện ảnh.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: KỊCH BẢN QUAY 9 CHẶNG CHO 2 MÁY SONY (KHỚP PHỤ ĐỀ 4.0) -->
+        <!-- ========================================================================= -->
+        <div id="tab-shooting-script" class="tab-section space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-lg md:text-xl font-extrabold text-white flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-neon rounded-full inline-block"></span>
+                        9 Chặng Bấm Máy 2 Cam Đồng Bộ (SRT 4.0)
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-0.5">Khớp 100% từng câu thoại trong file phụ đề `batdauvoithuvovan - 4.0.srt`</p>
+                </div>
+                <span class="cam-sync-badge">2-CAM SYNC</span>
+            </div>
+
+            <!-- CHẶNG 1 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 01 • 00:00 - 00:40</span>
+                        <h3 class="text-sm md:text-base font-bold text-white">Sự Chú Ý Là Đồng Tiền &amp; Thuế Thể Diện</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">BÀN GỖ (LOC_023)</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-brand/20 space-y-1">
+                    <span class="text-[11px] text-brand font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 1 - 20):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Đồng tiền lưu hành mạnh nhất bây giờ không phải là Việt Nam đồng đâu, mà là <strong>sự chú ý</strong>. Người làm kinh doanh đều hiểu: Nếu không lên video, khách hàng sẽ quên mình. Nhưng người càng có tri thức, vị thế lại càng sợ nói dở, sợ mất hình tượng... Để rồi phải đóng khoản <strong>thuế thể diện</strong> rất đắt đỏ bằng tiền quảng cáo, hoặc đứng nhìn đối thủ lấy hết sự chú ý."
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-brand/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Ngồi đĩnh đạc, ánh mắt thấu suốt nhìn thẳng ống kính. Nói với giọng điềm đạm, trầm chắc, khẳng định một sự thật hiển nhiên.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN TAY):</span>
+                        <p class="text-slate-300">Cận cảnh ngón tay cầm điện thoại nhấn nút <strong>"Xóa video vừa quay"</strong> (Minh họa cho nỗi sợ nói dở/thuế thể diện), rồi đặt điện thoại xuống mặt gỗ mộc.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 2 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 02 • 00:40 - 01:28</span>
+                        <h3 class="text-sm md:text-base font-bold text-white">Đồ Bốc Đồng vs Định Nghĩa Video Marketing</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">BÀN GỖ (LOC_023)</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-brand/20 space-y-1">
+                    <span class="text-[11px] text-brand font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 21 - 38):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Với những món đồ mua bốc đồng, chỉ cần clip vui vẻ để lan tỏa. Nhưng nếu bạn bán giải pháp chuyên môn hay sản phẩm giá trị cao, khách chỉ chi tiền khi có <strong>niềm tin</strong>. Nên bắt buộc phải làm <strong>Video Marketing</strong>: dùng giá trị thật, trải nghiệm thật để định vị vị thế lâu dài. Không phải video Ads chộp giật, không phải video giải trí, mà là đóng gói giá trị để gây dựng niềm tin."
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-brand/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Hai tay đặt tự nhiên trên bàn gỗ, người hơi chồm nhẹ về phía trước ở câu <em>"khách chỉ chi tiền khi có niềm tin"</em>.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN TAY):</span>
+                        <p class="text-slate-300">Cận cảnh tay cầm bút ký gạch chân chữ trong sổ da / tay rê chuột kéo layer video trên bàn phím (đóng gói giá trị).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 3 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 03 • 01:28 - 01:55</span>
+                        <h3 class="text-sm md:text-base font-bold text-white">Nạp Dữ Liệu Liên Tục &amp; Khí Thế Hừng Hực</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">BÀN GỖ (LOC_023)</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-brand/20 space-y-1">
+                    <span class="text-[11px] text-brand font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 39 - 51):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Để làm được điều đó, bước đầu tiên: <strong>Phải nạp dữ liệu</strong>. Xem những người đầu ngành người ta làm thế nào, xem thế giới làm, phân tích các mẫu, học cách làm của người đi trước. Xem liên tục, nạp liên tục. Nạp xong đống dữ liệu xịn sò rồi, bên trong hừng hực khí thế, thấy mọi thứ rất rõ ràng... Cho đến lúc bấm nút quay!"
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-brand/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Cầm điện thoại chăm chú nhìn màn hình, mắt sáng lên đầy cảm hứng, sau đó ngẩng mặt nhìn thẳng máy cười hào hứng.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN TAY):</span>
+                        <p class="text-slate-300">Macro ngón tay cái vuốt vèo vèo qua màn hình điện thoại đang phát các video ngắn chất lượng cao.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 4 (ĐOẠN ĐINH: MẶT ĐƠ) -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-amber-500/40 bg-slate-900/95 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-amber-500 text-slate-950 font-mono font-extrabold text-xs rounded-lg">CHẶNG 04 • 01:55 - 02:24</span>
+                        <h3 class="text-sm md:text-base font-bold text-amber-300">Mặt Cứng Đơ &amp; Xấu Hổ Vì Non Nớt</h3>
+                    </div>
+                    <span class="cam-sync-badge">SHOT ĐẮT GIÁ NHẤT</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-amber-500/30 space-y-1">
+                    <span class="text-[11px] text-amber-400 font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 52 - 64):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Mặt bị cứng, tay không thoải mái, ánh mắt bị phân tán. Bình thường tư vấn cho khách nói như rót mật vào tai, nhưng khi bật máy quay: bao nhiêu tự nhiên thoải mái biến mất hết! Cảm giác quay không ổn, <strong>hụt hẫng vô cùng!</strong> Vì nạp quá nhiều thứ hoàn hảo, nên thấy <strong>xấu hổ vì sự non nớt của mình</strong>."
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-amber-500/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300"><strong>Diễn xuất chân thật:</strong> Nhìn trân trân vào lens, cơ mặt cứng lại, chớp mắt bối rối, nuốt nước bọt gượng gạo rồi lắc đầu cười tự trào.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN TRIPOD):</span>
+                        <p class="text-slate-300">Cận cảnh ngón tay vươn ra chạm vào nút `REC` màu đỏ trên giá kẹp tripod, rồi hai bàn tay lúng túng bấu vào mép bàn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 5 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 05 • 02:25 - 02:43</span>
+                        <h3 class="text-sm md:text-base font-bold text-white">Mắt Nhìn Xịn, Đầu Hoàn Hảo vs Trình Mới Bắt Đầu</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">BÀN GỖ (LOC_023)</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-brand/20 space-y-1">
+                    <span class="text-[11px] text-brand font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 65 - 74):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Khi nạp nhiều dữ liệu, khiến mắt nhìn đâu cũng xịn, đầu của mình chỉ nghĩ thứ hoàn hảo. Trong khi cái miệng chưa quen nói chuyện với máy móc. <strong>Tiêu chuẩn trong đầu thì ở trên mây, còn kỹ năng thực tế chỉ mới bắt đầu.</strong>"
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-brand/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Tay chỉ nhẹ lên trán ở chữ <em>"tiêu chuẩn trên mây"</em>, rồi đưa tay xuống mặt bàn ở chữ <em>"kỹ năng thực tế mới bắt đầu"</em>.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN TAY):</span>
+                        <p class="text-slate-300">Cận cảnh hai bàn tay nâng tách trà ấm lên xoay nhẹ, hơi nước bốc lên nhẹ nhàng bên thớ gỗ mộc (`LOC_023`).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 6 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-emerald-500/40 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-emerald-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 06 • 02:43 - 03:14</span>
+                        <h3 class="text-sm md:text-base font-bold text-emerald-300">Kỹ Năng Tăng Theo Thời Gian Thực</h3>
+                    </div>
+                    <span class="cam-sync-badge">SYNC IN-SITU</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-emerald-500/30 space-y-1">
+                    <span class="text-[11px] text-emerald-400 font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 75 - 89):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Kỹ năng tăng theo thời gian thực, không phải thời gian lướt xem. Người ta mất 5 năm luyện tập, nói tự nhiên như thở. Mình xem video có 1 phút lại muốn bật máy làm được ngay. <span class="text-amber-300 font-bold">Không thể nào!</span> Não thì hiểu ngay, nhưng cái miệng, độ cứng cơ thể, biểu cảm tự nhiên: <strong>Phải trả giá bằng thời gian thực!</strong>"
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-emerald-500/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Nhìn thẳng tâm lens, gật đầu dứt khoát ở câu <em>"Không thể nào!"</em> và nhấn mạnh từng chữ <em>"Phải trả giá bằng thời gian thực"</em>.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN PHÍM):</span>
+                        <p class="text-slate-300">Top-down 45° cận 2 bàn tay gõ phím tắt `Ctrl + K`, `Ctrl + M` thoăn thoắt trên timeline (biểu trưng cho sự tôi luyện).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 7 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-slate-800 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 07 • 03:19 - 03:32</span>
+                        <h3 class="text-sm md:text-base font-bold text-white">Bắt Đầu Với Thứ Vớ Vẩn Là Hack Não</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">BÀN GỖ (LOC_023)</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-brand/20 space-y-1">
+                    <span class="text-[11px] text-brand font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 90 - 94):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Cách bạn bắt đầu với thứ vớ vẩn - <strong>Đó là hack não!</strong> Não chỉ sửa được thứ đã hoạt động, chứ không thể tối ưu thứ chưa tồn tại."
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-brand/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Mỉm cười đắc ý, ánh mắt sắc sảo như vừa khai mở một chân lý quan trọng.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN CẢNH):</span>
+                        <p class="text-slate-300">Vệt nắng cửa sổ rọi xiên mặt bàn gỗ + chiếc đồng hồ cát / cốc nước tĩnh tại (Khoảng lặng Negative Space).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHẶNG 8 -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-amber-500/30 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-amber-600 text-white font-mono font-bold text-xs rounded-lg">CHẶNG 08 • 03:33 - 03:49</span>
+                        <h3 class="text-sm md:text-base font-bold text-amber-300">Ẩn Dụ Game Đế Chế (AoE Insert)</h3>
+                    </div>
+                    <span class="text-xs font-mono text-slate-400">FOOTAGE AOE CÓ SẴN</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-amber-500/20 space-y-1">
+                    <span class="text-[11px] text-amber-400 font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 95 - 101):</span>
+                    <p class="text-slate-100 teleprompter-text italic">
+                        "Giống như trong game Đế Chế: Ban đầu bản đồ đen xì, phải đem dân đi dò đường, sương mù mới tan. Khi dò đường, có thể gặp sư tử, mất máu... Nhưng cũng có thể gặp mỏ quả, mỏ vàng."
+                    </p>
+                </div>
+                <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-slate-300">
+                    💡 <strong>Chỉ đạo dựng:</strong> Đè trực tiếp file footage có sẵn <code class="text-neon">BROLL_01_AoE_Do_Duong_9x16_Vertical.mp4</code> lên timeline, giữ nguyên tiếng nông dân <em>"đù đù"</em> và tiếng sư tử gầm.
+                </div>
+            </div>
+
+            <!-- CHẶNG 9 (CHỐT HẠ PUNCHLINE) -->
+            <div class="glass-panel shot-card rounded-3xl p-5 md:p-6 border border-neon/50 bg-gradient-to-r from-slate-900/95 to-emerald-950/40 space-y-4">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-1 bg-neon text-slate-950 font-mono font-extrabold text-xs rounded-lg">CHẶNG 09 (KẾT BÀI) • 03:50 - 04:13</span>
+                        <h3 class="text-sm md:text-base font-extrabold text-neon">Phải Bắt Đầu Với Thứ Vớ Vẩn (Punchline)</h3>
+                    </div>
+                    <span class="cam-sync-badge">CHỐT HẠ ĐỈNH CAO</span>
+                </div>
+                <div class="p-3.5 bg-slate-950 rounded-2xl border border-neon/40 space-y-1">
+                    <span class="text-[11px] text-neon font-bold font-mono uppercase"><i class="fa-solid fa-quote-left"></i> Lời thoại (Block 102 - 112):</span>
+                    <p class="text-neon teleprompter-text italic font-bold">
+                        "Nhưng chắc chắn một điều: Không mở rộng bản đồ, sẽ không bao giờ lên đời. Muốn lên đời Video Marketing, phải bắt đầu với thứ vớ vẩn. <span class="text-white font-extrabold">Phải vớ vẩn mới được!</span> Nếu không, não không cấp năng lượng để làm. Cứ bắt đầu với thứ vớ vẩn, não sẽ thấy thoải mái, chill và enjoy... <span class="text-white font-extrabold text-lg">Từ đó mọi thứ mới bắt đầu!</span>"
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-3 text-xs">
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-neon/30 space-y-1">
+                        <span class="cam-badge-a block w-max"><i class="fa-solid fa-camera"></i> MÁY A (SONY TRỰC DIỆN):</span>
+                        <p class="text-slate-300">Chém nhẹ tay dứt khoát ở câu <em>"Phải vớ vẩn mới được!"</em>, kết bài bằng nụ cười an nhiên rạng rỡ, giữ nguyên tư thế 3 giây trước khi ngắt máy.</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/80 rounded-xl border border-orange-500/30 space-y-1">
+                        <span class="cam-badge-b block w-max"><i class="fa-solid fa-camera"></i> MÁY B (SONY CẬN CẢNH):</span>
+                        <p class="text-slate-300">Tay từ từ gập nắp máy laptop lại (tiếng "cụp" nhẹ), nâng ly nước lên nhấp một ngụm thư thái.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: CHECKLIST HIỆN TRƯỜNG BẤM TÍCH TRÊN ĐIỆN THOẠI -->
+        <!-- ========================================================================= -->
+        <div id="tab-checklist" class="tab-section space-y-6">
+            
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-lg md:text-xl font-extrabold text-white flex items-center gap-2">
+                        <span class="w-2.5 h-6 bg-amber-400 rounded-full inline-block"></span>
+                        Checklist Bấm Máy 2 Cam Studio
+                    </h2>
+                    <p class="text-slate-400 text-xs mt-0.5">Bấm tích chọn từng ô khi đã quay xong từng chặng</p>
+                </div>
+                <button onclick="resetChecklist()" class="px-3 py-1 bg-slate-900 border border-slate-700 hover:border-amber-400 rounded-xl text-xs text-amber-300 font-mono">
+                    <i class="fa-solid fa-rotate-right"></i> Reset Check
+                </button>
+            </div>
+
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-4 text-xs md:text-sm">
+                
+                <div class="space-y-3">
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Setup Ban Đầu:</strong> Cân chỉnh Máy A (Eye-AF f/1.8) + Máy B (MF f/2.4) + Bật đèn Key Softbox 5500K</span>
+                    </label>
+                    
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 1 (00:00 - 00:40):</strong> Thoại sự chú ý &amp; thuế thể diện + B-roll ngón tay xóa video</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 2 (00:40 - 01:28):</strong> Thoại niềm tin Video Marketing + B-roll tay viết sổ da</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 3 (01:28 - 01:55):</strong> Thoại nạp dữ liệu liên tục + B-roll vuốt nhanh điện thoại</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 4 (01:55 - 02:24):</strong> Thoại mặt cứng đơ &amp; xấu hổ non nớt + Cận tay chạm nút REC đỏ</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 5 (02:25 - 02:43):</strong> Thoại tiêu chuẩn trên mây vs mới bắt đầu + B-roll nâng tách trà ấm</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 6 (02:43 - 03:14):</strong> Thoại kỹ năng thời gian thực + B-roll gõ phím `Ctrl + K` timeline</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 7 (03:19 - 03:32):</strong> Thoại hack não + B-roll vệt nắng cửa sổ thớ gỗ</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 8 (03:33 - 03:49):</strong> Thoại game Đế Chế (khớp với file AoE có sẵn)</span>
+                    </label>
+
+                    <label class="flex items-start gap-3 cursor-pointer p-2.5 rounded-xl hover:bg-slate-900/60 transition-all">
+                        <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                        <span class="text-slate-200"><strong>Chặng 9 (03:50 - 04:13):</strong> Thoại chốt hạ "Phải vớ vẩn mới được" + B-roll gập laptop thư thái</span>
+                    </label>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Bottom Sticky Controls for Mobile -->
+    <div class="fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 px-4 py-2.5 z-50 flex items-center justify-around">
+        <button onclick="showTab('tab-setup-guide')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-camera-rotate text-brand"></i> Sơ Đồ 2 Cam
+        </button>
+        <button onclick="showTab('tab-shooting-script')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-film text-neon"></i> 9 Chặng Quay
+        </button>
+        <button onclick="showTab('tab-checklist')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-list-check text-amber-400"></i> Checklist
+        </button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-3 py-1.5 bg-brand text-slate-950 font-bold rounded-xl text-xs flex items-center gap-1">
+            <i class="fa-solid fa-arrow-up"></i> Đầu Trang
+        </button>
+    </div>
+
+    <script>
+        function showTab(tabId, btn) {
+            document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active-tab'));
+            document.querySelectorAll('.tab-nav-btn').forEach(el => el.classList.remove('active'));
+            
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active-tab');
+            }
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-nav-btn').forEach(b => {
+                    if (b.getAttribute('onclick')?.includes(tabId)) b.classList.add('active');
+                });
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function resetChecklist() {
+            document.querySelectorAll('#tab-checklist input[type="checkbox"]').forEach(c => c.checked = false);
+        }
+    </script>
+
+</body>
+</html>
