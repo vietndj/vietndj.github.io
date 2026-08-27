@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>🎬 B-Roll Scout: Sân Bóng Rổ Times City</title>
+<meta property="og:title" content="🎬 B-Roll Scout: Sân Bóng Rổ Times City">
+<meta property="og:description" content="Kế hoạch quay 6 shots B-roll tại sân bóng rổ Times City. Phân tích 3 tầng + 2 kịch bản VO.">
+<meta property="og:image" content="assets/shot06_negative_space.jpg">
+<meta property="og:type" content="article">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0e14;--bg2:#121820;--bg3:#1a2230;--bg4:#1f2b3d;--cyan:#00d4ff;--green:#00e676;--orange:#ff7b3f;--red:#ff5252;--purple:#b388ff;--yellow:#ffd740;--txt:#e8eaed;--txt2:#9aa0a6;--txt3:#5f6368;--bdr:#2a3441;--r:14px}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:'Be Vietnam Pro','Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--txt);line-height:1.7;-webkit-font-smoothing:antialiased}
+.hero{background:linear-gradient(135deg,#0d1b2a,#162a3a 60%,#0f1f2e);padding:env(safe-area-inset-top,1.5rem) 1.25rem 1.5rem;border-bottom:1px solid var(--bdr)}
+.hero h1{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.35rem;font-weight:800;background:linear-gradient(90deg,var(--cyan),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:.35rem}
+.hero-meta{display:flex;gap:.6rem;flex-wrap:wrap;font-size:.78rem;color:var(--txt2)}.hero-meta span{display:flex;align-items:center;gap:.2rem}
+.nav-pills{display:flex;gap:.5rem;padding:.75rem 1.25rem;overflow-x:auto;-webkit-overflow-scrolling:touch;background:var(--bg2);border-bottom:1px solid var(--bdr);position:sticky;top:0;z-index:99}
+.nav-pills::-webkit-scrollbar{display:none}
+.nav-pill{white-space:nowrap;padding:.35rem .75rem;border-radius:20px;font-size:.72rem;font-weight:600;background:var(--bg3);color:var(--txt2);text-decoration:none;transition:all .2s;flex-shrink:0}
+.nav-pill:hover,.nav-pill:active{background:var(--cyan);color:var(--bg)}
+.section{padding:1.5rem 1.25rem;border-bottom:1px solid var(--bdr)}
+.stitle{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.1rem;font-weight:700;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:.5rem}
+.scene-hero{width:100%;border-radius:var(--r);overflow:hidden;cursor:pointer;margin-bottom:.75rem}
+.scene-hero img{width:100%;height:auto;display:block}
+.loc-card{background:var(--bg3);border-radius:var(--r);padding:1rem;display:flex;gap:.75rem;align-items:center}
+.loc-card code{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:.8rem}
+.loc-card span{color:var(--txt2);font-size:.82rem;display:block;margin-top:.15rem}
+.tier-box{background:var(--bg3);border-radius:var(--r);overflow:hidden;margin-bottom:.75rem}
+.tier-ctx{padding:.75rem 1rem;background:var(--bg2);font-size:.85rem}
+.tier-row{padding:.75rem 1rem;border-bottom:1px solid var(--bdr)}
+.tier-label{font-weight:700;font-size:.82rem;margin-bottom:.2rem}
+.tier-1 .tier-label{color:var(--txt3)}.tier-2 .tier-label{color:var(--orange)}.tier-3 .tier-label{color:var(--red)}
+.tier-val{font-size:.85rem;color:var(--txt2)}
+.tier-hook{font-size:.72rem;margin-top:.2rem;font-family:'JetBrains Mono',monospace}
+.tier-3 .tier-hook{color:var(--red);font-weight:700}
+.tier-trigger{padding:.75rem 1rem;background:linear-gradient(135deg,#2a1a1a,#1a1a2a);color:var(--red);font-size:.85rem}
+.shot-card{background:var(--bg3);border-radius:var(--r);overflow:hidden;margin-bottom:1.25rem;border-left:4px solid var(--cyan)}
+.shot-card .shot-img{width:100%;aspect-ratio:9/16;object-fit:cover;cursor:pointer;display:block}
+.shot-header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:var(--bg2);flex-wrap:wrap;gap:.35rem}
+.shot-num{font-family:'JetBrains Mono',monospace;font-size:1.1rem;font-weight:800;color:var(--orange)}
+.shot-name{font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--green);word-break:break-all}
+.shot-meta{padding:.75rem 1rem;display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.shot-meta-item{font-size:.78rem}.shot-meta-item .label{color:var(--txt3);font-size:.68rem;text-transform:uppercase;letter-spacing:.5px;font-family:'JetBrains Mono',monospace}
+.shot-meta-item .value{color:var(--txt);font-weight:500}
+.shot-desc{padding:0 1rem .5rem;font-size:.85rem;color:var(--txt2)}
+.shot-narrative{padding:0 1rem .75rem;font-size:.82rem;color:var(--purple);font-style:italic}
+.badge{display:inline-block;padding:.15rem .45rem;border-radius:4px;font-size:.68rem;font-weight:600;font-family:'JetBrains Mono',monospace;text-transform:uppercase;letter-spacing:.3px}
+.b-cutaway{background:#1a3a2a;color:#00e676}.b-sequence{background:#3a2a1a;color:#ff9800}.b-pov{background:#2a1a3a;color:#b388ff}
+.b-insitu{background:#1a2a3a;color:#00d4ff}.b-intercut{background:#3a1a2a;color:#ff5252}.b-metaphor{background:#2a3a1a;color:#ffd740}
+.b-negative{background:#1a1a2a;color:#82b1ff}.b-missing{background:#3a1a1a;color:#ff5252;border:1px dashed #ff5252}
+.vo-card{background:var(--bg3);border-radius:var(--r);overflow:hidden;margin-bottom:1rem}
+.vo-card.t2{border-left:4px solid var(--orange)}.vo-card.t3{border-left:4px solid var(--red)}
+.vo-head{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;background:var(--bg2);flex-wrap:wrap;gap:.3rem}
+.vo-head h3{font-size:.9rem;font-weight:600}
+.vo-dur{font-family:'JetBrains Mono',monospace;font-size:.78rem;color:var(--cyan)}
+.vo-body{padding:1rem}.vo-text{background:var(--bg);padding:1rem;border-radius:8px;font-size:.88rem;line-height:1.9;border:1px solid var(--bdr);margin-bottom:.75rem}
+.vo-map{font-size:.78rem}.vo-map h4{margin-bottom:.4rem;color:var(--txt2);font-size:.78rem}
+.tc-badge{display:inline-block;background:var(--bg2);padding:.15rem .5rem;border-radius:4px;margin:.15rem;font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--cyan)}
+.nm-box{background:var(--bg3);border-radius:var(--r);padding:1rem}
+.nm-box code{background:var(--bg);padding:.25rem .5rem;border-radius:4px;font-family:'JetBrains Mono',monospace;color:var(--green)}
+.nm-list{list-style:none;margin-top:.5rem}.nm-list li{margin:.2rem 0}
+.nm-list li code{color:var(--cyan);font-family:'JetBrains Mono',monospace;font-size:.82rem;cursor:pointer}
+.exist-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
+.exist-item{background:var(--bg3);border-radius:8px;padding:.5rem;text-align:center}
+.exist-item .ename{font-size:.72rem;color:var(--txt2);display:block;margin-top:.25rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lb-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.95);z-index:9999;flex-direction:column;justify-content:center;align-items:center}
+.lb-overlay.show{display:flex}
+.lb-overlay img{max-width:95vw;max-height:85vh;border-radius:8px;object-fit:contain}
+.lb-close{position:absolute;top:env(safe-area-inset-top,12px);right:12px;width:44px;height:44px;border-radius:50%;background:rgba(255,255,255,.15);border:none;color:#fff;font-size:1.3rem;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10000;backdrop-filter:blur(4px)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:64px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:1.3rem;cursor:pointer;border-radius:8px;z-index:10000}
+.lb-prev{left:8px}.lb-next{right:8px}
+.lb-counter{position:absolute;bottom:env(safe-area-inset-bottom,16px);color:var(--txt2);font-size:.8rem;font-family:'JetBrains Mono',monospace}
+.footer{text-align:center;padding:1.5rem 1.25rem;color:var(--txt3);font-size:.72rem;border-top:1px solid var(--bdr)}
+.footer a{color:var(--cyan);text-decoration:none}
+@media(min-width:600px){.section{padding:2rem 2.5rem}.hero{padding:2rem 2.5rem}.hero h1{font-size:1.8rem}.shot-card .shot-img{aspect-ratio:3/4;max-height:500px;object-position:top}.exist-grid{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:900px){.section{padding:2.5rem 4rem}.hero{padding:2.5rem 4rem}.shots-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}.shots-grid .shot-card{margin-bottom:0}.vo-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}.vo-grid .vo-card{margin-bottom:0}.shot-card .shot-img{max-height:450px}}
+.toast{position:fixed;bottom:env(safe-area-inset-bottom,20px);left:50%;transform:translateX(-50%) translateY(100px);background:var(--green);color:var(--bg);padding:.5rem 1.25rem;border-radius:20px;font-size:.82rem;font-weight:600;z-index:9999;opacity:0;transition:all .3s ease;pointer-events:none}
+.toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+.share-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.5rem 1rem;border-radius:8px;background:var(--cyan);color:var(--bg);font-size:.82rem;font-weight:600;border:none;cursor:pointer;margin-top:.75rem;transition:transform .1s}
+.share-btn:active{transform:scale(.95)}
+</style>
+</head>
+<body>
+<header class="hero">
+<h1>🎬 Kế Hoạch Quay B-Roll: Sân Bóng Rổ Times City</h1>
+<div class="hero-meta"><span>📍 TimesCity_Outdoor</span><span>📅 2026-08-27</span><span>🎯 6 shots</span><span>🎙️ 2 kịch bản VO</span></div>
+</header>
+<nav class="nav-pills">
+<a class="nav-pill" href="#sec-scene">📸 Bối Cảnh</a>
+<a class="nav-pill" href="#sec-tier">🧠 3 Tầng</a>
+<a class="nav-pill" href="#sec-shots">📋 6 Shots</a>
+<a class="nav-pill" href="#sec-vo">🎙️ VO</a>
+<a class="nav-pill" href="#sec-naming">🏷️ Naming</a>
+</nav>
+
+<section class="section" id="sec-scene">
+<div class="stitle">📸 Ảnh Bối Cảnh Gửi Vào</div>
+<div class="scene-hero" onclick="openLB(0)"><img src="assets/scene_01.jpg" alt="Sân bóng rổ Times City" loading="lazy"></div>
+<div class="loc-card"><div>
+<code>LOC_008</code> + <code>LOC_087</code>
+<span>Sân Thể Thao Times City • Sân Bóng Rổ &amp; Tennis Ngoài Trời</span>
+<span style="margin-top:.3rem;font-size:.75rem;color:var(--txt3)">Nhóm: <code style="color:var(--green);font-size:.72rem">TimesCity_Outdoor</code> · Mặt sân acrylic xanh ngọc, rào lưới thép bám dây leo, cao ốc trắng tân cổ điển</span>
+</div></div>
+</section>
+
+<section class="section">
+<div class="stitle">📦 Kho B-Roll Hiện Có &amp; Lỗ Hổng</div>
+<div class="exist-grid">
+<div class="exist-item"><span class="badge b-negative">Negative Space</span><span class="ename">Khoảng Lặng Ban Chiều</span></div>
+<div class="exist-item"><span class="badge b-negative">Negative Space</span><span class="ename">Thiên Nhiên &amp; Tái Tạo</span></div>
+</div>
+<p style="margin-top:.75rem;font-size:.82rem;color:var(--txt2)"><strong style="color:var(--red)">⚠️ Archetype thiếu:</strong></p>
+<div style="margin-top:.35rem;display:flex;gap:.35rem;flex-wrap:wrap">
+<span class="badge b-missing">Cutaway</span><span class="badge b-missing">Sequence</span><span class="badge b-missing">POV</span><span class="badge b-missing">In-Situ</span><span class="badge b-missing">Metaphor</span>
+</div>
+</section>
+
+<section class="section" id="sec-tier">
+<div class="stitle">🧠 Phân Tích 3 Tầng — SAFE REAL RAW</div>
+<div class="tier-box">
+<div class="tier-ctx"><strong>🎯 Bối cảnh:</strong> Anh Việt đứng một mình trên sân bóng rổ ngoài trời Times City giữa trưa vắng, ôm bóng rổ dưới chân các toà cao ốc đồ sộ. Trụ cột: 👤 Bản thân &amp; 💼 Công việc.</div>
+<div class="tier-row tier-1"><div class="tier-label">Tầng 1 — Nói đãi bôi</div><div class="tier-val">Ra sân vận động thể thao cho giãn gân cốt, hít thở không khí trong lành nâng cao sức khỏe để làm việc năng suất hơn.</div><div class="tier-hook">Giữ chân: 0% — Bị lướt</div></div>
+<div class="tier-row tier-2"><div class="tier-label">Tầng 2 — Cảm giác thật</div><div class="tier-val">Ngồi máy tính nhiều quá bế tắc ý tưởng, đầu óc căng thẳng và kiệt sức vì công việc. Ra sân đứng một lúc cho đỡ ngột ngạt nhưng trong đầu vẫn không ngừng lo âu về tiến độ, doanh số và định hướng tương lai.</div><div class="tier-hook">Giữ chân: 50% — Gật gù, thiện cảm</div></div>
+<div class="tier-row tier-3"><div class="tier-label">Tầng 3 — Sự thật ngượng miệng 🔥</div><div class="tier-val">Sau 30 tuổi, thứ làm bạn kiệt sức không phải là công việc, mà là cảm giác bạn đang nỗ lực hết sức trên một sân chơi không có khán giả. Không ai vỗ tay khi bạn làm tốt, và cũng không ai nhắc khi bạn đi sai. Bạn ra sân đứng một mình không phải để chơi bóng, mà vì bạn không dám đối diện với màn hình máy tính đang trống trơn và trách nhiệm cơm áo gạo tiền đang đè nặng.</div><div class="tier-hook">🔥 Giữ chân: 100% — VIRAL</div></div>
+<div class="tier-trigger"><strong>💀 Tử huyệt tâm lý:</strong> Sự cô độc của người trưởng thành tự gánh vác (The Solitary Player Paradox) — Khủng hoảng âm thầm: tự chơi, tự ném, tự chịu trách nhiệm trên sân đấu cuộc đời mà không ai thay thế được.</div>
+</div>
+</section>
+
+<section class="section" id="sec-shots">
+<div class="stitle">📋 Kế Hoạch Quay B-Roll — 6 Shots</div>
+<div class="shots-grid">
+<div class="shot-card" style="border-left-color:#00e676"><img class="shot-img" src="assets/shot01_cutaway.jpg" alt="Shot 1 Cutaway" onclick="openLB(1)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#1</span> <span class="badge b-cutaway">Cutaway</span></div><span class="shot-name">TimesCity_Outdoor_Cutaway_CU_001</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">CU (Close-Up)</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">Low-angle</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Static</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">4 giây</div></div></div><div class="shot-desc">Cận cảnh đế giày thể thao dẫm lên lá vàng khô trên vạch sơn trắng sân bóng. Chiếc lá giòn vỡ vụn dưới sức nặng bước chân.</div><div class="shot-narrative">🎯 Mở đầu: Âm thanh giòn tan và chi tiết dẫm lên áp lực đời thường.</div></div>
+<div class="shot-card" style="border-left-color:#b388ff"><img class="shot-img" src="assets/shot02_pov.jpg" alt="Shot 2 POV" onclick="openLB(2)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#2</span> <span class="badge b-pov">POV</span></div><span class="shot-name">TimesCity_Outdoor_POV_POV_002</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">POV</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">Eye-level</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Tilt-up</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">5 giây</div></div></div><div class="shot-desc">Góc nhìn thứ nhất: Hai tay nâng quả bóng rổ cam, ngước nhìn lên bảng rổ cao vút với hậu cảnh các toà cao ốc Times City.</div><div class="shot-narrative">🎯 Đặt người xem vào vị trí trước mục tiêu lớn và xa tầm với.</div></div>
+<div class="shot-card" style="border-left-color:#ff9800"><img class="shot-img" src="assets/shot03_sequence.jpg" alt="Shot 3 Sequence" onclick="openLB(3)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#3</span> <span class="badge b-sequence">Sequence</span></div><span class="shot-name">TimesCity_Outdoor_Sequence_MS_003</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">MS (Medium)</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">Low-angle</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Track right</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">6 giây</div></div></div><div class="shot-desc">Chuỗi thao tác nhồi bóng chậm rãi một tay trên mặt sân xanh, bước chân di chuyển ngang, tiếng bóng nảy đều đặn.</div><div class="shot-narrative">🎯 Băng chuyền hành động: quán tính vô thức khi suy nghĩ luẩn quẩn.</div></div>
+<div class="shot-card" style="border-left-color:#00d4ff"><img class="shot-img" src="assets/shot04_insitu.jpg" alt="Shot 4 In-Situ" onclick="openLB(4)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#4</span> <span class="badge b-insitu">In-Situ</span></div><span class="shot-name">TimesCity_Outdoor_InSitu_MCU_004</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">MCU (Medium CU)</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">Eye-level</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Slow Push-in</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">7 giây</div></div></div><div class="shot-desc">Anh Việt mặc đồ tối, cầm bóng tựa nhẹ vào hàng rào lưới thép, nhìn thẳng ống kính chia sẻ chân thật, điềm đạm.</div><div class="shot-narrative">🎯 Thoại hiện trường: tạo niềm tin, kết nối trực tiếp với người xem.</div></div>
+<div class="shot-card" style="border-left-color:#ffd740"><img class="shot-img" src="assets/shot05_metaphor.jpg" alt="Shot 5 Metaphor" onclick="openLB(5)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#5</span> <span class="badge b-metaphor">Metaphor</span></div><span class="shot-name">TimesCity_Outdoor_Metaphor_CU_005</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">CU (Close-Up)</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">High-angle</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Slow Dolly Up</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">5 giây</div></div></div><div class="shot-desc">Quả bóng rổ cam nằm bất động một mình giữa góc vạch sơn trắng, lá vàng khô rải rác bên cạnh.</div><div class="shot-narrative">🎯 Ẩn dụ thị giác: khoảng lặng cô đơn hoặc dự án bỏ dở giữa guồng quay.</div></div>
+<div class="shot-card" style="border-left-color:#82b1ff"><img class="shot-img" src="assets/shot06_negative_space.jpg" alt="Shot 6 Negative Space" onclick="openLB(6)" loading="lazy"><div class="shot-header"><div><span class="shot-num">#6</span> <span class="badge b-negative">Negative Space</span></div><span class="shot-name">TimesCity_Outdoor_NegativeSpace_EWS_006</span></div><div class="shot-meta"><div class="shot-meta-item"><div class="label">Cỡ cảnh</div><div class="value">EWS (Cực rộng)</div></div><div class="shot-meta-item"><div class="label">Góc máy</div><div class="value">Eye-level</div></div><div class="shot-meta-item"><div class="label">Chuyển động</div><div class="value">Static</div></div><div class="shot-meta-item"><div class="label">Thời lượng</div><div class="value">6 giây</div></div></div><div class="shot-desc">Toàn cảnh cực rộng: Một bóng người đứng cô độc giữa sân bóng rổ thênh thang, hậu cảnh toà tháp cao ốc đồ sộ.</div><div class="shot-narrative">🎯 Khoảng lặng đắt giá: tương phản giữa con người nhỏ bé và đô thị đồ sộ.</div></div>
+</div>
+</section>
+
+<section class="section" id="sec-vo">
+<div class="stitle">🎙️ Kịch Bản Voice-Over</div>
+<div class="vo-grid">
+<div class="vo-card t2"><div class="vo-head"><h3>🎙️ Script 1: Khi Đầu Óc Cần Khoảng Trống (Tầng 2)</h3><span class="vo-dur">⏱️ 35s</span></div><div class="vo-body"><div class="vo-text">Có những ngày ngồi trước màn hình máy tính từ sáng đến chiều, gõ được vài dòng lại xoá.<br><br>Bạn biết mình không hề lười, chỉ là não bộ đã thực sự quá tải.<br><br>Ra sân bóng rổ đứng một lúc, nghe tiếng quả bóng nảy trên mặt sân, nhìn những chiếc lá khô dưới chân... Tự nhiên thấy nhẹ nhõm hơn hẳn.<br><br>Đôi khi, bước lùi lại một nhịp không phải là bỏ cuộc, mà là để gom đủ sức cho cú ném tiếp theo.</div><div class="vo-map"><h4>📎 Ánh Xạ Shot:</h4><span class="tc-badge">Shot 1 → 0:00-0:06</span><span class="tc-badge">Shot 3 → 0:06-0:16</span><span class="tc-badge">Shot 2 → 0:16-0:25</span><span class="tc-badge">Shot 4 → 0:25-0:35</span></div></div></div>
+<div class="vo-card t3"><div class="vo-head"><h3>🎙️ Script 2: Sân Chơi Không Có Khán Giả (Tầng 3)</h3><span class="vo-dur">⏱️ 40s</span></div><div class="vo-body"><div class="vo-text">Sau 30 tuổi, thứ làm mình sợ nhất không phải là thất bại, mà là cảm giác mình đang nỗ lực hết sức trên một cái sân chơi không có khán giả.<br><br>Không ai vỗ tay khi bạn làm tốt, và cũng chẳng có ai nhắc khi bạn đi sai đường.<br><br>Ra sân đứng một mình, nhìn bảng rổ cao vút dưới chân những toà cao ốc, mình mới hiểu:<br><br>Cuộc đời này không có trọng tài. Hoặc là bạn tự ném bóng vào rổ của mình, hoặc là chấp nhận đứng nhìn thời gian trôi qua.</div><div class="vo-map"><h4>📎 Ánh Xạ Shot:</h4><span class="tc-badge">Shot 5 → 0:00-0:08</span><span class="tc-badge">Shot 6 → 0:08-0:18</span><span class="tc-badge">Shot 2 → 0:18-0:28</span><span class="tc-badge">Shot 4 → 0:28-0:40</span></div></div></div>
+</div>
+</section>
+
+<section class="section" id="sec-naming">
+<div class="stitle">🏷️ Quy Ước Đặt Tên File</div>
+<div class="nm-box">
+<div><strong>📐 Mẫu:</strong> <code>[LOCATION_GROUP]_[ARCHETYPE]_[SIZE]_[SEQ].mp4</code></div>
+<ul class="nm-list" style="margin-top:.6rem">
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_Cutaway_CU_001.mp4</code></li>
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_POV_POV_002.mp4</code></li>
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_Sequence_MS_003.mp4</code></li>
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_InSitu_MCU_004.mp4</code></li>
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_Metaphor_CU_005.mp4</code></li>
+<li><code onclick="navigator.clipboard.writeText(this.textContent)">TimesCity_Outdoor_NegativeSpace_EWS_006.mp4</code></li>
+</ul>
+<p style="margin-top:.5rem;font-size:.72rem;color:var(--txt3)">💡 Tap vào tên file để copy nhanh</p>
+</div>
+</section>
+
+<footer class="footer"><p>🎬 B-Roll Scout by <a href="https://fedu.vn/scene.html">FEDU Cinematic Portal</a></p><p>📍 TimesCity_Outdoor · 2026-08-27 · <a href="https://fedu.vn/scene.html">← Cổng Tra Cứu</a></p>
+<button class="share-btn" onclick="shareReport()">📤 Chia sẻ báo cáo</button>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<div class="lb-overlay" id="lb">
+<button class="lb-close" onclick="closeLB()">✕</button>
+<button class="lb-nav lb-prev" onclick="navLB(-1)">‹</button>
+<button class="lb-nav lb-next" onclick="navLB(1)">›</button>
+<img src="" alt="Lightbox">
+<div class="lb-counter" id="lb-count"></div>
+</div>
+
+<script>
+const lbImgs=['assets/scene_01.jpg','assets/shot01_cutaway.jpg','assets/shot02_pov.jpg','assets/shot03_sequence.jpg','assets/shot04_insitu.jpg','assets/shot05_metaphor.jpg','assets/shot06_negative_space.jpg'];
+let lbIdx=0;const lb=document.getElementById('lb'),lbImg=lb.querySelector('img'),lbCount=document.getElementById('lb-count');
+function openLB(i){lbIdx=i;lbImg.src=lbImgs[i];lbCount.textContent=`${i+1} / ${lbImgs.length}`;lb.classList.add('show');document.body.style.overflow='hidden'}
+function closeLB(){lb.classList.remove('show');document.body.style.overflow=''}
+function navLB(d){lbIdx=(lbIdx+d+lbImgs.length)%lbImgs.length;lbImg.src=lbImgs[lbIdx];lbCount.textContent=`${lbIdx+1} / ${lbImgs.length}`}
+let touchX=0;lb.addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX});
+lb.addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX;if(Math.abs(dx)>50)navLB(dx<0?1:-1);else if(e.target===lbImg||e.target===lb)closeLB()});
+document.addEventListener('keydown',e=>{if(!lb.classList.contains('show'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowLeft')navLB(-1);if(e.key==='ArrowRight')navLB(1)});
+
+// Toast notification
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2000)}
+
+// Enhanced copy-to-clipboard with toast
+document.querySelectorAll('.nm-list code').forEach(el=>{
+    el.addEventListener('click',()=>{navigator.clipboard.writeText(el.textContent).then(()=>showToast('✅ Đã copy: '+el.textContent))});
+});
+
+// Share report
+function shareReport(){
+    const url=window.location.href;
+    if(navigator.share){navigator.share({title:'🎬 B-Roll Scout: Sân Bóng Rổ Times City',url})}
+    else{navigator.clipboard.writeText(url).then(()=>showToast('📋 Đã copy link báo cáo!'))}
+}
+</script>
+</body>
+</html>
