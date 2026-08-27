@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Kịch Bản Quay 1-Shot & Kho B-Roll Thư Viện Dùng Chung • Bắt Đầu Với Thứ Vớ Vẩn</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                    colors: {
+                        neon: '#bef264',
+                        brand: '#38bdf8',
+                        dark: '#090d16',
+                        card: '#111827',
+                        cardinner: '#161f33',
+                        cardborder: '#233048'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #090d16;
+            color: #f1f5f9;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        .glass-panel {
+            background: rgba(17, 24, 39, 0.88);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-highlight {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.95) 0%, rgba(15, 23, 42, 0.98) 100%);
+            border: 1px solid rgba(190, 242, 100, 0.35);
+        }
+        .badge-broll {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.25rem 0.65rem;
+            border-radius: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .loc-img {
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: 0.875rem;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            transition: transform 0.3s ease;
+        }
+        .loc-img:hover {
+            transform: scale(1.02);
+        }
+        .tag-vo {
+            background: rgba(56, 189, 248, 0.15);
+            color: #7dd3fc;
+            border: 1px solid rgba(56, 189, 248, 0.35);
+        }
+        .tag-sync {
+            background: rgba(190, 242, 100, 0.15);
+            color: #bef264;
+            border: 1px solid rgba(190, 242, 100, 0.35);
+        }
+        .tag-bank {
+            background: rgba(168, 85, 247, 0.15);
+            color: #d8b4fe;
+            border: 1px solid rgba(168, 85, 247, 0.35);
+        }
+        .tab-nav-btn.active {
+            background: #1e293b;
+            color: #ffffff;
+            border-color: #38bdf8;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+        }
+        .tab-section {
+            display: none;
+        }
+        .tab-section.active-tab {
+            display: block;
+        }
+        .teleprompter-text {
+            font-size: 1.15rem;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body class="min-h-screen selection:bg-neon selection:text-slate-950 pb-28">
+
+    <!-- Sticky Reading / Navigation Bar -->
+    <header class="border-b border-slate-800 bg-slate-950/95 sticky top-0 z-50 backdrop-blur-md">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex flex-col md:flex-row md:items-center justify-between gap-3">
+            <div class="flex items-center justify-between">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="px-2.5 py-0.5 rounded-full text-xs font-bold uppercase tracking-wider bg-neon text-slate-950 font-mono">1-Shot Shooting Plan</span>
+                        <span class="text-xs text-slate-400 font-mono">Video 2.0 + Evergreen Bank</span>
+                    </div>
+                    <h1 class="text-lg md:text-xl font-extrabold text-white mt-0.5" id="pageMainTitle">Kịch Bản Quay &amp; Kho B-Roll Thư Viện</h1>
+                </div>
+            </div>
+            
+            <!-- Tab Switchers on Desktop/Mobile -->
+            <div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0">
+                <button onclick="showTab('tab-walktalk', this)" class="tab-nav-btn active px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-person-walking text-neon"></i> Walk &amp; Talk Thoại (7 Cảnh)
+                </button>
+                <button onclick="showTab('tab-video-broll', this)" class="tab-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-film text-brand"></i> B-Roll Của Video Này
+                </button>
+                <button onclick="showTab('tab-evergreen-bank', this)" class="tab-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-box-archive text-purple-400"></i> Kho Thư Viện Dùng Mãi
+                </button>
+                <button onclick="showTab('tab-quick-checklist', this)" class="tab-nav-btn px-3.5 py-2 rounded-xl text-xs font-bold border border-slate-700 text-slate-300 transition-all flex items-center gap-1.5 whitespace-nowrap">
+                    <i class="fa-solid fa-list-check text-amber-400"></i> Checklist Bấm Máy
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-10 space-y-10">
+
+        <!-- BANNER TỔNG QUAN: CHIẾN LƯỢC QUAY 1 LẦN ĂN TRỌN 2 MỤC TIÊU -->
+        <section class="glass-highlight rounded-3xl p-6 md:p-8 shadow-2xl space-y-4">
+            <div class="flex items-center gap-3">
+                <div class="p-3 bg-neon/10 text-neon rounded-2xl border border-neon/30">
+                    <i class="fa-solid fa-bullseye text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="text-xl md:text-2xl font-extrabold text-white">Chiến Lược Quay 1 Lần ĂN TRỌN 2 Mục Tiêu</h2>
+                    <p class="text-xs md:text-sm text-slate-400">Tiết kiệm 80% công sức set máy • Vừa đóng gói video hiện tại, vừa tích lũy tài sản số cho hàng trăm video sau</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-4 text-xs md:text-sm text-slate-300 pt-2">
+                <div class="bg-slate-950/70 p-4 rounded-2xl border border-brand/30 space-y-1.5">
+                    <strong class="text-brand block font-mono text-xs uppercase flex items-center gap-1.5">
+                        <i class="fa-solid fa-video"></i> MỤC TIÊU 1: HOÀN THIỆN VIDEO NÀY (BẮT ĐẦU VỚI THỨ VỚ VẨN)
+                    </strong>
+                    <p class="text-slate-300 text-xs leading-relaxed">Quay 7 góc Walk &amp; Talk ngoài trời (Times City) + 4 In-situ có thoại (Điện thoại, Tripod, Mặt đơ, Clip cũ) + Đoạn gameplay Đế Chế kinh điển.</p>
+                </div>
+                <div class="bg-slate-950/70 p-4 rounded-2xl border border-purple-500/30 space-y-1.5">
+                    <strong class="text-purple-400 block font-mono text-xs uppercase flex items-center gap-1.5">
+                        <i class="fa-solid fa-layer-group"></i> MỤC TIÊU 2: BẢO TÀNG B-ROLL DÙNG CHUNG (EVERGREEN BANK)
+                    </strong>
+                    <p class="text-slate-300 text-xs leading-relaxed">Tiện set đèn và góc máy, bấm thêm 8-10 shots Silent B-roll (bàn tay gõ phím, ngón tay vuốt Reels, vệt nắng cửa sổ, chén trà, góc sách) lưu kho dùng vĩnh viễn.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 1: WALK & TALK THOẠI NGOÀI TRỜI (7 CẢNH CHI TIẾT THEO PHỤ ĐỀ 2.0) -->
+        <!-- ========================================================================= -->
+        <div id="tab-walktalk" class="tab-section active-tab space-y-8">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2.5">
+                        <span class="w-3 h-7 bg-neon rounded-full inline-block"></span>
+                        Phần 1: 7 Cảnh Walk &amp; Talk Times City (Khớp 100% Subtitle 2.0)
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mt-1">Từ Sảnh Park Hill ➔ Lối Đá Bãi Cỏ ➔ Giàn Pergola ➔ Đường Cây Xanh ➔ Hoa Viên ➔ Cung Đường Nắng Sớm</p>
+                </div>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/reports/Bao_Cao_Boi_Canh_Thuc_Chien_R2.html" target="_blank" class="hidden sm:inline-flex px-3 py-1.5 bg-slate-900 border border-slate-700 hover:border-neon rounded-xl text-xs font-mono text-neon transition-all items-center gap-1.5">
+                    <i class="fa-solid fa-map-location-dot"></i> Kho 124 Bối Cảnh R2
+                </a>
+            </div>
+
+            <!-- CẢNH 1.1 -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 1.1 • 02:42 - 02:52</span>
+                        <h3 class="text-lg font-bold text-white">5 Năm Luyện Tập vs 1 Phút Lướt Xem</h3>
+                    </div>
+                    <span class="badge-broll tag-vo">Voice-Over Lồng Đè B-Roll</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_85.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_85.jpg" alt="LOC_085" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_085 • Sảnh Park Hill</span>
+                            <span class="text-indigo-400">Trung Cảnh Tĩnh</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/90 rounded-2xl border border-brand/30 space-y-1.5 font-medium">
+                            <span class="text-xs text-brand font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 75 - 78):</span>
+                            <p class="text-slate-100 teleprompter-text italic leading-relaxed">
+                                "Kỹ năng tăng theo thời gian thực,<br>
+                                Không phải thời gian lướt xem.<br>
+                                Người ta mất 5 năm luyện tập,<br>
+                                Nói tự nhiên như thở."
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Sảnh Park Hill rộng rãi, ánh sáng kính lớn tràn vào, khung cảnh sạch sẽ, sang trọng.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed">Vừa đẩy cửa bước ra, tay cầm cốc nước, bước thong thả. Đầu gật nhẹ ở chữ <em>"thời gian thực"</em>, giọng trầm ấm, khẳng định hiển nhiên.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 1.2 -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-indigo-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 1.2 • 02:52 - 03:03</span>
+                        <h3 class="text-lg font-bold text-white">Ảo Tưởng Xem 1 Phút Bật Máy Làm Được Ngay</h3>
+                    </div>
+                    <span class="badge-broll tag-vo">Voice-Over Lồng Đè B-Roll</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_78.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_78.jpg" alt="LOC_078" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_078 • Lối Đá Bãi Cỏ</span>
+                            <span class="text-indigo-400">Toàn Cảnh Vừa</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/90 rounded-2xl border border-brand/30 space-y-1.5 font-medium">
+                            <span class="text-xs text-brand font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 79 - 84):</span>
+                            <p class="text-slate-100 teleprompter-text italic leading-relaxed">
+                                "Mình xem video có 1 phút,<br>
+                                Lại muốn bật máy làm được ngay.<br>
+                                <span class="text-amber-300 font-bold">Không thể nào!</span><br>
+                                Não thì hiểu ngay, thấy rất đơn giản:<br>
+                                Làm gì, tay chân thế nào..."
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Lối đi lát đá uốn lượn thảm cỏ xanh mướt, bóng cây đổ dài dưới nắng sớm. Góc máy thấp hút chiều sâu.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed">Bước 2 bước ➔ <strong>Dừng lại giữa khung</strong>. Ở câu <em>"Không thể nào!"</em>, cười nhẹ lắc đầu giơ ngón trỏ cảnh tỉnh hóm hỉnh.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 1.3 (Sync Sound In-situ) -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-emerald-500/40 space-y-6 bg-gradient-to-br from-slate-900/90 to-emerald-950/20">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-emerald-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 1.3 • 03:03 - 03:09</span>
+                        <h3 class="text-lg font-bold text-emerald-300">Biểu Cảm Tự Nhiên Phải Trả Giá Bằng Thời Gian Thực</h3>
+                    </div>
+                    <span class="badge-broll tag-sync">SYNC IN-SITU (Khớp Khẩu Hình)</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_69.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_69.jpg" alt="LOC_069" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_069 • Giàn Pergola Gỗ</span>
+                            <span class="text-emerald-400">Cận Ngực Đón Nắng</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/95 rounded-2xl border border-emerald-500/40 space-y-1.5 font-medium">
+                            <span class="text-xs text-neon font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 85 - 89):</span>
+                            <p class="text-emerald-300 teleprompter-text italic font-bold leading-relaxed">
+                                "Nhưng cái miệng,<br>
+                                Độ cứng cơ thể,<br>
+                                Biểu cảm mượt mà,<br>
+                                Biểu cảm tự nhiên,<br>
+                                <span class="text-white font-extrabold text-xl">Phải trả giá bằng thời gian thực!</span>"
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Khung Pergola gỗ nâu sang trọng, vạt nắng sớm xiên chéo tạo ánh sáng viền (rim light) trên vai cực cinematic.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed">Vịn nhẹ cột gỗ, người nghiêng đón nắng. <strong>Nhìn thẳng tâm lens, từng chữ nhả ra dứt khoát</strong>, gật đầu chắc nịch.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 2.1 -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-amber-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 2.1 • 03:09 - 03:23</span>
+                        <h3 class="text-lg font-bold text-white">Bắt Đầu Với Thứ Vớ Vẩn Là Hack Não</h3>
+                    </div>
+                    <span class="badge-broll tag-vo">Voice-Over Lồng Đè B-Roll</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_01.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_01.jpg" alt="LOC_001" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_001 • Đường Cây Xanh</span>
+                            <span class="text-amber-400">Trung Cảnh Xoay 45°</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/90 rounded-2xl border border-amber-500/30 space-y-1.5 font-medium">
+                            <span class="text-xs text-amber-400 font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 90 - 94):</span>
+                            <p class="text-slate-100 teleprompter-text italic leading-relaxed">
+                                "Cách bạn bắt đầu với thứ vớ vẩn -<br>
+                                <span class="text-amber-300 font-bold">Đó là hack não!</span><br>
+                                Não chỉ sửa được thứ đã hoạt động,<br>
+                                Chứ không thể<br>
+                                Tối ưu thứ chưa tồn tại."
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Đường đi bộ rợp bóng cây cổ thụ mát rượi tại Times City, vòm lá xanh chiếm trọn hậu cảnh.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed">Đi thư thái ➔ <strong>Xoay người 45 độ về phía lens</strong>, mỉm cười rạng rỡ như vừa bật mí một bí mật đắt giá.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 2.2: Game Đế Chế -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-amber-500/40 space-y-6 bg-slate-900/95">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-amber-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 2.2 • 03:23 - 03:40</span>
+                        <h3 class="text-lg font-bold text-amber-300">Ẩn Dụ Game Đế Chế: Dò Đường Sương Mù Mới Tan</h3>
+                    </div>
+                    <span class="badge-broll bg-amber-500/20 text-amber-300 border border-amber-500/30">Metaphor B-Roll (AoE Insert)</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_80.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_80.jpg" alt="LOC_080" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_080 • Giàn Hoa Pergola</span>
+                            <span class="text-amber-400">Ngồi Bệ Đá Chồm Người</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/95 rounded-2xl border border-amber-500/30 space-y-2 font-medium">
+                            <span class="text-xs text-amber-400 font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 95 - 101):</span>
+                            <p class="text-slate-100 teleprompter-text italic leading-relaxed">
+                                "Giống như trong game Đế Chế:<br>
+                                Ban đầu bản đồ đen xì,<br>
+                                Phải đem dân đi dò đường, sương mù mới tan.<br>
+                                Khi dò đường, có thể gặp sư tử, mất máu...<br>
+                                Nhưng cũng có thể gặp mỏ quả, mỏ vàng."
+                            </p>
+                            <!-- Chỉ dẫn chèn clip AoE -->
+                            <div class="grid grid-cols-2 gap-2 pt-2 text-xs font-mono">
+                                <div class="p-2 bg-amber-950/50 rounded-lg border border-amber-500/30 text-amber-300">
+                                    🎮 [03:27] Đè clip 4s: AoE Dò Sương Mù
+                                </div>
+                                <div class="p-2 bg-rose-950/50 rounded-lg border border-rose-500/30 text-rose-300">
+                                    🦁 [03:34] Đè clip 5s: AoE Sư Tử Cắn Mất Máu
+                                </div>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Giàn hoa Pergola râm mát, có bệ đá sạch sẽ. Không gian tĩnh lặng ngập tràn sắc xanh.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed"><strong>Ngồi thư thái trên gờ bệ đá, hai tay chống gối, người hơi chồm về phía trước</strong>. Giọng hào hứng như đang kể chuyện chơi game với bạn bè.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 2.3 -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-slate-800 space-y-6">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-emerald-600 text-white font-mono font-bold text-xs rounded-lg">CẢNH 2.3 • 03:40 - 03:54</span>
+                        <h3 class="text-lg font-bold text-white">Muốn Lên Đời Video Marketing Phải Vớ Vẩn</h3>
+                    </div>
+                    <span class="badge-broll tag-vo">Voice-Over Lồng Đè B-Roll</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_121.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_121.jpg" alt="LOC_121" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_121 • Lối Đi Hoa Viên</span>
+                            <span class="text-emerald-400">Trung Cảnh Vững Chãi</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/90 rounded-2xl border border-emerald-500/30 space-y-1.5 font-medium">
+                            <span class="text-xs text-emerald-400 font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 102 - 109):</span>
+                            <p class="text-slate-100 teleprompter-text italic leading-relaxed">
+                                "Nhưng chắc chắn một điều:<br>
+                                Không mở rộng bản đồ, sẽ không bao giờ lên đời.<br>
+                                Muốn lên đời Video Marketing,<br>
+                                Phải bắt đầu với thứ vớ vẩn.<br>
+                                <span class="text-neon font-bold">Phải vớ vẩn mới được!</span><br>
+                                Nếu không, não không cấp năng lượng để làm."
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Lối đi lát đá giữa hoa viên xanh tươi, khóm hoa và cây cảnh tỉa gọn gàng đón nắng sáng rực rỡ.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện:</strong>
+                                <p class="text-slate-300 leading-relaxed">Đứng thẳng vững chãi. Ở câu <em>"Phải vớ vẩn mới được!"</em>, tay chém nhẹ dứt khoát trong không trung phá vỡ rào cản tâm lý.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CẢNH 2.4: Kết Bài Walk-off -->
+            <div class="glass-panel rounded-3xl p-6 md:p-8 border border-neon/50 space-y-6 bg-gradient-to-r from-slate-900/95 to-emerald-950/40">
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-slate-800 pb-4">
+                    <div class="flex items-center gap-3">
+                        <span class="px-3 py-1 bg-neon text-slate-950 font-mono font-extrabold text-xs rounded-lg">CẢNH 2.4 (KẾT BÀI) • 03:54 - 04:02</span>
+                        <h3 class="text-xl font-extrabold text-neon">Từ Đó Mọi Thứ Mới Bắt Đầu (Walk-Off Signature)</h3>
+                    </div>
+                    <span class="badge-broll tag-sync">SYNC IN-SITU (Khớp Khẩu Hình)</span>
+                </div>
+                <div class="grid md:grid-cols-3 gap-6 items-center">
+                    <div class="space-y-2">
+                        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_122.jpg" target="_blank">
+                            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_122.jpg" alt="LOC_122" class="loc-img w-full shadow-lg">
+                        </a>
+                        <div class="flex items-center justify-between text-xs font-mono text-slate-400">
+                            <span>LOC_122 • Cung Đường Nắng Sớm</span>
+                            <span class="text-neon font-bold">Toàn Cảnh Vừa</span>
+                        </div>
+                    </div>
+                    <div class="md:col-span-2 space-y-4">
+                        <div class="p-4 bg-slate-950/95 rounded-2xl border border-neon/40 space-y-1.5 font-medium">
+                            <span class="text-xs text-neon font-bold font-mono uppercase block mb-1"><i class="fa-solid fa-quote-left"></i> Lời thoại nguyên văn (Block 110 - 112):</span>
+                            <p class="text-neon teleprompter-text italic font-bold leading-relaxed">
+                                "Cứ bắt đầu với thứ vớ vẩn,<br>
+                                Não sẽ thấy thoải mái, chill và enjoy...<br>
+                                <span class="text-white font-extrabold text-2xl">Từ đó mọi thứ mới bắt đầu!</span>"
+                            </p>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-3 text-xs">
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-amber-300 block font-mono uppercase"><i class="fa-solid fa-location-dot"></i> Bối Cảnh:</strong>
+                                <p class="text-slate-300 leading-relaxed">Cung đường chạy bộ ngập tràn ánh ban mai rực rỡ, con đường thẳng tắp biểu trưng cho hành trình mới thênh thang.</p>
+                            </div>
+                            <div class="p-3.5 bg-slate-900/70 rounded-xl border border-slate-800 space-y-1">
+                                <strong class="text-neon block font-mono uppercase"><i class="fa-solid fa-person-walking"></i> Chỉ Đạo Thể Hiện (Walk-off):</strong>
+                                <p class="text-slate-300 leading-relaxed">Đứng thư giãn, mỉm cười rạng rỡ nói câu chốt. Vừa dứt câu, khẽ gật đầu rồi <strong>quay lưng thong thả bước tiếp theo con đường đầy nắng</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 2: B-ROLL CỦA DỰ ÁN NÀY (IN-SITU CÓ THOẠI & ĐẠO CỤ CHUYÊN BIỆT) -->
+        <!-- ========================================================================= -->
+        <div id="tab-video-broll" class="tab-section space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2.5">
+                        <span class="w-3 h-7 bg-brand rounded-full inline-block"></span>
+                        Phần 2: B-Roll Phục Vụ Riêng Cho Video Này (Project-Specific B-roll)
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mt-1">4 cảnh Thoại In-situ tại phòng quay/bàn gỗ + 2 cảnh Ẩn dụ đạo cụ (Metaphor) &amp; Tư liệu cũ</p>
+                </div>
+                <span class="badge-broll tag-vo">Dành Riêng Video 2.0</span>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- In-situ 1 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2.5 py-1 bg-brand/20 text-brand font-mono font-bold text-xs rounded-lg">IN-SITU 01 • NẠP DỮ LIỆU</span>
+                        <span class="text-xs font-mono text-slate-400">LOC_023 / BÀN GỖ</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Tay Cầm Điện Thoại Lướt Xem Video Mẫu</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed"><strong>Góc máy:</strong> Medium Close-Up hoặc Over-the-shoulder nhìn xéo màn hình điện thoại.</p>
+                    <div class="p-3 bg-slate-950 rounded-xl text-xs text-slate-200 border border-slate-800 italic">
+                        "Để làm được điều đó, bước bắt buộc đầu tiên là phải NẠP DỮ LIỆU: xem đối thủ làm thế nào, phân tích những mẫu video thành công..."
+                    </div>
+                </div>
+
+                <!-- In-situ 2 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2.5 py-1 bg-brand/20 text-brand font-mono font-bold text-xs rounded-lg">IN-SITU 02 • BẬT MÁY QUAY</span>
+                        <span class="text-xs font-mono text-slate-400">LOC_025 / TRIPOD</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Gá Điện Thoại Lên Tripod &amp; Bấm Nút REC</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed"><strong>Góc máy:</strong> Cận cảnh (Close-Up) ngàm kẹp tripod và đầu ngón tay chạm nút quay đỏ.</p>
+                    <div class="p-3 bg-slate-950 rounded-xl text-xs text-slate-200 border border-slate-800 italic">
+                        "Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ... cho đến khi bấm nút REC."
+                    </div>
+                </div>
+
+                <!-- In-situ 3 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2.5 py-1 bg-brand/20 text-brand font-mono font-bold text-xs rounded-lg">IN-SITU 03 • MẶT CỨNG ĐƠ</span>
+                        <span class="text-xs font-mono text-slate-400">LOC_023 / ỐNG KÍNH</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Nhìn Trực Diện Ống Kính, Biểu Cảm Đơ &amp; Cười Tự Trào</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed"><strong>Góc máy:</strong> Medium Close-Up 1-1 trực diện (như nhìn vào màn hình máy quay soi gương).</p>
+                    <div class="p-3 bg-slate-950 rounded-xl text-xs text-slate-200 border border-slate-800 italic">
+                        "Mặt thì cứng đờ, giọng thì run... Bình thường tư vấn khách thì hay như rót mật, đứng trước lens bao nhiêu tự nhiên biến mất sạch."
+                    </div>
+                </div>
+
+                <!-- In-situ 4 -->
+                <div class="glass-panel rounded-2xl p-6 border border-slate-800 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2.5 py-1 bg-brand/20 text-brand font-mono font-bold text-xs rounded-lg">IN-SITU 04 • CLIP CŨ</span>
+                        <span class="text-xs font-mono text-slate-400">MÀN HÌNH LAPTOP</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Chỉ Tay Vào Màn Hình Bật Lại Video Đầu Tay Mộc Mạc</h3>
+                    <p class="text-xs text-slate-300 leading-relaxed"><strong>Góc máy:</strong> Medium Shot bao quát cả anh Việt và góc màn hình laptop bật video cũ.</p>
+                    <div class="p-3 bg-slate-950 rounded-xl text-xs text-slate-200 border border-slate-800 italic">
+                        "Cái video đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn... Nhưng may là ngày đó tôi ĐÃ DÁM ĐĂNG LÊN."
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 3: KHO THƯ VIỆN B-ROLL DÙNG CHUNG (EVERGREEN B-ROLL BANK) -->
+        <!-- ========================================================================= -->
+        <div id="tab-evergreen-bank" class="tab-section space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2.5">
+                        <span class="w-3 h-7 bg-purple-500 rounded-full inline-block"></span>
+                        Phần 3: Kho B-Roll Thư Viện Dùng Chung (Evergreen Silent Bank)
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mt-1">Quay 10-15s mỗi cảnh KHÔNG THOẠI • Dùng chèn cắt nhịp đệm cho hàng trăm video sau này</p>
+                </div>
+                <span class="badge-broll tag-bank">Tài Sản Số Dùng Vĩnh Viễn</span>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+
+                <!-- 1. Bàn tay cơ bắp -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 1: CƠ BẮP DỰNG PHIM</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Bàn Tay Gõ Phím &amp; Rê Chuột Timeline</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Top-down 45° cận cảnh 2 bàn tay gõ phím tắt `Ctrl + K`, `Ctrl + M`, rê chuột kéo layer bên mặt bàn gỗ mộc nguyên khối (`LOC_023`).</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Mọi video nói về kỹ năng, sản xuất, làm việc sâu (Deep Work).
+                    </div>
+                </div>
+
+                <!-- 2. Không gian âm & Healing -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 2: NEGATIVE SPACE</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Vệt Nắng Cửa Sổ &amp; Giọt Nước Monstera</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Quay chậm tĩnh 60fps, vệt nắng sớm rọi xiên qua cửa kính lớn chiếu lên thớ gỗ (`LOC_024`), hoặc giọt nước đọng trên tán lá Monstera đung đưa.</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Khoảng nghỉ (Breathing space) sau các câu triết lý, kết bài.
+                    </div>
+                </div>
+
+                <!-- 3. POV mắt người -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 3: POV NHẬP VAI</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Ngón Tay Vuốt Màn Hình Thần Tốc</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Macro sát ngón tay cái vuốt nhanh qua feed Reels/TikTok, ánh sáng màn hình hắt lên vân tay trong không gian phòng tối.</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Các đoạn nói về tiêu thụ nội dung, mạng xã hội, lướt web.
+                    </div>
+                </div>
+
+                <!-- 4. Uống trà suy tư -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 4: RITUAL THIỀN VỊ</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Nâng Chén Trà Nhìn Ra Cửa Sổ</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Trung cận (Medium Close-Up) từ sau lưng anh Việt nâng ly trà/cà phê ấm, ánh mắt tĩnh tại nhìn ra tán cây xanh ngoài ban công.</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Bóc tách tâm lý, suy ngẫm, mở đầu chậm rãi.
+                    </div>
+                </div>
+
+                <!-- 5. Bước đi Times City -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 5: WALKING TRACKING</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Bước Đi Thong Dong Dưới Vòm Cây Nắng</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Low-angle Tracking hoặc Wide Shot sau lưng anh Việt sải bước tự tin dọc con đường râm mát Times City (`LOC_001` / `LOC_007`).</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Khám phá, mở đường, năng lượng hành động, tự do.
+                    </div>
+                </div>
+
+                <!-- 6. Thao tác thiết bị -->
+                <div class="glass-panel rounded-2xl p-5 border border-purple-500/30 space-y-3">
+                    <div class="flex justify-between items-center">
+                        <span class="px-2 py-0.5 bg-purple-500/20 text-purple-300 font-mono font-bold text-xs rounded">NHÓM 6: GEAR SETUP</span>
+                    </div>
+                    <h3 class="text-base font-bold text-white">Vặn Nút Đèn Studio &amp; Xoay Vòng Lens</h3>
+                    <p class="text-xs text-slate-400 leading-relaxed"><strong>Góc quay:</strong> Cận cảnh tay bật công tắc đèn Amaran, xoay nhẹ vòng lấy nét ống kính 35mm/85mm, ánh sáng dịu dần bừng sáng.</p>
+                    <div class="text-[11px] text-neon bg-slate-950 p-2 rounded-lg font-mono">
+                        🎯 Dùng cho: Chuẩn bị, vào guồng sáng tạo, set-up công việc chuyên nghiệp.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <!-- ========================================================================= -->
+        <!-- TAB 4: CHECKLIST HIỆN TRƯỜNG (BẤM TÍCH CHỌN TRÊN ĐIỆN THOẠI KHI QUAY) -->
+        <!-- ========================================================================= -->
+        <div id="tab-quick-checklist" class="tab-section space-y-6">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <div>
+                    <h2 class="text-2xl font-extrabold text-white flex items-center gap-2.5">
+                        <span class="w-3 h-7 bg-amber-400 rounded-full inline-block"></span>
+                        Phần 4: Checklist Bấm Máy 1-Shot Trên Hiện Trường
+                    </h2>
+                    <p class="text-slate-400 text-xs md:text-sm mt-1">Anh bấm chọn từng ô bên dưới khi đã hoàn thành từng shot quay</p>
+                </div>
+                <button onclick="resetChecklist()" class="px-3 py-1 bg-slate-900 border border-slate-700 hover:border-amber-400 rounded-xl text-xs text-amber-300 font-mono">
+                    <i class="fa-solid fa-rotate-right"></i> Reset Check
+                </button>
+            </div>
+
+            <div class="space-y-4 text-xs md:text-sm">
+                <!-- Block 1 -->
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <h3 class="font-bold text-neon uppercase font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-person-walking"></i> KHU VỰC 1: NGOẠI CẢNH TIMES CITY (7 SHOTS WALK &amp; TALK)
+                    </h3>
+                    <div class="space-y-2.5 pl-2">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 1.1:</strong> Sảnh Park Hill (`LOC_085`) - Thoại: <em>"5 năm luyện tập vs 1 phút lướt xem"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 1.2:</strong> Lối đá bãi cỏ (`LOC_078`) - Dừng lại giữa khung: <em>"Không thể nào!"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 1.3:</strong> Giàn Pergola gỗ (`LOC_069`) - <strong>Sync Khẩu Hình:</strong> <em>"Phải trả giá bằng thời gian thực!"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 2.1:</strong> Đường cây xanh (`LOC_001`) - Xoay 45°: <em>"Đó là hack não!"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 2.2:</strong> Giàn hoa Pergola (`LOC_080`) - Ngồi bệ đá: <em>"Ẩn dụ game Đế Chế dò sương mù"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 2.3:</strong> Hoa viên (`LOC_121`) - Đứng vững chãi: <em>"Phải vớ vẩn mới được!"</em></span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-neon focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Cảnh 2.4:</strong> Cung đường nắng sớm (`LOC_122`) - <strong>Sync Khẩu Hình &amp; Walk-Off:</strong> <em>"Từ đó mọi thứ mới bắt đầu!"</em></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Block 2 -->
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <h3 class="font-bold text-brand uppercase font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-house-laptop"></i> KHU VỰC 2: TẠI NHÀ &amp; PHÒNG QUAY (4 IN-SITU B-ROLL CÓ THOẠI)
+                    </h3>
+                    <div class="space-y-2.5 pl-2">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>In-situ 1:</strong> Bàn gỗ (`LOC_023`) - Lướt điện thoại xem video đối thủ</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>In-situ 2:</strong> Chân máy (`LOC_025`) - Gá máy kẹp tripod, chạm nút REC đỏ</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>In-situ 3:</strong> Trực diện lens (`LOC_023`) - Mặt cứng đơ lúng túng rồi cười tự trào</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-brand focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>In-situ 4:</strong> Màn hình máy tính (`LOC_023`) - Chỉ tay vào clip marketing đầu tay</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Block 3 -->
+                <div class="glass-panel p-5 rounded-2xl border border-slate-800 space-y-3">
+                    <h3 class="font-bold text-purple-400 uppercase font-mono flex items-center gap-2">
+                        <i class="fa-solid fa-box-archive"></i> KHU VỰC 3: KHO B-ROLL DÙNG CHUNG (6 SHOTS SILENT 10-15s)
+                    </h3>
+                    <div class="space-y-2.5 pl-2">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 1:</strong> Bàn tay gõ phím &amp; rê chuột Timeline bàn gỗ</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 2:</strong> Vệt nắng chiếu qua cửa sổ cây xanh tĩnh tại</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 3:</strong> Macro ngón tay cái vuốt Reels/TikTok thần tốc</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 4:</strong> Nâng ly trà nhìn ra cây xanh suy tư tĩnh lặng</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 5:</strong> Tracking bước đi dưới vòm cây nắng Times City</span>
+                        </label>
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input type="checkbox" class="mt-0.5 w-4 h-4 rounded text-purple-400 focus:ring-0 bg-slate-900 border-slate-700">
+                            <span class="text-slate-200"><strong>Silent 6:</strong> Thao tác vặn núm đèn studio &amp; xoay vòng lấy nét lens</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Bottom Navigation -->
+    <div class="fixed bottom-0 left-0 right-0 bg-slate-950/95 backdrop-blur-md border-t border-slate-800 px-4 py-3 z-50 flex items-center justify-around">
+        <button onclick="showTab('tab-walktalk')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-person-walking text-neon"></i> Walk &amp; Talk
+        </button>
+        <button onclick="showTab('tab-video-broll')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-film text-brand"></i> B-Roll Video
+        </button>
+        <button onclick="showTab('tab-evergreen-bank')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-box-archive text-purple-400"></i> Kho Thư Viện
+        </button>
+        <button onclick="showTab('tab-quick-checklist')" class="text-xs font-bold text-slate-400 hover:text-white flex flex-col items-center gap-1">
+            <i class="fa-solid fa-list-check text-amber-400"></i> Checklist
+        </button>
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-3 py-1.5 bg-neon text-slate-950 font-bold rounded-xl text-xs flex items-center gap-1">
+            <i class="fa-solid fa-arrow-up"></i> Đầu Trang
+        </button>
+    </div>
+
+    <script>
+        function showTab(tabId, btn) {
+            document.querySelectorAll('.tab-section').forEach(el => el.classList.remove('active-tab'));
+            document.querySelectorAll('.tab-nav-btn').forEach(el => el.classList.remove('active'));
+            
+            const target = document.getElementById(tabId);
+            if (target) {
+                target.classList.add('active-tab');
+            }
+            if (btn) {
+                btn.classList.add('active');
+            } else {
+                // sync bottom click to top button
+                document.querySelectorAll('.tab-nav-btn').forEach(b => {
+                    if (b.getAttribute('onclick')?.includes(tabId)) b.classList.add('active');
+                });
+            }
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        }
+
+        function resetChecklist() {
+            document.querySelectorAll('#tab-quick-checklist input[type="checkbox"]').forEach(c => c.checked = false);
+        }
+    </script>
+
+</body>
+</html>
