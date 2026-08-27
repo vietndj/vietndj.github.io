@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>Kịch Bản & B-Roll: Bắt Đầu Với Thứ Vớ Vẩn - Anh Việt</title>
+  <title>Kịch Bản & Ma Trận 8 Loại B-Roll: Bắt Đầu Với Thứ Vớ Vẩn - Anh Việt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
@@ -54,7 +54,7 @@
       position: sticky;
       top: 10px;
       z-index: 100;
-      background: rgba(17, 24, 39, 0.92);
+      background: rgba(17, 24, 39, 0.94);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border: 1px solid var(--card-border);
@@ -119,16 +119,17 @@
       border: none;
       color: var(--text-muted);
       font-family: var(--font-heading);
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
-      padding: 10px;
+      padding: 10px 6px;
       border-radius: 9px;
       cursor: pointer;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
+      gap: 4px;
       transition: all 0.2s;
+      text-align: center;
     }
 
     .tab-btn.active {
@@ -326,16 +327,22 @@
       margin-bottom: 8px;
     }
 
-    .broll-badge {
+    .broll-type-badge {
       font-family: var(--font-mono);
       font-size: 11.5px;
       font-weight: 700;
-      color: #FBBF24;
-      background: rgba(245, 158, 11, 0.15);
-      border: 1px solid rgba(245, 158, 11, 0.3);
       padding: 3px 8px;
       border-radius: 6px;
     }
+
+    .type-cutaway { background: rgba(59, 130, 246, 0.2); color: #60A5FA; border: 1px solid rgba(59, 130, 246, 0.3); }
+    .type-sequence { background: rgba(129, 140, 248, 0.2); color: #A5B4FC; border: 1px solid rgba(129, 140, 248, 0.3); }
+    .type-pov { background: rgba(244, 63, 94, 0.2); color: #FB7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+    .type-insitu { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .type-intercut { background: rgba(234, 179, 8, 0.2); color: #FDE047; border: 1px solid rgba(234, 179, 8, 0.3); }
+    .type-metaphor { background: rgba(168, 85, 247, 0.2); color: #C084FC; border: 1px solid rgba(168, 85, 247, 0.3); }
+    .type-negspace { background: rgba(148, 163, 184, 0.2); color: #CBD5E1; border: 1px solid rgba(148, 163, 184, 0.3); }
+    .type-archival { background: rgba(251, 146, 60, 0.2); color: #FDBA74; border: 1px solid rgba(251, 146, 60, 0.3); }
 
     .broll-title {
       font-family: var(--font-heading);
@@ -354,6 +361,16 @@
 
     .broll-detail-row strong {
       color: var(--accent);
+    }
+
+    .broll-mantra {
+      background: rgba(245, 158, 11, 0.1);
+      border-left: 3px solid #F59E0B;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12.5px;
+      color: #FDE047;
+      margin-top: 6px;
     }
 
     .broll-loc-tag {
@@ -424,7 +441,7 @@
 
     <!-- Header Banner -->
     <header>
-      <div class="badge-pill">🔥 KỊCH BẢN VIDEO MARKETING TRIỆU VIEW</div>
+      <div class="badge-pill">🔥 KỊCH BẢN &amp; MA TRẬN 8 LOẠI B-ROLL MASTERCLASS</div>
       <h1>Bắt Đầu Với Thứ Vớ Vẩn</h1>
       <div class="meta-info">
         <span>👤 <strong>Anh Việt</strong></span>
@@ -435,8 +452,9 @@
 
     <!-- Tab Switcher -->
     <div class="tab-switcher">
-      <button class="tab-btn active" onclick="switchView('scriptView', this)">📜 Kịch Bản Thoại (13 Shots)</button>
-      <button class="tab-btn" onclick="switchView('brollView', this)">🎬 Danh Sách B-Roll Cần Quay</button>
+      <button class="tab-btn active" onclick="switchView('scriptView', this)">📜 Kịch Bản Thoại</button>
+      <button class="tab-btn" onclick="switchView('brollMatrixView', this)">🎬 Ma Trận 8 Loại B-Roll</button>
+      <button class="tab-btn" onclick="switchView('brollChecklistView', this)">📋 Checklist Hiện Trường</button>
     </div>
 
     <!-- VIEW 1: SCRIPT -->
@@ -607,112 +625,160 @@
       </div>
     </div>
 
-    <!-- VIEW 2: B-ROLL SHOT LIST -->
-    <div id="brollView" class="view-content">
-      <div class="stats-card" style="border-left-color: #F59E0B;">
-        🎬 <strong>Checklist B-Roll &amp; Cảnh Trám:</strong> Gồm 4 cảnh In-situ B-roll có thoại trong kịch bản + 5 cảnh Cảnh Trám đệm quay nhanh quanh bàn gỗ &amp; phòng quay để chèn cắt nhịp khi dựng.
+    <!-- VIEW 2: 8 LOẠI B-ROLL MASTER MATRIX -->
+    <div id="brollMatrixView" class="view-content">
+      <div class="stats-card" style="border-left-color: #38BDF8;">
+        🧠 <strong>Chuẩn Hóa Ngôn Ngữ Đạo Diễn:</strong> 8 loại B-roll chia làm 3 trục mục đích (Tả thực, Hiện diện, Tâm lý) kết hợp hoàn hảo giữa <em>Thoại In-situ</em> và <em>B-roll Silent</em> (Không thoại).
       </div>
 
-      <!-- IN-SITU B-ROLL -->
-      <h3 style="font-family: var(--font-heading); font-size: 16px; color: #FDE047; margin: 18px 0 12px;">📌 PHẦN 1: 4 CẢNH IN-SITU B-ROLL (THOẠI TRỰC TIẾP TRONG CẢNH)</h3>
+      <!-- NHÓM 1: TRỤC TẢ THỰC -->
+      <h3 style="font-family: var(--font-heading); font-size: 15px; color: #60A5FA; margin: 18px 0 10px; text-transform: uppercase;">🟦 NHÓM 1: TRỤC TẢ THỰC (HÌNH ẢNH &amp; NHỊP ĐỘ)</h3>
 
-      <!-- BROLL 1 -->
+      <!-- 1. Cutaway -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge">SHOT 03 • IN-SITU B-ROLL</span>
-          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
+          <span class="broll-type-badge type-cutaway">1. CUTAWAY (Cắt Cảnh Đơn)</span>
+          <span class="broll-loc-tag">SILENT (KHÔNG THOẠI)</span>
         </div>
-        <div class="broll-title">1. Tay cầm điện thoại lướt xem các video mẫu</div>
-        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Medium Close-Up hoặc Over-the-shoulder nhìn xéo vào màn hình điện thoại đang lướt Reels/TikTok.</div>
-        <div class="broll-detail-row"><strong>Hành động:</strong> Anh Việt vừa lướt ngón tay xem video đối thủ/kênh lớn, vừa nói câu thoại: <em>"Để làm được điều đó, bước bắt buộc đầu tiên là phải NẠP DỮ LIỆU..."</em></div>
+        <div class="broll-title">Chèn 1 cảnh ngắn đúng từ khóa đang nói</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> ✂️ <em>"NÓI GÌ - HÌNH NẤY"</em> (Literal B-roll).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Chèn 1.5s cận cảnh biểu tượng Facebook Ads cắn tiền hoặc chiếc điện thoại đang mở màn hình cài đặt quảng cáo đè lên Shot 01 (đoạn <em>"tiền quảng cáo"</em>).</div>
+        <div class="broll-mantra">💡 Chức năng: Cung cấp thông tin cực nhanh và che vết cắt ghép khi nói vấp.</div>
       </div>
 
-      <!-- BROLL 2 -->
+      <!-- 2. Sequence -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge">SHOT 04 • IN-SITU B-ROLL</span>
-          <span class="broll-loc-tag">LOC_025 / PHÒNG QUAY</span>
+          <span class="broll-type-badge type-sequence">2. SEQUENCE (Chuỗi Hành Động)</span>
+          <span class="broll-loc-tag">SILENT (KHÔNG THOẠI)</span>
         </div>
-        <div class="broll-title">2. Thao tác gá máy lên Tripod &amp; Chạm nút quay</div>
-        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Cận cảnh (Close-Up) vào ngàm kẹp tripod và đầu ngón tay chạm nút REC đỏ trên màn hình/máy quay.</div>
-        <div class="broll-detail-row"><strong>Hành động:</strong> Thao tác dứt khoát, năng lượng hừng hực, vừa thao tác vừa nói: <em>"Nạp xong cả đống dữ liệu xịn sò, cảm hứng trong đầu hừng hực bùng nổ..."</em></div>
+        <div class="broll-title">Chuỗi nhiều góc máy nối tiếp hoàn thành 1 việc</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> 🎞️ <em>"BĂNG CHUYỀN HÀNH ĐỘNG"</em> (Action Montage).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Chuỗi 3 góc máy bàn gỗ: (1) Đặt ly cà phê ➔ (2) Bật công tắc đèn studio ➔ (3) Tay gõ phím `Ctrl + M` Export video. Chèn đè lên Shot 07 hoặc Shot 09.</div>
+        <div class="broll-mantra">💡 Chức năng: Nén thời gian, tạo nhịp điệu (pacing) chuyển động dồn dập, mượt mà.</div>
       </div>
 
-      <!-- BROLL 3 -->
+      <!-- 3. POV -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge">SHOT 05 • IN-SITU B-ROLL</span>
-          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
+          <span class="broll-type-badge type-pov">3. POV (Góc Nhìn Thứ Nhất)</span>
+          <span class="broll-loc-tag">SILENT (KHÔNG THOẠI)</span>
         </div>
-        <div class="broll-title">3. Nhìn thẳng ống kính, biểu cảm sượng đơ &amp; Cười tự trào</div>
-        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Medium Close-Up trực diện 1-1 qua màn hình máy quay (như nhìn vào gương).</div>
-        <div class="broll-detail-row"><strong>Hành động:</strong> Biểu cảm diễn tả lại sự cứng đờ, chớp mắt ngập ngừng, sau đó bật cười tự trào: <em>"Mặt thì cứng đờ, giọng thì run, nói năng gượng gạo..."</em></div>
+        <div class="broll-title">Góc nhìn từ đôi mắt người kể chĩa xuống tay</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> 👁️ <em>"NHẬP VAI KHÁN GIẢ"</em> (First-person perspective).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Đặt máy ngang ngực/cằm nhìn xuống 2 bàn tay đang lóng ngóng cầm gimbal hoặc chỉnh thông số khẩu độ ống kính đơ ra. Chèn đè lên Shot 05.</div>
+        <div class="broll-mantra">💡 Chức năng: Kích hoạt tế bào thần kinh gương, ép người xem cảm thấy chính họ đang thao tác vụng về.</div>
       </div>
 
-      <!-- BROLL 4 -->
+      <!-- NHÓM 2: TRỤC HIỆN DIỆN -->
+      <h3 style="font-family: var(--font-heading); font-size: 15px; color: #34D399; margin: 24px 0 10px; text-transform: uppercase;">🟩 NHÓM 2: TRỤC HIỆN DIỆN (GIAO TIẾP &amp; CẤU TRÚC)</h3>
+
+      <!-- 4. In-situ -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge">SHOT 10 • IN-SITU B-ROLL</span>
-          <span class="broll-loc-tag">LOC_023 / MÀN HÌNH MÁY TÍNH</span>
+          <span class="broll-type-badge type-insitu">4. THOẠI IN-SITU (Hiện Trường)</span>
+          <span class="broll-loc-tag" style="color: #38BDF8;">CÓ THOẠI TRỰC TIẾP</span>
         </div>
-        <div class="broll-title">4. Chỉ tay vào màn hình mở lại video marketing cũ đầu tay</div>
-        <div class="broll-detail-row"><strong>Góc máy &amp; Cỡ cảnh:</strong> Góc rộng vừa (Medium Shot) lấy được cả anh Việt và góc màn hình laptop/PC đang bật video clip cũ mộc mạc.</div>
-        <div class="broll-detail-row"><strong>Hành động:</strong> Chỉ tay vào màn hình, cười tự hào nhẹ nhõm: <em>"Cái video marketing đầu tiên của tôi: nói năng còn vụng, ánh sáng chưa chuẩn... Nhưng may là ngày đó tôi ĐÃ DÁM ĐĂNG LÊN."</em></div>
+        <div class="broll-title">Vừa thao tác việc thật vừa ngước lên nói</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> 🎬 <em>"VỪA LÀM - VỪA NÓI"</em> (Walk-and-talk / In-situ address).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Shot 03 (cầm điện thoại lướt video), Shot 04 (gá máy lên tripod), Shot 05 (nhìn ống kính cười tự trào), Shot 10 (chỉ vào màn hình máy tính).</div>
+        <div class="broll-mantra">💡 Chức năng: Phá vỡ khoảng cách chuyên gia xa vời, tạo cảm giác người bạn đồng hành sống trong khoảnh khắc.</div>
       </div>
 
-      <!-- OVERLAY B-ROLL -->
-      <h3 style="font-family: var(--font-heading); font-size: 16px; color: #38BDF8; margin: 24px 0 12px;">📌 PHẦN 2: 5 CẢNH TRÁM CHÈN ĐỆM (OVERLAY B-ROLL KHÔNG THOẠI)</h3>
-
-      <!-- BROLL OVERLAY 1 -->
+      <!-- 5. Intercut -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 01</span>
-          <span class="broll-loc-tag">LOC_023 / BÀN GỖ</span>
+          <span class="broll-type-badge type-intercut">5. DỰNG INTERCUT (Dựng Luân Phiên)</span>
+          <span class="broll-loc-tag">CẤU TRÚC DỰNG BÀI</span>
         </div>
-        <div class="broll-title">Bàn tay gõ phím &amp; rê chuột cắt Timeline (Cơ bắp dựng phim)</div>
-        <div class="broll-detail-row"><strong>Mô tả:</strong> Top-down 45 độ quay bàn tay gõ phím tắt và rê chuột bên mặt bàn gỗ mộc. Dùng chèn đè lên Shot 07 hoặc Shot 09 khi nói về luyện tập cơ bắp.</div>
+        <div class="broll-title">Cắt qua lại giữa Ngồi Tĩnh và Đi Động</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> ⚖️ <em>"NỬA TĨNH - NỬA ĐỘNG"</em> (Docu-style alternating).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Bàn gỗ A-roll (Shot 01) ➔ Cắt ra hành lang cây xanh (Shot 02) ➔ Cắt vào tripod (Shot 04) ➔ Cắt về bàn gỗ (Shot 06) ➔ Cắt ra ngoài trời (Shot 08) ➔ Về bàn gỗ chốt hạ (Shot 13).</div>
+        <div class="broll-mantra">💡 Chức năng: Cân bằng giữa sự Uy Tín vững chãi (ngồi tĩnh) và Thực Chiến sinh động (vận động).</div>
       </div>
 
-      <!-- BROLL OVERLAY 2 -->
+      <!-- NHÓM 3: TRỤC TÂM LÝ -->
+      <h3 style="font-family: var(--font-heading); font-size: 15px; color: #C084FC; margin: 24px 0 10px; text-transform: uppercase;">🟪 NHÓM 3: TRỤC TÂM LÝ (VŨ KHÍ NGHỆ THUẬT)</h3>
+
+      <!-- 6. Metaphor -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 02</span>
-          <span class="broll-loc-tag">LOC_024 / CỬA SỔ</span>
+          <span class="broll-type-badge type-metaphor">6. CẢNH METAPHOR (Ẩn Dụ Thị Giác)</span>
+          <span class="broll-loc-tag">SILENT (KHÔNG THOẠI)</span>
         </div>
-        <div class="broll-title">Uống ngụm trà / nước nhìn ra cửa sổ cây xanh tĩnh tại</div>
-        <div class="broll-detail-row"><strong>Mô tả:</strong> Interior-to-Exterior Medium Shot. Anh Việt nâng ly trà, ánh mắt suy tư nhìn tán lá xanh đung đưa ngoài cửa sổ. Dùng chèn ngắt nhịp ở Shot 06 hoặc Shot 11.</div>
+        <div class="broll-title">Dùng đồ vật hữu hình ám chỉ ý tưởng vô hình</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> ♟️ <em>"VẬT THAY LỜI"</em> (Symbolic Prop Shot).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> (1) Cận cảnh bát mì gói tự nấu bốc khói chèn đè lên Shot 08 (đoạn <em>"cái lưỡi sành ăn vs tự nấu dở"</em>). (2) Cảnh ngón tay đẩy quân cờ / bản đồ để ám chỉ chiến lược.</div>
+        <div class="broll-mantra">💡 Chức năng: Gây tò mò tột độ, biến kiến thức trừu tượng thành hình ảnh in sâu vào não bộ.</div>
       </div>
 
-      <!-- BROLL OVERLAY 3 -->
+      <!-- 7. Negative Space -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 03</span>
-          <span class="broll-loc-tag">MÀN HÌNH ĐIỆN THOẠI</span>
+          <span class="broll-type-badge type-negspace">7. NEGATIVE SPACE (Không Gian Âm)</span>
+          <span class="broll-loc-tag">SILENT (KHÔNG THOẠI)</span>
         </div>
-        <div class="broll-title">Ngón tay cái vuốt lướt màn hình thần tốc (Thumbs Swipe)</div>
-        <div class="broll-detail-row"><strong>Mô tả:</strong> Macro cận cảnh ngón tay cái vuốt nhanh qua hàng chục video trên TikTok/Reels, ánh sáng màn hình hắt lên vân tay. Dùng chèn đè lên Shot 09 (đoạn 60 giây).</div>
+        <div class="broll-title">Cảnh quay chậm, trống trải, TUYỆT ĐỐI KHÔNG CÓ NGƯỜI</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> ⏸️ <em>"KHOẢNG LẶNG VÔ HỒN"</em> (Breathing Room B-roll).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> Vệt nắng sớm xiên qua khung cửa sổ chiếu lên mặt bàn gỗ tĩnh lặng, hoặc giọt nước đọng trên tán lá xanh đung đưa chậm. Chèn 2 giây sau câu punchline Shot 11 (đoạn <em>"não chỉ sửa thứ đang hoạt động"</em>).</div>
+        <div class="broll-mantra">💡 Chức năng: Tạo "vùng đệm nhịp thở" để não người xem kịp ngấm và tiêu hóa câu triết lý sâu cay.</div>
       </div>
 
-      <!-- BROLL OVERLAY 4 -->
+      <!-- 8. Archival -->
       <div class="broll-card">
         <div class="broll-card-header">
-          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 04</span>
-          <span class="broll-loc-tag">LOC_025 / PHÒNG QUAY</span>
+          <span class="broll-type-badge type-archival">8. CẢNH ARCHIVAL (Tư Liệu / Game / Meme)</span>
+          <span class="broll-loc-tag">TƯ LIỆU QUÁ KHỨ</span>
         </div>
-        <div class="broll-title">Cảnh quay mờ ảo xuyên qua phiến lá Monstera (Shoot-through leaf)</div>
-        <div class="broll-detail-row"><strong>Mô tả:</strong> Đặt máy sau phiến lá Monstera xẻ nghệ thuật, lấy nét vào anh Việt đang bước đi hoặc ngồi chỉnh đèn quay. Dùng chèn đè lên Shot 02 hoặc Shot 08.</div>
+        <div class="broll-title">Chèn video quá khứ hoặc tư liệu văn hóa đại chúng</div>
+        <div class="broll-detail-row"><strong>Thần chú:</strong> ⏳ <em>"CỖ MÁY THỜI GIAN"</em> (Found Footage / Meme).</div>
+        <div class="broll-detail-row"><strong>Ứng dụng video này:</strong> (1) Video marketing cũ mộc mạc của anh Việt ở Shot 10. (2) Chèn 2-3 giây màn hình gameplay Đế Chế kinh điển (tiếng nông dân "đù đù", tiếng sư tử gầm, màn hình mở sương mù đen xì) ở Shot 12.</div>
+        <div class="broll-mantra">💡 Chức năng: Tạo bằng chứng thực tế (Proof), kích hoạt ký ức tuổi thơ và tạo tiếng cười đồng điệu.</div>
       </div>
 
-      <!-- BROLL OVERLAY 5 -->
-      <div class="broll-card">
-        <div class="broll-card-header">
-          <span class="broll-badge" style="color: #38BDF8; background: rgba(56,189,248,0.15); border-color: rgba(56,189,248,0.3);">CẢNH TRÁM 05</span>
-          <span class="broll-loc-tag">LOC_001 / NGOẠI CẢNH TIMES CITY</span>
-        </div>
-        <div class="broll-title">Bước đi thong dong dưới hàng cây râm mát (Dò đường bản đồ)</div>
-        <div class="broll-detail-row"><strong>Mô tả:</strong> Wide Tracking Shot từ phía sau lưng anh Việt bước đi thong thả dưới vòm cây xanh ngập nắng. Dùng chèn đè lên Shot 12 (đoạn mở bản đồ Đế Chế).</div>
+    </div>
+
+    <!-- VIEW 3: CHECKLIST HIỆN TRƯỜNG -->
+    <div id="brollChecklistView" class="view-content">
+      <div class="stats-card" style="border-left-color: #10B981;">
+        📋 <strong>Checklist Bấm Máy Tại Hiện Trường:</strong> Anh chỉ cần quét đúng danh sách dưới đây là đủ 100% tài nguyên dựng video triệu view!
       </div>
 
+      <div class="shot-list">
+        
+        <div class="broll-card">
+          <div class="broll-card-header">
+            <span class="broll-type-badge type-insitu">NHÓM 1: 4 CẢNH CÓ THOẠI (IN-SITU)</span>
+            <span class="broll-loc-tag">BẮT BUỘC</span>
+          </div>
+          <div class="broll-detail-row">☑️ <strong>1. Shot 03:</strong> Cầm điện thoại lướt xem video mẫu (Thoại: <em>"bước đầu tiên nạp dữ liệu..."</em>).</div>
+          <div class="broll-detail-row">☑️ <strong>2. Shot 04:</strong> Gá máy lên tripod, chạm nút quay đỏ (Thoại: <em>"nạp xong cảm hứng bùng nổ..."</em>).</div>
+          <div class="broll-detail-row">☑️ <strong>3. Shot 05:</strong> Nhìn ống kính cười tự trào (Thoại: <em>"mặt cứng đơ, giọng run, tư vấn khách thì hay..."</em>).</div>
+          <div class="broll-detail-row">☑️ <strong>4. Shot 10:</strong> Chỉ tay vào màn hình máy tính bật video cũ (Thoại: <em>"may là ngày đó dám đăng..."</em>).</div>
+        </div>
+
+        <div class="broll-card">
+          <div class="broll-card-header">
+            <span class="broll-type-badge type-sequence">NHÓM 2: 5 CẢNH KHÔNG THOẠI (SILENT B-ROLL)</span>
+            <span class="broll-loc-tag">QUAY 10-15s MỖI CẢNH</span>
+          </div>
+          <div class="broll-detail-row">☑️ <strong>1. Sequence bàn tay:</strong> Gõ phím, rê chuột, xoay nhẹ cốc nước bên bàn gỗ (`LOC_023`).</div>
+          <div class="broll-detail-row">☑️ <strong>2. Negative space:</strong> Vệt nắng chiếu xiên qua cửa sổ cây xanh tĩnh tại (`LOC_024`).</div>
+          <div class="broll-detail-row">☑️ <strong>3. POV lướt ngón tay:</strong> Cận cảnh ngón tay cái vuốt TikTok/Reels thần tốc.</div>
+          <div class="broll-detail-row">☑️ <strong>4. Metaphor bát mì:</strong> Cận cảnh bát mì gói hoặc nâng chén trà bên bàn gỗ mộc.</div>
+          <div class="broll-detail-row">☑️ <strong>5. Tracking đi dạo:</strong> Bước đi thong dong dưới hàng cây Times City (`LOC_001` / `LOC_007`).</div>
+        </div>
+
+        <div class="broll-card">
+          <div class="broll-card-header">
+            <span class="broll-type-badge type-archival">NHÓM 3: 2 TƯ LIỆU DỰNG CHÈN (ARCHIVAL INSERT)</span>
+            <span class="broll-loc-tag">LẤY TRÊN MÁY TÍNH</span>
+          </div>
+          <div class="broll-detail-row">☑️ <strong>1. Clip cũ đầu tay:</strong> 1 đoạn video mộc mạc từ vài năm trước của anh Việt.</div>
+          <div class="broll-detail-row">☑️ <strong>2. Footage Đế Chế (AOE):</strong> 3 giây gameplay mở bản đồ sương mù có tiếng "đù đù" đặc trưng.</div>
+        </div>
+
+      </div>
     </div>
 
   </div>
@@ -734,7 +800,9 @@
       document.getElementById(viewId).classList.add('active-view');
       btn.classList.add('active');
       const barTitle = document.getElementById('barTitle');
-      barTitle.innerText = viewId === 'scriptView' ? '📜 KỊCH BẢN THOẠI (13 SHOTS)' : '🎬 CHECKLIST B-ROLL HIỆN TRƯỜNG';
+      if (viewId === 'scriptView') barTitle.innerText = '📜 KỊCH BẢN THOẠI (13 SHOTS)';
+      else if (viewId === 'brollMatrixView') barTitle.innerText = '🎬 MA TRẬN 8 LOẠI B-ROLL';
+      else barTitle.innerText = '📋 CHECKLIST HIỆN TRƯỜNG';
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
