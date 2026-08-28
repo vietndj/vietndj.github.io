@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build ultra-robust, pre-rendered brollbank.html with inline YouTube embeds.
+Build ultra-robust, pre-rendered brollbank.html with inline YouTube embeds,
+B-Roll category filtering, AI Script-to-Broll matcher, and Integrated YouTube Delete Engine.
 """
 
 import json
@@ -25,15 +26,16 @@ def render_card_html(v):
     gdrive_dl = v.get('gdrive_download_url', '')
     gdrive_view = v.get('gdrive_view_url', '')
     dl_href = gdrive_dl if gdrive_dl else (gdrive_view if gdrive_view else "https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA")
+    escaped_title = v['title'].replace("'", "\\'").replace('"', '&quot;')
     
     # Pre-render card
     return f'''
-    <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-slate-800 hover:border-purple-500/60 transition shadow-lg bg-slate-900/90" id="card-{v['id']}" data-cat="{v['category_id']}" data-orient="{v['orientation']}">
+    <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-slate-800 hover:border-purple-500/60 transition shadow-lg bg-slate-900/90 relative" id="card-{v['id']}" data-cat="{v['category_id']}" data-orient="{v['orientation']}">
         <!-- Video Box / Embed -->
         <div class="relative bg-black {aspect_class} overflow-hidden flex items-center justify-center" id="player-box-{v['id']}">
             <!-- Responsive Iframe Embed -->
             <iframe src="https://www.youtube.com/embed/{yt_id}?enablejsapi=1&rel=0" 
-                    title="{v['title']}" 
+                    title="{escaped_title}" 
                     loading="lazy"
                     class="w-full h-full border-0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
@@ -81,9 +83,15 @@ def render_card_html(v):
                             Tải Drive
                         </a>
                     </div>
-                    <button onclick="openModal({v['id']})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold transition flex items-center gap-1">
-                        Chi tiết
-                    </button>
+                    <div class="flex items-center gap-1">
+                        <button onclick="openModal({v['id']})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold transition flex items-center gap-1">
+                            Chi tiết
+                        </button>
+                        <button onclick="openDeleteModal({v['id']}, '{escaped_title}', '{yt_id}', '{v['filename']}')" class="px-2 py-1 rounded-lg bg-red-600/10 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/20 text-[11px] font-semibold transition flex items-center gap-1" title="Xóa video khỏi YouTube & Thư viện">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                            Xóa
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -128,9 +136,6 @@ html_content = f'''<!DOCTYPE html>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
     
     <style>
         body {{
@@ -182,6 +187,12 @@ html_content = f'''<!DOCTYPE html>
         .badge-metaphor {{ background: rgba(245, 158, 11, 0.2); color: #fcd34d; border: 1px solid rgba(245, 158, 11, 0.4); }}
         .badge-negative_space {{ background: rgba(148, 163, 184, 0.2); color: #cbd5e1; border: 1px solid rgba(148, 163, 184, 0.4); }}
         .badge-archival {{ background: rgba(16, 185, 129, 0.2); color: #6ee7b7; border: 1px solid rgba(16, 185, 129, 0.4); }}
+        
+        .card-deleting {{
+            transform: scale(0.9);
+            opacity: 0;
+            transition: all 0.4s ease;
+        }}
     </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white flex flex-col bg-[#0b0f19]">
@@ -195,7 +206,7 @@ html_content = f'''<!DOCTYPE html>
             <div>
                 <div class="flex items-center gap-2">
                     <span class="font-extrabold text-lg tracking-tight text-white">B-ROLL BANK</span>
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">{len(videos)} CLIPS NHÚNG YOUTUBE & DRIVE</span>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold" id="nav-counter">{len(videos)} CLIPS NHÚNG YOUTUBE & DRIVE</span>
                 </div>
                 <p class="text-xs text-slate-400">Thư viện cảnh trám điện ảnh • Nguyễn Đức Việt (VietMac)</p>
             </div>
@@ -205,7 +216,7 @@ html_content = f'''<!DOCTYPE html>
         <div class="flex items-center gap-3">
             <a href="{db.get('gdrive_folder_url', 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA')}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                Google Drive Folder ({len(videos)})
+                Google Drive Folder (<span id="top-gdrive-count">{len(videos)}</span>)
             </a>
             <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
@@ -237,15 +248,15 @@ html_content = f'''<!DOCTYPE html>
                 <!-- Metrics -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-white font-mono">{len(videos)}</div>
+                        <div class="text-2xl font-black text-white font-mono" id="stat-total">{len(videos)}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng Video</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-purple-400 font-mono">{len([x for x in videos if x['orientation'] == 'vertical'])}</div>
+                        <div class="text-2xl font-black text-purple-400 font-mono" id="stat-vertical">{len([x for x in videos if x['orientation'] == 'vertical'])}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dọc 9:16 Shorts</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-indigo-400 font-mono">{len([x for x in videos if x['orientation'] == 'horizontal'])}</div>
+                        <div class="text-2xl font-black text-indigo-400 font-mono" id="stat-horizontal">{len([x for x in videos if x['orientation'] == 'horizontal'])}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ngang 16:9 4K</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
@@ -258,7 +269,7 @@ html_content = f'''<!DOCTYPE html>
             <!-- TABS -->
             <div class="mt-8 flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 w-fit">
                 <button onclick="switchMainTab('library')" id="tab-btn-library" class="tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition">
-                    📺 Xem Toàn Bộ 90 Video Nhúng
+                    📺 Xem Toàn Bộ <span id="tab-counter">{len(videos)}</span> Video Nhúng
                 </button>
                 <button onclick="switchMainTab('script-matcher')" id="tab-btn-script" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
                     ✨ Ráp Kịch Bản Thoại Thông Minh (AI)
@@ -285,31 +296,31 @@ html_content = f'''<!DOCTYPE html>
             <!-- 8 B-Roll Category Pills -->
             <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="cat-pills-container">
                 <button onclick="filterCategory('all')" class="cat-pill active shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold transition" data-cat="all">
-                    Tất cả (90)
+                    Tất cả (<span id="pill-all-count">{len(videos)}</span>)
                 </button>
                 <button onclick="filterCategory('cutaway')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="cutaway">
-                    ✂️ 1. Cutaway (22)
+                    ✂️ 1. Cutaway
                 </button>
                 <button onclick="filterCategory('sequence')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="sequence">
-                    🎞️ 2. Sequence (18)
+                    🎞️ 2. Sequence
                 </button>
                 <button onclick="filterCategory('pov')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="pov">
-                    👁️ 3. Góc POV (10)
+                    👁️ 3. Góc POV
                 </button>
                 <button onclick="filterCategory('in_situ')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="in_situ">
-                    🎬 4. Thoại In-situ (11)
+                    🎬 4. Thoại In-situ
                 </button>
                 <button onclick="filterCategory('intercut')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="intercut">
-                    ⚖️ 5. Dựng Intercut (9)
+                    ⚖️ 5. Dựng Intercut
                 </button>
                 <button onclick="filterCategory('metaphor')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="metaphor">
-                    ♟️ 6. Metaphor (12)
+                    ♟️ 6. Metaphor
                 </button>
                 <button onclick="filterCategory('negative_space')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="negative_space">
-                    ⏸️ 7. Negative Space (5)
+                    ⏸️ 7. Negative Space
                 </button>
                 <button onclick="filterCategory('archival')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="archival">
-                    ⏳ 8. Archival (3)
+                    ⏳ 8. Archival
                 </button>
             </div>
 
@@ -319,8 +330,8 @@ html_content = f'''<!DOCTYPE html>
                     <label class="block text-[11px] font-semibold text-slate-400 mb-1">Tỉ lệ khung hình</label>
                     <select id="filter-orientation" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
                         <option value="all">Tất cả định dạng</option>
-                        <option value="vertical">📱 Dọc 9:16 (Shorts/Reel - 82)</option>
-                        <option value="horizontal">🖥️ Ngang 16:9 (Cinematic 4K - 8)</option>
+                        <option value="vertical">📱 Dọc 9:16 (Shorts/Reel)</option>
+                        <option value="horizontal">🖥️ Ngang 16:9 (Cinematic 4K)</option>
                     </select>
                 </div>
                 <div>
@@ -351,7 +362,11 @@ html_content = f'''<!DOCTYPE html>
         <!-- STATUS BAR -->
         <div class="flex items-center justify-between text-xs text-slate-400 px-1">
             <div>
-                Đang hiển thị <span id="filtered-count" class="font-bold text-purple-400">90</span> / 90 video cảnh trám
+                Đang hiển thị <span id="filtered-count" class="font-bold text-purple-400">{len(videos)}</span> / <span id="total-clips-count">{len(videos)}</span> video cảnh trám
+            </div>
+            <div class="text-[11px] text-slate-500 flex items-center gap-1.5">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span>
+                API Xóa YouTube: <span id="api-status-badge" class="text-slate-400">Đang kết nối...</span>
             </div>
         </div>
 
@@ -363,7 +378,7 @@ html_content = f'''<!DOCTYPE html>
         <!-- EMPTY STATE -->
         <div id="empty-state" class="hidden text-center py-20 glass rounded-2xl border border-slate-800">
             <h3 class="text-lg font-bold text-slate-300">Không tìm thấy cảnh trám phù hợp</h3>
-            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Hãy thử xóa từ khóa tìm kiếm để hiển thị toàn bộ 90 video.</p>
+            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Hãy thử xóa từ khóa tìm kiếm để hiển thị toàn bộ video.</p>
             <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition">
                 Đặt lại bộ lọc
             </button>
@@ -558,15 +573,19 @@ html_content = f'''<!DOCTYPE html>
                 </div>
 
                 <!-- Modal Actions Row -->
-                <div class="flex items-center gap-2.5">
-                    <a id="modal-gdrive-btn" href="#" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2">
+                <div class="flex flex-wrap items-center gap-2.5">
+                    <a id="modal-gdrive-btn" href="#" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2 min-w-[160px]">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                        📥 Tải Video MP4 Gốc (Google Drive)
+                        📥 Tải Video Gốc (Drive)
                     </a>
                     <a id="modal-yt-btn" href="#" target="_blank" class="py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        Mở YouTube
+                        YouTube
                     </a>
+                    <button id="modal-delete-btn" onclick="openDeleteModalFromDetail()" class="py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5" title="Xóa vĩnh viễn trên YouTube & Thư viện">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                        Xóa Clip
+                    </button>
                 </div>
 
                 <!-- Info Grid -->
@@ -610,6 +629,67 @@ html_content = f'''<!DOCTYPE html>
         </div>
     </div>
 
+    <!-- MODAL XÁC NHẬN XÓA VIDEO B-ROLL -->
+    <div id="delete-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
+        <div class="glass max-w-md w-full rounded-2xl border border-red-500/40 flex flex-col overflow-hidden shadow-2xl bg-slate-900">
+            <!-- Header -->
+            <div class="p-4 sm:px-6 border-b border-slate-800 flex items-center justify-between bg-red-950/40">
+                <div class="flex items-center gap-2.5 text-red-400">
+                    <div class="w-8 h-8 rounded-lg bg-red-500/20 border border-red-500/40 flex items-center justify-center">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    </div>
+                    <h3 class="text-base font-black text-white">XÁC NHẬN XÓA VIDEO</h3>
+                </div>
+                <button onclick="closeDeleteModal()" class="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">✕</button>
+            </div>
+
+            <!-- Content -->
+            <div class="p-5 sm:p-6 space-y-4">
+                <div class="p-3.5 rounded-xl bg-slate-950 border border-slate-800 space-y-1.5 text-xs">
+                    <div class="text-slate-400">Video mục tiêu:</div>
+                    <div class="font-bold text-white text-sm" id="del-modal-title">Tiêu đề video</div>
+                    <div class="flex flex-wrap items-center gap-2 pt-1 font-mono text-[11px] text-slate-400">
+                        <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-purple-300" id="del-modal-id">ID: #0</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-red-300" id="del-modal-yt">YT: ...</span>
+                        <span class="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 truncate max-w-[200px]" id="del-modal-file">file.mp4</span>
+                    </div>
+                </div>
+
+                <!-- Warning message -->
+                <div class="p-3.5 rounded-xl bg-red-950/30 border border-red-900/50 flex items-start gap-3 text-xs text-red-200/90 leading-relaxed">
+                    <span class="text-base shrink-0">⚠️</span>
+                    <div>
+                        <strong class="text-red-300 font-bold block mb-0.5">CẢNH BÁO:</strong>
+                        Video sẽ bị <strong>xóa vĩnh viễn trên YouTube</strong> và loại bỏ khỏi kho B-Roll Bank Master.
+                    </div>
+                </div>
+
+                <!-- Status / Error message container -->
+                <div id="del-status-box" class="hidden p-3 rounded-xl text-xs space-y-1.5">
+                    <div id="del-status-text" class="font-medium"></div>
+                    <div id="del-cli-fallback" class="hidden pt-1.5 space-y-1.5">
+                        <div class="text-[11px] text-slate-400">Hoặc sao chép lệnh Terminal để chạy ngay:</div>
+                        <div class="flex items-center gap-2">
+                            <input id="del-cli-cmd" readonly class="flex-1 bg-black/50 p-2 rounded-lg border border-slate-700 font-mono text-[10px] text-purple-300 select-all" />
+                            <button onclick="copyCliCmd()" class="px-2.5 py-1.5 rounded-lg bg-purple-600 text-white text-xs font-bold shrink-0">Copy</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer buttons -->
+            <div class="p-4 sm:px-6 border-t border-slate-800 flex items-center justify-end gap-3 bg-slate-950">
+                <button onclick="closeDeleteModal()" id="del-cancel-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
+                    Hủy bỏ
+                </button>
+                <button id="del-confirm-btn" onclick="executeDeleteBroll()" class="px-5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-lg shadow-red-600/30 flex items-center gap-2 transition">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+                    <span id="del-btn-text">Xác Nhận Xóa</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <!-- TOAST -->
     <div id="toast" class="fixed bottom-6 right-6 z-50 px-4 py-2.5 rounded-xl glass border border-purple-500 text-xs font-semibold text-white shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 flex items-center gap-2">
         <span id="toast-msg">Đã sao chép!</span>
@@ -619,6 +699,25 @@ html_content = f'''<!DOCTYPE html>
     <script>
         const MASTER_DATA = {json_data_str};
         let activeCategory = 'all';
+        let currentDetailVideo = null;
+        let pendingDeleteVideo = null;
+        const API_BASE = 'http://localhost:8899';
+
+        // Check Local API Daemon Status
+        async function checkApiStatus() {{
+            const badge = document.getElementById('api-status-badge');
+            try {{
+                const res = await fetch(`${{API_BASE}}/api/status`, {{ method: 'GET', signal: AbortSignal.timeout(1500) }});
+                if (res.ok) {{
+                    badge.innerHTML = '<span class="text-emerald-400 font-semibold">Sẵn sàng (Port 8899)</span>';
+                }} else {{
+                    badge.innerHTML = '<span class="text-amber-400">Offline (Sử dụng CLI)</span>';
+                }}
+            }} catch (e) {{
+                badge.innerHTML = '<span class="text-amber-400">Offline (Sử dụng CLI)</span>';
+            }}
+        }}
+        checkApiStatus();
 
         function switchMainTab(tabId) {{
             document.getElementById('tab-content-library').classList.add('hidden');
@@ -720,6 +819,7 @@ html_content = f'''<!DOCTYPE html>
         function openModal(id) {{
             const v = MASTER_DATA.videos.find(x => x.id === id);
             if (!v) return;
+            currentDetailVideo = v;
 
             document.getElementById('modal-title').innerText = `${{v.id}}. ${{v.title}}`;
             const badge = document.getElementById('modal-category-badge');
@@ -764,7 +864,126 @@ html_content = f'''<!DOCTYPE html>
             setTimeout(() => {{
                 modal.classList.add('hidden');
                 document.getElementById('modal-player-container').innerHTML = '';
+                currentDetailVideo = null;
             }}, 300);
+        }}
+
+        // DELETE MODAL & ACTIONS
+        function openDeleteModal(id, title, ytId, filename) {{
+            pendingDeleteVideo = {{ id, title, ytId, filename }};
+            document.getElementById('del-modal-id').innerText = `ID: #${{id}}`;
+            document.getElementById('del-modal-title').innerText = title;
+            document.getElementById('del-modal-yt').innerText = `YT: ${{ytId}}`;
+            document.getElementById('del-modal-file').innerText = filename;
+
+            const statusBox = document.getElementById('del-status-box');
+            statusBox.className = 'hidden p-3 rounded-xl text-xs space-y-1.5';
+            document.getElementById('del-cli-fallback').classList.add('hidden');
+
+            const btn = document.getElementById('del-confirm-btn');
+            btn.disabled = false;
+            document.getElementById('del-btn-text').innerText = 'Xác Nhận Xóa';
+
+            const modal = document.getElementById('delete-modal');
+            modal.classList.remove('hidden');
+            setTimeout(() => modal.classList.remove('opacity-0'), 10);
+        }}
+
+        function openDeleteModalFromDetail() {{
+            if (!currentDetailVideo) return;
+            openDeleteModal(currentDetailVideo.id, currentDetailVideo.title, currentDetailVideo.video_id, currentDetailVideo.filename);
+        }}
+
+        function closeDeleteModal() {{
+            const modal = document.getElementById('delete-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {{
+                modal.classList.add('hidden');
+                pendingDeleteVideo = null;
+            }}, 300);
+        }}
+
+        async function executeDeleteBroll() {{
+            if (!pendingDeleteVideo) return;
+            const {{ id, title, ytId, filename }} = pendingDeleteVideo;
+
+            const btn = document.getElementById('del-confirm-btn');
+            const btnText = document.getElementById('del-btn-text');
+            const statusBox = document.getElementById('del-status-box');
+            const statusText = document.getElementById('del-status-text');
+            const cliFallback = document.getElementById('del-cli-fallback');
+            const cliCmd = document.getElementById('del-cli-cmd');
+
+            btn.disabled = true;
+            btnText.innerHTML = '<span class="inline-block animate-spin mr-1">⏳</span> Đang xóa trên YouTube...';
+
+            statusBox.className = 'p-3 rounded-xl text-xs bg-slate-950 border border-purple-500/40 text-purple-200 block';
+            statusText.innerText = '📡 Đang gọi YouTube API và đồng bộ cơ sở dữ liệu...';
+
+            try {{
+                const res = await fetch(`${{API_BASE}}/api/delete-broll`, {{
+                    method: 'POST',
+                    headers: {{ 'Content-Type': 'application/json' }},
+                    body: JSON.stringify({{ id, video_id: ytId, filename }}),
+                    signal: AbortSignal.timeout(20000)
+                }});
+
+                const data = await res.json();
+
+                if (res.ok && data.success) {{
+                    statusBox.className = 'p-3 rounded-xl text-xs bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 block';
+                    statusText.innerHTML = `✅ <b>Thành công!</b> Đã xóa video trên YouTube và hệ thống.`;
+                    
+                    // Remove card from UI
+                    const card = document.getElementById(`card-${{id}}`);
+                    if (card) {{
+                        card.classList.add('card-deleting');
+                        setTimeout(() => card.remove(), 400);
+                    }}
+
+                    // Update in-memory data
+                    MASTER_DATA.videos = MASTER_DATA.videos.filter(x => x.id !== id);
+                    updateCounters(MASTER_DATA.videos.length);
+
+                    showToast(`🗑️ Đã xóa video #${{id}} trên YouTube & Thư viện!`);
+
+                    setTimeout(() => {{
+                        closeDeleteModal();
+                        closeModal();
+                    }}, 1200);
+
+                }} else {{
+                    throw new Error(data.error || 'Lỗi không xác định khi xóa');
+                }}
+
+            }} catch (err) {{
+                console.error('Delete error:', err);
+                statusBox.className = 'p-3 rounded-xl text-xs bg-red-950/40 border border-red-500/40 text-red-200 block space-y-2';
+                statusText.innerHTML = `⚠️ <b>Chưa kết nối Local Daemon:</b> ${{err.message}}`;
+                
+                // Show CLI Command fallback
+                const cmdStr = `python3 "/Users/vietmac/Documents/CODE/Quản gia/delete_broll_cli.py" --id ${{id}} --yes`;
+                cliCmd.value = cmdStr;
+                cliFallback.classList.remove('hidden');
+
+                btn.disabled = false;
+                btnText.innerText = 'Thử lại';
+            }}
+        }}
+
+        function updateCounters(total) {{
+            document.getElementById('filtered-count').innerText = total;
+            document.getElementById('total-clips-count').innerText = total;
+            document.getElementById('stat-total').innerText = total;
+            document.getElementById('tab-counter').innerText = total;
+            document.getElementById('pill-all-count').innerText = total;
+            document.getElementById('top-gdrive-count').innerText = total;
+            document.getElementById('nav-counter').innerText = `${{total}} CLIPS NHÚNG YOUTUBE & DRIVE`;
+        }}
+
+        function copyCliCmd() {{
+            const cmd = document.getElementById('del-cli-cmd').value;
+            navigator.clipboard.writeText(cmd).then(() => showToast('Đã sao chép lệnh xóa Terminal!'));
         }}
 
         function copyText(txt) {{
@@ -923,4 +1142,4 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
 with open(HTML_OUT, 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print(f"Generated pre-rendered HTML with {len(videos)} inline YouTube embeds & GDrive download links: {HTML_OUT} ({len(html_content)} bytes)")
+print(f"Generated pre-rendered HTML with delete action & {len(videos)} inline YouTube embeds: {HTML_OUT} ({len(html_content)} bytes)")
