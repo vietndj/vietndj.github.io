@@ -111,20 +111,16 @@
         </div>
 
         <!-- Links -->
-        <div class="flex items-center gap-2 sm:gap-3">
-            <a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/30 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-600 hover:text-white text-xs font-bold shadow-lg transition" title="Mở bản Quản trị trực tiếp trên máy Mac (Xóa 1-click tức thì)">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-                App Local
-            </a>
-            <a href="https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
+        <div class="flex items-center gap-3">
+            <a href="https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
                 Google Drive Folder (<span id="top-gdrive-count">147</span>)
             </a>
-            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
+            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Playlist YouTube
             </a>
-            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
+            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
                 8 Loại B-Roll Fedu
             </a>
         </div>
@@ -10535,7 +10531,7 @@
                     <div class="w-8 h-8 rounded-lg bg-red-500/20 border border-red-500/40 flex items-center justify-center">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                     </div>
-                    <h3 class="text-base font-black text-white">XÁC NHẬN XÓA VIDEO</h3>
+                    <h3 class="text-base font-black text-white">XÓA VIDEO B-ROLL</h3>
                 </div>
                 <button onclick="closeDeleteModal()" class="p-1.5 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">✕</button>
             </div>
@@ -10553,26 +10549,33 @@
                 </div>
 
                 <!-- Warning message -->
-                <div class="p-3.5 rounded-xl bg-red-950/30 border border-red-900/50 flex items-start gap-3 text-xs text-red-200/90 leading-relaxed">
+                <div class="p-3 rounded-xl bg-red-950/30 border border-red-900/50 flex items-start gap-2.5 text-xs text-red-200/90 leading-relaxed">
                     <span class="text-base shrink-0">⚠️</span>
                     <div>
-                        <strong class="text-red-300 font-bold block mb-0.5">CẢNH BÁO:</strong>
                         Video sẽ bị <strong>xóa vĩnh viễn trên YouTube</strong> và loại bỏ khỏi kho B-Roll Bank Master.
                     </div>
                 </div>
 
-                <!-- Status / Error message container -->
-                <div id="del-status-box" class="hidden p-3.5 rounded-xl text-xs space-y-2.5">
-                    <div id="del-status-text" class="font-medium leading-relaxed"></div>
-                    <div id="del-cli-fallback" class="hidden space-y-2 pt-1 border-t border-red-500/20">
-                        <a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/30 transition">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
-                            Mở Bản Quản Trị Trực Tiếp (Xóa 1-Click Tức Thì)
+                <!-- 2 Action options (No background daemon needed) -->
+                <div class="space-y-3 pt-1">
+                    <!-- Option 1: Telegram Bot NOVA-CORE -->
+                    <div>
+                        <div class="text-[11px] text-blue-300 font-bold mb-1.5 flex items-center gap-1.5">
+                            <span>Cách 1: Xóa 1-Chạm qua Bot Telegram (Khuyên dùng)</span>
+                        </div>
+                        <a id="del-tele-link" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                            Mở Bot Telegram Xóa Ngay
                         </a>
-                        <div class="text-[11px] text-slate-400 pt-1">Hoặc sao chép lệnh Terminal để chạy ngay:</div>
+                        <div class="text-[10px] text-slate-500 mt-1 text-center">Tự động mở chat @nova0410_bot, bấm Gửi là xóa tức thì</div>
+                    </div>
+
+                    <!-- Option 2: CLI Command -->
+                    <div class="pt-2 border-t border-slate-800">
+                        <div class="text-[11px] text-purple-300 font-bold mb-1.5">Cách 2: Chạy Terminal CLI (1s xong tắt ngay)</div>
                         <div class="flex items-center gap-2">
-                            <input id="del-cli-cmd" readonly class="flex-1 bg-black/50 p-2 rounded-lg border border-slate-700 font-mono text-[10px] text-purple-300 select-all" />
-                            <button onclick="copyCliCmd()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold shrink-0 border border-slate-700">Copy</button>
+                            <input id="del-cli-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-xl border border-slate-700 font-mono text-[11px] text-purple-300 select-all" />
+                            <button onclick="copyCliCmd()" class="px-3.5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shrink-0 shadow-lg transition">Copy Lệnh</button>
                         </div>
                     </div>
                 </div>
@@ -10580,12 +10583,8 @@
 
             <!-- Footer buttons -->
             <div class="p-4 sm:px-6 border-t border-slate-800 flex items-center justify-end gap-3 bg-slate-950">
-                <button onclick="closeDeleteModal()" id="del-cancel-btn" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
-                    Hủy bỏ
-                </button>
-                <button id="del-confirm-btn" onclick="executeDeleteBroll()" class="px-5 py-2 rounded-xl bg-red-600 hover:bg-red-700 text-white text-xs font-bold shadow-lg shadow-red-600/30 flex items-center gap-2 transition">
-                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
-                    <span id="del-btn-text">Xác Nhận Xóa</span>
+                <button onclick="closeDeleteModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
+                    Đóng
                 </button>
             </div>
         </div>
@@ -10602,37 +10601,6 @@
         let activeCategory = 'all';
         let currentDetailVideo = null;
         let pendingDeleteVideo = null;
-        let API_BASE = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') ? '' : 'http://127.0.0.1:8899';
-        const CANDIDATE_ENDPOINTS = [
-            (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') ? '' : 'http://127.0.0.1:8899',
-            'http://127.0.0.1:8899',
-            'http://localhost:8899'
-        ].filter(Boolean);
-
-        // Check Local API Daemon Status
-        async function checkApiStatus() {
-            const badge = document.getElementById('api-status-badge');
-            if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
-                badge.innerHTML = '<span class="text-emerald-400 font-semibold">🟢 Local App Sẵn Sàng (Port 8899)</span>';
-                return;
-            }
-            for (const ep of CANDIDATE_ENDPOINTS) {
-                try {
-                    const res = await fetch(`${ep}/api/status`, { method: 'GET', signal: AbortSignal.timeout(1200) });
-                    if (res.ok) {
-                        API_BASE = ep;
-                        badge.innerHTML = '<span class="text-emerald-400 font-semibold">🟢 Sẵn sàng (Port 8899)</span>';
-                        return;
-                    }
-                } catch (e) {}
-            }
-            if (window.location.protocol === 'https:') {
-                badge.innerHTML = '<a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="text-amber-300 hover:text-white font-semibold underline">⚠️ Mở Bản Local Để Xóa 1-Click</a>';
-            } else {
-                badge.innerHTML = '<span class="text-amber-400">Offline (Sử dụng CLI)</span>';
-            }
-        }
-        checkApiStatus();
 
         function switchMainTab(tabId) {
             document.getElementById('tab-content-library').classList.add('hidden');
@@ -10783,7 +10751,7 @@
             }, 300);
         }
 
-        // DELETE MODAL & ACTIONS
+        // DELETE MODAL ACTIONS (Zero Daemon Required)
         function openDeleteModal(id) {
             const v = MASTER_DATA.videos.find(x => x.id === id);
             if (!v) return;
@@ -10793,13 +10761,11 @@
             document.getElementById('del-modal-yt').innerText = `YT: ${v.video_id || 'N/A'}`;
             document.getElementById('del-modal-file').innerText = v.filename;
 
-            const statusBox = document.getElementById('del-status-box');
-            statusBox.className = 'hidden p-3 rounded-xl text-xs space-y-1.5';
-            document.getElementById('del-cli-fallback').classList.add('hidden');
+            // Option 1: Telegram Link (NOVA-CORE Bot)
+            document.getElementById('del-tele-link').href = `https://t.me/nova0410_bot?text=/xoa_broll%20${v.id}`;
 
-            const btn = document.getElementById('del-confirm-btn');
-            btn.disabled = false;
-            document.getElementById('del-btn-text').innerText = 'Xác Nhận Xóa';
+            // Option 2: CLI Command
+            document.getElementById('del-cli-cmd').value = `xoa-broll ${v.id}`;
 
             const modal = document.getElementById('delete-modal');
             modal.classList.remove('hidden');
@@ -10820,84 +10786,11 @@
             }, 300);
         }
 
-        async function executeDeleteBroll() {
-            if (!pendingDeleteVideo) return;
-            const id = pendingDeleteVideo.id;
-            const ytId = pendingDeleteVideo.video_id;
-            const filename = pendingDeleteVideo.filename;
-
-            const btn = document.getElementById('del-confirm-btn');
-            const btnText = document.getElementById('del-btn-text');
-            const statusBox = document.getElementById('del-status-box');
-            const statusText = document.getElementById('del-status-text');
-            const cliFallback = document.getElementById('del-cli-fallback');
-            const cliCmd = document.getElementById('del-cli-cmd');
-
-            btn.disabled = true;
-            btnText.innerHTML = '<span class="inline-block animate-spin mr-1">⏳</span> Đang xóa trên YouTube...';
-
-            statusBox.className = 'p-3.5 rounded-xl text-xs bg-slate-950 border border-purple-500/40 text-purple-200 block space-y-2.5';
-            statusText.innerText = '📡 Đang gọi YouTube API và đồng bộ cơ sở dữ liệu...';
-
-            const endpointsToTry = API_BASE ? [API_BASE, 'http://127.0.0.1:8899', 'http://localhost:8899'] : ['', 'http://127.0.0.1:8899', 'http://localhost:8899'];
-            let deletedOk = false;
-            let lastErr = null;
-
-            for (const ep of endpointsToTry) {
-                try {
-                    const url = ep ? `${ep}/api/delete-broll` : '/api/delete-broll';
-                    const res = await fetch(url, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ id, video_id: ytId, filename }),
-                        signal: AbortSignal.timeout(20000)
-                    });
-
-                    const data = await res.json();
-                    if (res.ok && data.success) {
-                        API_BASE = ep;
-                        deletedOk = true;
-                        statusBox.className = 'p-3.5 rounded-xl text-xs bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 block';
-                        statusText.innerHTML = `✅ <b>Thành công!</b> Đã xóa video trên YouTube và hệ thống.`;
-                        
-                        const card = document.getElementById(`card-${id}`);
-                        if (card) {
-                            card.classList.add('card-deleting');
-                            setTimeout(() => card.remove(), 400);
-                        }
-
-                        MASTER_DATA.videos = MASTER_DATA.videos.filter(x => x.id !== id);
-                        updateCounters(MASTER_DATA.videos.length);
-                        showToast(`🗑️ Đã xóa video #${id} trên YouTube & Thư viện!`);
-
-                        setTimeout(() => {
-                            closeDeleteModal();
-                            closeModal();
-                        }, 1200);
-                        break;
-                    } else {
-                        lastErr = data.error || 'Lỗi từ server';
-                    }
-                } catch (e) {
-                    lastErr = e.message;
-                }
-            }
-
-            if (!deletedOk) {
-                statusBox.className = 'p-3.5 rounded-xl text-xs bg-red-950/40 border border-red-500/40 text-red-200 block space-y-2.5';
-                if (window.location.protocol === 'https:') {
-                    statusText.innerHTML = `⚠️ <b>Trình duyệt chặn kết nối từ HTTPS sang Local HTTP (Mixed Content).</b><br>Để xóa 1-click tức thì, anh mở <b>Bản Quản Trị Trực Tiếp</b> trên máy nhé:`;
-                } else {
-                    statusText.innerHTML = `⚠️ <b>Chưa kết nối Local Daemon:</b> ${lastErr}`;
-                }
-
-                const cmdStr = `python3 "/Users/vietmac/Documents/CODE/Quản gia/delete_broll_cli.py" --id ${id} --yes`;
-                cliCmd.value = cmdStr;
-                cliFallback.classList.remove('hidden');
-
-                btn.disabled = false;
-                btnText.innerText = 'Thử lại';
-            }
+        function copyCliCmd() {
+            const cmd = document.getElementById('del-cli-cmd').value;
+            navigator.clipboard.writeText(cmd).then(() => {
+                showToast('Đã sao chép: ' + cmd);
+            });
         }
 
         function updateCounters(total) {
