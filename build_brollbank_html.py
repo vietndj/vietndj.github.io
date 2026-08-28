@@ -87,7 +87,7 @@ def render_card_html(v):
                         <button onclick="openModal({v['id']})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold transition flex items-center gap-1">
                             Chi tiết
                         </button>
-                        <button onclick="openDeleteModal({v['id']}, '{escaped_title}', '{yt_id}', '{v['filename']}')" class="px-2 py-1 rounded-lg bg-red-600/10 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/20 text-[11px] font-semibold transition flex items-center gap-1" title="Xóa video khỏi YouTube & Thư viện">
+                        <button onclick="openDeleteModal({v['id']})" class="px-2 py-1 rounded-lg bg-red-600/10 hover:bg-red-600 text-red-400 hover:text-white border border-red-500/20 text-[11px] font-semibold transition flex items-center gap-1" title="Xóa video khỏi YouTube & Thư viện">
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
                             Xóa
                         </button>
@@ -869,12 +869,14 @@ html_content = f'''<!DOCTYPE html>
         }}
 
         // DELETE MODAL & ACTIONS
-        function openDeleteModal(id, title, ytId, filename) {{
-            pendingDeleteVideo = {{ id, title, ytId, filename }};
-            document.getElementById('del-modal-id').innerText = `ID: #${{id}}`;
-            document.getElementById('del-modal-title').innerText = title;
-            document.getElementById('del-modal-yt').innerText = `YT: ${{ytId}}`;
-            document.getElementById('del-modal-file').innerText = filename;
+        function openDeleteModal(id) {{
+            const v = MASTER_DATA.videos.find(x => x.id === id);
+            if (!v) return;
+            pendingDeleteVideo = v;
+            document.getElementById('del-modal-id').innerText = `ID: #${{v.id}}`;
+            document.getElementById('del-modal-title').innerText = v.title;
+            document.getElementById('del-modal-yt').innerText = `YT: ${{v.video_id || 'N/A'}}`;
+            document.getElementById('del-modal-file').innerText = v.filename;
 
             const statusBox = document.getElementById('del-status-box');
             statusBox.className = 'hidden p-3 rounded-xl text-xs space-y-1.5';
@@ -891,7 +893,7 @@ html_content = f'''<!DOCTYPE html>
 
         function openDeleteModalFromDetail() {{
             if (!currentDetailVideo) return;
-            openDeleteModal(currentDetailVideo.id, currentDetailVideo.title, currentDetailVideo.video_id, currentDetailVideo.filename);
+            openDeleteModal(currentDetailVideo.id);
         }}
 
         function closeDeleteModal() {{
@@ -905,7 +907,9 @@ html_content = f'''<!DOCTYPE html>
 
         async function executeDeleteBroll() {{
             if (!pendingDeleteVideo) return;
-            const {{ id, title, ytId, filename }} = pendingDeleteVideo;
+            const id = pendingDeleteVideo.id;
+            const ytId = pendingDeleteVideo.video_id;
+            const filename = pendingDeleteVideo.filename;
 
             const btn = document.getElementById('del-confirm-btn');
             const btnText = document.getElementById('del-btn-text');
@@ -1130,8 +1134,8 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
         function copyStoryboardShotlist() {{
             if (!window.latestStoryboard) return;
             const text = window.latestStoryboard.map(b => 
-                `BEAT ${{b.beat}}: "${{b.sentence}}"\n  -> B-ROLL: [${{b.video.category_name}}] ${{b.video.title}}\n  -> FILE: ${{b.video.filename}} (${{b.video.duration}})\n  -> GÓC MÁY: ${{b.video.shot_type}} | BỐI CẢNH: ${{b.video.location}}\n  -> LINK DEMO: https://www.youtube.com/watch?v=${{b.video.video_id}}\n`
-            ).join('\n');
+                `BEAT ${{b.beat}}: "${{b.sentence}}"\\n  -> B-ROLL: [${{b.video.category_name}}] ${{b.video.title}}\\n  -> FILE: ${{b.video.filename}} (${{b.video.duration}})\\n  -> GÓC MÁY: ${{b.video.shot_type}} | BỐI CẢNH: ${{b.video.location}}\\n  -> LINK DEMO: https://www.youtube.com/watch?v=${{b.video.video_id}}\\n`
+            ).join(String.fromCharCode(10));
             navigator.clipboard.writeText(text).then(() => showToast('Đã sao chép toàn bộ Shotlist phân cảnh B-Roll!'));
         }}
     </script>
