@@ -169,6 +169,20 @@ for i, f in enumerate(all_filenames):
             "Một tâm trí tĩnh lặng giữa thiên nhiên sẽ đưa ra những quyết định sáng suốt nhất."
         ]
         keywords = ["thiên nhiên", "cây xanh", "zen", "tĩnh lặng", "nghỉ ngơi", "times city", "xanh mát", "tái tạo"]
+    elif "loa phong cách" in fn_lower or "cuối tuần" in fn_lower or "loa phong cách" in fn_lower or "cuối tuần" in fn_lower:
+        cat_id = "in_situ"
+        title_vi = "Thoại In-Situ - Review Loa Bluetooth Hài Hước & Phản Ứng Tự Nhiên"
+        shot_type = "Medium Close-Up (MCU) / 9:16 Dọc"
+        location = "Studio Sáng Tạo / Không Gian Thoáng"
+        action = "Anh Việt ngồi cạnh bàn tròn, cầm loa Bluetooth mini bật nguồn nghe âm báo 'Páo-ờ-on' với biểu cảm hài hước sinh động"
+        mood = "Hài hước / Gần gũi / Đời thường / Thực chiến Review"
+        director_note = "Shot In-situ thoại thực tế phong cách mộc mạc, phá vỡ sự khô cứng của bài review công nghệ thông thường bằng phản ứng chân thực và biểu cảm hài hước, tạo điểm giữ chân (hook retention) xuất sắc ở 3s đầu."
+        cues = [
+            "Cuối tuần mình chỉ bạn cách quay video review sản phẩm phong cách mới...",
+            "Đừng đọc thông số khô cứng, hãy để biểu cảm và âm thanh thực tế tự nói lên câu chuyện...",
+            "Khi sản phẩm phát ra âm thanh khó đỡ, chính phản ứng bất ngờ tự nhiên của bạn là điểm ăn tiền nhất của video!"
+        ]
+        keywords = ["review loa", "in-situ", "thoại đời thường", "hài hước", "biểu cảm tự nhiên", "páo-ờ-on", "review sản phẩm", "fedu broll"]
     else:
         cat_id = "cutaway"
         title_vi = f"B-Roll: {f.replace('.mp4', '')}"
