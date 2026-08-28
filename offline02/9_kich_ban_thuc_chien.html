@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9 Kịch Bản Thực Chiến 3 Tầng Sự Thật - Bối Cảnh Lớp Học Offline (Style Trà Đá)</title>
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: #131C2E;
+      --card-inner: #1A263D;
+      --card-border: #233554;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --accent: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.12);
+      --badge-bg: #0369A1;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --success: #10B981;
+      --highlight: #FDE047;
+      --table-header: #0F172A;
+      --table-hover: #1E2D48;
+      --aroll-badge: #10B981;
+      --broll-badge: #F59E0B;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 24px 16px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 24px;
+      margin-bottom: 28px;
+    }
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+    .header-badge {
+      display: inline-block;
+      background: var(--accent-glow);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      padding: 4px 14px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .header-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+    }
+    
+    /* Navigation Bar */
+    .nav-bar {
+      position: sticky;
+      top: 12px;
+      z-index: 100;
+      background: rgba(19, 28, 46, 0.95);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-bottom: 32px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    }
+    .nav-bar::-webkit-scrollbar {
+      height: 4px;
+    }
+    .nav-bar::-webkit-scrollbar-thumb {
+      background: var(--card-border);
+      border-radius: 4px;
+    }
+    .nav-btn {
+      white-space: nowrap;
+      background: #1A263D;
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .nav-btn:hover, .nav-btn.active {
+      background: var(--accent);
+      color: #0B0F19;
+      border-color: var(--accent);
+    }
+
+    /* Logic Box */
+    .logic-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-left: 4px solid var(--accent);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 36px;
+    }
+    .logic-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .logic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
+    }
+    .logic-card {
+      background: var(--card-inner);
+      padding: 14px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--card-border);
+    }
+    .logic-card strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    .logic-card.c1 strong { color: var(--danger); }
+    .logic-card.c2 strong { color: var(--warning); }
+    .logic-card.c3 strong { color: var(--success); }
+    .logic-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Script Section */
+    .script-section {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 24px;
+      margin-bottom: 36px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      scroll-margin-top: 80px;
+    }
+    .script-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 16px;
+    }
+    .script-title-box {
+      flex: 1;
+      min-width: 280px;
+    }
+    .script-id {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 4px;
+    }
+    .script-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 4px;
+    }
+    .script-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .copy-btn {
+      background: #1E293B;
+      color: #F8FAFC;
+      border: 1px solid var(--accent);
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--accent);
+      color: #0B0F19;
+    }
+
+    /* 3 Tiers Box */
+    .tiers-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .tier-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      padding: 12px 14px;
+    }
+    .tier-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .tier-badge.t1 { background: rgba(239, 68, 68, 0.2); color: #F87171; border: 1px solid #EF4444; }
+    .tier-badge.t2 { background: rgba(245, 158, 11, 0.2); color: #FBBF24; border: 1px solid #F59E0B; }
+    .tier-badge.t3 { background: rgba(16, 185, 129, 0.2); color: #34D399; border: 1px solid #10B981; }
+    .tier-content {
+      font-size: 13px;
+      color: #E2E8F0;
+      line-height: 1.5;
+    }
+
+    /* Shot Table */
+    .table-wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      margin-bottom: 16px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      min-width: 600px;
+    }
+    th, td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--card-border);
+      vertical-align: top;
+    }
+    th {
+      background-color: var(--table-header);
+      color: var(--text-muted);
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    tr:hover {
+      background-color: var(--table-hover);
+    }
+    .col-time {
+      width: 80px;
+      font-weight: 700;
+      color: var(--accent);
+      font-size: 12px;
+      white-space: nowrap;
+    }
+    .col-shot {
+      width: 230px;
+    }
+    .shot-badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 800;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+    }
+    .badge-aroll { background: var(--aroll-badge); color: #000; }
+    .badge-broll { background: var(--broll-badge); color: #000; }
+    .shot-visual {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .col-voice {
+      color: #F8FAFC;
+    }
+    .voice-text {
+      color: var(--highlight);
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .takeaway-box {
+      background: rgba(56, 189, 248, 0.08);
+      border: 1px dashed var(--accent);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 13px;
+      color: #BAE6FD;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      padding-top: 24px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 16px 12px; }
+      .script-section { padding: 16px; }
+      h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- HEADER -->
+    <header>
+      <div class="header-top">
+        <span class="header-badge">KỊCH BẢN THỰC CHIẾN 2026 • LỚP OFFLINE</span>
+        <span class="header-meta">Mentor: Nguyễn Đức Việt • Hotline: 0934.688.632</span>
+      </div>
+      <h1>9 Mẫu Kịch Bản Thoại Gọn • Style Trà Đá Thực Chiến</h1>
+      <p class="subtitle">Thoại băm nhỏ 5-12 từ, nhịp nói tự nhiên như đời thường, dễ dàng ghép A-Roll mặt thật và B-Roll bối cảnh lớp học.</p>
+    </header>
+
+    <!-- LOGIC EXPLANATION -->
+    <div class="logic-box">
+      <div class="logic-title">💡 BẢN ĐỒ TƯ DUY 3 TẦNG BÓC SỰ THẬT (CHUẨN VĂN NÓI ĐỜI THƯỜNG)</div>
+      <div class="logic-grid">
+        <div class="logic-card c1">
+          <strong>❌ TẦNG 1 • NÓI ĐÃI BÔI</strong>
+          <p>Lý do xã giao ngoài miệng, an toàn, chuẩn mực. Người xem lướt qua sau 3 giây.</p>
+        </div>
+        <div class="logic-card c2">
+          <strong>⚠️ TẦNG 2 • CẢM GIÁC THẬT</strong>
+          <p>Cảm giác sốt ruột, bất an mắt thấy tai nghe. Người xem thấy quen và bắt đầu gật gù.</p>
+        </div>
+        <div class="logic-card c3">
+          <strong>✅ TẦNG 3 • SỰ THẬT NGƯỢNG MIỆNG</strong>
+          <p>Áp lực cơm áo gạo tiền, chạm đáy nỗi đau sinh tồn. Điểm giữ chân và tạo hành động thực tế.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK NAV -->
+    <div class="nav-bar">
+      <a href="#kb01" class="nav-btn">01. Ngồi Cafe Đêm</a>
+      <a href="#kb02" class="nav-btn">02. Tiền Mặt Bằng</a>
+      <a href="#kb03" class="nav-btn">03. Chững Sau 30</a>
+      <a href="#kb04" class="nav-btn">04. Tiền Quảng Cáo</a>
+      <a href="#kb05" class="nav-btn">05. Hết Khách Quen</a>
+      <a href="#kb06" class="nav-btn">06. Giỏi Nghề Vắng Khách</a>
+      <a href="#kb07" class="nav-btn">07. Cạnh Tranh Tổng Kho</a>
+      <a href="#kb08" class="nav-btn">08. Bắt Đầu Lại Từ 0</a>
+      <a href="#kb09" class="nav-btn">09. Bị So Sánh Giá</a>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 01 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb01">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 01 • LÀM VIỆC ĐÊM & BẾ TẮC</div>
+          <h2 class="script-title">Ngồi Cà Phê 10h Tối</h2>
+          <p class="script-desc">Bối cảnh: Góc bàn cafe / Bàn học đêm • Chạm vào: Áp lực FOMO & Kiệt sức cày cuốc</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-01')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Ra cà phê đêm đổi gió cho dễ tập trung làm việc."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Ở nhà nằm một chỗ thấy tội lỗi, ra quán ngồi ngáp vặt cũng đỡ cắn rứt."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Mệt lả người rồi nhưng không dám nghỉ, sợ dừng lại một cái là bạn bè nó vượt mặt hết."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-01">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie)</span>
+                <div class="shot-visual">Cầm máy selfie lia góc quán cafe đêm, cười trừ tự sự.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"10h đêm rồi... ngồi đây không phải vì chăm đâu anh em ạ."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Đặt máy xuống bàn cafe, mặt trầm lại kể chuyện.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Ở nhà nằm lướt điện thoại thì thấy tội lỗi, ra đây nhìn vào máy tính cho đỡ bất an."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Cận xoa trán)</span>
+                <div class="shot-visual">Bàn tay xoa trán mệt mỏi, màn hình laptop sáng giữa phòng.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Thấy bạn bè kiếm tiền kinh quá, mình mệt lả rồi mà không dám ngủ."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc nghiêng kính)</span>
+                <div class="shot-visual">Nhìn ra ngoài cửa kính đêm đầy suy tư.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Sợ chỉ cần dừng lại một ngày là bị bỏ lại phía sau."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói chắc nịch.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nhiều khi cày đêm chẳng phải để giàu lên, mà chỉ để bớt sợ thôi!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Nói trúng thói quen "cố tỏ ra bận rộn" để xoa dịu nỗi bất an tụt hậu.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 02 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb02">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 02 • CHỦ SHOP & MỞ TIỆM</div>
+          <h2 class="script-title">Tiền Mặt Bằng & Cửa Hàng Vắng Khách</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Bàn làm việc • Chạm vào: Áp lực chi phí mặt bằng & vắng khách</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-02')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Đi học thêm kỹ năng mới để nâng cấp cửa hàng."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Ngồi ở quán cả ngày ngáp vặt sốt ruột quá, mở app ra chỉ thấy tin trừ tiền."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Mỗi tháng mất đứt hai chục củ tiền nhà. Khách ở trên mạng hết rồi, mình cứ ngồi ôm cái quán thì có mà ăn cám."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-02">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie)</span>
+                <div class="shot-visual">Cầm máy selfie lia nhẹ lớp học, cười trừ tự giễu.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nhiều ông bảo: Quán đang ế, đi học làm gì?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Đặt máy xuống bàn, tay mở sổ, nói thẳng thừng.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Thế ngồi ở quán... chủ nhà có bớt tiền cho không?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Lướt đt & Gạch sổ)</span>
+                <div class="shot-visual">Màn hình app doanh thu vắng tanh ➔ Tay gạch số trên sổ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tháng nào cũng ném 20 củ tiền nhà ra cửa sổ mà khách vắng tanh."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc cửa sổ)</span>
+                <div class="shot-visual">Ngồi tựa cằm nhìn ra cửa sổ phòng học đăm chiêu.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Khách ở trên mạng, mình cứ ngồi canh cái cửa thì chờ chết!"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói chắc nịch, gật đầu dứt khoát.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Bỏ cái tôi đi. Học xong về tự quay lấy mà kéo khách!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Đập tan cái cớ ôm quán ngồi chờ chết, thức tỉnh việc phải tự làm video kéo khách.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 03 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb03">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 03 • NGƯỜI LÀM VĂN PHÒNG</div>
+          <h2 class="script-title">Chững Lại Sau Tuổi 30</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Laptop • Chạm vào: Khủng hoảng tuổi 30 & Sợ tụt hậu</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-03')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Tuổi này đi học thêm cho biết công nghệ mới."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Lương chục năm nay đứng yên, chi phí thì tăng chóng mặt."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Ngại nhất là ngồi học chung với mấy bạn trẻ. Nhưng không học thì vài năm nữa ai thuê mình?"</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-03">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie)</span>
+                <div class="shot-visual">Cầm máy selfie trong lớp, cười nhẹ nói chân thành.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Hơn 30 tuổi rồi, ngồi học lại từ đầu kể cũng hơi ngại..."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Hạ máy xuống bàn gõ phím laptop, nét mặt suy tư.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nhưng không học thì công việc chục năm nay đang chững lại rồi."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Chống cằm nhìn máy)</span>
+                <div class="shot-visual">Tay chống cằm nhìn màn hình, thở dài nhẹ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Lương thì đứng yên, mà chi phí nuôi gia đình thì tăng từng ngày."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Lia sổ tay)</span>
+                <div class="shot-visual">Lia máy từ lớp học về cuốn sổ ghi chép.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tụi trẻ nó bắt trend nhanh quá, mình cứ bảo thủ thì vài năm nữa ai thuê?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói quyết tâm.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Dẹp cái tự ái đi. Còn sức thì còn phải học để tự nuôi thân!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Dũng cảm thừa nhận sự chững lại tuổi 30 để tạo đồng cảm sâu sắc.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 04 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb04">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 04 • BÁN HÀNG ONLINE</div>
+          <h2 class="script-title">Tiền Quảng Cáo Ăn Hết Tiền Lãi</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Điện thoại • Chạm vào: Bế tắc vì phụ thuộc chạy Ads</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-04')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Đi học để tối ưu chi phí tiếp thị đa kênh."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Cứ 5 phút lại mở app xem ads, tiền trừ đều như vắt chanh mà không thấy tin nhắn khách đâu."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Ngày xưa ăn may nhờ ads rẻ. Giờ ads đắt cắn nát tiền lãi, không tự quay video thì phá sản sớm."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-04">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie bật tắt màn hình)</span>
+                <div class="shot-visual">Bấm sáng màn hình điện thoại rồi nhìn máy nói.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Cứ 5 phút lại mở app ads một lần... thót hết cả tim!"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Đặt máy xuống bàn, mặt chán ngán kể thật.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tiền cắn thì nhanh, mà tin nhắn khách thì vắng ngắt."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Cận màn hình app ads)</span>
+                <div class="shot-visual">Cận cảnh ngón tay lướt bảng số liệu chi phí ads đỏ lòm.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Bao nhiêu tiền lãi nạp hết cho Facebook với TikTok rồi còn đâu."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc nghiêng bài giảng)</span>
+                <div class="shot-visual">Nhìn lên bài giảng cách làm video tự nhiên, đăm chiêu.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Cứ ỷ lại vào nạp tiền chạy ads thì sớm muộn cũng sạch vốn."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói dứt khoát.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tự vác mặt lên làm video cho khách tin. Hết thời trả tiền mua số rồi!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Bóc trần sự phụ thuộc đốt tiền vào quảng cáo để hướng tới tự làm nội dung.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 05 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb05">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 05 • LÀM TỰ DO & TƯ VẤN</div>
+          <h2 class="script-title">Hết Khách Từ Mối Quan Hệ Quen</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Danh bạ Zalo • Chạm vào: Cạn nguồn khách giới thiệu</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-05')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Đi học để mở rộng tệp khách hàng tiềm năng."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Mở Zalo định nhờ người quen giới thiệu mà ngượng mồm, sợ người ta nghĩ mình ế việc."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Trước giờ sống dựa vào người quen. Giờ mối cạn rồi, không tự đi tìm khách lạ thì tháng sau nhịn đói."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-05">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie lướt Zalo)</span>
+                <div class="shot-visual">Lướt danh bạ Zalo rồi dừng lại, nhìn máy nói.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Định nhắn tin nhờ người quen giới thiệu khách... xong lại ngại."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Úp điện thoại xuống bàn học, thở dài nhẹ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Sợ người ta nghĩ mình dạo này ế việc đi nhờ vả."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Lật sổ trắng)</span>
+                <div class="shot-visual">Lật sang trang sổ trắng tinh chưa có lịch hẹn nào.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Trước giờ toàn sống nhờ mối quen, giờ cạn mối mới thấy bấp bênh."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc nghiêng máy chiếu)</span>
+                <div class="shot-visual">Nhìn lên màn hình máy chiếu phòng học tập trung.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Không tiếp cận được khách lạ trên mạng thì tháng sau nhịn đói."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói chắc nịch.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tự lên mạng làm video mà kiếm khách, khỏi phải đi nhờ vả ai!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Bóc trần sự thụ động khi chỉ sống nhờ mối quan hệ quen.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 06 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb06">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 06 • THỢ & NGHỀ KỸ THUẬT</div>
+          <h2 class="script-title">Tay Nghề Tốt Nhưng Vẫn Vắng Khách</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Sách kỹ thuật • Chạm vào: Tự ái của người làm nghề</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-06')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Hữu xạ tự nhiên hương, tay nghề chuẩn thì khách tự tìm đến."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Nhìn mấy đứa tay nghề bình thường mà lên mạng nói hay khách nườm nượp, cay mũi lắm chứ."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Cứ ôm cái tự ái chê người ta làm màu, sự thật là mình vừa lười vừa sợ xuất hiện."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-06">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie)</span>
+                <div class="shot-visual">Cầm máy chỉ vào cuốn sổ kỹ thuật, cười tự tin.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Làm nghề chục năm nay, tay nghề mình chẳng thua ai..."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Hạ máy xuống bàn, cười nửa miệng nói thẳng.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"...Nhưng nhìn đứa khác làm nghề bình thường mà đông nghẹt khách, thấy cay thật!"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Lướt video triệu view)</span>
+                <div class="shot-visual">Màn hình điện thoại mở video đối thủ triệu view.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Người ta biết quay video chia sẻ, còn mình cứ ngồi ôm cái xưởng chê người ta làm màu."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Ghi sổ đăm chiêu)</span>
+                <div class="shot-visual">Cúi xuống ghi chép sổ bài tập, ánh mắt nghiêm túc.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Làm giỏi mà giấu như mèo giấu thì ai mà biết?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng máy nói dứt khoát.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Dẹp cái tự ái đi. Tay nghề tốt thì vác máy lên quay cho khách thấy!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Đập tan tự ái của thợ nghề: làm giỏi mà không truyền thông thì tự đánh mất khách.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 07 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb07">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 07 • ĐẠI LÝ BÁN LẺ</div>
+          <h2 class="script-title">Bị Cạnh Tranh Bởi Tổng Kho & Giá Gốc</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Livestream • Chạm vào: Nguy cơ mất đất sống của trung gian</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-07')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Xây dựng kênh để tăng độ nhận diện thương hiệu."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Tổng kho với xưởng tự lên livestream bán giá gốc, mình nhập về bán kiểu gì nổi?"</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Thời ăn chênh lệch giá chết rồi. Không xây dựng được uy tín cá nhân để người ta tin mình thì sập tiệm."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-07">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie mở livestream)</span>
+                <div class="shot-visual">Cầm máy mở livestream tổng kho xả hàng, nói thật lòng.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tổng kho giờ nó lên livestream bán rẻ như cho thế này..."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Hạ máy xuống bàn, mặt trầm ngâm chia sẻ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"...Thì đại lý nhập về ăn chênh lệch giá sống bằng niềm tin à?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Ghi 'Uy tín cá nhân')</span>
+                <div class="shot-visual">Bàn tay ghi dòng chữ 'Uy tín cá nhân' vào vở.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Khách bấm một nút là mua tận xưởng, đua giảm giá chỉ có tự sát."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc nghiêng lớp học)</span>
+                <div class="shot-visual">Nhìn ra không gian lớp học suy ngẫm.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Giờ người ta mua vì tin người bán, chứ không phải vì cái giá rẻ nữa."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói điềm đạm.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tự xây kênh, lấy sự am hiểu mà giữ khách. Hết thời buôn nước bọt rồi!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Nhấn mạnh việc xây dựng uy tín cá nhân khi bán lẻ bị tổng kho cạnh tranh.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 08 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb08">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 08 • CHUYỂN NGHỀ & LÀM LẠI</div>
+          <h2 class="script-title">Bắt Đầu Lại Từ Con Số 0</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Sổ mới • Chạm vào: Nỗi bất an tài chính & sợ bàn tán</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-08')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Dám bước ra khỏi vùng an toàn để làm cái mới."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Tiền tiết kiệm vơi dần mà chưa đâu vào đâu, đến đăng bài cũng không dám vì sợ người quen xì xào."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Sợ nhất là làm thất bại thì không biết giấu mặt vào đâu."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-08">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie mở sổ mới)</span>
+                <div class="shot-visual">Cầm máy mở cuốn sổ mới tinh, nói thẳng thắn.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nghỉ việc cũ ra làm cái mới... nói thật là run vãi đạn!"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Đặt máy, uống ngụm nước, mắt lo âu.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Tiền tiết kiệm thì vơi dần, đăng bài cũng không dám vì sợ bạn bè xì xào."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Gạch chân 'Kênh mới')</span>
+                <div class="shot-visual">Bút gạch chân dòng chữ 'Bắt đầu kênh mới' trong sổ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nhưng cứ sợ người ta đánh giá thì tiền nhà ai trả cho mình?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Góc nghiêng ánh mắt)</span>
+                <div class="shot-visual">Nhìn lên bảng giảng bài, ánh mắt dứt khoát hơn.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Ngồi loay hoay nghĩ ngợi không đẻ ra tiền được."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói quyết liệt.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Đã chọn làm lại thì mặt phải dày lên. Cầm máy lên quay thôi!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Phơi bày nỗi bất an tài chính và sự e ngại ánh nhìn khi bắt đầu lại.
+      </div>
+    </section>
+
+    <!-- ============================================================== -->
+    <!-- KỊCH BẢN 09 -->
+    <!-- ============================================================== -->
+    <section class="script-section" id="kb09">
+      <div class="script-header">
+        <div class="script-title-box">
+          <div class="script-id">KỊCH BẢN 09 • SẢN PHẨM LÀM KỸ</div>
+          <h2 class="script-title">Hàng Làm Kỹ Nhưng Bị So Sánh Giá</h2>
+          <p class="script-desc">Bối cảnh: Phòng học / Mẫu sản phẩm • Chạm vào: Mâu thuẫn giữa chất lượng & giá rẻ</p>
+        </div>
+        <button class="copy-btn" onclick="copyText('voice-09')">📋 Copy Lời Thoại</button>
+      </div>
+
+      <div class="tiers-container">
+        <div class="tier-item">
+          <span class="tier-badge t1">Tầng 1: Đãi bôi</span>
+          <p class="tier-content">"Chỉ bán hàng chất lượng, nguồn gốc chuẩn chỉ."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t2">Tầng 2: Cảm giác thật</span>
+          <p class="tier-content">"Cứ báo giá là khách im lặng hoặc kêu đắt, so với hàng trôi nổi bực cả mình."</p>
+        </div>
+        <div class="tier-item">
+          <span class="tier-badge t3">Tầng 3: Ngượng miệng</span>
+          <p class="tier-content">"Khách chê đắt vì mình chỉ biết báo giá chứ không biết quay video cho người ta thấy công mình làm kỹ thế nào."</p>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th class="col-time">Thời gian</th>
+              <th class="col-shot">Cảnh quay (A-Roll / B-Roll)</th>
+              <th class="col-voice">Lời thoại băm nhỏ (Style Trà Đá)</th>
+            </tr>
+          </thead>
+          <tbody id="voice-09">
+            <tr>
+              <td class="col-time">00:00 - 00:03</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 1 (Selfie xoay sản phẩm)</span>
+                <div class="shot-visual">Cầm máy xoay nhẹ sản phẩm mẫu trên tay.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Làm kỹ từng đường kim mũi chỉ, chọn nguyên liệu xịn..."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:03 - 00:07</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 2 (Tại bàn)</span>
+                <div class="shot-visual">Đặt máy xuống bàn, thở dài kể khổ.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"...Thế mà cứ báo giá là khách kêu đắt, so với hàng chợ."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:07 - 00:12</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 1 (Màn hình tin nhắn im lặng)</span>
+                <div class="shot-visual">Màn hình điện thoại hiển thị tin nhắn khách xem xong không trả lời.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Nhiều lúc bực, nhưng nghĩ lại khách chê đắt là do lỗi của mình."</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:12 - 00:16</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-broll">B-Roll 2 (Xem bài giảng quy trình)</span>
+                <div class="shot-visual">Nhìn lên bài giảng cách quay video quy trình sản phẩm.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Mình chỉ biết báo giá, chứ có cho người ta thấy mình làm vất vả thế nào đâu?"</span></td>
+            </tr>
+            <tr>
+              <td class="col-time">00:16 - 00:20</td>
+              <td class="col-shot">
+                <span class="shot-badge badge-aroll">A-Roll 3 (Trực diện chốt)</span>
+                <div class="shot-visual">Nhìn thẳng camera nói chân thành, dứt khoát.</div>
+              </td>
+              <td class="col-voice"><span class="voice-text">"Thôi khỏi giải thích nhiều. Cầm máy quay từng công đoạn thật lên cho khách tự nhìn!"</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="takeaway-box">
+        💡 <strong>Điểm mấu chốt:</strong> Biến sự bức xúc khi bị so sánh giá thành hành động quay video chứng minh quy trình làm thật.
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <p>© 2026 Kịch Bản Video Thực Chiến • Thiết kế dành cho Thực Hành Tại Lớp Học Offline</p>
+      <p style="margin-top: 4px; font-size: 12px;">Được biên soạn dựa trên phương pháp Storytelling 3 Tầng Sự Thật • Phong cách Văn Nói Trà Đá.</p>
+    </footer>
+
+  </div>
+
+  <script>
+    function copyText(elementId) {
+      const container = document.getElementById(elementId);
+      const texts = container.querySelectorAll('.voice-text');
+      let scriptContent = '';
+      texts.forEach(t => {
+        scriptContent += t.innerText.replace(/"/g, '') + '\n\n';
+      });
+      
+      navigator.clipboard.writeText(scriptContent.trim()).then(() => {
+        alert('✅ Đã copy toàn bộ lời thoại kịch bản vào bộ nhớ tạm!');
+      }).catch(err => {
+        console.error('Không thể copy: ', err);
+      });
+    }
+  </script>
+</body>
+</html>
