@@ -12,6 +12,7 @@ import subprocess
 VIDEO_DIR = '/Users/vietmac/Documents/BROLL BANK'
 THUMB_DIR = '/Users/vietmac/Documents/CODE/vietndj.github.io/broll_thumbnails'
 CATALOG_PATH = '/Users/vietmac/Documents/CODE/Quản gia/broll_youtube_catalog.json'
+GDRIVE_CATALOG_PATH = '/Users/vietmac/Documents/CODE/Quản gia/broll_gdrive_catalog.json'
 OUT_JSON = '/Users/vietmac/Documents/CODE/vietndj.github.io/broll_bank_master.json'
 
 yt_catalog = {}
@@ -21,6 +22,18 @@ if os.path.exists(CATALOG_PATH):
             yt_catalog = json.load(f)
     except:
         yt_catalog = {}
+
+gdrive_catalog = {}
+gdrive_files_norm = {}
+if os.path.exists(GDRIVE_CATALOG_PATH):
+    try:
+        with open(GDRIVE_CATALOG_PATH, 'r', encoding='utf-8') as f:
+            gdrive_catalog = json.load(f)
+        import unicodedata
+        for gname, ginfo in gdrive_catalog.get("files", {}).items():
+            gdrive_files_norm[unicodedata.normalize('NFC', gname.lower())] = ginfo
+    except:
+        gdrive_catalog = {}
 
 BROLL_CATEGORIES = {
     "cutaway": {
@@ -103,20 +116,49 @@ if os.path.exists(OUT_JSON):
     except:
         pass
 
+def norm(s):
+    import unicodedata
+    return unicodedata.normalize('NFC', s.lower().strip()) if s else ''
+
+yt_catalog_norm = {norm(k): v for k, v in yt_catalog.items()}
+
 items = []
 for i, f in enumerate(all_filenames):
     idx = i + 1
-    fn_lower = f.lower()
+    fn_norm = norm(f)
     
+    # GDrive links
+    g_info = gdrive_files_norm.get(fn_norm, {})
+    if not g_info:
+        for gk, gv in gdrive_files_norm.items():
+            if gk == fn_norm or gk in fn_norm or fn_norm in gk:
+                g_info = gv
+                break
+    gdrive_file_id = g_info.get("file_id", "")
+    gdrive_download_url = g_info.get("download_url", "")
+    gdrive_view_url = g_info.get("view_url", "")
+
+    # YouTube mapping
+    yt_item = yt_catalog.get(f) or yt_catalog_norm.get(fn_norm, {})
+    if not yt_item:
+        for yk, yv in yt_catalog_norm.items():
+            if yk == fn_norm or yk in fn_norm or fn_norm in yk:
+                yt_item = yv
+                break
+    vid_id = yt_item.get('video_id', '') if yt_item else ''
+    yt_url = yt_item.get('youtube_url', f"https://www.youtube.com/watch?v={vid_id}" if vid_id else '') if yt_item else ''
+
     # Check if we have existing record
     if f in existing_data:
         record = existing_data[f].copy()
         record['id'] = idx
         record['thumbnail'] = f"thumb_{idx:03d}.jpg"
-        yt_item = yt_catalog.get(f, {})
-        if yt_item.get('video_id'):
-            record['video_id'] = yt_item['video_id']
-            record['youtube_url'] = yt_item.get('youtube_url', f"https://www.youtube.com/watch?v={yt_item['video_id']}")
+        record['gdrive_file_id'] = gdrive_file_id
+        record['gdrive_download_url'] = gdrive_download_url
+        record['gdrive_view_url'] = gdrive_view_url
+        if vid_id:
+            record['video_id'] = vid_id
+            record['youtube_url'] = yt_url
         items.append(record)
         continue
 
@@ -365,18 +407,23 @@ for i, f in enumerate(all_filenames):
         "thumbnail": thumb_file,
         "video_id": vid_id,
         "youtube_url": yt_url,
+        "gdrive_file_id": gdrive_file_id,
+        "gdrive_download_url": gdrive_download_url,
+        "gdrive_view_url": gdrive_view_url,
         "director_note": director_note,
         "dialogue_cues": cues,
         "keywords": keywords
     })
 
 db_output = {
-    "version": "1.1.0",
+    "version": "1.2.0",
     "total_videos": len(items),
     "vertical_count": len([x for x in items if x["orientation"] == "vertical"]),
     "horizontal_count": len([x for x in items if x["orientation"] == "horizontal"]),
     "playlist_url": "https://www.youtube.com/playlist?list=PLPs82ezbs9Lo",
     "playlist_id": "PLPs82ezbs9Lo",
+    "gdrive_folder_url": gdrive_catalog.get("folder_url", "https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA"),
+    "gdrive_folder_id": "1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA",
     "categories": BROLL_CATEGORIES,
     "videos": items
 }

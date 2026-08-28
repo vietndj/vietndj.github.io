@@ -21,6 +21,11 @@ def render_card_html(v):
     orient_label = '📱 Dọc 9:16' if v['orientation'] == 'vertical' else '🖥️ Ngang 16:9'
     aspect_class = 'aspect-[9/16] max-h-[380px]' if v['orientation'] == 'vertical' else 'aspect-video'
     
+    # Download link from Google Drive
+    gdrive_dl = v.get('gdrive_download_url', '')
+    gdrive_view = v.get('gdrive_view_url', '')
+    dl_href = gdrive_dl if gdrive_dl else (gdrive_view if gdrive_view else "https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA")
+    
     # Pre-render card
     return f'''
     <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-slate-800 hover:border-purple-500/60 transition shadow-lg bg-slate-900/90" id="card-{v['id']}" data-cat="{v['category_id']}" data-orient="{v['orientation']}">
@@ -65,13 +70,19 @@ def render_card_html(v):
                 <p class="text-[11px] text-purple-300/90 italic line-clamp-2 bg-purple-950/20 p-2 rounded-lg border border-purple-900/30">
                     "{v['dialogue_cues'][0] if v['dialogue_cues'] else 'Thao tác thực chiến...'}"
                 </p>
-                <div class="flex items-center justify-between gap-2 pt-1">
-                    <a href="https://www.youtube.com/watch?v={yt_id}" target="_blank" class="px-2.5 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 text-[11px] font-semibold transition flex items-center gap-1">
-                        <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        YouTube
-                    </a>
-                    <button onclick="openModal({v['id']})" class="px-3 py-1 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold transition flex items-center gap-1">
-                        Chi tiết Đạo diễn
+                <div class="flex items-center justify-between gap-1.5 pt-1">
+                    <div class="flex items-center gap-1.5">
+                        <a href="https://www.youtube.com/watch?v={yt_id}" target="_blank" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 text-[11px] font-semibold transition flex items-center gap-1">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                            YouTube
+                        </a>
+                        <a href="{dl_href}" target="_blank" class="px-2 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 text-[11px] font-semibold transition flex items-center gap-1" title="Tải file video MP4 gốc sạch từ Google Drive (không logo Shorts)">
+                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                            Tải Drive
+                        </a>
+                    </div>
+                    <button onclick="openModal({v['id']})" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-purple-600 text-slate-200 hover:text-white border border-slate-700 text-[11px] font-semibold transition flex items-center gap-1">
+                        Chi tiết
                     </button>
                 </div>
             </div>
@@ -184,7 +195,7 @@ html_content = f'''<!DOCTYPE html>
             <div>
                 <div class="flex items-center gap-2">
                     <span class="font-extrabold text-lg tracking-tight text-white">B-ROLL BANK</span>
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">90/90 CLIPS NHÚNG YOUTUBE</span>
+                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold">{len(videos)} CLIPS NHÚNG YOUTUBE & DRIVE</span>
                 </div>
                 <p class="text-xs text-slate-400">Thư viện cảnh trám điện ảnh • Nguyễn Đức Việt (VietMac)</p>
             </div>
@@ -192,11 +203,15 @@ html_content = f'''<!DOCTYPE html>
 
         <!-- Links -->
         <div class="flex items-center gap-3">
-            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Playlist YouTube (90)
+            <a href="{db.get('gdrive_folder_url', 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA')}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                Google Drive Folder ({len(videos)})
             </a>
-            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
+            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                Playlist YouTube
+            </a>
+            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
                 8 Loại B-Roll Fedu
             </a>
         </div>
@@ -209,28 +224,28 @@ html_content = f'''<!DOCTYPE html>
                 <div>
                     <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-3">
                         <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        100% Video Đã Nhúng Trực Tiếp • Xem & Phát Ngay Trên Trang
+                        100% Video Đã Nhúng Trực Tiếp • Xem & Tải Gốc Google Drive Ngay Trên Trang
                     </div>
                     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
                         Kho Cảnh Trám <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-amber-300">B-Roll Bank Master</span>
                     </h1>
                     <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-                        Phân loại chuẩn 8 nhóm B-Roll Fedu Master. Bấm Play xem trực tiếp từng video, tìm kiếm theo câu thoại / bối cảnh, hoặc dán kịch bản để AI tự động ráp phân cảnh.
+                        Phân loại chuẩn 8 nhóm B-Roll Fedu Master. Bấm Play xem trực tiếp từng video, bấm <strong>Tải Drive</strong> để lấy file gốc không dính logo Shorts, hoặc dán kịch bản để AI tự động ráp phân cảnh.
                     </p>
                 </div>
 
                 <!-- Metrics -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-white font-mono">90</div>
+                        <div class="text-2xl font-black text-white font-mono">{len(videos)}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng Video</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-purple-400 font-mono">82</div>
+                        <div class="text-2xl font-black text-purple-400 font-mono">{len([x for x in videos if x['orientation'] == 'vertical'])}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dọc 9:16 Shorts</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-indigo-400 font-mono">8</div>
+                        <div class="text-2xl font-black text-indigo-400 font-mono">{len([x for x in videos if x['orientation'] == 'horizontal'])}</div>
                         <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ngang 16:9 4K</div>
                     </div>
                     <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
@@ -542,6 +557,18 @@ html_content = f'''<!DOCTYPE html>
                     <!-- Embedded YouTube Player -->
                 </div>
 
+                <!-- Modal Actions Row -->
+                <div class="flex items-center gap-2.5">
+                    <a id="modal-gdrive-btn" href="#" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                        📥 Tải Video MP4 Gốc (Google Drive)
+                    </a>
+                    <a id="modal-yt-btn" href="#" target="_blank" class="py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                        Mở YouTube
+                    </a>
+                </div>
+
                 <!-- Info Grid -->
                 <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
                     <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
@@ -704,6 +731,10 @@ html_content = f'''<!DOCTYPE html>
             document.getElementById('modal-shot').innerText = v.shot_type;
             document.getElementById('modal-location').innerText = v.location;
             document.getElementById('modal-director-note').innerText = v.director_note;
+
+            const gdriveLink = v.gdrive_download_url || v.gdrive_view_url || 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA';
+            document.getElementById('modal-gdrive-btn').href = gdriveLink;
+            document.getElementById('modal-yt-btn').href = v.youtube_url || `https://www.youtube.com/watch?v=${{v.video_id}}`;
 
             const playerBox = document.getElementById('modal-player-container');
             playerBox.innerHTML = `
@@ -892,4 +923,4 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
 with open(HTML_OUT, 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print(f"Generated pre-rendered HTML with 90 inline YouTube embeds: {HTML_OUT} ({len(html_content)} bytes)")
+print(f"Generated pre-rendered HTML with {len(videos)} inline YouTube embeds & GDrive download links: {HTML_OUT} ({len(html_content)} bytes)")
