@@ -663,36 +663,62 @@ html_content = f'''<!DOCTYPE html>
                     </div>
                 </div>
 
-                <!-- 2 Action options (No background daemon needed) -->
+                <!-- 4 Action options (No background daemon needed) -->
                 <div class="space-y-3 pt-1">
-                    <!-- Option 1: Telegram Bot NOVA-CORE -->
-                    <div>
-                        <div class="text-[11px] text-blue-300 font-bold mb-1.5 flex items-center gap-1.5">
-                            <span>Cách 1: Xóa 1-Chạm qua Bot Telegram (Khuyên dùng)</span>
+                    <!-- Option 1: Copy Chat Prompt for AI -->
+                    <div class="p-3 rounded-xl bg-purple-950/30 border border-purple-900/50">
+                        <div class="text-[11px] text-purple-300 font-bold mb-1.5 flex items-center justify-between">
+                            <span>💬 Cách 1: Nhắn Cho Trợ Lý Antigravity / Gemini</span>
+                            <span class="text-[10px] text-purple-400 font-normal">Tự động xóa YT & Git Push</span>
                         </div>
-                        <a id="del-tele-link" href="#" target="_blank" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition">
+                        <div class="flex items-center gap-2">
+                            <input id="del-chat-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-lg border border-purple-800/60 font-mono text-[11px] text-purple-200 select-all" />
+                            <button onclick="copyChatCmd()" class="px-3.5 py-2.5 rounded-lg bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shrink-0 shadow-lg transition flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg>
+                                Copy Chat
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Option 2: Terminal CLI Command -->
+                    <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
+                        <div class="text-[11px] text-slate-300 font-bold mb-1.5 flex items-center justify-between">
+                            <span>⚡ Cách 2: Chạy Terminal CLI (1 giây)</span>
+                            <span class="text-[10px] text-slate-500 font-mono">xoa-broll ID --yes</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <input id="del-cli-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-lg border border-slate-700 font-mono text-[11px] text-emerald-400 select-all" />
+                            <button onclick="copyCliCmd()" class="px-3.5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shrink-0 shadow-lg transition flex items-center gap-1">
+                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
+                                Copy CLI
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Option 3: Telegram Bot NOVA-CORE -->
+                    <div class="p-3 rounded-xl bg-blue-950/20 border border-blue-900/40">
+                        <div class="text-[11px] text-blue-300 font-bold mb-1.5 flex items-center justify-between">
+                            <span>📱 Cách 3: Bắn Lệnh Qua Bot Telegram</span>
+                            <span class="text-[10px] text-blue-400">@nova0410_bot</span>
+                        </div>
+                        <a id="del-tele-link" href="#" target="_blank" class="w-full py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition">
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
                             Mở Bot Telegram Xóa Ngay
                         </a>
-                        <div class="text-[10px] text-slate-500 mt-1 text-center">Tự động mở chat @nova0410_bot, bấm Gửi là xóa tức thì</div>
-                    </div>
-
-                    <!-- Option 2: CLI Command -->
-                    <div class="pt-2 border-t border-slate-800">
-                        <div class="text-[11px] text-purple-300 font-bold mb-1.5">Cách 2: Chạy Terminal CLI (1s xong tắt ngay)</div>
-                        <div class="flex items-center gap-2">
-                            <input id="del-cli-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-xl border border-slate-700 font-mono text-[11px] text-purple-300 select-all" />
-                            <button onclick="copyCliCmd()" class="px-3.5 py-2.5 rounded-xl bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold shrink-0 shadow-lg transition">Copy Lệnh</button>
-                        </div>
                     </div>
                 </div>
             </div>
 
             <!-- Footer buttons -->
-            <div class="p-4 sm:px-6 border-t border-slate-800 flex items-center justify-end gap-3 bg-slate-950">
+            <div class="p-4 sm:px-6 border-t border-slate-800 flex items-center justify-between bg-slate-950">
+                <button onclick="hideCardTemporarily()" class="px-3.5 py-2 rounded-xl bg-red-950/60 hover:bg-red-600 text-red-300 hover:text-white border border-red-800/60 text-xs font-bold transition flex items-center gap-1.5" title="Ẩn thẻ này khỏi màn hình ngay lập tức">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                    Ẩn Tạm Khỏi Màn Hình
+                </button>
                 <button onclick="closeDeleteModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
                     Đóng
                 </button>
+            </div>
             </div>
         </div>
     </div>
@@ -868,11 +894,14 @@ html_content = f'''<!DOCTYPE html>
             document.getElementById('del-modal-yt').innerText = `YT: ${{v.video_id || 'N/A'}}`;
             document.getElementById('del-modal-file').innerText = v.filename;
 
-            // Option 1: Telegram Link (NOVA-CORE Bot)
-            document.getElementById('del-tele-link').href = `https://t.me/nova0410_bot?text=/xoa_broll%20${{v.id}}`;
+            // Option 1: Chat Prompt (Antigravity / Gemini)
+            document.getElementById('del-chat-cmd').value = `xoa broll ${{v.id}}`;
 
             // Option 2: CLI Command
-            document.getElementById('del-cli-cmd').value = `xoa-broll ${{v.id}}`;
+            document.getElementById('del-cli-cmd').value = `xoa-broll ${{v.id}} --yes`;
+
+            // Option 3: Telegram Link (NOVA-CORE Bot)
+            document.getElementById('del-tele-link').href = `https://t.me/nova0410_bot?text=xoa%20broll%20${{v.id}}`;
 
             const modal = document.getElementById('delete-modal');
             modal.classList.remove('hidden');
@@ -893,11 +922,41 @@ html_content = f'''<!DOCTYPE html>
             }}, 300);
         }}
 
+        function copyChatCmd() {{
+            const cmd = document.getElementById('del-chat-cmd').value;
+            navigator.clipboard.writeText(cmd).then(() => {{
+                showToast('Đã sao chép: ' + cmd + ' (Dán vào chat để AI xóa vĩnh viễn)');
+            }});
+        }}
+
         function copyCliCmd() {{
             const cmd = document.getElementById('del-cli-cmd').value;
             navigator.clipboard.writeText(cmd).then(() => {{
-                showToast('Đã sao chép: ' + cmd);
+                showToast('Đã sao chép lệnh Terminal: ' + cmd);
             }});
+        }}
+
+        function hideCardTemporarily() {{
+            if (!pendingDeleteVideo) return;
+            const targetId = pendingDeleteVideo.id;
+            const card = document.getElementById(`card-${{targetId}}`);
+            if (card) {{
+                card.style.transition = 'all 0.4s ease-out';
+                card.style.opacity = '0';
+                card.style.transform = 'scale(0.8)';
+                setTimeout(() => {{
+                    card.style.display = 'none';
+                    // Update index in MASTER_DATA locally
+                    const idx = MASTER_DATA.videos.findIndex(x => x.id === targetId);
+                    if (idx !== -1) MASTER_DATA.videos.splice(idx, 1);
+                    updateCounters(MASTER_DATA.videos.length);
+                    showToast(`Đã ẩn thẻ #${{targetId}} khỏi màn hình!`);
+                }}, 400);
+            }}
+            closeDeleteModal();
+            if (currentDetailVideo && currentDetailVideo.id === targetId) {{
+                closeModal();
+            }}
         }}
 
         function updateCounters(total) {{
