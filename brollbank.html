@@ -111,16 +111,20 @@
         </div>
 
         <!-- Links -->
-        <div class="flex items-center gap-3">
-            <a href="https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
+        <div class="flex items-center gap-2 sm:gap-3">
+            <a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/30 text-emerald-300 border border-emerald-500/50 hover:bg-emerald-600 hover:text-white text-xs font-bold shadow-lg transition" title="Mở bản Quản trị trực tiếp trên máy Mac (Xóa 1-click tức thì)">
+                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                App Local
+            </a>
+            <a href="https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
                 Google Drive Folder (<span id="top-gdrive-count">148</span>)
             </a>
-            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
+            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
                 <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                 Playlist YouTube
             </a>
-            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
+            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
                 8 Loại B-Roll Fedu
             </a>
         </div>
@@ -10626,13 +10630,17 @@
                 </div>
 
                 <!-- Status / Error message container -->
-                <div id="del-status-box" class="hidden p-3 rounded-xl text-xs space-y-1.5">
-                    <div id="del-status-text" class="font-medium"></div>
-                    <div id="del-cli-fallback" class="hidden pt-1.5 space-y-1.5">
-                        <div class="text-[11px] text-slate-400">Hoặc sao chép lệnh Terminal để chạy ngay:</div>
+                <div id="del-status-box" class="hidden p-3.5 rounded-xl text-xs space-y-2.5">
+                    <div id="del-status-text" class="font-medium leading-relaxed"></div>
+                    <div id="del-cli-fallback" class="hidden space-y-2 pt-1 border-t border-red-500/20">
+                        <a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="w-full py-2.5 px-3 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-bold text-xs flex items-center justify-center gap-1.5 shadow-lg shadow-emerald-900/30 transition">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14.5v-9l6 4.5-6 4.5z"/></svg>
+                            Mở Bản Quản Trị Trực Tiếp (Xóa 1-Click Tức Thì)
+                        </a>
+                        <div class="text-[11px] text-slate-400 pt-1">Hoặc sao chép lệnh Terminal để chạy ngay:</div>
                         <div class="flex items-center gap-2">
                             <input id="del-cli-cmd" readonly class="flex-1 bg-black/50 p-2 rounded-lg border border-slate-700 font-mono text-[10px] text-purple-300 select-all" />
-                            <button onclick="copyCliCmd()" class="px-2.5 py-1.5 rounded-lg bg-purple-600 text-white text-xs font-bold shrink-0">Copy</button>
+                            <button onclick="copyCliCmd()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold shrink-0 border border-slate-700">Copy</button>
                         </div>
                     </div>
                 </div>
@@ -10662,19 +10670,33 @@
         let activeCategory = 'all';
         let currentDetailVideo = null;
         let pendingDeleteVideo = null;
-        const API_BASE = 'http://localhost:8899';
+        let API_BASE = (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') ? '' : 'http://127.0.0.1:8899';
+        const CANDIDATE_ENDPOINTS = [
+            (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') ? '' : 'http://127.0.0.1:8899',
+            'http://127.0.0.1:8899',
+            'http://localhost:8899'
+        ].filter(Boolean);
 
         // Check Local API Daemon Status
         async function checkApiStatus() {
             const badge = document.getElementById('api-status-badge');
-            try {
-                const res = await fetch(`${API_BASE}/api/status`, { method: 'GET', signal: AbortSignal.timeout(1500) });
-                if (res.ok) {
-                    badge.innerHTML = '<span class="text-emerald-400 font-semibold">Sẵn sàng (Port 8899)</span>';
-                } else {
-                    badge.innerHTML = '<span class="text-amber-400">Offline (Sử dụng CLI)</span>';
-                }
-            } catch (e) {
+            if (window.location.hostname === '127.0.0.1' || window.location.hostname === 'localhost') {
+                badge.innerHTML = '<span class="text-emerald-400 font-semibold">🟢 Local App Sẵn Sàng (Port 8899)</span>';
+                return;
+            }
+            for (const ep of CANDIDATE_ENDPOINTS) {
+                try {
+                    const res = await fetch(`${ep}/api/status`, { method: 'GET', signal: AbortSignal.timeout(1200) });
+                    if (res.ok) {
+                        API_BASE = ep;
+                        badge.innerHTML = '<span class="text-emerald-400 font-semibold">🟢 Sẵn sàng (Port 8899)</span>';
+                        return;
+                    }
+                } catch (e) {}
+            }
+            if (window.location.protocol === 'https:') {
+                badge.innerHTML = '<a href="http://127.0.0.1:8899/brollbank.html" target="_blank" class="text-amber-300 hover:text-white font-semibold underline">⚠️ Mở Bản Local Để Xóa 1-Click</a>';
+            } else {
                 badge.innerHTML = '<span class="text-amber-400">Offline (Sử dụng CLI)</span>';
             }
         }
@@ -10882,51 +10904,61 @@
             btn.disabled = true;
             btnText.innerHTML = '<span class="inline-block animate-spin mr-1">⏳</span> Đang xóa trên YouTube...';
 
-            statusBox.className = 'p-3 rounded-xl text-xs bg-slate-950 border border-purple-500/40 text-purple-200 block';
+            statusBox.className = 'p-3.5 rounded-xl text-xs bg-slate-950 border border-purple-500/40 text-purple-200 block space-y-2.5';
             statusText.innerText = '📡 Đang gọi YouTube API và đồng bộ cơ sở dữ liệu...';
 
-            try {
-                const res = await fetch(`${API_BASE}/api/delete-broll`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ id, video_id: ytId, filename }),
-                    signal: AbortSignal.timeout(20000)
-                });
+            const endpointsToTry = API_BASE ? [API_BASE, 'http://127.0.0.1:8899', 'http://localhost:8899'] : ['', 'http://127.0.0.1:8899', 'http://localhost:8899'];
+            let deletedOk = false;
+            let lastErr = null;
 
-                const data = await res.json();
+            for (const ep of endpointsToTry) {
+                try {
+                    const url = ep ? `${ep}/api/delete-broll` : '/api/delete-broll';
+                    const res = await fetch(url, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ id, video_id: ytId, filename }),
+                        signal: AbortSignal.timeout(20000)
+                    });
 
-                if (res.ok && data.success) {
-                    statusBox.className = 'p-3 rounded-xl text-xs bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 block';
-                    statusText.innerHTML = `✅ <b>Thành công!</b> Đã xóa video trên YouTube và hệ thống.`;
-                    
-                    // Remove card from UI
-                    const card = document.getElementById(`card-${id}`);
-                    if (card) {
-                        card.classList.add('card-deleting');
-                        setTimeout(() => card.remove(), 400);
+                    const data = await res.json();
+                    if (res.ok && data.success) {
+                        API_BASE = ep;
+                        deletedOk = true;
+                        statusBox.className = 'p-3.5 rounded-xl text-xs bg-emerald-950/40 border border-emerald-500/40 text-emerald-200 block';
+                        statusText.innerHTML = `✅ <b>Thành công!</b> Đã xóa video trên YouTube và hệ thống.`;
+                        
+                        const card = document.getElementById(`card-${id}`);
+                        if (card) {
+                            card.classList.add('card-deleting');
+                            setTimeout(() => card.remove(), 400);
+                        }
+
+                        MASTER_DATA.videos = MASTER_DATA.videos.filter(x => x.id !== id);
+                        updateCounters(MASTER_DATA.videos.length);
+                        showToast(`🗑️ Đã xóa video #${id} trên YouTube & Thư viện!`);
+
+                        setTimeout(() => {
+                            closeDeleteModal();
+                            closeModal();
+                        }, 1200);
+                        break;
+                    } else {
+                        lastErr = data.error || 'Lỗi từ server';
                     }
+                } catch (e) {
+                    lastErr = e.message;
+                }
+            }
 
-                    // Update in-memory data
-                    MASTER_DATA.videos = MASTER_DATA.videos.filter(x => x.id !== id);
-                    updateCounters(MASTER_DATA.videos.length);
-
-                    showToast(`🗑️ Đã xóa video #${id} trên YouTube & Thư viện!`);
-
-                    setTimeout(() => {
-                        closeDeleteModal();
-                        closeModal();
-                    }, 1200);
-
+            if (!deletedOk) {
+                statusBox.className = 'p-3.5 rounded-xl text-xs bg-red-950/40 border border-red-500/40 text-red-200 block space-y-2.5';
+                if (window.location.protocol === 'https:') {
+                    statusText.innerHTML = `⚠️ <b>Trình duyệt chặn kết nối từ HTTPS sang Local HTTP (Mixed Content).</b><br>Để xóa 1-click tức thì, anh mở <b>Bản Quản Trị Trực Tiếp</b> trên máy nhé:`;
                 } else {
-                    throw new Error(data.error || 'Lỗi không xác định khi xóa');
+                    statusText.innerHTML = `⚠️ <b>Chưa kết nối Local Daemon:</b> ${lastErr}`;
                 }
 
-            } catch (err) {
-                console.error('Delete error:', err);
-                statusBox.className = 'p-3 rounded-xl text-xs bg-red-950/40 border border-red-500/40 text-red-200 block space-y-2';
-                statusText.innerHTML = `⚠️ <b>Chưa kết nối Local Daemon:</b> ${err.message}`;
-                
-                // Show CLI Command fallback
                 const cmdStr = `python3 "/Users/vietmac/Documents/CODE/Quản gia/delete_broll_cli.py" --id ${id} --yes`;
                 cliCmd.value = cmdStr;
                 cliFallback.classList.remove('hidden');
