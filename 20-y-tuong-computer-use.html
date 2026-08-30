@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>20 Ý Tưởng AI Agent Computer Use - Trước & Sau | Nâng Cấp Từ ChatGPT</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+            },
+            dark: {
+              bg: '#070b12',
+              card: '#0e1524',
+              surface: '#152033',
+              border: '#1e2e47',
+              hover: '#243754'
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #070b12;
+      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glow-emerald {
+      box-shadow: 0 0 40px -10px rgba(16, 185, 129, 0.25);
+    }
+    .glow-rose {
+      box-shadow: 0 0 35px -10px rgba(244, 63, 94, 0.2);
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #0e1524;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #1e2e47;
+      border-radius: 9999px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+      background: #34d399;
+    }
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 100;
+    }
+    .toast.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-emerald-500/30 selection:text-emerald-200">
+
+  <!-- TOP BAR -->
+  <header class="sticky top-0 z-50 bg-[#070b12]/90 backdrop-blur-md border-b border-dark-border px-4 lg:px-8 py-3.5 flex items-center justify-between">
+    <div class="flex items-center gap-3">
+      <div class="w-8 h-8 rounded-lg bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center font-mono font-bold text-emerald-400 text-sm">
+        ⚡
+      </div>
+      <div>
+        <div class="text-sm font-bold tracking-tight text-white flex items-center gap-2">
+          AI AGENT COMPUTER USE
+          <span class="text-[10px] uppercase font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">20 Ý TƯỞNG THỰC CHIẾN</span>
+        </div>
+        <div class="text-[11px] text-slate-400">Nâng cấp từ ChatGPT "Nói mồm" sang AI "Bắt tay làm thật"</div>
+      </div>
+    </div>
+    
+    <div class="flex items-center gap-3">
+      <a href="#danh-sach" class="hidden sm:inline-flex text-xs font-medium px-3.5 py-1.5 rounded-lg bg-dark-surface hover:bg-dark-hover border border-dark-border text-slate-200 transition-colors">
+        Xem 20 Ý Tưởng
+      </a>
+      <a href="#goi-cong-cu" class="text-xs font-bold px-4 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 transition-colors shadow-lg shadow-emerald-500/20">
+        Gói 499k Cắm Là Chạy
+      </a>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="relative pt-12 pb-16 px-4 lg:px-8 max-w-6xl mx-auto text-center overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-emerald-500/10 blur-[120px] pointer-events-none rounded-full"></div>
+    <div class="absolute top-1/3 left-1/4 w-[300px] h-[200px] bg-blue-500/10 blur-[100px] pointer-events-none rounded-full"></div>
+
+    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-mono mb-6">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      TỰ ĐỘNG HÓA THAO TÁC MÁY TÍNH 100%
+    </div>
+
+    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+      Đừng Dùng AI Để Chat Hỏi Đáp.<br>
+      <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+        Biến AI Thành Thợ Thực Thi Cho Bạn.
+      </span>
+    </h1>
+
+    <p class="text-slate-300 text-base sm:text-lg max-w-3xl mx-auto mb-8 font-normal leading-relaxed">
+      Sự khác biệt cốt lõi: ChatGPT web chỉ biết "nói mồm" và bắt bạn tự làm. Còn <strong class="text-white font-semibold">AI Agent (Computer Use)</strong> có tay chân: Tự mở file, tự cắt video, tự tính toán Excel, tự tải lên Google Drive và tự gửi link qua Telegram chỉ với 1 câu lệnh tiếng Việt đời thường.
+    </p>
+
+    <!-- Quick Stats -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 max-w-4xl mx-auto mb-10 text-left">
+      <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
+        <div class="text-2xl font-bold font-mono text-emerald-400">01 Lệnh</div>
+        <div class="text-xs text-slate-400 mt-1">Tiếng Việt ngắn gọn, không cần biết lập trình</div>
+      </div>
+      <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
+        <div class="text-2xl font-bold font-mono text-cyan-400">100%</div>
+        <div class="text-xs text-slate-400 mt-1">Chạy thẳng trên máy tính & tài khoản Google quen thuộc</div>
+      </div>
+      <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
+        <div class="text-2xl font-bold font-mono text-amber-400">15 Giây</div>
+        <div class="text-xs text-slate-400 mt-1">Xử lý xong việc mà trước đây mất 1–2 tiếng cặm cụi</div>
+      </div>
+      <div class="bg-dark-card border border-dark-border p-4 rounded-xl">
+        <div class="text-2xl font-bold font-mono text-purple-400">20 Ý Tưởng</div>
+        <div class="text-xs text-slate-400 mt-1">Áp dụng ngay cho Video, Văn phòng, Bán hàng & Quản trị</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SO SÁNH 8 ĐIỂM TRÓI CHÂN VS COMPUTER USE -->
+  <section class="max-w-6xl mx-auto px-4 lg:px-8 mb-16">
+    <div class="bg-dark-card border border-dark-border rounded-2xl p-6 lg:p-8 relative overflow-hidden">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-6 pb-4 border-b border-dark-border gap-4">
+        <div>
+          <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider font-semibold">Bản chất vấn đề</span>
+          <h2 class="text-xl sm:text-2xl font-bold text-white mt-1">Tại Sao ChatGPT Web Khiến Bạn Càng Dùng Càng Mệt?</h2>
+        </div>
+        <div class="text-xs text-slate-400 max-w-md">
+          ChatGPT web bị nhốt trong phòng kính: Biết rất nhiều nhưng không chạm tay vào ổ cứng, chuột, phím máy tính của bạn được.
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="bg-red-950/20 border border-red-500/20 rounded-xl p-5">
+          <div class="flex items-center gap-2 text-red-400 font-bold text-sm mb-3">
+            <span class="w-6 h-6 rounded-full bg-red-500/20 flex items-center justify-center text-xs">✕</span>
+            ChatGPT Trên Trình Duyệt (Bị Trói Tay Trói Chân)
+          </div>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-0.5">•</span>
+              <span><strong>Không vào được ổ cứng:</strong> Không biết trên máy bạn có file gì, phải tự tải lên từng cái.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-0.5">•</span>
+              <span><strong>Bó tay với video/âm thanh:</strong> Không cắt gọt được clip, không gọt được câu nói vấp, không làm sub.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-0.5">•</span>
+              <span><strong>Chỉ nhả chữ:</strong> Trả về văn bản mẫu suông rồi bảo bạn "Tự mở Premiere/Excel mà làm".</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-red-400 mt-0.5">•</span>
+              <span><strong>Hội chứng Alt+Tab:</strong> Bạn phải làm con thoi copy-paste giữa 5 ứng dụng toát mồ hôi.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-5 glow-emerald">
+          <div class="flex items-center gap-2 text-emerald-400 font-bold text-sm mb-3">
+            <span class="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center text-xs">✓</span>
+            AI Agent Có Computer Use (Thợ Thực Thi Trực Tiếp)
+          </div>
+          <ul class="space-y-2.5 text-xs text-slate-300">
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">•</span>
+              <span><strong>Thao tác trực tiếp trên máy:</strong> Tự mở file trong Downloads, Desktop, tự sửa và lưu lại.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">•</span>
+              <span><strong>Xử lý Video & Âm thanh thật:</strong> Tự gọt ngập ngừng, tự chèn phụ đề, xuất file MP4 xem ngay.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">•</span>
+              <span><strong>Tự chạy & Tự sửa lỗi:</strong> Thấy file lỗi công thức hoặc thiếu thư viện, AI tự sửa đến khi xong.</span>
+            </li>
+            <li class="flex items-start gap-2">
+              <span class="text-emerald-400 mt-0.5">•</span>
+              <span><strong>Tự kết nối dịch vụ:</strong> Tự đẩy file lên Drive, tự lấy link chia sẻ và tự bắn tin qua Telegram.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 20 Ý TƯỞNG TRƯỚC VÀ SAU (BEFORE & AFTER) -->
+  <section id="danh-sach" class="max-w-6xl mx-auto px-4 lg:px-8 mb-20">
+    <div class="text-center max-w-3xl mx-auto mb-10">
+      <span class="text-xs font-mono uppercase text-emerald-400 tracking-wider font-semibold">Thư viện tình huống</span>
+      <h2 class="text-2xl sm:text-4xl font-extrabold text-white mt-1 mb-4">20 Tình Huống Marketing "Trước & Sau"</h2>
+      <p class="text-slate-400 text-sm">
+        Chọn bộ lọc ngành nghề để xem những công việc hàng ngày được tự động hóa từ A đến Z như thế nào.
+      </p>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="flex flex-wrap items-center justify-center gap-2 mb-10">
+      <button onclick="filterCategory('all')" class="filter-btn active px-4 py-2 rounded-xl text-xs font-bold transition-all bg-emerald-500 text-slate-950" data-cat="all">
+        Tất Cả (20)
+      </button>
+      <button onclick="filterCategory('video')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-dark-card hover:bg-dark-surface border border-dark-border text-slate-300" data-cat="video">
+        🎬 Video & Nội Dung (5)
+      </button>
+      <button onclick="filterCategory('office')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-dark-card hover:bg-dark-surface border border-dark-border text-slate-300" data-cat="office">
+        📊 Văn Phòng & Excel (5)
+      </button>
+      <button onclick="filterCategory('business')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-dark-card hover:bg-dark-surface border border-dark-border text-slate-300" data-cat="business">
+        💼 Quản Trị & Nghiên Cứu (5)
+      </button>
+      <button onclick="filterCategory('automation')" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-dark-card hover:bg-dark-surface border border-dark-border text-slate-300" data-cat="automation">
+        ⚡ Bán Hàng & Tự Sửa Lỗi (5)
+      </button>
+    </div>
+
+    <!-- CARDS GRID -->
+    <div id="cards-container" class="grid grid-cols-1 gap-6">
+      <!-- Cards dynamically rendered -->
+    </div>
+  </section>
+
+  <!-- CTA BOX: GÓI CÔNG CỤ 499K -->
+  <section id="goi-cong-cu" class="max-w-4xl mx-auto px-4 lg:px-8 mb-24">
+    <div class="relative bg-gradient-to-b from-dark-card to-dark-surface border border-emerald-500/40 rounded-3xl p-8 lg:p-12 text-center overflow-hidden glow-emerald">
+      <div class="absolute -top-24 -right-24 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+      <span class="inline-block px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-500/40 text-emerald-400 text-xs font-mono font-bold uppercase mb-4">
+        CẮM LÀ CHẠY — LÀM SẴN 80%
+      </span>
+
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">
+        Sở Hữu Trọn Bộ 3 Công Cụ & Kinh Nghiệm Thực Chiến
+      </h2>
+      
+      <p class="text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8">
+        Không cần biết code. Vận hành trực tiếp trên tài khoản Google Gemini quen thuộc của bạn. Tự tạo thì mới tự sửa được, chỉ cần ra lệnh bằng tiếng Việt đời thường.
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-left max-w-3xl mx-auto mb-8">
+        <div class="bg-[#070b12]/80 border border-dark-border p-4 rounded-xl">
+          <div class="text-emerald-400 font-bold text-sm mb-1">01. Bóc Kịch Bản Clip</div>
+          <div class="text-xs text-slate-400">Dán link viral -> bóc lời và góc quay 2 cột trong 5 phút.</div>
+        </div>
+        <div class="bg-[#070b12]/80 border border-dark-border p-4 rounded-xl">
+          <div class="text-emerald-400 font-bold text-sm mb-1">02. Trợ Lý Dựng Video</div>
+          <div class="text-xs text-slate-400">Gọt sạch đoạn ngập ngừng, tự làm sub chuyển động, xuất video đăng ngay.</div>
+        </div>
+        <div class="bg-[#070b12]/80 border border-dark-border p-4 rounded-xl">
+          <div class="text-emerald-400 font-bold text-sm mb-1">03. Web Bán Hàng QR</div>
+          <div class="text-xs text-slate-400">Có sẵn mã QR ngân hàng, tiền về tài khoản, đổi nội dung trong 10 phút.</div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div class="text-center sm:text-right">
+          <div class="text-xs text-slate-400 line-through">Giá gốc 1.500.000đ</div>
+          <div class="text-3xl font-extrabold text-white font-mono">499.000đ</div>
+        </div>
+        <a href="https://ai.fedu.vn" target="_blank" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-base transition-all shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-2">
+          <span>ĐĂNG KÝ NHẬN BỘ CÔNG CỤ NGAY</span>
+          <span class="text-lg">→</span>
+        </a>
+      </div>
+      <div class="text-[11px] text-slate-400 mt-4">Kèm video hướng dẫn cầm tay chỉ việc của Thầy Nguyễn Đức Việt</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-dark-border py-8 text-center text-xs text-slate-400">
+    <div class="max-w-6xl mx-auto px-4">
+      <div>AI FEDU • Hệ thống AI Agent Thực Chiến Cho Người Làm Video & Văn Phòng</div>
+      <div class="mt-2 text-slate-400">Tất cả công cụ vận hành trên Google Gemini của bạn • Không phần mềm rác • Bảo mật 100%</div>
+    </div>
+  </footer>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="toast bg-emerald-500 text-slate-950 px-4 py-2.5 rounded-xl font-bold text-xs shadow-2xl flex items-center gap-2">
+    <span>✓</span> <span id="toast-msg">Đã sao chép câu lệnh!</span>
+  </div>
+
+  <!-- DATA & SCRIPT -->
+  <script>
+    const ideas = [
+      // NHÓM 1: VIDEO & NỘI DUNG (1 - 5)
+      {
+        id: 1,
+        cat: 'video',
+        title: 'Bóc Kịch Bản Clip Hay & Tải Thẳng Nhạc Nền Về Máy',
+        hook: 'Lướt thấy clip hay, khỏi cắn bút gõ lại lời hay tìm link tải nhạc.',
+        beforeTime: '30 - 45 Phút',
+        beforeDesc: 'Mở clip nghe đi nghe lại từng câu, gõ từng chữ vào Word, sau đó lên Google tìm trang web convert link để tải file MP3 dính đầy quảng cáo độc hại.',
+        afterTime: '15 Giây',
+        afterDesc: 'Dán link video vào -> AI tự tải file MP3 bài hát về thư mục Nhac_Hay, đồng thời xuất bảng kịch bản 2 cột (Lời thoại + Góc quay) sẵn sàng quay.',
+        prompt: 'Bóc kịch bản clip TikTok này thành bảng 2 cột và tải luôn bài nhạc nền MP3 lưu vào thư mục Nhac_Nen.',
+        badge: 'Cứu Cánh Creator'
+      },
+      {
+        id: 2,
+        cat: 'video',
+        title: 'Giao Việc Xong Đi Ngủ: Đêm Tự Dựng - Sáng Giao Khách',
+        hook: 'Thoát khỏi cảnh ngồi trông máy tính render video đến 2 giờ sáng.',
+        beforeTime: '60 - 90 Phút',
+        beforeDesc: 'Quay xong 3 video thô, ngồi căng mắt cắt từng đoạn ngập ngừng, gõ phụ đề, xuất file rồi ngồi canh thanh tiến trình 100% để copy link gửi cho khách.',
+        afterTime: '30 Giây Giao Việc',
+        afterDesc: 'Nhắn 1 câu rồi gập máy đi ngủ. AI tự gọt đoạn vấp, tự làm phụ đề nảy chữ, tự đẩy lên Google Drive và tự bắn link qua Telegram cho khách lúc xong.',
+        prompt: 'Gọt sạch đoạn nói vấp trong 3 video này, gắn phụ đề nảy chữ, tải lên Drive và gửi link vào Telegram cho khách.',
+        badge: 'Thảnh Thơi 100%'
+      },
+      {
+        id: 3,
+        cat: 'video',
+        title: 'Mẫu Khung Kịch Bản Có Sẵn 80% Từ Clip Triệu View',
+        hook: 'Xóa bỏ hoàn toàn nỗi sợ nhìn vào trang giấy trắng khi bắt đầu làm video.',
+        beforeTime: '2 - 3 Tiếng Bế Tắc',
+        beforeDesc: 'Cần quay video giới thiệu sản phẩm nhưng ngồi nhìn màn hình Word trống trơn 30 phút, không biết mở đầu bằng câu gì để giữ chân người xem.',
+        afterTime: '1 Phút Có Khung',
+        afterDesc: 'AI tự bóc cấu trúc 3 giây đầu (Hook), nhịp chuyển cảnh và lời kêu gọi từ video triệu view của đối thủ, điền sẵn thông tin sản phẩm của bạn vào.',
+        prompt: 'Bóc cấu trúc 3s đầu và 3 luận điểm từ link clip này, áp vào sản phẩm bình giữ nhiệt của tôi thành kịch bản 2 cột.',
+        badge: 'Khỏi Cắn Bút'
+      },
+      {
+        id: 4,
+        cat: 'video',
+        title: 'Dịch Phụ Đề Video Nước Ngoài Sang Tiếng Việt Đời Thường',
+        hook: 'Học hỏi tư liệu toàn cầu không lo rào cản ngôn ngữ hay Google Dịch ngô nghê.',
+        beforeTime: '45 Phút',
+        beforeDesc: 'Tải video tiếng Anh/Trung về, chép lời thoại sang Google Dịch, câu cú lủng củng rồi lại mất công ngồi canh từng giây để chèn chữ vào CapCut.',
+        afterTime: '20 Giây',
+        afterDesc: 'Kéo video vào -> AI tự nghe âm thanh, dịch sang tiếng Việt mộc mạc đúng ngữ cảnh đời thường, tự tạo phụ đề chạy khớp từng từ.',
+        prompt: 'Dịch lời thoại video này sang tiếng Việt đời thường, làm phụ đề chạy theo tiếng nói và xuất file video hoàn chỉnh.',
+        badge: 'Việt Hóa Tự Động'
+      },
+      {
+        id: 5,
+        cat: 'video',
+        title: 'Dọn Rác & Nén 50GB Video Thô Về Chuẩn Nét Nhẹ 1080p',
+        hook: 'Ổ cứng đỏ ngòm dung lượng được giải phóng chỉ sau 1 câu lệnh.',
+        beforeTime: '40 Phút Mò File',
+        beforeDesc: 'Mở từng clip ngắn xem cái nào quay hỏng để bấm xóa, sau đó mở phần mềm convert từng video để giảm dung lượng gửi qua Zalo không bị mờ.',
+        afterTime: '10 Giây',
+        afterDesc: 'AI tự động quét xóa các clip bấm nhầm dưới 2 giây, nén toàn bộ video còn lại về chuẩn 1080p giảm 70% dung lượng mà vẫn giữ nguyên độ nét.',
+        prompt: 'Xóa các clip quay hỏng dưới 2s, nén toàn bộ video còn lại về 1080p nét nhẹ lưu vào thư mục Video_Xong.',
+        badge: 'Cứu Bộ Nhớ'
+      },
+
+      // NHÓM 2: VĂN PHÒNG & EXCEL (6 - 10)
+      {
+        id: 6,
+        cat: 'office',
+        title: 'Trợ Lý Kế Toán: Tự Đọc 30 Ảnh Hóa Đơn Ra Bảng Excel',
+        hook: 'Không còn cảnh căng mắt làm "máy quét chạy bằng cơm" sợ gõ nhầm số tiền.',
+        beforeTime: '60 Phút Căng Mắt',
+        beforeDesc: 'Co nửa màn hình xem ảnh hóa đơn tiền ăn, xăng xe, nửa màn hình mở Excel gõ lại từng số. Gõ thừa một số 0 là phải tự bỏ tiền túi đền.',
+        afterTime: '15 Giây',
+        afterDesc: 'Thả 30 ảnh vào thư mục -> AI tự đọc chữ trên ảnh, bóc tách Ngày - Tên mục - Số tiền, kẻ bảng Excel và tính sẵn tổng chi phí.',
+        prompt: 'Đọc toàn bộ ảnh hóa đơn trong thư mục này, bóc tách thông tin và xuất ra bảng Excel có tính tổng tiền.',
+        badge: 'Chuẩn 100%'
+      },
+      {
+        id: 7,
+        cat: 'office',
+        title: 'Chiều Thứ Sáu: 1 Nút Dọn Sạch Bãi Rác Desktop & Downloads',
+        hook: 'Thứ Hai tuần sau mở máy lên tinh tươm, nhẹ đầu làm việc.',
+        beforeTime: '30 Phút Ngại Dọn',
+        beforeDesc: 'Desktop đặc nghẹt icon, Downloads cả nghìn file rác. Nhìn vào hoa mắt, sợ bấm nhầm xóa mất tài liệu quan trọng nên cứ để bừa bãi.',
+        afterTime: '5 Giây',
+        afterDesc: 'AI tự quét, gom toàn bộ ảnh vào thư mục riêng, tài liệu vào thư mục riêng, xóa sạch các file cài đặt tạm và file trùng lặp.',
+        prompt: 'Dọn sạch Desktop và Downloads: Gom ảnh, tài liệu vào từng thư mục tuần, xóa hết file cài đặt tạm .exe/.dmg.',
+        badge: 'Nhẹ Đầu'
+      },
+      {
+        id: 8,
+        cat: 'office',
+        title: 'Bóc Tách Tin Nhắn Đặt Hàng Lộn Xộn Ra Bảng Giao Vận',
+        hook: 'Khách nhắn mỗi người một kiểu, AI tự quy về một bảng ngăn nắp để in đơn.',
+        beforeTime: '45 Phút Copy-Paste',
+        beforeDesc: 'Ngồi đọc từng tin nhắn chat Facebook/Zalo, copy tên, số điện thoại, địa chỉ rời rạc rồi dán vào từng ô Excel để gửi bên giao hàng.',
+        afterTime: '10 Giây',
+        afterDesc: 'Kéo đoạn chat lộn xộn vào -> AI tự phân tích ngôn ngữ đời thường, điền đúng cột: Họ tên - SĐT - Địa chỉ - Mặt hàng - Số lượng.',
+        prompt: 'Đọc đoạn tin nhắn đặt hàng này, bóc tách thành bảng Excel gồm: Tên, SĐT, Địa chỉ, Sản phẩm, Số lượng.',
+        badge: 'Gọn Gàng'
+      },
+      {
+        id: 9,
+        cat: 'office',
+        title: 'Tự Động Đối Soát Công Nợ & Soạn Tin Nhắc Lịch Sự',
+        hook: 'Thu hồi tiền nhanh chóng mà không lo sứt mẻ quan hệ với khách hàng.',
+        beforeTime: '60 Phút Tra Cứu',
+        beforeDesc: 'Mở file Excel dò từng dòng ai chưa trả tiền, tính ngày trễ hạn, rồi mở từng cửa sổ chat ngồi gõ tin nhắn nhắc nợ ngượng ngùng.',
+        afterTime: '15 Giây',
+        afterDesc: 'AI tự lọc danh sách quá hạn 15 ngày, tự tính số tiền còn thiếu, tự soạn sẵn mẫu tin nhắn nhắc nhở lịch sự kèm số tài khoản cho từng người.',
+        prompt: 'Lọc khách nợ quá hạn 15 ngày trong Cong_No.xlsx, soạn tin nhắc nhở lịch sự kèm số tài khoản của tôi.',
+        badge: 'Khéo Léo'
+      },
+      {
+        id: 10,
+        cat: 'office',
+        title: 'Gộp 5 File Excel Doanh Số, Đẩy Lên Drive & Báo Telegram',
+        hook: '5 giờ rưỡi chiều sếp giục báo cáo, xong việc trong đúng 1 nốt nhạc.',
+        beforeTime: '40 Phút Cặm Cụi',
+        beforeDesc: 'Mở 5 file của 5 bạn sale, copy dán gộp lại, gõ công thức VLOOKUP lọc trùng, mở trình duyệt tải lên Drive, copy link gửi vào nhóm chat.',
+        afterTime: '15 Giây',
+        afterDesc: 'AI tự mở 5 file trên máy tính, gộp dữ liệu, tính tổng doanh thu, tự tải file kết quả lên Drive và bắn thẳng tin nhắn tóm tắt qua Telegram cho sếp.',
+        prompt: 'Gộp 5 file Excel doanh số này, tính tổng tiền từng bạn, đẩy lên Drive và gửi link báo cáo qua Telegram cho sếp.',
+        badge: 'Tan Làm Sớm'
+      },
+
+      // NHÓM 3: QUẢN TRỊ & NGHIÊN CỨU (11 - 15)
+      {
+        id: 11,
+        cat: 'business',
+        title: 'Lọc Tự Động 50 CV Ứng Viên Ra Bảng Chấm Điểm',
+        hook: 'Tuyển dụng không cần thức trắng đêm mở từng file PDF đọc mỏi mắt.',
+        beforeTime: '120 Phút Đọc Hồ Sơ',
+        beforeDesc: 'Tải 50 file CV về, mở từng cái đọc lướt, ghi chép điểm mạnh điểm yếu ra sổ, rất dễ bỏ sót ứng viên giỏi vì mệt mỏi.',
+        afterTime: '30 Giây',
+        afterDesc: 'AI tự đọc toàn bộ 50 CV trong thư mục, chấm điểm theo tiêu chí bạn yêu cầu và xuất bảng Excel xếp hạng từ cao xuống thấp kèm link mở CV.',
+        prompt: 'Đọc 50 CV trong thư mục này, chấm điểm theo tiêu chí kinh nghiệm và xuất bảng Excel xếp hạng ứng viên.',
+        badge: 'Tuyển Dụng Nhanh'
+      },
+      {
+        id: 12,
+        cat: 'business',
+        title: 'Bóc Tách Podcast YouTube 2 Tiếng Ra Trang Tài Liệu 3 Phút',
+        hook: 'Rút trọn tinh hoa của video dài mà không tốn nửa buổi chiều ngồi nghe.',
+        beforeTime: '120 Phút Ngồi Nghe',
+        beforeDesc: 'Muốn học kiến thức trong video podcast 2 tiếng phải vừa nghe vừa bấm dừng để ghi chép vào sổ tay, rất mất thời gian.',
+        afterTime: '45 Giây',
+        afterDesc: 'Dán link YouTube -> AI tự tải transcript, đúc kết 8 bài học thực chiến sâu sắc nhất và xuất bản thành 1 trang tài liệu tối màu sang xịn lưu trên máy.',
+        prompt: 'Bóc transcript podcast YouTube này, rút ra 8 bài học thực chiến sâu sắc nhất và tạo trang tài liệu đọc đẹp mắt.',
+        badge: 'Học Siêu Tốc'
+      },
+      {
+        id: 13,
+        cat: 'business',
+        title: 'Đọc 20 Hợp Đồng Scan Theo Dõi Hạn Thanh Toán',
+        hook: 'Không bao giờ sợ bị phạt vì quên hạn hợp đồng hay ngày đóng tiền nhà.',
+        beforeTime: '50 Phút Lật Giấy',
+        beforeDesc: 'Xấp hợp đồng lưu bằng file ảnh scan không thể bấm Ctrl+F tìm kiếm, phải mở từng file lật tìm dòng ngày hết hạn và số tiền.',
+        afterTime: '20 Giây',
+        afterDesc: 'AI quét toàn bộ ảnh scan, bóc Tên đối tác - Giá trị - Ngày hết hạn, xuất bảng theo dõi tự động tô màu đỏ cảnh báo hợp đồng sắp hết hạn trong 30 ngày.',
+        prompt: 'Đọc 20 hợp đồng scan này, lấy ra đối tác, giá trị, ngày hết hạn và tô đỏ các hợp đồng còn dưới 30 ngày.',
+        badge: 'Quản Trị Rủi Ro'
+      },
+      {
+        id: 14,
+        cat: 'business',
+        title: 'Quét Giá 5 Shop Đối Thủ Để Lên Bảng So Sánh Thị Trường',
+        hook: 'Định giá sản phẩm tự tin, nắm trọn giá bán và khuyến mãi của đối thủ.',
+        beforeTime: '60 Phút Mở Tab',
+        beforeDesc: 'Mở 5 trang web đối thủ, vào từng danh mục sản phẩm ghi lại giá tiền, tình trạng còn hàng vào sổ tay.',
+        afterTime: '25 Giây',
+        afterDesc: 'Nhập 5 đường link -> AI tự vào từng trang bóc tên, giá bán và xuất bảng Excel so sánh mức giá trung bình của thị trường kèm biểu đồ.',
+        prompt: 'Vào 5 link web đối thủ này, lấy tên sản phẩm, giá bán và xuất ra file Excel so sánh thị trường.',
+        badge: 'Nghiên Cứu Nhanh'
+      },
+      {
+        id: 15,
+        cat: 'business',
+        title: 'Đọc Tài Liệu 50 Trang Ra 5 Slide Trình Chiếu Đi Họp',
+        hook: 'Cứu cánh ngoạn mục khi sếp giao tài liệu lúc 2h và bắt 2h30 vào họp.',
+        beforeTime: '90 Phút Đọc & Làm Slide',
+        beforeDesc: 'Căng mắt đọc lướt 50 trang tài liệu dài đặc chữ, vừa đọc vừa mở PowerPoint căn chỉnh từng ô chữ, hình ảnh toát mồ hôi.',
+        afterTime: '1 Phút',
+        afterDesc: 'AI đọc hiểu toàn bộ tài liệu trong 30 giây, cô đọng 5 điểm cốt lõi nhất và tự dàn trang thành bộ slide thuyết trình giao diện tối chuyên nghiệp.',
+        prompt: 'Đọc file PDF này, rút ra 5 điểm then chốt và tạo thành bộ slide thuyết trình giao diện tối để tôi đi họp.',
+        badge: 'Cứu Nguy'
+      },
+
+      // NHÓM 4: BÁN HÀNG & TỰ SỬA LỖI (16 - 20)
+      {
+        id: 16,
+        cat: 'automation',
+        title: 'Cầu Nối Tự Động: Khách Quét Mã QR -> Tự Giao Bài Lúc 2H Sáng',
+        hook: 'Kiếm tiền tự động 24/7, sáng dậy thấy tiền đã về ví và khách đã nhận bài.',
+        beforeTime: 'Mất Khách Vì Chậm',
+        beforeDesc: 'Nửa đêm khách chuyển khoản gửi ảnh bill, bạn đang ngủ không trực chat được. Sáng dậy khách đổi ý đòi hủy đơn.',
+        afterTime: 'Hoàn Toàn Tự Động',
+        afterDesc: 'Trang web có sẵn mã QR ngân hàng. Khách quét mã chuyển tiền -> Hệ thống tự nhận diện và gửi bài học qua email/Zalo ngay lập tức.',
+        prompt: 'Tạo trang bán khóa học 499k gắn mã QR tài khoản của tôi, tự gửi bài học khi khách thanh toán thành công.',
+        badge: 'Bán Hàng Tự Động'
+      },
+      {
+        id: 17,
+        cat: 'automation',
+        title: 'Bán Sản Phẩm Mới Chỉ Sau 1 Tin Nhắn Đổi Nội Dung Web',
+        hook: 'Tự tạo thì mới tự sửa được, không cần tốn tiền triệu thuê thợ code.',
+        beforeTime: 'Chờ Thợ Sửa 2 Ngày',
+        beforeDesc: 'Mỗi lần muốn đổi giá bán, đổi tên sản phẩm hay đổi ảnh bìa lại phải nhắn tin nhờ thợ làm web, vừa tốn tiền vừa mất thời gian chờ đợi.',
+        afterTime: '5 Phút Xong',
+        afterDesc: 'Nhắn 1 câu lệnh bằng tiếng Việt cho AI -> Web tự đổi tiêu đề, đổi ảnh sản phẩm và mã QR tự cập nhật đúng số tiền mới.',
+        prompt: 'Đổi tiêu đề web thành Sổ Tay Kế Hoạch, đổi giá 199k và thay ảnh bìa bằng file bia_so.jpg trên Desktop.',
+        badge: 'Chủ Động 100%'
+      },
+      {
+        id: 18,
+        cat: 'automation',
+        title: 'Hệ Thống Thu Thập Khảo Sát Tự Bắn Nhận Xét Về Điện Thoại',
+        hook: 'Lắng nghe phản hồi của khách hàng/học viên ngay khi họ vừa gửi form.',
+        beforeTime: '30 Phút Check Sheet',
+        beforeDesc: 'Gửi form khảo sát nhưng không biết khi nào có người điền, phải liên tục F5 kiểm tra bảng tính Google Sheet.',
+        afterTime: 'Tức Thì',
+        afterDesc: 'AI tạo sẵn form thu thập -> Mỗi khi có học viên gửi nhận xét khen/chê, tin nhắn tóm tắt tự động nảy ngay trên Telegram của bạn.',
+        prompt: 'Tạo form khảo sát ý kiến học viên, lưu vào Google Sheet và tự bắn thông báo tóm tắt về Telegram khi có phản hồi mới.',
+        badge: 'Chăm Sóc Chu Đáo'
+      },
+      {
+        id: 19,
+        cat: 'automation',
+        title: 'Sửa Lỗi Font & Định Dạng Hàng Trăm File Văn Bản Cũ',
+        hook: 'Hồi sinh kho tài liệu cũ bị lỗi mã chữ VNI-Times/TCVN3 không đọc được.',
+        beforeTime: 'Nhiều Giờ Bấm Tay',
+        beforeDesc: 'Mở từng file Word cũ bị lỗi font chữ loằng ngoằng, copy từng đoạn sang Unikey để chuyển mã rồi dán lại, chỉnh sửa thụt thò lộn xộn.',
+        afterTime: '10 Giây',
+        afterDesc: 'AI tự quét 100 file trong thư mục, tự nhận diện bảng mã cũ và chuyển đổi toàn bộ sang Unicode (Arial/Inter) chuẩn đẹp.',
+        prompt: 'Chuyển toàn bộ 100 file Word trong thư mục này sang font Unicode chuẩn và căn lề văn bản ngay ngắn.',
+        badge: 'Cứu Dữ Liệu'
+      },
+      {
+        id: 20,
+        cat: 'automation',
+        title: 'Bắt Bệnh Lỗi File & Sửa Công Thức Excel Bằng 1 Ảnh Chụp',
+        hook: 'Gặp lỗi không cần lên mạng mò mẫm, kéo ảnh chụp vào là AI tự vào sửa tận nơi.',
+        beforeTime: 'Cả Buổi Chiều Bực Bội',
+        beforeDesc: 'File Excel bị báo lỗi `#VALUE!` hoặc `#N/A`, tìm mãi không biết sai ở đâu, hỏi ChatGPT thì nó chỉ đoán mò mà không sửa được file thật.',
+        afterTime: '15 Giây',
+        afterDesc: 'Chụp ảnh màn hình chỗ bị lỗi kéo vào -> AI tự mở file trên máy, tìm đúng dòng bị sai, sửa lại công thức và kiểm tra chạy mượt mà.',
+        prompt: 'Kiểm tra lỗi trong ảnh chụp này, mở file Excel trên máy tôi và sửa lại công thức cho đúng.',
+        badge: 'Tự Bắt Bệnh'
+      }
+    ];
+
+    function renderCards(filter = 'all') {
+      const container = document.getElementById('cards-container');
+      const filtered = filter === 'all' ? ideas : ideas.filter(item => item.cat === filter);
+
+      container.innerHTML = filtered.map(item => `
+        <div class="bg-dark-card border border-dark-border hover:border-emerald-500/40 rounded-2xl p-6 lg:p-7 transition-all duration-300">
+          <div class="flex flex-wrap items-center justify-between gap-3 mb-4 pb-3 border-b border-dark-border">
+            <div class="flex items-center gap-3">
+              <span class="font-mono text-xs font-bold px-2.5 py-1 rounded bg-dark-surface text-emerald-400 border border-dark-border">
+                #${String(item.id).padStart(2, '0')}
+              </span>
+              <h3 class="text-base sm:text-lg font-bold text-white">${item.title}</h3>
+            </div>
+            <span class="text-[11px] font-mono font-semibold px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30">
+              ${item.badge}
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-300 font-medium mb-5 italic text-emerald-300/90">
+            👉 "${item.hook}"
+          </p>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-5">
+            <div class="bg-red-950/15 border border-red-500/20 rounded-xl p-4 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between text-red-400 text-xs font-bold mb-2">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-red-400"></span> TRƯỚC (Thủ công / ChatGPT Web)
+                  </span>
+                  <span class="font-mono px-2 py-0.5 rounded bg-red-500/10 text-[11px]">${item.beforeTime}</span>
+                </div>
+                <p class="text-xs text-slate-400 leading-relaxed">${item.beforeDesc}</p>
+              </div>
+              <div class="mt-3 pt-2 border-t border-red-500/10 text-[11px] text-red-300/70">
+                ⚠️ Mệt mỏi, tốn thời gian, dễ sai sót
+              </div>
+            </div>
+
+            <div class="bg-emerald-950/20 border border-emerald-500/30 rounded-xl p-4 flex flex-col justify-between glow-emerald">
+              <div>
+                <div class="flex items-center justify-between text-emerald-400 text-xs font-bold mb-2">
+                  <span class="flex items-center gap-1.5">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> SAU (AI Agent Computer Use)
+                  </span>
+                  <span class="font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[11px]">${item.afterTime}</span>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed">${item.afterDesc}</p>
+              </div>
+              <div class="mt-3 pt-2 border-t border-emerald-500/20 text-[11px] text-emerald-400 font-medium">
+                ✓ Rảnh tay 100%, kết quả dùng được ngay
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#05080f] border border-dark-border rounded-xl p-3.5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 font-mono text-xs">
+            <div class="flex items-center gap-2 overflow-x-auto w-full text-slate-300">
+              <span class="text-emerald-400 select-none font-bold">LỆNH:</span>
+              <span class="text-slate-200 truncate">"${item.prompt}"</span>
+            </div>
+            <button onclick="copyPrompt('${item.prompt.replace(/'/g, "\'")}')" class="shrink-0 text-[11px] font-sans font-semibold px-3 py-1.5 rounded-lg bg-dark-surface hover:bg-emerald-500 hover:text-slate-950 text-slate-300 border border-dark-border transition-colors flex items-center gap-1.5">
+              <span>📋</span> Copy Lệnh
+            </button>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function filterCategory(cat) {
+      document.querySelectorAll('.filter-btn').forEach(btn => {
+        if (btn.dataset.cat === cat) {
+          btn.classList.remove('bg-dark-card', 'text-slate-300', 'border-dark-border');
+          btn.classList.add('bg-emerald-500', 'text-slate-950');
+        } else {
+          btn.classList.remove('bg-emerald-500', 'text-slate-950');
+          btn.classList.add('bg-dark-card', 'text-slate-300', 'border-dark-border');
+        }
+      });
+      renderCards(cat);
+    }
+
+    function copyPrompt(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Đã copy câu lệnh vào bộ nhớ tạm!');
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toast-msg');
+      toastMsg.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2500);
+    }
+
+    renderCards('all');
+  </script>
+</body>
+</html>
