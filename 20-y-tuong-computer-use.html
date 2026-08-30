@@ -382,6 +382,7 @@
   <!-- DATA & SCRIPT -->
   <script>
     const ideas = [
+      // NHÓM 1: SÁNG TẠO NỘI DUNG & DỰNG VIDEO THỰC CHIẾN (1 - 5)
       {
         id: 1,
         cat: 'video',
@@ -442,6 +443,8 @@
         prompt: 'Xóa các clip quay hỏng dưới 2s, nén toàn bộ video còn lại về 1080p nét nhẹ lưu vào thư mục Video_Xong.',
         badge: 'CỨU BỘ NHỚ'
       },
+
+      // NHÓM 2: VĂN PHÒNG, EXCEL & DỮ LIỆU CỤC BỘ (6 - 10)
       {
         id: 6,
         cat: 'office',
@@ -502,17 +505,19 @@
         prompt: 'Gộp 5 file Excel doanh số này, tính tổng tiền từng bạn, đẩy lên Drive và gửi link báo cáo qua Telegram cho sếp.',
         badge: 'TAN LÀM SỚM'
       },
+
+      // NHÓM 3: NGHIÊN CỨU THỊ TRƯỜNG & QUẢN TRỊ NỘI BỘ (11 - 15)
       {
         id: 11,
         cat: 'business',
-        title: 'LỌC TỰ ĐỘNG 50 CV ỨNG VIÊN RA BẢNG CHẤM ĐIỂM',
-        hook: 'Tuyển dụng không cần thức trắng đêm mở từng file PDF đọc mỏi mắt.',
-        beforeTime: '120 Phút Đọc Hồ Sơ',
-        beforeDesc: 'Tải 50 file CV về, mở từng cái đọc lướt, ghi chép điểm mạnh điểm yếu ra sổ, rất dễ bỏ sót ứng viên giỏi vì mệt mỏi.',
-        afterTime: '30 Giây',
-        afterDesc: 'AI tự đọc toàn bộ 50 CV trong thư mục, chấm điểm theo tiêu chí bạn yêu cầu và xuất bảng Excel xếp hạng từ cao xuống thấp kèm link mở CV.',
-        prompt: 'Đọc 50 CV trong thư mục này, chấm điểm theo tiêu chí kinh nghiệm và xuất bảng Excel xếp hạng ứng viên.',
-        badge: 'TUYỂN DỤNG NHANH'
+        title: 'TỰ ĐỌC 100 COMMENT KHÁN GIẢ ĐỂ LÊN 5 Ý TƯỞNG VIDEO VIRAL',
+        hook: 'Không còn đau đầu cạn kiệt ý tưởng, làm đúng chủ đề khán giả đang thèm khát.',
+        beforeTime: '90 Phút Lướt Mỏi Tay',
+        beforeDesc: 'Lướt đọc từng bình luận dưới video TikTok/Facebook, ghi chép câu hỏi của người xem vào sổ tay rời rạc, không biết đâu là chủ đề họ quan tâm nhất.',
+        afterTime: '20 Giây',
+        afterDesc: 'Kéo file danh sách comment vào -> AI tự đọc hiểu tâm lý, tổng hợp thành 5 nhóm câu hỏi hot nhất và xuất sẵn 5 tiêu đề video kèm kịch bản gợi ý.',
+        prompt: 'Đọc 100 comment này, tìm ra 5 nỗi đau lớn nhất của khán giả và gợi ý 5 tiêu đề video đánh trúng tâm lý.',
+        badge: 'Ý TƯỞNG VÔ TẬN'
       },
       {
         id: 12,
@@ -529,14 +534,14 @@
       {
         id: 13,
         cat: 'business',
-        title: 'ĐỌC 20 HỢP ĐỒNG SCAN THEO DÕI HẠN THANH TOÁN',
-        hook: 'Không bao giờ sợ bị phạt vì quên hạn hợp đồng hay ngày đóng tiền nhà.',
-        beforeTime: '50 Phút Lật Giấy',
-        beforeDesc: 'Xấp hợp đồng lưu bằng file ảnh scan không thể bấm Ctrl+F tìm kiếm, phải mở từng file lật tìm dòng ngày hết hạn và số tiền.',
-        afterTime: '20 Giây',
-        afterDesc: 'AI quét toàn bộ ảnh scan, bóc Tên đối tác - Giá trị - Ngày hết hạn, xuất bảng theo dõi tự động tô màu đỏ cảnh báo hợp đồng sắp hết hạn trong 30 ngày.',
-        prompt: 'Đọc 20 hợp đồng scan này, lấy ra đối tác, giá trị, ngày hết hạn và tô đỏ các hợp đồng còn dưới 30 ngày.',
-        badge: 'QUẢN TRỊ RỦI RO'
+        title: 'TỰ ĐỐI SOÁT SAO KÊ NGÂN HÀNG VỚI SỔ BÁN HÀNG CUỐI THÁNG',
+        hook: 'Tìm ra ngay lập tức các khoản tiền bị lệch hoặc bị ngân hàng trừ phí vô lý.',
+        beforeTime: '90 Phút Dò Từng Dòng',
+        beforeDesc: 'Tải file sao kê 200 giao dịch về, vừa mở sổ đơn hàng vừa căng mắt so sánh từng mã thanh toán, hoa mắt rất dễ sót đơn chưa nhận được tiền.',
+        afterTime: '15 Giây',
+        afterDesc: 'Kéo file sao kê và danh sách đơn hàng vào -> AI tự khớp mã giao dịch, lọc ra đúng 3 khoản tiền bị lệch và xuất bảng cảnh báo màu đỏ.',
+        prompt: 'Khớp dữ liệu sao_ke.xlsx với don_hang.xlsx, lọc ra những đơn chưa thanh toán hoặc số tiền bị lệch.',
+        badge: 'KHÔNG SÓT TIỀN'
       },
       {
         id: 14,
@@ -562,6 +567,8 @@
         prompt: 'Đọc file PDF này, rút ra 5 điểm then chốt và tạo thành bộ slide thuyết trình giao diện tối để tôi đi họp.',
         badge: 'CỨU NGUY'
       },
+
+      // NHÓM 4: BÁN HÀNG TỰ ĐỘNG & TỰ SỬA LỖI MÁY TÍNH (16 - 20)
       {
         id: 16,
         cat: 'automation',
@@ -571,7 +578,7 @@
         beforeDesc: 'Nửa đêm khách chuyển khoản gửi ảnh bill, bạn đang ngủ không trực chat được. Sáng dậy khách đổi ý đòi hủy đơn.',
         afterTime: 'Hoàn Toàn Tự Động',
         afterDesc: 'Trang web có sẵn mã QR ngân hàng. Khách quét mã chuyển tiền -> Hệ thống tự nhận diện và gửi bài học qua email/Zalo ngay lập tức.',
-        prompt: 'Tạo trang bán khóa học 3 triệu gắn mã QR tài khoản của tôi, tự gửi bài học khi khách thanh toán thành công.',
+        prompt: 'Tạo trang bán khóa học 3tr gắn mã QR tài khoản của tôi, tự gửi bài học khi khách thanh toán thành công.',
         badge: 'BÁN HÀNG TỰ ĐỘNG'
       },
       {
@@ -601,14 +608,14 @@
       {
         id: 19,
         cat: 'automation',
-        title: 'SỬA LỖI FONT & ĐỊNH DẠNG HÀNG TRĂM FILE VĂN BẢN CŨ',
-        hook: 'Hồi sinh kho tài liệu cũ bị lỗi mã chữ VNI-Times/TCVN3 không đọc được.',
-        beforeTime: 'Nhiều Giờ Bấm Tay',
-        beforeDesc: 'Mở từng file Word cũ bị lỗi font chữ loằng ngoằng, copy từng đoạn sang Unikey để chuyển mã rồi dán lại, chỉnh sửa thụt thò lộn xộn.',
+        title: 'TỰ ĐỔI TÊN & PHÂN LOẠI 100 ẢNH SẢN PHẨM / ẢNH MÀN HÌNH',
+        hook: 'Xóa sạch bãi rác tên file `IMG_9281.jpg`, tìm lại ảnh sản phẩm trong 1 nốt nhạc.',
+        beforeTime: '40 Phút Mở Từng Ảnh',
+        beforeDesc: 'Mở từng ảnh chụp sản phẩm hoặc ảnh tài liệu chụp màn hình lên xem, bấm F2 đổi tên từng file và tạo thư mục kéo thả thủ công.',
         afterTime: '10 Giây',
-        afterDesc: 'AI tự quét 100 file trong thư mục, tự nhận diện bảng mã cũ và chuyển đổi toàn bộ sang Unicode (SVN-Poppins) chuẩn đẹp.',
-        prompt: 'Chuyển toàn bộ 100 file Word trong thư mục này sang font Unicode chuẩn và căn lề văn bản ngay ngắn.',
-        badge: 'CỨU DỮ LIỆU'
+        afterDesc: 'AI tự nhìn nội dung trong ảnh, đổi tên rác thành tên chuẩn (Vi du: Binh_Giu_Nhiet_Xanh_01.jpg) và xếp ngay ngắn vào từng thư mục sản phẩm.',
+        prompt: 'Đọc nội dung 100 ảnh trong thư mục này, đổi tên file theo tên sản phẩm có trong ảnh và gom vào từng thư mục riêng.',
+        badge: 'QUẢN LÝ ẢNH THÔNG MINH'
       },
       {
         id: 20,
