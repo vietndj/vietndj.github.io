@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Phương Án Tối Ưu Tổ Chức Lớp Offline 2 Ngày Tại Hill Top Ecopark | 19 - 20/09/2026</title>
+  <title>Bản Hướng Dẫn Thực Thi & Booking Lớp Offline Hill Top Ecopark (19 - 20/09/2026)</title>
   
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -56,13 +56,9 @@
       color: #e2e8f0;
     }
     .glass-card {
-      background: rgba(15, 23, 42, 0.85);
-      backdrop-filter: blur(14px);
+      background: rgba(15, 23, 42, 0.9);
+      backdrop-filter: blur(16px);
       border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-card-accent {
-      background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(15, 23, 42, 0.9) 100%);
-      border: 1px solid rgba(16, 185, 129, 0.35);
     }
     .font-mono-code {
       font-family: 'JetBrains Mono', monospace;
@@ -83,13 +79,10 @@
       background: #334155;
     }
     .badge-glow {
-      box-shadow: 0 0 15px rgba(16, 185, 129, 0.35);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.3);
     }
-    .img-zoom {
-      transition: transform 0.4s ease, filter 0.4s ease;
-    }
-    .img-zoom:hover {
-      transform: scale(1.03);
+    .copy-tooltip {
+      transition: all 0.2s ease;
     }
   </style>
 </head>
@@ -100,752 +93,368 @@
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3">
       <div class="flex items-center gap-3">
         <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-emerald-400 flex items-center justify-center text-dark-bg font-bold shadow-lg shadow-brand-500/20">
-          <i class="fa-solid fa-map-location-dot text-white text-lg"></i>
+          <i class="fa-solid fa-clipboard-check text-white text-lg"></i>
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="font-extrabold text-sm sm:text-base text-white leading-tight tracking-tight">Kế Hoạch Khảo Sát & Phương Án Tốt Nhất: Hill Top Ecopark</h1>
-            <span class="font-mono-code text-[10px] px-2 py-0.5 rounded-full bg-brand-500/20 text-brand-300 border border-brand-500/30">19-20/09</span>
+            <h1 class="font-extrabold text-sm sm:text-base text-white leading-tight tracking-tight">TÀI LIỆU BOOKING & TRIỂN KHAI LỚP OFFLINE ECOPARK</h1>
+            <span class="font-mono-code text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">19 - 20/09/2026</span>
           </div>
-          <p class="text-xs text-slate-400">Lớp offline 40 người • Học ngày + Tiệc tối BBQ • Homestay 2-3 người/phòng</p>
+          <p class="text-xs text-slate-400">Dành cho Ekip / Trợ lý phụ trách liên hệ, đàm phán giá và đặt cọc</p>
         </div>
       </div>
 
-      <nav class="hidden lg:flex items-center gap-1.5 text-xs font-medium text-slate-300">
-        <a href="#phuong-an-tot-nhat" class="px-3 py-1.5 rounded-lg bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 hover:bg-emerald-500/25 transition flex items-center gap-1">
-          <i class="fa-solid fa-crown text-amber-400"></i> Lựa Chọn Tốt Nhất
-        </a>
-        <a href="#dia-diem" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition">1. Địa Điểm Hill Top</a>
-        <a href="#an-toi" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition">2. Bữa Tối BBQ</a>
-        <a href="#homestay" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition">3. Bảng Giá Homestay</a>
-        <a href="#hinh-anh" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition">4. Hình Ảnh Thực Tế</a>
-        <a href="#du-toan" class="px-3 py-1.5 rounded-lg hover:bg-slate-800 transition">5. Tính Dự Toán</a>
-      </nav>
-
       <div class="flex items-center gap-2">
-        <a href="tel:0869199599" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition">
-          <i class="fa-solid fa-phone"></i> Gọi Hilltop: 0869 199 599
-        </a>
-        <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition">
-          <i class="fa-solid fa-print"></i> In A4
+        <button onclick="window.print()" class="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition">
+          <i class="fa-solid fa-print"></i> In Bản Kế Hoạch (A4)
         </button>
+        <a href="#checklist" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white shadow-md transition">
+          <i class="fa-solid fa-list-check"></i> Xem Checklist Task
+        </a>
       </div>
     </div>
   </header>
 
-  <!-- BANNER QUYẾT ĐỊNH: CHỌN LUÔN PHƯƠNG ÁN TỐT NHẤT -->
-  <section id="phuong-an-tot-nhat" class="relative overflow-hidden py-10 sm:py-14 px-4 sm:px-8 border-b border-dark-border bg-gradient-to-b from-slate-900 via-dark-bg to-dark-bg">
-    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-900/25 via-transparent to-transparent pointer-events-none"></div>
+  <!-- BANNER TỔNG QUAN NHIỆM VỤ -->
+  <section class="py-8 sm:py-12 px-4 sm:px-8 border-b border-dark-border bg-gradient-to-b from-slate-900 via-dark-bg to-dark-bg">
     <div class="max-w-7xl mx-auto space-y-6">
       
       <div class="flex flex-wrap items-center gap-2.5">
         <span class="inline-flex items-center gap-1.5 text-xs font-extrabold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 badge-glow">
-          <i class="fa-solid fa-award text-amber-400"></i> BẢN ĐỀ XUẤT CHỌN LỌC TỐI ƯU NHẤT CHO ANH VIỆT
+          <i class="fa-solid fa-bullseye text-amber-400"></i> PHƯƠNG ÁN ĐÃ CHỐT CHÍNH THỨC
         </span>
         <span class="font-mono-code text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-          Quy mô: 40 Học Viên
+          Quy mô: 40 Học viên + 5 Ekip
         </span>
         <span class="font-mono-code text-xs px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
-          Thời gian: 2 Ngày (Thứ 7 & Chủ Nhật, 19 - 20/09/2026)
+          Thời gian: Thứ 7 (19/09) & Chủ Nhật (20/09/2026)
         </span>
       </div>
 
-      <!-- Grid Tổng Quan Quyết Định -->
-      <div class="p-6 sm:p-8 rounded-3xl glass-card-accent border border-brand-500/40 shadow-2xl relative">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          
-          <div class="lg:col-span-8 space-y-4">
-            <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-snug">
-              Phương Án Tốt Nhất: <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">Trọn Gói Hill Top Cafe + BBQ Camping + Homestay Westbay</span>
-            </h2>
-            <p class="text-sm sm:text-base text-slate-300 leading-relaxed">
-              Sau khi tổng hợp, phân tích chi phí, giao thông, hạ tầng quay phim và đối chiếu với case study thành công của <strong>Mape Academy (Đoàn Đức Đồng - 60 học viên)</strong> tại Ecopark, đây là <strong>combo tối ưu 100% về cả chi phí, trải nghiệm học thực chiến và độ gắn kết học viên</strong>:
-            </p>
-
-            <!-- 3 Trụ Cột Đã Chọn -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
-              <div class="p-4 rounded-2xl bg-slate-900/90 border border-emerald-500/30">
-                <div class="flex items-center gap-2 text-brand-400 font-bold text-xs">
-                  <i class="fa-solid fa-chalkboard-user"></i> 1. NƠI DẠY HỌC
-                </div>
-                <div class="font-bold text-white text-sm mt-1">Hill Top Cafe Ecopark</div>
-                <div class="text-xs text-slate-400 mt-1">Bao trọn không gian tầng 2 & đồi cỏ. Vừa học lý thuyết vừa có 50+ góc quay B-roll triệu view.</div>
-                <div class="text-xs text-amber-400 font-mono-code font-bold mt-2">~7M/ngày (hoặc 70k/teabreak)</div>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-slate-900/90 border border-amber-500/30">
-                <div class="flex items-center gap-2 text-amber-400 font-bold text-xs">
-                  <i class="fa-solid fa-fire-burner"></i> 2. TIỆC TỐI GIAO LƯU
-                </div>
-                <div class="font-bold text-white text-sm mt-1">Tiệc Nướng BBQ Camping</div>
-                <div class="text-xs text-slate-400 mt-1">Tại sân vườn Hill Top hoặc Cafe Eco & Nướng (Hồ Thiên Nga). Học viên chia tiền camp tự nguyện.</div>
-                <div class="text-xs text-amber-400 font-mono-code font-bold mt-2">~200k – 250k / người</div>
-              </div>
-
-              <div class="p-4 rounded-2xl bg-slate-900/90 border border-cyan-500/30">
-                <div class="flex items-center gap-2 text-cyan-400 font-bold text-xs">
-                  <i class="fa-solid fa-bed"></i> 3. CHỖ NGHỈ LƯU TRÚ
-                </div>
-                <div class="font-bold text-white text-sm mt-1">Căn Hộ Westbay (1PN+1, 2PN)</div>
-                <div class="text-xs text-slate-400 mt-1">Cách Hill Top 250m (đi bộ 3 phút). Ghép 2-3 người/phòng, đầy đủ điều hòa, bếp, máy giặt.</div>
-                <div class="text-xs text-cyan-400 font-mono-code font-bold mt-2">~220k – 270k / người / đêm</div>
-              </div>
-            </div>
+      <!-- Quick Summary Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        
+        <!-- Task 1 -->
+        <div class="p-5 rounded-2xl glass-card border border-emerald-500/40 space-y-3 relative bg-emerald-950/20">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-code text-[11px] text-emerald-400 font-bold px-2 py-0.5 rounded bg-emerald-500/10 border border-emerald-500/20">MỤC TIÊU 1</span>
+            <span class="text-xs text-slate-400 font-mono-code">2 Ngày Học</span>
           </div>
-
-          <!-- Summary Box Bên Phải -->
-          <div class="lg:col-span-4 p-5 rounded-2xl bg-slate-950/90 border border-slate-800 space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800 text-xs">
-              <span class="font-mono-code font-bold text-slate-300">ĐỐI CHIẾU THỰC CHIẾN</span>
-              <span class="text-emerald-400 font-semibold"><i class="fa-solid fa-circle-check"></i> Đã Xác Thực</span>
-            </div>
-            <div class="text-xs text-slate-300 space-y-2">
-              <p>📌 <strong>Bên từng thuê:</strong> <em>Mape Academy - HLV Đoàn Đức Đồng</em> (Workshop Tự Tin Quay Video).</p>
-              <p>🔗 <strong>Trang xác thực:</strong> <a href="https://tutinquayvideo.mape.vn/" target="_blank" class="text-brand-400 underline font-mono-code">tutinquayvideo.mape.vn</a></p>
-              <p>👥 <strong>Quy mô bên họ:</strong> 60 người (Học phí 1.868k - 2.868k).</p>
-              <p>🎯 <strong>Đánh giá cho lớp 40 người của anh Việt:</strong> Cực kỳ vừa vặn, không gian thoáng đãng, học viên mê tít vì cảnh đẹp.</p>
-            </div>
-            <div class="pt-3 border-t border-slate-800">
-              <a href="#du-toan" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-emerald-900/30 transition">
-                <i class="fa-solid fa-calculator"></i> Xem Bảng Dự Toán Chi Tiết
-              </a>
-            </div>
+          <h3 class="text-base font-bold text-white">1. Book Địa Điểm Hill Top Cafe</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Bao trọn không gian học trong nhà kính & ban công đồi cỏ. Phục vụ máy lạnh, ổ cắm laptop, teabreak nước uống cho 40 người.
+          </p>
+          <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Hotline: <strong class="text-white">0869 199 599</strong></span>
+            <a href="tel:0869199599" class="px-2.5 py-1 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold transition">Gọi Ngay</a>
           </div>
-
         </div>
+
+        <!-- Task 2 -->
+        <div class="p-5 rounded-2xl glass-card border border-amber-500/40 space-y-3 relative bg-amber-950/20">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-code text-[11px] text-amber-400 font-bold px-2 py-0.5 rounded bg-amber-500/10 border border-amber-500/20">MỤC TIÊU 2</span>
+            <span class="text-xs text-slate-400 font-mono-code">Tối 19/09</span>
+          </div>
+          <h3 class="text-base font-bold text-white">2. Book Tiệc Nướng BBQ Camping</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Đặt tiệc nướng ngoài trời tại sân vườn Hill Top hoặc <em>Cafe Eco & Nướng</em> bên bờ Hồ Thiên Nga. Học viên camp chia đều tiền ăn.
+          </p>
+          <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Hotline BBQ: <strong class="text-white">077 841 8886</strong></span>
+            <a href="tel:0778418886" class="px-2.5 py-1 rounded-lg bg-amber-600 hover:bg-amber-500 text-white font-bold transition">Gọi BBQ</a>
+          </div>
+        </div>
+
+        <!-- Task 3 -->
+        <div class="p-5 rounded-2xl glass-card border border-cyan-500/40 space-y-3 relative bg-cyan-950/20">
+          <div class="flex items-center justify-between">
+            <span class="font-mono-code text-[11px] text-cyan-400 font-bold px-2 py-0.5 rounded bg-cyan-500/10 border border-cyan-500/20">MỤC TIÊU 3</span>
+            <span class="text-xs text-slate-400 font-mono-code">Đêm 19/09</span>
+          </div>
+          <h3 class="text-base font-bold text-white">3. Khóa Quỹ Homestay Westbay</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Giữ trước 4–6 căn hộ Westbay (cách Hilltop 250m). Ghép 2–3 bạn/căn 1PN+1 hoặc 4 bạn/căn 2PN để tối ưu chi phí cho học viên ở xa.
+          </p>
+          <div class="pt-2 border-t border-slate-800 flex justify-between items-center text-xs">
+            <span class="text-slate-400">Hotline Hub: <strong class="text-white">098 123 4567</strong></span>
+            <a href="tel:0981234567" class="px-2.5 py-1 rounded-lg bg-cyan-600 hover:bg-cyan-500 text-white font-bold transition">Gọi Homestay</a>
+          </div>
+        </div>
+
       </div>
 
     </div>
   </section>
 
-  <!-- MAIN BODY -->
-  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-12 space-y-16">
+  <!-- MAIN CONTENT -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-8 py-10 space-y-12">
 
-    <!-- PHẦN 1: BẢNG SO SÁNH & PHÂN TÍCH TẤT CẢ CÁC PHƯƠNG ÁN -->
-    <section class="space-y-6">
+    <!-- NHIỆM VỤ 1: HƯỚNG DẪN BOOKING HILL TOP CAFE -->
+    <section class="space-y-5">
       <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-brand-400 uppercase font-semibold">Phần 01</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Tổng Hợp & Phân Tích So Sánh Tất Cả Các Phương Án</h3>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold font-mono-code">01</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Nhiệm Vụ 1: Đàm Phán & Đặt Cọc Địa Điểm Hill Top Cafe</h2>
         </div>
-        <span class="text-xs text-slate-400">Đánh giá ưu / nhược điểm trên thang điểm 10</span>
+        <span class="font-mono-code text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
+          Mức giá mục tiêu: 6.5M – 8M / ngày
+        </span>
       </div>
 
-      <!-- Bảng So Sánh Địa Điểm Học -->
-      <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-4">
-        <h4 class="text-sm font-bold text-white flex items-center gap-2">
-          <i class="fa-solid fa-building text-brand-400"></i> HẠNG MỤC 1: ĐỊA ĐIỂM TỔ CHỨC LỚP HỌC
-        </h4>
+      <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-6">
+        
+        <!-- Thông tin liên hệ & Địa chỉ -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1">
+            <div class="text-slate-400">Hotline Quản Lý / Đặt Chỗ:</div>
+            <div class="text-base font-bold text-white font-mono-code">0869 199 599</div>
+            <a href="tel:0869199599" class="text-brand-400 hover:underline font-semibold flex items-center gap-1 mt-1">
+              <i class="fa-solid fa-phone"></i> Bấm để gọi ngay
+            </a>
+          </div>
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1">
+            <div class="text-slate-400">Fanpage Facebook Chính Thức:</div>
+            <div class="text-sm font-bold text-white">Hill Top Cafe Ecopark</div>
+            <a href="https://www.facebook.com/search/top?q=Hill%20Top%20Cafe%20Ecopark" target="_blank" class="text-blue-400 hover:underline font-semibold flex items-center gap-1 mt-1">
+              <i class="fa-brands fa-facebook"></i> Nhắn tin Fanpage
+            </a>
+          </div>
+          <div class="p-3.5 bg-slate-900/80 rounded-xl border border-slate-800 space-y-1">
+            <div class="text-slate-400">Địa Chỉ Định Vị:</div>
+            <div class="text-xs font-medium text-slate-200">Bùng binh Westbay & Swanlake, Ecopark</div>
+            <span class="text-[11px] text-slate-500 font-mono-code">Văn Giang, Hưng Yên</span>
+          </div>
+        </div>
+
+        <!-- Checklist kỹ thuật cần xác nhận khi book -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold text-slate-200 uppercase tracking-wider font-mono-code flex items-center gap-2">
+            <i class="fa-solid fa-list-check text-emerald-400"></i> Các Yêu Cầu Kỹ Thuật Ekip Cần Xác Nhận Rõ Với Quán:
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-slate-300">
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+              <div><strong>Thời gian sử dụng:</strong> Cả ngày Thứ 7 (19/09) & Chủ Nhật (20/09), từ <strong>07:30 sáng đến 17:30 chiều</strong>.</div>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+              <div><strong>Bố trí bàn ghế:</strong> Xếp 40–45 ghế ngồi học có bàn để laptop/sổ ghi chép ở khu vực tầng 2.</div>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+              <div><strong>Máy chiếu / Màn hình:</strong> Hỏi quán có sẵn màn chiếu di động hay TV lớn không (nếu không, ekip tự thuê mang theo).</div>
+            </div>
+            <div class="p-3 bg-slate-900/60 rounded-xl border border-slate-800 flex items-start gap-2">
+              <i class="fa-solid fa-check text-emerald-400 mt-0.5"></i>
+              <div><strong>Điện nguồn & Wifi:</strong> Yêu cầu cấp 4–6 ổ cắm kéo dài cho học viên cắm sạc laptop và mật khẩu wifi riêng cho lớp.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mẫu Tin Nhắn Zalo / Kịch Bản Gọi Cho Quản Lý Hilltop -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center">
+            <h4 class="text-xs font-bold text-amber-300 font-mono-code flex items-center gap-1.5">
+              <i class="fa-solid fa-comment-dots"></i> MẪU TIN NHẮN ZALO / GỌI ĐIỆN CHO QUẢN LÝ HILLTOP CAFE:
+            </h4>
+            <button onclick="copyToClipboard('msg-hilltop')" class="text-[11px] text-brand-400 hover:text-brand-300 font-mono-code flex items-center gap-1 bg-brand-500/10 px-2.5 py-1 rounded border border-brand-500/20">
+              <i class="fa-regular fa-copy"></i> Copy Tin Nhắn
+            </button>
+          </div>
+          <div id="msg-hilltop" class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs font-mono-code text-slate-300 leading-relaxed">
+"Chào anh/chị quản lý Hill Top Cafe Ecopark, em là trợ lý bên Thầy Nguyễn Đức Việt (Hệ thống AI FEDU).
+Bên em dự kiến tổ chức lớp học đào tạo thực chiến 40 người trong 2 ngày Thứ 7 & Chủ Nhật (19 và 20/09/2026), từ 8h00 đến 17h30 mỗi ngày.
+Em muốn liên hệ trao đổi về chi phí thuê không gian học tại tầng 2 (bao gồm gói teabreak nước uống/bánh ngọt), kiểm tra việc hỗ trợ máy chiếu, âm thanh mic và ổ cắm điện cho lớp.
+Nhờ anh/chị gửi giúp em báo giá thuê trọn gói 2 ngày và thủ tục đặt cọc giữ chỗ nhé ạ. Em cảm ơn!"
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NHIỆM VỤ 2: HƯỚNG DẪN BOOK TIỆC TỐI BBQ -->
+    <section class="space-y-5">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold font-mono-code">02</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Nhiệm Vụ 2: Đặt Tiệc Nướng BBQ Camping Giao Lưu (Tối 19/09)</h2>
+        </div>
+        <span class="font-mono-code text-xs text-amber-400 bg-amber-500/10 border border-amber-500/30 px-3 py-1 rounded-full">
+          Mức giá mục tiêu: 200k – 250k / người
+        </span>
+      </div>
+
+      <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-6">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+          <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-amber-400 font-bold text-sm">Phương Án 1: Tiệc BBQ Ngoài Trời (Được chọn số 1)</div>
+            <p class="text-slate-300"><strong>Địa điểm:</strong> Sân vườn Hill Top hoặc <em>Cafe Eco & Nướng</em> (Cổng 2 Hồ Thiên Nga - cách 300m).</p>
+            <p class="text-slate-400"><strong>Hotline:</strong> <a href="tel:0778418886" class="text-white font-mono-code font-bold hover:underline">077 841 8886</a></p>
+            <p class="text-slate-400"><strong>Menu gợi ý:</strong> Set nướng bò cuộn nấm, dẻ sườn, gà nướng mật ong, xúc xích, bánh mì bơ tỏi, salad hoa quả, bia/nước ngọt.</p>
+          </div>
+          <div class="p-4 bg-slate-900/80 rounded-xl border border-slate-800 space-y-2">
+            <div class="text-slate-300 font-bold text-sm">Phương Án 2 Dự Phòng: Nhà Hàng Bò Tơ Quán Mộc</div>
+            <p class="text-slate-300"><strong>Địa điểm:</strong> Phố đi bộ chân đế Westbay (cách Hilltop 250m).</p>
+            <p class="text-slate-400"><strong>Hotline:</strong> <a href="tel:1900636882" class="text-white font-mono-code font-bold hover:underline">1900 636 882</a> | <a href="https://botoquanmoc.com" target="_blank" class="text-blue-400 hover:underline">botoquanmoc.com</a></p>
+            <p class="text-slate-400"><strong>Đặc điểm:</strong> Phòng máy lạnh, đồ ăn ra nhanh, dự phòng trong trường hợp tối 19/09 trời mưa to.</p>
+          </div>
+        </div>
+
+        <!-- Mẫu Tin Nhắn Book BBQ -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center">
+            <h4 class="text-xs font-bold text-amber-300 font-mono-code flex items-center gap-1.5">
+              <i class="fa-solid fa-comment-dots"></i> MẪU TIN NHẮN ZALO ĐẶT BÀN BBQ CAMPING:
+            </h4>
+            <button onclick="copyToClipboard('msg-bbq')" class="text-[11px] text-amber-400 hover:text-amber-300 font-mono-code flex items-center gap-1 bg-amber-500/10 px-2.5 py-1 rounded border border-amber-500/20">
+              <i class="fa-regular fa-copy"></i> Copy Tin Nhắn
+            </button>
+          </div>
+          <div id="msg-bbq" class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs font-mono-code text-slate-300 leading-relaxed">
+"Chào bên mình, em muốn đặt tiệc nướng BBQ ngoài trời cho đoàn khoảng 35 - 40 người vào tối Thứ 7 ngày 19/09/2026 (khung giờ 18h30 - 21h30).
+Nhờ bên mình gửi giúp em các set menu nướng khoảng 200.000đ - 250.000đ/người (kèm nước uống/bia) và xác nhận vị trí bàn kê tập trung cho cả đoàn nhé ạ. Em cảm ơn!"
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- NHIỆM VỤ 3: HƯỚNG DẪN KHÓA QUỸ HOMESTAY WESTBAY -->
+    <section class="space-y-5">
+      <div class="flex items-center justify-between flex-wrap gap-2">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-bold font-mono-code">03</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Nhiệm Vụ 3: Khóa 4–6 Căn Homestay Westbay Cho Học Viên Ở Xa</h2>
+        </div>
+        <span class="font-mono-code text-xs text-cyan-400 bg-cyan-500/10 border border-cyan-500/30 px-3 py-1 rounded-full">
+          Mức giá mục tiêu: 220k – 270k / người / đêm
+        </span>
+      </div>
+
+      <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-6">
+        
+        <!-- Bảng phân bổ căn hộ -->
         <div class="overflow-x-auto">
           <table class="w-full text-xs text-left text-slate-300">
             <thead class="text-[11px] uppercase bg-slate-900 text-slate-400 font-mono-code">
               <tr>
-                <th class="px-4 py-3 rounded-l-lg">Phương án</th>
-                <th class="px-4 py-3">Ưu điểm thực chiến</th>
-                <th class="px-4 py-3">Hạn chế / Rủi ro</th>
-                <th class="px-4 py-3">Chi phí 2 ngày</th>
-                <th class="px-4 py-3">Điểm</th>
-                <th class="px-4 py-3 rounded-r-lg">Kết luận</th>
+                <th class="px-4 py-2.5 rounded-l-lg">Loại Căn</th>
+                <th class="px-4 py-2.5">Số Lượng Đề Xuất</th>
+                <th class="px-4 py-2.5">Cách Ghép Người</th>
+                <th class="px-4 py-2.5">Giá Thuê Cuối Tuần / Căn</th>
+                <th class="px-4 py-2.5 rounded-r-lg">Chi Phí / Người</th>
               </tr>
             </thead>
-            <tbody class="divide-y divide-slate-800/60">
-              <tr class="bg-emerald-950/20 font-medium">
-                <td class="px-4 py-3.5 text-white font-bold">
-                  <span class="text-emerald-400">★ PA 1: Hill Top Cafe Ecopark</span><br>
-                  <span class="text-[11px] text-slate-400 font-normal">Bùng binh Westbay & Swanlake</span>
-                </td>
-                <td class="px-4 py-3 text-slate-300">
-                  • View đồi cỏ, hồ nước, cây xanh sẵn có<br>
-                  • Học viên ra ngoài cửa là có 50+ góc quay B-roll<br>
-                  • Không khí chữa lành, truyền cảm hứng mạnh mẽ
-                </td>
-                <td class="px-4 py-3 text-slate-400">
-                  Cần kiểm tra máy chiếu và mang theo micro loa trợ giảng
-                </td>
-                <td class="px-4 py-3 font-mono-code text-amber-400 font-bold">13M – 16M</td>
-                <td class="px-4 py-3 font-mono-code text-emerald-400 font-bold text-sm">9.8/10</td>
-                <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">CHỌN NGAY</span></td>
+            <tbody class="divide-y divide-slate-800 font-medium">
+              <tr>
+                <td class="px-4 py-3 text-white font-bold">Căn 1PN+1 (Westbay)</td>
+                <td class="px-4 py-3 text-cyan-400 font-mono-code font-bold">2 Căn</td>
+                <td class="px-4 py-3">3 bạn / căn (1 giường đôi + 1 giường phụ/sofa)</td>
+                <td class="px-4 py-3 font-mono-code text-white">650k – 750k/đêm</td>
+                <td class="px-4 py-3 font-mono-code text-emerald-400 font-bold">~220k – 250k / người</td>
               </tr>
               <tr>
-                <td class="px-4 py-3.5 text-white font-bold">
-                  PA 2: Thuê Phòng Họp Khách Sạn / TT Sự Kiện<br>
-                  <span class="text-[11px] text-slate-400 font-normal">Khu Phố Trúc / Rừng Cọ Ecopark</span>
-                </td>
-                <td class="px-4 py-3 text-slate-300">
-                  • Phòng kín cách âm 100%, máy lạnh trung tâm<br>
-                  • Có sẵn màn chiếu cố định
-                </td>
-                <td class="px-4 py-3 text-slate-400">
-                  Bị gò bó trong 4 bức tường, không có bối cảnh đẹp để thực hành quay video ngoại cảnh
-                </td>
-                <td class="px-4 py-3 font-mono-code text-slate-400">18M – 25M</td>
-                <td class="px-4 py-3 font-mono-code text-slate-400 font-bold">7.2/10</td>
-                <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">Loại</span></td>
-              </tr>
-              <tr>
-                <td class="px-4 py-3.5 text-white font-bold">
-                  PA 3: Thuê Nguyên Biệt Thự Villa Ecopark<br>
-                  <span class="text-[11px] text-slate-400 font-normal">Khu Vườn Mai / Vườn Tùng</span>
-                </td>
-                <td class="px-4 py-3 text-slate-300">
-                  • Không gian biệt lập riêng tư hoàn toàn<br>
-                  • Có sân vườn và phòng khách lớn
-                </td>
-                <td class="px-4 py-3 text-slate-400">
-                  Phòng khách tối đa chỉ ngồi được 20–25 người, 40 người sẽ bị chật chội và thiếu bàn ghế học
-                </td>
-                <td class="px-4 py-3 font-mono-code text-slate-400">16M – 22M</td>
-                <td class="px-4 py-3 font-mono-code text-slate-400 font-bold">6.5/10</td>
-                <td class="px-4 py-3"><span class="px-2 py-0.5 rounded bg-slate-800 text-slate-400">Loại</span></td>
+                <td class="px-4 py-3 text-white font-bold">Căn 2PN (Westbay)</td>
+                <td class="px-4 py-3 text-cyan-400 font-mono-code font-bold">3 – 4 Căn</td>
+                <td class="px-4 py-3">4 bạn / căn (2 phòng ngủ riêng biệt)</td>
+                <td class="px-4 py-3 font-mono-code text-white">900k – 1.100k/đêm</td>
+                <td class="px-4 py-3 font-mono-code text-emerald-400 font-bold">~225k – 275k / người</td>
               </tr>
             </tbody>
           </table>
         </div>
-      </div>
 
-      <!-- Bảng So Sánh Bữa Tối & Homestay -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        
-        <!-- So sánh bữa tối -->
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
-          <h4 class="text-sm font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-utensils text-amber-400"></i> HẠNG MỤC 2: TIỆC TỐI GIAO LƯU (19/09)
-          </h4>
-          <div class="space-y-2.5 text-xs">
-            <div class="p-3 rounded-xl bg-amber-950/20 border border-amber-500/30">
-              <div class="flex justify-between items-center font-bold text-amber-300">
-                <span>★ PA 1: BBQ Camping Ngoài Trời (Cafe Eco & Nướng / Hilltop)</span>
-                <span class="font-mono-code">200k - 250k/người</span>
-              </div>
-              <p class="text-slate-300 mt-1"><strong>Lý do chọn:</strong> Không gian mở lộng gió bên hồ, học viên dễ dàng đi lại cụng ly, ngồi quây quần tâm sự. Cực kỳ gắn kết.</p>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <div class="flex justify-between items-center font-bold text-slate-300">
-                <span>PA 2: Nhà Hàng Bò Tơ Quán Mộc / Lẩu Gió (Westbay)</span>
-                <span class="font-mono-code text-slate-400">180k - 230k/người</span>
-              </div>
-              <p class="text-slate-400 mt-1">Máy lạnh mát nhưng bị chia bàn nhỏ 6-8 người, khó giao lưu toàn đoàn.</p>
-            </div>
+        <!-- Hotline các bên Homestay Hub -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+            <div class="text-slate-400">Ecopark Homestay Hub (Kho 40 căn):</div>
+            <a href="tel:0981234567" class="text-brand-400 font-mono-code font-bold text-sm hover:underline block mt-1">098 123 4567</a>
+          </div>
+          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+            <div class="text-slate-400">Mộc's Home Westbay:</div>
+            <a href="tel:0936301199" class="text-brand-400 font-mono-code font-bold text-sm hover:underline block mt-1">093 630 1199</a>
+          </div>
+          <div class="p-3 bg-slate-900/80 rounded-xl border border-slate-800">
+            <div class="text-slate-400">Group Cư Dân Cho Thuê FB:</div>
+            <a href="https://www.facebook.com/groups/ecoparkhomestay" target="_blank" class="text-cyan-400 hover:underline block mt-1 font-semibold">facebook.com/groups/ecoparkhomestay</a>
           </div>
         </div>
 
-        <!-- So sánh lưu trú -->
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
-          <h4 class="text-sm font-bold text-white flex items-center gap-2">
-            <i class="fa-solid fa-house-user text-cyan-400"></i> HẠNG MỤC 3: HOMESTAY LƯU TRÚ CHO HỌC VIÊN
-          </h4>
-          <div class="space-y-2.5 text-xs">
-            <div class="p-3 rounded-xl bg-cyan-950/20 border border-cyan-500/30">
-              <div class="flex justify-between items-center font-bold text-cyan-300">
-                <span>★ PA 1: Homestay Westbay (Cách 250m - Đi bộ 3 phút)</span>
-                <span class="font-mono-code">220k - 270k/người</span>
-              </div>
-              <p class="text-slate-300 mt-1"><strong>Lý do chọn:</strong> Giá rẻ nhất, gần nhất, số lượng căn nhiều nhất, học viên chỉ cần đi bộ qua đường là tới lớp học.</p>
-            </div>
-            <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800">
-              <div class="flex justify-between items-center font-bold text-slate-300">
-                <span>PA 2: Homestay Swanlake Onsen (Cách 400m)</span>
-                <span class="font-mono-code text-slate-400">350k - 450k/người</span>
-              </div>
-              <p class="text-slate-400 mt-1">Căn hộ cao cấp có khoáng nóng, nhưng giá cao hơn Westbay 50%.</p>
-            </div>
+        <!-- Mẫu Tin Nhắn Book Homestay -->
+        <div class="space-y-2">
+          <div class="flex justify-between items-center">
+            <h4 class="text-xs font-bold text-cyan-300 font-mono-code flex items-center gap-1.5">
+              <i class="fa-solid fa-comment-dots"></i> MẪU TIN NHẮN ZALO GỬI QUẢN LÝ HOMESTAY WESTBAY:
+            </h4>
+            <button onclick="copyToClipboard('msg-homestay')" class="text-[11px] text-cyan-400 hover:text-cyan-300 font-mono-code flex items-center gap-1 bg-cyan-500/10 px-2.5 py-1 rounded border border-cyan-500/20">
+              <i class="fa-regular fa-copy"></i> Copy Tin Nhắn
+            </button>
+          </div>
+          <div id="msg-homestay" class="p-4 bg-slate-950 rounded-xl border border-slate-800 text-xs font-mono-code text-slate-300 leading-relaxed">
+"Chào anh/chị bên Homestay Ecopark, bên em có đoàn học viên về học lớp đào tạo tại khu Westbay.
+Bên em cần giữ trước 4 - 6 căn hộ tại tòa Westbay (A, B, C hoặc D) cho đêm Thứ 7 ngày 19/09/2026 (Check-in 14h00 ngày 19/09, Check-out 12h00 - 13h00 ngày 20/09).
+Cụ thể gồm: 2 căn 1PN+1 và 3 căn 2PN.
+Nhờ anh/chị gửi danh sách các căn trống, hình ảnh thực tế và báo giá ưu đãi đoàn giúp em nhé ạ. Em cảm ơn!"
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- PHẦN 2: CHI TIẾT ĐỊA ĐIỂM HILL TOP CAFE ECOPARK -->
-    <section id="dia-diem" class="space-y-6">
+    <!-- CHECKLIST TIẾN ĐỘ THỰC THI (TASK TRACKER) -->
+    <section id="checklist" class="space-y-5">
       <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-brand-400 uppercase font-semibold">Phần 02</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Chi Tiết Hạ Tầng & Sức Chứa Tại Hill Top Cafe</h3>
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center font-bold font-mono-code">04</div>
+          <h2 class="text-xl font-bold text-white tracking-tight">Checklist Tiến Độ Thực Thi Dành Cho Nhân Viên</h2>
         </div>
-        <div class="flex items-center gap-2">
-          <a href="tel:0869199599" class="px-3 py-1.5 text-xs font-bold rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white transition flex items-center gap-1">
-            <i class="fa-solid fa-phone"></i> Hotline: 0869 199 599
-          </a>
-          <a href="https://www.facebook.com/search/top?q=Hill%20Top%20Cafe%20Ecopark" target="_blank" class="px-3 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition flex items-center gap-1">
-            <i class="fa-brands fa-facebook"></i> Fanpage Hilltop
-          </a>
-        </div>
+        <span class="text-xs text-slate-400">Đánh dấu vào các việc đã hoàn thành</span>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+      <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-4">
         
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
-          <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-map-pin"></i>
-          </div>
-          <h4 class="font-bold text-white text-sm">Vị Trí Đắc Địa</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Nằm ngay bùng binh trung tâm nối liền phân khu Westbay và Swanlake Onsen. Cách chân các tòa tháp chung cư chỉ 250m - 400m. Có bãi đỗ xe máy và ô tô thoải mái cho toàn bộ đoàn 40 người.
-          </p>
-        </div>
-
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
-          <div class="w-8 h-8 rounded-lg bg-teal-500/20 text-teal-400 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-users"></i>
-          </div>
-          <h4 class="font-bold text-white text-sm">Sức Chứa & Mặt Bằng</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Tầng 2 trong nhà kính máy lạnh setup được <strong>40 – 50 ghế ngồi học kèm bàn</strong>. Khu vực ban công và đồi cỏ bên ngoài có sức chứa thêm 50–70 người khi chia nhóm thực hành bấm máy.
-          </p>
-        </div>
-
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3">
-          <div class="w-8 h-8 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold">
-            <i class="fa-solid fa-video"></i>
-          </div>
-          <h4 class="font-bold text-white text-sm">Bối Cảnh Video Thực Chiến</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Ánh sáng tự nhiên 360 độ từ hệ kính lớn, tone gỗ mộc cao cấp. Học viên không cần dựng phông bạt nhân tạo, chỉ cần cầm điện thoại lên là có những góc quay triệu view cực hút mắt.
-          </p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PHẦN 3: BẢNG GIÁ CHI TIẾT TỪNG LOẠI PHÒNG HOMESTAY -->
-    <section id="homestay" class="space-y-6">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-cyan-400 uppercase font-semibold">Phần 03</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Bảng Giá Chi Tiết Các Loại Phòng Homestay Tại Ecopark</h3>
-        </div>
-        <span class="font-mono-code text-xs text-emerald-400 bg-emerald-500/10 border border-emerald-500/30 px-3 py-1 rounded-full">
-          Giá cuối tuần Thứ 7 - Chủ Nhật (19 - 20/09)
-        </span>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
-        
-        <!-- Căn Studio -->
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3 relative">
-          <div class="text-[11px] font-mono-code text-slate-400 uppercase font-bold">LOẠI 1: CĂN STUDIO</div>
-          <h4 class="text-base font-bold text-white">Studio 1 Giường Lớn</h4>
-          <div class="text-xs text-slate-300">
-            <p><strong>Diện tích:</strong> ~35m² - 40m²</p>
-            <p><strong>Tiêu chuẩn:</strong> 2 người</p>
-            <p><strong>Phù hợp:</strong> Cặp đôi / 2 học viên cùng giới</p>
-          </div>
-          <div class="pt-2 border-t border-slate-800">
-            <div class="text-[11px] text-slate-400">Giá phòng cuối tuần:</div>
-            <div class="text-lg font-bold text-cyan-400 font-mono-code">550k – 700k<span class="text-xs text-slate-400">/đêm</span></div>
-            <div class="text-xs text-emerald-400 font-semibold mt-1">~275k / người</div>
-          </div>
-        </div>
-
-        <!-- Căn 1PN+1 -->
-        <div class="p-5 rounded-2xl glass-card border border-cyan-500/40 space-y-3 relative bg-cyan-950/15">
-          <div class="absolute top-3 right-3 font-mono-code text-[10px] bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30 font-bold">
-            KHUYÊN DÙNG ★
-          </div>
-          <div class="text-[11px] font-mono-code text-cyan-400 uppercase font-bold">LOẠI 2: CĂN 1PN+1</div>
-          <h4 class="text-base font-bold text-white">1 Phòng Ngủ + Giường Phụ</h4>
-          <div class="text-xs text-slate-300">
-            <p><strong>Diện tích:</strong> ~45m² - 50m²</p>
-            <p><strong>Tiêu chuẩn:</strong> 2 – 3 người</p>
-            <p><strong>Phù hợp:</strong> Ghép nhóm 3 học viên</p>
-          </div>
-          <div class="pt-2 border-t border-slate-800">
-            <div class="text-[11px] text-slate-400">Giá phòng cuối tuần:</div>
-            <div class="text-lg font-bold text-cyan-400 font-mono-code">650k – 800k<span class="text-xs text-slate-400">/đêm</span></div>
-            <div class="text-xs text-emerald-400 font-semibold mt-1">~220k – 270k / người</div>
-          </div>
-        </div>
-
-        <!-- Căn 2PN -->
-        <div class="p-5 rounded-2xl glass-card border border-cyan-500/40 space-y-3 relative bg-cyan-950/15">
-          <div class="absolute top-3 right-3 font-mono-code text-[10px] bg-cyan-500/20 text-cyan-300 px-2 py-0.5 rounded border border-cyan-500/30 font-bold">
-            RỘNG RÃI ★
-          </div>
-          <div class="text-[11px] font-mono-code text-cyan-400 uppercase font-bold">LOẠI 3: CĂN 2PN (1-2WC)</div>
-          <h4 class="text-base font-bold text-white">2 Phòng Ngủ Riêng Biệt</h4>
-          <div class="text-xs text-slate-300">
-            <p><strong>Diện tích:</strong> ~55m² - 68m²</p>
-            <p><strong>Tiêu chuẩn:</strong> 4 người</p>
-            <p><strong>Phù hợp:</strong> Ghép nhóm 4 học viên</p>
-          </div>
-          <div class="pt-2 border-t border-slate-800">
-            <div class="text-[11px] text-slate-400">Giá phòng cuối tuần:</div>
-            <div class="text-lg font-bold text-cyan-400 font-mono-code">900k – 1.200k<span class="text-xs text-slate-400">/đêm</span></div>
-            <div class="text-xs text-emerald-400 font-semibold mt-1">~225k – 300k / người</div>
-          </div>
-        </div>
-
-        <!-- Căn 3PN -->
-        <div class="p-5 rounded-2xl glass-card border border-slate-800 space-y-3 relative">
-          <div class="text-[11px] font-mono-code text-slate-400 uppercase font-bold">LOẠI 4: CĂN 3PN (2WC)</div>
-          <h4 class="text-base font-bold text-white">3 Phòng Ngủ Gia Đình</h4>
-          <div class="text-xs text-slate-300">
-            <p><strong>Diện tích:</strong> ~90m² - 110m²</p>
-            <p><strong>Tiêu chuẩn:</strong> 6 người</p>
-            <p><strong>Phù hợp:</strong> Nhóm ekip giảng dạy / 6 bạn</p>
-          </div>
-          <div class="pt-2 border-t border-slate-800">
-            <div class="text-[11px] text-slate-400">Giá phòng cuối tuần:</div>
-            <div class="text-lg font-bold text-cyan-400 font-mono-code">1.300k – 1.700k<span class="text-xs text-slate-400">/đêm</span></div>
-            <div class="text-xs text-emerald-400 font-semibold mt-1">~220k – 280k / người</div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Hotline & Link đặt Homestay uy tín -->
-      <div class="p-5 rounded-2xl glass-card border border-slate-800 overflow-x-auto">
-        <h4 class="text-sm font-bold text-white mb-3">Danh Bạ Hotline & Link Trực Tiếp Đặt Phòng Homestay Ecopark:</h4>
-        <table class="w-full text-xs text-left text-slate-300">
-          <thead class="text-[11px] uppercase bg-slate-900 text-slate-400 font-mono-code">
-            <tr>
-              <th class="px-4 py-2.5 rounded-l-lg">Đơn vị quản lý</th>
-              <th class="px-4 py-2.5">Khu vực phục vụ</th>
-              <th class="px-4 py-2.5">Khoảng cách tới Hilltop</th>
-              <th class="px-4 py-2.5">Hotline / Zalo</th>
-              <th class="px-4 py-2.5 rounded-r-lg">Link xác thực</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y divide-slate-800 font-medium">
-            <tr>
-              <td class="px-4 py-3 text-white font-bold">Ecopark Homestay Hub (Kho 40+ căn)</td>
-              <td class="px-4 py-3">Westbay Tòa A, B, C, D</td>
-              <td class="px-4 py-3 text-emerald-400 font-semibold">250m (Đi bộ 3p)</td>
-              <td class="px-4 py-3"><a href="tel:0981234567" class="text-brand-400 hover:underline">098 123 4567</a></td>
-              <td class="px-4 py-3">
-                <a href="https://ecoparker.com/danh-sach-homestay-ecopark/" target="_blank" class="text-cyan-400 hover:underline flex items-center gap-1">
-                  ecoparker.com <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-white font-bold">Swanlake Onsen Luxury Stay</td>
-              <td class="px-4 py-3">Swanlake R1, R2, Landmark</td>
-              <td class="px-4 py-3 text-purple-400 font-semibold">400m (Đi bộ 5p)</td>
-              <td class="px-4 py-3"><a href="tel:0968654865" class="text-brand-400 hover:underline">096 865 4865</a></td>
-              <td class="px-4 py-3">
-                <a href="https://www.booking.com/searchresults.vi.html?ss=SwanLake+Onsen+Ecopark" target="_blank" class="text-purple-400 hover:underline flex items-center gap-1">
-                  Booking.com Onsen <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                </a>
-              </td>
-            </tr>
-            <tr>
-              <td class="px-4 py-3 text-white font-bold">Mộc's Home & Vintage Westbay</td>
-              <td class="px-4 py-3">Westbay & Thảo Nguyên</td>
-              <td class="px-4 py-3 text-emerald-400 font-semibold">300m (Đi bộ 4p)</td>
-              <td class="px-4 py-3"><a href="tel:0936301199" class="text-brand-400 hover:underline">093 630 1199</a></td>
-              <td class="px-4 py-3">
-                <a href="https://www.facebook.com/groups/ecoparkhomestay" target="_blank" class="text-blue-400 hover:underline flex items-center gap-1">
-                  Group Cư Dân FB <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <!-- PHẦN 4: HÌNH ẢNH THỰC TẾ & BỐI CẢNH QUAY PHIM -->
-    <section id="hinh-anh" class="space-y-6">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-amber-400 uppercase font-semibold">Phần 04</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Thư Viện Hình Ảnh Thực Tế & Bối Cảnh Quay Ecopark</h3>
-        </div>
-        <span class="text-xs text-slate-400">Hình ảnh trực quan không gian học, ẩm thực & căn hộ</span>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        
-        <!-- Image Card 1: Hilltop Space -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=80" alt="Không gian học tập Hilltop Ecopark" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-emerald-400 font-mono-code border border-emerald-500/30">
-              HILL TOP CAFE
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Không Gian Học Trong Nhà Kính & Gỗ</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Bàn ghế gỗ mộc, điều hòa mát rượi, ánh sáng tự nhiên ngập tràn phù hợp cho 40 học viên thao tác máy tính & điện thoại.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">Sức chứa: 40-50 chỗ</span>
-              <a href="https://www.facebook.com/search/top?q=Hill%20Top%20Cafe%20Ecopark" target="_blank" class="text-brand-400 hover:underline font-semibold flex items-center gap-1">
-                Xem trên Facebook <i class="fa-solid fa-chevron-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Card 2: Outdoor Lawn Broll -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=800&auto=format&fit=crop&q=80" alt="Đồi thông và thảm cỏ Ecopark" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-teal-400 font-mono-code border border-teal-500/30">
-              BỐI CẢNH NGOẠI CẢNH
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Thảm Cỏ & Rừng Cây Ecopark</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Khuôn viên đồi cỏ dốc ngay sát quán cafe, học viên chỉ việc cầm gimbal/tripod ra bấm máy là có khung hình chuẩn cinematic.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">B-Roll triệu view</span>
-              <a href="https://tutinquayvideo.mape.vn/" target="_blank" class="text-teal-400 hover:underline font-semibold flex items-center gap-1">
-                Xem clip mẫu <i class="fa-solid fa-chevron-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Card 3: BBQ Networking -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=800&auto=format&fit=crop&q=80" alt="Tiệc nướng BBQ Camping Ecopark" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-amber-400 font-mono-code border border-amber-500/30">
-              TIỆC TỐI GIAO LƯU
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Tiệc Nướng BBQ Camping Ngoài Trời</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Bò nướng tảng, dẻ sườn, gà nướng mật ong, salad, bia lạnh bên bờ hồ. Không gian mở tạo cảm giác gắn kết không khoảng cách.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">Giá: ~200k - 250k/người</span>
-              <a href="tel:0778418886" class="text-amber-400 hover:underline font-semibold flex items-center gap-1">
-                Đặt bàn: 077 841 8886 <i class="fa-solid fa-phone text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Card 4: Westbay Living Room -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&auto=format&fit=crop&q=80" alt="Homestay Westbay phòng khách" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-cyan-400 font-mono-code border border-cyan-500/30">
-              HOMESTAY WESTBAY
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Căn Hộ Westbay 1PN+1 / 2PN</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Phòng khách sáng sủa, ban công thoáng mát, sofa bed và bàn ăn rộng rãi cho các bạn cùng phòng ngồi thảo luận bài học buổi tối.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">Giá: 650k - 900k/căn</span>
-              <a href="https://ecoparker.com/danh-sach-homestay-ecopark/" target="_blank" class="text-cyan-400 hover:underline font-semibold flex items-center gap-1">
-                Xem danh sách <i class="fa-solid fa-chevron-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Card 5: Westbay Bedroom -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?w=800&auto=format&fit=crop&q=80" alt="Homestay Westbay phòng ngủ" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-cyan-400 font-mono-code border border-cyan-500/30">
-              PHÒNG NGỦ HOMESTAY
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Phòng Ngủ Đầy Đủ Tiện Nghi</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Giường đôi nệm êm, điều hòa 2 chiều, chăn ga gối sạch sẽ chuẩn khách sạn, tủ quần áo và bàn làm việc yên tĩnh.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">Ghép: 2-3 người/phòng</span>
-              <a href="tel:0981234567" class="text-cyan-400 hover:underline font-semibold flex items-center gap-1">
-                Gọi đặt: 098 123 4567 <i class="fa-solid fa-phone text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Image Card 6: Swanlake Onsen -->
-        <div class="rounded-2xl glass-card border border-slate-800 overflow-hidden group">
-          <div class="relative h-48 overflow-hidden bg-slate-900">
-            <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&auto=format&fit=crop&q=80" alt="Swanlake Onsen Ecopark" class="w-full h-full object-cover img-zoom">
-            <div class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-slate-950/80 backdrop-blur-md text-[11px] font-bold text-purple-400 font-mono-code border border-purple-500/30">
-              SWANLAKE ONSEN
-            </div>
-          </div>
-          <div class="p-4 space-y-2">
-            <h4 class="font-bold text-white text-sm">Tổ Hợp Khoáng Nóng Onsen Nhật Bản</h4>
-            <p class="text-xs text-slate-400 leading-relaxed">
-              Dành cho học viên thích trải nghiệm nghỉ dưỡng cao cấp: Tắm khoáng nóng, xông hơi đá muối Himalaya, view ôm trọn Hồ Thiên Nga.
-            </p>
-            <div class="pt-2 flex justify-between items-center text-xs">
-              <span class="text-slate-500 font-mono-code">Cách Hilltop 400m</span>
-              <a href="https://www.booking.com/searchresults.vi.html?ss=SwanLake+Onsen+Ecopark" target="_blank" class="text-purple-400 hover:underline font-semibold flex items-center gap-1">
-                Xem Booking.com <i class="fa-solid fa-chevron-right text-[10px]"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PHẦN 5: BẢNG TÍNH DỰ TOÁN CHI PHÍ TƯƠNG TÁC -->
-    <section id="du-toan" class="space-y-6">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-brand-400 uppercase font-semibold">Phần 05</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Bảng Tính Ngân Sách Dự Toán Tự Động</h3>
-        </div>
-        <span class="text-xs text-slate-400">Kéo thả để cập nhật ngay chi phí thực tế cho đoàn</span>
-      </div>
-
-      <div class="p-6 sm:p-8 rounded-3xl glass-card border border-brand-500/30 grid grid-cols-1 lg:grid-cols-12 gap-8">
-        
-        <!-- Cột điều khiển -->
-        <div class="lg:col-span-7 space-y-5">
-          <div>
-            <div class="flex justify-between items-center text-xs font-bold text-slate-200 mb-2">
-              <span>Số lượng học viên:</span>
-              <span id="calc-students-count" class="font-mono-code text-brand-400 text-sm">40 người</span>
-            </div>
-            <input type="range" id="slider-students" min="20" max="60" value="40" step="5" class="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-emerald-500">
-            <div class="flex justify-between text-[10px] text-slate-500 font-mono-code mt-1">
-              <span>20 bạn</span>
-              <span>40 bạn (Chuẩn)</span>
-              <span>60 bạn (Tối đa)</span>
-            </div>
-          </div>
-
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="space-y-3 text-xs">
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 mt-0.5">
             <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1.5">Gói địa điểm Hilltop (2 ngày):</label>
-              <select id="calc-venue-opt" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500 font-medium">
-                <option value="14000000">Thuê trọn gói tiêu chuẩn (14.000.000đ / 2 ngày)</option>
-                <option value="16000000">Thuê trọn gói VIP (16.000.000đ / 2 ngày)</option>
-                <option value="per_pax">Gói Teabreak theo người (140k/người/2 ngày)</option>
-              </select>
+              <strong class="text-white">Bước 1: Gọi điện đặt cọc Hill Top Cafe (Trước ngày 05/09)</strong>
+              <p class="text-slate-400 mt-0.5">Gọi hotline 0869 199 599 chốt giữ địa điểm 2 ngày 19-20/09. Chuyển khoản cọc giữ chỗ và xin thông số máy chiếu.</p>
             </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 mt-0.5">
             <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1.5">Ăn trưa 2 ngày (2 bữa/học viên):</label>
-              <select id="calc-lunch-opt" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500 font-medium">
-                <option value="200000">100.000đ / bữa (200.000đ / 2 ngày)</option>
-                <option value="300000">150.000đ / bữa (300.000đ / 2 ngày - Set cơm ngon)</option>
-                <option value="0">Tự túc ăn trưa (0đ)</option>
-              </select>
+              <strong class="text-white">Bước 2: Giữ tạm quỹ 5 căn homestay Westbay (Trước ngày 08/09)</strong>
+              <p class="text-slate-400 mt-0.5">Liên hệ hotline 098 123 4567 để giữ danh sách căn 1PN+1 và 2PN. Nhận mã căn và hình ảnh để gửi học viên.</p>
             </div>
-          </div>
+          </label>
 
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 mt-0.5">
             <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1.5">In ấn giáo trình & thẻ đeo:</label>
-              <select id="calc-print-opt" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-3 py-2 text-xs text-white focus:outline-none focus:border-brand-500 font-medium">
-                <option value="80000">80.000đ / học viên (Giáo trình màu + Bút + Thẻ)</option>
-                <option value="50000">50.000đ / học viên (Giáo trình cơ bản)</option>
-                <option value="0">Tài liệu điện tử PDF (0đ)</option>
-              </select>
+              <strong class="text-white">Bước 3: Gắn form khảo sát học viên (Khi mở bán khóa học)</strong>
+              <p class="text-slate-400 mt-0.5">Thêm 2 câu hỏi: (1) Nhu cầu ghép phòng homestay ở lại qua đêm? (2) Đăng ký tham gia tiệc tối BBQ Networking (~200k)?</p>
             </div>
+          </label>
+
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 mt-0.5">
             <div>
-              <label class="text-xs font-semibold text-slate-300 block mb-1.5">Tiệc tối BBQ Networking (Tối 19/9):</label>
-              <div class="p-2.5 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-amber-400 font-medium">
-                ~220.000đ / người (Camp chia đều tự nguyện)
-              </div>
+              <strong class="text-white">Bước 4: Chốt số lượng & đặt cọc tiệc BBQ (Trước ngày 15/09)</strong>
+              <p class="text-slate-400 mt-0.5">Chốt danh sách số lượng người ăn tối thực tế và gọi 077 841 8886 đặt set nướng tại Cafe Eco & Nướng / Hilltop.</p>
             </div>
-          </div>
-        </div>
+          </label>
 
-        <!-- Cột kết quả -->
-        <div class="lg:col-span-5 bg-slate-950/90 rounded-2xl p-5 border border-slate-800 flex flex-col justify-between space-y-4">
-          <div>
-            <div class="flex justify-between items-center pb-3 border-b border-slate-800 text-xs font-bold">
-              <span class="text-slate-400">TỔNG HỢP DỰ TOÁN LỚP HỌC</span>
-              <span class="font-mono-code text-brand-400">2 NGÀY OFFLINE</span>
+          <label class="flex items-start gap-3 p-3 rounded-xl bg-slate-900/60 border border-slate-800 cursor-pointer hover:border-slate-700 transition">
+            <input type="checkbox" class="w-4 h-4 rounded text-emerald-500 bg-slate-800 border-slate-700 focus:ring-emerald-500 mt-0.5">
+            <div>
+              <strong class="text-white">Bước 5: Chuẩn bị thiết bị & tài liệu in ấn (Trước ngày 17/09)</strong>
+              <p class="text-slate-400 mt-0.5">In 45 cuốn giáo trình màu, 45 thẻ đeo học viên + ekip, chuẩn bị 4 ổ cắm điện nối dài, 2 micro không dây, bút viết.</p>
             </div>
-
-            <div class="mt-4 space-y-2 text-xs text-slate-300">
-              <div class="flex justify-between">
-                <span>1. Thuê Hill Top Cafe:</span>
-                <span id="out-venue" class="font-mono-code font-bold text-white">14.000.000đ</span>
-              </div>
-              <div class="flex justify-between">
-                <span>2. Ăn trưa 2 ngày:</span>
-                <span id="out-lunch" class="font-mono-code font-bold text-white">8.000.000đ</span>
-              </div>
-              <div class="flex justify-between">
-                <span>3. Teabreak cafe & bánh ngọt:</span>
-                <span id="out-teabreak" class="font-mono-code font-bold text-white">4.000.000đ</span>
-              </div>
-              <div class="flex justify-between">
-                <span>4. In ấn tài liệu & chứng chỉ:</span>
-                <span id="out-print" class="font-mono-code font-bold text-white">3.200.000đ</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="pt-4 border-t border-slate-800 space-y-3">
-            <div class="flex justify-between items-baseline">
-              <span class="text-xs font-bold text-slate-300">Tổng chi phí cố định:</span>
-              <span id="out-total" class="text-2xl font-extrabold text-brand-400 font-mono-code">29.200.000đ</span>
-            </div>
-            <div class="p-3 bg-brand-950/50 border border-brand-500/30 rounded-xl flex justify-between items-center">
-              <div>
-                <div class="text-[11px] text-slate-400">Giá vốn / học viên:</div>
-                <div id="out-per-student" class="text-sm font-bold text-emerald-300 font-mono-code">~730.000đ / bạn</div>
-              </div>
-              <div class="text-right">
-                <div class="text-[11px] text-slate-400">Mức học phí đề xuất:</div>
-                <div class="text-sm font-bold text-amber-400 font-mono-code">1.8M – 2.5M</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- PHẦN 6: LỊCH TRÌNH KHUNG MẪU 2 NGÀY (19-20/09) -->
-    <section class="space-y-6">
-      <div class="flex items-center justify-between flex-wrap gap-2">
-        <div>
-          <span class="font-mono-code text-xs text-brand-400 uppercase font-semibold">Phần 06</span>
-          <h3 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Kế Hoạch Khung 2 Ngày Lớp Offline (19 - 20/09/2026)</h3>
-        </div>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs text-slate-300">
-        
-        <!-- Day 1 -->
-        <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-3.5">
-          <div class="flex justify-between items-center pb-2 border-b border-slate-800">
-            <span class="font-bold text-brand-400 font-mono-code">NGÀY 1: THỨ BẢY (19/09/2026)</span>
-            <span class="text-slate-400 font-mono-code">08:00 - 21:30</span>
-          </div>
-          <div class="space-y-2.5">
-            <div class="flex gap-2.5"><span class="font-mono-code text-brand-400 font-bold w-20 flex-shrink-0">08:00 - 08:30</span><span>Đón học viên tại Hill Top Cafe, nhận tài liệu, thưởng thức cafe sáng.</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-brand-400 font-bold w-20 flex-shrink-0">08:30 - 11:45</span><span><strong>Lý thuyết cốt lõi (Trong nhà):</strong> Cấu trúc video giữ chân, nghệ thuật hook 3 giây, góc máy điện thoại.</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-slate-400 font-bold w-20 flex-shrink-0">12:00 - 13:30</span><span>Ăn trưa tại phố ẩm thực Westbay & check-in homestay nghỉ trưa.</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-brand-400 font-bold w-20 flex-shrink-0">13:30 - 17:30</span><span><strong>Thực hành quay ngoại cảnh:</strong> Chia nhóm ra đồi cỏ, hồ nước bấm máy. Kèm cặp 1-1.</span></div>
-            <div class="p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/30 flex gap-2.5 text-amber-200">
-              <span class="font-mono-code font-bold w-20 flex-shrink-0 text-amber-400">18:30 - 21:30</span>
-              <span><strong>TIỆC TỐI BBQ NETWORKING:</strong> Nướng thịt ngoài trời, giao lưu chuyện nghề, kết nối đối tác.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Day 2 -->
-        <div class="p-6 rounded-2xl glass-card border border-slate-800 space-y-3.5">
-          <div class="flex justify-between items-center pb-2 border-b border-slate-800">
-            <span class="font-bold text-teal-400 font-mono-code">NGÀY 2: CHỦ NHẬT (20/09/2026)</span>
-            <span class="text-slate-400 font-mono-code">08:30 - 17:00</span>
-          </div>
-          <div class="space-y-2.5">
-            <div class="flex gap-2.5"><span class="font-mono-code text-teal-400 font-bold w-20 flex-shrink-0">08:30 - 11:45</span><span><strong>Dựng phim & Tối ưu AI:</strong> Gọt đoạn thừa, chèn phụ đề chuyển động, âm thanh hiệu ứng.</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-slate-400 font-bold w-20 flex-shrink-0">12:00 - 13:30</span><span>Ăn trưa & trả phòng homestay (hoặc gia hạn nếu ở thêm).</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-teal-400 font-bold w-20 flex-shrink-0">13:30 - 16:00</span><span><strong>Chữa bài thực chiến:</strong> Thầy Việt sửa trực tiếp 10 video của học viên lên màn hình lớn.</span></div>
-            <div class="flex gap-2.5"><span class="font-mono-code text-teal-400 font-bold w-20 flex-shrink-0">16:00 - 17:00</span><span>Trao chứng nhận / quà kỷ niệm, chụp ảnh tập thể trên đồi thông và bế mạc.</span></div>
-          </div>
+          </label>
         </div>
 
       </div>
@@ -857,65 +466,23 @@
   <footer class="border-t border-dark-border py-8 px-4 sm:px-8 text-center text-xs text-slate-500">
     <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
       <div>
-        © 2026 Báo Cáo Khảo Sát Lớp Offline Hill Top Ecopark • Lưu trữ tại repo course (fedu.vn)
+        © 2026 Bản Hướng Dẫn Booking Sự Kiện Hill Top Ecopark • Dành riêng cho Ekip AI FEDU
       </div>
       <div class="flex items-center gap-4 text-slate-400">
-        <a href="#phuong-an-tot-nhat" class="hover:text-white transition">Lên đầu trang ↑</a>
+        <a href="#" class="hover:text-white transition">Lên đầu trang ↑</a>
       </div>
     </div>
   </footer>
 
-  <!-- DYNAMIC CALCULATOR JS -->
   <script>
-    const sliderStudents = document.getElementById('slider-students');
-    const labelStudents = document.getElementById('calc-students-count');
-    const selectVenue = document.getElementById('calc-venue-opt');
-    const selectLunch = document.getElementById('calc-lunch-opt');
-    const selectPrint = document.getElementById('calc-print-opt');
-
-    const outVenue = document.getElementById('out-venue');
-    const outLunch = document.getElementById('out-lunch');
-    const outTeabreak = document.getElementById('out-teabreak');
-    const outPrint = document.getElementById('out-print');
-    const outTotal = document.getElementById('out-total');
-    const outPerStudent = document.getElementById('out-per-student');
-
-    function formatCurrency(n) {
-      return n.toLocaleString('vi-VN') + 'đ';
+    function copyToClipboard(elementId) {
+      const text = document.getElementById(elementId).innerText.trim();
+      navigator.clipboard.writeText(text).then(() => {
+        alert('✅ Đã sao chép mẫu tin nhắn vào clipboard! Nhân viên có thể dán trực tiếp vào Zalo để gửi.');
+      }).catch(err => {
+        console.error('Lỗi sao chép:', err);
+      });
     }
-
-    function updateCalculations() {
-      const count = parseInt(sliderStudents.value, 10);
-      labelStudents.textContent = count + ' người';
-
-      let venueCost = 0;
-      if (selectVenue.value === 'per_pax') {
-        venueCost = count * 140000; // 70k x 2 buoi
-      } else {
-        venueCost = parseInt(selectVenue.value, 10);
-      }
-
-      const lunchCost = count * parseInt(selectLunch.value, 10);
-      const teabreakCost = count * 50000 * 2;
-      const printCost = count * parseInt(selectPrint.value, 10);
-
-      const total = venueCost + lunchCost + teabreakCost + printCost;
-      const perStudent = Math.round(total / count);
-
-      outVenue.textContent = formatCurrency(venueCost);
-      outLunch.textContent = formatCurrency(lunchCost);
-      outTeabreak.textContent = formatCurrency(teabreakCost);
-      outPrint.textContent = formatCurrency(printCost);
-      outTotal.textContent = formatCurrency(total);
-      outPerStudent.textContent = '~' + formatCurrency(perStudent) + ' / bạn';
-    }
-
-    sliderStudents.addEventListener('input', updateCalculations);
-    selectVenue.addEventListener('change', updateCalculations);
-    selectLunch.addEventListener('change', updateCalculations);
-    selectPrint.addEventListener('change', updateCalculations);
-
-    updateCalculations();
   </script>
 
 </body>
