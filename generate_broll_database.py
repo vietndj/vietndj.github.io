@@ -191,7 +191,21 @@ for i, f in enumerate(all_filenames):
     fn_lower = norm(f)
 
     # Specific semantic rules for new files
-    if "can-phong-la" in fn_lower or "căn phòng lá" in fn_lower or "149" in fn_lower:
+    if "huong-dan-hoc-vien" in fn_lower or "offline phan 2" in fn_lower or "154" in fn_lower:
+        cat_id = "sequence"
+        title_vi = "Sequence - Lớp Học Thực Chiến Fedu (Phần 2: Hướng Dẫn & Đánh Giá Bài Tập Học Viên)"
+        shot_type = "Medium Shot (MS) / Over-the-Shoulder (OTS) / 9:16 Dọc"
+        location = "Studio Lớp Học Offline Fedu"
+        action = "Anh Việt ngồi làm việc trên MacBook, sau đó đứng lên tận tình hướng dẫn học viên, xem bài và chia sẻ kinh nghiệm thực chiến trên laptop"
+        mood = "Tận tâm / Tương tác / Chuyên môn sâu / Uy tín đào tạo"
+        director_note = "Chuỗi cảnh hướng dẫn trực tiếp 1-1 tại lớp học offline, thể hiện sự đồng hành sát sao và phong thái chuyên nghiệp, tăng uy tín vượt trội cho thương hiệu cá nhân."
+        cues = [
+            "Tại lớp học thực chiến, tôi không chỉ dạy lý thuyết mà trực tiếp ngồi cùng bạn để sửa từng đường cắt, chỉnh từng khung hình...",
+            "Cầm tay chỉ việc là con đường ngắn nhất để bạn làm chủ toàn bộ quy trình sản xuất video...",
+            "Sự tiến bộ của từng học viên sau mỗi buổi học chính là thước đo giá trị lớn nhất."
+        ]
+        keywords = ["lớp offline", "hướng dẫn học viên", "fedu", "macbook", "thực hành", "sequence", "cầm tay chỉ việc", "sony"]
+    elif "can-phong-la" in fn_lower or "căn phòng lá" in fn_lower or "149" in fn_lower:
         cat_id = "negative_space"
         title_vi = "Negative Space - Căn Phòng Lá & Bước Đi Tĩnh Lặng Chiêm Nghiệm"
         shot_type = "Medium Shot (MS) / 9:16 Dọc"
