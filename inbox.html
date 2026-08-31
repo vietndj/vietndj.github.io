@@ -1,0 +1,2879 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Báo Cáo Hộp Thư Fanpage Real-Time | Nguyễn Đức Việt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: rgba(22, 30, 49, 0.75);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --accent-red: #FF4757;
+      --accent-green: #2ED573;
+      --accent-yellow: #FFA502;
+      --accent-blue: #1E90FF;
+      --text-main: #F1F2F6;
+      --text-muted: #8E9BAE;
+      --text-dim: #576574;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Plus Jakarta Sans', sans-serif; }
+    body {
+      background: var(--bg);
+      color: var(--text-main);
+      min-height: 100vh;
+      padding: 16px 12px 60px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, rgba(30, 41, 67, 0.9), rgba(15, 23, 42, 0.9));
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 20px 16px;
+      margin-bottom: 16px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    .header-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+    .logo-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(30, 144, 255, 0.15); color: #70A1FF;
+      border: 1px solid rgba(112, 161, 255, 0.3);
+      padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; text-transform: uppercase;
+    }
+    .pulse { width: 8px; height: 8px; background: #2ED573; border-radius: 50%; box-shadow: 0 0 10px #2ED573; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0% { transform: scale(0.9); opacity: 0.7; } 50% { transform: scale(1.3); opacity: 1; } 100% { transform: scale(0.9); opacity: 0.7; } }
+    .sync-time { font-size: 12px; color: var(--text-muted); font-family: 'JetBrains Mono', monospace; }
+    
+    h1 { font-size: 20px; font-weight: 800; color: #fff; margin-bottom: 6px; letter-spacing: -0.5px; }
+    .subtitle { font-size: 13px; color: var(--text-muted); line-height: 1.4; }
+    
+    /* Stats Grid */
+    .stats-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
+    @media (min-width: 600px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    
+    .stat-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 12px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card:active { transform: scale(0.98); }
+    .stat-card.active { border-color: #fff; background: rgba(255, 255, 255, 0.08); }
+    .stat-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    }
+    .stat-card.red::before { background: var(--accent-red); }
+    .stat-card.green::before { background: var(--accent-green); }
+    .stat-card.yellow::before { background: var(--accent-yellow); }
+    .stat-card.blue::before { background: var(--accent-blue); }
+    
+    .stat-num { font-size: 22px; font-weight: 800; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
+    .stat-card.red .stat-num { color: var(--accent-red); }
+    .stat-card.green .stat-num { color: var(--accent-green); }
+    .stat-card.yellow .stat-num { color: var(--accent-yellow); }
+    .stat-card.blue .stat-num { color: var(--accent-blue); }
+    .stat-label { font-size: 11px; font-weight: 600; color: var(--text-muted); }
+
+    /* Search */
+    .search-box {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid var(--card-border);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: #fff;
+      font-size: 14px;
+      margin-bottom: 16px;
+      outline: none;
+    }
+    .search-box:focus { border-color: #70A1FF; }
+    
+    /* Feed Items */
+    .feed-container { display: flex; flex-direction: column; gap: 12px; }
+    
+    .lead-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 16px;
+      backdrop-filter: blur(10px);
+      transition: border-color 0.2s ease;
+    }
+    .lead-card.urgent { border-left: 4px solid var(--accent-red); }
+    .lead-card.paid { border-left: 4px solid var(--accent-green); }
+    .lead-card.zalo { border-left: 4px solid var(--accent-yellow); }
+    .lead-card.support { border-left: 4px solid var(--accent-blue); }
+    
+    .lead-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 8px; }
+    .cust-name { font-size: 16px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+    .badge {
+      display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 700; text-transform: uppercase;
+    }
+    .badge-red { background: rgba(255, 71, 87, 0.2); color: #FF6B81; border: 1px solid rgba(255, 71, 87, 0.3); }
+    .badge-green { background: rgba(46, 213, 115, 0.2); color: #2ED573; border: 1px solid rgba(46, 213, 115, 0.3); }
+    .badge-yellow { background: rgba(255, 165, 2, 0.2); color: #FFA502; border: 1px solid rgba(255, 165, 2, 0.3); }
+    .badge-blue { background: rgba(30, 144, 255, 0.2); color: #70A1FF; border: 1px solid rgba(30, 144, 255, 0.3); }
+    
+    .time-tag { font-size: 11px; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; white-space: nowrap; }
+    
+    .lead-info-row {
+      display: flex; flex-wrap: wrap; gap: 8px 16px; font-size: 13px; margin-bottom: 12px;
+      color: var(--text-muted);
+    }
+    .lead-info-item { display: inline-flex; align-items: center; gap: 4px; }
+    .lead-info-item strong { color: #fff; font-family: 'JetBrains Mono', monospace; }
+    
+    .chat-bubble {
+      background: rgba(11, 15, 25, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 12px;
+      font-size: 13.5px;
+      line-height: 1.5;
+    }
+    .chat-bubble .sender-tag { font-size: 11px; font-weight: 700; color: #70A1FF; margin-bottom: 4px; text-transform: uppercase; }
+    .chat-bubble .cust-text { color: #E4E7EB; }
+    
+    .draft-box {
+      background: rgba(30, 41, 67, 0.4);
+      border: 1px dashed rgba(112, 161, 255, 0.3);
+      border-radius: 10px;
+      padding: 12px;
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .draft-title { font-size: 11px; font-weight: 700; color: #FFA502; margin-bottom: 6px; text-transform: uppercase; }
+    .draft-content { font-size: 13px; color: #CED6E0; line-height: 1.5; white-space: pre-line; }
+    
+    /* Actions */
+    .actions-row { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px; font-size: 12.5px; font-weight: 700;
+      text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease;
+    }
+    .btn-meta { background: #1877F2; color: #fff; }
+    .btn-meta:hover { background: #166FE5; }
+    .btn-copy { background: rgba(255, 255, 255, 0.1); color: #fff; border: 1px solid rgba(255, 255, 255, 0.2); }
+    .btn-copy:hover { background: rgba(255, 255, 255, 0.2); }
+    .btn-copy.copied { background: #2ED573; color: #0B0F19; }
+    
+    /* Footer */
+    .footer { text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-dim); }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="header-top">
+        <div class="logo-badge"><div class="pulse"></div> FANPAGE INBOX MONITOR</div>
+        <div class="sync-time">CẬP NHẬT: 01/09/2026 06:35:56</div>
+      </div>
+      <h1>Trung Tâm Đối Soát Hộp Thư Real-Time</h1>
+      <div class="subtitle">Hệ thống phân luồng 4 ngăn tự động • Đọc tệp đính kèm Bill CK • Chống va chạm Zalo • Kiểm tra trực tiếp trước khi nhắn.</div>
+    </div>
+
+    <!-- Stats Filter -->
+    <div class="stats-grid">
+      <div class="stat-card red active" onclick="filterCategory('action_required')">
+        <div class="stat-num">55</div>
+        <div class="stat-label">🔴 ĐANG CHỜ REP (FB)</div>
+      </div>
+      <div class="stat-card green" onclick="filterCategory('paid_confirmed')">
+        <div class="stat-num">7</div>
+        <div class="stat-label">🟢 ĐÃ CHUYỂN KHOẢN</div>
+      </div>
+      <div class="stat-card yellow" onclick="filterCategory('zalo_handover')">
+        <div class="stat-num">6</div>
+        <div class="stat-label">🟡 ĐANG CHĂM SÓC ZALO</div>
+      </div>
+      <div class="stat-card blue" onclick="filterCategory('account_support')">
+        <div class="stat-num">2</div>
+        <div class="stat-label">🔵 HỖ TRỢ KỸ THUẬT</div>
+      </div>
+    </div>
+
+    <!-- Search Input -->
+    <input type="text" class="search-box" id="searchInput" placeholder="🔍 Tìm kiếm theo tên khách, SĐT, hoặc ngành nghề..." onkeyup="handleSearch()">
+
+    <!-- Feed Container -->
+    <div class="feed-container" id="feedContainer">
+
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn thanh hương 0975263986 tổng quát hienthe1102@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Thanh Hương
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 23:07:47</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0975263986</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>Hienthe1102@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Có khoá edit nâng cao ko ah 
+0975263986 
+Hienthe1102@gmail.com 
+0973196689 
+Trương Thế Hiền 
+Ko thấy bên trung tâm gửi tin nhắn ag 
+Online e 
+Sđt c gửi cho người học khoác 
+Khác 
+Ko phải c 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1617117046389883">Dạ em chào Hương ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hương đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1617117046389883" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1617117046389883', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="minh nguyên 0966280989 tổng quát capella.enc@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Minh Nguyên
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 22:26:44</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0966280989</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>capella.enc@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Lộc Huyên + 0966280989 + capella.enc@gmail.com 
+Chỉnh sửa video có chuyên về lĩnh vưjc j k bạn nhỉ 
+Minhg làm bđs</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1621489636189866">Dạ em chào Nguyên ạ! Mảng Bất động sản ứng dụng khóa học cực kỳ tốt nhé. Trong khóa Em hướng dẫn 3 định dạng: 1. B-roll nhà đất + Voice-over, 2. Talking Head chuyên gia (mẫu: https://youtu.be/-1ddyry_Qs0), 3. Walk & Talk dẫn xem nhà (mẫu: https://youtube.com/shorts/soFcXS_F0jI). Anh/Chị Nguyên xem bài học tại https://video.fedu.vn nhé ạ!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1621489636189866" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1621489636189866', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hồng dung 0334786887 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hồng Dung
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 22:21:59</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0334786887</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Em muốn học làm video xây kênh ạ 
+0334786887 ạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_920076874494641">Dạ em chào Dung ạ! Xây kênh từ số 0 Anh/Chị Dung không phải lo đâu, em hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Anh/Chị Dung xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=920076874494641" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_920076874494641', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="huỳnh thanh tâm Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Huỳnh Thanh Tâm
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 20:25:43</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Hi 
+Mình muốn được tư vấn về khoá hoc.</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1951071876297464">Dạ em chào Tâm ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tâm đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1951071876297464" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1951071876297464', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="giang chi hương Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Giang Chi Hương
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 17:20:07</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Mình cám ơn ạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_932542052623350">Dạ em chào Hương ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hương đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=932542052623350" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_932542052623350', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="kim chung Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Kim Chung
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 16:22:55</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khoá học gồm những nội dung gi 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1048867677893446">Dạ em chào Chung ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Chung đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1048867677893446" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1048867677893446', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="sương nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Sương Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 16:16:42</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Mình tham khảo khóa học ạ 
+Với cần trang bị dụng cụ gì để quay, để làm ánh sáng vậy ạ 
+Phần mình thắc mắc là đoạn biến ý tưởng thành kịch bản rồi thành video
+
+Vì giảng viên mạnh ở phần làm video
+Còn phần lên kịch bản và biến thành video thì sao ạ, ko thấy video hướng dẫn nào ạ 
+Chỗ này mình đang thắc mắc 
+Với có khóa 599k khác khóa này à bạn 
+Mình xin link chân quay và đèn mà thầy dùng để tự quay 1 mình với ạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1591895752643380">Dạ em chào Nguyễn ạ! Xây kênh từ số 0 Anh/Chị Nguyễn không phải lo đâu, em hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Anh/Chị Nguyễn xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1591895752643380" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1591895752643380', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="ngọc ánh Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Ngọc Ánh
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 15:05:41</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+dạ chào anh ạ 
+e muốn đăng kí khóa học 
+dạ mình giới thiệu khóa học giúp em với ạ 
+dạ onl ạ 
+em xin thông tin thanh toán khóa học ạ 
+mình có xuất VAT ko ạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2527008244483687">Chào Ánh nhé! Bên anh CÓ hỗ trợ xuất hóa đơn VAT công ty đầy đủ nhé. Thông tin thanh toán: STK 88804101986 - TPBank (Chủ TK: NGUYEN DUC VIET) - Học phí ưu đãi 999.000đ. Chuyển xong Em / Ánh gửi thông tin xuất VAT để bên anh xuất gửi và cấp tài khoản học tại https://video.fedu.vn ngay nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2527008244483687" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2527008244483687', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="do thanh tam Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Do Thanh Tam
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 13:06:02</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Get offers</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1364671919161980">Dạ em chào Tam ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tam đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1364671919161980" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1364671919161980', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tuấn nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Tuấn Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 12:16:25</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khách chưa gửi tin nhắn chữ (Đã bấm menu hoặc gửi ảnh)</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1091994526877330">Dạ em chào Nguyễn ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1091994526877330" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1091994526877330', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="thuycham lai Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Thuycham Lai
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 10:22:12</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Học online ah</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1410700787635802">Dạ em chào Lai ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Lai đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1410700787635802" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1410700787635802', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn candy 0559070955 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Candy
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 07:13:22</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0559070955</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">0559070955 
+Nguyên thi thuý</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1433107902057419">Dạ em chào Candy ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Candy đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1433107902057419" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1433107902057419', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hanh nguyen Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hanh Nguyen
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">31/08/2026 04:02:56</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Bn 1 khóa ak</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1099885772378858">Dạ em chào Nguyen ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyen đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1099885772378858" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1099885772378858', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="trần thị tấm Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Trần Thị Tấm
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 22:25:14</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Da</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_122167370234688288">Dạ em chào Tấm ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tấm đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=122167370234688288" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_122167370234688288', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="quang nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Quang Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 21:14:06</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">500 k đc ko a 
+Nhiu shop bán 500 k những mình thích b 
+500 k ,nd có j ah 
+Tổng bn video edit khác nhau vậy b 
+Capcup pro hay thường e</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_4445176605798622">Dạ em chào Nguyễn ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=4445176605798622" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_4445176605798622', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="lê bạch kim Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Lê Bạch Kim
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 17:24:34</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Get Started 
+Mình hỏi lớp học 
+Online hay video 
+? 
+Cho mình thêm chi tiết lớp học nhé</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1349834380468702">Dạ em chào Kim ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Kim đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1349834380468702" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1349834380468702', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="đỗ hạ Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Đỗ Hạ
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 17:19:56</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Mình có lớp zoom nào học thử hay giới thiệu về lớp học ko bạn? 
+Vậy lớp 999k là lớp trực tiếp hay zoom ạ? 
+Dạ Thank bạn</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1627034185688371">Dạ em chào Hạ ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hạ đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1627034185688371" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1627034185688371', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="huỳnh kiều thoa Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Huỳnh Kiều Thoa
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 13:02:37</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Hi ad</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_921785500494488">Dạ em chào Thoa ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Thoa đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=921785500494488" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_921785500494488', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tram kim nguyen Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Tram Kim Nguyen
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 12:31:32</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Hello, muon hoc AI editing! And quay video dep hon bang camera, Sony. 
+Minh biet can ban editing video roi, chi du dung thoi, nhung khong chuyen nghiep lam. Cung chua biet dung AI editing nua. Muon hoc nhieu ky nang edit hon. Muon hoc nhieu hon. Master co the day cho minh nhieu hon duoc khong? Thank you! 
+Em day quay video bang iPhone, co Huong Dan quay video bang camera khong? 
+Ok, ngay mai noi chuyen Lai Nha. Cam on! 
+Phone qua this messenger nay cung duoc. 
+So phone cua minh o Bac My, phone qua ton tien lam. 
+De Minh noi lai Viber xem sao!</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1033851646145404">Dạ em chào Nguyen ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyen đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1033851646145404" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1033851646145404', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hoàng minh Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hoàng Minh
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">30/08/2026 11:52:42</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1018403874531708">Dạ em chào Minh ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Minh đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1018403874531708" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1018403874531708', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="rèm thu hoài Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Rèm Thu Hoài
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">28/08/2026 20:51:58</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Ib m với ạ 
+1 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1363272575680905">Dạ em chào Hoài ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hoài đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1363272575680905" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1363272575680905', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyet nguyen 0945626155 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyet Nguyen
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">28/08/2026 18:44:26</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0945626155</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Chị muốn đăng ký học 
+0945626155 
+Ok</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_3440363559466947">Dạ em chào Nguyen ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyen đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=3440363559466947" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_3440363559466947', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="linh ngô Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Linh Ngô
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">27/08/2026 20:01:04</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Tư vấn giúp mình khoá học 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1969464957050469">Dạ em chào Ngô ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Ngô đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1969464957050469" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1969464957050469', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tl fruit's - kombucha 0966563136 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              TL Fruit's - Kombucha
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">27/08/2026 15:32:16</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0966563136</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+E muốn tìm hiểu khoá học làm video ạ 
+Dạ vâng ạ 
+E bán hoa quả 
+E muốn học làm video a ạ 
+Để xây kênh 
+Mà e thấy mình nói ko dc tự nhiên làm video lẹt đẹt ng xem 
+Mong dc a chỉ bảo ạ 
+0966563136 
+E gui ạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_982160584878183">Chào Kombucha nhé! Xây kênh từ số 0 Em / Kombucha không phải lo đâu, anh hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Em / Kombucha xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=982160584878183" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_982160584878183', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="phạm dạ tkảo Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Phạm Dạ Tkảo
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">25/08/2026 20:45:30</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khách chưa gửi tin nhắn chữ (Đã bấm menu hoặc gửi ảnh)</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2094694758088911">Dạ em chào Tkảo ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tkảo đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2094694758088911" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2094694758088911', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hoàng thuý Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hoàng Thuý
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">25/08/2026 12:19:41</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Online ạ 
+Nhận ưu đãi 
+Em muốn hỏi là khóa học được học những gì ạ 
+Có học cách quay dựng video chuyển cảnh ko ạ 
+Stk này đúng ko ạ 
+Dạ, để e đk ạ 
+Dạ 
+Em gửi 
+Cho e vào học sớm nhé anh 
+Cho e hỏi hướng dẫn cách chuyển cảnh ở mục nào vậy ạ 
+Dạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1059847143224438">Chào Thuý nhé! Khóa học bên anh đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Em / Thuý đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1059847143224438" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1059847143224438', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn thủy Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Thủy
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">24/08/2026 19:59:44</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Mình muốn học làm video trực tiếp</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1417467383606467">Dạ em chào Thủy ạ! Xây kênh từ số 0 Anh/Chị Thủy không phải lo đâu, em hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Anh/Chị Thủy xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1417467383606467" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1417467383606467', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="trần thị thu hà Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Trần Thị Thu Hà
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">24/08/2026 07:59:18</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Chị lớn tuổi có ai hỗ trợ được không 
+Chị chỉ biết sử dụng trên điện thoại 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1088935697405458">Dạ em chào Hà ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hà đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1088935697405458" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1088935697405458', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn thoa Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Thoa
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">24/08/2026 06:26:08</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_4048187985484837">Dạ em chào Thoa ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Thoa đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=4048187985484837" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_4048187985484837', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn loan Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Loan
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">23/08/2026 15:44:57</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Học qua video sẵn? Vậy khi thực hành ko thành thì hỏi ai? 
+Chị muốn đăng ký học off thì bao giờ có lớp?</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1613538977095590">Dạ em chào Loan ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Loan đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1613538977095590" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1613538977095590', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tố chinh vinhomes Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Tố Chinh Vinhomes
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">23/08/2026 07:40:51</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khách chưa gửi tin nhắn chữ (Đã bấm menu hoặc gửi ảnh)</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1491586496326510">Dạ em chào Vinhomes ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Vinhomes đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1491586496326510" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1491586496326510', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn giang 0866778381 tổng quát andrew486901@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Giang
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">22/08/2026 09:04:21</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0866778381</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>andrew486901@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Em thấy video của anh rất hay 
+Em đang bối rối ở phần kịch bản cho content F&B 
+Em chưa có quy trình rõ ràng để tạo 1 video hoàn chỉnh
+Từ khâu ý tưởng, kịch bản đến quay dựng 
+Khoá học của anh bao gồm những gì ạ? 
+Get offers 
+Video học ở đâu bạn nhỉ? 
+Check giúp mình vs nhé 
+sdt: 0866778381 
+gmail: andrew486901@gmail.com 
+Liên hệ sớm giúp mình vs nhews 
+B check giúp mình vs
+Mình cần học luôn</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2074960150562919">Dạ em chào Giang ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Giang đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2074960150562919" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2074960150562919', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="vũ đức hoàng Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Vũ Đức Hoàng
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">21/08/2026 08:38:08</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khoá học thực chiến quay Video chi phí ntn vậy bạn 
+Mình học Offline 
+Học xong có Đội nhóm để cùng nhau rèn luyện ko em 
+Ok e, em nhắn a thông tin khoá học sắp tới tại Hà Nội nhé 
+Tháng 9 khi nào có lịch em nhắn a nhé 
+A cũng chưa vội phải học ngay 
+Học online a ko học được 
+Ok e</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1688439745600912">Dạ em chào Hoàng ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hoàng đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1688439745600912" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1688439745600912', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nam hoai nguyen Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nam Hoai Nguyen
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">21/08/2026 08:14:46</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+e hỏi mình còn khoá quay dựng video k ạ 
+không có học trực tiếp ạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1064413729377605">Dạ em chào Nguyen ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyen đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1064413729377605" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1064413729377605', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="long happynailspa 0932160083 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Long Happynailspa
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">20/08/2026 22:40:45</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0932160083</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Em chào anh 
+E cần tư vấn về khoá học quay dựng edit video ạ 
+Sdt em 0932160083 
+Dạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_942208148895126">Chào Happynailspa nhé! Khóa học bên anh đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Em / Happynailspa đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=942208148895126" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_942208148895126', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="loan nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Loan Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">20/08/2026 21:17:42</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+E cần tư vấn ạ 
+Nhắn tin đc k ạ 
+Online ạ 
+A xem trang của e xem học đc k ạ 
+Ních này luôn ạ 
+E tính là afilate 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1730840654815735">Chào Nguyễn nhé! Khóa học bên anh đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Em / Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1730840654815735" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1730840654815735', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="thai salem Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Thai Salem
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">19/08/2026 15:31:05</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Khóa học cls bao nhiêu bài học vậy bạn? 
+Nhận ưu đãi 
+alo 
+tôi hỏi khóa online</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1572656500995288">Dạ em chào Salem ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Salem đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1572656500995288" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1572656500995288', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="phạm thủy Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Phạm Thủy
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">17/08/2026 02:09:00</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1821561939017502">Dạ em chào Thủy ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Thủy đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1821561939017502" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1821561939017502', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tiến huỳnh Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Tiến Huỳnh
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">16/08/2026 20:04:03</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Học online à 
+A ở HCM 
+Cầm tay chỉ việc còn chưa xong mà học online bất tiện khi hỏi lắm</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2039032683421789">Dạ em chào Huỳnh ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Huỳnh đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2039032683421789" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2039032683421789', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="trần hà Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Trần Hà
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">12/08/2026 16:52:34</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Để e lm cái này tý đã nha. 
+Mk cảm ơn shop nhá 
+B đợi mk xíu nha mk thử lm cái bao phong thư này tý nha 
+Mk chắc chắn là sẽ hk r 
+Mà nay ch nhận lương ad, nên ch ck đc cho shop ạ 
+Đợi vài hopm nữa nhận lương mk ck cho shop nè 
+Hihi 
+Cảm ơn shop nhiều nha 
+À mk hoit xíu ạ 
+Mk dky jk v 
+Kb là có đc km nâng cấp capcut pro k ak 
+À dạ bên b có bán k ạ 
+Một năm ạ 
+Mk k thấy có cái nào giống á b 
+Mk làm đc cái nayd r á, tại mk muốn lm giống kiểu video trong hình á 
+Dạ b ơi mk hỏi chút ạ 
+Hình như thg 8 này có ctrinh hk off đúng k ạ 
+Kb là địa chỉ lớp hk ở đâu v ạ 
+Dạ không biết là địa chỉ ở đâu b nhỉ? 
+Dạ mk cảm ơn ạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1800819147754376">Dạ em chào Hà ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hà đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1800819147754376" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1800819147754376', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="tâm tâm Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Tâm Tâm
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">11/08/2026 11:55:46</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_4349117488637377">Dạ em chào Tâm ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tâm đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=4349117488637377" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_4349117488637377', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hạnh nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hạnh Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">10/08/2026 08:42:23</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Cho e xin mức học phí ạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1018914294293268">Chào Nguyễn nhé! Khóa học bên anh đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Em / Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1018914294293268" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1018914294293268', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hiệp phò mã Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hiệp Phò Mã
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">10/08/2026 06:30:00</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Học phí khóa này thế nào vậy admin 
+Học online hả Adm ib 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1739169927321798">Dạ em chào Mã ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Mã đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1739169927321798" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1739169927321798', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="giang tranhuong Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Giang Tranhuong
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">09/08/2026 14:23:53</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Hello em 
+Học online à em ơi 
+À 
+Chị chào em 
+Chị có 1 pk nhakhoa 
+Hơn 20 năm rồi 
+Chị ko biết nên marketing ntn</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_3345848868927445">Dạ em chào Tranhuong ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tranhuong đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=3345848868927445" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_3345848868927445', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="vu nguyen anh 0389220295 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Vu Nguyen Anh
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">09/08/2026 08:16:09</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0389220295</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Hôm nay 28 tháng 7 r mà a 
+Học phí tn ạ 
+3tr 1 ng học 2 ngày ạ 
+có học qua video online k a 
+Dạ. 0389220295 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1511948854069895">Dạ em chào Anh ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Anh đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1511948854069895" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1511948854069895', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn thị thu huyền Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Thị Thu Huyền
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">08/08/2026 22:12:26</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1382119927391587">Dạ em chào Huyền ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Huyền đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1382119927391587" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1382119927391587', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="võ hằng Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Võ Hằng
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">08/08/2026 19:39:51</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Hiện tại mình có lớp nào sắp mở ko? 
+Gồm học những kiến thức gì? Bao tiền? 
+Ồ. có 2 buổi mà 3 triệu à 😅 
+Học online hay trực tiếp vậy? 
+Chị ở xa ko học trực tiếp được. 
+online thì học phí thế nào ạ? 
+Khi nào có lớp này? Thường học ngày hay đêm? 
+Chị học 1:1 hay học theo lớp? Học mấy buổi 1 khoá? 
+Nhận ưu đãi 
+Khi nào có lớp online thì cho chị biết nha 
+Chị muốn chờ lớp mới cơ. Lớp bắt đầu học í 
+Chứ lớp học rồi chị theo ko kịp và chả biết đã học gì trước đó</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2829755204203527">Dạ em chào Hằng ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Hằng đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2829755204203527" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2829755204203527', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="dung nguyễn 0988246650 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Dung Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">08/08/2026 11:49:25</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0988246650</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Cho mình xin thông tin 
+Vào nhóm để hoc ạ 
+Ok ah 
+Nhận ưu đãi 
+Mình đã nộp tiền sao ko có ai báo lại 
+Ko báo giáo trình 
+Sao thế ah 
+Sđt. 0988246650 
+Bạn đã bỏ lỡ cuộc gọi của Dung. 
+Bạn có thể gọi cho Dung Nguyễn trong 7 ngày tới. 
+Yêu cầu gọi lại 
+Đây ah 
+Trợ lý có kết bạn được đâu bạn ơi 
+Có số mình lúc chuyển khoản rồi. Ko thấy ai nhắn tin lại. Kết bạn thì ko được kết bạn lại 
+Dạ ok</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1513339080836722">Dạ em chào Nguyễn ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1513339080836722" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1513339080836722', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="ngoc nguyen Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Ngoc Nguyen
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">06/08/2026 17:32:26</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+lớp học này ưu đãi còn bao nhiêu 
+mình muốn học lớp capcut 
+online e</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1048193330946674">Dạ em chào Nguyen ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyen đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1048193330946674" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1048193330946674', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="sơn nguyễn Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Sơn Nguyễn
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">06/08/2026 17:29:48</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Vâng có NV gọi điện tư vấn mình rồi ạ</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_934648965551739">Dạ em chào Nguyễn ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Nguyễn đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=934648965551739" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_934648965551739', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn hà Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Hà
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">06/08/2026 13:31:30</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Chào e 
+Chị muốn làm video tiếp thị liên kết 
+Mình muốn làm video chia sẻ về triết lý cuộc sống và để làm tiếp thị liên kết 
+Nguyễn Hà 
+Chị không biết gửi link cho e nhưng chị làm ít view lắm mà không bán được hàng 
+Là như nào e 
+Nói rõ hơn được không 
+E hướng dẫn chị với được không 
+Ý tưởng của chị là muốn chia sẻ những triết lý cuộc sống sau đó làm tiếp thị liên kết để kiếm tiền thôi.</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1065702636414513">Chào Hà nhé! Xây kênh từ số 0 Em / Hà không phải lo đâu, anh hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Em / Hà xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1065702636414513" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1065702636414513', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="thu duong Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Thu Duong
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">06/08/2026 08:56:44</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Cho mình xin giá khoá off</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1020969170725337">Dạ em chào Duong ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Duong đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1020969170725337" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1020969170725337', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="nguyễn thị tuyết tâm 0799868819 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyễn Thị Tuyết Tâm
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">05/08/2026 08:53:42</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0799868819</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Em xin thông tin các khóa học edit ạ 
+0799868819 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2214432669395359">Dạ em chào Tâm ạ! Khóa học bên em đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Anh/Chị Tâm đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2214432669395359" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2214432669395359', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="hồ thuý Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hồ Thuý
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">02/08/2026 16:46:35</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+E cần tìm hiểu về cái này ạ 
+Dạ 
+Dạ em đang xem ạ 
+Này học trong 30 ngày hả anh 
+Ko dạy online hả anh 
+Nếu học qua video có nhung mục e ko hiểu thì sao ạ 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_2395169320959969">Chào Thuý nhé! Khóa học bên anh đào tạo trọn gói từ ý tưởng, kịch bản, quay bằng điện thoại đến edit CapCut và ứng dụng AI, học online xem lại trọn đời tại https://video.fedu.vn. Em / Thuý đang muốn làm video cho ngành nào thế ạ?</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2395169320959969" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_2395169320959969', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card urgent" data-category="action_required" data-search="lê hiếu Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Lê Hiếu
+              <span class="badge badge-red">ĐANG CHỜ REP TRÊN FB</span>
+            </div>
+            <div class="time-tag">02/08/2026 07:47:05</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Không sao a ạ 
+Xem page của a e cũng học lại thêm nhiều thứ mà 
+Mây cái học ở trg lâu ngày ko dùng quên mất 
+H được nhắc lại 
+E cũng đang làm video Ai nên cũng đang ngồi làm mò lại nè a</div>
+          </div>
+          
+          
+            <div class="draft-box">
+              <div class="draft-title">💡 Kịch bản gợi ý (Chuẩn anh Việt - Draft):</div>
+              <div class="draft-content" id="draft_t_1583917946480795">Dạ em chào Hiếu ạ! Xây kênh từ số 0 Anh/Chị Hiếu không phải lo đâu, em hướng dẫn cách gom cảnh quay hàng ngày (B-roll) rồi lồng tiếng chia sẻ đè lên rất tự nhiên, không bị ngại trước ống kính. Anh/Chị Hiếu xem qua bài học tại https://video.fedu.vn nhé!</div>
+            </div>
+            
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1583917946480795" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            <button class="btn btn-copy" onclick="copyDraft('draft_t_1583917946480795', this)">📋 Copy Kịch Bản</button>
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="mộc quỳnh opentour Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Mộc Quỳnh Opentour
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">19/08/2026 14:47:25</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">K e 
+Chị báo bạn chị xếp lịch xong báo lại e nhé 
+Ok 2 ng e ạ 
+T3 tuần sau chốt nha 
+Thêm ng có giảm giá nữa k e 
+Ok e 
+Sorry e 
+Chị có lịch đi công tác đến ngày 3 tháng 9 mới quay về nên là bạn chị và chị chưa tham gia được 
+Để chị sắp lịch lại 1 chút rồi báo lại em nhé 
+Tới 3/9 chị báo nhé 
+Chị k theo đc đợt này 
+Chị đăng kí sau nhé</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2563266797453075" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="ngô huyền trâm 0934427299 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Ngô Huyền Trâm
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">20/08/2026 08:09:55</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0934427299</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Ok 
+E mua đc 
+A dạy e góc quay luôn phải ko A 
+Dạ 
+Anh ơi a có dạy chạy quảng cáo ko Anh 
+E ck rồi 
+E biết ah 
+E hỏi khoá khác anh có dạy chạy qc ko ạ Anh tại e cũng muốn học ạ 
+Khi nào bên A hỗ trợ 
+0934427299 
+Đúng ạ</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1721073682369185" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="nga le thanh 0963891881 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nga Le Thanh
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">19/08/2026 16:30:28</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0963891881</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Gui link đăng ký giúp mình 
+Gui mình DK 
+Lớp này đã ai làm mà hiệu quả rồi a 
+Có thể cho mình tham khảo là ai ko? 
+Đây là số Sđt của mình 
+Cần tư vấn thêm 
+0963891881 
+Ok ah 
+Alo 
+2 ngày trực tiếp học tại hà nội mà đến thời điểm này chưa ai liên hệ gì 
+E xem lịch thế nào e 
+Chị đã ck đặt cọc tiền rồi e 
+Chưa biết bạn nào e 
+Ko thấy nhóm nào ý</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1433618628591179" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="phạm thị thanh bình Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Phạm Thị Thanh Bình
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">19/08/2026 13:18:59</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Cái này mua xong là học đk luôn ah b? 
+Chuyển khoản rồi mới cấp TK hay sao b ha? 
+Cái này m học làm edit video trên phần mềm capcut hay sao b ha? 
+C đã chuyển khoản mua khoá học rồi 
+Tks e nhé 
+Có bạn bên e liên hệ c rồi e</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1949139782445620" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="phùng quân 0933118075 tổng quát bussinessup510@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Phùng Quân
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">19/08/2026 13:16:26</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0933118075</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>Bussinessup510@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Mình ck rồi 
+Mình ck tôi 
+Ko có ai hướng dẫn 
+0933118075 
+Bussinessup510@gmail.com</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1029593656653376" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="kiet doan 0931863455 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Kiet Doan
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">12/08/2026 08:41:27</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0931863455</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+0931863455 
+M thanh toán rùi nha 
+Hi b</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=27427823266859089" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card paid" data-category="paid_confirmed" data-search="thi phu nguyên 0378274096 tổng quát nguyenthiphu2026@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Thi Phu Nguyên
+              <span class="badge badge-green">ĐÃ CHUYỂN KHOẢN XONG</span>
+            </div>
+            <div class="time-tag">07/08/2026 09:12:34</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0378274096</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>nguyenthiphu2026@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Tư vấn mình với nhé 
+Mìn đã ck 
+Sau khi chekc xong cho mình vào nhóm và bắt đầu hoic nhé 
+0378274096 
+nguyenthiphu2026@gmail.com 
+Xong nhắn mình nha</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=897168396334089" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="nguyen thu huong 0913036345 tổng quát nguyenthuhuong230688@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Nguyen Thu Huong
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">31/08/2026 23:02:33</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0913036345</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>nguyenthuhuong230688@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Nguyễn thị thu Hương 0913036345, nguyenthuhuong230688@gmail.com 
+mình đã để  lại sdt và mail nhưng k thấy bên bạn thông tin lại.</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1362150345599794" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="vy thảo Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Vy Thảo
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">30/08/2026 08:18:36</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+E xin thông tin khoá học ạ</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1599030185053293" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="thu thuỷ Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Thu Thuỷ
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">20/08/2026 15:58:21</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+mình đk khoá học ngày 22-23/8 nhưng mình mất thông tin 
+Bạn gửi lại mình địa chỉ và thông tin khoá học ngày 22-23/8 nhé 
+oki B</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2476526646175626" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="đinh thế duyên 0973383678 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Đinh Thế Duyên
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">15/08/2026 12:11:00</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0973383678</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Fb Thắm Thỏ ạ 
+Đúng rồi ạ 
+Vào ngày 22-23 đúng ko ạ 
+Chuyển cọc hay sao ạ 
+Ok bạn vậy mình chuyển cọc . Rồi trước hôm học mình ck tiếp nhé 
+Ok bạn 
+Ok ạ 
+0973383678 
+Nhận ưu đãi 
+Nhận ưu đãi 
+Nhận ưu đãi</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2069400423968105" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="minhsang cao Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Minhsang Cao
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">09/08/2026 14:50:59</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            <div class="lead-info-item" style="color:#2ED573;"><strong>📸 CÓ ẢNH ĐÍNH KÈM</strong></div>
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Veo 3.1, capcut PC 
+https://www.facebook.com/share/1DN4sH2JrB/?mibextid=wwXIfr 
+https://www.facebook.com/share/1EtrR5hjXm/?mibextid=wwXIfr 
+2 kênh AI em test đây ạ 
+Em bên dạy nghề nem chua rán giò chả 
+Em muốn học để xây kênh người thật 
+https://www.facebook.com/share/18wq1PgnpH/?mibextid=wwXIfr 
+Mục tiêu của em là làm video người thật, 
+Chuyển cảnh cuốn, làm nội dung cuốn 
+Em có nội dung nhưng chưa biết làm tn cho nó cuốn và giữ chân ngươid xem 
+Vâng cái này em đang hướng đến 
+Vâng để em đăng ký 
+Dạ 
+Em cảm ơn anh tư vấn nhiệt tình 
+Đúng nhu cầu học viên 
+Dạ 
+Em add zalo r a nhé</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1002947435899665" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card zalo" data-category="zalo_handover" data-search="henry bằng Chưa có SĐT tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Henry Bằng
+              <span class="badge badge-yellow">ĐANG CHĂM SÓC ZALO (KHÓA FB)</span>
+            </div>
+            <div class="time-tag">04/08/2026 06:49:26</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>Chưa có SĐT</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+Xin giá khóa học</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1603404854641366" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card support" data-category="account_support" data-search="hải yến nguyễn 0968071193 tổng quát ">
+          <div class="lead-header">
+            <div class="cust-name">
+              Hải Yến Nguyễn
+              <span class="badge badge-blue">HỖ TRỢ KỸ THUẬT</span>
+            </div>
+            <div class="time-tag">30/08/2026 11:52:13</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0968071193</strong></div>
+            
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Bắt đầu 
+E đã đăng ký nhưng chưa vào học, mất tk 
+Hỗ trợ e ạ 
+0968071193</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=1619253136457225" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+        <div class="lead-card support" data-category="account_support" data-search="do ha 0909300886 tổng quát dothuha3008@gmail.com">
+          <div class="lead-header">
+            <div class="cust-name">
+              Do Ha
+              <span class="badge badge-blue">HỖ TRỢ KỸ THUẬT</span>
+            </div>
+            <div class="time-tag">02/08/2026 00:25:34</div>
+          </div>
+          
+          <div class="lead-info-row">
+            <div class="lead-info-item">📞 SĐT: <strong>0909300886</strong></div>
+            <div class="lead-info-item">📧 Email: <strong>Dothuha3008@gmail.com</strong></div>
+            <div class="lead-info-item">🏷️ Ngành: <strong>Tổng quát</strong></div>
+            
+          </div>
+          
+          <div class="chat-bubble">
+            <div class="sender-tag">Nội dung khách nhắn gần nhất:</div>
+            <div class="cust-text">Get Started 
+Bạn ơi, mình mua khoá học xong ko thấy email báo vào đâu học 
+Dothuha3008@gmail.com 
+0909300886 
+Bạn check giúp mình 
+Mình muốn thuê tư vấn quay clip gội đầu dưỡng sinh 
+Bên bạn có tư vấn hay có dịch vụ dạy quay ki</div>
+          </div>
+          
+          
+          
+          <div class="actions-row">
+            <a href="https://business.facebook.com/latest/inbox/all?asset_id=839755019212216&mailbox_id=839755019212216&selected_item_id=2893752037650906" target="_blank" class="btn btn-meta">👉 Mở Chat Meta Suite</a>
+            
+          </div>
+        </div>
+        
+    </div>
+
+    <div class="footer">
+      Hệ thống Đối Soát Inbox Fanpage Antigravity 2.0 • Hosted on GitHub Pages: <code>vietndj.github.io/inbox.html</code>
+    </div>
+  </div>
+
+  <script>
+    let currentFilter = 'action_required';
+
+    function filterCategory(cat) {
+      currentFilter = cat;
+      document.querySelectorAll('.stat-card').forEach(c => c.classList.remove('active'));
+      const activeCard = document.querySelector(`.stat-card[onclick*="${cat}"]`);
+      if (activeCard) activeCard.classList.add('active');
+      applyFilters();
+    }
+
+    function handleSearch() {
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const cards = document.querySelectorAll('.lead-card');
+      
+      cards.forEach(card => {
+        const matchesCategory = (currentFilter === 'all' || card.getAttribute('data-category') === currentFilter);
+        const matchesSearch = !q || card.getAttribute('data-search').includes(q);
+        
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function copyDraft(elemId, btn) {
+      const text = document.getElementById(elemId).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✓ Đã Copy!';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.innerHTML = originalText;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+
+    // Initial filter
+    filterCategory('action_required');
+  </script>
+</body>
+</html>
