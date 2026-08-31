@@ -106,7 +106,7 @@
       border: 1px solid #e2e8f0;
     }
     .io-step-light {
-      padding: 20px 22px;
+      padding: 18px 22px;
     }
     .io-arrow-light {
       display: flex;
@@ -132,7 +132,7 @@
       }
     }
 
-    /* Horizontal Snap Carousel — Cuộn Ngang Mượt Mà */
+    /* Horizontal Snap Carousel — Cuộn Ngang Mượt Mà Cho Tất Cả Các Tính Năng */
     .horizontal-snap-carousel {
       display: flex;
       gap: 16px;
@@ -140,7 +140,7 @@
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 12px;
+      padding-bottom: 10px;
       padding-top: 4px;
     }
     .horizontal-snap-carousel::-webkit-scrollbar {
@@ -348,7 +348,7 @@
   </header>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- 4 CÔNG CỤ AI CHỦ LỰC — GỌN GÀNG, CUỘN NGANG THOÁNG ĐÃNG -->
+  <!-- 4 CÔNG CỤ AI CHỦ LỰC — BỐ CỤC 2 CỘT + DẢI CUỘN NGANG -->
   <!-- ═══════════════════════════════════════════════════════ -->
   <main class="content-wrapper relative z-10 py-6">
 
@@ -390,7 +390,7 @@
         </p>
       </div>
 
-      <!-- Input / Output Box — Nền Sáng Sạch Sẽ -->
+      <!-- Input / Output Box -->
       <div class="io-grid-light mb-6">
         <div class="io-step-light bg-blue-50/50">
           <div class="font-integral text-[11px] text-blue-700 uppercase mb-1.5 flex items-center gap-1.5">
@@ -415,70 +415,147 @@
         </div>
       </div>
 
-      <!-- ── MINH HỌA TRỰC QUAN: VIDEO + 5 SHOT BÓC TÁCH CUỘN NGANG ── -->
-      <div class="inner-showcase space-y-5 mb-6">
+      <!-- ── MINH HỌA TRỰC QUAN: VIDEO BÊN TRÁI + DẢI CUỘN NGANG BÊN PHẢI ── -->
+      <div class="inner-showcase space-y-4 mb-6">
         
-        <!-- Video & Keyframes Row -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+        <!-- Showcase Header with Nav Buttons -->
+        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded bg-blue-100 text-[11px] font-mono text-blue-800 font-bold">DEMO</span>
+            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Video Gốc Mẫu ➔ Bóc Tách 39 Phân Cảnh &amp; Kịch Bản</span>
+          </div>
+
+          <!-- Carousel Controls -->
+          <div class="flex items-center gap-2">
+            <button onclick="document.getElementById('video-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button onclick="document.getElementById('video-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Column Row: Left Video + Right Horizontal Snap Carousel -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
           
-          <!-- Video Demo Mini -->
-          <div class="lg:col-span-4 flex flex-col items-center">
+          <!-- Cột Trái: Video Player & Link -->
+          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3 flex flex-col items-center text-center">
             <div class="relative w-full max-w-[190px] rounded-2xl overflow-hidden border border-slate-300 bg-black shadow-md aspect-[9/16]">
               <video src="./assets/video-analysis/demo_video.mp4" autoplay muted loop playsinline controls class="w-full h-full object-cover"></video>
               <div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[9px] font-mono text-blue-300 font-bold">
                 ▶ DEMO 65s
               </div>
             </div>
-            <span class="text-[11px] text-slate-500 font-mono mt-2">39 Phân Cảnh Bóc Tách</span>
+            
+            <div class="space-y-1 w-full text-left">
+              <div class="text-xs font-bold text-slate-900 leading-snug">Clip Creator Triệu View</div>
+              <div class="text-[11px] text-slate-500 leading-snug">39 phân cảnh quay • Bóc tách trong 15s</div>
+              <div class="p-2 rounded-xl bg-blue-50/70 border border-blue-100 text-[10px] font-mono text-blue-800 truncate mt-2">
+                ig/reel/DcJoysIuLS9
+              </div>
+            </div>
           </div>
 
-          <!-- 5 Shots Cuộn Ngang -->
-          <div class="lg:col-span-8 space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">5 Keyframe Bóc Tách Tiêu Biểu:</span>
-              <span class="text-[11px] text-slate-400">Vuốt ngang để xem ➔</span>
-            </div>
-
-            <div class="horizontal-snap-carousel">
-              <div class="snap-item w-[150px] bg-white rounded-xl p-2 border border-slate-200 shadow-sm">
-                <div class="rounded-lg overflow-hidden aspect-[9/16] bg-slate-100 mb-1.5 relative">
-                  <img src="./assets/video-analysis/shot_01.jpg" alt="Shot 1" class="w-full h-full object-cover image-zoom">
-                  <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">0.0s</span>
+          <!-- Cột Phải: Dải Cuộn Ngang Keyframes & Phân Tích -->
+          <div class="lg:col-span-8">
+            <div id="video-carousel" class="horizontal-snap-carousel">
+              
+              <!-- Shot 1 -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+                <div>
+                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                    <img src="./assets/video-analysis/shot_01.jpg" alt="Shot 1" class="w-full h-full object-cover image-zoom">
+                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">0.0s - 2.8s</span>
+                  </div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 01 • HOOK</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Cận Cảnh Tay Gạt Che Ống Kính</h4>
                 </div>
-                <div class="text-[10px] font-bold text-slate-900 truncate">01. Hook Che Cam</div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">
+                  <span class="text-slate-400 font-mono block text-[10px]">Lời thoại kịch bản:</span>
+                  "Đừng bao giờ quay video mà không biết cảnh tiếp theo làm gì..."
+                </div>
               </div>
 
-              <div class="snap-item w-[150px] bg-white rounded-xl p-2 border border-slate-200 shadow-sm">
-                <div class="rounded-lg overflow-hidden aspect-[9/16] bg-slate-100 mb-1.5 relative">
-                  <img src="./assets/video-analysis/shot_02.jpg" alt="Shot 2" class="w-full h-full object-cover image-zoom">
-                  <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">2.8s</span>
+              <!-- Shot 2 -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+                <div>
+                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                    <img src="./assets/video-analysis/shot_02.jpg" alt="Shot 2" class="w-full h-full object-cover image-zoom">
+                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">2.8s - 6.1s</span>
+                  </div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 02 • TOÀN CẢNH</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Góc Toàn Phòng Định Vị Không Gian</h4>
                 </div>
-                <div class="text-[10px] font-bold text-slate-900 truncate">02. Góc Toàn Phòng</div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">
+                  <span class="text-slate-400 font-mono block text-[10px]">Lời thoại kịch bản:</span>
+                  "Bước 1 &amp; 2: Quay lại chính việc bạn làm hàng ngày. Đừng diễn."
+                </div>
               </div>
 
-              <div class="snap-item w-[150px] bg-white rounded-xl p-2 border border-slate-200 shadow-sm">
-                <div class="rounded-lg overflow-hidden aspect-[9/16] bg-slate-100 mb-1.5 relative">
-                  <img src="./assets/video-analysis/shot_03.jpg" alt="Shot 3" class="w-full h-full object-cover image-zoom">
-                  <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">6.1s</span>
+              <!-- Shot 3 -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+                <div>
+                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                    <img src="./assets/video-analysis/shot_03.jpg" alt="Shot 3" class="w-full h-full object-cover image-zoom">
+                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">6.1s - 13.4s</span>
+                  </div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 03 • CẬN CẢNH</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Âm Thanh Gõ Phím Cơ Sống Động</h4>
                 </div>
-                <div class="text-[10px] font-bold text-slate-900 truncate">03. Cận Cảnh Phím</div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">
+                  <span class="text-slate-400 font-mono block text-[10px]">B-roll chi tiết:</span>
+                  Tạo nhịp nghe kích thích giác quan (ASMR), giữ chân mắt người xem.
+                </div>
               </div>
 
-              <div class="snap-item w-[150px] bg-white rounded-xl p-2 border border-slate-200 shadow-sm">
-                <div class="rounded-lg overflow-hidden aspect-[9/16] bg-slate-100 mb-1.5 relative">
-                  <img src="./assets/video-analysis/shot_04.jpg" alt="Shot 4" class="w-full h-full object-cover image-zoom">
-                  <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">13.4s</span>
+              <!-- Shot 4 -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+                <div>
+                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                    <img src="./assets/video-analysis/shot_04.jpg" alt="Shot 4" class="w-full h-full object-cover image-zoom">
+                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">13.4s - 21.0s</span>
+                  </div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 04 • QUY TRÌNH</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Hậu Trường Màn Hình Làm Việc Thật</h4>
                 </div>
-                <div class="text-[10px] font-bold text-slate-900 truncate">04. B-Roll Màn Hình</div>
+                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">
+                  <span class="text-slate-400 font-mono block text-[10px]">Lời thoại kịch bản:</span>
+                  "Cắt cảnh đúng vào nhịp nhạc, chữ tiêu đề đặt ở 1/3 trên."
+                </div>
               </div>
 
-              <div class="snap-item w-[150px] bg-white rounded-xl p-2 border border-slate-200 shadow-sm">
-                <div class="rounded-lg overflow-hidden aspect-[9/16] bg-slate-100 mb-1.5 relative">
-                  <img src="./assets/video-analysis/shot_05.jpg" alt="Shot 5" class="w-full h-full object-cover image-zoom">
-                  <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">21.0s</span>
+              <!-- Thẻ Phân Tích 3 Chiều & Bảng Màu -->
+              <div class="snap-item w-[280px] sm:w-[320px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-3">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <span class="text-[11px] font-bold text-emerald-700 uppercase font-mono">3 KHỐI MỔ XẺ CHUYÊN SÂU</span>
+                    <span class="text-[10px] text-slate-400">PDF 39 Trang</span>
+                  </div>
+                  
+                  <div class="p-2.5 rounded-xl bg-emerald-50 text-[11px] text-emerald-900">
+                    <strong>Điểm sáng:</strong> Nhịp cắt 1.6s/shot giữ chân mắt người xem.
+                  </div>
+                  
+                  <div class="p-2.5 rounded-xl bg-rose-50 text-[11px] text-rose-900">
+                    <strong>Hạn chế:</strong> Phụ đề ở 2 shot giữa cần tránh icon TikTok.
+                  </div>
+
+                  <!-- 4 Mã Màu -->
+                  <div class="flex items-center gap-2 pt-1">
+                    <span class="w-4 h-4 rounded-full bg-[#1e293b] border border-slate-300" title="#1E293B"></span>
+                    <span class="w-4 h-4 rounded-full bg-[#f8fafc] border border-slate-300" title="#F8FAFC"></span>
+                    <span class="w-4 h-4 rounded-full bg-[#f59e0b] border border-slate-300" title="#F59E0B"></span>
+                    <span class="w-4 h-4 rounded-full bg-[#06b6d4] border border-slate-300" title="#06B6D4"></span>
+                    <span class="text-[10px] text-slate-500 font-mono ml-auto">4 Màu HEX</span>
+                  </div>
                 </div>
-                <div class="text-[10px] font-bold text-slate-900 truncate">05. Chốt Call To Action</div>
+
+                <a href="./assets/video-analysis/demo_director_report.pdf" target="_blank" class="mt-3 py-2 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-[11px] flex items-center justify-center gap-1 transition shadow-sm">
+                  <span>Mở File PDF Đạo Diễn ↗</span>
+                </a>
               </div>
+
             </div>
           </div>
         </div>
@@ -508,7 +585,7 @@
 
 
     <!-- ─────────────────────────────────────────────────── -->
-    <!-- CARD 02: TẠO ẢNH CÓ MẶT CỦA BẠN (TỐI ƯU CUỘN NGANG) -->
+    <!-- CARD 02: TẠO ẢNH CÓ MẶT CỦA BẠN (DẢI CUỘN NGANG) -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-02" class="feature-card">
       
@@ -518,7 +595,6 @@
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold font-mono uppercase mb-2">
             <span>CÔNG CỤ 02</span>
           </div>
-          <!-- Tiêu Đề Tính Năng To Bản -->
           <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
             TẠO ẢNH CÓ MẶT CỦA BẠN
           </h2>
@@ -591,7 +667,7 @@
           </div>
         </div>
 
-        <!-- Main Interactive Row: 3 Ảnh Gốc (Cố định) + 10 Ảnh AI (Cuộn ngang) -->
+        <!-- Main Interactive Row -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
           
           <!-- Cột Trái (3 Ảnh Gốc Mỏ Neo) -->
@@ -805,7 +881,7 @@
 
 
     <!-- ─────────────────────────────────────────────────── -->
-    <!-- CARD 03: TRANG WEB BÁN HÀNG TỰ ĐỘNG -->
+    <!-- CARD 03: TRANG WEB BÁN HÀNG TỰ ĐỘNG (DẢI CUỘN NGANG) -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-03" class="feature-card">
       
@@ -866,54 +942,129 @@
         </div>
       </div>
 
-      <!-- ── MINH HỌA TRỰC QUAN: MOCKUP WEB & VIETQR ── -->
+      <!-- ── MINH HỌA TRỰC QUAN: VIETQR CỐ ĐỊNH + DẢI CUỘN NGANG TÍNH NĂNG WEB ── -->
       <div class="inner-showcase space-y-4 mb-6">
-        <div>
-          <div class="flex items-center justify-between gap-2 border-b border-slate-200 pb-3 mb-3">
-            <div class="flex items-center gap-2">
-              <span class="px-2.5 py-1 rounded bg-emerald-100 text-[11px] font-mono text-emerald-800 font-bold">DEMO</span>
-              <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Trang Web Bán Hàng Tự Động Cho Khóa Học &amp; Dịch Vụ</span>
-            </div>
-            <span class="text-xs text-emerald-700 font-mono font-semibold">Đã Đấu Nối VietQR</span>
+        
+        <!-- Header & Nav Buttons -->
+        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded bg-emerald-100 text-[11px] font-mono text-emerald-800 font-bold">DEMO</span>
+            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Giao Diện Web Đã Đấu Nối VietQR Thu Tiền 24/7</span>
           </div>
 
-          <!-- Browser Mockup (Light Theme) -->
-          <div class="rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-md grid grid-cols-1 md:grid-cols-12 gap-5 p-5 items-center">
-            <!-- Left Info -->
-            <div class="md:col-span-7 space-y-2.5">
-              <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-mono font-bold border border-emerald-200">
-                <i class="fa-solid fa-circle-check text-emerald-600"></i> ĐÃ XUẤT BẢN TRỰC TUYẾN
-              </div>
-              <h4 class="text-base sm:text-lg font-bold text-slate-900 leading-snug">
-                Gói 4 Công Cụ AI Làm Sẵn — Tự Động Hóa Từ Quay Đến Bán Hàng
-              </h4>
-              <p class="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
-                Tự động hóa bóc kịch bản, làm phụ đề động và tạo hình ảnh mang khuôn mặt bạn. Khách quét mã nhận bài học ngay.
-              </p>
-              
-              <!-- Live Notification Toast -->
-              <div class="p-3 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-3 text-xs text-emerald-900 font-mono shadow-sm">
-                <i class="fa-solid fa-bell text-emerald-600 animate-bounce text-sm"></i>
-                <div>
-                  <div class="font-bold text-[12px]">Ting ting: +499.000đ từ NGUYEN HOANG NAM</div>
-                  <div class="text-[11px] text-slate-500">AI tự động gửi tài liệu qua Zalo lúc 02:15 sáng.</div>
-                </div>
-              </div>
+          <div class="flex items-center gap-2">
+            <button onclick="document.getElementById('web-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button onclick="document.getElementById('web-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Column Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
+          
+          <!-- Cột Trái: VietQR Card Cố Định -->
+          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3 text-center">
+            <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wider font-mono">QUÉT MÃ VIETQR QUA APP NGÂN HÀNG</div>
+            
+            <div class="w-36 h-36 mx-auto bg-white p-2 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-center">
+              <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" alt="Demo VietQR" class="w-full h-full object-contain">
             </div>
 
-            <!-- Right VietQR Card Mockup -->
-            <div class="md:col-span-5 bg-slate-50 p-4 rounded-2xl border border-slate-200 text-center shadow-sm">
-              <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wider mb-2">QUÉT MÃ VIETQR QUA APP NGÂN HÀNG</div>
-              <div class="w-32 h-32 mx-auto bg-white p-2 rounded-xl shadow-sm border border-slate-200 mb-2 flex items-center justify-center">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" alt="Demo VietQR" class="w-full h-full object-contain">
+            <div class="text-sm font-mono font-bold text-emerald-700">499.000 VNĐ</div>
+            <div class="text-[11px] text-slate-500">Nội dung tự điền: <span class="text-slate-800 font-mono font-semibold">FEDU499K</span></div>
+
+            <!-- Live Toast Notification -->
+            <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-2.5 text-xs text-emerald-900 font-mono text-left shadow-sm">
+              <i class="fa-solid fa-bell text-emerald-600 animate-bounce text-sm shrink-0"></i>
+              <div>
+                <div class="font-bold text-[11px]">+499.000đ từ NGUYEN HOANG NAM</div>
+                <div class="text-[10px] text-slate-500">Gửi bài qua Zalo lúc 02:15 sáng</div>
               </div>
-              <div class="text-sm font-mono font-bold text-emerald-700">499.000 VNĐ</div>
-              <div class="text-[10px] text-slate-500 mt-0.5">Nội dung tự điền: <span class="text-slate-800 font-mono font-semibold">FEDU499K</span></div>
+            </div>
+          </div>
+
+          <!-- Cột Phải: Dải Cuộn Ngang 4 Điểm Đắt Giá Của Web -->
+          <div class="lg:col-span-8">
+            <div id="web-carousel" class="horizontal-snap-carousel">
+              
+              <!-- Web Feature 1 -->
+              <div class="snap-item w-[280px] sm:w-[310px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-1">
+                    <i class="fa-solid fa-pen-nib"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">TÍNH NĂNG 01</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Tự Viết Kịch Bản Bán Hàng Thôi Miên</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    AI tự viết tiêu đề giật tít, nêu rõ 3 nỗi đau của khách, làm nổi bật lợi ích và xử lý toàn bộ lý do từ chối.
+                  </p>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">
+                  Chat: "Viết bài bán gói này cho tôi"
+                </div>
+              </div>
+
+              <!-- Web Feature 2 -->
+              <div class="snap-item w-[280px] sm:w-[310px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm mb-1">
+                    <i class="fa-solid fa-building-columns"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-cyan-600 uppercase tracking-wider font-mono">TÍNH NĂNG 02</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Mã VietQR Tự Động Thu Tiền 24/7</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Khách quét mã là tiền về thẳng tài khoản ngân hàng của bạn ngay lập tức, không bị giữ tiền hay chiết khấu qua trung gian.
+                  </p>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">
+                  STK &amp; Ngân hàng chính chủ của bạn
+                </div>
+              </div>
+
+              <!-- Web Feature 3 -->
+              <div class="snap-item w-[280px] sm:w-[310px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-1">
+                    <i class="fa-solid fa-cloud-arrow-up"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">TÍNH NĂNG 03</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Đưa Web Lên Mạng Ngay Miễn Phí</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Tự động tạo tên miền phụ và đưa trang web lên mạng trong 30 giây, không tốn tiền thuê máy chủ hay mua hosting hàng tháng.
+                  </p>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">
+                  Link trực tuyến gửi khách ngay
+                </div>
+              </div>
+
+              <!-- Web Feature 4 -->
+              <div class="snap-item w-[280px] sm:w-[310px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm mb-1">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  </div>
+                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider font-mono">TÍNH NĂNG 04</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Muốn Đổi Giá / Ảnh Chỉ Cần Nhắn</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Không cần biết code. Khi muốn đổi sang bán sản phẩm khác hoặc giảm giá, chỉ cần nhắn tin ra lệnh là AI tự đổi trong 5 phút.
+                  </p>
+                </div>
+                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">
+                  Chat: "Đổi giá thành 299k giúp tôi"
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
+
       </div>
 
+      <!-- 4 Highlights Grid -->
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
         <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200">
           <div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-pen-fancy text-emerald-600 mr-1.5"></i> Tự viết kịch bản bán</div>
@@ -936,7 +1087,7 @@
 
 
     <!-- ─────────────────────────────────────────────────── -->
-    <!-- CARD 04: LÀM VIDEO REVIEW PHIM AI -->
+    <!-- CARD 04: LÀM VIDEO REVIEW PHIM AI (DẢI CUỘN NGANG) -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-04" class="feature-card">
       
@@ -1001,14 +1152,31 @@
         </div>
       </div>
 
-      <!-- ── MINH HỌA TRỰC QUAN: BẰNG CHỨNG REUP & YOUTUBE STUDIO ── -->
-      <div class="inner-showcase space-y-5 mb-6">
+      <!-- ── MINH HỌA TRỰC QUAN: VIDEO PREVIEW CỐ ĐỊNH + DẢI CUỘN NGANG BẰNG CHỨNG STUDIO & 3 BƯỚC ── -->
+      <div class="inner-showcase space-y-4 mb-6">
+        
+        <!-- Header & Nav Buttons -->
+        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+          <div class="flex items-center gap-2">
+            <span class="px-2.5 py-1 rounded bg-rose-100 text-[11px] font-mono text-rose-800 font-bold">DEMO</span>
+            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Video Đã Đăng Kênh ➔ Bằng Chứng YouTube Studio 0 Gậy</span>
+          </div>
 
-        <!-- Video YouTube Thật & Screenshot YouTube Studio -->
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+          <div class="flex items-center gap-2">
+            <button onclick="document.getElementById('reup-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại">
+              <i class="fa-solid fa-chevron-left text-xs"></i>
+            </button>
+            <button onclick="document.getElementById('reup-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp">
+              <i class="fa-solid fa-chevron-right text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2-Column Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
           
-          <!-- YouTube Preview Box -->
-          <div class="lg:col-span-5">
+          <!-- Cột Trái: YouTube Video Preview Player -->
+          <div class="lg:col-span-5 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
             <div class="relative rounded-2xl overflow-hidden border border-slate-300 bg-black shadow-md aspect-video group">
               <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" onerror="this.src='./assets/reup-youtube/youtube_studio_copyright_clean.png'" alt="Video Reup Preview" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-300">
               
@@ -1022,17 +1190,78 @@
                 1:37 • Review Phim AI
               </div>
             </div>
+
+            <div class="space-y-1">
+              <div class="text-xs font-bold text-slate-900">Tóm Tắt Phim: Người Nhện Xuyên Vũ Trụ</div>
+              <div class="text-[11px] text-slate-500 leading-snug">28 đoạn cắt &lt;4s, lật góc nhìn, đổi màu cyberpunk</div>
+              <a href="https://www.youtube.com/watch?v=T2D-KAe5Pe8" target="_blank" class="inline-flex items-center gap-1.5 text-xs text-red-600 font-bold hover:underline mt-1 font-mono">
+                <i class="fa-brands fa-youtube"></i> Mở Xem Video Trên YouTube ↗
+              </a>
+            </div>
           </div>
 
-          <!-- YouTube Studio Proof -->
-          <div class="lg:col-span-7 space-y-2">
-            <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Bằng Chứng YouTube Studio:</span>
-              <span class="text-[10px] text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded-full font-bold font-mono">0 GẬY BẢN QUYỀN</span>
-            </div>
+          <!-- Cột Phải: Dải Cuộn Ngang Ảnh YouTube Studio + 3 Tầng Kỹ Thuật -->
+          <div class="lg:col-span-7">
+            <div id="reup-carousel" class="horizontal-snap-carousel">
+              
+              <!-- Card 1: Bằng Chứng YouTube Studio -->
+              <div class="snap-item w-[290px] sm:w-[320px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                    <span class="text-[11px] font-bold text-emerald-700 uppercase font-mono">BẰNG CHỨNG STUDIO</span>
+                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">0 GẬY</span>
+                  </div>
+                  
+                  <div class="rounded-xl overflow-hidden border border-slate-200">
+                    <img src="./assets/reup-youtube/youtube_studio_copyright_clean.png" alt="YouTube Studio Proof" class="w-full h-auto object-cover">
+                  </div>
 
-            <div class="rounded-xl overflow-hidden border border-slate-200 bg-white shadow-sm">
-              <img src="./assets/reup-youtube/youtube_studio_copyright_clean.png" alt="YouTube Studio Copyright Clean Proof" class="w-full h-auto object-cover">
+                  <div class="text-[11px] text-slate-700 leading-snug space-y-1 pt-1">
+                    <div><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Restrictions: <strong>None</strong></div>
+                    <div><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> No impact to channel</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2: Tầng 1 Viết lại thoại -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-rose-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">1</div>
+                  <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider font-mono">TẦNG 1</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Bóc &amp; Viết Lại Thoại 100%</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Trích transcript cũ, đổi hoàn toàn cấu trúc câu chữ sang hook giật gân, cuốn hút để không bị trùng bản quyền chữ.
+                  </p>
+                </div>
+                <div class="text-[11px] text-slate-500 font-mono">Tránh khiếu nại chữ</div>
+              </div>
+
+              <!-- Card 3: Tầng 2 Cắt vụn & xóa mã băm -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-amber-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">2</div>
+                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider font-mono">TẦNG 2</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Dựng Cắt Vụn &lt; 4s &amp; Đổi Frame</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Cắt cảnh &lt; 4s, lật gương, zoom nhẹ 6%, đổi màu và tắt sạch 100% âm thanh phim gốc để xóa mã băm nhận diện.
+                  </p>
+                </div>
+                <div class="text-[11px] text-slate-500 font-mono">Xóa mã băm hình ảnh</div>
+              </div>
+
+              <!-- Card 4: Tầng 3 Lồng Voice AI -->
+              <div class="snap-item w-[260px] sm:w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="w-8 h-8 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs">3</div>
+                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">TẦNG 3</span>
+                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Lồng Voice AI + BGM Kịch Tính</h4>
+                  <p class="text-xs text-slate-600 leading-relaxed">
+                    Lồng giọng đọc AI tiếng Việt trầm ấm (Nam/Nữ), ghép nhạc nền kịch tính không bản quyền và tự động upload lên kênh.
+                  </p>
+                </div>
+                <div class="text-[11px] text-slate-500 font-mono">Tự upload lên kênh</div>
+              </div>
+
             </div>
           </div>
         </div>
