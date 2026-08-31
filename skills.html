@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>6 Công Cụ AI Làm Sẵn Cho Người Làm Video & Kinh Doanh — FEDU.VN</title>
-  <meta name="description" content="Gói 6 công cụ AI làm sẵn: Bóc kịch bản clip hay, Tạo ảnh có mặt bạn, Tạo web bán hàng tự động VietQR, Làm video review phim, Trợ lý Zalo rảnh tay và Trợ lý iMessage rảnh tay. Cài 1 lần bằng Thẻ QR, dùng trọn đời.">
+  <meta name="description" content="Gói 6 công cụ AI làm sẵn: Bóc kịch bản clip hay, Tạo ảnh có mặt bạn, Tạo web bán hàng tự động VietQR, Làm video review phim, Trợ lý Zalo và Trợ lý iMessage. Cài 1 lần bằng Thẻ QR, dùng trọn đời.">
   
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -30,16 +30,16 @@
       background-color: var(--bg);
       color: var(--text-body);
       font-family: 'SVN-Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-      line-height: 1.75;
-      font-size: clamp(15px, 1.05vw, 16.5px);
+      line-height: 1.7;
+      font-size: 15px;
       overflow-x: hidden;
     }
 
-    /* Strict Typography Rules */
+    /* Strict Typography Rules - Fix chữ dính */
     .font-integral {
       font-family: 'SVN-Integral CF', sans-serif;
       font-weight: 700;
-      letter-spacing: -0.015em;
+      letter-spacing: 0.01em;
     }
     .font-acta {
       font-family: 'SVN-Acta', serif;
@@ -50,63 +50,63 @@
     .bg-light-pattern {
       background-color: #f8fafc;
       background-image: radial-gradient(rgba(148, 163, 184, 0.22) 1px, transparent 1px);
-      background-size: 28px 28px;
+      background-size: 24px 24px;
     }
 
     /* Light Glow Elements */
     .hero-glow-light {
       position: absolute;
-      top: -120px;
+      top: -100px;
       left: 50%;
       transform: translateX(-50%);
-      width: 750px;
-      height: 480px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, rgba(6, 182, 212, 0.06) 45%, transparent 70%);
-      filter: blur(90px);
+      width: 700px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, rgba(6, 182, 212, 0.05) 50%, transparent 70%);
+      filter: blur(80px);
       pointer-events: none;
       z-index: 0;
     }
 
     /* Content Wrapper */
     .content-wrapper {
-      max-width: 1040px;
+      max-width: 980px;
       margin: 0 auto;
-      padding: 0 20px;
+      padding: 0 16px;
     }
 
-    /* Feature Card — Nền Trắng, Viền Mềm Mại, Thoáng Đãng */
+    /* Feature Card — Gọn gàng, tinh tế, không khoảng trắng thừa */
     .feature-card {
       background: #ffffff;
       border: 1px solid var(--card-border);
-      border-radius: 28px;
-      box-shadow: 0 12px 36px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
-      margin-bottom: 56px;
-      padding: 40px;
-      transition: box-shadow 0.3s ease, border-color 0.3s ease;
+      border-radius: 24px;
+      box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.05), 0 2px 6px -1px rgba(15, 23, 42, 0.02);
+      margin-bottom: 40px;
+      padding: 28px 32px;
+      transition: box-shadow 0.25s ease, border-color 0.25s ease;
     }
     @media (max-width: 640px) {
       .feature-card {
-        padding: 24px 18px;
-        margin-bottom: 36px;
-        border-radius: 20px;
+        padding: 20px 16px;
+        margin-bottom: 28px;
+        border-radius: 18px;
       }
     }
     .feature-card:hover {
-      box-shadow: 0 20px 45px -4px rgba(15, 23, 42, 0.08);
+      box-shadow: 0 16px 36px -4px rgba(15, 23, 42, 0.08);
       border-color: #cbd5e1;
     }
 
-    /* Interactive Input/Output Box — Light Theme Rõ Ràng */
+    /* Compact Input/Output Box */
     .io-grid-light {
       display: grid;
-      grid-template-columns: 1fr 48px 1fr;
-      border-radius: 18px;
+      grid-template-columns: 1fr 40px 1fr;
+      border-radius: 14px;
       overflow: hidden;
       background: #f8fafc;
       border: 1px solid #e2e8f0;
     }
     .io-step-light {
-      padding: 18px 22px;
+      padding: 14px 18px;
     }
     .io-arrow-light {
       display: flex;
@@ -116,7 +116,7 @@
       border-left: 1px solid #e2e8f0;
       border-right: 1px solid #e2e8f0;
       color: #0284c7;
-      font-size: 16px;
+      font-size: 14px;
     }
 
     @media (max-width: 768px) {
@@ -124,7 +124,7 @@
         grid-template-columns: 1fr;
       }
       .io-arrow-light {
-        height: 36px;
+        height: 32px;
         border-left: 0;
         border-right: 0;
         border-top: 1px solid #e2e8f0;
@@ -135,16 +135,16 @@
     /* Horizontal Snap Carousel */
     .horizontal-snap-carousel {
       display: flex;
-      gap: 16px;
+      gap: 14px;
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
       -webkit-overflow-scrolling: touch;
-      padding-bottom: 10px;
-      padding-top: 4px;
+      padding-bottom: 8px;
+      padding-top: 2px;
     }
     .horizontal-snap-carousel::-webkit-scrollbar {
-      height: 6px;
+      height: 5px;
     }
     .horizontal-snap-carousel::-webkit-scrollbar-track {
       background: #f1f5f9;
@@ -166,18 +166,18 @@
     .inner-showcase {
       background: #f8fafc;
       border: 1px solid #e2e8f0;
-      border-radius: 22px;
-      padding: 24px;
+      border-radius: 18px;
+      padding: 18px;
     }
     @media (max-width: 640px) {
       .inner-showcase {
-        padding: 16px;
-        border-radius: 18px;
+        padding: 14px;
+        border-radius: 16px;
       }
     }
 
     .image-zoom {
-      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .image-zoom:hover {
       transform: scale(1.03);
@@ -188,24 +188,22 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 16px 36px;
-      border-radius: 14px;
+      gap: 8px;
+      padding: 14px 30px;
+      border-radius: 12px;
       font-family: 'SVN-Poppins', sans-serif;
       font-weight: 600;
       color: #ffffff;
       background: linear-gradient(135deg, #1d4ed8 0%, #0284c7 100%);
-      box-shadow: 0 10px 25px -4px rgba(29, 78, 216, 0.35);
-      transition: all 0.25s ease;
+      box-shadow: 0 8px 20px -3px rgba(29, 78, 216, 0.3);
+      transition: all 0.2s ease;
       text-decoration: none;
+      font-size: 14px;
     }
     .btn-main:hover {
       transform: translateY(-2px);
-      box-shadow: 0 14px 30px -4px rgba(2, 132, 199, 0.45);
+      box-shadow: 0 12px 24px -3px rgba(2, 132, 199, 0.4);
       color: #ffffff;
-    }
-    .btn-main:active {
-      transform: translateY(0);
     }
 
     .btn-outline {
@@ -213,35 +211,36 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 16px 32px;
-      border-radius: 14px;
+      padding: 14px 26px;
+      border-radius: 12px;
       font-family: 'SVN-Poppins', sans-serif;
       font-weight: 600;
       color: #334155;
       background: #ffffff;
       border: 1px solid #cbd5e1;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
-      transition: all 0.25s ease;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.04);
+      transition: all 0.2s ease;
       text-decoration: none;
+      font-size: 14px;
     }
     .btn-outline:hover {
       background: #f8fafc;
       border-color: #94a3b8;
       color: #0f172a;
       transform: translateY(-2px);
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
     }
 
     .pill-link {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 8px 16px;
+      gap: 5px;
+      padding: 6px 13px;
       border-radius: 9999px;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
       text-decoration: none;
-      transition: all 0.2s ease;
+      transition: all 0.15s ease;
+      white-space: nowrap;
     }
     .pill-link:hover {
       transform: translateY(-1px);
@@ -249,8 +248,8 @@
 
     /* Carousel Nav Buttons */
     .carousel-nav-btn {
-      width: 36px;
-      height: 36px;
+      width: 32px;
+      height: 32px;
       border-radius: 50%;
       background: #ffffff;
       border: 1px solid #cbd5e1;
@@ -258,8 +257,8 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.06);
-      transition: all 0.2s ease;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+      transition: all 0.15s ease;
       cursor: pointer;
     }
     .carousel-nav-btn:hover {
@@ -276,18 +275,18 @@
   <div class="hero-glow-light"></div>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- HERO HEADER — THOÁNG ĐÃNG, HIỆN ĐẠI, DỄ ĐỌC -->
+  <!-- HERO HEADER — GỌN GÀNG, KHÔNG RỚT CHỮ, KHÔNG RỜI RẠC -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <header class="relative z-10 pt-16 pb-10 px-4 max-w-4xl mx-auto text-center">
+  <header class="relative z-10 pt-12 pb-8 px-4 max-w-3xl mx-auto text-center">
     
     <!-- Status Badge -->
-    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 bg-blue-50 border border-blue-200 text-blue-700 shadow-sm">
-      <span class="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse"></span>
-      <span>BỘ 6 CÔNG CỤ AI LÀM SẴN • CÀI 1 LẦN BẰNG THẺ QR</span>
+    <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full text-xs font-semibold mb-4 bg-blue-50 border border-blue-200 text-blue-700 shadow-sm">
+      <span class="w-2 h-2 rounded-full bg-blue-600 animate-pulse"></span>
+      <span>BỘ 6 CÔNG CỤ AI LÀM SẴN • CÀI 1 LẦN DÙNG TRỌN ĐỜI</span>
     </div>
 
-    <!-- Main Title — SVN-Integral CF To, Đậm, Đập Vào Mắt -->
-    <h1 class="font-integral text-2xl sm:text-4xl md:text-[2.65rem] leading-[1.2] text-slate-900 mb-5 uppercase tracking-tight" style="text-wrap: balance;">
+    <!-- Main Title — Chuẩn 2 dòng, không rớt chữ -->
+    <h1 class="font-integral text-xl sm:text-2xl md:text-3xl leading-snug text-slate-900 mb-3 uppercase tracking-tight">
       6 CÔNG CỤ AI LÀM SẴN<br>
       <span class="bg-gradient-to-r from-blue-700 via-indigo-600 to-cyan-600 bg-clip-text text-transparent">
         BẠN RA LỆNH TIẾNG VIỆT — AI TỰ LÀM HẾT
@@ -295,192 +294,189 @@
     </h1>
 
     <!-- Subtitle Thoáng Mắt -->
-    <p class="text-base sm:text-lg max-w-2xl mx-auto mb-3 text-slate-600 font-normal leading-relaxed">
-      Không cần biết code. Không dùng phần mềm lạ. Cài trực tiếp vào máy tính của bạn: Bóc kịch bản clip hay, tạo ảnh có mặt bạn, dựng web bán hàng, review phim, quản lý Zalo và iMessage rảnh tay.
+    <p class="text-sm sm:text-base text-slate-600 font-normal leading-relaxed max-w-xl mx-auto mb-2">
+      Không cần biết code. Cài trực tiếp vào máy tính: Bóc kịch bản clip hay, tạo ảnh có mặt bạn, dựng web bán hàng VietQR, làm video review phim, quản lý Zalo và iMessage rảnh tay.
     </p>
 
-    <p class="font-acta italic text-sm text-slate-500 mb-8">
-      *Cài 1 lần bằng Thẻ QR, dùng trọn đời trên chính tài khoản Google của bạn.
+    <p class="font-acta italic text-xs text-slate-500 mb-6">
+      *Cài 1 lần bằng Thẻ QR, chạy trực tiếp trên tài khoản Google của bạn.
     </p>
 
     <!-- Hero CTA Buttons -->
-    <div class="flex flex-wrap items-center justify-center gap-4 mb-6">
+    <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
       <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" download="the-kich-hoat-ai.png" class="btn-main">
-        <i class="fa-solid fa-qrcode text-base"></i>
+        <i class="fa-solid fa-qrcode text-sm"></i>
         <span>Tải Thẻ Kích Hoạt (Ảnh QR)</span>
       </a>
       <a href="#cai-dat-qr" class="btn-outline">
         <i class="fa-solid fa-circle-play text-blue-600"></i>
-        <span>Xem Cách Cài Đặt (30 Giây)</span>
+        <span>Xem Cách Cài (30 Giây)</span>
       </a>
     </div>
 
-    <div class="text-xs text-slate-500 flex items-center justify-center gap-2 mb-10 font-medium">
-      <i class="fa-solid fa-circle-check text-emerald-600"></i>
-      <span>Đã tương thích 100% cả macOS (Apple Silicon M1-M4) &amp; Windows 10/11</span>
-    </div>
-
     <!-- Quick Jump Menu To All 6 Individual Sale Pages -->
-    <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm max-w-4xl mx-auto text-left">
-      <div class="text-[11px] font-mono text-slate-500 uppercase font-semibold mb-3 flex items-center justify-between">
-        <span><i class="fa-solid fa-arrow-up-right-from-square text-blue-600 mr-1.5"></i> Xem Trang Giới Thiệu Riêng Cả 6 Công Cụ:</span>
-        <span class="text-[10px] text-slate-400 font-normal">fedu.vn/course</span>
+    <div class="p-3 rounded-2xl bg-white border border-slate-200 shadow-sm text-left">
+      <div class="text-[10px] font-mono text-slate-500 uppercase font-semibold mb-2 flex items-center justify-between">
+        <span><i class="fa-solid fa-arrow-up-right-from-square text-blue-600 mr-1"></i> Trang giới thiệu riêng từng công cụ:</span>
+        <span class="text-[9px] text-slate-400 font-normal">fedu.vn/course</span>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-xs">
-        <a href="https://fedu.vn/course/boc-kich-ban-3-tang.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">01. Bóc Kịch Bản</span>
-          <span class="text-[10px] text-blue-600 mt-1 font-mono">Xem Trang ↗</span>
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-1.5 text-xs">
+        <a href="https://fedu.vn/course/boc-kich-ban-3-tang.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-blue-50 border border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">01. Bóc Kịch Bản</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-blue-600"></i>
         </a>
-        <a href="https://fedu.vn/course/ai-face-clone.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-slate-700 hover:text-purple-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">02. Ảnh Có Mặt Bạn</span>
-          <span class="text-[10px] text-purple-600 mt-1 font-mono">Xem Trang ↗</span>
+        <a href="https://fedu.vn/course/ai-face-clone.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-purple-50 border border-slate-200 hover:border-purple-300 text-slate-700 hover:text-purple-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">02. Ảnh Có Mặt Bạn</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-purple-600"></i>
         </a>
-        <a href="https://fedu.vn/course/miss-ban-hang.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-slate-700 hover:text-emerald-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">03. Web Bán Hàng</span>
-          <span class="text-[10px] text-emerald-600 mt-1 font-mono">Xem Trang ↗</span>
+        <a href="https://fedu.vn/course/miss-ban-hang.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 border border-slate-200 hover:border-emerald-300 text-slate-700 hover:text-emerald-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">03. Web Bán Hàng</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-emerald-600"></i>
         </a>
-        <a href="https://fedu.vn/course/auto-edit-video.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-rose-50 border border-slate-200 hover:border-rose-300 text-slate-700 hover:text-rose-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">04. Dựng &amp; Reup Phim</span>
-          <span class="text-[10px] text-rose-600 mt-1 font-mono">Xem Trang ↗</span>
+        <a href="https://fedu.vn/course/auto-edit-video.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-rose-50 border border-slate-200 hover:border-rose-300 text-slate-700 hover:text-rose-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">04. Review Phim</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-rose-600"></i>
         </a>
-        <a href="https://fedu.vn/course/tro-ly-zalo-ranh-tay.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 text-slate-700 hover:text-cyan-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">05. Trợ Lý Zalo</span>
-          <span class="text-[10px] text-cyan-600 mt-1 font-mono">Xem Trang ↗</span>
+        <a href="https://fedu.vn/course/tro-ly-zalo-ranh-tay.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-cyan-50 border border-slate-200 hover:border-cyan-300 text-slate-700 hover:text-cyan-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">05. Trợ Lý Zalo</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-cyan-600"></i>
         </a>
-        <a href="https://fedu.vn/course/tro-ly-imessage-ranh-tay.html" target="_blank" class="p-2.5 rounded-xl bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 font-semibold flex flex-col justify-between transition group">
-          <span class="text-[11px]">06. Trợ Lý iMessage</span>
-          <span class="text-[10px] text-indigo-600 mt-1 font-mono">Xem Trang ↗</span>
+        <a href="https://fedu.vn/course/tro-ly-imessage-ranh-tay.html" target="_blank" class="p-2 rounded-lg bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 text-slate-700 hover:text-indigo-700 font-semibold flex items-center justify-between transition group">
+          <span class="text-[11px] truncate">06. Trợ Lý iMess</span>
+          <i class="fa-solid fa-arrow-right text-[8px] text-slate-400 group-hover:text-indigo-600"></i>
         </a>
       </div>
     </div>
   </header>
 
   <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- 6 CÔNG CỤ AI CHỦ LỰC — BỐ CỤC 2 CỘT + DẢI CUỘN NGANG -->
+  <!-- 6 CÔNG CỤ AI CHỦ LỰC — HEADER GỌN GÀNG LIỀN KHỐI -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <main class="content-wrapper relative z-10 py-6">
+  <main class="content-wrapper relative z-10 py-4">
 
     <!-- ─────────────────────────────────────────────────── -->
     <!-- CARD 01: BÓC KỊCH BẢN CLIP HAY -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-01" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-blue-50 border border-blue-200 text-blue-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 01</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            01
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              BÓC KỊCH BẢN CLIP HAY
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Dán link clip viral ➔ Tự bóc lời thoại &amp; góc quay 2 cột để quay theo</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            BÓC KỊCH BẢN CLIP HAY
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/boc-kich-ban-3-tang.html" target="_blank" class="pill-link bg-blue-600 text-white hover:bg-blue-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
           <a href="./assets/video-analysis/demo_director_report.pdf" target="_blank" class="pill-link bg-amber-50 border border-amber-300 text-amber-800 hover:bg-amber-100">
             <i class="fa-solid fa-file-pdf text-[10px] text-amber-600"></i>
-            <span>Mở PDF Mẫu (39 Trang) ↗</span>
+            <span>PDF Mẫu ↗</span>
           </a>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Dán Link Clip Hay <span class="text-blue-600 font-semibold">→</span> AI Tự Bóc Lời Thoại &amp; Góc Quay 2 Cột Để Quay Theo Trong 5 Phút
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Thấy clip nào trên mạng đang viral hay, bạn chỉ cần dán link vào. AI tự động cắt từng cảnh, bóc sạch lời nói, góc quay, lấy 4 mã màu HEX và xuất file hướng dẫn chi tiết để bạn cầm máy quay theo ngay. Khỏi cắn bút nghĩ câu mở đầu.
-        </p>
-      </div>
+      <!-- Slogan Ngắn -->
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Thấy clip nào đang viral hay, dán link vào là AI tự cắt từng cảnh, bóc sạch lời nói, góc quay, lấy 4 mã màu HEX và xuất file PDF hướng dẫn chi tiết để bạn cầm máy quay theo trong 5 phút. Khỏi cắn bút nghĩ câu mở đầu.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box Tinh Gọn -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-blue-50/50">
-          <div class="font-integral text-[11px] text-blue-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-keyboard text-blue-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-blue-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-keyboard text-blue-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "Phân tích clip này giúp tôi: https://www.instagram.com/reel/DcJoysIuLS9/"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Hỗ trợ TikTok, Instagram Reels, Shorts, Facebook hoặc video MP4.</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-file-pdf text-emerald-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-file-pdf text-emerald-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Báo Cáo Đạo Diễn PDF A4 (39 Trang)</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Đầy đủ ảnh chụp từng cảnh, bảng màu HEX, điểm sáng, hạn chế, kịch bản song ngữ và 3 mẫu CTA.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Báo Cáo Đạo Diễn PDF A4 (39 Trang)</div>
+          <div class="text-[11px] text-slate-600">Ảnh từng cảnh, bảng màu HEX, điểm sáng/hạn chế &amp; kịch bản 2 cột.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Demo Showcase (Bố cục 2 Cột + Cuộn Ngang) -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-blue-100 text-[11px] font-mono text-blue-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Video Gốc Mẫu ➔ Bóc Tách 39 Phân Cảnh &amp; Kịch Bản</span>
+            <span class="px-2 py-0.5 rounded bg-blue-100 text-[10px] font-mono text-blue-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Video Mẫu ➔ 39 Phân Cảnh Bóc Tách</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('video-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('video-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('video-carousel').scrollBy({left: -280, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('video-carousel').scrollBy({left: 280, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3 flex flex-col items-center text-center">
-            <div class="relative w-full max-w-[190px] rounded-2xl overflow-hidden border border-slate-300 bg-black shadow-md aspect-[9/16]">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2 flex flex-col items-center text-center">
+            <div class="relative w-full max-w-[170px] rounded-xl overflow-hidden border border-slate-300 bg-black aspect-[9/16]">
               <video src="./assets/video-analysis/demo_video.mp4" autoplay muted loop playsinline controls class="w-full h-full object-cover"></video>
-              <div class="absolute top-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[9px] font-mono text-blue-300 font-bold">▶ DEMO 65s</div>
+              <div class="absolute top-1.5 left-1.5 px-1.5 py-0.5 rounded bg-black/80 text-[8px] font-mono text-blue-300 font-bold">▶ DEMO 65s</div>
             </div>
-            <div class="space-y-1 w-full text-left">
-              <div class="text-xs font-bold text-slate-900">Clip Creator Triệu View</div>
-              <div class="text-[11px] text-slate-500">39 phân cảnh quay • Bóc tách trong 15s</div>
+            <div class="text-left w-full">
+              <div class="text-xs font-bold text-slate-900">Clip Triệu View Instagram</div>
+              <div class="text-[10px] text-slate-500">39 phân cảnh bóc tách trong 15s</div>
             </div>
           </div>
 
           <div class="lg:col-span-8">
             <div id="video-carousel" class="horizontal-snap-carousel">
-              <div class="snap-item w-[260px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+              <div class="snap-item w-[240px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
                 <div>
-                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                  <div class="rounded-lg overflow-hidden aspect-[9/16] max-h-[190px] bg-slate-100 mb-1.5 relative">
                     <img src="./assets/video-analysis/shot_01.jpg" alt="Shot 1" class="w-full h-full object-cover image-zoom">
-                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">0.0s - 2.8s</span>
+                    <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">0.0s - 2.8s</span>
                   </div>
-                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 01 • HOOK</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Cận Cảnh Tay Gạt Che Ống Kính</h4>
+                  <span class="text-[9px] font-bold text-blue-600 uppercase font-mono">SHOT 01 • HOOK</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-0.5 mb-1">Cận Cảnh Tay Gạt Che Ống Kính</h4>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">"Đừng bao giờ quay video mà không biết cảnh tiếp theo làm gì..."</div>
+                <div class="bg-slate-50 border border-slate-200 rounded p-1.5 text-[10px] text-slate-700">"Đừng bao giờ quay video mà không biết cảnh tiếp theo làm gì..."</div>
               </div>
 
-              <div class="snap-item w-[260px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
+              <div class="snap-item w-[240px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-blue-300 transition flex flex-col justify-between">
                 <div>
-                  <div class="rounded-xl overflow-hidden aspect-[9/16] max-h-[220px] bg-slate-100 mb-2 relative">
+                  <div class="rounded-lg overflow-hidden aspect-[9/16] max-h-[190px] bg-slate-100 mb-1.5 relative">
                     <img src="./assets/video-analysis/shot_02.jpg" alt="Shot 2" class="w-full h-full object-cover image-zoom">
-                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/70 font-mono text-[9px] text-white font-bold">2.8s - 6.1s</span>
+                    <span class="absolute bottom-1 right-1 px-1 py-0.5 rounded bg-black/70 font-mono text-[8px] text-white font-bold">2.8s - 6.1s</span>
                   </div>
-                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">SHOT 02 • TOÀN CẢNH</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-1.5">Góc Toàn Phòng Định Vị Không Gian</h4>
+                  <span class="text-[9px] font-bold text-blue-600 uppercase font-mono">SHOT 02 • TOÀN CẢNH</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-0.5 mb-1">Góc Toàn Phòng Không Gian</h4>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg p-2 text-[11px] text-slate-700">"Bước 1 &amp; 2: Quay lại chính việc bạn làm hàng ngày. Đừng diễn."</div>
+                <div class="bg-slate-50 border border-slate-200 rounded p-1.5 text-[10px] text-slate-700">"Bước 1 &amp; 2: Quay lại chính việc bạn làm hàng ngày. Đừng diễn."</div>
               </div>
 
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
-                <div class="space-y-3">
-                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-                    <span class="text-[11px] font-bold text-emerald-700 uppercase font-mono">3 KHỐI MỔ XẺ CHUYÊN SÂU</span>
-                    <span class="text-[10px] text-slate-400">PDF 39 Trang</span>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3.5 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-2">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-1.5">
+                    <span class="text-[10px] font-bold text-emerald-700 uppercase font-mono">MỔ XẺ 3 KHỐI</span>
+                    <span class="text-[9px] text-slate-400">PDF 39 Trang</span>
                   </div>
-                  <div class="p-2 rounded-xl bg-emerald-50 text-[11px] text-emerald-900"><strong>Điểm sáng:</strong> Nhịp cắt 1.6s/shot giữ chân mắt người xem.</div>
-                  <div class="p-2 rounded-xl bg-rose-50 text-[11px] text-rose-900"><strong>Hạn chế:</strong> Phụ đề cần tránh icon TikTok che.</div>
-                  <div class="flex items-center gap-2 pt-1">
-                    <span class="w-3.5 h-3.5 rounded-full bg-[#1e293b] border border-slate-300"></span>
-                    <span class="w-3.5 h-3.5 rounded-full bg-[#f8fafc] border border-slate-300"></span>
-                    <span class="w-3.5 h-3.5 rounded-full bg-[#f59e0b] border border-slate-300"></span>
-                    <span class="w-3.5 h-3.5 rounded-full bg-[#06b6d4] border border-slate-300"></span>
-                    <span class="text-[10px] text-slate-500 font-mono ml-auto">4 Màu HEX</span>
+                  <div class="p-1.5 rounded-lg bg-emerald-50 text-[10px] text-emerald-900"><strong>Điểm sáng:</strong> Nhịp cắt 1.6s/shot giữ chân mắt.</div>
+                  <div class="p-1.5 rounded-lg bg-rose-50 text-[10px] text-rose-900"><strong>Hạn chế:</strong> Phụ đề cần tránh icon TikTok.</div>
+                  <div class="flex items-center gap-1.5 pt-0.5">
+                    <span class="w-3 h-3 rounded-full bg-[#1e293b] border border-slate-300"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#f8fafc] border border-slate-300"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#f59e0b] border border-slate-300"></span>
+                    <span class="w-3 h-3 rounded-full bg-[#06b6d4] border border-slate-300"></span>
+                    <span class="text-[9px] text-slate-500 font-mono ml-auto">4 Màu HEX</span>
                   </div>
                 </div>
-                <a href="./assets/video-analysis/demo_director_report.pdf" target="_blank" class="mt-3 py-2 px-3 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-bold text-[11px] flex items-center justify-center gap-1 transition shadow-sm">
+                <a href="./assets/video-analysis/demo_director_report.pdf" target="_blank" class="mt-2 py-1.5 px-2.5 rounded-lg bg-amber-500 hover:bg-amber-600 text-white font-bold text-[10px] flex items-center justify-center gap-1 transition shadow-sm">
                   <span>Mở File PDF Đạo Diễn ↗</span>
                 </a>
               </div>
@@ -489,11 +485,11 @@
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-scissors text-blue-600 mr-1.5"></i> Cắt cảnh tự động</div><div class="text-[11px] text-slate-500">Bắt từng điểm shot chính xác 100%.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-palette text-amber-600 mr-1.5"></i> 4 Mã màu HEX</div><div class="text-[11px] text-slate-500">Trích màu chủ đạo để chỉnh màu.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-scale-balanced text-emerald-600 mr-1.5"></i> Khen / Chê khách quan</div><div class="text-[11px] text-slate-500">Chỉ rõ điểm sáng và lỗi bết sáng.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-table-columns text-purple-600 mr-1.5"></i> Kịch bản 2 cột</div><div class="text-[11px] text-slate-500">Lời đọc và góc máy để quay luôn.</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-scissors text-blue-600 mr-1"></i> Cắt cảnh tự động</div><div class="text-[10px] text-slate-500">Bắt từng điểm shot 100%.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-palette text-amber-600 mr-1"></i> 4 Mã màu HEX</div><div class="text-[10px] text-slate-500">Trích màu để chỉnh video.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-scale-balanced text-emerald-600 mr-1"></i> Khen/Chê khách quan</div><div class="text-[10px] text-slate-500">Chỉ rõ điểm sáng &amp; lỗi sáng.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-table-columns text-purple-600 mr-1"></i> Kịch bản 2 cột</div><div class="text-[10px] text-slate-500">Lời đọc và góc quay sẵn.</div></div>
       </div>
     </article>
 
@@ -502,131 +498,122 @@
     <!-- CARD 02: TẠO ẢNH CÓ MẶT CỦA BẠN -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-02" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-purple-50 border border-purple-200 text-purple-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 02</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-purple-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            02
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              TẠO ẢNH CÓ MẶT CỦA BẠN
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Nhắn 1 câu tiếng Việt ➔ Nhận bộ ảnh Studio đẹp mang đúng mặt bạn</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            TẠO ẢNH CÓ MẶT CỦA BẠN
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/ai-face-clone.html" target="_blank" class="pill-link bg-purple-600 text-white hover:bg-purple-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
-          <span class="text-xs text-purple-700 bg-purple-50 border border-purple-200 px-3 py-1 rounded-full font-semibold hidden sm:inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-fingerprint text-purple-600"></i> Độ giống &gt;95% khuôn mặt thật
+          <span class="text-[11px] text-purple-700 bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-full font-semibold hidden sm:inline-flex">
+            Độ giống &gt;95%
           </span>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Nhắn 1 Câu Tiếng Việt <span class="text-purple-600 font-semibold">→</span> Nhận Ngay Bộ Ảnh Studio Đẹp Mang Đúng Khuôn Mặt Bạn
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Nạp 3 ảnh chụp điện thoại thường ngày đúng 1 lần. Từ đó về sau, chỉ cần nhắn: "tôi ngồi cafe", "tôi thuyết trình" hay "tôi đi dạo phố", AI tự tạo ảnh Studio chuyên nghiệp mang đúng mặt bạn mà không cần thuê thợ chụp.
-        </p>
-      </div>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Nạp 3 ảnh chụp điện thoại thường ngày đúng 1 lần. Từ đó về sau, chỉ cần nhắn: "tôi ngồi cafe", "tôi thuyết trình" hay "tôi đi dạo phố", AI tự tạo ảnh Studio chuyên nghiệp mang đúng mặt bạn mà không cần thuê thợ chụp.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-purple-50/50">
-          <div class="font-integral text-[11px] text-purple-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-message text-purple-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-purple-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-message text-purple-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "Tạo ảnh tôi đang ngồi làm việc bên bàn gỗ, ánh sáng ấm"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Mô tả bối cảnh tự nhiên, không cần câu lệnh tiếng Anh phức tạp.</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-image text-emerald-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-image text-emerald-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Bức Ảnh Studio Chất Lượng Cao Mang Mặt Bạn</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Độ phân giải cao, giữ đúng đường nét khuôn mặt, ánh mắt và đồng nhất trang phục.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Bức Ảnh Studio Chất Lượng Cao Mang Mặt Bạn</div>
+          <div class="text-[11px] text-slate-600">Giữ đúng đường nét khuôn mặt, ánh mắt và đồng nhất trang phục.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Showcase 3 Ảnh Thật + Cuộn Ngang -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-purple-100 text-[11px] font-mono text-purple-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Đối Chiếu 3 Ảnh Thật ➔ 10 Bối Cảnh AI Tự Vẽ</span>
+            <span class="px-2 py-0.5 rounded bg-purple-100 text-[10px] font-mono text-purple-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">3 Ảnh Thật ➔ 10 Bối Cảnh AI Tự Vẽ</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('face-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('face-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('face-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('face-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-bold text-slate-900 uppercase font-mono">3 Ảnh Gốc Thật Của Bạn</span>
-              <span class="text-[10px] text-purple-700 bg-purple-50 px-2 py-0.5 rounded font-bold">Cài 1 lần</span>
+              <span class="text-xs font-bold text-slate-900 font-mono">3 Ảnh Gốc Thật Của Bạn</span>
+              <span class="text-[9px] text-purple-700 bg-purple-50 px-1.5 py-0.5 rounded font-bold">Cài 1 lần</span>
             </div>
-            <p class="text-[11px] text-slate-500 leading-snug">Chụp bằng điện thoại thường ngày (chính diện, nghiêng, cười):</p>
-            <div class="grid grid-cols-3 gap-2">
-              <div class="rounded-xl overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_01.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_01.jpg'" alt="Ảnh thật 1" class="w-full h-full object-cover"></div>
-              <div class="rounded-xl overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_02.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_02.jpg'" alt="Ảnh thật 2" class="w-full h-full object-cover"></div>
-              <div class="rounded-xl overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_03.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_03.jpg'" alt="Ảnh thật 3" class="w-full h-full object-cover"></div>
+            <div class="grid grid-cols-3 gap-1.5">
+              <div class="rounded-lg overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_01.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_01.jpg'" alt="Ảnh 1" class="w-full h-full object-cover"></div>
+              <div class="rounded-lg overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_02.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_02.jpg'" alt="Ảnh 2" class="w-full h-full object-cover"></div>
+              <div class="rounded-lg overflow-hidden aspect-square border border-slate-200 bg-slate-100"><img src="./assets/face-clone/real_03.jpg" onerror="this.src='https://fedu.vn/course/assets/face-clone/real_03.jpg'" alt="Ảnh 3" class="w-full h-full object-cover"></div>
             </div>
-            <div class="p-2.5 rounded-xl bg-purple-50/70 border border-purple-100 text-[11px] text-purple-900">
-              <i class="fa-solid fa-circle-check text-purple-600 mr-1"></i> Tự động khóa nét mặt và giữ trang phục đồng nhất cho mọi ảnh sau này.
+            <div class="p-2 rounded-lg bg-purple-50/70 text-[10px] text-purple-900">
+              <i class="fa-solid fa-circle-check text-purple-600 mr-1"></i> Tự động khóa nét mặt và giữ trang phục đồng nhất.
             </div>
           </div>
 
           <div class="lg:col-span-8">
             <div id="face-carousel" class="horizontal-snap-carousel">
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-purple-300 transition flex flex-col justify-between">
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-purple-300 transition flex flex-col justify-between">
                 <div>
-                  <div class="rounded-xl overflow-hidden aspect-[16/9] mb-2.5 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_01_desk.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_01_desk.jpg?v=20260829_v2'" alt="Bàn Mac" class="w-full h-full object-cover image-zoom"></div>
-                  <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider">01 • Bàn Làm Việc</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-2">Ngồi Làm Việc Bên Máy Tính &amp; Ánh Sáng Ấm</h4>
+                  <div class="rounded-lg overflow-hidden aspect-[16/9] mb-2 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_01_desk.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_01_desk.jpg?v=20260829_v2'" alt="Bàn Mac" class="w-full h-full object-cover image-zoom"></div>
+                  <span class="text-[9px] font-bold text-purple-600 uppercase">01 • Bàn Làm Việc</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-0.5 mb-1.5">Ngồi Làm Việc Bên Máy Tính &amp; Ánh Sáng Ấm</h4>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-[11px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-purple-700 font-mono truncate">"Tạo ảnh tôi đang làm việc bên bàn Mac"</span></div>
+                <div class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-[10px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-purple-700 font-mono truncate">"Tạo ảnh tôi đang làm việc bàn Mac"</span></div>
               </div>
 
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-amber-300 transition flex flex-col justify-between">
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-amber-300 transition flex flex-col justify-between">
                 <div>
-                  <div class="rounded-xl overflow-hidden aspect-[16/9] mb-2.5 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_02_runner.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_02_runner.jpg?v=20260829_v2'" alt="Chạy bộ" class="w-full h-full object-cover image-zoom"></div>
-                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider">02 • Thể Thao</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-2">Chạy Bộ Sáng Sớm Trong Công Viên Xanh</h4>
+                  <div class="rounded-lg overflow-hidden aspect-[16/9] mb-2 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_02_runner.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_02_runner.jpg?v=20260829_v2'" alt="Chạy bộ" class="w-full h-full object-cover image-zoom"></div>
+                  <span class="text-[9px] font-bold text-amber-600 uppercase">02 • Thể Thao</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-0.5 mb-1.5">Chạy Bộ Sáng Sớm Trong Công Viên Xanh</h4>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-[11px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-amber-700 font-mono truncate">"Tạo ảnh tôi chạy bộ buổi sáng"</span></div>
+                <div class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-[10px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-amber-700 font-mono truncate">"Tạo ảnh tôi chạy bộ buổi sáng"</span></div>
               </div>
 
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
                 <div>
-                  <div class="rounded-xl overflow-hidden aspect-[16/9] mb-2.5 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_03_studio.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_03_studio.jpg?v=20260829_v2'" alt="Studio" class="w-full h-full object-cover image-zoom"></div>
-                  <span class="text-[10px] font-bold text-cyan-600 uppercase tracking-wider">03 • Studio Avatar</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-2">Chân Dung Studio Chuyên Nghiệp Làm Avatar</h4>
+                  <div class="rounded-lg overflow-hidden aspect-[16/9] mb-2 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_03_studio.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_03_studio.jpg?v=20260829_v2'" alt="Studio" class="w-full h-full object-cover image-zoom"></div>
+                  <span class="text-[9px] font-bold text-cyan-600 uppercase">03 • Studio Avatar</span>
+                  <h4 class="text-xs font-bold text-slate-900 mt-0.5 mb-1.5">Chân Dung Studio Chuyên Nghiệp Avatar</h4>
                 </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-[11px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-cyan-700 font-mono truncate">"Tạo avatar studio chuyên nghiệp"</span></div>
-              </div>
-
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-3.5 border border-slate-200 shadow-sm hover:border-teal-300 transition flex flex-col justify-between">
-                <div>
-                  <div class="rounded-xl overflow-hidden aspect-[16/9] mb-2.5 bg-slate-100 border border-slate-100"><img src="./assets/face-clone/gen_07_travel.jpg?v=20260829_v2" onerror="this.src='https://fedu.vn/course/assets/face-clone/gen_07_travel.jpg?v=20260829_v2'" alt="Du lịch" class="w-full h-full object-cover image-zoom"></div>
-                  <span class="text-[10px] font-bold text-teal-600 uppercase tracking-wider">04 • Du Lịch</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900 mt-0.5 mb-2">Nghỉ Dưỡng Ngắm Núi Đồi Mây Trắng Resort</h4>
-                </div>
-                <div class="bg-slate-50 border border-slate-200 rounded-lg px-2.5 py-1.5 text-[11px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-teal-700 font-mono truncate">"Tạo ảnh tôi đi du lịch ngắm cảnh"</span></div>
+                <div class="bg-slate-50 border border-slate-200 rounded px-2 py-1 text-[10px]"><span class="text-slate-400 font-mono">Chat:</span> <span class="font-semibold text-cyan-700 font-mono truncate">"Tạo avatar studio chuyên nghiệp"</span></div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center"><div class="w-8 h-8 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center mx-auto mb-1.5"><i class="fa-solid fa-user-tie text-xs"></i></div><div class="text-slate-900 font-bold">Chuyên Gia Studio</div><div class="text-[10px] text-slate-500">Avatar vuông 1:1 sang trọng</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center"><div class="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center mx-auto mb-1.5"><i class="fa-solid fa-laptop text-xs"></i></div><div class="text-slate-900 font-bold">Bàn Làm Việc</div><div class="text-[10px] text-slate-500">Ảnh ngang 16:9 minh họa bài</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center"><div class="w-8 h-8 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center mx-auto mb-1.5"><i class="fa-solid fa-person-running text-xs"></i></div><div class="text-slate-900 font-bold">Lifestyle Thể Thao</div><div class="text-[10px] text-slate-500">Ảnh dọc 9:16 chạy bộ/cafe</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200 text-center"><div class="w-8 h-8 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center mx-auto mb-1.5"><i class="fa-solid fa-shirt text-xs"></i></div><div class="text-slate-900 font-bold">Giữ Trang Phục</div><div class="text-[10px] text-slate-500">Bộ 10 ảnh không bị đổi đồ</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center"><div class="text-slate-900 font-bold text-[11px]">Chuyên Gia Studio</div><div class="text-[10px] text-slate-500">Avatar vuông 1:1 sang trọng</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center"><div class="text-slate-900 font-bold text-[11px]">Bàn Làm Việc</div><div class="text-[10px] text-slate-500">Ảnh ngang 16:9 minh họa bài</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center"><div class="text-slate-900 font-bold text-[11px]">Lifestyle Thể Thao</div><div class="text-[10px] text-slate-500">Ảnh dọc 9:16 chạy bộ/cafe</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200 text-center"><div class="text-slate-900 font-bold text-[11px]">Giữ Trang Phục</div><div class="text-[10px] text-slate-500">Bộ 10 ảnh không bị đổi đồ</div></div>
       </div>
     </article>
 
@@ -635,122 +622,121 @@
     <!-- CARD 03: TRANG WEB BÁN HÀNG TỰ ĐỘNG -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-03" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 03</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            03
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              TRANG WEB BÁN HÀNG TỰ ĐỘNG
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Mô tả sản phẩm 1 dòng ➔ Có web bán hàng VietQR thu tiền 24/7</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            TRANG WEB BÁN HÀNG TỰ ĐỘNG
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/miss-ban-hang.html" target="_blank" class="pill-link bg-emerald-600 text-white hover:bg-emerald-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
-          <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full font-semibold hidden sm:inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-qrcode text-emerald-600"></i> VietQR tự điền số tiền 24/7
+          <span class="text-[11px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-2.5 py-1 rounded-full font-semibold hidden sm:inline-flex">
+            VietQR tự điền số tiền
           </span>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Mô Tả Sản Phẩm Trong 1 Dòng <span class="text-emerald-600 font-semibold">→</span> Có Ngay Trang Web Thu Tiền Tự Động 24/7
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Trang web có sẵn mã QR ngân hàng tự điền số tiền. Khách quét mã chuyển khoản là tiền về thẳng tài khoản, web tự kích hoạt gửi bài học cho khách lúc 2h sáng mà không cần người trực chat. Muốn đổi giá hay hình ảnh chỉ cần nhắn tin ra lệnh là AI sửa xong trong 10 phút.
-        </p>
-      </div>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Trang web có sẵn mã QR ngân hàng tự điền số tiền. Khách quét mã chuyển khoản là tiền về thẳng tài khoản, web tự kích hoạt gửi bài học cho khách lúc 2h sáng mà không cần người trực chat. Muốn đổi giá hay hình ảnh chỉ cần nhắn tin ra lệnh là AI sửa xong trong 10 phút.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-wand-magic-sparkles text-emerald-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-wand-magic-sparkles text-emerald-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "Tạo cho tôi trang web bán gói hướng dẫn quay video giá 499k"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Chỉ cần nói tên sản phẩm, giá bán và tài khoản ngân hàng của bạn.</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-blue-50/50">
-          <div class="font-integral text-[11px] text-blue-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-globe text-blue-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-blue-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-globe text-blue-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Website Bán Hàng Trực Tuyến Kèm VietQR Động</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Trang web hoàn chỉnh, có link chia sẻ ngay, quét mã là tiền về tài khoản bạn.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Website Bán Hàng Trực Tuyến Kèm VietQR Động</div>
+          <div class="text-[11px] text-slate-600">Trang web hoàn chỉnh, có link chia sẻ ngay, quét mã là tiền về.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Showcase VietQR + Cuộn Ngang -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-emerald-100 text-[11px] font-mono text-emerald-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Giao Diện Web Đã Đấu Nối VietQR Thu Tiền 24/7</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-[10px] font-mono text-emerald-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Giao Diện Web Đấu Nối VietQR Thu Tiền 24/7</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('web-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('web-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('web-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('web-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3 text-center">
-            <div class="text-[10px] font-bold text-slate-700 uppercase tracking-wider font-mono">QUÉT MÃ VIETQR QUA APP NGÂN HÀNG</div>
-            <div class="w-36 h-36 mx-auto bg-white p-2 rounded-2xl shadow-sm border border-slate-200 flex items-center justify-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2 text-center">
+            <div class="text-[9px] font-bold text-slate-700 uppercase font-mono">QUÉT MÃ VIETQR QUA APP NGÂN HÀNG</div>
+            <div class="w-32 h-32 mx-auto bg-white p-1.5 rounded-xl shadow-sm border border-slate-200 flex items-center justify-center">
               <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" alt="Demo VietQR" class="w-full h-full object-contain">
             </div>
-            <div class="text-sm font-mono font-bold text-emerald-700">499.000 VNĐ</div>
-            <div class="text-[11px] text-slate-500">Nội dung tự điền: <span class="text-slate-800 font-mono font-semibold">FEDU499K</span></div>
-            <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center gap-2.5 text-xs text-emerald-900 font-mono text-left shadow-sm">
-              <i class="fa-solid fa-bell text-emerald-600 animate-bounce text-sm shrink-0"></i>
-              <div><div class="font-bold text-[11px]">+499.000đ từ NGUYEN HOANG NAM</div><div class="text-[10px] text-slate-500">Gửi bài qua Zalo lúc 02:15 sáng</div></div>
+            <div class="text-xs font-mono font-bold text-emerald-700">499.000 VNĐ • FEDU499K</div>
+            <div class="p-2 rounded-lg bg-emerald-50 text-[10px] text-emerald-900 text-left">
+              <i class="fa-solid fa-bell text-emerald-600 animate-bounce mr-1"></i> +499.000đ • Gửi bài Zalo lúc 02:15 sáng
             </div>
           </div>
 
           <div class="lg:col-span-8">
             <div id="web-carousel" class="horizontal-snap-carousel">
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-pen-nib"></i></div>
-                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">TÍNH NĂNG 01</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Tự Viết Kịch Bản Bán Hàng Thôi Miên</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">AI tự viết tiêu đề giật tít, nêu rõ 3 nỗi đau của khách, làm nổi bật lợi ích và xử lý toàn bộ lý do từ chối.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-pen-nib"></i></div>
+                  <span class="text-[9px] font-bold text-emerald-600 uppercase font-mono">TÍNH NĂNG 01</span>
+                  <h4 class="text-xs font-bold text-slate-900">Tự Viết Kịch Bản Bán Hàng Thôi Miên</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">AI tự viết tiêu đề giật tít, nêu 3 nỗi đau của khách, làm nổi bật lợi ích và xử lý lý do từ chối.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Viết bài bán gói này cho tôi"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Chat: "Viết bài bán gói này cho tôi"</div>
               </div>
 
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-building-columns"></i></div>
-                  <span class="text-[10px] font-bold text-cyan-600 uppercase tracking-wider font-mono">TÍNH NĂNG 02</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Mã VietQR Tự Động Thu Tiền 24/7</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Khách quét mã là tiền về thẳng tài khoản ngân hàng của bạn ngay lập tức, không bị giữ tiền qua trung gian.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-building-columns"></i></div>
+                  <span class="text-[9px] font-bold text-cyan-600 uppercase font-mono">TÍNH NĂNG 02</span>
+                  <h4 class="text-xs font-bold text-slate-900">Mã VietQR Tự Động Thu Tiền 24/7</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Khách quét mã là tiền về thẳng tài khoản bạn ngay lập tức, không qua trung gian.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">STK &amp; Ngân hàng chính chủ</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">STK chính chủ của bạn</div>
               </div>
 
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">TÍNH NĂNG 03</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Đưa Web Lên Mạng Ngay Miễn Phí</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Tự động tạo tên miền phụ và đưa trang web lên mạng trong 30 giây, không tốn tiền thuê máy chủ hay mua hosting.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-8 h-8 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <span class="text-[9px] font-bold text-blue-600 uppercase font-mono">TÍNH NĂNG 03</span>
+                  <h4 class="text-xs font-bold text-slate-900">Đưa Web Lên Mạng Trong 30 Giây</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Tự tạo tên miền phụ và đưa web lên mạng miễn phí, không tốn tiền thuê hosting.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Link trực tuyến gửi khách ngay</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Link gửi khách ngay</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-pen-fancy text-emerald-600 mr-1.5"></i> Tự viết kịch bản bán</div><div class="text-[11px] text-slate-500">Tiêu đề gây chú ý, xử lý từ chối.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-building-columns text-cyan-600 mr-1.5"></i> Mã QR ngân hàng</div><div class="text-[11px] text-slate-500">Tiền về tài khoản, không trung gian.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-cloud-arrow-up text-blue-600 mr-1.5"></i> Đưa lên mạng ngay</div><div class="text-[11px] text-slate-500">Có link gửi khách ngay không tốn phí.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-wand-magic text-amber-600 mr-1.5"></i> Muốn sửa chỉ cần nhắn</div><div class="text-[11px] text-slate-500">Nhắn tin đổi giá/ảnh trong 5 phút.</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-pen-fancy text-emerald-600 mr-1"></i> Tự viết kịch bản</div><div class="text-[10px] text-slate-500">Gây chú ý, xử lý từ chối.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-building-columns text-cyan-600 mr-1"></i> Mã QR ngân hàng</div><div class="text-[10px] text-slate-500">Tiền về tài khoản thẳng.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-cloud-arrow-up text-blue-600 mr-1"></i> Lên mạng ngay</div><div class="text-[10px] text-slate-500">Có link gửi khách miễn phí.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-wand-magic text-amber-600 mr-1"></i> Sửa chỉ cần nhắn</div><div class="text-[10px] text-slate-500">Đổi giá/ảnh trong 5 phút.</div></div>
       </div>
     </article>
 
@@ -759,131 +745,124 @@
     <!-- CARD 04: LÀM VIDEO REVIEW PHIM AI -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-04" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 04</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-rose-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            04
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              LÀM VIDEO REVIEW PHIM AI
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Dán link clip phim ➔ AI tự viết thoại mới, lồng tiếng &amp; cắt dựng đăng kênh</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            LÀM VIDEO REVIEW PHIM AI
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/auto-edit-video.html" target="_blank" class="pill-link bg-rose-600 text-white hover:bg-rose-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
           <a href="https://www.youtube.com/watch?v=T2D-KAe5Pe8" target="_blank" class="pill-link bg-red-50 border border-red-200 text-red-700 hover:bg-red-100">
-            <i class="fa-brands fa-youtube text-red-600 text-[11px]"></i>
-            <span>Xem Video Reup (1:37) ↗</span>
+            <i class="fa-brands fa-youtube text-red-600 text-[10px]"></i>
+            <span>Xem Clip (1:37) ↗</span>
           </a>
-          <span class="text-xs text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full font-semibold hidden sm:inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-circle-check text-emerald-600"></i> Vượt 100% Content ID (0 Lỗi)
-          </span>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Dán Link Clip Phim <span class="text-rose-600 font-semibold">→</span> AI Tự Viết Kịch Bản Mới, Lồng Tiếng Việt &amp; Cắt Dựng Video Đăng Kênh
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Chỉ cần gửi link clip phim hoặc video tóm tắt, AI tự động bóc lời thoại cũ, viết lại kịch bản mới cuốn hút, lồng giọng đọc AI truyền cảm, cắt vụn cảnh dưới 4s, lật hình và đổi khung hình để xóa sạch mã băm — xuất video mới đăng thẳng lên kênh YouTube sạch bóng bản quyền 100%.
-        </p>
-      </div>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Chỉ cần gửi link clip phim hoặc video tóm tắt, AI tự động bóc lời thoại cũ, viết lại kịch bản mới cuốn hút, lồng giọng đọc AI truyền cảm, cắt vụn cảnh dưới 4s, lật hình và đổi khung hình để xóa sạch mã băm — xuất video mới đăng thẳng lên kênh YouTube sạch bóng bản quyền 100%.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-rose-50/50">
-          <div class="font-integral text-[11px] text-rose-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-link text-rose-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-rose-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-link text-rose-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "reup lại video này: https://youtu.be/tysxsFxsZBo"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Hỗ trợ link YouTube 16:9 hoặc video ngắn 9:16 (TikTok/Shorts).</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-brands fa-youtube text-emerald-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-brands fa-youtube text-emerald-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Video Mới 100% Đã Đăng Lên Kênh YouTube</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Đã tắt 100% tiếng phim gốc, lồng tiếng AI + BGM hồi hộp, kèm link xem và báo cáo sạch bản quyền.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Video Mới 100% Đã Đăng Lên Kênh YouTube</div>
+          <div class="text-[11px] text-slate-600">Tắt tiếng gốc, lồng giọng AI + BGM, kèm link và báo cáo 0 gậy.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Showcase YouTube + Cuộn Ngang -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-rose-100 text-[11px] font-mono text-rose-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Video Đã Đăng Kênh ➔ Bằng Chứng YouTube Studio 0 Gậy</span>
+            <span class="px-2 py-0.5 rounded bg-rose-100 text-[10px] font-mono text-rose-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Video Đăng Kênh ➔ Bằng Chứng Studio 0 Gậy</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('reup-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('reup-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('reup-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('reup-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <div class="lg:col-span-5 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-            <div class="relative rounded-2xl overflow-hidden border border-slate-300 bg-black shadow-md aspect-video group">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-5 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+            <div class="relative rounded-xl overflow-hidden border border-slate-300 bg-black aspect-video group">
               <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" onerror="this.src='./assets/reup-youtube/youtube_studio_copyright_clean.png'" alt="Video Reup Preview" class="w-full h-full object-cover opacity-80 group-hover:scale-105 transition duration-300">
               <a href="https://www.youtube.com/watch?v=T2D-KAe5Pe8" target="_blank" class="absolute inset-0 flex items-center justify-center bg-black/30 hover:bg-black/10 transition">
-                <div class="w-12 h-12 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fa-solid fa-play text-lg ml-0.5"></i></div>
+                <div class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center shadow-lg hover:scale-110 transition"><i class="fa-solid fa-play text-sm ml-0.5"></i></div>
               </a>
-              <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/80 text-[10px] font-mono text-white font-bold">1:37 • Review Phim AI</div>
+              <div class="absolute bottom-1.5 left-1.5 px-1.5 py-0.5 rounded bg-black/80 text-[9px] font-mono text-white font-bold">1:37 • Review Phim AI</div>
             </div>
-            <div class="space-y-1">
-              <div class="text-xs font-bold text-slate-900">Tóm Tắt Phim: Người Nhện Xuyên Vũ Trụ</div>
-              <div class="text-[11px] text-slate-500">28 đoạn cắt &lt;4s, lật góc nhìn, đổi màu cyberpunk</div>
-            </div>
+            <div class="text-xs font-bold text-slate-900">Tóm Tắt Phim: Người Nhện Xuyên Vũ Trụ</div>
+            <div class="text-[10px] text-slate-500">28 đoạn cắt &lt;4s, lật góc nhìn, đổi màu</div>
           </div>
 
           <div class="lg:col-span-7">
             <div id="reup-carousel" class="horizontal-snap-carousel">
-              <div class="snap-item w-[290px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-                    <span class="text-[11px] font-bold text-emerald-700 uppercase font-mono">BẰNG CHỨNG STUDIO</span>
-                    <span class="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-bold">0 GẬY</span>
+              <div class="snap-item w-[270px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-emerald-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="flex items-center justify-between border-b border-slate-100 pb-1">
+                    <span class="text-[10px] font-bold text-emerald-700 font-mono">BẰNG CHỨNG STUDIO</span>
+                    <span class="px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-bold">0 GẬY</span>
                   </div>
-                  <div class="rounded-xl overflow-hidden border border-slate-200"><img src="./assets/reup-youtube/youtube_studio_copyright_clean.png" alt="Proof" class="w-full h-auto object-cover"></div>
-                  <div class="text-[11px] text-slate-700 leading-snug space-y-1 pt-1">
-                    <div><i class="fa-solid fa-circle-check text-emerald-600 mr-1"></i> Restrictions: <strong>None</strong></div>
-                    <div><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> No impact to channel</div>
-                  </div>
+                  <div class="rounded-lg overflow-hidden border border-slate-200"><img src="./assets/reup-youtube/youtube_studio_copyright_clean.png" alt="Proof" class="w-full h-auto object-cover"></div>
+                  <div class="text-[10px] text-slate-700">Restrictions: <strong>None</strong> • No impact</div>
                 </div>
               </div>
 
-              <div class="snap-item w-[260px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-rose-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">1</div>
-                  <span class="text-[10px] font-bold text-rose-600 uppercase tracking-wider font-mono">TẦNG 1</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Bóc &amp; Viết Lại Thoại 100%</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Trích transcript cũ, đổi hoàn toàn câu chữ sang hook giật gân, tránh trùng bản quyền chữ.</p>
+              <div class="snap-item w-[250px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-rose-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">1</div>
+                  <span class="text-[9px] font-bold text-rose-600 uppercase font-mono">TẦNG 1</span>
+                  <h4 class="text-xs font-bold text-slate-900">Bóc &amp; Viết Lại Thoại 100%</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Trích transcript cũ, đổi hoàn toàn câu chữ sang hook giật gân, tránh trùng bản quyền chữ.</p>
                 </div>
-                <div class="text-[11px] text-slate-500 font-mono">Tránh khiếu nại chữ</div>
+                <div class="text-[10px] text-slate-500 font-mono">Tránh khiếu nại chữ</div>
               </div>
 
-              <div class="snap-item w-[260px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-amber-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">2</div>
-                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider font-mono">TẦNG 2</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Dựng Cắt Vụn &lt; 4s &amp; Đổi Frame</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Cắt cảnh &lt; 4s, lật gương, zoom 6%, đổi màu và tắt sạch âm thanh phim gốc.</p>
+              <div class="snap-item w-[250px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-amber-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs">2</div>
+                  <span class="text-[9px] font-bold text-amber-600 uppercase font-mono">TẦNG 2</span>
+                  <h4 class="text-xs font-bold text-slate-900">Dựng Cắt Vụn &lt; 4s &amp; Đổi Frame</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Cắt cảnh &lt; 4s, lật gương, zoom 6%, đổi màu và tắt sạch âm thanh phim gốc.</p>
                 </div>
-                <div class="text-[11px] text-slate-500 font-mono">Xóa mã băm hình ảnh</div>
+                <div class="text-[10px] text-slate-500 font-mono">Xóa mã băm hình ảnh</div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-file-lines text-rose-600 mr-1.5"></i> Viết kịch bản mới</div><div class="text-[11px] text-slate-500">Hook kịch tính, tránh bản quyền chữ.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-microphone-lines text-blue-600 mr-1.5"></i> Giọng đọc AI trầm ấm</div><div class="text-[11px] text-slate-500">Giọng Nam/Nữ chuẩn điện ảnh.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-film text-amber-600 mr-1.5"></i> Cắt vụn cảnh &lt; 4s</div><div class="text-[11px] text-slate-500">Lật hình, zoom nhẹ xóa mã băm.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-shield-halved text-emerald-600 mr-1.5"></i> Bảo vệ kênh chính</div><div class="text-[11px] text-slate-500">Đăng thẳng vào kênh phụ an toàn.</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-file-lines text-rose-600 mr-1"></i> Viết kịch bản mới</div><div class="text-[10px] text-slate-500">Hook kịch tính, tránh bản quyền chữ.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-microphone-lines text-blue-600 mr-1"></i> Giọng đọc AI trầm ấm</div><div class="text-[10px] text-slate-500">Giọng Nam/Nữ chuẩn điện ảnh.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-film text-amber-600 mr-1"></i> Cắt vụn &lt; 4s</div><div class="text-[10px] text-slate-500">Lật hình, zoom xóa mã băm.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-shield-halved text-emerald-600 mr-1"></i> Bảo vệ kênh</div><div class="text-[10px] text-slate-500">Đăng thẳng vào kênh phụ an toàn.</div></div>
       </div>
     </article>
 
@@ -892,142 +871,123 @@
     <!-- CARD 05: TRỢ LÝ ZALO RẢNH TAY -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-05" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-cyan-50 border border-cyan-200 text-cyan-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 05</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-cyan-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            05
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              TRỢ LÝ ZALO RẢNH TAY
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Nói 1 câu tiếng Việt ➔ Tự lọc bill, gom video dựng clip &amp; sao lưu Drive</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            TRỢ LÝ ZALO RẢNH TAY
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/tro-ly-zalo-ranh-tay.html" target="_blank" class="pill-link bg-cyan-600 text-white hover:bg-cyan-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
-          <span class="text-xs text-cyan-700 bg-cyan-50 border border-cyan-200 px-3 py-1 rounded-full font-semibold hidden sm:inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-cloud-arrow-up text-cyan-600"></i> Tự sao lưu Drive 23:00 Chủ Nhật
+          <span class="text-[11px] text-cyan-700 bg-cyan-50 border border-cyan-200 px-2.5 py-1 rounded-full font-semibold hidden sm:inline-flex">
+            Sao lưu 23:00 Chủ Nhật
           </span>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Nói 1 Câu Tiếng Việt <span class="text-cyan-600 font-semibold">→</span> Tự Động Lọc Bill, Gom Video Dựng Clip &amp; Sao Lưu Lên Google Drive
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Không cần quét mã QR lại nhiều lần. Tự động nhận diện thư mục Zalo PC/Mac, tìm nhanh hóa đơn chuyển khoản, gom video clip theo từng dự án và tự động tải lên Google Drive lúc 23h tối Chủ Nhật hàng tuần mà không tốn dung lượng máy.
-        </p>
-      </div>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Không cần quét mã QR lại nhiều lần. Tự động nhận diện thư mục Zalo PC/Mac, tìm nhanh hóa đơn chuyển khoản, gom video clip theo từng dự án và tự động tải lên Google Drive lúc 23h tối Chủ Nhật hàng tuần mà không tốn dung lượng máy.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-cyan-50/50">
-          <div class="font-integral text-[11px] text-cyan-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-keyboard text-cyan-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-cyan-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-keyboard text-cyan-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "Tìm cho tôi tất cả bill chuyển khoản trong Zalo từ anh Nam tuần này"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Nói tự nhiên, không cần nhớ vị trí file lưu ở đâu.</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-folder-tree text-emerald-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-folder-tree text-emerald-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Bảng Tổng Hợp Bill Kèm File Ảnh Gốc</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Trích xuất đúng số tiền, ngày giờ và tự gom toàn bộ ảnh hóa đơn vào 1 thư mục riêng.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Bảng Tổng Hợp Bill Kèm File Ảnh Gốc</div>
+          <div class="text-[11px] text-slate-600">Trích xuất đúng số tiền, ngày giờ và tự gom toàn bộ ảnh hóa đơn vào 1 thư mục riêng.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Showcase Zalo + Cuộn Ngang -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-cyan-100 text-[11px] font-mono text-cyan-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Tự Động Hóa Quản Lý Tin Nhắn &amp; Dữ Liệu Zalo</span>
+            <span class="px-2 py-0.5 rounded bg-cyan-100 text-[10px] font-mono text-cyan-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Tự Động Hóa Quản Lý Tin Nhắn &amp; Dữ Liệu Zalo</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('zalo-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('zalo-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('zalo-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('zalo-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <!-- Cột Trái Cố Định -->
-          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5 text-xs font-bold text-slate-900 uppercase font-mono">
-              <i class="fa-solid fa-comments text-cyan-600 text-base"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-900 font-mono">
+              <i class="fa-solid fa-comments text-cyan-600"></i>
               <span>Zalo PC / Mac Auto Sync</span>
             </div>
-            <div class="p-3 rounded-xl bg-cyan-50/70 border border-cyan-100 space-y-1.5 text-xs">
-              <div class="font-bold text-cyan-900">Không Cần Quét QR Lại</div>
-              <div class="text-slate-600 text-[11px] leading-relaxed">Tự nhận diện dữ liệu có sẵn trên máy tính, hoạt động 100% nội bộ an toàn.</div>
+            <div class="p-2.5 rounded-lg bg-cyan-50/70 text-[11px] text-slate-700 leading-snug">
+              <strong>Không Quét QR Lại:</strong> Tự nhận diện dữ liệu có sẵn trên máy tính, chạy 100% nội bộ an toàn.
             </div>
-            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-100 space-y-1 text-xs">
-              <div class="font-bold text-emerald-900"><i class="fa-solid fa-clock mr-1"></i> Lịch Sao Lưu Drive:</div>
-              <div class="text-[11px] text-slate-600 font-mono">23:00 Tối Chủ Nhật Hàng Tuần</div>
+            <div class="p-2 rounded-lg bg-emerald-50 text-[10px] text-emerald-900 font-mono">
+              <i class="fa-solid fa-clock mr-1"></i> Lịch Drive: 23:00 Chủ Nhật
             </div>
           </div>
 
-          <!-- Cột Phải Dải Cuộn Ngang -->
           <div class="lg:col-span-8">
             <div id="zalo-carousel" class="horizontal-snap-carousel">
-              
-              <!-- Tính năng 1 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
-                  <span class="text-[10px] font-bold text-cyan-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 01</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Thám Tử Tìm Bill Trong 3 Giây</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Nhặt đúng ảnh chuyển khoản/hóa đơn trong 3 giây giữa 1.000 tin nhắn rác mà không cần cuộn mỏi tay.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-cyan-100 text-cyan-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-magnifying-glass-dollar"></i></div>
+                  <span class="text-[9px] font-bold text-cyan-600 uppercase font-mono">TÌNH HUỐNG 01</span>
+                  <h4 class="text-xs font-bold text-slate-900">Thám Tử Tìm Bill Trong 3 Giây</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Nhặt đúng ảnh chuyển khoản/hóa đơn trong 3 giây giữa 1.000 tin nhắn rác.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Tìm bill chuyển khoản 5 triệu"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Chat: "Tìm bill chuyển khoản 5 triệu"</div>
               </div>
 
-              <!-- Tính năng 2 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-film"></i></div>
-                  <span class="text-[10px] font-bold text-blue-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 02</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Gom Toàn Bộ Video Dựng Clip</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Tự động gom sạch 10 video mẫu khách gửi vào 1 folder dự án ngăn nắp để mở phần mềm dựng ngay.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-film"></i></div>
+                  <span class="text-[9px] font-bold text-blue-600 uppercase font-mono">TÌNH HUỐNG 02</span>
+                  <h4 class="text-xs font-bold text-slate-900">Gom Toàn Bộ Video Dựng Clip</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Tự động gom sạch 10 video mẫu khách gửi vào 1 folder dự án ngăn nắp.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Gom video dự án A ra màn hình"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Chat: "Gom video dự án A ra màn hình"</div>
               </div>
 
-              <!-- Tính năng 3 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-note-sticky"></i></div>
-                  <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 03</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Cứu Nguy Lời Dặn Cũ</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Trích xuất chính xác lời dặn sửa video ở phút nào trong đoạn chat dài mà không sợ sót ý hay quên việc.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-cloud-arrow-up"></i></div>
+                  <span class="text-[9px] font-bold text-emerald-600 uppercase font-mono">TÌNH HUỐNG 03</span>
+                  <h4 class="text-xs font-bold text-slate-900">Sao Lưu Media Lên Drive Tự Động</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Tự động tải media quan trọng lên Google Drive theo thư mục năm/tháng lúc 23h Chủ Nhật.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Khách dặn sửa gì ở đoạn giữa?"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Lưu trữ vĩnh viễn trên Drive</div>
               </div>
-
-              <!-- Tính năng 4 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-cyan-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-cloud-arrow-up"></i></div>
-                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 04</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Sao Lưu Media Lên Drive Tự Động</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Tự động tải media quan trọng lên Google Drive theo thư mục năm/tháng/ngày lúc 23h Chủ Nhật.</p>
-                </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Lưu trữ vĩnh viễn trên Drive</div>
-              </div>
-
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-laptop text-cyan-600 mr-1.5"></i> Nhận diện PC/Mac</div><div class="text-[11px] text-slate-500">Không cần quét mã QR lại nhiều lần.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-receipt text-emerald-600 mr-1.5"></i> Lọc bill 3 giây</div><div class="text-[11px] text-slate-500">Nhặt đúng hóa đơn giữa 1.000 tin rác.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-folder-open text-blue-600 mr-1.5"></i> Gom video clip</div><div class="text-[11px] text-slate-500">Tự gom media theo dự án để dựng.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-cloud text-purple-600 mr-1.5"></i> Tự đẩy lên Drive</div><div class="text-[11px] text-slate-500">Định kỳ 23:00 tối Chủ Nhật hàng tuần.</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-laptop text-cyan-600 mr-1"></i> Nhận diện PC/Mac</div><div class="text-[10px] text-slate-500">Không cần quét QR lại.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-receipt text-emerald-600 mr-1"></i> Lọc bill 3 giây</div><div class="text-[10px] text-slate-500">Nhặt đúng bill giữa 1.000 tin rác.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-folder-open text-blue-600 mr-1"></i> Gom video clip</div><div class="text-[10px] text-slate-500">Tự gom media theo dự án.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-cloud text-purple-600 mr-1"></i> Tự đẩy lên Drive</div><div class="text-[10px] text-slate-500">Định kỳ 23:00 tối Chủ Nhật.</div></div>
       </div>
     </article>
 
@@ -1036,142 +996,123 @@
     <!-- CARD 06: TRỢ LÝ IMESSAGE RẢNH TAY -->
     <!-- ─────────────────────────────────────────────────── -->
     <article id="cong-cu-06" class="feature-card">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-6 border-b border-slate-100">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold font-mono uppercase mb-2">
-            <span>CÔNG CỤ 06</span>
+      
+      <!-- Compact Unified Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4 pb-4 border-b border-slate-200">
+        <div class="flex items-center gap-3">
+          <span class="w-9 h-9 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-integral text-sm font-bold shadow-sm shrink-0">
+            06
+          </span>
+          <div>
+            <h2 class="font-integral text-lg sm:text-xl text-slate-900 uppercase tracking-tight">
+              TRỢ LÝ IMESSAGE RẢNH TAY
+            </h2>
+            <div class="text-xs text-slate-500 font-medium">Nói 1 câu giọng nói ➔ Tự lọc OTP ngân hàng, trả lời tin VIP &amp; báo cáo 21h</div>
           </div>
-          <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 uppercase tracking-tight">
-            TRỢ LÝ IMESSAGE RẢNH TAY
-          </h2>
         </div>
-        <div class="flex items-center gap-3 flex-wrap">
+
+        <div class="flex items-center gap-2 shrink-0">
           <a href="https://fedu.vn/course/tro-ly-imessage-ranh-tay.html" target="_blank" class="pill-link bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm">
-            <i class="fa-solid fa-arrow-up-right-from-square text-[10px]"></i>
-            <span>Xem Trang Giới Thiệu Riêng ↗</span>
+            <span>Xem Trang Riêng ↗</span>
           </a>
-          <span class="text-xs text-indigo-700 bg-indigo-50 border border-indigo-200 px-3 py-1 rounded-full font-semibold hidden sm:inline-flex items-center gap-1.5">
-            <i class="fa-solid fa-shield-check text-indigo-600"></i> Bảo mật 100% nội bộ trên macOS
+          <span class="text-[11px] text-indigo-700 bg-indigo-50 border border-indigo-200 px-2.5 py-1 rounded-full font-semibold hidden sm:inline-flex">
+            Bảo mật 100% macOS
           </span>
         </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-lg sm:text-xl font-bold text-slate-800 mb-2">
-          Nói 1 Câu Bằng Giọng Nói <span class="text-indigo-600 font-semibold">→</span> Tự Lọc OTP Ngân Hàng, Trả Lời Tin Nhắn VIP &amp; Báo Cáo 21h
-        </h3>
-        <p class="text-sm sm:text-base text-slate-600 max-w-3xl leading-relaxed">
-          Biến chiếc máy Mac của bạn thành thư ký riêng tự động: Truy vấn trực tiếp cơ sở dữ liệu tin nhắn an toàn nội bộ, lọc sạch biến động số dư và OTP ngân hàng, tự động phản hồi đối tác theo lịch hẹn và gửi bản báo cáo tóm tắt lúc 21h tối.
-        </p>
-      </div>
+      <p class="text-xs sm:text-sm text-slate-600 mb-4 leading-relaxed">
+        Biến chiếc máy Mac của bạn thành thư ký riêng tự động: Truy vấn trực tiếp cơ sở dữ liệu tin nhắn an toàn nội bộ, lọc sạch biến động số dư và OTP ngân hàng, tự động phản hồi đối tác theo lịch hẹn và gửi bản báo cáo tóm tắt lúc 21h tối.
+      </p>
 
-      <div class="io-grid-light mb-6">
+      <!-- Input / Output Box -->
+      <div class="io-grid-light mb-4">
         <div class="io-step-light bg-indigo-50/50">
-          <div class="font-integral text-[11px] text-indigo-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-keyboard text-indigo-600"></i> Đầu vào (Bạn làm)
+          <div class="font-integral text-[10px] text-indigo-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-keyboard text-indigo-600"></i> Bạn làm
           </div>
-          <div class="text-xs sm:text-sm text-slate-800 font-mono bg-white p-2.5 rounded-xl border border-slate-200 shadow-sm">
+          <div class="text-xs text-slate-800 font-mono bg-white p-2 rounded-lg border border-slate-200 shadow-sm">
             "Hôm nay có biến động số dư hay tin nhắn đối tác nào quan trọng không?"
           </div>
-          <div class="text-[11px] text-slate-500 mt-1.5">Ra lệnh bằng giọng nói khi đang lái xe hoặc bận tay.</div>
         </div>
         <div class="io-arrow-light"><i class="fa-solid fa-arrow-right"></i></div>
         <div class="io-step-light bg-emerald-50/50">
-          <div class="font-integral text-[11px] text-emerald-700 uppercase mb-1.5 flex items-center gap-1.5">
-            <i class="fa-solid fa-clipboard-check text-emerald-600"></i> Đầu ra (AI bàn giao)
+          <div class="font-integral text-[10px] text-emerald-700 uppercase mb-1 flex items-center gap-1">
+            <i class="fa-solid fa-clipboard-check text-emerald-600"></i> AI bàn giao
           </div>
-          <div class="text-xs sm:text-sm text-slate-900 font-bold mb-1">Bản Báo Cáo Tổng Hợp 21h00 Ngắn Gọn</div>
-          <div class="text-[12px] text-slate-600 leading-relaxed">Liệt kê chi tiết thu chi ngân hàng, mã OTP và các tin nhắn khách VIP cần phản hồi.</div>
+          <div class="text-xs text-slate-900 font-bold mb-0.5">Bản Báo Cáo Tổng Hợp 21h00 Ngắn Gọn</div>
+          <div class="text-[11px] text-slate-600">Liệt kê chi tiết thu chi ngân hàng, mã OTP và các tin nhắn khách VIP cần phản hồi.</div>
         </div>
       </div>
 
-      <div class="inner-showcase space-y-4 mb-6">
-        <div class="flex items-center justify-between gap-4 pb-3 border-b border-slate-200">
+      <!-- Showcase iMessage + Cuộn Ngang -->
+      <div class="inner-showcase space-y-3 mb-4">
+        <div class="flex items-center justify-between gap-4 pb-2 border-b border-slate-200">
           <div class="flex items-center gap-2">
-            <span class="px-2.5 py-1 rounded bg-indigo-100 text-[11px] font-mono text-indigo-800 font-bold">DEMO</span>
-            <span class="text-xs sm:text-sm font-bold text-slate-900 uppercase tracking-wide">Tự Động Hóa Quản Lý SMS &amp; iMessage Trên macOS</span>
+            <span class="px-2 py-0.5 rounded bg-indigo-100 text-[10px] font-mono text-indigo-800 font-bold">DEMO</span>
+            <span class="text-xs font-bold text-slate-900 uppercase tracking-wide">Tự Động Hóa Quản Lý SMS &amp; iMessage Trên macOS</span>
           </div>
-          <div class="flex items-center gap-2">
-            <button onclick="document.getElementById('imess-carousel').scrollBy({left: -320, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi lại"><i class="fa-solid fa-chevron-left text-xs"></i></button>
-            <button onclick="document.getElementById('imess-carousel').scrollBy({left: 320, behavior: 'smooth'})" class="carousel-nav-btn" title="Xem tiếp"><i class="fa-solid fa-chevron-right text-xs"></i></button>
+          <div class="flex items-center gap-1.5">
+            <button onclick="document.getElementById('imess-carousel').scrollBy({left: -300, behavior: 'smooth'})" class="carousel-nav-btn" title="Lùi"><i class="fa-solid fa-chevron-left text-[11px]"></i></button>
+            <button onclick="document.getElementById('imess-carousel').scrollBy({left: 300, behavior: 'smooth'})" class="carousel-nav-btn" title="Tiếp"><i class="fa-solid fa-chevron-right text-[11px]"></i></button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-start">
-          <!-- Cột Trái Cố Định -->
-          <div class="lg:col-span-4 bg-white p-4 rounded-2xl border border-slate-200 shadow-sm space-y-3">
-            <div class="flex items-center gap-2.5 text-xs font-bold text-slate-900 uppercase font-mono">
-              <i class="fa-solid fa-message text-indigo-600 text-base"></i>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-4 items-start">
+          <div class="lg:col-span-4 bg-white p-3 rounded-2xl border border-slate-200 shadow-sm space-y-2">
+            <div class="flex items-center gap-2 text-xs font-bold text-slate-900 font-mono">
+              <i class="fa-solid fa-message text-indigo-600"></i>
               <span>Thư Ký Riêng Trên Mac</span>
             </div>
-            <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 space-y-1.5 text-xs">
-              <div class="font-bold text-indigo-900">Bảo Mật Nội Bộ 100%</div>
-              <div class="text-slate-600 text-[11px] leading-relaxed">Truy vấn trực tiếp cơ sở dữ liệu chat trên máy Mac, không gửi dữ liệu ra bên ngoài.</div>
+            <div class="p-2.5 rounded-lg bg-indigo-50/70 text-[11px] text-slate-700 leading-snug">
+              <strong>Bảo Mật macOS 100%:</strong> Truy vấn trực tiếp cơ sở dữ liệu chat trên máy Mac, không gửi dữ liệu ra bên ngoài.
             </div>
-            <div class="p-3 rounded-xl bg-emerald-50/70 border border-emerald-100 space-y-1 text-xs">
-              <div class="font-bold text-emerald-900"><i class="fa-solid fa-bell mr-1"></i> Báo Cáo Tối:</div>
-              <div class="text-[11px] text-slate-600 font-mono">21:00 Mỗi Tối Tóm Tắt Ngày</div>
+            <div class="p-2 rounded-lg bg-emerald-50 text-[10px] text-emerald-900 font-mono">
+              <i class="fa-solid fa-bell mr-1"></i> Báo Cáo: 21:00 Mỗi Tối
             </div>
           </div>
 
-          <!-- Cột Phải Dải Cuộn Ngang -->
           <div class="lg:col-span-8">
             <div id="imess-carousel" class="horizontal-snap-carousel">
-              
-              <!-- Tính năng 1 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-shield-halved"></i></div>
-                  <span class="text-[10px] font-bold text-indigo-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 01</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Lọc Sạch OTP &amp; Biến Động Số Dư</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Bóc tách chính xác mã OTP và số tiền biến động từ mọi ngân hàng (Vietcombank, Techcombank, MB...).</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-shield-halved"></i></div>
+                  <span class="text-[9px] font-bold text-indigo-600 uppercase font-mono">TÌNH HUỐNG 01</span>
+                  <h4 class="text-xs font-bold text-slate-900">Lọc Sạch OTP &amp; Biến Động Số Dư</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Bóc tách chính xác mã OTP và số tiền biến động từ mọi ngân hàng (VCB, TCB, MB...).</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Mã OTP vừa về là bao nhiêu?"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Chat: "Mã OTP vừa về là bao nhiêu?"</div>
               </div>
 
-              <!-- Tính năng 2 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-car"></i></div>
-                  <span class="text-[10px] font-bold text-amber-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 02</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Trả Lời Tin Nhắn Khi Đang Lái Xe</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Tay bận lái xe nhưng miệng nói 1 câu $ightarrow$ AI tự soạn tin nhắn chuẩn mực, gửi ngay cho đối tác VIP.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-car"></i></div>
+                  <span class="text-[9px] font-bold text-amber-600 uppercase font-mono">TÌNH HUỐNG 02</span>
+                  <h4 class="text-xs font-bold text-slate-900">Trả Lời Tin Nhắn Khi Đang Lái Xe</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Tay bận lái xe nhưng miệng nói 1 câu $ightarrow$ AI tự soạn tin chuẩn mực gửi đối tác VIP.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Nhắn hẹn anh Tuấn 9h sáng mai"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Chat: "Nhắn hẹn anh Tuấn 9h sáng mai"</div>
               </div>
 
-              <!-- Tính năng 3 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-heart"></i></div>
-                  <span class="text-[10px] font-bold text-purple-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 03</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Chăm Sóc Khách Hàng Cá Nhân Hóa</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Gửi tin nhắn chăm sóc cá nhân hóa 1-1, xưng hô đúng tên từng người, không bị mang tiếng spam.</p>
+              <div class="snap-item w-[260px] bg-white rounded-xl p-3 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
+                <div class="space-y-1.5">
+                  <div class="w-7 h-7 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-xs"><i class="fa-solid fa-moon"></i></div>
+                  <span class="text-[9px] font-bold text-emerald-600 uppercase font-mono">TÌNH HUỐNG 03</span>
+                  <h4 class="text-xs font-bold text-slate-900">Bản Tin Tóm Tắt 21h00 Mỗi Tối</h4>
+                  <p class="text-[11px] text-slate-600 leading-snug">Thư ký riêng báo cáo ngắn gọn việc đã xong và việc cần nhớ để chủ nhân an tâm ngủ ngon.</p>
                 </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Chat: "Gửi chúc mừng tuần mới 10 đối tác"</div>
+                <div class="p-1.5 rounded bg-slate-50 text-[10px] font-mono text-slate-700 mt-2">Báo cáo tổng kết 21h00</div>
               </div>
-
-              <!-- Tính năng 4 -->
-              <div class="snap-item w-[280px] bg-white rounded-2xl p-4 border border-slate-200 shadow-sm hover:border-indigo-300 transition flex flex-col justify-between">
-                <div class="space-y-2">
-                  <div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-sm mb-1"><i class="fa-solid fa-moon"></i></div>
-                  <span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider font-mono">TÌNH HUỐNG 04</span>
-                  <h4 class="text-xs sm:text-sm font-bold text-slate-900">Bản Tin Tóm Tắt 21h00 Mỗi Tối</h4>
-                  <p class="text-xs text-slate-600 leading-relaxed">Thư ký riêng báo cáo ngắn gọn việc đã xong và việc cần nhớ để chủ nhân an tâm ngủ ngon.</p>
-                </div>
-                <div class="p-2 rounded-xl bg-slate-50 border border-slate-200 text-[11px] font-mono text-slate-700 mt-3">Báo cáo tổng kết 21h00</div>
-              </div>
-
             </div>
           </div>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-shield-check text-indigo-600 mr-1.5"></i> Bảo mật macOS</div><div class="text-[11px] text-slate-500">Chạy 100% nội bộ trên máy bạn.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-key text-emerald-600 mr-1.5"></i> Lọc OTP &amp; Thu chi</div><div class="text-[11px] text-slate-500">Tự nhặt mã OTP &amp; biến động số dư.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-reply text-amber-600 mr-1.5"></i> Phản hồi điềm đạm</div><div class="text-[11px] text-slate-500">Trả lời tin nhắn khi đang lái xe.</div></div>
-        <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold mb-0.5"><i class="fa-solid fa-moon text-purple-600 mr-1.5"></i> Báo cáo 21h00</div><div class="text-[11px] text-slate-500">Thư ký riêng tổng kết cuối ngày.</div></div>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-xs">
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-shield-check text-indigo-600 mr-1"></i> Bảo mật macOS</div><div class="text-[10px] text-slate-500">Chạy 100% nội bộ an toàn.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-key text-emerald-600 mr-1"></i> Lọc OTP &amp; Thu chi</div><div class="text-[10px] text-slate-500">Tự nhặt mã OTP &amp; biến động số dư.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-reply text-amber-600 mr-1"></i> Phản hồi điềm đạm</div><div class="text-[10px] text-slate-500">Trả lời tin khi đang lái xe.</div></div>
+        <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200"><div class="text-slate-900 font-bold text-[11px]"><i class="fa-solid fa-moon text-purple-600 mr-1"></i> Báo cáo 21h00</div><div class="text-[10px] text-slate-500">Thư ký tổng kết cuối ngày.</div></div>
       </div>
     </article>
 
@@ -1180,45 +1121,45 @@
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- KHỐI HƯỚNG DẪN CÀI ĐẶT THẺ QR -->
   <!-- ═══════════════════════════════════════════════════════ -->
-  <section id="cai-dat-qr" class="relative z-10 max-w-4xl mx-auto px-4 py-16">
-    <div class="p-8 sm:p-12 rounded-3xl bg-white border border-blue-200 shadow-xl relative overflow-hidden text-center">
+  <section id="cai-dat-qr" class="relative z-10 max-w-3xl mx-auto px-4 py-12">
+    <div class="p-6 sm:p-10 rounded-3xl bg-white border border-blue-200 shadow-lg relative overflow-hidden text-center">
       
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold mb-3 bg-blue-50 text-blue-700 border border-blue-200">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-3 bg-blue-50 text-blue-700 border border-blue-200">
         <i class="fa-solid fa-qrcode text-blue-600"></i> CÀI ĐẶT TRONG 30 GIÂY
       </div>
-      <h2 class="font-integral text-2xl sm:text-3xl text-slate-900 mb-2 uppercase tracking-tight">
+      <h2 class="font-integral text-xl sm:text-2xl text-slate-900 mb-2 uppercase tracking-tight">
         CÀI ĐẶT TOÀN BỘ 6 CÔNG CỤ VÀO MÁY
       </h2>
-      <p class="text-sm sm:text-base text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed">
+      <p class="text-xs sm:text-sm text-slate-600 max-w-lg mx-auto mb-6 leading-relaxed">
         Chỉ cần tải ảnh Thẻ Kích Hoạt về máy rồi kéo thả vào khung chat là hệ thống tự động thiết lập toàn bộ.
       </p>
 
       <!-- 3 Bước Cài Đặt -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 text-left">
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-          <div class="w-8 h-8 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center mb-3 shadow">1</div>
-          <div class="text-sm font-bold text-slate-900 mb-1">Tải ảnh Thẻ QR về máy</div>
-          <div class="text-xs text-slate-600 leading-relaxed">Bấm nút bên dưới để lưu file ảnh Thẻ Kích Hoạt vào máy tính.</div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 mb-8 text-left">
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div class="w-7 h-7 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center mb-2 shadow">1</div>
+          <div class="text-xs font-bold text-slate-900 mb-0.5">Tải ảnh Thẻ QR về máy</div>
+          <div class="text-[11px] text-slate-600">Lưu file ảnh Thẻ Kích Hoạt vào máy tính.</div>
         </div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-          <div class="w-8 h-8 rounded-full bg-purple-600 text-white font-bold text-xs flex items-center justify-center mb-3 shadow">2</div>
-          <div class="text-sm font-bold text-slate-900 mb-1">Kéo thả ảnh vào khung chat</div>
-          <div class="text-xs text-slate-600 leading-relaxed">Mở khung chat lên và kéo thả file ảnh vừa tải vào.</div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div class="w-7 h-7 rounded-full bg-purple-600 text-white font-bold text-xs flex items-center justify-center mb-2 shadow">2</div>
+          <div class="text-xs font-bold text-slate-900 mb-0.5">Kéo thả ảnh vào chat</div>
+          <div class="text-[11px] text-slate-600">Mở khung chat lên và kéo thả file ảnh vào.</div>
         </div>
-        <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-          <div class="w-8 h-8 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center mb-3 shadow">3</div>
-          <div class="text-sm font-bold text-slate-900 mb-1">Nhập mật khẩu kích hoạt 1 lần</div>
-          <div class="text-xs text-slate-600 leading-relaxed">AI tự quét QR và hỏi mật khẩu → nhập mật khẩu để mở khóa trọn đời.</div>
+        <div class="p-4 rounded-xl bg-slate-50 border border-slate-200 shadow-sm">
+          <div class="w-7 h-7 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center mb-2 shadow">3</div>
+          <div class="text-xs font-bold text-slate-900 mb-0.5">Nhập mật khẩu 1 lần</div>
+          <div class="text-[11px] text-slate-600">AI tự quét QR và mở khóa trọn đời.</div>
         </div>
       </div>
 
       <!-- Preview Thẻ QR & Nút Tải -->
-      <div class="max-w-md mx-auto p-6 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
-        <div class="mb-5 rounded-xl overflow-hidden shadow-md border border-slate-200">
+      <div class="max-w-sm mx-auto p-5 rounded-2xl bg-slate-50 border border-slate-200 shadow-sm">
+        <div class="mb-4 rounded-xl overflow-hidden shadow-sm border border-slate-200">
           <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" alt="Thẻ Kích Hoạt AI QR Code" class="w-full h-auto object-cover">
         </div>
 
-        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" download="the-kich-hoat-ai.png" class="btn-main w-full py-4 text-sm">
+        <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" download="the-kich-hoat-ai.png" class="btn-main w-full py-3 text-xs">
           <i class="fa-solid fa-download"></i>
           <span>Tải Ảnh Thẻ Kích Hoạt (PNG)</span>
         </a>
@@ -1226,32 +1167,8 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <!-- THÔNG SỐ TÓM TẮT -->
-  <!-- ═══════════════════════════════════════════════════════ -->
-  <section class="relative z-10 max-w-4xl mx-auto px-4 py-8 text-center">
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <div class="font-integral text-2xl text-blue-700">06</div>
-        <div class="text-xs font-semibold text-slate-600 mt-1">Công cụ làm sẵn</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <div class="font-integral text-2xl text-emerald-700">1 LẦN</div>
-        <div class="text-xs font-semibold text-slate-600 mt-1">Cài 1 lần dùng trọn đời</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <div class="font-integral text-2xl text-purple-700">TỰ ĐỘNG</div>
-        <div class="text-xs font-semibold text-slate-600 mt-1">Tự cập nhật bản mới ngầm</div>
-      </div>
-      <div class="p-4 rounded-2xl bg-white border border-slate-200 shadow-sm">
-        <div class="font-integral text-2xl text-amber-700">TIẾNG VIỆT</div>
-        <div class="text-xs font-semibold text-slate-600 mt-1">Nhắn lệnh như nói chuyện</div>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="relative z-10 py-10 px-4 text-center text-xs text-slate-500 border-t border-slate-200 mt-12">
+  <footer class="relative z-10 py-8 px-4 text-center text-xs text-slate-500 border-t border-slate-200 mt-8">
     <div>Bộ 6 Công Cụ AI • Vận hành trực tiếp trên lõi Google Gemini • FEDU.VN</div>
   </footer>
 
