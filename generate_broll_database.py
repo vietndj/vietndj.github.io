@@ -188,9 +188,80 @@ for i, f in enumerate(all_filenames):
     dur_str = f"{int(dur_sec // 60):02d}:{int(dur_sec % 60):02d}"
     orientation = "vertical" if h > w else "horizontal"
     thumb_file = f"thumb_{idx:03d}.jpg"
+    fn_lower = norm(f)
 
     # Specific semantic rules for new files
-    if "đợi đón con" in fn_lower or "ngồi chill" in fn_lower:
+    if "can-phong-la" in fn_lower or "căn phòng lá" in fn_lower or "149" in fn_lower:
+        cat_id = "negative_space"
+        title_vi = "Negative Space - Căn Phòng Lá & Bước Đi Tĩnh Lặng Chiêm Nghiệm"
+        shot_type = "Medium Shot (MS) / 9:16 Dọc"
+        location = "Căn Phòng Lá Home Studio"
+        action = "Anh Việt bước đi chậm rãi trong căn phòng nhiều cây xanh cạnh cửa kính lớn, dáng vẻ suy tư và tĩnh tại"
+        mood = "Zen / Tĩnh lặng / Chiêm nghiệm / Thư thái"
+        director_note = "Khoảng lặng thị giác tuyệt đẹp với mảng xanh tự nhiên và ánh sáng xiên qua cửa kính, tạo nhịp thở lắng đọng trước khi mở ra câu chuyện sâu sắc."
+        cues = [
+            "Đôi khi, để tìm ra câu trả lời rõ ràng nhất, bạn chỉ cần một khoảng không gian yên tĩnh để lắng nghe chính mình...",
+            "Trước khi bắt đầu một hành trình mới, hãy dành cho mình vài phút chậm lại giữa thiên nhiên...",
+            "Không gian làm việc tràn ngập cây xanh giúp tâm trí luôn giữ được sự cân bằng và sáng suốt."
+        ]
+        keywords = ["căn phòng lá", "cây xanh", "tĩnh tâm", "suy tư", "studio", "khoảng lặng", "negative space", "zen"]
+    elif "go-binh-luan" in fn_lower or "gõ rồi xóa" in fn_lower or "150" in fn_lower:
+        cat_id = "metaphor"
+        title_vi = "Metaphor - Ngập Ngừng Mở Lời (Gõ Bình Luận Rồi Xóa Đi)"
+        shot_type = "Close-up (CU) Màn hình điện thoại / 9:16 Dọc"
+        location = "Bàn làm việc Home Studio"
+        action = "Cận cảnh hai bàn tay cầm iPhone, gõ dòng bình luận vào bài post trên mạng xã hội rồi ngập ngừng bấm xóa sạch"
+        mood = "Trăn trở / Ngại ngùng / Sợ phán xét / Đồng cảm sâu sắc"
+        director_note = "Ẩn dụ thị giác đánh trúng tâm lý ngập ngừng, sợ bị phán xét khi mở lời kết nối hoặc bình luận trên mạng xã hội của đa số người xem."
+        cues = [
+            "Bao nhiêu lần bạn đã gõ một dòng tin nhắn thật dài rồi lại lặng lẽ ấn nút xóa đi?...",
+            "Nỗi sợ bị phán xét khiến chúng ta ngần ngại mở lời kết nối với thế giới bên ngoài...",
+            "Đừng để sự tự ti ngăn cản bạn chia sẻ góc nhìn và giá trị thực sự của mình."
+        ]
+        keywords = ["gõ rồi xóa", "ngại mở lời", "sợ phán xét", "mạng xã hội", "đồng cảm", "metaphor", "broll mở lời"]
+    elif "nu-cuoi-thau-cam" in fn_lower or "chất lượng không phải xã" in fn_lower or "151" in fn_lower:
+        cat_id = "in_situ"
+        title_vi = "Thoại In-Situ - Nụ Cười Thấu Cảm & Kết Nối Chân Thành"
+        shot_type = "Medium Close-Up (MCU) / 9:16 Dọc"
+        location = "Căn Phòng Lá Home Studio"
+        action = "Anh Việt từ từ quay người lại nhìn thẳng vào ống kính máy quay với nụ cười rạng rỡ, ánh mắt ấm áp và thấu cảm"
+        mood = "Ấm áp / Chân thành / Tin cậy / Đồng điệu cảm xúc"
+        director_note = "Cảnh quay mỏ neo cảm xúc với nụ cười tự nhiên và ánh mắt trực diện, kéo gần khoảng cách với người xem và tạo cảm giác đối thoại 1-1 ấm áp."
+        cues = [
+            "Chúng ta không cần những mối quan hệ xã giao hời hợt, thứ chúng ta cần là sự kết nối thực sự chất lượng...",
+            "Chỉ cần bạn mở lòng chân thành, người phù hợp sẽ luôn lắng nghe bạn...",
+            "Mỗi cuộc trò chuyện sâu sắc đều bắt đầu từ một nụ cười và sự thấu hiểu."
+        ]
+        keywords = ["nụ cười", "thấu cảm", "mở lời", "kết nối chân thành", "chất lượng không xã giao", "in-situ", "anh việt"]
+    elif "dat-ly-tra" in fn_lower or "mời trà kéo ghế" in fn_lower or "152" in fn_lower:
+        cat_id = "cutaway"
+        title_vi = "Cutaway - Đặt Ly Trà Mời Trà & Kéo Ghế Đối Thoại (Bàn Gỗ)"
+        shot_type = "Close-Up (CU) Bàn gỗ / 9:16 Dọc"
+        location = "Góc Trà Đạo Home Studio"
+        action = "Cận cảnh bàn tay kéo nhẹ ghế gỗ và trượt ly trà nóng thủy tinh hai lớp bốc khói nhẹ nhàng vào giữa bàn mời người đối diện"
+        mood = "Mến khách / Gần gũi / Chậm rãi / Thư thái"
+        director_note = "Cảnh Cutaway mộc mạc mang tính biểu tượng của văn hóa mời trà, tạo không khí ấm cúng như một buổi trò chuyện trà đá tâm tình."
+        cues = [
+            "Kéo một chiếc ghế lại gần, nhấp một ngụm trà nóng và cùng nhau ngồi lại trò chuyện...",
+            "Mọi câu chuyện lớn đều bắt đầu bên tách trà giản dị...",
+            "Hãy dành một khoảng không gian ấm áp để lắng nghe những người bạn trân quý."
+        ]
+        keywords = ["mời trà", "kéo ghế", "bàn gỗ", "tách trà nóng", "đối thoại", "gần gũi", "cutaway", "home studio"]
+    elif "anh-mat-thau-cam" in fn_lower or "thau cam" in fn_lower or "153" in fn_lower:
+        cat_id = "cutaway"
+        title_vi = "Cutaway - Ánh Mắt Thấu Cảm & Sự Lắng Nghe Chân Thực"
+        shot_type = "Medium Close-Up (MCU) / 9:16 Dọc"
+        location = "Home Studio"
+        action = "Đặc tả anh Việt xoay người hướng về phía người xem, ánh mắt tập trung và nụ cười khích lệ"
+        mood = "Lắng nghe / Thấu cảm / Tự nhiên / Chân thực"
+        director_note = "Shot quay đặc tả sự lắng nghe và thấu cảm, rất thích hợp chèn vào các đoạn kết bài giảng hoặc lời khuyên chân thành."
+        cues = [
+            "Tôi hiểu những khó khăn bạn đang trải qua, bởi tôi cũng từng đứng ở vị trí đó...",
+            "Hãy kiên trì với con đường của mình, kết quả tốt đẹp sẽ đến...",
+            "Sự chân thật luôn có sức mạnh chạm đến trái tim người nghe hơn mọi kỹ xảo."
+        ]
+        keywords = ["thấu cảm", "ánh mắt", "lắng nghe", "chân thực", "cutaway", "home studio"]
+    elif "đợi đón con" in fn_lower or "ngồi chill" in fn_lower:
         cat_id = "negative_space"
         title_vi = "Khoảng Lặng Ban Chiều - Ngồi Chill Đợi Con (Times City)"
         shot_type = "Medium Shot (MS) / Tĩnh"
