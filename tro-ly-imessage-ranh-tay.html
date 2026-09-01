@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trợ Lý iMessage Rảnh Tay | Quản Lý & Tự Động Hóa Tin Nhắn SMS / iMessage Trên Mac</title>
+  
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#06090e',
+            cardBg: '#0e1420',
+            cardBorder: '#1e293b',
+            appleBlue: '#007aff',
+            appleCyan: '#38bdf8',
+            appleGreen: '#34c759',
+            emeraldAccent: '#10b981',
+            amberAccent: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ===================================================
+       TYPOGRAPHY SYSTEM (INTEGRAL REGULAR + POPPINS)
+       - Tiêu đề ngắn (<= 8 từ): SVN-Integral CF Regular (400)
+       - Tiêu đề dài (> 8 từ): SVN-Poppins SemiBold (600) / Bold (700)
+       - Thân bài & Đọc: SVN-Poppins (400/500/600)
+       - Trích dẫn & Hook: SVN-Acta / Playfair Display (Italic)
+       - Mã code / Timestamp: JetBrains Mono
+       =================================================== */
+    @font-face {
+      font-family: 'SVN-Integral';
+      src: url('./fonts/SVN-IntegralCF-Regular.ttf') format('truetype'),
+           url('./assets/fonts/SVN-IntegralCF-Regular.ttf') format('truetype'),
+           local('SVN-Integral CF Regular'), local('SVN-IntegralCF-Regular');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-Regular.ttf') format('truetype'),
+           local('SVN-Poppins-Regular'), local('SVN-Poppins');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-Medium.ttf') format('truetype'),
+           local('SVN-Poppins-Medium');
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-SemiBold.ttf') format('truetype'),
+           local('SVN-Poppins-SemiBold');
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-Bold.ttf') format('truetype'),
+           local('SVN-Poppins-Bold');
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('./fonts/SVN-Acta-BookItalic.ttf') format('truetype'),
+           local('SVN-Acta-BookItalic'), local('SVN-Acta');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    :root {
+      --font-integral: 'SVN-Integral', sans-serif;
+      --font-poppins: 'SVN-Poppins', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-acta: 'SVN-Acta', 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: #06090e;
+      color: #cbd5e1;
+      font-family: var(--font-poppins);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* Tiêu đề ngắn <= 8 từ: SVN-Integral CF Regular 400 */
+    .title-short {
+      font-family: var(--font-integral);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    /* Tiêu đề dài > 8 từ: SVN-Poppins SemiBold / Bold */
+    .title-long {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .font-quote {
+      font-family: var(--font-acta);
+      font-style: italic;
+    }
+
+    .font-mono-code {
+      font-family: var(--font-mono);
+    }
+
+    .glass-card {
+      background: rgba(14, 20, 32, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 122, 255, 0.5);
+      box-shadow: 0 20px 40px -15px rgba(0, 122, 255, 0.2);
+    }
+
+    /* iMessage Chat Bubble Styles */
+    .imessage-sent {
+      background: linear-gradient(135deg, #007aff, #0056b3);
+      color: #ffffff;
+      border-radius: 18px 18px 4px 18px;
+    }
+    .imessage-received {
+      background: #1e293b;
+      color: #e2e8f0;
+      border-radius: 18px 18px 18px 4px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #06090e;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="selection:bg-blue-500 selection:text-white">
+
+  <!-- FIXED FLOATING BACK BUTTON -->
+  <a href="./skills.html" id="fixed-back-btn" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-900/95 border border-blue-500/40 text-blue-300 hover:text-white hover:bg-blue-950 hover:border-blue-400 font-mono-code text-xs font-semibold shadow-2xl shadow-blue-950/60 transition transform hover:-translate-y-0.5 active:scale-95 group backdrop-blur-xl">
+    <span class="text-sm transition-transform group-hover:-translate-x-1">←</span>
+    <span>Kho Kỹ Năng</span>
+  </a>
+
+  <!-- TOP HEADER -->
+  <header class="sticky top-0 z-40 glass-card border-b border-slate-800/80 bg-opacity-90">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="./skills.html" class="flex items-center gap-1.5 text-xs text-slate-400 hover:text-blue-300 font-mono-code transition px-2.5 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800">
+          <span>←</span> <span class="hidden sm:inline">Kỹ Năng</span>
+        </a>
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white font-bold text-base shadow-lg shadow-blue-500/20">
+          💬
+        </div>
+        <div>
+          <span class="title-short text-sm tracking-wider text-white">TRỢ LÝ IMESSAGE RẢNH TAY</span>
+          <span class="hidden sm:inline-block ml-2 text-xs text-blue-400 font-mono-code px-2 py-0.5 rounded-md bg-blue-950/60 border border-blue-800/40">MACOS ENGINE</span>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <a href="#demo-scripts" class="text-xs text-slate-300 hover:text-white font-medium transition hidden md:inline">7 Kịch Bản Thực Tế</a>
+        <a href="#quick-order" class="px-4 py-2 rounded-xl bg-blue-600 hover:bg-blue-500 text-xs text-white font-bold transition shadow-lg shadow-blue-600/30">
+          Sở Hữu Ngay 3 Triệu
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative pt-12 pb-16 sm:pt-20 sm:pb-24 overflow-hidden">
+    <!-- Ambient Lighting Glow -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-blue-600/15 blur-[140px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
+      
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-blue-500/30 text-xs text-blue-300 font-mono-code mb-6 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-blue-400 animate-ping"></span>
+        <span>KHÔNG AI MUA PHẦN MỀM • HỌ MUA 3 GIÁ TRỊ VÔ GIÁ</span>
+      </div>
+
+      <h1 class="title-short text-3xl sm:text-5xl md:text-6xl text-white mb-6 leading-tight tracking-tight">
+        TRỢ LÝ IMESSAGE RẢNH TAY
+      </h1>
+
+      <p class="title-long text-base sm:text-xl text-slate-200 max-w-3xl mx-auto mb-6 font-normal leading-relaxed">
+        Biến chiếc máy Mac của bạn thành thư ký riêng tự động: Lọc sạch OTP & biến động số dư ngân hàng, phản hồi lịch hẹn tinh tế, chăm sóc đối tác VIP 1-1 và bảo mật 100% nội bộ trên máy của bạn.
+      </p>
+
+      <div class="font-quote text-slate-400 text-sm sm:text-base max-w-2xl mx-auto mb-10 border-l-2 border-blue-500/50 pl-4 py-1 italic">
+        "Người bận rộn không cần thêm một phần mềm để quản lý. Họ cần một người trợ lý làm thay việc lặt vặt để họ thảnh thơi làm việc lớn."
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#quick-order" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-bold text-sm tracking-wide shadow-xl shadow-blue-600/30 transition transform hover:-translate-y-0.5">
+          👉 Cài Đặt Trọn Gói 3.000.000đ (Bàn Giao 1-Shot)
+        </a>
+        <a href="#three-pillars" class="w-full sm:w-auto px-6 py-4 rounded-2xl glass-card border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white font-semibold text-sm transition">
+          Tìm Hiểu 3 Thứ Cốt Lõi ↓
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 1: 3 THỨ CỐT LÕI KHÁCH HÀNG THỰC SỰ MUA -->
+  <section id="three-pillars" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs text-blue-400 font-mono-code uppercase tracking-wider font-bold">TÂM LÝ HỌC THỰC CHIẾN</span>
+      <h2 class="title-short text-2xl sm:text-3xl text-white mt-2 mb-4">3 ĐIỀU BẠN THỰC SỰ MUA</h2>
+      <p class="title-long text-slate-400 text-xs sm:text-sm font-normal">
+        Chúng tôi không bán cho bạn những dòng lệnh code khô khan. Đây là 3 món quà giải phóng cuộc sống của bạn:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      
+      <!-- Pillar 1 -->
+      <div class="glass-card rounded-3xl p-6 border border-blue-500/30 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-28 h-28 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-blue-600/20 border border-blue-500/40 flex items-center justify-center text-blue-400 text-2xl mb-4">
+            ⏳
+          </div>
+          <span class="text-[11px] font-mono-code text-blue-400 font-bold uppercase">GIÁ TRỊ 01</span>
+          <h3 class="title-short text-lg text-white mt-1 mb-3">THỜI GIAN THƯ THẢ</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Chấm dứt cảnh cúi gằm mặt vào màn hình gõ tin nhắn lặp lại. Lúc bạn đang lái xe, đi đón con hay ngồi cà phê sáng, trợ lý Mac tự động xử lý trôi chảy mọi trao đổi.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-mono-code">
+          ✓ Trả lời lịch hẹn tự động<br>
+          ✓ Tóm tắt 50 tin rác trong 15s
+        </div>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="glass-card rounded-3xl p-6 border border-cyan-500/30 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-28 h-28 bg-cyan-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-cyan-600/20 border border-cyan-500/40 flex items-center justify-center text-cyan-400 text-2xl mb-4">
+            👑
+          </div>
+          <span class="text-[11px] font-mono-code text-cyan-400 font-bold uppercase">GIÁ TRỊ 02</span>
+          <h3 class="title-short text-lg text-white mt-1 mb-3">VỊ THẾ ĐẲNG CẤP</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Mua phong thái của người làm chủ ung dung. Phản hồi lịch thiệp, xưng hô chuẩn chỉ từng khách VIP, không bao giờ phải hỏi lại số tài khoản hay để khách đợi lâu.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-mono-code">
+          ✓ Chăm sóc cá nhân hóa 1-1<br>
+          ✓ Giữ trọn chữ tín trong làm ăn
+        </div>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="glass-card rounded-3xl p-6 border border-emerald-500/30 flex flex-col justify-between relative overflow-hidden">
+        <div class="absolute -top-10 -right-10 w-28 h-28 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none"></div>
+        <div>
+          <div class="w-12 h-12 rounded-2xl bg-emerald-600/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400 text-2xl mb-4">
+            🛡️
+          </div>
+          <span class="text-[11px] font-mono-code text-emerald-400 font-bold uppercase">GIÁ TRỊ 03</span>
+          <h3 class="title-short text-lg text-white mt-1 mb-3">AN TÂM KIỂM SOÁT</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Dữ liệu tin nhắn, OTP và số dư ngân hàng nằm 100% trên máy Mac của bạn. Không qua server lạ, lọc sạch giao dịch tiền tỷ không sót một đồng.
+          </p>
+        </div>
+        <div class="mt-6 pt-4 border-t border-slate-800 text-[11px] text-slate-400 font-mono-code">
+          ✓ Local-first 100% bảo mật<br>
+          ✓ Đối soát bill chuyển khoản 3s
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: 7 KỊCH BẢN DÙNG LÀ WOW (SHOWCASE TỰ NHIÊN) -->
+  <section id="demo-scripts" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs text-blue-400 font-mono-code uppercase tracking-wider font-bold">7 TÌNH HUỐNG THỰC TẾ</span>
+      <h2 class="title-short text-2xl sm:text-3xl text-white mt-2 mb-4">KỊCH BẢN TỰ NHIÊN DÙNG LÀ "WOW"</h2>
+      <p class="title-long text-slate-400 text-xs sm:text-sm font-normal">
+        Xem cách trợ lý giải quyết những tình huống éo le đời thường nhất của người làm kinh doanh và sáng tạo nội dung:
+      </p>
+    </div>
+
+    <!-- 7 Scenarios Grid -->
+    <div class="space-y-6">
+
+      <!-- Scenario 1 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-blue-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center text-xs font-bold font-mono-code">01</span>
+              <span class="text-xs font-mono-code text-blue-400 font-bold uppercase">THỜI GIAN THƯ THẢ & VỊ THẾ</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">CÀ PHÊ SÁNG CHỦ NHẬT & TIN NHẮN KHÁCH VIP</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Bạn đang ngồi ngắm phố phường uống cà phê sáng. Khách VIP nhắn iMessage hẹn lịch gặp đầu tuần. Thay vì phải mở máy gõ gõ làm hỏng buổi sáng, trợ lý Mac tự tra lịch rảnh và gửi tin nhắn phản hồi tròn trịa, lịch sự.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-blue-400 font-mono-code font-bold">Điểm WOW:</span> Khách hàng cảm nhận sự chu đáo và chuyên nghiệp tột bậc, trong khi bạn vẫn thảnh thơi nhấp ly cà phê.
+            </div>
+          </div>
+
+          <!-- Chat Simulator Preview -->
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 font-sans text-xs">
+            <div class="imessage-received p-3 max-w-[85%]">
+              <span class="block text-[10px] text-slate-400 font-mono-code mb-1">Đối tác VIP (0988xxx) • 08:30</span>
+              Anh Việt ơi, thứ 2 này anh em mình gặp nhau 9h sáng tại Times City bàn hợp đồng được không anh?
+            </div>
+            <div class="imessage-sent p-3 max-w-[85%] ml-auto text-right">
+              <span class="block text-[10px] text-blue-200 font-mono-code mb-1">Trợ lý Mac (Tự động) • 08:31</span>
+              Chào anh Hùng, sáng thứ 2 lúc 9h anh em mình gặp nhau ở cafe Times City nhé. Em đã lưu lịch hẹn rồi ạ.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-cyan-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-cyan-600/20 border border-cyan-500/40 text-cyan-400 flex items-center justify-center text-xs font-bold font-mono-code">02</span>
+              <span class="text-xs font-mono-code text-cyan-400 font-bold uppercase">SỰ AN TÂM & KIỂM SOÁT DÒNG TIỀN</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">"THÁM TỬ" LỌC BILL & BIẾN ĐỘNG SỐ DƯ 3 GIÂY</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Điện thoại ngập tràn hàng trăm SMS mã OTP, tin quảng cáo nhà mạng và thông báo biến động số dư. Bạn chỉ cần gõ 1 câu tiếng Việt, trợ lý lọc sạch toàn bộ giao dịch trên 10 triệu trong tháng ra bảng rõ ràng.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-cyan-400 font-mono-code font-bold">Điểm WOW:</span> Không cần cài thêm bất kỳ app lạ nào làm lộ tài khoản ngân hàng. Toàn bộ lọc từ SMS đã đồng bộ về máy Mac.
+            </div>
+          </div>
+
+          <!-- Terminal Output Preview -->
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono-code text-[11px] text-cyan-300 space-y-2">
+            <div class="text-slate-500">$ python3 imessage_assistant.py bank --days 30</div>
+            <div class="text-emerald-400">✓ 12/08: +50,000,000 VND (GD: K3 Course - Tran Minh)</div>
+            <div class="text-emerald-400">✓ 18/08: +30,000,000 VND (GD: Video System - Hoang)</div>
+            <div class="text-slate-400">→ Tổng dòng tiền: +80,000,000 VND (2 giao dịch)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-blue-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-blue-600/20 border border-blue-500/40 text-blue-400 flex items-center justify-center text-xs font-bold font-mono-code">03</span>
+              <span class="text-xs font-mono-code text-blue-400 font-bold uppercase">THỜI GIAN GIA ĐÌNH & KHÔNG MẤT KHÁCH</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">ĐANG LÁI XE / ĐÓN CON VẪN BÁO GIÁ TRÒN TRỊA</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Lúc 17h30 chiều bạn đang lái xe đi đón con tan học thì khách hàng nhắn tin hỏi tài liệu và báo giá. Cầm máy gõ thì nguy hiểm, mà đợi về nhà thì khách đã sang bên khác. Máy Mac ở nhà tự động gửi tài liệu tóm tắt trong 30 giây.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-blue-400 font-mono-code font-bold">Điểm WOW:</span> Vừa bảo vệ an toàn cho bản thân và con cái, vừa chốt đơn nhanh như có cả đội ngũ trực chat 24/7.
+            </div>
+          </div>
+
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-3 font-sans text-xs">
+            <div class="imessage-sent p-3 max-w-[90%] ml-auto text-right">
+              <span class="block text-[10px] text-blue-200 font-mono-code mb-1">Trợ lý Mac • 17:31</span>
+              Chào anh Tuấn, anh Việt đang trên đường đi đón cháu về. Em xin phép gửi anh bảng tóm tắt 3 công cụ trước để anh xem qua nhé ạ.
+            </div>
+            <div class="imessage-received p-3 max-w-[85%]">
+              <span class="block text-[10px] text-slate-400 font-mono-code mb-1">Khách Tuấn • 17:35</span>
+              Tuyệt vời quá, anh xem qua rồi. Mai 8h anh chuyển khoản nhé!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 4 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-emerald-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xs font-bold font-mono-code">04</span>
+              <span class="text-xs font-mono-code text-emerald-400 font-bold uppercase">VỊ THẾ TẬN TÂM & TIẾT KIỆM CÔNG SỨC</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">CHĂM SÓC 50 KHÁCH VIP "KHÔNG AI GIỐNG AI"</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Gửi tin nhắn hàng loạt sặc mùi quảng cáo sẽ bị coi là spam. Chỉ cần 1 lệnh tiếng Việt, trợ lý tự động gửi 50 tin iMessage riêng biệt: xưng hô đúng tên, nhắc đúng dự án hai bên đang hợp tác.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-emerald-400 font-mono-code font-bold">Điểm WOW:</span> Người nhận tưởng bạn dành cả buổi ngồi viết thư riêng cho họ, gia tăng sự gắn kết gấp 10 lần.
+            </div>
+          </div>
+
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 space-y-2 font-mono-code text-[11px]">
+            <div class="text-slate-400">💬 Gửi tới: <b>Anh Nam (BĐS Times)</b></div>
+            <div class="p-2 rounded-lg bg-slate-900 text-slate-300 mb-2">"Anh Nam ơi, clip căn 3 ngủ hôm qua quay xong dựng mượt chưa anh?"</div>
+            <div class="text-slate-400">💬 Gửi tới: <b>Chị Lan (Thời trang)</b></div>
+            <div class="p-2 rounded-lg bg-slate-900 text-slate-300">"Chị Lan ơi, web bán váy hôm nay nổ đơn tự động ổn không chị?"</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 5 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-amber-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-amber-600/20 border border-amber-500/40 text-amber-400 flex items-center justify-center text-xs font-bold font-mono-code">05</span>
+              <span class="text-xs font-mono-code text-amber-400 font-bold uppercase">KIỂM SOÁT THÔNG TIN & GIỮ CHỮ TÍN</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">TÌM LẠI SỐ TÀI KHOẢN & LỜI HỨA CŨ TRONG 3S</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Cần chuyển khoản thanh toán nhưng số tài khoản của đối tác nằm trong một tấm ảnh chụp từ 6 tháng trước. Thay vì nhắn lại câu ngại ngùng: *"Anh gửi lại em số tài khoản"*, AI quét cơ sở dữ liệu và trả kết quả ngay.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-amber-400 font-mono-code font-bold">Điểm WOW:</span> Giữ trọn phong thái của người làm việc chỉn chu, nhớ từng lời dặn của đối tác.
+            </div>
+          </div>
+
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono-code text-[11px] space-y-2">
+            <div class="text-amber-400 font-bold">🔍 LỆNH TÌM KIẾM CỤC BỘ:</div>
+            <div class="text-slate-300">"Tìm số tài khoản anh Hoàng gửi tháng trước"</div>
+            <div class="p-3 rounded-xl bg-slate-900 border border-amber-500/30 text-amber-300">
+              ✓ STK: 1903456789012<br>
+              ✓ Ngân hàng: Techcombank<br>
+              ✓ Chủ TK: NGUYEN HOANG DUNG
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 6 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-violet-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-violet-600/20 border border-violet-500/40 text-violet-400 flex items-center justify-center text-xs font-bold font-mono-code">06</span>
+              <span class="text-xs font-mono-code text-violet-400 font-bold uppercase">THẢNH THƠI ĐẦU ÓC TRƯỚC KHI NGỦ</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">BẢN TÓM TẮT "TỐI NAY CÓ GÌ CẦN NHỚ" LÚC 21H</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              21h00 tối, bạn tắt máy chuẩn bị nghỉ ngơi. Trợ lý tự động chưng cất 100 tin nhắn trong ngày thành đúng 3 gạch đầu dòng then chốt gửi về điện thoại. Lướt 15 giây là xong việc trong ngày.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-violet-400 font-mono-code font-bold">Điểm WOW:</span> Đầu óc nhẹ bẫng, ngủ một giấc thật sâu mà không lo sót bất kỳ việc gấp nào của ngày mai.
+            </div>
+          </div>
+
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono-code text-[11px] space-y-2">
+            <div class="text-violet-300 font-bold">📋 BÁO CÁO 21:00 (iMESSAGE SUMMARY)</div>
+            <div class="p-2.5 rounded-lg bg-slate-900 text-slate-300 space-y-1">
+              <div>1. Minh đã xác nhận nhận tài liệu (OK).</div>
+              <div>2. Nhà in hỏi kích thước banner (Cần duyệt trước 9h mai).</div>
+              <div>3. 42 tin nhắn quảng cáo khác đã tự động lọc bỏ.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 7 -->
+      <div class="glass-card rounded-3xl p-6 sm:p-8 border border-slate-800 hover:border-emerald-500/50 transition">
+        <div class="flex flex-col lg:flex-row gap-6 items-start justify-between">
+          <div class="lg:w-7/12">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="w-7 h-7 rounded-lg bg-emerald-600/20 border border-emerald-500/40 text-emerald-400 flex items-center justify-center text-xs font-bold font-mono-code">07</span>
+              <span class="text-xs font-mono-code text-emerald-400 font-bold uppercase">BẢO MẬT TUYỆT ĐỐI • LOCAL ONLY</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">"DỮ LIỆU ĐI ĐÂU?" — BẢO MẬT 100% TRÊN MÁY MAC</h3>
+            <p class="text-xs text-slate-300 leading-relaxed mb-4">
+              Tin nhắn iMessage chứa mã OTP ngân hàng, biến động số dư và bí mật hợp đồng. Tuyệt đối không tải phần mềm lạ gửi dữ liệu lên cloud. Hệ thống chạy 100% trên chip Mac của bạn.
+            </p>
+            <div class="p-3 rounded-xl bg-slate-950/80 border border-slate-800/80 text-xs text-slate-300">
+              <span class="text-emerald-400 font-mono-code font-bold">Điểm WOW:</span> Quyền riêng tư của bạn là bất khả xâm phạm. Không máy chủ ngoài, không lộ dữ liệu.
+            </div>
+          </div>
+
+          <div class="lg:w-5/12 w-full p-4 rounded-2xl bg-slate-950 border border-slate-800 font-mono-code text-[11px] text-emerald-400 space-y-2">
+            <div>🔒 CHỨNG CHỈ BẢO MẬT NỘI BỘ:</div>
+            <div class="text-slate-300">✓ Database: ~/Library/Messages/chat.db (Read-Only)</div>
+            <div class="text-slate-300">✓ AppleScript Native: Messages.app Sandbox</div>
+            <div class="text-slate-300">✓ Zero External API Leak: 100% Local Execution</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 3: 5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT -->
+  <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs text-blue-400 font-mono-code uppercase tracking-wider font-bold">THAO TÁC CỰC KỲ ĐƠN GIẢN</span>
+      <h2 class="title-short text-2xl sm:text-3xl text-white mt-2 mb-4">5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT</h2>
+      <p class="title-long text-slate-400 text-xs sm:text-sm font-normal">
+        Bạn chỉ việc nhắn tin bằng tiếng Việt đời thường cho AI, mọi tác vụ phức tạp bên dưới tự động vận hành:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <div class="glass-card rounded-2xl p-5 border border-slate-800 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-xl bg-blue-600/20 text-blue-400 flex items-center justify-center font-bold text-sm shrink-0">1</div>
+        <div>
+          <div class="text-xs font-mono-code text-blue-400 mb-1">LỌC BIẾN ĐỘNG SỐ DƯ:</div>
+          <div class="text-sm font-medium text-white mb-2">"Trích xuất tất cả giao dịch nhận tiền từ SMS Vietcombank trong tháng này"</div>
+          <div class="text-xs text-slate-400">AI tự lọc tên người gửi, số tiền, mã GD và xếp vào bảng gọn gàng.</div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-slate-800 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-xl bg-cyan-600/20 text-cyan-400 flex items-center justify-center font-bold text-sm shrink-0">2</div>
+        <div>
+          <div class="text-xs font-mono-code text-cyan-400 mb-1">CHĂM SÓC KHÁCH VIP:</div>
+          <div class="text-sm font-medium text-white mb-2">"Gửi tin nhắn iMessage hỏi thăm 10 khách hàng nhóm thiết kế, xưng hô đúng tên"</div>
+          <div class="text-xs text-slate-400">Tự soạn văn phong ấm áp, gửi riêng từng người qua Messages.app.</div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-slate-800 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-xl bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-bold text-sm shrink-0">3</div>
+        <div>
+          <div class="text-xs font-mono-code text-emerald-400 mb-1">PHẢN HỒI KHI ĐANG BẬN:</div>
+          <div class="text-sm font-medium text-white mb-2">"Nếu anh Hùng nhắn hẹn, hãy báo em rảnh 9h sáng thứ Hai tại Times City"</div>
+          <div class="text-xs text-slate-400">AI bắt đúng ngữ cảnh và gửi phản hồi ngay sau 30 giây.</div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-slate-800 flex items-start gap-4">
+        <div class="w-8 h-8 rounded-xl bg-amber-600/20 text-amber-400 flex items-center justify-center font-bold text-sm shrink-0">4</div>
+        <div>
+          <div class="text-xs font-mono-code text-amber-400 mb-1">TÌM THÔNG TIN CŨ:</div>
+          <div class="text-sm font-medium text-white mb-2">"Tìm số tài khoản của anh Hoàng gửi cho tôi trong tin nhắn tháng trước"</div>
+          <div class="text-xs text-slate-400">Truy xuất ngay số tài khoản và tên ngân hàng trong 3 giây.</div>
+        </div>
+      </div>
+
+      <div class="glass-card rounded-2xl p-5 border border-slate-800 flex items-start gap-4 md:col-span-2">
+        <div class="w-8 h-8 rounded-xl bg-violet-600/20 text-violet-400 flex items-center justify-center font-bold text-sm shrink-0">5</div>
+        <div>
+          <div class="text-xs font-mono-code text-violet-400 mb-1">BẢN TỔNG KẾT 21H:</div>
+          <div class="text-sm font-medium text-white mb-2">"Hôm nay có những ai nhắn tin cần tôi xử lý gấp không?"</div>
+          <div class="text-xs text-slate-400">Lọc sạch 50 tin rác, chưng cất thành 3 gạch đầu dòng then chốt để bạn thảnh thơi đi ngủ.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: SO SÁNH THỰC CHIẾN -->
+  <section class="py-16 max-w-5xl mx-auto px-4 sm:px-6 border-t border-slate-800/80">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="text-xs text-blue-400 font-mono-code uppercase tracking-wider font-bold">SO SÁNH THỰC TẾ</span>
+      <h2 class="title-short text-2xl sm:text-3xl text-white mt-2 mb-4">LÀM TAY VS. TRỢ LÝ IMESSAGE</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- Cũ -->
+      <div class="glass-card rounded-3xl p-6 border border-rose-500/20 bg-rose-950/10">
+        <div class="flex items-center gap-2 text-rose-400 font-bold text-sm mb-4 font-mono-code">
+          <span>❌</span> LÀM THỦ CÔNG TRUYỀN THỐNG
+        </div>
+        <ul class="space-y-3 text-xs text-slate-300 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-rose-400">✕</span>
+            <span>Cuộn mỏi tay tìm mã OTP và tin nhắn biến động số dư giữa hàng trăm tin rác.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-rose-400">✕</span>
+            <span>Đang lái xe hay đi chơi vẫn phải cúi đầu gõ tin nhắn vì sợ mất khách.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-rose-400">✕</span>
+            <span>Gửi tin nhắn hàng loạt bị coi là spam, mất thiện cảm với đối tác VIP.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-rose-400">✕</span>
+            <span>Tối đi ngủ vẫn lo ngay ngáy vì không biết mình có bỏ sót tin nhắn quan trọng nào không.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Mới -->
+      <div class="glass-card rounded-3xl p-6 border border-blue-500/40 bg-blue-950/10">
+        <div class="flex items-center gap-2 text-blue-400 font-bold text-sm mb-4 font-mono-code">
+          <span>✅</span> CÓ TRỢ LÝ IMESSAGE TRÊN MÁY MAC
+        </div>
+        <ul class="space-y-3 text-xs text-slate-200 leading-relaxed">
+          <li class="flex items-start gap-2">
+            <span class="text-blue-400">✓</span>
+            <span>1 lệnh lọc sạch toàn bộ dòng tiền, hóa đơn, OTP trong 3 giây không sót 1 chữ.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-400">✓</span>
+            <span>Tự động phản hồi báo giá và lịch hẹn tinh tế, thảnh thơi dành thời gian cho con cái.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-400">✓</span>
+            <span>Chăm sóc 50 khách hàng VIP 1-1, xưng hô chuẩn chỉ, giữ trọn vị thế người làm chủ.</span>
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-blue-400">✓</span>
+            <span>Bản tóm tắt 21h ngắn gọn, đọc 15 giây là nhẹ đầu, kê cao gối ngủ ngon.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 5: GÓI BÀN GIAO & THANH TOÁN (MISS BÁN HÀNG STYLE) -->
+  <section id="quick-order" class="py-20 max-w-4xl mx-auto px-4 sm:px-6 border-t border-slate-800/80 text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950 border border-blue-500/40 text-xs text-blue-300 font-mono-code mb-6 shadow-inner">
+      <span>💎 TRỌN GÓI BÀN GIAO & CÀI ĐẶT 1-SHOT</span>
+    </div>
+
+    <h2 class="title-short text-3xl sm:text-4xl text-white mb-4">
+      SỞ HỮU TRỢ LÝ IMESSAGE RẢNH TAY
+    </h2>
+
+    <p class="title-long text-slate-300 text-sm sm:text-base max-w-2xl mx-auto mb-8 font-normal">
+      Bàn giao toàn bộ script làm sẵn, hướng dẫn cài đặt 1-chạm trên macOS, tích hợp kết nối Google Drive và Gemini AI của chính bạn.
+    </p>
+
+    <!-- Pricing Card -->
+    <div class="glass-card rounded-3xl p-8 max-w-xl mx-auto border-2 border-blue-500/50 shadow-2xl shadow-blue-600/20 relative overflow-hidden text-left">
+      <div class="absolute top-0 right-0 px-4 py-1.5 bg-gradient-to-l from-blue-600 to-cyan-500 text-white font-mono-code text-[11px] font-bold rounded-bl-2xl uppercase">
+        LÀM SẴN 100%
+      </div>
+
+      <div class="mb-6">
+        <span class="text-xs text-slate-400 font-mono-code uppercase">HỌC PHÍ TRỌN GÓI</span>
+        <div class="flex items-baseline gap-2 mt-1">
+          <span class="title-short text-4xl sm:text-5xl text-white">3.000.000đ</span>
+          <span class="text-xs text-slate-400 font-mono-code">/ tài khoản trọn đời</span>
+        </div>
+      </div>
+
+      <div class="space-y-3 pt-6 border-t border-slate-800 text-xs text-slate-300 mb-8">
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">✓</span>
+          <span>Bàn giao toàn bộ source code Python Engine & AppleScript</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">✓</span>
+          <span>Cài đặt 1 lần duy nhất trên máy Mac, tự động chạy nền</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">✓</span>
+          <span>Tích hợp 7 kịch bản phản hồi thông minh và lọc bill ngân hàng</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">✓</span>
+          <span>Bảo mật 100% Local, không qua bất kỳ máy chủ bên thứ ba nào</span>
+        </div>
+        <div class="flex items-center gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-blue-500/20 text-blue-400 flex items-center justify-center text-xs">✓</span>
+          <span>Hỗ trợ trực tiếp 1-1 từ anh Nguyễn Đức Việt</span>
+        </div>
+      </div>
+
+      <!-- VietQR Box -->
+      <div class="p-4 rounded-2xl bg-slate-950 border border-slate-800 text-center">
+        <div class="text-xs text-slate-400 font-mono-code mb-3">QUÉT MÃ VIETQR ĐỂ KÍCH HOẠT TỰ ĐỘNG:</div>
+        
+        <img 
+          src="https://img.vietqr.io/image/MB-0988848989-compact2.png?amount=3000000&addInfo=IMESSAGE%20RANH%20TAY&accountName=NGUYEN%20DUC%20VIET" 
+          alt="Mã VietQR Thanh Toán 3 Triệu Đồng" 
+          class="w-48 h-48 mx-auto rounded-xl border border-slate-700 shadow-md mb-3"
+        />
+
+        <div class="text-[11px] font-mono-code text-slate-400 space-y-1">
+          <div>Ngân hàng: <b>MBBank (Ngân hàng Quân Đội)</b></div>
+          <div>Số tài khoản: <b class="text-cyan-300">0988848989</b></div>
+          <div>Chủ tài khoản: <b>NGUYEN DUC VIET</b></div>
+          <div>Số tiền: <b class="text-white">3.000.000 VND</b></div>
+          <div>Nội dung: <b class="text-blue-400">IMESSAGE RANH TAY</b></div>
+        </div>
+      </div>
+
+      <div class="mt-6 text-center">
+        <a href="https://t.me/vietndj" target="_blank" class="inline-flex items-center gap-2 text-xs text-cyan-400 hover:text-cyan-300 font-mono-code transition">
+          <span>💬 Nhắn tin xác nhận qua Telegram (@vietndj)</span>
+          <span>→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-800 bg-slate-950 text-center text-xs text-slate-500 font-mono-code">
+    <div class="font-quote text-slate-300 text-sm mb-4">
+      "Sự thảnh thơi và vị thế là thứ quý giá nhất. Hãy để công cụ gánh vác phần tay chân lặp lại."
+    </div>
+    <div>© 2026 FEDU COURSE HUB • THẦY NGUYỄN ĐỨC VIỆT</div>
+    <div class="mt-2 text-slate-600">Hệ thống Trợ Lý iMessage Vận Hành Cục Bộ Trên macOS</div>
+  </footer>
+
+</body>
+</html>

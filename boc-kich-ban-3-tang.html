@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bóc Kịch Bản Clip Hay & Báo Cáo Đạo Diễn PDF A4 (39 Trang) | FEDU.VN</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    @font-face {
+      font-family: 'SVN-Integral';
+      src: url('./fonts/SVN-IntegralCF-Regular.ttf') format('truetype'),
+           url('./assets/fonts/SVN-IntegralCF-Regular.ttf') format('truetype'),
+           url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-IntegralCF-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-Regular.ttf') format('truetype'),
+           url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Poppins-Regular.ttf') format('truetype');
+      font-weight: 400;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-SemiBold.ttf') format('truetype'),
+           url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Poppins-SemiBold.ttf') format('truetype');
+      font-weight: 600;
+    }
+    @font-face {
+      font-family: 'SVN-Poppins';
+      src: url('./assets/fonts/SVN-Poppins-Bold.ttf') format('truetype'),
+           url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Poppins-Bold.ttf') format('truetype');
+      font-weight: 700;
+    }
+    @font-face {
+      font-family: 'SVN-Acta';
+      src: url('./fonts/SVN-Acta-BookItalic.ttf') format('truetype'),
+           url('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/fonts/SVN-Acta-Regular.ttf') format('truetype');
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    :root {
+      --font-integral: 'SVN-Integral', sans-serif;
+      --font-poppins: 'SVN-Poppins', 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-acta: 'SVN-Acta', 'Playfair Display', Georgia, serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: #06090e;
+      color: #cbd5e1;
+      font-family: var(--font-poppins);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .title-short {
+      font-family: var(--font-integral);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+    .title-long {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+    .font-quote {
+      font-family: var(--font-acta);
+      font-style: italic;
+    }
+    .font-code {
+      font-family: var(--font-mono);
+    }
+
+    .glow-bg {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1000px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(0, 104, 255, 0.15) 0%, rgba(0, 194, 255, 0.05) 40%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .glass-card {
+      background: rgba(14, 20, 32, 0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+    }
+
+    .glass-card-hover {
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .glass-card-hover:hover {
+      border-color: rgba(0, 104, 255, 0.4);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -15px rgba(0, 104, 255, 0.2);
+    }
+
+    .btn-zalo-primary {
+      background: linear-gradient(135deg, #0068ff 0%, #00c2ff 100%);
+      color: #ffffff;
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(0, 104, 255, 0.4);
+      transition: all 0.25s ease;
+    }
+    .btn-zalo-primary:hover {
+      box-shadow: 0 15px 35px -5px rgba(0, 194, 255, 0.5);
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="relative min-h-screen text-slate-300">
+
+  <div class="glow-bg"></div>
+
+  <!-- HEADER NAVIGATION -->
+  <nav class="relative z-20 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md sticky top-0">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a href="./skills.html" class="flex items-center gap-2.5 text-white font-bold text-sm tracking-wide">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center text-white font-integral text-xs">01</span>
+        <span>BÓC KỊCH BẢN CLIP HAY</span>
+      </a>
+      <div class="flex items-center gap-4">
+        <a href="./skills.html" class="text-xs text-slate-400 hover:text-white transition"><i class="fa-solid fa-arrow-left mr-1"></i> Về 6 Công Cụ</a>
+        <a href="#dat-mua" class="btn-zalo-primary px-4 py-2 rounded-xl text-xs font-semibold">Nhận Gói 3 Triệu ↗</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section class="relative z-10 pt-16 pb-14 px-4 max-w-4xl mx-auto text-center">
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold mb-6 bg-blue-950/60 border border-blue-500/30 text-blue-400">
+      <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+      <span>CÔNG CỤ BÀN GIAO 80% — CẮM LÀ CHẠY TRÊN MÁY TÍNH</span>
+    </div>
+
+    <h1 class="title-short text-3xl sm:text-5xl text-white mb-6 leading-tight">
+      DÁN LINK CLIP VIRAL HAY<br>
+      <span class="bg-gradient-to-r from-blue-400 via-cyan-300 to-indigo-400 bg-clip-text text-transparent">
+        AI TỰ BÓC KỊCH BẢN 2 CỘT &amp; PDF 39 TRANG
+      </span>
+    </h1>
+
+    <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-4 font-normal leading-relaxed">
+      Thấy clip nào trên TikTok / Instagram triệu view hay, bạn chỉ việc dán link vào. AI tự động cắt từng cảnh, bóc sạch lời nói, góc quay, lấy 4 mã màu HEX và xuất file PDF chuẩn Đạo diễn để bạn quay theo trong 5 phút. Khỏi cắn bút nghĩ câu mở đầu.
+    </p>
+
+    <p class="font-quote text-sm text-slate-400 mb-8">
+      "Tự mày mò xem đi xem lại bấm dừng 3 tiếng không bằng 1 câu lệnh 15 giây AI làm sạch bóng."
+    </p>
+
+    <div class="flex flex-wrap items-center justify-center gap-4 mb-10">
+      <a href="#dat-mua" class="btn-zalo-primary px-8 py-4 rounded-xl text-sm font-bold flex items-center gap-2">
+        <i class="fa-solid fa-bolt"></i>
+        <span>Nhận Gói Cài Đặt (3.000.000đ)</span>
+      </a>
+      <a href="./assets/video-analysis/demo_director_report.pdf" target="_blank" class="px-6 py-4 rounded-xl bg-slate-900 border border-slate-700 text-slate-200 text-sm font-semibold hover:bg-slate-800 transition flex items-center gap-2">
+        <i class="fa-solid fa-file-pdf text-amber-400"></i>
+        <span>Mở Xem PDF Mẫu (39 Trang) ↗</span>
+      </a>
+    </div>
+
+    <!-- 3 Hộp Giá Trị Đổi Đời -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
+      <div class="glass-card p-5 border-blue-500/20">
+        <div class="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-clock"></i>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Khỏi Cắn Bút Nghĩ Mở Đầu</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Thấy clip nào viral là bóc ngay hook triệu view. Không mất 3 ngày nghĩ ý tưởng.</p>
+      </div>
+
+      <div class="glass-card p-5 border-cyan-500/20">
+        <div class="w-10 h-10 rounded-xl bg-cyan-500/10 text-cyan-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-film"></i>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Bản Đồ Quay 2 Cột Rõ Nét</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Cột trái lời nói, cột phải góc máy B-roll. Nhìn vào là cầm máy lên quay chuẩn từng shot.</p>
+      </div>
+
+      <div class="glass-card p-5 border-indigo-500/20">
+        <div class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center text-lg mb-3">
+          <i class="fa-solid fa-file-pdf"></i>
+        </div>
+        <h3 class="text-sm font-bold text-white mb-1">Báo Cáo Đạo Diễn PDF A4</h3>
+        <p class="text-xs text-slate-400 leading-relaxed">Xuất bản file PDF 39 trang sang trọng, in ra cầm tay hoặc gửi cho diễn viên/team quay.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT ĐỜI THƯỜNG -->
+  <section class="py-12 px-4 max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-8">
+      <h2 class="title-short text-2xl sm:text-3xl text-white mb-2">5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT</h2>
+      <p class="text-xs sm:text-sm text-slate-400">Chỉ cần nhắn tin như nói chuyện đời thường, AI tự làm thay toàn bộ việc tay chân.</p>
+    </div>
+
+    <div class="space-y-3">
+      <div class="glass-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-blue-600/20 text-blue-400 flex items-center justify-center font-code text-xs font-bold shrink-0">1</span>
+          <div>
+            <div class="text-xs font-mono text-blue-300 font-bold">"Bóc cho tôi kịch bản clip này: [link instagram]"</div>
+            <div class="text-[11px] text-slate-400">Tự tải video, cắt từng shot cảnh, trích xuất transcript và lập bảng 2 cột.</div>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500 font-mono bg-slate-900 px-2.5 py-1 rounded-full shrink-0">~15 Giây</span>
+      </div>
+
+      <div class="glass-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-cyan-600/20 text-cyan-400 flex items-center justify-center font-code text-xs font-bold shrink-0">2</span>
+          <div>
+            <div class="text-xs font-mono text-cyan-300 font-bold">"Lấy cho tôi 4 mã màu HEX của video này để chỉnh Premiere"</div>
+            <div class="text-[11px] text-slate-400">Trích xuất bảng màu chủ đạo (Color Palette) kèm mã HEX để apply vào LUTs.</div>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500 font-mono bg-slate-900 px-2.5 py-1 rounded-full shrink-0">~5 Giây</span>
+      </div>
+
+      <div class="glass-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-purple-600/20 text-purple-400 flex items-center justify-center font-code text-xs font-bold shrink-0">3</span>
+          <div>
+            <div class="text-xs font-mono text-purple-300 font-bold">"Mổ xẻ khen chê khách quan giúp tôi clip này có gì đáng học"</div>
+            <div class="text-[11px] text-slate-400">Đánh giá 3 chiều: Điểm sáng giữ chân mắt, lỗi kỹ thuật cần né và bài học thực chiến.</div>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500 font-mono bg-slate-900 px-2.5 py-1 rounded-full shrink-0">~10 Giây</span>
+      </div>
+
+      <div class="glass-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-emerald-600/20 text-emerald-400 flex items-center justify-center font-code text-xs font-bold shrink-0">4</span>
+          <div>
+            <div class="text-xs font-mono text-emerald-300 font-bold">"Chuyển kịch bản này áp vào bối cảnh phòng làm việc của tôi"</div>
+            <div class="text-[11px] text-slate-400">Tự động ánh xạ lời thoại và góc máy khớp với góc phòng/bàn làm việc thực tế của bạn.</div>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500 font-mono bg-slate-900 px-2.5 py-1 rounded-full shrink-0">~12 Giây</span>
+      </div>
+
+      <div class="glass-card p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-slate-800">
+        <div class="flex items-center gap-3">
+          <span class="w-7 h-7 rounded-lg bg-amber-600/20 text-amber-400 flex items-center justify-center font-code text-xs font-bold shrink-0">5</span>
+          <div>
+            <div class="text-xs font-mono text-amber-300 font-bold">"Xuất báo cáo PDF A4 để tôi in ra cho team quay"</div>
+            <div class="text-[11px] text-slate-400">Tự động đóng gói báo cáo PDF 39 trang Dark-mode sang trọng, tự động mở trên máy.</div>
+          </div>
+        </div>
+        <span class="text-[10px] text-slate-500 font-mono bg-slate-900 px-2.5 py-1 rounded-full shrink-0">~8 Giây</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- BỘ 7 BẪY KỊCH BẢN VIRAL / TÌNH HUỐNG DÙNG LÀ WOW -->
+  <section class="py-12 px-4 max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-10">
+      <h2 class="title-short text-2xl sm:text-3xl text-white mb-2">7 KỊCH BẢN THỰC CHIẾN DÙNG LÀ "WOW"</h2>
+      <p class="text-xs sm:text-sm text-slate-400">Không lý thuyết suông. Đây là 7 tình huống thực tế người làm video dùng hàng ngày.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Kịch bản 1 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-blue-400 font-mono">KỊCH BẢN 01 • CÀ PHÊ SÁNG 5 PHÚT</span>
+          <span class="text-[10px] text-slate-500">Không mất buổi sáng</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Lướt Thấy Clip Hay ➔ 5 Phút Sau Có Kịch Bản Quay Buổi Chiều</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Đang ngồi uống cà phê sáng thấy 1 reel 2 triệu view của nước ngoài quá đỉnh. Bấm copy link gửi cho AI, 15 giây sau nhận được kịch bản tiếng Việt đã được chuyển thể mượt mà để chiều mang máy ra quay.
+        </p>
+      </div>
+
+      <!-- Kịch bản 2 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-cyan-400 font-mono">KỊCH BẢN 02 • BÓC TRẦN BÍ QUYẾT TRIỆU VIEW</span>
+          <span class="text-[10px] text-slate-500">Giải mã tâm lý</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Mổ Xẻ Vì Sao 3 Giây Đầu Giữ Chân 80% Người Xem</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          AI chỉ rõ: Shot 1 dùng hiệu ứng âm thanh tiếng gõ phím cơ kết hợp góc máy cận cảnh che cam tạo tò mò. Giúp bạn hiểu bản chất tâm lý giữ chân người xem thay vì chỉ copy mù quáng.
+        </p>
+      </div>
+
+      <!-- Kịch bản 3 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-purple-400 font-mono">KỊCH BẢN 03 • LẤY MÃ MÀU HEX ĐỒNG BỘ</span>
+          <span class="text-[10px] text-slate-500">Chỉnh màu chuẩn</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Trích 4 Mã Màu HEX Để Video Không Lệch Tone</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Không còn cảnh kéo màu mò mẫm trên CapCut hay Premiere bị bết sáng. AI trích sẵn 4 mã màu HEX chính xác của clip gốc để bạn áp dụng đồng bộ cho toàn bộ series video của mình.
+        </p>
+      </div>
+
+      <!-- Kịch bản 4 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-400 font-mono">KỊCH BẢN 04 • KỊCH BẢN 2 CỘT SONG NGỮ</span>
+          <span class="text-[10px] text-slate-500">Quay diễn dễ dàng</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Cột Trái Lời Đọc — Cột Phải Góc Máy B-Roll Chi Tiết</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Trình bày định dạng 2 cột tiêu chuẩn của đài truyền hình: Cột Audio chứa lời thoại nói tự nhiên, cột Video ghi rõ cỡ cảnh (Toàn, Trung, Cận), chuyển động máy và đạo cụ cần chuẩn bị.
+        </p>
+      </div>
+
+      <!-- Kịch bản 5 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">KỊCH BẢN 05 • KHEN CHÊ KHÁCH QUAN</span>
+          <span class="text-[10px] text-slate-500">Tránh lỗi sai</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Chỉ Rõ Lỗi Bết Sáng &amp; Chữ Che Mất Mặt Để Mình Né</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          AI không chỉ khen nịnh mà chỉ thẳng: Clip gốc đặt subtitle ở góc dưới bị icon TikTok che khuất, ánh sáng ở giây 14 bị chói. Bạn quay video mới khắc phục ngay để video của mình hoàn hảo hơn bản gốc.
+        </p>
+      </div>
+
+      <!-- Kịch bản 6 -->
+      <div class="glass-card p-5 border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-rose-400 font-mono">KỊCH BẢN 06 • XUẤT PDF ĐẠO DIỄN SANG XỊN</span>
+          <span class="text-[10px] text-slate-500">In ấn cầm tay</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">File PDF A4 39 Trang Chuẩn Đạo Diễn Mang Ra Hiện Trường</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Chỉ 1 lệnh, AI biên soạn và xuất bản file PDF A4 đẹp như cuốn sổ tay đạo diễn điện ảnh, tự động mở trên máy Mac/Windows để bạn gửi qua Zalo cho quay phim hoặc in ra mang ra hiện trường.
+        </p>
+      </div>
+
+      <!-- Kịch bản 7 -->
+      <div class="glass-card p-5 border-slate-800 md:col-span-2 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-blue-400 font-mono">KỊCH BẢN 07 • KHO TƯ LIỆU VĨNH CỬU TRÊN DRIVE</span>
+          <span class="text-[10px] text-slate-500">Lưu trữ 2TB</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Tự Động Đồng Bộ Toàn Bộ Báo Cáo &amp; Video Gốc Lên Google Drive</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Mọi video phân tích và file PDF đều được tự động lưu trữ ngăn nắp vào Google Drive của bạn theo thư mục ngày/tháng. Sau 1 tháng, bạn sở hữu một kho tàng 100 kịch bản triệu view quý giá không bao giờ mất.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SO SÁNH LÀM TAY VS. CÔNG CỤ AI -->
+  <section class="py-12 px-4 max-w-4xl mx-auto relative z-10">
+    <div class="text-center mb-8">
+      <h2 class="title-short text-2xl sm:text-3xl text-white mb-2">LÀM THỦ CÔNG VS. CÔNG CỤ AI</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="glass-card p-6 border-rose-500/20 space-y-3">
+        <div class="text-rose-400 font-bold text-sm flex items-center gap-2">
+          <i class="fa-solid fa-xmark"></i> CÁCH CŨ: LÀM TAY THỦ CÔNG
+        </div>
+        <ul class="text-xs text-slate-400 space-y-2.5 leading-relaxed">
+          <li>• Ngồi bấm dừng video từng giây, gõ lại từng câu chữ mất 2 - 3 tiếng.</li>
+          <li>• Nhìn bằng mắt thường không biết chính xác mã màu, chỉnh video bị lệch tone.</li>
+          <li>• Không biết bố cục cảnh nào hiệu quả, quay xong về dựng mới thấy thiếu B-roll.</li>
+          <li>• Không có tài liệu chuẩn để đưa cho người khác quay cùng, giải thích mỏi mồm.</li>
+        </ul>
+      </div>
+
+      <div class="glass-card p-6 border-emerald-500/30 bg-emerald-950/10 space-y-3">
+        <div class="text-emerald-400 font-bold text-sm flex items-center gap-2">
+          <i class="fa-solid fa-check"></i> CÁCH MỚI: CÔNG CỤ AI LÀM SẴN
+        </div>
+        <ul class="text-xs text-slate-300 space-y-2.5 leading-relaxed">
+          <li>• <strong>Dán 1 đường link:</strong> 15 giây sau AI bóc sạch 39 phân cảnh kèm mốc thời gian.</li>
+          <li>• <strong>Lấy ngay 4 mã màu HEX:</strong> Nhập vào là video lên màu chuẩn rạp.</li>
+          <li>• <strong>Kịch bản 2 cột chi tiết:</strong> Biết rõ cảnh nào quay cận, cảnh nào quay toàn.</li>
+          <li>• <strong>Báo cáo PDF A4 39 trang:</strong> Gửi Zalo hoặc in ra cầm tay quay trong 5 phút.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORM ĐẶT MUA / VIETQR -->
+  <section id="dat-mua" class="py-16 px-4 max-w-2xl mx-auto relative z-10 text-center">
+    <div class="glass-card p-8 sm:p-10 border-blue-500/30 shadow-2xl relative overflow-hidden">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-bold mb-3 bg-blue-500/10 text-blue-400 border border-blue-500/30">
+        BÀN GIAO TRỌN GÓI • CÀI ĐẶT 1 LẦN DÙNG TRỌN ĐỜI
+      </div>
+
+      <h2 class="title-short text-2xl sm:text-3xl text-white mb-2">
+        SỞ HỮU CÔNG CỤ BÓC KỊCH BẢN CLIP HAY
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-400 mb-6">
+        Nằm trong bộ công cụ AI rảnh tay của Thầy Nguyễn Đức Việt. Chạy trực tiếp trên tài khoản Google của bạn.
+      </p>
+
+      <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 mb-6 text-center">
+        <div class="text-xs text-slate-400 uppercase font-mono mb-1">GIÁ CHIA SẺ KINH NGHIỆM &amp; BÀN GIAO CÔNG CỤ</div>
+        <div class="text-3xl sm:text-4xl font-integral text-emerald-400 font-bold mb-2">3.000.000 VNĐ</div>
+        <div class="text-xs text-slate-400">Cài đặt 1 lần bằng Thẻ QR • Tự động cập nhật bản mới ngầm</div>
+      </div>
+
+      <!-- Mockup VietQR -->
+      <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 space-y-4">
+        <div class="text-xs font-bold text-slate-300 uppercase font-mono">QUÉT MÃ VIETQR QUA APP NGÂN HÀNG</div>
+        <div class="w-44 h-44 mx-auto bg-white p-2 rounded-xl shadow-lg flex items-center justify-center">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/the-kich-hoat-ai.png" alt="VietQR 3 Triệu" class="w-full h-full object-contain">
+        </div>
+        <div class="text-xs text-slate-400 font-mono">
+          Số tiền: <strong class="text-emerald-400">3.000.000 VNĐ</strong> • Nội dung: <strong class="text-blue-400">FEDU BOCKICHBAN</strong>
+        </div>
+        <p class="text-[11px] text-slate-500">Hệ thống tự động kích hoạt và gửi Thẻ QR kèm video hướng dẫn sau 30 giây.</p>
+      </div>
+
+      <div class="mt-6 flex items-center justify-center gap-2 text-xs text-slate-400">
+        <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+        <span>Hỗ trợ cài đặt trực tiếp 1-1 qua UltraViewer / AnyDesk nếu cần.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="relative z-10 py-8 px-4 text-center text-xs text-slate-500 border-t border-slate-900">
+    <div>Công Cụ AI Bóc Kịch Bản Clip Hay • FEDU.VN • Thầy Nguyễn Đức Việt</div>
+  </footer>
+
+</body>
+</html>

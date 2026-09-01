@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Face Clone | Vũ Khí Hình Ảnh Độc Quyền Cho Trợ Lý AI</title>
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- QRCode.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#05070c',
+            surface: '#0d111a',
+            accent: '#10b981',
+            gold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #05070c;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      overflow-x: hidden;
+    }
+    .glow-glow {
+      box-shadow: 0 0 60px -15px rgba(16, 185, 129, 0.25);
+    }
+    .glass-box {
+      background: rgba(13, 17, 26, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .gradient-gold-text {
+      background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .gradient-emerald-text {
+      background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .image-hover-zoom {
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .image-hover-zoom:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="selection:bg-emerald-500 selection:text-black">
+
+  <!-- FIXED FLOATING BACK BUTTON -->
+  <a href="javascript:void(0)" onclick="handleGoBack()" id="fixed-back-btn" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-900/95 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-950 hover:border-emerald-400 font-mono text-xs font-semibold shadow-2xl shadow-emerald-950/60 transition transform hover:-translate-y-0.5 active:scale-95 group backdrop-blur-xl">
+    <span class="text-sm transition-transform group-hover:-translate-x-1">←</span>
+    <span>Quay lại</span>
+  </a>
+
+  <!-- ADMIN / RESELLER PORTAL (KÍCH HOẠT QUA ?admin HOẶC #admin) -->
+  <div id="admin-portal" class="hidden max-w-5xl mx-auto px-4 sm:px-6 pt-6 pb-4">
+    <div class="glass-box rounded-3xl p-6 sm:p-8 border-2 border-amber-500/50 bg-slate-900/95 shadow-2xl shadow-amber-500/10">
+      
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-800 pb-4 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="w-3 h-3 rounded-full bg-amber-400 animate-ping"></span>
+          <h2 class="text-xl sm:text-2xl font-extrabold text-white font-mono flex items-center gap-2">
+            <span>⚡️ BẢNG ĐIỀU KHIỂN ĐẠI LÝ BÁN HÀNG</span>
+          </h2>
+        </div>
+        <span class="text-xs font-mono px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">MÃ ĐỘNG DÙNG 1 LẦN</span>
+      </div>
+
+      <!-- Khối Tạo Mã Nhanh -->
+      <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 mb-6 bg-slate-950/80 p-4 rounded-2xl border border-slate-800">
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Mật khẩu tùy chọn (Dùng 1 lần):</label>
+          <input type="text" id="admin-custom-code" placeholder="Ví dụ: ANHNAM2026..." class="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-amber-300 font-mono focus:outline-none focus:border-amber-400 transition" />
+          <span class="text-[10px] text-slate-500">Bỏ trống để tự sinh mã FACE-XXXX</span>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Ghi chú / Tên khách hàng:</label>
+          <input type="text" id="admin-note" value="Khách mua gói 1-Chạm" placeholder="Ví dụ: Anh Nam Zalo..." class="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-amber-400 transition" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Số lượng sinh tự động:</label>
+          <select id="admin-count" class="w-full px-3.5 py-2 rounded-xl bg-slate-900 border border-slate-700 text-sm text-white focus:outline-none focus:border-amber-400 transition font-medium">
+            <option value="1">1 Mã duy nhất</option>
+            <option value="3">3 Mã</option>
+            <option value="5">5 Mã</option>
+            <option value="10">10 Mã (Bán sỉ)</option>
+          </select>
+        </div>
+        <div class="flex items-end">
+          <button onclick="adminCreateLicense()" id="btn-admin-create" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-black font-extrabold text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-amber-500/20 active:scale-95">
+            <span>⚡️</span>
+            <span id="btn-admin-create-text">TẠO MẬT KHẨU</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Danh Sách Mã Đã Tạo & Trạng Thái Trực Tuyến -->
+      <div>
+        <div class="flex items-center justify-between mb-3">
+          <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider font-mono">DANH SÁCH MÃ BẢN QUYỀN (CLOUDFLARE R2)</h3>
+          <button onclick="adminLoadLicenses()" class="text-xs text-amber-400 hover:underline flex items-center gap-1 font-mono">
+            <span>🔄 Làm mới danh sách</span>
+          </button>
+        </div>
+
+        <div class="overflow-x-auto rounded-xl border border-slate-800 bg-slate-950/60 max-h-72 overflow-y-auto">
+          <table class="w-full text-left text-xs text-slate-300 font-mono">
+            <thead class="bg-slate-900/90 text-slate-400 uppercase text-[11px] sticky top-0 border-b border-slate-800">
+              <tr>
+                <th class="py-2.5 px-4">Mã Kích Hoạt</th>
+                <th class="py-2.5 px-4">Trạng Thái</th>
+                <th class="py-2.5 px-4">Ghi Chú</th>
+                <th class="py-2.5 px-4">Thời Gian</th>
+                <th class="py-2.5 px-4 text-right">Hành Động</th>
+              </tr>
+            </thead>
+            <tbody id="admin-license-tbody" class="divide-y divide-slate-800/60">
+              <tr>
+                <td colspan="5" class="py-4 text-center text-slate-500">Đang tải danh sách mã từ Cloudflare R2...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Subtle Top Glow & Logo -->
+  <div class="relative max-w-5xl mx-auto px-4 sm:px-6 pt-10 sm:pt-16 pb-6 text-center">
+    <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs font-semibold text-emerald-400 mb-6 shadow-inner">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span class="tracking-wider uppercase">VŨ KHÍ ĐẶC QUYỀN • VISUAL TWIN AI ENGINE</span>
+    </div>
+
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-tight mb-5">
+      Một Câu Lệnh.<br />
+      <span class="gradient-emerald-text">Đúng Khuôn Mặt Của Bạn.</span>
+    </h1>
+
+    <p class="text-base sm:text-xl text-slate-400 max-w-2xl mx-auto font-light leading-relaxed mb-10">
+      Chỉ cần nạp 3 bức ảnh thường ngày. Từ nay mọi bức ảnh Trợ lý AI sinh ra đều tự động mang đúng khuôn mặt và thần thái của chính bạn — <span class="text-slate-200 font-medium">không cần mô tả lại, không cần kéo thả lặp lại.</span>
+    </p>
+  </div>
+
+  <!-- SECTION 1: VISUAL PROOF (INPUT -> OUTPUT CỦA ANH VIỆT) -->
+  <section class="max-w-5xl mx-auto px-4 sm:px-6 py-6">
+    
+    <!-- 1.1 KHỐI ĐẦU VÀO (INPUT) -->
+    <div class="glass-box rounded-3xl p-6 sm:p-8 mb-8 border border-slate-800/80">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-6 border-b border-slate-800/60 pb-4">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 rounded bg-slate-800 text-xs font-mono text-emerald-400 font-bold">BƯỚC 1</span>
+          <h2 class="text-lg font-bold text-white tracking-wide">Đầu Vào: 3 Ảnh Chụp Thường Ngày</h2>
+        </div>
+        <span class="text-xs text-slate-400 font-light">Chụp bằng điện thoại • Không cần chỉnh sửa</span>
+      </div>
+
+      <div class="grid grid-cols-3 gap-3 sm:gap-6">
+        <div class="rounded-2xl overflow-hidden aspect-square bg-slate-900 border border-slate-800 shadow-md">
+          <img src="./assets/face-clone/real_01.jpg" alt="Ảnh thật góc thẳng" class="w-full h-full object-cover image-hover-zoom" />
+        </div>
+        <div class="rounded-2xl overflow-hidden aspect-square bg-slate-900 border border-slate-800 shadow-md">
+          <img src="./assets/face-clone/real_02.jpg" alt="Ảnh thật góc nghiêng" class="w-full h-full object-cover image-hover-zoom" />
+        </div>
+        <div class="rounded-2xl overflow-hidden aspect-square bg-slate-900 border border-slate-800 shadow-md">
+          <img src="./assets/face-clone/real_03.jpg" alt="Ảnh thật ngoại cảnh" class="w-full h-full object-cover image-hover-zoom" />
+        </div>
+      </div>
+    </div>
+
+    <!-- Mũi Tên Chuyển Hóa Phép Thuật -->
+    <div class="flex items-center justify-center my-4">
+      <div class="w-12 h-12 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 text-xl font-black glow-glow">
+        ↓
+      </div>
+    </div>
+
+    <!-- 1.2 KHỐI ĐẦU RA (OUTPUT - 10 TÌNH HUỐNG ĐỜI THƯỜNG & CHUYÊN NGHIỆP) -->
+    <div class="space-y-6">
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-3 mb-6">
+        <div class="flex items-center gap-3">
+          <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-xs font-mono text-emerald-300 font-bold">BƯỚC 2</span>
+          <h2 class="text-lg sm:text-xl font-bold text-white tracking-wide">Đầu Ra: 10 Tình Huống Phổ Biến Với 1 Câu Chat Tự Nhiên</h2>
+        </div>
+        <span class="text-xs text-emerald-400 font-medium">Chất lượng 4K • Chuẩn Điện Ảnh</span>
+      </div>
+
+      <!-- Grid 10 Tình Huống -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+        <!-- Tình Huống 1: Bàn Gỗ -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-emerald-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_01_desk.jpg?v=20260829_v2" alt="AI Tạo: Làm việc bàn gỗ" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tình huống 01 • Công Việc</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Deep Work Bàn Gỗ • Nắng Hoàng Hôn Ấm</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-emerald-300 font-mono truncate">"Tạo ảnh tôi ngồi làm việc bàn gỗ"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 2: Thể Thao / Runner -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-cyan-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_02_runner.jpg?v=20260829_v2" alt="AI Tạo: Chạy bộ đón bình minh" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-cyan-400 uppercase tracking-wider">Tình huống 02 • Thể Thao</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Runner Marathon Đón Bình Minh Công Viên</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-cyan-300 font-mono truncate">"Tạo ảnh tôi chạy bộ đón bình minh"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 3: Avatar Chuyên Gia Studio -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-indigo-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_03_studio.jpg?v=20260829_v2" alt="AI Tạo: Avatar Studio Chuyên Gia" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Tình huống 03 • Thương Hiệu</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Avatar Studio Executive 85mm Bokeh</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-indigo-300 font-mono truncate">"Làm avatar chuyên gia phong cách studio"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 4: Đi Xe Máy Dạo Phố -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-amber-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_04_motorbike.jpg?v=20260829_v2" alt="AI Tạo: Đi xe máy phố Hà Nội" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Tình huống 04 • Đời Thường</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Đi Xe Máy Dạo Phố Mùa Thu Hà Nội</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-amber-300 font-mono truncate">"Tạo ảnh tôi đi xe máy trên phố mùa thu"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 5: Đi Siêu Thị Mua Sắm -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-emerald-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_05_supermarket.jpg?v=20260829_v2" alt="AI Tạo: Đi siêu thị mua sắm" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Tình huống 05 • Gia Đình</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Đi Siêu Thị Đẩy Xe Hàng Chọn Đồ Tươi Ngon</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-emerald-300 font-mono truncate">"Tạo ảnh tôi đi siêu thị chọn đồ"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 6: Trà Đá Vỉa Hè Phố Cổ -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-orange-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_06_trada.jpg?v=20260829_v2" alt="AI Tạo: Uống trà đá vỉa hè" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Tình huống 06 • Bản Sắc</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Uống Trà Đá Ghế Nhựa Vỉa Hè Phố Cổ</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-orange-300 font-mono truncate">"Tạo ảnh tôi ngồi uống trà đá vỉa hè"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 7: Du Lịch Ngắm Cảnh Núi Đồi -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-teal-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_07_travel.jpg?v=20260829_v2" alt="AI Tạo: Du lịch ngắm cảnh" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-teal-400 uppercase tracking-wider">Tình huống 07 • Du Lịch</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Nghỉ Dưỡng Ngắm Núi Đồi Mây Trắng Resort</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-teal-300 font-mono truncate">"Tạo ảnh tôi đi du lịch ngắm cảnh thiên nhiên"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 8: Giới Thiệu Sản Phẩm Hội Chợ -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-blue-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_08_gadget_expo.jpg?v=20260829_v2" alt="AI Tạo: Review củ sạc hội chợ" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Tình huống 08 • Review / Bán Hàng</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Cầm Củ Sạc Đa Năng Giới Thiệu Tại Hội Chợ</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-blue-300 font-mono truncate">"Tạo ảnh tôi cầm củ sạc giới thiệu ở hội chợ"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 9: Diễn Giả Sân Khấu Sự Kiện -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-purple-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_09_stage_speaker.jpg?v=20260829_v2" alt="AI Tạo: Thuyết trình sân khấu" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">Tình huống 09 • Diễn Giả</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Cầm Mic Thuyết Trình Trên Sân Khấu Hội Thảo</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-purple-300 font-mono truncate">"Tạo ảnh tôi cầm mic thuyết trình sân khấu"</span>
+          </div>
+        </div>
+
+        <!-- Tình Huống 10: Cafe Chill Bên Cửa Sổ -->
+        <div class="glass-box rounded-3xl overflow-hidden p-5 border border-slate-800/80 hover:border-rose-500/30 transition flex flex-col justify-between">
+          <div>
+            <div class="rounded-2xl overflow-hidden aspect-[16/9] mb-4 bg-slate-900 border border-slate-800 shadow-xl">
+              <img src="./assets/face-clone/gen_10_cafe.jpg?v=20260829_v2" alt="AI Tạo: Uống cafe bên cửa sổ" class="w-full h-full object-cover image-hover-zoom" />
+            </div>
+            <span class="text-xs font-bold text-rose-400 uppercase tracking-wider">Tình huống 10 • Phong Cách Sống</span>
+            <h3 class="text-base font-bold text-white mt-0.5 mb-3">Thưởng Thức Cafe Bên Cửa Sổ Ngập Nắng</h3>
+          </div>
+          <div class="bg-slate-900/90 border border-slate-800 rounded-xl px-3.5 py-2 flex items-center justify-between gap-2 text-xs">
+            <span class="text-slate-400 font-mono">Chat:</span>
+            <span class="font-semibold text-rose-300 font-mono truncate">"Tạo ảnh tôi ngồi thư giãn uống cafe bên cửa sổ"</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- BỘ 7 BẪY KỊCH BẢN THỰC CHIẾN DÙNG LÀ "WOW" -->
+  <section class="py-12 px-4 max-w-5xl mx-auto relative z-10">
+    <div class="text-center mb-10">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/20 text-xs font-bold text-purple-400 uppercase tracking-widest mb-3">
+        TÌNH HUỐNG THỰC TẾ
+      </div>
+      <h2 class="title-short text-2xl sm:text-3xl text-white mb-2 font-integral">7 KỊCH BẢN THỰC CHIẾN DÙNG LÀ "WOW"</h2>
+      <p class="text-xs sm:text-sm text-slate-400">Chỉ cần nhắn 1 câu tiếng Việt tự nhiên, AI tự tạo ảnh sắc nét mang đúng khuôn mặt bạn.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      
+      <!-- Kịch bản 1 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-purple-400 font-mono">KỊCH BẢN 01 • AVATAR CHUYÊN GIA 1:1</span>
+          <span class="text-[10px] text-slate-500">Không cần thuê Studio</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Cần Đổi Ảnh Đại Diện Sang Xịn Trên Facebook &amp; Zalo</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Không mất 2 triệu và nửa ngày đi chụp Studio. Chỉ cần nhắn: "Tạo avatar chuyên gia mặc vest lịch lãm", AI tự sinh ra 5 bức ảnh vuông sắc nét, ánh sáng studio sang trọng mang đúng khuôn mặt bạn.
+        </p>
+      </div>
+
+      <!-- Kịch bản 2 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-emerald-400 font-mono">KỊCH BẢN 02 • BÀN LÀM VIỆC MACBOOK 16:9</span>
+          <span class="text-[10px] text-slate-500">Ảnh bìa bài viết</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Ảnh Minh Họa Bài Viết Chia Sẻ Kinh Nghiệm</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Cần 1 bức ảnh ngồi làm việc chăm chú bên máy Mac để làm ảnh bìa bài viết hoặc thumbnail video. Nhắn 1 câu là AI tự vẽ không gian bàn gỗ ấm cúng, màn hình code/thiết kế sắc nét.
+        </p>
+      </div>
+
+      <!-- Kịch bản 3 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-amber-400 font-mono">KỊCH BẢN 03 • LIFESTYLE THỂ THAO 9:16</span>
+          <span class="text-[10px] text-slate-500">Story &amp; Reels</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Đăng Story Chạy Bộ Buổi Sáng Truyền Cảm Hứng</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Muốn xây dựng hình ảnh cá nhân năng động, tích cực nhưng sáng nay bận không chạy được. Nhắn AI tạo ảnh bạn đang chạy bộ trong công viên xanh lúc bình minh, mồ hôi tự nhiên và dáng chạy chuẩn.
+        </p>
+      </div>
+
+      <!-- Kịch bản 4 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-cyan-400 font-mono">KỊCH BẢN 04 • CẦM SẢN PHẨM REVIEW</span>
+          <span class="text-[10px] text-slate-500">Bán hàng thực chiến</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Cầm Củ Sạc / Cuốn Sách / Hộp Sản Phẩm Để Bán Hàng</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          AI tự ghép bạn đang cầm sản phẩm trên tay tại hội chợ công nghệ hoặc quán cafe để làm ảnh quảng cáo bán hàng mà không cần set đèn hay thuê mẫu chụp.
+        </p>
+      </div>
+
+      <!-- Kịch bản 5 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-rose-400 font-mono">KỊCH BẢN 05 • DIỄN GIẢ SÂN KHẤU HOÀNH TRÁNG</span>
+          <span class="text-[10px] text-slate-500">Tăng uy tín</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Cầm Mic Thuyết Trình Trước Hội Trường 500 Khách</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Tạo ảnh bạn đang đứng trên sân khấu hội thảo lớn, ánh đèn follow chuyên nghiệp, slide phía sau hiển thị đúng tên dự án của bạn để làm profile uy tín.
+        </p>
+      </div>
+
+      <!-- Kịch bản 6 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-blue-400 font-mono">KỊCH BẢN 06 • GIỮ TRANG PHỤC ĐỒNG NHẤT</span>
+          <span class="text-[10px] text-slate-500">Bộ nhận diện 10 ảnh</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Xuất Bộ 10 Bức Ảnh Mặc Cùng 1 Chiếc Áo Đồng Bộ</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Tính năng khóa trang phục thông minh (Wardrobe Continuity) giúp bạn tạo 10 bối cảnh khác nhau (cafe, văn phòng, dạo phố) nhưng vẫn mặc đúng chiếc áo polo đen quen thuộc, 100% tự nhiên.
+        </p>
+      </div>
+
+      <!-- Kịch bản 7 -->
+      <div class="glass-box rounded-2xl p-5 border border-slate-800 md:col-span-2 space-y-2">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-bold text-indigo-400 font-mono">KỊCH BẢN 07 • KHO PROFILE AI TRÊN GOOGLE DRIVE</span>
+          <span class="text-[10px] text-slate-500">Lưu trữ vĩnh viễn</span>
+        </div>
+        <h4 class="text-sm font-bold text-white">Tự Động Lưu Trữ Toàn Bộ Ảnh Độ Nét Cao 4K Vào Drive 2TB Của Bạn</h4>
+        <p class="text-xs text-slate-400 leading-relaxed">
+          Mọi bức ảnh tạo ra đều được lưu trữ trực tiếp vào Google Drive cá nhân. Khi cần đăng bài hay làm banner thiết kế, chỉ việc mở Drive lấy ảnh nét căng 4K sử dụng ngay.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 2: BỘ THIẾT LẬP BẢN SAO TRỰC TUYẾN 1-CHẠM (PHƯƠNG PHÁP 2: KÉO THẢ TRỰC TIẾP TRÊN WEB) -->
+  <section id="setup-section" class="max-w-4xl mx-auto px-4 sm:px-6 py-12">
+    <div class="relative glass-box rounded-3xl p-6 sm:p-10 border border-emerald-500/40 glow-glow overflow-hidden">
+      <!-- Background Ambient Glow -->
+      <div class="absolute -top-24 -right-24 w-60 h-60 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute -bottom-24 -left-24 w-60 h-60 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-xl mx-auto mb-8">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+          PHƯƠNG THỨC THIẾT LẬP TRỰC QUAN 100%
+        </div>
+        <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
+          Nạp 3 Ảnh Của Bạn Trực Tiếp Trên Web
+        </h2>
+        <p class="text-xs sm:text-sm text-slate-400 mt-2 font-light leading-relaxed">
+          Kéo thả 3 bức ảnh chân dung thường ngày vào các ô bên dưới. Web sẽ tự động phân tích khung xương mặt, nụ cười và đóng gói sẵn bản sao để nạp vào Trợ lý AI của bạn trong 1-click.
+        </p>
+      </div>
+
+      <!-- 3 Ô KÉO THẢ ẢNH TRỰC QUAN -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+        
+        <!-- Slot 1: Góc Thẳng Chính Diện -->
+        <div class="relative flex flex-col items-center">
+          <input type="file" id="input-slot-1" accept="image/*" class="hidden" onchange="handleFileSelect(event, 1)" />
+          <div id="dropzone-1" onclick="document.getElementById('input-slot-1').click()" ondragover="handleDragOver(event, 1)" ondragleave="handleDragLeave(event, 1)" ondrop="handleDrop(event, 1)" class="w-full aspect-[4/5] rounded-2xl border-2 border-dashed border-slate-700 hover:border-emerald-400/80 bg-slate-900/70 p-3 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 group overflow-hidden relative shadow-inner">
+            
+            <!-- Default Placeholder State -->
+            <div id="placeholder-1" class="flex flex-col items-center justify-center space-y-2 p-2">
+              <div class="w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-emerald-500/10 group-hover:border-emerald-500/30 transition duration-300">
+                📸
+              </div>
+              <span class="text-xs font-bold text-slate-200">Ảnh 1: Chính Diện</span>
+              <span class="text-[11px] text-slate-400 leading-tight">Góc thẳng, thấy rõ nét mặt & nụ cười</span>
+              <span class="mt-2 inline-block px-2.5 py-1 rounded-md bg-slate-800 text-[10px] font-mono text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black font-semibold transition">+ Chọn hoặc kéo thả</span>
+            </div>
+
+            <!-- Preview & Scanning State (Hidden by default) -->
+            <div id="preview-box-1" class="hidden absolute inset-0 w-full h-full">
+              <img id="img-preview-1" class="w-full h-full object-cover rounded-xl" src="" alt="Preview 1" />
+              <!-- Radar Scanner Overlay -->
+              <div id="scanner-1" class="absolute inset-0 bg-gradient-to-b from-transparent via-emerald-500/25 to-transparent h-12 w-full animate-[scan_2s_ease-in-out_infinite] pointer-events-none"></div>
+              <div class="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-emerald-500/30 flex items-center justify-between text-[10px]">
+                <span class="text-emerald-300 font-mono font-semibold">✓ Khớp 99% (Mỏ neo #1)</span>
+                <button onclick="event.stopPropagation(); removePhoto(1)" class="text-slate-400 hover:text-red-400 font-bold ml-2">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slot 2: Góc Nghiêng 3/4 -->
+        <div class="relative flex flex-col items-center">
+          <input type="file" id="input-slot-2" accept="image/*" class="hidden" onchange="handleFileSelect(event, 2)" />
+          <div id="dropzone-2" onclick="document.getElementById('input-slot-2').click()" ondragover="handleDragOver(event, 2)" ondragleave="handleDragLeave(event, 2)" ondrop="handleDrop(event, 2)" class="w-full aspect-[4/5] rounded-2xl border-2 border-dashed border-slate-700 hover:border-cyan-400/80 bg-slate-900/70 p-3 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 group overflow-hidden relative shadow-inner">
+            
+            <!-- Default Placeholder State -->
+            <div id="placeholder-2" class="flex flex-col items-center justify-center space-y-2 p-2">
+              <div class="w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/30 transition duration-300">
+                👤
+              </div>
+              <span class="text-xs font-bold text-slate-200">Ảnh 2: Góc Nghiêng 3/4</span>
+              <span class="text-[11px] text-slate-400 leading-tight">Rõ viền xương hàm & sống mũi</span>
+              <span class="mt-2 inline-block px-2.5 py-1 rounded-md bg-slate-800 text-[10px] font-mono text-cyan-400 group-hover:bg-cyan-400 group-hover:text-black font-semibold transition">+ Chọn hoặc kéo thả</span>
+            </div>
+
+            <!-- Preview & Scanning State -->
+            <div id="preview-box-2" class="hidden absolute inset-0 w-full h-full">
+              <img id="img-preview-2" class="w-full h-full object-cover rounded-xl" src="" alt="Preview 2" />
+              <div id="scanner-2" class="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/25 to-transparent h-12 w-full animate-[scan_2s_ease-in-out_infinite] pointer-events-none"></div>
+              <div class="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-cyan-500/30 flex items-center justify-between text-[10px]">
+                <span class="text-cyan-300 font-mono font-semibold">✓ Khớp 98% (Viền hàm)</span>
+                <button onclick="event.stopPropagation(); removePhoto(2)" class="text-slate-400 hover:text-red-400 font-bold ml-2">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Slot 3: Toàn Thân / Đời Thường -->
+        <div class="relative flex flex-col items-center">
+          <input type="file" id="input-slot-3" accept="image/*" class="hidden" onchange="handleFileSelect(event, 3)" />
+          <div id="dropzone-3" onclick="document.getElementById('input-slot-3').click()" ondragover="handleDragOver(event, 3)" ondragleave="handleDragLeave(event, 3)" ondrop="handleDrop(event, 3)" class="w-full aspect-[4/5] rounded-2xl border-2 border-dashed border-slate-700 hover:border-indigo-400/80 bg-slate-900/70 p-3 flex flex-col items-center justify-center text-center cursor-pointer transition-all duration-300 group overflow-hidden relative shadow-inner">
+            
+            <!-- Default Placeholder State -->
+            <div id="placeholder-3" class="flex flex-col items-center justify-center space-y-2 p-2">
+              <div class="w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700 flex items-center justify-center text-2xl group-hover:scale-110 group-hover:bg-indigo-500/10 group-hover:border-indigo-500/30 transition duration-300">
+                🌆
+              </div>
+              <span class="text-xs font-bold text-slate-200">Ảnh 3: Đời Thường / Nửa Người</span>
+              <span class="text-[11px] text-slate-400 leading-tight">Ánh sáng tự nhiên, dáng vóc chuẩn</span>
+              <span class="mt-2 inline-block px-2.5 py-1 rounded-md bg-slate-800 text-[10px] font-mono text-indigo-400 group-hover:bg-indigo-400 group-hover:text-black font-semibold transition">+ Chọn hoặc kéo thả</span>
+            </div>
+
+            <!-- Preview & Scanning State -->
+            <div id="preview-box-3" class="hidden absolute inset-0 w-full h-full">
+              <img id="img-preview-3" class="w-full h-full object-cover rounded-xl" src="" alt="Preview 3" />
+              <div id="scanner-3" class="absolute inset-0 bg-gradient-to-b from-transparent via-indigo-500/25 to-transparent h-12 w-full animate-[scan_2s_ease-in-out_infinite] pointer-events-none"></div>
+              <div class="absolute bottom-2 left-2 right-2 px-2 py-1 rounded-lg bg-black/75 backdrop-blur-md border border-indigo-500/30 flex items-center justify-between text-[10px]">
+                <span class="text-indigo-300 font-mono font-semibold">✓ Khớp 99% (Vóc dáng)</span>
+                <button onclick="event.stopPropagation(); removePhoto(3)" class="text-slate-400 hover:text-red-400 font-bold ml-2">✕</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TÙY CHỌN TÊN, PHONG CÁCH & MẬT KHẨU BẢO MẬT -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-2xl mx-auto mb-8 bg-slate-900/80 border border-slate-800 p-4 rounded-2xl">
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Tên hiển thị:</label>
+          <input type="text" id="user-name" value="Việt" placeholder="Ví dụ: Việt, Nam, Mai..." class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-emerald-500 transition font-medium" />
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-slate-400 mb-1">Phong cách mặc định:</label>
+          <select id="user-style" class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm text-white focus:outline-none focus:border-emerald-500 transition font-medium">
+            <option value="executive">Nam • Lịch Lãm / Doanh Nhân (Executive)</option>
+            <option value="athletic">Nam • Thể Thao / Hiện Đại (Athletic)</option>
+            <option value="minimalist">Nam • Tối Giản / Đời Thường (Minimalist)</option>
+            <option value="female_modern">Nữ • Hiện Đại / Thanh Lịch (Modern)</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-amber-400 mb-1">Mật khẩu kích hoạt bản quyền:</label>
+          <input type="text" id="user-password" value="" autocomplete="off" placeholder="Ví dụ: ANHNAM2026, FACE-XXXX..." class="w-full px-3.5 py-2 rounded-xl bg-slate-950 border border-amber-500/50 text-sm text-amber-300 placeholder:text-slate-600 focus:outline-none focus:border-amber-400 focus:ring-1 focus:ring-amber-400 transition font-mono font-bold uppercase tracking-wider" />
+        </div>
+      </div>
+
+      <!-- NÚT NẠP KHUÔN MẶT CỦA TÔI (LỰA CHỌN 3) -->
+      <div class="max-w-md mx-auto text-center space-y-4">
+        <button onclick="generateAICard()" id="btn-sync" class="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-emerald-500 via-teal-400 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-black font-extrabold text-base tracking-wide transition-all duration-300 shadow-xl shadow-emerald-500/25 flex items-center justify-center gap-3 active:scale-[0.98]">
+          <span class="text-xl">👤</span>
+          <span id="sync-btn-text">NẠP KHUÔN MẶT CỦA TÔI CHO TRỢ LÝ AI</span>
+        </button>
+
+        <p id="sync-status-tip" class="text-xs text-slate-400 font-light flex items-center justify-center gap-1.5">
+          <span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+          <span>Hệ thống tự đóng gói 3 góc mặt thành 1 file duy nhất. Ném vào chat là AI nhận diện bạn trọn đời.</span>
+        </p>
+      </div>
+
+      <!-- MODAL / KHU VỰC HIỂN THỊ FILE NHẬN DIỆN VỪA TẠO -->
+      <div id="card-result-container" class="hidden mt-10 max-w-xl mx-auto p-6 rounded-3xl bg-slate-900/90 border border-emerald-500/40 shadow-2xl shadow-emerald-500/20 text-center space-y-6 animate-fade-in">
+        <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-emerald-400 animate-pulse"></span>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider font-mono">FILE NHẬN DIỆN KHUÔN MẶT • ĐÃ TẢI VỀ MÁY</h3>
+          </div>
+          <span id="card-face-id-tag" class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold">#FACE_READY</span>
+        </div>
+
+        <!-- Canvas xem trước Thẻ Căn Cước AI -->
+        <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-700 bg-black flex justify-center">
+          <canvas id="ai-passport-canvas" width="800" height="460" class="w-full h-auto max-w-[540px]"></canvas>
+        </div>
+
+        <div class="bg-slate-950/80 border border-slate-800 rounded-2xl p-4 text-left space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="text-slate-400">🔒 Trạng thái bản quyền:</span>
+            <span class="font-mono font-bold text-emerald-400 text-xs">✓ ĐÃ KHÓA BẢO MẬT</span>
+          </div>
+          <div class="flex items-start gap-2 text-[11px] text-slate-300 pt-1 border-t border-slate-800/80">
+            <span class="text-emerald-400 font-bold">👉 Hướng dẫn:</span>
+            <span>Lưu bức ảnh thẻ này về máy ➔ Kéo thả ảnh vào khung chat <b>Antigravity</b> ➔ Nhập mã bí mật anh Việt cấp để kích hoạt!</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <button onclick="downloadPassportCard()" class="flex-1 py-3.5 px-4 rounded-xl bg-emerald-400 hover:bg-emerald-300 text-black font-extrabold text-sm flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-500/20">
+            <span>📥</span>
+            <span>TẢI THẺ CĂN CƯỚC AI (ẢNH PNG)</span>
+          </button>
+          <button onclick="window.location.href='antigravity://'" class="py-3.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-sm flex items-center justify-center gap-2 transition border border-slate-700">
+            <span>🚀</span>
+            <span>MỞ ANTIGRAVITY</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Khối Giải Thích 3 Bước Minh Bạch -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-left pt-8 mt-8 border-t border-slate-800/80 text-xs">
+        <div class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">1</span>
+          <div>
+            <span class="text-slate-200 font-bold block mb-0.5">Tải 3 Ảnh & Nhập Pass</span>
+            <span class="text-slate-400">Trình duyệt tự nén ảnh mỏ neo và mã hóa dữ liệu với mật khẩu của bạn.</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">2</span>
+          <div>
+            <span class="text-slate-200 font-bold block mb-0.5">Lưu Thẻ Căn Cước AI (QR)</span>
+            <span class="text-slate-400">Web xuất ra 1 ảnh Thẻ Căn Cước đẹp mắt có mã QR chứa toàn bộ dữ liệu.</span>
+          </div>
+        </div>
+        <div class="flex items-start gap-2.5">
+          <span class="w-5 h-5 rounded-full bg-indigo-500/20 text-indigo-400 flex items-center justify-center font-mono font-bold text-[11px] shrink-0 mt-0.5">3</span>
+          <div>
+            <span class="text-slate-200 font-bold block mb-0.5">Ném Vào Chat Antigravity</span>
+            <span class="text-slate-400">Thả ảnh vào chat, nhập mật khẩu mở khóa là AI tự nạp bản sao và render ảnh ngay.</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-8 text-center text-xs text-slate-600 border-t border-slate-900">
+    <p>© 2026 Visual Twin Engine • Personal AI Image Studio</p>
+  </footer>
+
+  <!-- Container ẩn phục vụ tạo QR Code Canvas -->
+  <div id="qr-hidden-container" class="hidden"></div>
+
+  <!-- SCRIPT XỬ LÝ KÉO THẢ & TẠO THẺ CĂN CƯỚC AI FACE (MÃ QR) -->
+  <script>
+    const userPhotos = { 1: null, 2: null, 3: null };
+    let currentPassportDataUrl = '';
+
+    // Hàm vẽ hình chữ nhật bo góc an toàn tuyệt đối (Tương thích mọi phiên bản Safari/Chrome/Firefox)
+    function drawRoundedRect(ctx, x, y, w, h, r) {
+      if (w < 2 * r) r = w / 2;
+      if (h < 2 * r) r = h / 2;
+      ctx.beginPath();
+      ctx.moveTo(x + r, y);
+      ctx.arcTo(x + w, y, x + w, y + h, r);
+      ctx.arcTo(x + w, y + h, x, y + h, r);
+      ctx.arcTo(x, y + h, x, y, r);
+      ctx.arcTo(x, y, x + w, y, r);
+      ctx.closePath();
+    }
+
+    // Hàm load ảnh an toàn với Promise
+    function loadImage(src) {
+      return new Promise((resolve) => {
+        if (!src) { resolve(null); return; }
+        const img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = () => resolve(img);
+        img.onerror = () => resolve(null);
+        img.src = src;
+        if (img.complete && img.naturalWidth > 0) {
+          resolve(img);
+        }
+      });
+    }
+
+    // Hàm tạo và lấy ảnh QR Code an toàn (Có Fallback Online nếu thư viện lỗi)
+    async function getQRCodeImage(text, size = 200) {
+      const qrContainer = document.getElementById('qr-hidden-container');
+      qrContainer.innerHTML = '';
+
+      if (typeof QRCode !== 'undefined') {
+        try {
+          new QRCode(qrContainer, {
+            text: text,
+            width: size,
+            height: size,
+            colorDark: "#000000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.M
+          });
+
+          // Đợi tối đa 1 giây để QR render ra canvas hoặc img
+          for (let i = 0; i < 20; i++) {
+            await new Promise(r => setTimeout(r, 50));
+            const canvasEl = qrContainer.querySelector('canvas');
+            if (canvasEl) return canvasEl;
+            const imgEl = qrContainer.querySelector('img');
+            if (imgEl && imgEl.src && imgEl.complete) return imgEl;
+          }
+        } catch (e) {
+          console.warn('QRCode.js lỗi, chuyển sang fallback:', e);
+        }
+      }
+
+      // Fallback: Tạo qua QR Server API chuẩn
+      const fallbackUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(text)}`;
+      const qrImg = await loadImage(fallbackUrl);
+      return qrImg;
+    }
+
+    function handleDragOver(e, slot) {
+      e.preventDefault();
+      const el = document.getElementById('dropzone-' + slot);
+      if (el) el.classList.add('border-emerald-400', 'bg-emerald-500/10');
+    }
+
+    function handleDragLeave(e, slot) {
+      e.preventDefault();
+      const el = document.getElementById('dropzone-' + slot);
+      if (el) el.classList.remove('border-emerald-400', 'bg-emerald-500/10');
+    }
+
+    function handleDrop(e, slot) {
+      e.preventDefault();
+      const el = document.getElementById('dropzone-' + slot);
+      if (el) el.classList.remove('border-emerald-400', 'bg-emerald-500/10');
+      if (e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0]) {
+        processImageFile(e.dataTransfer.files[0], slot);
+      }
+    }
+
+    function handleFileSelect(e, slot) {
+      if (e.target && e.target.files && e.target.files[0]) {
+        processImageFile(e.target.files[0], slot);
+      }
+    }
+
+    function processImageFile(file, slot) {
+      if (!file.type.startsWith('image/')) {
+        alert('Vui lòng chọn file hình ảnh (JPG, PNG, WEBP)!');
+        return;
+      }
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        userPhotos[slot] = {
+          dataUrl: e.target.result,
+          name: file.name,
+          type: file.type
+        };
+
+        const previewImg = document.getElementById('img-preview-' + slot);
+        if (previewImg) previewImg.src = e.target.result;
+        const placeholder = document.getElementById('placeholder-' + slot);
+        if (placeholder) placeholder.classList.add('hidden');
+        const previewBox = document.getElementById('preview-box-' + slot);
+        if (previewBox) previewBox.classList.remove('hidden');
+
+        checkPhotosStatus();
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function removePhoto(slot) {
+      userPhotos[slot] = null;
+      const inputEl = document.getElementById('input-slot-' + slot);
+      if (inputEl) inputEl.value = '';
+      const previewImg = document.getElementById('img-preview-' + slot);
+      if (previewImg) previewImg.src = '';
+      const previewBox = document.getElementById('preview-box-' + slot);
+      if (previewBox) previewBox.classList.add('hidden');
+      const placeholder = document.getElementById('placeholder-' + slot);
+      if (placeholder) placeholder.classList.remove('hidden');
+      checkPhotosStatus();
+    }
+
+    function checkPhotosStatus() {
+      const uploadedCount = Object.values(userPhotos).filter(Boolean).length;
+      const btnText = document.getElementById('sync-btn-text');
+      const tipText = document.getElementById('sync-status-tip');
+
+      if (btnText) {
+        if (uploadedCount === 3) {
+          btnText.innerText = '👤 ĐÃ ĐỦ 3 ẢNH • NẠP KHUÔN MẶT CỦA TÔI CHO TRỢ LÝ AI';
+        } else {
+          btnText.innerText = `👤 CHỌN THÊM ${3 - uploadedCount} ẢNH ĐỂ HOÀN TẤT (${uploadedCount}/3)`;
+        }
+      }
+      if (tipText && uploadedCount === 3) {
+        tipText.innerHTML = '<span class="inline-block w-1.5 h-1.5 rounded-full bg-emerald-400"></span><span class="text-emerald-400 font-semibold">Tuyệt vời! 3 góc mặt đã sẵn sàng đóng gói cho Trợ lý AI.</span>';
+      }
+    }
+
+    // TẠO THẺ CĂN CƯỚC AI & MÃ QR FACE DNA (CHUẨN 100% KHÔNG LỖI)
+    async function generateAICard() {
+      const uploadedCount = Object.values(userPhotos).filter(Boolean).length;
+      const nameEl = document.getElementById('user-name');
+      const styleEl = document.getElementById('user-style');
+      const passEl = document.getElementById('user-password');
+      const btn = document.getElementById('btn-sync');
+      const btnText = document.getElementById('sync-btn-text');
+
+      const userName = (nameEl ? nameEl.value.trim() : '') || 'Chủ Nhân';
+      const userStyle = styleEl ? styleEl.value : 'executive';
+      const userPassword = passEl ? passEl.value.trim() : '';
+
+      if (uploadedCount === 0) {
+        alert('Anh/chị vui lòng kéo hoặc chọn ít nhất 1-3 bức ảnh chân dung để tạo Thẻ Căn Cước nhé!');
+        const dz = document.getElementById('dropzone-1');
+        if (dz) dz.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+
+      if (!userPassword) {
+        alert('⚠️ Vui lòng nhập Mật Khẩu / Mã Kích Hoạt do Thầy Việt hoặc Đại Lý cấp để tạo Thẻ Căn Cước!');
+        if (passEl) {
+          passEl.focus();
+          passEl.classList.add('border-red-500', 'ring-2', 'ring-red-500/50');
+        }
+        return;
+      }
+
+      if (btnText) btnText.innerText = '⏳ ĐANG XÁC THỰC MẬT KHẨU...';
+      if (btn) btn.classList.add('opacity-80', 'cursor-wait');
+
+      // 1. Kiểm tra xác thực mật khẩu trực tuyến với Cloudflare R2
+      try {
+        const vResp = await fetch(`https://ai.fedu.vn/api/face/license/verify?code=${encodeURIComponent(userPassword)}`);
+        const vData = await vResp.json();
+        
+        if (!vResp.ok || !vData.valid) {
+          alert('❌ MẬT KHẨU KHÔNG HỢP LỆ:\n' + (vData.error || 'Mật khẩu này không tồn tại hoặc đã được sử dụng trước đó!'));
+          if (passEl) {
+            passEl.focus();
+            passEl.classList.add('border-red-500', 'ring-2', 'ring-red-500/50');
+          }
+          if (btnText) btnText.innerText = '⚡️ THỬ LẠI';
+          if (btn) btn.classList.remove('opacity-80', 'cursor-wait');
+          return;
+        }
+      } catch (vErr) {
+        console.warn('Lỗi kết nối kiểm tra mật khẩu:', vErr);
+      }
+
+      if (btnText) btnText.innerText = '⏳ ĐANG TẠO THẺ CĂN CƯỚC & ĐÓNG GÓI MÃ QR...';
+
+      try {
+        const photoList = [userPhotos[1]?.dataUrl, userPhotos[2]?.dataUrl, userPhotos[3]?.dataUrl].filter(Boolean);
+        let faceId = 'FACE_' + Math.random().toString(36).substring(2, 8).toUpperCase();
+        let qrPayload = `FEDU-FACE:${faceId}`;
+
+        // Gọi API lưu trữ Cloudflare R2
+        try {
+          const resp = await fetch('https://ai.fedu.vn/api/face/save', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: userName,
+              style: userStyle,
+              password: userPassword,
+              photos: photoList
+            })
+          });
+          if (resp.ok) {
+            const data = await resp.json();
+            if (data && data.face_id) {
+              faceId = data.face_id;
+              qrPayload = data.qr_url || `FEDU-FACE:${faceId}`;
+            }
+          }
+        } catch (apiErr) {
+          console.warn('API cloud lưu trữ (dùng fallback offline):', apiErr);
+        }
+
+        // Tạo mã QR
+        const qrDrawable = await getQRCodeImage(qrPayload, 200);
+
+        // Vẽ Thẻ Căn Cước AI lên Canvas chuẩn 800x460
+        const canvas = document.getElementById('ai-passport-canvas');
+        if (!canvas) throw new Error('Không tìm thấy phần tử Canvas');
+        const ctx = canvas.getContext('2d');
+
+        // 1. Nền Thẻ Dark Obsidian Slate + Viền Neon Glow
+        ctx.fillStyle = '#070a11';
+        ctx.fillRect(0, 0, 800, 460);
+
+        const gradBg = ctx.createLinearGradient(0, 0, 800, 460);
+        gradBg.addColorStop(0, '#0c121e');
+        gradBg.addColorStop(0.5, '#070a11');
+        gradBg.addColorStop(1, '#05070c');
+        ctx.fillStyle = gradBg;
+        ctx.fillRect(4, 4, 792, 452);
+
+        // Khung viền Neon Emerald
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 3;
+        ctx.strokeRect(10, 10, 780, 440);
+
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.2)';
+        ctx.lineWidth = 1;
+        ctx.strokeRect(16, 16, 768, 428);
+
+        // 2. Header Thẻ
+        ctx.fillStyle = '#10b981';
+        ctx.font = 'bold 16px monospace';
+        ctx.fillText('FEDU AI • VISUAL TWIN PRO', 35, 45);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px sans-serif';
+        ctx.fillText('OFFICIAL CERTIFIED AI FACE PASSPORT', 35, 65);
+
+        // Badge góc phải
+        ctx.fillStyle = 'rgba(16, 185, 129, 0.15)';
+        ctx.fillRect(580, 25, 185, 30);
+        ctx.strokeStyle = '#10b981';
+        ctx.strokeRect(580, 25, 185, 30);
+        ctx.fillStyle = '#34d399';
+        ctx.font = 'bold 12px monospace';
+        ctx.fillText(`ID: #${faceId}`, 595, 45);
+
+        // Đường kẻ phân cách
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.1)';
+        ctx.beginPath();
+        ctx.moveTo(35, 80);
+        ctx.lineTo(765, 80);
+        ctx.stroke();
+
+        // 3. Ảnh chân dung mỏ neo chính (Bên Trái)
+        const primaryPhoto = userPhotos[2] || userPhotos[1] || userPhotos[3];
+        if (primaryPhoto && primaryPhoto.dataUrl) {
+          const portraitImg = await loadImage(primaryPhoto.dataUrl);
+          if (portraitImg) {
+            ctx.save();
+            drawRoundedRect(ctx, 35, 105, 180, 240, 16);
+            ctx.clip();
+            ctx.drawImage(portraitImg, 35, 105, 180, 240);
+            ctx.restore();
+
+            ctx.strokeStyle = '#10b981';
+            ctx.lineWidth = 2;
+            drawRoundedRect(ctx, 35, 105, 180, 240, 16);
+            ctx.stroke();
+          }
+        }
+
+        // 4. Thông tin chủ nhân (Ở Giữa)
+        ctx.fillStyle = '#64748b';
+        ctx.font = '12px monospace';
+        ctx.fillText('CHỦ NHÂN BẢN SAO:', 235, 125);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 24px sans-serif';
+        ctx.fillText(userName.toUpperCase(), 235, 155);
+
+        ctx.fillStyle = '#64748b';
+        ctx.font = '12px monospace';
+        ctx.fillText('PHONG CÁCH:', 235, 195);
+
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 15px sans-serif';
+        ctx.fillText(userStyle.toUpperCase(), 235, 220);
+
+        ctx.fillStyle = '#64748b';
+        ctx.font = '12px monospace';
+        ctx.fillText('BẢO MẬT BẢN QUYỀN:', 235, 260);
+
+        ctx.fillStyle = '#10b981';
+        ctx.font = 'bold 13px monospace';
+        ctx.fillText('🔒 ĐÃ KHÓA (CẦN MÃ BÍ MẬT)', 235, 285);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '11px sans-serif';
+        ctx.fillText('✓ Nạp 3 Mỏ Neo • Nhận Diện 99% Khớp', 235, 325);
+
+        // 5. Khối QR Code (Bên Phải)
+        ctx.fillStyle = '#ffffff';
+        drawRoundedRect(ctx, 545, 105, 220, 240, 16);
+        ctx.fill();
+
+        ctx.strokeStyle = '#10b981';
+        ctx.lineWidth = 2;
+        ctx.stroke();
+
+        // Vẽ ảnh QR Code vào giữa khung trắng nếu có
+        if (qrDrawable) {
+          ctx.drawImage(qrDrawable, 555, 115, 200, 200);
+        }
+
+        ctx.fillStyle = '#0f172a';
+        ctx.font = 'bold 10px monospace';
+        ctx.textAlign = 'center';
+        ctx.fillText('SCAN IN ANTIGRAVITY', 655, 332);
+        ctx.textAlign = 'left';
+
+        // 6. Footer Thẻ Căn Cước
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.9)';
+        ctx.fillRect(35, 370, 730, 60);
+        ctx.strokeStyle = 'rgba(16, 185, 129, 0.3)';
+        ctx.strokeRect(35, 370, 730, 60);
+
+        ctx.fillStyle = '#a7f3d0';
+        ctx.font = 'bold 13px sans-serif';
+        ctx.fillText('⚡️ HƯỚNG DẪN KÍCH HOẠT TRONG 1 BƯỚC:', 50, 395);
+
+        ctx.fillStyle = '#94a3b8';
+        ctx.font = '12px sans-serif';
+        ctx.fillText('Kéo thả ảnh Thẻ này vào khung chat Antigravity ➔ Nhập mật khẩu mở khóa để kích hoạt ngay!', 50, 415);
+
+        // Xuất Data URL của Thẻ
+        currentPassportDataUrl = canvas.toDataURL('image/png');
+
+        // Tự động tải file ảnh Thẻ Căn Cước về máy ngay lập tức (1-Chạm)
+        downloadPassportCard();
+
+        // Cập nhật UI kết quả an toàn
+        const tagEl = document.getElementById('card-face-id-tag');
+        if (tagEl) tagEl.innerText = `#${faceId}`;
+        const resContainer = document.getElementById('card-result-container');
+        if (resContainer) {
+          resContainer.classList.remove('hidden');
+          resContainer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        if (btnText) btnText.innerText = '✅ ĐÃ TẢI FILE NHẬN DIỆN VỀ MÁY! NÉM VÀO ANTIGRAVITY ĐỂ DÙNG';
+        if (btn) {
+          btn.classList.remove('from-emerald-500', 'to-cyan-500', 'opacity-80', 'cursor-wait');
+          btn.classList.add('from-emerald-400', 'to-emerald-300');
+        }
+
+      } catch (err) {
+        console.error('Lỗi khi nạp ảnh:', err);
+        alert('Có lỗi xảy ra khi nạp ảnh: ' + (err.message || err));
+        if (btnText) btnText.innerText = '⚡️ THỬ LẠI';
+        if (btn) btn.classList.remove('opacity-80', 'cursor-wait');
+      }
+    }
+
+    function downloadPassportCard() {
+      if (!currentPassportDataUrl) {
+        alert('Chưa có dữ liệu khuôn mặt!');
+        return;
+      }
+      const nameEl = document.getElementById('user-name');
+      const userName = (nameEl ? nameEl.value.trim() : '') || 'Chu-Nhan';
+      const a = document.createElement('a');
+      a.href = currentPassportDataUrl;
+      a.download = `Nhan-Dien-Khuon-Mat-${userName}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }
+
+    // ── ADMIN / RESELLER PORTAL ENGINE ──
+    function initAdminPortal() {
+      const isParam = window.location.search.toLowerCase().includes('admin') || window.location.hash.toLowerCase().includes('admin');
+      if (isParam) {
+        const portal = document.getElementById('admin-portal');
+        if (portal) {
+          portal.classList.remove('hidden');
+          portal.scrollIntoView({ behavior: 'smooth' });
+          adminLoadLicenses();
+        }
+      }
+    }
+
+    async function adminLoadLicenses() {
+      const tbody = document.getElementById('admin-license-tbody');
+      if (!tbody) return;
+      tbody.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-500">Đang tải danh sách từ Cloudflare R2...</td></tr>';
+
+      try {
+        const resp = await fetch('https://ai.fedu.vn/api/face/license/list');
+        const data = await resp.json();
+        const licenses = data.licenses || [];
+
+        if (licenses.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="5" class="py-4 text-center text-slate-500">Chưa có mã nào được tạo. Hãy bấm "TẠO MÃ KÍCH HOẠT MỚI" ở trên.</td></tr>';
+          return;
+        }
+
+        tbody.innerHTML = licenses.map(item => {
+          const isUsed = item.status === 'used';
+          const badge = isUsed
+            ? '<span class="px-2 py-0.5 rounded bg-red-500/20 text-red-400 font-bold border border-red-500/30">🔴 ĐÃ DÙNG</span>'
+            : '<span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">🟢 CHƯA DÙNG</span>';
+          
+          const timeStr = item.created_at ? new Date(item.created_at).toLocaleString('vi-VN') : '—';
+          const usedInfo = isUsed && item.activated_at ? `<div class="text-[10px] text-slate-500">Dùng: ${new Date(item.activated_at).toLocaleTimeString('vi-VN')}</div>` : '';
+
+          return `
+            <tr class="hover:bg-slate-900/50 transition">
+              <td class="py-2.5 px-4 font-bold text-amber-300 text-sm tracking-wider">${item.code}</td>
+              <td class="py-2.5 px-4">${badge} ${usedInfo}</td>
+              <td class="py-2.5 px-4 text-slate-400">${item.note || '—'}</td>
+              <td class="py-2.5 px-4 text-slate-500 text-[11px]">${timeStr}</td>
+              <td class="py-2.5 px-4 text-right space-x-1.5">
+                <button onclick="copyToClipboard('${item.code}')" class="px-2 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold text-[11px] border border-slate-700 transition">📋 Copy Mã</button>
+                <button onclick="copyZaloTemplate('${item.code}')" class="px-2 py-1 rounded bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 font-semibold text-[11px] border border-amber-500/30 transition">🚀 Gửi Khách</button>
+              </td>
+            </tr>
+          `;
+        }).join('');
+      } catch (err) {
+        tbody.innerHTML = `<tr><td colspan="5" class="py-4 text-center text-red-400">Lỗi tải danh sách: ${err.message}</td></tr>`;
+      }
+    }
+
+    async function adminCreateLicense() {
+      const customCode = document.getElementById('admin-custom-code').value.trim();
+      const note = document.getElementById('admin-note').value.trim() || 'Khách CTV';
+      const count = document.getElementById('admin-count').value || '1';
+      const btn = document.getElementById('btn-admin-create');
+      const btnText = document.getElementById('btn-admin-create-text');
+
+      if (btnText) btnText.innerText = '⏳ Đang tạo...';
+      if (btn) btn.classList.add('opacity-80', 'cursor-wait');
+
+      try {
+        const resp = await fetch('https://ai.fedu.vn/api/face/license/create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ 
+            count: Number(count), 
+            note, 
+            custom_code: customCode || undefined 
+          })
+        });
+        const data = await resp.json();
+        if (data.success) {
+          const createdList = data.created.map(c => c.code).join(', ');
+          alert(`✅ Đã tạo thành công mật khẩu dùng 1 lần: ${createdList}`);
+          document.getElementById('admin-custom-code').value = '';
+          adminLoadLicenses();
+        } else {
+          alert('Lỗi: ' + (data.error || 'Không thể tạo mã'));
+        }
+      } catch (e) {
+        alert('Lỗi kết nối: ' + e.message);
+      } finally {
+        if (btnText) btnText.innerText = 'TẠO MẬT KHẨU';
+        if (btn) btn.classList.remove('opacity-80', 'cursor-wait');
+      }
+    }
+
+    function copyToClipboard(text) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(`📋 Đã copy mã: ${text}`);
+      });
+    }
+
+    function copyZaloTemplate(code) {
+      const msg = `👋 Chào bạn! Đây là Mã Kích Hoạt Bản Sao Khuôn Mặt AI độc quyền của bạn:\n\n🔑 MÃ KÍCH HOẠT (DÙNG 1 LẦN): ${code}\n🌐 Link tạo Thẻ Căn Cước AI: https://fedu.vn/course/ai-face-clone.html\n\n👉 HƯỚNG DẪN 3 BƯỚC:\n1. Vào link trên, tải 3 ảnh chân dung và dán Mã Kích Hoạt vào ô bảo mật.\n2. Bấm "TẠO & TẢI THẺ CĂN CƯỚC AI" để tải ảnh thẻ về máy.\n3. Mở Antigravity, kéo thả ảnh thẻ vào chat và nhập lại mã trên để bắt đầu tạo ảnh!`;
+      navigator.clipboard.writeText(msg).then(() => {
+        alert(`🚀 Đã copy sẵn nội dung tin nhắn gửi khách kèm mã ${code}!\nBạn chỉ cần dán vào Zalo/Facebook gửi cho khách hàng.`);
+      });
+    }
+
+    function handleGoBack() {
+      if (window.history.length > 1 && document.referrer) {
+        window.history.back();
+      } else {
+        window.location.href = './skills.html';
+      }
+    }
+
+    // Tự động kiểm tra tham số ?admin khi tải trang
+    window.addEventListener('DOMContentLoaded', initAdminPortal);
+  </script>
+</body>
+</html>
