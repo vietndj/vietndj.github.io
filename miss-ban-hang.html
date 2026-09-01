@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Web Bán Hàng Tự Động | Miss Bán Hàng 1-Chạm Thu Tiền 24/7</title>
+  
+  <!-- Preconnect Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Playfair+Display:ital,wght@1,600;1,700&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet" />
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            obsidian: "#06090e",
+            cardBg: "#0e1420",
+            cardBorder: "#1e293b",
+            emeraldAccent: "#10b981",
+            tealAccent: "#14b8a6",
+            cyanAccent: "#06b6d4",
+            amberAccent: "#f59e0b",
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* ===================================================
+       TYPOGRAPHY SYSTEM (INTEGRAL REGULAR + POPPINS + ACTA)
+       - Tiêu đề ngắn (<= 8 từ): SVN-Integral CF Regular (400)
+       - Tiêu đề dài (> 8 từ): SVN-Poppins SemiBold (600) / Bold (700)
+       - Thân bài & Đọc: SVN-Poppins (400/500/600)
+       - Trích dẫn & Hook: SVN-Acta / Playfair Display (Italic)
+       - Mã code / Timestamp: JetBrains Mono
+       =================================================== */
+    @font-face {
+      font-family: "SVN-Integral";
+      src: url("./fonts/SVN-IntegralCF-Regular.ttf") format("truetype"),
+           url("./assets/fonts/SVN-IntegralCF-Regular.ttf") format("truetype"),
+           local("SVN-Integral CF Regular"), local("SVN-IntegralCF-Regular");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "SVN-Poppins";
+      src: url("./assets/fonts/SVN-Poppins-Regular.ttf") format("truetype"),
+           local("SVN-Poppins-Regular"), local("SVN-Poppins");
+      font-weight: 400;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "SVN-Poppins";
+      src: url("./assets/fonts/SVN-Poppins-Medium.ttf") format("truetype"),
+           local("SVN-Poppins-Medium");
+      font-weight: 500;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "SVN-Poppins";
+      src: url("./assets/fonts/SVN-Poppins-SemiBold.ttf") format("truetype"),
+           local("SVN-Poppins-SemiBold");
+      font-weight: 600;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "SVN-Poppins";
+      src: url("./assets/fonts/SVN-Poppins-Bold.ttf") format("truetype"),
+           local("SVN-Poppins-Bold");
+      font-weight: 700;
+      font-style: normal;
+    }
+    @font-face {
+      font-family: "SVN-Acta";
+      src: url("./fonts/SVN-Acta-BookItalic.ttf") format("truetype"),
+           local("SVN-Acta-BookItalic"), local("SVN-Acta");
+      font-weight: 400;
+      font-style: italic;
+    }
+
+    :root {
+      --font-integral: "SVN-Integral", sans-serif;
+      --font-poppins: "SVN-Poppins", "Poppins", -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-acta: "SVN-Acta", "Playfair Display", Georgia, serif;
+      --font-mono: "JetBrains Mono", monospace;
+    }
+
+    body {
+      background-color: #06090e;
+      color: #cbd5e1;
+      font-family: var(--font-poppins);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .title-short {
+      font-family: var(--font-integral);
+      font-weight: 400;
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
+    }
+
+    .title-long {
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      line-height: 1.4;
+    }
+
+    .font-quote {
+      font-family: var(--font-acta);
+      font-style: italic;
+    }
+
+    .font-mono-code {
+      font-family: var(--font-mono);
+    }
+
+    .glass-nav {
+      background: rgba(6, 9, 14, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(30, 41, 59, 0.6);
+    }
+
+    .glass-card {
+      background: rgba(14, 20, 32, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(30, 41, 59, 0.8);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(16, 185, 129, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px -10px rgba(16, 185, 129, 0.15);
+    }
+
+    .glow-emerald {
+      box-shadow: 0 0 35px -5px rgba(16, 185, 129, 0.25);
+    }
+
+    .glow-teal {
+      box-shadow: 0 0 35px -5px rgba(20, 184, 166, 0.3);
+    }
+
+    .text-gradient-emerald {
+      background: linear-gradient(135deg, #ffffff 10%, #34d399 70%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+      color: #ffffff;
+      font-family: var(--font-poppins);
+      font-weight: 600;
+      transition: all 0.25s ease;
+    }
+    .btn-primary:hover {
+      box-shadow: 0 0 25px rgba(16, 185, 129, 0.5);
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid rgba(51, 65, 85, 0.8);
+      color: #e2e8f0;
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: rgba(51, 65, 85, 0.8);
+      border-color: rgba(16, 185, 129, 0.4);
+    }
+
+    .modal-backdrop {
+      background: rgba(3, 7, 18, 0.85);
+      backdrop-filter: blur(8px);
+    }
+  </style>
+</head>
+<body class="bg-obsidian text-slate-300 min-h-screen flex flex-col justify-between selection:bg-emerald-500/30 selection:text-emerald-200">
+
+  <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-nav">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 via-teal-500 to-cyan-400 p-[1px] flex items-center justify-center shadow-lg shadow-emerald-500/20 group-hover:scale-105 transition-transform">
+          <div class="w-full h-full bg-obsidian rounded-[11px] flex items-center justify-center">
+            <span class="title-short text-sm text-emerald-400 font-bold">M</span>
+          </div>
+        </div>
+        <div class="flex flex-col">
+          <span class="title-short text-sm sm:text-base text-white tracking-wide">MISS BÁN HÀNG</span>
+          <span class="text-[10px] font-mono-code text-emerald-400 tracking-wider">FEDU COURSE HUB</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-xs font-medium text-slate-400">
+        <a href="#gia-tri-cot-loi" class="hover:text-emerald-400 transition-colors">3 Điều Bạn Mua</a>
+        <a href="#co-cau-chot-don" class="hover:text-emerald-400 transition-colors text-emerald-400 font-semibold">Cỗ Máy Chốt Đơn</a>
+        <a href="#kich-ban-wow" class="hover:text-emerald-400 transition-colors">12 Kịch Bản Wow</a>
+        <a href="#cau-lenh-1-cham" class="hover:text-emerald-400 transition-colors">5 Câu Lệnh</a>
+        <a href="#so-sanh" class="hover:text-emerald-400 transition-colors">Làm Tay vs AI</a>
+        <a href="#faq" class="hover:text-emerald-400 transition-colors">Hỏi Đáp</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="#so-huu-ngay" class="btn-primary px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-2 shadow-md">
+          <span>Sở Hữu 3.000.000đ</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="pt-32 pb-16 sm:pt-40 sm:pb-24 relative overflow-hidden">
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-gradient-to-tr from-emerald-600/15 via-teal-500/15 to-cyan-500/10 blur-[130px] -z-10 pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono-code mb-6 shadow-inner">
+        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span>TRANG WEB THU TIỀN TỰ ĐỘNG BẰNG GOOGLE GEMINI</span>
+      </div>
+
+      <h1 class="title-short text-3xl sm:text-5xl md:text-6xl text-white tracking-tight leading-[1.1] mb-6">
+        TRANG WEB BÁN HÀNG <br class="hidden sm:inline" />
+        <span class="text-gradient-emerald">TỰ ĐỘNG 24/7</span>
+      </h1>
+
+      <p class="font-quote text-lg sm:text-2xl text-slate-300 max-w-2xl mx-auto mb-8 font-normal leading-relaxed">
+        &ldquo;Trang web có sẵn mã VietQR ngân hàng. Khách quét mã chuyển khoản là tiền về tài khoản, web tự gửi bài học lúc 2h sáng mà không cần trực chat.&rdquo;
+      </p>
+
+      <div class="flex flex-wrap justify-center items-center gap-3 sm:gap-6 text-xs text-slate-400 font-medium mb-10">
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-slate-800">
+          <span class="text-emerald-400 font-bold">✓</span>
+          <span>Tự động thu tiền qua VietQR SePay</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-slate-800">
+          <span class="text-teal-400 font-bold">✓</span>
+          <span>Tự tạo thì mới tự sửa được trong 5 phút</span>
+        </div>
+        <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-900/60 border border-slate-800">
+          <span class="text-cyan-400 font-bold">✓</span>
+          <span>Đưa lên mạng miễn phí trọn đời</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#so-huu-ngay" class="btn-primary w-full sm:w-auto px-8 py-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-3 shadow-xl glow-emerald">
+          <span>Kích Hoạt Miss Bán Hàng Ngay</span>
+          <span class="px-2 py-0.5 rounded bg-white/20 text-xs font-mono-code font-bold">3.000.000đ</span>
+        </a>
+        <a href="#kich-ban-wow" class="btn-secondary w-full sm:w-auto px-6 py-4 rounded-xl text-sm font-medium flex items-center justify-center gap-2">
+          <span>Xem 12 Kịch Bản Wow</span>
+          <svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 1: 3 ĐIỀU BẠN THỰC SỰ MUA -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-950/40 relative" id="gia-tri-cot-loi">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">TÂM LÝ HỌC THỰC CHIẾN</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">3 ĐIỀU BẠN THỰC SỰ MUA</h2>
+        <p class="title-long text-sm sm:text-base text-slate-400 font-normal">
+          Chúng tôi không bán mã nguồn code phức tạp. Đây là 3 đòn bẩy giải phóng dòng tiền và công việc bán hàng của bạn:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Value 1 -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-slate-800/80">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-2xl mb-5">
+              🌙
+            </div>
+            <div class="text-xs font-mono-code text-emerald-400 mb-1">GIÁ TRỊ 01</div>
+            <h3 class="title-short text-lg text-white mb-3">DOANH THU 2H SÁNG TỰ ĐỘNG</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Khách thức đêm xem web thấy thích là quét mã VietQR mua luôn. Tiền về tài khoản ngay lập tức, web tự động gửi link bài học trong 10 giây mà không cần người trực chat.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs font-mono-code text-slate-500 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span>Bán hàng xuyên màn đêm không sót đơn</span>
+          </div>
+        </div>
+
+        <!-- Value 2 -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-emerald-500/40 relative bg-gradient-to-b from-emerald-950/20 to-slate-900/60">
+          <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-emerald-400 text-slate-950 font-bold text-[10px] font-mono-code uppercase">
+            TỰ TẠO - TỰ SỬA
+          </div>
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-teal-500/10 border border-teal-500/20 flex items-center justify-center text-2xl mb-5">
+              🛠️
+            </div>
+            <div class="text-xs font-mono-code text-emerald-400 mb-1">GIÁ TRỊ 02</div>
+            <h3 class="title-short text-lg text-white mb-3">TỰ SỬA TRONG 5 PHÚT</h3>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Chấm dứt cảnh phụ thuộc thợ làm web. Khi muốn bán sản phẩm khác hoặc đổi giá bán từ 2 triệu lên 3 triệu, bạn chỉ cần nhắn tin 1 câu cho AI là trang web tự động cập nhật ngay.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs font-mono-code text-emerald-400 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>Không tốn tiền thuê thợ mỗi lần đổi giá</span>
+          </div>
+        </div>
+
+        <!-- Value 3 -->
+        <div class="glass-card rounded-2xl p-7 flex flex-col justify-between border-slate-800/80">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-2xl mb-5">
+              💰
+            </div>
+            <div class="text-xs font-mono-code text-cyan-400 mb-1">GIÁ TRỊ 03</div>
+            <h3 class="title-short text-lg text-white mb-3">MIỄN PHÍ TRỌN ĐỜI HOSTING</h3>
+            <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Deploy 1 lệnh lên Vercel / GitHub Pages miễn phí trọn đời, gắn tên miền riêng trong 1 phút mà không tốn tiền duy trì server hàng tháng. Tiết kiệm hàng chục triệu chi phí IT.
+            </p>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-800/60 text-xs font-mono-code text-slate-500 flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
+            <span>Tiết kiệm 5-10 triệu phí thuê ngoài</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: 3 CỖ MÁY CHỐT ĐƠN TỰ ĐỘNG -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-900/40 relative" id="co-cau-chot-don">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">ĐẦU RA HÀO NHOÁNG & THỰC CHIẾN</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">
+          3 CỖ MÁY CHỐT ĐƠN TỰ ĐỘNG
+        </h2>
+        <p class="title-long text-sm sm:text-base text-slate-300 font-normal">
+          AI tự động đóng vai người viết lời chào hàng và chuyên viên thu ngân mẫn cán phục vụ bạn 24/7:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <!-- Machine 1 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800 hover:border-emerald-500/50 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-emerald-500/10 text-emerald-400 font-mono-code text-[11px] font-bold">CỖ MÁY 01 • THU TIỀN</span>
+              <span class="text-xs font-mono-code text-slate-500">Tự động 100%</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">MÃ VIETQR SEPAY TỰ ĐỘNG</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Mã QR động tự tạo theo đúng số tiền và nội dung đơn hàng. Khách quét là tiền về thẳng tài khoản ngân hàng của bạn, web tự kích hoạt đơn trong 15s.
+            </p>
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 font-mono-code text-[11px] text-slate-300 space-y-1.5 mb-4">
+              <div class="text-emerald-400 font-semibold">💳 VietQR_Payment_Engine/</div>
+              <div class="text-slate-400 pl-3">├── TPBank • 0988 52 3333</div>
+              <div class="text-slate-400 pl-3">├── Số tiền: 3.000.000đ</div>
+              <div class="text-cyan-400 pl-3">└── ⚡️ SePay Webhook Auto Verify</div>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+            <span class="text-emerald-400 font-bold">👉</span>
+            <span>Tiền về tài khoản ngay tức khắc</span>
+          </div>
+        </div>
+
+        <!-- Machine 2 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800 hover:border-emerald-500/50 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-teal-500/10 text-teal-400 font-mono-code text-[11px] font-bold">CỖ MÁY 02 • COPYWRITING</span>
+              <span class="text-xs font-mono-code text-slate-500">Thôi miên khách</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">KỊCH BẢN BÁN HÀNG 4 BƯỚC</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              AI tự phỏng vấn bạn 4 câu ngắn gọn và tự động viết toàn bộ tiêu đề giật tít, 3 giá trị đổi đời, bảng so sánh và 15 dòng thông báo người mua.
+            </p>
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 font-mono-code text-[11px] text-slate-300 space-y-1.5 mb-4">
+              <div class="text-teal-400 font-semibold">✍️ Copywriting_Engine/</div>
+              <div class="text-slate-400 pl-3">├── Hero_Headline_Hook.txt</div>
+              <div class="text-slate-400 pl-3">├── 3_Gia_Tri_Doi_Doi.txt</div>
+              <div class="text-amber-400 pl-3">└── 👥 15_Live_Social_Proof.json</div>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+            <span class="text-emerald-400 font-bold">👉</span>
+            <span>Khỏi cắn bút nghĩ câu chào hàng</span>
+          </div>
+        </div>
+
+        <!-- Machine 3 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800 hover:border-emerald-500/50 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="px-2.5 py-1 rounded bg-cyan-500/10 text-cyan-400 font-mono-code text-[11px] font-bold">CỖ MÁY 03 • BÁO ĐƠN</span>
+              <span class="text-xs font-mono-code text-slate-500">Ting Ting 24/7</span>
+            </div>
+            <h3 class="title-short text-lg text-white mb-2">BÁO CÁO TELEGRAM TỨC THÌ</h3>
+            <p class="text-xs text-slate-400 leading-relaxed mb-4">
+              Mỗi khi có đơn hàng mới thanh toán thành công, bot Telegram bắn thông báo tên khách, số điện thoại và số tiền về điện thoại của bạn trong 5 giây.
+            </p>
+            <div class="p-3.5 rounded-xl bg-slate-950/80 border border-slate-800 font-mono-code text-[11px] text-slate-300 space-y-1.5 mb-4">
+              <div class="text-cyan-400 font-semibold">📱 Telegram_Alert_Bot/</div>
+              <div class="text-slate-400 pl-3">├── 🔔 Đơn mới: 3.000.000đ</div>
+              <div class="text-slate-400 pl-3">├── Khách: Anh Nam (0988xxx)</div>
+              <div class="text-emerald-400 pl-3">└── ✅ Đã tự gửi bài học lúc 02:15</div>
+            </div>
+          </div>
+          <div class="text-xs text-slate-400 flex items-center gap-1.5 font-medium">
+            <span class="text-emerald-400 font-bold">👉</span>
+            <span>Quản trị dòng tiền thảnh thơi</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Banner Callout -->
+      <div class="p-6 rounded-2xl bg-gradient-to-r from-emerald-950/40 via-teal-950/30 to-slate-900/60 border border-emerald-500/30 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-emerald-400/20 text-emerald-300 flex items-center justify-center text-2xl flex-shrink-0">
+            🚀
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-white">Bạn muốn có trang web bán sản phẩm của riêng mình ngay hôm nay?</div>
+            <div class="text-xs text-slate-400">Không cần biết code. Nhắn lệnh bằng tiếng Việt đời thường, AI tự làm thay từ A đến Z.</div>
+          </div>
+        </div>
+        <a href="#so-huu-ngay" class="btn-primary px-6 py-2.5 rounded-xl text-xs font-semibold whitespace-nowrap shadow-md">
+          Tạo Trang Ngay
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 12 TÌNH HUỐNG THỰC TẾ (KỊCH BẢN WOW) -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-950/60 relative" id="kich-ban-wow">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">12 TÌNH HUỐNG THỰC TẾ</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">KỊCH BẢN TỰ NHIÊN DÙNG LÀ "WOW"</h2>
+        <p class="title-long text-sm sm:text-base text-slate-300 font-normal">
+          Xem cách Miss Bán Hàng giải phóng toàn bộ quy trình bán hàng và chốt đơn online cho bạn:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <!-- Scenario 1 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-emerald-400 font-bold">TÌNH HUỐNG 01</span>
+            <span class="text-[11px] font-mono-code text-slate-500">THU TIỀN ĐÊM</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">KHÁCH MUA LÚC 2H SÁNG KHI BẠN ĐANG NGỦ</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Đang ngủ say, khách lướt thấy video của bạn và bấm vào web. Khách quét mã VietQR chuyển 3 triệu, 10 giây sau tiền về tài khoản, web tự động gửi tài liệu cho khách mà không cần bạn phải dậy trực chat.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-emerald-300">
+            🌙 Tiền về tài khoản lúc 02:15 sáng — Sáng dậy thấy tiền đã nằm trong ví.
+          </div>
+        </div>
+
+        <!-- Scenario 2 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-teal-400 font-bold">TÌNH HUỐNG 02</span>
+            <span class="text-[11px] font-mono-code text-slate-500">SỬA GIÁ 3 PHÚT</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">ĐỔI GIÁ TỪ 2 TRIỆU LÊN 3 TRIỆU TRONG 3 PHÚT</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Muốn tăng giá bán hoặc chạy chương trình ưu đãi tuần mới. Thay vì gọi thợ làm web chờ 2 ngày, bạn chỉ nhắn 1 câu: <em>"Đổi giá bán thành 3.000.000đ và cập nhật lại bảng giá"</em>. Web tự động đổi trên toàn bộ trang trong 3 phút.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-teal-300">
+            ⚡️ Tự tạo thì mới tự sửa được — Chủ động 100% kinh doanh.
+          </div>
+        </div>
+
+        <!-- Scenario 3 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-cyan-400 font-bold">TÌNH HUỐNG 03</span>
+            <span class="text-[11px] font-mono-code text-slate-500">RA MẮT NHANH</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">CÓ Ý TƯỞNG MỚI: 10 PHÚT CÓ NGAY WEB BÁN HÀNG</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Vừa nghĩ ra một dịch vụ tư vấn hoặc một gói kỹ năng mới. Trả lời 4 câu hỏi ngắn của AI, 10 phút sau bạn đã có một đường link web bán hàng chuyên nghiệp để gửi cho khách hoặc chạy quảng cáo.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-cyan-300">
+            🚀 Test ý tưởng bán hàng ngay trong ngày mà không tốn chi phí.
+          </div>
+        </div>
+
+        <!-- Scenario 4 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-amber-400 font-bold">TÌNH HUỐNG 04</span>
+            <span class="text-[11px] font-mono-code text-slate-500">RẢNH TAY DU LỊCH</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">ĐI CÀ PHÊ / DU LỊCH VẪN NHẬN BÁO ĐƠN TELEGRAM</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Bạn đang ngồi cà phê với bạn bè hoặc đi du lịch. Điện thoại rung lên thông báo bot Telegram: <em>"Chúc mừng! Khách hàng Mai Linh vừa thanh toán 3.000.000đ thành công"</em>. Mọi khâu giao hàng đều tự động.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-amber-300">
+            ☕️ Đi chơi thảnh thơi mà công việc kinh doanh vẫn vận hành trơn tru.
+          </div>
+        </div>
+
+        <!-- Scenario 5 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-purple-400 font-bold">TÌNH HUỐNG 05</span>
+            <span class="text-[11px] font-mono-code text-slate-500">TẠO KHAN HIẾM</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">ĐỒNG HỒ ĐẾM NGƯỢC THÚC GIỤC KHÁCH CHỐT ĐƠN</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Khách vào xem web thường hay chần chừ rời đi. Web tích hợp sẵn đồng hồ đếm ngược ưu đãi và số lượng giới hạn, tạo cảm giác cấp bách giúp khách hàng bấm quét mã VietQR thanh toán ngay.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-purple-300">
+            ⏳ Tăng tỷ lệ chuyển đổi chốt đơn gấp 2 lần so với web thông thường.
+          </div>
+        </div>
+
+        <!-- Scenario 6 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-rose-400 font-bold">TÌNH HUỐNG 06</span>
+            <span class="text-[11px] font-mono-code text-slate-500">HIỆU ỨNG ĐÁM ĐÔNG</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">POPUP 15 KHÁCH MUA GẦN NHẤT TĂNG ĐỘ TIN CẬY</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Khi khách đang đọc thông tin, góc màn hình liên tục hiển thị thông báo: <em>"Anh Tuấn (Hà Nội) vừa đăng ký thành công cách đây 4 phút"</em>. Hiệu ứng đám đông giúp xóa tan mọi nghi ngờ của người mua mới.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-rose-300">
+            👥 Bằng chứng xã hội (Social Proof) kích thích tâm lý mua theo.
+          </div>
+        </div>
+
+        <!-- Scenario 7 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-indigo-400 font-bold">TÌNH HUỐNG 07</span>
+            <span class="text-[11px] font-mono-code text-slate-500">ĐỔI GIAO DIỆN</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">ĐỔI GIAO DIỆN SANG TỐI (DARK SLATE) TRONG 1 LỆNH</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Muốn đổi phong cách web từ nền trắng trang nhã sang nền đen Dark Mode sang xịn theo phong cách công nghệ cao. Chỉ cần ra lệnh, AI tự động thay đổi bảng màu CSS và font chữ chuẩn chỉ trong 30 giây.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-indigo-300">
+            🎨 Đổi gu thiết kế tức thì theo đúng sở thích của bạn.
+          </div>
+        </div>
+
+        <!-- Scenario 8 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-lime-400 font-bold">TÌNH HUỐNG 08</span>
+            <span class="text-[11px] font-mono-code text-slate-500">ĐẬP TAN DO DỰ</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">BẢNG ĐỐI ĐẦU ĐẬP TAN 100% SỰ CHẦN CHỪ</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Khách hàng thường do dự so sánh với các giải pháp khác. Web có sẵn bảng đối đầu 2 cột: <em>"Làm thủ công vất vả vs Dùng công cụ rảnh tay"</em>, làm nổi bật sự vượt trội giúp khách không cần suy nghĩ nhiều.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-lime-300">
+            📊 Đối chiếu trực quan giúp khách hàng tự chốt sale trong đầu.
+          </div>
+        </div>
+
+        <!-- Scenario 9 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-sky-400 font-bold">TÌNH HUỐNG 09</span>
+            <span class="text-[11px] font-mono-code text-slate-500">TIẾT KIỆM CHI PHÍ</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">KHÔNG TỐN 1 ĐỒNG CHI PHÍ DUY TRÌ HOSTING</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Không giống như các nền tảng tạo web khác phải đóng 300k - 500k mỗi tháng. Trang web được triển khai lên hạ tầng đám mây toàn cầu của Vercel / GitHub Pages miễn phí trọn đời, tải trang cực nhanh.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-sky-300">
+            💵 Sở hữu vĩnh viễn, không lo phí duy trì định kỳ.
+          </div>
+        </div>
+
+        <!-- Scenario 10 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-pink-400 font-bold">TÌNH HUỐNG 10</span>
+            <span class="text-[11px] font-mono-code text-slate-500">TÊN MIỀN RIÊNG</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">GẮN TÊN MIỀN RIÊNG (.VN / .COM) TRONG 1 PHÚT</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Bạn đã có tên miền riêng như `tenshop.vn` hay `khoahoc.com`. Miss Bán Hàng hướng dẫn kết nối tên miền trong 1 phút, không cần biết thuật ngữ DNS hay cấu hình máy chủ rắc rối.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-pink-300">
+            🌐 Xây dựng thương hiệu chuyên nghiệp trên tên miền chính chủ.
+          </div>
+        </div>
+
+        <!-- Scenario 11 -->
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-orange-400 font-bold">TÌNH HUỐNG 11</span>
+            <span class="text-[11px] font-mono-code text-slate-500">NHÂN BẢN NHIỀU TRANG</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">BÁN 5 SẢN PHẨM TRÊN 5 TRANG RIÊNG BIỆT</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
+            Mỗi sản phẩm bạn tạo 1 trang landing page riêng để tối ưu tỷ lệ chuyển đổi cho từng nhóm khách. Chỉ cần 1 lệnh nhân bản: <em>"Tạo trang mới cho sản phẩm B"</em> là có ngay web bán hàng mới trong 5 phút.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800/80 text-xs font-mono-code text-orange-300">
+            📦 Mở rộng quy mô kinh doanh không giới hạn số lượng trang.
+          </div>
+        </div>
+
+        <!-- Scenario 12: Security -->
+        <div class="glass-card rounded-2xl p-6 border-emerald-500/50 bg-gradient-to-b from-emerald-950/20 to-slate-900/80">
+          <div class="flex items-center justify-between mb-3">
+            <span class="text-xs font-mono-code text-emerald-400 font-bold">TÌNH HUỐNG 12</span>
+            <span class="text-[11px] font-mono-code text-emerald-300">BẢO MẬT & DÒNG TIỀN</span>
+          </div>
+          <h3 class="title-short text-base text-white mb-2">"DỮ LIỆU & TIỀN ĐI ĐÂU?" — 100% VỀ TÀI KHOẢN CỦA BẠN</h3>
+          <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-4">
+            Không giữ tiền qua ví trung gian, không chiết khấu phần trăm doanh thu. 100% tiền khách chuyển khoản đi thẳng vào tài khoản ngân hàng chính chủ của bạn qua hệ thống liên ngân hàng Napas.
+          </p>
+          <div class="p-3 rounded-lg bg-slate-950 border border-emerald-500/30 text-xs font-mono-code text-emerald-300">
+            🔒 Bảo mật tuyệt đối — Bạn nắm toàn quyền kiểm soát dòng tiền 100%.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: 5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-900/40 relative" id="cau-lenh-1-cham">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">THAO TÁC CỰC KỲ ĐƠN GIẢN</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">5 CÂU LỆNH 1-CHẠM TIẾNG VIỆT</h2>
+        <p class="title-long text-sm sm:text-base text-slate-400 font-normal">
+          Bạn chỉ việc nhắn tin bằng tiếng Việt đời thường cho AI, mọi việc kỹ thuật bên dưới tự động vận hành:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <div class="lg:col-span-5 space-y-2.5" id="cmd-buttons">
+          <button onclick="showCommand(1)" id="cmd-btn-1" class="w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-900/90 border-emerald-500/50 text-white shadow-md">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-mono-code text-xs flex items-center justify-center font-bold">1</span>
+              <span class="text-xs sm:text-sm font-medium">Tạo trang web bán hàng mới</span>
+            </div>
+            <span class="text-emerald-400 text-xs">➔</span>
+          </button>
+
+          <button onclick="showCommand(2)" id="cmd-btn-2" class="w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-950/50 border-slate-800 text-slate-400 hover:text-slate-200">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono-code text-xs flex items-center justify-center font-bold">2</span>
+              <span class="text-xs sm:text-sm font-medium">Đổi giá bán & ưu đãi trên web</span>
+            </div>
+            <span class="text-slate-600 text-xs">➔</span>
+          </button>
+
+          <button onclick="showCommand(3)" id="cmd-btn-3" class="w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-950/50 border-slate-800 text-slate-400 hover:text-slate-200">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono-code text-xs flex items-center justify-center font-bold">3</span>
+              <span class="text-xs sm:text-sm font-medium">Thay ảnh mockup & banner sản phẩm</span>
+            </div>
+            <span class="text-slate-600 text-xs">➔</span>
+          </button>
+
+          <button onclick="showCommand(4)" id="cmd-btn-4" class="w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-950/50 border-slate-800 text-slate-400 hover:text-slate-200">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono-code text-xs flex items-center justify-center font-bold">4</span>
+              <span class="text-xs sm:text-sm font-medium">Thêm 15 popup khách mua gần nhất</span>
+            </div>
+            <span class="text-slate-600 text-xs">➔</span>
+          </button>
+
+          <button onclick="showCommand(5)" id="cmd-btn-5" class="w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-950/50 border-slate-800 text-slate-400 hover:text-slate-200">
+            <div class="flex items-center gap-3">
+              <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono-code text-xs flex items-center justify-center font-bold">5</span>
+              <span class="text-xs sm:text-sm font-medium">Deploy web lên mạng trong 30s</span>
+            </div>
+            <span class="text-slate-600 text-xs">➔</span>
+          </button>
+        </div>
+
+        <div class="lg:col-span-7">
+          <div class="glass-card rounded-2xl p-6 border-slate-800 bg-slate-950/90 h-full flex flex-col justify-between" id="cmd-display-box">
+            <div>
+              <div class="flex items-center justify-between pb-3 mb-4 border-b border-slate-800 text-xs font-mono-code">
+                <span class="text-emerald-400 font-semibold" id="cmd-title">Cách 1 • Tạo trang web bán hàng mới</span>
+                <span class="text-slate-500">Gemini 3.7 Core</span>
+              </div>
+              
+              <div class="p-3.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs sm:text-sm text-slate-200 mb-4 flex items-start gap-2.5">
+                <span class="text-emerald-400 font-bold">👤 Bạn:</span>
+                <span class="font-quote text-emerald-200" id="cmd-user-prompt">"Tạo cho tôi 1 trang web bán gói Thư Ký Zalo giá 3 triệu, thu tiền qua VietQR TPBank"</span>
+              </div>
+
+              <div class="p-4 rounded-xl bg-slate-950 border border-slate-800 text-xs leading-relaxed" id="cmd-ai-output">
+                <div class="text-xs text-emerald-400 font-mono-code mb-2">⚡️ ĐÃ TỰ ĐỘNG SINH NỘI DUNG & TẠO WEB BÁN HÀNG:</div>
+                <p class="text-slate-300 mb-3">Đã hoàn tất cấu trúc trang bán hàng cho gói <strong>Thư Ký Zalo 1-Chạm</strong>:</p>
+                <div class="space-y-1.5 font-mono-code text-[11px] text-slate-400 mb-3">
+                  <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+                    <span>1. Tiêu đề Hook:</span>
+                    <span class="text-emerald-400">"Một Câu Lệnh • Kho Tư Liệu Vĩnh Cửu"</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+                    <span>2. Giá bán & VietQR:</span>
+                    <span class="text-cyan-400">3.000.000đ (TPBank 0988523333)</span>
+                  </div>
+                  <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+                    <span>3. Thông báo Telegram:</span>
+                    <span class="text-amber-400">Tự động báo đơn qua Bot NOVA-CORE</span>
+                  </div>
+                </div>
+                <div class="text-[11px] text-slate-400">
+                  🌐 Link trang web: <code class="text-emerald-300">https://fedu.vn/course/tro-ly-zalo-ranh-tay.html</code>
+                </div>
+              </div>
+            </div>
+
+            <div class="mt-4 pt-3 border-t border-slate-800/80 flex items-center justify-between text-[11px] font-mono-code text-slate-500">
+              <span>Thời gian xử lý: ~2.5 giây</span>
+              <span class="text-emerald-400 font-bold">100% Sẵn Sàng Nhận Tiền</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: SO SÁNH THỰC TẾ -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-950/60 relative" id="so-sanh">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">SO SÁNH THỰC TẾ</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">THUÊ THỢ LÀM WEB VS. MISS BÁN HÀNG AI</h2>
+        <p class="title-long text-sm sm:text-base text-slate-400 font-normal">
+          Sự khác biệt giữa việc tốn kém phụ thuộc bên ngoài và tự chủ cỗ máy kinh doanh của mình:
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="glass-card rounded-2xl p-7 border-red-500/30 bg-gradient-to-b from-red-950/10 to-slate-950/60">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center font-bold text-sm">
+              ✕
+            </div>
+            <div>
+              <h3 class="title-short text-base text-white">THUÊ THỢ CODE & NỀN TẢNG NGOÀI</h3>
+              <div class="text-xs font-mono-code text-red-400">Tốn kém & Phụ thuộc</div>
+            </div>
+          </div>
+          <div class="space-y-4 text-xs sm:text-sm text-slate-400">
+            <div class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold">✕</span>
+              <span>Chi phí 5 - 10 triệu cho 1 trang web đơn giản, tốn thêm 300k - 500k tiền hosting hàng tháng.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold">✕</span>
+              <span>Mỗi lần muốn sửa giá hay đổi câu chữ phải gọi thợ, chờ đợi 2-3 ngày và tốn thêm tiền công.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold">✕</span>
+              <span>Không biết code thì chịu chết, web lỗi không biết kêu ai, mất khách lúc nửa đêm.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold">✕</span>
+              <span>Tự ngồi cắn bút viết văn bán hàng cả tuần mà đọc vẫn sáo rỗng, không ai mua.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-red-400 font-bold">✕</span>
+              <span>Khách chuyển khoản phải ngồi canh chụp màn hình đối soát thủ công rất mệt mỏi.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card rounded-2xl p-7 border-emerald-500/50 bg-gradient-to-b from-emerald-950/20 to-slate-900/80 relative shadow-xl glow-emerald">
+          <div class="absolute -top-3 right-6 px-3 py-0.5 rounded-full bg-gradient-to-r from-emerald-400 to-teal-400 text-slate-950 font-bold text-[10px] font-mono-code uppercase">
+            TỰ CHỦ 100%
+          </div>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold text-sm">
+              ✓
+            </div>
+            <div>
+              <h3 class="title-short text-base text-white">MISS BÁN HÀNG TỰ ĐỘNG</h3>
+              <div class="text-xs font-mono-code text-emerald-400">Tự tạo - Tự sửa - Tiền về tài khoản</div>
+            </div>
+          </div>
+          <div class="space-y-4 text-xs sm:text-sm text-slate-200">
+            <div class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Chi phí trọn gói 3.000.000đ dùng mãi mãi, miễn phí hosting và máy chủ trọn đời.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Muốn đổi giá hay đổi sản phẩm chỉ cần nhắn 1 câu chat, web tự cập nhật sau 5 phút.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Tự tạo thì mới tự sửa được — Hoàn toàn làm chủ công việc kinh doanh của mình.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>AI tự động viết toàn bộ lời chào hàng thôi miên sau 4 câu phỏng vấn ngắn gọn.</span>
+            </div>
+            <div class="flex items-start gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Tích hợp sẵn VietQR SePay tự động thu tiền 24/7 và gửi link bài học ngay lập tức.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: SỞ HỮU TRỌN GÓI -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-900/60 relative overflow-hidden" id="so-huu-ngay">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gradient-to-tr from-emerald-600/15 to-teal-600/15 blur-[140px] -z-10 pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="glass-card rounded-3xl p-8 sm:p-12 border-emerald-500/40 relative shadow-2xl glow-emerald bg-gradient-to-b from-slate-900/90 to-obsidian">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs font-mono-code mb-4">
+            💎 TRỌN GÓI BÀN GIAO & CÀI ĐẶT 1-SHOT
+          </div>
+          <h2 class="title-short text-3xl sm:text-4xl text-white mb-4">
+            SỞ HỮU MISS BÁN HÀNG TỰ ĐỘNG
+          </h2>
+          <p class="title-long text-xs sm:text-sm text-slate-300 font-normal">
+            Bàn giao toàn bộ bộ mã nguồn web bán hàng mẫu, công cụ tự động viết nội dung và kết nối VietQR SePay tự động, sử dụng vĩnh viễn trên tài khoản của bạn.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mb-10 pb-8 border-b border-slate-800">
+          <div class="space-y-3.5 text-xs sm:text-sm text-slate-300">
+            <div class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Bàn giao toàn bộ Template Web Bán Hàng chuẩn Mobile-First.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Công cụ AI tự viết kịch bản bán hàng (Copywriting) sau 4 bước.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Tích hợp sẵn Cổng thanh toán VietQR SePay xác nhận tự động.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Kết nối Bot Telegram báo đơn nổ ting ting 24/7.</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <span class="text-emerald-400 font-bold">✓</span>
+              <span>Hướng dẫn gắn tên miền riêng miễn phí trọn đời (Vercel/GitHub).</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-slate-950/80 border border-slate-800 text-center flex flex-col items-center justify-center">
+            <div class="text-xs font-mono-code text-slate-400 uppercase tracking-wider mb-1">HỌC PHÍ TRỌN GÓI</div>
+            <div class="flex items-baseline justify-center gap-2 mb-2">
+              <span class="title-short text-4xl sm:text-5xl text-gradient-emerald font-bold">3.000.000đ</span>
+            </div>
+            <div class="text-xs text-slate-400 font-mono-code mb-6">/ tài khoản sử dụng trọn đời</div>
+
+            <button onclick="openPaymentModal()" class="btn-primary w-full py-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 shadow-lg glow-emerald">
+              <span>Đăng Ký & Quét Mã QR Nhận Ngay</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+              </svg>
+            </button>
+            <div class="text-[11px] text-slate-500 font-mono-code mt-3">
+              ⚡️ Xác nhận thanh toán tự động qua SePay 24/7
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400 font-mono-code">
+          <div class="flex items-center gap-1.5">
+            <span class="text-emerald-400">🛡️</span>
+            <span>100% Tiền về tài khoản chính chủ</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-teal-400">🔒</span>
+            <span>Miễn phí hosting trọn đời</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="text-cyan-400">⚡️</span>
+            <span>Triển khai web trong 10 phút</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: HỎI ĐÁP THƯỜNG GẶP -->
+  <section class="py-16 sm:py-24 border-t border-slate-800/80 bg-slate-950/40 relative" id="faq">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <div class="text-xs font-mono-code text-emerald-400 uppercase tracking-wider mb-2">GIẢI ĐÁP THẮC MẮC</div>
+        <h2 class="title-short text-2xl sm:text-4xl text-white mb-4">HỎI ĐÁP THƯỜNG GẶP</h2>
+      </div>
+
+      <div class="space-y-4">
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <h3 class="title-short text-sm sm:text-base text-white mb-2">1. Tôi không biết lập trình / viết code có tự làm web được không?</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Dễ dàng 100%! Bạn chỉ cần trả lời 4 câu hỏi bằng tiếng Việt về sản phẩm của mình, AI sẽ tự động viết toàn bộ câu chữ, tạo trang web và đưa lên mạng. Bạn không cần chạm vào một dòng code nào.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <h3 class="title-short text-sm sm:text-base text-white mb-2">2. Tiền khách hàng chuyển khoản sẽ về đâu?</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            100% tiền khách hàng thanh toán sẽ về thẳng tài khoản ngân hàng chính chủ của bạn (TPBank, Vietcombank, MBBank...). Hệ thống không giữ tiền hay chiết khấu bất kỳ đồng nào của bạn.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <h3 class="title-short text-sm sm:text-base text-white mb-2">3. Sau này tôi muốn đổi giá bán hoặc đổi sản phẩm thì làm thế nào?</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Bạn chỉ cần nhắn tin cho AI: "Đổi giá bán thành 3 triệu và thay ảnh sản phẩm mới". AI sẽ tự động sửa toàn bộ trang web và cập nhật lên mạng trong 5 phút mà không cần thuê thợ.
+          </p>
+        </div>
+
+        <div class="glass-card rounded-2xl p-6 border-slate-800">
+          <h3 class="title-short text-sm sm:text-base text-white mb-2">4. Duy trì trang web này có mất phí hàng tháng không?</h3>
+          <p class="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            Hoàn toàn KHÔNG mất phí duy trì! Trang web được lưu trữ trên nền tảng đám mây miễn phí của Vercel / GitHub Pages. Bạn sở hữu trọn đời mà không tốn tiền thuê hosting hàng tháng.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="py-12 border-t border-slate-800/80 bg-obsidian text-center text-xs text-slate-500 font-mono-code">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        © 2026 FEDU COURSE HUB • THẦY NGUYỄN ĐỨC VIỆT
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#gia-tri-cot-loi" class="hover:text-emerald-400 transition-colors">3 Điều Bạn Mua</a>
+        <a href="#co-cau-chot-don" class="hover:text-emerald-400 transition-colors">Cỗ Máy Chốt Đơn</a>
+        <a href="#kich-ban-wow" class="hover:text-emerald-400 transition-colors">12 Kịch Bản</a>
+        <a href="#so-huu-ngay" class="hover:text-emerald-400 transition-colors text-emerald-400">Đăng Ký</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- PAYMENT MODAL -->
+  <div id="paymentModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 modal-backdrop hidden">
+    <div class="glass-card rounded-3xl max-w-md w-full p-6 sm:p-8 border-emerald-500/50 bg-slate-900/95 relative shadow-2xl">
+      <button onclick="closePaymentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-lg font-mono-code">
+        ✕
+      </button>
+
+      <div class="text-center mb-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-xs font-mono-code mb-2">
+          ⚡️ THANH TOÁN TỰ ĐỘNG 24/7
+        </div>
+        <h3 class="title-short text-xl text-white">SỞ HỮU MISS BÁN HÀNG TỰ ĐỘNG</h3>
+        <p class="text-xs text-slate-400 mt-1">Quét mã VietQR để mở khóa toàn bộ bài học & source code</p>
+      </div>
+
+      <div class="p-4 rounded-2xl bg-white flex flex-col items-center justify-center mb-4">
+        <img src="https://qr.sepay.vn/img?acc=0988523333&bank=TPBank&amount=3000000&des=MISS%20BAN%20HANG" alt="VietQR Thanh Toán" class="w-48 h-48 object-contain" />
+        <div class="text-[11px] font-mono-code text-slate-800 mt-2 font-bold">
+          Nội dung: <span class="text-emerald-600">MISS BAN HANG</span>
+        </div>
+      </div>
+
+      <div class="space-y-2 text-xs font-mono-code text-slate-300 mb-6 bg-slate-950/80 p-3.5 rounded-xl border border-slate-800">
+        <div class="flex justify-between">
+          <span class="text-slate-400">Ngân hàng:</span>
+          <span class="font-bold text-white">TPBank</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Số tài khoản:</span>
+          <span class="font-bold text-emerald-400">0988 52 3333</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Chủ tài khoản:</span>
+          <span class="font-bold text-white">NGUYEN DUC VIET</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-slate-400">Số tiền:</span>
+          <span class="font-bold text-emerald-400">3.000.000đ</span>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <p class="text-[11px] text-slate-400 leading-relaxed">
+          Sau khi chuyển khoản, hệ thống tự động xác nhận trong 15-30 giây và gửi link kích hoạt qua Telegram/Zalo cho bạn.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    const commandData = {
+      1: {
+        title: "Cách 1 • Tạo trang web bán hàng mới",
+        userPrompt: "\"Tạo cho tôi 1 trang web bán gói Thư Ký Zalo giá 3 triệu, thu tiền qua VietQR TPBank\"",
+        aiResponse: `
+          <div class="text-xs text-emerald-400 font-mono-code mb-2">⚡️ ĐÃ TỰ ĐỘNG SINH NỘI DUNG & TẠO WEB BÁN HÀNG:</div>
+          <p class="text-slate-300 mb-3">Đã hoàn tất cấu trúc trang bán hàng cho gói <strong>Thư Ký Zalo 1-Chạm</strong>:</p>
+          <div class="space-y-1.5 font-mono-code text-[11px] text-slate-400 mb-3">
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>1. Tiêu đề Hook:</span>
+              <span class="text-emerald-400">"Một Câu Lệnh • Kho Tư Liệu Vĩnh Cửu"</span>
+            </div>
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>2. Giá bán & VietQR:</span>
+              <span class="text-cyan-400">3.000.000đ (TPBank 0988523333)</span>
+            </div>
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>3. Thông báo Telegram:</span>
+              <span class="text-amber-400">Tự động báo đơn qua Bot NOVA-CORE</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400">
+            🌐 Link trang web: <code class="text-emerald-300">https://fedu.vn/course/tro-ly-zalo-ranh-tay.html</code>
+          </div>
+        `
+      },
+      2: {
+        title: "Cách 2 • Đổi giá bán & ưu đãi trên web",
+        userPrompt: "\"Đổi giá trên web thành 3.000.000đ và cập nhật ưu đãi tuần này\"",
+        aiResponse: `
+          <div class="text-xs text-teal-400 font-mono-code mb-2">⚡️ ĐÃ CẬP NHẬT GIÁ BÁN & DEPLOY LÊN MẠNG:</div>
+          <p class="text-slate-300 mb-3">Đã tự động cập nhật đồng bộ toàn bộ các khối trên website:</p>
+          <div class="space-y-1.5 font-mono-code text-[11px] text-slate-400 mb-3">
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>✓ Hero CTA:</span>
+              <span class="text-emerald-400">3.000.000đ</span>
+            </div>
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>✓ Bảng giá Offer:</span>
+              <span class="text-emerald-400">3.000.000đ (Tiết kiệm 50%)</span>
+            </div>
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800 flex justify-between">
+              <span>✓ Mã VietQR:</span>
+              <span class="text-cyan-400">Cập nhật số tiền 3.000.000đ tự động</span>
+            </div>
+          </div>
+          <div class="text-[11px] text-emerald-400">
+            ✅ Đã deploy lên Vercel trong 25 giây. Khách truy cập thấy giá mới ngay lập tức!
+          </div>
+        `
+      },
+      3: {
+        title: "Cách 3 • Thay ảnh mockup & banner sản phẩm",
+        userPrompt: "\"Thay ảnh mockup sản phẩm bằng bộ ảnh avatar vest đen mới\"",
+        aiResponse: `
+          <div class="text-xs text-cyan-400 font-mono-code mb-2">🎨 ĐÃ CẬP NHẬT TOÀN BỘ HÌNH ẢNH SẢN PHẨM:</div>
+          <p class="text-slate-300 mb-3">Đã tối ưu và thay thế 3 vị trí ảnh trên trang:</p>
+          <div class="space-y-1.5 font-mono-code text-[11px] text-slate-400 mb-3">
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800">
+              <span class="text-emerald-400">✓ Ảnh Hero:</span> Avatar Doanh Nhân Vest Đen 4K
+            </div>
+            <div class="p-2 rounded bg-slate-900/80 border border-slate-800">
+              <span class="text-teal-400">✓ Thẻ Showcase:</span> Ảnh demo 3 bối cảnh thực chiến
+            </div>
+          </div>
+          <div class="text-[11px] text-slate-400">
+            ✨ Trang web đã được tối ưu tốc độ tải dưới 0.8 giây.
+          </div>
+        `
+      },
+      4: {
+        title: "Cách 4 • Thêm 15 popup khách mua gần nhất",
+        userPrompt: "\"Tạo 15 thông báo popup khách vừa chuyển khoản để tăng uy tín\"",
+        aiResponse: `
+          <div class="text-xs text-rose-400 font-mono-code mb-2">👥 ĐÃ KÍCH HOẠT LIVE SOCIAL PROOF POPUP:</div>
+          <p class="text-slate-300 mb-3">Đã nạp 15 dòng thông báo khách mua hàng chân thực theo ngành:</p>
+          <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 text-xs font-mono-code text-slate-300 space-y-1 mb-3">
+            <div>• "Anh Hùng (Hà Nội) vừa đăng ký gói 3.000.000đ cách đây 3 phút"</div>
+            <div>• "Chị Linh (TP.HCM) vừa quét mã VietQR thành công"</div>
+            <div>• "Anh Nam (Đà Nẵng) vừa nhận link kích hoạt lúc 01:45"</div>
+          </div>
+          <div class="text-[11px] text-rose-300">
+            🔥 Tăng tỷ lệ khách bấm thanh toán gấp 2.3 lần!
+          </div>
+        `
+      },
+      5: {
+        title: "Cách 5 • Deploy web lên mạng trong 30s",
+        userPrompt: "\"Đưa trang web này lên Vercel và gửi link cho tôi test thử\"",
+        aiResponse: `
+          <div class="text-xs text-emerald-400 font-mono-code mb-2">🚀 DEPLOY THÀNH CÔNG LÊN HẠ TẦNG ĐÁM MÂY:</div>
+          <p class="text-slate-300 mb-3">Trang web đã chính thức hoạt động trực tuyến toàn cầu:</p>
+          <div class="p-3 rounded-lg bg-slate-900/90 border border-slate-800 text-xs font-mono-code text-slate-300 space-y-1 mb-3">
+            <div>✓ Hạ tầng: Vercel Edge Global CDN</div>
+            <div>✓ Tốc độ tải: 98/100 Google PageSpeed</div>
+            <div>✓ SSL Bảo mật: HTTPS Xanh 100%</div>
+            <div>✓ Chi phí duy trì: <span class="text-emerald-400 font-bold">0đ trọn đời</span></div>
+          </div>
+          <div class="text-[11px] text-emerald-300 font-semibold">
+            🎉 Bạn có thể copy link gửi ngay cho khách hàng hoặc chạy quảng cáo!
+          </div>
+        `
+      }
+    };
+
+    function showCommand(id) {
+      for (let i = 1; i <= 5; i++) {
+        const btn = document.getElementById(`cmd-btn-${i}`);
+        if (i === id) {
+          btn.className = "w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-900/90 border-emerald-500/50 text-white shadow-md";
+          btn.querySelector("span:first-child").className = "w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400 font-mono-code text-xs flex items-center justify-center font-bold";
+          btn.querySelector("span:last-child").className = "text-emerald-400 text-xs";
+        } else {
+          btn.className = "w-full text-left p-4 rounded-xl transition-all flex items-center justify-between border bg-slate-950/50 border-slate-800 text-slate-400 hover:text-slate-200";
+          btn.querySelector("span:first-child").className = "w-6 h-6 rounded-full bg-slate-800 text-slate-400 font-mono-code text-xs flex items-center justify-center font-bold";
+          btn.querySelector("span:last-child").className = "text-slate-600 text-xs";
+        }
+      }
+
+      const data = commandData[id];
+      document.getElementById("cmd-title").textContent = data.title;
+      document.getElementById("cmd-user-prompt").textContent = data.userPrompt;
+      document.getElementById("cmd-ai-output").innerHTML = data.aiResponse;
+    }
+
+    function openPaymentModal() {
+      document.getElementById("paymentModal").classList.remove("hidden");
+    }
+
+    function closePaymentModal() {
+      document.getElementById("paymentModal").classList.add("hidden");
+    }
+  </script>
+</body>
+</html>
