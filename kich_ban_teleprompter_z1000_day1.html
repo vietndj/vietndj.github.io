@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"><title>Z1000 SUMMIT 2026 • Ngày 1 • Phạm Bá Nghĩa</title>
+<style>
+:root{--bg:#07080b;--card:#111318;--inner:#171a21;--border:#2a2e36;--text:#f5f7fa;--muted:#a6adb8;--gold:#f3c548;--gold2:#ffdc73;--green:#36d399;--red:#fb7185;--fs:20px}
+*{box-sizing:border-box} body{margin:0;background:radial-gradient(circle at top,#181510 0,#08090c 33%,#06070a 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;padding:10px 10px 120px;line-height:1.55} .container{max-width:760px;margin:auto}
+.tele-bar{position:sticky;top:6px;z-index:50;background:rgba(12,13,16,.94);backdrop-filter:blur(16px);border:1px solid rgba(243,197,72,.35);border-radius:16px;padding:9px 11px;margin-bottom:14px;box-shadow:0 12px 30px rgba(0,0,0,.5)}
+.tele-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px} .logo{font-weight:900;color:var(--gold);font-size:13px;letter-spacing:.5px} .tools{display:flex;gap:6px} button{font:inherit} .btn{background:#181b22;color:#fff;border:1px solid #303541;border-radius:9px;padding:6px 10px;font-size:12px;font-weight:800;cursor:pointer} .btn.active{color:#04110c;border-color:var(--green);background:var(--green)}
+.tabs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4px;background:#07080b;border:1px solid #252933;padding:3px;border-radius:11px} .tab{border:0;background:transparent;color:#9da4ae;padding:7px 3px;border-radius:8px;font-size:11.5px;font-weight:800;cursor:pointer} .tab.active{background:var(--gold);color:#171309}
+.hero{background:linear-gradient(180deg,#211d12,#111318);border:1px solid #343026;border-radius:18px;padding:18px 15px;margin-bottom:14px;position:relative;overflow:hidden} .hero:before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:linear-gradient(90deg,#f3c548,#fff0a8,#36d399)} .badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:9px} .badge{font-size:10px;font-weight:900;border:1px solid rgba(243,197,72,.35);background:rgba(243,197,72,.1);color:var(--gold2);padding:4px 7px;border-radius:6px;letter-spacing:.5px} h1{font-size:21px;margin:0 0 5px;line-height:1.3} .sub{font-size:13px;color:var(--muted);margin:0 0 12px} .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-top:1px solid #2c2d31;padding-top:9px} .stat{text-align:center;background:#0c0d10;border:1px solid #22252b;border-radius:9px;padding:7px} .stat b{display:block;color:var(--gold);font-size:13px} .stat span{color:#8f96a1;font-size:9.5px}
+.section{display:none} .section.active{display:block;animation:fade .2s ease} @keyframes fade{from{opacity:.2;transform:translateY(4px)}to{opacity:1;transform:none}}
+.prompt-list{display:flex;flex-direction:column;gap:12px} .prompt-card{background:var(--card);border:1.5px solid var(--border);border-radius:16px;padding:15px 14px;cursor:pointer;transition:.18s} .prompt-card.current-active{border-color:var(--gold);box-shadow:0 0 22px rgba(243,197,72,.2);background:linear-gradient(180deg,#262014,#111318);transform:scale(1.006)} .climax-special{border-color:var(--green)}
+.card-top-meta,.timeline-header,.broll-hint-header{display:flex;align-items:center;justify-content:space-between;gap:8px} .line-number-pill{font-size:10.5px;font-weight:900;color:var(--gold);background:rgba(243,197,72,.1);border-radius:6px;padding:4px 7px} .line-duration-pill{font-size:10px;font-weight:800;color:#ffca6b;background:rgba(255,174,67,.09);border-radius:5px;padding:3px 6px} .cue-bar{display:flex;flex-wrap:wrap;gap:5px;margin:9px 0} .cue-tag{font-size:10.5px;color:#d8dde5;background:#1a1e26;border:1px solid #2b303a;border-radius:6px;padding:3px 7px} .script-line-text{font-size:var(--fs);line-height:1.66;color:#e7eaf0;letter-spacing:-.15px} .script-line-text strong{color:var(--gold2)} .broll-hint-box{margin-top:11px;background:#090a0d;border:1px dashed rgba(243,197,72,.38);border-radius:10px;padding:9px 10px;font-size:12px;color:#c7ccd5} .broll-hint-header{font-size:10px;font-weight:900;color:var(--gold);margin-bottom:4px} .broll-shot-badge{background:rgba(243,197,72,.12);padding:2px 6px;border-radius:4px} .broll-hint-desc{line-height:1.45}
+.card-wrap{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:15px 12px;margin-bottom:15px} .title{font-size:15px;font-weight:900;margin-bottom:12px;color:#fff} .timeline-item{background:var(--inner);border:1px solid #2a2e36;border-radius:12px;padding:12px;margin-bottom:9px} .time-slot{color:var(--gold);font-size:11px;font-weight:900} .shot-code{font-size:10px;background:rgba(243,197,72,.12);color:var(--gold2);padding:3px 6px;border-radius:5px;font-weight:900} .timeline-audio{font-size:13px;margin:7px 0;color:#f0f2f5} .timeline-visual{font-size:12px;color:#b5bcc6;background:#0b0c10;border-left:3px solid var(--gold);padding:8px;border-radius:6px}
+.grid{display:grid;grid-template-columns:1fr;gap:9px} @media(min-width:620px){.grid{grid-template-columns:1fr 1fr}} .lens{background:var(--inner);border:1px solid #2c3038;border-radius:12px;padding:12px} .lens h3{font-size:13px;color:var(--gold);margin:0 0 6px} .lens p{font-size:12.5px;color:#b5bbc5;margin:0} .exercise{background:linear-gradient(135deg,rgba(243,197,72,.1),rgba(54,211,153,.07));border:1px solid rgba(243,197,72,.38);border-radius:14px;padding:14px;margin-top:12px} .exercise h3{margin:0 0 8px;color:var(--gold2);font-size:14px} .exercise ol{margin:0;padding-left:20px;color:#e5e7eb;font-size:13px} .quote{margin-top:12px;text-align:center;border:1px solid #343638;background:#0a0b0d;border-radius:13px;padding:14px;font-weight:800;color:#f8e7a6}
+.float{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);z-index:60;display:flex;align-items:center;gap:10px;background:rgba(12,13,16,.96);border:1px solid var(--gold);border-radius:28px;padding:6px 10px;box-shadow:0 10px 28px rgba(0,0,0,.55)} .counter{font-size:11px;color:var(--gold);font-weight:900;min-width:58px;text-align:center} .footer{text-align:center;color:#676d78;font-size:10px;margin-top:20px}
+</style></head><body><div class="container">
+<div class="tele-bar"><div class="tele-row"><div class="logo">⚡ Z1000 CONTENT SYSTEM • PHẠM BÁ NGHĨA</div><div class="tools"><button class="btn" onclick="changeFont(-1)">A−</button><button class="btn" onclick="changeFont(1)">A+</button><button class="btn" id="scrollBtn" onclick="toggleScroll()">▶ Cuộn</button></div></div><div class="tabs"><button class="tab active" onclick="switchTab('prompt',this)">🎙 Kịch bản</button><button class="tab" onclick="switchTab('timeline',this)">🎬 Timeline & B‑Roll</button><button class="tab" onclick="switchTab('strategy',this)">🧠 Chiến lược</button></div></div>
+<div class="hero"><div class="badges"><span class="badge">DAY 1 • Z1000 SUMMIT 2026</span><span class="badge">~10 PHÚT</span><span class="badge">43 NHỊP TELEPROMPTER</span></div><h1>CƠ HỘI SIDE HUSTLE MỚI TRONG KỶ NGUYÊN AI</h1><p class="sub">Kịch bản master Ngày 1 — phá niềm tin cũ, định nghĩa tài sản số, giới thiệu framework 3 yếu tố và giao bài tập chuẩn bị cho Ngày 2.</p><div class="stats"><div class="stat"><b>43 dòng</b><span>Nhịp quay</span></div><div class="stat"><b>3 yếu tố</b><span>Problem • Product • AI/System</span></div><div class="stat"><b>5 ngày</b><span>Summit Journey</span></div></div></div>
+<div id="prompt" class="section active"><div class="prompt-list"><div class="prompt-card" data-index="1" onclick="setActiveCard(this,1)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 01 • HOOK MỞ MÀN</span><span class="line-duration-pill">00:00–00:08</span></div>
+      <div class="cue-bar"><span class="cue-tag">👁️ Nhìn thẳng máy quay</span><span class="cue-tag">🎙️ Chậm, chắc, mở không khí</span></div>
+      <div class="script-line-text">Chào mừng bạn đến với <strong>Ngày 1 của Z1000 SUMMIT 2026.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">A-Roll cận ngực, nền tối sang trọng; logo Z1000 xuất hiện nhẹ 1 giây.</div></div>
+    </div><div class="prompt-card" data-index="2" onclick="setActiveCard(this,2)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 02 • CÂU HỎI 3 NĂM</span><span class="line-duration-pill">00:08–00:24</span></div>
+      <div class="cue-bar"><span class="cue-tag">⏸️ Dừng 1 nhịp sau câu hỏi</span><span class="cue-tag">👁️ Ánh mắt nghiêm túc</span></div>
+      <div class="script-line-text">Trước khi bắt đầu, tôi muốn bạn tự hỏi mình một câu: <strong>nếu công việc hiện tại không thay đổi trong 3 năm tới, cuộc sống của bạn sẽ trông như thế nào?</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: lịch lật nhanh 2026 → 2027 → 2028 → 2029; người ngồi trước laptop lặp lại một ngày.</div></div>
+    </div><div class="prompt-card" data-index="3" onclick="setActiveCard(this,3)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 03 • VÒNG LẶP HIỆN TẠI</span><span class="line-duration-pill">00:24–00:43</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Giọng mô tả thực tế</span><span class="cue-tag">🤲 Tay mở nhẹ, không phán xét</span></div>
+      <div class="script-line-text">Bạn vẫn đi làm cùng một số giờ mỗi ngày. Thu nhập có thể tăng một chút, nhưng phần lớn thời gian của bạn vẫn được <strong>đổi lấy tiền.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: đồng hồ, bàn làm việc, màn hình công việc, cảnh đi-về lặp lại.</div></div>
+    </div><div class="prompt-card" data-index="4" onclick="setActiveCard(this,4)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 04 • THU NHẬP DỪNG KHI BẠN DỪNG</span><span class="line-duration-pill">00:43–00:56</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Nhấn ‘dừng lại’</span><span class="cue-tag">⏸️ Ngắt nhịp cuối câu</span></div>
+      <div class="script-line-text">Nếu bạn nghỉ làm, nguồn thu nhập cũng <strong>dừng lại.</strong> Và mỗi tháng, bạn lại bắt đầu từ con số không.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Graphic đơn giản: TIME → MONEY; khi TIME = 0 thì MONEY = 0.</div></div>
+    </div><div class="prompt-card" data-index="5" onclick="setActiveCard(this,5)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 05 • ĐÃ TỪNG MUỐN BẮT ĐẦU</span><span class="line-duration-pill">00:56–01:18</span></div>
+      <div class="cue-bar"><span class="cue-tag">🤝 Giọng đồng cảm</span><span class="cue-tag">👁️ Nhìn gần camera</span></div>
+      <div class="script-line-text">Có thể bạn đã từng nghĩ đến việc kiếm thêm thu nhập. Bạn đã xem những video về kinh doanh online, bán hàng, làm nội dung, affiliate hoặc xây dựng một sản phẩm riêng. Nhưng sau một thời gian, <strong>bạn vẫn chưa bắt đầu.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: lướt nhiều video, tab trình duyệt mở dày, note ý tưởng rồi bỏ dở.</div></div>
+    </div><div class="prompt-card" data-index="6" onclick="setActiveCard(this,6)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 06 • KHÔNG PHẢI DO BẠN</span><span class="line-duration-pill">01:18–01:28</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Nói từng câu, rõ</span><span class="cue-tag">⏸️ Mỗi câu nghỉ 0.5 giây</span></div>
+      <div class="script-line-text">Không phải vì bạn không thông minh.<br><br>Không phải vì bạn thiếu tham vọng.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">A-Roll close-up. Không chèn cảnh để giữ lực câu nói.</div></div>
+    </div><div class="prompt-card" data-index="7" onclick="setActiveCard(this,7)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 07 • NIỀM TIN GIỚI HẠN</span><span class="line-duration-pill">01:28–01:52</span></div>
+      <div class="cue-bar"><span class="cue-tag">👉 Nhấn bằng ngón tay nhẹ</span><span class="cue-tag">🎙️ Tăng năng lượng</span></div>
+      <div class="script-line-text">Vấn đề là bạn đang nhìn <strong>side hustle như một công việc thứ hai.</strong> Bạn nghĩ mình cần thêm nhiều thời gian, nhiều vốn, một lượng người theo dõi lớn hoặc một ý tưởng hoàn hảo trước khi có thể bắt đầu.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Text overlay lần lượt: THỜI GIAN / VỐN / FOLLOWER / Ý TƯỞNG HOÀN HẢO.</div></div>
+    </div><div class="prompt-card" data-index="8" onclick="setActiveCard(this,8)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 08 • PHÁ NIỀM TIN</span><span class="line-duration-pill">01:52–02:00</span></div>
+      <div class="cue-bar"><span class="cue-tag">⏸️ Dừng trước câu chốt</span><span class="cue-tag">👁️ Nhìn thẳng</span></div>
+      <div class="script-line-text">Và đó chính là <strong>niềm tin đang giới hạn bạn.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Màn hình tối nhẹ; một đường gạch ngang qua 4 từ khóa vừa xuất hiện.</div></div>
+    </div><div class="prompt-card" data-index="9" onclick="setActiveCard(this,9)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 09 • ĐỊNH NGHĨA SIDE HUSTLE</span><span class="line-duration-pill">02:00–02:24</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Giọng giải thích</span><span class="cue-tag">🤲 Tay mô tả ‘tài sản’</span></div>
+      <div class="script-line-text">Side hustle đúng nghĩa không phải là làm thêm 5 hoặc 10 tiếng mỗi tuần chỉ để đổi lấy thêm một khoản tiền nhỏ. Side hustle là việc <strong>xây dựng một tài sản có khả năng tạo ra giá trị nhiều lần</strong>, ngay cả khi bạn không trực tiếp đổi từng giờ làm việc lấy tiền.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Graphic: JOB = 1 giờ → 1 lần thu nhập; ASSET = 1 lần tạo → nhiều lần giá trị.</div></div>
+    </div><div class="prompt-card" data-index="10" onclick="setActiveCard(this,10)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 10 • SỰ DỊCH CHUYỂN LỚN</span><span class="line-duration-pill">02:24–02:31</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Chậm lại</span><span class="cue-tag">👁️ Mở ý mới</span></div>
+      <div class="script-line-text">Đây là sự thay đổi lớn đang diễn ra trong <strong>nền kinh tế số.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: creator economy, thanh toán online, sản phẩm số, dashboard.</div></div>
+    </div><div class="prompt-card" data-index="11" onclick="setActiveCard(this,11)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 11 • CUỘC CHƠI NGÀY TRƯỚC</span><span class="line-duration-pill">02:31–02:55</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Kể như hồi tưởng</span><span class="cue-tag">🤲 Liệt kê theo nhịp</span></div>
+      <div class="script-line-text">Ngày trước, muốn xây dựng một sản phẩm, bạn phải là chuyên gia hàng đầu. Bạn cần thuê người nghiên cứu, thuê copywriter, thuê designer, xây dựng funnel, chạy quảng cáo và mất hàng tháng để hoàn thiện mọi thứ.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll montage: researcher / copy / design / funnel / ads / calendar nhiều tháng.</div></div>
+    </div><div class="prompt-card" data-index="12" onclick="setActiveCard(this,12)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 12 • 2026 – CUỘC CHƠI ĐÃ KHÁC</span><span class="line-duration-pill">02:55–03:05</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Nhấn mạnh 2026</span><span class="cue-tag">⚡ Nâng năng lượng</span></div>
+      <div class="script-line-text"><strong>Năm 2026, cuộc chơi đã khác.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Full-screen text: 2026 — THE LEVERAGE ERA / Kỷ nguyên đòn bẩy.</div></div>
+    </div><div class="prompt-card" data-index="13" onclick="setActiveCard(this,13)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 13 • AI = ĐỘI NGŨ MỞ RỘNG</span><span class="line-duration-pill">03:05–03:28</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Nói nhanh hơn một chút</span><span class="cue-tag">🤲 Đếm từng khả năng</span></div>
+      <div class="script-line-text">AI đang giúp một người bình thường thực hiện những công việc trước đây cần cả một đội ngũ. AI có thể hỗ trợ nghiên cứu, xây dựng nội dung, phát triển sản phẩm, viết thông điệp marketing và thiết kế quy trình bán hàng.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Screen capture giả lập AI hỗ trợ Research → Content → Product → Marketing → Sales Process.</div></div>
+    </div><div class="prompt-card" data-index="14" onclick="setActiveCard(this,14)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 14 • AI KHÔNG PHẢI NÚT LÀM GIÀU</span><span class="line-duration-pill">03:28–03:47</span></div>
+      <div class="cue-bar"><span class="cue-tag">👁️ Nghiêm túc</span><span class="cue-tag">🎙️ Hạ tone để tạo tin cậy</span></div>
+      <div class="script-line-text">Nhưng hãy hiểu đúng điều này. <strong>AI không phải nút bấm để làm giàu mà không cần nỗ lực.</strong> Nó là đòn bẩy. Nó giúp bạn làm nhanh hơn, thử nghiệm nhiều hơn và xây dựng một tài sản kinh doanh với ít nguồn lực hơn.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Visual: nút ‘Get Rich’ bị gạch bỏ → LEVERAGE xuất hiện.</div></div>
+    </div><div class="prompt-card" data-index="15" onclick="setActiveCard(this,15)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 15 • CƠ HỘI KHÔNG NẰM Ở TOOL</span><span class="line-duration-pill">03:47–03:58</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Nhấn ‘không’</span><span class="cue-tag">⏸️ Nghỉ trước ‘cơ hội’</span></div>
+      <div class="script-line-text">Cơ hội không nằm ở việc biết sử dụng một công cụ AI riêng lẻ.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: nhiều logo AI chạy qua rồi mờ đi.</div></div>
+    </div><div class="prompt-card" data-index="16" onclick="setActiveCard(this,16)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 16 • CÔNG THỨC 3 YẾU TỐ</span><span class="line-duration-pill">03:58–04:08</span></div>
+      <div class="cue-bar"><span class="cue-tag">👉 Giơ 3 ngón tay</span><span class="cue-tag">🎙️ Rõ, chắc</span></div>
+      <div class="script-line-text">Cơ hội nằm ở việc biết kết hợp <strong>ba yếu tố.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Graphic 3 vòng tròn trống chuẩn bị hiện nội dung.</div></div>
+    </div><div class="prompt-card" data-index="17" onclick="setActiveCard(this,17)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 17 • YẾU TỐ 1 – VẤN ĐỀ</span><span class="line-duration-pill">04:08–04:19</span></div>
+      <div class="cue-bar"><span class="cue-tag">☝️ Một ngón tay</span><span class="cue-tag">🎙️ Nhấn ‘vấn đề thật’</span></div>
+      <div class="script-line-text">Một: Bạn tìm ra một <strong>vấn đề thật</strong> mà thị trường muốn giải quyết.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Vòng tròn 1: PROBLEM / VẤN ĐỀ.</div></div>
+    </div><div class="prompt-card" data-index="18" onclick="setActiveCard(this,18)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 18 • YẾU TỐ 2 – SẢN PHẨM</span><span class="line-duration-pill">04:19–04:31</span></div>
+      <div class="cue-bar"><span class="cue-tag">✌️ Hai ngón tay</span><span class="cue-tag">🎙️ Nhấn trạng thái → kết quả</span></div>
+      <div class="script-line-text">Hai: Bạn xây dựng một sản phẩm giúp khách hàng đi từ <strong>trạng thái hiện tại đến một kết quả cụ thể.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Before → Product → After.</div></div>
+    </div><div class="prompt-card" data-index="19" onclick="setActiveCard(this,19)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 19 • YẾU TỐ 3 – AI + HỆ THỐNG</span><span class="line-duration-pill">04:31–04:45</span></div>
+      <div class="cue-bar"><span class="cue-tag">👌 Ba ngón tay</span><span class="cue-tag">🎙️ Tăng nhịp</span></div>
+      <div class="script-line-text">Ba: Bạn dùng <strong>AI và hệ thống</strong> để tạo, đóng gói và phân phối sản phẩm đó với tốc độ cao hơn.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Vòng tròn 3: AI + SYSTEM; 3 vòng giao nhau ở ‘ASSET’.</div></div>
+    </div><div class="prompt-card" data-index="20" onclick="setActiveCard(this,20)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 20 • MÔ HÌNH Z1000 SUMMIT</span><span class="line-duration-pill">04:45–04:55</span></div>
+      <div class="cue-bar"><span class="cue-tag">👁️ Tự tin</span><span class="cue-tag">🎙️ Giọng tuyên bố</span></div>
+      <div class="script-line-text">Đó là mô hình mà chúng ta sẽ khám phá trong <strong>Z1000 SUMMIT 2026.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Logo Z1000 Summit + framework 3 bước.</div></div>
+    </div><div class="prompt-card" data-index="21" onclick="setActiveCard(this,21)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 21 • KHÔNG THÊM 50 TRANG GHI CHÚ</span><span class="line-duration-pill">04:55–05:18</span></div>
+      <div class="cue-bar"><span class="cue-tag">🤲 Chuyển sang hướng dẫn</span><span class="cue-tag">🎙️ Thực tế, quyết liệt</span></div>
+      <div class="script-line-text">Tôi không muốn bạn rời khỏi sự kiện này với thêm 50 trang ghi chú nhưng không có hành động nào. Tôi muốn bạn hiểu cách tìm ra cơ hội phù hợp, cách kiểm tra xem thị trường có nhu cầu hay không và cách biến một ý tưởng thành một sản phẩm có thể bán được.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll: notebook dày → đóng lại → checklist 3 bước xuất hiện.</div></div>
+    </div><div class="prompt-card" data-index="22" onclick="setActiveCard(this,22)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 22 • MINH BẠCH VỀ KẾT QUẢ</span><span class="line-duration-pill">05:18–05:27</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Hạ giọng</span><span class="cue-tag">👁️ Thẳng thắn</span></div>
+      <div class="script-line-text">Tất nhiên, tôi cũng muốn nói rõ một điều.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">A-Roll giữ nguyên 100%, không B-Roll.</div></div>
+    </div><div class="prompt-card" data-index="23" onclick="setActiveCard(this,23)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 23 • KHÔNG BẢO ĐẢM CON SỐ</span><span class="line-duration-pill">05:27–05:50</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Chậm, minh bạch</span><span class="cue-tag">🤲 Không khoa trương</span></div>
+      <div class="script-line-text">Không phải ai tham gia sự kiện này cũng sẽ kiếm được một con số cụ thể. Không có mô hình nào có thể bảo đảm kết quả cho tất cả mọi người.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Text nhỏ: ‘Không có kết quả nào được bảo đảm’.</div></div>
+    </div><div class="prompt-card" data-index="24" onclick="setActiveCard(this,24)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 24 • KẾT QUẢ PHỤ THUỘC VÀO TRIỂN KHAI</span><span class="line-duration-pill">05:50–06:08</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Liệt kê có nhịp</span><span class="cue-tag">👉 Mỗi ý một nhịp tay</span></div>
+      <div class="script-line-text">Kết quả phụ thuộc vào thị trường bạn chọn, vấn đề bạn giải quyết, chất lượng sản phẩm, khả năng triển khai và mức độ nghiêm túc của bạn.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">5 yếu tố hiện lần lượt quanh chữ RESULT.</div></div>
+    </div><div class="prompt-card" data-index="25" onclick="setActiveCard(this,25)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 25 • KỸ NĂNG CÓ THỂ DÙNG NHIỀU LẦN</span><span class="line-duration-pill">06:08–06:28</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Truyền cảm hứng vừa phải</span><span class="cue-tag">👁️ Ánh mắt mở</span></div>
+      <div class="script-line-text">Nhưng nếu bạn có thể học cách nhìn ra vấn đề có giá trị, xây dựng một giải pháp rõ ràng và đưa giải pháp đó đến đúng người, bạn sẽ sở hữu <strong>một kỹ năng có thể sử dụng nhiều lần trong tương lai.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Graphic vòng lặp: Find Problem → Build Solution → Reach People → Repeat.</div></div>
+    </div><div class="prompt-card" data-index="26" onclick="setActiveCard(this,26)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 26 • ĐIỀU QUAN TRỌNG</span><span class="line-duration-pill">06:28–06:35</span></div>
+      <div class="cue-bar"><span class="cue-tag">⏸️ Nghỉ 1 nhịp</span><span class="cue-tag">🎙️ Câu ngắn, sâu</span></div>
+      <div class="script-line-text">Và đó mới là điều quan trọng.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">A-Roll close-up; text quote giữa màn hình.</div></div>
+    </div><div class="prompt-card" data-index="27" onclick="setActiveCard(this,27)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 27 • LỘ TRÌNH 5 NGÀY</span><span class="line-duration-pill">06:35–06:43</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Năng lượng trở lại</span><span class="cue-tag">🤲 Mở tay</span></div>
+      <div class="script-line-text">Trong 5 ngày tới, chúng ta sẽ đi qua một <strong>hành trình cụ thể.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline 5 ngày xuất hiện.</div></div>
+    </div><div class="prompt-card" data-index="28" onclick="setActiveCard(this,28)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 28 • NGÀY 1</span><span class="line-duration-pill">06:43–06:56</span></div>
+      <div class="cue-bar"><span class="cue-tag">☝️ Chỉ Day 1</span><span class="cue-tag">🎙️ Gọn</span></div>
+      <div class="script-line-text">Hôm nay, bạn sẽ hiểu cơ hội side hustle mới là gì và tại sao những cách cũ đang trở nên khó khăn hơn.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline highlight DAY 1 — OPPORTUNITY.</div></div>
+    </div><div class="prompt-card" data-index="29" onclick="setActiveCard(this,29)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 29 • NGÀY 2</span><span class="line-duration-pill">06:56–07:12</span></div>
+      <div class="cue-bar"><span class="cue-tag">✌️ Chỉ Day 2</span><span class="cue-tag">🎙️ Rõ mục tiêu</span></div>
+      <div class="script-line-text">Ngày 2, chúng ta sẽ nói về cách tìm ra những sản phẩm số có khả năng bán được, thay vì bắt đầu bằng một ý tưởng ngẫu nhiên mà không ai cần.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline highlight DAY 2 — PRODUCT.</div></div>
+    </div><div class="prompt-card" data-index="30" onclick="setActiveCard(this,30)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 30 • NGÀY 3</span><span class="line-duration-pill">07:12–07:23</span></div>
+      <div class="cue-bar"><span class="cue-tag">👌 Chỉ Day 3</span><span class="cue-tag">🎙️ Tăng nhịp</span></div>
+      <div class="script-line-text">Ngày 3, chúng ta sẽ tập trung vào cách tiếp cận nguồn khách hàng mới và đưa sản phẩm đến đúng người.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline highlight DAY 3 — DISTRIBUTION.</div></div>
+    </div><div class="prompt-card" data-index="31" onclick="setActiveCard(this,31)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 31 • NGÀY 4</span><span class="line-duration-pill">07:23–07:36</span></div>
+      <div class="cue-bar"><span class="cue-tag">🖐️ Nhịp tay chắc</span><span class="cue-tag">🎙️ Tông xây hệ thống</span></div>
+      <div class="script-line-text">Ngày 4, chúng ta sẽ nói về những nguyên tắc, hệ thống và tư duy cần thiết để biến một side hustle thành một hoạt động kinh doanh thật sự.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline highlight DAY 4 — SYSTEM.</div></div>
+    </div><div class="prompt-card" data-index="32" onclick="setActiveCard(this,32)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 32 • NGÀY 5</span><span class="line-duration-pill">07:36–07:49</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Chốt hành trình</span><span class="cue-tag">👁️ Tự tin</span></div>
+      <div class="script-line-text">Ngày 5, bạn sẽ có một góc nhìn rõ ràng hơn về bước tiếp theo và cách triển khai mô hình này trong hoàn cảnh của mình.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Timeline highlight DAY 5 — ACTION PLAN.</div></div>
+    </div><div class="prompt-card" data-index="33" onclick="setActiveCard(this,33)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 33 • BÀI TẬP NGÀY 1</span><span class="line-duration-pill">07:49–08:00</span></div>
+      <div class="cue-bar"><span class="cue-tag">📝 Cầm bút hoặc cuốn sổ</span><span class="cue-tag">🎙️ Chuyển sang coaching</span></div>
+      <div class="script-line-text">Nhưng trước khi kết thúc Ngày 1, tôi muốn bạn làm một <strong>bài tập rất đơn giản.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">B-Roll sổ tay mở ra, tiêu đề ‘DAY 1 EXERCISE’.</div></div>
+    </div><div class="prompt-card" data-index="34" onclick="setActiveCard(this,34)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 34 • VIẾT XUỐNG 3 ĐIỀU</span><span class="line-duration-pill">08:00–08:07</span></div>
+      <div class="cue-bar"><span class="cue-tag">👉 Giơ 3 ngón tay</span><span class="cue-tag">⏸️ Nói chậm để người xem ghi</span></div>
+      <div class="script-line-text">Hãy viết xuống ba điều:</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Full-screen số 1 / 2 / 3.</div></div>
+    </div><div class="prompt-card" data-index="35" onclick="setActiveCard(this,35)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 35 • BÀI TẬP 1 – KỸ NĂNG</span><span class="line-duration-pill">08:07–08:18</span></div>
+      <div class="cue-bar"><span class="cue-tag">☝️ Một ngón tay</span><span class="cue-tag">🎙️ Rõ</span></div>
+      <div class="script-line-text">Một kỹ năng bạn đang có hoặc từng sử dụng.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Worksheet ô số 1: KỸ NĂNG.</div></div>
+    </div><div class="prompt-card" data-index="36" onclick="setActiveCard(this,36)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 36 • BÀI TẬP 2 – VẤN ĐỀ</span><span class="line-duration-pill">08:18–08:30</span></div>
+      <div class="cue-bar"><span class="cue-tag">✌️ Hai ngón tay</span><span class="cue-tag">🎙️ Tự sự</span></div>
+      <div class="script-line-text">Một vấn đề bạn đã từng trải qua và hiểu rõ.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Worksheet ô số 2: VẤN ĐỀ ĐÃ TRẢI QUA.</div></div>
+    </div><div class="prompt-card" data-index="37" onclick="setActiveCard(this,37)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 37 • BÀI TẬP 3 – NHÓM NGƯỜI</span><span class="line-duration-pill">08:30–08:44</span></div>
+      <div class="cue-bar"><span class="cue-tag">👌 Ba ngón tay</span><span class="cue-tag">🎙️ Mở rộng</span></div>
+      <div class="script-line-text">Một nhóm người mà bạn hiểu, từng làm việc cùng hoặc có thể tiếp cận.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Worksheet ô số 3: NHÓM NGƯỜI.</div></div>
+    </div><div class="prompt-card" data-index="38" onclick="setActiveCard(this,38)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 38 • ĐỪNG TÌM Ý TƯỞNG HOÀN HẢO</span><span class="line-duration-pill">08:44–09:03</span></div>
+      <div class="cue-bar"><span class="cue-tag">🤲 Trấn an</span><span class="cue-tag">🎙️ Coaching</span></div>
+      <div class="script-line-text">Đừng cố tìm một ý tưởng hoàn hảo. Mục tiêu của bài tập này là bắt đầu nhìn vào <strong>giao điểm giữa năng lực của bạn, vấn đề của thị trường và khả năng tạo ra một kết quả cụ thể.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Venn diagram: SKILL × PROBLEM × PEOPLE = OPPORTUNITY.</div></div>
+    </div><div class="prompt-card" data-index="39" onclick="setActiveCard(this,39)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 39 • CẦU NỐI SANG NGÀY 2</span><span class="line-duration-pill">09:03–09:14</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Gợi tò mò</span><span class="cue-tag">👁️ Nhìn thẳng</span></div>
+      <div class="script-line-text">Ngày mai, chúng ta sẽ sử dụng những thông tin này để bắt đầu tìm ra hướng sản phẩm phù hợp.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Graphic DAY 1 answers → DAY 2 PRODUCT DIRECTION.</div></div>
+    </div><div class="prompt-card" data-index="40" onclick="setActiveCard(this,40)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 40 • BẠN KHÔNG CẦN…</span><span class="line-duration-pill">09:14–09:34</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Từng câu dứt khoát</span><span class="cue-tag">⏸️ Nghỉ giữa các câu</span></div>
+      <div class="script-line-text">Bạn không cần có một lượng người theo dõi lớn.<br><br>Bạn không cần bắt đầu với một đội ngũ đông người.<br><br>Bạn cũng không cần biết mọi thứ ngay từ ngày đầu tiên.</div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Text kinetic: KHÔNG CẦN FOLLOWER LỚN / ĐỘI NGŨ LỚN / BIẾT HẾT.</div></div>
+    </div><div class="prompt-card" data-index="41" onclick="setActiveCard(this,41)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 41 • BẠN CẦN…</span><span class="line-duration-pill">09:34–09:50</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Tăng lực</span><span class="cue-tag">👉 Mỗi ý một nhịp</span></div>
+      <div class="script-line-text">Bạn cần <strong>một vấn đề đủ quan trọng, một giải pháp đủ rõ ràng và sự kiên trì để kiểm chứng nó trên thị trường.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">3 từ khóa: PROBLEM / SOLUTION / VALIDATION.</div></div>
+    </div><div class="prompt-card" data-index="42" onclick="setActiveCard(this,42)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 42 • CƠ HỘI THẬT</span><span class="line-duration-pill">09:50–10:08</span></div>
+      <div class="cue-bar"><span class="cue-tag">🎙️ Chậm lại</span><span class="cue-tag">👁️ Câu kết tư tưởng</span></div>
+      <div class="script-line-text">Đó là cơ hội mà tôi muốn bạn nhìn thấy hôm nay.<br><br>Không phải cơ hội kiếm tiền nhanh.<br><br>Mà là cơ hội <strong>xây dựng một tài sản số có thể phát triển theo thời gian.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Visual: Quick Money bị gạch → DIGITAL ASSET tăng trưởng theo đồ thị.</div></div>
+    </div><div class="prompt-card climax-special" data-index="43" onclick="setActiveCard(this,43)">
+      <div class="card-top-meta"><span class="line-number-pill">DÒNG 43 • CTA NGÀY 1</span><span class="line-duration-pill">10:08–10:28</span></div>
+      <div class="cue-bar"><span class="cue-tag">📝 Chỉ xuống phần bài tập</span><span class="cue-tag">🎙️ Ấm nhưng dứt khoát</span></div>
+      <div class="script-line-text">Hãy hoàn thành bài tập, lưu lại câu trả lời của bạn và quay lại vào Ngày 2. Bởi vì nhận thức về cơ hội chỉ là bước đầu. Ngày mai, chúng ta sẽ bắt đầu <strong>biến cơ hội đó thành một hướng đi cụ thể.</strong></div>
+      <div class="broll-hint-box"><div class="broll-hint-header"><span>🎥 CẢNH / ĐỒ HỌA GỢI Ý</span><span class="broll-shot-badge">Z1000</span></div><div class="broll-hint-desc">Ending: worksheet + logo Z1000 SUMMIT 2026 + ‘HẸN GẶP Ở NGÀY 2’.</div></div>
+    </div></div></div>
+<div id="timeline" class="section"><div class="card-wrap"><div class="title">🎬 MASTER TIMELINE — NGÀY 1</div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 00:00–01:28</span><span class="shot-code">MỞ VẤN ĐỀ</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Đặt câu hỏi 3 năm → mô tả vòng lặp đổi thời gian lấy tiền → gọi tên sự trì hoãn.</div><div class="timeline-visual"><strong>Visual:</strong> A-Roll + lịch 3 năm + vòng lặp công việc + browser tabs.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 01:28–02:31</span><span class="shot-code">PHÁ NIỀM TIN</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Side hustle không phải công việc thứ hai; định nghĩa lại thành tài sản tạo giá trị nhiều lần.</div><div class="timeline-visual"><strong>Visual:</strong> Text overlay 4 rào cản + graphic JOB vs ASSET.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 02:31–03:58</span><span class="shot-code">SỰ THAY ĐỔI 2026</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Ngày trước cần cả đội ngũ; 2026 AI trở thành đòn bẩy nhưng không phải nút làm giàu.</div><div class="timeline-visual"><strong>Visual:</strong> Montage đội ngũ → AI workflow → ‘LEVERAGE’.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 03:58–04:55</span><span class="shot-code">FRAMEWORK 3 YẾU TỐ</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Problem → Product → AI + System.</div><div class="timeline-visual"><strong>Visual:</strong> 3-circle framework; highlight giao điểm ASSET.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 04:55–06:35</span><span class="shot-code">KỲ VỌNG &amp; TÍNH THỰC TẾ</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Không muốn người xem chỉ ghi chú; minh bạch không bảo đảm kết quả; nhấn kỹ năng lặp lại được.</div><div class="timeline-visual"><strong>Visual:</strong> Notebook → checklist → vòng lặp kỹ năng.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 06:35–07:49</span><span class="shot-code">ROADMAP 5 NGÀY</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Giới thiệu mục tiêu từng ngày 1–5.</div><div class="timeline-visual"><strong>Visual:</strong> Timeline 5 ngày với highlight lần lượt.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 07:49–09:14</span><span class="shot-code">BÀI TẬP NGÀY 1</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Kỹ năng + vấn đề + nhóm người → tìm giao điểm cơ hội.</div><div class="timeline-visual"><strong>Visual:</strong> Sổ tay + worksheet + Venn diagram.</div></div><div class="timeline-item"><div class="timeline-header"><span class="time-slot">⏱️ 09:14–10:28</span><span class="shot-code">CHỐT TƯ TƯỞNG &amp; CTA</span></div><div class="timeline-audio"><strong>Nội dung:</strong> Bạn không cần follower/đội ngũ/biết hết; bạn cần vấn đề, giải pháp, kiểm chứng; hẹn Ngày 2.</div><div class="timeline-visual"><strong>Visual:</strong> Kinetic text + Digital Asset graph + end card.</div></div></div></div>
+<div id="strategy" class="section">
+<div class="card-wrap"><div class="title">🧠 BÓC TÁCH CHIẾN LƯỢC NỘI DUNG</div><div class="grid">
+<div class="lens"><h3>1. MỤC TIÊU</h3><p>Chuyển người xem từ “muốn kiếm thêm tiền” sang tư duy “xây tài sản số có thể tạo giá trị nhiều lần”.</p></div>
+<div class="lens"><h3>2. BIG IDEA</h3><p>Side hustle không nên là công việc thứ hai. Nó nên là một tài sản được tạo bằng Problem → Product → AI + System.</p></div>
+<div class="lens"><h3>3. NIỀM TIN CẦN PHÁ</h3><p>“Tôi cần nhiều thời gian, vốn, follower hoặc ý tưởng hoàn hảo mới bắt đầu được.”</p></div>
+<div class="lens"><h3>4. CƠ CHẾ TIN CẬY</h3><p>Không hứa con số cụ thể; nói rõ kết quả phụ thuộc vào thị trường, chất lượng, triển khai và mức độ nghiêm túc.</p></div>
+<div class="lens"><h3>5. OPEN LOOP</h3><p>Ngày 1 chỉ giúp nhìn ra cơ hội. Câu trả lời bài tập được dùng trực tiếp để tìm hướng sản phẩm ở Ngày 2.</p></div>
+<div class="lens"><h3>6. CTA</h3><p>Không bán ngay. CTA là hoàn thành 3 câu hỏi, lưu câu trả lời và quay lại Ngày 2 — một micro‑commitment rất thấp ma sát.</p></div>
+</div>
+<div class="exercise"><h3>📝 BÀI TẬP NGÀY 1 — 3 ĐIỂM GIAO</h3><ol><li>Một kỹ năng bạn đang có hoặc từng sử dụng.</li><li>Một vấn đề bạn đã từng trải qua và hiểu rõ.</li><li>Một nhóm người bạn hiểu, từng làm việc cùng hoặc có thể tiếp cận.</li></ol></div>
+<div class="quote">PROBLEM × PRODUCT × AI + SYSTEM → DIGITAL ASSET</div></div>
+</div>
+<div class="float"><button class="btn" onclick="prevLine()">↑ Trước</button><div class="counter" id="counter">01 / 43</div><button class="btn" onclick="nextLine()">Tiếp ↓</button></div>
+<div class="footer">© 2026 Z1000 SUMMIT • PHẠM BÁ NGHĨA • Z1000 CONTENT SYSTEM</div>
+</div>
+<script>
+let current=1,total=43,fs=20,scrolling=false,timer=null;
+const cards=[...document.querySelectorAll('.prompt-card')];
+function switchTab(id,btn){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));btn.classList.add('active');}
+function setActiveCard(el,n){cards.forEach(x=>x.classList.remove('current-active'));el.classList.add('current-active');current=n;document.getElementById('counter').textContent=String(n).padStart(2,'0')+' / '+total;el.scrollIntoView({behavior:'smooth',block:'center'});}
+function nextLine(){if(current<total)setActiveCard(cards[current],current+1)} function prevLine(){if(current>1)setActiveCard(cards[current-2],current-1)}
+function changeFont(d){fs=Math.max(14,Math.min(34,fs+d));document.documentElement.style.setProperty('--fs',fs+'px')}
+function toggleScroll(){const b=document.getElementById('scrollBtn');scrolling=!scrolling;b.classList.toggle('active',scrolling);b.textContent=scrolling?'⏸ Dừng':'▶ Cuộn';if(scrolling)timer=setInterval(()=>window.scrollBy({top:1,behavior:'auto'}),45);else clearInterval(timer)}
+document.addEventListener('keydown',e=>{if(e.key==='ArrowDown'||e.key==='PageDown')nextLine();if(e.key==='ArrowUp'||e.key==='PageUp')prevLine();});
+if(cards[0])cards[0].classList.add('current-active');
+</script></body></html>
