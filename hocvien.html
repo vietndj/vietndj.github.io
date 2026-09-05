@@ -481,7 +481,7 @@
         <span>•</span>
         <span>Khóa Học Làm Video & Xây Dựng Kênh Thực Chiến</span>
       </div>
-      <div>Cập nhật lúc: <span class="font-mono text-slate-600">06/09/2026 06:50:46</span></div>
+      <div>Cập nhật lúc: <span class="font-mono text-slate-600">06/09/2026 06:51:06</span></div>
     </div>
   </footer>
 
@@ -505,7 +505,16 @@
       const saved = localStorage.getItem(STORAGE_KEY_DATA);
       if (saved) {
         try {
-          currentStudents = JSON.parse(saved);
+          const parsed = JSON.parse(saved);
+          const parsedIds = new Set(parsed.map(s => s.id));
+          const newFromInitial = INITIAL_STUDENTS.filter(s => !parsedIds.has(s.id));
+          if (newFromInitial.length > 0) {
+            // Auto-merge newly added students from server/json
+            currentStudents = [...parsed, ...newFromInitial];
+            localStorage.setItem(STORAGE_KEY_DATA, JSON.stringify(currentStudents));
+          } else {
+            currentStudents = parsed;
+          }
           document.getElementById('resetDataBtn').classList.remove('hidden');
         } catch(e) {
           console.error('Lỗi parse local data, dùng initial:', e);
@@ -522,13 +531,13 @@
     }
 
     function resetToInitialData() {
-      if (confirm('Khôi phục toàn bộ danh sách 34 học viên gốc ban đầu? Mọi chỉnh sửa cục bộ sẽ bị ghi đè.')) {
+      if (confirm(`Khôi phục toàn bộ danh sách ${INITIAL_STUDENTS.length} học viên gốc ban đầu? Mọi chỉnh sửa cục bộ sẽ bị ghi đè.`)) {
         localStorage.removeItem(STORAGE_KEY_DATA);
         currentStudents = JSON.parse(JSON.stringify(INITIAL_STUDENTS));
         document.getElementById('resetDataBtn').classList.add('hidden');
         populateFilterDropdowns();
         renderAll();
-        showToast('Đã khôi phục dữ liệu 34 học viên gốc!');
+        showToast(`Đã khôi phục dữ liệu ${INITIAL_STUDENTS.length} học viên gốc!`);
       }
     }
 
