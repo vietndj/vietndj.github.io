@@ -200,7 +200,7 @@
         <span class="text-rose-600">Thiếu SĐT/FB: <b id="stat-critical">0</b></span>
       </div>
       <div>
-        <span>Cập nhật: 06/09/2026 00:32:45</span>
+        <span>Cập nhật: 06/09/2026 00:33:45</span>
       </div>
     </div>
   </footer>
@@ -358,27 +358,27 @@
         // Student Context & Marketing Use on Card
         let consHtml = '';
         if (s.consultations && s.consultations.length > 0) {
-          const latest = s.consultations[s.consultations.length - 1];
-          consHtml = `
+          consHtml = s.consultations.map((c, idx) => `
             <div class="space-y-2 pt-1">
-              ${latest.student_inquiry || latest.recorded_info ? `
+              ${c.student_inquiry || c.recorded_info ? `
                 <div class="p-3.5 rounded-2xl bg-slate-50 border border-slate-200/80 text-xs text-slate-800 leading-relaxed font-medium">
-                  <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center gap-1.5">
-                    <span>📌</span> Bối cảnh & Thắc mắc học viên:
+                  <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1 flex items-center justify-between">
+                    <span class="flex items-center gap-1.5"><span>📌</span> Bối cảnh & Thắc mắc học viên:</span>
+                    <span class="text-[10px] text-slate-400 font-mono">${c.date || ''} • ${c.topic || ''}</span>
                   </div>
-                  ${latest.student_inquiry || latest.recorded_info}
+                  ${c.student_inquiry || c.recorded_info}
                 </div>
               ` : ''}
-              ${latest.marketing_use ? `
+              ${c.marketing_use ? `
                 <div class="p-3.5 rounded-2xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 leading-relaxed font-medium">
                   <div class="text-[11px] font-bold text-indigo-700 uppercase tracking-wider mb-1 flex items-center gap-1.5">
                     <span>💡</span> Khai thác trong Marketing:
                   </div>
-                  ${latest.marketing_use}
+                  ${c.marketing_use}
                 </div>
               ` : ''}
             </div>
-          `;
+          `).join('');
         }
 
         card.innerHTML = `
