@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEDU Student Hub — Quản Lý Dữ Liệu & Tư Vấn Học Viên</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: #0f172a; }
+    ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: #475569; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen antialiased flex flex-col">
+
+  <!-- TOP HEADER -->
+  <header class="border-b border-slate-800 bg-slate-900/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-emerald-600 to-teal-400 flex items-center justify-center shadow-lg shadow-emerald-900/20 font-black text-slate-950 text-lg">
+          F
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <h1 class="text-base sm:text-lg font-bold tracking-tight text-white">FEDU Student Hub</h1>
+            <span class="px-2 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+              Live AI Sync
+            </span>
+          </div>
+          <p class="text-xs text-slate-400">Trí tuệ tư vấn & Phân loại học viên đa ngành</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3 text-xs">
+        <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-slate-800/80 border border-slate-700/60 text-slate-300">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Đồng bộ: <b>05/09/2026 23:57:03</b></span>
+        </div>
+        <a href="https://t.me/hocvienhocvideo_bot" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-medium transition shadow-sm">
+          <span>📱 Bot Telegram</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 py-6 flex-1 w-full space-y-6">
+
+    <!-- STATS OVERVIEW -->
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3.5">
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur">
+        <span class="text-xs font-medium text-slate-400">Tổng học viên đã nạp</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-white mt-1" id="stat-total">1</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur">
+        <span class="text-xs font-medium text-emerald-400">Hồ sơ hoàn thiện</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1" id="stat-complete">0</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur">
+        <span class="text-xs font-medium text-amber-400">Cần bổ sung thông tin</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-amber-400 mt-1" id="stat-warning">0</div>
+      </div>
+      <div class="p-4 rounded-2xl bg-slate-900/60 border border-slate-800/80 backdrop-blur">
+        <span class="text-xs font-medium text-rose-400">Thiếu liên hệ SĐT/FB</span>
+        <div class="text-2xl sm:text-3xl font-extrabold text-rose-400 mt-1" id="stat-critical">0</div>
+      </div>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 space-y-3.5">
+      <!-- Search Box -->
+      <div class="relative">
+        <input 
+          type="text" 
+          id="search-input" 
+          placeholder="🔍 Tìm nhanh theo tên học viên, lớp học, vướng mắc kỹ thuật, nhận xét của Thầy Việt..."
+          class="w-full bg-slate-950 border border-slate-700/80 rounded-xl px-4 py-2.5 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-emerald-500 transition"
+        >
+      </div>
+
+      <!-- Industry Pills -->
+      <div class="flex flex-wrap items-center gap-2 pt-1" id="industry-filter-container">
+        <button 
+          onclick="filterByIndustry('all')" 
+          class="ind-filter-btn active px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-600 text-white transition shadow-sm"
+          data-ind="all"
+        >
+          Tất cả ngành (1)
+        </button>
+        <!-- Injected via JS -->
+      </div>
+    </div>
+
+    <!-- STUDENTS LIST / CARDS -->
+    <div id="students-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Injected via JS -->
+    </div>
+
+    <div id="empty-state" class="hidden p-12 text-center bg-slate-900/40 rounded-2xl border border-slate-800">
+      <div class="text-3xl mb-2">🔍</div>
+      <h3 class="text-base font-bold text-slate-300">Không tìm thấy học viên phù hợp</h3>
+      <p class="text-xs text-slate-500 mt-1">Thử thay đổi từ khóa hoặc bộ lọc ngành nghề.</p>
+    </div>
+
+  </main>
+
+  <!-- DETAIL DRAWER / MODAL -->
+  <div id="drawer-overlay" class="fixed inset-0 bg-black/70 backdrop-blur-xs z-50 hidden transition-opacity" onclick="closeDrawer()"></div>
+  <div id="drawer" class="fixed top-0 right-0 bottom-0 w-full max-w-xl bg-slate-900 border-l border-slate-800 z-50 transform translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+    <!-- Header -->
+    <div class="p-5 border-b border-slate-800 flex items-center justify-between bg-slate-900/90 sticky top-0">
+      <div>
+        <h2 id="drawer-name" class="text-lg font-bold text-white flex items-center gap-2"></h2>
+        <p id="drawer-sub" class="text-xs text-slate-400 mt-0.5"></p>
+      </div>
+      <button onclick="closeDrawer()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition">
+        ✕
+      </button>
+    </div>
+
+    <!-- Scrollable Body -->
+    <div class="flex-1 overflow-y-auto p-5 space-y-6 text-xs text-slate-300" id="drawer-body">
+      <!-- Injected via JS -->
+    </div>
+  </div>
+
+  <!-- IMAGE LIGHTBOX MODAL -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-60 hidden items-center justify-center p-4" onclick="closeLightbox()">
+    <img id="lightbox-img" class="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl" src="" alt="Enlarged preview">
+  </div>
+
+  <footer class="border-t border-slate-800 py-4 text-center text-xs text-slate-500 mt-auto">
+    FEDU Student Hub • Tối ưu siêu tốc độ qua AI • Single File Static Architecture
+  </footer>
+
+  <script>
+    const STUDENTS = [{"id": "van_anh_offline2", "name": "Vân Anh", "class": "Offline 2", "industry": "Spa", "industry_slug": "spa", "phone": null, "zalo_url": null, "facebook_url": null, "completeness_score": 60, "health_status": "warning", "missing_items": [{"field": "phone", "label": "Số điện thoại / Zalo", "severity": "critical", "hint": "Cần xin số Zalo hoặc SĐT để tiện gọi"}, {"field": "facebook_url", "label": "Link Facebook cá nhân", "severity": "critical", "hint": "Cần lưu link trang cá nhân FB"}], "reference_channels": [{"name": "Reel Lưu Diệu (Kênh mẫu Spa)", "platform": "facebook", "url": "https://www.facebook.com/share/r/1D7ksvGmTV/?mibextid=wwXIfr", "description": "Kênh phong cách video ngắn về spa bạn Vân Anh muốn đi theo (https://www.facebook.com/luu.dieu.352491/reels/)"}], "videos": [{"id": "vid_01", "title": "Video Vân Anh nháp ban đầu", "duration": "00:45", "local_path": "/Users/vietmac/Downloads/van anh.mp4", "drive_url": null, "feedback": "Bản quay thử nghiệm trước khi áp dụng công thức 3 tầng chuẩn.", "created_at": "24/08/2026 16:30"}, {"id": "vid_02", "title": "Video 3 Tầng Chia Sẻ & Cảnh Trám Spa (01:29)", "duration": "01:29", "local_path": "/Users/vietmac/Downloads/van anh 2.mp4", "drive_url": null, "feedback": "Thầy Việt khen: \"nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế\". Áp dụng công thức 3 tầng, lồng cảnh trám spa tự nhiên và nội dung daily cuộc sống.", "created_at": "24/08/2026 17:02"}], "consultations": [{"id": "cst_01", "date": "24/08/2026 19:18", "channel": "zalo", "topic": "Kỹ thuật thu âm 2 máy & Đồng bộ CapCut PC", "summary": "Thầy Việt hướng dẫn: Chỉ cần 1 máy thu âm giọng nói rõ ràng, máy phụ chỉ cần nghe loáng thoáng để khi đưa vào CapCut PC thì phần mềm tự động dóng hàng sóng âm (Auto-sync by sound). Không cần cắm mic vào cả 2 máy.", "technical_blockers": "Chưa quen quay 2 máy đồng thời, bối rối về việc cắm mic thu tiếng.", "mindset_attitude": "Chăm chú học hỏi, tích cực hỏi kỹ thuật.", "next_steps": "Chờ Vân Anh gửi video thực hành sau khi tự dóng hàng trên CapCut PC để thầy chỉnh nhịp.", "screenshot_url": "tu_van_van_anh_01.png"}, {"id": "cst_02", "date": "24/08/2026 18:04", "channel": "zalo", "topic": "Nhận xét video thực hành 3 tầng & Cảnh trám Spa", "summary": "Vân Anh nộp video thực hành 01:29 xác định làm theo cấu trúc 3 tầng chia sẻ của thầy Việt, cài cắm cảnh trám về Spa tự nhiên, kết hợp nội dung daily về gia đình/con cái theo hướng dẫn của chị Hiếu. Thầy Việt khen mở đầu cuốn: \"nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế\".", "technical_blockers": "Chuyển cảnh chưa thật đúng bài bản, đang cố gắng hoàn thiện thêm dần dần.", "mindset_attitude": "Rất vui và biết ơn: \"Sau khi học khoá của thầy Việt và được chị Hiếu hướng dẫn thêm e thấy rất vui và xứng đáng vì quyết định đi học lớp mình là quá đúng đắn ạ.\"", "next_steps": "Tiếp tục hỗ trợ Vân Anh mài giũa kỹ thuật chuyển cảnh mượt hơn, giữ nguyên phong cách cảnh trám đời thường tự nhiên.", "screenshot_url": "tu_van_van_anh_02.png"}], "notes": "Học viên rất tiềm năng ngành Spa, giọng truyền cảm tự nhiên. Cần xin thêm SĐT và link Facebook cá nhân khi gặp buổi tới."}];
+    let currentIndustry = 'all';
+    let currentSearch = '';
+
+    // Initialize UI
+    function init() {
+      updateStats();
+      renderIndustryPills();
+      renderStudents();
+
+      document.getElementById('search-input').addEventListener('input', (e) => {
+        currentSearch = e.target.value.toLowerCase();
+        renderStudents();
+      });
+    }
+
+    function updateStats() {
+      let complete = 0, warning = 0, critical = 0;
+      STUDENTS.forEach(s => {
+        if (s.completeness_score >= 100) complete++;
+        else if (s.completeness_score >= 60) warning++;
+        else critical++;
+      });
+      document.getElementById('stat-complete').innerText = complete;
+      document.getElementById('stat-warning').innerText = warning;
+      document.getElementById('stat-critical').innerText = critical;
+    }
+
+    function renderIndustryPills() {
+      const container = document.getElementById('industry-filter-container');
+      const indMap = {};
+      STUDENTS.forEach(s => {
+        const ind = s.industry || 'Khác';
+        indMap[ind] = (indMap[ind] || 0) + 1;
+      });
+
+      Object.entries(indMap).forEach(([ind, count]) => {
+        const btn = document.createElement('button');
+        btn.className = 'ind-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60 transition';
+        btn.dataset.ind = ind;
+        btn.innerText = `${ind} (${count})`;
+        btn.onclick = () => filterByIndustry(ind);
+        container.appendChild(btn);
+      });
+    }
+
+    function filterByIndustry(ind) {
+      currentIndustry = ind;
+      document.querySelectorAll('.ind-filter-btn').forEach(btn => {
+        if (btn.dataset.ind === ind) {
+          btn.className = 'ind-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-emerald-600 text-white transition shadow-sm';
+        } else {
+          btn.className = 'ind-filter-btn px-3.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-800/80 hover:bg-slate-700 text-slate-300 border border-slate-700/60 transition';
+        }
+      });
+      renderStudents();
+    }
+
+    function renderStudents() {
+      const grid = document.getElementById('students-grid');
+      const emptyState = document.getElementById('empty-state');
+      grid.innerHTML = '';
+
+      const filtered = STUDENTS.filter(s => {
+        const matchesInd = currentIndustry === 'all' || (s.industry && s.industry.toLowerCase() === currentIndustry.toLowerCase());
+        const searchableText = `${s.name} ${s.class} ${s.industry} ${s.notes} ${s.consultations ? s.consultations.map(c=>c.summary + ' ' + c.topic).join(' ') : ''}`.toLowerCase();
+        const matchesSearch = !currentSearch || searchableText.includes(currentSearch);
+        return matchesInd && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.classList.add('hidden');
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      grid.classList.remove('hidden');
+      emptyState.classList.add('hidden');
+
+      filtered.forEach(s => {
+        const card = document.createElement('div');
+        card.className = 'p-5 rounded-2xl bg-slate-900/90 border border-slate-800 hover:border-emerald-500/50 transition shadow-lg space-y-4 cursor-pointer group';
+        card.onclick = () => openDrawer(s.id);
+
+        // Health Badge
+        let badgeHtml = '';
+        if (s.completeness_score >= 100) {
+          badgeHtml = '<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">🟢 Đầy đủ 100%</span>';
+        } else if (s.completeness_score >= 60) {
+          badgeHtml = `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">🟠 Cần bổ sung (${s.completeness_score}%)</span>`;
+        } else {
+          badgeHtml = `<span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-rose-500/10 text-rose-400 border border-rose-500/30">🔴 Thiếu liên hệ (${s.completeness_score}%)</span>`;
+        }
+
+        // Missing Items Alert list
+        let missingAlert = '';
+        if (s.missing_items && s.missing_items.length > 0) {
+          const items = s.missing_items.map(m => `• ${m.label}`).join(' ');
+          missingAlert = `<div class="text-[11px] text-amber-400/90 bg-amber-950/30 border border-amber-800/40 px-3 py-1.5 rounded-lg flex items-center gap-1.5">
+            <span>⚠️ Đang thiếu:</span> <span class="font-medium">${items}</span>
+          </div>`;
+        }
+
+        // Reference channel preview
+        let refHtml = '';
+        if (s.reference_channels && s.reference_channels.length > 0) {
+          const r = s.reference_channels[0];
+          refHtml = `<div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800 flex items-center justify-between text-[11px]">
+            <span class="text-slate-400 truncate">🎬 Kênh mẫu: <b class="text-slate-200">${r.name}</b></span>
+            <a href="${r.url}" target="_blank" onclick="event.stopPropagation()" class="text-emerald-400 hover:underline shrink-0 ml-2 font-semibold">Xem link ↗</a>
+          </div>`;
+        }
+
+        // Latest consultation summary
+        let consHtml = '';
+        if (s.consultations && s.consultations.length > 0) {
+          const latest = s.consultations[s.consultations.length - 1];
+          consHtml = `<div class="space-y-1">
+            <span class="text-[10px] uppercase font-bold text-slate-500 tracking-wider">Tư vấn gần nhất (${latest.date}):</span>
+            <p class="text-xs text-slate-300 line-clamp-2 leading-relaxed bg-slate-950/40 p-2.5 rounded-xl border border-slate-800/60">
+              ${latest.summary}
+            </p>
+          </div>`;
+        }
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div>
+              <div class="flex items-center gap-2">
+                <h3 class="text-base font-bold text-white group-hover:text-emerald-400 transition">${s.name}</h3>
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-800 text-slate-300">${s.class || 'Lớp'}</span>
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-emerald-950/60 text-emerald-300 border border-emerald-800/50">${s.industry}</span>
+              </div>
+              <p class="text-[11px] text-slate-400 mt-1">${s.notes || ''}</p>
+            </div>
+            ${badgeHtml}
+          </div>
+
+          ${missingAlert}
+          ${refHtml}
+          ${consHtml}
+
+          <div class="flex items-center justify-between pt-2 border-t border-slate-800/80 text-[11px] text-slate-500">
+            <span>Video thực hành: <b class="text-slate-300">${s.videos ? s.videos.length : 0}</b></span>
+            <span class="text-emerald-400 group-hover:translate-x-0.5 transition font-semibold">Xem chi tiết & video ➔</span>
+          </div>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function openDrawer(studentId) {
+      const s = STUDENTS.find(item => item.id === studentId);
+      if (!s) return;
+
+      document.getElementById('drawer-name').innerHTML = `${s.name} <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950 text-emerald-300 border border-emerald-800">${s.industry}</span>`;
+      document.getElementById('drawer-sub').innerText = `Lớp: ${s.class || 'Chưa xếp'} • Điểm hoàn thiện: ${s.completeness_score}%`;
+
+      const body = document.getElementById('drawer-body');
+      
+      // Build Videos HTML
+      let videosHtml = '';
+      if (s.videos && s.videos.length > 0) {
+        videosHtml = s.videos.map(v => `
+          <div class="p-3.5 bg-slate-950/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-bold text-white">${v.title} (${v.duration})</span>
+              <span class="text-slate-500">${v.created_at || ''}</span>
+            </div>
+            ${v.feedback ? `<p class="text-[11px] text-emerald-300 bg-emerald-950/40 border border-emerald-800/30 p-2 rounded-lg">💬 Nhận xét: ${v.feedback}</p>` : ''}
+            <video controls src="${v.local_path || v.drive_url}" class="w-full max-h-60 rounded-lg bg-black mt-2 shadow-inner" preload="metadata"></video>
+          </div>
+        `).join('');
+      } else {
+        videosHtml = '<p class="text-slate-500 italic p-3 text-center">Chưa có video thực hành nào.</p>';
+      }
+
+      // Build Timeline HTML
+      let consHtml = '';
+      if (s.consultations && s.consultations.length > 0) {
+        consHtml = s.consultations.map(c => `
+          <div class="p-3.5 bg-slate-950/90 rounded-xl border border-slate-800 space-y-2">
+            <div class="flex items-center justify-between border-b border-slate-800/80 pb-1.5">
+              <span class="font-bold text-emerald-400">📅 ${c.date} • ${c.topic}</span>
+              <span class="text-[10px] uppercase font-bold bg-slate-800 px-2 py-0.5 rounded text-slate-400">${c.channel}</span>
+            </div>
+            <p class="text-slate-200 leading-relaxed">${c.summary}</p>
+            ${c.technical_blockers ? `<div class="text-[11px] text-amber-300 bg-amber-950/30 p-2 rounded-lg border border-amber-900/30"><b>⚠️ Vướng mắc:</b> ${c.technical_blockers}</div>` : ''}
+            ${c.mindset_attitude ? `<div class="text-[11px] text-blue-300 bg-blue-950/30 p-2 rounded-lg border border-blue-900/30"><b>🧠 Tâm lý:</b> ${c.mindset_attitude}</div>` : ''}
+            ${c.next_steps ? `<div class="text-[11px] text-emerald-300 bg-emerald-950/30 p-2 rounded-lg border border-emerald-900/30"><b>👉 Hướng tiếp theo:</b> ${c.next_steps}</div>` : ''}
+            ${c.screenshot_url ? `
+              <div class="pt-2">
+                <span class="text-[10px] text-slate-500 block mb-1">Ảnh chụp màn hình hội thoại:</span>
+                <img src="assets/hocvien/${c.screenshot_url}" onclick="openLightbox('assets/hocvien/${c.screenshot_url}')" class="w-full max-h-48 object-cover rounded-lg border border-slate-800 cursor-zoom-in hover:opacity-90 transition">
+              </div>
+            ` : ''}
+          </div>
+        `).join('');
+      }
+
+      body.innerHTML = `
+        <!-- Quick Actions & Contacts -->
+        <div class="p-3.5 bg-slate-950/60 rounded-xl border border-slate-800 space-y-2">
+          <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Thông tin liên hệ & kênh:</span>
+          <div class="grid grid-cols-2 gap-2 text-[11px]">
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-slate-500 block">Số điện thoại:</span>
+              <span class="font-semibold text-white">${s.phone || '<i class="text-rose-400">Chưa có (cần xin)</i>'}</span>
+            </div>
+            <div class="p-2 rounded-lg bg-slate-900 border border-slate-800">
+              <span class="text-slate-500 block">Link Facebook:</span>
+              <span class="font-semibold text-white">${s.facebook_url ? `<a href="${s.facebook_url}" target="_blank" class="text-emerald-400 hover:underline">Mở Facebook ↗</a>` : '<i class="text-rose-400">Chưa có link FB</i>'}</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Video Practice -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider">🎬 Video thực hành (${s.videos ? s.videos.length : 0}):</h3>
+          ${videosHtml}
+        </div>
+
+        <!-- Timeline -->
+        <div class="space-y-2">
+          <h3 class="text-xs font-bold text-slate-200 uppercase tracking-wider">🎙️ Lịch sử tư vấn & bối cảnh (${s.consultations ? s.consultations.length : 0}):</h3>
+          ${consHtml}
+        </div>
+      `;
+
+      document.getElementById('drawer-overlay').classList.remove('hidden');
+      document.getElementById('drawer').classList.remove('translate-x-full');
+    }
+
+    function closeDrawer() {
+      document.getElementById('drawer-overlay').classList.add('hidden');
+      document.getElementById('drawer').classList.add('translate-x-full');
+    }
+
+    function openLightbox(url) {
+      document.getElementById('lightbox-img').src = url;
+      document.getElementById('lightbox').classList.remove('hidden');
+      document.getElementById('lightbox').classList.add('flex');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.add('hidden');
+      document.getElementById('lightbox').classList.remove('flex');
+    }
+
+    window.onload = init;
+  </script>
+</body>
+</html>
