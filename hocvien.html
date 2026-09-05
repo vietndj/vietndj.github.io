@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Học Viên Khóa Video — Bối Cảnh Tư Vấn & Ứng Dụng Marketing</title>
+  <title>Học Viên Khóa Video — Bối Cảnh Tư Vấn & Thư Mục Media</title>
   
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -61,7 +61,7 @@
           <h1 class="text-base sm:text-lg font-extrabold tracking-tight text-slate-900">
             HỌC VIÊN KHÓA VIDEO
           </h1>
-          <p class="text-[11px] text-slate-400 font-medium">Bối cảnh tư vấn, nhận xét & Khai thác Marketing thực chiến</p>
+          <p class="text-[11px] text-slate-400 font-medium">Bối cảnh tư vấn, video thực hành & thư mục Google Drive</p>
         </div>
       </div>
 
@@ -114,8 +114,8 @@
       </div>
     </div>
 
-    <!-- STUDENT CARDS (WITH PHOTO / VIDEO PREVIEWS) -->
-    <div id="students-grid" class="grid grid-cols-1 gap-4">
+    <!-- STUDENT CARDS -->
+    <div id="students-grid" class="grid grid-cols-1 gap-5">
       <!-- Injected via JS -->
     </div>
 
@@ -150,7 +150,7 @@
     </div>
 
     <!-- Drawer Scrollable Content -->
-    <div class="flex-1 overflow-y-auto p-5 space-y-5 text-xs text-slate-600" id="drawer-body">
+    <div class="flex-1 overflow-y-auto p-5 space-y-6 text-xs text-slate-600" id="drawer-body">
       <!-- Injected via JS -->
     </div>
   </div>
@@ -160,7 +160,34 @@
     <img id="lightbox-img" class="max-w-full max-h-[92vh] object-contain rounded-2xl shadow-2xl bg-white p-1" src="" alt="Zoom preview">
   </div>
 
-  <!-- SUBTLE FOOTER WITH MINIMAL STATS -->
+  <!-- VIDEO PLAYER MODAL (XEM NGAY TRÊN CARD) -->
+  <div id="video-modal" class="fixed inset-0 bg-slate-950/85 backdrop-blur-sm z-60 hidden items-center justify-center p-4" onclick="closeVideoModal()">
+    <div class="max-w-2xl w-full bg-slate-900 rounded-3xl overflow-hidden shadow-2xl p-4 sm:p-5 space-y-3.5 border border-slate-700" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between text-white text-sm">
+        <div>
+          <h3 id="video-modal-title" class="font-extrabold text-base text-white"></h3>
+          <p id="video-modal-sub" class="text-xs text-slate-400 mt-0.5"></p>
+        </div>
+        <button onclick="closeVideoModal()" class="w-8 h-8 rounded-full bg-slate-800 hover:bg-slate-700 text-slate-300 flex items-center justify-center transition">
+          ✕
+        </button>
+      </div>
+      <div class="relative bg-black rounded-2xl overflow-hidden shadow-inner flex items-center justify-center min-h-[260px] max-h-[70vh]">
+        <video id="video-modal-player" controls autoplay class="w-full max-h-[68vh] object-contain" src=""></video>
+      </div>
+      <div id="video-modal-feedback" class="p-3 rounded-xl bg-slate-800 text-xs text-slate-200 border border-slate-700 leading-relaxed hidden"></div>
+      <div class="flex items-center justify-between text-xs pt-1 border-t border-slate-800">
+        <a id="video-modal-drive" href="" target="_blank" class="text-blue-400 hover:text-blue-300 font-bold inline-flex items-center gap-1">
+          <span>📁 Xem/Tải video trên Google Drive</span> ↗
+        </a>
+        <button onclick="closeVideoModal()" class="text-slate-400 hover:text-white font-medium">
+          Đóng (Esc)
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SUBTLE FOOTER -->
   <footer class="border-t border-slate-200/70 bg-white py-4 mt-auto">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-[11px] text-slate-400">
       <div class="flex items-center gap-3 font-medium">
@@ -173,14 +200,14 @@
         <span class="text-rose-600">Thiếu SĐT/FB: <b id="stat-critical">0</b></span>
       </div>
       <div>
-        <span>Cập nhật: 06/09/2026 00:07:25</span>
+        <span>Cập nhật: 06/09/2026 00:11:57</span>
       </div>
     </div>
   </footer>
 
   <!-- DATA & JAVASCRIPT LOGIC -->
   <script>
-    const STUDENTS = [{"id": "van_anh_offline2", "name": "Vân Anh", "class": "Offline 2", "industry": "Spa", "industry_slug": "spa", "avatar_url": "assets/hocvien/vananh_avatar.jpg", "thumbnail_url": "assets/hocvien/thumb_vananh.jpg", "phone": null, "zalo_url": null, "facebook_url": null, "completeness_score": 60, "health_status": "warning", "missing_items": [{"field": "phone", "label": "Số điện thoại / Zalo", "severity": "critical", "hint": "Cần xin số Zalo hoặc SĐT để tiện gọi"}, {"field": "facebook_url", "label": "Link Facebook cá nhân", "severity": "critical", "hint": "Cần lưu link trang cá nhân FB"}], "reference_channels": [{"name": "Reel Lưu Diệu (Kênh mẫu Spa)", "platform": "facebook", "url": "https://www.facebook.com/share/r/1D7ksvGmTV/?mibextid=wwXIfr", "description": "Kênh phong cách video ngắn về spa bạn Vân Anh muốn đi theo (https://www.facebook.com/luu.dieu.352491/reels/)"}], "videos": [{"id": "vid_01", "title": "Video Vân Anh nháp ban đầu", "duration": "00:45", "local_path": "/Users/vietmac/Downloads/van anh.mp4", "drive_url": null, "feedback": "Bản quay thử nghiệm trước khi áp dụng công thức 3 tầng chuẩn.", "created_at": "24/08/2026 16:30"}, {"id": "vid_02", "title": "Video 3 Tầng Chia Sẻ & Cảnh Trám Spa (01:29)", "duration": "01:29", "thumbnail": "assets/hocvien/thumb_vananh.jpg", "local_path": "/Users/vietmac/Downloads/van anh 2.mp4", "drive_url": "https://drive.google.com/open?id=1HP8MrctBb2uhIklvXOi3ZEQxxgbQVo3B", "feedback": "Thầy Việt khen: \"nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế\". Áp dụng công thức 3 tầng, lồng cảnh trám spa tự nhiên và nội dung daily cuộc sống.", "created_at": "24/08/2026 17:02"}], "consultations": [{"id": "cst_01", "date": "24/08/2026 19:18", "channel": "zalo", "topic": "Kỹ thuật thu âm 2 máy & Đồng bộ CapCut PC", "recorded_info": "Vân Anh hỏi cách quay đồng thời 2 điện thoại khi chỉ có 1 chân mic cắm vào 1 máy, chưa từng quay 2 máy bao giờ nên lúng túng về âm thanh.", "feedback": "Thầy Việt hướng dẫn: Chỉ cần 1 máy thu âm giọng nói rõ ràng, máy phụ chỉ cần nghe loáng thoáng để đưa vào CapCut PC tự động dóng hàng sóng âm (Auto-sync by sound). Không cần cắm mic cả 2 máy.", "marketing_use": "Làm bài viết/video 'Mẹo quay 2 góc máy bằng CapCut PC cho người mới': Đánh trúng nỗi sợ thiết bị cồng kềnh của học viên, chứng minh điện thoại thường vẫn làm ra video xịn.", "screenshot_url": "tu_van_van_anh_01.png"}, {"id": "cst_02", "date": "24/08/2026 18:04", "channel": "zalo", "topic": "Nộp video thực hành 3 tầng & Cảnh trám Spa (01:29)", "recorded_info": "Vân Anh chia sẻ cảm nhận: 'Sau khi học khoá của thầy Việt và được chị Hiếu hướng dẫn thêm e thấy rất vui và xứng đáng vì quyết định đi học lớp mình là quá đúng đắn ạ'. Video thực hành áp dụng chuẩn 3 tầng chia sẻ, lồng cảnh trám spa và daily gia đình con cái.", "feedback": "Thầy Việt nhận xét: 'nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế'. Khen mở đầu cuốn, giọng truyền cảm tự nhiên, nhắc trau chuốt thêm phần chuyển cảnh.", "marketing_use": "Case Study & Social Proof chuyển đổi khách ngành Spa: Trưng dẫn kết quả thực tế học viên Spa từ số 0 tự làm video 3 tầng tự nhiên; dùng video của Vân Anh làm tư liệu kịch bản mẫu đào tạo cho các chủ Spa tiếp theo.", "screenshot_url": "tu_van_van_anh_02.png"}], "notes": "Học viên rất tiềm năng ngành Spa, giọng truyền cảm tự nhiên. Cần xin thêm SĐT và link Facebook cá nhân khi gặp buổi tới."}];
+    const STUDENTS = [{"id": "van_anh_offline2", "name": "Vân Anh", "class": "Offline 2", "industry": "Spa", "industry_slug": "spa", "avatar_url": "assets/hocvien/vananh_avatar.jpg", "thumbnail_url": "assets/hocvien/thumb_vananh.jpg", "drive_folder_url": "https://drive.google.com/drive/folders/1pdyRmPjl1XxZMsvyiGuljxeTS_JqxLzI?usp=sharing", "local_folder_path": "/Users/vietmac/Documents/CODE/facebook, skool/data/hocvien/van_anh_offline2", "phone": null, "zalo_url": null, "facebook_url": null, "completeness_score": 60, "health_status": "warning", "missing_items": [{"field": "phone", "label": "Số điện thoại / Zalo", "severity": "critical", "hint": "Cần xin số Zalo hoặc SĐT để tiện gọi"}, {"field": "facebook_url", "label": "Link Facebook cá nhân", "severity": "critical", "hint": "Cần lưu link trang cá nhân FB"}], "reference_channels": [{"name": "Reel Lưu Diệu (Kênh mẫu Spa)", "platform": "facebook", "url": "https://www.facebook.com/share/r/1D7ksvGmTV/?mibextid=wwXIfr", "description": "Kênh phong cách video ngắn về spa bạn Vân Anh muốn đi theo (https://www.facebook.com/luu.dieu.352491/reels/)"}], "videos": [{"id": "vid_01", "title": "Video 1: Bản quay thử nghiệm ban đầu", "duration": "00:27", "thumbnail": "assets/hocvien/thumb_vananh_01.jpg", "local_path": "assets/hocvien/van_anh_01.mp4", "drive_url": "https://drive.google.com/file/d/1UzLjR1QsHGjWj9nuVDb14VEx9cNI5M4R/view?usp=sharing", "feedback": "Bản quay thử nghiệm góc máy trước khi áp dụng công thức 3 tầng chuẩn.", "created_at": "24/08/2026 16:30"}, {"id": "vid_02", "title": "Video 2: 3 Tầng Chia Sẻ & Cảnh Trám Spa", "duration": "01:29", "thumbnail": "assets/hocvien/thumb_vananh.jpg", "local_path": "assets/hocvien/van_anh_02.mp4", "drive_url": "https://drive.google.com/file/d/1HP8MrctBb2uhIklvXOi3ZEQxxgbQVo3B/view?usp=sharing", "feedback": "Thầy Việt khen: \"nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế\". Áp dụng công thức 3 tầng, lồng cảnh trám spa tự nhiên và nội dung daily cuộc sống.", "created_at": "24/08/2026 17:02"}], "consultations": [{"id": "cst_01", "date": "24/08/2026 19:18", "channel": "zalo", "topic": "Kỹ thuật thu âm 2 máy & Đồng bộ CapCut PC", "recorded_info": "Vân Anh hỏi cách quay đồng thời 2 điện thoại khi chỉ có 1 chân mic cắm vào 1 máy, chưa từng quay 2 máy bao giờ nên lúng túng về âm thanh.", "feedback": "Thầy Việt hướng dẫn: Chỉ cần 1 máy thu âm giọng nói rõ ràng, máy phụ chỉ cần nghe loáng thoáng để đưa vào CapCut PC tự động dóng hàng sóng âm (Auto-sync by sound). Không cần cắm mic cả 2 máy.", "marketing_use": "Làm bài viết / video 'Mẹo quay 2 góc máy bằng CapCut PC cho người mới': Đánh trúng nỗi sợ thiết bị cồng kềnh của người mới, chứng minh điện thoại thường vẫn làm ra video xịn.", "screenshot_url": "tu_van_van_anh_01.png"}, {"id": "cst_02", "date": "24/08/2026 18:04", "channel": "zalo", "topic": "Nộp video thực hành 3 tầng & Cảnh trám Spa (01:29)", "recorded_info": "Vân Anh chia sẻ cảm nhận: 'Sau khi học khoá của thầy Việt và được chị Hiếu hướng dẫn thêm e thấy rất vui và xứng đáng vì quyết định đi học lớp mình là quá đúng đắn ạ'. Video thực hành áp dụng chuẩn 3 tầng chia sẻ, lồng cảnh trám spa và daily gia đình con cái.", "feedback": "Thầy Việt nhận xét: 'nghe đã thấy hấp dẫn rồi. Chắc chắn là nói dối luônnnn - giọng em hay thế'. Khen mở đầu cuốn, giọng truyền cảm tự nhiên, nhắc trau chuốt thêm phần chuyển cảnh.", "marketing_use": "Case Study & Social Proof chuyển đổi khách ngành Spa: Trưng dẫn kết quả thực tế học viên Spa từ số 0 tự làm video 3 tầng tự nhiên; dùng video của Vân Anh làm tư liệu kịch bản mẫu đào tạo cho các chủ Spa tiếp theo.", "screenshot_url": "tu_van_van_anh_02.png"}], "notes": "Học viên rất tiềm năng ngành Spa, giọng truyền cảm tự nhiên. Cần xin thêm SĐT và link Facebook cá nhân khi gặp buổi tới."}];
     let currentIndustry = 'all';
     let currentSearch = '';
 
@@ -262,13 +289,8 @@
 
       filtered.forEach(s => {
         const card = document.createElement('div');
-        card.className = 'p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-blue-400/80 hover:shadow-lg transition-all duration-200 cursor-pointer group shadow-[0_2px_8px_rgba(0,0,0,0.02)] flex flex-col sm:flex-row gap-5 items-start';
+        card.className = 'p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 hover:border-blue-400/80 hover:shadow-lg transition-all duration-200 cursor-pointer group shadow-[0_2px_8px_rgba(0,0,0,0.02)] space-y-4';
         card.onclick = () => openDrawer(s.id);
-
-        // Visual Media Thumbnail
-        const mediaThumb = s.thumbnail_url || (s.videos && s.videos[1] && s.videos[1].thumbnail) || s.avatar_url || '';
-        const mediaAvatar = s.avatar_url || '';
-        const latestVideo = s.videos && s.videos.length > 0 ? s.videos[s.videos.length - 1] : null;
 
         // Health Status Badge
         let badgeHtml = '';
@@ -291,22 +313,61 @@
           `;
         }
 
-        // Latest Consultation Context + Marketing Use Block
+        // Render ALL Video thumbnails on the card so you see ALL videos at a glance!
+        let videosPreviewStrip = '';
+        if (s.videos && s.videos.length > 0) {
+          const videoItems = s.videos.map((v, idx) => `
+            <div 
+              onclick="event.stopPropagation(); playVideoDirect('${s.id}', '${v.id}')" 
+              class="relative shrink-0 w-36 h-48 rounded-2xl overflow-hidden bg-slate-950 border border-slate-200/90 shadow-sm group/vid hover:border-blue-500 hover:shadow-md transition-all cursor-pointer"
+              title="Bấm để phát nhanh: ${v.title}"
+            >
+              <img src="${v.thumbnail || s.thumbnail_url || s.avatar_url}" class="w-full h-full object-cover group-hover/vid:scale-105 transition duration-300" alt="${v.title}">
+              <div class="absolute inset-0 bg-black/25 group-hover/vid:bg-black/10 transition flex items-center justify-center">
+                <div class="w-9 h-9 rounded-full bg-white/95 text-slate-900 flex items-center justify-center font-black text-xs shadow-lg group-hover/vid:scale-110 transition">
+                  ▶
+                </div>
+              </div>
+              <div class="absolute top-2 left-2">
+                <span class="px-2 py-0.5 rounded-md text-[10px] font-extrabold bg-slate-900/80 text-white backdrop-blur-xs">
+                  Video ${idx + 1}
+                </span>
+              </div>
+              <div class="absolute bottom-2 left-2 right-2 bg-slate-900/90 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-1 rounded-xl flex items-center justify-between">
+                <span class="truncate">${v.title.split(':')[1] || v.title}</span>
+                <span class="text-emerald-400 shrink-0 ml-1.5 font-mono">${v.duration}</span>
+              </div>
+            </div>
+          `).join('');
+
+          videosPreviewStrip = `
+            <div class="space-y-2 pt-1">
+              <div class="flex items-center justify-between text-[11px]">
+                <span class="font-extrabold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                  <span>🎬</span> Các video thực hành (${s.videos.length} video):
+                </span>
+                <span class="text-slate-400 text-[10px] italic">Bấm vào video để xem ngay</span>
+              </div>
+              <div class="flex items-center gap-3 overflow-x-auto pb-1.5 pt-0.5">
+                ${videoItems}
+              </div>
+            </div>
+          `;
+        }
+
+        // Consultation quote
         let consHtml = '';
         if (s.consultations && s.consultations.length > 0) {
           const latest = s.consultations[s.consultations.length - 1];
           consHtml = `
-            <div class="space-y-2 pt-1">
-              <!-- Nhận xét của thầy -->
+            <div class="space-y-1.5 pt-1">
               ${latest.feedback ? `
-                <div class="p-2.5 rounded-2xl bg-blue-50/70 border border-blue-100 text-xs text-blue-950 leading-relaxed font-medium">
-                  💬 <b>Thầy Việt nhận xét:</b> ${latest.feedback}
+                <div class="p-3 rounded-2xl bg-blue-50/70 border border-blue-100 text-xs text-blue-950 leading-relaxed font-medium">
+                  💬 <b>Thầy Việt:</b> ${latest.feedback}
                 </div>
               ` : ''}
-
-              <!-- Ứng dụng Marketing -->
               ${latest.marketing_use ? `
-                <div class="p-2.5 rounded-2xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 leading-relaxed font-medium">
+                <div class="p-3 rounded-2xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 leading-relaxed font-medium">
                   💡 <b>Ứng dụng Marketing:</b> ${latest.marketing_use}
                 </div>
               ` : ''}
@@ -314,56 +375,44 @@
           `;
         }
 
-        // Drive Link Button
-        let driveBtn = '';
-        if (latestVideo && latestVideo.drive_url) {
-          driveBtn = `
-            <a href="${latestVideo.drive_url}" target="_blank" onclick="event.stopPropagation()" class="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 hover:bg-blue-100 font-semibold text-[11px] transition">
-              <span>📁 Video trên Drive</span> ↗
-            </a>
-          `;
-        }
-
         card.innerHTML = `
-          <!-- Media Column (Left) -->
-          <div class="relative shrink-0 w-full sm:w-44 h-48 sm:h-44 rounded-2xl overflow-hidden bg-slate-100 border border-slate-200/80 group-hover:shadow-md transition">
-            <img src="${mediaThumb}" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="${s.name}" onerror="this.src='${mediaAvatar}'">
-            ${latestVideo ? `
-              <div class="absolute bottom-2 left-2 right-2 bg-slate-900/80 backdrop-blur-xs text-white text-[10px] font-bold px-2 py-1 rounded-lg flex items-center justify-between">
-                <span>▶ Video thực hành</span>
-                <span>${latestVideo.duration || '01:29'}</span>
-              </div>
-            ` : ''}
-          </div>
-
-          <!-- Content Column (Right) -->
-          <div class="flex-1 min-w-0 space-y-2.5 w-full">
-            <div class="flex items-start justify-between gap-2">
+          <!-- Header Row -->
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex items-center gap-3.5">
+              <img src="${s.avatar_url || s.thumbnail_url}" class="w-13 h-13 rounded-2xl object-cover border border-slate-200 shadow-xs" style="width: 52px; height: 52px;" alt="${s.name}">
               <div>
                 <div class="flex items-center gap-2 flex-wrap">
-                  <h3 class="text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition">${s.name}</h3>
+                  <h3 class="text-lg font-extrabold text-slate-900 group-hover:text-blue-600 transition">${s.name}</h3>
                   <span class="px-2 py-0.5 rounded-md text-[10px] font-bold bg-slate-100 text-slate-700">${s.class || 'Khóa học'}</span>
                   <span class="px-2.5 py-0.5 rounded-md text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-100">${s.industry}</span>
                 </div>
                 <p class="text-xs text-slate-500 mt-0.5">${s.notes || ''}</p>
               </div>
-              <div class="shrink-0 text-right">
-                ${badgeHtml}
-              </div>
             </div>
 
-            ${missingAlert}
-            ${consHtml}
-
-            <div class="flex items-center justify-between pt-2 border-t border-slate-100 text-xs text-slate-400">
-              <div class="flex items-center gap-2">
-                <span>Video: <b class="text-slate-700">${s.videos ? s.videos.length : 0}</b></span>
-                ${driveBtn}
-              </div>
-              <span class="text-blue-600 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
-                Xem bối cảnh & video ➔
-              </span>
+            <div class="shrink-0 text-right">
+              ${badgeHtml}
             </div>
+          </div>
+
+          ${missingAlert}
+          ${videosPreviewStrip}
+          ${consHtml}
+
+          <!-- Bottom Actions -->
+          <div class="flex items-center justify-between pt-3 border-t border-slate-100 text-xs">
+            <div class="flex items-center gap-2 flex-wrap">
+              ${s.drive_folder_url ? `
+                <a href="${s.drive_folder_url}" target="_blank" onclick="event.stopPropagation()" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-700 font-bold text-xs transition border border-blue-200/80 shadow-xs">
+                  <span>📁 Thư mục Drive (${s.videos ? s.videos.length : 0} video + toàn bộ ảnh tư vấn)</span>
+                  <span class="text-blue-500">↗</span>
+                </a>
+              ` : ''}
+            </div>
+
+            <span class="text-blue-600 font-bold group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+              Xem chi tiết hồ sơ ➔
+            </span>
           </div>
         `;
 
@@ -382,14 +431,33 @@
 
       const body = document.getElementById('drawer-body');
 
-      // Videos
+      // Prominent Google Drive Folder Card
+      let driveBanner = '';
+      if (s.drive_folder_url) {
+        driveBanner = `
+          <a href="${s.drive_folder_url}" target="_blank" class="p-4 bg-gradient-to-r from-blue-50 to-indigo-50/60 hover:from-blue-100 hover:to-indigo-100/80 border border-blue-200 rounded-2xl flex items-center justify-between transition shadow-xs">
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">📁</span>
+              <div>
+                <span class="font-bold text-blue-950 block text-sm">Thư mục Google Drive của ${s.name}</span>
+                <span class="text-[11px] text-blue-700">Lưu trữ trọn bộ video gốc, ảnh chụp tư vấn Zalo & file raw</span>
+              </div>
+            </div>
+            <span class="text-xs font-bold text-blue-800 bg-white px-3.5 py-1.5 rounded-full border border-blue-200 shadow-xs">
+              Mở Drive ↗
+            </span>
+          </a>
+        `;
+      }
+
+      // Videos (Render ALL videos)
       let videosHtml = '';
       if (s.videos && s.videos.length > 0) {
-        videosHtml = s.videos.map(v => `
+        videosHtml = s.videos.map((v, i) => `
           <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-2.5">
             <div class="flex items-center justify-between text-xs">
-              <span class="font-bold text-slate-900">${v.title} (${v.duration})</span>
-              ${v.drive_url ? `<a href="${v.drive_url}" target="_blank" class="text-blue-600 hover:underline font-bold text-[11px]">📁 Mở Google Drive ↗</a>` : ''}
+              <span class="font-extrabold text-slate-900">${v.title}</span>
+              <span class="px-2 py-0.5 rounded font-bold text-[10px] bg-slate-200 text-slate-700">${v.duration}</span>
             </div>
             ${v.feedback ? `
               <div class="text-xs text-blue-900 bg-blue-50/80 border border-blue-100 p-2.5 rounded-xl font-medium leading-relaxed">
@@ -405,7 +473,7 @@
         videosHtml = '<p class="text-slate-400 italic p-3 text-center bg-slate-50 rounded-2xl">Chưa có video thực hành nào.</p>';
       }
 
-      // Timeline / Consultations with 3-block logic
+      // Timeline
       let consHtml = '';
       if (s.consultations && s.consultations.length > 0) {
         consHtml = s.consultations.map(c => `
@@ -415,7 +483,6 @@
               <span class="text-[10px] uppercase font-bold bg-white border border-slate-200 px-2 py-0.5 rounded-md text-slate-600">${c.channel}</span>
             </div>
 
-            <!-- 1. Ghi nhận thông tin -->
             <div class="space-y-1">
               <span class="text-[11px] font-bold text-slate-700 flex items-center gap-1">
                 <span>📌</span> Ghi nhận thông tin học viên:
@@ -425,7 +492,6 @@
               </p>
             </div>
 
-            <!-- 2. Nhận xét của Thầy Việt -->
             ${c.feedback ? `
               <div class="space-y-1">
                 <span class="text-[11px] font-bold text-blue-700 flex items-center gap-1">
@@ -437,7 +503,6 @@
               </div>
             ` : ''}
 
-            <!-- 3. Ứng dụng Marketing / Khai thác Content -->
             ${c.marketing_use ? `
               <div class="space-y-1">
                 <span class="text-[11px] font-bold text-indigo-700 flex items-center gap-1">
@@ -449,7 +514,6 @@
               </div>
             ` : ''}
 
-            <!-- Ảnh chụp màn hình tư vấn -->
             ${c.screenshot_url ? `
               <div class="pt-1">
                 <span class="text-[11px] font-semibold text-slate-500 block mb-1.5">Ảnh chụp tin nhắn đối soát:</span>
@@ -465,6 +529,9 @@
       }
 
       body.innerHTML = `
+        <!-- Google Drive Folder Banner -->
+        ${driveBanner}
+
         <!-- Quick Contacts Card -->
         <div class="p-4 bg-slate-50 rounded-2xl border border-slate-200/80 space-y-2">
           <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">Kênh kết nối & liên hệ:</span>
@@ -480,9 +547,9 @@
           </div>
         </div>
 
-        <!-- Video Practices -->
+        <!-- Video Practices (ALL VIDEOS) -->
         <div class="space-y-3">
-          <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">🎬 Video thực hành (${s.videos ? s.videos.length : 0}):</h3>
+          <h3 class="text-xs font-extrabold text-slate-900 uppercase tracking-wider">🎬 Toàn bộ video thực hành (${s.videos ? s.videos.length : 0}):</h3>
           ${videosHtml}
         </div>
 
@@ -512,6 +579,56 @@
       document.getElementById('lightbox').classList.add('hidden');
       document.getElementById('lightbox').classList.remove('flex');
     }
+
+    function playVideoDirect(studentId, videoId) {
+      const s = STUDENTS.find(item => item.id === studentId);
+      if (!s || !s.videos) return;
+      const v = s.videos.find(item => item.id === videoId);
+      if (!v) return;
+
+      document.getElementById('video-modal-title').innerText = `${s.name} — ${v.title}`;
+      document.getElementById('video-modal-sub').innerText = `Thời lượng: ${v.duration} • Ngày nộp: ${v.created_at || 'Mới cập nhật'}`;
+      
+      const player = document.getElementById('video-modal-player');
+      player.src = v.local_path || v.drive_url || '';
+      player.load();
+      player.play().catch(() => {});
+      
+      const fbBox = document.getElementById('video-modal-feedback');
+      if (v.feedback) {
+        fbBox.innerHTML = `💬 <b>Thầy Việt:</b> ${v.feedback}`;
+        fbBox.classList.remove('hidden');
+      } else {
+        fbBox.classList.add('hidden');
+      }
+
+      const driveLink = document.getElementById('video-modal-drive');
+      if (v.drive_url) {
+        driveLink.href = v.drive_url;
+        driveLink.classList.remove('hidden');
+      } else {
+        driveLink.classList.add('hidden');
+      }
+
+      document.getElementById('video-modal').classList.remove('hidden');
+      document.getElementById('video-modal').classList.add('flex');
+    }
+
+    function closeVideoModal() {
+      const player = document.getElementById('video-modal-player');
+      player.pause();
+      player.src = '';
+      document.getElementById('video-modal').classList.add('hidden');
+      document.getElementById('video-modal').classList.remove('flex');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideoModal();
+        closeLightbox();
+        closeDrawer();
+      }
+    });
 
     window.onload = init;
   </script>
