@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chiến Lược Toàn Cảnh & Visual Storyboard Xây Kênh TikTok Salon Tóc 10 Năm (Hải Phòng)</title>
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: #131C2E;
+      --card-inner: #1A263D;
+      --card-border: #233554;
+      --text-main: #F1F5F9;
+      --text-muted: #94A3B8;
+      --accent: #38BDF8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --badge-bg: #0369A1;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --success: #10B981;
+      --highlight: #FDE047;
+      --purple: #A855F7;
+      --pink: #EC4899;
+      --table-header: #0F172A;
+      --table-hover: #1E2D48;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      padding: 24px 16px;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    header {
+      background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .tag-group {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 20px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-primary { background: var(--badge-bg); color: #BAE6FD; }
+    .badge-gold { background: rgba(245, 158, 11, 0.2); color: #FCD34D; border: 1px solid #F59E0B; }
+    .badge-success { background: rgba(16, 185, 129, 0.2); color: #6EE7B7; border: 1px solid #10B981; }
+    .badge-purple { background: rgba(168, 85, 247, 0.2); color: #D8B4FE; border: 1px solid #A855F7; }
+
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+    
+    .section-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    }
+    .section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 12px;
+    }
+    
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    @media (max-width: 900px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 550px) {
+      .grid-4 { grid-template-columns: 1fr; }
+    }
+
+    .box-item {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+    .box-item h3 {
+      font-size: 16px;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .alert-box {
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      border-left: 4px solid;
+    }
+    .alert-info {
+      background: rgba(56, 189, 248, 0.08);
+      border-color: var(--accent);
+      color: #E0F2FE;
+    }
+    .alert-warning {
+      background: rgba(245, 158, 11, 0.08);
+      border-color: var(--warning);
+      color: #FEF3C7;
+    }
+    .alert-pink {
+      background: rgba(236, 72, 153, 0.08);
+      border-color: var(--pink);
+      color: #FCE7F3;
+    }
+
+    .img-card {
+      background: #0F172A;
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    .img-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .img-card-body {
+      padding: 14px;
+      flex: 1;
+    }
+    .img-card-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .img-card-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* STORYBOARD SHOT CARD */
+    .shot-card {
+      background: var(--card-inner);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+      position: relative;
+    }
+    .shot-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: rgba(0, 0, 0, 0.85);
+      color: var(--highlight);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      border: 1px solid rgba(255,255,255,0.2);
+      z-index: 2;
+    }
+    .shot-card img {
+      width: 100%;
+      aspect-ratio: 9/16;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--card-border);
+    }
+    .shot-body {
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .shot-time {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--accent);
+    }
+    .shot-action {
+      font-size: 13px;
+      color: #F1F5F9;
+      line-height: 1.4;
+    }
+    .shot-typo {
+      background: #000;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 6px 8px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 800;
+      color: #FFF;
+      text-align: center;
+      margin-top: 4px;
+    }
+
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+    .checklist li {
+      padding: 8px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      border-bottom: 1px dashed var(--card-border);
+    }
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+    .check-icon {
+      color: var(--success);
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="tag-group">
+      <span class="badge badge-primary">Chiến Lược Video TikTok</span>
+      <span class="badge badge-gold">Thợ 10 Năm Hải Phòng</span>
+      <span class="badge badge-purple">100% Visual Minh Họa Đồng Bộ</span>
+      <span class="badge badge-success">Thực Chiến Salon Nhỏ Gọn</span>
+    </div>
+    <h1>TOÀN CẢNH CHIẾN LƯỢC XÂY KÊNH & BẢNG PHÂN CẢNH THỰC CHIẾN SALON NHỎ</h1>
+    <p class="subtitle">Bóc tách toàn diện: Setup góc quay thực tế cho tiệm nhỏ (chủ nữ quay bằng điện thoại + đèn Nanlite vàng ấm), Đòn bẩy tâm lý Mẫu Xinh, và 2 Bộ Kịch Bản 15s Zoom-cut chuẩn TikTok.</p>
+  </header>
+
+  <!-- DANH SÁCH CÔNG VIỆC -->
+  <div class="section-card">
+    <div class="section-title">📋 BẢNG CHECKLIST QUẢN TRỊ CÔNG VIỆC THỰC THI</div>
+    <ul class="checklist">
+      <li><span class="check-icon">✓</span> <strong>Mục 1:</strong> Xác lập Định vị Phong cách & Output Đóng gói Sản phẩm (Khai thác lõi 10 năm kinh nghiệm).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 2:</strong> Giải mã Tâm lý học & Sinh nhân vật Mẫu Nữ Đồng Bộ 100% (Halo Effect & Beauty Projection).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 3:</strong> Minh họa Thực Chiến Setup Salon Nhỏ Gọn (Chủ nữ tự quay iPhone, Đèn Softbox nhỏ + Thanh Nanlite vàng ấm, Quạt sạc mini).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 4:</strong> Visual Storyboard Kịch Bản 1 (15s - Mặt Tròn $\rightarrow$ V-Line / Layer & Sóng Lơi - 4 Khung hình 9:16).</li>
+      <li><span class="check-icon">✓</span> <strong>Mục 5:</strong> Visual Storyboard Kịch Bản 2 (15s - Chất Tóc Bóng Mượt Ánh Gương / Duỗi Phục Hồi - 4 Khung hình 9:16).</li>
+    </ul>
+  </div>
+
+  <!-- PHẦN 1: ĐỊNH VỊ & ĐÓNG GÓI SẢN PHẨM -->
+  <div class="section-card">
+    <div class="section-title">💎 1. PHONG CÁCH & OUTPUT ĐÓNG GÓI SẢN PHẨM (LÕI 10 NĂM)</div>
+    
+    <div class="grid-2">
+      <div class="box-item">
+        <h3>✨ 1.1. Phong cách kênh (Visual & Vibe)</h3>
+        <p><strong>Clean Luxury / Gần Gũi & Tinh Tế:</strong></p>
+        <ul style="margin-left: 18px; margin-top: 8px; color: var(--text-muted); font-size: 14px;">
+          <li>Không ồn ào, không drama, không làm màu phức tạp.</li>
+          <li>Không gian tiệm nhỏ ấm cúng, sạch sẽ, tone be/ấm, bắt sáng tóc tự nhiên.</li>
+          <li>Nhạc nền: Trend Acoustic nhẹ nhàng, Beat thời trang, Lofi hoặc nhạc khớp tiếng kéo/đánh bass.</li>
+        </ul>
+      </div>
+
+      <div class="box-item">
+        <h3>📦 1.2. Output Đóng gói sản phẩm</h3>
+        <p><strong>Lõi: Tay nghề 10 năm xử lý cấu trúc tóc & tỉ lệ mặt</strong></p>
+        <ul style="margin-left: 18px; margin-top: 8px; color: var(--text-muted); font-size: 14px;">
+          <li><strong>Gói 1: "Layer Thăng Hạng Nhan Sắc"</strong> &rarr; Cắt ôm gò má, cằm V-line, che khuyết điểm mặt to/vuông.</li>
+          <li><strong>Gói 2: "Sóng Lơi Lười Sấy (Lazy Waves)"</strong> &rarr; Uốn giữ nếp tự nhiên, về nhà sấy tay không 100% vẫn vào sóng.</li>
+          <li><strong>Gói 3: "Duỗi / Nhuộm Phục Hồi Ánh Gương"</strong> &rarr; Tóc bóng khỏe, suôn mượt như tơ lụa.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="alert-box alert-info" style="margin-top: 18px;">
+      <strong>🎯 Thông điệp Output (Core Message):</strong> <em>"Tại đây, bạn không chỉ mua một mái tóc đẹp khi ở tiệm, mà mua một diện mạo sang trọng, trẻ trung và về nhà tự sấy vẫn đẹp như ở tiệm."</em>
+    </div>
+  </div>
+
+  <!-- PHẦN 2: TÂM LÝ HỌC & MẪU NỮ THAM CHIẾU ĐỒNG BỘ -->
+  <div class="section-card">
+    <div class="section-title">🧠 2. ĐÒN BẨY TÂM LÝ "MẪU XINH" & HÌNH TƯỢNG ĐỒNG BỘ</div>
+    
+    <div class="grid-2" style="align-items: center;">
+      <div>
+        <div class="alert-box alert-pink">
+          <strong>⚠️ Nỗi sợ lớn nhất của chị em:</strong> Sợ bị phá tóc, sợ bị già, sợ về nhà sấy không được như tiệm.
+        </div>
+        <div class="box-item">
+          <h3>⚡ Bóc trần Đòn bẩy tâm lý: "MẪU XINH, ĂN MẶC CÓ GU"</h3>
+          <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">
+            Yếu tố <strong>Mẫu xinh + Quần áo sang</strong> tạo ra 2 đòn tâm lý cực mạnh:
+          </p>
+          <p style="font-size: 13px; color: #E2E8F0; margin-bottom: 6px;">
+            🔹 <strong>Hiệu ứng Hào quang (Halo Effect):</strong> Người xem tự động gán nhãn salon đẳng cấp, thợ có gu thẩm mỹ cao.
+          </p>
+          <p style="font-size: 13px; color: #E2E8F0;">
+            🔹 <strong>Đồng hóa bản thân (Beauty Projection):</strong> Phụ nữ vô thức tin rằng: <em>"Cắt ở đây mình cũng sẽ xinh đẹp và cuốn hút như cô ấy."</em>
+          </p>
+        </div>
+        <div class="quote-box" style="font-style: italic; color: #FDE047; background: rgba(253, 224, 71, 0.08); padding: 14px; border-radius: 8px; border-left: 3px solid #FDE047; margin-top: 10px;">
+          💡 <strong>Tuyển chọn tại tiệm:</strong> Chọn 2-3 khách nữ có nét mặt thanh tú mỗi tuần, tặng voucher giảm giá để quay clip 1 phút sau khi làm xong.
+        </div>
+      </div>
+
+      <!-- ẢNH MẪU ĐỒNG BỘ -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/04_hero_model.jpg" alt="Mẫu Nữ Tham Chiếu Đồng Bộ" style="aspect-ratio: 9/16; max-height: 480px;" />
+        <div class="img-card-body">
+          <div class="img-card-title">Mẫu Nữ Đồng Bộ Chuẩn Clean-Girl (Generated Reference)</div>
+          <div class="img-card-desc">Gương mặt rạng rỡ, makeup tự nhiên, áo cúp ngực sang trọng, mái tóc dài layer bồng bềnh chuẩn form salon cao cấp.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 3: SETUP STUDIO THỰC CHIẾN SALON NHỎ -->
+  <div class="section-card">
+    <div class="section-title">🎬 3. SETUP GÓC QUAY THỰC CHIẾN CHO SALON NHỎ (CHỦ NỮ - 1 GÓC DUY NHẤT)</div>
+    
+    <div class="alert-box alert-warning">
+      <strong>✨ Tiêu chí Salon Nhỏ Gọn:</strong> Tuyệt đối không cần máy quay cồng kềnh hay studio đắt đỏ. Chỉ cần 1 góc tiệm sạch sẽ, ấm cúng, chủ tiệm tự quay bằng điện thoại cực kỳ gần gũi và chuyên nghiệp!
+    </div>
+
+    <div class="grid-3">
+      <!-- ẢNH 1: GHẾ & BACKGROUND TIỆM NHỎ -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/01_studio_chair.jpg" alt="Góc Tiệm Nhỏ Ấm Cúng" />
+        <div class="img-card-body">
+          <div class="img-card-title">🪑 1. Góc Tiệm Nhỏ Sạch Sẽ & Gương LED Vàng Ấm</div>
+          <div class="img-card-desc">1 ghế cắt da xám/kem nhỏ gọn, tường sơn màu be/kem ấm cúng, gương tròn viền LED vàng dịu. Góc tiệm ngăn nắp, thoáng đãng, chủ nữ thân thiện.</div>
+        </div>
+      </div>
+
+      <!-- ẢNH 2: ÁNH SÁNG & ĐIỆN THOẠI -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/02_studio_lighting.jpg" alt="Quay Bằng Điện Thoại & Đèn Nanlite" />
+        <div class="img-card-body">
+          <div class="img-card-title">💡 2. Quay Bằng iPhone + Đèn Nanlite Vàng Ấm</div>
+          <div class="img-card-desc">Chủ nữ tự quay bằng iPhone gắn tripod mini. Phía trước dùng 1 đèn LED/softbox nhỏ làm mịn da mặt, phía sau đặt 1 thanh <strong>Nanlite Pavotube ánh sáng vàng ấm 3200K</strong> viền tóc óng ả.</div>
+        </div>
+      </div>
+
+      <!-- ẢNH 3: ĐẠO CỤ QUẠT MINI CẦM TAY -->
+      <div class="img-card">
+        <img src="assets/frames_toc_10nam/03_studio_prop.jpg" alt="Quạt Mini Sạc USB" />
+        <div class="img-card-body">
+          <div class="img-card-title">💨 3. Quạt Mini Sạc USB & Dụng Cụ Trên Xe Đẩy</div>
+          <div class="img-card-desc">01 quạt sạc mini cầm tay nhỏ xinh đặt trên xe đẩy dụng cụ tóc, thổi làn gió nhẹ thoang thoảng để tóc bay bồng bềnh tự nhiên khi quay Slow-mo.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 4: KỊCH BẢN 1 (15S) -->
+  <div class="section-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+      <div class="section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+        ⚡ 4. KỊCH BẢN 1: "THĂNG HẠNG NHAN SẮC MẶT TRÒN &rarr; V-LINE" (15 Giây)
+      </div>
+      <span class="badge badge-primary">Mục tiêu: Đẩy mạnh Cắt Layer + Uốn Sóng Lơi</span>
+    </div>
+
+    <div class="alert-box alert-info">
+      <strong>🎬 Cấu trúc quay:</strong> 4 Shot Zoom-cut theo beat nhạc | Không cần thu âm thoại | Quay trong đúng 60 giây sau khi sấy tóc.
+    </div>
+
+    <div class="grid-4">
+      <!-- SHOT 1 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 1 (00-03s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot1_front.jpg" alt="Shot 1 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 00 - 03s | Medium Shot</div>
+          <div class="shot-action">Mẫu ngồi thẳng, tóc buông trước ngực, nhìn camera cười duyên nhẹ nhàng.</div>
+          <div class="shot-typo">MẶT TRÒN CẮT GÌ CHO SANG?</div>
+        </div>
+      </div>
+
+      <!-- SHOT 2 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 2 (03-07s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot2_hands.jpg" alt="Shot 2 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 03 - 07s | Close-up 45°</div>
+          <div class="shot-action">Thợ luồn tay nâng bổng lọn tóc lên rồi buông tay để tóc nảy sóng rơi xuống.</div>
+          <div class="shot-typo">LAYER BAY THON GỌN MẶT</div>
+        </div>
+      </div>
+
+      <!-- SHOT 3 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 3 (07-11s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot3_profile.jpg" alt="Shot 3 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 07 - 11s | Profile Slow-mo</div>
+          <div class="shot-action">Mẫu nghiêng đầu, ngón tay vén nhẹ lọn tóc ôm gò má. Quạt mini thổi tóc bay nhẹ.</div>
+          <div class="shot-typo">UỐN SÓNG LƯƠI SẤY TAY 100%</div>
+        </div>
+      </div>
+
+      <!-- SHOT 4 -->
+      <div class="shot-card">
+        <div class="shot-badge">SHOT 4 (11-15s)</div>
+        <img src="assets/frames_toc_10nam/kb1_shot4_reveal.jpg" alt="Shot 4 KB1" />
+        <div class="shot-body">
+          <div class="shot-time">⏱ 11 - 15s | Medium Close-up</div>
+          <div class="shot-action">Mẫu cười rạng rỡ, tay vuốt đuôi tóc. Camera giật nhẹ theo beat nhạc kết thúc.</div>
+          <div class="shot-typo" style="background: #E11D48;">📍 SALON HẢI PHÒNG - INBOX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 5: KỊCH BẢN 2 (15S) -->
+  <div class="section-card">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 8px;">
+      <div class="section-title" style="margin-bottom: 0; border-bottom: none; padding-bottom: 0;">
+        ✨ 5. KỊCH BẢN 2: "CHẤT TÓC BÓNG MƯỢT ÁNH GƯƠNG" (15 Giây)
+      </div>
+      <span class="badge badge-success">Mục tiêu: Đẩy mạnh Duỗi / Nhuộm / Phục Hồi</span>
+    </div>
+
+    <div class="alert-box alert-warning">
+      <strong>🎬 Cấu trúc quay:</strong> Đánh mạnh vào thị giác xúc giác (Tactile ASMR) | Chứng minh tóc bóng khỏe, không rối, không khô xơ.
+    </div>
+
+    <div class="grid-4">
+      <!-- SHOT 1 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 1 (00-03s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot1_comb.jpg" alt="Shot 1 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 00 - 03s | Cận Cảnh Chải Lược</div>
+          <div class="shot-action">Lược răng thưa chải 1 đường từ đỉnh đầu xuống ngọn tóc suôn mượt êm ru.</div>
+          <div class="shot-typo">TỪNG BỊ TÓC CHÁY KHÔ XƠ?</div>
+        </div>
+      </div>
+
+      <!-- SHOT 2 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 2 (03-07s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot2_shake.jpg" alt="Shot 2 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 03 - 07s | Lắc Tóc Bay Nhẹ</div>
+          <div class="shot-action">Mẫu nhắm mắt mỉm cười lắc nhẹ vai, mái tóc suôn óng ả bay lượn bắt sáng lấp lánh.</div>
+          <div class="shot-typo">PHỤC HỒI ĐA TẦNG ÁNH GƯƠNG</div>
+        </div>
+      </div>
+
+      <!-- SHOT 3 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 3 (07-11s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot3_touch.jpg" alt="Shot 3 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 07 - 11s | Extreme Close-up</div>
+          <div class="shot-action">Bàn tay mẫu vuốt trượt qua các sợi tóc bóng mượt như lụa, không gợn xơ rối.</div>
+          <div class="shot-typo">MỀM MƯỢT NHƯ TƠ LỤA</div>
+        </div>
+      </div>
+
+      <!-- SHOT 4 -->
+      <div class="shot-card">
+        <div class="shot-badge" style="color: var(--success);">SHOT 4 (11-15s)</div>
+        <img src="assets/frames_toc_10nam/kb2_shot4_glow.jpg" alt="Shot 4 KB2" />
+        <div class="shot-body">
+          <div class="shot-time" style="color: var(--success);">⏱ 11 - 15s | Soi Gương Thần Thái</div>
+          <div class="shot-action">Mẫu quay 30° nhìn vào gương LED mỉm cười tự tin, toát lên vẻ đẹp sang trọng.</div>
+          <div class="shot-typo" style="background: #0284C7;">✨ TỰ TIN XUỐNG PHỐ - GHÉ TIỆM</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHẦN 6: QUY TRÌNH HÀNG NGÀY -->
+  <div class="section-card">
+    <div class="section-title">🚀 6. QUY TRÌNH SẢN XUẤT 3 BƯỚC "LÀM XONG LÀ CÓ CLIP" CHO CHỦ TIỆM</div>
+    
+    <div class="grid-3">
+      <div class="box-item">
+        <h3>1️⃣ Bước 1: Chọn Khách Xinh (30s)</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Khách nữ xinh xắn làm tóc xong ưng ý &rarr; Mời sang "Ghế Studio": <em>"Em ơi tóc xinh quá, anh/chị xin 1 phút quay clip ngắn lưu kỷ niệm nhé!"</em></p>
+      </div>
+      <div class="box-item">
+        <h3>2️⃣ Bước 2: Bấm Máy 4 Shot (60s)</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Bật đèn LED nhỏ + thanh Nanlite vàng ấm + quạt mini. Đặt iPhone quay 4 đúp ngắn: 1 đúp chính diện, 1 đúp luồn tay, 1 đúp mẫu lắc tóc, 1 đúp mẫu cười vuốt tóc.</p>
+      </div>
+      <div class="box-item">
+        <h3>3️⃣ Bước 3: Dựng CapCut Siêu Tốc (3 phút)</h3>
+        <p style="font-size: 13px; color: var(--text-muted);">Nhập 4 clip vào CapCut, chọn nhạc trend TikTok, cắt mỗi đoạn 3-4s đúng nhịp trống, gõ 3 dòng text mẫu ở trên &rarr; Xuất video đăng ngay!</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng Phân Cảnh Visual Storyboard • Nguyệt Store Hải Phòng | AI Storyboard Studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0a0e17;
+      --bg-surface: #111827;
+      --bg-card: #172033;
+      --bg-card-hover: #1e2a44;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: #38bdf888;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.15);
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --amber: #f59e0b;
+      --amber-glow: rgba(245, 158, 11, 0.15);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
+      --purple: #a855f7;
+      --purple-glow: rgba(168, 85, 247, 0.15);
+      --rose: #f43f5e;
+      --rose-glow: rgba(244, 63, 94, 0.15);
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.6;
+      padding-bottom: 80px;
+    }
+    .top-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10, 14, 23, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .brand-group { display: flex; align-items: center; gap: 10px; }
+    .brand-badge {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff; font-size: 11px; font-weight: 800; padding: 5px 12px; border-radius: 6px; text-transform: uppercase; letter-spacing: 0.5px;
+    }
+    .header-title { font-size: 15px; font-weight: 700; color: var(--text-primary); }
+    .header-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .nav-btn {
+      background: var(--bg-card); border: 1px solid var(--border-subtle); color: var(--text-secondary);
+      font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: var(--radius-sm); text-decoration: none; transition: all 0.2s;
+    }
+    .nav-btn:hover { background: var(--accent); color: #000; font-weight: 700; }
+    .action-btn {
+      background: linear-gradient(135deg, #f59e0b, #d97706); color: #000; font-weight: 700; border: none;
+      padding: 6px 14px; border-radius: var(--radius-sm); cursor: pointer; font-size: 12px;
+    }
+    .hub-link {
+      background: rgba(56, 189, 248, 0.15); border: 1px solid var(--cyan); color: var(--cyan);
+      font-size: 12px; font-weight: 700; padding: 6px 14px; border-radius: var(--radius-sm); text-decoration: none;
+    }
+    .hub-link:hover { background: var(--cyan); color: #000; }
+    .container { max-width: 1400px; margin: 0 auto; padding: 24px 20px; }
+    
+    /* Original Message Box */
+    .original-message-box {
+      background: linear-gradient(180deg, #131d2e 0%, #0d1522 100%);
+      border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px;
+    }
+    .orig-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; padding-bottom: 14px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+    .orig-title-group { font-size: 16px; font-weight: 800; color: #fff; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .orig-badge { background: var(--cyan-glow); color: var(--cyan); font-size: 11px; font-weight: 700; padding: 3px 8px; border-radius: 4px; border: 1px solid var(--cyan); }
+    .orig-meta { font-size: 12px; color: var(--text-muted); display: flex; gap: 12px; flex-wrap: wrap; }
+    .orig-content-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; }
+    @media (max-width: 900px) { .orig-content-grid { grid-template-columns: 1fr; } }
+    .raw-text-panel {
+      background: #080c14; border: 1px solid rgba(255, 255, 255, 0.06); border-radius: var(--radius-md);
+      padding: 16px 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #e2e8f0; white-space: pre-wrap; line-height: 1.6; max-height: 320px; overflow-y: auto;
+    }
+    .ref-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; }
+    .ref-item { background: #080c14; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: var(--radius-md); overflow: hidden; cursor: pointer; transition: all 0.2s ease; }
+    .ref-item:hover { border-color: var(--cyan); transform: translateY(-2px); }
+    .ref-thumb-box { position: relative; width: 100%; aspect-ratio: 16 / 9; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .ref-thumb-box img { width: 100%; height: 100%; object-fit: cover; }
+    .ref-label-badge { position: absolute; top: 6px; left: 6px; background: rgba(0,0,0,0.75); color: var(--cyan); font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.4); }
+    .ref-info { padding: 10px; }
+    .ref-title { font-size: 12px; font-weight: 700; color: #fff; margin-bottom: 2px; }
+    .ref-desc { font-size: 11px; color: var(--text-muted); line-height: 1.3; }
+
+    /* Scene Container */
+    .script-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      margin-bottom: 32px;
+      position: relative;
+    }
+    .script-section.border-cyan { border-left: 5px solid var(--cyan); }
+    .script-section.border-amber { border-left: 5px solid var(--amber); }
+    .script-section.border-purple { border-left: 5px solid var(--purple); }
+    .script-section.border-rose { border-left: 5px solid var(--rose); }
+    .script-section.border-emerald { border-left: 5px solid var(--emerald); }
+
+    .script-header {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 20px; padding-bottom: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .script-title-group { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .script-badge { font-size: 11px; font-weight: 800; padding: 4px 10px; border-radius: 6px; text-transform: uppercase; font-family: 'JetBrains Mono', monospace; }
+    .badge-cyan { background: var(--cyan-glow); color: var(--cyan); border: 1px solid var(--cyan); }
+    .badge-amber { background: var(--amber-glow); color: var(--amber); border: 1px solid var(--amber); }
+    .badge-purple { background: var(--purple-glow); color: var(--purple); border: 1px solid var(--purple); }
+    .badge-rose { background: var(--rose-glow); color: var(--rose); border: 1px solid var(--rose); }
+    .badge-emerald { background: var(--emerald-glow); color: var(--emerald); border: 1px solid var(--emerald); }
+
+    .beats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+    .beat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.25s ease;
+    }
+    .beat-card:hover {
+      border-color: var(--accent);
+      box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.6);
+      transform: translateY(-2px);
+    }
+    .beat-img-container {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #000;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .beat-img-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+    .beat-card:hover .beat-img-container img {
+      transform: scale(1.04);
+    }
+    .beat-tag {
+      position: absolute; top: 10px; left: 10px;
+      background: rgba(10, 14, 23, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 3px 8px; border-radius: 4px;
+      font-size: 11px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+      color: #fff;
+    }
+    .beat-duration {
+      position: absolute; top: 10px; right: 10px;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--amber);
+      padding: 2px 6px; border-radius: 4px;
+      font-size: 10px; font-weight: 700; font-family: 'JetBrains Mono', monospace;
+    }
+    .beat-body {
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+    }
+    .beat-title {
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .beat-action-desc {
+      font-size: 12px;
+      color: #cbd5e1;
+      line-height: 1.5;
+    }
+    .specs-table {
+      width: 100%;
+      font-size: 11px;
+      border-collapse: collapse;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .specs-table tr { border-bottom: 1px solid rgba(255, 255, 255, 0.04); }
+    .specs-table tr:last-child { border-bottom: none; }
+    .specs-table td { padding: 4px 8px; }
+    .specs-table td.spec-name { color: var(--text-muted); font-weight: 600; width: 34%; }
+    .specs-table td.spec-val { color: #f1f5f9; font-weight: 500; }
+
+    .director-note-box {
+      background: rgba(56, 189, 248, 0.06);
+      border: 1px dashed rgba(56, 189, 248, 0.3);
+      padding: 8px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      color: #bae6fd;
+      line-height: 1.4;
+      margin-top: auto;
+    }
+
+    /* Lightbox Modal */
+    .lightbox {
+      display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.92); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center; padding: 20px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox-content {
+      background: var(--bg-card); border: 1px solid rgba(56, 189, 248, 0.35); border-radius: var(--radius-lg);
+      max-width: 900px; width: 100%; max-height: 92vh; overflow: hidden; display: flex; gap: 22px; padding: 22px; position: relative;
+    }
+    @media (max-width: 768px) { .lightbox-content { flex-direction: column; overflow-y: auto; } }
+    .lightbox-img-box { flex: 1.2; aspect-ratio: 16 / 9; background: #000; border-radius: 8px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+    .lightbox-img-box img { width: 100%; height: 100%; object-fit: contain; background: #000; display: block; }
+    .lightbox-details { flex: 1; display: flex; flex-direction: column; gap: 12px; overflow-y: auto; }
+    .lightbox-close { position: absolute; top: 12px; right: 14px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); font-size: 20px; color: #fff; width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s; }
+    .lightbox-close:hover { background: #ef4444; border-color: #ef4444; }
+  </style>
+</head>
+<body>
+
+  <!-- TOP STICKY BAR -->
+  <header class="top-header">
+    <div class="brand-group">
+      <span class="brand-badge">Bảng Phân Cảnh Master</span>
+      <div class="header-title">🎬 Nguyệt Store Hải Phòng • 5 Kịch Bản Video B-Roll Theo Beat</div>
+    </div>
+    <div class="header-controls">
+      <a href="index.html" class="hub-link">🏛️ Master Hub Tổng</a>
+      <a href="#orig-msg" class="nav-btn">📩 Bối Cảnh Chuẩn</a>
+      <a href="#kb-1" class="nav-btn">KB 01 (ASMR 15PM)</a>
+      <a href="#kb-2" class="nav-btn">KB 02 (Drop Thu Cũ)</a>
+      <a href="#kb-3" class="nav-btn">KB 03 (Dual iPad/Watch)</a>
+      <a href="#kb-4" class="nav-btn">KB 04 (Vạch Lỗi -1Tr)</a>
+      <a href="#kb-5" class="nav-btn">KB 05 (Đóng Gói HP)</a>
+      <button class="action-btn" onclick="window.print()">📄 In PDF</button>
+    </div>
+  </header>
+
+  <div class="container">
+    
+    <!-- KHỐI TIN NHẮN & YÊU CẦU GỐC ĐẦU VÀO -->
+    <section class="original-message-box" id="orig-msg">
+      <div class="orig-header">
+        <div class="orig-title-group">
+          <h2 style="font-size: 16px; font-weight: 800; color: #fff;">📩 Yêu Cầu Gốc & Mỏ Neo Bối Cảnh Cửa Hàng Hải Phòng</h2>
+          <span class="orig-badge">NGUYET_STORE_HAI_PHONG_STUDIO</span>
+        </div>
+        <div class="orig-meta">
+          <span>📍 Địa điểm: <b>Hải Phòng (Lê Chân / 50 Hai Bà Trưng)</b></span>
+          <span>👤 Gương mặt đại diện: <b>Nguyệt (24 tuổi, áo polo be)</b></span>
+          <span>🎯 Mục tiêu: <b>Bán iPhone cũ, iPad, Apple Watch</b></span>
+        </div>
+      </div>
+
+      <div class="orig-content-grid">
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            💬 Định Hướng Quay Dựng Ít Thoại • Cắt Theo Beat Nhạc:
+          </div>
+          <div class="raw-text-panel">• TRIỆT TIÊU 4 ĐIỂM ĐAU KHÁCH MUA ĐỒ CŨ:
+  1. Sợ hàng dựng/ép kính -> Giải quyết bằng Macro soi ốc đít, màng loa, test 3uTools xanh.
+  2. Sợ bị giấu vết xước -> Giải quyết bằng "Vạch lá tìm sâu", công khai trừ 1 triệu.
+  3. Sợ bảo hành lươn lẹo -> Giải quyết bằng cận cảnh viết phiếu 1 đổi 1 12 tháng tại Hải Phòng.
+  4. Ngân sách ít -> Giải quyết bằng Trả góp 5 phút lấy máy + Trợ giá thu cũ 1 triệu.
+
+• CÔNG THỨC QUAY DỰNG:
+  - 100% video dựng nhịp nhanh theo tiếng Kick/Snare (1.5s - 2s / cảnh).
+  - Khai thác tối đa ASMR: Tiếng gõ viền titan cộc cộc, bóc seal rẹt rẹt, sập ốp lưng tách.
+  - Phụ đề động to rõ nhảy từng chữ (Word-by-word) để người xem tắt âm thanh vẫn hiểu.</div>
+        </div>
+
+        <div>
+          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
+            🖼️ 4 Mỏ Neo Thị Giác Chuẩn Bối Cảnh:
+          </div>
+          <div class="ref-gallery">
+            <div class="ref-item" onclick="openLightbox('assets/kb1_c1.jpg', 'Góc Macro Soi Viền Titan', 'Cận cảnh viền kim loại và cụm camera dưới đèn rọi 45 độ trên thảm da đen.', '📍 MỎ NEO 01')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 Macro B-Roll</span>
+                <img src="assets/kb1_c1.jpg" alt="Macro B-roll">
+              </div>
+              <div class="ref-info">
+                <div class="ref-title">Macro 3x Viền Titan</div>
+                <div class="ref-desc">Ánh sáng xiên sắc lẹm</div>
+              </div>
+            </div>
+
+            <div class="ref-item" onclick="openLightbox('assets/kb3_c1.jpg', 'So Kè Màn Hình Dual-Screen', 'Đặt 2 máy cạnh nhau kiểm tra độ mượt 120Hz và màu sắc True Tone.', '📍 MỎ NEO 02')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 So Kè Máy</span>
+                <img src="assets/kb3_c1.jpg" alt="Screen Test">
+              </div>
+              <div class="ref-info">
+                <div class="ref-title">Dual Screen Test</div>
+                <div class="ref-desc">So sánh trực quan</div>
+              </div>
+            </div>
+
+            <div class="ref-item" onclick="openLightbox('assets/kb4_c3.jpg', 'Flatlay Hệ Sinh Thái & Bảo Hành', 'Bày trọn bộ máy, cáp sạc 20W và thẻ bảo hành mạ vàng.', '📍 MỎ NEO 03')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 Combo Quà</span>
+                <img src="assets/kb4_c3.jpg" alt="Flatlay Bundle">
+              </div>
+              <div class="ref-info">
+                <div class="ref-title">Flatlay Trọn Bộ Quà</div>
+                <div class="ref-desc">Cảm giác hời tối đa</div>
+              </div>
+            </div>
+
+            <div class="ref-item" onclick="openLightbox('assets/kb2_c3.jpg', 'Khoảnh Khắc Bàn Giao Khách Thật', 'Nguyệt cười tươi trao túi quà và hộp máy cho khách tại quầy thu ngân Hải Phòng.', '📍 MỎ NEO 04')">
+              <div class="ref-thumb-box">
+                <span class="ref-label-badge">📍 Khách Thật HP</span>
+                <img src="assets/kb2_c3.jpg" alt="Store Handover">
+              </div>
+              <div class="ref-info">
+                <div class="ref-title">Bàn Giao Khách Thật</div>
+                <div class="ref-desc">Niềm tin thương hiệu</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- KỊCH BẢN 01: ASMR THẨM ĐỊNH MÁY ZIN LIKE NEW 99% (IPHONE 15 PRO MAX) -->
+    <!-- ========================================================================= -->
+    <section class="script-section border-cyan" id="kb-1">
+      <div class="script-header">
+        <div class="script-title-group">
+          <span class="script-badge badge-cyan">KỊCH BẢN 01</span>
+          <h2 style="font-size: 18px; font-weight: 800; color: #fff;">ASMR Thẩm Định Máy Zin Like New 99% (iPhone 15 Pro Max)</h2>
+        </div>
+        <div style="font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--cyan);">
+          ⏱️ Thời lượng: 18s • Nhịp beat Lofi Hip-hop • 0% Thoại Thừa
+        </div>
+      </div>
+
+      <div class="beats-grid">
+        
+        <!-- Cảnh 1 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb1_c1.jpg', 'Cảnh 1: Hook Macro Viền Titan', 'Tay cầm xoay nghiêng dưới ánh đèn, gõ móng tay cộc cộc vào mặt kính.', '🎬 KB01 • CẢNH 1')">
+            <span class="beat-tag">CẢNH 1 • HOOK</span>
+            <span class="beat-duration">00:00 - 00:03</span>
+            <img src="assets/kb1_c1.jpg" alt="Cảnh 1 Macro Titan">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">💎 Hook Xoay 360° Viền Titan Lóe Sáng</div>
+            <div class="beat-action-desc">
+              Bàn tay sạch cầm máy xoay nhẹ dưới đèn rọi kim loại. Gõ móng tay cộc cộc vào mặt kính lưng tạo tiếng đanh giòn.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Macro 3x • Góc nghiêng 45°</td></tr>
+              <tr><td class="spec-name">Động tác máy:</td><td class="spec-val">Slow Pan xoay vòng cung</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng gõ "Cộc cộc" + Beat Lofi</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--cyan); font-weight: 700;">"15PM Zin hay Dựng?"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Khóa sáng và lấy nét (AE/AF Lock) vào mép viền để tạo vệt sáng kim loại phản chiếu.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 2 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb1_c2.jpg', 'Cảnh 2: Soi Ốc Đít & Màng Loa', 'Bút chỉ thẳng vào 2 lỗ ốc đít sáng loáng, màng loa sạch không hạt bụi.', '🎬 KB01 • CẢNH 2')">
+            <span class="beat-tag">CẢNH 2 • SOI ZIN</span>
+            <span class="beat-duration">00:03 - 00:08</span>
+            <img src="assets/kb1_c2.jpg" alt="Cảnh 2 Soi Ốc Đít">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🔍 Soi Cận Cảnh Chân Ốc Chưa Toét</div>
+            <div class="beat-action-desc">
+              Đầu bút kim loại chỉ thẳng vào 2 lỗ ốc đít nguyên bản sáng bóng, lia qua màng loa sạch tinh tươm.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Extreme Close-up (Cận cực đại)</td></tr>
+              <tr><td class="spec-name">Động tác máy:</td><td class="spec-val">Lia ngang (Track-in)</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Whoosh" lia gió</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: #fff; font-weight: 700;">"Ốc Zin • Màng Loa Chuẩn"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Phải lau sạch bụi bám quanh cổng sạc Type-C trước khi bấm máy.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 3 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb1_c3.jpg', 'Cảnh 3: Test Màn Hình & 3uTools', 'Cắm laptop hiện bảng điểm 100% màu xanh, màn hình máy bật True Tone rực rỡ.', '🎬 KB01 • CẢNH 3')">
+            <span class="beat-tag">CẢNH 3 • TEST MÁY</span>
+            <span class="beat-duration">00:08 - 00:14</span>
+            <img src="assets/kb1_c3.jpg" alt="Cảnh 3 Test 3uTools">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">💻 Cắm Laptop Check 3uTools Full Xanh</div>
+            <div class="beat-action-desc">
+              Cắm cáp sạc vào laptop: Màn hình laptop báo 100% Score xanh lá. Màn hình iPhone bật True Tone chuyển màu mượt mà.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Trung cảnh ngang bàn (Medium POV)</td></tr>
+              <tr><td class="spec-name">Động tác máy:</td><td class="spec-val">Cố định trên tripod</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Ting" nhận diện thiết bị</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--emerald); font-weight: 700;">"Pin 9x% • 3uTools Xanh 100%"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Để màn hình laptop nghiêng góc 30 độ tránh bị bóng lóa đèn trần.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 4 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb1_c4.jpg', 'Cảnh 4: Lắp Ốp & Thẻ Bảo Hành', 'Đắp ốp lưng trong suốt vào nghe tiếng tách, đặt thẻ bảo hành 12 tháng đóng dấu đỏ.', '🎬 KB01 • CẢNH 4')">
+            <span class="beat-tag">CẢNH 4 • CHỐT SALE</span>
+            <span class="beat-duration">00:14 - 00:18</span>
+            <img src="assets/kb1_c4.jpg" alt="Cảnh 4 Lắp Ốp Bảo Hành">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🛡️ Sập Ốp MagSafe + Thẻ Bảo Hành 12T</div>
+            <div class="beat-action-desc">
+              Bàn tay Nguyệt sập chiếc ốp MagSafe trong suốt vào máy nghe tiếng "Tách", đặt nhẹ thẻ bảo hành 1 đổi 1 bên cạnh củ sạc 20W.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Top-down Flatlay góc 60°</td></tr>
+              <tr><td class="spec-name">Động tác máy:</td><td class="spec-val">Push-in nhẹ vào thẻ bảo hành</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Tách" sập ốp giòn tan</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--amber); font-weight: 700;">"Bảo Hành 1 Đổi 1 Tại Hải Phòng"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Call To Action xuất hiện to ở giữa: <em>"Comment [15PM] nhận báo giá + video test từng cây!"</em>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- KỊCH BẢN 02: LỘT XÁC THU CŨ ĐỔI MỚI THEO NHỊP DROP BASS -->
+    <!-- ========================================================================= -->
+    <section class="script-section border-amber" id="kb-2">
+      <div class="script-header">
+        <div class="script-title-group">
+          <span class="script-badge badge-amber">KỊCH BẢN 02</span>
+          <h2 style="font-size: 18px; font-weight: 800; color: #fff;">Lột Xác Thu Cũ Đổi Mới Theo Nhịp Drop Bass</h2>
+        </div>
+        <div style="font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--amber);">
+          ⏱️ Thời lượng: 15s • Nhịp Bass Drop TikTok • Đẩy Dịch Vụ Lên Đời
+        </div>
+      </div>
+
+      <div class="beats-grid">
+        
+        <!-- Cảnh 1 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb2_c1.jpg', 'Cảnh 1: Máy Cũ Vỡ Nát', 'Cây điện thoại vỡ nát màn hình chằng chịt đặt trên thảm da bàn kỹ thuật.', '🎬 KB02 • CẢNH 1')">
+            <span class="beat-tag">CẢNH 1 • VẤN ĐỀ</span>
+            <span class="beat-duration">00:00 - 00:04</span>
+            <img src="assets/kb2_c1.jpg" alt="Cảnh 1 Máy Nát">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">💥 Chiếc Máy Vỡ Nát Trải Qua 82 Kiếp Nạn</div>
+            <div class="beat-action-desc">
+              Khách đập một chiếc điện thoại vỡ nát màn hình, xước viền tơi tả xuống mặt bàn.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Cận cảnh góc thấp 30°</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Nhạc dồn dập (Build-up)</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--rose); font-weight: 700;">"Máy Nát Thế Này Shop Có Thu Không?"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Đèn rọi nhấn mạnh vào những đường nứt kính tạo cảm giác máy "hết cứu".
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 2 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb2_c2.jpg', 'Cảnh 2: Lột Xác Drop Bass', 'Cây iPhone Titan dựng trên đế kim loại + Voucher 1 Triệu bừng sáng.', '🎬 KB02 • CẢNH 2')">
+            <span class="beat-tag">CẢNH 2 • DROP BIẾN HÌNH</span>
+            <span class="beat-duration">00:04 - 00:10</span>
+            <img src="assets/kb2_c2.jpg" alt="Cảnh 2 Drop Titan">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">⚡ Drop Bass: Lột Xác Thành Siêu Phẩm Titan</div>
+            <div class="beat-action-desc">
+              Nhịp nhạc drop cực mạnh: Chiếc máy nát biến mất, thay bằng iPhone 15 Pro Titan bóng bẩy kèm cọc voucher trợ giá 1.000.000đ.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Trung cận góc chính diện</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">DROP BASS CỰC CĂNG + Ting Ting</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--amber); font-weight: 800;">"TRỢ GIÁ THU CŨ 1.000.000Đ"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Cắt cảnh đúng miligiây tiếng trống Bass đập mạnh để tạo hiệu ứng giật mắt.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 3 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb2_c3.jpg', 'Cảnh 3: Bàn Giao Khách HP', 'Nguyệt cười tươi trao túi quà và hộp máy mới cho khách hàng tại quầy.', '🎬 KB02 • CẢNH 3')">
+            <span class="beat-tag">CẢNH 3 • SOCIAL PROOF</span>
+            <span class="beat-duration">00:10 - 00:15</span>
+            <img src="assets/kb2_c3.jpg" alt="Cảnh 3 Trao Máy">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🤝 Bàn Giao Tận Tay Khách Hàng Hải Phòng</div>
+            <div class="beat-action-desc">
+              Nguyệt cười tươi trao chiếc túi quà sang trọng và hộp máy cho bạn khách hàng nữ đang cười rạng rỡ tại quầy.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Góc trung toàn cảnh quầy thu ngân</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Beat nhạc vui tươi kết bài</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--emerald); font-weight: 700;">"Mang Máy Cũ Qua 50 Hai Bà Trưng Nhận Giá Ngay"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Nụ cười thật của nhân viên và khách tạo cảm giác dịch vụ thân thiện, uy tín.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- KỊCH BẢN 03: SO KÈ SONG SONG KHÔNG CẦN THOẠI (IPAD VS WATCH) -->
+    <!-- ========================================================================= -->
+    <section class="script-section border-purple" id="kb-3">
+      <div class="script-header">
+        <div class="script-title-group">
+          <span class="script-badge badge-purple">KỊCH BẢN 03</span>
+          <h2 style="font-size: 18px; font-weight: 800; color: #fff;">So Kè Song Song: Cùng 6 Triệu Chọn iPad Hay Apple Watch?</h2>
+        </div>
+        <div style="font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--purple);">
+          ⏱️ Thời lượng: 20s • Dual Split-Screen • Đẩy Bán Đồ Thứ Sinh
+        </div>
+      </div>
+
+      <div class="beats-grid">
+        
+        <!-- Cảnh 1 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb3_c1.jpg', 'Cảnh 1: Dual Screen Setup', 'Đặt song song 2 thiết bị trên giá đỡ trải nghiệm, vuốt cảm ứng đồng thời.', '🎬 KB03 • CẢNH 1')">
+            <span class="beat-tag">CẢNH 1 • SO KÈ</span>
+            <span class="beat-duration">00:00 - 00:05</span>
+            <img src="assets/kb3_c1.jpg" alt="Cảnh 1 Dual Screen">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">⚖️ Màn Hình Đôi: Bài Toán Tài Chính 6 Triệu</div>
+            <div class="beat-action-desc">
+              Hai tay cùng lúc bật sáng màn hình: Bên trái là iPad Gen 9 màn to 10.2 inch, bên phải là Apple Watch Series 7 viền thép sáng loáng.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Góc nhìn thứ nhất POV (Top-down)</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Nhịp beat điện tử nảy vui tai</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--purple); font-weight: 700;">"Cùng 6 Triệu: Mua Gì Dùng Sướng?"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Tăng độ sáng cả 2 màn hình lên 100% để hiển thị màu sắc rực rỡ nhất.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 2 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb3_c2.jpg', 'Cảnh 2: Split Test Tính Năng', 'Tay trái vẽ bút Pencil trên iPad, tay phải chạm đo nhịp tim Apple Watch.', '🎬 KB03 • CẢNH 2')">
+            <span class="beat-tag">CẢNH 2 • TRẢI NGHIỆM</span>
+            <span class="beat-duration">00:05 - 00:13</span>
+            <img src="assets/kb3_c2.jpg" alt="Cảnh 2 Test Split">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">✍️ Trải Nghiệm Thực Tế: Học Tập vs Đi Lại</div>
+            <div class="beat-action-desc">
+              Nửa trái: Tay cầm bút Apple Pencil vẽ mượt mà, ghi chép học tập. Nửa phải: Cổ tay đeo Watch chạm nhận thông báo, đo nhịp tim.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Split screen đôi chia 50/50</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng vẽ "Scribble" + Tiếng tim đập</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: #fff; font-weight: 700;">"iPad: Học Cả Ngày • Watch: Nhận Cuộc Gọi"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Dùng hiệu ứng Split Screen trong CapCut ghép 2 video chạy song song.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 3 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb3_c3.jpg', 'Cảnh 3: Nguyệt Tư Vấn Quầy', 'Nguyệt cầm cả 2 thiết bị tươi cười giải đáp chân thành tại quầy shop.', '🎬 KB03 • CẢNH 3')">
+            <span class="beat-tag">CẢNH 3 • CHỐT LỜI KHUYÊN</span>
+            <span class="beat-duration">00:13 - 00:20</span>
+            <img src="assets/kb3_c3.jpg" alt="Cảnh 3 Nguyệt Tư Vấn">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">💁‍♀️ Nguyệt Chốt Giải Pháp: Chọn Theo Nhu Cầu</div>
+            <div class="beat-action-desc">
+              Nguyệt cầm iPad và Apple Watch tươi cười nhìn thẳng ống kính: <em>"Cho con học chọn iPad, cho bản thân đi đường chọn Watch!"</em>
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Trung cảnh (Thấy rõ gương mặt & logo shop)</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Thoại tự nhiên + Beat nhẹ</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--cyan); font-weight: 700;">"Sẵn Hàng Like New Giá Học Sinh Tại HP"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Nguyệt nói ngắn gọn 1 câu duy nhất, không cần giải thích thông số dài dòng.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- KỊCH BẢN 04: VẠCH KHUYẾT ĐIỂM XƯỚC DĂM TRỪ 1 TRIỆU -->
+    <!-- ========================================================================= -->
+    <section class="script-section border-rose" id="kb-4">
+      <div class="script-header">
+        <div class="script-title-group">
+          <span class="script-badge badge-rose">KỊCH BẢN 04</span>
+          <h2 style="font-size: 18px; font-weight: 800; color: #fff;">Vạch Khuyết Điểm Xước Dăm Trừ Ngay 1 Triệu Đồng</h2>
+        </div>
+        <div style="font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--rose);">
+          ⏱️ Thời lượng: 18s • Nghệ Thuật Flaw-Highlighting • Tạo Niềm Tin Tột Độ
+        </div>
+      </div>
+
+      <div class="beats-grid">
+        
+        <!-- Cảnh 1 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb4_c1.jpg', 'Cảnh 1: Chỉ Vào Vết Xước', 'Đầu bút chỉ vào 1 chấm xước dăm bé như hạt cát ở góc viền máy.', '🎬 KB04 • CẢNH 1')">
+            <span class="beat-tag">CẢNH 1 • VẠCH LỖI</span>
+            <span class="beat-duration">00:00 - 00:05</span>
+            <img src="assets/kb4_c1.jpg" alt="Cảnh 1 Chỉ Vết Xước">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🔍 Tự Vạch Vết Xước Dăm Bằng Hạt Cát</div>
+            <div class="beat-action-desc">
+              Nguyệt dùng đầu bút chỉ thẳng vào một chấm xước dăm bé tí ở góc viền máy do chủ cũ dùng trần. Vòng tròn đỏ popup highlight.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Macro 3x cực cận</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng gõ bút + Nhạc kịch tính</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--rose); font-weight: 800;">"LỖI: XƯỚC 1 CHẤM DO DÙNG TRẦN"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Sự trung thực này là "vũ khí tối thượng" khiến khách hàng tin tưởng tuyệt đối.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 2 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb4_c2.jpg', 'Cảnh 2: Lắp Ốp Lưng Keng', 'Đắp chiếc ốp lưng silicon vào, vết xước biến mất hoàn toàn, máy đẹp 100%.', '🎬 KB04 • CẢNH 2')">
+            <span class="beat-tag">CẢNH 2 • BIẾN HÌNH</span>
+            <span class="beat-duration">00:05 - 00:11</span>
+            <img src="assets/kb4_c2.jpg" alt="Cảnh 2 Lắp Ốp">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">📱 Lắp Ốp Lưng Vào: Đẹp Keng Không Tì Vết</div>
+            <div class="beat-action-desc">
+              Nguyệt sập chiếc ốp lưng MagSafe đen mờ vào máy: Vết xước biến mất 100%, cầm máy lên xoay sang trọng như đập hộp.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Góc nhìn qua vai (Over-the-shoulder)</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Tách" lắp ốp + Nhạc bốc lên</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--emerald); font-weight: 800;">"TRỪ THẲNG 1.000.000Đ CHO BÁC NÀO CHỐT"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Gạch chéo giá cũ màu đỏ, hiện giá mới màu xanh lá nhấp nháy.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 3 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb4_c3.jpg', 'Cảnh 3: Combo Tặng Kèm', 'Bày la liệt sạc 20W, thẻ bảo hành, ốp lưng trên thảm da đen.', '🎬 KB04 • CẢNH 3')">
+            <span class="beat-tag">CẢNH 3 • COMBO QUÀ</span>
+            <span class="beat-duration">00:11 - 00:18</span>
+            <img src="assets/kb4_c3.jpg" alt="Cảnh 3 Flatlay Quà">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🎁 Tặng Full Combo Sạc 20W + Bảo Hành 12T</div>
+            <div class="beat-action-desc">
+              Bày trọn bộ quà tặng: Củ sạc nhanh 20W, dán cường lực miễn phí trọn đời, bao thợ Hải Phòng mở máy check ruột zin.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Top-down Flatlay sang trọng</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Ting" tiền về</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--amber); font-weight: 700;">"Comment [CHỐT] Bế Luôn Cây Này Về"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Thúc giục khan hiếm: <em>"Duy nhất 1 cây lẻ màu, ai nhanh tay người đó được!"</em>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- KỊCH BẢN 05: QUY TRÌNH ĐÓNG GÓI ĐƠN HÀNG GIAO HỎA TỐC HẢI PHÒNG -->
+    <!-- ========================================================================= -->
+    <section class="script-section border-emerald" id="kb-5">
+      <div class="script-header">
+        <div class="script-title-group">
+          <span class="script-badge badge-emerald">KỊCH BẢN 05</span>
+          <h2 style="font-size: 18px; font-weight: 800; color: #fff;">Quy Trình Đóng Gói Đơn Hàng Giao Hỏa Tốc Hải Phòng</h2>
+        </div>
+        <div style="font-size: 12px; font-family: 'JetBrains Mono', monospace; color: var(--emerald);">
+          ⏱️ Thời lượng: 18s • ASMR Đóng Gói Lofi • Kích Thích Đặt Ship Tận Nhà
+        </div>
+      </div>
+
+      <div class="beats-grid">
+        
+        <!-- Cảnh 1 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb5_c1.jpg', 'Cảnh 1: Dán Cường Lực ASMR', 'Lau sạch màn hình, bóc seal kính cường lực miết khí rẹt rẹt cực mượt.', '🎬 KB05 • CẢNH 1')">
+            <span class="beat-tag">CẢNH 1 • DÁN KÍNH</span>
+            <span class="beat-duration">00:00 - 00:05</span>
+            <img src="assets/kb5_c1.jpg" alt="Cảnh 1 Dán Kính">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🧼 Dán Kính Cường Lực KingKong Siêu Mượt</div>
+            <div class="beat-action-desc">
+              Lau màn hình sáng bóng bằng khăn cồn, bóc lớp dán cường lực và dùng gạt miết bọt khí rẹt rẹt không một hạt bụi.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Góc nhìn từ trên xuống Top-down</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng miết khí "Rẹt rẹt" cực đã tai</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--cyan); font-weight: 700;">"Dán Kính KingKong Miễn Phí Trọn Đời"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Tăng âm lượng micro để thu trọn tiếng rẹt rẹt miết kính ASMR.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 2 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb5_c2.jpg', 'Cảnh 2: Buộc Nơ Hộp Quà', 'Thắt nơ ruy băng vàng quanh hộp quà sang trọng kèm phiếu chuyển phát nhanh Hải Phòng.', '🎬 KB05 • CẢNH 2')">
+            <span class="beat-tag">CẢNH 2 • ĐÓNG GÓI</span>
+            <span class="beat-duration">00:05 - 00:12</span>
+            <img src="assets/kb5_c2.jpg" alt="Cảnh 2 Buộc Nơ">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🎀 Thắt Nơ Hộp Quà + Phiếu Hỏa Tốc HP</div>
+            <div class="beat-action-desc">
+              Bàn tay nhẹ nhàng thắt nơ ruy băng vàng sang trọng quanh hộp máy, dán phiếu chuyển phát nhanh đóng dấu đỏ Hải Phòng City.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Cận cảnh góc nghiêng bàn thu ngân</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng rút ruy băng nhẹ nhàng + Nhạc lofi</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--amber); font-weight: 700;">"Đóng Gói Chuẩn Quà Tặng 5 Sao"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Khách mua làm quà tặng vợ/người yêu xem cảnh này sẽ bấm mua ngay.
+            </div>
+          </div>
+        </div>
+
+        <!-- Cảnh 3 -->
+        <div class="beat-card">
+          <div class="beat-img-container" onclick="openLightbox('assets/kb5_c3.jpg', 'Cảnh 3: Giao Hàng Rạng Rỡ', 'Trao tận tay gói quà cho khách hàng/shipper rạng rỡ trước cửa hàng.', '🎬 KB05 • CẢNH 3')">
+            <span class="beat-tag">CẢNH 3 • GIAO HỎA TỐC</span>
+            <span class="beat-duration">00:12 - 00:18</span>
+            <img src="assets/kb5_c3.jpg" alt="Cảnh 3 Giao Hàng">
+          </div>
+          <div class="beat-body">
+            <div class="beat-title">🚀 Freeship 30 Phút Khắp Thành Phố Hải Phòng</div>
+            <div class="beat-action-desc">
+              Nguyệt cười tươi trao túi quà sang trọng cho khách: Nhận máy tại nhà, mở ra kiểm tra zin chuẩn mới phải thanh toán tiền.
+            </div>
+            <table class="specs-table">
+              <tr><td class="spec-name">Cỡ cảnh / Góc:</td><td class="spec-val">Trung toàn cảnh quầy thu ngân</td></tr>
+              <tr><td class="spec-name">Âm thanh SFX:</td><td class="spec-val">Tiếng "Ting" kết bài</td></tr>
+              <tr><td class="spec-name">Text Overlay:</td><td class="spec-val" style="color: var(--emerald); font-weight: 800;">"Freeship Hỏa Tốc 30P Hải Phòng • Check Zin Mới Trả Tiền"</td></tr>
+            </table>
+            <div class="director-note-box">
+              💡 <b>Ghi chú đạo diễn:</b> Call To Action cuối: <em>"Inbox địa chỉ ngay - 30 phút sau có máy tận tay!"</em>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <!-- LIGHTBOX MODAL -->
+  <div class="lightbox" id="lightboxModal" onclick="closeLightbox(event)">
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+      <button class="lightbox-close" onclick="closeLightboxDirect()">✕</button>
+      <div class="lightbox-img-box">
+        <img id="lbImg" src="" alt="Zoom Frame">
+      </div>
+      <div class="lightbox-details">
+        <div id="lbTag" style="font-size: 11px; font-weight: 800; color: var(--cyan); text-transform: uppercase; font-family: 'JetBrains Mono', monospace;"></div>
+        <h3 id="lbTitle" style="font-size: 18px; font-weight: 800; color: #fff;"></h3>
+        <p id="lbDesc" style="font-size: 13px; color: #cbd5e1; line-height: 1.6;"></p>
+        <div style="margin-top: auto; padding-top: 14px; border-top: 1px solid rgba(255,255,255,0.08); font-size: 11px; color: var(--amber);">
+          💡 <b>Quy chuẩn:</b> Khung hình thuộc hệ thống Visual Storyboard Nguyệt Store Hải Phòng 2026.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openLightbox(imgSrc, title, desc, tag) {
+      document.getElementById('lbImg').src = imgSrc;
+      document.getElementById('lbTitle').innerText = title;
+      document.getElementById('lbDesc').innerText = desc;
+      document.getElementById('lbTag').innerText = tag || 'PHÂN CẢNH CHI TIẾT';
+      document.getElementById('lightboxModal').classList.add('active');
+    }
+    function closeLightbox(e) {
+      if (e.target.id === 'lightboxModal') {
+        document.getElementById('lightboxModal').classList.remove('active');
+      }
+    }
+    function closeLightboxDirect() {
+      document.getElementById('lightboxModal').classList.remove('active');
+    }
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeLightboxDirect();
+    });
+  </script>
+</body>
+</html>
