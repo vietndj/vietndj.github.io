@@ -408,55 +408,84 @@
         <h3 class="text-base font-bold text-slate-900">Chỉnh sửa thông tin học viên</h3>
         <button onclick="closeEditModal()" class="text-slate-400 hover:text-slate-600">✕</button>
       </div>
-      <form id="editStudentForm" onsubmit="handleSaveFullEdit(event)" class="space-y-3 text-xs">
+      <form id="editStudentForm" onsubmit="handleSaveFullEdit(event)" class="space-y-3.5 text-xs">
         <input type="hidden" id="edit-id" />
+        
+        <!-- 1. GHI CHÚ TƯ VẤN ĐƯA LÊN ĐẦU (Được chỉnh sửa nhiều nhất) -->
+        <div class="p-3 bg-amber-50/80 border border-amber-200 rounded-2xl">
+          <div class="flex items-center justify-between mb-1.5">
+            <label class="font-bold text-amber-900 flex items-center gap-1.5">
+              <span>📝</span> Ghi chú tư vấn & Bối cảnh học viên
+            </label>
+            <span class="text-[10px] text-amber-800 font-semibold bg-amber-100/80 px-2 py-0.5 rounded-md">Ưu tiên sửa nhanh</span>
+          </div>
+          <textarea 
+            id="edit-notes" 
+            rows="3" 
+            placeholder="Nhập nội dung tư vấn, tâm lý, vướng mắc hoặc định hướng cho học viên..." 
+            class="w-full px-3 py-2 rounded-xl border border-amber-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 focus:outline-none bg-white text-slate-800 leading-relaxed"
+          ></textarea>
+        </div>
+
+        <!-- 2. HỌ & TÊN HỌC VIÊN -->
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Họ & Tên học viên *</label>
-          <input type="text" id="edit-name" required class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+          <input type="text" id="edit-name" required class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none font-bold text-slate-900" />
         </div>
+
+        <!-- 3. NGÀNH NGHỀ (XỔ RA ĐỂ CHỌN) & LỚP HỌC -->
         <div class="grid grid-cols-2 gap-3">
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">Lớp học</label>
-            <input type="text" id="edit-class" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            <label class="block font-semibold text-slate-700 mb-1">Ngành nghề * (Xổ ra để chọn)</label>
+            <select id="edit-industry" onchange="handleEditIndustryChange()" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white font-medium text-slate-800">
+              <!-- Dynamically populated via JS -->
+            </select>
+            <input type="text" id="edit-industry-custom" placeholder="Nhập tên ngành nghề mới..." class="hidden mt-1.5 w-full px-3 py-1.5 rounded-lg border border-blue-300 focus:ring-2 focus:ring-blue-500 text-xs bg-blue-50/50" />
           </div>
           <div>
-            <label class="block font-semibold text-slate-700 mb-1">Ngành nghề</label>
-            <input type="text" id="edit-industry" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            <label class="block font-semibold text-slate-700 mb-1">Lớp học</label>
+            <input type="text" id="edit-class" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none font-medium" />
           </div>
         </div>
+
+        <!-- 4. SỐ ĐIỆN THOẠI & NGUỒN LIÊN HỆ -->
         <div class="grid grid-cols-2 gap-3">
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Số điện thoại</label>
-            <input type="text" id="edit-phone" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+            <input type="text" id="edit-phone" placeholder="vd: 0912345678" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono" />
           </div>
           <div>
             <label class="block font-semibold text-slate-700 mb-1">Nguồn liên hệ</label>
-            <select id="edit-source" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none">
-              <option value="zalo">Zalo</option>
-              <option value="facebook">Facebook Page</option>
-              <option value="both">Cả FB & Zalo</option>
+            <select id="edit-source" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none bg-white font-medium">
+              <option value="zalo">💬 Zalo</option>
+              <option value="facebook">🌐 Facebook Page</option>
+              <option value="both">🔄 Cả FB & Zalo</option>
             </select>
           </div>
         </div>
-        <div>
-          <label class="block font-semibold text-slate-700 mb-1">Link Zalo Chat (zalo.me/...)</label>
-          <input type="text" id="edit-zalo" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+
+        <!-- 5. LINK ZALO & LINK FACEBOOK -->
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Link Zalo Chat</label>
+            <input type="text" id="edit-zalo" placeholder="https://zalo.me/..." class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-600" />
+          </div>
+          <div>
+            <label class="block font-semibold text-slate-700 mb-1">Link Facebook cá nhân / Page</label>
+            <input type="text" id="edit-facebook" placeholder="https://facebook.com/..." class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none text-slate-600" />
+          </div>
         </div>
-        <div>
-          <label class="block font-semibold text-slate-700 mb-1">Link Facebook cá nhân / Page</label>
-          <input type="text" id="edit-facebook" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
-        </div>
+
+        <!-- 6. THƯ MỤC GOOGLE DRIVE -->
         <div>
           <label class="block font-semibold text-slate-700 mb-1">Thư mục Google Drive</label>
-          <input type="text" id="edit-drive" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none" />
+          <input type="text" id="edit-drive" placeholder="https://drive.google.com/..." class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none font-mono text-slate-600" />
         </div>
-        <div>
-          <label class="block font-semibold text-slate-700 mb-1">Ghi chú tư vấn</label>
-          <textarea id="edit-notes" rows="2" class="w-full px-3 py-2 rounded-xl border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:outline-none"></textarea>
-        </div>
+
+        <!-- ACTION BUTTONS -->
         <div class="flex items-center justify-end gap-2 pt-3 border-t border-slate-100">
-          <button type="button" onclick="closeEditModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 font-semibold text-slate-700">Hủy</button>
-          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold text-white shadow-sm">Lưu Thay Đổi</button>
+          <button type="button" onclick="closeEditModal()" class="px-4 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 font-semibold text-slate-700 transition">Hủy</button>
+          <button type="submit" class="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 font-bold text-white shadow-sm transition">Lưu Thay Đổi</button>
         </div>
       </form>
     </div>
@@ -481,7 +510,7 @@
         <span>•</span>
         <span>Khóa Học Làm Video & Xây Dựng Kênh Thực Chiến</span>
       </div>
-      <div>Cập nhật lúc: <span class="font-mono text-slate-600">06/09/2026 06:51:06</span></div>
+      <div>Cập nhật lúc: <span class="font-mono text-slate-600">06/09/2026 06:52:30</span></div>
     </div>
   </footer>
 
@@ -1344,23 +1373,64 @@
     }
 
     // --- 9. FULL EDIT MODAL ---
+    function handleEditIndustryChange() {
+      const select = document.getElementById('edit-industry');
+      const customInput = document.getElementById('edit-industry-custom');
+      if (select.value === '__custom__') {
+        customInput.classList.remove('hidden');
+        customInput.focus();
+      } else {
+        customInput.classList.add('hidden');
+      }
+    }
+
     function openEditModalForCurrent() {
       if (!selectedStudentId) return;
       const s = currentStudents.find(st => st.id === selectedStudentId);
       if (!s) return;
 
       document.getElementById('edit-id').value = s.id;
+      document.getElementById('edit-notes').value = s.notes || '';
       document.getElementById('edit-name').value = s.name || '';
       document.getElementById('edit-class').value = s.class || '';
-      document.getElementById('edit-industry').value = s.industry || '';
+
+      // Populate Industry Dropdown dynamically
+      const indSelect = document.getElementById('edit-industry');
+      const customInput = document.getElementById('edit-industry-custom');
+      customInput.classList.add('hidden');
+      customInput.value = '';
+
+      const allIndustries = Array.from(new Set(currentStudents.map(st => st.industry).filter(Boolean))).sort();
+      let indHtml = allIndustries.map(ind => `<option value="${ind}">${ind}</option>`).join('');
+      indHtml += '<option value="__custom__">➕ Nhập ngành nghề khác...</option>';
+      indSelect.innerHTML = indHtml;
+
+      const currentInd = s.industry || '';
+      if (allIndustries.includes(currentInd)) {
+        indSelect.value = currentInd;
+      } else if (currentInd) {
+        indSelect.insertAdjacentHTML('afterbegin', `<option value="${currentInd}">${currentInd}</option>`);
+        indSelect.value = currentInd;
+      } else {
+        indSelect.selectedIndex = 0;
+      }
+
       document.getElementById('edit-phone').value = s.phone || '';
       document.getElementById('edit-source').value = s.contact_source || 'zalo';
       document.getElementById('edit-zalo').value = s.zalo_url || '';
       document.getElementById('edit-facebook').value = s.facebook_url || '';
       document.getElementById('edit-drive').value = s.drive_folder_url || '';
-      document.getElementById('edit-notes').value = s.notes || '';
 
       document.getElementById('fullEditModal').classList.remove('hidden');
+
+      // Tự động focus vào Ghi chú tư vấn để sửa nhanh tức thì
+      setTimeout(() => {
+        const notesEl = document.getElementById('edit-notes');
+        if (notesEl) {
+          notesEl.focus();
+          notesEl.setSelectionRange(notesEl.value.length, notesEl.value.length);
+        }
+      }, 150);
     }
 
     function closeEditModal() {
@@ -1373,22 +1443,30 @@
       const student = currentStudents.find(s => s.id === id);
       if (!student) return;
 
+      student.notes = document.getElementById('edit-notes').value.trim();
       student.name = document.getElementById('edit-name').value.trim();
       student.class = document.getElementById('edit-class').value.trim();
-      student.industry = document.getElementById('edit-industry').value.trim();
+
+      const indSelect = document.getElementById('edit-industry');
+      if (indSelect.value === '__custom__') {
+        const customVal = document.getElementById('edit-industry-custom').value.trim();
+        student.industry = customVal || 'Chưa phân loại';
+      } else {
+        student.industry = indSelect.value || 'Chưa phân loại';
+      }
+
       student.phone = document.getElementById('edit-phone').value.trim();
       student.contact_source = document.getElementById('edit-source').value;
       student.zalo_url = document.getElementById('edit-zalo').value.trim();
       student.facebook_url = document.getElementById('edit-facebook').value.trim();
       student.drive_folder_url = document.getElementById('edit-drive').value.trim();
-      student.notes = document.getElementById('edit-notes').value.trim();
 
       saveStudents();
       closeEditModal();
       openDrawer(id); // Re-render drawer
       populateFilterDropdowns();
       renderAll();
-      showToast(`Đã cập nhật thông tin học viên ${student.name}!`);
+      showToast(`Đã lưu ghi chú & thông tin học viên ${student.name}!`);
     }
 
     // --- 10. TOAST & UTILITIES ---
