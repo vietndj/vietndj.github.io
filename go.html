@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FEDU Omni-Hub • Trung Tâm Điều Hành & Kho Tri Thức Số (go.fedu.vn)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-base: #060911;
+      --bg-surface: #0c121e;
+      --bg-card: #101726;
+      --bg-card-hover: #162035;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-focus: #38bdf8;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.18);
+      --emerald: #10b981;
+      --emerald-glow: rgba(16, 185, 129, 0.15);
+      --amber: #f59e0b;
+      --purple: #a855f7;
+      --rose: #f43f5e;
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-primary);
+      line-height: 1.55;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    a { color: inherit; text-decoration: none; }
+    
+    /* TOP NAVBAR */
+    .navbar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(6, 9, 17, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 12px 24px;
+      display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .brand-wrap { display: flex; align-items: center; gap: 12px; }
+    .brand-logo {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff; font-weight: 800; font-size: 11px; letter-spacing: 0.8px;
+      padding: 6px 12px; border-radius: var(--radius-sm); text-transform: uppercase;
+      box-shadow: 0 0 16px rgba(2, 132, 199, 0.4);
+    }
+    .brand-name { font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+    .brand-domain { color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; background: var(--cyan-glow); padding: 3px 8px; border-radius: 6px; }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .nav-pill {
+      font-size: 12px; font-weight: 600; color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle);
+      padding: 6px 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .nav-pill kbd {
+      background: rgba(255, 255, 255, 0.12); color: #fff; padding: 1px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    }
+
+    /* CONTAINER */
+    .container { max-width: 1380px; margin: 0 auto; padding: 24px 20px 60px; width: 100%; flex: 1; }
+
+    /* HERO */
+    .hero {
+      text-align: center; padding: 28px 16px 20px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3);
+      padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 12px;
+    }
+    .hero h1 {
+      font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px;
+    }
+    .hero p {
+      color: var(--text-secondary); font-size: 15px; max-width: 720px; margin: 0 auto 24px;
+    }
+
+    /* SEARCH BAR */
+    .search-box {
+      max-width: 780px; margin: 0 auto 24px; position: relative;
+    }
+    .search-inner {
+      display: flex; align-items: center;
+      background: var(--bg-surface);
+      border: 1.5px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 6px 16px;
+      transition: all 0.25s ease;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    }
+    .search-inner:focus-within {
+      border-color: var(--cyan);
+      box-shadow: 0 0 0 3px var(--cyan-glow), 0 12px 35px rgba(0, 0, 0, 0.6);
+    }
+    .search-icon { font-size: 18px; margin-right: 12px; color: var(--text-muted); }
+    .search-input {
+      flex: 1; background: transparent; border: none; outline: none;
+      color: #fff; font-size: 16px; font-family: inherit; font-weight: 500;
+      padding: 10px 0;
+    }
+    .search-input::placeholder { color: var(--text-muted); font-size: 14.5px; }
+    .search-clear {
+      display: none; background: rgba(255, 255, 255, 0.1); border: none;
+      color: var(--text-secondary); width: 26px; height: 26px; border-radius: 50%;
+      cursor: pointer; align-items: center; justify-content: center; font-size: 12px;
+      margin-left: 8px; transition: all 0.2s;
+    }
+    .search-clear:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
+    .search-kbd {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace;
+      color: var(--text-muted); background: rgba(255, 255, 255, 0.06);
+      padding: 3px 8px; border-radius: 6px; border: 1px solid var(--border-subtle);
+      margin-left: 8px;
+    }
+
+    /* PINNED ESSENTIALS */
+    .pinned-section {
+      max-width: 1100px; margin: 0 auto 28px;
+    }
+    .pinned-label {
+      font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+      color: var(--amber); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+    }
+    .pinned-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;
+    }
+    .pinned-card {
+      background: linear-gradient(145deg, rgba(245, 158, 11, 0.06) 0%, rgba(16, 23, 38, 0.9) 100%);
+      border: 1px solid rgba(245, 158, 11, 0.25);
+      border-radius: var(--radius-md); padding: 12px 14px;
+      display: flex; align-items: center; gap: 10px;
+      transition: all 0.2s ease; text-decoration: none; color: inherit;
+    }
+    .pinned-card:hover {
+      transform: translateY(-2px); border-color: var(--amber);
+      box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
+    }
+    .pinned-icon { font-size: 22px; }
+    .pinned-info { overflow: hidden; }
+    .pinned-title { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pinned-meta { font-size: 11px; color: var(--text-muted); }
+
+    /* CATEGORY TABS */
+    .tabs-bar {
+      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px;
+      margin-bottom: 24px; scrollbar-width: none; border-bottom: 1px solid var(--border-subtle);
+    }
+    .tabs-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      background: transparent; border: 1px solid transparent;
+      color: var(--text-secondary); font-size: 13.5px; font-weight: 600; font-family: inherit;
+      padding: 8px 16px; border-radius: var(--radius-sm); cursor: pointer;
+      display: flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s;
+    }
+    .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.04); }
+    .tab-btn.active {
+      background: var(--bg-card); color: var(--cyan);
+      border-color: rgba(56, 189, 248, 0.35); box-shadow: 0 2px 12px var(--cyan-glow);
+    }
+    .tab-badge {
+      font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 700;
+      background: rgba(255, 255, 255, 0.08); padding: 2px 7px; border-radius: 999px;
+    }
+    .tab-btn.active .tab-badge {
+      background: var(--cyan-glow); color: var(--cyan);
+    }
+
+    /* RESULTS STATS */
+    .results-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+      font-size: 13px; color: var(--text-muted); font-weight: 600;
+    }
+    .results-count span { color: var(--text-primary); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+
+    /* CARDS GRID */
+    .cards-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+    }
+    .card {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md); padding: 18px;
+      display: flex; flex-direction: column; justify-content: space-between;
+      transition: all 0.22s ease; position: relative;
+    }
+    .card:hover {
+      transform: translateY(-3px); border-color: var(--cyan);
+      background: var(--bg-card-hover); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .card-icon {
+      font-size: 26px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+      background: rgba(255, 255, 255, 0.04); border-radius: 10px; flex-shrink: 0;
+    }
+    .card-title-group { flex: 1; overflow: hidden; }
+    .card-badge {
+      display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
+    }
+    .badge-apps { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
+    .badge-landings { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+    .badge-courses { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+    .badge-podcasts { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
+    .badge-skills { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
+    .badge-storyboards { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+
+    .card-title {
+      font-size: 15px; font-weight: 700; color: #fff; line-height: 1.4;
+      margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+    }
+    .card-desc {
+      font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px;
+    }
+    .card-tags {
+      display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;
+    }
+    .tag-chip {
+      font-size: 10.5px; font-weight: 600; color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04); padding: 2px 7px; border-radius: 4px;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .tag-chip:hover { color: var(--cyan); background: var(--cyan-glow); }
+
+    .card-actions {
+      display: flex; gap: 8px; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px; margin-top: auto;
+    }
+    .btn-open {
+      flex: 1; background: var(--bg-base); border: 1px solid rgba(56, 189, 248, 0.3);
+      color: #fff; font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;
+    }
+    .btn-open:hover {
+      background: var(--cyan); color: #000; border-color: var(--cyan);
+    }
+    .btn-copy {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle);
+      color: var(--text-secondary); font-size: 12px; font-weight: 600; padding: 7px 10px;
+      border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 4px;
+    }
+    .btn-copy:hover { color: #fff; background: rgba(255, 255, 255, 0.1); }
+
+    /* HIGHLIGHT */
+    mark { background: rgba(56, 189, 248, 0.3); color: #fff; padding: 0 2px; border-radius: 3px; }
+
+    /* EMPTY STATE */
+    .empty-state {
+      text-align: center; padding: 60px 20px; color: var(--text-muted);
+    }
+    .empty-icon { font-size: 48px; margin-bottom: 12px; }
+
+    /* LOAD MORE */
+    .load-more-wrap { text-align: center; margin-top: 32px; }
+    .btn-load-more {
+      background: var(--bg-surface); border: 1px solid var(--border-subtle);
+      color: var(--text-secondary); font-size: 13px; font-weight: 700; padding: 10px 24px;
+      border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;
+    }
+    .btn-load-more:hover { border-color: var(--cyan); color: #fff; background: var(--bg-card); }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--border-subtle); padding: 24px; text-align: center;
+      font-size: 12px; color: var(--text-muted); margin-top: auto;
+    }
+    .footer strong { color: var(--text-secondary); }
+
+    /* TOAST */
+    .toast {
+      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      background: #10b981; color: #fff; font-size: 13px; font-weight: 700;
+      padding: 10px 18px; border-radius: var(--radius-sm); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(12px);
+      transition: all 0.25s ease; pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .navbar { padding: 10px 16px; }
+      .brand-domain { display: none; }
+      .hero h1 { font-size: 24px; }
+      .pinned-grid { grid-template-columns: repeat(2, 1fr); }
+      .cards-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="brand-wrap">
+      <div class="brand-logo">FEDU</div>
+      <div class="brand-name">Omni-Hub <span class="brand-domain">go.fedu.vn</span></div>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-pill">
+        <span>Raycast Quicklink:</span> <kbd>Option + Space</kbd> gõ <kbd>hub</kbd>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container">
+    
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-badge">⚡ Trung Tâm Điều Hành & Kho Tri Thức Số</div>
+      <h1>Cổng Tra Cứu Toàn Bộ Tài Nguyên Số</h1>
+      <p>Gom toàn bộ Web Apps, Landing Pages (SPAs), Kho Khóa Học, 517+ Podcast Tri Thức và AI Skills về một mối duy nhất.</p>
+
+      <!-- SEARCH BOX -->
+      <div class="search-box">
+        <div class="search-inner">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm font, scene, broll, podcast, kịch bản, spa, skill... (Bấm '/' để tìm)" autocomplete="off">
+          <button id="clearSearchBtn" class="search-clear" title="Xóa tìm kiếm">✕</button>
+          <span class="search-kbd">/</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PINNED ESSENTIALS -->
+    <section class="pinned-section">
+      <div class="pinned-label">⭐ Công cụ thiết yếu dùng hàng ngày</div>
+      <div class="pinned-grid">
+        <a href="https://fedu.vn/font" target="_blank" class="pinned-card">
+          <div class="pinned-icon">🔤</div>
+          <div class="pinned-info">
+            <div class="pinned-title">FEDU Font System</div>
+            <div class="pinned-meta">fedu.vn/font</div>
+          </div>
+        </a>
+        <a href="https://fedu.vn/scene.html" target="_blank" class="pinned-card">
+          <div class="pinned-icon">🎬</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Scene Inspector</div>
+            <div class="pinned-meta">200+ Cảnh Điện Ảnh</div>
+          </div>
+        </a>
+        <a href="https://fedu.vn/brollbank.html" target="_blank" class="pinned-card">
+          <div class="pinned-icon">🎥</div>
+          <div class="pinned-info">
+            <div class="pinned-title">B-Roll Bank YouTube</div>
+            <div class="pinned-meta">150+ Clips Thực Chiến</div>
+          </div>
+        </a>
+        <a href="https://spa-da-mat-laser-1tr.vercel.app" target="_blank" class="pinned-card">
+          <div class="pinned-icon">💆</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Spa Da Mặt Laser 1Tr</div>
+            <div class="pinned-meta">Landing Page SPA</div>
+          </div>
+        </a>
+        <a href="https://fedu.vn/hocvien.html" target="_blank" class="pinned-card">
+          <div class="pinned-icon">👥</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Học Viên & CRM Leads</div>
+            <div class="pinned-meta">SePay Real-time</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- CATEGORY TABS -->
+    <nav class="tabs-bar" id="tabsBar">
+      <button class="tab-btn active" data-cat="all">🌟 Tất Cả <span class="tab-badge" id="badge-all">0</span></button>
+      <button class="tab-btn" data-cat="apps">⚡ Web Apps & Tools <span class="tab-badge" id="badge-apps">0</span></button>
+      <button class="tab-btn" data-cat="landings">🚀 Landing Pages & SPAs <span class="tab-badge" id="badge-landings">0</span></button>
+      <button class="tab-btn" data-cat="courses">🎓 Kho Khóa Học <span class="tab-badge" id="badge-courses">0</span></button>
+      <button class="tab-btn" data-cat="podcasts">🎙️ Podcasts K <span class="tab-badge" id="badge-podcasts">0</span></button>
+      <button class="tab-btn" data-cat="skills">🧠 AI Skills Master <span class="tab-badge" id="badge-skills">0</span></button>
+      <button class="tab-btn" data-cat="storyboards">📝 Kịch Bản Storyboards <span class="tab-badge" id="badge-storyboards">0</span></button>
+    </nav>
+
+    <!-- RESULTS INFO -->
+    <div class="results-header">
+      <div class="results-count" id="resultsCount">Đang tải tài nguyên...</div>
+      <div class="results-hint" id="resultsHint">Gõ từ khóa không dấu để lọc siêu tốc</div>
+    </div>
+
+    <!-- CARDS GRID -->
+    <section class="cards-grid" id="cardsGrid">
+      <!-- Rendered via JS -->
+    </section>
+
+    <!-- EMPTY STATE -->
+    <div id="emptyState" class="empty-state" style="display: none;">
+      <div class="empty-icon">🔍</div>
+      <h3>Không tìm thấy tài nguyên nào phù hợp</h3>
+      <p>Thử tìm với từ khóa khác hoặc bấm nút xóa tìm kiếm.</p>
+    </div>
+
+    <!-- LOAD MORE -->
+    <div class="load-more-wrap" id="loadMoreWrap" style="display: none;">
+      <button class="btn-load-more" id="loadMoreBtn">Xem Thêm Kết Quả...</button>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div>Hệ Thống Điều Hành & Kho Tri Thức <strong>FEDU Omni-Hub</strong> • Cập nhật tự động 1-Shot</div>
+    <div style="margin-top: 4px;">Dành riêng cho <strong>anh Việt</strong> • Powered by Antigravity AI Engine</div>
+  </footer>
+
+  <!-- TOAST -->
+  <div id="toast" class="toast">
+    <span>✅</span> <span id="toastMsg">Đã sao chép link!</span>
+  </div>
+
+  <script>
+    // Chuẩn hóa tiếng Việt bỏ dấu để tìm kiếm cực nhạy
+    function removeVietnameseTones(str) {
+      if (!str) return '';
+      str = str.toLowerCase();
+      str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+      str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+      str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+      str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+      str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+      str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+      str = str.replace(/đ/g, "d");
+      str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, "");
+      str = str.replace(/\u02C6|\u0306|\u031B/g, "");
+      return str.trim();
+    }
+
+    let allItems = [];
+    let currentCategory = 'all';
+    let searchQuery = '';
+    let visibleCount = 48;
+    const PAGE_CHUNK = 36;
+
+    const searchInput = document.getElementById('searchInput');
+    const clearSearchBtn = document.getElementById('clearSearchBtn');
+    const cardsGrid = document.getElementById('cardsGrid');
+    const emptyState = document.getElementById('emptyState');
+    const resultsCount = document.getElementById('resultsCount');
+    const loadMoreWrap = document.getElementById('loadMoreWrap');
+    const loadMoreBtn = document.getElementById('loadMoreBtn');
+    const tabsBar = document.getElementById('tabsBar');
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toastMsg');
+
+    function showToast(text) {
+      toastMsg.textContent = text;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    // Tải dữ liệu catalog.json
+    async function loadCatalog() {
+      try {
+        const res = await fetch('catalog.json?v=' + Date.now());
+        const data = await res.json();
+        allItems = data.items || [];
+
+        // Cập nhật số lượng trên các badge tab
+        document.getElementById('badge-all').textContent = allItems.length;
+        const stats = data.stats || {};
+        for (const [k, v] of Object.entries(stats)) {
+          const el = document.getElementById(`badge-${k}`);
+          if (el) el.textContent = v;
+        }
+
+        // Đọc URL params ban đầu (?q=... và ?c=...)
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('q')) {
+          searchQuery = params.get('q');
+          searchInput.value = searchQuery;
+          clearSearchBtn.style.display = 'flex';
+        }
+        if (params.has('c')) {
+          const cat = params.get('c');
+          const btn = document.querySelector(`.tab-btn[data-cat="${cat}"]`);
+          if (btn) {
+            document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            currentCategory = cat;
+          }
+        }
+
+        render();
+      } catch (err) {
+        console.error('Lỗi tải catalog:', err);
+        resultsCount.textContent = '❌ Lỗi tải dữ liệu catalog. Vui lòng thử lại.';
+      }
+    }
+
+    function highlightText(text, query) {
+      if (!query || !text) return text || '';
+      const normQuery = removeVietnameseTones(query);
+      const normText = removeVietnameseTones(text);
+      const idx = normText.indexOf(normQuery);
+      if (idx === -1) return text;
+      const matched = text.substring(idx, idx + query.length);
+      return text.substring(0, idx) + `<mark>${matched}</mark>` + text.substring(idx + query.length);
+    }
+
+    function filterItems() {
+      const qNorm = removeVietnameseTones(searchQuery);
+      return allItems.filter(item => {
+        // Lọc category
+        if (currentCategory !== 'all' && item.category !== currentCategory) {
+          return false;
+        }
+        // Lọc search
+        if (qNorm) {
+          const titleNorm = removeVietnameseTones(item.title || '');
+          const descNorm = removeVietnameseTones(item.desc || '');
+          const tagsNorm = removeVietnameseTones((item.tags || []).join(' '));
+          const urlNorm = removeVietnameseTones(item.url || '');
+          if (!titleNorm.includes(qNorm) && !descNorm.includes(qNorm) && !tagsNorm.includes(qNorm) && !urlNorm.includes(qNorm)) {
+            return false;
+          }
+        }
+        return true;
+      });
+    }
+
+    function render() {
+      const filtered = filterItems();
+      resultsCount.innerHTML = `Hiển thị <span>${Math.min(visibleCount, filtered.length)}</span> / <span>${filtered.length}</span> tài nguyên`;
+
+      if (filtered.length === 0) {
+        cardsGrid.innerHTML = '';
+        emptyState.style.display = 'block';
+        loadMoreWrap.style.display = 'none';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+      const toShow = filtered.slice(0, visibleCount);
+
+      cardsGrid.innerHTML = toShow.map(it => {
+        const badgeClass = `badge-${it.category}`;
+        const titleHl = highlightText(it.title, searchQuery);
+        const descHl = highlightText(it.desc, searchQuery);
+        const tagsHtml = (it.tags || []).slice(0, 4).map(t => 
+          `<span class="tag-chip" onclick="searchByTag('${t}')">#${t}</span>`
+        ).join('');
+
+        return `
+          <div class="card">
+            <div>
+              <div class="card-top">
+                <div class="card-icon">${it.icon || '📄'}</div>
+                <div class="card-title-group">
+                  <span class="card-badge ${badgeClass}">${it.badge || it.category_name}</span>
+                  <h3 class="card-title" title="${it.title}">${titleHl}</h3>
+                </div>
+              </div>
+              <p class="card-desc">${descHl || 'Không có mô tả chi tiết.'}</p>
+              <div class="card-tags">${tagsHtml}</div>
+            </div>
+            <div class="card-actions">
+              <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="btn-open">
+                <span>Mở Trang</span> <span>↗</span>
+              </a>
+              <button class="btn-copy" onclick="copyLink('${it.url}')" title="Sao chép liên kết">
+                📋 Copy
+              </button>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      if (filtered.length > visibleCount) {
+        loadMoreWrap.style.display = 'block';
+      } else {
+        loadMoreWrap.style.display = 'none';
+      }
+    }
+
+    function updateUrlParams() {
+      const url = new URL(window.location);
+      if (searchQuery) url.searchParams.set('q', searchQuery);
+      else url.searchParams.delete('q');
+
+      if (currentCategory !== 'all') url.searchParams.set('c', currentCategory);
+      else url.searchParams.delete('c');
+
+      window.history.replaceState({}, '', url);
+    }
+
+    function searchByTag(tag) {
+      searchQuery = tag;
+      searchInput.value = tag;
+      clearSearchBtn.style.display = 'flex';
+      visibleCount = PAGE_CHUNK;
+      updateUrlParams();
+      render();
+    }
+
+    function copyLink(url) {
+      navigator.clipboard.writeText(url).then(() => {
+        showToast('✅ Đã sao chép: ' + url);
+      }).catch(() => {
+        showToast('🔗 ' + url);
+      });
+    }
+
+    // SỰ KIỆN TÌM KIẾM
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
+      visibleCount = PAGE_CHUNK;
+      updateUrlParams();
+      render();
+    });
+
+    clearSearchBtn.addEventListener('click', () => {
+      searchInput.value = '';
+      searchQuery = '';
+      clearSearchBtn.style.display = 'none';
+      visibleCount = PAGE_CHUNK;
+      updateUrlParams();
+      render();
+      searchInput.focus();
+    });
+
+    // SỰ KIỆN TABS
+    tabsBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.tab-btn');
+      if (!btn) return;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentCategory = btn.dataset.cat;
+      visibleCount = PAGE_CHUNK;
+      updateUrlParams();
+      render();
+    });
+
+    // XEM THÊM
+    loadMoreBtn.addEventListener('click', () => {
+      visibleCount += PAGE_CHUNK;
+      render();
+    });
+
+    // PHÍM TẮT
+    window.addEventListener('keydown', (e) => {
+      if (e.key === '/' && document.activeElement !== searchInput) {
+        e.preventDefault();
+        searchInput.focus();
+        searchInput.select();
+      } else if (e.key === 'Escape' && document.activeElement === searchInput) {
+        searchInput.value = '';
+        searchQuery = '';
+        clearSearchBtn.style.display = 'none';
+        updateUrlParams();
+        render();
+        searchInput.blur();
+      }
+    });
+
+    // Khởi động
+    loadCatalog();
+  </script>
+</body>
+</html>
