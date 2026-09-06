@@ -229,6 +229,117 @@
   }
 
   /**
+   * Favorites Storage Helper
+   */
+  function getFavorites() {
+    try {
+      var favs = localStorage.getItem('fonthub_favorites');
+      return favs ? JSON.parse(favs) : [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function isFontFavorite(fontId) {
+    var favs = getFavorites();
+    return favs.indexOf(fontId) !== -1;
+  }
+
+  function toggleFontFavorite(fontId) {
+    try {
+      var favs = getFavorites();
+      var idx = favs.indexOf(fontId);
+      var isFav = false;
+      if (idx === -1) {
+        favs.push(fontId);
+        isFav = true;
+      } else {
+        favs.splice(idx, 1);
+        isFav = false;
+      }
+      localStorage.setItem('fonthub_favorites', JSON.stringify(favs));
+      return isFav;
+    } catch (e) {
+      return false;
+    }
+  }
+
+  /**
+   * Resolves a human-readable font variant (e.g. 'Light', 'Book', 'BoldItalic', 'ExtraBold')
+   * into valid CSS font-weight, font-style, and family fallbacks matching OS & webfont files.
+   */
+  function resolveVariantStyle(family, variantStr, category, files) {
+    var raw = String(variantStr || 'Regular').trim();
+    var lower = raw.toLowerCase();
+
+    // 1. Determine fontStyle
+    var isItalic = lower.includes('italic') || lower.includes('oblique') || lower.includes('slant');
+    var fontStyle = isItalic ? 'italic' : 'normal';
+
+    // 2. Determine numeric fontWeight
+    var fontWeight = '400';
+    if (lower.includes('thin') || lower.includes('hairline') || lower === '100' || lower === '100italic' || lower.includes('air')) {
+      fontWeight = '100';
+    } else if (lower.includes('extralight') || lower.includes('ultralight') || lower.includes('extra light') || lower.includes('ultra light') || lower === '200' || lower === '200italic') {
+      fontWeight = '200';
+    } else if (lower.includes('light') || lower === '300' || lower === '300italic') {
+      fontWeight = '300';
+    } else if (lower.includes('medium') || lower === '500' || lower === '500italic') {
+      fontWeight = '500';
+    } else if (lower.includes('semibold') || lower.includes('demibold') || lower.includes('semi bold') || lower.includes('demi bold') || lower === '600' || lower === '600italic') {
+      fontWeight = '600';
+    } else if (lower.includes('extrabold') || lower.includes('ultrabold') || lower.includes('heavy') || lower.includes('extra bold') || lower.includes('ultra bold') || lower === '800' || lower === '800italic') {
+      fontWeight = '800';
+    } else if (lower.includes('black') || lower.includes('poster') || lower.includes('ultra') || lower === '900' || lower === '900italic') {
+      fontWeight = '900';
+    } else if (lower.includes('bold') || lower === '700' || lower === '700italic') {
+      fontWeight = '700';
+    } else if (lower.includes('book') || lower.includes('regular') || lower.includes('normal') || lower.includes('roman') || lower === '400') {
+      fontWeight = '400';
+    }
+
+    // 3. Fallback stack
+    var fallbackStack = App.typeTester ? App.typeTester.getFallbackStack(category) : 'sans-serif';
+
+    // 4. Style naming for OS Font Matching
+    var cleanStyle = raw.replace(/[_-]/g, ' ').trim();
+    var hyphenStyle = raw.replace(/\s+/g, '-').trim();
+
+    var candidates = [
+      "'" + family + " " + cleanStyle + "'",
+      "'" + family + "-" + hyphenStyle + "'",
+      "'" + family + " " + raw + "'",
+      "'" + family + "-" + raw + "'",
+      "'" + family + "'"
+    ];
+
+    // Check if matching file exists in font.files
+    var matchedFilename = null;
+    if (Array.isArray(files) && files.length > 0) {
+      var found = files.find(function (f) {
+        if (!f) return false;
+        var fStyle = String(f.style || '').toLowerCase();
+        var fName = String(f.filename || '').toLowerCase();
+        return fStyle === lower || fName.includes(lower) || fName.includes(hyphenStyle.toLowerCase());
+      });
+      if (found && found.filename) {
+        matchedFilename = found.filename;
+        candidates.unshift("'" + matchedFilename.replace(/\.(ttf|otf|woff2)$/i, '') + "'");
+      }
+    }
+
+    var combinedFamily = candidates.join(', ') + ', ' + fallbackStack;
+
+    return {
+      rawVariant: raw,
+      fontWeight: fontWeight,
+      fontStyle: fontStyle,
+      fontFamily: combinedFamily,
+      matchedFilename: matchedFilename
+    };
+  }
+
+  /**
    * Builds the HTML string for an individual font card.
    */
   function createFontCardHTML(font) {
@@ -263,19 +374,38 @@
     var downloadTooltip = 'Tải trọn bộ ' + escapeHTML(font.name) + ' (' + weightsCount + ' files zip)';
 
     var category = font.category || (font.matrix_3d && font.matrix_3d.style) || 'Sans Serif';
-    var fallbackStack = App.typeTester.getFallbackStack(category);
+
+    // Find default weight index (prefer Regular, Book, Medium or first index)
+    var defaultWeightIdx = 0;
+    for (var wIdx = 0; wIdx < weights.length; wIdx++) {
+      var wLower = String(weights[wIdx]).toLowerCase();
+      if (wLower === 'regular' || wLower === 'book' || wLower === 'roman' || wLower === 'medium') {
+        defaultWeightIdx = wIdx;
+        break;
+      }
+    }
+    var activeWeight = weights[defaultWeightIdx] || 'Regular';
+    var initialResolved = resolveVariantStyle(font.family || font.name, activeWeight, category, font.files);
 
     // Build weight chips
     var weightChipsHTML = weights.map(function (w, idx) {
-      var isDefaultActive = (idx === 0 || String(w).toLowerCase() === 'regular');
-      return '<button type="button" class="weight-chip' + (isDefaultActive ? ' active' : '') + '" data-weight="' + escapeHTML(w) + '">' + escapeHTML(w) + '</button>';
+      var isActive = (idx === defaultWeightIdx);
+      return '<button type="button" class="weight-chip' + (isActive ? ' active' : '') + '" data-weight="' + escapeHTML(w) + '">' + escapeHTML(w) + '</button>';
     }).join('');
+
+    var isFav = isFontFavorite(font.id);
 
     return [
       '<article class="font-card" data-font-id="' + escapeHTML(font.id) + '" data-family="' + escapeHTML(font.family || font.name) + '" data-category="' + escapeHTML(category) + '">',
       '  <header class="card-header">',
       '    <div class="card-title-row">',
-      '      <h3 class="card-family-name">' + escapeHTML(font.name) + '</h3>',
+      '      <div class="title-with-fav">',
+      '        <button type="button" class="btn-fav' + (isFav ? ' active' : '') + '" data-fav-id="' + escapeHTML(font.id) + '" title="Đánh dấu yêu thích">⭐️</button>',
+      '        <h3 class="card-family-name">' + escapeHTML(font.name) + '</h3>',
+      '        <button type="button" class="btn-copy-name" data-copy-name="' + escapeHTML(font.name) + '" title="Copy tên font">',
+      '          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>',
+      '        </button>',
+      '      </div>',
       '      <span class="badge">' + weightsLabel + '</span>',
       '    </div>',
       '    <div class="card-designer-row">',
@@ -291,7 +421,7 @@
       '    </div>',
       '  </header>',
       '  <div class="card-specimen-wrap">',
-      '    <div class="preview-text" contenteditable="true" spellcheck="false" data-family="' + escapeHTML(font.family || font.name) + '" data-sample="' + escapeHTML(font.sample_text || '') + '" style="font-family: \'' + escapeHTML(font.family || font.name) + '\', ' + fallbackStack + ';">',
+      '    <div class="preview-text" contenteditable="true" spellcheck="false" data-family="' + escapeHTML(font.family || font.name) + '" data-sample="' + escapeHTML(font.sample_text || '') + '" style="font-family: ' + initialResolved.fontFamily + '; font-weight: ' + initialResolved.fontWeight + '; font-style: ' + initialResolved.fontStyle + ';">',
       '      ' + escapeHTML(currentText),
       '    </div>',
       '  </div>',
@@ -380,10 +510,10 @@
   }
 
   /**
-   * Attaches event listeners for weight chips, copy CSS, and glyphs modal buttons.
+   * Attaches event listeners for weight chips, copy CSS, copy name, favorite, and glyphs modal buttons.
    */
   function attachCardEvents() {
-    // Weight switching
+    // Weight switching with live CSS resolution
     DOM.fontGrid.querySelectorAll('.weight-chip:not([data-bound])').forEach(function (chip) {
       chip.setAttribute('data-bound', 'true');
       chip.addEventListener('click', function (e) {
@@ -391,21 +521,73 @@
         if (!card) return;
         var family = card.getAttribute('data-family');
         var weight = chip.getAttribute('data-weight');
+        var fontId = card.getAttribute('data-font-id');
+        var fontObj = App.allFonts.find(function (f) { return f.id === fontId || (f.family || f.name) === family; });
+        var category = card.getAttribute('data-category') || (fontObj && fontObj.category) || 'Sans Serif';
+        var files = fontObj ? fontObj.files : [];
 
         // Update active chip in card
         card.querySelectorAll('.weight-chip').forEach(function (c) { c.classList.remove('active'); });
         chip.classList.add('active');
 
-        // Update card preview style
+        // Resolve exact CSS properties
+        var resolved = resolveVariantStyle(family, weight, category, files);
+
+        // Update card preview style IMMEDIATELY
         var preview = card.querySelector('.preview-text');
         if (preview) {
-          preview.style.fontWeight = weight;
+          preview.style.fontWeight = resolved.fontWeight;
+          preview.style.fontStyle = resolved.fontStyle;
+          preview.style.fontFamily = resolved.fontFamily;
         }
 
-        // Trigger dynamic web font load if matching font exists in catalog
-        var fontObj = App.allFonts.find(function (f) { return (f.family || f.name) === family; });
-        if (fontObj && fontObj.web_font_url) {
-          App.typeTester.loadWebFont(family, fontObj.web_font_url, weight).catch(function () {});
+        // Dynamically load font face if available on server
+        if (resolved.matchedFilename && typeof FontFace !== 'undefined') {
+          var fontFaceFamily = family + ' ' + resolved.rawVariant;
+          var fontUrl = '../fonts/' + resolved.matchedFilename;
+          if (!document.fonts.check('16px "' + fontFaceFamily + '"')) {
+            var face = new FontFace(fontFaceFamily, 'url("' + fontUrl + '")', {
+              weight: resolved.fontWeight,
+              style: resolved.fontStyle
+            });
+            face.load().then(function (loaded) {
+              document.fonts.add(loaded);
+              if (preview) {
+                preview.style.fontFamily = '"' + fontFaceFamily + '", ' + resolved.fontFamily;
+              }
+            }).catch(function () {});
+          }
+        }
+      });
+    });
+
+    // Favorite Button
+    DOM.fontGrid.querySelectorAll('.btn-fav:not([data-bound])').forEach(function (btn) {
+      btn.setAttribute('data-bound', 'true');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var fontId = btn.getAttribute('data-fav-id');
+        var isNowFav = toggleFontFavorite(fontId);
+        if (isNowFav) {
+          btn.classList.add('active');
+          showToast('Đã thêm vào danh sách Yêu thích ⭐️');
+        } else {
+          btn.classList.remove('active');
+          showToast('Đã bỏ khỏi Yêu thích');
+        }
+      });
+    });
+
+    // Copy Name Button
+    DOM.fontGrid.querySelectorAll('.btn-copy-name:not([data-bound])').forEach(function (btn) {
+      btn.setAttribute('data-bound', 'true');
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation();
+        var fontName = btn.getAttribute('data-copy-name');
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(fontName).then(function () {
+            showToast('Đã sao chép: ' + fontName);
+          });
         }
       });
     });
@@ -817,13 +999,13 @@
     // Instantiate TypeTesterEngine
     App.typeTester = new TypeTester.TypeTesterEngine();
 
-    // Check saved theme
+    // Check saved theme (default: light)
     try {
       var savedTheme = localStorage.getItem('fedu_font_theme');
-      if (savedTheme && (savedTheme === 'light' || savedTheme === 'neon' || savedTheme === 'dark')) {
-        setTheme(savedTheme);
-      }
-    } catch (e) {}
+      setTheme(savedTheme === 'dark' || savedTheme === 'neon' ? savedTheme : 'light');
+    } catch (e) {
+      setTheme('light');
+    }
 
     // Populate preset dropdown
     populatePresets();
