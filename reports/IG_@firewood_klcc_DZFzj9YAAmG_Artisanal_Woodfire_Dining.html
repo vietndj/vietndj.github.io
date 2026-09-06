@@ -1,0 +1,3813 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nghệ Thuật Nấu Bếp Củi & Bản Lĩnh Nữ Bếp Trưởng Firewood KLCC • Director's Report</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg-main: #0b0f17;
+    --bg-card: #131b2a;
+    --bg-card-hover: #1c273c;
+    --bg-sidebar: #0f1624;
+    --border-color: #202c42;
+    --border-active: #38bdf8;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+    --accent-amber: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --accent-purple: #c084fc;
+    --font-heading: 'Plus Jakarta Sans', sans-serif;
+    --font-body: 'Be Vietnam Pro', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    font-size: 14.5px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Top Navigation Header */
+.top-nav {
+    background: rgba(15, 22, 36, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-primary);
+    text-decoration: none;
+}
+.nav-badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+}
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-btn {
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+.nav-btn:hover {
+    color: var(--text-primary);
+    border-color: var(--accent-blue);
+    background: var(--bg-card-hover);
+}
+.nav-btn.primary {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    border-color: var(--accent-blue);
+}
+.nav-btn.primary:hover {
+    opacity: 0.9;
+}
+
+/* Main Layout Split Screen */
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto;
+}
+
+/* Left Sticky Video Column */
+.player-column {
+    width: 420px;
+    flex-shrink: 0;
+    padding: 24px 16px 24px 24px;
+    position: sticky;
+    top: 57px;
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    border-right: 1px solid var(--border-color);
+}
+.video-frame-box {
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    position: relative;
+    aspect-ratio: 9 / 16;
+    max-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.video-frame-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.player-controls {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ctrl-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.ctrl-btn {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s;
+}
+.ctrl-btn:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--accent-blue);
+}
+.ctrl-btn.active {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: var(--accent-blue);
+    color: var(--accent-blue);
+}
+.speed-pills {
+    display: flex;
+    gap: 4px;
+}
+.speed-pill {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 4px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+}
+.speed-pill.active {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    font-weight: 700;
+    border-color: var(--accent-blue);
+}
+
+/* Right Content Column */
+.content-column {
+    flex: 1;
+    padding: 24px 28px 40px 24px;
+    min-width: 0;
+}
+
+/* Header Banner */
+.report-header {
+    margin-bottom: 24px;
+}
+.meta-tags-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.author-ig-badge {
+    background: rgba(244, 63, 94, 0.12);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.3);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.2s;
+}
+.author-ig-badge:hover {
+    background: rgba(244, 63, 94, 0.25);
+    color: #fff;
+}
+.stat-pill {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+}
+.report-title {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+.report-overview {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--accent-blue);
+    border-radius: 8px;
+    padding: 14px 16px;
+    color: #cbd5e1;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Views Toggle Bar */
+.view-switch-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+}
+.switch-buttons {
+    display: flex;
+    gap: 8px;
+}
+.view-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.view-btn.active {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    border-color: var(--accent-blue);
+}
+
+/* Storyboard Detailed Cards */
+.storyboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    padding: 20px;
+    transition: all 0.2s ease;
+    position: relative;
+}
+.shot-card:hover {
+    border-color: rgba(56, 189, 248, 0.4);
+}
+.shot-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.shot-header-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.shot-index-badge {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    font-weight: 800;
+    font-size: 12px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+}
+.time-jump-btn {
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    color: var(--accent-blue);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.15s;
+}
+.time-jump-btn:hover {
+    background: var(--accent-blue);
+    color: #0b0f17;
+}
+.dur-pill {
+    opacity: 0.8;
+    font-weight: 400;
+}
+.tech-tag {
+    background: var(--bg-main);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11.5px;
+    font-family: var(--font-mono);
+}
+.shot-headline-box {
+    margin-bottom: 16px;
+}
+.shot-headline-title {
+    font-family: var(--font-heading);
+    font-size: 16.5px;
+    font-weight: 700;
+    color: var(--text-primary);
+    line-height: 1.45;
+}
+
+/* Keyframes Grid (3 items) */
+.keyframes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+.keyframe-item {
+    cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-color);
+    background: #000;
+    aspect-ratio: 9 / 16;
+}
+.keyframe-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+}
+.keyframe-item:hover img {
+    transform: scale(1.03);
+}
+.kf-badge {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+}
+.kf-badge.start { border-left: 3px solid var(--accent-blue); }
+.kf-badge.mid { border-left: 3px solid var(--accent-amber); }
+.kf-badge.end { border-left: 3px solid var(--accent-emerald); }
+
+/* Analysis 3 Blocks Grid */
+.analysis-blocks-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.critique-block {
+    background: rgba(15, 22, 36, 0.7);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    padding: 14px 16px;
+}
+.block-title {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.block-content {
+    font-size: 13.5px;
+    color: #cbd5e1;
+    line-height: 1.65;
+}
+.two-column-critique {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.critique-col {
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.critique-col.pro {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: #a7f3d0;
+}
+.critique-col.con {
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.2);
+    color: #fecdd3;
+}
+.col-header {
+    font-weight: 700;
+    margin-bottom: 6px;
+    font-size: 12.5px;
+}
+.critique-col.pro .col-header { color: var(--accent-emerald); }
+.critique-col.con .col-header { color: var(--accent-rose); }
+
+.takeaway-block {
+    background: rgba(245, 158, 11, 0.08);
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+.takeaway-title {
+    font-weight: 700;
+    color: var(--accent-amber);
+    font-size: 13px;
+    margin-bottom: 4px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.takeaway-body {
+    font-size: 13.5px;
+    color: #fef3c7;
+    line-height: 1.6;
+}
+
+/* Tech Specs Footer */
+.shot-specs-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.spec-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.spec-label {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Transitions Section */
+.trans-section {
+    margin-top: 16px;
+    background: var(--bg-sidebar);
+    border: 1px dashed var(--border-color);
+    border-radius: 10px;
+    padding: 12px;
+}
+.trans-header {
+    font-size: 12px;
+    color: var(--accent-blue);
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+.trans-img-wrap {
+    cursor: pointer;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--border-color);
+}
+.trans-img-wrap img {
+    width: 100%;
+    display: block;
+}
+.zoom-indicator {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+}
+
+/* Visual Grid View */
+.grid-view-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+}
+.grid-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.grid-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-blue);
+}
+.grid-thumb-box {
+    aspect-ratio: 9 / 16;
+    background: #000;
+    position: relative;
+}
+.grid-thumb-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.grid-time-tag {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-family: var(--font-mono);
+}
+.grid-shot-tag {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: var(--accent-blue);
+    color: #0b0f17;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+.grid-card-desc {
+    padding: 10px;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+}
+
+/* Drawer Jump Menu */
+.drawer-backdrop {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 200;
+    display: none;
+}
+.drawer-container {
+    position: fixed;
+    top: 0; right: -360px; width: 340px; height: 100%;
+    background: var(--bg-sidebar);
+    border-left: 1px solid var(--border-color);
+    z-index: 201;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+.drawer-header {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.drawer-title {
+    font-weight: 700;
+    font-size: 15px;
+}
+.drawer-close {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 20px; cursor: pointer;
+}
+.drawer-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.drawer-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 12px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    transition: all 0.15s;
+}
+.drawer-item:hover {
+    border-color: var(--accent-blue);
+    background: var(--bg-card-hover);
+}
+.d-id {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-blue);
+    font-family: var(--font-mono);
+}
+.d-time {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+}
+.d-title {
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.35;
+}
+
+/* Lightbox Darkroom Modal */
+.lightbox-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(4, 7, 13, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 300;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.lightbox-box {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.lightbox-img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+    border: 1px solid var(--border-color);
+}
+.lightbox-caption {
+    color: #cbd5e1;
+    font-size: 13.5px;
+    text-align: center;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: #fff;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Responsive Mobile Rules */
+@media (max-width: 992px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+    .player-column {
+        width: 100%;
+        position: sticky;
+        top: 57px;
+        height: auto;
+        padding: 12px 16px;
+        z-index: 90;
+        background: var(--bg-main);
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .video-frame-box {
+        max-height: 260px;
+        margin: 0 auto;
+    }
+    .content-column {
+        padding: 16px;
+    }
+    .two-column-critique {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<header class="top-nav">
+    <a href="../scene.html" class="nav-brand">
+        <span class="nav-badge">DIRECTOR CUT</span>
+        <span>Nghệ Thuật Nấu Bếp Củi & Bản Lĩnh Nữ Bếp Trưởng Firewood KLCC</span>
+    </a>
+    <div class="nav-actions">
+        <a href="../scene.html" class="nav-btn">🏛 Cổng Video</a>
+        <button class="nav-btn primary" onclick="toggleDrawer()">📑 Mục Lục (23)</button>
+    </div>
+</header>
+
+<div class="main-wrapper">
+    <!-- Left Sticky Video Player -->
+    <aside class="player-column">
+        <div class="video-frame-box">
+            <video id="main-video" controls playsinline preload="metadata">
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Artisanal%20Woodfire%20Dining%20-%20@firewood_klcc.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ phát video MP4.
+            </video>
+        </div>
+        <div class="player-controls">
+            <div class="ctrl-row">
+                <button class="ctrl-btn" onclick="togglePlay()"><span id="play-icon">▶</span> Phát / Dừng</button>
+                <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1 Frame</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1 Frame ⏭</button>
+            </div>
+            <div class="ctrl-row">
+                <span style="font-size:12px; color:var(--text-muted); font-weight:600;">Tốc độ:</span>
+                <div class="speed-pills">
+                    <button class="speed-pill" onclick="setSpeed(0.25, this)">0.25x</button>
+                    <button class="speed-pill" onclick="setSpeed(0.5, this)">0.5x</button>
+                    <button class="speed-pill active" onclick="setSpeed(1.0, this)">1.0x</button>
+                    <button class="speed-pill" onclick="setSpeed(1.5, this)">1.5x</button>
+                    <button class="speed-pill" onclick="setSpeed(2.0, this)">2.0x</button>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!-- Right Content -->
+    <main class="content-column">
+        <div class="report-header">
+            <div class="meta-tags-flex">
+                <a href="https://www.instagram.com/p/DZFzj9YAAmG/?stkn=cmhlNzF1cnhkd2tz" target="_blank" rel="noopener noreferrer" class="author-ig-badge">
+                    📸 @firewood_klcc ↗
+                </a>
+                <span class="stat-pill">⏱ 68.56s</span>
+                <span class="stat-pill">🎬 23 Phân Cảnh</span>
+                <span class="stat-pill">📐 1080x1920 (9:16 Vertical)</span>
+            </div>
+            <h1 class="report-title">Nghệ Thuật Nấu Bếp Củi & Bản Lĩnh Nữ Bếp Trưởng Firewood KLCC</h1>
+            <div class="report-overview">
+                Bóc tách 23 phân cảnh chuẩn đạo diễn trong thước phim ẩm thực tinh hoa của Firewood KLCC: Khám phá hành trình 13 năm trui rèn của Nữ Bếp trưởng Qaia Yew (từ Bread Street Kitchen của Gordon Ramsay đến nhà hàng Michelin Soigné), nghệ thuật điều khiển ngọn lửa than Binchotan/Bakau trên thớ thịt bò A5 Wagyu mọng nước, ngôn ngữ ánh sáng tương phản điện ảnh (Chiaroscuro) và triết lý nêm nếm hương khói độc bản.
+            </div>
+        </div>
+
+        <div class="view-switch-bar">
+            <div class="switch-buttons">
+                <button class="view-btn active" id="btn-detail-view" onclick="switchView('detail')">
+                    📋 Bảng Phân Cảnh Chi Tiết
+                </button>
+                <button class="view-btn" id="btn-grid-view" onclick="switchView('grid')">
+                    🖼 Lưới Thị Giác
+                </button>
+            </div>
+            <span style="font-size:12.5px; color:var(--text-muted); font-family:var(--font-mono);">
+                23 Shots
+            </span>
+        </div>
+
+        <!-- Storyboard Detailed View -->
+        <div class="storyboard-container" id="storyboard-view">
+            
+    <div class="shot-card" id="shot-card-1">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 01</span>
+                <button class="time-jump-btn" onclick="playShot(0.00, 3.32, 'Shot 01')">
+                    ▶ 0.00s ➔ 3.32s <span class="dur-pill">(3.36s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Close-Up</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Phát Lệnh Mở Màn Định Danh Nhân Vật: Khẳng Định Vị Thế Nữ Bếp Trưởng Trực Diện Không Vòng Vo</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_start.jpg', 'Shot 01 • Khung hình Đầu (0.00s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (0.00s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_mid.jpg', 'Shot 01 • Cao trào Giữa (1.66s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (1.66s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_end.jpg', 'Shot 01 • Khung hình Cuối (3.32s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (3.32s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Nữ Bếp trưởng Qaia Yew đứng trước quầy bếp mở trong chiếc áo thun và tạp dề xanh ô-liu in dòng chữ 'FIREWOOD', ánh mắt nhìn thẳng vào ống kính máy quay tự tin giới thiệu: 'Qaia Yew, Head Chef of Firewood KLCC'. Phía sau là dãy quầy bếp sáng ấm và các đĩa sứ xếp sẵn sàng vào ca phục vụ.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Bố cục nhân vật chính diện chiếm 1/3 trên khung hình dọc 9:16; Key Light chiếu mềm tôn lên nét mặt mộc mạc, toát lên sự điềm tĩnh và quyền uy của một bếp trưởng dày dặn bản lĩnh; loại bỏ hoàn toàn sự rào đón để đi thẳng vào trọng tâm câu chuyện.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Dáng đứng nhân vật hơi gượng ở tư thế chắp tay trước bụng; nếu kết hợp vừa nói vừa kiểm tra dao bếp hoặc lau nhẹ mặt quầy bar sẽ tự nhiên và đậm chất hiện trường hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Khi làm nội dung thương hiệu cá nhân hoặc câu chuyện nghề, hãy để nhân vật chính xưng danh và giao tiếp bằng mắt (eye-contact) trực diện ngay frame đầu tiên để xác lập uy tín tức thì.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Close-Up • 50mm f/2.2
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Quầy bếp mở Firewood KLCC
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Key Light 4500K chiếu mềm + Ánh sáng ấm 3000K hậu cảnh
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang cận cảnh miếng thịt bò raw
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 02: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang cận cảnh miếng thịt bò raw</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_01_to_02.jpg', 'Chuyển Cảnh Shot 01 ➔ Shot 02 (Cut chuyển sang cận cảnh miếng thịt bò raw)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_01_to_02.jpg" alt="Transition 01 to 02" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-2">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 02</span>
+                <button class="time-jump-btn" onclick="playShot(3.36, 5.32, 'Shot 02')">
+                    ▶ 3.36s ➔ 5.32s <span class="dur-pill">(2.00s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Top-Down Flat Lay</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Visual Hook Thị Giác Nguyên Bản: Đốn Tim Bằng Thớ Thịt Bò Wagyu Vân Cẩm Thạch Thô Mộc</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_start.jpg', 'Shot 02 • Khung hình Đầu (3.36s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (3.36s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_mid.jpg', 'Shot 02 • Cao trào Giữa (4.34s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (4.34s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_end.jpg', 'Shot 02 • Khung hình Cuối (5.32s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (5.32s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay Top-down flat-lay nhìn thẳng từ trên xuống mặt thớt gỗ hình bầu dục đặt trên phiến đá cẩm thạch đen huyền bí; một dải thăn bò Wagyu tươi rói với đường vân mỡ cẩm thạch (marbling) hoàn mỹ được đặt trang trọng; dòng chữ typography trắng 'Firewood KLCC' căn chỉnh thanh lịch.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Tương phản màu sắc tuyệt đỉnh giữa sắc đỏ hồng tươi của thăn thịt bò Wagyu với tông đen bóng của đá granite và vân gỗ mộc; góc chiếu Top-down tôn vinh tối đa cấu trúc marbling đạt chuẩn A5, kích thích tuyến vị giác ngay tích tắc.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Ánh sáng phản chiếu nhẹ từ trần nhà lên mặt đá đen ở góc viền trên; cần dùng filter CPL (Circular Polarizer) để triệt tiêu hoàn toàn vệt bóng lóa, giúp nền đen sâu thẳm hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Sản phẩm cốt lõi (hero ingredient) phải được xuất hiện ở trạng thái thô mộc và tinh khiết nhất để chứng minh nguồn gốc nguyên liệu thượng hạng trước khi qua lửa.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Top-Down Flat Lay • 35mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Mặt bàn đá Marble đen
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng ven khuếch tán mềm (Soft Top-Fill)
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Match Cut sang miếng thịt nướng chín
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 03: <span style="color:#cbd5e1; font-weight:normal;">Match Cut sang miếng thịt nướng chín</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_02_to_03.jpg', 'Chuyển Cảnh Shot 02 ➔ Shot 03 (Match Cut sang miếng thịt nướng chín)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_02_to_03.jpg" alt="Transition 02 to 03" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-3">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 03</span>
+                <button class="time-jump-btn" onclick="playShot(5.36, 7.24, 'Shot 03')">
+                    ▶ 5.36s ➔ 7.24s <span class="dur-pill">(1.92s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Top-Down Match Cut</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Cú Match Cut Biến Hóa Kỳ Diệu: Đối Chiếu Trực Tiếp Giữa Nguyên Bản Và Tuyệt Tác Nướng Chín</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_start.jpg', 'Shot 03 • Khung hình Đầu (5.36s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (5.36s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_mid.jpg', 'Shot 03 • Cao trào Giữa (6.30s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (6.30s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_end.jpg', 'Shot 03 • Khung hình Cuối (7.24s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (7.24s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cú Match Cut thần sầu giữ nguyên vị trí thớt gỗ và góc Top-down của Shot 02, nhưng miếng thịt bò sống lập tức biến thành dải steak nướng chín hoàn hảo, xắt lát khoe phần lõi hồng đào medium-rare mọng nước, kèm chén sốt chimichurri xanh ngắt, muối biển thô và tỏi phi vàng giòn.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Kỹ thuật Match Cut chuẩn xác từng milimet giữa trạng thái thô (Before) và tác phẩm ẩm thực hoàn thiện (After) tạo hiệu ứng 'thỏa mãn thị giác' cực mạnh (instant visual reward); bố cục đĩa ăn sắp đặt chuẩn quy tắc điểm nhìn cân đối.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Chén sốt chimichurri đặt ở góc trên bên trái thớt hơi sát mép khung hình, dễ bị thanh điều hướng UI của Instagram/TikTok che khuất nếu người xem bật comment.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Áp dụng Match Cut Before-After trên cùng một trục định vị là vũ khí tối thượng giữ chân người xem trong các video ẩm thực hoặc chế tác thủ công.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Top-Down Match Cut • 35mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Mặt bàn đá Marble đen
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Top Soft Light + Rim Light phản chiếu thớ thịt bóng bẩy
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang toàn cảnh không gian bếp
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 04: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang toàn cảnh không gian bếp</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_03_to_04.jpg', 'Chuyển Cảnh Shot 03 ➔ Shot 04 (Cắt chuyển sang toàn cảnh không gian bếp)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_03_to_04.jpg" alt="Transition 03 to 04" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-4">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 04</span>
+                <button class="time-jump-btn" onclick="playShot(7.28, 9.92, 'Shot 04')">
+                    ▶ 7.28s ➔ 9.92s <span class="dur-pill">(2.68s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">High-Angle Wide Tracking</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Thiết Lập Quy Mô & Không Gian Kiến Trúc: Đưa Người Xem Vào Trọng Tâm Căn Bếp Hiện Đại</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_start.jpg', 'Shot 04 • Khung hình Đầu (7.28s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (7.28s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_mid.jpg', 'Shot 04 • Cao trào Giữa (8.60s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (8.60s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_end.jpg', 'Shot 04 • Khung hình Cuối (9.92s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (9.92s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc máy High-Angle tracking từ phía sau lưng Chef Qaia đang thao tác tại bàn đảo bếp bằng đá dài thênh thang; trần nhà lắp hệ thống hộp đèn lưới caro phát sáng trắng ấm rực rỡ; bên dưới bàn là những chồng đĩa sứ chuẩn bị cho giờ phục vụ khách. Subtitle: 'and we are open about 6 months from since last year'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Thiết kế trần xuyên sáng (light box grid) đóng vai trò vừa là nguồn sáng khổng lồ không bóng đổ (shadowless keylight) vừa tạo đường dẫn hướng phối cảnh sâu hút mắt về phía cuối quầy bếp; thể hiện tính chuyên nghiệp đẳng cấp quốc tế.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Tỷ lệ người nhân vật chiếm diện tích hơi nhỏ so với khối trần đèn quá choáng ngợp; góc quay từ sau lưng làm giảm sự tương tác cảm xúc khuôn mặt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Khi giới thiệu nhà hàng cao cấp, hãy tận dụng các mảng trần ánh sáng hoặc hành lang dài làm đường dẫn thị giác (leading lines) để phô diễn quy mô và đẳng cấp kiến trúc.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> High-Angle Wide Tracking • 24mm f/3.5
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Gian bếp chính Firewood KLCC
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng khuếch tán từ trần lưới hộp đèn (Overhead Ceiling Grid)
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang góc trung chuẩn bị món
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 05: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang góc trung chuẩn bị món</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_04_to_05.jpg', 'Chuyển Cảnh Shot 04 ➔ Shot 05 (Cut chuyển sang góc trung chuẩn bị món)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_04_to_05.jpg" alt="Transition 04 to 05" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-5">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 05</span>
+                <button class="time-jump-btn" onclick="playShot(9.96, 12.60, 'Shot 05')">
+                    ▶ 9.96s ➔ 12.60s <span class="dur-pill">(2.68s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Side Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Sự Giao Thoa Giữa Ẩm Thực Tỉ Mỉ & Đô Thị Phồn Hoa: Khẳng Định Vị Trí Vàng KLCC</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_start.jpg', 'Shot 05 • Khung hình Đầu (9.96s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (9.96s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_mid.jpg', 'Shot 05 • Cao trào Giữa (11.28s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (11.28s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_end.jpg', 'Shot 05 • Khung hình Cuối (12.60s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (12.60s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay Medium Shot bắt trọn khoảnh khắc Chef Qaia đeo găng tay đen tập trung cao độ decor món ăn trên quầy; qua khung cửa kính sát sàn phía sau là các tòa nhà chọc trời sừng sững của trung tâm thủ đô Kuala Lumpur. Subtitle: 'end of November'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Bố cục lồng khung thông minh: nhân vật đang thao tác thủ công tỉ mỉ được đóng khung trên nền cảnh quan hiện đại của KLCC; tạo nên sự đối lập đầy tính triết lý giữa nghề bếp thủ công truyền thống và nhịp sống đô thị tương lai.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Độ chênh sáng giữa trong nhà và ngoài trời khá lớn; khung cửa sổ hơi ngả xám mờ làm giảm độ tương phản của các khối cao ốc bên ngoài.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Tận dụng cửa kính view landmark đắt giá làm hậu cảnh để ngầm định vị đẳng cấp và giá trị thương hiệu mà không cần phải dùng lời thoại phô trương.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Side Shot • 35mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Bàn đảo bếp view vách kính cao ốc
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng trần lưới + Daylight ngoài trời lọt qua rèm kính
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang cận cảnh đĩa steak hoàn tất
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 06: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang cận cảnh đĩa steak hoàn tất</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_05_to_06.jpg', 'Chuyển Cảnh Shot 05 ➔ Shot 06 (Cắt chuyển sang cận cảnh đĩa steak hoàn tất)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_05_to_06.jpg" alt="Transition 05 to 06" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-6">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 06</span>
+                <button class="time-jump-btn" onclick="playShot(12.64, 14.84, 'Shot 06')">
+                    ▶ 12.64s ➔ 14.84s <span class="dur-pill">(2.24s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Close-Up Slow Pan</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Dẫn Dắt Thị Giác Bằng Cú Pan Cận Cảnh: Đánh Thức Cảm Giác Thèm Ăn Với Đĩa Steak Master</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_start.jpg', 'Shot 06 • Khung hình Đầu (12.64s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (12.64s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_mid.jpg', 'Shot 06 • Cao trào Giữa (13.74s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (13.74s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_end.jpg', 'Shot 06 • Khung hình Cuối (14.84s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (14.84s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Máy quay lia chậm (slow pan) từ trái qua phải trên bề mặt thớt gỗ: lướt qua chén sốt thảo mộc, khay nấm áp chảo, đống tỏi phi giòn rụm rồi dừng lại ở những thớ thịt bò nướng tái hồng hào tươm mỡ. Subtitle: 'our main dish is a steak'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Chuyển động lia mượt mà dẫn mắt người xem khám phá trọn vẹn từng thành phần hương vị của món signature; độ sâu trường ảnh nông làm mờ hậu cảnh bếp, hướng 100% sự tập trung vào thớ thịt mọng nước.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Tốc độ lia ở 0.5 giây đầu hơi nhanh trước khi ổn định nhịp; người xem chưa kịp định hình chén sốt phụ bên trái đã bị kéo sang dải thịt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Trong cú lia sản phẩm cận cảnh, hãy bắt đầu bằng 0.5 giây dừng tĩnh để mắt người xem định vị, sau đó lia từ tốn với tốc độ đồng đều để tránh giật lag khung hình.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Close-Up Slow Pan • 50mm f/2.0
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Mặt bàn thớt gỗ bếp mở
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng vàng ấm cục bộ (Spot Key Light)
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang phỏng vấn trực tiếp bếp trưởng
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 07: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang phỏng vấn trực tiếp bếp trưởng</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_06_to_07.jpg', 'Chuyển Cảnh Shot 06 ➔ Shot 07 (Cut chuyển sang phỏng vấn trực tiếp bếp trưởng)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_06_to_07.jpg" alt="Transition 06 to 07" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-7">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 07</span>
+                <button class="time-jump-btn" onclick="playShot(14.88, 17.84, 'Shot 07')">
+                    ▶ 14.88s ➔ 17.84s <span class="dur-pill">(3.00s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Close-Up Interview</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Bảo Chứng Chuyên Môn Bằng Profile Quốc Tế: Khắc Họa Chiều Sâu Tâm Huyết Của Đầu Bếp</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_start.jpg', 'Shot 07 • Khung hình Đầu (14.88s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (14.88s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_mid.jpg', 'Shot 07 • Cao trào Giữa (16.36s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (16.36s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_end.jpg', 'Shot 07 • Khung hình Cuối (17.84s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (17.84s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay phỏng vấn trực diện Chef Qaia Yew; ánh mắt chân thành và giọng nói điềm tĩnh khi cô chia sẻ về thời gian rèn giũa tại Bread Street Kitchen (Gordon Ramsay) và Soigné (Michelin). Hậu cảnh là tủ rượu vang âm tường tỏa ánh sáng vàng hổ phách ấm áp. Subtitle: 'Bread Street Kitchen & Soigné'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Hậu cảnh tủ rượu sang trọng xóa phông mượt mà tạo bokeh hạt tròn lung linh; ánh sáng key-light ấm 3200K tôn nước da tự nhiên và ánh mắt kiên định của nhân vật; tạo uy tín vững chắc về tay nghề.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Bố cục đặt mặt nhân vật hơi lệch nhẹ về bên phải nhưng hướng nhìn lại nhìn thẳng ống kính thay vì nhìn người phỏng vấn chếch 15 độ, tạo cảm giác hơi phân vân giữa phong cách vlog và documentary.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Hậu cảnh phỏng vấn trong ngành F&B nên khai thác kệ rượu vang, lò nướng hoặc dàn gia vị cao cấp để làm nền tảng thẩm mỹ (visual prestige) cho lời nói của bếp trưởng.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Close-Up Interview • 50mm f/1.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Trước tủ rượu vang cao cấp
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng 3 điểm (Key, Fill dịu, Backlight viền tóc)
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang không gian bàn ăn chiều tối
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 08: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang không gian bàn ăn chiều tối</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_07_to_08.jpg', 'Chuyển Cảnh Shot 07 ➔ Shot 08 (Cắt chuyển sang không gian bàn ăn chiều tối)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_07_to_08.jpg" alt="Transition 07 to 08" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-8">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 08</span>
+                <button class="time-jump-btn" onclick="playShot(17.88, 21.72, 'Shot 08')">
+                    ▶ 17.88s ➔ 21.72s <span class="dur-pill">(3.88s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Low-Angle Wide Glide</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Nghệ Thuật Căn Chỉnh Trục Đối Xứng Tối Giản: Không Gian Bàn Ăn Chuẩn Fine Dining Về Đêm</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_start.jpg', 'Shot 08 • Khung hình Đầu (17.88s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (17.88s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_mid.jpg', 'Shot 08 • Cao trào Giữa (19.80s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (19.80s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_end.jpg', 'Shot 08 • Khung hình Cuối (21.72s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (21.72s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc máy Wide Interior lướt nhẹ dọc theo mặt bàn ăn tối bóng loáng; khăn ăn, dao nĩa đặt ngay ngắn cạnh ly thủy tinh pha lê lấp lánh; phía xa là trần sáng rực rỡ và khung cảnh hoàng hôn chuyển dần sang đêm hoa lệ ngoài khung cửa. Subtitle: 'almost like 13 years'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Bố cục đường dẫn phối cảnh (linear perspective) kéo dài từ góc bàn tiền cảnh đến tận ô cửa kính thành phố; mặt bàn tối màu phản chiếu ánh đèn trần tạo hiệu ứng mặt nước bóng bẩy (glossy reflections) cực kỳ sang trọng.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Khoảng trống ở giữa mặt bàn hơi rộng và vắng vẻ trong 1.5 giây đầu; nếu có một nhân viên đang rót nước hoặc đặt nến ở hậu cảnh sẽ tạo thêm sinh khí cho không gian.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Tận dụng bề mặt phản chiếu (bàn đá bóng, mặt kính) để nhân đôi ánh sáng và chiều sâu không gian khi quay nội thất nhà hàng cao cấp.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Low-Angle Wide Glide • 24mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Phòng ăn chính Firewood KLCC
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ambient Light từ trần đèn + Đèn thành phố về đêm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang cận cảnh vỉ than hoa đỏ rực
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 09: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang cận cảnh vỉ than hoa đỏ rực</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_08_to_09.jpg', 'Chuyển Cảnh Shot 08 ➔ Shot 09 (Cut chuyển sang cận cảnh vỉ than hoa đỏ rực)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_08_to_09.jpg" alt="Transition 08 to 09" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-9">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 09</span>
+                <button class="time-jump-btn" onclick="playShot(21.76, 24.72, 'Shot 09')">
+                    ▶ 21.76s ➔ 24.72s <span class="dur-pill">(3.00s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Macro Close-Up</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Ngọn Lửa Sôi Sục & Tiếng Xèo Xèo Rực Lửa: Trái Tim Cốt Lõi Của Triết Lý Bếp Củi Firewood</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_start.jpg', 'Shot 09 • Khung hình Đầu (21.76s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (21.76s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_mid.jpg', 'Shot 09 • Cao trào Giữa (23.24s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (23.24s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_end.jpg', 'Shot 09 • Khung hình Cuối (24.72s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (24.72s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay Macro áp sát vỉ nướng than hoa: miếng thăn bò xèo xèo bốc khói nghi ngút, những ngọn lửa vàng cam liếm quanh thớ thịt xém vàng giòn rụm; than củi hồng rực phát sáng bên dưới. Subtitle: 'to open the second outlet'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Khung hình tràn ngập năng lượng nguyên bản của nhiệt lượng và lửa đỏ; độ tương phản cực đại giữa nền than cháy sẫm và ngọn lửa vàng rực mang lại cảm xúc thị giác mãnh liệt; kích thích trực giác thèm ăn ở tầng sâu nhất.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Hơi nóng và mỡ bắn mạnh có thể làm mờ kính lọc ống kính nếu không có lồng chắn bảo vệ chuyên dụng; dải sáng của ngọn lửa hơi cháy sáng nhẹ ở tâm ngọn lửa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Trong video ẩm thực nướng than, cú quay cận cảnh ngọn lửa liếm vào thớ thịt (flame sear) là thước phim đắt giá nhất để minh chứng cho hương vị 'char flavor' độc bản.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Macro Close-Up • 85mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Lò nướng than Binchotan hở
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh lửa tự thân (Practical Fire Light) ấm 2200K
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang nhịp phục vụ bàn
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 10: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang nhịp phục vụ bàn</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_09_to_10.jpg', 'Chuyển Cảnh Shot 09 ➔ Shot 10 (Cắt chuyển sang nhịp phục vụ bàn)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_09_to_10.jpg" alt="Transition 09 to 10" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-10">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 10</span>
+                <button class="time-jump-btn" onclick="playShot(24.76, 27.84, 'Shot 10')">
+                    ▶ 24.76s ➔ 27.84s <span class="dur-pill">(3.12s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Symmetrical Wide Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Đường Hút Phối Cảnh Lưới Ánh Sáng: Khắc Họa Nhịp Điệu Chuyên Nghiệp Của Đội Ngũ Phục Vụ</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_start.jpg', 'Shot 10 • Khung hình Đầu (24.76s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (24.76s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_mid.jpg', 'Shot 10 • Cao trào Giữa (26.30s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (26.30s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_end.jpg', 'Shot 10 • Khung hình Cuối (27.84s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (27.84s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc máy Wide đặt giữa lối đi dịch vụ: Nữ nhân viên phục vụ trong bộ đồng phục sơ mi trắng chỉn chu bưng khay đĩa bước đi thoăn thoắt về phía thực khách; trần đèn lưới hộp sáng kéo dài vô tận trên đầu tạo hiệu ứng đường chân trời ấn tượng. Subtitle: 'Firewood KLCC is because of charcoal grill'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Tính đối xứng hình học xuất sắc từ hệ thống trần đèn hộp lưới kết hợp quầy bar hai bên tạo nên đường hút mắt tự nhiên; chuyển động bước đi của nhân viên tạo nhịp dẫn hướng linh hoạt cho video.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Nhân viên phục vụ bước qua khá nhanh khiến gương mặt bị thiếu sáng nhẹ do ánh sáng chủ yếu đánh thẳng từ đỉnh đầu xuống (Top-down downlighting).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Khi quay chuyển động trong hành lang hoặc quầy bar dài, hãy để chủ thể di chuyển từ vùng tối vào vùng sáng để tạo sự thay đổi nhịp điệu ánh sáng thú vị.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Symmetrical Wide Shot • 24mm f/3.2
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Lối đi phục vụ trung tâm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Hệ thống trần đèn lưới hộp sáng khuếch tán
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang dòng bếp line
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 11: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang dòng bếp line</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_10_to_11.jpg', 'Chuyển Cảnh Shot 10 ➔ Shot 11 (Cut chuyển sang dòng bếp line)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_10_to_11.jpg" alt="Transition 10 to 11" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-11">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 11</span>
+                <button class="time-jump-btn" onclick="playShot(27.88, 33.36, 'Shot 11')">
+                    ▶ 27.88s ➔ 33.36s <span class="dur-pill">(5.52s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Lateral Tracking Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Cú Tracking Theo Bước Bếp Trưởng: Tái Hiện Không Khí Khẩn Trương Nơi Chiến Tuyến Bếp Mở</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_start.jpg', 'Shot 11 • Khung hình Đầu (27.88s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (27.88s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_mid.jpg', 'Shot 11 • Cao trào Giữa (30.62s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (30.62s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_end.jpg', 'Shot 11 • Khung hình Cuối (33.36s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (33.36s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Máy quay lia theo bước chân thoăn thoắt của Chef Qaia khi cô đi dọc quầy bếp mở, liên tục kiểm tra đĩa ăn, chỉ đạo các đầu bếp cấp dưới và điều phối nhịp độ ra món trong giờ cao điểm. Subtitle: 'the flavor the char flavor'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Cú máy tracking kéo dài hơn 5 giây mang đậm phong cách phim tài liệu (cinematic documentary); làm nổi bật khả năng bao quát và khí chất thủ lĩnh của bếp trưởng trong căn bếp hiện đại.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Góc máy đi ngang từ phía sau lưng nên có đoạn bóng lưng nhân vật che khuất mất thao tác của các phụ bếp trên mặt bàn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Cú tracking theo lưng nhân vật lãnh đạo qua không gian làm việc luôn tạo cảm giác cuốn hút và chân thực hơn là các góc máy tĩnh đặt sẵn trên chân máy.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Lateral Tracking Shot • 28mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Dọc quầy bếp mở
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng trần lưới + Ánh đèn bàn bếp
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang đặc tả miếng thịt bò sống
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 12: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang đặc tả miếng thịt bò sống</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_11_to_12.jpg', 'Chuyển Cảnh Shot 11 ➔ Shot 12 (Cắt chuyển sang đặc tả miếng thịt bò sống)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_11_to_12.jpg" alt="Transition 11 to 12" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-12">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 12</span>
+                <button class="time-jump-btn" onclick="playShot(33.40, 36.16, 'Shot 12')">
+                    ▶ 33.40s ➔ 36.16s <span class="dur-pill">(2.80s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Low-Angle Macro Hero Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Bố Cục Tượng Đài Vững Chãi (Heroic Low-Angle): Tôn Vinh Miếng Thịt Bò Wagyu Như Một Tác Phẩm Nghệ Thuật</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_start.jpg', 'Shot 12 • Khung hình Đầu (33.40s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (33.40s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_mid.jpg', 'Shot 12 • Cao trào Giữa (34.78s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (34.78s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_end.jpg', 'Shot 12 • Khung hình Cuối (36.16s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (36.16s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay thấp hất lên (Low-Angle Hero Shot): Khối thăn Wagyu đứng thẳng sừng sững như một ngọn tháp cẩm thạch đỏ hồng, hai bên chân đế là những củ tỏi khô trắng muốt và những hạt muối biển thô rải đều trên nền đen huyền bí. Subtitle: 'because the flavor is very unique that's I like'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Góc quay cận từ dưới lên nhân đôi cảm giác hùng vĩ và quyền lực cho nguyên liệu chính; bố cục tĩnh nghiêm cẩn, ánh sáng viền (rim light) sắc bén tách biệt từng sợi gân mỡ khỏi hậu cảnh tối mịt.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Không có chuyển động máy (static lock-off); sau chuỗi cú máy động trước đó, một cú push-in cực chậm vào miếng thịt sẽ duy trì dòng chảy tốt hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Hãy đặt nguyên liệu cao cấp vào góc thấp và ánh sáng kịch tính như một bức tượng điêu khắc để truyền tải thông điệp về sự tôn trọng tuyệt đối với ẩm thực.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Low-Angle Macro Hero Shot • 50mm f/2.5
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Bàn đá đen studio
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng Chiaroscuro tương phản cao, Rim light trắng sắc
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang phỏng vấn chân dung
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 13: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang phỏng vấn chân dung</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_12_to_13.jpg', 'Chuyển Cảnh Shot 12 ➔ Shot 13 (Cắt chuyển sang phỏng vấn chân dung)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_12_to_13.jpg" alt="Transition 12 to 13" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-13">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 13</span>
+                <button class="time-jump-btn" onclick="playShot(36.20, 40.16, 'Shot 13')">
+                    ▶ 36.20s ➔ 40.16s <span class="dur-pill">(4.00s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Close-Up</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Khoảnh Khắc Trầm Lắng Nội Tâm: Sự Gắn Kết Sứ Mệnh Trở Về Quê Hương Cống Hiến</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_start.jpg', 'Shot 13 • Khung hình Đầu (36.20s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (36.20s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_mid.jpg', 'Shot 13 • Cao trào Giữa (38.18s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (38.18s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_end.jpg', 'Shot 13 • Khung hình Cuối (40.16s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (40.16s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cận cảnh Chef Qaia trong một nhịp thở chậm lại: ánh mắt cô nhìn sâu vào người đối diện, chia sẻ lý do quyết định quay trở về Malaysia để xây dựng Firewood KLCC sau nhiều năm bôn ba xứ người. Subtitle: 'I will come back for Firewood KLCC'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Tốc độ nhịp dựng được kéo dài gần 4 giây tạo khoảng lặng cảm xúc đắt giá (emotional breather); biểu cảm khuôn mặt chân phương, không màu mè tô vẽ, chạm đến sự đồng cảm sâu sắc của người xem.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Góc quay lặp lại góc của Shot 07; nếu đổi sang góc nghiêng 45 độ (Profile Close-Up) sẽ làm đa dạng hóa góc nhìn chân dung nhân vật.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Đừng ngại giữ những phân cảnh nhân vật dừng lại nói chuyện chân thật; cảm xúc chân thành chính là sợi dây vô hình kết nối khách hàng với thương hiệu mạnh nhất.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Close-Up • 50mm f/1.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Trước tủ rượu vang
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Key Light dịu ấm + Bokeh đèn nền
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang món khai vị sò điệp
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 14: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang món khai vị sò điệp</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_13_to_14.jpg', 'Chuyển Cảnh Shot 13 ➔ Shot 14 (Cắt chuyển sang món khai vị sò điệp)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_13_to_14.jpg" alt="Transition 13 to 14" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-14">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 14</span>
+                <button class="time-jump-btn" onclick="playShot(40.20, 41.64, 'Shot 14')">
+                    ▶ 40.20s ➔ 41.64s <span class="dur-pill">(1.48s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">High-Angle Detail Plating</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Đỉnh Cao Thẩm Mỹ Trình Bày (Fine Plating): Vẻ Đẹp Điêu Khắc Tinh Tế Của Nữ Bếp Trưởng</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_start.jpg', 'Shot 14 • Khung hình Đầu (40.20s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (40.20s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_mid.jpg', 'Shot 14 • Cao trào Giữa (40.92s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (40.92s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_end.jpg', 'Shot 14 • Khung hình Cuối (41.64s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (41.64s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cận cảnh tuyệt đẹp món khai vị: Một chiếc vỏ sò điệp trắng tinh khôi đặt trên đĩa gốm đen men mờ, bên trong là phần cồi sò điệp áp chảo béo ngậy được điểm xuyết trứng cá caviar đen tuyền và những nhánh rau mầm xanh mướt. Subtitle: 'as a woman as a chef'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Sự phối hợp hoàn hảo giữa hình khối tự nhiên (vỏ sò rãnh sóng) và hình học đĩa tròn; màu trắng của vỏ sò nổi bật trên nền đen huyền bí, thể hiện sự mềm mại nữ tính xen lẫn chuẩn mực Fine Dining khắt khe.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Thời lượng xuất hiện quá ngắn (chỉ 1.48s); người xem chưa kịp ngắm trọn vẹn chi tiết hạt caviar thì đã cắt sang cảnh tiếp theo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Những món ăn mang tính biểu tượng thẩm mỹ cao nên được giữ tối thiểu 2-2.5 giây hoặc kết hợp chuyển động xoay nhẹ đĩa để khán giả kịp thẩm thấu vẻ đẹp chi tiết.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> High-Angle Detail Plating • 50mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Mặt bàn đá hoa cương đen
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng chiếu rọi từ trên (Spot Accent Light)
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang thao tác rắc muối
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 15: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang thao tác rắc muối</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_14_to_15.jpg', 'Chuyển Cảnh Shot 14 ➔ Shot 15 (Cut chuyển sang thao tác rắc muối)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_14_to_15.jpg" alt="Transition 14 to 15" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-15">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 15</span>
+                <button class="time-jump-btn" onclick="playShot(41.68, 44.24, 'Shot 15')">
+                    ▶ 41.68s ➔ 44.24s <span class="dur-pill">(2.60s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Profile Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Cú Rắc Muối Điện Ảnh Kịch Tính: Tái Hiện Vũ Điệu Gia Vị Dưới Ánh Sáng Ven Khắc Nghiệt</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_start.jpg', 'Shot 15 • Khung hình Đầu (41.68s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (41.68s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_mid.jpg', 'Shot 15 • Cao trào Giữa (42.96s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (42.96s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_end.jpg', 'Shot 15 • Khung hình Cuối (44.24s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (44.24s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cận cảnh phụ bếp nam nghiêng mình rắc những hạt muối biển trắng mịn từ trên cao rơi xuống những tảng thịt steak đang chờ nướng; ánh sáng ven chiếu rọi làm sáng rực từng hạt muối li ti rơi tự do trong không trung. Subtitle: 'because as a chef'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Hiệu ứng ánh sáng ven (Rim Lighting) kết hợp phông nền tối làm nổi bật quỹ đạo chuyển động của các hạt muối; góc máy thấp chéo làm tôn vẻ tập trung nghiêm nghị của người đầu bếp.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Vùng mặt của người đầu bếp hơi chìm vào bóng tối sâu (underexposed); nếu có thêm một chút ánh sáng hắt nhẹ (Bounce Fill) vào cằm sẽ giữ được chi tiết biểu cảm mắt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Quay các hạt gia vị (muối, tiêu, bột ớt) rơi luôn cần nguồn sáng ngược (Backlight) mạnh và phông nền tối màu để hạt gia vị phát sáng như những tinh thể pha lê.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Profile Shot • 50mm f/2.0
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Khu chuẩn bị thịt nướng
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Backlight viền sáng mạnh + Ánh sáng ấm môi trường
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang toàn cảnh đồng đội làm việc
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 16: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang toàn cảnh đồng đội làm việc</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_15_to_16.jpg', 'Chuyển Cảnh Shot 15 ➔ Shot 16 (Cut chuyển sang toàn cảnh đồng đội làm việc)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_15_to_16.jpg" alt="Transition 15 to 16" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-16">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 16</span>
+                <button class="time-jump-btn" onclick="playShot(44.28, 49.72, 'Shot 16')">
+                    ▶ 44.28s ➔ 49.72s <span class="dur-pill">(5.48s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Wide Kitchen Action</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Nhịp Thở Đồng Đội & Năng Lượng Đỉnh Điểm: Vượt Qua Giới Hạn Bản Thân Nơi Chảo Lửa</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_start.jpg', 'Shot 16 • Khung hình Đầu (44.28s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (44.28s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_mid.jpg', 'Shot 16 • Cao trào Giữa (47.00s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (47.00s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_end.jpg', 'Shot 16 • Khung hình Cuối (49.72s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (49.72s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay toàn cảnh không gian bếp nướng: Khói than bảng lảng bốc lên, các đầu bếp nhịp nhàng lật thịt, điều chỉnh than củi và phối hợp ăn ý như một cỗ máy hoàn hảo; Chef Qaia theo dõi sát sao từng công đoạn. Subtitle: 'so I want to challenge myself and my limit'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Thước phim kéo dài hơn 5 giây bắt trọn cái hồn của một 'kitchen brigade' thực thụ; khói mờ ảo kết hợp ánh đèn ấm tạo nên không khí làm việc vừa căng thẳng vừa đậm chất nghệ thuật trình diễn.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Khói than bốc lên có lúc che khuất một phần mặt của bếp trưởng ở giữa khung hình; bố cục tiền cảnh có chai dầu ăn hơi lộn xộn ở góc dưới.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Trong phóng sự ẩm thực, hình ảnh cả đội ngũ cùng nhau 'chiến đấu' bên lò lửa có sức truyền cảm hứng mạnh mẽ hơn nhiều so với chỉ quay một cá nhân đơn lẻ.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide Kitchen Action • 24mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Trạm bếp nướng than trung tâm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Khói thực tế + Ánh sáng ấm từ trần và lò than
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang bảng phấn phân loại thịt
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 17: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang bảng phấn phân loại thịt</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_16_to_17.jpg', 'Chuyển Cảnh Shot 16 ➔ Shot 17 (Cắt chuyển sang bảng phấn phân loại thịt)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_16_to_17.jpg" alt="Transition 16 to 17" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-17">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 17</span>
+                <button class="time-jump-btn" onclick="playShot(49.76, 51.36, 'Shot 17')">
+                    ▶ 49.76s ➔ 51.36s <span class="dur-pill">(1.64s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Detail Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Chi Tiết Bảng Phấn Thủ Công Độc Bản: Tri Thức Về Thịt Bò & Than Củi Binchotan/Bakau</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_start.jpg', 'Shot 17 • Khung hình Đầu (49.76s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (49.76s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_mid.jpg', 'Shot 17 • Cao trào Giữa (50.56s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (50.56s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_end.jpg', 'Shot 17 • Khung hình Cuối (51.36s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (51.36s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cận cảnh tấm bảng đen vẽ tay sơ đồ các phần cắt thịt bò (Tomahawk, Ribeye, Prime Rib) và hai loại than củi đặc trưng của quán: Binchotan Charcoal & Bakau Charcoal; phía sau là bóng lưng nhân viên lướt qua. Subtitle: 'I hope my customer is enjoy my dish'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Chi tiết bảng phấn thủ công mang lại nét văn hóa mộc mạc (artisanal touch), minh chứng cho sự am hiểu tường tận về các loại than củi tự nhiên và cấu trúc thịt của nhà hàng.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Ánh sáng hắt vào góc trên bảng hơi chói gây mất nét chữ phấn trắng; góc máy hơi nghiêng nhẹ thiếu đi sự vuông vức của một chi tiết đồ họa tĩnh.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Chèn những chi tiết bảng vẽ tay, thực đơn viết tay hoặc ghi chú chuyên môn giúp nhân cách hóa thương hiệu và tạo cảm giác chăm chút tỉ mỉ từ những điều nhỏ nhất.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Detail Shot • 35mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Góc tường trạm pha chế
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Daylight tự nhiên hắt chéo + Ambient ấm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cut chuyển sang cận cảnh cắt thái thịt
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 18: <span style="color:#cbd5e1; font-weight:normal;">Cut chuyển sang cận cảnh cắt thái thịt</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_17_to_18.jpg', 'Chuyển Cảnh Shot 17 ➔ Shot 18 (Cut chuyển sang cận cảnh cắt thái thịt)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_17_to_18.jpg" alt="Transition 17 to 18" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-18">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 18</span>
+                <button class="time-jump-btn" onclick="playShot(51.40, 53.64, 'Shot 18')">
+                    ▶ 51.40s ➔ 53.64s <span class="dur-pill">(2.28s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Macro Action</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Nát Lòng Với Nhát Dao Xuyên Thấu: Đặc Tả Thớ Thịt Steak Nghỉ Đạt Độ Chín Hoàn Hảo</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_start.jpg', 'Shot 18 • Khung hình Đầu (51.40s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (51.40s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_mid.jpg', 'Shot 18 • Cao trào Giữa (52.52s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (52.52s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_end.jpg', 'Shot 18 • Khung hình Cuối (53.64s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (53.64s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Cận cảnh lưỡi dao bếp sắc ngọt lướt qua dải thịt bò vừa được nướng chín và để nghỉ; từng lát thịt hé lộ màu hồng đào tươi rói bên trong cùng dòng nước ngọt thịt (myoglobin) tươm ra lấp lánh dưới ánh đèn. Subtitle: 'the plating and the flavor'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Góc quay cực cận bắt trọn khoảnh khắc lưỡi dao cắt ngọt lịm không một vết rách; độ đàn hồi của thớ thịt Wagyu chín vừa (medium rare) đạt đến cảnh giới cao nhất của thị giác ẩm thực.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Bàn tay phụ bếp đeo găng đen đôi lúc che mất một góc nhìn lát cắt; cần hạ góc máy thấp hơn một chút để thấy trọn vẹn bề mặt nghiêng của lát thịt.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Động tác cắt thịt steak chín phải quay ở tốc độ khung hình chuẩn và độ nét cao nhất vào lưỡi dao để truyền tải cảm giác 'mềm như bơ' đến người xem.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Macro Action • 70mm f/2.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Thớt cắt chuyên dụng
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng tập trung xiên góc 60 độ
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang khoảnh khắc thực khách thưởng thức
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 19: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang khoảnh khắc thực khách thưởng thức</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_18_to_19.jpg', 'Chuyển Cảnh Shot 18 ➔ Shot 19 (Cắt chuyển sang khoảnh khắc thực khách thưởng thức)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_18_to_19.jpg" alt="Transition 18 to 19" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-19">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 19</span>
+                <button class="time-jump-btn" onclick="playShot(53.68, 56.76, 'Shot 19')">
+                    ▶ 53.68s ➔ 56.76s <span class="dur-pill">(3.12s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Over-the-Shoulder Medium Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Khoảnh Khắc Hạnh Phúc Của Thực Khách: Lời Hồi Đáp Trọn Vẹn Dành Cho Tâm Huyết Bếp Trưởng</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_start.jpg', 'Shot 19 • Khung hình Đầu (53.68s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_start.jpg" alt="Shot 19 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (53.68s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_mid.jpg', 'Shot 19 • Cao trào Giữa (55.22s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_mid.jpg" alt="Shot 19 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (55.22s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_end.jpg', 'Shot 19 • Khung hình Cuối (56.76s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_end.jpg" alt="Shot 19 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (56.76s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc máy Over-the-Shoulder từ sau lưng bạn đồng hành: Vị thực khách trung niên tao nhã nâng ly rượu vang đỏ, mỉm cười mãn nguyện sau khi thưởng thức món ăn; bên ngoài khung cửa sổ là sắc xanh biếc của cây cối công viên KLCC. Subtitle: 'so my customer will enjoy...'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Chuyển dịch góc nhìn từ người làm bếp sang người thụ hưởng trải nghiệm; ánh mắt hài lòng của thực khách là bằng chứng thuyết phục nhất cho chất lượng món ăn, hoàn tất vòng lặp câu chuyện ẩm thực.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Hậu cảnh bên ngoài hơi thừa sáng so với khuôn mặt nhân vật; cần bù sáng nhẹ vào má thực khách để làm rõ nụ cười hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Video ẩm thực sẽ thiếu trọn vẹn nếu không có khoảnh khắc người thưởng thức gật đầu tán thưởng; đó là đỉnh cao của sự thỏa mãn cảm xúc trong storytelling F&B.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Over-the-Shoulder Medium Shot • 50mm f/2.0
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Bàn ăn cạnh cửa sổ công viên
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng tự nhiên cửa sổ kết hợp đèn bàn ấm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang người thợ giữ lửa
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 20: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang người thợ giữ lửa</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_19_to_20.jpg', 'Chuyển Cảnh Shot 19 ➔ Shot 20 (Cắt chuyển sang người thợ giữ lửa)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_19_to_20.jpg" alt="Transition 19 to 20" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-20">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 20</span>
+                <button class="time-jump-btn" onclick="playShot(56.80, 60.52, 'Shot 20')">
+                    ▶ 56.80s ➔ 60.52s <span class="dur-pill">(3.76s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Eye-Level Shot</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Chiếc Kẹp Bếp & Ngọn Lửa Cuối Cùng: Tôn Vinh Người Giữ Lửa Thầm Lặng Nơi Gian Bếp</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_start.jpg', 'Shot 20 • Khung hình Đầu (56.80s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_start.jpg" alt="Shot 20 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (56.80s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_mid.jpg', 'Shot 20 • Cao trào Giữa (58.66s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_mid.jpg" alt="Shot 20 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (58.66s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_end.jpg', 'Shot 20 • Khung hình Cuối (60.52s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_end.jpg" alt="Shot 20 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (60.52s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Góc quay chính diện trạm nướng: Người đầu bếp cầm chiếc kẹp dài chuyên dụng khéo léo gắp từng thanh than hồng Binchotan, tàn tro bay lất phất trong làn khói ấm nồng; tiếng lửa tí tách reo vui. Subtitle: 'it will keep in the flavor in your mouth around'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Khắc họa trọn vẹn sự kiên nhẫn và kỷ luật thép của nghệ thuật nướng than hoa truyền thống; khói và tàn lửa tạo nên chất thơ điện ảnh vô cùng sâu lắng trước khi khép lại video.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Góc quay từ xa có hàng ghế bar ở tiền cảnh hơi chắn nhẹ góc nhìn phía dưới lò; nếu tiến máy lại gần hơn 0.5 mét sẽ tạo cảm giác nhập vai sâu sắc hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Hãy luôn dành một góc quay tôn vinh sự cần mẫn của đôi bàn tay người thợ nấu trực tiếp; đó chính là linh hồn của những món ăn đậm đà bản sắc.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Eye-Level Shot • 35mm f/2.0
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Trạm nướng than mở
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng than hồng rực rỡ + Hậu cảnh tối Chiaroscuro
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt chuyển sang lời đúc kết của bếp trưởng
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 21: <span style="color:#cbd5e1; font-weight:normal;">Cắt chuyển sang lời đúc kết của bếp trưởng</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_20_to_21.jpg', 'Chuyển Cảnh Shot 20 ➔ Shot 21 (Cắt chuyển sang lời đúc kết của bếp trưởng)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_20_to_21.jpg" alt="Transition 20 to 21" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-21">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 21</span>
+                <button class="time-jump-btn" onclick="playShot(60.56, 64.52, 'Shot 21')">
+                    ▶ 60.56s ➔ 64.52s <span class="dur-pill">(4.00s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Medium Close-Up</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Lời Kết Trọn Vẹn Của Trái Tim Bếp Trưởng: Lắng Đọng Hương Khói Trong Ký Ức Người Dùng</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_start.jpg', 'Shot 21 • Khung hình Đầu (60.56s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_start.jpg" alt="Shot 21 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (60.56s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_mid.jpg', 'Shot 21 • Cao trào Giữa (62.54s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_mid.jpg" alt="Shot 21 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (62.54s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_end.jpg', 'Shot 21 • Khung hình Cuối (64.52s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_end.jpg" alt="Shot 21 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (64.52s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Chef Qaia mỉm cười rạng rỡ và tự tin trước ống kính, chia sẻ câu đúc kết tâm huyết về giá trị của hương than củi và khói thơm ngấm sâu vào từng thớ thịt: 'the flavor the char oil inside and the aroma'.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Nụ cười mở lòng và ánh mắt bừng sáng của nữ bếp trưởng sau hành trình dài nỗ lực mang lại cái kết đầy năng lượng tích cực; bố cục khuôn hình cân đối, màu sắc ấm cúng.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Micro cài áo lộ nhẹ trên cổ áo thun; nếu giấu micro tinh tế dưới nếp áo sẽ giúp khuôn hình đạt chuẩn điện ảnh hoàn hảo hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Hãy kết thúc video bằng một nụ cười rạng rỡ và một câu khẳng định chắc nịch về giá trị cốt lõi để lại dư âm khó phai trong tâm trí khách hàng.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Medium Close-Up • 50mm f/1.8
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Trước tủ rượu vang
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng vàng ấm 3200K rạng rỡ
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Fade chuyển sang logo thương hiệu
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 22: <span style="color:#cbd5e1; font-weight:normal;">Fade chuyển sang logo thương hiệu</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_21_to_22.jpg', 'Chuyển Cảnh Shot 21 ➔ Shot 22 (Fade chuyển sang logo thương hiệu)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_21_to_22.jpg" alt="Transition 21 to 22" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-22">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 22</span>
+                <button class="time-jump-btn" onclick="playShot(64.56, 66.40, 'Shot 22')">
+                    ▶ 64.56s ➔ 66.40s <span class="dur-pill">(1.88s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Motion Graphic Outro Card</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Khắc Sâu Dấu Ấn Thương Hiệu Tối Giản: Khẳng Định Vị Thế 'The Flame & Grill' Tại KLCC</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_start.jpg', 'Shot 22 • Khung hình Đầu (64.56s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_start.jpg" alt="Shot 22 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (64.56s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_mid.jpg', 'Shot 22 • Cao trào Giữa (65.48s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_mid.jpg" alt="Shot 22 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (65.48s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_end.jpg', 'Shot 22 • Khung hình Cuối (66.40s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_end.jpg" alt="Shot 22 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (66.40s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Tấm danh thiếp thương hiệu hiện lên trang trọng ở trung tâm màn hình: Logo chữ 'FIREWOOD' màu trắng tinh tế, dòng phụ đề 'The Flame & Grill, KLCC' trên nền lưới kim loại đen mờ ảo.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Thiết kế typography tối giản, thanh lịch chuẩn nhận diện Fine Dining; hiệu ứng xuất hiện dứt khoát neo giữ tên thương hiệu vào tâm trí người xem ngay sau cảm xúc dâng trào.</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Nền đen hơi tĩnh; nếu thêm một làn khói mờ ảo lướt ngang logo sẽ tạo sự liên kết tự nhiên hơn với chủ đề bếp lửa.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Outro logo của video ẩm thực cao cấp cần tối giản và sạch sẽ, tránh các hiệu ứng đồ họa 3D rối rắm làm mất đi vẻ sang trọng.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Motion Graphic Outro Card • Canvas 9:16
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Nền lưới thép đen công nghiệp
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Typography màu trắng tinh tế
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Dissolve mờ dần sang shot kết
+            </div>
+        </div>
+
+        
+        <div class="trans-section">
+            <div class="trans-header">
+                ⚡ Kỹ thuật chuyển tiếp sang Shot 23: <span style="color:#cbd5e1; font-weight:normal;">Dissolve mờ dần sang shot kết</span>
+            </div>
+            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_22_to_23.jpg', 'Chuyển Cảnh Shot 22 ➔ Shot 23 (Dissolve mờ dần sang shot kết)')">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/transitions/trans_22_to_23.jpg" alt="Transition 22 to 23" loading="lazy">
+                <div class="zoom-indicator">🔍 So Sánh Frame Cuối &amp; Đầu</div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card" id="shot-card-23">
+        <div class="shot-card-header">
+            <div class="shot-header-left">
+                <span class="shot-index-badge">SHOT 23</span>
+                <button class="time-jump-btn" onclick="playShot(66.44, 68.52, 'Shot 23')">
+                    ▶ 66.44s ➔ 68.52s <span class="dur-pill">(2.12s)</span>
+                </button>
+            </div>
+            <div class="shot-header-right">
+                <span class="tech-tag">Fade to Black</span>
+            </div>
+        </div>
+
+        <div class="shot-headline-box">
+            <h3 class="shot-headline-title">Dư Âm Lắng Đọng Sau Màn Trình Diễn: Ngọn Lửa Tắt Dần Nhưng Hương Vị Còn Mãi</h3>
+        </div>
+
+        <!-- 3 Keyframes Gallery -->
+        <div class="keyframes-grid">
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_start.jpg', 'Shot 23 • Khung hình Đầu (66.44s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_start.jpg" alt="Shot 23 Start" loading="lazy">
+                    <span class="kf-badge start">Đầu (66.44s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_mid.jpg', 'Shot 23 • Cao trào Giữa (67.48s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_mid.jpg" alt="Shot 23 Mid" loading="lazy">
+                    <span class="kf-badge mid">Giữa (67.48s)</span>
+                </div>
+            </div>
+            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_end.jpg', 'Shot 23 • Khung hình Cuối (68.52s)')">
+                <div class="kf-img-wrap">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_end.jpg" alt="Shot 23 End" loading="lazy">
+                    <span class="kf-badge end">Cuối (68.52s)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3 Structured Critique Blocks -->
+        <div class="analysis-blocks-grid">
+            <div class="critique-block action-block">
+                <div class="block-title">
+                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
+                </div>
+                <div class="block-content">
+                    Logo 'FIREWOOD' từ từ mờ dần và chìm vào bóng tối sâu thẳm, khép lại trọn vẹn hành trình 68 giây khám phá nghệ thuật ẩm thực củi lửa đỉnh cao.
+                </div>
+            </div>
+
+            <div class="critique-block two-sided-critique">
+                <div class="block-title">
+                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
+                </div>
+                <div class="two-column-critique">
+                    <div class="critique-col pro">
+                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <p>Nhịp mờ dần (Fade to Black) nhẹ nhàng, êm ái tạo cảm giác trọn vẹn và trang nhã; thời lượng 2 giây vừa đủ để người xem kịp ngẫm nghĩ và có xu hướng xem lại (replay).</p>
+                    </div>
+                    <div class="critique-col con">
+                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <p>Có thể thêm tài khoản mạng xã hội hoặc địa chỉ website ở dòng chân trang để tối ưu chuyển đổi đặt bàn (CTA).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="takeaway-block">
+                <div class="takeaway-title">
+                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
+                </div>
+                <div class="takeaway-body">
+                    Kết thúc bằng nhịp fade êm ái kích hoạt cảm giác hoài niệm và mong muốn được trải nghiệm thực tế ngay tại nhà hàng.
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="shot-specs-bar">
+            <div class="spec-item">
+                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Fade to Black • Canvas 9:16
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">📍 Bối cảnh:</span> Studio Dark Void
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Tối dần vào bóng đêm
+            </div>
+            <div class="spec-item">
+                <span class="spec-label">⚡ Chuyển cảnh:</span> Kết thúc video
+            </div>
+        </div>
+
+        
+    </div>
+    
+        </div>
+
+        <!-- Visual Grid View -->
+        <div class="grid-view-container" id="grid-view" style="display: none;">
+            
+    <div class="grid-card" onclick="jumpToShot(1, 0.00, 3.32)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+            <span class="grid-shot-tag">SHOT 01</span>
+            <span class="grid-time-tag">0.00s - 3.32s (3.36s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Phát Lệnh Mở Màn Định Danh Nhân Vật: Khẳng Định Vị Thế Nữ Bếp Trưởng Trực Diện Không Vòng Vo</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Close-Up • 50mm f/2.2 • Quầy bếp mở Firewood KLCC</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(2, 3.36, 5.32)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+            <span class="grid-shot-tag">SHOT 02</span>
+            <span class="grid-time-tag">3.36s - 5.32s (2.00s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Visual Hook Thị Giác Nguyên Bản: Đốn Tim Bằng Thớ Thịt Bò Wagyu Vân Cẩm Thạch Thô Mộc</div>
+            <div style="color:var(--text-muted); font-size:11px;">Top-Down Flat Lay • 35mm f/2.8 • Mặt bàn đá Marble đen</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(3, 5.36, 7.24)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+            <span class="grid-shot-tag">SHOT 03</span>
+            <span class="grid-time-tag">5.36s - 7.24s (1.92s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Cú Match Cut Biến Hóa Kỳ Diệu: Đối Chiếu Trực Tiếp Giữa Nguyên Bản Và Tuyệt Tác Nướng Chín</div>
+            <div style="color:var(--text-muted); font-size:11px;">Top-Down Match Cut • 35mm f/2.8 • Mặt bàn đá Marble đen</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(4, 7.28, 9.92)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+            <span class="grid-shot-tag">SHOT 04</span>
+            <span class="grid-time-tag">7.28s - 9.92s (2.68s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Thiết Lập Quy Mô & Không Gian Kiến Trúc: Đưa Người Xem Vào Trọng Tâm Căn Bếp Hiện Đại</div>
+            <div style="color:var(--text-muted); font-size:11px;">High-Angle Wide Tracking • 24mm f/3.5 • Gian bếp chính Firewood KLCC</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(5, 9.96, 12.60)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+            <span class="grid-shot-tag">SHOT 05</span>
+            <span class="grid-time-tag">9.96s - 12.60s (2.68s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Sự Giao Thoa Giữa Ẩm Thực Tỉ Mỉ & Đô Thị Phồn Hoa: Khẳng Định Vị Trí Vàng KLCC</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Side Shot • 35mm f/2.8 • Bàn đảo bếp view vách kính cao ốc</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(6, 12.64, 14.84)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+            <span class="grid-shot-tag">SHOT 06</span>
+            <span class="grid-time-tag">12.64s - 14.84s (2.24s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Dẫn Dắt Thị Giác Bằng Cú Pan Cận Cảnh: Đánh Thức Cảm Giác Thèm Ăn Với Đĩa Steak Master</div>
+            <div style="color:var(--text-muted); font-size:11px;">Close-Up Slow Pan • 50mm f/2.0 • Mặt bàn thớt gỗ bếp mở</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(7, 14.88, 17.84)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+            <span class="grid-shot-tag">SHOT 07</span>
+            <span class="grid-time-tag">14.88s - 17.84s (3.00s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Bảo Chứng Chuyên Môn Bằng Profile Quốc Tế: Khắc Họa Chiều Sâu Tâm Huyết Của Đầu Bếp</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Close-Up Interview • 50mm f/1.8 • Trước tủ rượu vang cao cấp</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(8, 17.88, 21.72)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+            <span class="grid-shot-tag">SHOT 08</span>
+            <span class="grid-time-tag">17.88s - 21.72s (3.88s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Nghệ Thuật Căn Chỉnh Trục Đối Xứng Tối Giản: Không Gian Bàn Ăn Chuẩn Fine Dining Về Đêm</div>
+            <div style="color:var(--text-muted); font-size:11px;">Low-Angle Wide Glide • 24mm f/2.8 • Phòng ăn chính Firewood KLCC</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(9, 21.76, 24.72)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+            <span class="grid-shot-tag">SHOT 09</span>
+            <span class="grid-time-tag">21.76s - 24.72s (3.00s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Ngọn Lửa Sôi Sục & Tiếng Xèo Xèo Rực Lửa: Trái Tim Cốt Lõi Của Triết Lý Bếp Củi Firewood</div>
+            <div style="color:var(--text-muted); font-size:11px;">Macro Close-Up • 85mm f/2.8 • Lò nướng than Binchotan hở</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(10, 24.76, 27.84)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+            <span class="grid-shot-tag">SHOT 10</span>
+            <span class="grid-time-tag">24.76s - 27.84s (3.12s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Đường Hút Phối Cảnh Lưới Ánh Sáng: Khắc Họa Nhịp Điệu Chuyên Nghiệp Của Đội Ngũ Phục Vụ</div>
+            <div style="color:var(--text-muted); font-size:11px;">Symmetrical Wide Shot • 24mm f/3.2 • Lối đi phục vụ trung tâm</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(11, 27.88, 33.36)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+            <span class="grid-shot-tag">SHOT 11</span>
+            <span class="grid-time-tag">27.88s - 33.36s (5.52s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Cú Tracking Theo Bước Bếp Trưởng: Tái Hiện Không Khí Khẩn Trương Nơi Chiến Tuyến Bếp Mở</div>
+            <div style="color:var(--text-muted); font-size:11px;">Lateral Tracking Shot • 28mm f/2.8 • Dọc quầy bếp mở</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(12, 33.40, 36.16)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+            <span class="grid-shot-tag">SHOT 12</span>
+            <span class="grid-time-tag">33.40s - 36.16s (2.80s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Bố Cục Tượng Đài Vững Chãi (Heroic Low-Angle): Tôn Vinh Miếng Thịt Bò Wagyu Như Một Tác Phẩm Nghệ Thuật</div>
+            <div style="color:var(--text-muted); font-size:11px;">Low-Angle Macro Hero Shot • 50mm f/2.5 • Bàn đá đen studio</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(13, 36.20, 40.16)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+            <span class="grid-shot-tag">SHOT 13</span>
+            <span class="grid-time-tag">36.20s - 40.16s (4.00s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Khoảnh Khắc Trầm Lắng Nội Tâm: Sự Gắn Kết Sứ Mệnh Trở Về Quê Hương Cống Hiến</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Close-Up • 50mm f/1.8 • Trước tủ rượu vang</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(14, 40.20, 41.64)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+            <span class="grid-shot-tag">SHOT 14</span>
+            <span class="grid-time-tag">40.20s - 41.64s (1.48s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Đỉnh Cao Thẩm Mỹ Trình Bày (Fine Plating): Vẻ Đẹp Điêu Khắc Tinh Tế Của Nữ Bếp Trưởng</div>
+            <div style="color:var(--text-muted); font-size:11px;">High-Angle Detail Plating • 50mm f/2.8 • Mặt bàn đá hoa cương đen</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(15, 41.68, 44.24)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+            <span class="grid-shot-tag">SHOT 15</span>
+            <span class="grid-time-tag">41.68s - 44.24s (2.60s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Cú Rắc Muối Điện Ảnh Kịch Tính: Tái Hiện Vũ Điệu Gia Vị Dưới Ánh Sáng Ven Khắc Nghiệt</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Profile Shot • 50mm f/2.0 • Khu chuẩn bị thịt nướng</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(16, 44.28, 49.72)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+            <span class="grid-shot-tag">SHOT 16</span>
+            <span class="grid-time-tag">44.28s - 49.72s (5.48s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Nhịp Thở Đồng Đội & Năng Lượng Đỉnh Điểm: Vượt Qua Giới Hạn Bản Thân Nơi Chảo Lửa</div>
+            <div style="color:var(--text-muted); font-size:11px;">Wide Kitchen Action • 24mm f/2.8 • Trạm bếp nướng than trung tâm</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(17, 49.76, 51.36)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
+            <span class="grid-shot-tag">SHOT 17</span>
+            <span class="grid-time-tag">49.76s - 51.36s (1.64s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Chi Tiết Bảng Phấn Thủ Công Độc Bản: Tri Thức Về Thịt Bò & Than Củi Binchotan/Bakau</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Detail Shot • 35mm f/2.8 • Góc tường trạm pha chế</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(18, 51.40, 53.64)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
+            <span class="grid-shot-tag">SHOT 18</span>
+            <span class="grid-time-tag">51.40s - 53.64s (2.28s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Nát Lòng Với Nhát Dao Xuyên Thấu: Đặc Tả Thớ Thịt Steak Nghỉ Đạt Độ Chín Hoàn Hảo</div>
+            <div style="color:var(--text-muted); font-size:11px;">Macro Action • 70mm f/2.8 • Thớt cắt chuyên dụng</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(19, 53.68, 56.76)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_19_mid.jpg" alt="Shot 19" loading="lazy">
+            <span class="grid-shot-tag">SHOT 19</span>
+            <span class="grid-time-tag">53.68s - 56.76s (3.12s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Khoảnh Khắc Hạnh Phúc Của Thực Khách: Lời Hồi Đáp Trọn Vẹn Dành Cho Tâm Huyết Bếp Trưởng</div>
+            <div style="color:var(--text-muted); font-size:11px;">Over-the-Shoulder Medium Shot • 50mm f/2.0 • Bàn ăn cạnh cửa sổ công viên</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(20, 56.80, 60.52)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_20_mid.jpg" alt="Shot 20" loading="lazy">
+            <span class="grid-shot-tag">SHOT 20</span>
+            <span class="grid-time-tag">56.80s - 60.52s (3.76s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Chiếc Kẹp Bếp & Ngọn Lửa Cuối Cùng: Tôn Vinh Người Giữ Lửa Thầm Lặng Nơi Gian Bếp</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Eye-Level Shot • 35mm f/2.0 • Trạm nướng than mở</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(21, 60.56, 64.52)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_21_mid.jpg" alt="Shot 21" loading="lazy">
+            <span class="grid-shot-tag">SHOT 21</span>
+            <span class="grid-time-tag">60.56s - 64.52s (4.00s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Lời Kết Trọn Vẹn Của Trái Tim Bếp Trưởng: Lắng Đọng Hương Khói Trong Ký Ức Người Dùng</div>
+            <div style="color:var(--text-muted); font-size:11px;">Medium Close-Up • 50mm f/1.8 • Trước tủ rượu vang</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(22, 64.56, 66.40)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_22_mid.jpg" alt="Shot 22" loading="lazy">
+            <span class="grid-shot-tag">SHOT 22</span>
+            <span class="grid-time-tag">64.56s - 66.40s (1.88s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Khắc Sâu Dấu Ấn Thương Hiệu Tối Giản: Khẳng Định Vị Thế 'The Flame & Grill' Tại KLCC</div>
+            <div style="color:var(--text-muted); font-size:11px;">Motion Graphic Outro Card • Canvas 9:16 • Nền lưới thép đen công nghiệp</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="jumpToShot(23, 66.44, 68.52)">
+        <div class="grid-thumb-box">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_23_mid.jpg" alt="Shot 23" loading="lazy">
+            <span class="grid-shot-tag">SHOT 23</span>
+            <span class="grid-time-tag">66.44s - 68.52s (2.12s)</span>
+        </div>
+        <div class="grid-card-desc">
+            <div style="font-weight:700; color:#fff; font-size:13px; margin-bottom:4px;">Dư Âm Lắng Đọng Sau Màn Trình Diễn: Ngọn Lửa Tắt Dần Nhưng Hương Vị Còn Mãi</div>
+            <div style="color:var(--text-muted); font-size:11px;">Fade to Black • Canvas 9:16 • Studio Dark Void</div>
+        </div>
+    </div>
+    
+        </div>
+    </main>
+</div>
+
+<!-- Drawer Jump Menu -->
+<div class="drawer-backdrop" id="drawer-backdrop" onclick="toggleDrawer()"></div>
+<div class="drawer-container" id="drawer-container">
+    <div class="drawer-header">
+        <div class="drawer-title">📑 Danh Sách Phân Cảnh (23)</div>
+        <button class="drawer-close" onclick="toggleDrawer()">✕</button>
+    </div>
+    <div class="drawer-list">
+        
+    <div class="drawer-item" onclick="jumpToShot(1, 0.00, 3.32)">
+        <span class="d-id">SHOT 01</span>
+        <span class="d-time">0.00s - 3.32s</span>
+        <span class="d-title">Phát Lệnh Mở Màn Định Danh Nhân Vật: Khẳng Định Vị Thế Nữ Bếp Trưởng Trực Diện Không Vòng Vo</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(2, 3.36, 5.32)">
+        <span class="d-id">SHOT 02</span>
+        <span class="d-time">3.36s - 5.32s</span>
+        <span class="d-title">Visual Hook Thị Giác Nguyên Bản: Đốn Tim Bằng Thớ Thịt Bò Wagyu Vân Cẩm Thạch Thô Mộc</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(3, 5.36, 7.24)">
+        <span class="d-id">SHOT 03</span>
+        <span class="d-time">5.36s - 7.24s</span>
+        <span class="d-title">Cú Match Cut Biến Hóa Kỳ Diệu: Đối Chiếu Trực Tiếp Giữa Nguyên Bản Và Tuyệt Tác Nướng Chín</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(4, 7.28, 9.92)">
+        <span class="d-id">SHOT 04</span>
+        <span class="d-time">7.28s - 9.92s</span>
+        <span class="d-title">Thiết Lập Quy Mô & Không Gian Kiến Trúc: Đưa Người Xem Vào Trọng Tâm Căn Bếp Hiện Đại</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(5, 9.96, 12.60)">
+        <span class="d-id">SHOT 05</span>
+        <span class="d-time">9.96s - 12.60s</span>
+        <span class="d-title">Sự Giao Thoa Giữa Ẩm Thực Tỉ Mỉ & Đô Thị Phồn Hoa: Khẳng Định Vị Trí Vàng KLCC</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(6, 12.64, 14.84)">
+        <span class="d-id">SHOT 06</span>
+        <span class="d-time">12.64s - 14.84s</span>
+        <span class="d-title">Dẫn Dắt Thị Giác Bằng Cú Pan Cận Cảnh: Đánh Thức Cảm Giác Thèm Ăn Với Đĩa Steak Master</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(7, 14.88, 17.84)">
+        <span class="d-id">SHOT 07</span>
+        <span class="d-time">14.88s - 17.84s</span>
+        <span class="d-title">Bảo Chứng Chuyên Môn Bằng Profile Quốc Tế: Khắc Họa Chiều Sâu Tâm Huyết Của Đầu Bếp</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(8, 17.88, 21.72)">
+        <span class="d-id">SHOT 08</span>
+        <span class="d-time">17.88s - 21.72s</span>
+        <span class="d-title">Nghệ Thuật Căn Chỉnh Trục Đối Xứng Tối Giản: Không Gian Bàn Ăn Chuẩn Fine Dining Về Đêm</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(9, 21.76, 24.72)">
+        <span class="d-id">SHOT 09</span>
+        <span class="d-time">21.76s - 24.72s</span>
+        <span class="d-title">Ngọn Lửa Sôi Sục & Tiếng Xèo Xèo Rực Lửa: Trái Tim Cốt Lõi Của Triết Lý Bếp Củi Firewood</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(10, 24.76, 27.84)">
+        <span class="d-id">SHOT 10</span>
+        <span class="d-time">24.76s - 27.84s</span>
+        <span class="d-title">Đường Hút Phối Cảnh Lưới Ánh Sáng: Khắc Họa Nhịp Điệu Chuyên Nghiệp Của Đội Ngũ Phục Vụ</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(11, 27.88, 33.36)">
+        <span class="d-id">SHOT 11</span>
+        <span class="d-time">27.88s - 33.36s</span>
+        <span class="d-title">Cú Tracking Theo Bước Bếp Trưởng: Tái Hiện Không Khí Khẩn Trương Nơi Chiến Tuyến Bếp Mở</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(12, 33.40, 36.16)">
+        <span class="d-id">SHOT 12</span>
+        <span class="d-time">33.40s - 36.16s</span>
+        <span class="d-title">Bố Cục Tượng Đài Vững Chãi (Heroic Low-Angle): Tôn Vinh Miếng Thịt Bò Wagyu Như Một Tác Phẩm Nghệ Thuật</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(13, 36.20, 40.16)">
+        <span class="d-id">SHOT 13</span>
+        <span class="d-time">36.20s - 40.16s</span>
+        <span class="d-title">Khoảnh Khắc Trầm Lắng Nội Tâm: Sự Gắn Kết Sứ Mệnh Trở Về Quê Hương Cống Hiến</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(14, 40.20, 41.64)">
+        <span class="d-id">SHOT 14</span>
+        <span class="d-time">40.20s - 41.64s</span>
+        <span class="d-title">Đỉnh Cao Thẩm Mỹ Trình Bày (Fine Plating): Vẻ Đẹp Điêu Khắc Tinh Tế Của Nữ Bếp Trưởng</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(15, 41.68, 44.24)">
+        <span class="d-id">SHOT 15</span>
+        <span class="d-time">41.68s - 44.24s</span>
+        <span class="d-title">Cú Rắc Muối Điện Ảnh Kịch Tính: Tái Hiện Vũ Điệu Gia Vị Dưới Ánh Sáng Ven Khắc Nghiệt</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(16, 44.28, 49.72)">
+        <span class="d-id">SHOT 16</span>
+        <span class="d-time">44.28s - 49.72s</span>
+        <span class="d-title">Nhịp Thở Đồng Đội & Năng Lượng Đỉnh Điểm: Vượt Qua Giới Hạn Bản Thân Nơi Chảo Lửa</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(17, 49.76, 51.36)">
+        <span class="d-id">SHOT 17</span>
+        <span class="d-time">49.76s - 51.36s</span>
+        <span class="d-title">Chi Tiết Bảng Phấn Thủ Công Độc Bản: Tri Thức Về Thịt Bò & Than Củi Binchotan/Bakau</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(18, 51.40, 53.64)">
+        <span class="d-id">SHOT 18</span>
+        <span class="d-time">51.40s - 53.64s</span>
+        <span class="d-title">Nát Lòng Với Nhát Dao Xuyên Thấu: Đặc Tả Thớ Thịt Steak Nghỉ Đạt Độ Chín Hoàn Hảo</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(19, 53.68, 56.76)">
+        <span class="d-id">SHOT 19</span>
+        <span class="d-time">53.68s - 56.76s</span>
+        <span class="d-title">Khoảnh Khắc Hạnh Phúc Của Thực Khách: Lời Hồi Đáp Trọn Vẹn Dành Cho Tâm Huyết Bếp Trưởng</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(20, 56.80, 60.52)">
+        <span class="d-id">SHOT 20</span>
+        <span class="d-time">56.80s - 60.52s</span>
+        <span class="d-title">Chiếc Kẹp Bếp & Ngọn Lửa Cuối Cùng: Tôn Vinh Người Giữ Lửa Thầm Lặng Nơi Gian Bếp</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(21, 60.56, 64.52)">
+        <span class="d-id">SHOT 21</span>
+        <span class="d-time">60.56s - 64.52s</span>
+        <span class="d-title">Lời Kết Trọn Vẹn Của Trái Tim Bếp Trưởng: Lắng Đọng Hương Khói Trong Ký Ức Người Dùng</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(22, 64.56, 66.40)">
+        <span class="d-id">SHOT 22</span>
+        <span class="d-time">64.56s - 66.40s</span>
+        <span class="d-title">Khắc Sâu Dấu Ấn Thương Hiệu Tối Giản: Khẳng Định Vị Thế 'The Flame & Grill' Tại KLCC</span>
+    </div>
+    
+    <div class="drawer-item" onclick="jumpToShot(23, 66.44, 68.52)">
+        <span class="d-id">SHOT 23</span>
+        <span class="d-time">66.44s - 68.52s</span>
+        <span class="d-title">Dư Âm Lắng Đọng Sau Màn Trình Diễn: Ngọn Lửa Tắt Dần Nhưng Hương Vị Còn Mãi</span>
+    </div>
+    
+    </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+    <div class="lightbox-box" onclick="event.stopPropagation()">
+        <img src="" alt="Enlarged Shot" class="lightbox-img" id="lightbox-img">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+</div>
+
+<script>
+const video = document.getElementById('main-video');
+let loopTimer = null;
+
+function playShot(start, end, label) {
+    if (loopTimer) clearInterval(loopTimer);
+    video.currentTime = start;
+    video.play();
+    document.getElementById('play-icon').textContent = '⏸';
+
+    // Auto loop or pause at end
+    loopTimer = setInterval(() => {
+        if (video.currentTime >= end) {
+            video.pause();
+            clearInterval(loopTimer);
+            document.getElementById('play-icon').textContent = '▶';
+        }
+    }, 40);
+
+    // If mobile, scroll up slightly to player
+    if (window.innerWidth <= 992) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function jumpToShot(id, start, end) {
+    playShot(start, end, 'Shot ' + id);
+    if (document.getElementById('storyboard-view').style.display !== 'none') {
+        const card = document.getElementById('shot-card-' + id);
+        if (card) {
+            card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            card.style.borderColor = 'var(--accent-blue)';
+            setTimeout(() => { card.style.borderColor = 'var(--border-color)'; }, 1600);
+        }
+    }
+    toggleDrawer(false);
+}
+
+function togglePlay() {
+    if (video.paused) {
+        video.play();
+        document.getElementById('play-icon').textContent = '⏸';
+    } else {
+        video.pause();
+        document.getElementById('play-icon').textContent = '▶';
+    }
+}
+
+function stepFrame(frames) {
+    const fps = 25.0;
+    video.pause();
+    document.getElementById('play-icon').textContent = '▶';
+    video.currentTime = Math.max(0, Math.min(video.duration, video.currentTime + (frames / fps)));
+}
+
+function setSpeed(rate, elem) {
+    video.playbackRate = rate;
+    document.querySelectorAll('.speed-pill').forEach(el => el.classList.remove('active'));
+    if (elem) elem.classList.add('active');
+}
+
+function switchView(mode) {
+    const detailView = document.getElementById('storyboard-view');
+    const gridView = document.getElementById('grid-view');
+    const btnDetail = document.getElementById('btn-detail-view');
+    const btnGrid = document.getElementById('btn-grid-view');
+
+    if (mode === 'grid') {
+        detailView.style.display = 'none';
+        gridView.style.display = 'grid';
+        btnDetail.classList.remove('active');
+        btnGrid.classList.add('active');
+    } else {
+        detailView.style.display = 'flex';
+        gridView.style.display = 'none';
+        btnDetail.classList.add('active');
+        btnGrid.classList.remove('active');
+    }
+}
+
+function toggleDrawer(force) {
+    const drawer = document.getElementById('drawer-container');
+    const backdrop = document.getElementById('drawer-backdrop');
+    const isOpen = drawer.style.right === '0px';
+    const shouldOpen = force !== undefined ? force : !isOpen;
+
+    if (shouldOpen) {
+        drawer.style.right = '0px';
+        backdrop.style.display = 'block';
+    } else {
+        drawer.style.right = '-360px';
+        backdrop.style.display = 'none';
+    }
+}
+
+function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').textContent = caption;
+    document.getElementById('lightbox-modal').style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox-modal').style.display = 'none';
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+});
+</script>
+
+</body>
+</html>
