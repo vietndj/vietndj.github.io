@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy • FEDU Video Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #060911;
+      --bg-surface: #0c121e;
+      --bg-card: #111a2b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --emerald: #10b981;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding-bottom: 80px;
+    }
+    .header {
+      background: rgba(6, 9, 17, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .badge {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--cyan); }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+    }
+    .hero {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 24px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    li { margin-bottom: 8px; }
+    .highlight {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .lang-toggle {
+      display: inline-flex;
+      background: var(--bg-card);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+      gap: 4px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--cyan);
+      color: #060911;
+    }
+    .section-vn { display: none; }
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://fedu.vn" class="brand">
+        <span class="badge">FEDU</span>
+        <span>Video Manager</span>
+      </a>
+      <div>
+        <a href="https://fedu.vn/terms.html" class="nav-link">Terms of Service →</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('vn')">Tiếng Việt</button>
+      </div>
+      <h1>Privacy Policy</h1>
+      <div class="meta">Effective Date: September 6, 2026 • Application: FEDU Video Manager (video quan ly)</div>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="section-en">
+      <div class="card">
+        <h2>1. Overview & Scope</h2>
+        <p>This Privacy Policy explains how <span class="highlight">FEDU</span> ("we", "our", or "us") collects, uses, and safeguards information when you connect and use the <span class="highlight">FEDU Video Manager</span> (registered as <i>video quan ly</i>) via TikTok Developer APIs and our website (<a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a>).</p>
+        <p>We respect your privacy and are committed to complying with TikTok Developer Terms of Service, GDPR, and relevant data protection regulations.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Information We Collect</h2>
+        <p>When you authenticate and authorize our application through TikTok OAuth Login Kit and Content Posting API, we may receive:</p>
+        <ul>
+          <li><span class="highlight">Basic Profile Data:</span> Your TikTok open_id, union_id, display name, and avatar URL to identify authorized channel sessions.</li>
+          <li><span class="highlight">Video & Content Metadata:</span> Video titles, descriptions, hashtags, publish timestamps, and upload status required for publishing and scheduling.</li>
+          <li><span class="highlight">Analytics Data:</span> View counts, likes, and comment metrics retrieved via authorized APIs for performance reporting.</li>
+        </ul>
+        <p>We <span class="highlight">DO NOT</span> collect, store, or have access to your personal TikTok account passwords, payment credentials, or private chat messages.</p>
+      </div>
+
+      <div class="card">
+        <h2>3. How We Use Your Information</h2>
+        <p>We use the data collected strictly for the following functional purposes:</p>
+        <ul>
+          <li>To authenticate and connect your authorized TikTok account.</li>
+          <li>To upload, schedule, and publish video content directly to your TikTok channel upon your explicit request.</li>
+          <li>To display performance dashboards and upload status reports.</li>
+          <li>To troubleshoot system errors and ensure API uptime.</li>
+        </ul>
+        <p><span class="highlight">We will NEVER sell, lease, or monetize your data with third parties or ad brokers.</span></p>
+      </div>
+
+      <div class="card">
+        <h2>4. Data Storage and Security</h2>
+        <p>Your access tokens and refresh tokens are encrypted and securely stored with strict access controls (restricted file permissions and TLS encryption). We do not keep video files on temporary servers once they have been successfully dispatched and confirmed by the TikTok API endpoint.</p>
+      </div>
+
+      <div class="card">
+        <h2>5. Data Retention & Deletion Instructions</h2>
+        <p>You have full control over your data at any time:</p>
+        <ul>
+          <li><span class="highlight">Revoke Access:</span> You can revoke the application's access at any moment via your TikTok app settings (Settings &gt; Security &gt; Manage App Permissions).</li>
+          <li><span class="highlight">Request Data Deletion:</span> If you wish to delete all stored tokens and metadata associated with your account, please send an email to <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a> with the subject line <i>"TikTok Data Deletion Request"</i>. We will permanently delete all records within 48 business hours.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>6. Contact Us</h2>
+        <p>For any questions or inquiries regarding this Privacy Policy, please contact:</p>
+        <p>
+          <strong>FEDU Education & Technology</strong><br>
+          Website: <a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a><br>
+          Email: <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a><br>
+          Lead Developer: Nguyen Duc Viet (anh Việt)
+        </p>
+      </div>
+    </div>
+
+    <!-- VIETNAMESE VERSION -->
+    <div id="content-vn" class="section-vn">
+      <div class="card">
+        <h2>1. Tổng quan & Phạm vi</h2>
+        <p>Chính sách bảo mật này giải thích cách thức <span class="highlight">FEDU</span> ("chúng tôi") thu thập, sử dụng và bảo vệ thông tin khi bạn kết nối và sử dụng ứng dụng <span class="highlight">FEDU Video Manager</span> (tên đăng ký: <i>video quan ly</i>) qua cổng TikTok Developer API và hệ thống website (<a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a>).</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Thông tin chúng tôi thu thập</h2>
+        <p>Khi bạn xác thực qua cổng TikTok OAuth, ứng dụng chỉ tiếp nhận:</p>
+        <ul>
+          <li><span class="highlight">Thông tin cơ bản:</span> Mã định danh (open_id), tên hiển thị và ảnh đại diện kênh để xác định phiên làm việc.</li>
+          <li><span class="highlight">Dữ liệu video:</span> Tiêu đề, mô tả, hashtag, thời gian đăng và trạng thái video cần đăng tải.</li>
+          <li><span class="highlight">Thống kê hiệu suất:</span> Lượt xem, lượt thích của các video đã đăng để hiển thị báo cáo.</li>
+        </ul>
+        <p>Chúng tôi <span class="highlight">TUYỆT ĐỐI KHÔNG</span> thu thập hoặc lưu trữ mật khẩu cá nhân, thông tin thanh toán hay tin nhắn riêng tư của tài khoản TikTok.</p>
+      </div>
+
+      <div class="card">
+        <h2>3. Mục đích sử dụng</h2>
+        <ul>
+          <li>Xác thực và duy trì kết nối tài khoản TikTok được ủy quyền.</li>
+          <li>Tự động đăng tải và lên lịch video giáo dục lên kênh theo chỉ định của người dùng.</li>
+          <li>Báo cáo trạng thái và số liệu tiếp cận của nội dung.</li>
+          <li>Tuyệt đối không mua bán hay chia sẻ dữ liệu cho bên thứ ba.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4. Quyền xóa dữ liệu (Data Deletion)</h2>
+        <p>Người dùng có toàn quyền hủy quyền truy cập bất kỳ lúc nào trong cài đặt bảo mật ứng dụng của TikTok, hoặc gửi email yêu cầu xóa toàn bộ dữ liệu lưu trữ tới <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a>. Chúng tôi sẽ xóa vĩnh viễn dữ liệu trong vòng 48 giờ.</p>
+      </div>
+
+      <div class="card">
+        <h2>5. Thông tin liên hệ</h2>
+        <p>
+          <strong>Hệ thống FEDU Education</strong><br>
+          Website: <a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a><br>
+          Email: <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 FEDU. All rights reserved. Built for TikTok Content Posting & Management Automation.
+    </footer>
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      if (lang === 'en') {
+        document.querySelector('.lang-btn:nth-child(1)').classList.add('active');
+        document.getElementById('content-en').style.display = 'block';
+        document.getElementById('content-vn').style.display = 'none';
+      } else {
+        document.querySelector('.lang-btn:nth-child(2)').classList.add('active');
+        document.getElementById('content-en').style.display = 'none';
+        document.getElementById('content-vn').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>

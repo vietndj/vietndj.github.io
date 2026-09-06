@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Service • FEDU Video Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #060911;
+      --bg-surface: #0c121e;
+      --bg-card: #111a2b;
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-accent: rgba(56, 189, 248, 0.35);
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      --cyan: #38bdf8;
+      --cyan-glow: rgba(56, 189, 248, 0.15);
+      --emerald: #10b981;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      line-height: 1.7;
+      padding-bottom: 80px;
+    }
+    .header {
+      background: rgba(6, 9, 17, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 18px 24px;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 17px;
+    }
+    .badge {
+      background: linear-gradient(135deg, #0284c7, #2563eb);
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      letter-spacing: 0.5px;
+    }
+    .nav-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--cyan); }
+    .container {
+      max-width: 900px;
+      margin: 40px auto 0;
+      padding: 0 24px;
+    }
+    .hero {
+      margin-bottom: 36px;
+      border-bottom: 1px solid var(--border-subtle);
+      padding-bottom: 24px;
+    }
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 10px;
+      background: linear-gradient(135deg, #ffffff 40%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .meta {
+      font-size: 14px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--cyan);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    p {
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+      font-size: 15px;
+    }
+    ul {
+      margin-left: 20px;
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+      font-size: 15px;
+    }
+    li { margin-bottom: 8px; }
+    .highlight {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+    .lang-toggle {
+      display: inline-flex;
+      background: var(--bg-card);
+      padding: 4px;
+      border-radius: 8px;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 24px;
+      gap: 4px;
+    }
+    .lang-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-secondary);
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .lang-btn.active {
+      background: var(--cyan);
+      color: #060911;
+    }
+    .section-vn { display: none; }
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-inner">
+      <a href="https://fedu.vn" class="brand">
+        <span class="badge">FEDU</span>
+        <span>Video Manager</span>
+      </a>
+      <div>
+        <a href="https://fedu.vn/privacy.html" class="nav-link">← Privacy Policy</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="hero">
+      <div class="lang-toggle">
+        <button class="lang-btn active" onclick="switchLang('en')">English</button>
+        <button class="lang-btn" onclick="switchLang('vn')">Tiếng Việt</button>
+      </div>
+      <h1>Terms of Service</h1>
+      <div class="meta">Effective Date: September 6, 2026 • Application: FEDU Video Manager (video quan ly)</div>
+    </div>
+
+    <!-- ENGLISH VERSION -->
+    <div id="content-en" class="section-en">
+      <div class="card">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing or using the <span class="highlight">FEDU Video Manager</span> (referred to as "Service" or "Application"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not authorize or use the application.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Description of Service</h2>
+        <p><span class="highlight">FEDU Video Manager</span> is an internal automation and creator productivity tool designed to manage video publishing workflows, schedule content, and analyze performance across video channels including TikTok.</p>
+      </div>
+
+      <div class="card">
+        <h2>3. Use of TikTok Platform & Compliance</h2>
+        <p>Our application integrates with TikTok APIs. By using our service with your TikTok account, you acknowledge and agree that:</p>
+        <ul>
+          <li>You comply with all <a href="https://www.tiktok.com/legal/page/row/terms-of-service/en" target="_blank" rel="noopener" style="color:var(--cyan);">TikTok Terms of Service</a> and <a href="https://www.tiktok.com/community-guidelines" target="_blank" rel="noopener" style="color:var(--cyan);">Community Guidelines</a>.</li>
+          <li>You possess full ownership or necessary licenses for all video assets, audio, graphics, and text published through this tool.</li>
+          <li>You will not use this application to transmit spam, copyright-infringing media, or illicit material.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>4. Intellectual Property</h2>
+        <p>All intellectual property rights in the application, design, source code, and branding belong to <span class="highlight">FEDU</span>. Your uploaded videos and creative assets remain solely your intellectual property.</p>
+      </div>
+
+      <div class="card">
+        <h2>5. Limitation of Liability</h2>
+        <p>The Service is provided on an "AS IS" and "AS AVAILABLE" basis. FEDU shall not be held liable for any indirect, incidental, or consequential damages resulting from TikTok API downtimes, rate limits, or account suspensions imposed by third-party platforms.</p>
+      </div>
+
+      <div class="card">
+        <h2>6. Termination</h2>
+        <p>You may discontinue using the Service at any time by revoking application permissions inside your TikTok mobile app or contacting our support team.</p>
+      </div>
+
+      <div class="card">
+        <h2>7. Contact Information</h2>
+        <p>For questions regarding these Terms of Service, please contact us at:</p>
+        <p>
+          <strong>FEDU Education & Technology</strong><br>
+          Website: <a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a><br>
+          Email: <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- VIETNAMESE VERSION -->
+    <div id="content-vn" class="section-vn">
+      <div class="card">
+        <h2>1. Chấp thuận điều khoản</h2>
+        <p>Khi sử dụng ứng dụng <span class="highlight">FEDU Video Manager</span>, bạn đồng ý tuân thủ các điều khoản dịch vụ này cùng toàn bộ quy định cộng đồng của TikTok.</p>
+      </div>
+
+      <div class="card">
+        <h2>2. Quyền sở hữu nội dung</h2>
+        <p>Người dùng giữ toàn quyền sở hữu bản quyền đối với các video, âm thanh và nội dung được tạo và đăng tải qua công cụ.</p>
+      </div>
+
+      <div class="card">
+        <h2>3. Giới hạn trách nhiệm</h2>
+        <p>Công cụ hỗ trợ tự động hóa dựa trên API chính thức của TikTok. Chúng tôi không chịu trách nhiệm đối với các thay đổi chính sách đột xuất từ nền tảng bên thứ ba.</p>
+      </div>
+
+      <div class="card">
+        <h2>4. Liên hệ</h2>
+        <p>
+          <strong>FEDU Education</strong><br>
+          Website: <a href="https://fedu.vn" style="color:var(--cyan);">https://fedu.vn</a><br>
+          Email: <a href="mailto:vietndj@gmail.com" style="color:var(--cyan);">vietndj@gmail.com</a>
+        </p>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 FEDU. All rights reserved.
+    </footer>
+  </main>
+
+  <script>
+    function switchLang(lang) {
+      document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+      if (lang === 'en') {
+        document.querySelector('.lang-btn:nth-child(1)').classList.add('active');
+        document.getElementById('content-en').style.display = 'block';
+        document.getElementById('content-vn').style.display = 'none';
+      } else {
+        document.querySelector('.lang-btn:nth-child(2)').classList.add('active');
+        document.getElementById('content-en').style.display = 'none';
+        document.getElementById('content-vn').style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
