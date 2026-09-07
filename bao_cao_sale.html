@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Đối Soát Tin Nhắn Fanpage & Tối Ưu Chốt Đơn - FEDU</title>
+  <title>Đối Soát Tin Nhắn Fanpage - FEDU</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
@@ -20,83 +20,58 @@
       --accent-red: #f85149;
       --cust-bubble: #21262d;
       --sale-bubble: #1f6feb;
-      --wall-bubble: #3c1e1e;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
       background-color: var(--bg);
       color: var(--text);
-      line-height: 1.5;
-      padding: 16px;
+      line-height: 1.4;
+      padding: 14px;
       overflow-x: hidden;
     }
     .container {
-      max-width: 920px;
+      max-width: 880px;
       margin: 0 auto;
       width: 100%;
     }
     .header {
       background: #161b22;
       border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 14px;
     }
     .header h1 {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--text-heading);
-      margin-bottom: 8px;
+      margin-bottom: 4px;
     }
     .header p {
       color: var(--text-muted);
-      font-size: 14px;
-      line-height: 1.5;
+      font-size: 13px;
     }
-    .stats-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 14px;
-    }
-    .stat-pill {
-      background: #21262d;
-      padding: 6px 12px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-    }
-    .stat-pill strong {
-      color: #fff;
-    }
-
     .controls {
-      margin-bottom: 20px;
+      margin-bottom: 14px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 10px;
     }
     .tabs {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px;
+      gap: 6px;
     }
     .tab-btn {
       background: #21262d;
       border: 1px solid var(--border);
       color: var(--text);
-      padding: 8px 14px;
-      border-radius: 8px;
-      font-size: 13px;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
       font-weight: 600;
       cursor: pointer;
-      transition: all 0.15s;
-    }
-    .tab-btn:hover {
-      background: #30363d;
-      color: #fff;
     }
     .tab-btn.active {
       background: #1f6feb;
@@ -105,49 +80,54 @@
     }
     .search-input {
       width: 100%;
-      padding: 10px 14px;
+      padding: 8px 12px;
       background: #161b22;
       border: 1px solid var(--border);
-      border-radius: 8px;
+      border-radius: 6px;
       color: #fff;
-      font-size: 14px;
-    }
-    .search-input:focus {
-      outline: none;
-      border-color: var(--accent-blue);
+      font-size: 13px;
     }
 
-    /* CASE CARDS */
+    /* ACCORDION CARDS */
     .case-feed {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
     }
     .case-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
-      border-radius: 12px;
+      border-radius: 8px;
       overflow: hidden;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
-    .card-header {
-      background: #1c2128;
-      padding: 14px 18px;
-      border-bottom: 1px solid var(--border);
+    details.card-details {
+      width: 100%;
+    }
+    summary.card-summary {
+      padding: 12px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 10px;
+      cursor: pointer;
+      list-style: none;
+      user-select: none;
+      background: #1c2128;
+      border-bottom: 1px solid transparent;
+    }
+    summary.card-summary::-webkit-details-marker {
+      display: none;
+    }
+    details[open] summary.card-summary {
+      border-bottom: 1px solid var(--border);
     }
     .cust-info {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       flex-wrap: wrap;
+      font-size: 13px;
     }
     .cust-name {
-      font-size: 15px;
       font-weight: 700;
       color: #fff;
     }
@@ -155,38 +135,41 @@
       background: var(--accent-green);
       color: #fff;
       font-family: monospace;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 700;
-      padding: 2px 8px;
+      padding: 1px 6px;
       border-radius: 4px;
     }
-    .time-tag {
-      color: var(--text-muted);
-      font-size: 12px;
+    .issue-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 1px 6px;
+      border-radius: 4px;
     }
+    .tag-red { background: rgba(248, 81, 73, 0.2); color: #ff7b72; }
+    .tag-orange { background: rgba(240, 136, 62, 0.2); color: #ffa657; }
+    .tag-blue { background: rgba(56, 139, 253, 0.2); color: #79c0ff; }
+
     .btn-open {
       background: #1f6feb;
       color: #fff;
       text-decoration: none;
-      font-size: 12px;
+      font-size: 11px;
       font-weight: 600;
-      padding: 6px 12px;
-      border-radius: 6px;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: background 0.15s;
+      padding: 4px 10px;
+      border-radius: 4px;
+      white-space: nowrap;
     }
     .btn-open:hover {
       background: #388bfd;
     }
 
-    /* CHAT STREAM (CĂN TRÁI / CĂN PHẢI) */
+    /* CHAT STREAM */
     .chat-stream {
-      padding: 18px;
+      padding: 14px;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 8px;
       background: #0d1117;
     }
     .msg-wrapper {
@@ -201,27 +184,19 @@
       align-self: flex-end;
     }
     .sender-title {
-      font-size: 11px;
+      font-size: 10.5px;
       font-weight: 600;
-      margin-bottom: 3px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
+      margin-bottom: 2px;
     }
-    .msg-wrapper.cust .sender-title {
-      color: var(--accent-blue);
-    }
-    .msg-wrapper.sale .sender-title {
-      color: var(--text-muted);
-      align-self: flex-end;
-    }
+    .msg-wrapper.cust .sender-title { color: var(--accent-blue); }
+    .msg-wrapper.sale .sender-title { color: var(--text-muted); align-self: flex-end; }
+    
     .bubble {
-      padding: 10px 14px;
-      border-radius: 12px;
-      font-size: 13.5px;
-      line-height: 1.45;
+      padding: 7px 12px;
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.4;
       word-break: break-word;
-      white-space: pre-line;
     }
     .msg-wrapper.cust .bubble {
       background: var(--cust-bubble);
@@ -234,63 +209,53 @@
       color: #ffffff;
       border-top-right-radius: 2px;
     }
-    .msg-wrapper.sale .bubble.wall {
-      background: #2d1818;
+    
+    /* WALL TRUNCATION ACCORDION */
+    details.wall-accordion {
+      background: #2b1717;
       border: 1px solid rgba(248, 81, 73, 0.4);
+      border-radius: 8px;
+      padding: 6px 10px;
+      font-size: 12px;
       color: #ffc8c4;
     }
-    .bubble.missed-call {
-      background: #3b1818;
-      border: 1px dashed var(--accent-red);
-      color: #ffa198;
+    details.wall-accordion summary {
+      cursor: pointer;
       font-weight: 600;
+      color: #ff7b72;
+    }
+    details.wall-accordion .full-text {
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(248, 81, 73, 0.3);
+      line-height: 1.4;
+      white-space: pre-line;
     }
 
-    /* CARD FOOTER */
     .card-footer {
       background: #161b22;
-      padding: 12px 18px;
+      padding: 8px 14px;
       border-top: 1px solid var(--border);
-      font-size: 12.5px;
-      line-height: 1.4;
+      font-size: 12px;
+      color: var(--text-muted);
     }
-    .issue-badge {
-      display: inline-block;
-      font-weight: 700;
-      padding: 2px 6px;
-      border-radius: 4px;
-      font-size: 11px;
-      margin-right: 6px;
-    }
-    .issue-badge.red { background: rgba(248, 81, 73, 0.2); color: #ff7b72; }
-    .issue-badge.orange { background: rgba(240, 136, 62, 0.2); color: #ffa657; }
-    .issue-badge.blue { background: rgba(56, 139, 253, 0.2); color: #79c0ff; }
-    .issue-badge.purple { background: rgba(188, 140, 255, 0.2); color: #d2a8ff; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>💬 ĐỐI SOÁT HỘP THƯ & TỐI ƯU QUY TRÌNH CHỐT ĐƠN 1TR</h1>
-      <p>Bóc tách chuỗi tin nhắn đối ứng thực tế giữa <strong>Khách (Căn trái)</strong> và <strong>Sale (Căn phải)</strong>.<br>
-      Quy tắc chuẩn: <strong>Hỏi thăm ngắn gọn -> Lấy số điện thoại -> Bốc máy gọi 2-3 phút</strong> (Không vứt cục tin nhắn dài AI).</p>
-      
-      <div class="stats-bar">
-        <div class="stat-pill">Tổng hội thoại có tương tác: <strong>505</strong></div>
-        <div class="stat-pill">Khách đã để lại SĐT: <strong style="color: var(--accent-green);">114</strong></div>
-        <div class="stat-pill">Cần gọi điện tư vấn: <strong style="color: var(--accent-orange);">78</strong></div>
-      </div>
+      <h1>💬 ĐỐI SOÁT HỘP THƯ FANPAGE (DẠNG THU GỌN)</h1>
+      <p>Bấm vào từng khách để mở rộng xem đối ứng <strong>Khách (Căn trái) - Sale (Căn phải)</strong>. Tin dài được tự động thu gọn.</p>
     </div>
 
     <div class="controls">
       <div class="tabs">
         <button class="tab-btn active" onclick="filterTab('ALL', this)">Tất Cả (505)</button>
-        <button class="tab-btn" onclick="filterTab('PHONE_NO_CALL', this)">📞 Khách Đã Cho SĐT (114)</button>
-        <button class="tab-btn" onclick="filterTab('SPECIFIC_NEED', this)">🎯 Hỏi Nhu Cầu Riêng (Spa, BĐS, Tuổi tác...) (22)</button>
-        <button class="tab-btn" onclick="filterTab('GHOST_WALL', this)">💬 Nhận Tin Dài Rồi Dừng (364)</button>
-        <button class="tab-btn" onclick="filterTab('BARGAIN', this)">💡 Mặc Cả Học Phí (5)</button>
+        <button class="tab-btn" onclick="filterTab('PHONE_NO_CALL', this)">📞 Đã Có SĐT (114)</button>
+        <button class="tab-btn" onclick="filterTab('SPECIFIC_NEED', this)">🎯 Nhu Cầu Riêng (22)</button>
+        <button class="tab-btn" onclick="filterTab('GHOST_WALL', this)">💬 Nhận Tin Dài (364)</button>
       </div>
-      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Gõ tên khách, SĐT hoặc câu hỏi để tìm kiếm ngay..." onkeyup="searchCases()">
+      <input type="text" id="searchInput" class="search-input" placeholder="🔍 Tìm tên, SĐT..." onkeyup="searchCases()">
     </div>
 
     <div class="case-feed" id="caseFeed">
@@ -305,7 +270,7 @@
       const feed = document.getElementById('caseFeed');
       feed.innerHTML = '';
       if (items.length === 0) {
-        feed.innerHTML = '<div style="text-align:center; padding: 40px; color: var(--text-muted);">Không tìm thấy hội thoại phù hợp.</div>';
+        feed.innerHTML = '<div style="text-align:center; padding: 20px; color: var(--text-muted);">Không tìm thấy.</div>';
         return;
       }
 
@@ -314,54 +279,60 @@
         card.className = 'case-card';
 
         let phoneBadge = item.phone !== 'Chưa có SĐT' ? `<span class="phone-tag">📞 ${item.phone}</span>` : '';
-        let badgeCls = 'blue';
-        let badgeTxt = 'Tư Vấn';
-        if (item.issue_type === 'PHONE_NO_CALL') { badgeCls = 'red'; badgeTxt = 'CÓ SĐT - CẦN GỌI'; }
-        else if (item.issue_type === 'SPECIFIC_NEED') { badgeCls = 'orange'; badgeTxt = 'NHU CẦU CỤ THỂ'; }
-        else if (item.issue_type === 'BARGAIN') { badgeCls = 'purple'; badgeTxt = 'HỎI HỌC PHÍ'; }
+        let tagCls = 'tag-blue';
+        let tagTxt = 'Tư Vấn';
+        if (item.issue_type === 'PHONE_NO_CALL') { tagCls = 'tag-red'; tagTxt = 'CÓ SĐT'; }
+        else if (item.issue_type === 'SPECIFIC_NEED') { tagCls = 'tag-orange'; tagTxt = 'NHU CẦU RIÊNG'; }
 
-        // Build chat stream
         let chatHtml = '';
         item.timeline.forEach(msg => {
           const isCust = msg.sender === 'CUST';
           const sideClass = isCust ? 'cust' : 'sale';
-          const title = isCust ? `🧑 ${msg.name} (${msg.time})` : `💼 Sale Fanpage (${msg.time})`;
-          let bubbleClass = 'bubble';
-          if (!isCust && msg.is_wall) bubbleClass += ' wall';
-          if (msg.is_call_missed) bubbleClass += ' missed-call';
+          const title = isCust ? `🧑 ${msg.name} (${msg.time})` : `💼 Sale (${msg.time})`;
 
-          let textContent = msg.text;
-          if (msg.is_call_missed) {
-            textContent = '🔴 ' + textContent;
-          } else if (!isCust && msg.is_wall) {
-            textContent = '⚠️ [CỤC TIN VĂN MẪU DÀI]:\n' + textContent;
+          let bodyHtml = '';
+          if (!isCust && msg.is_wall) {
+            let preview = msg.text.substring(0, 70).replace(/\n/g, ' ') + '...';
+            bodyHtml = `
+              <details class="wall-accordion">
+                <summary>⚠️ [Cục tin mẫu 999k dài 500 từ...]: ${preview}</summary>
+                <div class="full-text">${msg.text.replace(/\n/g, '<br>')}</div>
+              </details>
+            `;
+          } else {
+            bodyHtml = `<div class="bubble">${msg.text.replace(/\n/g, '<br>')}</div>`;
           }
 
           chatHtml += `
             <div class="msg-wrapper ${sideClass}">
               <div class="sender-title">${title}</div>
-              <div class="${bubbleClass}">${textContent.replace(/\n/g, '<br>')}</div>
+              ${bodyHtml}
             </div>
           `;
         });
 
+        // Open first 3 by default
+        const isOpen = idx < 3 ? 'open' : '';
+
         card.innerHTML = `
-          <div class="card-header">
-            <div class="cust-info">
-              <span style="color: var(--text-muted); font-weight:700;">#${idx + 1}</span>
-              <span class="cust-name">${item.cust_name}</span>
-              ${phoneBadge}
-              <span class="time-tag">🕒 ${item.updated_time}</span>
+          <details class="card-details" ${isOpen}>
+            <summary class="card-summary">
+              <div class="cust-info">
+                <span style="color:var(--text-muted); font-weight:700;">#${idx + 1}</span>
+                <span class="cust-name">${item.cust_name}</span>
+                ${phoneBadge}
+                <span class="issue-tag ${tagCls}">${tagTxt}</span>
+                <span style="color:var(--text-muted); font-size:11px;">🕒 ${item.updated_time}</span>
+              </div>
+              <a href="${item.meta_link}" target="_blank" class="btn-open" onclick="event.stopPropagation();">👉 Mở Chat</a>
+            </summary>
+            <div class="chat-stream">
+              ${chatHtml}
             </div>
-            <a href="${item.meta_link}" target="_blank" class="btn-open">👉 Mở Chat Meta Suite</a>
-          </div>
-          <div class="chat-stream">
-            ${chatHtml}
-          </div>
-          <div class="card-footer">
-            <span class="issue-badge ${badgeCls}">${badgeTxt}</span>
-            <span style="color: var(--text);">${item.issue_note}</span>
-          </div>
+            <div class="card-footer">
+              💡 ${item.issue_note}
+            </div>
+          </details>
         `;
         feed.appendChild(card);
       });
@@ -386,8 +357,7 @@
         filtered = filtered.filter(c => 
           c.cust_name.toLowerCase().includes(query) ||
           c.phone.toLowerCase().includes(query) ||
-          c.timeline.some(m => m.text.toLowerCase().includes(query)) ||
-          c.issue_note.toLowerCase().includes(query)
+          c.timeline.some(m => m.text.toLowerCase().includes(query))
         );
       }
 
