@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 163,
-  "total_unique_ideas": 151,
-  "total_active_ideas": 141,
+  "total_scene_items": 164,
+  "total_unique_ideas": 152,
+  "total_active_ideas": 142,
   "total_excluded_ideas": 10,
-  "total_creators": 84,
+  "total_creators": 85,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 10,
-    "talking-head": 13,
+    "talking-head": 14,
     "storytelling": 18,
     "dien-anh": 79,
     "chuyen-canh": 18
@@ -147,7 +147,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 7,
     "am-thuc": 15,
     "du-lich": 18,
-    "cong-nghe": 20,
+    "cong-nghe": 21,
     "kien-truc": 17,
     "the-thao": 5,
     "ky-thuat-quay": 36
@@ -208,7 +208,7 @@ var FEDU_IDEAS_DATABASE = {
     "india": 13,
     "japan": 9,
     "vietnam": 8,
-    "asia_other": 42
+    "asia_other": 43
   },
   "creators_hub": [
     {
@@ -464,6 +464,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@inbex.id",
+      "name": "Inbex.Id",
+      "profile_url": "https://www.instagram.com/inbex.id/",
+      "video_count": 1,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide"
       ]
     },
     {
@@ -1194,6 +1205,66 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide",
+      "shortcode": "DcoPBXdDPro",
+      "title_vi": "Quy Trình Setup Góc Quay Livestream & Đèn 2 Điểm Cực Nhanh - @inbex.id",
+      "quick_takeaway": "Bóc tách 7 phân cảnh chuẩn đạo diễn về quy trình thiết lập góc máy livestream và hệ thống ánh sáng 2 điểm (2-Point Studio Lighting) chỉ trong vài giây: 1. Đặt ghế định vị tâm điểm, 2.",
+      "key_tech": "2-Point Studio Lighting • 45° Key Light Calibration • Rim Light Hair Separation • Negative Hook Visual Error Alert (Red X) • Eye-Level Camera Alignment • Pacing Bridge Subject Entry • Cinematic Portrait Payoff",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á (Indonesia)",
+        "en_name": "Indonesia / Asia",
+        "flag": "🇮🇩",
+        "badge_color": "sky"
+      },
+      "purpose": "Hướng dẫn setup góc quay nhanh trong vài giây với combo chân đèn và đèn LED tròn, tối ưu chi phí cho content creator và streamer",
+      "tech_tags": [
+        "2-Point Studio Lighting",
+        "45° Key Light Calibration",
+        "Rim Light Separation",
+        "Visual Error Alert (Red X)",
+        "Livestream Setup Guide",
+        "Fast Assembly Workflow"
+      ],
+      "logic_explanation": "Quy trình thiết lập hệ thống ánh sáng 2 điểm trực chiến, sử dụng đồ họa cảnh báo lỗi góc đèn ngang 90 độ và chuẩn hóa góc 45 độ, kết hợp đèn ven sau lưng tạo khối cho buổi livestream/quay video.",
+      "creator": {
+        "raw": "@inbex.id",
+        "name": "Inbex.Id",
+        "handle": "@inbex.id",
+        "profile_url": "https://www.instagram.com/inbex.id/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcoPBXdDPro/",
+      "gdrive_folder": "https://drive.google.com/open?id=1fpyyC9R_VTSGbGweluV1L8q7xoPzr0Z_",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoPBXdDPro.mp4",
+        "report_url": "reports/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide.html",
+        "shots_count": 7,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
       "shortcode": "DcyDbGmItDV",
