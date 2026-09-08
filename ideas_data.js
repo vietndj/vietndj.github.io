@@ -147,10 +147,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 7,
     "am-thuc": 15,
     "du-lich": 18,
-    "cong-nghe": 21,
+    "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 37
+    "ky-thuat-quay": 36
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 60,
+    "us_eu": 59,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -375,7 +375,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Unknown",
       "profile_url": "https://www.instagram.com/reel/DcyS2KEm7-v/",
       "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "top_industry": "Công Nghệ & Thiết Bị",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
@@ -1220,24 +1220,28 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
         "badge_color": "purple"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "country": {
+        "id": "global",
+        "name": "Toàn Cầu",
+        "en_name": "Global",
+        "flag": "🌐",
+        "badge_color": "sky"
+      },
+      "purpose": "Trình diễn sản phẩm đèn tuýp khí & B-roll công nghệ (Commercial Product Showcase)",
       "tech_tags": [
-        "Cinematic"
+        "Auto-Inflation Showcase",
+        "Fast Unboxing Hook",
+        "Soft Air Diffusion",
+        "Magnetic Rigging",
+        "Dynamic RGB Lighting"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Video thương mại mẫu mực kết hợp B-roll đập hộp, cú kích hoạt bơm khí tự động tạo điểm wow thị giác, phô diễn ánh sáng tán xạ mềm 360 độ và độ cơ động cao cho creator.",
       "creator": {
         "raw": "Unknown",
         "name": "Unknown",
