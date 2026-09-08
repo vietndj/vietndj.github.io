@@ -273,38 +273,77 @@
         </div>
 
         
-        <!-- HORIZONTAL SHOOTING STYLE TABS (KIỂU QUAY) -->
-        <div class="border-t border-slate-800/80 bg-slate-950/70 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
-            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
-                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
-                    <span class="text-purple-400">🎥 KIỂU QUAY:</span>
+        <!-- FOCUS MODE HERO BANNER (CHUYÊN ĐỀ ĐẶC QUYỀN HỌC VIÊN) -->
+        <div id="focusModeBanner" class="hidden border-t border-b border-indigo-500/30 bg-gradient-to-r from-indigo-950/90 via-purple-950/70 to-slate-950 px-4 sm:px-6 lg:px-8 py-4 shadow-lg shadow-indigo-950/30">
+            <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+                <div class="flex items-start gap-3.5">
+                    <div id="focusBadgeIcon" class="w-12 h-12 rounded-2xl bg-indigo-600/20 border border-indigo-500/40 flex items-center justify-center text-2xl shrink-0 shadow-inner">
+                        💆
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2 flex-wrap mb-1">
+                            <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-indigo-500/25 text-indigo-300 border border-indigo-500/40">
+                                🎯 Chuyên Đề Chọn Lọc Cho Học Viên
+                            </span>
+                            <span id="focusCountBadge" class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-slate-800 text-sky-300 border border-slate-700">
+                                2 video mẫu
+                            </span>
+                        </div>
+                        <h2 id="focusTitle" class="text-base sm:text-lg font-bold text-white tracking-tight">
+                            Kho Mẫu Video Dành Riêng Cho Ngành Làm Đẹp & Spa / Y Tế
+                        </h2>
+                        <p id="focusSubtitle" class="text-xs text-slate-300 max-w-2xl mt-0.5">
+                            Tuyển tập các mẫu quay dựng chuẩn quốc tế do anh Việt chọn lọc thực chiến cho thương hiệu của bạn.
+                        </p>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="shootingStyleTabsContainer">
-                    <!-- Injected dynamically via JS -->
+
+                <div class="flex items-center gap-2 shrink-0">
+                    <button onclick="toggleFilterBars()" id="filterToggleBtn" class="px-3 py-1.5 rounded-xl border border-slate-700 bg-slate-900/90 hover:bg-slate-800 text-xs font-semibold text-slate-300 hover:text-white transition flex items-center gap-1.5">
+                        <span>⚙️ Bộ Lọc Khác</span>
+                    </button>
+                    <button onclick="exitFocusMode()" class="px-3.5 py-1.5 rounded-xl border border-indigo-500/40 bg-indigo-600/20 hover:bg-indigo-600/30 text-xs font-bold text-indigo-200 hover:text-white transition flex items-center gap-1.5">
+                        <span>🌐 Xem Toàn Bộ 131+ Mẫu ↗</span>
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- 2-ROW INDUSTRY CATEGORY PILLS (NGÀNH NGHỀ 2 DÒNG) -->
-        <div class="border-t border-slate-800/80 bg-slate-950/50 px-4 sm:px-6 lg:px-8 py-2.5">
-            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 mb-2">
-                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
-                    <span class="text-sky-400">🏷️ NGÀNH NGHỀ (2 DÒNG):</span>
+        <!-- WRAPPER CHO 3 THANH BỘ LỌC (ẨN/HIỆN THEO FOCUS MODE) -->
+        <div id="allFilterBarsContainer" class="transition-all duration-300">
+            <!-- HORIZONTAL SHOOTING STYLE TABS (KIỂU QUAY) -->
+            <div class="border-t border-slate-800/80 bg-slate-950/70 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
+                <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                        <span class="text-purple-400">🎥 KIỂU QUAY:</span>
+                    </div>
+                    <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="shootingStyleTabsContainer">
+                        <!-- Injected dynamically via JS -->
+                    </div>
                 </div>
             </div>
-            <div class="max-w-7xl mx-auto flex flex-col gap-2" id="industryPillsContainer">
-                <!-- Injected dynamically via JS: 2 rows (5 + 5 pills) -->
-            </div>
-        </div>
 
-        <!-- HORIZONTAL COUNTRY FILTER TABS (QUỐC GIA) -->
-        <div class="border-t border-slate-800/80 bg-slate-950/80 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
-            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
-                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
-                    <span class="text-amber-400">🌏 QUỐC GIA:</span>
+            <!-- 2-ROW INDUSTRY CATEGORY PILLS (NGÀNH NGHỀ 2 DÒNG) -->
+            <div class="border-t border-slate-800/80 bg-slate-950/50 px-4 sm:px-6 lg:px-8 py-2.5">
+                <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 mb-2">
+                    <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                        <span class="text-sky-400">🏷️ NGÀNH NGHỀ (2 DÒNG):</span>
+                    </div>
                 </div>
-                <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="countryTabsContainer">
-                    <!-- Injected dynamically via JS -->
+                <div class="max-w-7xl mx-auto flex flex-col gap-2" id="industryPillsContainer">
+                    <!-- Injected dynamically via JS: 2 rows (5 + 5 pills) -->
+                </div>
+            </div>
+
+            <!-- HORIZONTAL COUNTRY FILTER TABS (QUỐC GIA) -->
+            <div class="border-t border-slate-800/80 bg-slate-950/80 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
+                <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                    <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                        <span class="text-amber-400">🌏 QUỐC GIA:</span>
+                    </div>
+                    <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="countryTabsContainer">
+                        <!-- Injected dynamically via JS -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -314,14 +353,28 @@
     <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
         <!-- SECONDARY FILTER & STATS BAR -->
-        <div class="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-800/80">
-            <!-- Filter summary -->
-            <div class="flex items-center gap-3">
+        <div class="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-800/80">
+            <!-- Filter summary & Teacher Share Toolbar -->
+            <div class="flex items-center gap-3 flex-wrap">
                 <div class="text-sm font-medium text-slate-300 flex items-center gap-2">
                     <span id="currentFilterLabel" class="text-white font-bold">Tất Cả Ngành</span>
                     <span class="text-slate-500">•</span>
                     <span id="matchCounterText" class="text-sky-400 font-mono font-bold">115</span>
                     <span class="text-slate-400">mẫu tham chiếu</span>
+                </div>
+
+                <!-- Teacher Share Toolbar (1-Click Share) -->
+                <div id="teacherShareBar" class="flex items-center gap-2 bg-gradient-to-r from-sky-950/70 via-indigo-950/60 to-purple-950/60 border border-sky-500/30 rounded-xl px-2.5 py-1 text-xs shadow-sm">
+                    <span class="text-sky-400 font-bold flex items-center gap-1">
+                        <span>🔗</span>
+                        <span class="hidden lg:inline text-[11px]">Link gửi học viên:</span>
+                    </span>
+                    <code id="shareUrlPreview" data-url="https://ytuong.fedu.vn/" class="text-[11px] font-mono text-slate-300 max-w-[140px] sm:max-w-[200px] md:max-w-[240px] truncate bg-slate-900/90 px-2 py-0.5 rounded border border-slate-800">
+                        https://ytuong.fedu.vn/
+                    </code>
+                    <button onclick="copyStudentShareLink()" id="copyShareBtn" class="px-2.5 py-1 rounded-lg bg-sky-500 hover:bg-sky-400 text-slate-950 font-bold text-[11px] transition flex items-center gap-1 shrink-0 active:scale-95 shadow-sm" title="Sao chép liên kết chuyên đề này gửi học viên">
+                        <span>📋 Sao Chép</span>
+                    </button>
                 </div>
             </div>
 
@@ -630,6 +683,8 @@
             appState.currentStyle = styleId;
             appState.currentPage = 1;
             renderShootingStyleTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
             applyFilters();
 
             if (appState.currentView !== 'grid') {
@@ -696,6 +751,8 @@
             renderShootingStyleTabs();
             renderIndustryPills();
             renderCountryTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
             applyFilters();
             
             if (appState.currentView !== 'grid') {
@@ -748,6 +805,8 @@
             if (cSelect) cSelect.value = countryId === 'all' ? '' : countryId;
 
             renderCountryTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
             applyFilters();
 
             if (appState.currentView !== 'grid') {
@@ -898,6 +957,8 @@
             if (matchCounter) matchCounter.innerText = matched.length;
 
             renderCards(matched);
+            renderFocusBanner();
+            updateTeacherShareLink();
         }
 
         // Render Cards Grid
@@ -1380,12 +1441,324 @@
             renderShootingStyleTabs();
             renderIndustryPills();
             renderCountryTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
             applyFilters();
         }
 
         function loadMoreIdeas() {
             appState.currentPage++;
             applyFilters();
+        }
+
+
+        // =========================================================================
+        // DEEP-LINKING, FOCUS MODE & TEACHER SHARE ENGINE
+        // =========================================================================
+        const INDUSTRY_ALIASES = {
+            'spa': 'spa-lam-dep',
+            'spa-lam-dep': 'spa-lam-dep',
+            'lam-dep': 'spa-lam-dep',
+            'y-te': 'spa-lam-dep',
+            'thuong-hieu': 'thuong-hieu',
+            'thuonghieu': 'thuong-hieu',
+            'personal-brand': 'thuong-hieu',
+            'thoi-trang': 'thoi-trang',
+            'thoitrang': 'thoi-trang',
+            'fashion': 'thoi-trang',
+            'am-thuc': 'am-thuc',
+            'amthuc': 'am-thuc',
+            'fnb': 'am-thuc',
+            'food': 'am-thuc',
+            'du-lich': 'du-lich',
+            'dulich': 'du-lich',
+            'travel': 'du-lich',
+            'cong-nghe': 'cong-nghe',
+            'congnghe': 'cong-nghe',
+            'tech': 'cong-nghe',
+            'kien-truc': 'kien-truc',
+            'kientruc': 'kien-truc',
+            'architecture': 'kien-truc',
+            'the-thao': 'the-thao',
+            'thethao': 'the-thao',
+            'sports': 'the-thao',
+            'ky-thuat': 'ky-thuat-quay',
+            'kythuat': 'ky-thuat-quay',
+            'filmmaking': 'ky-thuat-quay'
+        };
+
+        const STYLE_ALIASES = {
+            'walk-and-talk': 'walk-and-talk',
+            'walk': 'walk-and-talk',
+            'walkandtalk': 'walk-and-talk',
+            'voice-over': 'voice-over',
+            'voice': 'voice-over',
+            'voiceover': 'voice-over',
+            'talking-head': 'talking-head',
+            'talking': 'talking-head',
+            'talkinghead': 'talking-head',
+            'storytelling': 'storytelling',
+            'story': 'storytelling',
+            'dien-anh': 'dien-anh',
+            'cinematic': 'dien-anh',
+            'chuyen-canh': 'chuyen-canh',
+            'transition': 'chuyen-canh'
+        };
+
+        const COUNTRY_ALIASES = {
+            'us_eu': 'us_eu',
+            'aumy': 'us_eu',
+            'au-my': 'us_eu',
+            'korea': 'korea',
+            'han-quoc': 'korea',
+            'hanquoc': 'korea',
+            'india': 'india',
+            'an-do': 'india',
+            'ando': 'india',
+            'japan': 'japan',
+            'nhat-ban': 'japan',
+            'nhatban': 'japan',
+            'vietnam': 'vietnam',
+            'viet-nam': 'vietnam',
+            'asia_other': 'asia_other',
+            'chau-a': 'asia_other'
+        };
+
+        function initUrlParams() {
+            const params = new URLSearchParams(window.location.search);
+            const hash = window.location.hash.replace('#', '').trim().toLowerCase();
+
+            let indParam = params.get('nganh') || params.get('n') || (hash.startsWith('nganh-') ? hash.replace('nganh-', '') : hash);
+            let styleParam = params.get('kieu') || params.get('k') || (hash.startsWith('kieu-') ? hash.replace('kieu-', '') : '');
+            let countryParam = params.get('quoc-gia') || params.get('qg') || (hash.startsWith('qg-') ? hash.replace('qg-', '') : '');
+            let techParam = params.get('ky-thuat') || params.get('kt') || '';
+            let purposeParam = params.get('muc-dich') || params.get('md') || '';
+            let searchParam = params.get('q') || params.get('tim-kiem') || '';
+            let focusParam = params.get('focus') || params.get('f');
+
+            if (indParam && INDUSTRY_ALIASES[indParam]) {
+                appState.currentIndustry = INDUSTRY_ALIASES[indParam];
+            }
+            if (styleParam && STYLE_ALIASES[styleParam]) {
+                appState.currentStyle = STYLE_ALIASES[styleParam];
+            }
+            if (countryParam && COUNTRY_ALIASES[countryParam]) {
+                appState.currentCountry = COUNTRY_ALIASES[countryParam];
+            }
+            if (techParam) {
+                appState.currentTech = techParam;
+                const tSelect = document.getElementById('techFilter');
+                if (tSelect) tSelect.value = techParam;
+            }
+            if (purposeParam) {
+                appState.currentPurpose = purposeParam;
+                const pSelect = document.getElementById('purposeFilter');
+                if (pSelect) pSelect.value = purposeParam;
+            }
+            if (searchParam) {
+                appState.searchQuery = searchParam;
+                const sInput = document.getElementById('globalSearchInput');
+                if (sInput) sInput.value = searchParam;
+            }
+
+            // Auto-activate Focus Mode if focus=1 or if user opened an industry/style link
+            if (focusParam === '1' || focusParam === 'true' || (appState.currentIndustry !== 'all') || (appState.currentStyle !== 'all')) {
+                appState.focusMode = true;
+            }
+        }
+
+        function renderFocusBanner() {
+            const banner = document.getElementById('focusModeBanner');
+            const allFilterBars = document.getElementById('allFilterBarsContainer');
+            if (!banner || !window.FEDU_IDEAS_DATABASE) return;
+
+            const db = window.FEDU_IDEAS_DATABASE;
+            const hasFocus = appState.focusMode && (appState.currentIndustry !== 'all' || appState.currentStyle !== 'all' || appState.currentCountry !== 'all');
+
+            if (!hasFocus) {
+                banner.classList.add('hidden');
+                if (allFilterBars) allFilterBars.classList.remove('hidden');
+                return;
+            }
+
+            banner.classList.remove('hidden');
+            if (allFilterBars && !appState.showFilterBarsInFocus) {
+                allFilterBars.classList.add('hidden');
+            } else if (allFilterBars) {
+                allFilterBars.classList.remove('hidden');
+            }
+
+            const iconEl = document.getElementById('focusBadgeIcon');
+            const titleEl = document.getElementById('focusTitle');
+            const subEl = document.getElementById('focusSubtitle');
+            const countEl = document.getElementById('focusCountBadge');
+
+            let titleText = "Chuyên Đề Chọn Lọc Cho Học Viên";
+            let subText = "Tuyển tập các mẫu quay dựng chuẩn quốc tế do anh Việt chọn lọc thực chiến cho bạn.";
+            let iconText = "🎯";
+
+            if (appState.currentIndustry !== 'all') {
+                const indObj = db.industries.find(i => i.id === appState.currentIndustry);
+                if (indObj) {
+                    iconText = indObj.icon;
+                    titleText = `Kho Mẫu Video Dành Riêng Cho Ngành ${indObj.name}`;
+                    subText = `Tuyển tập các mẫu video chuẩn quốc tế ngành ${indObj.name} do anh Việt chọn lọc thực chiến cho thương hiệu của bạn. Đã bóc tách phân cảnh, góc máy, ánh sáng và bài học áp dụng.`;
+                }
+            } else if (appState.currentStyle !== 'all') {
+                const styleObj = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
+                if (styleObj) {
+                    iconText = styleObj.icon;
+                    titleText = `Chuyên Đề Kiểu Quay: ${styleObj.name}`;
+                    subText = `Thao lược các phân cảnh ứng dụng phong cách ${styleObj.name}, nhịp thở thị giác và kỹ thuật dựng bám sát bối cảnh thực chiến.`;
+                }
+            } else if (appState.currentCountry !== 'all') {
+                const countryObj = (db.countries || []).find(c => c.id === appState.currentCountry);
+                if (countryObj) {
+                    iconText = countryObj.flag;
+                    titleText = `Kho Mẫu Video Phong Cách: ${countryObj.name}`;
+                    subText = `Tổng hợp các góc máy và ngôn ngữ điện ảnh đặc trưng của các creator hàng đầu khu vực ${countryObj.name}.`;
+                }
+            }
+
+            if (iconEl) iconEl.innerText = iconText;
+            if (titleEl) titleEl.innerText = titleText;
+            if (subEl) subEl.innerText = subText;
+            if (countEl) {
+                const matchCount = document.getElementById('matchCounterText')?.innerText || '';
+                countEl.innerText = matchCount ? `${matchCount} video mẫu` : 'Chuyên đề';
+            }
+        }
+
+        function toggleFilterBars() {
+            appState.showFilterBarsInFocus = !appState.showFilterBarsInFocus;
+            const allFilterBars = document.getElementById('allFilterBarsContainer');
+            const toggleBtn = document.getElementById('filterToggleBtn');
+            if (allFilterBars) {
+                allFilterBars.classList.toggle('hidden', !appState.showFilterBarsInFocus);
+            }
+            if (toggleBtn) {
+                toggleBtn.innerText = appState.showFilterBarsInFocus ? 'Ẩn Bộ Lọc' : '⚙️ Bộ Lọc Khác';
+            }
+        }
+
+        function exitFocusMode() {
+            appState.focusMode = false;
+            appState.showFilterBarsInFocus = true;
+            appState.currentIndustry = 'all';
+            appState.currentStyle = 'all';
+            appState.currentCountry = 'all';
+            appState.currentTech = '';
+            appState.currentPurpose = '';
+            appState.searchQuery = '';
+
+            const sInput = document.getElementById('globalSearchInput');
+            if (sInput) sInput.value = '';
+            const tSelect = document.getElementById('techFilter');
+            if (tSelect) tSelect.value = '';
+            const pSelect = document.getElementById('purposeFilter');
+            if (pSelect) pSelect.value = '';
+            const cSelect = document.getElementById('countryFilter');
+            if (cSelect) cSelect.value = '';
+
+            try {
+                window.history.pushState({}, '', window.location.pathname);
+            } catch(e) {}
+
+            renderFocusBanner();
+            renderShootingStyleTabs();
+            renderIndustryPills();
+            renderCountryTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
+            applyFilters();
+        }
+
+        function updateTeacherShareLink() {
+            const previewEl = document.getElementById('shareUrlPreview');
+            if (!previewEl) return;
+
+            let urlParams = [];
+            let shortAlias = '';
+
+            if (appState.currentIndustry !== 'all') {
+                urlParams.push(`nganh=${encodeURIComponent(appState.currentIndustry)}`);
+                if (appState.currentIndustry === 'spa-lam-dep') shortAlias = 'spa.html';
+                else if (appState.currentIndustry === 'am-thuc') shortAlias = 'fnb.html';
+                else if (appState.currentIndustry === 'thoi-trang') shortAlias = 'thoitrang.html';
+                else if (appState.currentIndustry === 'thuong-hieu') shortAlias = 'thuonghieu.html';
+                else if (appState.currentIndustry === 'du-lich') shortAlias = 'dulich.html';
+                else if (appState.currentIndustry === 'cong-nghe') shortAlias = 'congnghe.html';
+                else if (appState.currentIndustry === 'kien-truc') shortAlias = 'kientruc.html';
+                else if (appState.currentIndustry === 'the-thao') shortAlias = 'thethao.html';
+                else if (appState.currentIndustry === 'ky-thuat-quay') shortAlias = 'kythuat.html';
+            }
+            if (appState.currentStyle !== 'all') {
+                urlParams.push(`kieu=${encodeURIComponent(appState.currentStyle)}`);
+                if (!shortAlias) {
+                    if (appState.currentStyle === 'walk-and-talk') shortAlias = 'walkandtalk.html';
+                    else if (appState.currentStyle === 'voice-over') shortAlias = 'voiceover.html';
+                    else if (appState.currentStyle === 'talking-head') shortAlias = 'talkinghead.html';
+                    else if (appState.currentStyle === 'storytelling') shortAlias = 'storytelling.html';
+                }
+            }
+            if (appState.currentCountry !== 'all') {
+                urlParams.push(`quoc-gia=${encodeURIComponent(appState.currentCountry)}`);
+            }
+            if (appState.currentTech) {
+                urlParams.push(`ky-thuat=${encodeURIComponent(appState.currentTech)}`);
+            }
+            if (appState.currentPurpose) {
+                urlParams.push(`muc-dich=${encodeURIComponent(appState.currentPurpose)}`);
+            }
+
+            let fullShareUrl = 'https://ytuong.fedu.vn/';
+            if (urlParams.length > 0) {
+                urlParams.push('focus=1');
+                fullShareUrl = `https://ytuong.fedu.vn/?${urlParams.join('&')}`;
+                if (shortAlias && urlParams.length === 2) {
+                    fullShareUrl = `https://ytuong.fedu.vn/${shortAlias}`;
+                }
+            }
+
+            previewEl.innerText = fullShareUrl;
+            previewEl.dataset.url = fullShareUrl;
+
+            try {
+                if (urlParams.length > 0) {
+                    window.history.replaceState({}, '', `?${urlParams.join('&')}`);
+                } else {
+                    window.history.replaceState({}, '', window.location.pathname);
+                }
+            } catch (e) {}
+        }
+
+        function copyStudentShareLink() {
+            const previewEl = document.getElementById('shareUrlPreview');
+            const url = previewEl?.dataset.url || previewEl?.innerText || window.location.href;
+            
+            navigator.clipboard.writeText(url).then(() => {
+                showToast("Đã sao chép link gửi học viên! Dán vào Zalo/Facebook ngay.", "📋");
+            }).catch(() => {
+                prompt("Sao chép liên kết này gửi cho học viên:", url);
+            });
+        }
+
+        function showToast(msg, icon = "✅") {
+            const toast = document.getElementById('toastNotification');
+            const msgEl = document.getElementById('toastMsg');
+            const iconEl = document.getElementById('toastIcon');
+            if (!toast) return;
+
+            if (msgEl) msgEl.innerText = msg;
+            if (iconEl) iconEl.innerText = icon;
+
+            toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+            }, 3000);
         }
 
         // Helpers
@@ -1446,8 +1819,15 @@
             renderShootingStyleTabs();
             renderIndustryPills();
             renderCountryTabs();
+            renderFocusBanner();
+            updateTeacherShareLink();
             applyFilters();
         });
     </script>
+    <!-- Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 border border-sky-500/40 text-slate-100 shadow-2xl shadow-sky-950/50 text-xs font-semibold backdrop-blur-md">
+        <span id="toastIcon" class="text-lg">✅</span>
+        <span id="toastMsg">Đã sao chép link chuyên đề!</span>
+    </div>
 </body>
 </html>

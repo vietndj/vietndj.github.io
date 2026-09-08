@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 156,
-  "total_unique_ideas": 144,
-  "total_active_ideas": 134,
+  "total_scene_items": 157,
+  "total_unique_ideas": 145,
+  "total_active_ideas": 135,
   "total_excluded_ideas": 10,
   "total_creators": 80,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 9,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 77,
+    "dien-anh": 78,
     "chuyen-canh": 17
   },
   "industries": [
@@ -146,7 +146,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 20,
     "thoi-trang": 7,
     "am-thuc": 14,
-    "du-lich": 17,
+    "du-lich": 18,
     "cong-nghe": 19,
     "kien-truc": 17,
     "the-thao": 4,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 55,
+    "us_eu": 56,
     "korea": 7,
     "india": 13,
     "japan": 9,
@@ -319,6 +319,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yegor.sky",
+      "name": "Yegor.Sky",
+      "profile_url": "https://www.instagram.com/yegor.sky/",
+      "video_count": 3,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
+        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
+        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
+      ]
+    },
+    {
       "handle": "@by.bennnj",
       "name": "By.Bennnj",
       "profile_url": "https://www.instagram.com/by.bennnj/",
@@ -379,18 +392,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@photoknack.in_DcD30ThT7Zm_Small_Balcony_Big_Frame_Perspective",
         "IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in"
-      ]
-    },
-    {
-      "handle": "@yegor.sky",
-      "name": "Yegor.Sky",
-      "profile_url": "https://www.instagram.com/yegor.sky/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
-        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
       ]
     },
     {
@@ -1147,6 +1148,66 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
+      "shortcode": "Dc-6BFdi7bU",
+      "title_vi": "Nghệ Thuật Biến Vali Du Lịch Thành Chuỗi Thước Phim Điện Ảnh - @yegor.sky",
+      "quick_takeaway": "Bóc tách 10 phân cảnh điện ảnh sáng tạo từ chiếc vali du lịch vỏ nhôm (Rimowa style) của Yegor.Sky: Kỹ thuật chơi với góc máy (Playing with angles), Low angle, Over-the-shoulder, Top-down POV, giấu camera trong lòng vali (Trunk Shot POV ...",
+      "key_tech": "Cinematic Object Sequence • Multi-Angle Storytelling • Trunk POV (Inside-Suitcase Shot) • Occlusion Black Wipe & Match Cut • Macro Zipper Detail • Worm's Eye View Floor Tracking Parallax",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Biến chiếc vali du lịch thường nhật thành chuỗi cảnh phim điện ảnh, kỹ thuật chơi với góc máy đa dạng, Low angle, Over-the-shoulder, Macro zipper, Parallax rolling wheel",
+      "tech_tags": [
+        "Cinematic Object Sequence",
+        "Playing with Angles",
+        "Trunk POV Inside-Suitcase",
+        "Black Occlusion Wipe",
+        "Macro Zipper Detail",
+        "Worm's Eye View Parallax"
+      ],
+      "logic_explanation": "Khai thác tối đa các góc máy sáng tạo xung quanh và bên trong chiếc vali du lịch: Từ góc kéo quai trên cao, đặt đồ vào đáy vali, góc nhìn Tarantino Trunk POV bên trong lòng vali đóng nắp, cận cảnh khóa kéo macro đến cú tracking sát đất lướt theo bước chân.",
+      "creator": {
+        "raw": "@yegor.sky",
+        "name": "Yegor.Sky",
+        "handle": "@yegor.sky",
+        "profile_url": "https://www.instagram.com/yegor.sky/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc-6BFdi7bU/",
+      "gdrive_folder": "https://drive.google.com/open?id=1skJy6ziPGvGdFFXdFSgaJGKKuVvZdhPq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc-6BFdi7bU.mp4",
+        "report_url": "reports/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence.html",
+        "shots_count": 10,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode",
       "shortcode": "DcgN1bsKUmi",
