@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 12,
     "storytelling": 18,
-    "dien-anh": 80,
-    "chuyen-canh": 17
+    "dien-anh": 79,
+    "chuyen-canh": 18
   },
   "industries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 59,
+    "us_eu": 58,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -1214,17 +1214,22 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "purple"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "middle_east",
+        "name": "Trung Đông / Nam Á",
+        "en_name": "Middle East / South Asia",
+        "flag": "🇦🇪/🇮🇳",
+        "badge_color": "amber"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Đập hộp chiếc đèn pin mini Ulanzi LM01, hiệu ứng âm thanh rọc dao bóc seal ASMR, góc quay Macro xoay 360 độ, kiểm soát ánh sáng cục bộ trong không gian tối.",
       "tech_tags": [
-        "Cinematic ASMR Unboxing • Staccato Gobo Flash Montage • Macro Extreme Close-Up • Sunset Lamp Halo Silhouette • Optical Zoom Lens • Tactile Sound Design"
+        "Cinematic ASMR Unboxing",
+        "Macro Close-Up",
+        "Staccato Gobo Flash Montage",
+        "Sunset Lamp Halo Silhouette",
+        "Tactile Sound Design",
+        "Optical Zoom Lens"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Màn đập hộp điện ảnh đỉnh cao kết hợp hiệu ứng âm thanh tactile ASMR thỏa mãn thính giác, chuỗi montage 11 micro-cuts chớp nháy Gobo patterns theo nhịp beat và cú Hero Shot silhouette quyền lực trước đèn hoàng hôn Sunset Lamp.",
       "creator": {
         "raw": "@_mubeenart",
         "name": "_Mubeenart",
@@ -1255,11 +1260,11 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video 6.28s của @valenti_k41: Nghệ thuật cố định máy quay và di chuyển đạo cụ (The Relative Motion Inversion), đếm ngược hậu trường 3-2-1 kích thích tò mò, lướt phím macro chuẩn xác từng micro-...",
       "key_tech": "Relative Motion Inversion, Fixed Camera Moving Subject, BTS Countdown Hook, Overhead Top-Down Flat-Lay, Optical Motion Blur, Rhythmic Snapping, Tactile Mechanical ASMR, Seamless Infinite Loop",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -1275,11 +1280,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Ý tưởng quay video bằng điện thoại thông minh, tận dụng đồ dùng sẵn có, chuyển cảnh mượt mà, tối ưu hóa cho nhà sáng tạo độc lập",
       "tech_tags": [
-        "Relative Motion Inversion, Fixed Camera Moving Subject, BTS Countdown Hook, Overhead Top-Down Flat-Lay, Optical Motion Blur, Rhythmic Snapping, Tactile Mechanical ASMR, Seamless Infinite Loop"
+        "Relative Motion Inversion",
+        "Fixed Camera Moving Subject",
+        "BTS Countdown Hook",
+        "Overhead Top-Down Flat-Lay",
+        "Optical Motion Blur",
+        "Tactile Mechanical ASMR",
+        "Seamless Infinite Loop"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Cố định máy quay vuông góc 90 độ và dùng tay trượt bàn phím cơ tạo hiệu ứng lướt macro siêu mượt mà không cần thanh trượt đắt tiền, kết hợp đếm ngược 3-2-1 hậu trường và vòng lặp vô tận.",
       "creator": {
         "raw": "@valenti_k41 (Valenti | content creator)",
         "name": "Valenti | content creator",
