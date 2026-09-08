@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 153,
-  "total_unique_ideas": 141,
-  "total_active_ideas": 131,
+  "total_scene_items": 154,
+  "total_unique_ideas": 142,
+  "total_active_ideas": 132,
   "total_excluded_ideas": 10,
-  "total_creators": 77,
+  "total_creators": 78,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -60,7 +60,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 2,
+    "walk-and-talk": 3,
     "voice-over": 9,
     "talking-head": 11,
     "storytelling": 17,
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 19,
     "kien-truc": 17,
     "the-thao": 3,
-    "ky-thuat-quay": 33
+    "ky-thuat-quay": 34
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 53,
+    "us_eu": 54,
     "korea": 6,
     "india": 13,
     "japan": 9,
@@ -439,6 +439,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@layton_video",
+      "name": "Layton_Video",
+      "profile_url": "https://www.instagram.com/layton_video/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds"
       ]
     },
     {
@@ -1114,6 +1125,61 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds",
+      "shortcode": "DbILcfyxZot",
+      "title_vi": "Layton • 6 Góc Máy Trong 60 Giây: Thao Lược B-Roll Thần Tốc Cầu Đi Bộ",
+      "quick_takeaway": "Bóc tách chuyên sâu quy trình Walk and Talk kết hợp B-Roll thực chiến của nhà sáng tạo nội dung Layton (@layton_video). Giải mã công thức 'Speedrun Filmmaking' hoàn thành 6 góc máy điện ảnh chỉ trong 60 giây bấm máy: 1.",
+      "key_tech": "Speedrun Walk & Talk • Wide Establishing • High Wide Railing 45° • Overhead Symmetry • Frame Within A Frame Nan Gỗ • Low Medium Pacing • Worm's Eye View Parallax • Anticipation Countdown Riser • Fast Kinetic Multi-Angle Cut",
+      "shooting_style": {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Speedrun Walk & Talk • Wide Establishing • High Wide Railing 45° • Overhead Symmetry • Frame Within A Frame Nan Gỗ • Low Medium Pacing • Worm's Eye View Parallax • Anticipation Countdown Riser • Fast Kinetic Multi-Angle Cut"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@layton_video",
+        "name": "Layton_Video",
+        "handle": "@layton_video",
+        "profile_url": "https://www.instagram.com/layton_video/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbILcfyxZot/",
+      "gdrive_folder": "https://drive.google.com/open?id=1d6tpi3b5AWIY9Vpl0YQP_Dhh9BJv_ms-",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbILcfyxZot.mp4",
+        "report_url": "reports/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds.html",
+        "shots_count": 9,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@wowshoebwow_Db_EEZtjJBI_Moving_Postcards_London_Trafalgar",
       "shortcode": "Db_EEZtjJBI",
