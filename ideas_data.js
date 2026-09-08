@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 162,
-  "total_unique_ideas": 150,
-  "total_active_ideas": 140,
+  "total_scene_items": 163,
+  "total_unique_ideas": 151,
+  "total_active_ideas": 141,
   "total_excluded_ideas": 10,
   "total_creators": 84,
   "shooting_styles": [
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 10,
-    "talking-head": 12,
+    "talking-head": 13,
     "storytelling": 18,
     "dien-anh": 79,
     "chuyen-canh": 18
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 20,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 35
+    "ky-thuat-quay": 36
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 58,
+    "us_eu": 59,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -368,6 +368,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@shogentle",
+      "name": "Shogentle",
+      "profile_url": "https://www.instagram.com/shogentle/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
+        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
       ]
     },
     {
@@ -829,17 +841,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@shogentle",
-      "name": "Shogentle",
-      "profile_url": "https://www.instagram.com/shogentle/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
-      ]
-    },
-    {
       "handle": "@rubyscafe",
       "name": "Little Ruby's Cafe",
       "profile_url": "https://www.instagram.com/rubyscafe/",
@@ -1193,6 +1194,66 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
+      "shortcode": "DcyDbGmItDV",
+      "title_vi": "Triết Lý 1 Đèn Đánh Bại 5 Đèn: Nghệ Thuật Chiếu Sáng Chiaroscuro & Vòng Lặp Vô Tận",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 16 phân cảnh về triết lý ánh sáng Chiaroscuro: phản biện sai lầm 5 đèn phẳng lẹt, đối chiếu 4 kiệt tác Hollywood (The Batman, Zendaya, Pulp Fiction, Kingsman) và kỹ thuật vòng lặp vô tận (Infinite Loop).",
+      "key_tech": "Chiaroscuro Lighting, Rembrandt Split Light, Pattern Interrupt, Proof Stacking, Infinite Narrative Loop, Staging Escalation",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Hướng dẫn kỹ thuật chiếu sáng điện ảnh Chiaroscuro và xây dựng vòng lặp kịch bản vô tận",
+      "tech_tags": [
+        "Chiaroscuro Lighting",
+        "Rembrandt Lighting",
+        "Proof Stacking",
+        "Pattern Interrupt",
+        "Infinite Narrative Loop",
+        "Staging Escalation"
+      ],
+      "logic_explanation": "Phản biện quan niệm lạm dụng đèn phẳng lẹt bằng cách bật liên tiếp 5 đèn, búng tay chuyển sang 1 đèn cạnh bên phong cách Chiaroscuro và đối chiếu 4 trích đoạn phim Hollywood, kết thúc bằng vòng lặp vô tận.",
+      "creator": {
+        "raw": "@shogentle",
+        "name": "Shogentle",
+        "handle": "@shogentle",
+        "profile_url": "https://www.instagram.com/shogentle/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcyDbGmItDV/",
+      "gdrive_folder": "https://drive.google.com/open?id=1K-HsLMQnyrJPtNaW71H0IQC6OtGybNrq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five/shot_03_mid.jpg",
+        "video_url": "./videos/One Lamp Beats Five - @shogentle.mp4",
+        "report_url": "reports/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five.html",
+        "shots_count": 16,
+        "duration": "0.15s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01",
       "shortcode": "Dca9-aWotLM",
