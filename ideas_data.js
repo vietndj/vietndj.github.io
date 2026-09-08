@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 159,
-  "total_unique_ideas": 147,
-  "total_active_ideas": 137,
+  "total_scene_items": 162,
+  "total_unique_ideas": 150,
+  "total_active_ideas": 140,
   "total_excluded_ideas": 10,
-  "total_creators": 82,
+  "total_creators": 84,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 10,
-    "talking-head": 11,
+    "talking-head": 12,
     "storytelling": 18,
-    "dien-anh": 78,
+    "dien-anh": 80,
     "chuyen-canh": 17
   },
   "industries": [
@@ -143,14 +143,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 2,
-    "thuong-hieu": 20,
+    "thuong-hieu": 21,
     "thoi-trang": 7,
     "am-thuc": 15,
     "du-lich": 18,
-    "cong-nghe": 19,
+    "cong-nghe": 20,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 34
+    "ky-thuat-quay": 35
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 57,
+    "us_eu": 59,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -371,6 +371,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@valenti_k41",
+      "name": "Valenti | content creator",
+      "profile_url": "https://www.instagram.com/valenti_k41/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas",
+        "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR"
+      ]
+    },
+    {
       "handle": "@hena_film_vlog",
       "name": "Hena_Film_Vlog",
       "profile_url": "https://www.instagram.com/hena_film_vlog/",
@@ -440,6 +452,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@_mubeenart",
+      "name": "_Mubeenart",
+      "profile_url": "https://www.instagram.com/_mubeenart/",
+      "video_count": 1,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01"
+      ]
+    },
+    {
+      "handle": "@alexboissetgrowth",
+      "name": "Alexboissetgrowth",
+      "profile_url": "https://www.instagram.com/alexboissetgrowth/",
+      "video_count": 1,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes"
       ]
     },
     {
@@ -850,17 +884,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@valenti_k41",
-      "name": "Valenti | content creator",
-      "profile_url": "https://www.instagram.com/valenti_k41/",
-      "video_count": 1,
-      "top_industry": "Công Nghệ & Thiết Bị",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR"
-      ]
-    },
-    {
       "handle": "@arturbr",
       "name": "Arturbr",
       "profile_url": "https://www.instagram.com/arturbr/",
@@ -1170,6 +1193,177 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01",
+      "shortcode": "Dca9-aWotLM",
+      "title_vi": "Đập Hộp Điện Ảnh & Cận Cảnh Macro: Ulanzi LM01 (@_mubeenart)",
+      "quick_takeaway": "Bóc tách 17 phân cảnh đập hộp ASMR và phô diễn quang học đèn pin mini Ulanzi LM01: Mở màn bằng Hero Shot tương phản đỏ hoàng hôn (Sunset Lamp Silhouette), chuỗi Staccato Gobo Flash Montage 11 micro-cuts siêu tốc ăn khớp beat lofi, nghi t...",
+      "key_tech": "Cinematic ASMR Unboxing • Staccato Gobo Flash Montage • Macro Extreme Close-Up • Sunset Lamp Halo Silhouette • Optical Zoom Lens • Tactile Sound Design",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic ASMR Unboxing • Staccato Gobo Flash Montage • Macro Extreme Close-Up • Sunset Lamp Halo Silhouette • Optical Zoom Lens • Tactile Sound Design"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@_mubeenart",
+        "name": "_Mubeenart",
+        "handle": "@_mubeenart",
+        "profile_url": "https://www.instagram.com/_mubeenart/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dca9-aWotLM/",
+      "gdrive_folder": "https://drive.google.com/open?id=1VXI2neew872QlO8zaeUiW2uJhSufX_aQ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dca9-aWotLM.mp4",
+        "report_url": "reports/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01.html",
+        "shots_count": 17,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas",
+      "shortcode": "DctVSroI3UB",
+      "title_vi": "Creative Phone Video Ideas • Nghịch Đảo Chuyển Động & Macro Phím Cơ",
+      "quick_takeaway": "Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video 6.28s của @valenti_k41: Nghệ thuật cố định máy quay và di chuyển đạo cụ (The Relative Motion Inversion), đếm ngược hậu trường 3-2-1 kích thích tò mò, lướt phím macro chuẩn xác từng micro-...",
+      "key_tech": "Relative Motion Inversion, Fixed Camera Moving Subject, BTS Countdown Hook, Overhead Top-Down Flat-Lay, Optical Motion Blur, Rhythmic Snapping, Tactile Mechanical ASMR, Seamless Infinite Loop",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Relative Motion Inversion, Fixed Camera Moving Subject, BTS Countdown Hook, Overhead Top-Down Flat-Lay, Optical Motion Blur, Rhythmic Snapping, Tactile Mechanical ASMR, Seamless Infinite Loop"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@valenti_k41 (Valenti | content creator)",
+        "name": "Valenti | content creator",
+        "handle": "@valenti_k41",
+        "profile_url": "https://www.instagram.com/valenti_k41/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DctVSroI3UB/",
+      "gdrive_folder": "https://drive.google.com/open?id=1YANhnx3-GU7RUOsdsxJJm9Z8INU7aRh6",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas/shot_03_mid.jpg",
+        "video_url": "videos/Creative phone video ideas - @valenti_k41.mp4",
+        "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
+        "shots_count": 6,
+        "duration": "12s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes",
+      "shortcode": "DZXpNj_IveV",
+      "title_vi": "Giải Mã 5 Công Thức Visual Hook & Phễu Chuyển Đổi Inbound Triệu View - @alexboissetgrowth",
+      "quick_takeaway": "Bóc tách 7 phân cảnh bậc thầy về nghệ thuật Visual Hook kết hợp Talking Head Direct-to-Camera uy quyền của chuyên gia phát triển thương hiệu cá nhân Alex Boisset tại Barcelona, Tây Ban Nha. Video thị phạm trực quan 5 kỹ thuật mở màn chốn...",
+      "key_tech": "5 Visual Hooks Formula • Tactile Mic-Tap ASMR • Desk POV & Camera Lift • Direct-to-Camera Authority • Catalan Vault Architecture • Natural Daylight Aesthetics • Automated ManyChat Inbound Funnel • Single-Word Micro-Commitment CTA",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "spain",
+        "name": "Tây Ban Nha",
+        "en_name": "Spain",
+        "flag": "🇪🇸",
+        "badge_color": "amber"
+      },
+      "purpose": "Thị phạm 5 công thức Visual Hook giữ chân, giải mã Reach-Engagement-Retention, kích hoạt phễu tự động ManyChat thu hút học viên Masterclass",
+      "tech_tags": [
+        "5 Visual Hooks Formula",
+        "Direct-to-Camera Authority",
+        "Tactile Mic-Tap ASMR",
+        "Desk POV & Camera Lift",
+        "ManyChat Inbound Funnel",
+        "Pattern Interrupt",
+        "Catalan Vault Aesthetics"
+      ],
+      "logic_explanation": "Thị phạm trực quan 5 kỹ thuật mở màn chống lướt qua (Walk-in, Mic-tap, Rót nước, Đặt điện thoại POV, Nhấc máy thu hẹp khoảng cách), sau đó bẻ lái mượt mà sang bài toán cốt lõi và chốt hạ bằng phễu chuyển đổi tự động ManyChat.",
+      "creator": {
+        "raw": "@alexboissetgrowth",
+        "name": "Alexboissetgrowth",
+        "handle": "@alexboissetgrowth",
+        "profile_url": "https://www.instagram.com/alexboissetgrowth/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DZXpNj_IveV/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_fhbSxPGnlm4uZbZ54mgD9qCg7sJ4Xo-",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZXpNj_IveV.mp4",
+        "report_url": "reports/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes.html",
+        "shots_count": 7,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro",
       "shortcode": "DbVhTUiznEp",
