@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 154,
-  "total_unique_ideas": 142,
-  "total_active_ideas": 132,
+  "total_scene_items": 156,
+  "total_unique_ideas": 144,
+  "total_active_ideas": 134,
   "total_excluded_ideas": 10,
-  "total_creators": 78,
+  "total_creators": 80,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 11,
     "storytelling": 17,
     "dien-anh": 77,
-    "chuyen-canh": 15
+    "chuyen-canh": 17
   },
   "industries": [
     {
@@ -144,12 +144,12 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 2,
     "thuong-hieu": 20,
-    "thoi-trang": 6,
+    "thoi-trang": 7,
     "am-thuc": 14,
     "du-lich": 17,
     "cong-nghe": 19,
     "kien-truc": 17,
-    "the-thao": 3,
+    "the-thao": 4,
     "ky-thuat-quay": 34
   },
   "countries": [
@@ -203,8 +203,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 54,
-    "korea": 6,
+    "us_eu": 55,
+    "korea": 7,
     "india": 13,
     "japan": 9,
     "vietnam": 8,
@@ -439,6 +439,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@etaemin",
+      "name": "Etaemin",
+      "profile_url": "https://www.instagram.com/etaemin/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode"
+      ]
+    },
+    {
+      "handle": "@jesussropero",
+      "name": "Jesús Ropero",
+      "profile_url": "https://www.instagram.com/jesussropero/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever"
       ]
     },
     {
@@ -1125,6 +1147,126 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode",
+      "shortcode": "DcgN1bsKUmi",
+      "title_vi": "Kỹ Thuật Motion Match Cut Chuyển Trạng Thái Vào Chế Độ Chạy Bộ - @etaemin",
+      "quick_takeaway": "Bóc tách 9 phân cảnh chuẩn thể thao & lifestyle về kỹ thuật Motion Match Cut chuyển đổi tức thì từ trang phục thường nhật (quần âu, áo thun đen, giày da) sang bộ trang phục chạy bộ chuyên nghiệp (áo gió siêu nhẹ, quần compression, giày c...",
+      "key_tech": "In-Place Motion Match Cut • Momentum Continuation Kick • Beat-Synced Dynamic Warm-Up Jump Cuts • Single-Leg Balance Anchor • High-Contrast Color Pop (Black to White) • Anticipation Peak Outro",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
+      "purpose": "Giậm chân chuyển trang phục chạy, chuỗi khởi động chuẩn beat, kích hoạt trạng thái chạy bộ",
+      "tech_tags": [
+        "Motion Match Cut",
+        "Beat-Synced Jump Cuts",
+        "In-Place Transformation",
+        "Running Fitness Lifestyle",
+        "Momentum Continuation"
+      ],
+      "logic_explanation": "Kỹ thuật vung chân đá Match Cut chuyển đổi tức thì từ trang phục thường nhật sang đồ chạy bộ chuyên nghiệp, tiếp nối chuỗi khởi động động học theo nhịp nhạc cực chuẩn.",
+      "creator": {
+        "raw": "@etaemin",
+        "name": "Etaemin",
+        "handle": "@etaemin",
+        "profile_url": "https://www.instagram.com/etaemin/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcgN1bsKUmi/",
+      "gdrive_folder": "https://drive.google.com/open?id=17onmcIyjEG8W38B32ArnNk5EmNF2Ly2G",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcgN1bsKUmi.mp4",
+        "report_url": "reports/IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode.html",
+        "shots_count": 9,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever",
+      "shortcode": "Dc9LUXLAHkc",
+      "title_vi": "Getting Ready Faster Than Ever • Nghệ Thuật Match Cut Dậm Chân & Nhịp Điệu 120 BPM",
+      "quick_takeaway": "Bóc tách trọn vẹn 3 phân cảnh mẫu mực trong video Reel 6.0s của @jesussropero: Nghệ thuật Match Cut động năng (Kinetic Momentum) kết nối cú đạp chân trần trong nhà và cú dậm giày da ngoài trời, góc quay siêu thấp sát mặt đất (Ground-Leve...",
+      "key_tech": "Fast-Paced Rhythm Cut, Match Cut Quần Áo, Foot Stamp Lens-Wipe, Ground-Level Low-Angle, Kinetic Typography, Camera Pickup Transition, 120 BPM Beat Sync, Hero Strut Walking",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ (Tây Ban Nha)",
+        "en_name": "Spain / Europe",
+        "flag": "🇪🇸",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase OOTD biến hình thần tốc giữ chân người xem",
+      "tech_tags": [
+        "Fast-Paced Rhythm Cut",
+        "Match Cut Quần Áo",
+        "Foot Stamp Wipe",
+        "Ground-Level Low-Angle",
+        "Kinetic Typography",
+        "Camera Pickup Transition",
+        "120 BPM Beat Sync"
+      ],
+      "logic_explanation": "Video ngắn 6s biến hình OOTD thần tốc bằng cú match cut dậm chân ngoạn mục từ phòng ngủ ra quảng trường cổ kính Tây Ban Nha, đồng bộ hoàn hảo với nhịp beat 120 BPM.",
+      "creator": {
+        "raw": "@jesussropero (Jesús Ropero)",
+        "name": "Jesús Ropero",
+        "handle": "@jesussropero",
+        "profile_url": "https://www.instagram.com/jesussropero/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc9LUXLAHkc/",
+      "gdrive_folder": "https://drive.google.com/open?id=1hIyEsw3ySne3E8YUD_xtyqcJFx1wROpF",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.jpg",
+        "video_url": "videos/Getting Ready Faster Than Ever - @jesussropero.mp4",
+        "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
+        "shots_count": 3,
+        "duration": "6s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds",
       "shortcode": "DbILcfyxZot",
