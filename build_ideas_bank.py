@@ -2,8 +2,12 @@
 # -*- coding: utf-8 -*-
 """
 build_ideas_bank.py
-Engine tự động phân loại, chuẩn hóa dữ liệu kho ý tưởng theo ngành (Ideas Bank)
-từ cơ sở dữ liệu scene.html và kho báo cáo reports/.
+Engine tự động phân loại, chuẩn hóa dữ liệu kho ý tưởng theo ma trận đa chiều:
+- Trục 1: Kiểu quay (Shooting Format) - Walk and Talk, Voice Over, Talking Head, Storytelling, Điện Ảnh, Chuyển Cảnh
+- Trục 2: Ngành nghề & Chủ đề (9 ngành cốt lõi, bao gồm Làm Đẹp & Spa / Y Tế)
+- Trục 3: Kỹ thuật quay dựng (Technical tags)
+- Trục 4: Mục đích nội dung (Content Purpose)
+
 Tác giả: FEDU Creative Engineering
 """
 
@@ -16,18 +20,86 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 SCENE_PATH = os.path.join(BASE_DIR, "scene.html")
 REPORTS_DIR = os.path.join(BASE_DIR, "reports")
 EXCLUDED_CONFIG_PATH = os.path.join(BASE_DIR, "curation_config.json")
+MASTER_CLASSIFICATIONS_PATH = os.path.join(BASE_DIR, "master_classifications.json")
 OUTPUT_JS_PATH = os.path.join(BASE_DIR, "ideas_data.js")
 
-# Định nghĩa 8 ngành cốt lõi cho học viên quay dựng
+# 1. Định nghĩa 6 Kiểu Quay (Shooting Styles) - Bộ lọc ngang chính
+SHOOTING_STYLES = [
+    {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald",
+        "desc": "Vừa đi vừa nói, camera di chuyển theo nhân vật, tương tác không gian thực tế."
+    },
+    {
+        "id": "voice-over",
+        "name": "Voice Over",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
+        "badge_color": "purple",
+        "desc": "Hình ảnh B-roll điện ảnh kết hợp giọng đọc thuyết minh nền, podcast voice."
+    },
+    {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue",
+        "desc": "Nói trực diện trước ống kính chia sẻ chuyên môn, hướng dẫn kỹ năng, review sản phẩm."
+    },
+    {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber",
+        "desc": "Kể chuyện tự sự, chuỗi hành trình, bài học cảm xúc & triết lý sâu sắc."
+    },
+    {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky",
+        "desc": "Nghệ thuật góc máy điện ảnh, bố cục khung hình tĩnh/chậm, ánh sáng Chiaroscuro."
+    },
+    {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose",
+        "desc": "Kỹ thuật cắt cảnh nhịp điệu, match cut, whip pan, zoom transition, kinetic visual loop."
+    }
+]
+
+# 2. Định nghĩa 9 Ngành Nghề & Chủ Đề (Industries / Niches) - Bộ lọc dọc chính
 INDUSTRIES = [
+    {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose",
+        "desc": "Dịch vụ spa, phòng khám thẩm mỹ, da liễu Before/After, phẫu thuật, Flash Sale dịch vụ."
+    },
+    {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo",
+        "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
+    },
     {
         "id": "thoi-trang",
         "name": "Thời Trang & Phụ Kiện",
         "en_name": "Fashion & Style",
         "icon": "👔",
-        "badge_color": "rose",
-        "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, Infinite Loop.",
-        "keywords": ["fashion", "thời trang", "lookbook", "outfit", "baggy jeans", "calvin klein", "linen", "y2k", "denim", "quần jean", "phối đồ", "styling", "tsangtastic", "jenny tsang", "slaohuairen", "new balance"]
+        "badge_color": "pink",
+        "desc": "Lookbook biến hóa outfit, mỏ neo món đồ, chuyển động bước chân đổi cảnh, phong cách đường phố."
     },
     {
         "id": "am-thuc",
@@ -35,8 +107,7 @@ INDUSTRIES = [
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber",
-        "desc": "Nghệ thuật bếp lửa, món ăn bốc khói, quán cafe hè, hẻm ẩm thực đêm, trà đạo, ASMR ẩm thực.",
-        "keywords": ["ẩm thực", "bếp củi", "woodfire", "dining", "nấu ăn", "kitchen film", "ruby's cafe", "rubyscafe", "yokocho", "sứa đỏ", "trà đạo", "chef", "nhà hàng", "món ăn", "food", "firewood klcc", "cafe", "cook a video"]
+        "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
     },
     {
         "id": "du-lich",
@@ -44,8 +115,7 @@ INDUSTRIES = [
         "en_name": "Travel & Culture",
         "icon": "✈️",
         "badge_color": "sky",
-        "desc": "Khung hình tĩnh đón thế giới di chuyển (Static Lock-off), ánh sáng Chiaroscuro tự nhiên, phong cảnh đại ngàn, chân dung bản địa.",
-        "keywords": ["du lịch", "du ký", "bhutan", "porto", "venice", "copenhagen", "shanghai", "london", "bangkok", "new york", "himalaya", "pacific northwest", "road trip", "biển", "hoàng hôn", "sunset", "coastline", "saigon", "wilderness", "vietnam", "nomadic", "traveler"]
+        "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
     },
     {
         "id": "cong-nghe",
@@ -53,26 +123,15 @@ INDUSTRIES = [
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple",
-        "desc": "5 nhịp unboxing mở hộp, ASMR bóc seal/click phím, review máy ảnh & gear cao cấp, giao diện AR/Spatial.",
-        "keywords": ["sony kando", "unboxing", "mở hộp", "jbl", "sandisk", "dji mic", "earbuds", "ssd", "firefly", "ray-ban meta", "camera gear", "thiết bị quay", "asmr điện ảnh", "đèn bàn", "koti", "projector", "canva"]
+        "desc": "5 nhịp mở hộp unboxing, review gear máy ảnh & phụ kiện, công nghệ AR/AI Spatial."
     },
     {
         "id": "kien-truc",
-        "name": "Kiến Trúc & Không Gian",
+        "name": "Kiến Trúc & Không Gian Sống",
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald",
-        "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living), ánh sáng sớm đô thị.",
-        "keywords": ["kiến trúc", "không gian gỗ", "slow living", "tĩnh lặng", "urban symmetry", "đối xứng", "metro", "ga tàu điện", "kyoto", "hẻm cổ", "morning light", "the vantage point", "tinh thần hygge", "cổ kính", "đô thị"]
-    },
-    {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎬",
-        "badge_color": "blue",
-        "desc": "Bóc tách 4 kỹ thuật cắt cảnh, tâm lý học góc máy, 8 quy tắc chuyển động bình thường hóa điện ảnh, thiết kế âm thanh SFX.",
-        "keywords": ["cắt cảnh", "4 cuts", "cuts mastery", "bố cục", "composition", "lighting", "đánh đèn", "static shot", "khung hình tĩnh", "góc máy", "sound design", "sfx", "camera angles", "match cut", "visual sequence", "photoknack", "mridupawasharma", "bryan hynes", "shogentle"]
+        "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
     },
     {
         "id": "the-thao",
@@ -80,23 +139,30 @@ INDUSTRIES = [
         "en_name": "Sports & Motion",
         "icon": "🏃",
         "badge_color": "orange",
-        "desc": "Góc quay FPV drone tốc độ cao, ánh sáng Low-key ngược sáng trong phòng tập gym, nhịp bước chân chạy bộ, kỷ luật rèn luyện.",
-        "keywords": ["chạy bộ", "bóng rổ", "gym", "fitness", "fpv drone", "lướt drone", "thể thao", "rèn luyện", "willwfit", "alpine fpv", "kỷ luật thép", "colecoppolino"]
+        "desc": "Gym low-key, chạy bộ kỷ luật, FPV drone tốc độ cao vách tuyết, chuyển động năng động."
     },
     {
-        "id": "thuong-hieu",
-        "name": "Thương Hiệu & Kể Chuyện",
-        "en_name": "Personal Brand & Story",
-        "icon": "💼",
-        "badge_color": "indigo",
-        "desc": "Kịch bản bán khóa học chuyển đổi cao, tâm lý nói chuyện trước ống kính (Yap Triangle), quy trình kể chuyện 1 ngày sáng tạo, phá vỡ bế tắc.",
-        "keywords": ["thương hiệu cá nhân", "khóa học", "workshop", "yap triangle", "nói chuyện trên camera", "bế tắc sáng tạo", "creative block", "choices", "elsa qin", "commercial", "quảng cáo", "project 100", "daily life", "anh sắc ánh"]
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue",
+        "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
     }
 ]
 
 PERSONAL_IDENTIFIERS = [
     "@vietmac", "practice_cinematic", "self_practice", "broll_plan", "@local", "vietnd"
 ]
+
+def load_master_classifications():
+    if os.path.exists(MASTER_CLASSIFICATIONS_PATH):
+        try:
+            with open(MASTER_CLASSIFICATIONS_PATH, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception:
+            pass
+    return {}
 
 def load_portal_data():
     with open(SCENE_PATH, "r", encoding="utf-8") as f:
@@ -113,7 +179,12 @@ def load_curation_config():
                 return json.load(f)
         except Exception:
             pass
-    return {"excluded_ids": [], "custom_industry_overrides": {}, "custom_title_overrides": {}}
+    return {
+        "excluded_ids": [],
+        "custom_industry_overrides": {},
+        "custom_shooting_style_overrides": {},
+        "custom_title_overrides": {}
+    }
 
 def extract_shortcode(item):
     ig = item.get("ig_url", "")
@@ -132,7 +203,6 @@ def clean_creator_info(creator_raw, ig_url="", vid_id=""):
     handle = ""
     name = creator_raw.strip()
     
-    # Check Video_by_ suffix in id
     m_by = re.search(r"Video_by_([a-zA-Z0-9._]+)", vid_id)
     if m_by:
         handle = "@" + m_by.group(1)
@@ -184,9 +254,8 @@ def clean_title_and_takeaway(item, title_overrides={}):
     if os.path.exists(full_html_path):
         try:
             with open(full_html_path, "r", encoding="utf-8", errors="ignore") as rf:
-                html_head = rf.read(25000)
+                html_head = rf.read(30000)
                 
-                # Check duration e.g. 26.07s
                 m_dur = re.search(r"(\d+(?:\.\d+)?s)\b", html_head)
                 if m_dur:
                     report_duration = m_dur.group(1)
@@ -195,7 +264,6 @@ def clean_title_and_takeaway(item, title_overrides={}):
                 if tm:
                     report_title = tm.group(1).strip()
                     
-                # Check overview-card
                 m_card = re.search(r"<div class=\"overview-card\">.*?<div[^>]*>(.*?)</div>", html_head, re.DOTALL)
                 if m_card:
                     report_desc = re.sub(r"<.*?>", "", m_card.group(1)).strip()
@@ -232,46 +300,67 @@ def clean_title_and_takeaway(item, title_overrides={}):
 
     return clean_title, short_takeaway, report_duration
 
-def classify_item(item, title, takeaway, industry_overrides={}):
-    vid_id = item.get("id", "")
-    if vid_id in industry_overrides:
-        target_id = industry_overrides[vid_id]
-        match = next((i for i in INDUSTRIES if i["id"] == target_id), None)
-        if match:
-            return match
+def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, curation_cfg, master_dict):
+    ind_overrides = curation_cfg.get("custom_industry_overrides", {})
+    style_overrides = curation_cfg.get("custom_shooting_style_overrides", {})
 
-    text = f"{title} {takeaway} {item.get('key_tech', '')} {item.get('creator', '')} {item.get('id', '')}".lower()
+    master = master_dict.get(vid_id) or master_dict.get(code)
+    if master:
+        s_id = style_overrides.get(vid_id, master["shooting_style"]["id"])
+        i_id = ind_overrides.get(vid_id, master["industry"]["id"])
+        style_obj = next((s for s in SHOOTING_STYLES if s["id"] == s_id), SHOOTING_STYLES[4])
+        ind_obj = next((i for i in INDUSTRIES if i["id"] == i_id), INDUSTRIES[8])
+        purpose = master.get("purpose", "Showcase thị giác & Thẩm mỹ")
+        tech_tags = master.get("tech_tags", [key_tech] if key_tech else ["Cinematic Framing"])
+        logic = master.get("logic_explanation", "")
+        return style_obj, ind_obj, purpose, tech_tags, logic
+
+    # Fallback for future unknown items
+    corpus = f"{vid_id} {clean_title} {takeaway} {key_tech}".lower()
     
-    best_ind = None
-    best_score = 0
-    
-    for ind in INDUSTRIES:
-        score = 0
-        for kw in ind["keywords"]:
-            if kw in text:
-                score += 2 if len(kw) > 4 else 1
-        if score > best_score:
-            best_score = score
-            best_ind = ind
-            
-    if not best_ind or best_score == 0:
-        if any(w in text for w in ["du lịch", "phong cảnh", "himalaya", "sunset"]):
-            best_ind = next(i for i in INDUSTRIES if i["id"] == "du-lich")
-        elif any(w in text for w in ["bố cục", "góc máy", "ánh sáng", "cắt"]):
-            best_ind = next(i for i in INDUSTRIES if i["id"] == "ky-thuat-quay")
-        else:
-            best_ind = next(i for i in INDUSTRIES if i["id"] == "kien-truc")
-            
-    return best_ind
+    target_style = style_overrides.get(vid_id, "dien-anh")
+    if "tinanguyen" in corpus or "medical" in corpus:
+        target_style = "walk-and-talk"
+    elif any(w in corpus for w in ["talking head", "yap triangle", "nói trước"]):
+        target_style = "talking-head"
+    elif any(w in corpus for w in ["thuyết minh", "voiceover", "voice over"]):
+        target_style = "voice-over"
+    elif any(w in corpus for w in ["match cut", "whip pan", "transition", "chuyển cảnh"]):
+        target_style = "chuyen-canh"
+    elif any(w in corpus for w in ["kể chuyện", "storytelling", "hành trình"]):
+        target_style = "storytelling"
+
+    target_ind = ind_overrides.get(vid_id, "ky-thuat-quay")
+    if any(w in corpus for w in ["y khoa", "y tế", "spa", "da liễu", "mụn"]):
+        target_ind = "spa-lam-dep"
+    elif any(w in corpus for w in ["thương hiệu cá nhân", "xây kênh", "bán khóa học"]):
+        target_ind = "thuong-hieu"
+    elif any(w in corpus for w in ["lookbook", "outfit", "thời trang"]):
+        target_ind = "thoi-trang"
+    elif any(w in corpus for w in ["ẩm thực", "cafe", "cà phê", "nấu ăn"]):
+        target_ind = "am-thuc"
+    elif any(w in corpus for w in ["unboxing", "mở hộp", "dji", "mic 3", "gear"]):
+        target_ind = "cong-nghe"
+    elif any(w in corpus for w in ["kiến trúc", "không gian gỗ", "slow living"]):
+        target_ind = "kien-truc"
+    elif any(w in corpus for w in ["chạy bộ", "gym", "fitness", "thể thao"]):
+        target_ind = "the-thao"
+    elif any(w in corpus for w in ["du lịch", "du ký", "bhutan", "porto", "venice"]):
+        target_ind = "du-lich"
+
+    style_obj = next((s for s in SHOOTING_STYLES if s["id"] == target_style), SHOOTING_STYLES[4])
+    ind_obj = next((i for i in INDUSTRIES if i["id"] == target_ind), INDUSTRIES[8])
+    return style_obj, ind_obj, "Showcase thị giác & Thẩm mỹ", [key_tech] if key_tech else ["Cinematic"], ""
 
 def build_database():
     portal_data = load_portal_data()
     curation_cfg = load_curation_config()
+    master_dict = load_master_classifications()
     manually_excluded_ids = set(curation_cfg.get("excluded_ids", []))
-    ind_overrides = curation_cfg.get("custom_industry_overrides", {})
     title_overrides = curation_cfg.get("custom_title_overrides", {})
     
     print(f"Loaded {len(portal_data)} items from scene.html")
+    print(f"Loaded {len(master_dict)} items from master_classifications.json")
 
     unique_items_map = {}
     for idx, item in enumerate(portal_data):
@@ -303,7 +392,9 @@ def build_database():
         is_excluded = is_personal or (vid_id in manually_excluded_ids) or (code in manually_excluded_ids)
         
         clean_title, short_takeaway, rep_dur = clean_title_and_takeaway(item, title_overrides)
-        industry = classify_item(item, clean_title, short_takeaway, ind_overrides)
+        style_obj, ind_obj, purpose, tech_tags, logic_exp = get_item_classification(
+            vid_id, code, clean_title, short_takeaway, item.get("key_tech", ""), curation_cfg, master_dict
+        )
         
         folder = item.get("folder_name") or vid_id
         thumbs = item.get("thumbnails") or item.get("thumbs") or []
@@ -336,13 +427,23 @@ def build_database():
             "title_vi": clean_title,
             "quick_takeaway": short_takeaway,
             "key_tech": item.get("key_tech", ""),
-            "industry": {
-                "id": industry["id"],
-                "name": industry["name"],
-                "en_name": industry["en_name"],
-                "icon": industry["icon"],
-                "badge_color": industry["badge_color"]
+            "shooting_style": {
+                "id": style_obj["id"],
+                "name": style_obj["name"],
+                "en_name": style_obj["en_name"],
+                "icon": style_obj["icon"],
+                "badge_color": style_obj["badge_color"]
             },
+            "industry": {
+                "id": ind_obj["id"],
+                "name": ind_obj["name"],
+                "en_name": ind_obj["en_name"],
+                "icon": ind_obj["icon"],
+                "badge_color": ind_obj["badge_color"]
+            },
+            "purpose": purpose,
+            "tech_tags": tech_tags,
+            "logic_explanation": logic_exp,
             "creator": c_info,
             "ig_url": item.get("ig_url", "") or c_info["profile_url"],
             "gdrive_folder": item.get("gdrive_folder", ""),
@@ -382,42 +483,41 @@ def build_database():
         })
 
     active_ideas = [x for x in processed_ideas if not x["is_excluded"]]
+    
     industry_stats = {}
     for ind in INDUSTRIES:
         c = sum(1 for x in active_ideas if x["industry"]["id"] == ind["id"])
         industry_stats[ind["id"]] = c
 
+    shooting_style_stats = {}
+    for st in SHOOTING_STYLES:
+        c = sum(1 for x in active_ideas if x["shooting_style"]["id"] == st["id"])
+        shooting_style_stats[st["id"]] = c
+
     database_payload = {
-        "generated_at": "2026-09-08T22:30:00+07:00",
+        "generated_at": "2026-09-08T23:50:00+07:00",
         "total_scene_items": len(portal_data),
         "total_unique_ideas": len(processed_ideas),
         "total_active_ideas": len(active_ideas),
         "total_excluded_ideas": len(processed_ideas) - len(active_ideas),
         "total_creators": len(creators_hub),
+        "shooting_styles": SHOOTING_STYLES,
+        "shooting_style_stats": shooting_style_stats,
         "industries": INDUSTRIES,
         "industry_stats": industry_stats,
         "creators_hub": creators_hub,
         "ideas": processed_ideas
     }
 
-    with open(OUTPUT_JS_PATH, "w", encoding="utf-8") as f:
-        f.write("/**\n * FEDU CREATIVE IDEAS BANK DATABASE (Auto-generated)\n")
-        f.write(" * Do not edit manually. Re-run build_ideas_bank.py to update.\n */\n")
-        json_str = json.dumps(database_payload, ensure_ascii=False, indent=2)
-        f.write("var FEDU_IDEAS_DATABASE = " + json_str + ";\n")
-        f.write("if (typeof window !== 'undefined') { window.FEDU_IDEAS_DATABASE = FEDU_IDEAS_DATABASE; }\n")
+    js_content = f"/**\n * FEDU CREATIVE IDEAS BANK DATABASE (Auto-generated)\n * Do not edit manually. Re-run build_ideas_bank.py to update.\n */\nvar FEDU_IDEAS_DATABASE = {json.dumps(database_payload, ensure_ascii=False, indent=2)};\n"
 
-    print(f"\n==========================================")
-    print(f"✅ Generated ideas_data.js successfully!")
-    print(f"📊 Total Unique Videos: {len(processed_ideas)}")
-    print(f"🌟 Active Ideas for Students: {len(active_ideas)}")
-    print(f"🔒 Excluded Personal/Hidden Videos: {len(processed_ideas) - len(active_ideas)}")
-    print(f"👥 Top Creators in Hub: {len(creators_hub)}")
-    print(f"🏷️ Industry Breakdown:")
-    for ind in INDUSTRIES:
-        print(f"   {ind['icon']} {ind['name']}: {industry_stats[ind['id']]} videos")
-    print(f"==========================================\n")
-    return database_payload
+    with open(OUTPUT_JS_PATH, "w", encoding="utf-8") as f:
+        f.write(js_content)
+
+    print(f"Successfully generated {OUTPUT_JS_PATH}")
+    print(f"Total active ideas: {len(active_ideas)}")
+    print(f"Industry Stats: {industry_stats}")
+    print(f"Shooting Style Stats: {shooting_style_stats}")
 
 if __name__ == "__main__":
     build_database()
