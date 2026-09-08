@@ -151,6 +151,77 @@ INDUSTRIES = [
     }
 ]
 
+
+# 3. Định nghĩa 6 Khu Vực & Quốc Gia (Countries / Regions)
+COUNTRIES = [
+    {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple",
+        "desc": "Thước phim phong cách phương Tây, New York, London, Paris, Berlin, tối giản hiện đại."
+    },
+    {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink",
+        "desc": "Tone màu trong trẻo, phong cách Daily Vlog, thẩm mỹ chữa lành, cafe aesthetic Hàn Quốc."
+    },
+    {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber",
+        "desc": "Kỹ xảo cắt cảnh điêu luyện, Match cut triệu view, kỹ thuật quay dựng đỉnh cao châu Á."
+    },
+    {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose",
+        "desc": "Mỹ học Wabi-Sabi, khung hình tĩnh (Static Shot), nhịp thở đời thường Kyoto & Tokyo."
+    },
+    {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald",
+        "desc": "Mẫu quay bối cảnh Việt Nam thực chiến, đường phố Hà Nội, Sài Gòn, Hải Dương, clip học viên."
+    },
+    {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky",
+        "desc": "Hong Kong, Singapore, Thái Lan, Malaysia, Philippines, không gian đô thị châu Á sống động."
+    }
+]
+
+def detect_country(creator, title, report_desc=""):
+    c = (creator or "").lower()
+    t = (title or "").lower()
+    r = (report_desc or "").lower()
+    combined = f"{c} {t} {r}"
+
+    if any(x in c for x in ['mridu', 'photoknack', 'sajad', 'thomasmathew', 'ayush', 'aayush']) or 'ấn độ' in combined or 'india' in combined:
+        return next(x for x in COUNTRIES if x['id'] == 'india')
+    if any(x in c for x in ['hena', 'bewoom', 'kyung6', 'nana_ic']) or 'hàn quốc' in combined or 'korea' in combined or 'seoul' in combined:
+        return next(x for x in COUNTRIES if x['id'] == 'korea')
+    if any(x in c for x in ['shogentle', 'junko', 'kenshoji', 'hana.koni', 'daiki']) or any(x in combined for x in ['tokyo', 'kyoto', 'nhật bản', 'japan', 'yokocho']):
+        return next(x for x in COUNTRIES if x['id'] == 'japan')
+    if any(x in c for x in ['tinanguyen', 'minhmigoi', 'thodia', 'kopdinh', 'anhsac', 'vietmac', 'startup', 'self_practice']) or any(x in combined for x in ['việt nam', 'vietnam', 'hải dương', 'sài gòn', 'saigon', 'hà nội', 'times city']):
+        return next(x for x in COUNTRIES if x['id'] == 'vietnam')
+    if any(x in c for x in ['withyuee', 'tsangtastic', 'jazziesillona', 'nicoolalah', 'ariffathul', 'firewood', 'intothethailand', 'jsnhow', 'beixin', 'slaohuairen', 'jeromememe', 'elsaqinn', 'chowyhh', 'gakuyen', 'kerennilan', 'mkxpresar']) or any(x in combined for x in ['bangkok', 'hong kong', 'bhutan', 'thượng hải', 'shanghai', 'malaysia', 'philippines', 'thái lan']):
+        return next(x for x in COUNTRIES if x['id'] == 'asia_other')
+    return next(x for x in COUNTRIES if x['id'] == 'us_eu')
+
 PERSONAL_IDENTIFIERS = [
     "@vietmac", "practice_cinematic", "self_practice", "broll_plan", "@local", "vietnd"
 ]
@@ -300,7 +371,7 @@ def clean_title_and_takeaway(item, title_overrides={}):
 
     return clean_title, short_takeaway, report_duration
 
-def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, curation_cfg, master_dict):
+def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, creator_handle, curation_cfg, master_dict):
     ind_overrides = curation_cfg.get("custom_industry_overrides", {})
     style_overrides = curation_cfg.get("custom_shooting_style_overrides", {})
 
@@ -313,7 +384,10 @@ def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, curat
         purpose = master.get("purpose", "Showcase thị giác & Thẩm mỹ")
         tech_tags = master.get("tech_tags", [key_tech] if key_tech else ["Cinematic Framing"])
         logic = master.get("logic_explanation", "")
-        return style_obj, ind_obj, purpose, tech_tags, logic
+        country_obj = master.get("country")
+        if not country_obj:
+            country_obj = detect_country(creator_handle, clean_title, takeaway)
+        return style_obj, ind_obj, country_obj, purpose, tech_tags, logic
 
     # Fallback for future unknown items
     corpus = f"{vid_id} {clean_title} {takeaway} {key_tech}".lower()
@@ -350,7 +424,8 @@ def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, curat
 
     style_obj = next((s for s in SHOOTING_STYLES if s["id"] == target_style), SHOOTING_STYLES[4])
     ind_obj = next((i for i in INDUSTRIES if i["id"] == target_ind), INDUSTRIES[8])
-    return style_obj, ind_obj, "Showcase thị giác & Thẩm mỹ", [key_tech] if key_tech else ["Cinematic"], ""
+    country_obj = detect_country(creator_handle, clean_title, takeaway)
+    return style_obj, ind_obj, country_obj, "Showcase thị giác & Thẩm mỹ", [key_tech] if key_tech else ["Cinematic"], ""
 
 def build_database():
     portal_data = load_portal_data()
@@ -392,8 +467,8 @@ def build_database():
         is_excluded = is_personal or (vid_id in manually_excluded_ids) or (code in manually_excluded_ids)
         
         clean_title, short_takeaway, rep_dur = clean_title_and_takeaway(item, title_overrides)
-        style_obj, ind_obj, purpose, tech_tags, logic_exp = get_item_classification(
-            vid_id, code, clean_title, short_takeaway, item.get("key_tech", ""), curation_cfg, master_dict
+        style_obj, ind_obj, country_obj, purpose, tech_tags, logic_exp = get_item_classification(
+            vid_id, code, clean_title, short_takeaway, item.get("key_tech", ""), c_info["handle"], curation_cfg, master_dict
         )
         
         folder = item.get("folder_name") or vid_id
@@ -440,6 +515,13 @@ def build_database():
                 "en_name": ind_obj["en_name"],
                 "icon": ind_obj["icon"],
                 "badge_color": ind_obj["badge_color"]
+            },
+            "country": {
+                "id": country_obj["id"],
+                "name": country_obj["name"],
+                "en_name": country_obj["en_name"],
+                "flag": country_obj["flag"],
+                "badge_color": country_obj["badge_color"]
             },
             "purpose": purpose,
             "tech_tags": tech_tags,
@@ -494,8 +576,13 @@ def build_database():
         c = sum(1 for x in active_ideas if x["shooting_style"]["id"] == st["id"])
         shooting_style_stats[st["id"]] = c
 
+    country_stats = {}
+    for c_item in COUNTRIES:
+        cnt = sum(1 for x in active_ideas if x.get("country", {}).get("id") == c_item["id"])
+        country_stats[c_item["id"]] = cnt
+
     database_payload = {
-        "generated_at": "2026-09-08T23:50:00+07:00",
+        "generated_at": "2026-09-08T23:55:00+07:00",
         "total_scene_items": len(portal_data),
         "total_unique_ideas": len(processed_ideas),
         "total_active_ideas": len(active_ideas),
@@ -505,6 +592,8 @@ def build_database():
         "shooting_style_stats": shooting_style_stats,
         "industries": INDUSTRIES,
         "industry_stats": industry_stats,
+        "countries": COUNTRIES,
+        "country_stats": country_stats,
         "creators_hub": creators_hub,
         "ideas": processed_ideas
     }

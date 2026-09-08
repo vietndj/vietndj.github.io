@@ -125,6 +125,15 @@
             font-weight: 700;
         }
 
+        /* Country Tab Active */
+        .country-tab.active {
+            background: linear-gradient(135deg, #d97706, #b45309);
+            color: #ffffff;
+            border-color: #f59e0b;
+            box-shadow: 0 4px 14px rgba(217, 119, 6, 0.4);
+            font-weight: 700;
+        }
+
         /* View switcher active */
         .view-btn.active {
             background: #1e293b;
@@ -276,10 +285,27 @@
             </div>
         </div>
 
-        <!-- HORIZONTAL INDUSTRY CATEGORY PILLS -->
-        <div class="border-t border-slate-800/80 bg-slate-950/40 px-4 sm:px-6 lg:px-8 py-2.5 overflow-x-auto">
-            <div class="max-w-7xl mx-auto flex items-center gap-2 no-scrollbar" id="industryPillsContainer">
-                <!-- Injected dynamically via JS -->
+        <!-- 2-ROW INDUSTRY CATEGORY PILLS (NGÀNH NGHỀ 2 DÒNG) -->
+        <div class="border-t border-slate-800/80 bg-slate-950/50 px-4 sm:px-6 lg:px-8 py-2.5">
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 mb-2">
+                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                    <span class="text-sky-400">🏷️ NGÀNH NGHỀ (2 DÒNG):</span>
+                </div>
+            </div>
+            <div class="max-w-7xl mx-auto flex flex-col gap-2" id="industryPillsContainer">
+                <!-- Injected dynamically via JS: 2 rows (5 + 5 pills) -->
+            </div>
+        </div>
+
+        <!-- HORIZONTAL COUNTRY FILTER TABS (QUỐC GIA) -->
+        <div class="border-t border-slate-800/80 bg-slate-950/80 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                    <span class="text-amber-400">🌏 QUỐC GIA:</span>
+                </div>
+                <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="countryTabsContainer">
+                    <!-- Injected dynamically via JS -->
+                </div>
             </div>
         </div>
     </header>
@@ -314,6 +340,17 @@
                     <option value="chiaroscuro">Low-Key / Chiaroscuro (Tương phản sáng tối)</option>
                     <option value="fpv">FPV Drone (Tốc độ cao)</option>
                     <option value="macro">Macro / Close-up đặc tả</option>
+                </select>
+
+                <!-- Filter by Country -->
+                <select id="countryFilter" onchange="handleFilterChange()" class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-amber-400">
+                    <option value="">🌏 Quốc gia: Tất Cả</option>
+                    <option value="us_eu">🇺🇸/🇪🇺 Âu Mỹ</option>
+                    <option value="korea">🇰🇷 Hàn Quốc</option>
+                    <option value="india">🇮🇳 Ấn Độ</option>
+                    <option value="japan">🇯🇵 Nhật Bản</option>
+                    <option value="vietnam">🇻🇳 Việt Nam</option>
+                    <option value="asia_other">🌏 Châu Á Khác</option>
                 </select>
 
                 <!-- Filter by Purpose -->
@@ -600,7 +637,7 @@
             }
         }
 
-        // Render Industry Pills (Vertical Filter)
+        // Render Industry Pills (2 Rows Filter)
         function renderIndustryPills() {
             const container = document.getElementById('industryPillsContainer');
             if (!container || !window.FEDU_IDEAS_DATABASE) return;
@@ -608,7 +645,7 @@
             const db = window.FEDU_IDEAS_DATABASE;
             const allCount = db.total_active_ideas;
 
-            let html = `
+            const allBtn = `
                 <button 
                     onclick="selectIndustry('all')" 
                     class="ind-pill ${appState.currentIndustry === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
@@ -618,10 +655,10 @@
                 </button>
             `;
 
-            db.industries.forEach(ind => {
+            const pillButtons = db.industries.map(ind => {
                 const count = db.industry_stats[ind.id] || 0;
                 const isActive = appState.currentIndustry === ind.id;
-                html += `
+                return `
                     <button 
                         onclick="selectIndustry('${ind.id}')" 
                         class="ind-pill ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
@@ -633,6 +670,19 @@
                 `;
             });
 
+            // Split into 2 neat rows (5 + 5 pills)
+            const row1Pills = [allBtn, ...pillButtons.slice(0, 4)];
+            const row2Pills = pillButtons.slice(4);
+
+            let html = `
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar flex-wrap sm:flex-nowrap">
+                    ${row1Pills.join('')}
+                </div>
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar flex-wrap sm:flex-nowrap">
+                    ${row2Pills.join('')}
+                </div>
+            `;
+
             container.innerHTML = html;
         }
 
@@ -640,11 +690,66 @@
         function selectIndustry(indId) {
             appState.currentIndustry = indId;
             appState.currentPage = 1;
+            appState.currentCountry = 'all';
+            const countrySelect = document.getElementById('countryFilter');
+            if (countrySelect) countrySelect.value = '';
             renderShootingStyleTabs();
             renderIndustryPills();
+            renderCountryTabs();
             applyFilters();
             
-            // Switch back to grid if currently in creators
+            if (appState.currentView !== 'grid') {
+                switchMainView('grid');
+            }
+        }
+
+        // Render Country Tabs (Horizontal Filter)
+        function renderCountryTabs() {
+            const container = document.getElementById('countryTabsContainer');
+            if (!container || !window.FEDU_IDEAS_DATABASE) return;
+
+            const db = window.FEDU_IDEAS_DATABASE;
+            const allCount = db.total_active_ideas;
+
+            let html = `
+                <button 
+                    onclick="selectCountry('all')" 
+                    class="country-tab ${appState.currentCountry === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                >
+                    <span>🌟 Tất Cả Quốc Gia</span>
+                    <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${allCount}</span>
+                </button>
+            `;
+
+            (db.countries || []).forEach(c => {
+                const count = (db.country_stats && db.country_stats[c.id]) || 0;
+                const isActive = appState.currentCountry === c.id;
+                html += `
+                    <button 
+                        onclick="selectCountry('${c.id}')" 
+                        class="country-tab ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-amber-500/50 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                        title="${escapeHtml(c.desc)}"
+                    >
+                        <span>${c.flag} ${escapeHtml(c.name)}</span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-amber-300">${count}</span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Select Country
+        function selectCountry(countryId) {
+            appState.currentCountry = countryId;
+            appState.currentPage = 1;
+
+            const cSelect = document.getElementById('countryFilter');
+            if (cSelect) cSelect.value = countryId === 'all' ? '' : countryId;
+
+            renderCountryTabs();
+            applyFilters();
+
             if (appState.currentView !== 'grid') {
                 switchMainView('grid');
             }
@@ -710,6 +815,12 @@
                     return false;
                 }
 
+                // 3.5. Country filter (Phân loại theo Quốc gia)
+                if (appState.currentCountry !== 'all') {
+                    const itemCountryId = item.country ? item.country.id : '';
+                    if (itemCountryId !== appState.currentCountry) return false;
+                }
+
                 // 4. Technique filter (Trục 3: Kỹ thuật)
                 if (appState.currentTech) {
                     const tVal = appState.currentTech.toLowerCase();
@@ -747,6 +858,9 @@
                         (item.shooting_style?.en_name || '') + ' ' +
                         (item.industry?.name || '') + ' ' +
                         (item.industry?.en_name || '') + ' ' +
+                        (item.country?.name || '') + ' ' +
+                        (item.country?.en_name || '') + ' ' +
+                        (item.country?.flag || '') + ' ' +
                         (item.purpose || '') + ' ' +
                         (item.tech_tags ? item.tech_tags.join(' ') : '') + ' ' +
                         (item.logic_explanation || '') + ' ' +
@@ -771,11 +885,13 @@
             // Update Label & Counters
             const currentIndObj = db.industries.find(i => i.id === appState.currentIndustry);
             const currentStyleObj = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
+            const currentCountryObj = (db.countries || []).find(c => c.id === appState.currentCountry);
             const labelEl = document.getElementById('currentFilterLabel');
             if (labelEl) {
                 let parts = [];
                 if (currentStyleObj) parts.push(`${currentStyleObj.icon} ${currentStyleObj.name}`);
                 if (currentIndObj) parts.push(`${currentIndObj.icon} ${currentIndObj.name}`);
+                if (currentCountryObj) parts.push(`${currentCountryObj.flag} ${currentCountryObj.name}`);
                 labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Tất Cả Ý Tưởng & Mẫu Quay';
             }
             const matchCounter = document.getElementById('matchCounterText');
@@ -833,6 +949,12 @@
                                 <span class="px-2 py-0.5 rounded-lg text-xs font-bold border ${badgeColorClass}">
                                     ${item.industry.icon} ${escapeHtml(item.industry.name)}
                                 </span>
+                                <!-- Quốc gia Badge -->
+                                ${item.country ? `
+                                    <span class="px-2 py-0.5 rounded-lg text-xs font-bold border bg-amber-500/15 text-amber-300 border-amber-500/30" title="${escapeHtml(item.country.desc || '')}">
+                                        ${item.country.flag} ${escapeHtml(item.country.name)}
+                                    </span>
+                                ` : ''}
                                 <span class="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded">
                                     🎬 ${item.media.shots_count} shots
                                 </span>
@@ -1222,9 +1344,14 @@
             const dSelect = document.getElementById('durationFilter');
             const sSelect = document.getElementById('sortFilter');
 
+            const countrySelect = document.getElementById('countryFilter');
             appState.complexity = cSelect?.value || '';
             appState.duration = dSelect?.value || '';
             appState.sortBy = sSelect?.value || 'default';
+            if (countrySelect) {
+                appState.currentCountry = countrySelect.value || 'all';
+                renderCountryTabs();
+            }
             appState.currentPage = 1;
 
             applyFilters();
@@ -1247,8 +1374,12 @@
             const sSelect = document.getElementById('sortFilter');
             if (sSelect) sSelect.value = 'default';
 
+            appState.currentCountry = 'all';
+            const countrySelect = document.getElementById('countryFilter');
+            if (countrySelect) countrySelect.value = '';
             renderShootingStyleTabs();
             renderIndustryPills();
+            renderCountryTabs();
             applyFilters();
         }
 
@@ -1309,8 +1440,12 @@
         // App Initialization
         document.addEventListener('DOMContentLoaded', () => {
             initStorage();
+            appState.currentCountry = 'all';
+            const countrySelect = document.getElementById('countryFilter');
+            if (countrySelect) countrySelect.value = '';
             renderShootingStyleTabs();
             renderIndustryPills();
+            renderCountryTabs();
             applyFilters();
         });
     </script>
