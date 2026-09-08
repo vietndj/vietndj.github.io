@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 164,
-  "total_unique_ideas": 152,
-  "total_active_ideas": 142,
+  "total_scene_items": 165,
+  "total_unique_ideas": 153,
+  "total_active_ideas": 143,
   "total_excluded_ideas": 10,
   "total_creators": 85,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 14,
     "storytelling": 18,
-    "dien-anh": 79,
+    "dien-anh": 80,
     "chuyen-canh": 18
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 36
+    "ky-thuat-quay": 37
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 59,
+    "us_eu": 60,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -368,6 +368,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@creator",
+      "name": "Unknown",
+      "profile_url": "https://www.instagram.com/reel/DcyS2KEm7-v/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
+        "IG_@by.bennnj_DbKauxkoJU_"
       ]
     },
     {
@@ -1017,17 +1029,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@creator",
-      "name": "Creator",
-      "profile_url": "https://www.instagram.com/creator/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Making_Beginner_Cameras_Look_Cinematic_-_%40by.bennnj/img_001_7dd798e3.jpg",
-      "video_ids": [
-        "IG_@by.bennnj_DbKauxkoJU_"
-      ]
-    },
-    {
       "handle": "@mkxpresar",
       "name": "Katsuki Studio",
       "profile_url": "https://www.instagram.com/mkxpresar/",
@@ -1205,6 +1206,61 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
+      "shortcode": "DcyS2KEm7-v",
+      "title_vi": "",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "Unknown",
+        "name": "Unknown",
+        "handle": "@creator",
+        "profile_url": "https://www.instagram.com/reel/DcyS2KEm7-v/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcyS2KEm7-v/",
+      "gdrive_folder": "https://drive.google.com/drive/folders/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light/shot_03_mid.jpg",
+        "video_url": "videos/DcyS2KEm7-v.mp4",
+        "report_url": "reports/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light.html",
+        "shots_count": 0,
+        "duration": "15s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide",
       "shortcode": "DcoPBXdDPro",
