@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-09-08T23:50:00+07:00",
+  "generated_at": "2026-09-08T23:55:00+07:00",
   "total_scene_items": 153,
   "total_unique_ideas": 141,
   "total_active_ideas": 131,
@@ -151,6 +151,64 @@ var FEDU_IDEAS_DATABASE = {
     "kien-truc": 17,
     "the-thao": 3,
     "ky-thuat-quay": 33
+  },
+  "countries": [
+    {
+      "id": "us_eu",
+      "name": "Âu Mỹ",
+      "en_name": "US & Europe",
+      "flag": "🇺🇸/🇪🇺",
+      "badge_color": "purple",
+      "desc": "Thước phim phong cách phương Tây, New York, London, Paris, Berlin, tối giản hiện đại."
+    },
+    {
+      "id": "korea",
+      "name": "Hàn Quốc",
+      "en_name": "South Korea",
+      "flag": "🇰🇷",
+      "badge_color": "pink",
+      "desc": "Tone màu trong trẻo, phong cách Daily Vlog, thẩm mỹ chữa lành, cafe aesthetic Hàn Quốc."
+    },
+    {
+      "id": "india",
+      "name": "Ấn Độ",
+      "en_name": "India",
+      "flag": "🇮🇳",
+      "badge_color": "amber",
+      "desc": "Kỹ xảo cắt cảnh điêu luyện, Match cut triệu view, kỹ thuật quay dựng đỉnh cao châu Á."
+    },
+    {
+      "id": "japan",
+      "name": "Nhật Bản",
+      "en_name": "Japan",
+      "flag": "🇯🇵",
+      "badge_color": "rose",
+      "desc": "Mỹ học Wabi-Sabi, khung hình tĩnh (Static Shot), nhịp thở đời thường Kyoto & Tokyo."
+    },
+    {
+      "id": "vietnam",
+      "name": "Việt Nam",
+      "en_name": "Vietnam",
+      "flag": "🇻🇳",
+      "badge_color": "emerald",
+      "desc": "Mẫu quay bối cảnh Việt Nam thực chiến, đường phố Hà Nội, Sài Gòn, Hải Dương, clip học viên."
+    },
+    {
+      "id": "asia_other",
+      "name": "Châu Á Khác",
+      "en_name": "Other Asia",
+      "flag": "🌏",
+      "badge_color": "sky",
+      "desc": "Hong Kong, Singapore, Thái Lan, Malaysia, Philippines, không gian đô thị châu Á sống động."
+    }
+  ],
+  "country_stats": {
+    "us_eu": 53,
+    "korea": 6,
+    "india": 13,
+    "japan": 9,
+    "vietnam": 8,
+    "asia_other": 42
   },
   "creators_hub": [
     {
@@ -1076,6 +1134,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bưu thiếp chuyển động quảng trường Trafalgar London",
       "tech_tags": [
         "Moving Postcard Concept",
@@ -1126,6 +1191,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "So sánh cảm xúc khung hình tĩnh vs chuyển động máy",
       "tech_tags": [
@@ -1178,6 +1250,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💆",
         "badge_color": "rose"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Giới thiệu dịch vụ y tế thương mại (Authority)",
       "tech_tags": [
         "Medical Documentary Framing",
@@ -1228,6 +1307,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Thử thách 10 tuần sáng tạo kỷ luật",
       "tech_tags": [
@@ -1280,6 +1366,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
       "purpose": "Truyền cảm hứng & Xây dựng thương hiệu cá nhân",
       "tech_tags": [
         "Threshold Floor-level Angle, ASMR Daily Soundscape, Warm Ambient Sunlight, Healing Narrative Rhythm, Interactive Engagement CTA"
@@ -1327,6 +1420,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Rèn luyện kỷ luật 5h sáng & Phong cách sống",
       "tech_tags": [
@@ -1379,6 +1479,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách hậu trường làm phim thực chiến của đạo diễn",
       "tech_tags": [
         "BTS Camera Rig",
@@ -1429,6 +1536,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Travel & Culture",
         "icon": "✈️",
         "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Kỹ thuật quay du lịch bằng iPhone chuẩn điện ảnh",
       "tech_tags": [
@@ -1481,6 +1595,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
       "purpose": "Vẻ đẹp tĩnh lặng của không gian nhà gỗ truyền thống",
       "tech_tags": [
         "Hanok Wood Texture",
@@ -1531,6 +1652,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Hướng dẫn kỹ thuật lia máy xoay tròn Whip Pan",
       "tech_tags": [
@@ -1583,6 +1711,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏃",
         "badge_color": "orange"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Dựng phim nhịp độ cao về kỷ luật thể lực & Ý chí",
       "tech_tags": [
         "Rapid Motion Montage",
@@ -1633,6 +1768,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Kỹ thuật đánh đèn studio 3 điểm chuyên nghiệp",
       "tech_tags": [
@@ -1685,6 +1827,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
       "purpose": "5 bố cục quay không gian căn hộ phong cách Nhật",
       "tech_tags": [
         "Apartment Corner Framing",
@@ -1736,6 +1885,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "6 góc quay B-roll bắt trọn cảm xúc quán cà phê",
       "tech_tags": [
         "Coffee Pour Macro",
@@ -1785,6 +1941,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Hướng dẫn thiết lập thông số iPhone quay phim điện ảnh",
@@ -1838,6 +2001,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "7 góc máy điện ảnh quay B-roll bàn làm việc",
       "tech_tags": [
         "Low-Angle Laptop Tilt",
@@ -1888,6 +2058,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Fashion & Style",
         "icon": "👔",
         "badge_color": "pink"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Lookbook biến hóa outfit trên phố đô thị",
       "tech_tags": [
@@ -1940,6 +2117,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "So sánh góc quay nhàm chán vs góc quay sáng tạo",
       "tech_tags": [
         "A/B Visual Comparison",
@@ -1990,6 +2174,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
       },
       "purpose": "5 bố cục mở hộp đồ công nghệ chuẩn điện ảnh",
       "tech_tags": [
@@ -2042,6 +2233,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
       "purpose": "4 kỹ thuật cắt cảnh nâng tầm video điện ảnh",
       "tech_tags": [
         "Match Cut On Action",
@@ -2092,6 +2290,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Tôn vinh nghệ thuật ẩm thực bếp củi & Nữ bếp trưởng",
       "tech_tags": [
@@ -2144,6 +2349,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Static Cinematography, Early Morning Sunlight, Chiaroscuro Contrast, One-Point Perspective, Architectural Symmetry"
@@ -2191,6 +2403,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -2240,6 +2459,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Kinetic Running Sequence, Specular Golden Road, Dirty Foliage Foreground, Backlit Silhouette, Eye Contact CTA"
@@ -2287,6 +2513,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Thao lược ống kính Sony Cinema Line & Nghệ thuật kể chuyện",
       "tech_tags": [
@@ -2339,6 +2572,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Review & Giới thiệu thiết bị công nghệ",
       "tech_tags": [
         "Cấu trúc Co-Giãn Nhịp Phim (Compression & Expansion Pacing) • Tone Màu Deep Pine Film LUT • Kỹ thuật Bắt Sáng Tự Nhiên Komorebi Flare • Cắt Cảnh Rhythmic Cut theo Nhịp Âm Thanh Lofi"
@@ -2386,6 +2626,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Truyền cảm hứng & Triết lý lựa chọn cuộc đời",
       "tech_tags": [
@@ -2438,6 +2685,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bán khóa học & Chuyển đổi",
       "tech_tags": [
         "A-Roll Anchor",
@@ -2488,6 +2742,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Giải mã tâm lý trì hoãn & bế tắc ý tưởng",
       "tech_tags": [
@@ -2540,6 +2801,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "👔",
         "badge_color": "pink"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Showcase chất liệu trang phục & Thơ điện ảnh",
       "tech_tags": [
         "Linen Texture Macro",
@@ -2590,6 +2858,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "10 slide giải mã bí quyết thiết kế âm thanh SFX",
       "tech_tags": [
@@ -2642,6 +2917,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Kinetic Masking, Triptych Split Screen, Symmetrical Anchor Pose, Match Cut, 3-Layer Urban Depth"
@@ -2689,6 +2971,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -2738,6 +3027,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Kinetic Running Sequence, High-Contrast Backlit, Specular Road Reflection, Golden Rim Light, Eye Contact CTA"
@@ -2785,6 +3081,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Rèn luyện 3 thói quen kỷ luật đời thường",
       "tech_tags": [
@@ -2837,6 +3140,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Tự sự cảm xúc người hướng nội",
       "tech_tags": [
         "Empathy Hook",
@@ -2886,6 +3196,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Mở hộp máy bay không người lái DJI Drone",
@@ -2939,6 +3256,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Thói quen nấu bữa tối bình yên đời thường",
       "tech_tags": [
         "Gas Stove Blue Flame",
@@ -2989,6 +3313,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Chữa lành áp lực tâm lý sáng tạo",
       "tech_tags": [
@@ -3041,6 +3372,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Công thức dựng chuỗi chuyển đổi không gian du lịch",
       "tech_tags": [
         "Whip Pan Match Cut",
@@ -3091,6 +3429,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "3 chiêu mồi câu thị giác giữ chân khán giả giây đầu",
       "tech_tags": [
@@ -3143,6 +3488,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "8 quy tắc biến công việc tầm thường thành điện ảnh",
       "tech_tags": [
         "Sequence Theory",
@@ -3193,6 +3545,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Hướng dẫn kỹ năng nói trước camera cho Solo Creator",
       "tech_tags": [
@@ -3245,6 +3604,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm, Carousel Flow"
@@ -3293,6 +3659,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Visual Metaphor, Momentum Continuity, Diegetic Typography, Match Action, Snap Zooms, SaaS Demo Storytelling"
@@ -3339,6 +3712,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Ẩm Thực & F&B",
         "en_name": "Food & Beverage",
         "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
         "badge_color": "amber"
       },
       "purpose": "7 góc máy quay B-roll nấu nướng trong bếp",
@@ -3392,6 +3772,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Mở hộp bàn phím cơ Lofree chuẩn điện ảnh",
       "tech_tags": [
         "Mechanical Click ASMR",
@@ -3442,6 +3829,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Khắc họa không gian quán cafe hè New York",
       "tech_tags": [
@@ -3494,6 +3888,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
       "purpose": "Quảng cáo ổ cứng di động SSD cho điện thoại",
       "tech_tags": [
         "Empathy Pain Point Hook",
@@ -3545,6 +3946,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Quảng bá không gian F&B & Thưởng thức ẩm thực",
       "tech_tags": [
         "POV Storytelling, Fast-Cut Beat-Matched Montage (6 frames), Golden Hour Lens Flare, One-Point Perspective Leading Lines, Frame-in-Frame Canopy, Vintage Kodak Portra 400 Glow"
@@ -3592,6 +4000,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -3641,6 +4056,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
@@ -3689,6 +4111,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "4 Composition Rules, Symmetrical Subway, Diagonal Leading Lines, Multi-Level Layering, Natural Tunnel Framing, One-Point Perspective"
@@ -3735,6 +4164,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Trình diễn tính năng mic qua âm thanh ASMR đỉnh cao",
@@ -3788,6 +4224,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Golden Hour Extreme Backlit, Silhouette Shadow Leading, Human Interest Documentary, 24fps Cinematic Motion Blur"
@@ -3836,6 +4279,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Low-Angle Worm's Eye, S-Curve Leading, Framing Depth, In-camera Body Wipe, Cinematic Remake Blueprint"
@@ -3882,6 +4332,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Trải nghiệm rạp chiếu phim cá nhân với kính Viture",
@@ -3935,6 +4392,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
@@ -3982,6 +4446,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Chiến lược xây dựng phễu chuyển đổi cho Creator",
       "tech_tags": [
@@ -4034,6 +4505,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Cut in Motion, Inside Cabinet POV, Faceless B-Roll, Focal Length Triad (Wide-Med-Macro), Seamless Loop"
@@ -4082,6 +4560,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
@@ -4129,6 +4614,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Truyền cảm hứng vượt qua bẫy tê liệt hành động",
       "tech_tags": [
@@ -4181,6 +4673,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "7 góc máy điện ảnh quay B-roll bàn làm việc",
       "tech_tags": [
         "Low-Angle Laptop Tilt",
@@ -4232,6 +4731,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Practical Location Mapping, Home Ground Angles, Gimbal Tracking, Dawn Golden Hour"
@@ -4280,6 +4786,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Truyền cảm hứng & Xây dựng thương hiệu cá nhân",
       "tech_tags": [
         "5-Slide Arc, Pacing Tension, Retention Loop, Multi-Aspect Ratio"
@@ -4327,6 +4840,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Hướng dẫn kỹ thuật lia máy xoay tròn Whip Pan",
       "tech_tags": [
@@ -4379,6 +4899,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Teal & Orange Grade, Natural Alley Chiaroscuro, Parallax Motion, Frame Within Frame"
@@ -4426,6 +4953,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Tôn vinh nghệ thuật giàn giáo tre Hong Kong",
       "tech_tags": [
@@ -4478,6 +5012,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Phóng sự ẩm thực đường phố đặc sản mùa sứa đỏ",
       "tech_tags": [
         "Street Vendor Macro",
@@ -4528,6 +5069,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Beauty, Spa & Medical",
         "icon": "💆",
         "badge_color": "rose"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
       },
       "purpose": "Bán hàng & Flash Sale 8.8 (Chuyển đổi liệu trình)",
       "tech_tags": [
@@ -4581,6 +5129,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Đánh giá camera điện thoại OPPO Find X9s đa góc",
       "tech_tags": [
         "3-Picture Collage",
@@ -4632,6 +5187,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Widescreen 16:9, Color Grading, Parallax Motion, Natural Light Depth"
@@ -4679,6 +5241,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -4728,6 +5297,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Visual Diary, 3:2 Cinematic Aspect Ratio, 24fps Motion Blur, Smooth Pan & Tilt, Golden Hour Glow, Natural Window Key, Wabi-Sabi Texture, Frame Within Frame, Teal & Amber Contrast"
@@ -4775,6 +5351,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Sports & Motion",
         "icon": "🏃",
         "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Kỷ luật rèn luyện cơ bắp & Thể hình Low-Key",
       "tech_tags": [
@@ -4827,6 +5410,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Truyền cảm hứng & Xây dựng thương hiệu cá nhân",
       "tech_tags": [
         "Diptych Split-Screen, Shadow Play, 24h Routine Timeline, Komorebi Sunlight, Wabi-Sabi Aesthetics, Macro Culinary"
@@ -4874,6 +5464,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Fashion & Style",
         "icon": "👔",
         "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Quảng bá phong cách sống & Sneaker New Balance",
       "tech_tags": [
@@ -4926,6 +5523,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Chia sẻ quy trình biến ý tưởng thành video",
       "tech_tags": [
         "Workspace Reveal",
@@ -4977,6 +5581,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Quảng bá không gian F&B & Thưởng thức ẩm thực",
       "tech_tags": [
         "Fast Montage Beat Sync, Leading Lines, Horizon Match Cut, Emotional Anchor, Flycam Aerial"
@@ -5024,6 +5635,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -5073,6 +5691,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Review & Giới thiệu thiết bị công nghệ",
       "tech_tags": [
         "Worm's Eye Low Angle, One-Point Perspective, 1.4s Fast Cut Rhythm, 3-Layer Foreground Depth, Blue Hour Contrast, iPhone Mobile Filmmaking"
@@ -5120,6 +5745,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
@@ -5169,6 +5801,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Beat-sync Fast Cut, Architectural Framing, Macro Product Insert, Kinetic Foreground Pass"
@@ -5216,6 +5855,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
@@ -5265,6 +5911,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Golden 1.8s Cut Rhythm, Micro Camera Movements (Tilt/Pedestal/Truck), Frame in Frame, One-Point Perspective, Scale Contrast, Street Observation Method"
@@ -5313,6 +5966,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Truyền cảm hứng & Xây dựng thương hiệu cá nhân",
       "tech_tags": [
         "Low Table Angle, Window Motivated Lighting, ASMR Sound Sync, 3-Layer Depth"
@@ -5360,6 +6020,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Chuyển cảnh không gian quán cafe qua ánh sáng cửa sổ",
       "tech_tags": [
@@ -5412,6 +6079,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Hướng dẫn kỹ thuật lia máy xoay tròn Whip Pan",
       "tech_tags": [
         "Seamless Spin Pan",
@@ -5463,6 +6137,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Du ký khám phá cảnh quan thiên nhiên & Văn hóa",
       "tech_tags": [
         "Low Light Street Filming, Night Bokeh Aesthetics, Color Separation"
@@ -5511,6 +6192,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cỡ cảnh, động tác máy, nhịp điệu thị giác"
@@ -5557,6 +6245,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Review & Giới thiệu thiết bị công nghệ",
@@ -5607,6 +6302,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Commercial Product Slow Creep, Moving Strip Light, Luxury Metal Texture"
@@ -5654,6 +6356,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Nghệ thuật quay góc tĩnh & xoay quanh ly nước",
       "tech_tags": [
@@ -5706,6 +6415,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Voice-over Script Sync, Lifestyle Storytelling, Beat-matched Cuts"
@@ -5753,6 +6469,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Fashion & Style",
         "icon": "👔",
         "badge_color": "pink"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Tuyển tập biến hình outfit thời trang đa slide",
       "tech_tags": [
@@ -5805,6 +6528,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Quảng bá không gian F&B & Thưởng thức ẩm thực",
       "tech_tags": [
         "Visual Rhythm Carousel, Stopping Power, 9:16 Mobile Framing, Hook-to-CTA Pipeline"
@@ -5852,6 +6582,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Review & Giới thiệu thiết bị công nghệ",
       "tech_tags": [
@@ -5901,6 +6638,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "👔",
         "badge_color": "pink"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Trình diễn thời trang & Phong cách phối đồ",
       "tech_tags": [
         "Slow Motion 60fps to 24fps, Sunset Rim Light, Texture Focus"
@@ -5948,6 +6692,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "5 góc máy điện ảnh & Tâm lý học thị giác",
       "tech_tags": [
@@ -6000,6 +6751,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Fast Paced Montage, Beat Sync Cutting, Rapid Action Transitions"
@@ -6047,6 +6805,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Showcase kiến trúc nội thất tối giản hiện đại",
       "tech_tags": [
@@ -6099,6 +6864,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "👔",
         "badge_color": "pink"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Lookbook thời trang dạo phố chuyển cảnh bước chân",
       "tech_tags": [
         "Footstep Match Cut",
@@ -6150,6 +6922,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Du ký khám phá cảnh quan thiên nhiên & Văn hóa",
       "tech_tags": [
         "Match Cut on Shape & Color, Micro-tempo 0.2s, Top-Down 90° Overhead, Ambient Street Foley"
@@ -6198,6 +6977,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "16:9 to 9:16 Re-framing, Safe Zone Typography, Center Attention"
@@ -6244,6 +7030,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Quảng cáo tai nghe chống ồn JBL Noise Cancelling",
@@ -6297,6 +7090,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "💼",
         "badge_color": "indigo"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Thử thách 100 ngày sáng tạo nội dung kỷ luật",
       "tech_tags": [
         "Day 01 Commitment",
@@ -6346,6 +7146,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Du Lịch & Văn Hóa",
         "en_name": "Travel & Culture",
         "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
         "badge_color": "sky"
       },
       "purpose": "Nén tiêu cự telephoto khắc họa giao thông Bangkok đa tầng",
@@ -6399,6 +7206,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Khung cảnh đêm mưa ánh đèn neon rực rỡ Tokyo",
       "tech_tags": [
         "Neon Puddle Reflection",
@@ -6449,6 +7263,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Bố cục đối xứng một điểm tụ trong kiến trúc hiện đại",
       "tech_tags": [
@@ -6501,6 +7322,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
       "purpose": "Đánh giá camera điện thoại OPPO Find X9s đa góc",
       "tech_tags": [
         "3-Picture Collage",
@@ -6551,6 +7379,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Quảng cáo tai nghe chống ồn JBL Noise Cancelling",
       "tech_tags": [
@@ -6603,6 +7438,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
       "purpose": "Chỉ ra 3 thói quen xấu phá hỏng chất lượng video",
       "tech_tags": [
         "Mistake Breakdown",
@@ -6653,6 +7495,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Travel & Culture",
         "icon": "✈️",
         "badge_color": "sky"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Khắc họa sự tĩnh lặng kỳ vĩ của dãy núi Himalaya",
       "tech_tags": [
@@ -6705,6 +7554,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏃",
         "badge_color": "orange"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Lướt FPV Drone tốc độ cao trên đỉnh núi tuyết Alps",
       "tech_tags": [
         "FPV Proximity Dive",
@@ -6755,6 +7611,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
       },
       "purpose": "Mỹ học không gian gỗ & Phong cách sống chậm Kyoto",
       "tech_tags": [
@@ -6807,6 +7670,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "High-Contrast Chiaroscuro Lighting, Dutch Angle Tilts, Kinetic Camera Pacing, Graphic Silhouettes"
@@ -6854,6 +7724,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber"
+      },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
       },
       "purpose": "Khám phá hẻm ẩm thực đêm Tokyo & Đèn lồng đỏ",
       "tech_tags": [
@@ -6904,6 +7781,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Du Lịch & Văn Hóa",
         "en_name": "Travel & Culture",
         "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
         "badge_color": "sky"
       },
       "purpose": "Vlog road trip chuyển nhà về hòn đảo quê hương",
@@ -6957,6 +7841,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Hành trình du mục giữa thiên nhiên hoang dã",
       "tech_tags": [
         "Nomadic Freedom Arc",
@@ -7007,6 +7898,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Kiến trúc đường dẫn & Nhịp chuyển động ga tàu điện",
       "tech_tags": [
@@ -7059,6 +7957,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
       "purpose": "Du ký khám phá cảnh quan thiên nhiên & Văn hóa",
       "tech_tags": [
         "Negative Space Mastery, Fog Depth Layering, Monochromatic Tone, Meditative Static Cuts"
@@ -7105,6 +8010,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Du Lịch & Văn Hóa",
         "en_name": "Travel & Culture",
         "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
         "badge_color": "sky"
       },
       "purpose": "Du ký khám phá cảnh quan thiên nhiên & Văn hóa",
@@ -7154,6 +8066,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
       },
       "purpose": "Kỹ thuật đánh đèn studio 3 điểm chuyên nghiệp",
       "tech_tags": [
@@ -7206,6 +8125,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Multi-Slide Carousel Architecture, Slide-by-Slide Retention Curve, Visual Consistency, Swipe Momentum"
@@ -7253,6 +8179,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Travel & Culture",
         "icon": "✈️",
         "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Vẻ đẹp hoang sơ rừng thông bờ Tây nước Mỹ",
       "tech_tags": [
@@ -7305,6 +8238,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🏛️",
         "badge_color": "emerald"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Tôn vinh vẻ đẹp đường nét kiến trúc & Không gian sống",
       "tech_tags": [
         "Gimbal Orbital Tracking, Dynamic Speed Ramping, High Saturation Color Separation, Smooth Pacing"
@@ -7353,6 +8293,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
@@ -7400,6 +8347,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
       },
       "purpose": "Tương phản ánh sáng & Khung hình kiến trúc đô thị",
       "tech_tags": [
@@ -7452,6 +8406,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Bóc tách ngôn ngữ thị giác & Bố cục điện ảnh",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
@@ -7500,6 +8461,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Quảng bá không gian F&B & Thưởng thức ẩm thực",
       "tech_tags": [
         "Visual Breathing Rhythm, 3:2 Film Aspect Ratio, Visual Anchor Cover Hook, One-Point Alley Perspective, Sunlit Velocity Contrast, Tactile Lifestyle Break, Zen Macro Contemplation, Frame-in-Frame Practical Light, Sunset Telephoto Compression, Hypnotic Chōchin Lantern Rhythm, Twilight Blue Hour Contrast, Nostalgic OTS Loop Closure"
@@ -7547,6 +8515,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Personal Brand & Service",
         "icon": "💼",
         "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
       },
       "purpose": "Chia sẻ quy trình biến ý tưởng thành video",
       "tech_tags": [
@@ -7599,6 +8574,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🍜",
         "badge_color": "amber"
       },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
       "purpose": "Khám phá hẻm ẩm thực đêm Tokyo & Đèn lồng đỏ",
       "tech_tags": [
         "Yakitori Smoke Atmosphere",
@@ -7649,6 +8631,13 @@ var FEDU_IDEAS_DATABASE = {
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
       },
       "purpose": "Sức mạnh bố cục khung hình trong điện ảnh",
       "tech_tags": [
@@ -7701,6 +8690,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "🎯",
         "badge_color": "blue"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "5 góc máy điện ảnh & Tâm lý học thị giác",
       "tech_tags": [
         "5 Psychological Angles",
@@ -7752,6 +8748,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
       "purpose": "Kể chuyện thị giác & Tình cảm hồi hương Sài Gòn",
       "tech_tags": [
         "4:3 Vintage Aspect",
@@ -7801,6 +8804,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Công Nghệ & Thiết Bị",
         "en_name": "Tech & Gear",
         "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
       "purpose": "Review kính thông minh Ray-Ban Meta qua Hyperlapse",
@@ -7854,6 +8864,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "📱",
         "badge_color": "purple"
       },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
       "purpose": "Hướng dẫn quy trình sáng tạo cùng Adobe Firefly AI",
       "tech_tags": [
         "Mixed-Reality Workflow",
@@ -7903,6 +8920,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Du Lịch & Văn Hóa",
         "en_name": "Travel & Culture",
         "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
         "badge_color": "sky"
       },
       "purpose": "Khắc họa chân dung & Hạnh phúc của người Bhutan",
@@ -7956,6 +8980,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Quan sát đời sống buổi sớm thành phố cảng Porto",
       "tech_tags": [
         "Morning Cobblestone Light",
@@ -8007,6 +9038,13 @@ var FEDU_IDEAS_DATABASE = {
         "icon": "✈️",
         "badge_color": "sky"
       },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
       "purpose": "Tôn vinh nghệ nhân thủ công di sản thành Venice",
       "tech_tags": [
         "Artisan Hands Macro",
@@ -8056,6 +9094,13 @@ var FEDU_IDEAS_DATABASE = {
         "name": "Du Lịch & Văn Hóa",
         "en_name": "Travel & Culture",
         "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
         "badge_color": "sky"
       },
       "purpose": "Khắc họa mùa hè Copenhagen & Tinh thần Hygge",
