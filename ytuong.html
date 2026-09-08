@@ -106,6 +106,16 @@
             box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.6);
         }
 
+        
+        /* Shooting Style Tab Active */
+        .style-tab.active {
+            background: linear-gradient(135deg, #7c3aed, #2563eb);
+            color: #ffffff;
+            border-color: #a855f7;
+            box-shadow: 0 4px 14px rgba(124, 58, 237, 0.4);
+            font-weight: 700;
+        }
+
         /* Industry Pill Active */
         .ind-pill.active {
             background: linear-gradient(135deg, #0284c7, #2563eb);
@@ -253,6 +263,19 @@
             </div>
         </div>
 
+        
+        <!-- HORIZONTAL SHOOTING STYLE TABS (KIỂU QUAY) -->
+        <div class="border-t border-slate-800/80 bg-slate-950/70 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
+            <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
+                <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-slate-400">
+                    <span class="text-purple-400">🎥 KIỂU QUAY:</span>
+                </div>
+                <div class="flex items-center gap-2 no-scrollbar overflow-x-auto" id="shootingStyleTabsContainer">
+                    <!-- Injected dynamically via JS -->
+                </div>
+            </div>
+        </div>
+
         <!-- HORIZONTAL INDUSTRY CATEGORY PILLS -->
         <div class="border-t border-slate-800/80 bg-slate-950/40 px-4 sm:px-6 lg:px-8 py-2.5 overflow-x-auto">
             <div class="max-w-7xl mx-auto flex items-center gap-2 no-scrollbar" id="industryPillsContainer">
@@ -278,6 +301,31 @@
 
             <!-- Deep Filters -->
             <div class="flex flex-wrap items-center gap-2 text-xs">
+                
+                <!-- Filter by Technique -->
+                <select id="techFilter" onchange="handleFilterChange()" class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-sky-400">
+                    <option value="">⚙️ Kỹ thuật: Tất Cả</option>
+                    <option value="walk-in">Leading Walk-in / Over-the-Shoulder</option>
+                    <option value="static">Static Shot (Khung hình tĩnh)</option>
+                    <option value="match cut">Match Cut (Cắt khớp chuyển động)</option>
+                    <option value="whip pan">Whip Pan (Lia xoay chuyển cảnh)</option>
+                    <option value="split screen">Split Screen (Chia màn hình Before/After)</option>
+                    <option value="asmr">ASMR / Foley Sound Design</option>
+                    <option value="chiaroscuro">Low-Key / Chiaroscuro (Tương phản sáng tối)</option>
+                    <option value="fpv">FPV Drone (Tốc độ cao)</option>
+                    <option value="macro">Macro / Close-up đặc tả</option>
+                </select>
+
+                <!-- Filter by Purpose -->
+                <select id="purposeFilter" onchange="handleFilterChange()" class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-sky-400">
+                    <option value="">🎯 Mục đích: Tất Cả</option>
+                    <option value="bán hàng">Bán Hàng & Flash Sale / Chuyển Đổi</option>
+                    <option value="hướng dẫn">Hướng Dẫn & Tutorial / Tips</option>
+                    <option value="kỷ luật">Kỷ Luật & Truyền Cảm Hứng</option>
+                    <option value="showcase">Showcase Thị Giác & Thẩm Mỹ</option>
+                    <option value="vlog">Vlog / Phong Cách Sống</option>
+                </select>
+
                 <!-- Filter by Complexity / Shots -->
                 <select id="complexityFilter" onchange="handleFilterChange()" class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-sky-400">
                     <option value="">🎬 Độ Dài Shot: Tất Cả</option>
@@ -468,7 +516,10 @@
         // State Management
         let appState = {
             currentView: 'grid', // 'grid' or 'creators'
+            currentStyle: 'all',
             currentIndustry: 'all',
+            currentTech: '',
+            currentPurpose: '',
             searchQuery: '',
             complexity: '',
             duration: '',
@@ -501,7 +552,55 @@
             }
         }
 
-        // Render Industry Pills
+        // Render Shooting Style Tabs (Horizontal Filter)
+        function renderShootingStyleTabs() {
+            const container = document.getElementById('shootingStyleTabsContainer');
+            if (!container || !window.FEDU_IDEAS_DATABASE) return;
+
+            const db = window.FEDU_IDEAS_DATABASE;
+            const allCount = db.total_active_ideas;
+
+            let html = `
+                <button 
+                    onclick="selectShootingStyle('all')" 
+                    class="style-tab ${appState.currentStyle === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                >
+                    <span>🌟 Tất Cả Kiểu</span>
+                    <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${allCount}</span>
+                </button>
+            `;
+
+            (db.shooting_styles || []).forEach(st => {
+                const count = (db.shooting_style_stats && db.shooting_style_stats[st.id]) || 0;
+                const isActive = appState.currentStyle === st.id;
+                html += `
+                    <button 
+                        onclick="selectShootingStyle('${st.id}')" 
+                        class="style-tab ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-purple-500/50 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                        title="${escapeHtml(st.desc)}"
+                    >
+                        <span>${st.icon} ${escapeHtml(st.name)}</span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-purple-300">${count}</span>
+                    </button>
+                `;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // Select Shooting Style
+        function selectShootingStyle(styleId) {
+            appState.currentStyle = styleId;
+            appState.currentPage = 1;
+            renderShootingStyleTabs();
+            applyFilters();
+
+            if (appState.currentView !== 'grid') {
+                switchMainView('grid');
+            }
+        }
+
+        // Render Industry Pills (Vertical Filter)
         function renderIndustryPills() {
             const container = document.getElementById('industryPillsContainer');
             if (!container || !window.FEDU_IDEAS_DATABASE) return;
@@ -512,9 +611,9 @@
             let html = `
                 <button 
                     onclick="selectIndustry('all')" 
-                    class="ind-pill ${appState.currentIndustry === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5"
+                    class="ind-pill ${appState.currentIndustry === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
                 >
-                    <span>🌟 Tất Cả</span>
+                    <span>🌟 Tất Cả Ngành</span>
                     <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${allCount}</span>
                 </button>
             `;
@@ -525,7 +624,7 @@
                 html += `
                     <button 
                         onclick="selectIndustry('${ind.id}')" 
-                        class="ind-pill ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5"
+                        class="ind-pill ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
                         title="${escapeHtml(ind.desc)}"
                     >
                         <span>${ind.icon} ${escapeHtml(ind.name)}</span>
@@ -541,6 +640,7 @@
         function selectIndustry(indId) {
             appState.currentIndustry = indId;
             appState.currentPage = 1;
+            renderShootingStyleTabs();
             renderIndustryPills();
             applyFilters();
             
@@ -579,7 +679,7 @@
             }
         }
 
-        // Filter and Render Ideas Cards
+        // Filter and Render Ideas Cards (4-Axis Multi-Dimensional Filter)
         function applyFilters() {
             if (!window.FEDU_IDEAS_DATABASE) return;
             const db = window.FEDU_IDEAS_DATABASE;
@@ -599,17 +699,37 @@
                     if (appState.curationFilter === 'excluded' && !isEffectivelyExcluded) return false;
                 }
 
-                // 2. Industry filter
+                // 2. Shooting Style filter (Trục 1: Kiểu quay)
+                if (appState.currentStyle !== 'all') {
+                    const itemStyleId = item.shooting_style ? item.shooting_style.id : '';
+                    if (itemStyleId !== appState.currentStyle) return false;
+                }
+
+                // 3. Industry filter (Trục 2: Ngành nghề)
                 if (appState.currentIndustry !== 'all' && item.industry.id !== appState.currentIndustry) {
                     return false;
                 }
 
-                // 3. Complexity filter
+                // 4. Technique filter (Trục 3: Kỹ thuật)
+                if (appState.currentTech) {
+                    const tVal = appState.currentTech.toLowerCase();
+                    const techHaystack = ((item.key_tech || '') + ' ' + (item.tech_tags ? item.tech_tags.join(' ') : '') + ' ' + (item.quick_takeaway || '')).toLowerCase();
+                    if (!techHaystack.includes(tVal)) return false;
+                }
+
+                // 5. Purpose filter (Trục 4: Mục đích)
+                if (appState.currentPurpose) {
+                    const pVal = appState.currentPurpose.toLowerCase();
+                    const purposeHaystack = ((item.purpose || '') + ' ' + (item.quick_takeaway || '') + ' ' + (item.title_vi || '')).toLowerCase();
+                    if (!purposeHaystack.includes(pVal)) return false;
+                }
+
+                // 6. Complexity filter
                 if (appState.complexity && item.complexity.id !== appState.complexity) {
                     return false;
                 }
 
-                // 4. Duration filter
+                // 7. Duration filter
                 if (appState.duration) {
                     const durNum = parseFloat(item.media.duration) || (item.media.shots_count * 2);
                     if (appState.duration === 'short' && durNum >= 15) return false;
@@ -617,15 +737,21 @@
                     if (appState.duration === 'long' && durNum <= 30) return false;
                 }
 
-                // 5. Search filter
+                // 8. Omni-Search filter
                 if (searchVal) {
                     const haystack = (
                         (item.title_vi || '') + ' ' + 
                         (item.quick_takeaway || '') + ' ' + 
                         (item.key_tech || '') + ' ' + 
-                        (item.creator.name || '') + ' ' + 
-                        (item.creator.handle || '') + ' ' + 
-                        (item.industry.name || '')
+                        (item.shooting_style?.name || '') + ' ' +
+                        (item.shooting_style?.en_name || '') + ' ' +
+                        (item.industry?.name || '') + ' ' +
+                        (item.industry?.en_name || '') + ' ' +
+                        (item.purpose || '') + ' ' +
+                        (item.tech_tags ? item.tech_tags.join(' ') : '') + ' ' +
+                        (item.logic_explanation || '') + ' ' +
+                        (item.creator?.name || '') + ' ' + 
+                        (item.creator?.handle || '')
                     ).toLowerCase();
                     if (!haystack.includes(searchVal)) return false;
                 }
@@ -644,9 +770,13 @@
 
             // Update Label & Counters
             const currentIndObj = db.industries.find(i => i.id === appState.currentIndustry);
+            const currentStyleObj = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
             const labelEl = document.getElementById('currentFilterLabel');
             if (labelEl) {
-                labelEl.innerText = currentIndObj ? `${currentIndObj.icon} ${currentIndObj.name}` : '🌟 Tất Cả Ngành';
+                let parts = [];
+                if (currentStyleObj) parts.push(`${currentStyleObj.icon} ${currentStyleObj.name}`);
+                if (currentIndObj) parts.push(`${currentIndObj.icon} ${currentIndObj.name}`);
+                labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Tất Cả Ý Tưởng & Mẫu Quay';
             }
             const matchCounter = document.getElementById('matchCounterText');
             if (matchCounter) matchCounter.innerText = matched.length;
@@ -690,10 +820,17 @@
                 return `
                     <div class="glass-card rounded-2xl p-4 flex flex-col justify-between relative overflow-hidden ${isExcluded ? 'opacity-70 ring-1 ring-rose-500/40 bg-rose-950/10' : ''}">
                         
-                        <!-- Top Header: Industry Tag, Shots Count & Duration -->
+                        <!-- Top Header: Dual Badges (Shooting Style + Industry) -->
                         <div class="flex items-center justify-between gap-2 mb-3">
                             <div class="flex items-center gap-1.5 flex-wrap">
-                                <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold border ${badgeColorClass}">
+                                <!-- Kiểu quay Badge -->
+                                ${item.shooting_style ? `
+                                    <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold border bg-purple-500/15 text-purple-300 border-purple-500/30">
+                                        ${item.shooting_style.icon} ${escapeHtml(item.shooting_style.name)}
+                                    </span>
+                                ` : ''}
+                                <!-- Ngành nghề Badge -->
+                                <span class="px-2 py-0.5 rounded-lg text-xs font-bold border ${badgeColorClass}">
                                     ${item.industry.icon} ${escapeHtml(item.industry.name)}
                                 </span>
                                 <span class="text-[11px] font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded">
@@ -792,11 +929,17 @@
                             </p>
                         </div>
 
-                        <!-- Key Technique Tag -->
+                        <!-- Purpose & Key Technique Tags -->
+                        ${item.purpose ? `
+                            <div class="mb-1 text-[11px] text-amber-300/90 truncate flex items-center gap-1">
+                                <span class="text-amber-500 font-bold shrink-0">🎯 Mục đích:</span>
+                                <span class="truncate">${escapeHtml(item.purpose)}</span>
+                            </div>
+                        ` : ''}
                         ${item.key_tech ? `
-                            <div class="mb-3 text-[11px] text-slate-400 truncate">
-                                <span class="text-slate-500 font-semibold">🎯 Kỹ thuật:</span> 
-                                <span class="text-sky-300/90 font-mono">${escapeHtml(item.key_tech)}</span>
+                            <div class="mb-3 text-[11px] text-slate-400 truncate flex items-center gap-1">
+                                <span class="text-slate-500 font-semibold shrink-0">⚙️ Kỹ thuật:</span> 
+                                <span class="text-sky-300/90 font-mono truncate">${escapeHtml(item.key_tech)}</span>
                             </div>
                         ` : ''}
 
@@ -1104,6 +1247,7 @@
             const sSelect = document.getElementById('sortFilter');
             if (sSelect) sSelect.value = 'default';
 
+            renderShootingStyleTabs();
             renderIndustryPills();
             applyFilters();
         }
@@ -1165,6 +1309,7 @@
         // App Initialization
         document.addEventListener('DOMContentLoaded', () => {
             initStorage();
+            renderShootingStyleTabs();
             renderIndustryPills();
             applyFilters();
         });
