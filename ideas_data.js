@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 157,
-  "total_unique_ideas": 145,
-  "total_active_ideas": 135,
+  "total_scene_items": 159,
+  "total_unique_ideas": 147,
+  "total_active_ideas": 137,
   "total_excluded_ideas": 10,
-  "total_creators": 80,
+  "total_creators": 82,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -61,9 +61,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 3,
-    "voice-over": 9,
+    "voice-over": 10,
     "talking-head": 11,
-    "storytelling": 17,
+    "storytelling": 18,
     "dien-anh": 78,
     "chuyen-canh": 17
   },
@@ -145,11 +145,11 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 2,
     "thuong-hieu": 20,
     "thoi-trang": 7,
-    "am-thuc": 14,
+    "am-thuc": 15,
     "du-lich": 18,
     "cong-nghe": 19,
     "kien-truc": 17,
-    "the-thao": 4,
+    "the-thao": 5,
     "ky-thuat-quay": 34
   },
   "countries": [
@@ -203,8 +203,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 56,
-    "korea": 7,
+    "us_eu": 57,
+    "korea": 8,
     "india": 13,
     "japan": 9,
     "vietnam": 8,
@@ -440,6 +440,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@cafe.pilgrim",
+      "name": "Cafe.Pilgrim",
+      "profile_url": "https://www.instagram.com/cafe.pilgrim/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro"
+      ]
+    },
+    {
+      "handle": "@nicorauchenwald",
+      "name": "Nicorauchenwald",
+      "profile_url": "https://www.instagram.com/nicorauchenwald/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life"
       ]
     },
     {
@@ -1148,6 +1170,128 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro",
+      "shortcode": "DbVhTUiznEp",
+      "title_vi": "Quán Cà Phê San Euljiro - Tái Định Vị Thương Hiệu & B-Roll Không Gian Ẩm Thực Tối Giản",
+      "quick_takeaway": "Bóc tách 10 phân cảnh mẫu mực về nghệ thuật quay B-Roll không gian F&B và văn hóa cà phê Hàn Quốc từ kênh @cafe.pilgrim. Video tái hiện trọn vẹn câu chuyện tái định vị thương hiệu (Brand Renewal) từ quán cafe ngắm tàu hỏa Yongsan 4D nức ...",
+      "key_tech": "Architectural Awning Window Framing • Artisanal Pour-Over Craftsmanship • Sensory Drip Ice ASMR Visual • Layered Marble Swirl Macro • Vaulted Plaster Arch One-Point Perspective • 1-Second Rhythmic Cadence • Urban Contrast Outro",
+      "shooting_style": {
+        "id": "voice-over",
+        "name": "Voice Over",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
+        "badge_color": "purple"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
+      "purpose": "Tái định vị thương hiệu cà phê mộc mạc, tôn vinh kỹ nghệ pour-over và không gian bar đứng tối giản",
+      "tech_tags": [
+        "Architectural Framing",
+        "Hand Drip Craftsmanship",
+        "Sensory Food Appeal",
+        "Layered Drink Macro",
+        "Standing Bar Concept",
+        "Rhythmic 1s Cut",
+        "Brand Renewal Story"
+      ],
+      "logic_explanation": "Kỹ thuật quay B-roll nhịp thở 1 giây/shot tôn vinh kiến trúc quầy bar gỗ mộc và vòm cong thạch cao, hòa quyện với kỹ nghệ pha chế pour-over và ly cà phê sữa vani phân tầng cẩm thạch.",
+      "creator": {
+        "raw": "@cafe.pilgrim",
+        "name": "Cafe.Pilgrim",
+        "handle": "@cafe.pilgrim",
+        "profile_url": "https://www.instagram.com/cafe.pilgrim/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbVhTUiznEp/",
+      "gdrive_folder": "https://drive.google.com/open?id=1ezHBSOtXaYsct9HqWLsiJ_sPHHwGXGc1",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbVhTUiznEp.mp4",
+        "report_url": "reports/IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro.html",
+        "shots_count": 10,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life",
+      "shortcode": "DbJcoLdssK6",
+      "title_vi": "Quy Trình Chuẩn Bị Giải Đua 99 Laps & Nghệ Thuật Montage Nhịp Nhanh Thể Thao - @nicorauchenwald",
+      "quick_takeaway": "Phân tích chuyên sâu 18 phân cảnh thể thao & phong cách sống của nhà sáng tạo nội dung / vận động viên người Áo Nico Rauchenwald. Video khai thác nhịp dựng cắt cảnh siêu tốc (Beat-Synced Montage) chuẩn xác từng 20 khung hình (~0.67s) the...",
+      "key_tech": "Beat-Synced Micro-Montage • Static Typography Visual Anchor • High-Contrast Juxtaposition • Low-Key Gym Silhouette • In-Field Tailgate Staging • Volumetric Steam God Rays • Open-Ended YouTube Bridge",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ (Áo)",
+        "en_name": "Austria / Europe",
+        "flag": "🇦🇹",
+        "badge_color": "purple"
+      },
+      "purpose": "Quy trình chuẩn bị giải đua 99 Laps, rèn luyện thể chất & làm phim, kích hoạt dopamine chuyển đổi sang YouTube",
+      "tech_tags": [
+        "Beat-Synced Micro-Montage",
+        "Static Typography Visual Anchor",
+        "High-Contrast Juxtaposition",
+        "Low-Key Gym Silhouette",
+        "In-Field Tailgate Staging",
+        "Volumetric Steam God Rays",
+        "Open-Ended YouTube Bridge"
+      ],
+      "logic_explanation": "Khai thác nhịp dựng cắt cảnh siêu tốc đúng 20 khung hình (~0.67s) theo nhịp beat trống 90 BPM bản rap No Church in the Wild. Mở đầu với title DAY IN THE LIFE neo giữ thị giác, sau đó bùng nổ sang chuỗi B-roll điện ảnh thể thao, gym, ẩm thực và hậu kỳ.",
+      "creator": {
+        "raw": "@nicorauchenwald",
+        "name": "Nicorauchenwald",
+        "handle": "@nicorauchenwald",
+        "profile_url": "https://www.instagram.com/nicorauchenwald/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbJcoLdssK6/",
+      "gdrive_folder": "https://drive.google.com/drive/folders/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbJcoLdssK6.mp4",
+        "report_url": "reports/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life.html",
+        "shots_count": 18,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
       "shortcode": "Dc-6BFdi7bU",
