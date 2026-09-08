@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T22:30:00+07:00",
-  "total_scene_items": 137,
-  "total_unique_ideas": 125,
-  "total_active_ideas": 115,
+  "total_scene_items": 138,
+  "total_unique_ideas": 126,
+  "total_active_ideas": 116,
   "total_excluded_ideas": 10,
-  "total_creators": 64,
+  "total_creators": 65,
   "industries": [
     {
       "id": "thoi-trang",
@@ -230,7 +230,7 @@ var FEDU_IDEAS_DATABASE = {
     "du-lich": 19,
     "cong-nghe": 9,
     "kien-truc": 22,
-    "ky-thuat-quay": 44,
+    "ky-thuat-quay": 45,
     "the-thao": 3,
     "thuong-hieu": 4
   },
@@ -438,6 +438,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@kortafilms",
+      "name": "Kortafilms",
+      "profile_url": "https://www.instagram.com/kortafilms/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery"
       ]
     },
     {
@@ -992,6 +1003,42 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery",
+      "shortcode": "DcdthwaTM3J",
+      "title_vi": "7 Góc Máy Điện Ảnh Cho B-Roll Bàn Làm Việc - @kortafilms",
+      "quick_takeaway": "Bóc tách 8 phân cảnh chuẩn đạo diễn về 7 góc máy điện ảnh quay b-roll không gian làm việc sáng tạo (Desk Setup / Workspace Filmmaking): 1. Low Angle mở laptop hắt sáng màn hình, 2.",
+      "key_tech": "Low Angle Laptop Opening • First-Person POV Storyboard • Macro Close-Up Typing • Over-The-Shoulder Depth • Top-Down 90° Desk Symmetry • Ground-Level Softbox Grid • High Angle 45° Mouse • Low Dutch Drawer CTA Outro",
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎬",
+        "badge_color": "blue"
+      },
+      "creator": {
+        "raw": "@kortafilms",
+        "name": "Kortafilms",
+        "handle": "@kortafilms",
+        "profile_url": "https://www.instagram.com/kortafilms/"
+      },
+      "ig_url": "https://www.instagram.com/p/DcdthwaTM3J/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Oz7Q6yL1ql5Pv__UfAi_uEG_NaGwHkos",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcdthwaTM3J.mp4",
+        "report_url": "reports/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery.html",
+        "shots_count": 8,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic",
       "shortcode": "DXf1LldT5co",
