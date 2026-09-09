@@ -2,1663 +2,1633 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Quy Trình Setup Góc Quay Livestream & Đèn 2 Điểm Cực Nhanh - @inbex.id • Director's Analysis Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Phân Tích Video Điện Ảnh - @inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide • Director's Report</title>
+
+<!-- Fonts: Google Fonts Fallbacks -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
+/* ═══ 1. FONT DECLARATIONS (Local & Web Fallbacks) ═══ */
 @font-face {
-    font-family: 'SVN-Acta';
-    src: local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-family: 'FD Aeonik Extended';
+    src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
+         url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
+         local('FD Aeonik Extended Bold');
     font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'SVN-Acta';
-    src: local('SVN-Acta-Medium'), local('SVN-Acta');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'SVN-Acta';
-    src: local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta');
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
+         local('FD Aeonik Regular');
     font-weight: 400;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'GT America';
-    src: local('GT-America-LCGV-Standard-Regular'), local('GT America');
-    font-weight: 400;
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
+         local('FD Aeonik SemiBold');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
 }
 @font-face {
-    font-family: 'GT America';
-    src: local('GT-America-LCGV-Standard-Medium'), local('GT America');
-    font-weight: 500;
-}
-@font-face {
-    font-family: 'GT America';
-    src: local('GT-America-LCGV-Standard-Bold'), local('GT America');
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
+         local('FD Aeonik Bold');
     font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
+         local('Tiempos Text Regular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
+         local('Tiempos Text Medium');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         local('Tiempos Text Regular Italic');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
 }
 
+/* ═══ 2. DESIGN TOKENS (Light Theme - Chuẩn 30ngayviral.fedu.vn) ═══ */
 :root {
-    --bg-main: #0b0f17;
-    --bg-card: #131b2a;
-    --bg-card-hover: #1c273c;
-    --bg-sidebar: #0f1624;
-    --border-color: #202c42;
-    --border-active: #38bdf8;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-amber: #f59e0b;
-    --accent-blue: #38bdf8;
-    --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
-    --accent-purple: #c084fc;
-    --font-heading: 'SVN-Acta', Georgia, 'Times New Roman', serif;
-    --font-body: 'GT America', 'GT-America-LCGV-Standard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --cl-bg-main: #ffffff;
+    --cl-bg-tint: #f8fafc;
+    --cl-bg-card: #ffffff;
+    --cl-bg-card-muted: #f1f5f9;
+    --cl-border: rgba(0, 0, 0, 0.08);
+    --cl-border-hover: rgba(26, 115, 232, 0.35);
+    --cl-line: rgba(0, 0, 0, 0.06);
+
+    /* Ink Contrast WCAG AAA */
+    --cl-text-primary: #090d16;  /* Slate 950 (18.8:1) */
+    --cl-text-body: #0f172a;     /* Slate 900 (16.5:1 Mực in cao cấp) */
+    --cl-text-secondary: #475569;/* Slate 600 */
+    --cl-text-muted: #64748b;    /* Slate 500 */
+
+    /* Accent & Brand Colors */
+    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
+    --cl-accent-tint: rgba(26, 115, 232, 0.08);
+    --cl-amber: #d97706;         /* Amber 600 */
+    --cl-amber-bg: #fffbeb;      /* Amber 50 */
+    --cl-amber-border: #fef3c7;  /* Amber 100 */
+    --cl-emerald: #059669;       /* Emerald 600 */
+    --cl-emerald-bg: #f0fdf4;    /* Emerald 50 */
+    --cl-emerald-border: #bbf7d0;/* Emerald 200 */
+    --cl-rose: #e11d48;          /* Rose 600 */
+    --cl-rose-bg: #fff1f2;       /* Rose 50 */
+    --cl-rose-border: #fecdd3;   /* Rose 200 */
+
+    /* Typography Stacks */
+    --font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
+    --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
+
+    /* Video Aspect Ratio */
+    --video-aspect-ratio: 9 / 16;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
+    background-color: var(--cl-bg-main);
+    color: var(--cl-text-body);
     font-family: var(--font-body);
-    line-height: 1.65;
     font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
-    -webkit-font-smoothing: antialiased;
 }
 
-/* Top Navigation Header */
+/* ═══ 3. TOP NAVIGATION HEADER ═══ */
 .top-nav {
-    background: rgba(15, 22, 36, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
-    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--cl-line);
+    padding: 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 200;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-heading);
+    gap: 8px;
+    font-family: var(--font-heading-short);
     font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--text-primary);
+    font-size: 14.5px;
+    color: var(--cl-text-primary);
     text-decoration: none;
+    letter-spacing: -0.01em;
 }
-.nav-brand .brand-badge {
-    background: linear-gradient(135deg, #38bdf8, #818cf8);
-    color: #0b0f17;
-    font-size: 0.7rem;
-    font-weight: 800;
-    padding: 2px 7px;
-    border-radius: 4px;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+.nav-badge {
+    background: var(--cl-accent-tint);
+    color: var(--cl-accent);
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(26, 115, 232, 0.18);
 }
-.nav-actions {
+.nav-meta-title {
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    color: var(--cl-text-secondary);
+    font-weight: 500;
+    max-width: 480px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nav-right {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
 }
 .nav-btn {
-    background: #1e293b;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 7px 13px;
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 6px 14px;
     border-radius: 8px;
-    font-size: 0.85rem;
-    cursor: pointer;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    transition: all 0.2s;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 .nav-btn:hover {
-    background: #334155;
-    border-color: var(--accent-blue);
+    background: var(--cl-bg-tint);
+    border-color: var(--cl-accent);
+    color: var(--cl-accent);
+}
+.nav-btn.primary {
+    background: var(--cl-accent);
+    border-color: var(--cl-accent);
+    color: #ffffff;
+}
+.nav-btn.primary:hover {
+    background: #1558b0;
 }
 
-/* Main Layout */
-.main-container {
-    max-width: 1200px;
-    width: 100%;
+/* ═══ 4. MAIN LAYOUT (DESKTOP SPLIT-SCREEN & MOBILE-FIRST) ═══ */
+.layout-container {
+    display: flex;
+    flex: 1;
+    max-width: 1680px;
     margin: 0 auto;
-    padding: 24px 20px 80px;
-    display: grid;
-    grid-template-columns: 340px 1fr;
-    gap: 30px;
+    width: 100%;
 }
 
-/* Sticky Left Column: Video Player & Overview */
-.sticky-column {
+/* LEFT COLUMN: STICKY DIRECTOR PLAYER */
+.left-player-col {
+    width: 460px;
+    flex-shrink: 0;
+    padding: 24px;
+    border-right: 1px solid var(--cl-line);
+    background: var(--cl-bg-tint);
     position: sticky;
-    top: 80px;
-    height: fit-content;
+    top: 57px;
+    height: calc(100vh - 57px);
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 18px;
 }
-
-.video-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
+.player-box {
+    background: #000000;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
-.video-player-box {
     position: relative;
-    background: #000;
-    aspect-ratio: 9 / 16;
-    max-height: 520px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    aspect-ratio: var(--video-aspect-ratio);
+    max-height: 560px;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
-.video-player-box video {
+.player-box video {
     width: 100%;
     height: 100%;
     object-fit: contain;
-}
-.video-info-box {
-    padding: 16px;
-}
-.video-title {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    line-height: 1.35;
-    margin-bottom: 8px;
-    color: #ffffff;
-}
-.video-meta-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-bottom: 12px;
-}
-.meta-tag {
-    font-size: 0.75rem;
-    padding: 3px 8px;
-    border-radius: 5px;
-    background: #1e293b;
-    color: var(--text-secondary);
-    border: 1px solid rgba(255,255,255,0.06);
-}
-.meta-tag.creator {
-    color: var(--accent-blue);
-    font-weight: 600;
-}
-.video-desc {
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    line-height: 1.55;
+    display: block;
 }
 
-/* Drawer Jump Controls */
-.drawer-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 16px;
-}
-.drawer-title {
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    color: var(--text-muted);
-    margin-bottom: 12px;
-    font-weight: 700;
-}
-.drawer-list {
+/* DIRECTOR CONTROLS BAR */
+.director-controls {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 12px;
     display: flex;
     flex-direction: column;
-    gap: 6px;
-    max-height: 280px;
-    overflow-y: auto;
-    padding-right: 4px;
+    gap: 10px;
 }
-.drawer-shot-row {
+.ctrl-row {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     gap: 8px;
-    padding: 7px 10px;
-    background: #172133;
+}
+.ctrl-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ctrl-btn {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 5px 10px;
     border-radius: 6px;
-    font-size: 0.82rem;
+    font-family: var(--font-ui);
+    font-size: 11.5px;
+    font-weight: 600;
     cursor: pointer;
-    transition: background 0.15s;
-    border: 1px solid transparent;
+    transition: all 0.15s ease;
 }
-.drawer-shot-row:hover {
-    background: #22314a;
-    border-color: var(--accent-blue);
+.ctrl-btn:hover, .ctrl-btn.active {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
 }
-.d-badge {
-    background: var(--accent-blue);
-    color: #0b0f17;
-    font-weight: 700;
-    font-size: 0.7rem;
-    padding: 2px 5px;
-    border-radius: 3px;
-    white-space: nowrap;
-}
-.d-time {
-    color: var(--text-muted);
-    font-size: 0.72rem;
-    white-space: nowrap;
-}
-.d-title {
-    color: var(--text-secondary);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+.time-display {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cl-text-secondary);
+    font-weight: 600;
 }
 
-/* Right Column: Content, Grid Toggle & Storyboard */
-.content-column {
+/* VIDEO INFO CARD IN SIDEBAR */
+.video-meta-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 8px;
+}
+.video-meta-title {
+    font-family: var(--font-heading-long);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cl-text-primary);
+    line-height: 1.4;
+}
+.video-meta-author {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--cl-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.author-link {
+    color: var(--cl-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.author-link:hover {
+    text-decoration: underline;
 }
 
-/* View Mode Switcher Header */
-.content-header {
+/* RIGHT COLUMN: STORYBOARD CONTENT & AUDIT */
+.right-content-col {
+    flex: 1;
+    padding: 32px 40px 80px 40px;
+    min-width: 0;
+    background: #ffffff;
+}
+
+/* VIEW SWITCHER & HEADER BAR */
+.content-header-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-card);
-    padding: 14px 18px;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cl-line);
 }
-.content-header h2 {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
-    color: #ffffff;
-}
-.view-mode-tabs {
+.view-tabs {
     display: flex;
-    gap: 6px;
-    background: #0f1624;
-    padding: 3px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
+    gap: 8px;
+    background: var(--cl-bg-tint);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--cl-border);
 }
-.tab-btn {
+.view-tab {
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--cl-text-secondary);
     background: transparent;
     border: none;
-    color: var(--text-muted);
-    padding: 5px 12px;
-    border-radius: 6px;
-    font-size: 0.82rem;
     cursor: pointer;
-    font-weight: 600;
     transition: all 0.2s;
 }
-.tab-btn.active {
-    background: var(--accent-blue);
-    color: #0b0f17;
+.view-tab.active {
+    background: #ffffff;
+    color: var(--cl-text-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Grid Mode View */
-.grid-container {
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 16px;
+/* HERO OVERVIEW CARD */
+.overview-hero-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
 }
-.grid-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: transform 0.2s, border-color 0.2s;
-}
-.grid-card:hover {
-    transform: translateY(-2px);
-    border-color: var(--accent-blue);
-}
-.grid-thumb-box {
-    position: relative;
-    aspect-ratio: 9 / 16;
-    max-height: 280px;
-    background: #000;
-}
-.grid-thumb-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.grid-time-tag {
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    background: rgba(0,0,0,0.75);
-    color: #fff;
-    font-size: 0.7rem;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-}
-.grid-shot-tag {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    background: var(--accent-blue);
-    color: #0b0f17;
-    font-size: 0.7rem;
+.overview-hero-title {
+    font-family: var(--font-heading-short);
+    font-size: 24px;
     font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
+    text-transform: uppercase;
+    color: var(--cl-text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin-bottom: 12px;
 }
-.grid-card-desc {
-    padding: 10px;
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
+.overview-hero-desc {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--cl-text-body);
+    margin-bottom: 18px;
+}
+.overview-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cl-line);
+}
+.overview-spec-item {
+    font-family: var(--font-ui);
+    font-size: 13px;
+}
+.spec-tag-label {
+    color: var(--cl-text-muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+}
+.spec-tag-value {
+    color: var(--cl-text-primary);
+    font-weight: 600;
 }
 
-/* Detailed Storyboard View */
-.storyboard-container {
+/* ═══ 5. STORYBOARD CARDS (ZEBRA STRIPING) ═══ */
+.shots-container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 36px;
 }
 .shot-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 20px;
-    transition: border-color 0.3s;
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
+.shot-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.shot-card:nth-child(even) {
+    background: var(--cl-bg-tint);
+}
+
+/* SHOT CARD HEADER */
 .shot-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 14px;
 }
-.shot-header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+.shot-id-pill {
+    background: var(--cl-text-primary);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
 }
-.shot-index-badge {
-    background: linear-gradient(135deg, var(--accent-blue), #60a5fa);
-    color: #0b0f17;
-    font-weight: 800;
-    font-size: 0.8rem;
-    padding: 3px 8px;
-    border-radius: 6px;
-}
-.time-jump-btn {
-    background: #1e293b;
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.78rem;
-    cursor: pointer;
+.shot-time-btn {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-accent);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-family: var(--font-mono);
-    transition: all 0.2s;
+    cursor: pointer;
+    transition: all 0.15s;
 }
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #0b0f17;
-}
-.dur-pill {
-    color: var(--accent-amber);
-    font-weight: 600;
-}
-.tech-tag {
-    font-size: 0.75rem;
-    background: #172133;
-    border: 1px solid rgba(255,255,255,0.06);
-    color: var(--accent-emerald);
-    padding: 3px 9px;
-    border-radius: 20px;
-    font-weight: 600;
-}
-
-.shot-headline-box {
-    margin-bottom: 16px;
-}
-.shot-headline-title {
-    font-family: var(--font-heading);
-    font-size: 1.15rem;
+.shot-time-btn:hover {
+    background: var(--cl-accent);
     color: #ffffff;
-    line-height: 1.4;
+    border-color: var(--cl-accent);
+}
+.shot-headline {
+    font-family: var(--font-heading-long);
+    font-size: 18.5px;
+    font-weight: 700;
+    color: var(--cl-text-primary);
+    line-height: 1.45;
+    margin-bottom: 18px;
 }
 
-/* 3 Keyframes Gallery */
-.keyframes-grid {
+/* 3 KEYFRAMES GALLERY */
+.keyframes-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 22px;
 }
-.keyframe-item {
-    cursor: pointer;
-    border-radius: 8px;
+.kf-card {
+    background: #000000;
+    border-radius: 12px;
     overflow: hidden;
-    background: #000;
-    border: 1px solid var(--border-color);
-    transition: transform 0.2s;
-}
-.keyframe-item:hover {
-    transform: scale(1.02);
-    border-color: var(--accent-blue);
-}
-.kf-img-wrap {
     position: relative;
-    aspect-ratio: 9 / 16;
-    width: 100%;
+    aspect-ratio: var(--video-aspect-ratio);
+    cursor: pointer;
+    border: 1px solid var(--cl-border);
 }
-.kf-img-wrap img {
+.kf-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
 }
-.kf-badge {
+.kf-card:hover img {
+    transform: scale(1.03);
+}
+.kf-label-tag {
     position: absolute;
-    bottom: 6px;
-    left: 6px;
-    font-size: 0.68rem;
-    font-weight: 700;
-    padding: 2px 6px;
-    border-radius: 4px;
-    color: #fff;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
 }
-.kf-badge.start { background: rgba(56, 189, 248, 0.85); }
-.kf-badge.mid { background: rgba(245, 158, 11, 0.85); }
-.kf-badge.end { background: rgba(244, 63, 94, 0.85); }
+.kf-label-tag.start { border-left: 3px solid var(--cl-accent); }
+.kf-label-tag.mid { border-left: 3px solid var(--cl-amber); }
+.kf-label-tag.end { border-left: 3px solid var(--cl-emerald); }
 
-/* Critique Blocks Grid */
-.analysis-blocks-grid {
+/* 3 STRUCTURED CRITIQUE BLOCKS */
+.critique-blocks-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-    margin-bottom: 16px;
+    gap: 14px;
+    margin-bottom: 20px;
 }
-.critique-block {
-    background: #172133;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 14px;
+
+/* BLOCK 1: SUBJECT & ACTION */
+.block-subject-action {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px 20px;
 }
-.block-title {
-    font-size: 0.85rem;
+.block-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    color: var(--text-primary);
-    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--cl-text-muted);
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.block-content {
-    font-size: 0.86rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
+.block-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--cl-text-body);
+    line-height: 1.7;
 }
 
-.two-column-critique {
+/* BLOCK 2: TWO-SIDED COMPOSITION CRITIQUE */
+.block-two-sided {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
-.critique-col {
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 0.82rem;
-    line-height: 1.5;
+.critique-side {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
-.critique-col.pro {
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.25);
-    color: #a7f3d0;
+.critique-side.pro {
+    background: var(--cl-emerald-bg);
+    border: 1px solid var(--cl-emerald-border);
 }
-.critique-col.con {
-    background: rgba(245, 158, 11, 0.08);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    color: #fde68a;
+.critique-side.con {
+    background: var(--cl-rose-bg);
+    border: 1px solid var(--cl-rose-border);
 }
-.col-header {
+.side-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 5px;
-    font-size: 0.8rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.critique-side.pro .side-header { color: var(--cl-emerald); }
+.critique-side.con .side-header { color: var(--cl-rose); }
+.side-content {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--cl-text-body);
 }
 
-.takeaway-block {
-    background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(129, 140, 248, 0.1));
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    border-radius: 10px;
-    padding: 12px 14px;
+/* BLOCK 3: ACTIONABLE TAKEAWAY */
+.block-takeaway {
+    background: var(--cl-amber-bg);
+    border: 1px solid var(--cl-amber-border);
+    border-radius: 12px;
+    padding: 16px 20px;
 }
-.takeaway-title {
+.takeaway-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    color: var(--accent-blue);
-    font-size: 0.84rem;
-    margin-bottom: 4px;
+    text-transform: uppercase;
+    color: var(--cl-amber);
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 .takeaway-body {
-    font-size: 0.85rem;
-    color: #e2e8f0;
-    line-height: 1.55;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: #78350f;
+    line-height: 1.7;
 }
 
-/* Shot Specs Bar */
-.shot-specs-bar {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px 16px;
-    background: #0f1624;
-    padding: 12px 14px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-    font-size: 0.8rem;
-    color: var(--text-secondary);
-}
-.spec-item {
+/* SPECS STRIP */
+.shot-specs-strip {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 16px;
+    background: var(--cl-bg-tint);
+    border-radius: 10px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--cl-text-secondary);
+    margin-bottom: 18px;
+}
+.spec-pill strong {
+    color: var(--cl-text-primary);
+}
+
+/* TRANSITION CARD */
+.transition-card {
+    background: var(--cl-bg-tint);
+    border: 1px dashed var(--cl-border);
+    border-radius: 14px;
+    padding: 16px;
+}
+.trans-title-bar {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--cl-accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
     gap: 6px;
 }
-.spec-label {
-    color: var(--text-muted);
-    white-space: nowrap;
-}
-
-/* Transition Section */
-.trans-section {
-    margin-top: 18px;
-    padding-top: 14px;
-    border-top: 1px dashed var(--border-color);
-}
-.trans-header {
-    margin-bottom: 10px;
-}
-.trans-title {
-    font-size: 0.82rem;
-    color: var(--accent-rose);
-    font-weight: 700;
-}
-.trans-img-wrap {
-    position: relative;
+.trans-img-container {
+    cursor: pointer;
     border-radius: 10px;
     overflow: hidden;
-    cursor: pointer;
-    border: 1px solid var(--border-color);
-    aspect-ratio: 16 / 9;
-    max-height: 260px;
-    background: #000;
+    position: relative;
+    border: 1px solid var(--cl-border);
+    background: #000000;
 }
-.trans-img-wrap img {
+.trans-img-container img {
     width: 100%;
-    height: 100%;
-    object-fit: contain;
+    height: auto;
+    display: block;
 }
-.zoom-indicator {
+.trans-zoom-badge {
     position: absolute;
     bottom: 8px;
     right: 8px;
-    background: rgba(0,0,0,0.75);
-    color: #fff;
-    font-size: 0.72rem;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
     padding: 3px 8px;
     border-radius: 4px;
 }
 
-/* Lightbox Modal */
-.lightbox-modal {
+/* ═══ 6. VISUAL GRID VIEW (ALTERNATE VIEW) ═══ */
+.visual-grid-view {
     display: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+.grid-shot-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.grid-shot-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.grid-thumb-wrap {
+    aspect-ratio: var(--video-aspect-ratio);
+    position: relative;
+    background: #000;
+}
+.grid-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.grid-thumb-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+}
+.grid-card-body {
+    padding: 10px 12px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cl-text-primary);
+    line-height: 1.4;
+}
+
+/* ═══ 7. LIGHTBOX MODAL ═══ */
+.lightbox-modal {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(0,0,0,0.92);
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
     z-index: 999;
+    display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 20px;
+    padding: 24px;
 }
+.lightbox-modal.active { display: flex; }
 .lightbox-content {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.8);
-    object-fit: contain;
+    max-width: 92vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 82vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 .lightbox-caption {
-    margin-top: 12px;
-    color: #f8fafc;
-    font-size: 0.95rem;
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
     text-align: center;
 }
 .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 25px;
-    background: #1e293b;
-    border: 1px solid var(--border-color);
-    color: #fff;
-    font-size: 1.5rem;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
+    top: 20px; right: 24px;
+    color: #ffffff;
+    font-size: 32px;
+    background: none; border: none;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-/* Responsive Breakpoints */
+/* ═══ 8. FOOTER LINKS BLOCK ═══ */
+.bottom-links-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+.footer-link-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--cl-text-primary);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+}
+.footer-link-card:hover {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
+}
+
+/* ═══ 9. RESPONSIVE MOBILE RULES (< 992px) ═══ */
 @media (max-width: 992px) {
-    .main-container {
+    .layout-container {
+        flex-direction: column;
+    }
+    .left-player-col {
+        width: 100%;
+        position: sticky;
+        top: 57px;
+        height: auto;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--cl-line);
+        z-index: 100;
+    }
+    .player-box {
+        max-height: 420px;
+    }
+    .right-content-col {
+        padding: 20px 16px 60px 16px;
+    }
+    .block-two-sided {
         grid-template-columns: 1fr;
     }
-    .sticky-column {
-        position: static;
-    }
-    .two-column-critique {
-        grid-template-columns: 1fr;
-    }
-    .shot-specs-bar {
-        grid-template-columns: 1fr;
+    .keyframes-row {
+        gap: 8px;
     }
 }
 </style>
 </head>
 <body>
 
-<!-- Navigation Bar -->
-<div class="top-nav">
-    <a href="https://vietndj.github.io/scene.html" class="nav-brand">
-        <span class="brand-badge">DIRECTOR</span> FEDU Video Analytics
-    </a>
-    <div class="nav-actions">
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <a href="https://fedu.vn/scene.html" class="nav-brand">
+            <span>🎬 FEDU DIRECTOR REPORT</span>
+        </a>
+        <span class="nav-badge">7 PHÂN CẢNH</span>
+        <span class="nav-meta-title">Phân Tích Video Điện Ảnh - @inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide</span>
+    </div>
+    <div class="nav-right">
+        <a href="https://www.instagram.com/reel/DcoPBXdDPro/" target="_blank" class="nav-btn primary">
+            <span>📸 Instagram Gốc ↗</span>
+        </a>
         <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
-            💡 Kho Ý Tưởng YTUONG HUB
-        </a>
-        <a href="https://www.instagram.com/reel/DcoPBXdDPro/" target="_blank" class="nav-btn">
-            📱 Xem Instagram Gốc
+            <span>💡 Kho Ý Tưởng ↗</span>
         </a>
     </div>
-</div>
+</nav>
 
-<div class="main-container">
-    <!-- Left Column: Video Sticky & Quick Drawer -->
-    <div class="sticky-column">
-        <div class="video-card">
-            <div class="video-player-box">
-                <video id="playerVideo" class="modal-video" controls playsinline>
-                    <source src="DcoPBXdDPro.mp4" type="video/mp4">
-                    <source src="../videos/DcoPBXdDPro.mp4" type="video/mp4">
-                    <source src="./videos/DcoPBXdDPro.mp4" type="video/mp4">
-                    <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoPBXdDPro.mp4" type="video/mp4">
-                    Trình duyệt không hỗ trợ thẻ video.
-                </video>
-            </div>
-            <div class="video-info-box">
-                <h1 class="video-title">Quy Trình Setup Góc Quay Livestream & Đèn 2 Điểm Cực Nhanh - @inbex.id</h1>
-                <div class="video-meta-tags">
-                    <span class="meta-tag creator">@inbex.id</span>
-                    <span class="meta-tag">⏱️ 9.3s</span>
-                    <span class="meta-tag">🎬 7 Shots</span>
-                    <span class="meta-tag">💡 2-Point Lighting</span>
+<!-- MAIN CONTAINER -->
+<div class="layout-container">
+    <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
+    <aside class="left-player-col">
+        <div class="player-box">
+            <video id="mainPlayer" playsinline preload="metadata">
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/id_DcoPBXdD.mp4" type="video/mp4">
+                <source src="videos/id_DcoPBXdD.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+
+        <!-- DIRECTOR CONTROLS -->
+        <div class="director-controls">
+            <div class="ctrl-row">
+                <div class="ctrl-btn-group">
+                    <button class="ctrl-btn" onclick="togglePlay()" id="playBtn">▶ Phát</button>
+                    <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
+                    <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
                 </div>
-                <p class="video-desc">Bóc tách 7 phân cảnh chuẩn đạo diễn về quy trình thiết lập góc máy livestream và hệ thống ánh sáng 2 điểm (2-Point Studio Lighting) chỉ trong vài giây: 1. Đặt ghế định vị tâm điểm, 2. Cảnh báo lỗi góc đèn ngang 90 độ (Red X Alert), 3. Cân chỉnh đèn chính Key Light 45 độ làm sáng tự nhiên (Green Check), 4. Bổ sung đèn ven Rim Light sau lưng tách khối chủ thể, 5. Căn chỉnh chân máy và camera ngang tầm mắt, 6. Bước vào ghế khóa bố cục sẵn sàng ghi hình, và 7. Cú máy cận cảnh chân dung điện ảnh chốt hạ thành quả ánh sáng mịn màng, tôn da và rạng rỡ.</p>
+                <span class="time-display" id="timeDisplay">0.00s / 9.30s</span>
+            </div>
+            <div class="ctrl-row">
+                <div class="ctrl-btn-group">
+                    <span style="font-size:11px; font-weight:600; color:var(--cl-text-muted);">Tốc độ:</span>
+                    <button class="ctrl-btn" onclick="setSpeed(0.25)">0.25x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(0.5)">0.5x</button>
+                    <button class="ctrl-btn active" onclick="setSpeed(1.0)">1.0x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(1.5)">1.5x</button>
+                </div>
+                <button class="ctrl-btn" onclick="toggleLoop()" id="loopBtn">🔁 Lặp Shot</button>
             </div>
         </div>
 
-        <!-- Quick Jump Drawer -->
-        <div class="drawer-card">
-            <div class="drawer-title">📌 Danh Sách Phân Cảnh (Quick Jump)</div>
-            <div class="drawer-list">
-                
-    <div class="drawer-shot-row" onclick="jumpToShot(1, 0.0)">
-        <span class="d-badge">Shot 01</span>
-        <span class="d-time">0.00s - 0.97s (0.97s)</span>
-        <span class="d-title">Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Pos...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(2, 1.0)">
-        <span class="d-badge">Shot 02</span>
-        <span class="d-time">1.00s - 1.53s (0.53s)</span>
-        <span class="d-title">Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(3, 1.57)">
-        <span class="d-badge">Shot 03</span>
-        <span class="d-time">1.57s - 2.17s (0.60s)</span>
-        <span class="d-title">Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45°...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(4, 2.2)">
-        <span class="d-badge">Shot 04</span>
-        <span class="d-time">2.20s - 2.97s (0.77s)</span>
-        <span class="d-title">Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Ligh...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(5, 3.0)">
-        <span class="d-badge">Shot 05</span>
-        <span class="d-time">3.00s - 4.53s (1.53s)</span>
-        <span class="d-title">Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & C...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(6, 4.57)">
-        <span class="d-badge">Shot 06</span>
-        <span class="d-time">4.57s - 6.07s (1.50s)</span>
-        <span class="d-title">Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Ent...</span>
-    </div>
-    
-    <div class="drawer-shot-row" onclick="jumpToShot(7, 6.1)">
-        <span class="d-badge">Shot 07</span>
-        <span class="d-time">6.10s - 9.27s (3.17s)</span>
-        <span class="d-title">Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Por...</span>
-    </div>
-    
+        <!-- VIDEO META -->
+        <div class="video-meta-card">
+            <div class="video-meta-title">Phân Tích Video Điện Ảnh - @inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide</div>
+            <div class="video-meta-author">
+                <span>Tác giả:</span>
+                <a href="https://www.instagram.com/reel/DcoPBXdDPro/" target="_blank" class="author-link">@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide</a>
             </div>
         </div>
-    </div>
+    </aside>
 
-    <!-- Right Column: Content -->
-    <div class="content-column">
-        <div class="content-header">
-            <h2>Bóc Tách Phân Cảnh &amp; Đạo Diễn Thực Chiến</h2>
-            <div class="view-mode-tabs">
-                <button class="tab-btn active" id="tabDetail" onclick="setViewMode('detail')">Chi Tiết (Detail)</button>
-                <button class="tab-btn" id="tabGrid" onclick="setViewMode('grid')">Lưới Ảnh (Grid)</button>
+    <!-- RIGHT COLUMN: ANALYSIS & CRITIQUE -->
+    <main class="right-content-col">
+        <!-- HEADER BAR WITH VIEW SWITCHER -->
+        <div class="content-header-bar">
+            <div class="view-tabs">
+                <button class="view-tab active" id="tabDetail" onclick="switchView('detail')">📋 Bảng Phân Tích Đạo Diễn</button>
+                <button class="view-tab" id="tabGrid" onclick="switchView('grid')">🔲 Lưới Ảnh Keyframes</button>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--cl-text-muted);">
+                Tỷ lệ: <strong>9:16 Dọc (Vertical Reel)</strong> • 9.30s
             </div>
         </div>
 
-        <!-- Fast Grid View -->
-        <div class="grid-container" id="gridView">
+        <!-- HERO OVERVIEW CARD -->
+        <div class="overview-hero-card">
+            <h1 class="overview-hero-title">Phân Tích Video Điện Ảnh - @inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide</h1>
+            <p class="overview-hero-desc">Bóc tách chi tiết 7 phân cảnh theo chuẩn đạo diễn chuyên nghiệp.</p>
+            <div class="overview-specs-grid">
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Kỹ Thuật Cốt Lõi</span>
+                    <span class="spec-tag-value">Cinematic Storytelling, Composition Critique, Micro-Beats Pacing</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Tổng Số Phân Cảnh</span>
+                    <span class="spec-tag-value">7 Shots • Nhịp trung bình 1.3s</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Độ Phân Giải</span>
+                    <span class="spec-tag-value">1440x2560 • 30.0 FPS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STORYBOARD DETAIL VIEW -->
+        <div class="shots-container" id="detailView">
             
-    <div class="grid-card" onclick="jumpToShot(1, 0.0)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
-            <div class="grid-time-tag">0.00s - 0.97s</div>
-            <div class="grid-shot-tag">Shot 01</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Positioning)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(2, 1.0)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
-            <div class="grid-time-tag">1.00s - 1.53s</div>
-            <div class="grid-shot-tag">Shot 02</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake - Red X Alert)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(3, 1.57)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
-            <div class="grid-time-tag">1.57s - 2.17s</div>
-            <div class="grid-shot-tag">Shot 03</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45° Calibration - Green Check)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(4, 2.2)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
-            <div class="grid-time-tag">2.20s - 2.97s</div>
-            <div class="grid-shot-tag">Shot 04</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Light Addition)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(5, 3.0)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
-            <div class="grid-time-tag">3.00s - 4.53s</div>
-            <div class="grid-shot-tag">Shot 05</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & Camera Alignment)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(6, 4.57)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
-            <div class="grid-time-tag">4.57s - 6.07s</div>
-            <div class="grid-shot-tag">Shot 06</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Entry & Ready Stance)</strong>
-        </div>
-    </div>
-    
-    <div class="grid-card" onclick="jumpToShot(7, 6.1)">
-        <div class="grid-thumb-box">
-            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
-            <div class="grid-time-tag">6.10s - 9.27s</div>
-            <div class="grid-shot-tag">Shot 07</div>
-        </div>
-        <div class="grid-card-desc">
-            <strong>Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Portrait Payoff & Lighting Magic)</strong>
-        </div>
-    </div>
-    
-        </div>
-
-        <!-- Detailed Storyboard Cards -->
-        <div class="storyboard-container" id="storyboardView">
-            
-    <div class="shot-card" id="shot-1" data-start="0.0" data-end="0.97">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 01</span>
-                <button class="time-jump-btn" onclick="jumpToShot(1, 0.0)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    0.00s - 0.97s <span class="dur-pill">(0.97s)</span>
+        <article class="shot-card" id="shot-1">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 01</span>
+                <button class="shot-time-btn" onclick="jumpToShot(1, 0.0, 0.97)">
+                    ▶ 0.00s - 0.97s (0.97s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Positioning)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Positioning)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_start.jpg', 'Shot 01 • Khung hình Đầu (0.00s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (0.00s)</span>
+                    <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg', 'Shot 01 • Cao trào Giữa (0.48s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg', 'Shot 01 • Giữa (0.48s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (0.48s)</span>
+                    <span class="kf-label-tag mid">Giữa (0.48s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_end.jpg', 'Shot 01 • Khung hình Cuối (0.97s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_end.jpg', 'Shot 01 • Cuối (0.97s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (0.97s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Người sáng tạo bước vào khung hình phòng trống phong cách tối giản (sàn gỗ sồi, rèm voan trắng, cây xanh nội thất), mang chiếc ghế bọc đệm trắng chân gỗ Scandinavia đặt chuẩn xác vào vị trí trung tâm sân khấu. Thao tác dứt khoát, gọn gàng, thiết lập ngay lập tức 'mỏ neo thị giác' (visual anchor) - nơi người xem sẽ tập trung toàn bộ ánh nhìn trong suốt video.
+                    <span class="kf-label-tag end">Cuối (0.97s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Người sáng tạo bước vào khung hình phòng trống phong cách tối giản (sàn gỗ sồi, rèm voan trắng, cây xanh nội thất), mang chiếc ghế bọc đệm trắng chân gỗ Scandinavia đặt chuẩn xác vào vị trí trung tâm sân khấu. Thao tác dứt khoát, gọn gàng, thiết lập ngay lập tức 'mỏ neo thị giác' (visual anchor) - nơi người xem sẽ tập trung toàn bộ ánh nhìn trong suốt video.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Bố cục không gian thoáng đãng, động tác mở màn mang tính kích hoạt (action hook) cực nhanh; không vòng vo lý thuyết mà đi thẳng vào hành động thực chiến; màu trắng của ghế tương phản rõ nét với sàn gỗ ấm.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục không gian thoáng đãng, động tác mở màn mang tính kích hoạt (action hook) cực nhanh; không vòng vo lý thuyết mà đi thẳng vào hành động thực chiến; màu trắng của ghế tương phản rõ nét với sàn gỗ ấm.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Động tác cúi người đặt ghế diễn ra khá nhanh (< 1 giây); người xem chưa kịp định hình tổng thể không gian trước khi sang nhịp tiếp theo.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Động tác cúi người đặt ghế diễn ra khá nhanh (< 1 giây); người xem chưa kịp định hình tổng thể không gian trước khi sang nhịp tiếp theo.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Trong video hướng dẫn ngắn (Short-form Setup Guide), mở đầu bằng một hành vi thiết lập thực thể (đặt ghế/đặt bàn) sẽ lập tức giữ chân người xem vì não bộ con người luôn tò mò muốn biết 'sắp có ai ngồi vào đây' hoặc 'setup tiếp theo là gì'.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Trong video hướng dẫn ngắn (Short-form Setup Guide), mở đầu bằng một hành vi thiết lập thực thể (đặt ghế/đặt bàn) sẽ lập tức giữ chân người xem vì não bộ con người luôn tò mò muốn biết 'sắp có ai ngồi vào đây' hoặc 'setup tiếp theo là gì'.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • Wide Eye-Level Studio View
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • Wide Eye-Level Studio View</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Không gian phòng khách / Studio cá nhân tối giản</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng môi trường tự nhiên khuếch tán qua rèm trắng (Soft Ambient Daylight)</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Không gian phòng khách / Studio cá nhân tối giản
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Ánh sáng môi trường tự nhiên khuếch tán qua rèm trắng (Soft Ambient Daylight)
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 02 • Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_01_to_02.jpg', '⚡ Chuyển Cảnh Sang Shot 02 • Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_01_to_02.jpg" alt="Transition Shot 01" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-2" data-start="1.0" data-end="1.53">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 02</span>
-                <button class="time-jump-btn" onclick="jumpToShot(2, 1.0)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    1.00s - 1.53s <span class="dur-pill">(0.53s)</span>
+
+        <article class="shot-card" id="shot-2">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 02</span>
+                <button class="shot-time-btn" onclick="jumpToShot(2, 1.0, 1.53)">
+                    ▶ 1.00s - 1.53s (0.53s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake - Red X Alert)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake - Red X Alert)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_start.jpg', 'Shot 02 • Khung hình Đầu (1.00s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_start.jpg', 'Shot 02 • Đầu (1.00s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (1.00s)</span>
+                    <span class="kf-label-tag start">Đầu (1.00s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_mid.jpg', 'Shot 02 • Cao trào Giữa (1.27s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_mid.jpg', 'Shot 02 • Giữa (1.27s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (1.27s)</span>
+                    <span class="kf-label-tag mid">Giữa (1.27s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_end.jpg', 'Shot 02 • Khung hình Cuối (1.53s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_end.jpg', 'Shot 02 • Cuối (1.53s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (1.53s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Chiếc đèn chiếu chính INBEX (Softbox Parabolic Octagon trên chân đèn trắng) được đưa vào khung hình nhưng đặt sai góc chiếu: đặt vuông góc 90 độ ngang hông/bên cạnh ghế. Ngay trên mặt đèn xuất hiện huy hiệu đồ họa cảnh báo hình tròn màu đỏ với dấu gạch chéo đỏ (Red X badge), đồng thời hiển thị phụ đề chú thích hướng dẫn: '① Key Light: 45° di depan wajah'. Cảnh báo người làm video không nên đặt đèn trực tiếp bên hông vì sẽ tạo bóng đổ gắt một bên mặt, mất chi tiết khối.
+                    <span class="kf-label-tag end">Cuối (1.53s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Chiếc đèn chiếu chính INBEX (Softbox Parabolic Octagon trên chân đèn trắng) được đưa vào khung hình nhưng đặt sai góc chiếu: đặt vuông góc 90 độ ngang hông/bên cạnh ghế. Ngay trên mặt đèn xuất hiện huy hiệu đồ họa cảnh báo hình tròn màu đỏ với dấu gạch chéo đỏ (Red X badge), đồng thời hiển thị phụ đề chú thích hướng dẫn: '① Key Light: 45° di depan wajah'. Cảnh báo người làm video không nên đặt đèn trực tiếp bên hông vì sẽ tạo bóng đổ gắt một bên mặt, mất chi tiết khối.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Ứng dụng kỹ thuật 'Negative Hook / Error Warning' trực quan cực kỳ thông minh: thay vì chỉ nói lý thuyết, video mô phỏng ngay sai lầm phổ biến nhất của người mới bằng ký hiệu đồ họa đỏ rực, kích hoạt sự chú ý phản xạ của khán giả.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Ứng dụng kỹ thuật 'Negative Hook / Error Warning' trực quan cực kỳ thông minh: thay vì chỉ nói lý thuyết, video mô phỏng ngay sai lầm phổ biến nhất của người mới bằng ký hiệu đồ họa đỏ rực, kích hoạt sự chú ý phản xạ của khán giả.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Dấu cảnh báo xuất hiện ngắn (chỉ hơn 0.5 giây), người xem lướt nhanh có thể cần xem lại lần 2 để đọc trọn vẹn văn bản Indonesia.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Dấu cảnh báo xuất hiện ngắn (chỉ hơn 0.5 giây), người xem lướt nhanh có thể cần xem lại lần 2 để đọc trọn vẹn văn bản Indonesia.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Đưa ra cảnh báo sai lầm trước khi chỉ ra cách làm đúng là công thức giữ chân (retention booster) hiệu quả nhất trong video chia sẻ kiến thức ngắn. Nhìn thấy dấu X đỏ, người xem sẽ lập tức dừng ngón tay lại để xem cách sửa.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Đưa ra cảnh báo sai lầm trước khi chỉ ra cách làm đúng là công thức giữ chân (retention booster) hiệu quả nhất trong video chia sẻ kiến thức ngắn. Nhìn thấy dấu X đỏ, người xem sẽ lập tức dừng ngón tay lại để xem cách sửa.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • Stationary Setup Angle
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • Stationary Setup Angle</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio cá nhân Inbex</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Đèn chưa bật / Đặt sai góc 90° ngang hông</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt Stop-Motion dịch chuyển đèn sang Shot 03</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Studio cá nhân Inbex
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Đèn chưa bật / Đặt sai góc 90° ngang hông
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt Stop-Motion dịch chuyển đèn sang Shot 03
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 03 • Cắt Stop-Motion dịch chuyển đèn sang Shot 03</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Cắt Stop-Motion dịch chuyển đèn sang Shot 03</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_02_to_03.jpg', '⚡ Chuyển Cảnh Sang Shot 03 • Cắt Stop-Motion dịch chuyển đèn sang Shot 03')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_02_to_03.jpg" alt="Transition Shot 02" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-3" data-start="1.57" data-end="2.17">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 03</span>
-                <button class="time-jump-btn" onclick="jumpToShot(3, 1.57)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    1.57s - 2.17s <span class="dur-pill">(0.60s)</span>
+
+        <article class="shot-card" id="shot-3">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 03</span>
+                <button class="shot-time-btn" onclick="jumpToShot(3, 1.57, 2.17)">
+                    ▶ 1.57s - 2.17s (0.60s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45° Calibration - Green Check)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45° Calibration - Green Check)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_start.jpg', 'Shot 03 • Khung hình Đầu (1.57s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_start.jpg', 'Shot 03 • Đầu (1.57s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (1.57s)</span>
+                    <span class="kf-label-tag start">Đầu (1.57s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg', 'Shot 03 • Cao trào Giữa (1.87s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg', 'Shot 03 • Giữa (1.87s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (1.87s)</span>
+                    <span class="kf-label-tag mid">Giữa (1.87s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_end.jpg', 'Shot 03 • Khung hình Cuối (2.17s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_end.jpg', 'Shot 03 • Cuối (2.17s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (2.17s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Chân đèn INBEX được xoay chuyển dịch về phía trước ghế một góc chếch 45 độ chuẩn xác. Huy hiệu đồ họa lập tức chuyển sang hình tròn xanh lá cây kèm dấu tích xanh (Green Checkmark). Đèn bật sáng bừng, chùm sáng mềm mịn (diffused soft light) quét qua bức tường trắng và sàn gỗ, tạo nên một trường sáng dịu mắt, sẵn sàng chiếu sáng gương mặt mẫu một cách tự nhiên nhất.
+                    <span class="kf-label-tag end">Cuối (2.17s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Chân đèn INBEX được xoay chuyển dịch về phía trước ghế một góc chếch 45 độ chuẩn xác. Huy hiệu đồ họa lập tức chuyển sang hình tròn xanh lá cây kèm dấu tích xanh (Green Checkmark). Đèn bật sáng bừng, chùm sáng mềm mịn (diffused soft light) quét qua bức tường trắng và sàn gỗ, tạo nên một trường sáng dịu mắt, sẵn sàng chiếu sáng gương mặt mẫu một cách tự nhiên nhất.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Hiệu ứng chuyển đổi đối lập từ 'X đỏ' sang 'Tích xanh' mang lại sự thỏa mãn thị giác (Visual Satisfaction); ánh sáng từ softbox tỏa ra mềm mại làm bừng sáng góc phòng; góc 45 độ tạo tỷ lệ sáng tối Rembrandt kinh điển giúp gương mặt thon gọn và có chiều sâu.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Hiệu ứng chuyển đổi đối lập từ 'X đỏ' sang 'Tích xanh' mang lại sự thỏa mãn thị giác (Visual Satisfaction); ánh sáng từ softbox tỏa ra mềm mại làm bừng sáng góc phòng; góc 45 độ tạo tỷ lệ sáng tối Rembrandt kinh điển giúp gương mặt thon gọn và có chiều sâu.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Thời lượng shot tương đối ngắn; nếu kéo dài thêm 0.3 giây kết hợp tiếng click bật công tắc (Switch SFX) sẽ tăng thêm tính xúc giác (tactile feedback).</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Thời lượng shot tương đối ngắn; nếu kéo dài thêm 0.3 giây kết hợp tiếng click bật công tắc (Switch SFX) sẽ tăng thêm tính xúc giác (tactile feedback).</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Đèn Key Light hoàn hảo cho livestream hoặc video nói chuyện (Talking Head) luôn nằm ở vị trí chếch 30 - 45 độ so với trục nhìn của camera và cao hơn tầm mắt một chút để tạo bóng mũi đổ nhẹ tự nhiên.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Đèn Key Light hoàn hảo cho livestream hoặc video nói chuyện (Talking Head) luôn nằm ở vị trí chếch 30 - 45 độ so với trục nhìn của camera và cao hơn tầm mắt một chút để tạo bóng mũi đổ nhẹ tự nhiên.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • Stationary Setup Angle
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • Stationary Setup Angle</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio cá nhân Inbex</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Đèn chính INBEX 100W Softbox góc 45° bật sáng (5600K Daylight)</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Studio cá nhân Inbex
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Đèn chính INBEX 100W Softbox góc 45° bật sáng (5600K Daylight)
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 04 • Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_03_to_04.jpg', '⚡ Chuyển Cảnh Sang Shot 04 • Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_03_to_04.jpg" alt="Transition Shot 03" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-4" data-start="2.2" data-end="2.97">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 04</span>
-                <button class="time-jump-btn" onclick="jumpToShot(4, 2.2)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    2.20s - 2.97s <span class="dur-pill">(0.77s)</span>
+
+        <article class="shot-card" id="shot-4">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 04</span>
+                <button class="shot-time-btn" onclick="jumpToShot(4, 2.2, 2.97)">
+                    ▶ 2.20s - 2.97s (0.77s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Light Addition)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Light Addition)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_start.jpg', 'Shot 04 • Khung hình Đầu (2.20s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_start.jpg', 'Shot 04 • Đầu (2.20s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (2.20s)</span>
+                    <span class="kf-label-tag start">Đầu (2.20s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_mid.jpg', 'Shot 04 • Cao trào Giữa (2.58s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_mid.jpg', 'Shot 04 • Giữa (2.58s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (2.58s)</span>
+                    <span class="kf-label-tag mid">Giữa (2.58s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_end.jpg', 'Shot 04 • Khung hình Cuối (2.97s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_end.jpg', 'Shot 04 • Cuối (2.97s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (2.97s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Một cây đèn phụ thứ 2 (INBEX LED Panel / Spot với chân đèn đen) xuất hiện ở góc sau lưng bên trái của ghế. Dòng chữ hướng dẫn hiện lên: '② Rim Light: dari samping belakang'. Đèn phụ bật sáng rọi vào góc sau đầu và vai, tạo ra một vệt sáng viền sắc nét, đảm bảo khi chủ thể ngồi vào sẽ được tách bạch hoàn toàn khỏi bức tường hậu cảnh.
+                    <span class="kf-label-tag end">Cuối (2.97s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Một cây đèn phụ thứ 2 (INBEX LED Panel / Spot với chân đèn đen) xuất hiện ở góc sau lưng bên trái của ghế. Dòng chữ hướng dẫn hiện lên: '② Rim Light: dari samping belakang'. Đèn phụ bật sáng rọi vào góc sau đầu và vai, tạo ra một vệt sáng viền sắc nét, đảm bảo khi chủ thể ngồi vào sẽ được tách bạch hoàn toàn khỏi bức tường hậu cảnh.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Hoàn thiện công thức chiếu sáng 2 điểm (2-Point Lighting Setup) kinh tế và tối ưu nhất cho phòng nhỏ; sự xuất hiện của đèn ven giải thích trực quan lý do tại sao video chuyên nghiệp lại có chiều sâu và độ trong vắt; tương phản giữa đèn chính mềm phía trước và đèn viền gắt phía sau.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Hoàn thiện công thức chiếu sáng 2 điểm (2-Point Lighting Setup) kinh tế và tối ưu nhất cho phòng nhỏ; sự xuất hiện của đèn ven giải thích trực quan lý do tại sao video chuyên nghiệp lại có chiều sâu và độ trong vắt; tương phản giữa đèn chính mềm phía trước và đèn viền gắt phía sau.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Dây điện và chân đèn lộ diện trong khung hình setup, tuy nhiên vì đây là hậu trường hướng dẫn (BTS Tutorial) nên điều này tạo cảm giác chân thực, không dàn dựng quá mức.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Dây điện và chân đèn lộ diện trong khung hình setup, tuy nhiên vì đây là hậu trường hướng dẫn (BTS Tutorial) nên điều này tạo cảm giác chân thực, không dàn dựng quá mức.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Không cần đến hệ thống 3-4 đèn phức tạp; chỉ cần 1 đèn chính (Key) 45 độ phía trước và 1 đèn ven (Rim) chéo góc sau lưng là đủ để biến bất kỳ căn phòng trọ hay phòng ngủ nào thành studio livestream chuẩn điện ảnh.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Không cần đến hệ thống 3-4 đèn phức tạp; chỉ cần 1 đèn chính (Key) 45 độ phía trước và 1 đèn ven (Rim) chéo góc sau lưng là đủ để biến bất kỳ căn phòng trọ hay phòng ngủ nào thành studio livestream chuẩn điện ảnh.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • BTS Wide Angle
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • BTS Wide Angle</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio cá nhân Inbex</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Hệ thống chiếu sáng 2 điểm (Key Light 45° + Rim Light sau lưng)</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt Stop-Motion đặt máy ảnh sang Shot 05</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Studio cá nhân Inbex
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Hệ thống chiếu sáng 2 điểm (Key Light 45° + Rim Light sau lưng)
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt Stop-Motion đặt máy ảnh sang Shot 05
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 05 • Cắt Stop-Motion đặt máy ảnh sang Shot 05</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • Cắt Stop-Motion đặt máy ảnh sang Shot 05</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_04_to_05.jpg', '⚡ Chuyển Cảnh Sang Shot 05 • Cắt Stop-Motion đặt máy ảnh sang Shot 05')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_04_to_05.jpg" alt="Transition Shot 04" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-5" data-start="3.0" data-end="4.53">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 05</span>
-                <button class="time-jump-btn" onclick="jumpToShot(5, 3.0)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    3.00s - 4.53s <span class="dur-pill">(1.53s)</span>
+
+        <article class="shot-card" id="shot-5">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 05</span>
+                <button class="shot-time-btn" onclick="jumpToShot(5, 3.0, 4.53)">
+                    ▶ 3.00s - 4.53s (1.53s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & Camera Alignment)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & Camera Alignment)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_start.jpg', 'Shot 05 • Khung hình Đầu (3.00s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_start.jpg', 'Shot 05 • Đầu (3.00s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (3.00s)</span>
+                    <span class="kf-label-tag start">Đầu (3.00s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_mid.jpg', 'Shot 05 • Cao trào Giữa (3.77s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_mid.jpg', 'Shot 05 • Giữa (3.77s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (3.77s)</span>
+                    <span class="kf-label-tag mid">Giữa (3.77s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_end.jpg', 'Shot 05 • Khung hình Cuối (4.53s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_end.jpg', 'Shot 05 • Cuối (4.53s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (4.53s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Bàn tay và người hướng dẫn đưa chiếc chân máy INBEX vững chắc màu đen cùng máy ảnh mirrorless vào đặt chính diện ở tiền cảnh. Nhãn chữ 'camera' xuất hiện chỉ thẳng vào thân máy. Người hướng dẫn căn chỉnh độ cao và góc máy hướng thẳng vào tâm điểm chiếc ghế trắng, hoàn tất tam giác thiết bị: Đèn chính - Đèn ven - Máy quay.
+                    <span class="kf-label-tag end">Cuối (4.53s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bàn tay và người hướng dẫn đưa chiếc chân máy INBEX vững chắc màu đen cùng máy ảnh mirrorless vào đặt chính diện ở tiền cảnh. Nhãn chữ 'camera' xuất hiện chỉ thẳng vào thân máy. Người hướng dẫn căn chỉnh độ cao và góc máy hướng thẳng vào tâm điểm chiếc ghế trắng, hoàn tất tam giác thiết bị: Đèn chính - Đèn ven - Máy quay.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Nhịp điệu setup mượt mà, đưa góc nhìn của khán giả từ 'chuẩn bị môi trường' sang 'góc đặt mắt nhìn'; chân máy INBEX được showcase khéo léo nhưng tự nhiên, đóng vai trò là xương sống cố định khung hình; bố cục có lớp lang rõ rệt (Foreground: Tripod/Camera -> Midground: Ghế chủ thể -> Background: Tủ gỗ & Rèm).</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Nhịp điệu setup mượt mà, đưa góc nhìn của khán giả từ 'chuẩn bị môi trường' sang 'góc đặt mắt nhìn'; chân máy INBEX được showcase khéo léo nhưng tự nhiên, đóng vai trò là xương sống cố định khung hình; bố cục có lớp lang rõ rệt (Foreground: Tripod/Camera -> Midground: Ghế chủ thể -> Background: Tủ gỗ & Rèm).</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Góc máy quay chính diện có thể che khuất một phần chiếc ghế trắng ở hậu cảnh; nhưng điều này lại làm tăng cảm giác chân thực của một buổi chuẩn bị ghi hình thực tế.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Góc máy quay chính diện có thể che khuất một phần chiếc ghế trắng ở hậu cảnh; nhưng điều này lại làm tăng cảm giác chân thực của một buổi chuẩn bị ghi hình thực tế.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Đặt chân máy ngang tầm mắt (Eye-Level) của người ngồi tạo cảm giác đối thoại bình đẳng, ấm cúng và đáng tin cậy nhất trong các video chia sẻ kiến thức hoặc bán hàng livestream.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Đặt chân máy ngang tầm mắt (Eye-Level) của người ngồi tạo cảm giác đối thoại bình đẳng, ấm cúng và đáng tin cậy nhất trong các video chia sẻ kiến thức hoặc bán hàng livestream.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • Multi-Layer Foreground-to-Background Depth
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • Multi-Layer Foreground-to-Background Depth</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio cá nhân Inbex</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Key Light 45° + Rim Light giữ nguyên trạng thái bật</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt nối tiếp chuyển động bước vào ghế sang Shot 06</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Studio cá nhân Inbex
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Key Light 45° + Rim Light giữ nguyên trạng thái bật
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt nối tiếp chuyển động bước vào ghế sang Shot 06
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 06 • Cắt nối tiếp chuyển động bước vào ghế sang Shot 06</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Cắt nối tiếp chuyển động bước vào ghế sang Shot 06</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_05_to_06.jpg', '⚡ Chuyển Cảnh Sang Shot 06 • Cắt nối tiếp chuyển động bước vào ghế sang Shot 06')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_05_to_06.jpg" alt="Transition Shot 05" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-6" data-start="4.57" data-end="6.07">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 06</span>
-                <button class="time-jump-btn" onclick="jumpToShot(6, 4.57)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    4.57s - 6.07s <span class="dur-pill">(1.50s)</span>
+
+        <article class="shot-card" id="shot-6">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 06</span>
+                <button class="shot-time-btn" onclick="jumpToShot(6, 4.57, 6.07)">
+                    ▶ 4.57s - 6.07s (1.50s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Wide 24mm f/2.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Entry & Ready Stance)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Entry & Ready Stance)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_start.jpg', 'Shot 06 • Khung hình Đầu (4.57s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_start.jpg', 'Shot 06 • Đầu (4.57s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (4.57s)</span>
+                    <span class="kf-label-tag start">Đầu (4.57s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_mid.jpg', 'Shot 06 • Cao trào Giữa (5.32s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_mid.jpg', 'Shot 06 • Giữa (5.32s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (5.32s)</span>
+                    <span class="kf-label-tag mid">Giữa (5.32s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_end.jpg', 'Shot 06 • Khung hình Cuối (6.07s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_end.jpg', 'Shot 06 • Cuối (6.07s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (6.07s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Nữ sáng tạo nội dung trong trang phục thường nhật trẻ trung (áo polo sọc ngang xám, quần ống suông be) bước nhanh từ vị trí máy quay qua khoảng trống phòng, tiến về phía chiếc ghế trắng, ngồi xuống ngay ngắn, chỉnh lại tư thế lưng thẳng và ánh mắt tập trung hướng về camera. Mọi thiết bị đã ở đúng vị trí hoàn hảo.
+                    <span class="kf-label-tag end">Cuối (6.07s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Nữ sáng tạo nội dung trong trang phục thường nhật trẻ trung (áo polo sọc ngang xám, quần ống suông be) bước nhanh từ vị trí máy quay qua khoảng trống phòng, tiến về phía chiếc ghế trắng, ngồi xuống ngay ngắn, chỉnh lại tư thế lưng thẳng và ánh mắt tập trung hướng về camera. Mọi thiết bị đã ở đúng vị trí hoàn hảo.</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Tạo sự chuyển giao nhịp nhàng (Pacing Bridge) giữa giai đoạn chuẩn bị hậu trường (Behind The Scenes) và thành quả cuối cùng (Final Output); động tác bước đi tạo năng lượng tích cực, thôi thúc sự háo hức xem kết quả hình ảnh khi nhìn qua ống kính camera thực tế.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Tạo sự chuyển giao nhịp nhàng (Pacing Bridge) giữa giai đoạn chuẩn bị hậu trường (Behind The Scenes) và thành quả cuối cùng (Final Output); động tác bước đi tạo năng lượng tích cực, thôi thúc sự háo hức xem kết quả hình ảnh khi nhìn qua ống kính camera thực tế.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Tốc độ di chuyển có thể hơi vội; tuy nhiên trong thời lượng short-form 9 giây, việc tối giản thao tác thừa là tối quan trọng để giữ nhịp xem.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Tốc độ di chuyển có thể hơi vội; tuy nhiên trong thời lượng short-form 9 giây, việc tối giản thao tác thừa là tối quan trọng để giữ nhịp xem.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Luôn có một phân cảnh ngắn kết nối hành vi của người sáng tạo bước vào khung hình trước khi cắt sang góc máy chính. Điều này giúp khán giả hiểu rõ mối quan hệ không gian (Spatial Awareness) giữa hậu trường và thước phim thành phẩm.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Luôn có một phân cảnh ngắn kết nối hành vi của người sáng tạo bước vào khung hình trước khi cắt sang góc máy chính. Điều này giúp khán giả hiểu rõ mối quan hệ không gian (Spatial Awareness) giữa hậu trường và thước phim thành phẩm.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Wide 24mm f/2.8 • Full Room Overview
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm f/2.8 • Full Room Overview</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio cá nhân Inbex</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Full 2-Point Setup sẵn sàng hoạt động</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Studio cá nhân Inbex
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Full 2-Point Setup sẵn sàng hoạt động
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07
-            </div>
-        </div>
 
-        
-        <div class="trans-section">
-            <div class="trans-header">
-                <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 07 • Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07</span>
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
             </div>
-            <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_06_to_07.jpg', '⚡ Chuyển Cảnh Sang Shot 07 • Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07')">
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_06_to_07.jpg" alt="Transition Shot 06" loading="lazy">
-                <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
-            </div>
-        </div>
+            
+        </article>
         
-    </div>
-    
-    <div class="shot-card" id="shot-7" data-start="6.1" data-end="9.27">
-        <div class="shot-card-header">
-            <div class="shot-header-left">
-                <span class="shot-index-badge">Shot 07</span>
-                <button class="time-jump-btn" onclick="jumpToShot(7, 6.1)">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    6.10s - 9.27s <span class="dur-pill">(3.17s)</span>
+
+        <article class="shot-card" id="shot-7">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 07</span>
+                <button class="shot-time-btn" onclick="jumpToShot(7, 6.1, 9.27)">
+                    ▶ 6.10s - 9.27s (3.17s)
                 </button>
             </div>
-            <div class="shot-header-right">
-                <span class="tech-tag">Portrait 50mm / 85mm f/1.8</span>
-            </div>
-        </div>
+            <h2 class="shot-headline">Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Portrait Payoff & Lighting Magic)</h2>
 
-        <div class="shot-headline-box">
-            <h3 class="shot-headline-title">Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Portrait Payoff & Lighting Magic)</h3>
-        </div>
-
-        <!-- 3 Keyframes Gallery -->
-        <div class="keyframes-grid">
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_start.jpg', 'Shot 07 • Khung hình Đầu (6.10s)')">
-                <div class="kf-img-wrap">
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_start.jpg', 'Shot 07 • Đầu (6.10s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
-                    <span class="kf-badge start">Đầu (6.10s)</span>
+                    <span class="kf-label-tag start">Đầu (6.10s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_mid.jpg', 'Shot 07 • Cao trào Giữa (7.68s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_mid.jpg', 'Shot 07 • Giữa (7.68s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
-                    <span class="kf-badge mid">Giữa (7.68s)</span>
+                    <span class="kf-label-tag mid">Giữa (7.68s)</span>
                 </div>
-            </div>
-            <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_end.jpg', 'Shot 07 • Khung hình Cuối (9.27s)')">
-                <div class="kf-img-wrap">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_end.jpg', 'Shot 07 • Cuối (9.27s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
-                    <span class="kf-badge end">Cuối (9.27s)</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- 3 Structured Critique Blocks -->
-        <div class="analysis-blocks-grid">
-            <div class="critique-block action-block">
-                <div class="block-title">
-                    <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                </div>
-                <div class="block-content">
-                    Cú cắt cực đắt sang góc máy chân dung tầm trung (Medium Close-Up Portrait). Khởi đầu khung hình bằng một tích tắc chủ thể hơi cúi đầu suy tư, sau đó nữ sáng tạo ngẩng cao đầu nhìn thẳng vào ống kính máy ảnh với nụ cười nhẹ tự tin, rạng rỡ. Ánh sáng từ combo INBEX phô diễn toàn bộ sức mạnh: Đèn chính Key Light 45° phủ sáng mịn màng làn da châu Á, tạo đốm sáng lấp lánh (catchlight) trong đôi mắt; đèn ven Rim Light tách sợi tóc và bờ vai sắc sảo khỏi nền gỗ ấm và cây xanh. Bức ảnh video từ một căn phòng bình thường bỗng chốc biến thành thước phim studio thương mại đẳng cấp!
+                    <span class="kf-label-tag end">Cuối (9.27s)</span>
                 </div>
             </div>
 
-            <div class="critique-block two-sided-critique">
-                <div class="block-title">
-                    <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Ưu &amp; Hạn Chế)
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Cú cắt cực đắt sang góc máy chân dung tầm trung (Medium Close-Up Portrait). Khởi đầu khung hình bằng một tích tắc chủ thể hơi cúi đầu suy tư, sau đó nữ sáng tạo ngẩng cao đầu nhìn thẳng vào ống kính máy ảnh với nụ cười nhẹ tự tin, rạng rỡ. Ánh sáng từ combo INBEX phô diễn toàn bộ sức mạnh: Đèn chính Key Light 45° phủ sáng mịn màng làn da châu Á, tạo đốm sáng lấp lánh (catchlight) trong đôi mắt; đèn ven Rim Light tách sợi tóc và bờ vai sắc sảo khỏi nền gỗ ấm và cây xanh. Bức ảnh video từ một căn phòng bình thường bỗng chốc biến thành thước phim studio thương mại đẳng cấp!</div>
                 </div>
-                <div class="two-column-critique">
-                    <div class="critique-col pro">
-                        <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <p>Cú chốt hạ (Payoff Shot) đạt điểm tuyệt đối về mặt tâm lý và thương mại; sự tương phản giữa quá trình setup thô 5 giây và chất lượng hình ảnh cuối cùng tạo cảm xúc kinh ngạc (Wow effect); chứng minh thuyết phục rằng không cần máy quay đắt tiền, chỉ cần biết setup đèn đúng kỹ thuật là video sẽ đẹp lung linh.</p>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Cú chốt hạ (Payoff Shot) đạt điểm tuyệt đối về mặt tâm lý và thương mại; sự tương phản giữa quá trình setup thô 5 giây và chất lượng hình ảnh cuối cùng tạo cảm xúc kinh ngạc (Wow effect); chứng minh thuyết phục rằng không cần máy quay đắt tiền, chỉ cần biết setup đèn đúng kỹ thuật là video sẽ đẹp lung linh.</div>
                     </div>
-                    <div class="critique-col con">
-                        <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <p>Shot diễn ra tĩnh trong hơn 3 giây cuối; nếu bổ sung thêm đồ họa Before / After nhấp nháy tắt mở đèn ven trong 1 giây sẽ càng làm nổi bật hơn nữa sự khác biệt ma thuật của đèn Rim Light.</p>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Shot diễn ra tĩnh trong hơn 3 giây cuối; nếu bổ sung thêm đồ họa Before / After nhấp nháy tắt mở đèn ven trong 1 giây sẽ càng làm nổi bật hơn nữa sự khác biệt ma thuật của đèn Rim Light.</div>
                     </div>
                 </div>
-            </div>
 
-            <div class="takeaway-block">
-                <div class="takeaway-title">
-                    <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                </div>
-                <div class="takeaway-body">
-                    Đỉnh cao của video bán thiết bị hoặc dạy quay dựng không phải là khoe thông số kỹ thuật (lumen, CRI, công suất), mà là cho khách hàng thấy NGAY LẬP TỨC thành phẩm hình ảnh cuối cùng đẹp mê hồn mà họ sẽ nhận được chỉ sau vài bước đơn giản.
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Đỉnh cao của video bán thiết bị hoặc dạy quay dựng không phải là khoe thông số kỹ thuật (lumen, CRI, công suất), mà là cho khách hàng thấy NGAY LẬP TỨC thành phẩm hình ảnh cuối cùng đẹp mê hồn mà họ sẽ nhận được chỉ sau vài bước đơn giản.</div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tech Specs -->
-        <div class="shot-specs-bar">
-            <div class="spec-item">
-                <span class="spec-label">📐 Góc máy &amp; Tiêu cự:</span> Portrait 50mm / 85mm f/1.8 • Medium Close-Up Eye-Level
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Portrait 50mm / 85mm f/1.8 • Medium Close-Up Eye-Level</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Góc quay chính diện ghế ngồi Studio</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Key Light 45° (da mặt mịn, catchlight mắt) + Rim Light trái sau (tóc & vai) + Background Ambient ấm áp</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Kết thúc video (Loop Outro sẵn sàng quay lại đầu)</span>
             </div>
-            <div class="spec-item">
-                <span class="spec-label">📍 Bối cảnh:</span> Góc quay chính diện ghế ngồi Studio
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">💡 Ánh sáng &amp; Màu sắc:</span> Key Light 45° (da mặt mịn, catchlight mắt) + Rim Light trái sau (tóc & vai) + Background Ambient ấm áp
-            </div>
-            <div class="spec-item">
-                <span class="spec-label">⚡ Chuyển cảnh:</span> Kết thúc video (Loop Outro sẵn sàng quay lại đầu)
-            </div>
-        </div>
 
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_07_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/transitions/trans_07_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
         
-    </div>
-    
         </div>
-    </div>
+
+        <!-- VISUAL GRID VIEW -->
+        <div class="visual-grid-view" id="gridView">
+            
+        <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 0.97)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
+            </div>
+            <div class="grid-card-body">Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Positioning)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(2, 1.0, 1.53)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <span class="grid-thumb-badge">Shot 02 • 1.00s</span>
+            </div>
+            <div class="grid-card-body">Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake - Red X Alert)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(3, 1.57, 2.17)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <span class="grid-thumb-badge">Shot 03 • 1.57s</span>
+            </div>
+            <div class="grid-card-body">Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45° Calibration - Green Check)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(4, 2.2, 2.97)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <span class="grid-thumb-badge">Shot 04 • 2.20s</span>
+            </div>
+            <div class="grid-card-body">Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Light Addition)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(5, 3.0, 4.53)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <span class="grid-thumb-badge">Shot 05 • 3.00s</span>
+            </div>
+            <div class="grid-card-body">Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & Camera Alignment)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(6, 4.57, 6.07)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <span class="grid-thumb-badge">Shot 06 • 4.57s</span>
+            </div>
+            <div class="grid-card-body">Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Entry & Ready Stance)</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(7, 6.1, 9.27)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <span class="grid-thumb-badge">Shot 07 • 6.10s</span>
+            </div>
+            <div class="grid-card-body">Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Portrait Payoff & Lighting Magic)</div>
+        </div>
+        
+        </div>
+
+        <!-- FOOTER LINKS SECTION -->
+        <footer class="bottom-links-section">
+            <div style="font-family:var(--font-heading-short); font-size:14px; font-weight:700; text-transform:uppercase; color:var(--cl-text-primary);">
+                🔗 Hệ Sinh Thái &amp; Kho Tài Nguyên Liên Quan
+            </div>
+            <div class="footer-links-grid">
+                <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
+                    <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
+                </a>
+                <a href="https://fedu.vn/scene.html" target="_blank" class="footer-link-card">
+                    <span>🎬 Cổng Tra Cứu Điện Ảnh Scene.html ↗</span>
+                </a>
+                <a href="https://drive.google.com/open?id=1fpyyC9R_VTSGbGweluV1L8q7xoPzr0Z_" target="_blank" class="footer-link-card">
+                    <span>📁 Mở Thư Mục Google Drive ↗</span>
+                </a>
+                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide" class="footer-link-card">
+                    <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
+                </a>
+            </div>
+        </footer>
+    </main>
 </div>
 
-<!-- Lightbox Modal -->
+<!-- LIGHTBOX MODAL -->
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <img src="" alt="Enlarged Keyframe" class="lightbox-content" id="lightboxImg">
-    <div class="lightbox-caption" id="lightboxCaption"></div>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
 </div>
 
 <script>
-function setViewMode(mode) {
-    const detailView = document.getElementById('storyboardView');
-    const gridView = document.getElementById('gridView');
-    const btnDetail = document.getElementById('tabDetail');
-    const btnGrid = document.getElementById('tabGrid');
+// Structured Shots Data
+const SHOTS_DATA = [{"id": 1, "st_frame": 0, "en_frame": 29, "mid_frame": 14, "st_time": 0.0, "en_time": 0.97, "duration": 0.97, "headline": "Định Vị Tâm Điểm Khung Hình & Đặt Ghế Chủ Thể (Subject Anchor Positioning)", "subject_action": "Người sáng tạo bước vào khung hình phòng trống phong cách tối giản (sàn gỗ sồi, rèm voan trắng, cây xanh nội thất), mang chiếc ghế bọc đệm trắng chân gỗ Scandinavia đặt chuẩn xác vào vị trí trung tâm sân khấu. Thao tác dứt khoát, gọn gàng, thiết lập ngay lập tức 'mỏ neo thị giác' (visual anchor) - nơi người xem sẽ tập trung toàn bộ ánh nhìn trong suốt video.", "pros": "Bố cục không gian thoáng đãng, động tác mở màn mang tính kích hoạt (action hook) cực nhanh; không vòng vo lý thuyết mà đi thẳng vào hành động thực chiến; màu trắng của ghế tương phản rõ nét với sàn gỗ ấm.", "cons": "Động tác cúi người đặt ghế diễn ra khá nhanh (< 1 giây); người xem chưa kịp định hình tổng thể không gian trước khi sang nhịp tiếp theo.", "takeaway": "Trong video hướng dẫn ngắn (Short-form Setup Guide), mở đầu bằng một hành vi thiết lập thực thể (đặt ghế/đặt bàn) sẽ lập tức giữ chân người xem vì não bộ con người luôn tò mò muốn biết 'sắp có ai ngồi vào đây' hoặc 'setup tiếp theo là gì'.", "lens_angle": "Wide 24mm f/2.8 • Wide Eye-Level Studio View", "location": "Không gian phòng khách / Studio cá nhân tối giản", "lighting_color": "Ánh sáng môi trường tự nhiên khuếch tán qua rèm trắng (Soft Ambient Daylight)", "transition": "Cắt cứng dạng Stop-Motion (Jump Cut Action) sang Shot 02"}, {"id": 2, "st_frame": 30, "en_frame": 46, "mid_frame": 38, "st_time": 1.0, "en_time": 1.53, "duration": 0.53, "headline": "Trực Quan Hóa Lỗi Bố Trí Đèn Ngang 90 Độ (Key Light Angle Mistake - Red X Alert)", "subject_action": "Chiếc đèn chiếu chính INBEX (Softbox Parabolic Octagon trên chân đèn trắng) được đưa vào khung hình nhưng đặt sai góc chiếu: đặt vuông góc 90 độ ngang hông/bên cạnh ghế. Ngay trên mặt đèn xuất hiện huy hiệu đồ họa cảnh báo hình tròn màu đỏ với dấu gạch chéo đỏ (Red X badge), đồng thời hiển thị phụ đề chú thích hướng dẫn: '① Key Light: 45° di depan wajah'. Cảnh báo người làm video không nên đặt đèn trực tiếp bên hông vì sẽ tạo bóng đổ gắt một bên mặt, mất chi tiết khối.", "pros": "Ứng dụng kỹ thuật 'Negative Hook / Error Warning' trực quan cực kỳ thông minh: thay vì chỉ nói lý thuyết, video mô phỏng ngay sai lầm phổ biến nhất của người mới bằng ký hiệu đồ họa đỏ rực, kích hoạt sự chú ý phản xạ của khán giả.", "cons": "Dấu cảnh báo xuất hiện ngắn (chỉ hơn 0.5 giây), người xem lướt nhanh có thể cần xem lại lần 2 để đọc trọn vẹn văn bản Indonesia.", "takeaway": "Đưa ra cảnh báo sai lầm trước khi chỉ ra cách làm đúng là công thức giữ chân (retention booster) hiệu quả nhất trong video chia sẻ kiến thức ngắn. Nhìn thấy dấu X đỏ, người xem sẽ lập tức dừng ngón tay lại để xem cách sửa.", "lens_angle": "Wide 24mm f/2.8 • Stationary Setup Angle", "location": "Studio cá nhân Inbex", "lighting_color": "Đèn chưa bật / Đặt sai góc 90° ngang hông", "transition": "Cắt Stop-Motion dịch chuyển đèn sang Shot 03"}, {"id": 3, "st_frame": 47, "en_frame": 65, "mid_frame": 56, "st_time": 1.57, "en_time": 2.17, "duration": 0.6, "headline": "Chuẩn Hóa Đèn Chính Góc 45 Độ & Bật Nguồn Sáng Mặt (Key Light 45° Calibration - Green Check)", "subject_action": "Chân đèn INBEX được xoay chuyển dịch về phía trước ghế một góc chếch 45 độ chuẩn xác. Huy hiệu đồ họa lập tức chuyển sang hình tròn xanh lá cây kèm dấu tích xanh (Green Checkmark). Đèn bật sáng bừng, chùm sáng mềm mịn (diffused soft light) quét qua bức tường trắng và sàn gỗ, tạo nên một trường sáng dịu mắt, sẵn sàng chiếu sáng gương mặt mẫu một cách tự nhiên nhất.", "pros": "Hiệu ứng chuyển đổi đối lập từ 'X đỏ' sang 'Tích xanh' mang lại sự thỏa mãn thị giác (Visual Satisfaction); ánh sáng từ softbox tỏa ra mềm mại làm bừng sáng góc phòng; góc 45 độ tạo tỷ lệ sáng tối Rembrandt kinh điển giúp gương mặt thon gọn và có chiều sâu.", "cons": "Thời lượng shot tương đối ngắn; nếu kéo dài thêm 0.3 giây kết hợp tiếng click bật công tắc (Switch SFX) sẽ tăng thêm tính xúc giác (tactile feedback).", "takeaway": "Đèn Key Light hoàn hảo cho livestream hoặc video nói chuyện (Talking Head) luôn nằm ở vị trí chếch 30 - 45 độ so với trục nhìn của camera và cao hơn tầm mắt một chút để tạo bóng mũi đổ nhẹ tự nhiên.", "lens_angle": "Wide 24mm f/2.8 • Stationary Setup Angle", "location": "Studio cá nhân Inbex", "lighting_color": "Đèn chính INBEX 100W Softbox góc 45° bật sáng (5600K Daylight)", "transition": "Cắt cứng Stop-Motion thêm nguồn sáng phụ sang Shot 04"}, {"id": 4, "st_frame": 66, "en_frame": 89, "mid_frame": 77, "st_time": 2.2, "en_time": 2.97, "duration": 0.77, "headline": "Bổ Sung Đèn Ven Sau Lưng Tách Khối Chủ Thể (Rim Light / Hair Light Addition)", "subject_action": "Một cây đèn phụ thứ 2 (INBEX LED Panel / Spot với chân đèn đen) xuất hiện ở góc sau lưng bên trái của ghế. Dòng chữ hướng dẫn hiện lên: '② Rim Light: dari samping belakang'. Đèn phụ bật sáng rọi vào góc sau đầu và vai, tạo ra một vệt sáng viền sắc nét, đảm bảo khi chủ thể ngồi vào sẽ được tách bạch hoàn toàn khỏi bức tường hậu cảnh.", "pros": "Hoàn thiện công thức chiếu sáng 2 điểm (2-Point Lighting Setup) kinh tế và tối ưu nhất cho phòng nhỏ; sự xuất hiện của đèn ven giải thích trực quan lý do tại sao video chuyên nghiệp lại có chiều sâu và độ trong vắt; tương phản giữa đèn chính mềm phía trước và đèn viền gắt phía sau.", "cons": "Dây điện và chân đèn lộ diện trong khung hình setup, tuy nhiên vì đây là hậu trường hướng dẫn (BTS Tutorial) nên điều này tạo cảm giác chân thực, không dàn dựng quá mức.", "takeaway": "Không cần đến hệ thống 3-4 đèn phức tạp; chỉ cần 1 đèn chính (Key) 45 độ phía trước và 1 đèn ven (Rim) chéo góc sau lưng là đủ để biến bất kỳ căn phòng trọ hay phòng ngủ nào thành studio livestream chuẩn điện ảnh.", "lens_angle": "Wide 24mm f/2.8 • BTS Wide Angle", "location": "Studio cá nhân Inbex", "lighting_color": "Hệ thống chiếu sáng 2 điểm (Key Light 45° + Rim Light sau lưng)", "transition": "Cắt Stop-Motion đặt máy ảnh sang Shot 05"}, {"id": 5, "st_frame": 90, "en_frame": 136, "mid_frame": 113, "st_time": 3.0, "en_time": 4.53, "duration": 1.53, "headline": "Cân Chỉnh Chân Máy & Khóa Trục Ống Kính Ngang Tầm Mắt (Tripod & Camera Alignment)", "subject_action": "Bàn tay và người hướng dẫn đưa chiếc chân máy INBEX vững chắc màu đen cùng máy ảnh mirrorless vào đặt chính diện ở tiền cảnh. Nhãn chữ 'camera' xuất hiện chỉ thẳng vào thân máy. Người hướng dẫn căn chỉnh độ cao và góc máy hướng thẳng vào tâm điểm chiếc ghế trắng, hoàn tất tam giác thiết bị: Đèn chính - Đèn ven - Máy quay.", "pros": "Nhịp điệu setup mượt mà, đưa góc nhìn của khán giả từ 'chuẩn bị môi trường' sang 'góc đặt mắt nhìn'; chân máy INBEX được showcase khéo léo nhưng tự nhiên, đóng vai trò là xương sống cố định khung hình; bố cục có lớp lang rõ rệt (Foreground: Tripod/Camera -> Midground: Ghế chủ thể -> Background: Tủ gỗ & Rèm).", "cons": "Góc máy quay chính diện có thể che khuất một phần chiếc ghế trắng ở hậu cảnh; nhưng điều này lại làm tăng cảm giác chân thực của một buổi chuẩn bị ghi hình thực tế.", "takeaway": "Đặt chân máy ngang tầm mắt (Eye-Level) của người ngồi tạo cảm giác đối thoại bình đẳng, ấm cúng và đáng tin cậy nhất trong các video chia sẻ kiến thức hoặc bán hàng livestream.", "lens_angle": "Wide 24mm f/2.8 • Multi-Layer Foreground-to-Background Depth", "location": "Studio cá nhân Inbex", "lighting_color": "Key Light 45° + Rim Light giữ nguyên trạng thái bật", "transition": "Cắt nối tiếp chuyển động bước vào ghế sang Shot 06"}, {"id": 6, "st_frame": 137, "en_frame": 182, "mid_frame": 159, "st_time": 4.57, "en_time": 6.07, "duration": 1.5, "headline": "Di Chuyển Vào Vị Trí & Khóa Bố Cục Sẵn Sàng Ghi Hình (Subject Entry & Ready Stance)", "subject_action": "Nữ sáng tạo nội dung trong trang phục thường nhật trẻ trung (áo polo sọc ngang xám, quần ống suông be) bước nhanh từ vị trí máy quay qua khoảng trống phòng, tiến về phía chiếc ghế trắng, ngồi xuống ngay ngắn, chỉnh lại tư thế lưng thẳng và ánh mắt tập trung hướng về camera. Mọi thiết bị đã ở đúng vị trí hoàn hảo.", "pros": "Tạo sự chuyển giao nhịp nhàng (Pacing Bridge) giữa giai đoạn chuẩn bị hậu trường (Behind The Scenes) và thành quả cuối cùng (Final Output); động tác bước đi tạo năng lượng tích cực, thôi thúc sự háo hức xem kết quả hình ảnh khi nhìn qua ống kính camera thực tế.", "cons": "Tốc độ di chuyển có thể hơi vội; tuy nhiên trong thời lượng short-form 9 giây, việc tối giản thao tác thừa là tối quan trọng để giữ nhịp xem.", "takeaway": "Luôn có một phân cảnh ngắn kết nối hành vi của người sáng tạo bước vào khung hình trước khi cắt sang góc máy chính. Điều này giúp khán giả hiểu rõ mối quan hệ không gian (Spatial Awareness) giữa hậu trường và thước phim thành phẩm.", "lens_angle": "Wide 24mm f/2.8 • Full Room Overview", "location": "Studio cá nhân Inbex", "lighting_color": "Full 2-Point Setup sẵn sàng hoạt động", "transition": "Cắt cứng đột phá (Hard Cut Payoff) sang cận cảnh Shot 07"}, {"id": 7, "st_frame": 183, "en_frame": 278, "mid_frame": 230, "st_time": 6.1, "en_time": 9.27, "duration": 3.17, "headline": "Cú Máy Cận Cảnh Điện Ảnh Chốt Hạ Hiệu Quả Ánh Sáng (Cinematic Portrait Payoff & Lighting Magic)", "subject_action": "Cú cắt cực đắt sang góc máy chân dung tầm trung (Medium Close-Up Portrait). Khởi đầu khung hình bằng một tích tắc chủ thể hơi cúi đầu suy tư, sau đó nữ sáng tạo ngẩng cao đầu nhìn thẳng vào ống kính máy ảnh với nụ cười nhẹ tự tin, rạng rỡ. Ánh sáng từ combo INBEX phô diễn toàn bộ sức mạnh: Đèn chính Key Light 45° phủ sáng mịn màng làn da châu Á, tạo đốm sáng lấp lánh (catchlight) trong đôi mắt; đèn ven Rim Light tách sợi tóc và bờ vai sắc sảo khỏi nền gỗ ấm và cây xanh. Bức ảnh video từ một căn phòng bình thường bỗng chốc biến thành thước phim studio thương mại đẳng cấp!", "pros": "Cú chốt hạ (Payoff Shot) đạt điểm tuyệt đối về mặt tâm lý và thương mại; sự tương phản giữa quá trình setup thô 5 giây và chất lượng hình ảnh cuối cùng tạo cảm xúc kinh ngạc (Wow effect); chứng minh thuyết phục rằng không cần máy quay đắt tiền, chỉ cần biết setup đèn đúng kỹ thuật là video sẽ đẹp lung linh.", "cons": "Shot diễn ra tĩnh trong hơn 3 giây cuối; nếu bổ sung thêm đồ họa Before / After nhấp nháy tắt mở đèn ven trong 1 giây sẽ càng làm nổi bật hơn nữa sự khác biệt ma thuật của đèn Rim Light.", "takeaway": "Đỉnh cao của video bán thiết bị hoặc dạy quay dựng không phải là khoe thông số kỹ thuật (lumen, CRI, công suất), mà là cho khách hàng thấy NGAY LẬP TỨC thành phẩm hình ảnh cuối cùng đẹp mê hồn mà họ sẽ nhận được chỉ sau vài bước đơn giản.", "lens_angle": "Portrait 50mm / 85mm f/1.8 • Medium Close-Up Eye-Level", "location": "Góc quay chính diện ghế ngồi Studio", "lighting_color": "Key Light 45° (da mặt mịn, catchlight mắt) + Rim Light trái sau (tóc & vai) + Background Ambient ấm áp", "transition": "Kết thúc video (Loop Outro sẵn sàng quay lại đầu)"}];
+const player = document.getElementById('mainPlayer');
+const playBtn = document.getElementById('playBtn');
+const timeDisplay = document.getElementById('timeDisplay');
+const loopBtn = document.getElementById('loopBtn');
 
-    if (mode === 'grid') {
-        detailView.style.display = 'none';
-        gridView.style.display = 'grid';
-        btnGrid.classList.add('active');
-        btnDetail.classList.remove('active');
-    } else {
+let currentLoopShot = null;
+let isLooping = false;
+
+// Timeupdate listener
+player.addEventListener('timeupdate', () => {
+    const ct = player.currentTime;
+    timeDisplay.textContent = ;
+
+    if (isLooping && currentLoopShot) {
+        if (ct >= currentLoopShot.en_time) {
+            player.currentTime = currentLoopShot.st_time;
+        }
+    }
+});
+
+player.addEventListener('play', () => { playBtn.textContent = '⏸ Tạm dừng'; });
+player.addEventListener('pause', () => { playBtn.textContent = '▶ Phát'; });
+
+function togglePlay() {
+    if (player.paused) player.play();
+    else player.pause();
+}
+
+function setSpeed(speed) {
+    player.playbackRate = speed;
+    document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
+        if (b.textContent === speed + 'x') b.classList.add('active');
+        else if (b.textContent.includes('x')) b.classList.remove('active');
+    });
+}
+
+function stepFrame(frames) {
+    const fps = 30.0 || 24;
+    player.currentTime += frames / fps;
+}
+
+function jumpToShot(shotId, stTime, enTime) {
+    player.currentTime = stTime;
+    player.play();
+    currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
+
+    // Highlight card
+    document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
+    const targetCard = document.getElementById();
+    if (targetCard) {
+        targetCard.style.borderColor = 'var(--cl-accent)';
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function toggleLoop() {
+    isLooping = !isLooping;
+    loopBtn.classList.toggle('active', isLooping);
+}
+
+function switchView(viewName) {
+    const detailView = document.getElementById('detailView');
+    const gridView = document.getElementById('gridView');
+    const tabDetail = document.getElementById('tabDetail');
+    const tabGrid = document.getElementById('tabGrid');
+
+    if (viewName === 'detail') {
         detailView.style.display = 'flex';
         gridView.style.display = 'none';
-        btnDetail.classList.add('active');
-        btnGrid.classList.remove('active');
+        tabDetail.classList.add('active');
+        tabGrid.classList.remove('active');
+    } else {
+        detailView.style.display = 'none';
+        gridView.style.display = 'grid';
+        tabDetail.classList.remove('active');
+        tabGrid.classList.add('active');
     }
 }
 
-function jumpToShot(shotId, timeSec) {
-    const video = document.getElementById('playerVideo');
-    if (video) {
-        video.currentTime = timeSec;
-        video.play().catch(() => {});
-    }
-    setViewMode('detail');
-    const el = document.getElementById('shot-' + shotId);
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        el.style.borderColor = 'var(--accent-blue)';
-        setTimeout(() => {
-            el.style.borderColor = '';
-        }, 1500);
-    }
-}
-
-function openLightbox(imgSrc, captionText) {
-    const modal = document.getElementById('lightboxModal');
-    const img = document.getElementById('lightboxImg');
-    const cap = document.getElementById('lightboxCaption');
-    img.src = imgSrc;
-    cap.innerText = captionText;
-    modal.style.display = 'flex';
+// Lightbox
+function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    document.getElementById('lightboxModal').classList.add('active');
 }
 
 function closeLightbox() {
-    document.getElementById('lightboxModal').style.display = 'none';
+    document.getElementById('lightboxModal').classList.remove('active');
 }
 
 document.addEventListener('keydown', (e) => {
