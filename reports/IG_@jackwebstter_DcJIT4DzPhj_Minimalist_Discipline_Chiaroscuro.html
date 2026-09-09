@@ -2,156 +2,263 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Khung Hình Điện Ảnh Tối Giản Về Kỷ Luật Bản Thân - @jackwebstter • Director's Report</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Phân Tích Video Điện Ảnh - @jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro • Director's Report</title>
+
+<!-- Fonts: Google Fonts Fallbacks -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
 <style>
-:root {
-    --bg-main: #0b0f17;
-    --bg-card: #131b2a;
-    --bg-card-hover: #1c273c;
-    --bg-sidebar: #0f1624;
-    --border-color: #202c42;
-    --border-active: #38bdf8;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-amber: #f59e0b;
-    --accent-blue: #38bdf8;
-    --accent-emerald: #10b981;
-    --accent-rose: #f43f5e;
-    --accent-purple: #c084fc;
-    --font-heading: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Be Vietnam Pro', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
+/* ═══ 1. FONT DECLARATIONS (Local & Web Fallbacks) ═══ */
+@font-face {
+    font-family: 'FD Aeonik Extended';
+    src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
+         url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
+         local('FD Aeonik Extended Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
+         local('FD Aeonik Regular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
+         local('FD Aeonik SemiBold');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
+         local('FD Aeonik Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
+         local('Tiempos Text Regular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
+         local('Tiempos Text Medium');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         local('Tiempos Text Regular Italic');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; }
+/* ═══ 2. DESIGN TOKENS (Light Theme - Chuẩn 30ngayviral.fedu.vn) ═══ */
+:root {
+    --cl-bg-main: #ffffff;
+    --cl-bg-tint: #f8fafc;
+    --cl-bg-card: #ffffff;
+    --cl-bg-card-muted: #f1f5f9;
+    --cl-border: rgba(0, 0, 0, 0.08);
+    --cl-border-hover: rgba(26, 115, 232, 0.35);
+    --cl-line: rgba(0, 0, 0, 0.06);
+
+    /* Ink Contrast WCAG AAA */
+    --cl-text-primary: #090d16;  /* Slate 950 (18.8:1) */
+    --cl-text-body: #0f172a;     /* Slate 900 (16.5:1 Mực in cao cấp) */
+    --cl-text-secondary: #475569;/* Slate 600 */
+    --cl-text-muted: #64748b;    /* Slate 500 */
+
+    /* Accent & Brand Colors */
+    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
+    --cl-accent-tint: rgba(26, 115, 232, 0.08);
+    --cl-amber: #d97706;         /* Amber 600 */
+    --cl-amber-bg: #fffbeb;      /* Amber 50 */
+    --cl-amber-border: #fef3c7;  /* Amber 100 */
+    --cl-emerald: #059669;       /* Emerald 600 */
+    --cl-emerald-bg: #f0fdf4;    /* Emerald 50 */
+    --cl-emerald-border: #bbf7d0;/* Emerald 200 */
+    --cl-rose: #e11d48;          /* Rose 600 */
+    --cl-rose-bg: #fff1f2;       /* Rose 50 */
+    --cl-rose-border: #fecdd3;   /* Rose 200 */
+
+    /* Typography Stacks */
+    --font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
+    --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Video Aspect Ratio */
+    --video-aspect-ratio: 4 / 3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
+    background-color: var(--cl-bg-main);
+    color: var(--cl-text-body);
     font-family: var(--font-body);
-    line-height: 1.6;
-    font-size: 14.5px;
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
 }
 
-/* Top Navigation Header */
+/* ═══ 3. TOP NAVIGATION HEADER ═══ */
 .top-nav {
-    background: rgba(15, 22, 36, 0.95);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--border-color);
-    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--cl-line);
+    padding: 12px 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 200;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 .nav-brand {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-family: var(--font-heading);
+    gap: 8px;
+    font-family: var(--font-heading-short);
     font-weight: 700;
-    font-size: 15px;
-    color: var(--text-primary);
+    font-size: 14.5px;
+    color: var(--cl-text-primary);
     text-decoration: none;
+    letter-spacing: -0.01em;
 }
 .nav-badge {
-    background: rgba(56, 189, 248, 0.15);
-    color: var(--accent-blue);
-    padding: 3px 8px;
-    border-radius: 6px;
+    background: var(--cl-accent-tint);
+    color: var(--cl-accent);
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
     font-size: 11px;
     font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border: 1px solid rgba(56, 189, 248, 0.3);
+    border: 1px solid rgba(26, 115, 232, 0.18);
 }
-.nav-actions {
+.nav-meta-title {
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    color: var(--cl-text-secondary);
+    font-weight: 500;
+    max-width: 480px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nav-right {
     display: flex;
     align-items: center;
     gap: 10px;
 }
 .nav-btn {
-    background: var(--bg-card);
-    color: var(--text-secondary);
-    border: 1px solid var(--border-color);
-    padding: 6px 12px;
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 6px 14px;
     border-radius: 8px;
+    font-family: var(--font-ui);
     font-size: 12.5px;
     font-weight: 600;
-    cursor: pointer;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    text-decoration: none;
+    cursor: pointer;
     transition: all 0.2s ease;
 }
 .nav-btn:hover {
-    color: var(--text-primary);
-    border-color: var(--accent-blue);
-    background: var(--bg-card-hover);
+    background: var(--cl-bg-tint);
+    border-color: var(--cl-accent);
+    color: var(--cl-accent);
 }
 .nav-btn.primary {
-    background: var(--accent-blue);
-    color: #0b0f17;
-    border-color: var(--accent-blue);
+    background: var(--cl-accent);
+    border-color: var(--cl-accent);
+    color: #ffffff;
 }
 .nav-btn.primary:hover {
-    opacity: 0.9;
+    background: #1558b0;
 }
 
-/* Main Layout Split Screen */
-.main-wrapper {
+/* ═══ 4. MAIN LAYOUT (DESKTOP SPLIT-SCREEN & MOBILE-FIRST) ═══ */
+.layout-container {
     display: flex;
     flex: 1;
-    width: 100%;
-    max-width: 1600px;
+    max-width: 1680px;
     margin: 0 auto;
+    width: 100%;
 }
 
-/* Left Sticky Video Column */
-.player-column {
-    width: 420px;
+/* LEFT COLUMN: STICKY DIRECTOR PLAYER */
+.left-player-col {
+    width: 460px;
     flex-shrink: 0;
-    padding: 24px 16px 24px 24px;
+    padding: 24px;
+    border-right: 1px solid var(--cl-line);
+    background: var(--cl-bg-tint);
     position: sticky;
     top: 57px;
     height: calc(100vh - 57px);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    border-right: 1px solid var(--border-color);
+    gap: 18px;
 }
-.video-frame-box {
-    background: #000;
+.player-box {
+    background: #000000;
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     position: relative;
-    aspect-ratio: 4 / 3;
-    max-height: 520px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    aspect-ratio: var(--video-aspect-ratio);
+    max-height: 560px;
+    width: 100%;
 }
-.video-frame-box video {
+.player-box video {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    display: block;
 }
-.player-controls {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
+
+/* DIRECTOR CONTROLS BAR */
+.director-controls {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
     border-radius: 12px;
     padding: 12px;
     display: flex;
@@ -164,1316 +271,1134 @@ body {
     justify-content: space-between;
     gap: 8px;
 }
+.ctrl-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
 .ctrl-btn {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    padding: 6px 10px;
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 5px 10px;
     border-radius: 6px;
-    font-size: 12px;
+    font-family: var(--font-ui);
+    font-size: 11.5px;
     font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    transition: all 0.15s;
+    transition: all 0.15s ease;
 }
-.ctrl-btn:hover {
-    background: var(--bg-card-hover);
-    border-color: var(--accent-blue);
+.ctrl-btn:hover, .ctrl-btn.active {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
 }
-.ctrl-btn.active {
-    background: rgba(56, 189, 248, 0.2);
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-.speed-pills {
-    display: flex;
-    gap: 4px;
-}
-.speed-pill {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 4px 6px;
-    border-radius: 4px;
-    font-size: 11px;
-    cursor: pointer;
+.time-display {
     font-family: var(--font-mono);
-}
-.speed-pill.active {
-    background: var(--accent-blue);
-    color: #0b0f17;
-    font-weight: 700;
-    border-color: var(--accent-blue);
+    font-size: 12px;
+    color: var(--cl-text-secondary);
+    font-weight: 600;
 }
 
-/* Right Content Column */
-.content-column {
-    flex: 1;
-    padding: 24px 28px 40px 24px;
-    min-width: 0;
-}
-
-/* Header Banner */
-.report-header {
-    margin-bottom: 24px;
-}
-.meta-tags-flex {
+/* VIDEO INFO CARD IN SIDEBAR */
+.video-meta-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: column;
     gap: 8px;
-    margin-bottom: 12px;
 }
-.author-ig-badge {
-    background: rgba(244, 63, 94, 0.12);
-    color: #fb7185;
-    border: 1px solid rgba(244, 63, 94, 0.3);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
+.video-meta-title {
+    font-family: var(--font-heading-long);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cl-text-primary);
+    line-height: 1.4;
+}
+.video-meta-author {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--cl-text-secondary);
+    display: flex;
     align-items: center;
-    gap: 4px;
-    transition: all 0.2s;
+    gap: 6px;
 }
-.author-ig-badge:hover {
-    background: rgba(244, 63, 94, 0.25);
-    color: #fff;
+.author-link {
+    color: var(--cl-accent);
+    text-decoration: none;
+    font-weight: 600;
 }
-.stat-pill {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-family: var(--font-mono);
-}
-.report-title {
-    font-family: var(--font-heading);
-    font-size: 24px;
-    font-weight: 800;
-    line-height: 1.35;
-    margin-bottom: 12px;
-    color: var(--text-primary);
-}
-.report-summary {
-    color: var(--text-secondary);
-    font-size: 14.5px;
-    line-height: 1.7;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--accent-amber);
-    padding: 14px 16px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+.author-link:hover {
+    text-decoration: underline;
 }
 
-/* View Mode Switcher */
-.view-switch-bar {
+/* RIGHT COLUMN: STORYBOARD CONTENT & AUDIT */
+.right-content-col {
+    flex: 1;
+    padding: 32px 40px 80px 40px;
+    min-width: 0;
+    background: #ffffff;
+}
+
+/* VIEW SWITCHER & HEADER BAR */
+.content-header-bar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 8px 12px;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cl-line);
 }
-.tab-pills {
+.view-tabs {
     display: flex;
-    gap: 6px;
+    gap: 8px;
+    background: var(--cl-bg-tint);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--cl-border);
 }
-.tab-btn {
+.view-tab {
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--cl-text-secondary);
     background: transparent;
-    border: 1px solid transparent;
-    color: var(--text-secondary);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12.5px;
-    font-weight: 600;
+    border: none;
     cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.15s;
+    transition: all 0.2s;
 }
-.tab-btn.active {
-    background: var(--bg-sidebar);
-    border-color: var(--border-color);
-    color: var(--accent-blue);
-}
-.drawer-toggle-btn {
-    background: var(--bg-sidebar);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 12.5px;
-    font-weight: 600;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
-.drawer-toggle-btn:hover {
-    color: var(--text-primary);
-    border-color: var(--accent-blue);
+.view-tab.active {
+    background: #ffffff;
+    color: var(--cl-text-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-/* Shot Cards (Detail View) */
-.shots-timeline {
+/* HERO OVERVIEW CARD */
+.overview-hero-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+}
+.overview-hero-title {
+    font-family: var(--font-heading-short);
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cl-text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+.overview-hero-desc {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--cl-text-body);
+    margin-bottom: 18px;
+}
+.overview-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cl-line);
+}
+.overview-spec-item {
+    font-family: var(--font-ui);
+    font-size: 13px;
+}
+.spec-tag-label {
+    color: var(--cl-text-muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+}
+.spec-tag-value {
+    color: var(--cl-text-primary);
+    font-weight: 600;
+}
+
+/* ═══ 5. STORYBOARD CARDS (ZEBRA STRIPING) ═══ */
+.shots-container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 36px;
 }
 .shot-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 14px;
-    padding: 20px;
-    transition: all 0.2s ease;
-    scroll-margin-top: 80px;
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 .shot-card:hover {
-    border-color: rgba(56, 189, 248, 0.4);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
+.shot-card:nth-child(even) {
+    background: var(--cl-bg-tint);
+}
+
+/* SHOT CARD HEADER */
 .shot-card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid rgba(255,255,255,0.06);
 }
-.shot-header-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.shot-index-badge {
-    background: var(--accent-blue);
-    color: #0b0f17;
-    font-weight: 800;
-    font-size: 12px;
-    padding: 4px 8px;
-    border-radius: 6px;
+.shot-id-pill {
+    background: var(--cl-text-primary);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 9999px;
     font-family: var(--font-mono);
-}
-.time-jump-btn {
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    color: var(--accent-blue);
-    padding: 4px 10px;
-    border-radius: 6px;
     font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+.shot-time-btn {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-accent);
+    padding: 4px 12px;
+    border-radius: 8px;
     font-family: var(--font-mono);
+    font-size: 12.5px;
     font-weight: 600;
-    cursor: pointer;
     display: inline-flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    cursor: pointer;
     transition: all 0.15s;
 }
-.time-jump-btn:hover {
-    background: var(--accent-blue);
-    color: #0b0f17;
+.shot-time-btn:hover {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
 }
-.dur-pill {
-    opacity: 0.8;
-    font-weight: 400;
-}
-.tech-tag {
-    background: var(--bg-main);
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 11.5px;
-    font-family: var(--font-mono);
-}
-.shot-headline-box {
-    margin-bottom: 16px;
-}
-.shot-headline-title {
-    font-family: var(--font-heading);
-    font-size: 16.5px;
+.shot-headline {
+    font-family: var(--font-heading-long);
+    font-size: 18.5px;
     font-weight: 700;
-    color: var(--text-primary);
+    color: var(--cl-text-primary);
     line-height: 1.45;
-}
-
-/* Keyframes Grid (3 items) */
-.keyframes-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
     margin-bottom: 18px;
 }
-.keyframe-item {
-    cursor: pointer;
-    border-radius: 8px;
+
+/* 3 KEYFRAMES GALLERY */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+.kf-card {
+    background: #000000;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    border: 1px solid var(--border-color);
-    background: #000;
-    aspect-ratio: 4 / 3;
+    aspect-ratio: var(--video-aspect-ratio);
+    cursor: pointer;
+    border: 1px solid var(--cl-border);
 }
-.keyframe-item img {
+.kf-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
     transition: transform 0.25s ease;
 }
-.keyframe-item:hover img {
+.kf-card:hover img {
     transform: scale(1.03);
 }
-.kf-badge {
+.kf-label-tag {
     position: absolute;
-    bottom: 6px;
-    left: 6px;
-    background: rgba(0,0,0,0.75);
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 10px;
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 5px;
     font-family: var(--font-mono);
+    font-size: 11px;
     font-weight: 600;
 }
-.kf-badge.start { border-left: 3px solid var(--accent-blue); }
-.kf-badge.mid { border-left: 3px solid var(--accent-amber); }
-.kf-badge.end { border-left: 3px solid var(--accent-emerald); }
+.kf-label-tag.start { border-left: 3px solid var(--cl-accent); }
+.kf-label-tag.mid { border-left: 3px solid var(--cl-amber); }
+.kf-label-tag.end { border-left: 3px solid var(--cl-emerald); }
 
-/* Analysis 3 Blocks Grid */
-.analysis-blocks-grid {
+/* 3 STRUCTURED CRITIQUE BLOCKS */
+.critique-blocks-grid {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
+    margin-bottom: 20px;
 }
-.critique-block {
-    background: rgba(15, 22, 36, 0.7);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    padding: 14px 16px;
+
+/* BLOCK 1: SUBJECT & ACTION */
+.block-subject-action {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px 20px;
 }
-.block-title {
-    font-family: var(--font-heading);
+.block-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    font-size: 13.5px;
-    color: var(--text-primary);
-    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--cl-text-muted);
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
-.block-content {
-    font-size: 13.5px;
-    color: #cbd5e1;
-    line-height: 1.65;
+.block-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--cl-text-body);
+    line-height: 1.7;
 }
-.two-column-critique {
+
+/* BLOCK 2: TWO-SIDED COMPOSITION CRITIQUE */
+.block-two-sided {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
 }
-.critique-col {
-    padding: 10px 12px;
-    border-radius: 8px;
-    font-size: 13px;
-    line-height: 1.6;
+.critique-side {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
-.critique-col.pro {
-    background: rgba(16, 185, 129, 0.08);
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    color: #a7f3d0;
+.critique-side.pro {
+    background: var(--cl-emerald-bg);
+    border: 1px solid var(--cl-emerald-border);
 }
-.critique-col.con {
-    background: rgba(244, 63, 94, 0.08);
-    border: 1px solid rgba(244, 63, 94, 0.2);
-    color: #fecdd3;
+.critique-side.con {
+    background: var(--cl-rose-bg);
+    border: 1px solid var(--cl-rose-border);
 }
-.col-header {
+.side-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 6px;
-    font-size: 12.5px;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
 }
-.critique-col.pro .col-header { color: var(--accent-emerald); }
-.critique-col.con .col-header { color: var(--accent-rose); }
+.critique-side.pro .side-header { color: var(--cl-emerald); }
+.critique-side.con .side-header { color: var(--cl-rose); }
+.side-content {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--cl-text-body);
+}
 
-.takeaway-block {
-    background: rgba(245, 158, 11, 0.08);
-    border: 1px solid rgba(245, 158, 11, 0.25);
-    border-left: 4px solid var(--accent-amber);
-    border-radius: 8px;
-    padding: 12px 14px;
+/* BLOCK 3: ACTIONABLE TAKEAWAY */
+.block-takeaway {
+    background: var(--cl-amber-bg);
+    border: 1px solid var(--cl-amber-border);
+    border-radius: 12px;
+    padding: 16px 20px;
 }
-.takeaway-title {
+.takeaway-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
     font-weight: 700;
-    color: var(--accent-amber);
-    font-size: 13px;
-    margin-bottom: 4px;
+    text-transform: uppercase;
+    color: var(--cl-amber);
+    margin-bottom: 6px;
     display: flex;
     align-items: center;
     gap: 6px;
 }
 .takeaway-body {
-    font-size: 13.5px;
-    color: #fef3c7;
-    line-height: 1.6;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: #78350f;
+    line-height: 1.7;
 }
 
-/* Tech Specs Footer */
-.shot-specs-bar {
+/* SPECS STRIP */
+.shot-specs-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 12px;
-    margin-top: 14px;
-    padding-top: 12px;
-    border-top: 1px solid rgba(255,255,255,0.06);
-    font-size: 12px;
-    color: var(--text-muted);
+    gap: 10px 16px;
+    padding: 12px 16px;
+    background: var(--cl-bg-tint);
+    border-radius: 10px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--cl-text-secondary);
+    margin-bottom: 18px;
 }
-.spec-item {
+.spec-pill strong {
+    color: var(--cl-text-primary);
+}
+
+/* TRANSITION CARD */
+.transition-card {
+    background: var(--cl-bg-tint);
+    border: 1px dashed var(--cl-border);
+    border-radius: 14px;
+    padding: 16px;
+}
+.trans-title-bar {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--cl-accent);
+    margin-bottom: 10px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
 }
-.spec-label {
-    color: var(--text-secondary);
-    font-weight: 600;
-}
-
-/* Transitions Section */
-.trans-section {
-    margin-top: 16px;
-    background: var(--bg-sidebar);
-    border: 1px dashed var(--border-color);
-    border-radius: 10px;
-    padding: 12px;
-}
-.trans-header {
-    font-size: 12px;
-    color: var(--accent-blue);
-    font-weight: 600;
-    margin-bottom: 8px;
-}
-.trans-img-wrap {
+.trans-img-container {
     cursor: pointer;
-    border-radius: 6px;
+    border-radius: 10px;
     overflow: hidden;
     position: relative;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--cl-border);
+    background: #000000;
 }
-.trans-img-wrap img {
+.trans-img-container img {
     width: 100%;
+    height: auto;
     display: block;
 }
-.zoom-indicator {
+.trans-zoom-badge {
     position: absolute;
-    bottom: 6px;
-    right: 6px;
-    background: rgba(0,0,0,0.7);
-    color: #fff;
-    padding: 2px 6px;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
     border-radius: 4px;
-    font-size: 10px;
 }
 
-/* Visual Grid View */
-.grid-view-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+/* ═══ 6. VISUAL GRID VIEW (ALTERNATE VIEW) ═══ */
+.visual-grid-view {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
 }
-.grid-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
+.grid-shot-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.2s;
 }
-.grid-card:hover {
+.grid-shot-card:hover {
     transform: translateY(-3px);
-    border-color: var(--accent-blue);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
-.grid-thumb-box {
-    aspect-ratio: 4 / 3;
-    background: #000;
+.grid-thumb-wrap {
+    aspect-ratio: var(--video-aspect-ratio);
     position: relative;
+    background: #000;
 }
-.grid-thumb-box img {
+.grid-thumb-wrap img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
-.grid-time-tag {
-    position: absolute;
-    bottom: 6px;
-    right: 6px;
-    background: rgba(0,0,0,0.8);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-family: var(--font-mono);
-}
-.grid-shot-tag {
+.grid-thumb-badge {
     position: absolute;
     top: 6px;
     left: 6px;
-    background: var(--accent-blue);
-    color: #0b0f17;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
     padding: 2px 6px;
     border-radius: 4px;
-    font-size: 10px;
-    font-weight: 700;
     font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
 }
-.grid-card-desc {
-    padding: 10px;
+.grid-card-body {
+    padding: 10px 12px;
+    font-family: var(--font-ui);
     font-size: 12px;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: var(--cl-text-primary);
     line-height: 1.4;
 }
 
-/* Drawer Jump Menu */
-.drawer-backdrop {
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    backdrop-filter: blur(4px);
-    z-index: 200;
-    display: none;
-}
-.drawer-container {
-    position: fixed;
-    top: 0; right: -360px; width: 340px; height: 100%;
-    background: var(--bg-sidebar);
-    border-left: 1px solid var(--border-color);
-    z-index: 201;
-    display: flex;
-    flex-direction: column;
-    transition: right 0.3s ease;
-}
-.drawer-header {
-    padding: 16px;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.drawer-title {
-    font-weight: 700;
-    font-size: 15px;
-}
-.drawer-close {
-    background: none; border: none; color: var(--text-muted);
-    font-size: 20px; cursor: pointer;
-}
-.drawer-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.drawer-shot-row {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    padding: 10px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    transition: all 0.15s;
-}
-.drawer-shot-row:hover {
-    border-color: var(--accent-blue);
-    background: var(--bg-card-hover);
-}
-.d-badge {
-    color: var(--accent-blue);
-    font-weight: 700;
-    font-size: 11px;
-    font-family: var(--font-mono);
-}
-.d-time {
-    font-size: 10.5px;
-    color: var(--text-muted);
-    font-family: var(--font-mono);
-}
-.d-title {
-    font-size: 12px;
-    color: var(--text-primary);
-    line-height: 1.35;
-}
-
-/* Lightbox Modal */
+/* ═══ 7. LIGHTBOX MODAL ═══ */
 .lightbox-modal {
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(5, 8, 15, 0.95);
-    backdrop-filter: blur(8px);
-    z-index: 300;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    z-index: 999;
     display: none;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    padding: 20px;
+    padding: 24px;
 }
+.lightbox-modal.active { display: flex; }
 .lightbox-content {
-    max-width: 90vw;
-    max-height: 80vh;
-    border-radius: 12px;
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    max-width: 92vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
 }
 .lightbox-content img {
     max-width: 100%;
-    max-height: 80vh;
-    display: block;
+    max-height: 82vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 .lightbox-caption {
-    margin-top: 14px;
-    color: var(--text-secondary);
+    color: #ffffff;
+    font-family: var(--font-ui);
     font-size: 14px;
+    font-weight: 500;
     text-align: center;
 }
 .lightbox-close {
     position: absolute;
     top: 20px; right: 24px;
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: #fff;
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #ffffff;
+    font-size: 32px;
+    background: none; border: none;
     cursor: pointer;
 }
 
-/* Responsive Breakpoints */
-@media (max-width: 1024px) {
-    .main-wrapper {
+/* ═══ 8. FOOTER LINKS BLOCK ═══ */
+.bottom-links-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+.footer-link-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--cl-text-primary);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+}
+.footer-link-card:hover {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
+}
+
+/* ═══ 9. RESPONSIVE MOBILE RULES (< 992px) ═══ */
+@media (max-width: 992px) {
+    .layout-container {
         flex-direction: column;
     }
-    .player-column {
+    .left-player-col {
         width: 100%;
         position: sticky;
         top: 57px;
         height: auto;
-        border-right: none;
-        border-bottom: 1px solid var(--border-color);
         padding: 16px;
-        z-index: 90;
-        background: var(--bg-main);
+        border-right: none;
+        border-bottom: 1px solid var(--cl-line);
+        z-index: 100;
     }
-    .video-frame-box {
-        max-height: 380px;
+    .player-box {
+        max-height: 420px;
     }
-    .two-column-critique {
+    .right-content-col {
+        padding: 20px 16px 60px 16px;
+    }
+    .block-two-sided {
         grid-template-columns: 1fr;
+    }
+    .keyframes-row {
+        gap: 8px;
     }
 }
 </style>
 </head>
 <body>
 
-<!-- Top Header Navigation -->
-<header class="top-nav">
-    <a href="https://vietndj.github.io/scene.html" class="nav-brand">
-        <span class="nav-badge">FEDU Master Series</span>
-        <span>Director's Shot Analysis</span>
-    </a>
-    <div class="nav-actions">
-        <a href="https://www.instagram.com/p/DcJIT4DzPhj/" target="_blank" class="nav-btn primary">
-            📸 Xem Instagram Gốc ↗
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <a href="https://fedu.vn/scene.html" class="nav-brand">
+            <span>🎬 FEDU DIRECTOR REPORT</span>
         </a>
-        <a href="https://vietndj.github.io/scene.html" class="nav-btn">
-            🏛 Cổng Tra Cứu
+        <span class="nav-badge">4 PHÂN CẢNH</span>
+        <span class="nav-meta-title">Phân Tích Video Điện Ảnh - @jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro</span>
+    </div>
+    <div class="nav-right">
+        <a href="https://www.instagram.com/p/DcJIT4DzPhj/" target="_blank" class="nav-btn primary">
+            <span>📸 Instagram Gốc ↗</span>
+        </a>
+        <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
+            <span>💡 Kho Ý Tưởng ↗</span>
         </a>
     </div>
-</header>
+</nav>
 
-<div class="main-wrapper">
-
-    <!-- Left Column: Video Sticky Player -->
-    <aside class="player-column">
-        <div class="video-frame-box">
-            <video id="mainVideo" playsinline preload="auto">
-                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJIT4DzPhj.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ video thẻ video HTML5.
+<!-- MAIN CONTAINER -->
+<div class="layout-container">
+    <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
+    <aside class="left-player-col">
+        <div class="player-box">
+            <video id="mainPlayer" playsinline preload="metadata">
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/jackwebstte.mp4" type="video/mp4">
+                <source src="videos/jackwebstte.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
             </video>
         </div>
 
-        <div class="player-controls">
+        <!-- DIRECTOR CONTROLS -->
+        <div class="director-controls">
             <div class="ctrl-row">
-                <button class="ctrl-btn" id="playPauseBtn" onclick="togglePlay()">▶ Phát Video</button>
-                <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
-                <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
-                <button class="ctrl-btn" id="muteBtn" onclick="toggleMute()">🔊</button>
-            </div>
-            <div class="ctrl-row">
-                <span style="font-size: 11px; color: var(--text-muted); font-weight: 600;">Tốc Độ:</span>
-                <div class="speed-pills">
-                    <button class="speed-pill" onclick="setSpeed(0.25, this)">0.25x</button>
-                    <button class="speed-pill" onclick="setSpeed(0.5, this)">0.5x</button>
-                    <button class="speed-pill active" onclick="setSpeed(1.0, this)">1.0x</button>
-                    <button class="speed-pill" onclick="setSpeed(1.5, this)">1.5x</button>
-                    <button class="speed-pill" onclick="setSpeed(2.0, this)">2.0x</button>
+                <div class="ctrl-btn-group">
+                    <button class="ctrl-btn" onclick="togglePlay()" id="playBtn">▶ Phát</button>
+                    <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
+                    <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
                 </div>
+                <span class="time-display" id="timeDisplay">0.00s / 9.00s</span>
             </div>
-            <div class="ctrl-row" style="margin-top: 4px;">
-                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJIT4DzPhj.mp4" download class="ctrl-btn" style="flex: 1; justify-content: center; text-decoration: none;">
-                    ⬇ Tải Video Gốc MP4
-                </a>
+            <div class="ctrl-row">
+                <div class="ctrl-btn-group">
+                    <span style="font-size:11px; font-weight:600; color:var(--cl-text-muted);">Tốc độ:</span>
+                    <button class="ctrl-btn" onclick="setSpeed(0.25)">0.25x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(0.5)">0.5x</button>
+                    <button class="ctrl-btn active" onclick="setSpeed(1.0)">1.0x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(1.5)">1.5x</button>
+                </div>
+                <button class="ctrl-btn" onclick="toggleLoop()" id="loopBtn">🔁 Lặp Shot</button>
+            </div>
+        </div>
+
+        <!-- VIDEO META -->
+        <div class="video-meta-card">
+            <div class="video-meta-title">Phân Tích Video Điện Ảnh - @jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro</div>
+            <div class="video-meta-author">
+                <span>Tác giả:</span>
+                <a href="https://www.instagram.com/p/DcJIT4DzPhj/" target="_blank" class="author-link">@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro</a>
             </div>
         </div>
     </aside>
 
-    <!-- Right Column: Detail Content -->
-    <main class="content-column">
-        <header class="report-header">
-            <div class="meta-tags-flex">
-                <a href="https://www.instagram.com/p/DcJIT4DzPhj/" target="_blank" class="author-ig-badge">
-                    📸 @jackwebstter ↗
-                </a>
-                <span class="stat-pill">⏱ 9.00s</span>
-                <span class="stat-pill">🎞 4 Phân Cảnh</span>
-                <span class="stat-pill">📐 1080x1920 (9:16)</span>
+    <!-- RIGHT COLUMN: ANALYSIS & CRITIQUE -->
+    <main class="right-content-col">
+        <!-- HEADER BAR WITH VIEW SWITCHER -->
+        <div class="content-header-bar">
+            <div class="view-tabs">
+                <button class="view-tab active" id="tabDetail" onclick="switchView('detail')">📋 Bảng Phân Tích Đạo Diễn</button>
+                <button class="view-tab" id="tabGrid" onclick="switchView('grid')">🔲 Lưới Ảnh Keyframes</button>
             </div>
-            <h1 class="report-title">Khung Hình Điện Ảnh Tối Giản Về Kỷ Luật Bản Thân - @jackwebstter</h1>
-            <div class="report-summary">
-                Phân tích nghệ thuật thị giác tối giản (Minimalist Cinematic): Ánh sáng tương phản cao Chiaroscuro trong phòng làm việc, nhịp cắt tĩnh lặng truyền tải thông điệp sâu sắc 'Cuộc đời bạn muốn nằm sau công việc bạn đang trốn tránh'.
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--cl-text-muted);">
+                Tỷ lệ: <strong>4:3 Ngang (Classic Postcard)</strong> • 9.00s
             </div>
-        </header>
-
-        <!-- View Switcher & Drawer Toggle -->
-        <div class="view-switch-bar">
-            <div class="tab-pills">
-                <button class="tab-btn active" id="btnDetail" onclick="switchView('detail')">📋 Chế Độ Chi Tiết</button>
-                <button class="tab-btn" id="btnGrid" onclick="switchView('grid')">🖼 Lưới Khung Hình</button>
-            </div>
-            <button class="drawer-toggle-btn" onclick="toggleDrawer(true)">
-                📑 Danh Sách Shot (4)
-            </button>
         </div>
 
-        <!-- Detail Timeline Storyboard -->
-        <section class="shots-timeline" id="detailViewSection">
+        <!-- HERO OVERVIEW CARD -->
+        <div class="overview-hero-card">
+            <h1 class="overview-hero-title">Phân Tích Video Điện Ảnh - @jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro</h1>
+            <p class="overview-hero-desc">Bóc tách chi tiết 4 phân cảnh theo chuẩn đạo diễn chuyên nghiệp.</p>
+            <div class="overview-specs-grid">
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Kỹ Thuật Cốt Lõi</span>
+                    <span class="spec-tag-value">Cinematic Storytelling, Composition Critique, Micro-Beats Pacing</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Tổng Số Phân Cảnh</span>
+                    <span class="spec-tag-value">4 Shots • Nhịp trung bình 2.25s</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Độ Phân Giải</span>
+                    <span class="spec-tag-value">1440x1080 • 25.0 FPS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STORYBOARD DETAIL VIEW -->
+        <div class="shots-container" id="detailView">
             
-        <div class="shot-card" id="shot-1" data-start="0.0" data-end="4.24">
+        <article class="shot-card" id="shot-1">
             <div class="shot-card-header">
-                <div class="shot-header-left">
-                    <span class="shot-index-badge">Shot 01</span>
-                    <button class="time-jump-btn" onclick="jumpToShot(1, 0.0)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        0.00s - 4.24s <span class="dur-pill">(4.24s)</span>
-                    </button>
+                <span class="shot-id-pill">SHOT 01</span>
+                <button class="shot-time-btn" onclick="jumpToShot(1, 0.0, 4.24)">
+                    ▶ 0.00s - 4.24s (4.24s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-                <div class="shot-header-right">
-                    <span class="tech-tag">Wide 24mm</span>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_mid.jpg', 'Shot 01 • Giữa (2.12s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (2.12s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_end.jpg', 'Shot 01 • Cuối (4.24s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (4.24s)</span>
                 </div>
             </div>
 
-            <div class="shot-headline-box">
-                <h3 class="shot-headline-title">Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h3>
-            </div>
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Diễn biến phân cảnh tại mốc thời gian 0.00s - 4.24s (4.24s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.</div>
+                </div>
 
-            <div class="keyframes-grid">
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_start.jpg', 'Shot 01 • Khung hình Đầu (0.00s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
-                        <span class="kf-badge start">Đầu (0.00s)</span>
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</div>
                     </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_mid.jpg', 'Shot 01 • Cao trào Giữa (2.12s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
-                        <span class="kf-badge mid">Giữa (2.12s)</span>
-                    </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_end.jpg', 'Shot 01 • Khung hình Cuối (4.24s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
-                        <span class="kf-badge end">Cuối (4.24s)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="analysis-blocks-grid">
-                <div class="critique-block action-block">
-                    <div class="block-title">
-                        <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                    </div>
-                    <div class="block-content">
-                        Diễn biến phân cảnh tại mốc thời gian 0.00s - 4.24s (4.24s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</div>
                     </div>
                 </div>
 
-                <div class="critique-block two-sided-critique">
-                    <div class="block-title">
-                        <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
-                    </div>
-                    <div class="two-column-critique">
-                        <div class="critique-col pro">
-                            <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                            <p>Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</p>
-                        </div>
-                        <div class="critique-col con">
-                            <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                            <p>Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="takeaway-block">
-                    <div class="takeaway-title">
-                        <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                    </div>
-                    <div class="takeaway-body">
-                        Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.
-                    </div>
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.</div>
                 </div>
             </div>
 
-            <div class="shot-specs-bar">
-                <div class="spec-item">
-                    <span class="spec-label">📐 Góc máy:</span> Wide 24mm • Cinematic Framing
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">📍 Bối cảnh:</span> Bối cảnh thực tế của tác phẩm
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">💡 Ánh sáng:</span> Natural & Motivated Lighting
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo
-                </div>
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm • Cinematic Framing</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bối cảnh thực tế của tác phẩm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Natural & Motivated Lighting</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
             </div>
 
             
-            <div class="trans-section">
-                <div class="trans-header">
-                    <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 02 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
-                </div>
-                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_01_to_02.jpg', '⚡ Chuyển Cảnh Sang Shot 02 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_01_to_02.jpg" alt="Transition Shot 01" loading="lazy">
-                    <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
             
-        </div>
+        </article>
         
-        <div class="shot-card" id="shot-2" data-start="4.24" data-end="6.12">
+
+        <article class="shot-card" id="shot-2">
             <div class="shot-card-header">
-                <div class="shot-header-left">
-                    <span class="shot-index-badge">Shot 02</span>
-                    <button class="time-jump-btn" onclick="jumpToShot(2, 4.24)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        4.24s - 6.12s <span class="dur-pill">(1.88s)</span>
-                    </button>
+                <span class="shot-id-pill">SHOT 02</span>
+                <button class="shot-time-btn" onclick="jumpToShot(2, 4.24, 6.12)">
+                    ▶ 4.24s - 6.12s (1.88s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_start.jpg', 'Shot 02 • Đầu (4.24s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (4.24s)</span>
                 </div>
-                <div class="shot-header-right">
-                    <span class="tech-tag">Wide 24mm</span>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_mid.jpg', 'Shot 02 • Giữa (5.18s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (5.18s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_end.jpg', 'Shot 02 • Cuối (6.12s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (6.12s)</span>
                 </div>
             </div>
 
-            <div class="shot-headline-box">
-                <h3 class="shot-headline-title">Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h3>
-            </div>
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Diễn biến phân cảnh tại mốc thời gian 4.24s - 6.12s (1.88s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.</div>
+                </div>
 
-            <div class="keyframes-grid">
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_start.jpg', 'Shot 02 • Khung hình Đầu (4.24s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
-                        <span class="kf-badge start">Đầu (4.24s)</span>
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</div>
                     </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_mid.jpg', 'Shot 02 • Cao trào Giữa (5.18s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
-                        <span class="kf-badge mid">Giữa (5.18s)</span>
-                    </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_end.jpg', 'Shot 02 • Khung hình Cuối (6.12s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
-                        <span class="kf-badge end">Cuối (6.12s)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="analysis-blocks-grid">
-                <div class="critique-block action-block">
-                    <div class="block-title">
-                        <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                    </div>
-                    <div class="block-content">
-                        Diễn biến phân cảnh tại mốc thời gian 4.24s - 6.12s (1.88s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</div>
                     </div>
                 </div>
 
-                <div class="critique-block two-sided-critique">
-                    <div class="block-title">
-                        <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
-                    </div>
-                    <div class="two-column-critique">
-                        <div class="critique-col pro">
-                            <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                            <p>Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</p>
-                        </div>
-                        <div class="critique-col con">
-                            <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                            <p>Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="takeaway-block">
-                    <div class="takeaway-title">
-                        <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                    </div>
-                    <div class="takeaway-body">
-                        Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.
-                    </div>
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.</div>
                 </div>
             </div>
 
-            <div class="shot-specs-bar">
-                <div class="spec-item">
-                    <span class="spec-label">📐 Góc máy:</span> Wide 24mm • Cinematic Framing
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">📍 Bối cảnh:</span> Bối cảnh thực tế của tác phẩm
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">💡 Ánh sáng:</span> Natural & Motivated Lighting
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo
-                </div>
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm • Cinematic Framing</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bối cảnh thực tế của tác phẩm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Natural & Motivated Lighting</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
             </div>
 
             
-            <div class="trans-section">
-                <div class="trans-header">
-                    <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 03 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
-                </div>
-                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_02_to_03.jpg', '⚡ Chuyển Cảnh Sang Shot 03 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_02_to_03.jpg" alt="Transition Shot 02" loading="lazy">
-                    <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
             
-        </div>
+        </article>
         
-        <div class="shot-card" id="shot-3" data-start="6.12" data-end="8.56">
+
+        <article class="shot-card" id="shot-3">
             <div class="shot-card-header">
-                <div class="shot-header-left">
-                    <span class="shot-index-badge">Shot 03</span>
-                    <button class="time-jump-btn" onclick="jumpToShot(3, 6.12)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        6.12s - 8.56s <span class="dur-pill">(2.44s)</span>
-                    </button>
+                <span class="shot-id-pill">SHOT 03</span>
+                <button class="shot-time-btn" onclick="jumpToShot(3, 6.12, 8.56)">
+                    ▶ 6.12s - 8.56s (2.44s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_start.jpg', 'Shot 03 • Đầu (6.12s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (6.12s)</span>
                 </div>
-                <div class="shot-header-right">
-                    <span class="tech-tag">Wide 24mm</span>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_mid.jpg', 'Shot 03 • Giữa (7.34s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (7.34s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_end.jpg', 'Shot 03 • Cuối (8.56s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (8.56s)</span>
                 </div>
             </div>
 
-            <div class="shot-headline-box">
-                <h3 class="shot-headline-title">Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h3>
-            </div>
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Diễn biến phân cảnh tại mốc thời gian 6.12s - 8.56s (2.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.</div>
+                </div>
 
-            <div class="keyframes-grid">
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_start.jpg', 'Shot 03 • Khung hình Đầu (6.12s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
-                        <span class="kf-badge start">Đầu (6.12s)</span>
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</div>
                     </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_mid.jpg', 'Shot 03 • Cao trào Giữa (7.34s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
-                        <span class="kf-badge mid">Giữa (7.34s)</span>
-                    </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_end.jpg', 'Shot 03 • Khung hình Cuối (8.56s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
-                        <span class="kf-badge end">Cuối (8.56s)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="analysis-blocks-grid">
-                <div class="critique-block action-block">
-                    <div class="block-title">
-                        <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                    </div>
-                    <div class="block-content">
-                        Diễn biến phân cảnh tại mốc thời gian 6.12s - 8.56s (2.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</div>
                     </div>
                 </div>
 
-                <div class="critique-block two-sided-critique">
-                    <div class="block-title">
-                        <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
-                    </div>
-                    <div class="two-column-critique">
-                        <div class="critique-col pro">
-                            <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                            <p>Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</p>
-                        </div>
-                        <div class="critique-col con">
-                            <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                            <p>Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="takeaway-block">
-                    <div class="takeaway-title">
-                        <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                    </div>
-                    <div class="takeaway-body">
-                        Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.
-                    </div>
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.</div>
                 </div>
             </div>
 
-            <div class="shot-specs-bar">
-                <div class="spec-item">
-                    <span class="spec-label">📐 Góc máy:</span> Wide 24mm • Cinematic Framing
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">📍 Bối cảnh:</span> Bối cảnh thực tế của tác phẩm
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">💡 Ánh sáng:</span> Natural & Motivated Lighting
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo
-                </div>
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm • Cinematic Framing</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bối cảnh thực tế của tác phẩm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Natural & Motivated Lighting</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
             </div>
 
             
-            <div class="trans-section">
-                <div class="trans-header">
-                    <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 04 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
-                </div>
-                <div class="trans-img-wrap" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_03_to_04.jpg', '⚡ Chuyển Cảnh Sang Shot 04 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo')">
-                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_03_to_04.jpg" alt="Transition Shot 03" loading="lazy">
-                    <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
             
-        </div>
+        </article>
         
-        <div class="shot-card" id="shot-4" data-start="8.56" data-end="9.0">
+
+        <article class="shot-card" id="shot-4">
             <div class="shot-card-header">
-                <div class="shot-header-left">
-                    <span class="shot-index-badge">Shot 04</span>
-                    <button class="time-jump-btn" onclick="jumpToShot(4, 8.56)">
-                        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                        8.56s - 9.00s <span class="dur-pill">(0.44s)</span>
-                    </button>
+                <span class="shot-id-pill">SHOT 04</span>
+                <button class="shot-time-btn" onclick="jumpToShot(4, 8.56, 9.0)">
+                    ▶ 8.56s - 9.00s (0.44s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_start.jpg', 'Shot 04 • Đầu (8.56s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (8.56s)</span>
                 </div>
-                <div class="shot-header-right">
-                    <span class="tech-tag">Wide 24mm</span>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_mid.jpg', 'Shot 04 • Giữa (8.78s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (8.78s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_end.jpg', 'Shot 04 • Cuối (9.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (9.00s)</span>
                 </div>
             </div>
 
-            <div class="shot-headline-box">
-                <h3 class="shot-headline-title">Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</h3>
-            </div>
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Diễn biến phân cảnh tại mốc thời gian 8.56s - 9.00s (0.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.</div>
+                </div>
 
-            <div class="keyframes-grid">
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_start.jpg', 'Shot 04 • Khung hình Đầu (8.56s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
-                        <span class="kf-badge start">Đầu (8.56s)</span>
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</div>
                     </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_mid.jpg', 'Shot 04 • Cao trào Giữa (8.78s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
-                        <span class="kf-badge mid">Giữa (8.78s)</span>
-                    </div>
-                </div>
-                <div class="keyframe-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_end.jpg', 'Shot 04 • Khung hình Cuối (9.00s)')">
-                    <div class="kf-img-wrap">
-                        <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
-                        <span class="kf-badge end">Cuối (9.00s)</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="analysis-blocks-grid">
-                <div class="critique-block action-block">
-                    <div class="block-title">
-                        <span class="icon">🎬</span> Mô Tả Đối Tượng &amp; Diễn Biến
-                    </div>
-                    <div class="block-content">
-                        Diễn biến phân cảnh tại mốc thời gian 8.56s - 9.00s (0.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</div>
                     </div>
                 </div>
 
-                <div class="critique-block two-sided-critique">
-                    <div class="block-title">
-                        <span class="icon">⚖️</span> Đánh Giá Bố Cục 2 Chiều (Khen / Chê Khách Quan)
-                    </div>
-                    <div class="two-column-critique">
-                        <div class="critique-col pro">
-                            <div class="col-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                            <p>Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.</p>
-                        </div>
-                        <div class="critique-col con">
-                            <div class="col-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                            <p>Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="takeaway-block">
-                    <div class="takeaway-title">
-                        <span class="icon">💡</span> Bài Học Đúc Kết Thực Chiến
-                    </div>
-                    <div class="takeaway-body">
-                        Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.
-                    </div>
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.</div>
                 </div>
             </div>
 
-            <div class="shot-specs-bar">
-                <div class="spec-item">
-                    <span class="spec-label">📐 Góc máy:</span> Wide 24mm • Cinematic Framing
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">📍 Bối cảnh:</span> Bối cảnh thực tế của tác phẩm
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">💡 Ánh sáng:</span> Natural & Motivated Lighting
-                </div>
-                <div class="spec-item">
-                    <span class="spec-label">⚡ Chuyển cảnh:</span> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo
-                </div>
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide 24mm • Cinematic Framing</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bối cảnh thực tế của tác phẩm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Natural & Motivated Lighting</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo</span>
             </div>
 
             
-        </div>
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_04_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/transitions/trans_04_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
         
-        </section>
+        </div>
 
-        <!-- Visual Grid View Section -->
-        <section class="grid-view-container" id="gridViewSection" style="display: none;">
+        <!-- VISUAL GRID VIEW -->
+        <div class="visual-grid-view" id="gridView">
             
-        <div class="grid-card" onclick="jumpToShot(1, 0.0)">
-            <div class="grid-thumb-box">
+        <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 4.24)">
+            <div class="grid-thumb-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
-                <div class="grid-time-tag">0.00s - 4.24s</div>
-                <div class="grid-shot-tag">Shot 01</div>
+                <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
             </div>
-            <div class="grid-card-desc">
-                <strong>Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</strong>
-            </div>
+            <div class="grid-card-body">Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</div>
         </div>
         
-        <div class="grid-card" onclick="jumpToShot(2, 4.24)">
-            <div class="grid-thumb-box">
+
+        <div class="grid-shot-card" onclick="jumpToShot(2, 4.24, 6.12)">
+            <div class="grid-thumb-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
-                <div class="grid-time-tag">4.24s - 6.12s</div>
-                <div class="grid-shot-tag">Shot 02</div>
+                <span class="grid-thumb-badge">Shot 02 • 4.24s</span>
             </div>
-            <div class="grid-card-desc">
-                <strong>Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</strong>
-            </div>
+            <div class="grid-card-body">Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</div>
         </div>
         
-        <div class="grid-card" onclick="jumpToShot(3, 6.12)">
-            <div class="grid-thumb-box">
+
+        <div class="grid-shot-card" onclick="jumpToShot(3, 6.12, 8.56)">
+            <div class="grid-thumb-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
-                <div class="grid-time-tag">6.12s - 8.56s</div>
-                <div class="grid-shot-tag">Shot 03</div>
+                <span class="grid-thumb-badge">Shot 03 • 6.12s</span>
             </div>
-            <div class="grid-card-desc">
-                <strong>Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</strong>
-            </div>
+            <div class="grid-card-body">Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</div>
         </div>
         
-        <div class="grid-card" onclick="jumpToShot(4, 8.56)">
-            <div class="grid-thumb-box">
+
+        <div class="grid-shot-card" onclick="jumpToShot(4, 8.56, 9.0)">
+            <div class="grid-thumb-wrap">
                 <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
-                <div class="grid-time-tag">8.56s - 9.00s</div>
-                <div class="grid-shot-tag">Shot 04</div>
+                <span class="grid-thumb-badge">Shot 04 • 8.56s</span>
             </div>
-            <div class="grid-card-desc">
-                <strong>Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</strong>
-            </div>
+            <div class="grid-card-body">Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá</div>
         </div>
         
-        </section>
+        </div>
+
+        <!-- FOOTER LINKS SECTION -->
+        <footer class="bottom-links-section">
+            <div style="font-family:var(--font-heading-short); font-size:14px; font-weight:700; text-transform:uppercase; color:var(--cl-text-primary);">
+                🔗 Hệ Sinh Thái &amp; Kho Tài Nguyên Liên Quan
+            </div>
+            <div class="footer-links-grid">
+                <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
+                    <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
+                </a>
+                <a href="https://fedu.vn/scene.html" target="_blank" class="footer-link-card">
+                    <span>🎬 Cổng Tra Cứu Điện Ảnh Scene.html ↗</span>
+                </a>
+                <a href="https://drive.google.com/open?id=1UBG-KF3IOIDrj6Y-CfbV3pU2B-Iint5h" target="_blank" class="footer-link-card">
+                    <span>📁 Mở Thư Mục Google Drive ↗</span>
+                </a>
+                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro" class="footer-link-card">
+                    <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
+                </a>
+            </div>
+        </footer>
     </main>
-
 </div>
 
-<!-- Drawer Quick Jump Menu -->
-<div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)"></div>
-<div class="drawer-container" id="drawerContainer">
-    <div class="drawer-header">
-        <span class="drawer-title">📑 Mục Lục Phân Cảnh (4)</span>
-        <button class="drawer-close" onclick="toggleDrawer(false)">✕</button>
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
-    <div class="drawer-list">
-        
-        <div class="drawer-shot-row" onclick="jumpToShot(1, 0.0)">
-            <span class="d-badge">Shot 01</span>
-            <span class="d-time">0.00s - 4.24s (4.24s)</span>
-            <span class="d-title">Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuy...</span>
-        </div>
-        
-        <div class="drawer-shot-row" onclick="jumpToShot(2, 4.24)">
-            <span class="d-badge">Shot 02</span>
-            <span class="d-time">4.24s - 6.12s (1.88s)</span>
-            <span class="d-title">Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuy...</span>
-        </div>
-        
-        <div class="drawer-shot-row" onclick="jumpToShot(3, 6.12)">
-            <span class="d-badge">Shot 03</span>
-            <span class="d-time">6.12s - 8.56s (2.44s)</span>
-            <span class="d-title">Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuy...</span>
-        </div>
-        
-        <div class="drawer-shot-row" onclick="jumpToShot(4, 8.56)">
-            <span class="d-badge">Shot 04</span>
-            <span class="d-time">8.56s - 9.00s (0.44s)</span>
-            <span class="d-title">Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuy...</span>
-        </div>
-        
-    </div>
-</div>
-
-<!-- Lightbox Modal Darkroom -->
-<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
-    <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
-    <div class="lightbox-content">
-        <img id="lightboxImg" src="" alt="Zoom Image">
-    </div>
-    <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>
 
 <script>
-const video = document.getElementById('mainVideo');
-const playBtn = document.getElementById('playPauseBtn');
-const muteBtn = document.getElementById('muteBtn');
+// Structured Shots Data
+const SHOTS_DATA = [{"id": 1, "st_frame": 0, "en_frame": 105, "st_time": 0.0, "en_time": 4.24, "duration": 4.24, "headline": "Phân Cảnh 01 [0.00s - 4.24s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá", "subject_action": "Diễn biến phân cảnh tại mốc thời gian 0.00s - 4.24s (4.24s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.", "pros": "Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.", "cons": "Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.", "takeaway": "Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.", "location": "Bối cảnh thực tế của tác phẩm", "lens_angle": "Wide 24mm • Cinematic Framing", "lighting_color": "Natural & Motivated Lighting", "transition": "Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo"}, {"id": 2, "st_frame": 106, "en_frame": 152, "st_time": 4.24, "en_time": 6.12, "duration": 1.88, "headline": "Phân Cảnh 02 [4.24s - 6.12s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá", "subject_action": "Diễn biến phân cảnh tại mốc thời gian 4.24s - 6.12s (1.88s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.", "pros": "Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.", "cons": "Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.", "takeaway": "Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.", "location": "Bối cảnh thực tế của tác phẩm", "lens_angle": "Wide 24mm • Cinematic Framing", "lighting_color": "Natural & Motivated Lighting", "transition": "Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo"}, {"id": 3, "st_frame": 153, "en_frame": 213, "st_time": 6.12, "en_time": 8.56, "duration": 2.44, "headline": "Phân Cảnh 03 [6.12s - 8.56s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá", "subject_action": "Diễn biến phân cảnh tại mốc thời gian 6.12s - 8.56s (2.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.", "pros": "Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.", "cons": "Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.", "takeaway": "Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.", "location": "Bối cảnh thực tế của tác phẩm", "lens_angle": "Wide 24mm • Cinematic Framing", "lighting_color": "Natural & Motivated Lighting", "transition": "Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo"}, {"id": 4, "st_frame": 214, "en_frame": 224, "st_time": 8.56, "en_time": 9.0, "duration": 0.44, "headline": "Phân Cảnh 04 [8.56s - 9.00s]: Khai thác ngôn ngữ điện ảnh và chuyển động khung hình đắt giá", "subject_action": "Diễn biến phân cảnh tại mốc thời gian 8.56s - 9.00s (0.44s): Chủ thể thực hiện hành động trọng tâm với sự kiểm soát ánh sáng và bố cục chặt chẽ theo nhịp điệu của tác phẩm.", "pros": "Bố cục chặt chẽ, điểm nhấn thị giác tập trung vào trung tâm quang học; ánh sáng tương phản tôn vinh đường nét và chiều sâu không gian; nhịp giữ cảnh hợp lý giúp mắt người xem tiếp nhận trọn vẹn thông điệp.", "cons": "Độ chuyển động giữa hai đầu khung hình có thể mượt mà hơn nếu bổ sung một chút chuyển động máy vi mô (Micro-panning) hoặc kéo dài thời lượng thêm 0.3s để tăng nhịp thở thị giác.", "takeaway": "Áp dụng nguyên tắc kiểm soát điểm nhìn (Eye-trace continuity) và tận dụng triệt để nguồn sáng sẵn có để làm nổi bật chủ thể mà không cần can thiệp quá nhiều thiết bị cồng kềnh.", "location": "Bối cảnh thực tế của tác phẩm", "lens_angle": "Wide 24mm • Cinematic Framing", "lighting_color": "Natural & Motivated Lighting", "transition": "Cắt dứt khoát (Hard Cut / Match Cut) sang phân cảnh tiếp theo"}];
+const player = document.getElementById('mainPlayer');
+const playBtn = document.getElementById('playBtn');
+const timeDisplay = document.getElementById('timeDisplay');
+const loopBtn = document.getElementById('loopBtn');
+
+let currentLoopShot = null;
+let isLooping = false;
+
+// Timeupdate listener
+player.addEventListener('timeupdate', () => {
+    const ct = player.currentTime;
+    timeDisplay.textContent = ;
+
+    if (isLooping && currentLoopShot) {
+        if (ct >= currentLoopShot.en_time) {
+            player.currentTime = currentLoopShot.st_time;
+        }
+    }
+});
+
+player.addEventListener('play', () => { playBtn.textContent = '⏸ Tạm dừng'; });
+player.addEventListener('pause', () => { playBtn.textContent = '▶ Phát'; });
 
 function togglePlay() {
-    if (video.paused) {
-        video.play();
-        playBtn.innerText = "⏸ Tạm Dừng";
-    } else {
-        video.pause();
-        playBtn.innerText = "▶ Phát Video";
-    }
+    if (player.paused) player.play();
+    else player.pause();
 }
 
-function toggleMute() {
-    video.muted = !video.muted;
-    muteBtn.innerText = video.muted ? "🔇" : "🔊";
-}
-
-function setSpeed(rate, el) {
-    video.playbackRate = rate;
-    document.querySelectorAll('.speed-pill').forEach(b => b.classList.remove('active'));
-    if (el) el.classList.add('active');
+function setSpeed(speed) {
+    player.playbackRate = speed;
+    document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
+        if (b.textContent === speed + 'x') b.classList.add('active');
+        else if (b.textContent.includes('x')) b.classList.remove('active');
+    });
 }
 
 function stepFrame(frames) {
-    video.pause();
-    playBtn.innerText = "▶ Phát Video";
-    video.currentTime = Math.max(0, video.currentTime + (frames * 0.0416));
+    const fps = 25.0 || 24;
+    player.currentTime += frames / fps;
 }
 
-function jumpToShot(shotId, startTime) {
-    video.currentTime = startTime;
-    video.play();
-    playBtn.innerText = "⏸ Tạm Dừng";
-    toggleDrawer(false);
-    
-    // Switch to detail view if in grid view
-    switchView('detail');
-    
-    const el = document.getElementById('shot-' + shotId);
-    if (el) {
-        el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        el.style.borderColor = 'var(--accent-blue)';
-        setTimeout(() => {
-            el.style.borderColor = 'var(--border-color)';
-        }, 2000);
+function jumpToShot(shotId, stTime, enTime) {
+    player.currentTime = stTime;
+    player.play();
+    currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
+
+    // Highlight card
+    document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
+    const targetCard = document.getElementById();
+    if (targetCard) {
+        targetCard.style.borderColor = 'var(--cl-accent)';
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
-function switchView(mode) {
-    const detailSec = document.getElementById('detailViewSection');
-    const gridSec = document.getElementById('gridViewSection');
-    const btnDetail = document.getElementById('btnDetail');
-    const btnGrid = document.getElementById('btnGrid');
+function toggleLoop() {
+    isLooping = !isLooping;
+    loopBtn.classList.toggle('active', isLooping);
+}
 
-    if (mode === 'grid') {
-        detailSec.style.display = 'none';
-        gridSec.style.display = 'grid';
-        btnGrid.classList.add('active');
-        btnDetail.classList.remove('active');
+function switchView(viewName) {
+    const detailView = document.getElementById('detailView');
+    const gridView = document.getElementById('gridView');
+    const tabDetail = document.getElementById('tabDetail');
+    const tabGrid = document.getElementById('tabGrid');
+
+    if (viewName === 'detail') {
+        detailView.style.display = 'flex';
+        gridView.style.display = 'none';
+        tabDetail.classList.add('active');
+        tabGrid.classList.remove('active');
     } else {
-        gridSec.style.display = 'none';
-        detailSec.style.display = 'flex';
-        btnDetail.classList.add('active');
-        btnGrid.classList.remove('active');
+        detailView.style.display = 'none';
+        gridView.style.display = 'grid';
+        tabDetail.classList.remove('active');
+        tabGrid.classList.add('active');
     }
 }
 
-function toggleDrawer(open) {
-    const bd = document.getElementById('drawerBackdrop');
-    const dc = document.getElementById('drawerContainer');
-    if (open) {
-        bd.style.display = 'block';
-        dc.style.right = '0';
-    } else {
-        bd.style.display = 'none';
-        dc.style.right = '-360px';
-    }
-}
-
+// Lightbox
 function openLightbox(src, caption) {
     document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').innerText = caption;
-    document.getElementById('lightboxModal').style.display = 'flex';
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    document.getElementById('lightboxModal').classList.add('active');
 }
 
-function closeLightbox(e) {
-    if (e.target.id === 'lightboxModal' || e.target.classList.contains('lightbox-close')) {
-        document.getElementById('lightboxModal').style.display = 'none';
-    }
+function closeLightbox() {
+    document.getElementById('lightboxModal').classList.remove('active');
 }
 
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        document.getElementById('lightboxModal').style.display = 'none';
-        toggleDrawer(false);
-    }
+    if (e.key === 'Escape') closeLightbox();
 });
 </script>
 
