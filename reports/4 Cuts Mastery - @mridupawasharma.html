@@ -888,18 +888,18 @@ function renderApp() {
         const dur = s.duration;
         const padId = String(s_id).padStart(2, '0');
 
-        const img_start = `${CDN_IMG}/shot_${padId}_start.jpg`;
-        const img_mid = `${CDN_IMG}/shot_${padId}_mid.jpg`;
-        const img_end = `${CDN_IMG}/shot_${padId}_end.jpg`;
+        const img_start = `${CDN_IMG}/shot_${padId}_start.jpg?v=2`;
+        const img_mid = `${CDN_IMG}/shot_${padId}_mid.jpg?v=2`;
+        const img_end = `${CDN_IMG}/shot_${padId}_end.jpg?v=2`;
 
         let img_trans = '';
         let trans_title = '';
         if (s_id < shotsData.length) {
             const nextPad = String(s_id + 1).padStart(2, '0');
-            img_trans = `${CDN_IMG}/transitions/trans_${padId}_to_${nextPad}.jpg`;
+            img_trans = `${CDN_IMG}/transitions/trans_${padId}_to_${nextPad}.jpg?v=2`;
             trans_title = `⚡ Chuyển Cảnh Sang Shot ${nextPad} • ${s.transition}`;
         } else {
-            img_trans = `${CDN_IMG}/transitions/trans_24_to_01_loop.jpg`;
+            img_trans = `${CDN_IMG}/transitions/trans_24_to_01_loop.jpg?v=2`;
             trans_title = `⚡ Chuyển Cảnh Vòng Lặp Vô Tận Sang Shot 01 • ${s.transition}`;
         }
 
