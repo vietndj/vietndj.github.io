@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 165,
-  "total_unique_ideas": 153,
-  "total_active_ideas": 143,
+  "total_scene_items": 167,
+  "total_unique_ideas": 155,
+  "total_active_ideas": 145,
   "total_excluded_ideas": 10,
-  "total_creators": 85,
+  "total_creators": 87,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 14,
     "storytelling": 18,
-    "dien-anh": 80,
-    "chuyen-canh": 18
+    "dien-anh": 81,
+    "chuyen-canh": 19
   },
   "industries": [
     {
@@ -145,8 +145,8 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 2,
     "thuong-hieu": 21,
     "thoi-trang": 7,
-    "am-thuc": 15,
-    "du-lich": 18,
+    "am-thuc": 16,
+    "du-lich": 19,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 59,
+    "us_eu": 61,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -476,6 +476,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@hey.lirules",
+      "name": "Li! Video creator",
+      "profile_url": "https://www.instagram.com/hey.lirules/",
+      "video_count": 1,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions"
+      ]
+    },
+    {
+      "handle": "@alena.feda",
+      "name": "@alena.feda",
+      "profile_url": "https://www.instagram.com/alena.feda/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch"
       ]
     },
     {
@@ -1207,6 +1229,125 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions",
+      "shortcode": "DdBDvZph1od",
+      "title_vi": "Nghệ Thuật Chuyển Cảnh Che Tiền Cảnh & B-Roll Điện Ảnh Phố Cổ Hội An",
+      "quick_takeaway": "Bóc tách 11 phân cảnh mẫu mực trong video 16.36s của @hey.lirules tại Hội An: Nghệ thuật sử dụng vật cản tiền cảnh (Foreground Occlusion Mask Cut) qua nón lá và lưng người đi bộ, đánh lừa thị giác sinh học (Saccadic Masking), bùng nổ màu...",
+      "key_tech": "Foreground Occlusion Mask Cut • Saccadic Masking • Parallax Z-Axis Depth • Chiaroscuro Shadow Art • Atmospheric B-Roll",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Du ký khám phá di sản Hội An & Kỹ thuật chuyển cảnh tự nhiên bằng vật cản (Travel Cinematic & Mask Transitions)",
+      "tech_tags": [
+        "Foreground Occlusion Mask Cut",
+        "Saccadic Masking Transition",
+        "Blackout Wipe Reveal",
+        "Parallax 3D Z-Axis",
+        "Atmospheric B-Roll Framing"
+      ],
+      "logic_explanation": "Video mẫu mực về kỹ thuật Foreground Occlusion Mask Cut tại phố cổ Hội An: Tận dụng nón lá, người đi bộ và góc máy thấp ven sông Hoài để chuyển cảnh mượt mà không dùng hiệu ứng kỹ xảo số rẻ tiền, mở ra vụ nổ màu sắc lồng đèn đêm rực rỡ.",
+      "creator": {
+        "raw": "@hey.lirules (Li! Video creator)",
+        "name": "Li! Video creator",
+        "handle": "@hey.lirules",
+        "profile_url": "https://www.instagram.com/hey.lirules/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdBDvZph1od/",
+      "gdrive_folder": "https://drive.google.com/open?id=1kIvOxphPKOBP3TcOhGw50wmUAy1u0UPs",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions/shot_03_mid.jpg",
+        "video_url": "videos/Hoi An Natural Mask Transitions - @hey.lirules.mp4",
+        "report_url": "reports/Hoi An Natural Mask Transitions - @hey.lirules.html",
+        "shots_count": 11,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch",
+      "shortcode": "Dc1w07upyNF",
+      "title_vi": "Nghệ Thuật Quay Đồ Ăn & Food Styling 4 Bước - @alena.feda",
+      "quick_takeaway": "Bóc tách 15 phân cảnh mẫu mực trong video hướng dẫn quay đồ ăn của Alena Feda (@alena.feda): Công thức 4 bước thần thánh biến một video quay món ăn vụng về thành thước phim ẩm thực điện ảnh mê hoặc (1. Khống chế ánh sáng tạt nghiêng Chia...",
+      "key_tech": "4-Step Food Styling Framework • Directional Side Key Light 45° • Depth via Rustic Wood Riser • Autumn Color Palette Accent • Macro Knife Crunch • Sizzling Caramel Texture • Slow-Mo Honey Drizzle • Sensory Food ASMR",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇨🇦/🇺🇸",
+        "badge_color": "purple"
+      },
+      "purpose": "Quy trình 4 bước thiết lập ánh sáng & nghệ thuật quay B-roll ẩm thực mê hoặc (Food Styling & Lighting Mastery)",
+      "tech_tags": [
+        "4-Step Food Styling Framework",
+        "Directional Soft Key Light",
+        "Rustic Wood Pedestal Riser",
+        "Autumn Color Accent",
+        "Sensory ASMR Food B-Roll",
+        "Slow-Mo Honey Drizzle"
+      ],
+      "logic_explanation": "Mở đầu bằng đòn bẩy thấu cảm chỉ ra cách quay sai lầm thường gặp, sau đó thị phạm 4 bước lột xác thị giác (Ánh sáng Chiaroscuro, Bố cục thớt gỗ đa tầng, Bảng màu mùa thu, Vệ sinh mặt bàn) và chốt hạ bằng chuỗi 9 cú máy Hero B-roll đỉnh cao.",
+      "creator": {
+        "raw": "Alena | Food Filming Tips (@alena.feda)",
+        "name": "@alena.feda",
+        "handle": "@alena.feda",
+        "profile_url": "https://www.instagram.com/alena.feda/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc1w07upyNF/",
+      "gdrive_folder": "https://drive.google.com/open?id=1BALvZL0ldFb4w1u6RblSleE3Ew0jPGLB",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch/shot_03_mid.jpg",
+        "video_url": "videos/Food Filming & Styling Mastery - @alena.feda.mp4",
+        "report_url": "reports/Food Filming & Styling Mastery - @alena.feda.html",
+        "shots_count": 15,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
       "shortcode": "DcyS2KEm7-v",
       "title_vi": "",
@@ -1256,7 +1397,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/DcyS2KEm7-v.mp4",
         "report_url": "reports/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light.html",
         "shots_count": 0,
-        "duration": "15s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -1376,7 +1517,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/One Lamp Beats Five - @shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five.html",
         "shots_count": 16,
-        "duration": "0.15s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -1497,7 +1638,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Creative phone video ideas - @valenti_k41.mp4",
         "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
         "shots_count": 6,
-        "duration": "12s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -1860,7 +2001,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Getting Ready Faster Than Ever - @jesussropero.mp4",
         "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
         "shots_count": 3,
-        "duration": "6s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
