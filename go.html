@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FEDU Omni-Hub • Trung Tâm Điều Hành & Kho Tri Thức Số (go.fedu.vn)</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="theme-color" content="#0284c7">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="preload" href="/fonts/FDAeonikExtended-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/FDAeonik-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/FDActa-Book.woff2" as="font" type="font/woff2" crossorigin>
   <style>
     :root {
+      --font-display: 'FDAeonikExtended', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-sans: 'FDAeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-serif: 'FDActa', Georgia, serif;
+      --font-mono: 'FDAeonikMono', 'JetBrains Mono', monospace;
+
       --bg-base: #060911;
       --bg-surface: #0c121e;
       --bg-card: #101726;
@@ -31,7 +43,7 @@
     }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: var(--font-sans);
       background-color: var(--bg-base);
       color: var(--text-primary);
       line-height: 1.55;
@@ -53,12 +65,12 @@
     .brand-wrap { display: flex; align-items: center; gap: 12px; }
     .brand-logo {
       background: linear-gradient(135deg, #0284c7, #2563eb);
-      color: #fff; font-weight: 800; font-size: 11px; letter-spacing: 0.8px;
+      color: #fff; font-family: var(--font-display); font-weight: 800; font-size: 11px; letter-spacing: 0.8px;
       padding: 6px 12px; border-radius: var(--radius-sm); text-transform: uppercase;
       box-shadow: 0 0 16px rgba(2, 132, 199, 0.4);
     }
-    .brand-name { font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
-    .brand-domain { color: var(--cyan); font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600; background: var(--cyan-glow); padding: 3px 8px; border-radius: 6px; }
+    .brand-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
+    .brand-domain { color: var(--cyan); font-family: var(--font-mono); font-size: 12px; font-weight: 600; background: var(--cyan-glow); padding: 3px 8px; border-radius: 6px; }
     .nav-actions { display: flex; align-items: center; gap: 10px; }
     .nav-pill {
       font-size: 12px; font-weight: 600; color: var(--text-secondary);
@@ -66,7 +78,7 @@
       padding: 6px 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;
     }
     .nav-pill kbd {
-      background: rgba(255, 255, 255, 0.12); color: #fff; padding: 1px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; font-size: 11px;
+      background: rgba(255, 255, 255, 0.12); color: #fff; padding: 1px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 11px;
     }
 
     /* CONTAINER */
@@ -79,13 +91,15 @@
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
       background: var(--cyan-glow); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.3);
-      padding: 4px 14px; border-radius: 999px; font-size: 12px; font-weight: 700; margin-bottom: 12px;
+      padding: 4px 14px; border-radius: 999px; font-size: 12px; font-family: var(--font-display); font-weight: 700; margin-bottom: 12px;
     }
     .hero h1 {
-      font-size: clamp(24px, 4vw, 36px); font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.5px;
+      font-family: var(--font-display);
+      font-size: clamp(26px, 4.2vw, 38px); font-weight: 800; color: #fff; margin-bottom: 10px; letter-spacing: -0.02em;
     }
     .hero p {
-      color: var(--text-secondary); font-size: 15px; max-width: 720px; margin: 0 auto 24px;
+      font-family: var(--font-serif);
+      color: #cbd5e1; font-size: 16.5px; font-weight: 400; line-height: 1.65; max-width: 760px; margin: 0 auto 24px;
     }
 
     /* SEARCH BAR */
@@ -120,7 +134,7 @@
     }
     .search-clear:hover { background: rgba(255, 255, 255, 0.2); color: #fff; }
     .search-kbd {
-      font-size: 11px; font-family: 'JetBrains Mono', monospace;
+      font-size: 11px; font-family: var(--font-mono);
       color: var(--text-muted); background: rgba(255, 255, 255, 0.06);
       padding: 3px 8px; border-radius: 6px; border: 1px solid var(--border-subtle);
       margin-left: 8px;
@@ -131,7 +145,7 @@
       max-width: 1100px; margin: 0 auto 28px;
     }
     .pinned-label {
-      font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+      font-size: 11.5px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
       color: var(--amber); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
     }
     .pinned-grid {
@@ -150,8 +164,8 @@
     }
     .pinned-icon { font-size: 22px; }
     .pinned-info { overflow: hidden; }
-    .pinned-title { font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pinned-meta { font-size: 11px; color: var(--text-muted); }
+    .pinned-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pinned-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
 
     /* CATEGORY TABS */
     .tabs-bar {
@@ -161,7 +175,7 @@
     .tabs-bar::-webkit-scrollbar { display: none; }
     .tab-btn {
       background: transparent; border: 1px solid transparent;
-      color: var(--text-secondary); font-size: 13.5px; font-weight: 600; font-family: inherit;
+      color: var(--text-secondary); font-size: 13.5px; font-weight: 600; font-family: var(--font-display);
       padding: 8px 16px; border-radius: var(--radius-sm); cursor: pointer;
       display: flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s;
     }
@@ -171,7 +185,7 @@
       border-color: rgba(56, 189, 248, 0.35); box-shadow: 0 2px 12px var(--cyan-glow);
     }
     .tab-badge {
-      font-size: 11px; font-family: 'JetBrains Mono', monospace; font-weight: 700;
+      font-size: 11px; font-family: var(--font-mono); font-weight: 700;
       background: rgba(255, 255, 255, 0.08); padding: 2px 7px; border-radius: 999px;
     }
     .tab-btn.active .tab-badge {
@@ -183,7 +197,7 @@
       display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
       font-size: 13px; color: var(--text-muted); font-weight: 600;
     }
-    .results-count span { color: var(--text-primary); font-weight: 700; font-family: 'JetBrains Mono', monospace; }
+    .results-count span { color: var(--text-primary); font-weight: 700; font-family: var(--font-mono); }
 
     /* CARDS GRID */
     .cards-grid {
@@ -206,7 +220,7 @@
     }
     .card-title-group { flex: 1; overflow: hidden; }
     .card-badge {
-      display: inline-block; font-size: 10.5px; font-weight: 700; text-transform: uppercase;
+      display: inline-block; font-size: 10.5px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
       letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
     }
     .badge-apps { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
@@ -217,17 +231,20 @@
     .badge-storyboards { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
 
     .card-title {
-      font-size: 15px; font-weight: 700; color: #fff; line-height: 1.4;
+      font-family: var(--font-display);
+      font-size: 15px; font-weight: 700; color: #fff; line-height: 1.4; letter-spacing: -0.01em;
       margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
     .card-desc {
-      font-size: 12.5px; color: var(--text-secondary); line-height: 1.5;
+      font-family: var(--font-serif);
+      font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;
       display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px;
     }
     .card-tags {
       display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;
     }
     .tag-chip {
+      font-family: var(--font-mono);
       font-size: 10.5px; font-weight: 600; color: var(--text-muted);
       background: rgba(255, 255, 255, 0.04); padding: 2px 7px; border-radius: 4px;
       cursor: pointer; transition: all 0.15s;
@@ -239,7 +256,7 @@
     }
     .btn-open {
       flex: 1; background: var(--bg-base); border: 1px solid rgba(56, 189, 248, 0.3);
-      color: #fff; font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: var(--radius-sm);
+      color: #fff; font-family: var(--font-display); font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: var(--radius-sm);
       display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;
     }
     .btn-open:hover {
@@ -247,7 +264,7 @@
     }
     .btn-copy {
       background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle);
-      color: var(--text-secondary); font-size: 12px; font-weight: 600; padding: 7px 10px;
+      color: var(--text-secondary); font-family: var(--font-mono); font-size: 12px; font-weight: 600; padding: 7px 10px;
       border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 4px;
     }
     .btn-copy:hover { color: #fff; background: rgba(255, 255, 255, 0.1); }
@@ -265,7 +282,7 @@
     .load-more-wrap { text-align: center; margin-top: 32px; }
     .btn-load-more {
       background: var(--bg-surface); border: 1px solid var(--border-subtle);
-      color: var(--text-secondary); font-size: 13px; font-weight: 700; padding: 10px 24px;
+      color: var(--text-secondary); font-family: var(--font-display); font-size: 13px; font-weight: 700; padding: 10px 24px;
       border-radius: var(--radius-md); cursor: pointer; transition: all 0.2s;
     }
     .btn-load-more:hover { border-color: var(--cyan); color: #fff; background: var(--bg-card); }
@@ -335,6 +352,34 @@
     <section class="pinned-section">
       <div class="pinned-label">⭐ Công cụ thiết yếu dùng hàng ngày</div>
       <div class="pinned-grid">
+        <a href="https://cms.fedu.vn" target="_blank" class="pinned-card">
+          <div class="pinned-icon">⚙️</div>
+          <div class="pinned-info">
+            <div class="pinned-title">CMS Workspace</div>
+            <div class="pinned-meta">cms.fedu.vn</div>
+          </div>
+        </a>
+        <a href="https://fedu.vn/k/index.html" target="_blank" class="pinned-card">
+          <div class="pinned-icon">🎙️</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Repo K Podcast</div>
+            <div class="pinned-meta">518+ Bài Tri Thức</div>
+          </div>
+        </a>
+        <a href="https://fedu.vn/course/" target="_blank" class="pinned-card">
+          <div class="pinned-icon">🎓</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Course Archive</div>
+            <div class="pinned-meta">fedu.vn/course/</div>
+          </div>
+        </a>
+        <a href="https://ytuong.fedu.vn" target="_blank" class="pinned-card">
+          <div class="pinned-icon">💡</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Reference Hub</div>
+            <div class="pinned-meta">ytuong.fedu.vn</div>
+          </div>
+        </a>
         <a href="https://fonthub.fedu.vn" target="_blank" class="pinned-card">
           <div class="pinned-icon">🔤</div>
           <div class="pinned-info">
@@ -549,7 +594,14 @@
       }
 
       emptyState.style.display = 'none';
-      const toShow = filtered.slice(0, visibleCount);
+      const sorted = [...filtered].sort((a, b) => {
+        if (!searchQuery) {
+          if (a.pinned && !b.pinned) return -1;
+          if (!a.pinned && b.pinned) return 1;
+        }
+        return 0;
+      });
+      const toShow = sorted.slice(0, visibleCount);
 
       cardsGrid.innerHTML = toShow.map(it => {
         const badgeClass = `badge-${it.category}`;
