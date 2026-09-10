@@ -3089,7 +3089,7 @@ var FEDU_IDEAS_DATABASE = {
         "handle": "@yegor.sky",
         "profile_url": "https://www.instagram.com/yegor.sky/"
       },
-      "ig_url": "https://www.instagram.com/reel/DbBQzyqimbi/?stkn=MW11MHZld3d0YWFmOA==",
+      "ig_url": "https://www.instagram.com/reel/DbBQzyqimbi/",
       "gdrive_folder": "https://drive.google.com/open?id=1C5cOIsrDJtbQr1710286gOLR1ogFdSl4",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky/shot_01_mid.jpg",
@@ -3147,7 +3147,7 @@ var FEDU_IDEAS_DATABASE = {
         "handle": "@hena_film_vlog",
         "profile_url": "https://www.instagram.com/hena_film_vlog/"
       },
-      "ig_url": "https://www.instagram.com/reel/DY_0KNxvNJa/?stkn=MWVodmM3MXVhb3ZnOQ==",
+      "ig_url": "https://www.instagram.com/reel/DY_0KNxvNJa/",
       "gdrive_folder": "https://drive.google.com/open?id=16KsPU6lUhohxcNDTAy-9GTEA-46PqIkQ",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.jpg",
@@ -3263,7 +3263,7 @@ var FEDU_IDEAS_DATABASE = {
         "handle": "@firewood_klcc",
         "profile_url": "https://www.instagram.com/firewood_klcc/"
       },
-      "ig_url": "https://www.instagram.com/p/DZFzj9YAAmG/?stkn=cmhlNzF1cnhkd2tz",
+      "ig_url": "https://www.instagram.com/p/DZFzj9YAAmG/",
       "gdrive_folder": "https://drive.google.com/open?id=1qxMig74H8BZUoaLp1yytes3bAcWeM4yg",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@firewood_klcc_DZFzj9YAAmG_Artisanal_Woodfire_Dining/shot_01_mid.jpg",
@@ -3318,7 +3318,7 @@ var FEDU_IDEAS_DATABASE = {
         "handle": "@the.vantage.point",
         "profile_url": "https://www.instagram.com/the.vantage.point/"
       },
-      "ig_url": "https://www.instagram.com/reel/Dct9JzWKVFo/?stkn=MW1mMnd1OTJwNWlteQ==",
+      "ig_url": "https://www.instagram.com/reel/Dct9JzWKVFo/",
       "gdrive_folder": "https://drive.google.com/open?id=1hqw6sy-TmJw8B-pEmOku5nrdNzsKxrSB",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@the.vantage.point_Dct9JzWKVFo_NYC_Morning_Light/shot_01_mid.jpg",
