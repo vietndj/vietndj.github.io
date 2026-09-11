@@ -52,10 +52,10 @@ subprocess.run(f"cd {REPO_DIR} && git add -A && git commit -m 'Auto-sync B-Roll 
 
 # Gửi thông báo Telegram
 if os.path.exists(NOTIFY_SCRIPT):
-    msg = "🎬 [B-ROLL BANK] ĐÃ ĐỒNG BỘ CẬP NHẬT XONG!\nTrang web: https://fedu.vn/brollbank.html\nPlaylist: https://www.youtube.com/playlist?list=PLPs82ezbs9Lo"
+    msg = "🎬 [B-ROLL BANK] ĐÃ ĐỒNG BỘ CẬP NHẬT XONG!\nTrang web: https://brollbank.fedu.vn\nPlaylist: https://www.youtube.com/playlist?list=PLPs82ezbs9Lo"
     subprocess.run(f'python3 "{NOTIFY_SCRIPT}" --msg "{msg}"', shell=True)
 
 print("\n==================================================")
 print("🎉 HOÀN TẤT ĐỒNG BỘ 100%! TRANG WEB ĐÃ SẴN SÀNG:")
-print("🔗 https://fedu.vn/brollbank.html")
+print("🔗 https://brollbank.fedu.vn")
 print("==================================================")
