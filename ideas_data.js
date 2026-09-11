@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 174,
-  "total_unique_ideas": 161,
-  "total_active_ideas": 151,
+  "total_scene_items": 175,
+  "total_unique_ideas": 162,
+  "total_active_ideas": 152,
   "total_excluded_ideas": 10,
-  "total_creators": 90,
+  "total_creators": 91,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 15,
     "storytelling": 21,
-    "dien-anh": 82,
+    "dien-anh": 83,
     "chuyen-canh": 20
   },
   "industries": [
@@ -145,7 +145,7 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 2,
     "thuong-hieu": 23,
     "thoi-trang": 7,
-    "am-thuc": 16,
+    "am-thuc": 17,
     "du-lich": 19,
     "cong-nghe": 22,
     "kien-truc": 17,
@@ -207,7 +207,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 8,
     "india": 13,
     "japan": 9,
-    "vietnam": 8,
+    "vietnam": 9,
     "asia_other": 43
   },
   "creators_hub": [
@@ -490,6 +490,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@allinbcoffee",
+      "name": "Allinbcoffee",
+      "profile_url": "https://www.instagram.com/allinbcoffee/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon"
       ]
     },
     {
@@ -1264,6 +1275,66 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon",
+      "shortcode": "Dc-LDGRsCDN",
+      "title_vi": "allinB Coffee • Không Gian Quán & Vibe Thư Thái Sài Gòn - @allinbcoffee",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 12 phân cảnh mẫu mực về nghệ thuật quay B-Roll không gian F&B, kiến trúc sân vườn giếng trời và nhịp sống thư thái tại allinB Coffee Roasters (Sài Gòn). Video sử dụng cấu trúc nhịp dựng 1 giây (1-Second Rhyth...",
+      "key_tech": "Courtyard Garden Establishing, Koi Water Flow Dynamic, Frame-within-a-Frame (Spiral Staircase), Japanese Lantern Layering, 1-Second Rhythmic Cadence, Deep Work Ambiance, Artisanal Tamping Precision, Sensory Espresso Macro Extraction",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Không gian quán cà phê sân vườn giếng trời & vibe thư thái Sài Gòn",
+      "tech_tags": [
+        "1-Second Pacing",
+        "Courtyard Garden Hook",
+        "Spiral Staircase Frame",
+        "Japanese Lantern Layering",
+        "Espresso Macro Flow",
+        "Deep Work Nook"
+      ],
+      "logic_explanation": "12 phân cảnh mẫu mực về nghệ thuật quay B-roll F&B: Từ khoảng lặng sân vườn giếng trời, bố cục khung trong khung qua cầu thang xoắn, góc làm việc đón nắng tự nhiên đến cú Macro chiết xuất espresso thơm lừng.",
+      "creator": {
+        "raw": "@allinbcoffee",
+        "name": "Allinbcoffee",
+        "handle": "@allinbcoffee",
+        "profile_url": "https://www.instagram.com/allinbcoffee/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc-LDGRsCDN/",
+      "gdrive_folder": "https://drive.google.com/open?id=1O1c5DsjpV8TGTlSOB-tUalHEfOkSJIcc",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc-LDGRsCDN.mp4",
+        "report_url": "reports/allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon_-_@allinbcoffee.html",
+        "shots_count": 12,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas",
       "shortcode": "DdB_21Yo0Qc",
