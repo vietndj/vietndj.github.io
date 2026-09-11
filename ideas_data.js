@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 179,
-  "total_unique_ideas": 166,
-  "total_active_ideas": 156,
+  "total_scene_items": 180,
+  "total_unique_ideas": 167,
+  "total_active_ideas": 157,
   "total_excluded_ideas": 10,
   "total_creators": 94,
   "shooting_styles": [
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 10,
-    "talking-head": 15,
+    "talking-head": 16,
     "storytelling": 21,
     "dien-anh": 85,
     "chuyen-canh": 22
@@ -143,7 +143,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 2,
-    "thuong-hieu": 23,
+    "thuong-hieu": 24,
     "thoi-trang": 8,
     "am-thuc": 17,
     "du-lich": 20,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 70,
+    "us_eu": 71,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -320,6 +320,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@shogentle",
+      "name": "Shogentle",
+      "profile_url": "https://www.instagram.com/shogentle/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
+        "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
+        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
+      ]
+    },
+    {
       "handle": "@creator",
       "name": "Unknown",
       "profile_url": "https://www.instagram.com/reel/DaH7X34NTNX/",
@@ -407,18 +420,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
-      ]
-    },
-    {
-      "handle": "@shogentle",
-      "name": "Shogentle",
-      "profile_url": "https://www.instagram.com/shogentle/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
-        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
       ]
     },
     {
@@ -1309,6 +1310,67 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
+      "shortcode": "DdCRQnBI4ny",
+      "title_vi": "Triết Lý Fast Food Outsells Restaurant: Ẩn Dụ Thị Giác & Giữ Chân Khán Giả Trung Thành",
+      "quick_takeaway": "Báo cáo bóc tách 16 phân cảnh video của @shogentle: Bóc trần nghịch lý triệu view rác (Fast Food vs Fine Dining), giải phẫu ẩn dụ nuốt điện thoại, chữ chiếu lên trán, cửa bẫy rơi tự do và đám đông bóng đen bỏ rơi creator.",
+      "key_tech": "Visual Metaphor, Proof Stacking, Pattern Interrupt, Scale Match Cut, Kinetic Typography Slate, Trapdoor Pun, Silhouette Crowd Dissolve, Zero-G Clones",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Giải thích triết lý sản xuất nội dung bền vững, phản biện tư duy săn view rác và xây dựng khán giả trung thành sẵn sàng trả tiền",
+      "tech_tags": [
+        "Visual Metaphor",
+        "Proof Stacking",
+        "Pattern Interrupt",
+        "Kinetic Typography Slate",
+        "Trapdoor Pun",
+        "Silhouette Crowd Dissolve",
+        "Zero-G Clones"
+      ],
+      "logic_explanation": "Sử dụng ẩn dụ thức ăn nhanh nuốt chửng điện thoại để giải thích nội dung phản xạ; dùng cửa bẫy rơi xuống sàn để minh họa vấn đề tiềm ẩn; và dùng đám đông bóng đen quay lưng bỏ đi để cảnh tỉnh hậu quả khi cố làm hài lòng khán giả vãng lai.",
+      "creator": {
+        "raw": "@shogentle",
+        "name": "Shogentle",
+        "handle": "@shogentle",
+        "profile_url": "https://www.instagram.com/shogentle/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdCRQnBI4ny/",
+      "gdrive_folder": "https://drive.google.com/open?id=1LcqCpSfJI4OSltUd_8SHkyUvJWsVL3b7",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant/shot_03_mid.jpg",
+        "video_url": "./videos/Fast Food Outsells Restaurant - @shogentle.mp4",
+        "report_url": "reports/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant.html",
+        "shots_count": 16,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook",
       "shortcode": "DcQy-eEOIHc",
