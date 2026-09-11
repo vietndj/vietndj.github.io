@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 167,
-  "total_unique_ideas": 155,
-  "total_active_ideas": 145,
+  "total_scene_items": 168,
+  "total_unique_ideas": 156,
+  "total_active_ideas": 146,
   "total_excluded_ideas": 10,
-  "total_creators": 87,
+  "total_creators": 88,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 14,
     "storytelling": 18,
-    "dien-anh": 81,
+    "dien-anh": 82,
     "chuyen-canh": 19
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 36
+    "ky-thuat-quay": 37
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 61,
+    "us_eu": 62,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -476,6 +476,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@Gabe_Harris",
+      "name": "Gabe_Harris",
+      "profile_url": "https://www.instagram.com/Gabe_Harris/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis"
       ]
     },
     {
@@ -1228,6 +1239,61 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis",
+      "shortcode": "Dc3immEILSE",
+      "title_vi": "Video by watch.gabe",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 7 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@Gabe_Harris",
+        "name": "Gabe_Harris",
+        "handle": "@Gabe_Harris",
+        "profile_url": "https://www.instagram.com/Gabe_Harris/"
+      },
+      "ig_url": "https://www.instagram.com/p/Dc3immEILSE/?img_index=2&stkn=MXZ2N2E0anYwMnBzeQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1a0IDCkNY-ldnUxxfaTH5tn-q-M_U4E1v",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis.html",
+        "shots_count": 7,
+        "duration": "0.15s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions",
       "shortcode": "DdBDvZph1od",
