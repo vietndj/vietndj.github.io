@@ -63,8 +63,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 3,
     "voice-over": 10,
     "talking-head": 14,
-    "storytelling": 19,
-    "dien-anh": 83,
+    "storytelling": 20,
+    "dien-anh": 82,
     "chuyen-canh": 19
   },
   "industries": [
@@ -143,14 +143,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 2,
-    "thuong-hieu": 21,
+    "thuong-hieu": 22,
     "thoi-trang": 7,
     "am-thuc": 16,
     "du-lich": 19,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 38
   },
   "countries": [
     {
@@ -494,7 +494,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Steven.Vuu",
       "profile_url": "https://www.instagram.com/steven.vuu/",
       "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
@@ -1319,22 +1319,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu",
       "shortcode": "DchxEAkJ9Hw",
-      "title_vi": "@Steven_🇻🇳_Vu - Video by steven.vuu",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "title_vi": "Nghệ Thuật Kể Chuyện Hài Bẻ Lái Thực Tế (Relatable Comedy Skit) - @steven.vuu",
+      "quick_takeaway": "Bóc tách cấu trúc 12 phân cảnh điện ảnh hài hước của Steven Vu: Từ chuỗi thiết lập kỳ vọng xa hoa chỉn chu (High-End Prep: sơ mi đen, dây chuyền bạc, rương vàng, nước hoa YSL, kính râm bad boy, xe hơi Prius) đến cú bẻ lái lật ngược kỳ vọ...",
+      "key_tech": "Subversion of Expectation, Relatable Comedy Skit, Fast-Cut Pacing, Sensory Escalation, POV Audio Cue, Ellipsis Time Compression, Story Circle Loop",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
       },
       "country": {
         "id": "us_eu",
@@ -1343,13 +1343,18 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Kịch bản bẻ lái lật ngược kỳ vọng (Subversion of Expectation) trong video hài đời sống",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Subversion of Expectation",
+        "Relatable Comedy Skit",
+        "Fast-Cut Pacing",
+        "Sensory Escalation",
+        "POV Audio Cue",
+        "Story Circle Loop"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Chuỗi thiết lập kỳ vọng sang chảnh cực độ (vest sơ mi, nước hoa YSL, kính râm, xe Prius) trước khi tung cú twist đời thường đi chợ xách 2 túi đồ siêu thị về nhà.",
       "creator": {
-        "raw": "@Steven_🇻🇳_Vu",
+        "raw": "@steven.vuu",
         "name": "Steven.Vuu",
         "handle": "@steven.vuu",
         "profile_url": "https://www.instagram.com/steven.vuu/"
@@ -1362,7 +1367,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DchxEAkJ9Hw.mp4",
         "report_url": "reports/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
