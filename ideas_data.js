@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 172,
-  "total_unique_ideas": 159,
-  "total_active_ideas": 149,
+  "total_scene_items": 173,
+  "total_unique_ideas": 160,
+  "total_active_ideas": 150,
   "total_excluded_ideas": 10,
   "total_creators": 90,
   "shooting_styles": [
@@ -63,7 +63,7 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 3,
     "voice-over": 10,
     "talking-head": 15,
-    "storytelling": 20,
+    "storytelling": 21,
     "dien-anh": 82,
     "chuyen-canh": 19
   },
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 38
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 65,
+    "us_eu": 66,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -274,6 +274,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@joshdiazfilms",
+      "name": "Joshdiazfilms",
+      "profile_url": "https://www.instagram.com/joshdiazfilms/",
+      "video_count": 6,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
+        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
+        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
+        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
+        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
+        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
+      ]
+    },
+    {
       "handle": "@jade.got.curious",
       "name": "Jade.Got.Curious",
       "profile_url": "https://www.instagram.com/jade.got.curious/",
@@ -287,21 +303,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
         "IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious",
         "IG_@Jade_Sheng_DcbAqchxJ2t_Video_by_jade.got.curious"
-      ]
-    },
-    {
-      "handle": "@joshdiazfilms",
-      "name": "Joshdiazfilms",
-      "profile_url": "https://www.instagram.com/joshdiazfilms/",
-      "video_count": 5,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
-        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
-        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
-        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
-        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
       ]
     },
     {
@@ -1262,6 +1263,66 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
+      "shortcode": "DdEshZtz9Rb",
+      "title_vi": "Josh Diaz • Lifestyle Habit & Cinematic B-Roll Routine",
+      "quick_takeaway": "Báo cáo đạo diễn phân tích ngôn ngữ điện ảnh, góc quay Overhead Top-Down, Fisheye Circular Vignette, nghệ thuật ánh sáng xiên Dappled Light và cú Twist bẻ lái thị giác.",
+      "key_tech": "Overhead Top-Down, Fisheye Vignette, Dappled Light, Visual Punchline Twist",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Xây dựng thói quen phong cách sống, phản biện định kiến dậy sớm và nghệ thuật quay B-Roll điện ảnh tự sự (Lifestyle Habit & Cinematic Routine)",
+      "tech_tags": [
+        "Overhead Top-Down Angle",
+        "Fisheye Circular Vignette",
+        "Dappled Morning Light",
+        "Tactile Skincare Detail",
+        "Visual Punchline Twist",
+        "Minimalist Retro Typography"
+      ],
+      "logic_explanation": "Mẫu video chuẩn mực về phong cách Lifestyle B-Roll điện ảnh: Kết hợp góc máy Top-Down từ trần nhà, ống kính Fisheye viền tròn hoài niệm và cú Twist bẻ lái thị giác hài hước để biến lời tự sự dậy muộn thành một tác phẩm nghệ thuật cuốn hút.",
+      "creator": {
+        "raw": "@joshdiazfilms",
+        "name": "Joshdiazfilms",
+        "handle": "@joshdiazfilms",
+        "profile_url": "https://www.instagram.com/joshdiazfilms/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdEshZtz9Rb/",
+      "gdrive_folder": "https://drive.google.com/drive/folders/Work/AI_Video_Analysis",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdEshZtz9Rb.mp4",
+        "report_url": "reports/Lifestyle Habit & Cinematic Routine - @joshdiazfilms.html",
+        "shots_count": 9,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
       "shortcode": "DdF-qr0s4Kk",
