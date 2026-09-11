@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Giáo Trình Thực Tế: Logic Làm Video Lồng Tiếng Cho Người Mới</title>
+  
+  <!-- Font Definitions & System Fallbacks -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    /* ═══ 1. FONT DECLARATIONS (Local Repo, System & CDN Fallbacks) ═══ */
+    @font-face {
+      font-family: 'FD Aeonik Extended';
+      src: url('./fonts/FDAeonikExtended-Bold.woff2?v=20260911b') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDAeonikExtended-Bold.woff2?v=20260911b') format('woff2'),
+           url('./fonts/FDAeonikExtended-Bold.ttf?v=20260911b') format('truetype'),
+           url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
+           local('FD Aeonik Extended Bold');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FD Aeonik';
+      src: url('./fonts/FDAeonikRegular.ttf') format('truetype'),
+           url('./assets/fonts/FDAeonikRegular.ttf') format('truetype'),
+           url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
+           local('FD Aeonik Regular');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'FD Aeonik';
+      src: url('./fonts/FDAeonikExtended-SemiBold.woff2?v=20260911b') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDAeonikExtended-SemiBold.woff2?v=20260911b') format('woff2'),
+           url('./fonts/FDAeonikExtended-SemiBold.ttf?v=20260911b') format('truetype'),
+           url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
+           local('FD Aeonik SemiBold');
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Tiempos Text';
+      src: url('./fonts/FDTiemposText-Regular.otf') format('opentype'),
+           url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
+           local('Tiempos Text Regular'), local('Georgia');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Tiempos Text';
+      src: url('./fonts/FDTiemposText-Medium.otf') format('opentype'),
+           url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
+           local('Tiempos Text Medium'), local('Georgia');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: 'Tiempos Text';
+      src: url('./fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+           url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+           local('Tiempos Text Regular Italic'), local('Georgia');
+      font-weight: 400;
+      font-style: italic;
+      font-display: swap;
+    }
+
+    /* ═══ 2. DESIGN TOKENS (Light Theme Chuẩn Video) ═══ */
+    :root {
+      --cl-bg:              #ffffff;
+      --cl-tint:            #f8fafc;
+      --cl-card:            #ffffff;
+      --cl-card-subtle:     #f1f5f9;
+      --cl-line:            rgba(0, 0, 0, 0.06);
+      --cl-line-strong:     rgba(0, 0, 0, 0.12);
+      --cl-text-base:       #090d16;
+      --cl-text-body:       #0f172a;
+      --cl-text-muted:      #475569;
+      --cl-accent:          #1a73e8;
+      --cl-accent-tint:     rgba(26, 115, 232, 0.08);
+      --cl-accent-dark:     #0d47a1;
+      --cl-emerald:         #059669;
+      --cl-emerald-tint:    #ecfdf5;
+      --cl-amber:           #d97706;
+      --cl-amber-tint:      #fffbeb;
+      --cl-rose:            #e11d48;
+      --cl-rose-tint:       #fff1f2;
+
+      --cl-radius-sm:       8px;
+      --cl-radius-md:       14px;
+      --cl-radius-lg:       20px;
+      --cl-radius-xl:       28px;
+      --cl-radius-full:     9999px;
+
+      --font-display-short: 'FD Aeonik Extended', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-display-long:  'FD Aeonik', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body:          'Tiempos Text', 'Inter', Georgia, serif;
+      --font-editorial:     'Tiempos Text', Georgia, serif;
+      --font-mono:          'JetBrains Mono', monospace;
+
+      --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+      --apple-ease:   cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--cl-bg);
+      color: var(--cl-text-body);
+    }
+
+    body {
+      font-family: var(--font-body);
+      line-height: 1.8;
+      overflow-x: hidden;
+      background: var(--cl-bg);
+    }
+
+    /* ═══ 3. ZEBRA STRIPING & LAYOUT ARCHITECTURE ═══ */
+    .cl-zebra-section {
+      width: 100%;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 100px 24px;
+      position: relative;
+      border-bottom: 1px solid var(--cl-line);
+      box-sizing: border-box;
+    }
+
+    .cl-zebra--light {
+      background-color: var(--cl-bg);
+    }
+
+    .cl-zebra--tint {
+      background-color: var(--cl-tint);
+    }
+
+    .cl-sec-container {
+      width: 100%;
+      max-width: 880px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cl-sec-container--wide {
+      max-width: 1140px;
+    }
+
+    /* ═══ 4. TYPOGRAPHY RULES ═══ */
+    .cl-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--cl-accent);
+      background: var(--cl-accent-tint);
+      border: 1px solid rgba(26, 115, 232, 0.2);
+      padding: 6px 16px;
+      border-radius: var(--cl-radius-full);
+      margin-bottom: 24px;
+    }
+
+    .title-short {
+      font-family: var(--font-display-short);
+      font-weight: 700;
+      font-size: clamp(24px, 4vw, 42px);
+      line-height: 1.18;
+      letter-spacing: -0.01em;
+      text-transform: uppercase;
+      color: var(--cl-text-base);
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+
+    .title-long {
+      font-family: var(--font-display-long);
+      font-weight: 600;
+      font-size: clamp(22px, 3.2vw, 34px);
+      line-height: 1.35;
+      color: var(--cl-text-base);
+      margin-bottom: 20px;
+      text-wrap: balance;
+    }
+
+    .editorial-hook {
+      font-family: var(--font-editorial);
+      font-style: italic;
+      font-size: clamp(17px, 2.2vw, 21px);
+      line-height: 1.68;
+      color: var(--cl-accent);
+      margin-bottom: 28px;
+      max-width: 800px;
+      text-wrap: balance;
+    }
+
+    .cl-body {
+      font-size: clamp(16px, 1.6vw, 17.5px);
+      color: var(--cl-text-body);
+      line-height: 1.85;
+      margin-bottom: 28px;
+      max-width: 800px;
+      text-align: left;
+    }
+
+    .hero-direct-bullets {
+      width: 100%;
+      max-width: 800px;
+      background: var(--cl-tint);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: var(--cl-radius-lg);
+      padding: 24px 28px;
+      margin: 0 auto 32px auto;
+      text-align: left;
+    }
+
+    .hero-bullets-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+    }
+
+    .hero-bullets-list li {
+      position: relative;
+      padding-left: 22px;
+      font-size: 15.5px;
+      line-height: 1.7;
+      color: var(--cl-text-body);
+    }
+
+    .hero-bullets-list li::before {
+      content: "•";
+      position: absolute;
+      left: 4px;
+      top: -1px;
+      color: var(--cl-accent);
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 1.5;
+    }
+
+    .hero-bullets-list li b {
+      color: var(--cl-text-base);
+      font-family: var(--font-display-long);
+      font-weight: 600;
+    }
+
+    /* ═══ 5. CARDS & INTERACTIVE COMPONENTS ═══ */
+    .apple-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      width: 100%;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .apple-card {
+      background: var(--cl-card);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: var(--cl-radius-lg);
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+      position: relative;
+      transition: all 0.35s var(--apple-spring);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .apple-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.07);
+      border-color: rgba(26, 115, 232, 0.3);
+    }
+
+    .apple-card__icon {
+      font-size: 28px;
+      margin-bottom: 16px;
+      display: inline-block;
+    }
+
+    .apple-card__badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--cl-radius-full);
+      margin-bottom: 12px;
+      align-self: flex-start;
+    }
+
+    .apple-card__badge--blue {
+      background: var(--cl-accent-tint);
+      color: var(--cl-accent);
+    }
+
+    .apple-card__badge--rose {
+      background: var(--cl-rose-tint);
+      color: var(--cl-rose);
+    }
+
+    .apple-card__badge--emerald {
+      background: var(--cl-emerald-tint);
+      color: var(--cl-emerald);
+    }
+
+    .apple-card__badge--amber {
+      background: var(--cl-amber-tint);
+      color: var(--cl-amber);
+    }
+
+    .apple-card__title {
+      font-family: var(--font-display-short);
+      font-weight: 700;
+      font-size: 18px;
+      color: var(--cl-text-base);
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 12px;
+    }
+
+    .apple-card__desc {
+      font-size: 15px;
+      line-height: 1.72;
+      color: var(--cl-text-body);
+      flex-grow: 1;
+    }
+
+    .apple-card__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cl-accent);
+      text-decoration: none;
+      margin-top: 18px;
+      transition: gap 0.2s ease;
+    }
+
+    .apple-card__link:hover {
+      gap: 10px;
+      text-decoration: underline;
+    }
+
+    /* ═══ 6. COMPARISON TABLE / 2-COL BOX ═══ */
+    .compare-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      width: 100%;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .compare-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .compare-col {
+      padding: 32px 28px;
+      border-radius: var(--cl-radius-lg);
+      border: 1px solid var(--cl-line-strong);
+    }
+
+    .compare-col--bad {
+      background: #ffffff;
+      border-left: 5px solid var(--cl-rose);
+    }
+
+    .compare-col--good {
+      background: #ffffff;
+      border-left: 5px solid var(--cl-emerald);
+    }
+
+    .compare-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .compare-title {
+      font-family: var(--font-display-short);
+      font-size: 16px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+    }
+
+    .compare-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .compare-list li {
+      position: relative;
+      padding-left: 24px;
+      font-size: 15px;
+      line-height: 1.65;
+      color: var(--cl-text-body);
+    }
+
+    .compare-list li::before {
+      position: absolute;
+      left: 0;
+      top: 0;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .compare-col--bad .compare-list li::before {
+      content: "✕";
+      color: var(--cl-rose);
+    }
+
+    .compare-col--good .compare-list li::before {
+      content: "✓";
+      color: var(--cl-emerald);
+    }
+
+    /* ═══ 7. CHECKLIST & SOP ACTION STEPS ═══ */
+    .apple-list {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .apple-list-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 18px;
+      background: var(--cl-card);
+      border: 1px solid var(--cl-line-strong);
+      border-radius: var(--cl-radius-md);
+      padding: 22px 24px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+      transition: transform 0.25s ease;
+    }
+
+    .apple-list-item:hover {
+      transform: translateX(6px);
+      border-color: rgba(26, 115, 232, 0.4);
+    }
+
+    .apple-list-item__bullet {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--cl-radius-full);
+      background: var(--cl-accent-tint);
+      color: var(--cl-accent);
+      font-family: var(--font-mono);
+      font-size: 13px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .apple-list-item__content {
+      font-size: 15.5px;
+      line-height: 1.75;
+      color: var(--cl-text-body);
+    }
+
+    .apple-list-item__content b {
+      color: var(--cl-text-base);
+      font-family: var(--font-display-long);
+      font-size: 16.5px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    /* ═══ 8. SCRIPT GALLERY (9 KỊCH BẢN) ═══ */
+    .script-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+      width: 100%;
+      margin-top: 32px;
+      text-align: left;
+    }
+
+    .script-card {
+      background: #ffffff;
+      border: 1px solid var(--cl-line-strong);
+      border-radius: var(--cl-radius-lg);
+      padding: 24px 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: all 0.3s var(--apple-spring);
+    }
+
+    .script-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--cl-accent);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+    }
+
+    .script-num {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--cl-accent);
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .script-title {
+      font-family: var(--font-display-short);
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--cl-text-base);
+      line-height: 1.35;
+      text-transform: uppercase;
+      letter-spacing: -0.01em;
+      margin-bottom: 8px;
+    }
+
+    .script-hook {
+      font-size: 13.5px;
+      line-height: 1.6;
+      color: var(--cl-text-muted);
+      margin-bottom: 16px;
+      flex-grow: 1;
+    }
+
+    .script-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: var(--cl-radius-sm);
+      background: var(--cl-tint);
+      color: var(--cl-accent-dark);
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid var(--cl-line-strong);
+      transition: all 0.2s ease;
+    }
+
+    .script-btn:hover {
+      background: var(--cl-accent);
+      color: #ffffff;
+      border-color: var(--cl-accent);
+    }
+
+    /* ═══ 9. CTA BUTTON & STICKY NAV ═══ */
+    .btn-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--cl-accent);
+      color: #ffffff;
+      font-family: var(--font-mono);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: var(--cl-radius-full);
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(26, 115, 232, 0.25);
+      transition: all 0.3s var(--apple-spring);
+      margin-top: 24px;
+    }
+
+    .btn-cta:hover {
+      background: var(--cl-accent-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(26, 115, 232, 0.35);
+    }
+
+    .sticky-nav {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      padding: 8px 18px;
+      border-radius: var(--cl-radius-full);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    }
+
+    .sticky-nav a {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--cl-text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .sticky-nav a:hover {
+      color: var(--cl-accent);
+    }
+
+    /* ═══ 10. APPLE MOTION REVEAL ═══ */
+    .apple-reveal {
+      opacity: 0;
+      transform: translate3d(0, 26px, 0);
+      transition: opacity 0.5s var(--apple-ease), transform 0.58s var(--apple-spring);
+      will-change: opacity, transform;
+    }
+
+    .apple-reveal.is-visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+      will-change: auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- STICKY NAV DÀNH CHO HỌC VIÊN -->
+  <nav class="sticky-nav">
+    <a href="#sec-hero">Khởi Đầu</a>
+    <a href="#sec-psychology">Bản Chất</a>
+    <a href="#sec-traps">3 Chỗ Hay Vấp</a>
+    <a href="#sec-sop">4 Bước Làm</a>
+    <a href="#sec-scripts">9 Kịch Bản</a>
+    <a href="#sec-benchmarks">Video Mẫu ↗</a>
+  </nav>
+
+  <!-- ═══ KHỐI 1: HERO (KHỞI ĐẦU CHO HỌC VIÊN MỚI) ═══ -->
+  <section class="cl-zebra-section cl-zebra--light" id="sec-hero">
+    <div class="cl-sec-container apple-reveal">
+      <div class="cl-badge">BÀI HỌC THỰC TẾ • GIÁO TRÌNH HỌC VIÊN 2026</div>
+      <h1 class="title-short">TÁCH HÌNH KHỎI TIẾNG<br>ĐỂ BẮT ĐẦU VIDEO</h1>
+      <p class="editorial-hook">"Ngồi trước ống kính khi chưa quen rất dễ lúng túng cơ mặt. Tách riêng phần tiếng và phần hình: bạn nói bằng giọng mộc mạc nhất trong phòng tĩnh, rồi lấy hình ảnh đời thực phủ lên."</p>
+      
+      <div class="hero-direct-bullets">
+        <ul class="hero-bullets-list">
+          <li><b>Rào cản thực tế:</b> Không phải do thiếu máy ảnh đắt tiền hay đèn đóm phức tạp, mà do não bị quá tải khi vừa phải nhớ lời, vừa lo kiểm soát cơ mặt trước ống kính.</li>
+          <li><b>Nguyên lý tháo gỡ:</b> Tách riêng hoàn toàn phần tiếng và phần hình (hình chạy theo tiếng dẫn) để giải phóng triệt để áp lực ngoại hình.</li>
+          <li><b>Xử lý phần tiếng:</b> Ngồi một góc phòng tĩnh, nói bằng đúng chất giọng mộc mạc thường ngày. Thu từng câu ngắn dứt khoát; sai câu nào bấm dừng và thu lại ngay câu đó, không sợ vấp.</li>
+          <li><b>Xử lý phần hình:</b> Cầm điện thoại quay lại vài lát cắt sinh hoạt, làm việc thực tế diễn ra quanh mình (không cần nhìn vào ống kính, không cần diễn).</li>
+          <li><b>Ghép hoàn thiện:</b> Lấy các khung hình đời thực phủ đè lên dải âm thanh đã nói.</li>
+          <li><b>Kết quả:</b> Xóa sạch cảm giác gượng gạo, giữ trọn sự chân thật và tiết kiệm tối đa thời gian sản xuất video.</li>
+        </ul>
+      </div>
+
+      <div class="apple-cards-grid" style="margin-top: 16px;">
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--emerald">LỢI THẾ 01</div>
+          <h3 class="apple-card__title">KHÔNG CẦN LỘ MẶT</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 6px;">
+            <div>• Bỏ qua trang điểm, canh góc máy và diễn nét mặt.</div>
+            <div>• Thu âm trong phòng tĩnh với giọng nói thoải mái nhất.</div>
+          </div>
+        </div>
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--blue">LỢI THẾ 02</div>
+          <h3 class="apple-card__title">THU ÂM LẠI TÙY Ý</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 6px;">
+            <div>• Vấp câu nào dừng lại 2 giây bấm thu lại ngay câu đó.</div>
+            <div>• Làm chủ 100% phần âm thanh trước khi bắt đầu dựng hình.</div>
+          </div>
+        </div>
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--amber">LỢI THẾ 03</div>
+          <h3 class="apple-card__title">TẬN DỤNG CẢNH CÓ SẴN</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 6px;">
+            <div>• Bàn trà, bàn gõ phím, vệt nắng cửa sổ đều là tư liệu.</div>
+            <div>• Cầm điện thoại quay tĩnh 6–8 giây, không tốn thêm chi phí.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 2: TẠI SAO NGƯỜI MỚI NGẠI ỐNG KÍNH? (ĐỐI CHIẾU THỰC TẾ) ═══ -->
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-psychology">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal">
+      <div class="cl-badge">01 / TÂM LÝ KHI LÊN HÌNH</div>
+      <h2 class="title-short">NGỒI NÓI TRƯỚC CAMERA<br>VÀ HÌNH CHẠY TIẾNG DẪN</h2>
+      <p class="editorial-hook">"Tại sao nhiều người ngồi trước camera thì lúng túng, nhưng khi ngồi uống chén trà với bạn bè thì nói chuyện rất tự nhiên?"</p>
+      
+      <div class="compare-grid">
+        <div class="compare-col compare-col--bad">
+          <div class="compare-header">
+            <span style="font-size: 24px;">🚫</span>
+            <h3 class="compare-title" style="color: var(--cl-rose);">ÁP LỰC KHI NGỒI NÓI TRỰC DIỆN</h3>
+          </div>
+          <ul class="compare-list">
+            <li><b>Phân tán năng lượng:</b> Mắt vừa canh ống kính, miệng vừa nhớ lời, đầu vừa lo nét mặt có tự nhiên không.</li>
+            <li><b>Cơ mặt bị gượng:</b> Sợ quên ý khiến cơ mặt căng thẳng, nụ cười gượng gạo, người xem cảm nhận được ngay sự thiếu tự nhiên.</li>
+            <li><b>Chuẩn bị rườm rà:</b> Dọn phòng, kê đèn, thay đồ... mất cả buổi chuẩn bị nhưng bấm máy lại vấp liên tục.</li>
+            <li><b>Cảm giác xa cách:</b> Người xem cảm thấy người trên màn hình đang gồng lên để thuyết giảng hoặc bán hàng.</li>
+          </ul>
+        </div>
+
+        <div class="compare-col compare-col--good">
+          <div class="compare-header">
+            <span style="font-size: 24px;">✅</span>
+            <h3 class="compare-title" style="color: var(--cl-emerald);">LỢI THẾ CỦA HÌNH CHẠY TIẾNG DẪN</h3>
+          </div>
+          <ul class="compare-list">
+            <li><b>Tập trung trọn vẹn vào giọng nói:</b> Nhắm mắt lại vẫn thu âm được, chỉ cần thả lỏng và nói như đang tâm sự với bạn bè.</li>
+            <li><b>Cảm giác gần gũi như ngồi đối diện:</b> Đặt mic sát miệng, giọng trầm ấm mộc mạc tạo cảm giác thân mật như hai người ngồi cùng bàn.</li>
+            <li><b>Không gian nhẹ nhàng cho mắt:</b> Người xem được ngắm hình ảnh đời thường bình dị, không bị ai nhìn chằm chằm tạo áp lực.</li>
+            <li><b>Làm video nhanh gọn:</b> Thấy góc nào đẹp thì cầm máy quay 5 giây để dành; tối về phòng ngủ thu âm 2 phút là xong video.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 3: 3 LỚP CẢM XÚC TRONG VIDEO THỰC TẾ ═══ -->
+  <section class="cl-zebra-section cl-zebra--light" id="sec-logic">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal">
+      <div class="cl-badge">02 / CẤU TRÚC CẢM XÚC</div>
+      <h2 class="title-short">3 LỚP TẠO NÊN SỰ CUỐN HÚT</h2>
+      <p class="editorial-hook">"Một video chạm được vào lòng người không nằm ở máy quay đắt tiền, mà nằm ở sự chân thật của hình ảnh và âm thanh."</p>
+
+      <div class="apple-cards-grid">
+        <div class="apple-card">
+          <div class="apple-card__icon">🎞️</div>
+          <div class="apple-card__badge apple-card__badge--blue">LỚP 1: HÌNH ẢNH</div>
+          <h3 class="apple-card__title">KHÔNG GIAN CHO MẮT THỞ</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Giảm áp lực nhìn:</b> Không ép người xem nhìn chằm chằm vào cơ mặt; cho mắt nghỉ ngơi với khung hình đời thường.</div>
+            <div>• <b>Tư liệu bình dị:</b> Chuyển động chậm rãi của hơi nước tách trà, vạt nắng hiên nhà, đôi tay làm việc.</div>
+          </div>
+        </div>
+
+        <div class="apple-card">
+          <div class="apple-card__icon">🎧</div>
+          <div class="apple-card__badge apple-card__badge--emerald">LỚP 2: ÂM THANH</div>
+          <h3 class="apple-card__title">TIẾNG ĐỘNG THẬT NGOÀI ĐỜI</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Giữ 20% tiếng hiện trường:</b> Tiếng lách cách gõ phím, tiếng rót nước, tiếng dép lê... để video có hơi thở sống.</div>
+            <div>• <b>Khử cảm giác khô cứng:</b> Không tắt sạch âm nền khiến giọng nói bị trơ trọi như bản tin phát thanh.</div>
+          </div>
+        </div>
+
+        <div class="apple-card">
+          <div class="apple-card__icon">🎙️</div>
+          <div class="apple-card__badge apple-card__badge--amber">LỚP 3: LỜI THOẠI</div>
+          <h3 class="apple-card__title">ĐÚNG TRĂN TRỞ THẬT</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Tâm thế người làm nghề:</b> Không gồng mình dạy đời ai; chỉ bộc bạch thật lòng từ những va vấp thực tế.</div>
+            <div>• <b>Chạm trúng việc có thật:</b> Nói đúng nút thắt người nghe đang vướng, giúp họ thấy an tâm vì không đơn độc.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 4: 3 CHỖ NGƯỜI MỚI HAY VẤP KHI DỰNG VIDEO ═══ -->
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-traps">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal">
+      <div class="cl-badge">03 / KINH NGHIỆM ĐI TRƯỚC</div>
+      <h2 class="title-short">3 CHỖ NGƯỜI MỚI HAY VẤP</h2>
+      <p class="editorial-hook">"Tránh được 3 điểm này, video của bạn sẽ mộc mạc, tự nhiên và giữ chân người xem rất êm."</p>
+
+      <div class="apple-cards-grid">
+        <div class="apple-card" style="border-top: 4px solid var(--cl-rose);">
+          <div class="apple-card__badge apple-card__badge--rose">ĐIỂM VẤP 01</div>
+          <h3 class="apple-card__title">NÓI GÌ CHIẾU NẤY</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Chỗ hay vấp:</b> Nói uống trà thì chiếu cảnh uống trà, nói bế tắc thì chiếu cảnh ôm đầu. Người xem đoán trước được hình ảnh nên lướt qua ngay.</div>
+            <div>• <b>Cách chỉnh:</b> Dùng hình ảnh đời thường làm nền. Lời nói về sự tĩnh lặng, hình ảnh quay đôi bàn tay kiên nhẫn lau chiếc bàn làm việc.</div>
+          </div>
+        </div>
+
+        <div class="apple-card" style="border-top: 4px solid var(--cl-rose);">
+          <div class="apple-card__badge apple-card__badge--rose">ĐIỂM VẤP 02</div>
+          <h3 class="apple-card__title">TẮT SẠCH TIẾNG THẬT</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Chỗ hay vấp:</b> Tắt 100% tiếng gốc của cảnh quay, chỉ để nhạc nền đè dưới giọng đọc khiến video bị khô và thiếu tự nhiên.</div>
+            <div>• <b>Cách chỉnh:</b> Giữ lại khoảng 15% tiếng thật của cảnh: tiếng dép lê, tiếng rót nước, tiếng xe xa xăm để khung hình có hơi thở cuộc sống.</div>
+          </div>
+        </div>
+
+        <div class="apple-card" style="border-top: 4px solid var(--cl-rose);">
+          <div class="apple-card__badge apple-card__badge--rose">ĐIỂM VẤP 03</div>
+          <h3 class="apple-card__title">CẮT HÌNH TRƯỚC KHI THU TIẾNG</h3>
+          <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
+            <div>• <b>Chỗ hay vấp:</b> Cắt sẵn đoạn hình 2 giây rồi cố đọc thật nhanh một câu dài cho vừa khung, khiến giọng đọc bị hụt hơi và mất tự nhiên.</div>
+            <div>• <b>Cách chỉnh:</b> Thu âm trọn vẹn giọng nói trước. Sau mỗi câu để khoảng nghỉ 1–2 giây, rồi mới xếp các đoạn hình ảnh chèn lên sau.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 5: QUY TRÌNH 4 BƯỚC LÀM VIDEO (CHỈ VỚI ĐIỆN THOẠI) ═══ -->
+  <section class="cl-zebra-section cl-zebra--light" id="sec-sop">
+    <div class="cl-sec-container apple-reveal">
+      <div class="cl-badge">04 / HƯỚNG DẪN THỰC HIỆN</div>
+      <h2 class="title-short">QUY TRÌNH 4 BƯỚC TRONG 30 PHÚT</h2>
+      <p class="editorial-hook">"Chỉ với một chiếc điện thoại và làm đúng theo thứ tự từng bước này."</p>
+
+      <div class="apple-list">
+        <div class="apple-list-item">
+          <div class="apple-list-item__bullet">01</div>
+          <div class="apple-list-item__content">
+            <b>BƯỚC 1: CHỌN 1 ĐOẠN KỊCH BẢN NGẮN (DƯỚI 150 TỪ)</b>
+            Không cần ngồi vắt óc nghĩ từ đầu. Chọn ngay 1 trong 9 bài mẫu gợi ý ở bên dưới. Mỗi bài chỉ dài từ 90 đến 130 từ, đã chia sẵn từng câu ngắn vừa vặn theo nhịp thở.
+          </div>
+        </div>
+
+        <div class="apple-list-item">
+          <div class="apple-list-item__bullet">02</div>
+          <div class="apple-list-item__content">
+            <b>BƯỚC 2: THU ÂM TRONG GÓC PHÒNG TĨNH</b>
+            Ngồi trong phòng ngủ hoặc góc nhà có đệm, rèm vải để tiêu bớt tiếng vang. Đặt mic tai nghe gần khóe miệng. Nói nhỏ nhẹ, từ tốn như đang ngồi trò chuyện với bạn bè. Đọc vấp chỗ nào thì dừng lại 2 giây bấm thu lại ngay câu đó.
+          </div>
+        </div>
+
+        <div class="apple-list-item">
+          <div class="apple-list-item__bullet">03</div>
+          <div class="apple-list-item__content">
+            <b>BƯỚC 3: QUAY 6 ĐẾN 8 CẢNH SINH HOẠT ĐỜI THỰC</b>
+            Cầm điện thoại quay các góc bình dị quanh mình: bàn tay gõ phím, ấm nước đang sôi, bước chân đi lại, ánh nắng ngoài cửa sổ. <b>Quy tắc: giữ chắc tay quay tĩnh từ 6 đến 8 giây cho mỗi góc.</b>
+          </div>
+        </div>
+
+        <div class="apple-list-item">
+          <div class="apple-list-item__bullet">04</div>
+          <div class="apple-list-item__content">
+            <b>BƯỚC 4: RÁP VIDEO TRÊN PHẦN MỀM ĐIỆN THOẠI</b>
+            Thả đoạn thu âm vào trước làm phần nền chính. Thả các cảnh quay phụ lên phía trên. Cho hình ảnh xuất hiện trước tiếng một nhịp ngắn, hoặc tiếng nói dứt rồi hình ảnh vẫn ngân lại 1 giây. Giữ tiếng động thật ở mức 15%, nhạc nền nhẹ 10% rồi xuất video.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 6: 9 KỊCH BẢN MẪU BÓC TÁCH TRĂN TRỞ THẬT ═══ -->
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-scripts">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal">
+      <div class="cl-badge">05 / BÀI MẪU VIẾT SẴN</div>
+      <h2 class="title-short">9 BÀI MẪU BÓC TÁCH TRĂN TRỞ THẬT</h2>
+      <p class="editorial-hook">"Kho bài mẫu viết sẵn theo giọng nói mộc mạc, gần gũi. Bạn chỉ cần chọn 1 bài, thu âm và ghép hình là xong."</p>
+
+      <div style="margin-bottom: 24px;">
+        <a href="https://vietndj.github.io/9_kich_ban_thuc_chien.html" target="_blank" class="btn-cta">
+          📖 Xem Đủ 9 Bài Viết Thực Tế ↗
+        </a>
+      </div>
+
+      <div class="script-grid">
+        <!-- Script 1 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 01</div>
+            <h4 class="script-title">NGỒI CÀ PHÊ 10H TỐI</h4>
+            <p class="script-hook">Cảm giác trăn trở của người làm kinh doanh khi nhân viên đã về hết, doanh thu trong ngày không đủ bù chi phí.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_01_ngoi_ca_phe_10h_toi.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 2 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 02</div>
+            <h4 class="script-title">TIỀN MẶT BẰNG & CỬA HÀNG VẮNG</h4>
+            <p class="script-hook">Cái bẫy chi phí cố định: Càng thuê mặt bằng lớn càng dễ hụt vốn nếu không có lượng khách quen tự tìm đến.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_02_tien_mat_bang_va_cua_hang_vang_khach.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 3 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 03</div>
+            <h4 class="script-title">CHỮNG LẠI SAU TUỔI 30</h4>
+            <p class="script-hook">Khoảng lặng khi nhận ra những kinh nghiệm cũ giúp mình sống sót trước đây đã không còn phù hợp với hiện tại.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_03_chung_lai_sau_tuoi_30.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 4 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 04</div>
+            <h4 class="script-title">CHI PHÍ QUẢNG CÁO QUÁ CAO</h4>
+            <p class="script-hook">Sự thật về chạy quảng cáo: Doanh thu nhìn lớn nhưng cuối tháng trừ hết chi phí quảng cáo thì tiền lãi chẳng còn bao nhiêu.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_04_tien_quang_cao_an_het_tien_lai.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 5 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 05</div>
+            <h4 class="script-title">HẾT KHÁCH TỪ NGƯỜI QUEN</h4>
+            <p class="script-hook">Sau vài tháng người quen ủng hộ ban đầu, việc kinh doanh đòi hỏi phải biết cách tiếp cận với khách hàng lạ bên ngoài.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_05_het_khach_tu_moi_quan_he_quen.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 6 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 06</div>
+            <h4 class="script-title">TAY NGHỀ CHẮC VẪN ÍT KHÁCH</h4>
+            <p class="script-hook">Nhiều người nghĩ làm tốt thì khách tự tìm đến; nhưng nếu không chịu xuất hiện chia sẻ thì rất khó để người khác biết đến mình.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_06_tay_nghe_tot_nhung_van_vang_khach.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 7 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 07</div>
+            <h4 class="script-title">KHI KHÔNG THỂ CẠNH TRANH VỀ GIÁ</h4>
+            <p class="script-hook">Đối đầu với các kho tổng về giá là điều rất khó; thứ duy nhất giúp bạn giữ chân khách là niềm tin cá nhân và sự chân thành.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_07_bi_canh_tranh_boi_tong_kho_va_gia_goc.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 8 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 08</div>
+            <h4 class="script-title">BẮT ĐẦU LẠI TỪ ĐẦU</h4>
+            <p class="script-hook">Gác lại những kết quả và thói quen cũ để dám cầm điện thoại lên bắt đầu quay lại từ những video đầu tiên.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_08_bat_dau_lai_tu_con_so_0.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+
+        <!-- Script 9 -->
+        <div class="script-card">
+          <div>
+            <div class="script-num">BÀI MẪU 09</div>
+            <h4 class="script-title">LÀM KỸ NHƯNG BỊ SO GIÁ</h4>
+            <p class="script-hook">Cách quay cận cảnh từng chi tiết công đoạn để khách tự nhìn thấy công sức và giá trị mà không cần phải giải thích nhiều.</p>
+          </div>
+          <a href="https://vietndj.github.io/kich_ban_09_hang_lam_ky_nhung_bi_so_sanh_gia.html" target="_blank" class="script-btn">Xem Chi Tiết ↗</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 7: THƯ VIỆN VIDEO MẪU THỰC TẾ ═══ -->
+  <section class="cl-zebra-section cl-zebra--light" id="sec-benchmarks">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal">
+      <div class="cl-badge">06 / PHÂN TÍCH VIDEO MẪU</div>
+      <h2 class="title-short">THƯ VIỆN VIDEO MẪU ĐÃ BÓC TÁCH</h2>
+      <p class="editorial-hook">"Xem cách những người làm video dùng hình ảnh đời thường và lời dẫn mộc mạc để giữ chân người xem."</p>
+
+      <div class="apple-cards-grid">
+        <!-- Case 1: Josh Diaz -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--blue">JOSH DIAZ (@JOSHDIAZFILMS)</div>
+          <h3 class="apple-card__title">NHỊP SỐNG CHẬM LẠI</h3>
+          <p class="apple-card__desc">
+            Giảm bớt cảm giác bị tụt lại phía sau. Khung hình chiều hoàng hôn ấm áp, góc máy tĩnh, giọng nói từ tốn tạo cảm giác an tâm cho người xem.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/Falling%20Behind%20Mindset%20-%20@joshdiazfilms.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/reel/Dbow9xKOCje/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+
+        <!-- Case 2: Jack Webster -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--emerald">JACK WEBSTER (@JACKWEBSTTER)</div>
+          <h3 class="apple-card__title">KHÔNG GIAN LÀM VIỆC KỶ LUẬT</h3>
+          <p class="apple-card__desc">
+            Không cần lộ mặt: Chỉ quay bóng lưng và đôi bàn tay làm việc dưới ánh đèn bàn tập trung. Giọng đọc dứt khoát, điềm đạm.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/p/DcJIT4DzPhj/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+
+        <!-- Case 3: Life of Riza -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--amber">LIFE OF RIZA (@LIFEOFRIZA)</div>
+          <h3 class="apple-card__title">BIẾN SUY NGHĨ THÀNH HÀNH ĐỘNG</h3>
+          <p class="apple-card__desc">
+            Góc quay bàn làm việc từ trên xuống, giữ lại tiếng cọ bút sột soạt, giọng đọc bộc bạch thẳng thắn về sự chần chừ và cách bắt tay vào làm.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/Y_Tuong_Thanh_Hien_Thuc_Canva%20-%20@lifeofriza.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/reel/DcTqPjitJl1/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+
+        <!-- Case 4: Quyen Van -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--blue">QUYEN VAN (@QFROOST)</div>
+          <h3 class="apple-card__title">NHỊP SỐNG GÓC PHỐ SÀI GÒN</h3>
+          <p class="apple-card__desc">
+            Nhịp cắt hình ảnh ăn khớp cùng âm thanh đường phố. Lời dẫn sâu lắng về con người và nhịp sống đời thường nơi góc phố.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/Saigon,%20Vietnam%20-%20@qfroost.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/p/DXWKIztktTN/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+
+        <!-- Case 5: Jazzie Sillona -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--emerald">JAZZIE SILLONA (@JAZZIESILLONA)</div>
+          <h3 class="apple-card__title">KHỚP LỜI DẪN VỚI CẢNH PHỐ</h3>
+          <p class="apple-card__desc">
+            Bản mẫu ghép lời dẫn với 14 góc máy đường phố, câu chữ ăn khớp tự nhiên theo từng bước chân người đi lại.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/Tai_Hang_Hong_Kong_Street%20-%20@jazziesillona.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/p/DXoss18j011/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+
+        <!-- Case 6: Jason How -->
+        <div class="apple-card">
+          <div class="apple-card__badge apple-card__badge--rose">JASON HOW (@JSNHOW)</div>
+          <h3 class="apple-card__title">NHỊP ĐIỆU THONG DONG</h3>
+          <p class="apple-card__desc">
+            Cân đối nhịp thở của video: Đan xen cảnh thiên nhiên tĩnh lặng và những khoảng lặng để người xem cảm thấy nhẹ nhõm.
+          </p>
+          <div style="display: flex; gap: 12px; margin-top: 16px; flex-wrap: wrap;">
+            <a href="https://vietndj.github.io/reports/Unwinding%20-%20@jsnhow.html" target="_blank" class="script-btn">Báo Cáo Phân Tích ↗</a>
+            <a href="https://www.instagram.com/reel/Dcz7nniBEFe/" target="_blank" class="script-btn">Xem Video Gốc ↗</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- CÁC CỔNG TRA CỨU HỆ THỐNG -->
+      <div style="margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="https://vietndj.github.io/scene.html" target="_blank" class="btn-cta" style="background: #0f172a;">
+          🏛️ Cổng Tra Cứu Video Mẫu ↗
+        </a>
+        <a href="https://ytuong.fedu.vn/voiceover.html" target="_blank" class="btn-cta" style="background: #0284c7;">
+          💡 Chuyên Đề Video Lồng Tiếng ↗
+        </a>
+        <a href="https://vietndj.github.io/brollbank.html" target="_blank" class="btn-cta" style="background: #059669;">
+          🎞️ Kho Cảnh Quay Đời Thực ↗
+        </a>
+        <a href="https://vietndj.github.io/6-loai-b-roll-video-course.html" target="_blank" class="btn-cta" style="background: #7c3aed;">
+          📖 Giáo Trình Các Loại Cảnh Quay ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 8: LỜI DẶN DÒ & BẮT TAY VÀO LÀM ═══ -->
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-closing">
+    <div class="cl-sec-container apple-reveal">
+      <div class="cl-badge">07 / LỜI DẶN DÒ TÂM HUYẾT</div>
+      <h2 class="title-short">ĐỪNG ĐỢI ĐỦ ĐỒ NGHỀ MỚI LÀM</h2>
+      <p class="editorial-hook">"Người làm nghề thực tế không đợi sắm đủ thiết bị rồi mới bắt đầu. Cứ làm từ những thứ bình dị nhất quanh mình."</p>
+
+      <p class="cl-body">
+        Hôm nay, bạn không cần phải quay một video cầu kỳ như phim rạp. Bạn chỉ cần làm đúng một việc: <b>Chọn 1 bài trong 9 bài mẫu bên trên</b>, ngồi vào góc bàn yên tĩnh nhất trong nhà, bật chức năng ghi âm điện thoại lên và đọc bằng giọng nói mộc mạc của bạn. 
+        <br><br>
+        Sau đó, cầm máy quay 5 cảnh đời thường: đôi bàn tay, chén nước, vệt nắng hiên nhà. Ghép chúng lại với nhau trên điện thoại. Khi video đó xuất hiện, bạn đã bước qua được rào cản lớn nhất của bản thân để bắt đầu làm video.
+      </p>
+
+      <div style="margin-top: 24px; display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;">
+        <a href="https://vietndj.github.io/9_kich_ban_thuc_chien.html" target="_blank" class="btn-cta">
+          🚀 BẮT ĐẦU VỚI 9 BÀI MẪU THỰC TẾ ↗
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ JAVASCRIPT: ZERO-JANK APPLE OBSERVER ═══ -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const observerOptions = {
+        root: null,
+        rootMargin: "0px 0px -50px 0px",
+        threshold: 0.15
+      };
+
+      const observer = new IntersectionObserver((entries, obs) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".apple-reveal").forEach(el => observer.observe(el));
+    });
+  </script>
+</body>
+</html>
