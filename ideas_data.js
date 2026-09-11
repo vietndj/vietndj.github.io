@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 175,
-  "total_unique_ideas": 162,
-  "total_active_ideas": 152,
+  "total_scene_items": 177,
+  "total_unique_ideas": 164,
+  "total_active_ideas": 154,
   "total_excluded_ideas": 10,
-  "total_creators": 91,
+  "total_creators": 92,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 15,
     "storytelling": 21,
-    "dien-anh": 83,
-    "chuyen-canh": 20
+    "dien-anh": 84,
+    "chuyen-canh": 21
   },
   "industries": [
     {
@@ -144,9 +144,9 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 2,
     "thuong-hieu": 23,
-    "thoi-trang": 7,
+    "thoi-trang": 8,
     "am-thuc": 17,
-    "du-lich": 19,
+    "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 67,
+    "us_eu": 69,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -320,6 +320,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@creator",
+      "name": "Unknown",
+      "profile_url": "https://www.instagram.com/reel/DaH7X34NTNX/",
+      "video_count": 3,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mako__go_DaH7X34NTNX_Palermo_Sicily/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily",
+        "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
+        "IG_@by.bennnj_DbKauxkoJU_"
+      ]
+    },
+    {
       "handle": "@valenti_k41",
       "name": "Valenti | content creator",
       "profile_url": "https://www.instagram.com/valenti_k41/",
@@ -394,18 +407,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
-      ]
-    },
-    {
-      "handle": "@creator",
-      "name": "Unknown",
-      "profile_url": "https://www.instagram.com/reel/DcyS2KEm7-v/",
-      "video_count": 2,
-      "top_industry": "Công Nghệ & Thiết Bị",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light",
-        "IG_@by.bennnj_DbKauxkoJU_"
       ]
     },
     {
@@ -490,6 +491,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@jamison.lange",
+      "name": "Jamison.Lange",
+      "profile_url": "https://www.instagram.com/jamison.lange/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion"
       ]
     },
     {
@@ -1275,6 +1287,125 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion",
+      "shortcode": "DawDiT2M1p8",
+      "title_vi": "Jamison Lange • Coffee + Outfit Match Cut Transition",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, match-cut chuyển cảnh trang phục, thao tác pha cà phê và nhịp dựng 22 phân cảnh.",
+      "key_tech": "Match Cut Transitions, Visual Sub-framing, Tactile Macro Shots, Wardrobe Continuity, Symmetrical Framing, Dopamine Pacing",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Lookbook biến hình thời trang GRWM kết hợp ASMR cà phê buổi sáng",
+      "tech_tags": [
+        "Match Cut Transition",
+        "ASMR Coffee Macro",
+        "Visual Sub-framing",
+        "Wardrobe Continuity",
+        "Monochrome Sand Beige",
+        "Pattern Interrupt"
+      ],
+      "logic_explanation": "Kỹ thuật match-cut biến hình trang phục từ cởi trần sang bộ suit linen be qua điệu nhảy vui tươi kết hợp B-roll pha cà phê buổi sáng, phá vỡ định kiến video thời trang tĩnh.",
+      "creator": {
+        "raw": "@jamison.lange",
+        "name": "Jamison.Lange",
+        "handle": "@jamison.lange",
+        "profile_url": "https://www.instagram.com/jamison.lange/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DawDiT2M1p8/",
+      "gdrive_folder": "https://drive.google.com/open?id=1WPj3Ds09SkUSZkRDZAcwS43omIEjte9Z",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DawDiT2M1p8.mp4",
+        "report_url": "reports/Coffee + Outfit Match Cut Transition - @jamison.lange.html",
+        "shots_count": 22,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily",
+      "shortcode": "DaH7X34NTNX",
+      "title_vi": "",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: Static Camera Framing • Natural Archway Framing • Z-Axis Perspective Compression • Wes Anderson Symmetry • Organic Movement.",
+      "key_tech": "Static Camera Framing • Natural Archway Framing • Z-Axis Perspective Compression • Wes Anderson Symmetry • Organic Movement",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Du ký điện ảnh khám phá di sản Palermo Sicily & Kỹ thuật đóng khung tĩnh đón dòng người (Static Framing & Street Vignettes)",
+      "tech_tags": [
+        "Static Camera Framing",
+        "Natural Archway Framing",
+        "V-Shaped Baroque Compression",
+        "Wes Anderson Symmetry",
+        "Organic Micro-Movement"
+      ],
+      "logic_explanation": "Bộ phim mẫu mực về nghệ thuật đóng khung tĩnh (Fixed Framing): Máy quay đứng yên 100% để đón dòng xe ba gác Piaggio Ape, phụ nữ đạp xe, rèm ban công bay trong gió biển và chú chim bồ câu bay qua mái vòm nhà thờ, tạo nên chất thơ điện ảnh thuần khiết không cần lia máy.",
+      "creator": {
+        "raw": "Unknown",
+        "name": "Unknown",
+        "handle": "@creator",
+        "profile_url": "https://www.instagram.com/reel/DaH7X34NTNX/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaH7X34NTNX/",
+      "gdrive_folder": "https://drive.google.com/open?id=1z1dc4ozpSK9m95GwFxr-LF0dh20R1-f8",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mako__go_DaH7X34NTNX_Palermo_Sicily/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mako__go_DaH7X34NTNX_Palermo_Sicily/shot_03_mid.jpg",
+        "video_url": "videos/Palermo Sicily Static Shots - @mako__go.mp4",
+        "report_url": "reports/Palermo Sicily Static Shots - @mako__go.html",
+        "shots_count": 7,
+        "duration": "14.10s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon",
       "shortcode": "Dc-LDGRsCDN",
