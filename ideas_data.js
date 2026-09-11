@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 168,
+  "total_scene_items": 169,
   "total_unique_ideas": 156,
   "total_active_ideas": 146,
   "total_excluded_ideas": 10,
@@ -63,8 +63,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 3,
     "voice-over": 10,
     "talking-head": 14,
-    "storytelling": 18,
-    "dien-anh": 82,
+    "storytelling": 19,
+    "dien-anh": 81,
     "chuyen-canh": 19
   },
   "industries": [
@@ -479,14 +479,14 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@Gabe_Harris",
-      "name": "Gabe_Harris",
-      "profile_url": "https://www.instagram.com/Gabe_Harris/",
+      "handle": "@watch.gabe",
+      "name": "Gabe Harris",
+      "profile_url": "https://www.instagram.com/watch.gabe/",
       "video_count": 1,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis"
+        "IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year"
       ]
     },
     {
@@ -1240,17 +1240,17 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis",
+      "id": "IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year",
       "shortcode": "Dc3immEILSE",
-      "title_vi": "Video by watch.gabe",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 7 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "title_vi": "Quy Trình Xây Dựng Kho B-Roll Dùng Suốt 1 Năm - @watch.gabe",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 7 slide Instagram Carousel của đạo diễn Gabe Harris: Giải pháp thoát khỏi bẫy kiệt sức \"Full Production Fallacy\", tư duy biến sinh hoạt thường nhật thành phân cảnh điện ảnh, quy tắc quay theo chuỗi hành động ...",
+      "key_tech": "B-Roll Library System, Sequence Shooting vs Single Shots, Anti-Burnout Workflow, Everyday Life as Movie Scenes, Overshoot Multi-Angle Strategy, 30-Day Batch Challenge, Mini-Story Micro-Pacing, Retention Carousel Structure",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -1266,26 +1266,30 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Hệ thống xây dựng thư viện B-roll dùng trọn 1 năm",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "B-Roll Library System",
+        "Sequence Shooting",
+        "Overshoot Strategy",
+        "Everyday Life as Movie Scenes",
+        "30-Day Batching"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Giải mã chiến lược thoát khỏi bẫy kiệt sức của creator: Không quay video đơn lẻ mà quay chuỗi hành động (sequences), biến sinh hoạt đời thường thành cảnh phim và đóng gói kho tài nguyên dùng cho cả năm.",
       "creator": {
-        "raw": "@Gabe_Harris",
-        "name": "Gabe_Harris",
-        "handle": "@Gabe_Harris",
-        "profile_url": "https://www.instagram.com/Gabe_Harris/"
+        "raw": "@watch.gabe (Gabe Harris)",
+        "name": "Gabe Harris",
+        "handle": "@watch.gabe",
+        "profile_url": "https://www.instagram.com/watch.gabe/"
       },
-      "ig_url": "https://www.instagram.com/p/Dc3immEILSE/?img_index=2&stkn=MXZ2N2E0anYwMnBzeQ==",
-      "gdrive_folder": "https://drive.google.com/open?id=1a0IDCkNY-ldnUxxfaTH5tn-q-M_U4E1v",
+      "ig_url": "https://www.instagram.com/p/Dc3immEILSE/",
+      "gdrive_folder": "https://drive.google.com/open?id=1MsLWqdOZVm6QKJHV7b8b5QYtsEFsMgEC",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis/slide_01.mp4",
-        "report_url": "reports/IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis.html",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@watch.gabe_Dc3immEILSE_Build_B_Roll_Library_Year/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Xay_Dung_Kho_B_Roll_Dung_1_Nam_-_@watch.gabe.mp4",
+        "report_url": "reports/Xay_Dung_Kho_B_Roll_Dung_1_Nam_-_@watch.gabe.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
