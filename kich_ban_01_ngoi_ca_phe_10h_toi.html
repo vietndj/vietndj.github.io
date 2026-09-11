@@ -194,6 +194,91 @@
     .script-line-intent { font-size: 11.5px; color: var(--text-muted); margin-left: auto; white-space: nowrap; }
     @media (max-width: 900px) { .script-line-intent { display: none; } }
 
+    
+    /* Modular Step-by-Step Pedagogy */
+    .step-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px 28px;
+      margin-bottom: 24px;
+    }
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .step-num-badge {
+      font-size: 11px;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      font-family: 'JetBrains Mono', monospace;
+    }
+    .step-badge-t1 { background: rgba(239, 68, 68, 0.15); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.3); }
+    .step-badge-t2 { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+    .step-badge-t3 { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+    .step-badge-t25 { background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); font-weight: 800; }
+    .step-title {
+      font-size: 16px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .step-content-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 16px;
+      margin-top: 10px;
+    }
+    @media (max-width: 850px) {
+      .step-content-grid { grid-template-columns: 1fr; }
+    }
+    .step-subcard {
+      background: #090e17;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+    .step-subcard-label {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .step-quote {
+      font-size: 13.5px;
+      font-weight: 600;
+      color: #fde047;
+      font-style: italic;
+      line-height: 1.5;
+    }
+    .step-desc {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    .section-question-box {
+      background: linear-gradient(180deg, #131d2e 0%, #0c1421 100%);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      border-radius: var(--radius-lg);
+      padding: 26px 30px;
+      margin-bottom: 24px;
+      scroll-margin-top: 70px;
+    }
+    .section-question-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
     /* Hero */
     .hero { background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 24px 28px; margin-bottom: 28px; }
     .hero-tags { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
@@ -295,148 +380,127 @@
     </div>
   </header>
 
-    <div class="container">
+      <div class="container">
     <!-- KHỐI 1: ĐỀ BÀI THỰC HÀNH TẠI LỚP -->
     <section class="exercise-box" id="de-bai">
       <div class="exercise-header">
         <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
-          <h2 style="font-size: 16px; font-weight: 800; color: #fff;">🎯 Đề Bài Thực Hành Tại Lớp (Offline Masterclass)</h2>
-          <span class="exercise-badge">Bài Tập 01</span>
-          <span class="orig-badge-purple">Tầng 2.5 Thực Chiến</span>
+          <span class="exercise-badge">🎯 BÀI TẬP THỰC HÀNH TẠI LỚP</span>
+          <span class="orig-badge-purple">KỊCH BẢN 01</span>
         </div>
         <div class="orig-meta">
+          <span>📍 Bối cảnh: <b>Quán cà phê đêm sau 21h - 22h</b></span>
           <span>⏱️ Thời lượng video mục tiêu: <b>20 - 22 Giây</b></span>
-          <span>📍 Không gian: <b>Quán cà phê đêm sau 21h - 22h</b></span>
         </div>
       </div>
 
-      <div class="exercise-prompt-card">
-        <div class="exercise-prompt-label">Đề bài đặt ra cho học viên:</div>
-        <div class="exercise-prompt-title">"Ngồi quán cà phê buổi tối mà làm thành video thì phải làm thế nào để video có người xem và có kết nối thực sự với người xem?"</div>
-        <div class="exercise-prompt-sub">
-          <b>Thách thức của người làm nghề:</b> Nếu chỉ cầm máy lên quay bâng quơ hoặc nói đạo lý thì bị người xem lướt qua ngay lập tức; nếu kể khổ than nghèo thì tự hạ thấp vị thế người có nghề; nếu bảo diễn trò lố lăng trên mạng thì cái tôi và tự trọng nghề nghiệp không cho phép. Làm sao để biến không gian quán cà phê đêm thành một video đĩnh đạc, chạm đúng tim đen và tạo dựng niềm tin tuyệt đối với khách hàng?
-        </div>
-      </div>
-
-      <div class="orig-content-grid">
-        <div>
-          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
-            💡 Tóm tắt hướng xử lý theo bài tập thực hành:
-          </div>
-          <div class="raw-text-panel">MỤC TIÊU BÀI TẬP:
-1. Không biến mình thành kẻ rao giảng đạo lý bề nổi (Tránh bẫy Tầng 1).
-2. Không sa đà vào kể lể mệt mỏi thao tác vặt (Tránh bẫy Tầng 2 nông).
-3. Không than nghèo kể khổ, không vạch áo cho người xem lưng (Tránh bẫy Tầng 3 thô bạo).
-4. Bắt đúng CÁI CỚ NGỤY TRANG và SỰ GIẰNG XÉ THỂ DIỆN của người lớn (Đạt chuẩn Tầng 2.5).
-5. Giải phóng tâm lý: Người ta tin người làm được việc có trách nhiệm, chứ ai tin diễn viên nói hay.</div>
-        </div>
-
-        <div>
-          <div style="font-size: 11px; color: var(--cyan); font-weight: 700; margin-bottom: 6px; text-transform: uppercase;">
-            🖼️ Nhân diện & Bối cảnh mỏ neo tham chiếu:
-          </div>
-          <div class="ref-gallery">
-            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg?v=20260911_faceclone_v3', 'Ảnh Bối Cảnh Quán Cà Phê Đêm', 'Không gian quán cà phê vắng về đêm, ánh đèn vàng ấm, bàn gỗ mộc và laptop.', '📍 THAM CHIẾU BỐI CẢNH')">
-              <div class="ref-thumb-box">
-                <span class="ref-label-badge">📍 Bối Cảnh Thực</span>
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene1_beat1.jpg?v=20260911_faceclone_v3" alt="Ảnh Bối Cảnh Quán Cà Phê Đêm" loading="lazy">
-              </div>
-              <div class="ref-caption">
-                <strong>Quán Cà Phê Đêm 10h</strong>
-                <span>Không gian vắng vẻ, ánh sáng ấm áp, bàn gỗ tối màu, ly cà phê đá tan.</span>
-              </div>
-            </div>
-
-            <div class="ref-item" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg?v=20260911_faceclone_v3', 'Nhân Diện Mỏ Neo (Anh Việt)', 'Anh Việt - Áo blazer may đo xám than tối over áo thun trắng trơn, phong thái điềm đạm.', '📍 NHÂN DIỆN MỎ NEO')">
-              <div class="ref-thumb-box">
-                <span class="ref-label-badge">📍 Nhân Diện Mặc Định</span>
-                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/storyboards/kich_ban_01_ngoi_ca_phe_10h_toi/assets/frames/scene5_beat1.jpg?v=20260911_faceclone_v3" alt="Nhân Diện Mặc Định (Anh Việt)" loading="lazy">
-              </div>
-              <div class="ref-caption">
-                <strong>Nhân Diện Thực Tế Anh Việt</strong>
-                <span>Áo blazer xám than tối cùng áo thun trắng trơn, đồng nhất 100% trang phục 18 phân cảnh.</span>
-              </div>
-            </div>
-          </div>
+      <div class="exercise-prompt-card" style="margin-bottom: 0;">
+        <div class="exercise-prompt-label">Đề bài cho học viên:</div>
+        <div class="exercise-prompt-title" style="margin-bottom: 0;">
+          "Ngồi quán cà phê buổi tối mà làm thành video thì phải làm thế nào để video có người xem và có kết nối với người xem?"
         </div>
       </div>
     </section>
 
-    <!-- KHỐI 2: PHÂN TÍCH LOGIC 4 TẦNG NHẬN THỨC & LÝ GIẢI BẢN CHẤT -->
-    <section class="tiers-deep-box" id="phan-tich-4-tang">
-      <div class="tiers-deep-title">
-        <span>🧬 Phân Tích Logic 4 Tầng Nhận Thức: Tại Sao Video Chỉ Chạm Khi Đạt Chuẩn Tầng 2.5?</span>
+    <!-- TIÊU ĐỀ PHÂN TÍCH LUÔN LÀ CÂU HỎI -->
+    <div class="section-question-box" id="phan-tich-4-tang">
+      <h2 class="section-question-title">
+        ❓ Cách để làm video với đề bài này hấp dẫn là gì?
+      </h2>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-top: 8px; line-height: 1.6;">
+        Đối chiếu qua 4 tầng nhận thức để thấy vì sao hầu hết người làm video bị lướt qua, và đâu là điểm chạm duy nhất giữ được thể diện người lớn và tạo ra kết nối thật.
+      </p>
+    </div>
+
+    <!-- BƯỚC 1: CÁI MÀ AI CŨNG NGHĨ RA (TẦNG 1) -->
+    <section class="step-box">
+      <div class="step-header">
+        <span class="step-num-badge step-badge-t1">BƯỚC 1 • TẦNG 1 (SAFE)</span>
+        <h3 class="step-title">Là Cái Mà Ai Cũng Nghĩ Ra: Nói Đãi Bôi & Đạo Lý Bề Nổi</h3>
+        <span class="tier-reaction react-bad" style="margin-left: auto;">❌ Người xem lướt qua ngay lập tức</span>
       </div>
-
-      <div class="tiers-cards-grid">
-        <!-- Tầng 1 -->
-        <div class="tier-detail-card t1">
-          <div class="tier-tag-head">
-            <span style="color: #f87171;">TẦNG 1 • ĐÃI BÔI / ĐẠO LÝ (SAFE)</span>
-            <span class="tier-reaction react-bad">Lướt qua ngay lập tức</span>
-          </div>
-          <div class="tier-sample-voice">
-            "10h đêm vẫn ngồi cà phê lên kế hoạch tuần mới. Không có áp lực thì không có kim cương. Cố gắng vì mục tiêu!"
-          </div>
-          <div class="tier-explanation">
-            <b>Lý giải vì sao thất bại:</b> Đây là văn mẫu giáo điều, bề nổi, sáo rỗng. Ai cũng nói được câu này nên người xem thấy giả tạo, không có chút thông tin đời thực nào để giữ chân họ.
-          </div>
+      <div class="step-content-grid">
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: #f87171;">Thoại mẫu thường thấy:</div>
+          <div class="step-quote">"10h đêm vẫn ngồi cà phê lên kế hoạch tuần mới. Không có áp lực thì không có kim cương. Cố gắng vì mục tiêu!"</div>
         </div>
-
-        <!-- Tầng 2 -->
-        <div class="tier-detail-card t2">
-          <div class="tier-tag-head">
-            <span style="color: #fbbf24;">TẦNG 2 • CẢM GIÁC THẬT (REAL)</span>
-            <span class="tier-reaction react-mid">Gật gù nhẹ rồi trôi qua</span>
-          </div>
-          <div class="tier-sample-voice">
-            "10h đêm rồi, quán sắp đóng cửa, ly cà phê tan hết đá mà ngồi mỏi lưng vẫn chưa xong việc."
-          </div>
-          <div class="tier-explanation">
-            <b>Lý giải vì sao chưa hiệu quả:</b> Có chi tiết đời thực nhưng bị <b>nông</b>. Nghe như một lời than vãn vu vơ, mệt mỏi bề mặt của người mới đi làm. Không tạo ra chiều sâu, không giải quyết được bài toán kết nối vị thế.
-          </div>
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: var(--text-muted);">Lý giải vì sao thất bại:</div>
+          <div class="step-desc">Đây là văn mẫu giáo điều, đạo lý sáo rỗng. Ai cầm máy lên cũng nói được câu này nên người xem lướt qua trong 2 giây đầu vì thấy giả tạo, không có chút thông tin đời thực nào.</div>
         </div>
-
-        <!-- Tầng 3 -->
-        <div class="tier-detail-card t3">
-          <div class="tier-tag-head">
-            <span style="color: #34d399;">TẦNG 3 • SỰ THẬT TRẦN TRỤI (RAW)</span>
-            <span class="tier-reaction react-bad">Ái ngại, ngượng ngùng, tắt video</span>
-          </div>
-          <div class="tier-sample-voice">
-            "Ngồi đây vì sợ về nhà. Doanh số cả tháng đứng im, nợ ngập đầu, về nhà không biết nhìn mặt người thân thế nào..."
-          </div>
-          <div class="tier-explanation">
-            <b>Lý giải vì sao thất bại:</b> <b>Bắn vọt sang Tầng 3 thô bạo.</b> Vạch áo cho người xem lưng, tự biến mình thành kẻ thất bại thảm hại, kể khổ bi lụy. Người lớn có tự trọng không bao giờ nói thế trước công chúng. Người xem thấy năng lượng tiêu cực nên né tránh.
-          </div>
-        </div>
-
-        <!-- Tầng 2.5 -->
-        <div class="tier-detail-card t25">
-          <div class="tier-tag-head">
-            <span style="color: #c084fc;">TẦNG 2.5 • THỂ DIỆN NGƯỜI LỚN (ADULT FRICTION)</span>
-            <span class="tier-reaction react-good">🎯 ĐIỂM CHẠM VÀNG</span>
-          </div>
-          <div class="tier-sample-voice">
-            "Ly nước tan hết đá mà vẫn chưa muốn về, nhìn qua cứ tưởng bận rộn lắm... Biết là phải làm video thì mới sống được, nhưng cái tự trọng của người làm nghề không cho phép mình lên mạng diễn trò."
-          </div>
-          <div class="tier-explanation">
-            <b>Lý giải bản chất:</b> Bắt đúng <b>cái cớ ngụy trang</b> (ngồi cho có vẻ bận rộn) + <b>nỗi sốt ruột thực tế</b> (chi phí chạy đều mà cách làm cũ hết khách) + <b>nỗi sợ thể diện</b> (ngại người quen chê cười, tự trọng không cho phép diễn trò). Độc giả thấy tim mình rung lên vì bắt đúng tim đen mà vẫn bảo toàn trọn vẹn thể diện cho họ.
-          </div>
-        </div>
-      </div>
-
-      <div class="conclusion-25-box">
-        💡 <strong>KẾT LUẬN VỀ PHƯƠNG ÁN 2.5 (BẢN CHẤT CỦA SỰ THUYẾT PHỤC):</strong><br>
-        Người làm nghề có chuyên môn và người làm chủ kinh doanh không hề thiếu kiến thức. Rào cản lớn nhất khiến họ không dám xuất hiện trước ống kính không nằm ở kỹ thuật, mà nằm ở <strong>thể diện</strong>: sợ người quen chê cười, sợ bị coi là ế ẩm phải lên mạng làm trò. Khi kịch bản chạm đúng Tầng 2.5, ta tháo gỡ hoàn toàn khiên phòng thủ và giải phóng tâm lý cho họ: <em>Khách hàng tìm người có trách nhiệm, tìm người làm được việc, chứ không ai đi tìm diễn viên nói hay. Cứ quay thật việc mình làm mỗi ngày... việc thật thì ngại gì!</em>
       </div>
     </section>
 
-    <!-- KHỐI 3: KỊCH BẢN NÓI THỰC CHIẾN ĐÃ CHỐT (2 GHÉP 3) -->
+    <!-- BƯỚC 2: CỐ GẮNG NÓI THẬT HƠN MỘT CHÚT (TẦNG 2) -->
+    <section class="step-box">
+      <div class="step-header">
+        <span class="step-num-badge step-badge-t2">BƯỚC 2 • TẦNG 2 (REAL)</span>
+        <h3 class="step-title">Cố Gắng Nói Thật Hơn: Kể Cảm Giác Mệt Mỏi Đời Thường</h3>
+        <span class="tier-reaction react-mid" style="margin-left: auto;">⚠️ Gật gù nhẹ rồi trôi qua</span>
+      </div>
+      <div class="step-content-grid">
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: #fbbf24;">Thoại mẫu thường thấy:</div>
+          <div class="step-quote">"10h đêm rồi, quán sắp đóng cửa, ly cà phê tan hết đá mà ngồi mỏi lưng vẫn chưa xong việc."</div>
+        </div>
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: var(--text-muted);">Lý giải vì sao chưa hiệu quả:</div>
+          <div class="step-desc">Có chi tiết đời thực nhưng bị <b>nông</b>. Nghe như một lời than vãn vu vơ, mệt mỏi bề mặt của người mới đi làm. Không tạo ra chiều sâu, không ai muốn kết nối hay mua hàng từ một người chỉ biết than thở mệt mỏi.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BƯỚC 3: NÓI THẬT ĐẾN MỨC TRẦN TRỤI (TẦNG 3) -->
+    <section class="step-box">
+      <div class="step-header">
+        <span class="step-num-badge step-badge-t3">BƯỚC 3 • TẦNG 3 (RAW)</span>
+        <h3 class="step-title">Nói Thật Đến Mức Trần Trụi: Than Nghèo Kể Khổ</h3>
+        <span class="tier-reaction react-bad" style="margin-left: auto;">❌ Ái ngại, ngượng ngùng, tắt video</span>
+      </div>
+      <div class="step-content-grid">
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: #34d399;">Thoại mẫu thường thấy:</div>
+          <div class="step-quote">"Ngồi đây vì sợ về nhà. Doanh số cả tháng đứng im, nợ ngập đầu, về nhà không biết nhìn mặt người thân thế nào..."</div>
+        </div>
+        <div class="step-subcard">
+          <div class="step-subcard-label" style="color: var(--text-muted);">Lý giải vì sao không dùng được:</div>
+          <div class="step-desc"><b>Bắn vọt sang Tầng 3 thô bạo.</b> Vạch áo cho người xem lưng, tự biến mình thành kẻ thất bại thảm hại. Người lớn có tự trọng nghề nghiệp không ai nói thế trước công chúng. Người xem thấy năng lượng tiêu cực nên né tránh.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BƯỚC 4: ĐIỂM CHẠM ĐẮT GIÁ NHẤT (TẦNG 2.5) -->
+    <section class="step-box" style="border-color: rgba(168, 85, 247, 0.45); background: linear-gradient(180deg, rgba(168, 85, 247, 0.08) 0%, #0d1422 100%);">
+      <div class="step-header">
+        <span class="step-num-badge step-badge-t25">BƯỚC 4 • TẦNG 2.5 (ADULT FRICTION)</span>
+        <h3 class="step-title" style="color: #d8b4fe;">Điểm Chạm Đắt Giá Nhất: Thể Diện Người Lớn & Sự Giằng Xé Của Người Có Nghề</h3>
+        <span class="tier-reaction react-good" style="margin-left: auto;">🎯 ĐIỂM CHẠM VÀNG (Dừng lại & Kết nối sâu)</span>
+      </div>
+      <div class="step-content-grid">
+        <div class="step-subcard" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="step-subcard-label" style="color: #c084fc;">Bản chất logic bóc tách:</div>
+          <div class="step-quote" style="font-size: 13px; font-weight: 500; color: #f8fafc; font-style: normal;">
+            • <b>Cái cớ ngụy trang:</b> Ly nước tan hết đá mà vẫn chưa muốn về, nhìn qua cứ tưởng bận rộn lắm.<br>
+            • <b>Áp lực thực tế:</b> Công việc chững lại, chi phí vẫn chạy đều, mà cách làm cũ không còn ra khách nữa.<br>
+            • <b>Điểm nghẽn thể diện:</b> Biết là phải làm video thì mới sống được... Nhưng rào cản lớn nhất là ngại. Ngại người quen chê cười, và cái tự trọng của người làm nghề không cho phép mình lên mạng diễn trò.
+          </div>
+        </div>
+        <div class="step-subcard" style="border-color: rgba(168, 85, 247, 0.3);">
+          <div class="step-subcard-label" style="color: #c084fc;">Tại sao tạo ra kết nối mạnh mẽ:</div>
+          <div class="step-desc">Độc giả thấy tim mình rung lên vì bắt đúng tim đen mà <b>vẫn bảo toàn trọn vẹn vị thế và lòng tự trọng cho họ</b>. Không biến họ thành kẻ thất bại, mà khẳng định họ là người có tự trọng nghề nghiệp đang tìm một lối đi tử tế.</div>
+        </div>
+      </div>
+      <div class="conclusion-25-box" style="margin-top: 16px;">
+        💡 <strong>KẾT LUẬN VỀ PHƯƠNG ÁN 2.5 (LỜI GIẢI GIẢI PHÓNG TÂM LÝ):</strong><br>
+        Người làm nghề có chuyên môn và người làm chủ kinh doanh không hề thiếu kiến thức. Rào cản lớn nhất khiến họ không dám xuất hiện trước ống kính là <strong>thể diện</strong>: sợ người quen chê cười, sợ bị coi là ế ẩm phải lên mạng làm trò. Khi kịch bản chạm đúng Tầng 2.5, ta tháo gỡ hoàn toàn khiên phòng thủ: <em>Khách hàng tìm người có trách nhiệm, tìm người làm được việc, chứ ai tìm diễn viên nói hay. Cứ quay thật việc mình làm mỗi ngày... việc thật thì ngại gì!</em>
+      </div>
+    </section>
+
+    <!-- KHỐI 3: KỊCH BẢN NÓI THỰC CHIẾN ĐÃ CHỐT (BẢN GHÉP 2 & 3) -->
     <section class="final-script-box" id="kich-ban-chot">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 8px;">
         <h2 style="font-size: 16px; font-weight: 800; color: #fff;">📝 Kịch Bản Nói Thực Chiến Đã Chốt (Bản Ghép 2 & 3 • Chuẩn Văn Nói Trà Đá)</h2>
-        <span class="orig-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: #10b981;">Đã Duyệt Kịch Bản</span>
+        <span class="orig-badge" style="background: rgba(16, 185, 129, 0.15); color: #10b981; border-color: #10b981;">Đã Chốt Lời Thoại</span>
       </div>
       <p style="font-size: 12.5px; color: var(--text-secondary); margin-bottom: 14px;">
         Thời lượng: <b>20 - 22 Giây</b> • Ngắt nhịp thở tự nhiên • Cấu trúc 5 cảnh chuyển đổi tâm lý từ Bối cảnh ➔ Cái cớ ➔ Nỗi sốt ruột ➔ Điểm nghẽn thể diện ➔ Giải phóng tâm lý.
