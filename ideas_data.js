@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 177,
-  "total_unique_ideas": 164,
-  "total_active_ideas": 154,
+  "total_scene_items": 179,
+  "total_unique_ideas": 166,
+  "total_active_ideas": 156,
   "total_excluded_ideas": 10,
-  "total_creators": 92,
+  "total_creators": 94,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 15,
     "storytelling": 21,
-    "dien-anh": 84,
-    "chuyen-canh": 21
+    "dien-anh": 85,
+    "chuyen-canh": 22
   },
   "industries": [
     {
@@ -147,9 +147,9 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 8,
     "am-thuc": 17,
     "du-lich": 20,
-    "cong-nghe": 22,
+    "cong-nghe": 23,
     "kien-truc": 17,
-    "the-thao": 5,
+    "the-thao": 6,
     "ky-thuat-quay": 40
   },
   "countries": [
@@ -203,12 +203,12 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 69,
+    "us_eu": 70,
     "korea": 8,
     "india": 13,
     "japan": 9,
     "vietnam": 9,
-    "asia_other": 43
+    "asia_other": 44
   },
   "creators_hub": [
     {
@@ -491,6 +491,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@aidana_adilkassym",
+      "name": "Aidana_Adilkassym",
+      "profile_url": "https://www.instagram.com/aidana_adilkassym/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook"
+      ]
+    },
+    {
+      "handle": "@critos_pro",
+      "name": "Critos Pro",
+      "profile_url": "https://www.instagram.com/critos_pro/",
+      "video_count": 1,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency"
       ]
     },
     {
@@ -1287,6 +1309,127 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook",
+      "shortcode": "DcQy-eEOIHc",
+      "title_vi": "Aidana • Tornado Kick Martial Arts Kinetic Hook",
+      "quick_takeaway": "Bóc tách 7 phân cảnh mẫu mực trong video triệu view của nữ võ sĩ kiêm creator Aidana Adilkassym (@aidana_adilkassym): Đòn bẩy thị giác Kinetic Hook với cú đá xoay Tornado Kick (Dollyo Chagi 360/540) xuất phát từ trang phục mặc nhà giản d...",
+      "key_tech": "Martial Arts Tornado Kick Hook • Peak Momentum Action Match Cut • Editorial Stare Transition • Fluid Silk Fabric Physics • Over-The-Shoulder Silhouette • Intimate Hero Walk-In",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Trung Á / Kazakhstan",
+        "en_name": "Kazakhstan / Central Asia",
+        "flag": "🇰🇿",
+        "badge_color": "sky"
+      },
+      "purpose": "Cú Match Cut biến hình võ thuật sang thời trang cao cấp (Kinetic Martial Arts to High-Fashion Transformation Hook)",
+      "tech_tags": [
+        "Tornado Kick Kinetic Hook",
+        "Peak Momentum Action Match Cut",
+        "Editorial Stare Transition",
+        "Fluid Silk Fabric Physics",
+        "Over-the-Shoulder Glance",
+        "Intimate Hero Walk-In"
+      ],
+      "logic_explanation": "Đòn bẩy thị giác bắt đầu bằng bộ đồ mặc nhà giản dị, tung cú đá xoay 360/540 trên không và cắt cảnh khớp trục quán tính sang set blazer lụa sang trọng, sau đó phô diễn chuyển động vải satin và ánh nhìn quyến rũ.",
+      "creator": {
+        "raw": "@aidana_adilkassym",
+        "name": "Aidana_Adilkassym",
+        "handle": "@aidana_adilkassym",
+        "profile_url": "https://www.instagram.com/aidana_adilkassym/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcQy-eEOIHc/",
+      "gdrive_folder": "https://drive.google.com/open?id=1EsMUc49uYY3H7kLSkqwiN4h8xWAMLT9y",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook/shot_03_mid.jpg",
+        "video_url": "videos/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.mp4",
+        "report_url": "reports/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.html",
+        "shots_count": 7,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency",
+      "shortcode": "DcxwKHYoBFv",
+      "title_vi": "Critos Pro • The Art of Consistency - Bàn Làm Việc Công Nghệ",
+      "quick_takeaway": "Bóc tách 17 phân cảnh điện ảnh bàn làm việc công nghệ (Deep Work Routine): Nhịp cắt Micro-Staccato dồn dập (0.2s - 0.9s), Match-Cut chuyển đổi ánh sáng Ngày sang Đêm (Day-to-Night), bố cục đối xứng trục đỉnh đầu, nghệ thuật bày trí Flatl...",
+      "key_tech": "Micro-Staccato Speed Cut, Day-to-Night Match Cut, Desk Setup B-Roll, Dual Amber Accent Lighting, Closed-Loop Visual Rhythm, Multi-Angle Consistency, Audio Sensory Trigger",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Bàn làm việc công nghệ & thói quen Deep Work kỷ luật (Desk Setup & Consistency Routine)",
+      "tech_tags": [
+        "Micro-Staccato Speed Cut",
+        "Day-to-Night Match Cut",
+        "Desk Setup B-Roll",
+        "Overhead Symmetry",
+        "Everyday Carry Flatlay",
+        "Audio Sensory Trigger",
+        "Closed-Loop Routine"
+      ],
+      "logic_explanation": "Nhịp cắt siêu nhanh 0.2s - 0.9s kết hợp match-cut ánh sáng biến đổi từ ngày sang đêm và bố cục đối xứng đỉnh đầu, kể câu chuyện về sự kiên trì làm việc sâu của creator.",
+      "creator": {
+        "raw": "@critos_pro (Critos Pro)",
+        "name": "Critos Pro",
+        "handle": "@critos_pro",
+        "profile_url": "https://www.instagram.com/critos_pro/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcxwKHYoBFv/",
+      "gdrive_folder": "https://drive.google.com/open?id=1e9HUEN86EvCHqEC-9RG00x1ny6LxBIkD",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxwKHYoBFv.mp4",
+        "report_url": "reports/The Art of Consistency - @critos_pro.html",
+        "shots_count": 17,
+        "duration": "10.22s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion",
       "shortcode": "DawDiT2M1p8",
