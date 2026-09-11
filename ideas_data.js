@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 173,
-  "total_unique_ideas": 160,
-  "total_active_ideas": 150,
+  "total_scene_items": 174,
+  "total_unique_ideas": 161,
+  "total_active_ideas": 151,
   "total_excluded_ideas": 10,
   "total_creators": 90,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 15,
     "storytelling": 21,
     "dien-anh": 82,
-    "chuyen-canh": 19
+    "chuyen-canh": 20
   },
   "industries": [
     {
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 66,
+    "us_eu": 67,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -320,6 +320,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@valenti_k41",
+      "name": "Valenti | content creator",
+      "profile_url": "https://www.instagram.com/valenti_k41/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas",
+        "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas",
+        "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR"
+      ]
+    },
+    {
       "handle": "@yegor.sky",
       "name": "Yegor.Sky",
       "profile_url": "https://www.instagram.com/yegor.sky/",
@@ -405,18 +418,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
         "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
-      ]
-    },
-    {
-      "handle": "@valenti_k41",
-      "name": "Valenti | content creator",
-      "profile_url": "https://www.instagram.com/valenti_k41/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas",
-        "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR"
       ]
     },
     {
@@ -1264,6 +1265,68 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas",
+      "shortcode": "DdB_21Yo0Qc",
+      "title_vi": "Creative Phone Video Ideas • Nghệ Thuật Dựng Routine Creator 15 Micro-Beats",
+      "quick_takeaway": "Bóc tách trọn vẹn 15 phân cảnh mẫu mực trong video 5.17s của @valenti_k41: Nghệ thuật kể chuyện bằng nhịp dựng siêu tốc (15 Micro-Beats Pacing), quay điện thoại đa góc độ (Natural Framing, Tactile Macro, Top-Down 90°, Screen Glow), đồng ...",
+      "key_tech": "15 Micro-Beats Pacing, Smartphone Filmmaking, Natural Framing, Tactile Macro Foley Sync, Top-Down 90° Flat-Lay, Screen Glow Lighting, Narrative Emotional Twist, Seamless Infinite Loop",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Kỹ thuật dựng nhịp siêu tốc 15 micro-beats cho video routine một ngày của Creator, tận dụng góc quay điện thoại sáng tạo, xúc giác Foley ASMR và cú twist cảm xúc.",
+      "tech_tags": [
+        "15 Micro-Beats Pacing",
+        "Smartphone Filmmaking",
+        "Natural Framing",
+        "Tactile Macro Foley Sync",
+        "Top-Down 90° Flat-Lay",
+        "Screen Glow Lighting",
+        "Narrative Emotional Twist",
+        "Seamless Infinite Loop"
+      ],
+      "logic_explanation": "Chia nhỏ một chu trình thường nhật thành 15 micro-beats dồn dập (0.27s - 0.4s/shot) kết hợp đổi liên tục 4 góc máy độc lạ và âm thanh cơ học dứt khoát, kết thúc bằng cú ngã kiệt sức tạo sự đồng cảm sâu sắc.",
+      "creator": {
+        "raw": "@valenti_k41 (Valenti | content creator)",
+        "name": "Valenti | content creator",
+        "handle": "@valenti_k41",
+        "profile_url": "https://www.instagram.com/valenti_k41/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdB_21Yo0Qc/",
+      "gdrive_folder": "https://drive.google.com/open?id=1aPAcee34iyac-1G4AWDNd1LNN0toyLHA",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas/shot_03_mid.jpg",
+        "video_url": "videos/Creative Phone Video Ideas - Routine Creator - @valenti_k41.mp4",
+        "report_url": "reports/Creative Phone Video Ideas - Routine Creator - @valenti_k41.html",
+        "shots_count": 15,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
       "shortcode": "DdEshZtz9Rb",
       "title_vi": "Josh Diaz • Lifestyle Habit & Cinematic B-Roll Routine",
@@ -1307,7 +1370,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/joshdiazfilms/"
       },
       "ig_url": "https://www.instagram.com/reel/DdEshZtz9Rb/",
-      "gdrive_folder": "https://drive.google.com/drive/folders/Work/AI_Video_Analysis",
+      "gdrive_folder": "https://drive.google.com/open?id=1Px04k5l7_xJAuv3BpaSd7LZLNz-9HjDT",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_03_mid.jpg",
