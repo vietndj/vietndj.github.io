@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 180,
-  "total_unique_ideas": 167,
-  "total_active_ideas": 157,
+  "total_scene_items": 181,
+  "total_unique_ideas": 168,
+  "total_active_ideas": 158,
   "total_excluded_ideas": 10,
   "total_creators": 94,
   "shooting_styles": [
@@ -60,7 +60,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 3,
+    "walk-and-talk": 4,
     "voice-over": 10,
     "talking-head": 16,
     "storytelling": 21,
@@ -144,7 +144,7 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 2,
     "thuong-hieu": 24,
-    "thoi-trang": 8,
+    "thoi-trang": 9,
     "am-thuc": 17,
     "du-lich": 20,
     "cong-nghe": 23,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 71,
+    "us_eu": 72,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -408,6 +408,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@tsangtastic",
+      "name": "Tsangtastic",
+      "profile_url": "https://www.instagram.com/tsangtastic/",
+      "video_count": 2,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing",
+        "IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic"
       ]
     },
     {
@@ -811,17 +823,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_01_mid.jpg",
       "video_ids": [
         "IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery"
-      ]
-    },
-    {
-      "handle": "@tsangtastic",
-      "name": "Tsangtastic",
-      "profile_url": "https://www.instagram.com/tsangtastic/",
-      "video_count": 1,
-      "top_industry": "Thời Trang & Phụ Kiện",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic"
       ]
     },
     {
@@ -1310,6 +1311,65 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing",
+      "shortcode": "DaB-gO6hvPX",
+      "title_vi": "Nghệ Thuật Mở Hộp Rương Quà Mùa Hè Tory Burch & Phối Đồ Điện Ảnh - @tsangtastic • Director's Report",
+      "quick_takeaway": "Bóc tách 22 phân cảnh mở hộp rương quà tặng mùa hè Tory Burch (Summer PR Trunk) của Jenny Tsang (@tsangtastic): Kỹ thuật giấu cắt nhịp thở, mở ngăn kéo đa tầng, phối màu kính mát & khuyên tai, cận cảnh túi da lộn camel & charm bóng bãi b...",
+      "key_tech": "Luxury PR Trunk Unboxing • Tracking Dolly Walk • Action Match Cut • Multi-Tier Drawer Reveal • Macro Accessory Showcase • Dreamy Pool Fantasy Cut",
+      "shooting_style": {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Mở hộp rương quà tặng mùa hè Tory Burch & phối đồ phụ kiện du lịch biển",
+      "tech_tags": [
+        "PR Trunk Unboxing",
+        "Tracking Dolly Walk",
+        "Fit Check & Styling",
+        "Macro Accessory Showcase",
+        "Match Cut Fantasy Transition"
+      ],
+      "logic_explanation": "Khai thác cấu trúc mở hộp đa tầng (Drawer Mechanism) kết hợp micro-reaction, bước đi song song tracking dolly và cú match-cut chuyển cảnh viễn tưởng hồ bơi biến video PR thành một tác phẩm điện ảnh lifestyle sống động.",
+      "creator": {
+        "raw": "@tsangtastic",
+        "name": "Tsangtastic",
+        "handle": "@tsangtastic",
+        "profile_url": "https://www.instagram.com/tsangtastic/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaB-gO6hvPX/",
+      "gdrive_folder": "https://drive.google.com/open?id=13_XfCZ1WlHUI2E10MsvNS6UQ-75THvh5",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaB-gO6hvPX.mp4",
+        "report_url": "reports/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing.html",
+        "shots_count": 22,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
       "shortcode": "DdCRQnBI4ny",
