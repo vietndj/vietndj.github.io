@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 171,
-  "total_unique_ideas": 158,
-  "total_active_ideas": 148,
+  "total_scene_items": 172,
+  "total_unique_ideas": 159,
+  "total_active_ideas": 149,
   "total_excluded_ideas": 10,
   "total_creators": 90,
   "shooting_styles": [
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 10,
-    "talking-head": 14,
+    "talking-head": 15,
     "storytelling": 20,
     "dien-anh": 82,
     "chuyen-canh": 19
@@ -143,7 +143,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 2,
-    "thuong-hieu": 22,
+    "thuong-hieu": 23,
     "thoi-trang": 7,
     "am-thuc": 16,
     "du-lich": 19,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 64,
+    "us_eu": 65,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -368,6 +368,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@neolumo.uralsk",
+      "name": "Neolumo.Uralsk",
+      "profile_url": "https://www.instagram.com/neolumo.uralsk/",
+      "video_count": 2,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
+        "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
       ]
     },
     {
@@ -641,17 +653,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story/shot_01_mid.jpg",
       "video_ids": [
         "IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story"
-      ]
-    },
-    {
-      "handle": "@neolumo.uralsk",
-      "name": "Neolumo.Uralsk",
-      "profile_url": "https://www.instagram.com/neolumo.uralsk/",
-      "video_count": 1,
-      "top_industry": "Làm Đẹp & Spa / Y Tế",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
       ]
     },
     {
@@ -1261,6 +1262,67 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
+      "shortcode": "DdF-qr0s4Kk",
+      "title_vi": "Neolumo • Phóng Sự Trị Liệu Da Liễu Y Khoa & Thẩm Mỹ",
+      "quick_takeaway": "Bóc tách 20 phân cảnh mẫu mực về nghệ thuật quay phóng sự thương hiệu y tế cao cấp (Medical Aesthetic Storytelling) từ kênh @neolumo.uralsk (Phòng khám da liễu & thẩm mỹ y khoa Neolumo Luxury Club, Uralsk, Kazakhstan). Video thiết lập ti...",
+      "key_tech": "Sterile Clinic Walk-and-Talk Hook • Talking Head Medical Authority • Ultrasonic Peeling Micro-Vibration • Sterile Gauze Mechanical Extraction • Uno Loop Macro Visual Proof • Alginate Soothing Gel Therapy • Minimalist Marble Luxury Outro",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Quốc Tế (Kazakhstan)",
+        "en_name": "International (Kazakhstan)",
+        "flag": "🇰🇿",
+        "badge_color": "purple"
+      },
+      "purpose": "Phóng sự thương hiệu phòng khám thẩm mỹ y khoa, giải thích cơ chế làm sạch chuyên sâu và kêu gọi đặt lịch khám",
+      "tech_tags": [
+        "Medical Walk-and-Talk",
+        "Talking Head Authority",
+        "Ultrasonic Peeling Macro",
+        "Sterile Extraction Proof",
+        "Uno Loop Visual ASMR",
+        "Alginate Soothing Mask",
+        "Minimalist Marble Luxury"
+      ],
+      "logic_explanation": "Kỹ thuật kết hợp giữa góc máy chào đón Walk-and-Talk ở hành lang vô trùng, góc tư vấn Talking Head điềm đạm và chuỗi B-roll cận cảnh thao tác điều trị đạt chuẩn y tế tạo niềm tin tuyệt đối.",
+      "creator": {
+        "raw": "@neolumo.uralsk",
+        "name": "Neolumo.Uralsk",
+        "handle": "@neolumo.uralsk",
+        "profile_url": "https://www.instagram.com/neolumo.uralsk/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdF-qr0s4Kk/",
+      "gdrive_folder": "https://drive.google.com/open?id=1G4OYFuArGebQVN5wHfIagrnpp_SMxkuB",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdF-qr0s4Kk.mp4",
+        "report_url": "reports/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa.html",
+        "shots_count": 20,
+        "duration": "0.2s"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang",
       "shortcode": "DcvmVl2hbuY",
