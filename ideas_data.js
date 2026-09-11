@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 170,
-  "total_unique_ideas": 157,
-  "total_active_ideas": 147,
+  "total_scene_items": 171,
+  "total_unique_ideas": 158,
+  "total_active_ideas": 148,
   "total_excluded_ideas": 10,
-  "total_creators": 89,
+  "total_creators": 90,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 10,
     "talking-head": 14,
     "storytelling": 19,
-    "dien-anh": 82,
+    "dien-anh": 83,
     "chuyen-canh": 19
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 38
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 63,
+    "us_eu": 64,
     "korea": 8,
     "india": 13,
     "japan": 9,
@@ -476,6 +476,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis",
         "IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio"
+      ]
+    },
+    {
+      "handle": "@ju_seobang",
+      "name": "Ju_Seobang",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -1250,6 +1261,61 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang",
+      "shortcode": "DcvmVl2hbuY",
+      "title_vi": "@주서방 - Video by ju seobang",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@주서방",
+        "name": "Ju_Seobang",
+        "handle": "@ju_seobang",
+        "profile_url": "https://www.instagram.com/ju_seobang/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcvmVl2hbuY/?stkn=MTd5eWQxMzZwbWV0",
+      "gdrive_folder": "https://drive.google.com/open?id=1BeILTI8i8chvig_gzXLiAnOw6oAexE_4",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvmVl2hbuY.mp4",
+        "report_url": "reports/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang.html",
+        "shots_count": 6,
+        "duration": "0.15s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu",
       "shortcode": "DchxEAkJ9Hw",
