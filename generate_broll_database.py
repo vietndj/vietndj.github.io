@@ -191,7 +191,21 @@ for i, f in enumerate(all_filenames):
     fn_lower = norm(f)
 
     # Specific semantic rules for new files
-    if "huong-dan-hoc-vien" in fn_lower or "offline phan 2" in fn_lower or "154" in fn_lower:
+    if "practice-cinematic" in fn_lower or "155" in fn_lower or "1209" in fn_lower:
+        cat_id = "sequence"
+        title_vi = "Sequence - Luyện Tập Góc Máy & Ánh Sáng Điện Ảnh Đời Thường 1209 (Times City)"
+        shot_type = "Medium Shot (MS) / One-Point Perspective / 9:16 Dọc"
+        location = "Khuôn viên Vinhomes Times City"
+        action = "Anh Việt thực hành chuỗi 23 phân cảnh B-roll điện ảnh: chạm hoa trang đỏ, ngồi xổm đón nắng, ngước nhìn tháp cao tầng, lóa nắng qua tán lá, bước đi hàng cọ và ngồi ghế đá kết bài"
+        mood = "Điện ảnh / Thư thái / Nhịp thở đô thị / Tái tạo năng lượng"
+        director_note = "Chuỗi B-roll mẫu mực kết hợp xúc giác thiên nhiên, đỉnh cao quang học lóa nắng (Sunburst Flare), chiều sâu một điểm tụ và cú gạt người tự nhiên (In-Camera Body Wipe Outro)."
+        cues = [
+            "Khi đầu óc căng thẳng vì công việc và màn hình máy tính, hãy cầm máy xuống sân để tập nhìn lại thế giới...",
+            "Ánh nắng ban mai, màu hoa đỏ và tán cây xanh chính là liều thuốc chữa lành tự nhiên tốt nhất...",
+            "Quay phim điện ảnh không nằm ở thiết bị đắt tiền, mà ở khả năng quan sát nhịp sống bình dị quanh mình."
+        ]
+        keywords = ["practice cinematic", "1209", "times city", "broll điện ảnh", "hoa trang đỏ", "đón nắng", "lóa nắng", "hàng cọ", "ghế đá", "body wipe", "sequence"]
+    elif "huong-dan-hoc-vien" in fn_lower or "offline phan 2" in fn_lower or "154" in fn_lower:
         cat_id = "sequence"
         title_vi = "Sequence - Lớp Học Thực Chiến Fedu (Phần 2: Hướng Dẫn & Đánh Giá Bài Tập Học Viên)"
         shot_type = "Medium Shot (MS) / Over-the-Shoulder (OTS) / 9:16 Dọc"
