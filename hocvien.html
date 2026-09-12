@@ -605,7 +605,7 @@
         <span>•</span>
         <span>Khóa Học Làm Video & Xây Dựng Kênh Thực Chiến</span>
       </div>
-      <div>Cập nhật lúc: <span class="font-mono text-slate-600">12/09/2026 19:53:49</span></div>
+      <div>Cập nhật lúc: <span class="font-mono text-slate-600">12/09/2026 19:55:08</span></div>
     </div>
   </footer>
 
@@ -2312,11 +2312,12 @@
       if (!targetId) return;
 
       // Find student in current list
-      const targetStudent = students.find(s => 
+      const targetList = (typeof currentStudents !== 'undefined' && currentStudents.length > 0) ? currentStudents : INITIAL_STUDENTS;
+      const targetStudent = targetList.find(s => 
         s.id === targetId || 
         s.phone === targetId || 
         ('card-' + s.id) === targetId ||
-        s.id.toLowerCase() === targetId.toLowerCase()
+        (s.id && s.id.toLowerCase() === targetId.toLowerCase())
       );
 
       if (!targetStudent) {
@@ -2331,9 +2332,10 @@
         const clearBtn = document.getElementById('clearSearchBtn');
         if (clearBtn) clearBtn.classList.add('hidden');
       }
-      currentSourceFilter = 'all';
-      currentIndustryFilter = 'all';
-      currentClassFilter = 'all';
+      if (document.getElementById('industrySelect')) document.getElementById('industrySelect').value = 'all';
+      if (document.getElementById('classSelect')) document.getElementById('classSelect').value = 'all';
+      activeSourceFilter = 'all';
+      activeStatusFilter = 'all';
       
       document.querySelectorAll('.source-tab').forEach(b => {
         b.className = 'source-tab px-2.5 py-1 rounded-lg transition hover:text-slate-900';
