@@ -4,10 +4,10 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 181,
-  "total_unique_ideas": 168,
+  "total_scene_items": 182,
+  "total_unique_ideas": 169,
   "total_active_ideas": 158,
-  "total_excluded_ideas": 10,
+  "total_excluded_ideas": 11,
   "total_creators": 94,
   "shooting_styles": [
     {
@@ -1311,6 +1311,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "Practice_Cinematic_1209_@vietmac",
+      "shortcode": "Practice_Cinematic_1209_@vietmac",
+      "title_vi": "Practice Cinematic 1209 • Nghệ Thuật B-Roll & Nhịp Thở Đô Thị Times City",
+      "quick_takeaway": "Bóc tách 23 phân cảnh mẫu mực trong video 44.08s của anh Nguyễn Việt: Kết nối xúc giác thiên nhiên, tư thế đón nắng Hero Stance, chiều sâu khung nhìn ẩn mật qua tán cây, góc ngước kiến trúc chọc trời, cú bùng nổ quang học lóa nắng (Sunbu...",
+      "key_tech": "Natural Tactile Hook • Hero Stance Sunlight • Peephole Foliage Framing • Urban Oasis Skyscraper • Macro Bloom Contrast • Solar Flare Sunburst • Profile Rim Light • One-Point Perspective Walk • Kinetic Life B-Roll • In-Camera Body Wipe Outro",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "vn",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "rose"
+      },
+      "purpose": "Luyện tập góc máy B-roll điện ảnh đời thường, bố cục đối xứng một điểm tụ, ánh sáng ngược và nhịp thở đô thị Times City",
+      "tech_tags": [
+        "Natural Tactile Hook",
+        "Hero Stance Sunlight",
+        "Peephole Foliage Framing",
+        "Urban Oasis Skyscraper",
+        "Macro Bloom Contrast",
+        "Solar Flare Sunburst",
+        "Profile Rim Light",
+        "One-Point Perspective Walk",
+        "Kinetic Life B-Roll",
+        "In-Camera Body Wipe Outro"
+      ],
+      "logic_explanation": "Video mẫu mực thực hành quay dựng điện ảnh đời thường: Khởi đầu bằng chi tiết thiên nhiên mộc mạc kết nối con người -> Giải phóng năng lượng đón nắng -> Phô diễn chiều sâu qua lớp lá cây -> Ngước nhìn kiến trúc đô thị xanh -> Bùng nổ điểm nhấn lóa nắng quang học -> Bố cục đối xứng một điểm tụ hút mắt -> Bắt trọn nhịp sống con người và khép lại bằng cú Body Wipe tự nhiên kinh điển.",
+      "creator": {
+        "raw": "@vietmac (Nguyễn Việt)",
+        "name": "Nguyễn Việt",
+        "handle": "@vietmac",
+        "profile_url": "https://www.instagram.com/vietmac/"
+      },
+      "ig_url": "https://vietndj.github.io/reports/Practice_Cinematic_1209%20-%20@vietmac.html",
+      "gdrive_folder": "https://drive.google.com/open?id=1qlCyufPR5MkJtbovVX5zC77pYaypujlh",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Practice_Cinematic_1209_@vietmac/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Practice_Cinematic_1209_@vietmac/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Practice_Cinematic_1209_@vietmac.mp4",
+        "report_url": "reports/Practice_Cinematic_1209 - @vietmac.html",
+        "shots_count": 23,
+        "duration": "44.1s"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": true,
+      "is_excluded": true
+    },
     {
       "id": "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing",
       "shortcode": "DaB-gO6hvPX",
