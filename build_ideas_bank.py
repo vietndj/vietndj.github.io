@@ -264,29 +264,46 @@ def extract_shortcode(item):
         return m.group(1)
     
     vid_id = item.get("id", "")
-    m_code = re.search(r"_(D[A-Za-z0-9_-]{10})_", vid_id)
+    m_code = re.search(r"_(D[A-Za-z0-9_-]{9,11})", vid_id)
     if m_code:
         return m_code.group(1)
         
     return vid_id
 
-def clean_creator_info(creator_raw, ig_url="", vid_id=""):
+def clean_creator_info(creator_raw, ig_url="", vid_id="", item=None):
     handle = ""
-    name = creator_raw.strip()
+    name = (creator_raw or "").strip()
+    if name == "Unknown":
+        name = ""
+
+    # Check item channel/author
+    if item:
+        if not handle and item.get("channel_tag"):
+            handle = item.get("channel_tag")
+        if not handle and item.get("author"):
+            handle = item.get("author")
+        if not name and item.get("channel"):
+            name = item.get("channel")
     
     m_by = re.search(r"Video_by_([a-zA-Z0-9._]+)", vid_id)
     if m_by:
         handle = "@" + m_by.group(1)
-    else:
-        m = re.search(r"@([a-zA-Z0-9._]+)", creator_raw)
+    elif not handle:
+        m = re.search(r"@([a-zA-Z0-9._]+)", creator_raw or "")
         if m:
             handle = "@" + m.group(1)
+        else:
+            m_id = re.search(r"IG_@([a-zA-Z0-9._]+)_", vid_id)
+            if m_id:
+                handle = "@" + m_id.group(1)
     
-    name_m = re.search(r"\((.*?)\)", creator_raw)
+    name_m = re.search(r"\((.*?)\)", creator_raw or "")
     if name_m:
         name = name_m.group(1).strip()
-    elif handle:
+    elif not name and handle:
         name = handle.replace("@", "").title()
+    elif not name:
+        name = "Creator"
         
     profile_url = ig_url
     if handle:
@@ -300,7 +317,7 @@ def clean_creator_info(creator_raw, ig_url="", vid_id=""):
             profile_url = f"https://www.instagram.com/{m_ig.group(1)}/"
             
     return {
-        "raw": creator_raw,
+        "raw": creator_raw or handle,
         "name": name,
         "handle": handle or "@creator",
         "profile_url": profile_url
@@ -311,9 +328,9 @@ def clean_title_and_takeaway(item, title_overrides={}):
     if vid_id in title_overrides:
         clean_title = title_overrides[vid_id]
     else:
-        clean_title = item.get("title_vi", "").strip()
+        clean_title = (item.get("title_vi") or item.get("title") or item.get("title_en") or "").strip()
         
-    desc_vi = item.get("desc_vi", "").strip()
+    desc_vi = (item.get("desc_vi") or item.get("summary") or item.get("desc") or "").strip()
     key_tech = item.get("key_tech", "").strip()
     html_rel = item.get("root_html_rel") or item.get("main_html_rel", "")
     full_html_path = os.path.join(BASE_DIR, html_rel)
@@ -456,8 +473,13 @@ def build_database():
 
     for code, item in unique_items_map.items():
         vid_id = item.get("id", "")
-        creator_raw = item.get("creator", "Unknown")
-        c_info = clean_creator_info(creator_raw, item.get("ig_url", ""), vid_id)
+        creator_raw = item.get("creator") or item.get("author") or item.get("channel_tag") or "Unknown"
+        c_info = clean_creator_info(creator_raw, item.get("ig_url", ""), vid_id, item=item)
+        master = master_dict.get(vid_id) or master_dict.get(code)
+        if master and master.get("creator_name") and (not c_info.get("name") or c_info["name"].startswith("@")):
+            c_info["name"] = master["creator_name"]
+        elif c_info.get("name", "").startswith("@"):
+            c_info["name"] = c_info["name"].replace("@", "").title()
         
         is_personal = False
         check_str = f"{creator_raw} {vid_id}".lower()
@@ -474,8 +496,12 @@ def build_database():
         folder = item.get("folder_name") or vid_id
         thumbs = item.get("thumbnails") or item.get("thumbs") or []
         if not thumbs or len(thumbs) < 2:
-            thumb_hook = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_01_mid.jpg"
-            thumb_key = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_03_mid.jpg"
+            if "Carousel" in folder or "Carousel" in vid_id:
+                thumb_hook = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/slide_01_mid.jpg"
+                thumb_key = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/slide_03_mid.jpg"
+            else:
+                thumb_hook = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_01_mid.jpg"
+                thumb_key = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_03_mid.jpg"
         else:
             thumb_hook = thumbs[0]
             thumb_key = thumbs[1] if len(thumbs) > 1 else thumbs[0]
