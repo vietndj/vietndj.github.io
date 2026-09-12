@@ -731,6 +731,47 @@
       margin: 4px 6px;
     }
 
+  
+    /* ═══ CHIP LINK KHOA HỌC Ở ĐẦU TRANG ═══ */
+    .hero-badge-group {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .chip-science-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: var(--cl-radius-full);
+      font-family: var(--font-mono);
+      font-size: 11.5px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      text-decoration: none;
+      background: var(--cl-accent-tint);
+      color: var(--cl-accent);
+      border: 1px solid rgba(26, 115, 232, 0.28);
+      box-shadow: 0 2px 8px rgba(26, 115, 232, 0.08);
+      transition: all 0.22s var(--apple-ease);
+    }
+    .chip-science-link:hover {
+      background: var(--cl-accent);
+      color: #ffffff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(26, 115, 232, 0.24);
+    }
+    .chip-science-link svg {
+      transition: transform 0.2s ease;
+    }
+    .chip-science-link:hover svg {
+      transform: translate(2px, -2px);
+    }
+
   </style>
 </head>
 <body>
@@ -819,10 +860,12 @@
   <!-- ═══ KHỐI 1: HERO (LIGHT) ═══ -->
   <section class="cl-zebra-section cl-zebra--light" id="sec-hero" style="padding-top: 72px;">
     <div class="cl-sec-container cl-sec-container--wide apple-reveal">
-      <div style="display: inline-flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 24px;">
-        <span class="cl-badge" style="margin-bottom: 0;">BÀI GIẢNG THỰC CHIẾN • NGHỆ THUẬT KỂ CHUYỆN</span>
-        <a href="storytelling-khoa-hoc.html" class="cl-badge" style="margin-bottom: 0; background: rgba(5, 150, 105, 0.08); color: var(--cl-emerald); border-color: rgba(5, 150, 105, 0.25); text-decoration: none; transition: all 0.2s var(--apple-ease);" onmouseover="this.style.background='var(--cl-emerald)';this.style.color='#ffffff';" onmouseout="this.style.background='rgba(5, 150, 105, 0.08)';this.style.color='var(--cl-emerald)';">
-          <span>🔬 Cơ Sở Khoa Học Thực Chứng ↗</span>
+            <!-- NHÓM BADGE & CHIP KHOA HỌC Ở ĐẦU -->
+      <div class="hero-badge-group">
+        <div class="cl-badge" style="margin-bottom: 0;">BÀI GIẢNG THỰC CHIẾN • NGHỆ THUẬT KỂ CHUYỆN</div>
+        <a href="storytelling-khoa-hoc.html" class="chip-science-link" title="Đọc công trình nghiên cứu khoa học nhận thức và định lý Conant-Ashby">
+          <span>🔬 Cơ Sở Khoa Học Thực Chứng</span>
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
         </a>
       </div>
       <h1 class="title-short">CÁCH QUAY STORYTELLING:<br>BÓC TRẦN SỰ THẬT TẦNG&nbsp;2.5</h1>
