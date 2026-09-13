@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 183,
-  "total_unique_ideas": 170,
-  "total_active_ideas": 138,
+  "total_scene_items": 184,
+  "total_unique_ideas": 171,
+  "total_active_ideas": 139,
   "total_excluded_ideas": 32,
   "total_creators": 87,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 77,
+    "dien-anh": 78,
     "chuyen-canh": 25
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 36
+    "ky-thuat-quay": 37
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 65,
+    "us_eu": 66,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -273,6 +273,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yegor.sky",
+      "name": "Yegor.Sky",
+      "profile_url": "https://www.instagram.com/yegor.sky/",
+      "video_count": 4,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky",
+        "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
+        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
+        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
+      ]
+    },
+    {
       "handle": "@jeromememe",
       "name": "Jerome Teo",
       "profile_url": "https://www.instagram.com/jeromememe/",
@@ -310,19 +324,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas",
         "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas",
         "IG_@valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR"
-      ]
-    },
-    {
-      "handle": "@yegor.sky",
-      "name": "Yegor.Sky",
-      "profile_url": "https://www.instagram.com/yegor.sky/",
-      "video_count": 3,
-      "top_industry": "Du Lịch & Văn Hóa",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
-        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
-        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
       ]
     },
     {
@@ -1221,6 +1222,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky",
+      "shortcode": "DdJaKjQCMTm",
+      "title_vi": "Video by yegor.sky",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 2 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@Yegor.Sky",
+        "name": "Yegor.Sky",
+        "handle": "@yegor.sky",
+        "profile_url": "https://www.instagram.com/yegor.sky/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJaKjQCMTm/?stkn=MTIzc203azJrZ204aA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1iscgPZy9AnTt3ZYN9sHQrHAdhUaPQYiM",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJaKjQCMTm.mp4",
+        "report_url": "reports/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky.html",
+        "shots_count": 2,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
       "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
