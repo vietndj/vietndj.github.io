@@ -822,6 +822,203 @@ video#mainPlayer {
     font-size: 32px;
     cursor: pointer;
 }
+
+/* Styling for Spoken Script & Remake Prompt Box */
+.dialogue-script-card {
+    background: #0e1420;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+}
+
+.dialogue-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1e293b;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dialogue-title {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.dialogue-timeline-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dialogue-item {
+    background: #121928;
+    border: 1px solid #1f2c42;
+    border-left: 3px solid var(--accent-amber);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.dialogue-item-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+}
+
+.dialogue-beat-badge {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.dialogue-time-btn {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    padding: 3px 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.dialogue-time-btn:hover {
+    background: var(--accent-blue);
+    color: #041324;
+}
+
+.dialogue-en {
+    font-size: 13px;
+    color: #94a3b8;
+    font-style: italic;
+    margin-bottom: 6px;
+    line-height: 1.5;
+}
+
+.dialogue-vi {
+    font-size: 13.5px;
+    color: #f8fafc;
+    font-weight: 500;
+    line-height: 1.55;
+}
+
+/* Remake Mega Prompt Box */
+.remake-prompt-card {
+    background: linear-gradient(135deg, #0e1726 0%, #16243b 100%);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.remake-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.remake-headline {
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.remake-subtext {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.prompt-code-wrapper {
+    position: relative;
+    background: #080d16;
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.prompt-code-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 8px 14px;
+    border-bottom: 1px solid #1e2d45;
+}
+
+.prompt-code-filename {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.copy-prompt-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--accent-blue);
+    color: #041324;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-prompt-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.copy-prompt-btn:active {
+    transform: translateY(0);
+}
+
+.prompt-code-content {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    padding: 14px;
+    max-height: 280px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
 </style>
 </head>
 <body>
@@ -866,6 +1063,94 @@ video#mainPlayer {
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
             <div>Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.</div>
+
+        <!-- BẢNG KỊCH BẢN THOẠI SONG NGỮ & ÁNH XẠ SANG NGÀNH NGHỀ -->
+        <div class="dialogue-script-card">
+            <div class="dialogue-header">
+                <div class="dialogue-title">
+                    <span>🎙️ KỊCH BẢN THOẠI NGUYÊN BẢN (ENGLISH) &amp; BẢN DỊCH TIẾNG VIỆT</span>
+                </div>
+                <span style="font-size:11.5px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">4 PHÂN ĐOẠN THOẠI CHÍNH</span>
+            </div>
+            <div class="dialogue-timeline-list">
+                <div class="dialogue-item">
+                    <div class="dialogue-item-header">
+                        <span class="dialogue-beat-badge">🎯 Hook 3s • Bẻ gãy niềm tin ngây thơ</span>
+                        <button class="dialogue-time-btn" onclick="playShot(0.00, 2.66, 'HOOK 3S')">▶ 0.00s - 2.66s</button>
+                    </div>
+                    <div class="dialogue-en">"Apparently first time dads need a hospital bag."</div>
+                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Nghe bảo mấy ông lần đầu làm bố là phải chuẩn bị sẵn một cái túi đồ đi viện..."</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="dialogue-item-header">
+                        <span class="dialogue-beat-badge">⚡ Xung đột • Cái cớ chủ quan giữ thể diện</span>
+                        <button class="dialogue-time-btn" onclick="playShot(7.00, 12.48, 'XUNG ĐỘT')">▶ 7.00s - 12.48s</button>
+                    </div>
+                    <div class="dialogue-en">"Katie's been on me about packing this bag and I'm always telling her I'm a guy. It's gonna take like two minutes."</div>
+                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Vợ mình cứ cằn nhằn giục giã suốt chuyện soạn cái túi này. Mình thì cứ bảo: 'Anh là đàn ông mà, soạn vèo cái 2 phút là xong!'..."</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="dialogue-item-header">
+                        <span class="dialogue-beat-badge">💡 Tỉnh ngộ • Bóc trần thực tế khách quan</span>
+                        <button class="dialogue-time-btn" onclick="playShot(12.48, 17.60, 'THỰC TẾ')">▶ 12.48s - 17.60s</button>
+                    </div>
+                    <div class="dialogue-en">"Fellas, you're gonna be living in the hospital for a few days. It's definitely gonna take more than two minutes."</div>
+                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Nhưng mà này các ông ơi, vào viện là phải ở lại đó vài ngày liền đấy. Chắc chắn là không thể nào xong trong 2 phút được đâu!"</div>
+                </div>
+
+                <div class="dialogue-item">
+                    <div class="dialogue-item-header">
+                        <span class="dialogue-beat-badge">💬 Hạ màn tự trào • Mở lời kêu gọi tương tác</span>
+                        <button class="dialogue-time-btn" onclick="playShot(19.36, 25.48, 'KẾT BÀI')">▶ 19.36s - 25.48s</button>
+                    </div>
+                    <div class="dialogue-en">"Pretty sure I'm missing something. Unfortunately, Katie's not home right now to let me know what it is. So keep an eye out for part two."</div>
+                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Kiểu gì mình cũng soạn thiếu một món nào đó rồi. Khổ nỗi vợ đang không có nhà để nhắc xem thiếu cái gì. Anh em nào có kinh nghiệm chỉ giùm với, và nhớ đón xem phần hai nhé!"</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- KHỐI PROMPT ÁNH XẠ SANG NGÀNH NGHỀ (GEMINI MEGA PROMPT) -->
+        <div class="remake-prompt-card">
+            <div class="remake-header-badge">✨ CHUYỂN THỂ KỊCH BẢN 1-CHẠM</div>
+            <h3 class="remake-headline">Muốn ánh xạ sang ngành nghề của bạn, hãy copy prompt bên dưới</h3>
+            <p class="remake-subtext">Sao chép Mega Prompt này dán vào Gemini. AI sẽ tự động hỏi ngành nghề &amp; đồ nghề của bạn để xuất bản ngay 3 phương án kịch bản tương ứng theo chuẩn văn phong mộc mạc anh Việt (đã lọc sạch 100% văn mẫu).</p>
+
+            <div class="prompt-code-wrapper">
+                <div class="prompt-code-toolbar">
+                    <span class="prompt-code-filename">📄 MEGA_PROMPT_REMAKE_GEMINI.md</span>
+                    <button class="copy-prompt-btn" onclick="copyMegaPrompt(this)">📋 Sao chép Prompt</button>
+                </div>
+                <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Video Ngắn &amp; Chuyên gia Tinh chỉnh Lời thoại Thực Chiến theo trường phái mộc mạc của anh Việt (nguyen-viet-voice).
+
+Tôi có cấu trúc logic giữ chân 26 giây đắt giá từ đạo diễn Josh Diaz (@joshdiazfilms) với 4 nhịp:
+1. Hook 3s: Nêu sự thật trần trụi về một việc ai cũng nghĩ là đơn giản.
+2. Xung đột 2 vế: Cái cớ chủ quan giữ thể diện ("Tưởng 2 phút là xong") đối đầu với Thực tế khách quan ("Vào cuộc mới biết mất cả buổi / ở lại mấy ngày").
+3. Tactile B-roll: Bàn tay liên tục đặt từng món đồ nghề/chi tiết thật xuống bàn làm việc theo nhịp nói (âm thanh thực tế, mắt thấy tai nghe).
+4. Kết bài tự trào &amp; Mở lời tự nhiên: Thừa nhận cái khó của người làm nghề, nhờ người xem chỉ giùm kinh nghiệm hoặc đặt câu hỏi mở chân thành.
+
+=== QUY TẮC BẮT BUỘC VỀ VĂN PHONG ANH VIỆT (TUÂN THỦ 100%) ===
+- CẤM TUYỆT ĐỐI VĂN MẪU AI &amp; TỪ NGỮ SÁO RỖNG: Không dùng 'bứt phá', 'chuyển hóa', 'vũ khí', 'thần thái', 'ma trận', 'nâng tầm', 'chạm cảm xúc', 'khơi gợi nhu cầu', 'giải pháp toàn diện', 'tối ưu hóa', 'đỉnh cao', 'bí quyết', 'bật mí', 'ngộ nhận', 'rào cản', 'tử huyệt'...
+- CẤM TUYỆT ĐỐI TỪ 'ÔNG GIÁO' hoặc xưng hô thầy bà dạy đời. Đại từ xưng hô chuẩn mực: 'mình - bạn' hoặc 'tôi - bạn'.
+- CẤM TUYỆT ĐỐI MƯỢN CỚ SỐ ĐÔNG: Không dùng 'anh em mình', 'nhiều người ngoài kia', 'chúng ta thường hay'. Đi thẳng một đường thẳng vào bản chất sự việc.
+- GIỮ TRỌN VĂN PHONG MỘC MẠC: Giọng người làm nghề khiêm tốn, biết đến đâu chia sẻ đến đấy, có nụ cười tự trào duyên dáng, tôn trọng thời gian người xem.
+
+=== HƯỚNG DẪN TƯƠNG TÁC (TRIỆT TIÊU MA SÁT) ===
+Nếu trong tin nhắn này tôi ĐÃ GHI SẴN thông tin ngành nghề ở cuối, hãy BỎ QUA bước hỏi và XUẤT BẢN NGAY 3 kịch bản.
+
+Nếu tôi CHƯA GHI ngành nghề, hãy DỪNG LẠI và chỉ gửi duy nhất menu 1 câu ngắn gọn sau:
+
+"Chào bạn, để viết đúng đồ nghề và cảnh quay thực tế tại chỗ làm việc của bạn, bạn chọn ngành nào dưới đây (chỉ cần gõ số 1, 2, 3, 4 hoặc gõ 1 dòng ngắn):
+1. Đồ da thủ công / May mặc / Mỹ nghệ (Bàn làm việc, dao kéo, búa gõ, kim chỉ)
+2. Thẩm mỹ / Spa / Nha khoa / Y tế (Bàn tư vấn, khay dụng cụ, kem dưỡng, máy móc)
+3. Kiến trúc / Nội thất / Xây dựng (Bản vẽ, thước đo, mẫu vật liệu gạch đá gỗ)
+4. Ngành khác: Bạn nhắn giúp mình: [Tên nghề] + [Khách hay tưởng lầm điều gì] + [3 món đồ trên bàn làm việc]"
+
+Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG ÁN KỊCH BẢN CHI TIẾT TỪNG GIÂY (Gồm 4 cột: Thời lượng | Hình ảnh B-roll xúc giác | Lời thoại A-roll mộc mạc | Âm thanh Foley thực tế) được lọc sạch 100% văn mẫu!</div>
+            </div>
+        </div>
+
         </div>
 
         <div class="action-toolbar">
@@ -2044,6 +2329,26 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function copyMegaPrompt(btn) {
+    const codeEl = document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    const text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✅ Đã sao chép!';
+        btn.style.background = '#10b981';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2200);
+    }).catch(err => {
+        alert('Lỗi sao chép, bạn vui lòng bôi đen văn bản để copy nhé!');
+    });
+}
+
 </script>
 </body>
 </html>
