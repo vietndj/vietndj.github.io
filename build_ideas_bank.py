@@ -561,7 +561,10 @@ def build_database():
                 "video_url": vid_url,
                 "report_url": html_url,
                 "shots_count": shots_count,
-                "duration": duration_str
+                "duration": duration_str,
+                "youtube_id": item.get("youtube_id") or (master.get("youtube_id") if master else ""),
+                "youtube_embed": item.get("youtube_embed") or (master.get("youtube_embed") if master else ""),
+                "youtube_url": item.get("youtube_url") or (master.get("youtube_url") if master else "")
             },
             "complexity": complexity,
             "is_personal": is_personal,
