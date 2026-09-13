@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 185,
-  "total_unique_ideas": 172,
-  "total_active_ideas": 140,
+  "total_scene_items": 186,
+  "total_unique_ideas": 173,
+  "total_active_ideas": 141,
   "total_excluded_ideas": 32,
-  "total_creators": 87,
+  "total_creators": 88,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 79,
+    "dien-anh": 80,
     "chuyen-canh": 25
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 38
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 67,
+    "us_eu": 68,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -471,6 +471,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@bysuncan",
+      "name": "𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
+      "profile_url": "https://www.instagram.com/bysuncan/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan"
       ]
     },
     {
@@ -1223,6 +1234,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan",
+      "shortcode": "DcvZ-FowD_A",
+      "title_vi": "@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣 - Video by bysuncan",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 5 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
+        "name": "𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
+        "handle": "@bysuncan",
+        "profile_url": "https://www.instagram.com/bysuncan/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcvZ-FowD_A/?stkn=Ynd6aGE0bzBtZTF3",
+      "gdrive_folder": "https://drive.google.com/open?id=1W4uUyzay5wIzgeUz7lwmJQdO6kL44sik",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvZ-FowD_A.mp4",
+        "report_url": "reports/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan.html",
+        "shots_count": 5,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms",
       "shortcode": "DdJ7S5BJ6H0",
