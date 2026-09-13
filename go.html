@@ -167,29 +167,66 @@
     .pinned-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .pinned-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
 
-    /* CATEGORY TABS */
+    /* CATEGORY TABS (BỐ CỤC 2 DÒNG THỰC CHIẾN - DỄ ẤN) */
     .tabs-bar {
-      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 12px;
-      margin-bottom: 24px; scrollbar-width: none; border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-subtle);
     }
-    .tabs-bar::-webkit-scrollbar { display: none; }
+    .tabs-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
     .tab-btn {
-      background: transparent; border: 1px solid transparent;
-      color: var(--text-secondary); font-size: 13.5px; font-weight: 600; font-family: var(--font-display);
-      padding: 8px 16px; border-radius: var(--radius-sm); cursor: pointer;
-      display: flex; align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      font-weight: 600;
+      font-family: var(--font-display);
+      padding: 8px 16px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.2s ease;
+      min-height: 40px;
+      user-select: none;
     }
-    .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.04); }
+    .tab-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(255, 255, 255, 0.16);
+      transform: translateY(-1px);
+    }
     .tab-btn.active {
-      background: var(--bg-card); color: var(--cyan);
-      border-color: rgba(56, 189, 248, 0.35); box-shadow: 0 2px 12px var(--cyan-glow);
+      background: var(--bg-card);
+      color: var(--cyan);
+      border-color: rgba(56, 189, 248, 0.45);
+      box-shadow: 0 2px 14px var(--cyan-glow);
+    }
+    .tab-btn[data-cat="megaprompts"].active {
+      border-color: rgba(56, 189, 248, 0.6);
+      box-shadow: 0 2px 16px rgba(56, 189, 248, 0.35);
     }
     .tab-badge {
-      font-size: 11px; font-family: var(--font-mono); font-weight: 700;
-      background: rgba(255, 255, 255, 0.08); padding: 2px 7px; border-radius: 999px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 2px 8px;
+      border-radius: 999px;
     }
     .tab-btn.active .tab-badge {
-      background: var(--cyan-glow); color: var(--cyan);
+      background: var(--cyan-glow);
+      color: var(--cyan);
     }
 
     /* RESULTS STATS */
@@ -352,6 +389,13 @@
     <section class="pinned-section">
       <div class="pinned-label">⭐ Công cụ thiết yếu dùng hàng ngày</div>
       <div class="pinned-grid">
+        <a href="https://fedu.vn/course/4tang.html" target="_blank" class="pinned-card" style="border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(145deg, rgba(56, 189, 248, 0.12) 0%, rgba(16, 23, 38, 0.9) 100%);">
+          <div class="pinned-icon">⚡</div>
+          <div class="pinned-info">
+            <div class="pinned-title">Bóc Tách 4 Tầng</div>
+            <div class="pinned-meta">Megaprompt 1 Dòng</div>
+          </div>
+        </a>
         <a href="http://localhost:8890" target="_blank" class="pinned-card" style="border-color: rgba(56, 189, 248, 0.35); background: linear-gradient(145deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 23, 38, 0.9) 100%);">
           <div class="pinned-icon">🏠</div>
           <div class="pinned-info">
@@ -432,15 +476,20 @@
       </div>
     </section>
 
-    <!-- CATEGORY TABS -->
+    <!-- CATEGORY TABS (BỐ CỤC 2 DÒNG THỰC CHIẾN - DỄ ẤN) -->
     <nav class="tabs-bar" id="tabsBar">
-      <button class="tab-btn active" data-cat="all">🌟 Tất Cả <span class="tab-badge" id="badge-all">0</span></button>
-      <button class="tab-btn" data-cat="apps">⚡ Web Apps & Tools <span class="tab-badge" id="badge-apps">0</span></button>
-      <button class="tab-btn" data-cat="landings">🚀 Landing Pages & SPAs <span class="tab-badge" id="badge-landings">0</span></button>
-      <button class="tab-btn" data-cat="courses">🎓 Kho Khóa Học <span class="tab-badge" id="badge-courses">0</span></button>
-      <button class="tab-btn" data-cat="podcasts">🎙️ Podcasts K <span class="tab-badge" id="badge-podcasts">0</span></button>
-      <button class="tab-btn" data-cat="skills">🧠 AI Skills Master <span class="tab-badge" id="badge-skills">0</span></button>
-      <button class="tab-btn" data-cat="storyboards">📝 Kịch Bản Storyboards <span class="tab-badge" id="badge-storyboards">0</span></button>
+      <div class="tabs-row">
+        <button class="tab-btn active" data-cat="all">🌟 Tất Cả <span class="tab-badge" id="badge-all">0</span></button>
+        <button class="tab-btn" data-cat="megaprompts">📋 Mega Prompts <span class="tab-badge" id="badge-megaprompts">0</span></button>
+        <button class="tab-btn" data-cat="apps">⚡ Web Apps & Tools <span class="tab-badge" id="badge-apps">0</span></button>
+        <button class="tab-btn" data-cat="landings">🚀 Landing Pages & SPAs <span class="tab-badge" id="badge-landings">0</span></button>
+      </div>
+      <div class="tabs-row">
+        <button class="tab-btn" data-cat="courses">🎓 Kho Khóa Học <span class="tab-badge" id="badge-courses">0</span></button>
+        <button class="tab-btn" data-cat="podcasts">🎙️ Podcasts K <span class="tab-badge" id="badge-podcasts">0</span></button>
+        <button class="tab-btn" data-cat="skills">🧠 AI Skills Master <span class="tab-badge" id="badge-skills">0</span></button>
+        <button class="tab-btn" data-cat="storyboards">📝 Kịch Bản Storyboards <span class="tab-badge" id="badge-storyboards">0</span></button>
+      </div>
     </nav>
 
     <!-- RESULTS INFO -->
@@ -534,6 +583,14 @@
           if (el) el.textContent = v;
         }
 
+        // Đếm chính xác số lượng Mega Prompts (category megaprompts + item có tag megaprompt)
+        const megaItemsCount = allItems.filter(it => it.category === 'megaprompts' || (it.tags && it.tags.some(t => {
+          const tn = removeVietnameseTones(t).toLowerCase();
+          return tn.includes('megaprompt') || tn.includes('prompt');
+        }))).length;
+        const badgeMega = document.getElementById('badge-megaprompts');
+        if (badgeMega) badgeMega.textContent = stats['megaprompts'] || megaItemsCount;
+
         // Đọc URL params ban đầu (?q=... và ?c=...)
         const params = new URLSearchParams(window.location.search);
         if (params.has('q')) {
@@ -572,8 +629,17 @@
       const qNorm = removeVietnameseTones(searchQuery);
       return allItems.filter(item => {
         // Lọc category
-        if (currentCategory !== 'all' && item.category !== currentCategory) {
-          return false;
+        if (currentCategory !== 'all') {
+          if (currentCategory === 'megaprompts') {
+            const isMega = item.category === 'megaprompts' ||
+              (item.tags && item.tags.some(t => {
+                const tn = removeVietnameseTones(t).toLowerCase();
+                return tn.includes('megaprompt') || tn.includes('prompt');
+              }));
+            if (!isMega) return false;
+          } else if (item.category !== currentCategory) {
+            return false;
+          }
         }
         // Lọc search
         if (qNorm) {
