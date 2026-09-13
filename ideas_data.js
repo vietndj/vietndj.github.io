@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 188,
-  "total_unique_ideas": 175,
-  "total_active_ideas": 143,
+  "total_scene_items": 190,
+  "total_unique_ideas": 176,
+  "total_active_ideas": 144,
   "total_excluded_ideas": 32,
   "total_creators": 89,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 82,
+    "dien-anh": 83,
     "chuyen-canh": 25
   },
   "industries": [
@@ -146,7 +146,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 16,
     "thoi-trang": 8,
     "am-thuc": 14,
-    "du-lich": 18,
+    "du-lich": 19,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 70,
+    "us_eu": 71,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -275,13 +275,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@yegor.sky",
-      "name": "Yegor.Sky",
+      "name": "Yegor.sky",
       "profile_url": "https://www.instagram.com/yegor.sky/",
       "video_count": 4,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_01_mid.jpg",
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky",
+        "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
         "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
         "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
         "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
@@ -351,6 +351,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@ju_seobang",
+      "name": "주서방",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -549,17 +561,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mako__go_DaH7X34NTNX_Palermo_Sicily/shot_01_mid.jpg",
       "video_ids": [
         "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily"
-      ]
-    },
-    {
-      "handle": "@ju_seobang",
-      "name": "주서방",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -1247,6 +1248,126 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+      "shortcode": "DbA22ywhMSI",
+      "title_vi": "@주서방 - Video by ju seobang",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@주서방",
+        "name": "주서방",
+        "handle": "@ju_seobang",
+        "profile_url": "https://www.instagram.com/ju_seobang/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbA22ywhMSI/?stkn=cjJhdGwzNG1kNXd3",
+      "gdrive_folder": "https://drive.google.com/open?id=1XUlvMvPzkWqk8A8L5hfAqze75-AaLavT",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbA22ywhMSI.mp4",
+        "report_url": "reports/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang.html",
+        "shots_count": 10,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
+      "shortcode": "DdJaKjQCMTm",
+      "title_vi": "How To Film Yourself In City • Công Thức 9 Phân Cảnh B-Roll Điện Ảnh",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu công thức 9 phân cảnh kinh điển quay phim bản thân giữa lòng đô thị của creator Yegor.Sky.",
+      "key_tech": "Urban Self-Filming Formula, 9-Shot Montage, 1x & 2x Focal Shift",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Công thức 9 phân cảnh kinh điển quay phim bản thân giữa lòng đô thị",
+      "tech_tags": [
+        "Urban Self-Filming Formula",
+        "1x & 2x Focal Length Shift",
+        "Symmetrical Storefront Wes Anderson",
+        "Alleyway Vanishing Point",
+        "Golden Hour Sun Reflection"
+      ],
+      "logic_explanation": "Công thức 9 phân cảnh kinh điển ghi lại hành trình bản thân trong đô thị: Phối cảnh ngã tư đường rộng, hất máy 2x kiến trúc zíc-zắc, selfie camera hàng cọ, mặt tiền quán ăn phẳng đối xứng, ngược sáng tán cây, ngõ biển hiệu neon và vệt sáng hoàng hôn biển rực rỡ.",
+      "creator": {
+        "raw": "@yegor.sky",
+        "name": "Yegor.sky",
+        "handle": "@yegor.sky",
+        "profile_url": "https://www.instagram.com/yegor.sky/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJaKjQCMTm/",
+      "gdrive_folder": "https://drive.google.com/open?id=1j4DIeOUcRDlGJVjvfLBO_2bq-8JQu9V6",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJaKjQCMTm.mp4",
+        "report_url": "reports/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City.html",
+        "shots_count": 10,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu",
       "shortcode": "DdM7gO4yD-c",
       "title_vi": "@Steven_🇻🇳_Vu - Video by steven.vuu",
@@ -1474,64 +1595,6 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky",
-      "shortcode": "DdJaKjQCMTm",
-      "title_vi": "Video by yegor.sky",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 2 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
-      ],
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@Yegor.Sky",
-        "name": "Yegor.Sky",
-        "handle": "@yegor.sky",
-        "profile_url": "https://www.instagram.com/yegor.sky/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DdJaKjQCMTm/?stkn=MTIzc203azJrZ204aA==",
-      "gdrive_folder": "https://drive.google.com/open?id=1iscgPZy9AnTt3ZYN9sHQrHAdhUaPQYiM",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJaKjQCMTm.mp4",
-        "report_url": "reports/IG_@Yegor.Sky_DdJaKjQCMTm_Video_by_yegor.sky.html",
-        "shots_count": 2,
-        "duration": "0.15s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
