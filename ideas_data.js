@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 194,
-  "total_unique_ideas": 178,
-  "total_active_ideas": 146,
+  "total_scene_items": 197,
+  "total_unique_ideas": 180,
+  "total_active_ideas": 148,
   "total_excluded_ideas": 32,
-  "total_creators": 91,
+  "total_creators": 92,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -63,9 +63,9 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 1,
     "voice-over": 8,
     "talking-head": 11,
-    "storytelling": 17,
-    "dien-anh": 82,
-    "chuyen-canh": 27
+    "storytelling": 18,
+    "dien-anh": 81,
+    "chuyen-canh": 29
   },
   "industries": [
     {
@@ -144,13 +144,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 3,
     "thuong-hieu": 16,
-    "thoi-trang": 9,
-    "am-thuc": 15,
+    "thoi-trang": 10,
+    "am-thuc": 17,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 38
   },
   "countries": [
     {
@@ -204,7 +204,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "country_stats": {
     "us_eu": 72,
-    "korea": 8,
+    "korea": 9,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -302,6 +302,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ju_seobang",
+      "name": "Ju_Seobang",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        "",
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
+      ]
+    },
+    {
       "handle": "@shogentle",
       "name": "Shogentle",
       "profile_url": "https://www.instagram.com/shogentle/",
@@ -363,18 +376,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
         "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
-      ]
-    },
-    {
-      "handle": "@ju_seobang",
-      "name": "주서방",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -498,14 +499,25 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@kulniyasally",
+      "name": "Kulniyasally",
+      "profile_url": "https://www.instagram.com/kulniyasally/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        ""
+      ]
+    },
+    {
       "handle": "@hsuan_yunn",
       "name": "鍾瑄芸Shanny",
       "profile_url": "https://www.instagram.com/hsuan_yunn/",
       "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_01_mid.jpg",
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn"
+        "IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase"
       ]
     },
     {
@@ -1270,11 +1282,131 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn",
+      "id": "",
+      "shortcode": "DdGRCKwsaaI",
+      "title_vi": "Kamera 0.5x Ultra-Wide Food POV: Phối Hợp Hậu Trường & Thành Phẩm Điện Ảnh",
+      "quick_takeaway": "Báo cáo phân tích đạo diễn chuyên sâu về kỹ thuật quay POV ẩm thực bằng ống kính góc siêu rộng 0.5x của smartphone kết hợp mồi nhử hậu trường Behind-the-scenes (BTS) và cú bùng nổ chuyển cảnh thành phẩm (Result).",
+      "key_tech": "Ultra-Wide 0.5x Smartphone POV, Behind-The-Scenes Hook, Rhythm Match Cut, Whip Zoom Transition, Sensory Food Visuals",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Ultra-Wide 0.5x Smartphone POV, Behind-The-Scenes Hook, Rhythm Match Cut, Whip Zoom Transition, Sensory Food Visuals"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@kulniyasally",
+        "name": "Kulniyasally",
+        "handle": "@kulniyasally",
+        "profile_url": "https://www.instagram.com/kulniyasally/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGRCKwsaaI/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Z2Uovd7AL7uKMnhRpBsTfc6mJ7U9RwSY",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdGRCKwsaaI.mp4",
+        "report_url": "reports/IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV.html",
+        "shots_count": 7,
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase",
       "shortcode": "DdLsL-cSekL",
-      "title_vi": "@鍾瑄芸Shanny - Video by hsuan yunn",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "title_vi": "Outdoor Fashion Match Cut Gear Showcase • Nghệ Thuật Match Cut Biến Hình & Trưng Bày Đồ Dã Ngoại Siêu Cuốn",
+      "quick_takeaway": "Bóc tách trọn vẹn 7 phân cảnh mẫu mực trong video Reel của @hsuan_yunn (鍾瑄芸Shanny): Nghệ thuật kết hợp In-Camera Action Match Cut biến hình trang phục từ mặc nhà sang set đồ dã ngoại thể thao (Gorpcore/Athleisure) chỉ trong 0.43s, đồng t...",
+      "key_tech": "In-Camera Action Match Cut, Low-Angle Squat Visual Anchor, Prop Kicking Visual Hook, Athleisure Styling Harmony, Over-the-Shoulder Bag Reveal",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "asia",
+        "name": "Châu Á",
+        "en_name": "Asia",
+        "flag": "🇹🇼",
+        "badge_color": "emerald"
+      },
+      "purpose": "Showcase trang phục và phụ kiện dã ngoại thời thượng qua kỹ thuật Match Cut biến hình",
+      "tech_tags": [
+        "In-Camera Action Match Cut",
+        "Low-Angle Squat Visual Anchor",
+        "Prop Kicking Visual Hook",
+        "Athleisure Gorpcore Styling",
+        "Over-the-Shoulder Bag Reveal"
+      ],
+      "logic_explanation": "Mở màn bằng visual hook tung sút giày dí dỏm, khớp chuyển cảnh chân hạ xuống (Action Match Cut) để biến hình tức thì sang set đồ thể thao ngoài trời với 3 góc khoe đồ đắt giá.",
+      "creator": {
+        "raw": "@hsuan_yunn",
+        "name": "鍾瑄芸Shanny",
+        "handle": "@hsuan_yunn",
+        "profile_url": "https://www.instagram.com/hsuan_yunn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdLsL-cSekL/?stkn=MWFyazduMXNnMmk0bg==",
+      "gdrive_folder": "https://drive.google.com/open?id=1rjW471Zu_gi1z0G-rV7sOnuhGM1aX1jq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdLsL-cSekL.mp4",
+        "report_url": "reports/Outdoor Fashion Match Cut Gear Showcase - @hsuan_yunn.html",
+        "shots_count": 7,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "",
+      "shortcode": "",
+      "title_vi": "Cách 'Câu' Kẹo Của Bố Vợ • Tuyệt Kỹ Hài Tình Huống Triệu View",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -1298,24 +1430,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Cinematic"
       ],
       "logic_explanation": "",
       "creator": {
-        "raw": "@鍾瑄芸Shanny",
-        "name": "鍾瑄芸Shanny",
-        "handle": "@hsuan_yunn",
-        "profile_url": "https://www.instagram.com/hsuan_yunn/"
+        "raw": "@ju_seobang",
+        "name": "Ju_Seobang",
+        "handle": "@ju_seobang",
+        "profile_url": "https://www.instagram.com/ju_seobang/"
       },
-      "ig_url": "https://www.instagram.com/reel/DdLsL-cSekL/?stkn=MWFyazduMXNnMmk0bg==",
-      "gdrive_folder": "https://drive.google.com/open?id=1nSmiyNhS-XJOp5Xh7kmiAOfiagiWLbZH",
+      "ig_url": "https://www.instagram.com/ju_seobang/",
+      "gdrive_folder": "",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdLsL-cSekL.mp4",
-        "report_url": "reports/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn.html",
-        "shots_count": 6,
-        "duration": "0.15s",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "",
+        "report_url": "",
+        "shots_count": 0,
+        "duration": "11.95s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -1518,31 +1650,31 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "Korea",
+        "flag": "🇰🇷",
+        "badge_color": "blue"
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
         "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Tuyệt chiêu tạo viral skit 12 giây: Thiết lập sự thèm thuồng tại đảo bếp -> Đánh lạc hướng bằng âm thanh rơi đồ -> Ép đối phương vào tư thế mù quan sát -> Khóa mục tiêu thùng rác -> Cắt giật cực độ 0.65s đớp kẹo trên không trung -> Lia máy whip-pan về lại sofa giả vờ vô can.",
       "creator": {
         "raw": "@주서방",
         "name": "주서방",
@@ -1558,9 +1690,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang.html",
         "shots_count": 10,
         "duration": "0.15s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
