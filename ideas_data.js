@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 192,
+  "total_scene_items": 193,
   "total_unique_ideas": 177,
   "total_active_ideas": 145,
   "total_excluded_ideas": 32,
@@ -63,8 +63,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 1,
     "voice-over": 8,
     "talking-head": 11,
-    "storytelling": 16,
-    "dien-anh": 83,
+    "storytelling": 17,
+    "dien-anh": 82,
     "chuyen-canh": 26
   },
   "industries": [
@@ -142,7 +142,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 2,
+    "spa-lam-dep": 3,
     "thuong-hieu": 16,
     "thoi-trang": 8,
     "am-thuc": 15,
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 40
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -354,6 +354,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@steven.vuu",
+      "name": "Steven Vuu",
+      "profile_url": "https://www.instagram.com/steven.vuu/",
+      "video_count": 2,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
+        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
+      ]
+    },
+    {
       "handle": "@ju_seobang",
       "name": "주서방",
       "profile_url": "https://www.instagram.com/ju_seobang/",
@@ -363,18 +375,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
         "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
-      "handle": "@steven.vuu",
-      "name": "Steven_🇻🇳_Vu",
-      "profile_url": "https://www.instagram.com/steven.vuu/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu",
-        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -1259,6 +1259,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
+      "shortcode": "DdM7gO4yD-c",
+      "title_vi": "Kính Thông Minh Meta Ray-Ban vs Trị Mụn Hero Cosmetics Skit • Nghệ Thuật Lồng Ghép Quảng Cáo Skit Comedy Đỉnh Cao",
+      "quick_takeaway": "Bóc tách 10 phân cảnh mẫu mực về nghệ thuật lồng ghép quảng cáo tự nhiên (Native Advertising) trong video skit hài hước của Steven Vuu: Sử dụng kính thông minh Meta Ray-Ban làm nhân vật phản biện chê mụn phũ phàng, chuyển tiếp khéo léo s...",
+      "key_tech": "POV Speculative AI Fiction, Sensory Macro POV Dispense, Bathroom Mirror Routine, Subversive Comedy Punchline, Action Match Cut",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ / Việt Kiều",
+        "en_name": "US & Overseas",
+        "flag": "🇺🇸/🇻🇳",
+        "badge_color": "purple"
+      },
+      "purpose": "Skit comedy lồng ghép quảng cáo tự nhiên trị mụn Hero Cosmetics cùng kính Meta Ray-Ban",
+      "tech_tags": [
+        "POV Speculative AI Fiction",
+        "Sensory Macro POV Dispense",
+        "Bathroom Mirror Routine",
+        "Subversive Comedy Punchline",
+        "Action Match Cut",
+        "Hero Cosmetics Placement"
+      ],
+      "logic_explanation": "Kịch bản skit comedy lồng ghép quảng cáo tự nhiên (Native Advertising) đỉnh cao: Dùng kính thông minh Meta Ray-Ban chê mụn phũ phàng làm đòn bẩy dẫn sang chu trình rửa mặt Hero Mighty Cleanser và kết thúc bằng cú đấm lật kèo comedy.",
+      "creator": {
+        "raw": "@steven.vuu",
+        "name": "Steven Vuu",
+        "handle": "@steven.vuu",
+        "profile_url": "https://www.instagram.com/steven.vuu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdM7gO4yD-c/?stkn=NnJjcHlkcTBheDBj",
+      "gdrive_folder": "https://drive.google.com/open?id=1T7j9z63Hh4qD1c86e01Yd-H_2pB1oQeW",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdM7gO4yD-c.mp4",
+        "report_url": "reports/Meta Ray-Ban AI vs Tri Mun Hero Cosmetics Skit - @steven.vuu.html",
+        "shots_count": 10,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel",
       "shortcode": "DcvZ-FowD_A",
       "title_vi": "Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi",
@@ -1491,64 +1554,6 @@ var FEDU_IDEAS_DATABASE = {
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
-      },
-      "complexity": {
-        "id": "trung-binh",
-        "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu",
-      "shortcode": "DdM7gO4yD-c",
-      "title_vi": "@Steven_🇻🇳_Vu - Video by steven.vuu",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
-      ],
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@Steven_🇻🇳_Vu",
-        "name": "Steven_🇻🇳_Vu",
-        "handle": "@steven.vuu",
-        "profile_url": "https://www.instagram.com/steven.vuu/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DdM7gO4yD-c/?stkn=NnJjcHlkcTBheDBj",
-      "gdrive_folder": "https://drive.google.com/open?id=1CnrEGYPZQNFZt4XiKeStXpAYVw6b8Jlr",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdM7gO4yD-c.mp4",
-        "report_url": "reports/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu.html",
-        "shots_count": 12,
-        "duration": "0.15s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
       },
       "complexity": {
         "id": "trung-binh",
