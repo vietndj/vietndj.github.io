@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 191,
+  "total_scene_items": 192,
   "total_unique_ideas": 177,
   "total_active_ideas": 145,
   "total_excluded_ideas": 32,
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 84,
-    "chuyen-canh": 25
+    "dien-anh": 83,
+    "chuyen-canh": 26
   },
   "industries": [
     {
@@ -146,11 +146,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 16,
     "thoi-trang": 8,
     "am-thuc": 15,
-    "du-lich": 19,
+    "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 41
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 72,
+    "us_eu": 71,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -498,6 +498,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@bysuncan",
+      "name": "bysuncan",
+      "profile_url": "https://www.instagram.com/bysuncan/",
+      "video_count": 1,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel"
+      ]
+    },
+    {
       "handle": "@allure.cafebar",
       "name": "Allure_Cafe_Bar",
       "profile_url": "https://www.instagram.com/allure.cafebar/",
@@ -517,17 +528,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer"
-      ]
-    },
-    {
-      "handle": "@bysuncan",
-      "name": "𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
-      "profile_url": "https://www.instagram.com/bysuncan/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan"
       ]
     },
     {
@@ -1259,6 +1259,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel",
+      "shortcode": "DcvZ-FowD_A",
+      "title_vi": "Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi",
+      "quick_takeaway": "Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video Reel của @bysuncan: Nghệ thuật In-Camera Action Match Cut dùng cú đấm trực diện che ống kính (Physical Occlusion Transition) để chuyển cảnh từ phòng làm việc ra đỉnh núi lửa hoang sơ theo...",
+      "key_tech": "In-Camera Fist Wipe Match Cut, Momentum Kinetic Transition, Beat-Synced Action, Domestic-to-Epic Contrast, Symmetrical Hero Pose",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "sea",
+        "name": "Đông Nam Á (Indonesia)",
+        "en_name": "Indonesia",
+        "flag": "🇮🇩",
+        "badge_color": "emerald"
+      },
+      "purpose": "Hook biến hình du lịch bùng nổ năng lượng từ phòng ngủ ra đỉnh núi",
+      "tech_tags": [
+        "In-Camera Fist Wipe Match Cut",
+        "Momentum Occlusion Transition",
+        "Beat-Synced Action",
+        "Domestic-to-Epic Contrast",
+        "Symmetrical Hero Pose",
+        "Diagonal Leading Lines"
+      ],
+      "logic_explanation": "Kỹ thuật In-Camera Action Match Cut dùng cú đấm trực diện che kín cảm biến ống kính tại phòng ngủ, kết nối bùng nổ sang nắm đấm thu về trên đỉnh núi lửa hoang sơ theo nhịp beat bài hát Smooth Criminal.",
+      "creator": {
+        "raw": "@bysuncan",
+        "name": "bysuncan",
+        "handle": "@bysuncan",
+        "profile_url": "https://www.instagram.com/bysuncan/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcvZ-FowD_A/?stkn=Ynd6aGE0bzBtZTF3",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvZ-FowD_A.mp4",
+        "report_url": "reports/Smooth Criminal Punch Transition Travel - @bysuncan.html",
+        "shots_count": 6,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar",
       "shortcode": "DdF81brAiIj",
       "title_vi": "Video by allure.cafebar",
@@ -1540,64 +1603,6 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJsv1AsGwt.mp4",
         "report_url": "reports/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer.html",
         "shots_count": 2,
-        "duration": "0.15s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan",
-      "shortcode": "DcvZ-FowD_A",
-      "title_vi": "@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣 - Video by bysuncan",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 5 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
-      ],
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
-        "name": "𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣",
-        "handle": "@bysuncan",
-        "profile_url": "https://www.instagram.com/bysuncan/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DcvZ-FowD_A/?stkn=Ynd6aGE0bzBtZTF3",
-      "gdrive_folder": "https://drive.google.com/open?id=1W4uUyzay5wIzgeUz7lwmJQdO6kL44sik",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvZ-FowD_A.mp4",
-        "report_url": "reports/IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan.html",
-        "shots_count": 5,
         "duration": "0.15s",
         "youtube_id": "",
         "youtube_embed": "",
