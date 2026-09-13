@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 204,
-  "total_unique_ideas": 185,
-  "total_active_ideas": 153,
+  "total_scene_items": 205,
+  "total_unique_ideas": 186,
+  "total_active_ideas": 154,
   "total_excluded_ideas": 32,
-  "total_creators": 96,
+  "total_creators": 97,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 11,
     "storytelling": 17,
     "dien-anh": 84,
-    "chuyen-canh": 32
+    "chuyen-canh": 33
   },
   "industries": [
     {
@@ -146,7 +146,7 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 16,
     "thoi-trang": 11,
     "am-thuc": 16,
-    "du-lich": 20,
+    "du-lich": 21,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 6,
@@ -204,7 +204,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "country_stats": {
     "us_eu": 73,
-    "korea": 10,
+    "korea": 11,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -497,6 +497,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@saebomoh",
+      "name": "오새봄 / Oh Sae Bom",
+      "profile_url": "https://www.instagram.com/saebomoh/",
+      "video_count": 1,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog"
       ]
     },
     {
@@ -1326,6 +1337,71 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog",
+      "shortcode": "DbH76S5yg5W",
+      "title_vi": "A Little Hong Kong A Lot Of Happiness • Nghệ Thuật Vlog Du Lịch Hè Góc Thấp Đầy Bản Sắc",
+      "quick_takeaway": "Bóc tách 6 phân cảnh mẫu mực trong video Reel của @saebomoh: Thao lược góc máy thấp góc siêu rộng (Low-Angle Ultra-Wide POV) kết hợp chuyển động băng chuyền sân bay mượt mà như dolly track, kỹ thuật Match-Cut định hướng chuyển động (Moti...",
+      "key_tech": "Low-Angle Ultra-Wide POV, Travelator Natural Dolly, Motion Match-Cut, Urban Canyon Scale Shock, Seamless Outfit Switch, Wong Kar-wai Retro Street Aesthetic, Infinite Loop Narrative",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "Korea",
+        "flag": "🇰🇷",
+        "badge_color": "blue"
+      },
+      "purpose": "Vlog du lịch dạo phố mùa hè, thời trang dạo phố OOTD & Khám phá địa điểm check-in Hong Kong (Summer Travel & Streetwear Vlog)",
+      "tech_tags": [
+        "Low-Angle Ultra-Wide POV",
+        "Travelator Natural Dolly",
+        "Motion Match-Cut",
+        "Urban Canyon Scale Shock",
+        "Worm's Eye Perspective",
+        "Seamless Outfit Switch",
+        "Wong Kar-wai Retro Street Aesthetic",
+        "Infinite Loop Narrative"
+      ],
+      "logic_explanation": "Mẫu mực về kỹ thuật du lịch dạo phố góc thấp (Low-Angle POV): Tận dụng băng chuyền sân bay làm dolly track mượt mà, chuyển cảnh match-cut bằng cú hất/bổ máy nối liền khoảng cách địa lý nghìn dặm, đổi outfit giữ nguyên góc máy tạo sự phong phú thị giác và khép lại bằng vòng lặp vô tận cuốn hút.",
+      "creator": {
+        "raw": "@saebomoh (오새봄 / Oh Sae Bom)",
+        "name": "오새봄 / Oh Sae Bom",
+        "handle": "@saebomoh",
+        "profile_url": "https://www.instagram.com/saebomoh/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbH76S5yg5W/?stkn=dmVsa2twaGoyNGI2",
+      "gdrive_folder": "https://drive.google.com/open?id=1-O9WxOLsK1gVAsxJh9ZZT7Ni4HxjImrz",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/A%20Little%20Hong%20Kong%20A%20Lot%20Of%20Happiness%20-%20@saebomoh.mp4",
+        "report_url": "reports/A Little Hong Kong A Lot Of Happiness - @saebomoh.html",
+        "shots_count": 6,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion",
       "shortcode": "DcxgmP1zZPk_",
