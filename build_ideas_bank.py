@@ -148,6 +148,14 @@ INDUSTRIES = [
         "icon": "🎯",
         "badge_color": "blue",
         "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+    },
+    {
+        "id": "ugc",
+        "name": "UGC",
+        "en_name": "UGC & Ads",
+        "icon": "📱",
+        "badge_color": "amber",
+        "desc": "Video quảng cáo UGC sàn TMĐT (Shopee, Lazada...) chuẩn công thức AIDA: Gây chú ý, khơi gợi nhu cầu, thúc đẩy chuyển đổi."
     }
 ]
 
@@ -236,37 +244,12 @@ def load_master_classifications():
     return {}
 
 def load_portal_data():
-    try:
-        import subprocess
-        node_script = """
-        const fs = require('fs');
-        const content = fs.readFileSync(process.env.SCENE_PATH, 'utf-8');
-        const m = content.match(/const portalData\\s*=\\s*(\\[[\\s\\S]*?\\]);/);
-        if (m) {
-            const data = eval(m[1]);
-            console.log(JSON.stringify(data));
-        } else {
-            process.exit(1);
-        }
-        """
-        env = os.environ.copy()
-        env["SCENE_PATH"] = SCENE_PATH
-        p = subprocess.run(["node"], input=node_script, capture_output=True, text=True, env=env)
-        if p.returncode == 0 and p.stdout:
-            return json.loads(p.stdout)
-    except Exception:
-        pass
-
     with open(SCENE_PATH, "r", encoding="utf-8") as f:
         content = f.read()
     m = re.search(r'const portalData\s*=\s*(\[.*?\]);', content, re.DOTALL)
     if not m:
         raise ValueError("Could not extract portalData from scene.html")
-    # Quote unquoted property names
-    fixed_json = re.sub(r'([{,]\s*)([a-zA-Z0-9_]+)\s*:', r'\1"\2":', m.group(1))
-    fixed_json = re.sub(r',\s*([\]\}])', r'\1', fixed_json)
-    return json.loads(fixed_json)
-
+    return json.loads(m.group(1))
 
 def load_curation_config():
     if os.path.exists(EXCLUDED_CONFIG_PATH):
@@ -369,9 +352,20 @@ def clean_title_and_takeaway(item, title_overrides={}):
             with open(full_html_path, "r", encoding="utf-8", errors="ignore") as rf:
                 html_head = rf.read(30000)
                 
-                m_dur = re.search(r"(\d+(?:\.\d+)?s)\b", html_head)
+                m_dur = re.search(r"/\s*(\d+(?:\.\d+)?s)\b", html_head)
+                if not m_dur:
+                    m_dur = re.search(r'class="time-display"[^>]*>.*?/\s*([0-9.]+s)', html_head)
+                if not m_dur:
+                    m_dur = re.search(r'⏱️\s*([0-9.]+s?)', html_head)
                 if m_dur:
-                    report_duration = m_dur.group(1)
+                    parsed_d = m_dur.group(1)
+                    # Exclude invalid micro CSS transitions like 0.2s
+                    try:
+                        num_sec = float(parsed_d.replace('s', ''))
+                        if num_sec >= 2.0:
+                            report_duration = parsed_d
+                    except Exception:
+                        pass
                 
                 tm = re.search(r"<title>(.*?)</title>", html_head, re.IGNORECASE)
                 if tm:
@@ -534,11 +528,38 @@ def build_database():
         vid_url = item.get("root_vid_rel") or item.get("main_vid_rel") or ""
         if not vid_url and item.get("all_vids"):
             vid_url = item["all_vids"][0].get("rel_url", "")
+
+        # R2 Video URL Mapping Override for guaranteed 200 OK CDN streaming
+        R2_OVERRIDE_MAP = {
+            "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdCRQnBI4ny.mp4",
+            "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Tornado%20Kick%20Martial%20Arts%20Kinetic%20Hook%20-%20%40aidana_adilkassym.mp4",
+            "IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxwKHYoBFv.mp4",
+            "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DawDiT2M1p8.mp4",
+            "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaH7X34NTNX.mp4",
+            "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20Phone%20Video%20Ideas%20-%20Routine%20Creator%20-%20%40valenti_k41.mp4",
+            "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBDvZph1od.mp4",
+            "IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Food%20Filming%20%26%20Styling%20Mastery%20-%20%40alena.feda.mp4",
+            "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcyS2KEm7-v.mp4",
+            "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcyDbGmItDV.mp4",
+            "FB_@AnhSacAnh_1964049564715249_Thuong_Hieu_Ca_Nhan_Sinh_Loi": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Thuong_Hieu_Ca_Nhan_Sinh_Loi_Anh_Sac_Anh.mp4",
+            "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaB-gO6hvPX.mp4",
+            "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20phone%20video%20ideas%20-%20%40valenti_k41.mp4",
+            "IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Getting%20Ready%20Faster%20Than%20Ever%20-%20%40jesussropero.mp4",
+            "IG_@colecoppolino_DcJiRCrTlG1": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJiRCrTlG1.mp4",
+            "IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTk0RGgtBO.mp4",
+            "IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbRak0lsesY.mp4",
+            "IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbjCyKgxp8S.mp4",
+            "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTqPjitJl1.mp4"
+        }
+        if vid_id in R2_OVERRIDE_MAP:
+            vid_url = R2_OVERRIDE_MAP[vid_id]
             
         html_url = item.get("root_html_rel") or item.get("main_html_rel") or ""
         shots_count = item.get("shots_count", 0)
         
         duration_str = item.get("duration", "") or rep_dur or (f"{shots_count * 2}s" if shots_count else "15s")
+        if "DaB-gO6hvPX" in vid_id:
+            duration_str = "90s"
         
         if shots_count <= 8:
             complexity = {"id": "de", "label": "🟢 Dễ làm theo (3-8 shots)"}
@@ -546,6 +567,18 @@ def build_database():
             complexity = {"id": "trung-binh", "label": "🟡 Trung bình (9-18 shots)"}
         else:
             complexity = {"id": "nang-cao", "label": "🔴 Nâng cao (>18 shots)"}
+
+        transition_level = master.get("transition_level") if master else None
+        is_ad_bot = master.get("is_ad_bot", False) if master else False
+        if not is_ad_bot and (("LAZADA_" in vid_id) or ("SHOPEE_" in vid_id) or ("UGC, Quảng cáo, AIDA" in str(tech_tags))):
+            is_ad_bot = True
+
+        # Video upload từ bot telegram tải quảng cáo (Shopee, Lazada...) -> Xếp vào mục ngành nghề UGC
+        if is_ad_bot or "LAZADA_" in vid_id or "SHOPEE_" in vid_id or (master and master.get("industry", {}).get("id") == "ugc"):
+            is_ad_bot = True
+            ind_obj = next(i for i in INDUSTRIES if i["id"] == "ugc")
+
+        fedu_opt = master.get("fedu_optimization", {}) if master else {}
 
         idea_obj = {
             "id": vid_id,
@@ -576,6 +609,9 @@ def build_database():
             },
             "purpose": purpose,
             "tech_tags": tech_tags,
+            "transition_level": transition_level,
+            "is_ad_bot": is_ad_bot,
+            "fedu_optimization": fedu_opt,
             "logic_explanation": logic_exp,
             "creator": c_info,
             "ig_url": item.get("ig_url", "") or c_info["profile_url"],
@@ -635,8 +671,14 @@ def build_database():
         cnt = sum(1 for x in active_ideas if x.get("country", {}).get("id") == c_item["id"])
         country_stats[c_item["id"]] = cnt
 
+    transition_stats = {
+        "level_1_count": sum(1 for x in active_ideas if x.get("transition_level") == "Chuyển cảnh Level 1"),
+        "level_2_count": sum(1 for x in active_ideas if x.get("transition_level") == "Chuyển cảnh Level 2"),
+        "ad_bot_count": sum(1 for x in active_ideas if x.get("is_ad_bot") is True)
+    }
+
     database_payload = {
-        "generated_at": "2026-09-08T23:55:00+07:00",
+        "generated_at": "2026-09-13T18:00:00+07:00",
         "total_scene_items": len(portal_data),
         "total_unique_ideas": len(processed_ideas),
         "total_active_ideas": len(active_ideas),
@@ -648,6 +690,7 @@ def build_database():
         "industry_stats": industry_stats,
         "countries": COUNTRIES,
         "country_stats": country_stats,
+        "transition_stats": transition_stats,
         "creators_hub": creators_hub,
         "ideas": processed_ideas
     }
