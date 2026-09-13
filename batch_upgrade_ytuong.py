@@ -222,45 +222,123 @@ CSS_COMPONENT = """
     line-height: 1.45;
 }
 
+/* Remake Mega Prompt Box (Accordion Closed Default) */
 .remake-prompt-card {
     background: linear-gradient(135deg, #0e1726 0%, #16243b 100%);
     border: 1px solid rgba(56, 189, 248, 0.35);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 24px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+}
+
+.prompt-accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+    cursor: pointer;
+    user-select: none;
+    background: rgba(15, 23, 42, 0.6);
+    gap: 10px;
+    transition: background 0.15s ease;
+}
+
+.prompt-accordion-header:hover {
+    background: rgba(30, 41, 59, 0.85);
+}
+
+.prompt-header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
 }
 
 .remake-header-badge {
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: 4px;
     background: rgba(56, 189, 248, 0.15);
     color: #38bdf8;
     border: 1px solid rgba(56, 189, 248, 0.3);
-    font-size: 11px;
+    font-size: 10.5px;
     font-weight: 800;
-    padding: 3px 10px;
+    padding: 2px 8px;
     border-radius: 4px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    white-space: nowrap;
+    flex-shrink: 0;
 }
 
-.remake-headline {
+.remake-accordion-title {
     font-family: var(--font-heading, sans-serif);
-    font-size: 17px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.4;
-    margin-bottom: 6px;
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #f8fafc;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.prompt-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.copy-prompt-btn-compact {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: #38bdf8;
+    color: #041324;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 11.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.copy-prompt-btn-compact:hover {
+    filter: brightness(1.15);
+    transform: translateY(-1px);
+}
+
+.prompt-toggle-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    color: #94a3b8;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.toggle-icon {
+    font-size: 9px;
+    transition: transform 0.2s ease;
+}
+
+.prompt-accordion-body {
+    padding: 14px 16px 16px 16px;
+    border-top: 1px solid rgba(56, 189, 248, 0.2);
+    background: rgba(8, 13, 22, 0.5);
 }
 
 .remake-subtext {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #cbd5e1;
     line-height: 1.5;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
 }
 
 .prompt-code-wrapper {
@@ -282,7 +360,7 @@ CSS_COMPONENT = """
 
 .prompt-code-filename {
     font-family: monospace;
-    font-size: 11.5px;
+    font-size: 11px;
     color: #94a3b8;
     font-weight: 600;
 }
@@ -294,9 +372,9 @@ CSS_COMPONENT = """
     background: #38bdf8;
     color: #041324;
     border: none;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 6px;
-    font-size: 12px;
+    font-size: 11.5px;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
@@ -318,23 +396,55 @@ CSS_COMPONENT = """
     white-space: pre-wrap;
     word-break: break-word;
 }
-"""
 
-JS_COMPONENT = """
-function copyMegaPrompt(btn) {
-    const codeEl = document.getElementById('megaPromptText');
+@media (max-width: 640px) {
+    .remake-accordion-title {
+        font-size: 12px;
+    }
+    .prompt-accordion-header {
+        padding: 8px 10px;
+    }
+}
+\"\"\"
+
+JS_COMPONENT = \"\"\"
+function togglePromptAccordion(headerEl) {
+    const card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    const body = card.querySelector('.prompt-accordion-body');
+    const icon = card.querySelector('.toggle-icon');
+    const label = card.querySelector('.toggle-label');
+    if (!body) return;
+    const isCollapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (isCollapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    const card = btn.closest('.remake-prompt-card');
+    const codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
     if (!codeEl) return;
     const text = codeEl.innerText || codeEl.textContent;
     navigator.clipboard.writeText(text).then(() => {
-        const originalText = btn.innerHTML;
-        btn.innerHTML = '✅ Đã sao chép!';
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        const oldBg = btn.style.background;
+        const oldColor = btn.style.color;
         btn.style.background = '#10b981';
         btn.style.color = '#fff';
         setTimeout(() => {
-            btn.innerHTML = originalText;
-            btn.style.background = '';
-            btn.style.color = '';
-        }, 2200);
+            btn.innerHTML = orig;
+            btn.style.background = oldBg;
+            btn.style.color = oldColor;
+        }, 2000);
     }).catch(err => {
         alert('Lỗi sao chép, bạn vui lòng bôi đen văn bản để copy nhé!');
     });
@@ -374,26 +484,38 @@ def classify_video(item):
 def generate_technique_prompt_html(title):
     clean_title = title.replace('"', '&quot;')
     return f"""
-        <!-- KHỐI PROMPT ÁNH XẠ KỸ THUẬT CÚ MÁY SANG NGÀNH NGHỀ STU (KHÔNG THOẠI) -->
-        <div class="remake-prompt-card">
-            <div class="remake-header-badge">🎥 ỨNG DỤNG CÚ MÁY 1-CHẠM THEO NGÀNH STU</div>
-            <h3 class="remake-headline">Muốn ứng dụng kỹ thuật quay này vào sản phẩm của bạn, hãy copy prompt bên dưới</h3>
-            <p class="remake-subtext">Video này thuần túy về kỹ thuật quay (không thoại). Sao chép Mega Prompt này dán vào Gemini để AI hướng dẫn áp dụng cú máy/chuyển cảnh này vào quay sản phẩm thực tế cho học viên STU (100% hình ảnh xúc giác, không cần nói).</p>
-
-            <div class="prompt-code-wrapper">
-                <div class="prompt-code-toolbar">
-                    <span class="prompt-code-filename">📄 MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
-                    <button class="copy-prompt-btn" onclick="copyMegaPrompt(this)">📋 Sao chép Prompt</button>
+        <!-- KHỐI PROMPT ÁNH XẠ KỸ THUẬT CÚ MÁY SANG NGÀNH NGHỀ STU (ACCORDION ĐÓNG MẶC ĐỊNH) -->
+        <div class="remake-prompt-card" id="remakePromptCard">
+            <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
+                <div class="prompt-header-left">
+                    <span class="remake-header-badge">🎥 CÚ MÁY STU</span>
+                    <span class="remake-accordion-title">Ánh xạ kỹ thuật quay này sang ngành nghề của bạn (Gemini Prompt)</span>
                 </div>
-                <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến (In-Camera Cinematography) theo trường phái mộc mạc của anh Việt.
+                <div class="prompt-header-right">
+                    <button class="copy-prompt-btn-compact" onclick="copyMegaPrompt(event, this)">📋 Sao chép</button>
+                    <div class="prompt-toggle-btn">
+                        <span class="toggle-icon">▼</span>
+                        <span class="toggle-label">Mở xem</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-accordion-body" style="display: none;">
+                <p class="remake-subtext">Video này thuần túy về kỹ thuật quay (không thoại). Sao chép Mega Prompt này dán vào Gemini để AI hướng dẫn áp dụng cú máy/chuyển cảnh này vào quay sản phẩm thực tế cho học viên STU (100% hình ảnh xúc giác, không cần nói).</p>
+
+                <div class="prompt-code-wrapper">
+                    <div class="prompt-code-toolbar">
+                        <span class="prompt-code-filename">📄 MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
+                        <button class="copy-prompt-btn" onclick="copyMegaPrompt(event, this)">📋 Sao chép Prompt</button>
+                    </div>
+                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến (In-Camera Cinematography) theo trường phái mộc mạc của anh Việt.
 
 Tôi vừa học được kỹ thuật quay / chuyển cảnh cực kỳ đắt giá: {clean_title}.
 Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
 
 === QUY TẮC BẮT BUỘC (TUÂN THỦ 100%) ===
 - CẤM BỊA KỊCH BẢN NÓI DÔNG DÀI: Tôi không cần kịch bản nói hay lý thuyết đạo lý. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào, đặt góc nào tại bàn làm việc thực tế.
-- CẤM VĂN MẪU AI: Không dùng \'nâng tầm\', \'bứt phá\', \'thần thái\', \'vũ khí\', \'chuyển hóa\'...
-- VĂN PHONG MỘC MẠC: Xưng \'mình - bạn\', hướng dẫn cầm tay chỉ việc như người làm nghề chỉ cho nhau.
+- CẤM VĂN MẪU AI: Không dùng 'nâng tầm', 'bứt phá', 'thần thái', 'vũ khí', 'chuyển hóa'...
+- VĂN PHONG MỘC MẠC: Xưng 'mình - bạn', hướng dẫn cầm tay chỉ việc như người làm nghề chỉ cho nhau.
 
 === HƯỚNG DẪN TƯƠNG TÁC THEO NGÀNH HỌC VIÊN STU ===
 Nếu tôi chưa ghi ngành, hãy hỏi đúng 1 câu:
@@ -405,6 +527,7 @@ Nếu tôi chưa ghi ngành, hãy hỏi đúng 1 câu:
 5. Ngành khác của bạn trong STU: [Tên nghề] + [Sản phẩm muốn quay]"
 
 Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (Gồm 4 thông số: Tiêu cự ống kính | Hướng lia máy & Điểm giấu vết cắt | Đạo cụ trên bàn | Cách phối ánh sáng tự nhiên)!</div>
+                </div>
             </div>
         </div>
     """
@@ -437,21 +560,25 @@ def patch_report_html(report_path, html_snippet):
         return False, "Đã có khối remake-prompt-card"
 
     # Inject CSS before </style>
-    if "/* Styling for 2-Column Dialogue Script & Remake Prompt Box */" not in content:
+    if "/* Styling for 2-Column Dialogue Script & Remake Prompt Box */" not in content and "/* Remake Mega Prompt Box" not in content:
         content = content.replace("</style>", CSS_COMPONENT + "\n</style>", 1)
 
-    # Inject HTML snippet right after overview-card (newer template) or after header/summary (older template)
+    # Inject HTML snippet right after overview-card (newer template) or after report-header (older template)
     overview_pattern = r"(<div class=\"overview-card\">[\s\S]*?</div>)"
-    header_pattern = r"(</header>)"
+    report_header_pattern = r"(<header class=\"report-header\">[\s\S]*?</header>)"
+    summary_pattern = r"(<div class=\"report-summary\">[\s\S]*?</div>)"
+
     if re.search(overview_pattern, content):
         content = re.sub(overview_pattern, r"\1\n" + html_snippet, content, count=1)
-    elif re.search(header_pattern, content):
-        content = re.sub(header_pattern, r"\1\n" + html_snippet, content, count=1)
+    elif re.search(report_header_pattern, content):
+        content = re.sub(report_header_pattern, r"\1\n" + html_snippet, content, count=1)
+    elif re.search(summary_pattern, content):
+        content = re.sub(summary_pattern, r"\1\n" + html_snippet, content, count=1)
     else:
-        return False, "Không tìm thấy thẻ overview-card hoặc </header>"
+        return False, "Không tìm thấy thẻ overview-card hoặc report-header"
 
     # Inject JS before </script>
-    if "function copyMegaPrompt" not in content:
+    if "function togglePromptAccordion" not in content:
         content = content.replace("</script>", JS_COMPONENT + "\n</script>", 1)
 
     with open(report_path, "w", encoding="utf-8") as f:
