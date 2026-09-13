@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 206,
-  "total_unique_ideas": 186,
-  "total_active_ideas": 154,
+  "total_scene_items": 208,
+  "total_unique_ideas": 187,
+  "total_active_ideas": 155,
   "total_excluded_ideas": 32,
-  "total_creators": 98,
+  "total_creators": 99,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 83,
+    "dien-anh": 84,
     "chuyen-canh": 34
   },
   "industries": [
@@ -144,13 +144,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 4,
     "thuong-hieu": 16,
-    "thoi-trang": 12,
-    "am-thuc": 16,
+    "thoi-trang": 11,
+    "am-thuc": 17,
     "du-lich": 21,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 6,
-    "ky-thuat-quay": 40
+    "ky-thuat-quay": 41
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 73,
+    "us_eu": 74,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -499,14 +499,25 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@kristinagoose",
-      "name": "Kristinagoose",
-      "profile_url": "https://www.instagram.com/kristinagoose/",
+      "handle": "@treechurchlogan",
+      "name": "Treechurchlogan",
+      "profile_url": "https://www.instagram.com/treechurchlogan/",
       "video_count": 1,
-      "top_industry": "Thời Trang & Phụ Kiện",
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
       "video_ids": [
         ""
+      ]
+    },
+    {
+      "handle": "@tattebakery",
+      "name": "Tatte Bakery",
+      "profile_url": "https://www.instagram.com/tattebakery/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC"
       ]
     },
     {
@@ -1350,22 +1361,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "",
       "shortcode": "",
-      "title_vi": "Casual But Make It Bomb • Kỹ Thuật Chuyển Cảnh Match Cut Đồ Vật (Bag Wipe Transition) & Trình Diễn Thời Trang Viral Cực Bén",
+      "title_vi": "Bring A Friend To Church Skit • Đỉnh Cao Hài Hước Nghĩa Đen (Literal Comedy) & Hook 2 Nhịp Kêu Gọi Tham Dự Sự Kiện",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh (Transition)",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "thoi-trang",
-        "name": "Thời Trang & Phụ Kiện",
-        "en_name": "Fashion & Style",
-        "icon": "👔",
-        "badge_color": "pink"
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1380,12 +1391,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "logic_explanation": "",
       "creator": {
-        "raw": "@kristinagoose",
-        "name": "Kristinagoose",
-        "handle": "@kristinagoose",
-        "profile_url": "https://www.instagram.com/kristinagoose/"
+        "raw": "@treechurchlogan",
+        "name": "Treechurchlogan",
+        "handle": "@treechurchlogan",
+        "profile_url": "https://www.instagram.com/treechurchlogan/"
       },
-      "ig_url": "https://www.instagram.com/kristinagoose/",
+      "ig_url": "https://www.instagram.com/treechurchlogan/",
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
@@ -1393,7 +1404,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "",
         "shots_count": 0,
-        "duration": "7.25s",
+        "duration": "10.0s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -1401,6 +1412,73 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "de",
         "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC",
+      "shortcode": "DcJM7AWOa__",
+      "title_vi": "Bản Hòa Âm Cà Phê Mới Tại New York • Tuyệt Kỹ Video F&B Triệu View Bằng ASMR",
+      "quick_takeaway": "Bóc tách 12 phân cảnh chuẩn đạo diễn trong video quảng bá điểm đến F&B triệu view của Tatte Bakery (@tattebakery) tại New York: Nghệ thuật dùng âm thanh xúc giác (Tactile ASMR Soundscape) thay thế hoàn toàn lời bình, nhịp cắt tiết tấu nh...",
+      "key_tech": "Tactile ASMR Soundscape, NYC Street Reveal Hook, Macro Food Textures, Barista Craftsmanship, Sensory Foley Sync-Cut, 1.02s Fast Pacing, Hero Closing Branding",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Quảng bá chi nhánh mới tại New York bằng bản hòa âm xúc giác ASMR",
+      "tech_tags": [
+        "Tactile ASMR Soundscape",
+        "NYC Street Reveal Hook",
+        "Top-Down Flat Lay Match Cut",
+        "Fresh Croissant Tongs Grip",
+        "Compak Grinder Precision",
+        "La Marzocco Iconic Angle",
+        "Double-Spout Crema Macro",
+        "Tulip Latte Art Pouring",
+        "European Checkerboard Interior",
+        "Tatte X NYC Signature Lock-Off"
+      ],
+      "logic_explanation": "Tuyệt chiêu quảng bá địa điểm F&B mới: Mở đầu bằng chuyển động xe taxi vàng định vị thành phố New York -> Chuỗi bóc tách xúc giác ASMR đa giác quan (đánh sữa, xắn thìa bánh, kẹp bánh sừng bò, xay cà phê, dòng chảy crema, vẽ latte art) -> Chứng minh sức hút bằng góc rộng không gian quán tấp nập -> Khóa chặt tâm trí bằng cận cảnh tách cà phê biểu tượng 'TATTE X NYC' quả táo đỏ.",
+      "creator": {
+        "raw": "@tattebakery",
+        "name": "Tatte Bakery",
+        "handle": "@tattebakery",
+        "profile_url": "https://www.instagram.com/tattebakery/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcJM7AWOa__/?stkn=MWE1N3JzbWlwZGVhOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=11KrjCL35NeaATtV2AePDjVWj0j90ywPY",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJM7AWOa__.mp4",
+        "report_url": "reports/Soundtrack%20of%20Newest%20Cafe%20NYC%20-%20%40tattebakery.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
