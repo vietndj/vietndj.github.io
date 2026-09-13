@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 186,
-  "total_unique_ideas": 173,
-  "total_active_ideas": 141,
+  "total_scene_items": 187,
+  "total_unique_ideas": 174,
+  "total_active_ideas": 142,
   "total_excluded_ideas": 32,
-  "total_creators": 88,
+  "total_creators": 89,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 80,
+    "dien-anh": 81,
     "chuyen-canh": 25
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 68,
+    "us_eu": 69,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -471,6 +471,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@parisexplorer",
+      "name": "Laurent_Derossi",
+      "profile_url": "https://www.instagram.com/parisexplorer/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer"
       ]
     },
     {
@@ -1234,6 +1245,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer",
+      "shortcode": "DdJsv1AsGwt",
+      "title_vi": "Video by parisexplorer",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 2 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@Laurent_Derossi",
+        "name": "Laurent_Derossi",
+        "handle": "@parisexplorer",
+        "profile_url": "https://www.instagram.com/parisexplorer/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJsv1AsGwt/?stkn=eXV3NHppdGRndXlq",
+      "gdrive_folder": "https://drive.google.com/open?id=11DGOFXeY0w92c7cEgt88C0SRc_RTHxyF",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJsv1AsGwt.mp4",
+        "report_url": "reports/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer.html",
+        "shots_count": 2,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@𝙗𝙮𝙨𝙪𝙣𝙘𝙖𝙣_DcvZ-FowD_A_Video_by_bysuncan",
       "shortcode": "DcvZ-FowD_A",
