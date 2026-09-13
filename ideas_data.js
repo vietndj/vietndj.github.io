@@ -352,6 +352,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi.vietnam",
+      "name": "Ulanzi Vietnam Official",
+      "profile_url": "https://www.instagram.com/ulanzi.vietnam/",
+      "video_count": 2,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://img.youtube.com/vi/adOF33KL6qk/hqdefault.jpg",
+      "video_ids": [
+        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
+      ]
+    },
+    {
       "handle": "@tsangtastic",
       "name": "Tsangtastic",
       "profile_url": "https://www.instagram.com/tsangtastic/",
@@ -457,18 +469,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi Official",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 2,
-      "top_industry": "Công Nghệ & Thiết Bị",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_01_mid.jpg",
-      "video_ids": [
-        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
       ]
     },
     {
@@ -1222,6 +1222,130 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+      "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+      "title_vi": "Ulanzi UA20 Đèn LED Thanh Bơm Hơi 20W Bi-Color Tích Hợp Pin",
+      "quick_takeaway": "Mẫu video quảng cáo UGC sản phẩm Ulanzi UA20 chuẩn công thức AIDA: Gây chú ý (Attention) với thiết kế bơm hơi độc lạ, khơi gợi nhu cầu (Interest) với công suất 20W Bi-color, thúc đẩy mong muốn (Desire) bằng ứng dụng dã ngoại đa năng và k...",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Quảng cáo thương mại điện tử UGC chuẩn công thức AIDA",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA",
+        "E-commerce Video",
+        "Product Showcase"
+      ],
+      "logic_explanation": "Mẫu video UGC bán hàng trực quan theo cấu trúc AIDA: 3s đầu gây tò mò với thiết kế bơm hơi độc lạ, trình diễn tính năng giải quyết vấn đề và kích hoạt quyết định mua sắm.",
+      "creator": {
+        "raw": "@ulanzi.vietnam",
+        "name": "Ulanzi Vietnam Official",
+        "handle": "@ulanzi.vietnam",
+        "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
+      },
+      "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://img.youtube.com/vi/adOF33KL6qk/hqdefault.jpg",
+        "thumb_key": "https://img.youtube.com/vi/adOF33KL6qk/maxresdefault.jpg",
+        "video_url": "https://www.youtube.com/embed/adOF33KL6qk",
+        "report_url": "",
+        "shots_count": 8,
+        "duration": "42.7s",
+        "youtube_id": "adOF33KL6qk",
+        "youtube_embed": "https://www.youtube.com/embed/adOF33KL6qk",
+        "youtube_url": "https://youtu.be/adOF33KL6qk"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
+      "shortcode": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
+      "title_vi": "ULANZI MT80 Chân Máy Tripod Cao 213cm Tải Trọng 5kg",
+      "quick_takeaway": "Mẫu video quảng cáo UGC chân máy tripod Ulanzi MT-80 chuẩn công thức AIDA: Trực quan hóa chiều cao 213cm, khả năng chịu tải 5kg máy cơ, thao tác bung gập nhanh 1 chạm, kích thích chuyển đổi trên sàn TMĐT.",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Quảng cáo thương mại điện tử UGC chuẩn công thức AIDA",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA",
+        "E-commerce Video",
+        "Product Showcase"
+      ],
+      "logic_explanation": "Mẫu video quảng cáo UGC bán phụ kiện máy ảnh: Thao tác thực tế với thiết bị nặng, đo chiều cao trực quan, giải quyết triệt để nỗi sợ rung lắc của khách hàng.",
+      "creator": {
+        "raw": "@ulanzi.vietnam",
+        "name": "Ulanzi Vietnam Official",
+        "handle": "@ulanzi.vietnam",
+        "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
+      },
+      "ig_url": "https://shopee.vn/ULANZI-MT80-Ch%C3%A2n-M%C3%A1y-Tripod-ULANZI-MT-80-Chi%E1%BB%81u-Cao-213cm-T%E1%BA%A3i-Tr%E1%BB%8Dng-5kg-H%C3%A0ng-Ch%C3%ADnh-H%C3%A3ng-i.1146051656.42829427636",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://img.youtube.com/vi/InZ6HgASLnE/hqdefault.jpg",
+        "thumb_key": "https://img.youtube.com/vi/InZ6HgASLnE/maxresdefault.jpg",
+        "video_url": "https://www.youtube.com/embed/InZ6HgASLnE",
+        "report_url": "",
+        "shots_count": 9,
+        "duration": "54.7s",
+        "youtube_id": "InZ6HgASLnE",
+        "youtube_embed": "https://www.youtube.com/embed/InZ6HgASLnE",
+        "youtube_url": "https://youtu.be/InZ6HgASLnE"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing",
       "shortcode": "DaB-gO6hvPX",
       "title_vi": "Nghệ Thuật Mở Hộp Rương Quà Mùa Hè Tory Burch & Phối Đồ Điện Ảnh - @tsangtastic • Director's Report",
@@ -1267,7 +1391,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaB-gO6hvPX.mp4",
         "report_url": "reports/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing.html",
         "shots_count": 22,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "nang-cao",
@@ -1322,7 +1449,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/Fast Food Outsells Restaurant - @shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant.html",
         "shots_count": 16,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "trung-binh",
@@ -1377,7 +1507,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.mp4",
         "report_url": "reports/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "de",
@@ -1432,7 +1565,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxwKHYoBFv.mp4",
         "report_url": "reports/The Art of Consistency - @critos_pro.html",
         "shots_count": 17,
-        "duration": "10.22s"
+        "duration": "10.22s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "trung-binh",
@@ -1487,7 +1623,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DawDiT2M1p8.mp4",
         "report_url": "reports/Coffee + Outfit Match Cut Transition - @jamison.lange.html",
         "shots_count": 22,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "nang-cao",
@@ -1546,7 +1685,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Palermo Sicily Static Shots - @mako__go.mp4",
         "report_url": "reports/Palermo Sicily Static Shots - @mako__go.html",
         "shots_count": 7,
-        "duration": "14.10s"
+        "duration": "14.10s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -1606,7 +1748,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc-LDGRsCDN.mp4",
         "report_url": "reports/allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon_-_@allinbcoffee.html",
         "shots_count": 12,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -1668,7 +1813,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Creative Phone Video Ideas - Routine Creator - @valenti_k41.mp4",
         "report_url": "reports/Creative Phone Video Ideas - Routine Creator - @valenti_k41.html",
         "shots_count": 15,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -1728,7 +1876,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdEshZtz9Rb.mp4",
         "report_url": "reports/Lifestyle Habit & Cinematic Routine - @joshdiazfilms.html",
         "shots_count": 9,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -1789,7 +1940,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdF-qr0s4Kk.mp4",
         "report_url": "reports/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa.html",
         "shots_count": 20,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -1844,7 +1998,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvmVl2hbuY.mp4",
         "report_url": "reports/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang.html",
         "shots_count": 6,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "de",
@@ -1904,7 +2061,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DchxEAkJ9Hw.mp4",
         "report_url": "reports/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu.html",
         "shots_count": 12,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -1963,7 +2123,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Xay_Dung_Kho_B_Roll_Dung_1_Nam_-_@watch.gabe.mp4",
         "report_url": "reports/Xay_Dung_Kho_B_Roll_Dung_1_Nam_-_@watch.gabe.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2022,7 +2185,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Hoi An Natural Mask Transitions - @hey.lirules.mp4",
         "report_url": "reports/Hoi An Natural Mask Transitions - @hey.lirules.html",
         "shots_count": 11,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2082,7 +2248,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Food Filming & Styling Mastery - @alena.feda.mp4",
         "report_url": "reports/Food Filming & Styling Mastery - @alena.feda.html",
         "shots_count": 15,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2141,7 +2310,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/DcyS2KEm7-v.mp4",
         "report_url": "reports/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light.html",
         "shots_count": 0,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2201,7 +2373,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoPBXdDPro.mp4",
         "report_url": "reports/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2261,7 +2436,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/One Lamp Beats Five - @shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five.html",
         "shots_count": 16,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2321,7 +2499,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dca9-aWotLM.mp4",
         "report_url": "reports/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01.html",
         "shots_count": 17,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2382,7 +2563,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Creative phone video ideas - @valenti_k41.mp4",
         "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
         "shots_count": 6,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2443,7 +2627,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZXpNj_IveV.mp4",
         "report_url": "reports/IG_@alexboissetgrowth_DZXpNj_IveV_Masterclass_Crecer_En_Redes.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2504,7 +2691,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbVhTUiznEp.mp4",
         "report_url": "reports/IG_@cafe.pilgrim_DbVhTUiznEp_Cafe_Saan_Euljiro.html",
         "shots_count": 10,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2565,7 +2755,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbJcoLdssK6.mp4",
         "report_url": "reports/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life.html",
         "shots_count": 18,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2625,7 +2818,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc-6BFdi7bU.mp4",
         "report_url": "reports/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence.html",
         "shots_count": 10,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2684,7 +2880,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcgN1bsKUmi.mp4",
         "report_url": "reports/IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode.html",
         "shots_count": 9,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2745,7 +2944,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Getting Ready Faster Than Ever - @jesussropero.mp4",
         "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
         "shots_count": 3,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2800,7 +3002,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbILcfyxZot.mp4",
         "report_url": "reports/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds.html",
         "shots_count": 9,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "trung-binh",
@@ -2858,7 +3063,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db_EEZtjJBI.mp4",
         "report_url": "reports/IG_@wowshoebwow_Db_EEZtjJBI_Moving_Postcards_London_Trafalgar.html",
         "shots_count": 3,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2916,7 +3124,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db5TrGYlKbD.mp4",
         "report_url": "reports/IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story.html",
         "shots_count": 3,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -2974,7 +3185,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcOUP2PsMsP.mp4",
         "report_url": "reports/IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority.html",
         "shots_count": 16,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3032,7 +3246,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbgtGKjNcH9.mp4",
         "report_url": "reports/IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling.html",
         "shots_count": 28,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -3087,7 +3304,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcVzQCSP1MR.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog.html",
         "shots_count": 14,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3145,7 +3365,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJIT4DzPhj.mp4",
         "report_url": "reports/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro.html",
         "shots_count": 4,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3203,7 +3426,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcbJDDNi7h8.mp4",
         "report_url": "reports/IG_@srdtrv_DcbJDDNi7h8_Behind_The_Scenes_Directing_Mastery.html",
         "shots_count": 12,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3261,7 +3487,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db7_3rpgK5c.mp4",
         "report_url": "reports/IG_@withgeorgy_Db7_3rpgK5c_Cinematic_Travel_iPhone_Mastery.html",
         "shots_count": 8,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3319,7 +3548,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcYxC8wvt1z.mp4",
         "report_url": "reports/IG_@bewoom__DcYxC8wvt1z_Sasohan_Daejeon_Hanok_Serenity.html",
         "shots_count": 11,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3377,7 +3609,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcWEp8-swbB.mp4",
         "report_url": "reports/IG_@onethebaha_DcWEp8-swbB_Seamless_Spin_Whip_Pan_Tutorial.html",
         "shots_count": 3,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3435,7 +3670,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTbD0MR-V_.mp4",
         "report_url": "reports/IG_@brandon.dtd_DcTbD0MR-V__Discipline_Motivation_Obsession.html",
         "shots_count": 18,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3493,7 +3731,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcD30ThT7Zm.mp4",
         "report_url": "reports/IG_@photoknack.in_DcD30ThT7Zm_Small_Balcony_Big_Frame_Perspective.html",
         "shots_count": 4,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3551,7 +3792,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db-jmp6TXNT.mp4",
         "report_url": "reports/IG_@nana_icroom_Db-jmp6TXNT_5_Japanese_Vlog_Compositions.html",
         "shots_count": 20,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -3609,7 +3853,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZWRDtqMNWq.mp4",
         "report_url": "reports/IG_@lacapturevisuals_DZWRDtqMNWq_Coffee_Shop_Broll_Mastery.html",
         "shots_count": 14,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3667,7 +3914,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcd2VeyNJQx.mp4",
         "report_url": "reports/IG_@pascal_blaurock_Dcd2VeyNJQx_iPhone_Cinema_Settings_Mastery.html",
         "shots_count": 24,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -3725,7 +3975,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcdthwaTM3J.mp4",
         "report_url": "reports/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery.html",
         "shots_count": 8,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3783,7 +4036,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DXf1LldT5co.mp4",
         "report_url": "reports/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic.html",
         "shots_count": 16,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -3841,7 +4097,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbBQzyqimbi.mp4",
         "report_url": "reports/IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky.html",
         "shots_count": 6,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -3899,7 +4158,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DY_0KNxvNJa.mp4",
         "report_url": "reports/5 Góc Quay Mở Hộp Unboxing Điện Ảnh - @hena_film_vlog.html",
         "shots_count": 26,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -3957,7 +4219,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc0tEcOIdwy.mp4",
         "report_url": "reports/4 Cuts Mastery - @mridupawasharma.html",
         "shots_count": 24,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -4015,7 +4280,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Artisanal%20Woodfire%20Dining%20-%20@firewood_klcc.mp4",
         "report_url": "reports/Artisanal Woodfire Dining - @firewood_klcc.html",
         "shots_count": 23,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -4070,7 +4338,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/NYC_Morning_Light%20-%20%40the.vantage.point.mp4",
         "report_url": "reports/IG_@the.vantage.point_Dct9JzWKVFo_NYC_Morning_Light.html",
         "shots_count": 9,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4125,7 +4396,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Practice_Cinematic_Chay_0904_@vietmac.mp4",
         "report_url": "reports/Practice_Cinematic_Chay_0904 - @vietmac.html",
         "shots_count": 27,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -4180,7 +4454,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Practice_Cinematic_Chay_0903_2_@vietmac.mp4",
         "report_url": "reports/Practice_Cinematic_Chay_0903_2 - @vietmac.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4238,7 +4515,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc0zzrWj8Vu.mp4",
         "report_url": "reports/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -4293,7 +4573,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcz7nniBEFe.mp4",
         "report_url": "reports/Unwinding - @jsnhow.html",
         "shots_count": 14,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4351,7 +4634,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcILfhlgsmu.mp4",
         "report_url": "reports/IG_@Elsa_Qin_C_DcILfhlgsmu_Video_by_elsaqinn.html",
         "shots_count": 44,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -4409,7 +4695,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Thuong_Hieu_Ca_Nhan_Sinh_Loi_Anh_Sac_Anh.mp4",
         "report_url": "reports/Thuong_Hieu_Ca_Nhan_Sinh_Loi_Anh_Sac_Anh.html",
         "shots_count": 48,
-        "duration": "96s"
+        "duration": "96s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -4467,7 +4756,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcBjIwPMMfa.mp4",
         "report_url": "reports/Creative Block Loop - @sajad_machu.html",
         "shots_count": 14,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4525,7 +4817,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcLblxOy3tN.mp4",
         "report_url": "reports/IG_@slaohuairen_DcLblxOy3tN_A_young_girl_in_linen.html",
         "shots_count": 13,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4583,7 +4878,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/How_to_Sound_Design_SFX_-_@gakuyen.mp4",
         "report_url": "reports/IG_@gakuyen_Dc0MQfeEwp4_Carousel_Analysis.html",
         "shots_count": 10,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4638,7 +4936,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Split%20City%20Shanghai%20-%20%40kyung6film.mp4",
         "report_url": "reports/IG_@kyung6film_DakY2EST-Tm_Split_City_Shanghai.html",
         "shots_count": 5,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -4693,7 +4994,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcvxba1OvrD.mp4",
         "report_url": "reports/Koti Sunset Ambient Lamp - @by.bennnj.html",
         "shots_count": 10,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4748,7 +5052,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/practice_cinematic_chay_0903.mp4",
         "report_url": "reports/Practice_Cinematic_Chay_0903 - @vietmac.html",
         "shots_count": 8,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -4806,7 +5113,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dctj7NfNimM.mp4",
         "report_url": "reports/Life Feel Put Together - @joshdiazfilms.html",
         "shots_count": 18,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4864,7 +5174,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DceDPc2yVm0.mp4",
         "report_url": "reports/Worst Person to Text - @joshdiazfilms.html",
         "shots_count": 11,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -4922,7 +5235,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJjGy1tG7d.mp4",
         "report_url": "reports/DJI Drone Unboxing - @joshdiazfilms.html",
         "shots_count": 7,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -4980,7 +5296,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db1hf_vO67m.mp4",
         "report_url": "reports/Simple Life Dinner Routine - @joshdiazfilms.html",
         "shots_count": 12,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5038,7 +5357,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dbow9xKOCje.mp4",
         "report_url": "reports/Falling Behind Mindset - @joshdiazfilms.html",
         "shots_count": 12,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5096,7 +5418,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcqzVfno5Al.mp4",
         "report_url": "reports/Travel Sequence Formula - @omgadrian.html",
         "shots_count": 11,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5154,7 +5479,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DF2sOsNyNlY.mp4",
         "report_url": "reports/3 Hooks Mastery - @mridupawasharma.html",
         "shots_count": 8,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -5212,7 +5540,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcxsw50zIR8.mp4",
         "report_url": "reports/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes.html",
         "shots_count": 16,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5270,7 +5601,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcwPu99sDKI.mp4",
         "report_url": "reports/IG_@Aayush_Swamy_DcwPu99sDKI_Video_by_iamaayushswamy.html",
         "shots_count": 22,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -5325,7 +5659,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DctRykCjcp2.mp4",
         "report_url": "reports/IG_@Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis.html",
         "shots_count": 10,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5380,7 +5717,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJDJjVJGy6.mp4",
         "report_url": "reports/IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5438,7 +5778,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/7%20Shots%20For%20Your%20Next%20Kitchen%20Film%20-%20%40thomasmathewt2.mp4",
         "report_url": "reports/7%20Shots%20For%20Your%20Next%20Kitchen%20Film%20-%20%40thomasmathewt2.html",
         "shots_count": 8,
-        "duration": "16s"
+        "duration": "16s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -5496,7 +5839,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Cinematic%20Unboxing%20Mastery%20-%20%40yegor.sky.mp4",
         "report_url": "reports/Cinematic Unboxing Mastery - @yegor.sky.html",
         "shots_count": 10,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5554,7 +5900,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Summer%20in%20the%20Village%20-%20%40rubyscafe.mp4",
         "report_url": "reports/Summer in the Village - @rubyscafe.html",
         "shots_count": 14,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5612,7 +5961,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/SanDisk%20Creator%20Phone%20SSD%20-%20%40mridupawasharma.mp4",
         "report_url": "reports/SanDisk Creator Phone SSD - @mridupawasharma.html",
         "shots_count": 34,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -5667,7 +6019,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Summer%20in%20New%20York%20City%20-%20@ethanbarber.co.mp4",
         "report_url": "reports/Summer in New York City - @ethanbarber.co.html",
         "shots_count": 26,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -5722,7 +6077,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/broll_plans/BROLL_PLAN_20260827_TimesCity_Basketball/BROLL_PLAN_20260827_TimesCity_Basketball.html",
         "shots_count": 6,
-        "duration": "12s"
+        "duration": "12s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -5777,7 +6135,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/xnAU8Pazc6A.mp4",
         "report_url": "reports/IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast.html",
         "shots_count": 0,
-        "duration": "15s"
+        "duration": "15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -5832,7 +6193,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Composition%20in%20London%20-%20@chowyhh.mp4",
         "report_url": "reports/The Art of Composition in London - @chowyhh.html",
         "shots_count": 5,
-        "duration": "16.42s"
+        "duration": "16.42s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -5890,7 +6254,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DJI%20Mic%203%20ASMR%20Cinematic%20-%20@valenti_k41.mp4",
         "report_url": "reports/DJI Mic 3 ASMR Cinematic - @valenti_k41.html",
         "shots_count": 14,
-        "duration": "28s"
+        "duration": "28s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -5945,7 +6312,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/practice_cinematic_2508.mp4",
         "report_url": "reports/Practice_Cinematic_2508 - @vietmac.html",
         "shots_count": 19,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6000,7 +6370,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/practice_cinematic_01.mp4",
         "report_url": "reports/Practice_Cinematic_01 - @vietmac.html",
         "shots_count": 25,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6058,7 +6431,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcOQSCMqho0.mp4",
         "report_url": "reports/Personal Cinema - @arturbr.html",
         "shots_count": 18,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -6113,7 +6489,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZB9Ls3No6p.mp4",
         "report_url": "reports/IG_@Jade_Sheng_DZB9Ls3No6p_Video_by_jade.got.curious.html",
         "shots_count": 65,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6171,7 +6550,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DYXiic5xMeC.mp4",
         "report_url": "reports/IG_@Jade_Sheng_DYXiic5xMeC_Video_by_jade.got.curious.html",
         "shots_count": 20,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6226,7 +6608,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZwO5X6N_MS.mp4",
         "report_url": "reports/IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -6281,7 +6666,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZa9pzKRsAU.mp4",
         "report_url": "reports/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious.html",
         "shots_count": 30,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6339,7 +6727,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcbAqchxJ2t.mp4",
         "report_url": "reports/IG_@Jade_Sheng_DcbAqchxJ2t_Video_by_jade.got.curious.html",
         "shots_count": 54,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6397,7 +6788,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/Bao_Cao_Boi_Canh_Thuc_Chien_R2.html",
         "shots_count": 124,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6452,7 +6846,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/Chay_Bo_Times_City - @Self_Practice.html",
         "shots_count": 20,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6507,7 +6904,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/Visual_Storytelling_Carousel - @withyuee.html",
         "shots_count": 5,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -6565,7 +6965,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Urban_Transitions%20-%20%40withyuee.mp4",
         "report_url": "reports/Hong_Kong_Urban_Transitions - @withyuee.html",
         "shots_count": 21,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6620,7 +7023,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Cinematography_Guide%20-%20%40withyuee.mp4",
         "report_url": "reports/Hong_Kong_Cinematography_Guide - @withyuee.html",
         "shots_count": 28,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6678,7 +7084,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Bamboo_Scaffolding%20-%20%40withyuee.mp4",
         "report_url": "reports/Hong_Kong_Bamboo_Scaffolding - @withyuee.html",
         "shots_count": 16,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -6736,7 +7145,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Mua%20Sua%20Do%20Hai%20Duong%20-%20%40thodiahaiduongne.mp4",
         "report_url": "reports/Mua Sua Do Hai Duong - @thodiahaiduongne.html",
         "shots_count": 15,
-        "duration": "0.2s"
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -6795,7 +7207,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/7673468312290037012.mp4",
         "report_url": "reports/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -6853,7 +7268,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino.mp4",
         "report_url": "reports/Ky_Luat_Thep_Va_Buoc_Nhay_Luong_Tu_Doi_Doi - @colecoppolino.html",
         "shots_count": 1,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -6908,7 +7326,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Hong_Kong_Cinematic_Cityscape - @withyuee.mp4",
         "report_url": "reports/Hong_Kong_Cinematic_Cityscape - @withyuee.html",
         "shots_count": 20,
-        "duration": "40s"
+        "duration": "40s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -6963,7 +7384,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/London Cinematic Video Postcards - @daiki.shino.html",
         "shots_count": 10,
-        "duration": "20s"
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -7018,7 +7442,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/Tokyo_Slow_Life_Magic_Moments - @ioana_iftode.html",
         "shots_count": 9,
-        "duration": "18s"
+        "duration": "18s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -7076,7 +7503,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/The_Goal_Is_Simple_Gym_Motivation - @willwfit.mp4",
         "report_url": "reports/The_Goal_Is_Simple_Gym_Motivation - @willwfit.html",
         "shots_count": 1,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7131,7 +7561,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "reports/Tokyo_Slow_Life_Visual_Diaries - @ioana_iftode.html",
         "shots_count": 10,
-        "duration": "20s"
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -7189,7 +7622,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Aesthetic_Routine - @iamlukeluquire.mp4",
         "report_url": "reports/Aesthetic_Routine - @iamlukeluquire.html",
         "shots_count": 1,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7247,7 +7683,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Y_Tuong_Thanh_Hien_Thuc_Canva - @lifeofriza.mp4",
         "report_url": "reports/Y_Tuong_Thanh_Hien_Thuc_Canva - @lifeofriza.html",
         "shots_count": 1,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7302,7 +7741,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/The_Next_Station_Is_Vietnam - @madisonkjan.mp4",
         "report_url": "reports/The_Next_Station_Is_Vietnam - @madisonkjan.html",
         "shots_count": 1,
-        "duration": "2s"
+        "duration": "2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7357,7 +7799,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Lat_Cat_Cam_Xuc%20-%20%40KopDinh.mp4",
         "report_url": "reports/Lat_Cat_Cam_Xuc - @KopDinh.html",
         "shots_count": 3,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7412,7 +7857,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Chinese_New_Year_Hong_Kong%20-%20%40withyuee.mp4",
         "report_url": "reports/Chinese_New_Year_Hong_Kong - @withyuee.html",
         "shots_count": 1,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7467,7 +7915,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01_DO8aI3uker6.mp4",
         "report_url": "reports/Hong_Kong_Visual_Rhythm_Carousel - @withyuee.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7522,7 +7973,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Gough_Street_Central_Hong_Kong%20-%20%40withyuee.mp4",
         "report_url": "reports/Gough_Street_Central_Hong_Kong - @withyuee.html",
         "shots_count": 1,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7577,7 +8031,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Spring_in_Hong_Kong%20-%20%40withyuee.mp4",
         "report_url": "reports/Spring_in_Hong_Kong - @withyuee.html",
         "shots_count": 1,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7632,7 +8089,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee.mp4",
         "report_url": "reports/The_Art_of_Noticing_Hong_Kong - @withyuee.html",
         "shots_count": 1,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7687,7 +8147,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Aesthetic_Routine_Fitness%20-%20%40samuelaitken_.mp4",
         "report_url": "reports/Aesthetic_Routine_Fitness - @samuelaitken_.html",
         "shots_count": 19,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -7745,7 +8208,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Bakery_Egg_Tart%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Bakery_Egg_Tart - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7803,7 +8269,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Neon_Street_Night%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Neon_Street_Night - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -7858,7 +8327,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Coffee_Morning_Routine%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Coffee_Morning_Routine - @jazziesillona.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -7913,7 +8385,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Making_Beginner_Cameras_Look_Cinematic%20-%20%40by.bennnj.mp4",
         "report_url": "reports/Making_Beginner_Cameras_Look_Cinematic - @by.bennnj.html",
         "shots_count": 36,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -7968,7 +8443,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Cinematic_Train_Japan%20-%20%40Katsuki.mp4",
         "report_url": "reports/Cinematic_Train_Japan - @Katsuki.html",
         "shots_count": 3,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8026,7 +8504,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Rainy_Day_Cinematic%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Rainy_Day_Cinematic - @jazziesillona.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -8081,7 +8562,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Tai_Hang_Hong_Kong_Street%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Tai_Hang_Hong_Kong_Street - @jazziesillona.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -8139,7 +8623,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
         "report_url": "reports/Visual_Stopping_Power_Carousel - @jazziesillona.html",
         "shots_count": 6,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8194,7 +8681,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
         "report_url": "reports/Street_Photography_Carousel - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8249,7 +8739,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
         "report_url": "reports/Everyday_Filming_Logic_Carousel - @jazziesillona.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8304,7 +8797,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01_DWrDQgoj7Uw.mp4",
         "report_url": "reports/Mood_and_Tone_Carousel - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8362,7 +8858,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
         "report_url": "reports/Quy_Tac_Quay_Phim_Carousel - @Jacoub_Anwar.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8417,7 +8916,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Fruit_Market%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Fruit_Market - @jazziesillona.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8475,7 +8977,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
         "report_url": "reports/Urban_Texture_Carousel - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8533,7 +9038,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Humans_of_Hong_Kong%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Humans_of_Hong_Kong - @jazziesillona.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8588,7 +9096,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Mat_Chuoc_x_Pho_Hong_Kong%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Mat_Chuoc_x_Pho_Hong_Kong - @jazziesillona.html",
         "shots_count": 41,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -8643,7 +9154,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Hong_Kong_Alleyways_Cinematic%20-%20%40jazziesillona.mp4",
         "report_url": "reports/Hong_Kong_Alleyways_Cinematic - @jazziesillona.html",
         "shots_count": 4,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8701,7 +9215,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Storyboard_Analysis%20-%20%40by.bennnj.mp4",
         "report_url": "reports/Storyboard_Analysis - @by.bennnj.html",
         "shots_count": 2,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8759,7 +9276,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Project%20100%20Day%2001%20-%20%40byjxson.mp4",
         "report_url": "reports/Project 100 Day 01 - @byjxson.html",
         "shots_count": 15,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -8817,7 +9337,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life.mp4",
         "report_url": "reports/IG_@intothethailand_Dad0d3xtv9E_The_Beauty_of_Bangkok_in_Everyday_Life.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -8875,7 +9398,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dau0C9AzXc8.mp4",
         "report_url": "reports/IG_@Rilo_Dau0C9AzXc8_Video_by_17th.visuals.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -8933,7 +9459,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DY2XJzdioZg.mp4",
         "report_url": "reports/IG_@Simeon_Kraeft_DY2XJzdioZg_Video_by_simeonkraeft.html",
         "shots_count": 10,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -8991,7 +9520,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaH_rTUTe14.mp4",
         "report_url": "reports/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma.html",
         "shots_count": 37,
-        "duration": "9s"
+        "duration": "9s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9049,7 +9581,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaXdrAVzGcc.mp4",
         "report_url": "reports/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma.html",
         "shots_count": 37,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9107,7 +9642,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbnlAB5Twrw.mp4",
         "report_url": "reports/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma.html",
         "shots_count": 23,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9165,7 +9703,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcGbEVFznin.mp4",
         "report_url": "reports/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma.html",
         "shots_count": 20,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9223,7 +9764,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZN-FfdyPgH.mp4",
         "report_url": "reports/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker.html",
         "shots_count": 65,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9281,7 +9825,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Da46F-lxueg.mp4",
         "report_url": "reports/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog.html",
         "shots_count": 15,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -9336,7 +9883,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DY5aQaoABsy.mp4",
         "report_url": "reports/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan.html",
         "shots_count": 33,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9394,7 +9944,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbS3HNNIKR7.mp4",
         "report_url": "reports/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa.html",
         "shots_count": 32,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9452,7 +10005,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaAm8suhCau.mp4",
         "report_url": "reports/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah.html",
         "shots_count": 31,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -9510,7 +10066,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbomJ6-Tpry.mp4",
         "report_url": "reports/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever.html",
         "shots_count": 13,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -9568,7 +10127,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcLwG_mKyKM.mp4",
         "report_url": "reports/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -9623,7 +10185,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVHH27S7Lf.mp4",
         "report_url": "reports/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -9678,7 +10243,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVAYFwvo4y.mp4",
         "report_url": "reports/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona.html",
         "shots_count": 12,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -9736,7 +10304,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJBTCoT6UT.mp4",
         "report_url": "reports/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in.html",
         "shots_count": 3,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -9791,7 +10362,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01.mp4",
         "report_url": "reports/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis.html",
         "shots_count": 0,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -9849,7 +10423,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DYwzs3zRRkv.mp4",
         "report_url": "reports/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland.html",
         "shots_count": 6,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -9904,7 +10481,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaC90d3tWuV.mp4",
         "report_url": "reports/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio.html",
         "shots_count": 8,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -9959,7 +10539,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaC90d3tWuV.mp4",
         "report_url": "reports/IG_@creator_DaC90d3tWuV_Video_DaC90d3tWuV.html",
         "shots_count": 0,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
       },
       "complexity": {
         "id": "de",
@@ -10014,7 +10597,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/video.mp4",
         "report_url": "reports/IG_@local_creator_video_video.html",
         "shots_count": 5,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -10072,7 +10658,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db7P1GeOxvq.mp4",
         "report_url": "reports/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim.html",
         "shots_count": 5,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -10127,7 +10716,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/video_ig.mp4",
         "report_url": "reports/IG_@local_creator_video_ig_video_ig.html",
         "shots_count": 14,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10182,7 +10774,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Kyoto%20Slow%20Life%20Visual%20Diaries%20-%20%40ioana_iftode.mp4",
         "report_url": "reports/Kyoto Slow Life Visual Diaries - @ioana_iftode.html",
         "shots_count": 10,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10240,7 +10835,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Visual%20Sequence%20-%20%40bryanhynes.mp4",
         "report_url": "reports/The Art of Visual Sequence - @bryanhynes.html",
         "shots_count": 20,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -10298,7 +10896,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Art%20of%20Static%20Shot%20-%20%40kenshoji.visuals.mp4",
         "report_url": "reports/The Art of Static Shot - @kenshoji.visuals.html",
         "shots_count": 11,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10356,7 +10957,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/The%20Power%20of%20Composition%20-%20%40minhmigoi.mp4",
         "report_url": "reports/The Power of Composition - @minhmigoi.html",
         "shots_count": 15,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10414,7 +11018,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Camera%20Angles%20Mastery%20-%20%40mcjacoub.mp4",
         "report_url": "reports/Camera Angles Mastery - @mcjacoub.html",
         "shots_count": 7,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
@@ -10472,7 +11079,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Saigon%2C%20Vietnam%20-%20%40qfroost.mp4",
         "report_url": "reports/Saigon, Vietnam - @qfroost.html",
         "shots_count": 21,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -10530,7 +11140,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Ray-Ban%20Meta%20System%20-%20%40qfroost.mp4",
         "report_url": "reports/Ray-Ban Meta System - @qfroost.html",
         "shots_count": 23,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -10588,7 +11201,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Quy_Trinh_Sang_Tao_Adobe_Firefly%20-%20%40qfroost.mp4",
         "report_url": "reports/Quy_Trinh_Sang_Tao_Adobe_Firefly - @qfroost.html",
         "shots_count": 25,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -10646,7 +11262,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People%20of%20Bhutan%20-%20%40jeromememe.mp4",
         "report_url": "reports/People of Bhutan - @jeromememe.html",
         "shots_count": 17,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10704,7 +11323,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People_of_Porto%20-%20%40jeromememe.mp4",
         "report_url": "reports/People_of_Porto - @jeromememe.html",
         "shots_count": 11,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -10762,7 +11384,10 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Artisans%20of%20Venice%20-%20%40jeromememe.mp4",
         "report_url": "reports/Artisans of Venice - @jeromememe.html",
         "shots_count": 26,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -10820,125 +11445,14 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/People%20of%20Copenhagen%20-%20%40jeromememe.mp4",
         "report_url": "reports/People of Copenhagen - @jeromememe.html",
         "shots_count": 15,
-        "duration": "0.15s"
+        "duration": "0.15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-      "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-      "title_vi": "Ulanzi UA20 Đèn LED Thanh Bơm Hơi 20W Bi-Color Tích Hợp Pin",
-      "quick_takeaway": "Video quảng cáo UGC sàn Lazada áp dụng công thức AIDA: Gây chú ý (Attention), khơi gợi hứng thú (Interest), thúc đẩy mong muốn (Desire) và kêu gọi hành động (Action).",
-      "key_tech": "UGC, Quảng cáo, AIDA",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "cong-nghe",
-        "name": "Công Nghệ & Thiết Bị",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
-      },
-      "country": {
-        "id": "vietnam",
-        "name": "Việt Nam",
-        "en_name": "Vietnam",
-        "flag": "🇻🇳",
-        "badge_color": "emerald"
-      },
-      "purpose": "Video quảng cáo thương mại điện tử Lazada theo cấu trúc AIDA & phong cách UGC thực chiến",
-      "tech_tags": [
-        "UGC",
-        "Quảng cáo",
-        "AIDA"
-      ],
-      "logic_explanation": "Video UGC tối ưu cho sàn Lazada bám sát công thức AIDA: Mở đầu trực quan giữ chân người xem, trình diễn tính năng giải quyết vấn đề thực tế và thúc đẩy mua hàng.",
-      "creator": {
-        "raw": "@ulanzi",
-        "name": "Ulanzi Official",
-        "handle": "@ulanzi",
-        "profile_url": "https://www.instagram.com/ulanzi/"
-      },
-      "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html",
-      "gdrive_folder": "",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_03_mid.jpg",
-        "video_url": "./videos/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi.mp4",
-        "report_url": "",
-        "shots_count": 1,
-        "duration": "2s"
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
-      "shortcode": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
-      "title_vi": "ULANZI MT80 Chân Máy Tripod Cao 213cm Tải Trọng 5kg",
-      "quick_takeaway": "Video quảng cáo UGC sàn Shopee áp dụng công thức AIDA: Gây chú ý (Attention), khơi gợi hứng thú (Interest), thúc đẩy mong muốn (Desire) và kêu gọi hành động (Action).",
-      "key_tech": "UGC, Quảng cáo, AIDA",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "cong-nghe",
-        "name": "Công Nghệ & Thiết Bị",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
-      },
-      "country": {
-        "id": "vietnam",
-        "name": "Việt Nam",
-        "en_name": "Vietnam",
-        "flag": "🇻🇳",
-        "badge_color": "emerald"
-      },
-      "purpose": "Video quảng cáo thương mại điện tử Shopee theo cấu trúc AIDA & phong cách UGC thực chiến",
-      "tech_tags": [
-        "UGC",
-        "Quảng cáo",
-        "AIDA"
-      ],
-      "logic_explanation": "Video UGC tối ưu cho sàn Shopee bám sát công thức AIDA: Mở đầu trực quan giữ chân người xem, trình diễn tính năng giải quyết vấn đề thực tế và thúc đẩy mua hàng.",
-      "creator": {
-        "raw": "@ulanzi",
-        "name": "Ulanzi Official",
-        "handle": "@ulanzi",
-        "profile_url": "https://www.instagram.com/ulanzi/"
-      },
-      "ig_url": "https://shopee.vn/ULANZI-MT80-Ch%C3%A2n-M%C3%A1y-Tripod-ULANZI-MT-80-Chi%E1%BB%81u-Cao-213cm-T%E1%BA%A3i-Tr%E1%BB%8Dng-5kg-H%C3%A0ng-Ch%C3%ADnh-H%C3%A3ng-i.1146051656.42829427636",
-      "gdrive_folder": "",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả/shot_03_mid.jpg",
-        "video_url": "./videos/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả.mp4",
-        "report_url": "",
-        "shots_count": 1,
-        "duration": "2s"
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false

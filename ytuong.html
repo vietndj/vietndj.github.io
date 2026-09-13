@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Kho Ý Tưởng & Mẫu Quay Theo Ngành | VIDEO Reference Cinema Hub</title>
+    <title>Kho Ý Tưởng Thực Hành Video Hằng Ngày | Tích Lũy Đủ Giờ Quay Dựng Video</title>
     <meta name="description" content="Kho ý tưởng sáng tạo và mẫu quay video ngắn theo ngành dành cho học viên quay dựng VIDEO. Quản lý kênh creator hàng đầu, xem trước điểm ăn tiền của video, theo dõi Instagram 1-chạm.">
     
     <!-- Google Fonts -->
@@ -203,10 +203,10 @@
                     </div>
                     <div>
                         <div class="flex items-center gap-2">
-                            <span class="font-heading font-extrabold text-lg text-white tracking-tight group-hover:text-sky-400 transition-colors">VIDEO REFERENCE HUB</span>
+                            <span class="font-heading font-extrabold text-lg text-white tracking-tight group-hover:text-sky-400 transition-colors">KHO Ý TƯỞNG THỰC HÀNH VIDEO HẰNG NGÀY</span>
                             <span class="px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-sky-500/15 text-sky-400 border border-sky-500/30">ytuong.fedu.vn</span>
                         </div>
-                        <p class="text-xs text-slate-400">Kho Ý Tưởng & Mẫu Quay Theo Ngành Dành Cho Học Viên Quay Dựng</p>
+                        <p class="text-xs text-slate-400">Tích lũy đủ giờ quay dựng video thực chiến mỗi ngày • Chuyên đề UGC, Quảng Cáo & AIDA</p>
                     </div>
                 </a>
 
@@ -540,8 +540,9 @@
             </div>
             
             <!-- Video Body -->
-            <div class="relative bg-black flex items-center justify-center min-h-[360px] max-h-[62vh] overflow-hidden">
+            <div class="relative bg-black flex items-center justify-center min-h-[360px] max-h-[62vh] overflow-hidden w-full">
                 <video id="modalActiveVideo" controls playsinline loop class="w-full max-h-[62vh] object-contain bg-black"></video>
+                <iframe id="modalActiveYoutube" class="hidden w-full h-[62vh] min-h-[360px] border-0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
 
             <!-- Director Speed & Frame Stepper Toolbar -->
@@ -760,7 +761,7 @@
     </div>
 
     <!-- LOAD DATABASE SCRIPT -->
-    <script src="ideas_data.js?v=2.2"></script>
+    <script src="ideas_data.js?v=3.0"></script>
 
     <!-- SPA LOGIC -->
     <script>
@@ -1543,7 +1544,7 @@
                         <div class="pt-3 border-t border-slate-800/80 flex items-center justify-between gap-2 mt-auto">
                             <!-- Left: Video, Report & Copy Formula -->
                             <div class="flex items-center gap-1.5 flex-1 overflow-hidden">
-                                ${item.media.video_url ? `
+                                ${(item.media.video_url || item.media.youtube_id || item.media.youtube_embed) ? `
                                     <button 
                                         onclick="openVideoModal('${item.id}')" 
                                         class="flex-1 px-2.5 py-1.5 rounded-xl bg-sky-500/15 hover:bg-sky-500/25 text-sky-400 border border-sky-500/30 text-xs font-bold transition flex items-center justify-center gap-1 truncate"
@@ -2244,20 +2245,33 @@
         function openVideoModal(id) {
             if (!window.FEDU_IDEAS_DATABASE) return;
             const item = window.FEDU_IDEAS_DATABASE.ideas.find(x => x.id === id);
-            if (!item || !item.media.video_url) return;
+            if (!item) return;
 
             const modal = document.getElementById('videoPlayerModal');
             const video = document.getElementById('modalActiveVideo');
+            const ytFrame = document.getElementById('modalActiveYoutube');
             const title = document.getElementById('videoModalTitle');
             const directLink = document.getElementById('modalDirectVideoLink');
 
-            if (title) title.innerText = `${item.creator.handle} • ${item.title_vi}`;
-            if (video) {
-                video.src = item.media.video_url;
-                video.playbackRate = 1.0;
-                video.play().catch(() => {});
+            if (title) title.innerText = `${item.creator?.handle || ''} • ${item.title_vi}`;
+
+            const ytId = item.media?.youtube_id || item.youtube_id;
+            const ytEmbed = item.media?.youtube_embed || (ytId ? `https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0` : null);
+
+            if (ytEmbed) {
+                if (video) { video.classList.add('hidden'); video.pause(); video.src = ''; }
+                if (ytFrame) { ytFrame.classList.remove('hidden'); ytFrame.src = ytEmbed; }
+                if (directLink) directLink.href = item.media?.youtube_url || `https://youtu.be/${ytId}`;
+            } else if (item.media?.video_url) {
+                if (ytFrame) { ytFrame.classList.add('hidden'); ytFrame.src = ''; }
+                if (video) {
+                    video.classList.remove('hidden');
+                    video.src = item.media.video_url;
+                    video.playbackRate = 1.0;
+                    video.play().catch(() => {});
+                }
+                if (directLink) directLink.href = item.media.video_url;
             }
-            if (directLink) directLink.href = item.media.video_url;
 
             modal?.classList.add('open');
         }
@@ -2317,7 +2331,9 @@
                 modal.classList.remove('open');
                 if (modalId === 'videoPlayerModal') {
                     const video = document.getElementById('modalActiveVideo');
-                    if (video) video.pause();
+                    if (video) { video.pause(); video.src = ''; }
+                    const ytFrame = document.getElementById('modalActiveYoutube');
+                    if (ytFrame) { ytFrame.src = ''; ytFrame.classList.add('hidden'); }
                 } else if (modalId === 'reportEmbedModal') {
                     const iframe = document.getElementById('reportModalIframe');
                     if (iframe) iframe.src = '';
