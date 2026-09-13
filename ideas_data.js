@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 190,
-  "total_unique_ideas": 176,
-  "total_active_ideas": 144,
+  "total_scene_items": 191,
+  "total_unique_ideas": 177,
+  "total_active_ideas": 145,
   "total_excluded_ideas": 32,
-  "total_creators": 89,
+  "total_creators": 90,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 83,
+    "dien-anh": 84,
     "chuyen-canh": 25
   },
   "industries": [
@@ -145,7 +145,7 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 2,
     "thuong-hieu": 16,
     "thoi-trang": 8,
-    "am-thuc": 14,
+    "am-thuc": 15,
     "du-lich": 19,
     "cong-nghe": 22,
     "kien-truc": 17,
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 71,
+    "us_eu": 72,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -495,6 +495,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@allure.cafebar",
+      "name": "Allure_Cafe_Bar",
+      "profile_url": "https://www.instagram.com/allure.cafebar/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
       ]
     },
     {
@@ -1248,6 +1259,64 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar",
+      "shortcode": "DdF81brAiIj",
+      "title_vi": "Video by allure.cafebar",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 17 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@ALLURE_cafe_bar",
+        "name": "Allure_Cafe_Bar",
+        "handle": "@allure.cafebar",
+        "profile_url": "https://www.instagram.com/allure.cafebar/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdF81brAiIj/?stkn=MXdyenBrNmg2cGwwcA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1cPah6ks_2kqe728ZOY_F0fIga3CGqpY5",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdF81brAiIj.mp4",
+        "report_url": "reports/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar.html",
+        "shots_count": 17,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
       "shortcode": "DbA22ywhMSI",
       "title_vi": "@주서방 - Video by ju seobang",
@@ -1642,7 +1711,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
       },
       "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://img.youtube.com/vi/adOF33KL6qk/hqdefault.jpg",
         "thumb_key": "https://img.youtube.com/vi/adOF33KL6qk/maxresdefault.jpg",
@@ -1704,7 +1773,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
       },
       "ig_url": "https://shopee.vn/ULANZI-MT80-Ch%C3%A2n-M%C3%A1y-Tripod-ULANZI-MT-80-Chi%E1%BB%81u-Cao-213cm-T%E1%BA%A3i-Tr%E1%BB%8Dng-5kg-H%C3%A0ng-Ch%C3%ADnh-H%C3%A3ng-i.1146051656.42829427636",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://img.youtube.com/vi/InZ6HgASLnE/hqdefault.jpg",
         "thumb_key": "https://img.youtube.com/vi/InZ6HgASLnE/maxresdefault.jpg",
@@ -6448,7 +6517,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": ""
       },
       "ig_url": "",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/broll_plans/BROLL_PLAN_20260827_TimesCity_Basketball/assets/scene_01.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/broll_plans/BROLL_PLAN_20260827_TimesCity_Basketball/assets/ref_01.jpg",
@@ -7159,7 +7228,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": ""
       },
       "ig_url": "",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_01.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_03.jpg",
@@ -7217,7 +7286,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/Self_Practice/"
       },
       "ig_url": "https://www.instagram.com/Self_Practice/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_001_d3929600.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_003_f4a21091.jpg",
@@ -7275,7 +7344,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_001_f678a262.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_003_ab7e9aa6.jpg",
@@ -7336,7 +7405,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_001_f338d92e.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_003_5bd4e9f3.jpg",
@@ -7394,7 +7463,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_001_4c61efb5.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_003_469ee782.jpg",
@@ -7455,7 +7524,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_001_84d02fa0.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_003_02cc6fea.jpg",
@@ -7516,7 +7585,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thodiahaiduongne/"
       },
       "ig_url": "https://www.tiktok.com/@thodiahaiduongne/video/7350657143906913544",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_start.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_end.jpg",
@@ -7578,7 +7647,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/tinanguyen2004/"
       },
       "ig_url": "https://www.tiktok.com/@tinanguyen2004/video/7673468312290037012",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_03_mid.jpg",
@@ -8579,7 +8648,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DbLToEpPPzm/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_001_94f415b0.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_003_08e95b41.jpg",
@@ -8640,7 +8709,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DZzwqWBvfwT/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_001_a370a673.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_003_5aac8ee0.jpg",
@@ -8814,7 +8883,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mkxpresar/"
       },
       "ig_url": "https://www.instagram.com/p/DaP3EE-qgAQ/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_001_1a64c4c7.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_003_716d7781.jpg",
@@ -8875,7 +8944,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DYcM_9FPr7I/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_001_a101e3ca.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_003_172f4445.jpg",
@@ -8933,7 +9002,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DXoss18j011/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_015_0f87c40e.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_017_781ec86d.jpg",
@@ -9952,7 +10021,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DaXdrAVzGcc/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -10013,7 +10082,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DbnlAB5Twrw/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -10074,7 +10143,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DcGbEVFznin/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -10135,7 +10204,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/briantooker/"
       },
       "ig_url": "https://www.instagram.com/p/DZN-FfdyPgH/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_03_mid.jpg",
@@ -10196,7 +10265,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/junko_livlog/"
       },
       "ig_url": "https://www.instagram.com/p/Da46F-lxueg/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_03_mid.jpg",
@@ -10254,7 +10323,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kerennilan/"
       },
       "ig_url": "https://www.instagram.com/p/DY5aQaoABsy/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_03_mid.jpg",
@@ -10315,7 +10384,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/hana.konichiwa/"
       },
       "ig_url": "https://www.instagram.com/p/DbS3HNNIKR7/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_03_mid.jpg",
@@ -10376,7 +10445,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/nicoolalah/"
       },
       "ig_url": "https://www.instagram.com/p/DaAm8suhCau/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_03_mid.jpg",
@@ -10437,7 +10506,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thewaytowherever/"
       },
       "ig_url": "https://www.instagram.com/p/DbomJ6-Tpry/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_03_mid.jpg",
@@ -10498,7 +10567,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thomasmathewt2/"
       },
       "ig_url": "https://www.instagram.com/p/DcLwG_mKyKM/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_03_mid.jpg",
@@ -10556,7 +10625,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/bewoom/"
       },
       "ig_url": "https://www.instagram.com/p/DZVHH27S7Lf/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_03_mid.jpg",
@@ -10614,7 +10683,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DZVAYFwvo4y/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_03_mid.jpg",
@@ -10675,7 +10744,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/photoknack.in/"
       },
       "ig_url": "https://www.instagram.com/p/DcJBTCoT6UT/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg",
@@ -10733,7 +10802,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kosnio/"
       },
       "ig_url": "https://www.instagram.com/p/DcI-darjckz/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg",
@@ -10794,7 +10863,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/austinrutland/"
       },
       "ig_url": "https://www.instagram.com/p/DYwzs3zRRkv/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_03_mid.jpg",
@@ -10852,7 +10921,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kosnio/"
       },
       "ig_url": "https://www.instagram.com/p/DaC90d3tWuV/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_03_mid.jpg",
@@ -10910,7 +10979,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/creator/"
       },
       "ig_url": "https://www.instagram.com/creator/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_02_mid.jpg",
@@ -10968,7 +11037,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/local/"
       },
       "ig_url": "https://www.instagram.com/local/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_001_64380ecb.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_003_0fe2b694.jpg",
@@ -11029,7 +11098,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ariffathulhakim/"
       },
       "ig_url": "https://www.instagram.com/ariffathulhakim/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_03_mid.jpg",
@@ -11087,7 +11156,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/local/"
       },
       "ig_url": "https://www.instagram.com/local/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_001_3c289bad.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_003_7c3a7180.jpg",
@@ -11206,7 +11275,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/bryanhynes/"
       },
       "ig_url": "https://www.instagram.com/reel/DacaMHwzEm3/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_080_ae283717.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_082_406f7de9.jpg",
