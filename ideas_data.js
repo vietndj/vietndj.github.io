@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 205,
+  "total_scene_items": 206,
   "total_unique_ideas": 186,
   "total_active_ideas": 154,
   "total_excluded_ideas": 32,
-  "total_creators": 97,
+  "total_creators": 98,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 84,
-    "chuyen-canh": 33
+    "dien-anh": 83,
+    "chuyen-canh": 34
   },
   "industries": [
     {
@@ -144,13 +144,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 4,
     "thuong-hieu": 16,
-    "thoi-trang": 11,
+    "thoi-trang": 12,
     "am-thuc": 16,
     "du-lich": 21,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 6,
-    "ky-thuat-quay": 41
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -302,19 +302,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@ju_seobang",
-      "name": "Ju_Seobang",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 3,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-      "video_ids": [
-        "",
-        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
       "handle": "@steven.vuu",
       "name": "Steven.Vuu",
       "profile_url": "https://www.instagram.com/steven.vuu/",
@@ -377,6 +364,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@ju_seobang",
+      "name": "Ju Seobang",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -497,6 +496,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@kristinagoose",
+      "name": "Kristinagoose",
+      "profile_url": "https://www.instagram.com/kristinagoose/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        ""
       ]
     },
     {
@@ -1338,6 +1348,64 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "",
+      "shortcode": "",
+      "title_vi": "Casual But Make It Bomb • Kỹ Thuật Chuyển Cảnh Match Cut Đồ Vật (Bag Wipe Transition) & Trình Diễn Thời Trang Viral Cực Bén",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@kristinagoose",
+        "name": "Kristinagoose",
+        "handle": "@kristinagoose",
+        "profile_url": "https://www.instagram.com/kristinagoose/"
+      },
+      "ig_url": "https://www.instagram.com/kristinagoose/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "",
+        "report_url": "",
+        "shots_count": 0,
+        "duration": "7.25s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog",
       "shortcode": "DbH76S5yg5W",
       "title_vi": "A Little Hong Kong A Lot Of Happiness • Nghệ Thuật Vlog Du Lịch Hè Góc Thấp Đầy Bản Sắc",
@@ -1636,64 +1704,6 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.html",
         "shots_count": 8,
         "duration": "0.2s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "",
-      "shortcode": "",
-      "title_vi": "Cách 'Câu' Kẹo Của Bố Vợ • Tuyệt Kỹ Hài Tình Huống Triệu View",
-      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
-      "key_tech": "",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic"
-      ],
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@ju_seobang",
-        "name": "Ju_Seobang",
-        "handle": "@ju_seobang",
-        "profile_url": "https://www.instagram.com/ju_seobang/"
-      },
-      "ig_url": "https://www.instagram.com/ju_seobang/",
-      "gdrive_folder": "",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
-        "video_url": "",
-        "report_url": "",
-        "shots_count": 0,
-        "duration": "11.95s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
