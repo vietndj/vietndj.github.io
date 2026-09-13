@@ -236,12 +236,38 @@ def load_master_classifications():
     return {}
 
 def load_portal_data():
+    try:
+    try:
+        import subprocess
+        node_script = """
+        const fs = require('fs');
+        const content = fs.readFileSync(process.env.SCENE_PATH, 'utf-8');
+        const m = content.match(/const portalData\\s*=\\s*(\\[[\\s\\S]*?\\]);/);
+        if (m) {
+            const data = eval(m[1]);
+            console.log(JSON.stringify(data));
+        } else {
+            process.exit(1);
+        }
+        """
+        env = os.environ.copy()
+        env["SCENE_PATH"] = SCENE_PATH
+        p = subprocess.run(["node"], input=node_script, capture_output=True, text=True, env=env)
+        if p.returncode == 0 and p.stdout:
+            return json.loads(p.stdout)
+    except Exception:
+        pass
+
     with open(SCENE_PATH, "r", encoding="utf-8") as f:
         content = f.read()
     m = re.search(r'const portalData\s*=\s*(\[.*?\]);', content, re.DOTALL)
     if not m:
         raise ValueError("Could not extract portalData from scene.html")
-    return json.loads(m.group(1))
+    # Quote unquoted property names
+    fixed_json = re.sub(r'([{,]\s*)([a-zA-Z0-9_]+)\s*:', r'\1"\2":', m.group(1))
+    fixed_json = re.sub(r',\s*([\]\}])', r'\1', fixed_json)
+    return json.loads(fixed_json)
+
 
 def load_curation_config():
     if os.path.exists(EXCLUDED_CONFIG_PATH):
