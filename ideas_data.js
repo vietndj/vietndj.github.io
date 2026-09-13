@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 187,
-  "total_unique_ideas": 174,
-  "total_active_ideas": 142,
+  "total_scene_items": 188,
+  "total_unique_ideas": 175,
+  "total_active_ideas": 143,
   "total_excluded_ideas": 32,
   "total_creators": 89,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 81,
+    "dien-anh": 82,
     "chuyen-canh": 25
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 40
+    "ky-thuat-quay": 41
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 69,
+    "us_eu": 70,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -351,6 +351,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@steven.vuu",
+      "name": "Steven_🇻🇳_Vu",
+      "profile_url": "https://www.instagram.com/steven.vuu/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu",
+        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -548,17 +560,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_01_mid.jpg",
       "video_ids": [
         "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
-      "handle": "@steven.vuu",
-      "name": "Steven Vu",
-      "profile_url": "https://www.instagram.com/steven.vuu/",
-      "video_count": 1,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -1245,6 +1246,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu",
+      "shortcode": "DdM7gO4yD-c",
+      "title_vi": "@Steven_🇻🇳_Vu - Video by steven.vuu",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@Steven_🇻🇳_Vu",
+        "name": "Steven_🇻🇳_Vu",
+        "handle": "@steven.vuu",
+        "profile_url": "https://www.instagram.com/steven.vuu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdM7gO4yD-c/?stkn=NnJjcHlkcTBheDBj",
+      "gdrive_folder": "https://drive.google.com/open?id=1CnrEGYPZQNFZt4XiKeStXpAYVw6b8Jlr",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdM7gO4yD-c.mp4",
+        "report_url": "reports/IG_@Steven_🇻🇳_Vu_DdM7gO4yD-c_Video_by_steven.vuu.html",
+        "shots_count": 12,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer",
       "shortcode": "DdJsv1AsGwt",
