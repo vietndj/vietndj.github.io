@@ -5,923 +5,863 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <title>Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi • Director's Report</title>
 
-<!-- Fonts: Google Fonts Fallbacks -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
-<style>
-/* ═══ 1. FONT DECLARATIONS (Local & Web Fallbacks) ═══ */
-@font-face {
-    font-family: 'FD Aeonik Extended';
-    src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
-         url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
-         local('FD Aeonik Extended Bold');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+<style>@font-face {
+font-family: 'FD Aeonik Extended';
+src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
+url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
+url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
+local('FD Aeonik Extended Bold');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
-         local('FD Aeonik Regular');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+font-family: 'FD Aeonik';
+src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
+url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
+local('FD Aeonik Regular');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
-         local('FD Aeonik SemiBold');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+font-family: 'FD Aeonik';
+src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
+url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
+local('FD Aeonik SemiBold');
+font-weight: 600;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
-         local('FD Aeonik Bold');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+font-family: 'FD Aeonik';
+src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
+url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
+local('FD Aeonik Bold');
+font-weight: 700;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
-         local('Tiempos Text Regular');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+font-family: 'Tiempos Text';
+src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
+url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
+local('Tiempos Text Regular');
+font-weight: 400;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
-         local('Tiempos Text Medium');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+font-family: 'Tiempos Text';
+src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
+url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
+local('Tiempos Text Medium');
+font-weight: 500;
+font-style: normal;
+font-display: swap;
 }
 @font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-         local('Tiempos Text Regular Italic');
-    font-weight: 400;
-    font-style: italic;
-    font-display: swap;
+font-family: 'Tiempos Text';
+src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+local('Tiempos Text Regular Italic');
+font-weight: 400;
+font-style: italic;
+font-display: swap;
 }
-
-/* ═══ 2. DESIGN TOKENS (Light Theme - Chuẩn 30ngayviral.fedu.vn) ═══ */
 :root {
-    --cl-bg-main: #ffffff;
-    --cl-bg-tint: #f8fafc;
-    --cl-bg-card: #ffffff;
-    --cl-bg-card-muted: #f1f5f9;
-    --cl-border: rgba(0, 0, 0, 0.08);
-    --cl-border-hover: rgba(26, 115, 232, 0.35);
-    --cl-line: rgba(0, 0, 0, 0.06);
-
-    /* Ink Contrast WCAG AAA */
-    --cl-text-primary: #090d16;  /* Slate 950 (18.8:1) */
-    --cl-text-body: #0f172a;     /* Slate 900 (16.5:1 Mực in cao cấp) */
-    --cl-text-secondary: #475569;/* Slate 600 */
-    --cl-text-muted: #64748b;    /* Slate 500 */
-
-    /* Accent & Brand Colors */
-    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
-    --cl-accent-tint: rgba(26, 115, 232, 0.08);
-    --cl-amber: #d97706;         /* Amber 600 */
-    --cl-amber-bg: #fffbeb;      /* Amber 50 */
-    --cl-amber-border: #fef3c7;  /* Amber 100 */
-    --cl-emerald: #059669;       /* Emerald 600 */
-    --cl-emerald-bg: #f0fdf4;    /* Emerald 50 */
-    --cl-emerald-border: #bbf7d0;/* Emerald 200 */
-    --cl-rose: #e11d48;          /* Rose 600 */
-    --cl-rose-bg: #fff1f2;       /* Rose 50 */
-    --cl-rose-border: #fecdd3;   /* Rose 200 */
-
-    /* Typography Stacks */
-    --font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
-    --font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
-    --font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
-    --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-
-    /* Video Aspect Ratio */
-    --video-aspect-ratio: 9 / 16;
+--cl-bg-main: #ffffff;
+--cl-bg-tint: #f8fafc;
+--cl-bg-card: #ffffff;
+--cl-bg-card-muted: #f1f5f9;
+--cl-border: rgba(0, 0, 0, 0.08);
+--cl-border-hover: rgba(26, 115, 232, 0.35);
+--cl-line: rgba(0, 0, 0, 0.06);
+--cl-text-primary: #090d16;
+--cl-text-body: #0f172a;
+--cl-text-secondary: #475569;
+--cl-text-muted: #64748b;
+--cl-accent: #1a73e8;
+--cl-accent-tint: rgba(26, 115, 232, 0.08);
+--cl-amber: #d97706;
+--cl-amber-bg: #fffbeb;
+--cl-amber-border: #fef3c7;
+--cl-emerald: #059669;
+--cl-emerald-bg: #f0fdf4;
+--cl-emerald-border: #bbf7d0;
+--cl-rose: #e11d48;
+--cl-rose-bg: #fff1f2;
+--cl-rose-border: #fecdd3;
+--font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
+--font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
+--font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
+--font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+--font-mono: 'JetBrains Mono', monospace;
+--video-aspect-ratio: 9 / 16;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
 body {
-    background-color: var(--cl-bg-main);
-    color: var(--cl-text-body);
-    font-family: var(--font-body);
-    font-size: 15px;
-    line-height: 1.75;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+background-color: var(--cl-bg-main);
+color: var(--cl-text-body);
+font-family: var(--font-body);
+font-size: 15px;
+line-height: 1.75;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
-
-/* ═══ 3. TOP NAVIGATION HEADER ═══ */
 .top-nav {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--cl-line);
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 200;
+background: rgba(255, 255, 255, 0.94);
+backdrop-filter: blur(14px);
+border-bottom: 1px solid var(--cl-line);
+padding: 12px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: sticky;
+top: 0;
+z-index: 200;
 }
 .nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+display: flex;
+align-items: center;
+gap: 12px;
 }
 .nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-heading-short);
-    font-weight: 700;
-    font-size: 14.5px;
-    color: var(--cl-text-primary);
-    text-decoration: none;
-    letter-spacing: -0.01em;
+display: flex;
+align-items: center;
+gap: 8px;
+font-family: var(--font-heading-short);
+font-weight: 700;
+font-size: 14.5px;
+color: var(--cl-text-primary);
+text-decoration: none;
+letter-spacing: -0.01em;
 }
 .nav-badge {
-    background: var(--cl-accent-tint);
-    color: var(--cl-accent);
-    padding: 3px 9px;
-    border-radius: 9999px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    border: 1px solid rgba(26, 115, 232, 0.18);
+background: var(--cl-accent-tint);
+color: var(--cl-accent);
+padding: 3px 9px;
+border-radius: 9999px;
+font-family: var(--font-mono);
+font-size: 11px;
+font-weight: 600;
+border: 1px solid rgba(26, 115, 232, 0.18);
 }
 .nav-meta-title {
-    font-family: var(--font-ui);
-    font-size: 13.5px;
-    color: var(--cl-text-secondary);
-    font-weight: 500;
-    max-width: 480px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+font-family: var(--font-ui);
+font-size: 13.5px;
+color: var(--cl-text-secondary);
+font-weight: 500;
+max-width: 480px;
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
 }
 .nav-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
+display: flex;
+align-items: center;
+gap: 10px;
 }
 .nav-btn {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    color: var(--cl-text-primary);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+color: var(--cl-text-primary);
+padding: 6px 14px;
+border-radius: 8px;
+font-family: var(--font-ui);
+font-size: 12.5px;
+font-weight: 600;
+text-decoration: none;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+cursor: pointer;
+transition: all 0.2s ease;
 }
 .nav-btn:hover {
-    background: var(--cl-bg-tint);
-    border-color: var(--cl-accent);
-    color: var(--cl-accent);
+background: var(--cl-bg-tint);
+border-color: var(--cl-accent);
+color: var(--cl-accent);
 }
 .nav-btn.primary {
-    background: var(--cl-accent);
-    border-color: var(--cl-accent);
-    color: #ffffff;
+background: var(--cl-accent);
+border-color: var(--cl-accent);
+color: #ffffff;
 }
 .nav-btn.primary:hover {
-    background: #1558b0;
+background: #1558b0;
 }
-
-/* ═══ 4. MAIN LAYOUT (DESKTOP SPLIT-SCREEN & MOBILE-FIRST) ═══ */
 .layout-container {
-    display: flex;
-    flex: 1;
-    max-width: 1680px;
-    margin: 0 auto;
-    width: 100%;
+display: flex;
+flex: 1;
+max-width: 1680px;
+margin: 0 auto;
+width: 100%;
 }
-
-/* LEFT COLUMN: STICKY DIRECTOR PLAYER */
 .left-player-col {
-    width: 460px;
-    flex-shrink: 0;
-    padding: 24px;
-    border-right: 1px solid var(--cl-line);
-    background: var(--cl-bg-tint);
-    position: sticky;
-    top: 57px;
-    height: calc(100vh - 57px);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+width: 460px;
+flex-shrink: 0;
+padding: 24px;
+border-right: 1px solid var(--cl-line);
+background: var(--cl-bg-tint);
+position: sticky;
+top: 57px;
+height: calc(100vh - 57px);
+overflow-y: auto;
+display: flex;
+flex-direction: column;
+gap: 18px;
 }
 .player-box {
-    background: #000000;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    aspect-ratio: var(--video-aspect-ratio);
-    max-height: 560px;
-    width: 100%;
+background: #000000;
+border-radius: 16px;
+overflow: hidden;
+position: relative;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+border: 1px solid rgba(0, 0, 0, 0.1);
+aspect-ratio: var(--video-aspect-ratio);
+max-height: 560px;
+width: 100%;
 }
 .player-box video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
+width: 100%;
+height: 100%;
+object-fit: contain;
+display: block;
 }
-
-/* DIRECTOR CONTROLS BAR */
 .director-controls {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+border-radius: 12px;
+padding: 12px;
+display: flex;
+flex-direction: column;
+gap: 10px;
 }
 .ctrl-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 8px;
 }
 .ctrl-btn-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .ctrl-btn {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    color: var(--cl-text-primary);
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-family: var(--font-ui);
-    font-size: 11.5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s ease;
+background: var(--cl-bg-tint);
+border: 1px solid var(--cl-border);
+color: var(--cl-text-primary);
+padding: 5px 10px;
+border-radius: 6px;
+font-family: var(--font-ui);
+font-size: 11.5px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.15s ease;
 }
 .ctrl-btn:hover, .ctrl-btn.active {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
+background: var(--cl-accent);
+color: #ffffff;
+border-color: var(--cl-accent);
 }
 .time-display {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--cl-text-secondary);
-    font-weight: 600;
+font-family: var(--font-mono);
+font-size: 12px;
+color: var(--cl-text-secondary);
+font-weight: 600;
 }
-
-/* VIDEO INFO CARD IN SIDEBAR */
 .video-meta-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+border-radius: 12px;
+padding: 16px;
+display: flex;
+flex-direction: column;
+gap: 8px;
 }
 .video-meta-title {
-    font-family: var(--font-heading-long);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--cl-text-primary);
-    line-height: 1.4;
+font-family: var(--font-heading-long);
+font-size: 15px;
+font-weight: 700;
+color: var(--cl-text-primary);
+line-height: 1.4;
 }
 .video-meta-author {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--cl-text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
+font-family: var(--font-ui);
+font-size: 13px;
+color: var(--cl-text-secondary);
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .author-link {
-    color: var(--cl-accent);
-    text-decoration: none;
-    font-weight: 600;
+color: var(--cl-accent);
+text-decoration: none;
+font-weight: 600;
 }
 .author-link:hover {
-    text-decoration: underline;
+text-decoration: underline;
 }
-
-/* DRAWER QUICK JUMP MENU */
 .drawer-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-line);
-    border-radius: 12px;
-    padding: 14px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+background: #ffffff;
+border: 1px solid var(--cl-line);
+border-radius: 12px;
+padding: 14px;
+box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 }
 .drawer-title {
-    font-family: var(--font-heading-short);
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: var(--cl-text-muted);
-    margin-bottom: 10px;
-    font-weight: 700;
+font-family: var(--font-heading-short);
+font-size: 12px;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+color: var(--cl-text-muted);
+margin-bottom: 10px;
+font-weight: 700;
 }
 .drawer-list {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    max-height: 240px;
-    overflow-y: auto;
-    padding-right: 4px;
+display: flex;
+flex-direction: column;
+gap: 6px;
+max-height: 240px;
+overflow-y: auto;
+padding-right: 4px;
 }
 .drawer-shot-row {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
-    background: var(--cl-bg-tint);
-    border-radius: 6px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-    border: 1px solid transparent;
+display: flex;
+align-items: center;
+gap: 8px;
+padding: 8px 10px;
+background: var(--cl-bg-tint);
+border-radius: 6px;
+font-size: 12px;
+cursor: pointer;
+transition: all 0.15s ease;
+border: 1px solid transparent;
 }
 .drawer-shot-row:hover {
-    background: #eef2f6;
-    border-color: var(--cl-accent);
+background: #eef2f6;
+border-color: var(--cl-accent);
 }
 .d-badge {
-    background: var(--cl-accent);
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    flex-shrink: 0;
+background: var(--cl-accent);
+color: #ffffff;
+font-weight: 700;
+font-size: 11px;
+padding: 2px 6px;
+border-radius: 4px;
+flex-shrink: 0;
 }
 .d-time {
-    color: var(--cl-text-muted);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    flex-shrink: 0;
+color: var(--cl-text-muted);
+font-family: var(--font-mono);
+font-size: 11px;
+flex-shrink: 0;
 }
 .d-title {
-    color: var(--cl-text-primary);
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 12px;
-    font-weight: 500;
+color: var(--cl-text-primary);
+white-space: nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+font-size: 12px;
+font-weight: 500;
 }
-
-/* RIGHT COLUMN: STORYBOARD CONTENT & AUDIT */
 .right-content-col {
-    flex: 1;
-    padding: 32px 40px 80px 40px;
-    min-width: 0;
-    background: #ffffff;
+flex: 1;
+padding: 32px 40px 80px 40px;
+min-width: 0;
+background: #ffffff;
 }
-
-/* VIEW SWITCHER & HEADER BAR */
 .content-header-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--cl-line);
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 28px;
+padding-bottom: 16px;
+border-bottom: 1px solid var(--cl-line);
 }
 .view-tabs {
-    display: flex;
-    gap: 8px;
-    background: var(--cl-bg-tint);
-    padding: 4px;
-    border-radius: 10px;
-    border: 1px solid var(--cl-border);
+display: flex;
+gap: 8px;
+background: var(--cl-bg-tint);
+padding: 4px;
+border-radius: 10px;
+border: 1px solid var(--cl-border);
 }
 .view-tab {
-    padding: 6px 14px;
-    border-radius: 7px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 600;
-    color: var(--cl-text-secondary);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
+padding: 6px 14px;
+border-radius: 7px;
+font-family: var(--font-ui);
+font-size: 12.5px;
+font-weight: 600;
+color: var(--cl-text-secondary);
+background: transparent;
+border: none;
+cursor: pointer;
+transition: all 0.2s;
 }
 .view-tab.active {
-    background: #ffffff;
-    color: var(--cl-text-primary);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+background: #ffffff;
+color: var(--cl-text-primary);
+box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
-
-/* HERO OVERVIEW CARD */
 .overview-hero-card {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    border-radius: 18px;
-    padding: 24px 28px;
-    margin-bottom: 32px;
+background: var(--cl-bg-tint);
+border: 1px solid var(--cl-border);
+border-radius: 18px;
+padding: 24px 28px;
+margin-bottom: 32px;
 }
 .overview-hero-title {
-    font-family: var(--font-heading-short);
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--cl-text-primary);
-    letter-spacing: -0.01em;
-    line-height: 1.35;
-    margin-bottom: 12px;
+font-family: var(--font-heading-short);
+font-size: 24px;
+font-weight: 700;
+text-transform: uppercase;
+color: var(--cl-text-primary);
+letter-spacing: -0.01em;
+line-height: 1.35;
+margin-bottom: 12px;
 }
 .overview-hero-desc {
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--cl-text-body);
-    margin-bottom: 18px;
+font-family: var(--font-body);
+font-size: 16px;
+line-height: 1.8;
+color: var(--cl-text-body);
+margin-bottom: 18px;
 }
 .overview-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    padding-top: 14px;
-    border-top: 1px solid var(--cl-line);
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+gap: 12px;
+padding-top: 14px;
+border-top: 1px solid var(--cl-line);
 }
 .overview-spec-item {
-    font-family: var(--font-ui);
-    font-size: 13px;
+font-family: var(--font-ui);
+font-size: 13px;
 }
 .spec-tag-label {
-    color: var(--cl-text-muted);
-    font-size: 11.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 2px;
+color: var(--cl-text-muted);
+font-size: 11.5px;
+text-transform: uppercase;
+font-weight: 600;
+letter-spacing: 0.05em;
+display: block;
+margin-bottom: 2px;
 }
 .spec-tag-value {
-    color: var(--cl-text-primary);
-    font-weight: 600;
+color: var(--cl-text-primary);
+font-weight: 600;
 }
-
-/* ═══ 5. STORYBOARD CARDS (ZEBRA STRIPING) ═══ */
 .shots-container {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
+display: flex;
+flex-direction: column;
+gap: 36px;
 }
 .shot-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s, box-shadow 0.2s;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+border-radius: 20px;
+padding: 28px;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+transition: transform 0.2s, box-shadow 0.2s;
 }
 .shot-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
 }
 .shot-card:nth-child(even) {
-    background: var(--cl-bg-tint);
+background: var(--cl-bg-tint);
 }
-
-/* SHOT CARD HEADER */
 .shot-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-bottom: 14px;
 }
 .shot-id-pill {
-    background: var(--cl-text-primary);
-    color: #ffffff;
-    padding: 4px 12px;
-    border-radius: 9999px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
+background: var(--cl-text-primary);
+color: #ffffff;
+padding: 4px 12px;
+border-radius: 9999px;
+font-family: var(--font-mono);
+font-size: 12px;
+font-weight: 700;
+letter-spacing: 0.02em;
 }
 .shot-time-btn {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    color: var(--cl-accent);
-    padding: 4px 12px;
-    border-radius: 8px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-    transition: all 0.15s;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+color: var(--cl-accent);
+padding: 4px 12px;
+border-radius: 8px;
+font-family: var(--font-mono);
+font-size: 12.5px;
+font-weight: 600;
+display: inline-flex;
+align-items: center;
+gap: 6px;
+cursor: pointer;
+transition: all 0.15s;
 }
 .shot-time-btn:hover {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
+background: var(--cl-accent);
+color: #ffffff;
+border-color: var(--cl-accent);
 }
 .shot-headline {
-    font-family: var(--font-heading-long);
-    font-size: 18.5px;
-    font-weight: 700;
-    color: var(--cl-text-primary);
-    line-height: 1.45;
-    margin-bottom: 18px;
+font-family: var(--font-heading-long);
+font-size: 18.5px;
+font-weight: 700;
+color: var(--cl-text-primary);
+line-height: 1.45;
+margin-bottom: 18px;
 }
-
-/* 3 KEYFRAMES GALLERY */
 .keyframes-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 22px;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 12px;
+margin-bottom: 22px;
 }
 .kf-card {
-    background: #000000;
-    border-radius: 12px;
-    overflow: hidden;
-    position: relative;
-    aspect-ratio: var(--video-aspect-ratio);
-    cursor: pointer;
-    border: 1px solid var(--cl-border);
+background: #000000;
+border-radius: 12px;
+overflow: hidden;
+position: relative;
+aspect-ratio: var(--video-aspect-ratio);
+cursor: pointer;
+border: 1px solid var(--cl-border);
 }
 .kf-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease;
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
+transition: transform 0.25s ease;
 }
 .kf-card:hover img {
-    transform: scale(1.03);
+transform: scale(1.03);
 }
 .kf-label-tag {
-    position: absolute;
-    bottom: 8px;
-    left: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(4px);
-    color: #ffffff;
-    padding: 3px 8px;
-    border-radius: 5px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
+position: absolute;
+bottom: 8px;
+left: 8px;
+background: rgba(0, 0, 0, 0.75);
+backdrop-filter: blur(4px);
+color: #ffffff;
+padding: 3px 8px;
+border-radius: 5px;
+font-family: var(--font-mono);
+font-size: 11px;
+font-weight: 600;
 }
 .kf-label-tag.start { border-left: 3px solid var(--cl-accent); }
 .kf-label-tag.mid { border-left: 3px solid var(--cl-amber); }
 .kf-label-tag.end { border-left: 3px solid var(--cl-emerald); }
-
-/* 3 STRUCTURED CRITIQUE BLOCKS */
 .critique-blocks-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    margin-bottom: 20px;
+display: flex;
+flex-direction: column;
+gap: 14px;
+margin-bottom: 20px;
 }
-
-/* BLOCK 1: SUBJECT & ACTION */
 .block-subject-action {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    padding: 16px 20px;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+border-radius: 12px;
+padding: 16px 20px;
 }
 .block-label {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--cl-text-muted);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+font-family: var(--font-ui);
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+letter-spacing: 0.04em;
+color: var(--cl-text-muted);
+margin-bottom: 6px;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .block-text {
-    font-family: var(--font-body);
-    font-size: 15px;
-    color: var(--cl-text-body);
-    line-height: 1.7;
+font-family: var(--font-body);
+font-size: 15px;
+color: var(--cl-text-body);
+line-height: 1.7;
 }
-
-/* BLOCK 2: TWO-SIDED COMPOSITION CRITIQUE */
 .block-two-sided {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 12px;
 }
 .critique-side {
-    padding: 16px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
+padding: 16px;
+border-radius: 12px;
+display: flex;
+flex-direction: column;
+gap: 6px;
 }
 .critique-side.pro {
-    background: var(--cl-emerald-bg);
-    border: 1px solid var(--cl-emerald-border);
+background: var(--cl-emerald-bg);
+border: 1px solid var(--cl-emerald-border);
 }
 .critique-side.con {
-    background: var(--cl-rose-bg);
-    border: 1px solid var(--cl-rose-border);
+background: var(--cl-rose-bg);
+border: 1px solid var(--cl-rose-border);
 }
 .side-header {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+font-family: var(--font-ui);
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .critique-side.pro .side-header { color: var(--cl-emerald); }
 .critique-side.con .side-header { color: var(--cl-rose); }
 .side-content {
-    font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--cl-text-body);
+font-family: var(--font-body);
+font-size: 14px;
+line-height: 1.65;
+color: var(--cl-text-body);
 }
-
-/* BLOCK 3: ACTIONABLE TAKEAWAY */
 .block-takeaway {
-    background: var(--cl-amber-bg);
-    border: 1px solid var(--cl-amber-border);
-    border-radius: 12px;
-    padding: 16px 20px;
+background: var(--cl-amber-bg);
+border: 1px solid var(--cl-amber-border);
+border-radius: 12px;
+padding: 16px 20px;
 }
 .takeaway-header {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--cl-amber);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+font-family: var(--font-ui);
+font-size: 12px;
+font-weight: 700;
+text-transform: uppercase;
+color: var(--cl-amber);
+margin-bottom: 6px;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .takeaway-body {
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 500;
-    color: #78350f;
-    line-height: 1.7;
+font-family: var(--font-body);
+font-size: 15px;
+font-weight: 500;
+color: #78350f;
+line-height: 1.7;
 }
-
-/* SPECS STRIP */
 .shot-specs-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-    padding: 12px 16px;
-    background: var(--cl-bg-tint);
-    border-radius: 10px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    color: var(--cl-text-secondary);
-    margin-bottom: 18px;
+display: flex;
+flex-wrap: wrap;
+gap: 10px 16px;
+padding: 12px 16px;
+background: var(--cl-bg-tint);
+border-radius: 10px;
+font-family: var(--font-ui);
+font-size: 12.5px;
+color: var(--cl-text-secondary);
+margin-bottom: 18px;
 }
 .spec-pill strong {
-    color: var(--cl-text-primary);
+color: var(--cl-text-primary);
 }
-
-/* TRANSITION CARD */
 .transition-card {
-    background: var(--cl-bg-tint);
-    border: 1px dashed var(--cl-border);
-    border-radius: 14px;
-    padding: 16px;
+background: var(--cl-bg-tint);
+border: 1px dashed var(--cl-border);
+border-radius: 14px;
+padding: 16px;
 }
 .trans-title-bar {
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--cl-accent);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
+font-family: var(--font-ui);
+font-size: 12.5px;
+font-weight: 700;
+color: var(--cl-accent);
+margin-bottom: 10px;
+display: flex;
+align-items: center;
+gap: 6px;
 }
 .trans-img-container {
-    cursor: pointer;
-    border-radius: 10px;
-    overflow: hidden;
-    position: relative;
-    border: 1px solid var(--cl-border);
-    background: #000000;
+cursor: pointer;
+border-radius: 10px;
+overflow: hidden;
+position: relative;
+border: 1px solid var(--cl-border);
+background: #000000;
 }
 .trans-img-container img {
-    width: 100%;
-    height: auto;
-    display: block;
+width: 100%;
+height: auto;
+display: block;
 }
 .trans-zoom-badge {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
-    padding: 3px 8px;
-    border-radius: 4px;
+position: absolute;
+bottom: 8px;
+right: 8px;
+background: rgba(0, 0, 0, 0.7);
+color: #ffffff;
+font-family: var(--font-ui);
+font-size: 11px;
+font-weight: 600;
+padding: 3px 8px;
+border-radius: 4px;
 }
-
-/* ═══ 6. VISUAL GRID VIEW (ALTERNATE VIEW) ═══ */
 .visual-grid-view {
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+display: none;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 16px;
 }
 .grid-shot-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.2s;
+background: #ffffff;
+border: 1px solid var(--cl-border);
+border-radius: 12px;
+overflow: hidden;
+cursor: pointer;
+transition: all 0.2s;
 }
 .grid-shot-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+transform: translateY(-3px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 .grid-thumb-wrap {
-    aspect-ratio: var(--video-aspect-ratio);
-    position: relative;
-    background: #000;
+aspect-ratio: var(--video-aspect-ratio);
+position: relative;
+background: #000;
 }
 .grid-thumb-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+width: 100%;
+height: 100%;
+object-fit: cover;
+display: block;
 }
 .grid-thumb-badge {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    font-weight: 600;
+position: absolute;
+top: 6px;
+left: 6px;
+background: rgba(0, 0, 0, 0.75);
+color: #fff;
+padding: 2px 6px;
+border-radius: 4px;
+font-family: var(--font-mono);
+font-size: 10.5px;
+font-weight: 600;
 }
 .grid-card-body {
-    padding: 10px 12px;
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--cl-text-primary);
-    line-height: 1.4;
+padding: 10px 12px;
+font-family: var(--font-ui);
+font-size: 12px;
+font-weight: 600;
+color: var(--cl-text-primary);
+line-height: 1.4;
 }
-
-/* ═══ 7. LIGHTBOX MODAL ═══ */
 .lightbox-modal {
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(10px);
-    z-index: 999;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+position: fixed;
+top: 0; left: 0; width: 100vw; height: 100vh;
+background: rgba(0, 0, 0, 0.88);
+backdrop-filter: blur(10px);
+z-index: 999;
+display: none;
+align-items: center;
+justify-content: center;
+padding: 24px;
 }
 .lightbox-modal.active { display: flex; }
 .lightbox-content {
-    max-width: 92vw;
-    max-height: 92vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+max-width: 92vw;
+max-height: 92vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 12px;
 }
 .lightbox-content img {
-    max-width: 100%;
-    max-height: 82vh;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+max-width: 100%;
+max-height: 82vh;
+border-radius: 12px;
+box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
 }
 .lightbox-caption {
-    color: #ffffff;
-    font-family: var(--font-ui);
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
+color: #ffffff;
+font-family: var(--font-ui);
+font-size: 14px;
+font-weight: 500;
+text-align: center;
 }
 .lightbox-close {
-    position: absolute;
-    top: 20px; right: 24px;
-    color: #ffffff;
-    font-size: 32px;
-    background: none; border: none;
-    cursor: pointer;
+position: absolute;
+top: 20px; right: 24px;
+color: #ffffff;
+font-size: 32px;
+background: none; border: none;
+cursor: pointer;
 }
-
-/* ═══ 8. FOOTER LINKS BLOCK ═══ */
 .bottom-links-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid var(--cl-line);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
+margin-top: 50px;
+padding-top: 30px;
+border-top: 1px solid var(--cl-line);
+display: flex;
+flex-direction: column;
+gap: 14px;
 }
 .footer-links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+gap: 12px;
 }
 .footer-link-card {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    border-radius: 10px;
-    padding: 12px 16px;
-    text-decoration: none;
-    color: var(--cl-text-primary);
-    font-family: var(--font-ui);
-    font-size: 13px;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.15s;
+background: var(--cl-bg-tint);
+border: 1px solid var(--cl-border);
+border-radius: 10px;
+padding: 12px 16px;
+text-decoration: none;
+color: var(--cl-text-primary);
+font-family: var(--font-ui);
+font-size: 13px;
+font-weight: 600;
+display: flex;
+align-items: center;
+gap: 8px;
+transition: all 0.15s;
 }
 .footer-link-card:hover {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
+background: var(--cl-accent);
+color: #ffffff;
+border-color: var(--cl-accent);
 }
-
-/* ═══ 9. RESPONSIVE MOBILE RULES (< 992px) ═══ */
 @media (max-width: 992px) {
-    .layout-container {
-        flex-direction: column;
-    }
-    .left-player-col {
-        width: 100%;
-        position: sticky;
-        top: 57px;
-        height: auto;
-        padding: 16px;
-        border-right: none;
-        border-bottom: 1px solid var(--cl-line);
-        z-index: 100;
-    }
-    .player-box {
-        max-height: 420px;
-    }
-    .right-content-col {
-        padding: 20px 16px 60px 16px;
-    }
-    .block-two-sided {
-        grid-template-columns: 1fr;
-    }
-    .keyframes-row {
-        gap: 8px;
-    }
+.layout-container {
+flex-direction: column;
 }
-</style>
+.left-player-col {
+width: 100%;
+position: sticky;
+top: 57px;
+height: auto;
+padding: 16px;
+border-right: none;
+border-bottom: 1px solid var(--cl-line);
+z-index: 100;
+}
+.player-box {
+max-height: 420px;
+}
+.right-content-col {
+padding: 20px 16px 60px 16px;
+}
+.block-two-sided {
+grid-template-columns: 1fr;
+}
+.keyframes-row {
+gap: 8px;
+}
+}</style>
 </head>
 <body>
 
-<!-- TOP NAV -->
 <nav class="top-nav">
     <div class="nav-left">
         <a href="https://fedu.vn/scene.html" class="nav-brand">
@@ -940,9 +880,8 @@ body {
     </div>
 </nav>
 
-<!-- MAIN CONTAINER -->
 <div class="layout-container">
-    <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
+    
     <aside class="left-player-col">
         <div class="player-box">
             <video id="mainPlayer" playsinline preload="metadata">
@@ -952,7 +891,7 @@ body {
             </video>
         </div>
 
-        <!-- DIRECTOR CONTROLS -->
+        
         <div class="director-controls">
             <div class="ctrl-row">
                 <div class="ctrl-btn-group">
@@ -974,7 +913,7 @@ body {
             </div>
         </div>
 
-        <!-- VIDEO META -->
+        
         <div class="video-meta-card">
             <div class="video-meta-title">Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi</div>
             <div class="video-meta-author">
@@ -983,7 +922,7 @@ body {
             </div>
         </div>
 
-        <!-- DRAWER QUICK JUMP MENU -->
+        
         <div class="drawer-card">
             <div class="drawer-title">📑 Nhảy Tới Phân Cảnh (Quick Jump)</div>
             <div class="drawer-list">
@@ -1033,9 +972,9 @@ body {
         </div>
     </aside>
 
-    <!-- RIGHT COLUMN: ANALYSIS & CRITIQUE -->
+    
     <main class="right-content-col">
-        <!-- HEADER BAR WITH VIEW SWITCHER -->
+        
         <div class="content-header-bar">
             <div class="view-tabs">
                 <button class="view-tab active" id="tabDetail" onclick="switchView('detail')">📋 Bảng Phân Tích Đạo Diễn</button>
@@ -1046,7 +985,7 @@ body {
             </div>
         </div>
 
-        <!-- HERO OVERVIEW CARD -->
+        
         <div class="overview-hero-card">
             <h1 class="overview-hero-title">Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi</h1>
             <p class="overview-hero-desc">Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video Reel của @bysuncan: Nghệ thuật In-Camera Action Match Cut dùng cú đấm trực diện che ống kính (Physical Occlusion Transition) để chuyển cảnh ngoạn mục từ phòng làm việc 2m² ra đỉnh núi lửa hoang sơ theo nhịp beat Smooth Criminal, kết hợp bố cục đối xứng quyền lực, nhịp dựng dồn dập và Hero Shot giải phóng năng lượng.</p>
@@ -1066,7 +1005,7 @@ body {
             </div>
         </div>
 
-        <!-- STORYBOARD DETAIL VIEW -->
+        
         <div class="shots-container" id="detailView">
             
         <article class="shot-card" id="shot-1">
@@ -1078,7 +1017,7 @@ body {
             </div>
             <h2 class="shot-headline">Hook Vũ Đạo Hài Hước Đời Thường & Cú Đấm Trực Diện Che Kín Ống Kính: Tạo Lực Hút Bất Ngờ Bằng Kỹ Thuật Physical Lens Occlusion</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
@@ -1094,7 +1033,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1118,7 +1057,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide Angle 24mm (Camera 1x Smartphone)</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Phòng làm việc tại gia / Setup máy tính cá nhân (Indonesia)</span>
@@ -1147,7 +1086,7 @@ body {
             </div>
             <h2 class="shot-headline">Cú Thu Nắm Đấm Mở Ra Đại Ngàn Núi Lửa: Giải Phóng Động Năng & Phong Thái Hero Swagger Bùng Nổ Trên Đỉnh Bromo</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_02_start.jpg', 'Shot 02 • Đầu (8.50s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
@@ -1163,7 +1102,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1187,7 +1126,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide Angle 28mm</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Đỉnh sống lưng núi lửa hoang sơ (Bromo Ridge, Indonesia)</span>
@@ -1216,7 +1155,7 @@ body {
             </div>
             <h2 class="shot-headline">Cận Cảnh Nghiêng Bán Thân Bí Ẩn (Mysterious Profile Cut): Bắt Trọn Thần Thái Bụi Bặm Của Hiker Giữa Địa Hình Khắc Nghiệt</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_03_start.jpg', 'Shot 03 • Đầu (10.70s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
@@ -1232,7 +1171,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1256,7 +1195,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard Lens ~40mm</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Sườn dốc núi đá sỏi men theo triền núi lửa</span>
@@ -1285,7 +1224,7 @@ body {
             </div>
             <h2 class="shot-headline">Tạo Dáng Che Nắng Chuyển Động Bung Tay: Tôn Vinh Khí Chất Chinh Phục Và Bố Cục Đối Xứng Quyền Lực</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_04_start.jpg', 'Shot 04 • Đầu (12.30s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
@@ -1301,7 +1240,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1325,7 +1264,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide Angle ~28mm</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Mỏm đá cao nhìn xuống lòng thung lũng núi lửa</span>
@@ -1354,7 +1293,7 @@ body {
             </div>
             <h2 class="shot-headline">Góc Máy Vác Gậy Thám Hiểm Lướt Nhanh (Staccato Accented Cut): Đẩy Cao Nhịp Điệu Dồn Dập Trước Khi Bung Hồi Kết Toàn Cảnh</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_05_start.jpg', 'Shot 05 • Đầu (14.43s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
@@ -1370,7 +1309,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1394,7 +1333,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard Wide ~35mm</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Đường mòn sỏi đá men triền núi cao</span>
@@ -1423,7 +1362,7 @@ body {
             </div>
             <h2 class="shot-headline">Hero Shot Từ Sau Lưng Đứng Đỉnh Mỏm Đá (Back-View Summit Pose): Biểu Tượng Chinh Phục Tự Do Giữa Vực Thẳm Đại Ngàn</h2>
 
-            <!-- 3 Keyframes -->
+            
             <div class="keyframes-row">
                 <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_06_start.jpg', 'Shot 06 • Đầu (15.43s)')">
                     <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
@@ -1439,7 +1378,7 @@ body {
                 </div>
             </div>
 
-            <!-- 3 Structured Critique Blocks -->
+            
             <div class="critique-blocks-grid">
                 <div class="block-subject-action">
                     <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
@@ -1463,7 +1402,7 @@ body {
                 </div>
             </div>
 
-            <!-- Specs Strip -->
+            
             <div class="shot-specs-strip">
                 <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide Angle ~24mm</span>
                 <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Mép mỏm đá nhô ra thung lũng núi lửa (Indonesian Volcano Ridge Edge)</span>
@@ -1476,7 +1415,7 @@ body {
         
         </div>
 
-        <!-- VISUAL GRID VIEW -->
+        
         <div class="visual-grid-view" id="gridView">
             
         <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 8.47)">
@@ -1534,7 +1473,7 @@ body {
         
         </div>
 
-        <!-- FOOTER LINKS SECTION -->
+        
         <footer class="bottom-links-section">
             <div style="font-family:var(--font-heading-short); font-size:14px; font-weight:700; text-transform:uppercase; color:var(--cl-text-primary);">
                 🔗 Hệ Sinh Thái &amp; Kho Tài Nguyên Liên Quan
@@ -1557,7 +1496,6 @@ body {
     </main>
 </div>
 
-<!-- LIGHTBOX MODAL -->
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
@@ -1566,103 +1504,82 @@ body {
     </div>
 </div>
 
-<script>
-// Structured Shots Data
-const SHOTS_DATA = [{"id": 1, "st_frame": 0, "mid_frame": 127, "en_frame": 254, "st_time": 0.0, "mid_time": 4.23, "en_time": 8.47, "duration": 8.47, "headline": "Hook Vũ Đạo Hài Hước Đời Thường & Cú Đấm Trực Diện Che Kín Ống Kính: Tạo Lực Hút Bất Ngờ Bằng Kỹ Thuật Physical Lens Occlusion", "subject_action": "Diễn viên (@bysuncan) mặc áo thun dài tay trắng và quần đùi thể thao đen, ban đầu ngồi cúi người tại bàn máy tính góc phòng làm việc (đèn bàn hắt ánh sáng cam ấm). Khi tiếng beat Smooth Criminal nổi lên, anh ta đứng bật dậy tiến sát ống kính, lắc hông, nhún nhảy và múa tay theo vũ đạo khởi động quyền anh cực kỳ dí dỏm. Phía sau lưng, người bạn (@vildokswaraa) bế một chú mèo nhỏ đứng tựa tường quan sát với vẻ mặt thản nhiên (deadpan expression). Đến đúng nhịp cao trào bài hát ('You've been struck by...'), diễn viên bất ngờ tung cú đấm tay phải cực mạnh (Right Cross) lao thẳng vào tâm ống kính camera, khiến nắm đấm choán ngợp và che kín hoàn toàn cảm biến máy quay.", "pros": "Khởi đầu bằng bối cảnh phòng ngủ/studio công nghệ 2m² cực kỳ chân thật, hạ thấp cảnh giác của người xem trước khi tung cú twist. Sự hiện diện của bạn bế mèo tạo yếu tố viral và tiếng cười tự nhiên. Động tác đấm lao thẳng theo trục Z (Z-axis kinetic momentum) tạo xung động thị giác giật mình (Visual Jolt) cực mạnh. Cú đấm che kín 100% cảm biến camera đóng vai trò tấm che vật lý hoàn hảo (Physical In-Camera Masking) để giấu vết cắt tàng hình sang bối cảnh tiếp theo.", "cons": "Thời lượng 8.47s cho một cú Hook là hơi dài so với nhịp lướt Reels thông thường (thường cần dưới 3-4s); ánh sáng phòng có sự chênh lệch giữa đèn cam ấm 3200K và đèn trần huỳnh quang mờ khiến vùng da mặt khi sát camera bị bệt sáng nhẹ.", "takeaway": "Kỹ thuật 'Z-Axis Physical Occlusion Cut': Tận dụng chuyển động cơ thể lao thẳng vào ống kính (nắm đấm, bàn tay, mũ, áo) che kín khung hình tại đúng 1-2 frame để biến nó thành cổng dịch chuyển không gian tự nhiên nhất giữa hai thế giới đối lập.", "shot_type": "Medium Shot to Extreme Close-Up (Góc ngang tầm mắt, tripod cố định)", "lens_angle": "Wide Angle 24mm (Camera 1x Smartphone)", "location": "Phòng làm việc tại gia / Setup máy tính cá nhân (Indonesia)", "lighting_color": "Ánh sáng đèn bàn Tungsten cam ấm (~3200K) kết hợp đèn trần tán xạ", "color_grade": "Natural Indoor Lifestyle • Tông màu ấm cúng, tương phản vừa phải", "sound_design": "Beat nhạc Michael Jackson 'Smooth Criminal' remix dồn dập + Tiếng chân nhún nhảy + Tiếng vút gió cú đấm (Whoosh)", "transition": "In-Camera Fist Wipe Match Cut (Cú đấm che kín ống kính chuyển cảnh sang đỉnh núi)"}, {"id": 2, "st_frame": 255, "mid_frame": 287, "en_frame": 320, "st_time": 8.5, "mid_time": 9.57, "en_time": 10.67, "duration": 2.17, "headline": "Cú Thu Nắm Đấm Mở Ra Đại Ngàn Núi Lửa: Giải Phóng Động Năng & Phong Thái Hero Swagger Bùng Nổ Trên Đỉnh Bromo", "subject_action": "Tiếp nối động năng cú đấm từ Shot 1, ống kính ngoài trời hé lộ nắm đấm mang găng tay đen trong ống tay áo khoác gió đỏ rực (red technical windbreaker) đang thu về từ mặt kính camera. Động tác thu tay mở toang khung cảnh thiên nhiên hùng vĩ trên đỉnh núi đá khô cằn. Diễn viên chính xuất hiện đầy khí chất: áo khoác gió đỏ nổi bật, kính râm thể thao tráng gương đen, sải bước tự tin tiến về phía trước theo nhịp nhạc. Phía sau lưng anh ta trên sườn dốc là người bạn đồng hành trong trang phục trekking dã ngoại, mang balo và vác gậy leo núi nhìn ngắm cảnh quan.", "pros": "Cú Match Cut hoàn hảo 100% về hướng di chuyển và vận tốc tay giữa 2 bối cảnh cách nhau hàng trăm cây số. Sự bùng nổ màu sắc (Color Pop): sắc đỏ rực của áo khoác gió tương phản tột cùng với màu nâu xám của đá núi lửa và màu xanh thẳm của bầu trời (Teal & Orange palette). Bố cục dọc 9:16 tôn vinh tư thế người hùng (Hero Stride) của nhân vật chính.", "cons": "Ánh nắng gắt buổi trưa (High Noon Sun) trên cao nguyên tạo bóng đổ sâu dưới hốc mắt và cằm; kính râm tráng gương đen che khuất hoàn toàn biểu cảm ánh mắt của nhân vật.", "takeaway": "Quy tắc 'Color Pop Outdoor': Khi ghi hình nhân vật giữa thiên nhiên hoang dã, trang bị trang phục màu nóng (đỏ, cam neon) trên nền đất đá núi rừng sẽ tạo điểm nhấn thị giác tách lớp chủ thể sắc lẹm tức thì.", "shot_type": "Low-Angle Medium Close-Up (Góc ngước nhẹ từ dưới lên)", "lens_angle": "Wide Angle 28mm", "location": "Đỉnh sống lưng núi lửa hoang sơ (Bromo Ridge, Indonesia)", "lighting_color": "Ánh nắng mặt trời trực tiếp gay gắt (High Noon Daylight ~5600K)", "color_grade": "Cinematic Teal & Orange Outdoor • Áo đỏ bão hòa cao, trời xanh thẫm, đá nâu ấm", "sound_design": "Beat drop bùng nổ theo câu hát 'You've been struck by a Smooth Criminal' + Tiếng gió rít đỉnh núi", "transition": "Hard Cut theo nhịp phách trống EDM (Rhythmic Beat Cut)"}, {"id": 3, "st_frame": 321, "mid_frame": 344, "en_frame": 368, "st_time": 10.7, "mid_time": 11.47, "en_time": 12.27, "duration": 1.57, "headline": "Cận Cảnh Nghiêng Bán Thân Bí Ẩn (Mysterious Profile Cut): Bắt Trọn Thần Thái Bụi Bặm Của Hiker Giữa Địa Hình Khắc Nghiệt", "subject_action": "Khung hình cắt chuyển sang góc cận nghiêng (Profile Medium Close-Up) của người bạn đồng hành leo núi (@callmeido_444). Anh ta trang bị chuẩn phong cách sinh tồn dã ngoại: nón tai bèo safari màu kem, khăn trùm kín mặt ninja/balaclava đen chỉ để lộ đôi mắt sắc bén, áo phông đen lót găng tay ống rằn ri camo, đeo balo dã ngoại có dắt chai nước khoáng bên hông. Anh ta giữ gậy leo núi ngang vai và khẽ xoay đầu nhìn lướt qua vai hướng về ống kính với phong thái thâm trầm, can trường.", "pros": "Kỹ thuật 'Character Diversity Cut': Cắt đổi sang nhân vật phụ bí ẩn giúp mở rộng chiều sâu câu chuyện chuyến thám hiểm (Expedition Storytelling). Chi tiết phục trang thực địa (găng tay rằn ri, balaclava, gậy trekking) khẳng định độ chân thật của cuộc hành trình. Hậu cảnh vách núi dốc đứng làm nổi bật đường viền của nón tai bèo.", "cons": "Chai nước khoáng vỏ đỏ trắng dắt bên hông balo có logo thương hiệu khá bắt mắt, hơi phân tán điểm nhìn khỏi ánh mắt nhân vật; thời lượng 1.57s hơi ngắn cho một cú chân dung tĩnh.", "takeaway": "Kỹ thuật 'Character Anchor': Trong chuỗi hành động của nhân vật chính, xen kẽ 1-2 shot cận cảnh biểu cảm sắc lạnh của đồng đội sẽ biến video du lịch cá nhân thành một thước phim thám hiểm tài liệu đậm chất điện ảnh.", "shot_type": "Medium Close-Up Profile (Cận nghiêng bán thân)", "lens_angle": "Standard Lens ~40mm", "location": "Sườn dốc núi đá sỏi men theo triền núi lửa", "lighting_color": "Ánh sáng tự nhiên tạt nghiêng (Side Sun Lighting), đổ bóng khối gò má và vành nón", "color_grade": "Tactical Earth Tone • Tông màu đất, xanh rêu quân đội và màu kem safari", "sound_design": "Nhịp bass EDM giữ nhịp ổn định + Tiếng sỏi đá dưới chân lạo xạo", "transition": "Cut-on-Eye-Line (Cắt cảnh theo trục hướng nhìn của mắt)"}, {"id": 4, "st_frame": 369, "mid_frame": 400, "en_frame": 432, "st_time": 12.3, "mid_time": 13.33, "en_time": 14.4, "duration": 2.1, "headline": "Tạo Dáng Che Nắng Chuyển Động Bung Tay: Tôn Vinh Khí Chất Chinh Phục Và Bố Cục Đối Xứng Quyền Lực", "subject_action": "Máy quay trở lại với diễn viên chính, đứng vững trên mỏm đá nhô cao với bộ đồ thể thao leo núi màu đen (áo thun kỹ thuật ôm sát, găng tay chống nắng rằn ri, quần dã ngoại đen). Ban đầu, anh ta chụm hai bàn tay đặt lên trán làm cử chỉ che nắng nhìn xa xăm về phía chân trời. Liền sau đó, anh ta hạ tay xuống, đeo kính râm thể thao đen bóng, nhìn thẳng trực diện vào ống kính và dang rộng hai cánh tay sang hai bên như sải cánh đại bàng đón gió lộng giữa đất trời bao la.", "pros": "Cử động tay biến chuyển nhịp nhàng từ 'khép' (che trán) sang 'mở' (bung rộng hai cánh tay) mở rộng trường nhìn của người xem từ khuôn mặt ra toàn cảnh hùng vĩ. Bố cục đối xứng trung tâm (Symmetrical Central Framing) tạo cảm giác quyền lực, vững chãi của người chinh phục. Biểu cảm cool ngầu hài hước ngầm cực kỳ ăn khớp với tinh thần bài hát.", "cons": "Ánh nắng rọi thẳng từ đỉnh đầu (Top Light) tạo bóng đổ dưới cằm; các chi tiết trên nền áo đen bị tối nhẹ nếu màn hình điện thoại người xem ở độ sáng thấp.", "takeaway": "Kỹ thuật 'Frame Expansion Gesture': Sử dụng động tác dang rộng hai cánh tay của chủ thể để phá vỡ giới hạn chật hẹp của khung hình dọc 9:16, kích thích người xem cảm nhận được sự vô tận của không gian xung quanh.", "shot_type": "Low-to-Eye Level Medium Shot (Góc ngang ngực ngước nhẹ)", "lens_angle": "Wide Angle ~28mm", "location": "Mỏm đá cao nhìn xuống lòng thung lũng núi lửa", "lighting_color": "Ánh nắng ban trưa chói chang, bóng đổ vuông góc", "color_grade": "High-Contrast Adventure Grade • Áo đen tuyền tương phản với nền trời xanh thẳm", "sound_design": "Giai điệu synthwave / EDM dâng trào theo từng phách nhạc Smooth Criminal", "transition": "Match Action Cut theo nhịp chuyển động cơ thể"}, {"id": 5, "st_frame": 433, "mid_frame": 447, "en_frame": 462, "st_time": 14.43, "mid_time": 14.9, "en_time": 15.4, "duration": 0.97, "headline": "Góc Máy Vác Gậy Thám Hiểm Lướt Nhanh (Staccato Accented Cut): Đẩy Cao Nhịp Điệu Dồn Dập Trước Khi Bung Hồi Kết Toàn Cảnh", "subject_action": "Người bạn đồng hành xuất hiện trở lại trong góc máy bán diện trung bình, hai tay vác thanh gậy leo núi màu cam ngang sau gáy qua hai vai. Anh ta đứng vững chãi trên sườn núi đá dốc, xoay người nhìn chếch về phía ống kính máy quay với ánh mắt thám hiểm sắc lẹm, sẵn sàng cho những thử thách khắc nghiệt tiếp theo trên cung đường hành quân.", "pros": "Đường xiên chéo của cây gậy trekking màu cam (Diagonal Leading Line) chia cắt khung hình linh hoạt, định hướng mắt nhìn từ góc trái sang góc phải. Thời lượng siêu ngắn 0.97s đóng vai trò như một nhịp dằn (Accented Staccato Beat), tạo lực đẩy dồn dập trước khi bung shot kết toàn cảnh. Màu cam của gậy tạo điểm nhấn màu sắc (Color Accent) tinh tế.", "cons": "Thời lượng dưới 1 giây diễn ra rất nhanh, đòi hỏi người xem phải tập trung cao độ; góc máy tương tự shot 3 nhưng rộng hơn đôi chút.", "takeaway": "Sử dụng 'Staccato Cut' (Shot đệm cực ngắn < 1s) ngay trước shot kết thúc là công thức kinh điển để gia tăng dopamine, tạo nhịp điệu dồn dập như trailer điện ảnh chuyên nghiệp.", "shot_type": "Medium Shot Low-Angle (Góc ngang hông ngước nhẹ)", "lens_angle": "Standard Wide ~35mm", "location": "Đường mòn sỏi đá men triền núi cao", "lighting_color": "Ánh sáng tự nhiên ngược sáng nhẹ (Subtle Rim Light trên vành nón)", "color_grade": "Warm Earth & Tactical Slate • Điểm nhấn cam neon trên thanh gậy leo núi", "sound_design": "Cú gõ beat dồn dập (Snare Riser) chuẩn bị vào hồi kết", "transition": "Fast Jump Cut sang Hero Back View"}, {"id": 6, "st_frame": 463, "mid_frame": 486, "en_frame": 509, "st_time": 15.43, "mid_time": 16.2, "en_time": 17.0, "duration": 1.57, "headline": "Hero Shot Từ Sau Lưng Đứng Đỉnh Mỏm Đá (Back-View Summit Pose): Biểu Tượng Chinh Phục Tự Do Giữa Vực Thẳm Đại Ngàn", "subject_action": "Máy quay đặt từ phía sau lưng diễn viên chính (Back POV Hero Shot), hơi ngước nhẹ từ dưới lên. Diễn viên đứng dạng hai chân vững như bàn thạch trên mỏm đá nhô cao nhất ở mép vực, hai cánh tay dang rộng sang hai bên, lưng thẳng kiêu hãnh, hướng ánh nhìn ra không gian bao la của thung lũng núi lửa và những rặng núi trùng điệp phía xa. Cảnh tượng mở ra thiên nhiên kỳ vĩ, khép lại hành trình dịch chuyển ngoạn mục từ căn phòng 4 bức tường ra đỉnh cao thế giới.", "pros": "Góc quay mang tính biểu tượng điện ảnh (Wanderer above the Sea of Fog aesthetic): Người xem như được hóa thân vào người lữ hành, hòa mình vào cảm giác tự do giải phóng năng lượng tuyệt đối. Bố cục đối xứng hoàn hảo theo trục dọc cơ thể (hình chữ X cân bằng giữa khung hình). Tác động cảm xúc mạnh mẽ, kích hoạt khát khao xê dịch (High Travel Aspiration & Wanderlust Trigger).", "cons": "Do thời lượng video dừng ở 17.00s, shot này khép lại khá nhanh khi chưa kịp thực hiện cú lùi máy (Dolly Out / Slow Zoom Out) để tôn thêm độ vĩ đại của khung cảnh.", "takeaway": "Kỹ thuật 'The Victorious Back Pose': Kết thúc video du lịch khám phá bằng một góc quay từ sau lưng nhân vật nhìn ra không gian rộng lớn nhất sẽ kích thích người xem đồng nhất bản thân với câu chuyện, tạo tỷ lệ lưu (Save) và chia sẻ (Share) cao nhất.", "shot_type": "Low-Angle Wide Back Shot (Góc quay từ sau lưng ngước lên)", "lens_angle": "Wide Angle ~24mm", "location": "Mép mỏm đá nhô ra thung lũng núi lửa (Indonesian Volcano Ridge Edge)", "lighting_color": "Ánh sáng ban ngày rực rỡ, chi tiết sắc nét trên bề mặt đá và vân áo", "color_grade": "Epic Cinematic Landscape • Tương phản sâu, chi tiết sắc cạnh, bầu trời xanh ngắt", "sound_design": "Âm nhạc kết thúc dứt khoát theo cú pose dáng kiêu hãnh", "transition": "Reel End / Infinite Loop Ready"}];
+<script>const SHOTS_DATA = [{"id": 1, "st_frame": 0, "mid_frame": 127, "en_frame": 254, "st_time": 0.0, "mid_time": 4.23, "en_time": 8.47, "duration": 8.47, "headline": "Hook Vũ Đạo Hài Hước Đời Thường & Cú Đấm Trực Diện Che Kín Ống Kính: Tạo Lực Hút Bất Ngờ Bằng Kỹ Thuật Physical Lens Occlusion", "subject_action": "Diễn viên (@bysuncan) mặc áo thun dài tay trắng và quần đùi thể thao đen, ban đầu ngồi cúi người tại bàn máy tính góc phòng làm việc (đèn bàn hắt ánh sáng cam ấm). Khi tiếng beat Smooth Criminal nổi lên, anh ta đứng bật dậy tiến sát ống kính, lắc hông, nhún nhảy và múa tay theo vũ đạo khởi động quyền anh cực kỳ dí dỏm. Phía sau lưng, người bạn (@vildokswaraa) bế một chú mèo nhỏ đứng tựa tường quan sát với vẻ mặt thản nhiên (deadpan expression). Đến đúng nhịp cao trào bài hát ('You've been struck by...'), diễn viên bất ngờ tung cú đấm tay phải cực mạnh (Right Cross) lao thẳng vào tâm ống kính camera, khiến nắm đấm choán ngợp và che kín hoàn toàn cảm biến máy quay.", "pros": "Khởi đầu bằng bối cảnh phòng ngủ/studio công nghệ 2m² cực kỳ chân thật, hạ thấp cảnh giác của người xem trước khi tung cú twist. Sự hiện diện của bạn bế mèo tạo yếu tố viral và tiếng cười tự nhiên. Động tác đấm lao thẳng theo trục Z (Z-axis kinetic momentum) tạo xung động thị giác giật mình (Visual Jolt) cực mạnh. Cú đấm che kín 100% cảm biến camera đóng vai trò tấm che vật lý hoàn hảo (Physical In-Camera Masking) để giấu vết cắt tàng hình sang bối cảnh tiếp theo.", "cons": "Thời lượng 8.47s cho một cú Hook là hơi dài so với nhịp lướt Reels thông thường (thường cần dưới 3-4s); ánh sáng phòng có sự chênh lệch giữa đèn cam ấm 3200K và đèn trần huỳnh quang mờ khiến vùng da mặt khi sát camera bị bệt sáng nhẹ.", "takeaway": "Kỹ thuật 'Z-Axis Physical Occlusion Cut': Tận dụng chuyển động cơ thể lao thẳng vào ống kính (nắm đấm, bàn tay, mũ, áo) che kín khung hình tại đúng 1-2 frame để biến nó thành cổng dịch chuyển không gian tự nhiên nhất giữa hai thế giới đối lập.", "shot_type": "Medium Shot to Extreme Close-Up (Góc ngang tầm mắt, tripod cố định)", "lens_angle": "Wide Angle 24mm (Camera 1x Smartphone)", "location": "Phòng làm việc tại gia / Setup máy tính cá nhân (Indonesia)", "lighting_color": "Ánh sáng đèn bàn Tungsten cam ấm (~3200K) kết hợp đèn trần tán xạ", "color_grade": "Natural Indoor Lifestyle • Tông màu ấm cúng, tương phản vừa phải", "sound_design": "Beat nhạc Michael Jackson 'Smooth Criminal' remix dồn dập + Tiếng chân nhún nhảy + Tiếng vút gió cú đấm (Whoosh)", "transition": "In-Camera Fist Wipe Match Cut (Cú đấm che kín ống kính chuyển cảnh sang đỉnh núi)"}, {"id": 2, "st_frame": 255, "mid_frame": 287, "en_frame": 320, "st_time": 8.5, "mid_time": 9.57, "en_time": 10.67, "duration": 2.17, "headline": "Cú Thu Nắm Đấm Mở Ra Đại Ngàn Núi Lửa: Giải Phóng Động Năng & Phong Thái Hero Swagger Bùng Nổ Trên Đỉnh Bromo", "subject_action": "Tiếp nối động năng cú đấm từ Shot 1, ống kính ngoài trời hé lộ nắm đấm mang găng tay đen trong ống tay áo khoác gió đỏ rực (red technical windbreaker) đang thu về từ mặt kính camera. Động tác thu tay mở toang khung cảnh thiên nhiên hùng vĩ trên đỉnh núi đá khô cằn. Diễn viên chính xuất hiện đầy khí chất: áo khoác gió đỏ nổi bật, kính râm thể thao tráng gương đen, sải bước tự tin tiến về phía trước theo nhịp nhạc. Phía sau lưng anh ta trên sườn dốc là người bạn đồng hành trong trang phục trekking dã ngoại, mang balo và vác gậy leo núi nhìn ngắm cảnh quan.", "pros": "Cú Match Cut hoàn hảo 100% về hướng di chuyển và vận tốc tay giữa 2 bối cảnh cách nhau hàng trăm cây số. Sự bùng nổ màu sắc (Color Pop): sắc đỏ rực của áo khoác gió tương phản tột cùng với màu nâu xám của đá núi lửa và màu xanh thẳm của bầu trời (Teal & Orange palette). Bố cục dọc 9:16 tôn vinh tư thế người hùng (Hero Stride) của nhân vật chính.", "cons": "Ánh nắng gắt buổi trưa (High Noon Sun) trên cao nguyên tạo bóng đổ sâu dưới hốc mắt và cằm; kính râm tráng gương đen che khuất hoàn toàn biểu cảm ánh mắt của nhân vật.", "takeaway": "Quy tắc 'Color Pop Outdoor': Khi ghi hình nhân vật giữa thiên nhiên hoang dã, trang bị trang phục màu nóng (đỏ, cam neon) trên nền đất đá núi rừng sẽ tạo điểm nhấn thị giác tách lớp chủ thể sắc lẹm tức thì.", "shot_type": "Low-Angle Medium Close-Up (Góc ngước nhẹ từ dưới lên)", "lens_angle": "Wide Angle 28mm", "location": "Đỉnh sống lưng núi lửa hoang sơ (Bromo Ridge, Indonesia)", "lighting_color": "Ánh nắng mặt trời trực tiếp gay gắt (High Noon Daylight ~5600K)", "color_grade": "Cinematic Teal & Orange Outdoor • Áo đỏ bão hòa cao, trời xanh thẫm, đá nâu ấm", "sound_design": "Beat drop bùng nổ theo câu hát 'You've been struck by a Smooth Criminal' + Tiếng gió rít đỉnh núi", "transition": "Hard Cut theo nhịp phách trống EDM (Rhythmic Beat Cut)"}, {"id": 3, "st_frame": 321, "mid_frame": 344, "en_frame": 368, "st_time": 10.7, "mid_time": 11.47, "en_time": 12.27, "duration": 1.57, "headline": "Cận Cảnh Nghiêng Bán Thân Bí Ẩn (Mysterious Profile Cut): Bắt Trọn Thần Thái Bụi Bặm Của Hiker Giữa Địa Hình Khắc Nghiệt", "subject_action": "Khung hình cắt chuyển sang góc cận nghiêng (Profile Medium Close-Up) của người bạn đồng hành leo núi (@callmeido_444). Anh ta trang bị chuẩn phong cách sinh tồn dã ngoại: nón tai bèo safari màu kem, khăn trùm kín mặt ninja/balaclava đen chỉ để lộ đôi mắt sắc bén, áo phông đen lót găng tay ống rằn ri camo, đeo balo dã ngoại có dắt chai nước khoáng bên hông. Anh ta giữ gậy leo núi ngang vai và khẽ xoay đầu nhìn lướt qua vai hướng về ống kính với phong thái thâm trầm, can trường.", "pros": "Kỹ thuật 'Character Diversity Cut': Cắt đổi sang nhân vật phụ bí ẩn giúp mở rộng chiều sâu câu chuyện chuyến thám hiểm (Expedition Storytelling). Chi tiết phục trang thực địa (găng tay rằn ri, balaclava, gậy trekking) khẳng định độ chân thật của cuộc hành trình. Hậu cảnh vách núi dốc đứng làm nổi bật đường viền của nón tai bèo.", "cons": "Chai nước khoáng vỏ đỏ trắng dắt bên hông balo có logo thương hiệu khá bắt mắt, hơi phân tán điểm nhìn khỏi ánh mắt nhân vật; thời lượng 1.57s hơi ngắn cho một cú chân dung tĩnh.", "takeaway": "Kỹ thuật 'Character Anchor': Trong chuỗi hành động của nhân vật chính, xen kẽ 1-2 shot cận cảnh biểu cảm sắc lạnh của đồng đội sẽ biến video du lịch cá nhân thành một thước phim thám hiểm tài liệu đậm chất điện ảnh.", "shot_type": "Medium Close-Up Profile (Cận nghiêng bán thân)", "lens_angle": "Standard Lens ~40mm", "location": "Sườn dốc núi đá sỏi men theo triền núi lửa", "lighting_color": "Ánh sáng tự nhiên tạt nghiêng (Side Sun Lighting), đổ bóng khối gò má và vành nón", "color_grade": "Tactical Earth Tone • Tông màu đất, xanh rêu quân đội và màu kem safari", "sound_design": "Nhịp bass EDM giữ nhịp ổn định + Tiếng sỏi đá dưới chân lạo xạo", "transition": "Cut-on-Eye-Line (Cắt cảnh theo trục hướng nhìn của mắt)"}, {"id": 4, "st_frame": 369, "mid_frame": 400, "en_frame": 432, "st_time": 12.3, "mid_time": 13.33, "en_time": 14.4, "duration": 2.1, "headline": "Tạo Dáng Che Nắng Chuyển Động Bung Tay: Tôn Vinh Khí Chất Chinh Phục Và Bố Cục Đối Xứng Quyền Lực", "subject_action": "Máy quay trở lại với diễn viên chính, đứng vững trên mỏm đá nhô cao với bộ đồ thể thao leo núi màu đen (áo thun kỹ thuật ôm sát, găng tay chống nắng rằn ri, quần dã ngoại đen). Ban đầu, anh ta chụm hai bàn tay đặt lên trán làm cử chỉ che nắng nhìn xa xăm về phía chân trời. Liền sau đó, anh ta hạ tay xuống, đeo kính râm thể thao đen bóng, nhìn thẳng trực diện vào ống kính và dang rộng hai cánh tay sang hai bên như sải cánh đại bàng đón gió lộng giữa đất trời bao la.", "pros": "Cử động tay biến chuyển nhịp nhàng từ 'khép' (che trán) sang 'mở' (bung rộng hai cánh tay) mở rộng trường nhìn của người xem từ khuôn mặt ra toàn cảnh hùng vĩ. Bố cục đối xứng trung tâm (Symmetrical Central Framing) tạo cảm giác quyền lực, vững chãi của người chinh phục. Biểu cảm cool ngầu hài hước ngầm cực kỳ ăn khớp với tinh thần bài hát.", "cons": "Ánh nắng rọi thẳng từ đỉnh đầu (Top Light) tạo bóng đổ dưới cằm; các chi tiết trên nền áo đen bị tối nhẹ nếu màn hình điện thoại người xem ở độ sáng thấp.", "takeaway": "Kỹ thuật 'Frame Expansion Gesture': Sử dụng động tác dang rộng hai cánh tay của chủ thể để phá vỡ giới hạn chật hẹp của khung hình dọc 9:16, kích thích người xem cảm nhận được sự vô tận của không gian xung quanh.", "shot_type": "Low-to-Eye Level Medium Shot (Góc ngang ngực ngước nhẹ)", "lens_angle": "Wide Angle ~28mm", "location": "Mỏm đá cao nhìn xuống lòng thung lũng núi lửa", "lighting_color": "Ánh nắng ban trưa chói chang, bóng đổ vuông góc", "color_grade": "High-Contrast Adventure Grade • Áo đen tuyền tương phản với nền trời xanh thẳm", "sound_design": "Giai điệu synthwave / EDM dâng trào theo từng phách nhạc Smooth Criminal", "transition": "Match Action Cut theo nhịp chuyển động cơ thể"}, {"id": 5, "st_frame": 433, "mid_frame": 447, "en_frame": 462, "st_time": 14.43, "mid_time": 14.9, "en_time": 15.4, "duration": 0.97, "headline": "Góc Máy Vác Gậy Thám Hiểm Lướt Nhanh (Staccato Accented Cut): Đẩy Cao Nhịp Điệu Dồn Dập Trước Khi Bung Hồi Kết Toàn Cảnh", "subject_action": "Người bạn đồng hành xuất hiện trở lại trong góc máy bán diện trung bình, hai tay vác thanh gậy leo núi màu cam ngang sau gáy qua hai vai. Anh ta đứng vững chãi trên sườn núi đá dốc, xoay người nhìn chếch về phía ống kính máy quay với ánh mắt thám hiểm sắc lẹm, sẵn sàng cho những thử thách khắc nghiệt tiếp theo trên cung đường hành quân.", "pros": "Đường xiên chéo của cây gậy trekking màu cam (Diagonal Leading Line) chia cắt khung hình linh hoạt, định hướng mắt nhìn từ góc trái sang góc phải. Thời lượng siêu ngắn 0.97s đóng vai trò như một nhịp dằn (Accented Staccato Beat), tạo lực đẩy dồn dập trước khi bung shot kết toàn cảnh. Màu cam của gậy tạo điểm nhấn màu sắc (Color Accent) tinh tế.", "cons": "Thời lượng dưới 1 giây diễn ra rất nhanh, đòi hỏi người xem phải tập trung cao độ; góc máy tương tự shot 3 nhưng rộng hơn đôi chút.", "takeaway": "Sử dụng 'Staccato Cut' (Shot đệm cực ngắn < 1s) ngay trước shot kết thúc là công thức kinh điển để gia tăng dopamine, tạo nhịp điệu dồn dập như trailer điện ảnh chuyên nghiệp.", "shot_type": "Medium Shot Low-Angle (Góc ngang hông ngước nhẹ)", "lens_angle": "Standard Wide ~35mm", "location": "Đường mòn sỏi đá men triền núi cao", "lighting_color": "Ánh sáng tự nhiên ngược sáng nhẹ (Subtle Rim Light trên vành nón)", "color_grade": "Warm Earth & Tactical Slate • Điểm nhấn cam neon trên thanh gậy leo núi", "sound_design": "Cú gõ beat dồn dập (Snare Riser) chuẩn bị vào hồi kết", "transition": "Fast Jump Cut sang Hero Back View"}, {"id": 6, "st_frame": 463, "mid_frame": 486, "en_frame": 509, "st_time": 15.43, "mid_time": 16.2, "en_time": 17.0, "duration": 1.57, "headline": "Hero Shot Từ Sau Lưng Đứng Đỉnh Mỏm Đá (Back-View Summit Pose): Biểu Tượng Chinh Phục Tự Do Giữa Vực Thẳm Đại Ngàn", "subject_action": "Máy quay đặt từ phía sau lưng diễn viên chính (Back POV Hero Shot), hơi ngước nhẹ từ dưới lên. Diễn viên đứng dạng hai chân vững như bàn thạch trên mỏm đá nhô cao nhất ở mép vực, hai cánh tay dang rộng sang hai bên, lưng thẳng kiêu hãnh, hướng ánh nhìn ra không gian bao la của thung lũng núi lửa và những rặng núi trùng điệp phía xa. Cảnh tượng mở ra thiên nhiên kỳ vĩ, khép lại hành trình dịch chuyển ngoạn mục từ căn phòng 4 bức tường ra đỉnh cao thế giới.", "pros": "Góc quay mang tính biểu tượng điện ảnh (Wanderer above the Sea of Fog aesthetic): Người xem như được hóa thân vào người lữ hành, hòa mình vào cảm giác tự do giải phóng năng lượng tuyệt đối. Bố cục đối xứng hoàn hảo theo trục dọc cơ thể (hình chữ X cân bằng giữa khung hình). Tác động cảm xúc mạnh mẽ, kích hoạt khát khao xê dịch (High Travel Aspiration & Wanderlust Trigger).", "cons": "Do thời lượng video dừng ở 17.00s, shot này khép lại khá nhanh khi chưa kịp thực hiện cú lùi máy (Dolly Out / Slow Zoom Out) để tôn thêm độ vĩ đại của khung cảnh.", "takeaway": "Kỹ thuật 'The Victorious Back Pose': Kết thúc video du lịch khám phá bằng một góc quay từ sau lưng nhân vật nhìn ra không gian rộng lớn nhất sẽ kích thích người xem đồng nhất bản thân với câu chuyện, tạo tỷ lệ lưu (Save) và chia sẻ (Share) cao nhất.", "shot_type": "Low-Angle Wide Back Shot (Góc quay từ sau lưng ngước lên)", "lens_angle": "Wide Angle ~24mm", "location": "Mép mỏm đá nhô ra thung lũng núi lửa (Indonesian Volcano Ridge Edge)", "lighting_color": "Ánh sáng ban ngày rực rỡ, chi tiết sắc nét trên bề mặt đá và vân áo", "color_grade": "Epic Cinematic Landscape • Tương phản sâu, chi tiết sắc cạnh, bầu trời xanh ngắt", "sound_design": "Âm nhạc kết thúc dứt khoát theo cú pose dáng kiêu hãnh", "transition": "Reel End / Infinite Loop Ready"}];
 const player = document.getElementById('mainPlayer');
 const playBtn = document.getElementById('playBtn');
 const timeDisplay = document.getElementById('timeDisplay');
 const loopBtn = document.getElementById('loopBtn');
-
 let currentLoopShot = null;
 let isLooping = false;
-
-// Timeupdate listener
 player.addEventListener('timeupdate', () => {
-    const ct = player.currentTime;
-    timeDisplay.textContent = ct.toFixed(2) + 's / ' + (player.duration ? player.duration.toFixed(2) : '17.00') + 's';
-
-    if (isLooping && currentLoopShot) {
-        if (ct >= currentLoopShot.en_time) {
-            player.currentTime = currentLoopShot.st_time;
-        }
-    }
+const ct = player.currentTime;
+timeDisplay.textContent = ct.toFixed(2) + 's / ' + (player.duration ? player.duration.toFixed(2) : '17.00') + 's';
+if (isLooping && currentLoopShot) {
+if (ct >= currentLoopShot.en_time) {
+player.currentTime = currentLoopShot.st_time;
+}
+}
 });
-
 player.addEventListener('play', () => { playBtn.textContent = '⏸ Tạm dừng'; });
 player.addEventListener('pause', () => { playBtn.textContent = '▶ Phát'; });
-
 function togglePlay() {
-    if (player.paused) player.play();
-    else player.pause();
+if (player.paused) player.play();
+else player.pause();
 }
-
 function setSpeed(speed) {
-    player.playbackRate = speed;
-    document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
-        if (b.textContent === speed + 'x') b.classList.add('active');
-        else if (b.textContent.includes('x')) b.classList.remove('active');
-    });
-}
-
-function stepFrame(frames) {
-    const fps = 30.0 || 24;
-    player.currentTime += frames / fps;
-}
-
-function jumpToShot(shotId, stTime, enTime) {
-    player.currentTime = stTime;
-    player.play();
-    currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
-
-    // Highlight card
-    document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
-    const targetCard = document.getElementById('shot-' + shotId);
-    if (targetCard) {
-        targetCard.style.borderColor = 'var(--cl-accent)';
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
-function toggleLoop() {
-    isLooping = !isLooping;
-    loopBtn.classList.toggle('active', isLooping);
-}
-
-function switchView(viewName) {
-    const detailView = document.getElementById('detailView');
-    const gridView = document.getElementById('gridView');
-    const tabDetail = document.getElementById('tabDetail');
-    const tabGrid = document.getElementById('tabGrid');
-
-    if (viewName === 'detail') {
-        detailView.style.display = 'flex';
-        gridView.style.display = 'none';
-        tabDetail.classList.add('active');
-        tabGrid.classList.remove('active');
-    } else {
-        detailView.style.display = 'none';
-        gridView.style.display = 'grid';
-        tabDetail.classList.remove('active');
-        tabGrid.classList.add('active');
-    }
-}
-
-// Lightbox
-function openLightbox(src, caption) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').textContent = caption || '';
-    document.getElementById('lightboxModal').classList.add('active');
-}
-
-function closeLightbox() {
-    document.getElementById('lightboxModal').classList.remove('active');
-}
-
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+player.playbackRate = speed;
+document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
+if (b.textContent === speed + 'x') b.classList.add('active');
+else if (b.textContent.includes('x')) b.classList.remove('active');
 });
-</script>
+}
+function stepFrame(frames) {
+const fps = 30.0 || 24;
+player.currentTime += frames / fps;
+}
+function jumpToShot(shotId, stTime, enTime) {
+player.currentTime = stTime;
+player.play();
+currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
+document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
+const targetCard = document.getElementById('shot-' + shotId);
+if (targetCard) {
+targetCard.style.borderColor = 'var(--cl-accent)';
+targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+}
+function toggleLoop() {
+isLooping = !isLooping;
+loopBtn.classList.toggle('active', isLooping);
+}
+function switchView(viewName) {
+const detailView = document.getElementById('detailView');
+const gridView = document.getElementById('gridView');
+const tabDetail = document.getElementById('tabDetail');
+const tabGrid = document.getElementById('tabGrid');
+if (viewName === 'detail') {
+detailView.style.display = 'flex';
+gridView.style.display = 'none';
+tabDetail.classList.add('active');
+tabGrid.classList.remove('active');
+} else {
+detailView.style.display = 'none';
+gridView.style.display = 'grid';
+tabDetail.classList.remove('active');
+tabGrid.classList.add('active');
+}
+}
+function openLightbox(src, caption) {
+document.getElementById('lightboxImg').src = src;
+document.getElementById('lightboxCaption').textContent = caption || '';
+document.getElementById('lightboxModal').classList.add('active');
+}
+function closeLightbox() {
+document.getElementById('lightboxModal').classList.remove('active');
+}
+document.addEventListener('keydown', (e) => {
+if (e.key === 'Escape') closeLightbox();
+});</script>
 
 </body>
 </html>
