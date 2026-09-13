@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 209,
-  "total_unique_ideas": 188,
-  "total_active_ideas": 156,
+  "total_scene_items": 210,
+  "total_unique_ideas": 189,
+  "total_active_ideas": 157,
   "total_excluded_ideas": 32,
-  "total_creators": 100,
+  "total_creators": 101,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 11,
     "storytelling": 17,
     "dien-anh": 85,
-    "chuyen-canh": 34
+    "chuyen-canh": 35
   },
   "industries": [
     {
@@ -149,7 +149,7 @@ var FEDU_IDEAS_DATABASE = {
     "du-lich": 21,
     "cong-nghe": 22,
     "kien-truc": 17,
-    "the-thao": 6,
+    "the-thao": 7,
     "ky-thuat-quay": 42
   },
   "countries": [
@@ -205,7 +205,7 @@ var FEDU_IDEAS_DATABASE = {
   "country_stats": {
     "us_eu": 75,
     "korea": 11,
-    "india": 6,
+    "india": 7,
     "japan": 10,
     "vietnam": 2,
     "asia_other": 44
@@ -496,6 +496,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@sanjogchopra",
+      "name": "Sanjog Chopra",
+      "profile_url": "https://www.instagram.com/sanjogchopra/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation"
       ]
     },
     {
@@ -1369,6 +1380,68 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation",
+      "shortcode": "Dcxi128sxO9_",
+      "title_vi": "Dancing to the Beat • Phân Tích 17 Phân Cảnh B-Roll Gym Điện Ảnh & Tài Trợ Khéo Léo",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "B-roll gym nhịp nhanh kết hợp tài trợ MuscleBlaze CreAMP",
+      "tech_tags": [
+        "Fast-Cut Beat Sync",
+        "B&W Noir Awakening Hook",
+        "Organic Product Placement",
+        "Backlit Chalk Dust Explosion",
+        "Floor-Level Foreground Outro"
+      ],
+      "logic_explanation": "Mở đầu bằng cận cảnh mắt đen trắng tĩnh lặng, tăng tốc chóng mặt với micro-montage grooming buổi sáng, dằn hộp MuscleBlaze CreAMP tạo điểm nhấn thương hiệu, bùng nổ chuỗi bài tập gym nặng theo từng nốt guitar điện và kết thúc bằng cú máy sát sàn thong dong.",
+      "creator": {
+        "raw": "@sanjogchopra",
+        "name": "Sanjog Chopra",
+        "handle": "@sanjogchopra",
+        "profile_url": "https://www.instagram.com/sanjogchopra/"
+      },
+      "ig_url": "https://www.instagram.com/sanjogchopra/",
+      "gdrive_folder": "https://drive.google.com/open?id=1-7BlIChO1_mFvDRdYTDQAFApRQmeNOrI",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcxi128sxO9.mp4",
+        "report_url": "reports/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation.html",
+        "shots_count": 17,
+        "duration": "9.84s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process",
       "shortcode": "DdHMOB0xfd1",
