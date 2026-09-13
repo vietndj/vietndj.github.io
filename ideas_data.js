@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 181,
-  "total_unique_ideas": 168,
-  "total_active_ideas": 136,
+  "total_scene_items": 183,
+  "total_unique_ideas": 170,
+  "total_active_ideas": 138,
   "total_excluded_ideas": 32,
-  "total_creators": 86,
+  "total_creators": 87,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 16,
-    "dien-anh": 75,
+    "dien-anh": 77,
     "chuyen-canh": 25
   },
   "industries": [
@@ -147,7 +147,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 8,
     "am-thuc": 14,
     "du-lich": 18,
-    "cong-nghe": 20,
+    "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
     "ky-thuat-quay": 36
@@ -207,7 +207,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 8,
     "india": 6,
     "japan": 10,
-    "vietnam": 0,
+    "vietnam": 2,
     "asia_other": 44
   },
   "creators_hub": [
@@ -457,6 +457,18 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@ulanzi",
+      "name": "Ulanzi Official",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 2,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_01_mid.jpg",
+      "video_ids": [
+        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
       ]
     },
     {
@@ -1310,7 +1322,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/Fast Food Outsells Restaurant - @shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant.html",
         "shots_count": 16,
-        "duration": "32s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -1365,7 +1377,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.mp4",
         "report_url": "reports/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.html",
         "shots_count": 7,
-        "duration": "14s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -1475,7 +1487,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DawDiT2M1p8.mp4",
         "report_url": "reports/Coffee + Outfit Match Cut Transition - @jamison.lange.html",
         "shots_count": 22,
-        "duration": "44s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "nang-cao",
@@ -1656,7 +1668,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Creative Phone Video Ideas - Routine Creator - @valenti_k41.mp4",
         "report_url": "reports/Creative Phone Video Ideas - Routine Creator - @valenti_k41.html",
         "shots_count": 15,
-        "duration": "30s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -1716,7 +1728,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdEshZtz9Rb.mp4",
         "report_url": "reports/Lifestyle Habit & Cinematic Routine - @joshdiazfilms.html",
         "shots_count": 9,
-        "duration": "18s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -1789,8 +1801,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang",
       "shortcode": "DcvmVl2hbuY",
-      "title_vi": "@주서방 DcvmVl2hbuY Video by ju seobang",
-      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 6 phân cảnh.",
+      "title_vi": "@주서방 - Video by ju seobang",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
       "shooting_style": {
         "id": "dien-anh",
@@ -1832,7 +1844,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvmVl2hbuY.mp4",
         "report_url": "reports/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang.html",
         "shots_count": 6,
-        "duration": "12s"
+        "duration": "0.15s"
       },
       "complexity": {
         "id": "de",
@@ -1892,7 +1904,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DchxEAkJ9Hw.mp4",
         "report_url": "reports/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu.html",
         "shots_count": 12,
-        "duration": "24s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -2010,7 +2022,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Hoi An Natural Mask Transitions - @hey.lirules.mp4",
         "report_url": "reports/Hoi An Natural Mask Transitions - @hey.lirules.html",
         "shots_count": 11,
-        "duration": "22s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -2129,7 +2141,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/DcyS2KEm7-v.mp4",
         "report_url": "reports/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light.html",
         "shots_count": 0,
-        "duration": "15s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -2249,7 +2261,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/One Lamp Beats Five - @shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five.html",
         "shots_count": 16,
-        "duration": "32s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "trung-binh",
@@ -2370,7 +2382,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Creative phone video ideas - @valenti_k41.mp4",
         "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
         "shots_count": 6,
-        "duration": "12s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -2733,7 +2745,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Getting Ready Faster Than Ever - @jesussropero.mp4",
         "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
         "shots_count": 3,
-        "duration": "6s"
+        "duration": "0.2s"
       },
       "complexity": {
         "id": "de",
@@ -10813,6 +10825,120 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+      "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+      "title_vi": "Ulanzi UA20 Đèn LED Thanh Bơm Hơi 20W Bi-Color Tích Hợp Pin",
+      "quick_takeaway": "Video quảng cáo UGC sàn Lazada áp dụng công thức AIDA: Gây chú ý (Attention), khơi gợi hứng thú (Interest), thúc đẩy mong muốn (Desire) và kêu gọi hành động (Action).",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Video quảng cáo thương mại điện tử Lazada theo cấu trúc AIDA & phong cách UGC thực chiến",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA"
+      ],
+      "logic_explanation": "Video UGC tối ưu cho sàn Lazada bám sát công thức AIDA: Mở đầu trực quan giữ chân người xem, trình diễn tính năng giải quyết vấn đề thực tế và thúc đẩy mua hàng.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi Official",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi/shot_03_mid.jpg",
+        "video_url": "./videos/LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi.mp4",
+        "report_url": "",
+        "shots_count": 1,
+        "duration": "2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
+      "shortcode": "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả",
+      "title_vi": "ULANZI MT80 Chân Máy Tripod Cao 213cm Tải Trọng 5kg",
+      "quick_takeaway": "Video quảng cáo UGC sàn Shopee áp dụng công thức AIDA: Gây chú ý (Attention), khơi gợi hứng thú (Interest), thúc đẩy mong muốn (Desire) và kêu gọi hành động (Action).",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Video quảng cáo thương mại điện tử Shopee theo cấu trúc AIDA & phong cách UGC thực chiến",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA"
+      ],
+      "logic_explanation": "Video UGC tối ưu cho sàn Shopee bám sát công thức AIDA: Mở đầu trực quan giữ chân người xem, trình diễn tính năng giải quyết vấn đề thực tế và thúc đẩy mua hàng.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi Official",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://shopee.vn/ULANZI-MT80-Ch%C3%A2n-M%C3%A1y-Tripod-ULANZI-MT-80-Chi%E1%BB%81u-Cao-213cm-T%E1%BA%A3i-Tr%E1%BB%8Dng-5kg-H%C3%A0ng-Ch%C3%ADnh-H%C3%A3ng-i.1146051656.42829427636",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả/shot_03_mid.jpg",
+        "video_url": "./videos/SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả.mp4",
+        "report_url": "",
+        "shots_count": 1,
+        "duration": "2s"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
