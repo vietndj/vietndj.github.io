@@ -236,15 +236,19 @@
 
                 <!-- Desktop View Switcher -->
                 <div class="hidden md:flex items-center p-1 rounded-xl bg-slate-900 border border-slate-800 text-xs font-medium">
-                    <button id="viewGridBtn" onclick="switchMainView('grid')" class="view-btn active px-3.5 py-1.5 rounded-lg text-slate-300 transition flex items-center gap-1.5">
+                    <button id="viewGridBtn" onclick="switchMainView('grid')" class="view-btn active px-3 py-1.5 rounded-lg text-slate-300 transition flex items-center gap-1.5">
                         <span>💡 Kho Ý Tưởng</span>
-                        <span id="activeCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-sky-300">149</span>
+                        <span id="activeCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-sky-300">136</span>
                     </button>
-                    <button id="viewCreatorsBtn" onclick="switchMainView('creators')" class="view-btn px-3.5 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5">
+                    <button id="viewUgcBtn" onclick="toggleUgcMode()" class="view-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-amber-300 transition flex items-center gap-1.5" title="Xem video quảng cáo bot & UGC sản phẩm sàn TMĐT">
+                        <span>📱 Mục UGC</span>
+                        <span id="ugcCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30">2</span>
+                    </button>
+                    <button id="viewCreatorsBtn" onclick="switchMainView('creators')" class="view-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-slate-200 transition flex items-center gap-1.5">
                         <span>👥 Danh Mục Kênh</span>
                         <span id="creatorsCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-purple-300">86</span>
                     </button>
-                    <a href="/scene" class="view-btn px-3 py-1.5 rounded-lg text-slate-400 hover:text-amber-300 transition flex items-center gap-1.5" title="Trung tâm tra cứu & so sánh phân cảnh điện ảnh">
+                    <a href="/scene" class="view-btn px-2.5 py-1.5 rounded-lg text-slate-400 hover:text-amber-300 transition flex items-center gap-1.5" title="Trung tâm tra cứu & so sánh phân cảnh điện ảnh">
                         <span>🎬 So Sánh Phân Cảnh</span>
                     </a>
                 </div>
@@ -315,6 +319,44 @@
 
         <!-- WRAPPER CHO 3 THANH BỘ LỌC (ẨN/HIỆN THEO FOCUS MODE) -->
         <div id="allFilterBarsContainer" class="transition-all duration-300">
+
+            <!-- KHÓA HỌC CHUYỂN CẢNH (video.fedu.vn) - 2 LEVEL TRANSITIONS -->
+            <div class="border-t border-rose-500/30 bg-gradient-to-r from-rose-950/40 via-purple-950/30 to-slate-950 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
+                <div class="max-w-7xl mx-auto flex items-center justify-between gap-3 flex-wrap sm:flex-nowrap">
+                    <div class="flex items-center gap-1.5 shrink-0 text-xs font-bold text-rose-300">
+                        <span class="px-2 py-0.5 rounded-lg bg-rose-500/20 border border-rose-500/40">⚡ KHÓA HỌC CHUYỂN CẢNH (video.fedu.vn):</span>
+                    </div>
+                    <div class="flex items-center gap-2 no-scrollbar overflow-x-auto">
+                        <button 
+                            onclick="filterTransitionLevel('Chuyển cảnh Level 1')" 
+                            id="btnTransitionL1" 
+                            class="whitespace-nowrap px-3 py-1 rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 text-amber-200 text-xs font-bold transition flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer"
+                            title="Loại 1 (Chỗ đông người): Cầm tay selfie, chuyển cảnh bằng cử động đầu (gật đầu / lắc đầu x2)"
+                        >
+                            <span>🤳 Chuyển Cảnh Level 1 (Selfie Đông Người • Gật/Lắc x2)</span>
+                            <span id="transL1CountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-400 text-slate-950 font-black">22</span>
+                        </button>
+                        <button 
+                            onclick="filterTransitionLevel('Chuyển cảnh Level 2')" 
+                            id="btnTransitionL2" 
+                            class="whitespace-nowrap px-3 py-1 rounded-xl border border-rose-500/40 bg-rose-500/15 hover:bg-rose-500/25 text-rose-200 text-xs font-bold transition flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer"
+                            title="Loại 2 (Chân máy cố định): Bất cứ hành động cơ thể nào làm lại 2 lần rõ ràng thành chuyển cảnh"
+                        >
+                            <span>📐 Chuyển Cảnh Level 2 (Chân Máy • Động Tác Cơ Thể x2)</span>
+                            <span id="transL2CountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-rose-400 text-slate-950 font-black">26</span>
+                        </button>
+                        <button 
+                            onclick="filterTransitionLevel('all')" 
+                            id="btnTransitionAll" 
+                            class="hidden whitespace-nowrap px-2.5 py-1 rounded-xl border border-slate-700 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold transition items-center gap-1 shrink-0 cursor-pointer"
+                            title="Hủy lọc chuyển cảnh"
+                        >
+                            <span>✕ Bỏ lọc</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
             <!-- HORIZONTAL SHOOTING STYLE TABS (KIỂU QUAY) -->
             <div class="border-t border-slate-800/80 bg-slate-950/70 px-4 sm:px-6 lg:px-8 py-2 overflow-x-auto">
                 <div class="max-w-7xl mx-auto flex items-center justify-between gap-3">
@@ -771,6 +813,8 @@
             currentStyle: 'all',
             currentIndustry: 'all',
             currentCountry: 'all',
+            currentTransitionLevel: 'all', // 'all', 'Chuyển cảnh Level 1', 'Chuyển cảnh Level 2'
+            showUgc: false, // Default false: auto-hide ad bot videos until clicked
             currentTech: '',
             currentPurpose: '',
             searchQuery: '',
@@ -1035,13 +1079,124 @@
             }
         }
 
+        // Filter Transition Level (Khóa học video.fedu.vn)
+        function filterTransitionLevel(level) {
+            if (appState.currentTransitionLevel === level && level !== 'all') {
+                appState.currentTransitionLevel = 'all';
+            } else {
+                appState.currentTransitionLevel = level;
+            }
+            appState.currentPage = 1;
+            updateTransitionFilterUI();
+            applyFilters();
+
+            if (appState.currentView !== 'grid') {
+                switchMainView('grid');
+            }
+        }
+
+        function updateTransitionFilterUI() {
+            const btnL1 = document.getElementById('btnTransitionL1');
+            const btnL2 = document.getElementById('btnTransitionL2');
+            const btnAll = document.getElementById('btnTransitionAll');
+
+            if (btnL1) {
+                if (appState.currentTransitionLevel === 'Chuyển cảnh Level 1') {
+                    btnL1.className = "whitespace-nowrap px-3.5 py-1 rounded-xl border border-amber-400 bg-amber-500 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shrink-0 shadow-md shadow-amber-500/30 ring-2 ring-amber-300/60 cursor-pointer scale-105";
+                } else {
+                    btnL1.className = "whitespace-nowrap px-3 py-1 rounded-xl border border-amber-500/40 bg-amber-500/15 hover:bg-amber-500/25 text-amber-200 text-xs font-bold transition flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer";
+                }
+            }
+
+            if (btnL2) {
+                if (appState.currentTransitionLevel === 'Chuyển cảnh Level 2') {
+                    btnL2.className = "whitespace-nowrap px-3.5 py-1 rounded-xl border border-rose-400 bg-rose-500 text-white text-xs font-black transition flex items-center gap-1.5 shrink-0 shadow-md shadow-rose-500/30 ring-2 ring-rose-300/60 cursor-pointer scale-105";
+                } else {
+                    btnL2.className = "whitespace-nowrap px-3 py-1 rounded-xl border border-rose-500/40 bg-rose-500/15 hover:bg-rose-500/25 text-rose-200 text-xs font-bold transition flex items-center gap-1.5 shrink-0 shadow-sm cursor-pointer";
+                }
+            }
+
+            if (btnAll) {
+                if (appState.currentTransitionLevel !== 'all') {
+                    btnAll.classList.remove('hidden');
+                    btnAll.classList.add('flex');
+                } else {
+                    btnAll.classList.add('hidden');
+                    btnAll.classList.remove('flex');
+                }
+            }
+        }
+
+        // Cập nhật linh hoạt số lượng badge trên Header và thanh Chuyển Cảnh
+        function updateHeaderBadges() {
+            if (!window.FEDU_IDEAS_DATABASE) return;
+            const db = window.FEDU_IDEAS_DATABASE;
+            const allIdeas = db.ideas || [];
+            const activeIdeas = allIdeas.filter(x => {
+                if (appState.localDeletedIds && appState.localDeletedIds.has(x.id)) return false;
+                const isExcluded = x.is_excluded || (appState.localExcludedIds && appState.localExcludedIds.has(x.id));
+                if (!appState.curationMode && isExcluded) return false;
+                return true;
+            });
+
+            const standardCount = activeIdeas.filter(x => !x.is_ad_bot && x.industry?.id !== 'ugc').length;
+            const ugcCount = activeIdeas.filter(x => x.is_ad_bot || x.industry?.id === 'ugc').length;
+            const l1Count = activeIdeas.filter(x => x.transition_level === 'Chuyển cảnh Level 1').length;
+            const l2Count = activeIdeas.filter(x => x.transition_level === 'Chuyển cảnh Level 2').length;
+
+            const activeCountEl = document.getElementById('activeCountBadge');
+            if (activeCountEl) activeCountEl.textContent = standardCount;
+
+            const ugcCountEl = document.getElementById('ugcCountBadge');
+            if (ugcCountEl) ugcCountEl.textContent = ugcCount;
+
+            const transL1CountEl = document.getElementById('transL1CountBadge');
+            if (transL1CountEl) transL1CountEl.textContent = l1Count;
+
+            const transL2CountEl = document.getElementById('transL2CountBadge');
+            if (transL2CountEl) transL2CountEl.textContent = l2Count;
+        }
+
+        // Đồng bộ trạng thái các nút Desktop Switcher (Kho ý tưởng vs Mục UGC)
+        function updateUgcButtonState() {
+            const ugcBtn = document.getElementById('viewUgcBtn');
+            const gridBtn = document.getElementById('viewGridBtn');
+            const isUgc = (appState.currentIndustry === 'ugc' || appState.showUgc);
+            if (isUgc) {
+                if (ugcBtn) {
+                    ugcBtn.classList.add('active', 'bg-amber-500/20', 'text-amber-300', 'border', 'border-amber-500/40');
+                    ugcBtn.classList.remove('text-slate-400');
+                }
+                if (gridBtn) gridBtn.classList.remove('active');
+            } else {
+                if (ugcBtn) {
+                    ugcBtn.classList.remove('active', 'bg-amber-500/20', 'text-amber-300', 'border', 'border-amber-500/40');
+                    ugcBtn.classList.add('text-slate-400');
+                }
+                if (gridBtn && appState.currentView === 'grid') gridBtn.classList.add('active');
+            }
+        }
+
+        // Toggle UGC Mode (Bot Video Quảng Cáo & UGC sàn TMĐT)
+        function toggleUgcMode() {
+            if (appState.currentIndustry === 'ugc' || appState.showUgc) {
+                selectIndustry('all');
+                showToast("💡 Đã quay lại Kho Ý Tưởng Sáng Tạo");
+            } else {
+                selectIndustry('ugc');
+                showToast("📱 Đang xem chuyên mục UGC & Video Quảng Cáo Sàn TMĐT");
+            }
+        }
+
         // Render Industry Pills (2 Rows Filter)
         function renderIndustryPills() {
             const container = document.getElementById('industryPillsContainer');
             if (!container || !window.FEDU_IDEAS_DATABASE) return;
 
             const db = window.FEDU_IDEAS_DATABASE;
-            const allCount = db.total_active_ideas;
+            // Số lượng mẫu ý tưởng chuẩn (không tính video bot quảng cáo UGC mặc định ẩn)
+            const standardIdeasCount = db.ideas.filter(x => !x.is_excluded && !x.is_ad_bot && x.industry?.id !== 'ugc' && !appState.localDeletedIds?.has(x.id)).length;
+            const ugcCount = db.ideas.filter(x => !x.is_excluded && (x.is_ad_bot || x.industry?.id === 'ugc') && !appState.localDeletedIds?.has(x.id)).length;
 
             const allBtn = `
                 <button 
@@ -1049,28 +1204,38 @@
                     class="ind-pill ${appState.currentIndustry === 'all' ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
                 >
                     <span>🌟 Tất Cả Ngành</span>
-                    <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${allCount}</span>
+                    <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${standardIdeasCount}</span>
                 </button>
             `;
 
             const pillButtons = db.industries.map(ind => {
-                const count = db.industry_stats[ind.id] || 0;
+                const count = (ind.id === 'ugc') ? ugcCount : (db.industry_stats[ind.id] || 0);
                 const isActive = appState.currentIndustry === ind.id;
+                const isUgcPill = (ind.id === 'ugc');
+                const badgeColor = isUgcPill 
+                    ? 'bg-amber-500/20 text-amber-300 border border-amber-500/30' 
+                    : 'bg-slate-800/80 text-slate-400';
+                const customClass = isUgcPill 
+                    ? (isActive 
+                        ? 'active border-amber-400 bg-amber-500/20 text-amber-300 shadow-md shadow-amber-500/20' 
+                        : 'border-amber-500/30 text-amber-400 hover:border-amber-400 hover:text-amber-300') 
+                    : '';
+
                 return `
                     <button 
                     onclick="selectIndustry('${ind.id}')" 
-                    class="ind-pill ${isActive ? 'active' : ''} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
+                    class="ind-pill ${isActive ? 'active' : ''} ${customClass} whitespace-nowrap px-3.5 py-1.5 rounded-xl border border-slate-800 bg-slate-900/90 text-xs font-semibold text-slate-300 hover:border-slate-700 hover:text-white transition flex items-center gap-1.5 shrink-0"
                     title="${escapeHtml(ind.desc)}"
                     >
                         <span>${ind.icon} ${escapeHtml(ind.name)}</span>
-                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-slate-400">${count}</span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[10px] ${badgeColor}">${count}</span>
                     </button>
                 `;
             });
 
-            // Split into 2 neat rows (5 + 5 pills)
-            const row1Pills = [allBtn, ...pillButtons.slice(0, 4)];
-            const row2Pills = pillButtons.slice(4);
+            // Split into 2 neat rows (Row 1: All + 5 pills, Row 2: 5 remaining pills including UGC)
+            const row1Pills = [allBtn, ...pillButtons.slice(0, 5)];
+            const row2Pills = pillButtons.slice(5);
 
             let html = `
                 <div class="flex items-center gap-2 overflow-x-auto no-scrollbar flex-wrap sm:flex-nowrap">
@@ -1087,10 +1252,13 @@
         // Select Industry
         function selectIndustry(indId) {
             appState.currentIndustry = (appState.currentIndustry === indId) ? 'all' : indId;
+            appState.showUgc = (appState.currentIndustry === 'ugc');
             appState.currentPage = 1;
             appState.currentCountry = 'all';
             const countrySelect = document.getElementById('countryFilter');
             if (countrySelect) countrySelect.value = '';
+
+            updateUgcButtonState();
             renderShootingStyleTabs();
             renderIndustryPills();
             renderCountryTabs();
@@ -1110,7 +1278,15 @@
 
             const db = window.FEDU_IDEAS_DATABASE;
             const nonDeletedIdeas = db.ideas.filter(x => !appState.localDeletedIds.has(x.id));
-            const allCount = appState.curationMode ? nonDeletedIdeas.length : db.total_active_ideas;
+            const isViewingUgc = (appState.currentIndustry === 'ugc' || appState.showUgc);
+
+            // Số lượng Toàn Cầu
+            const allCount = nonDeletedIdeas.filter(x => {
+                const isUgc = x.is_ad_bot || x.industry?.id === 'ugc';
+                if (!appState.curationMode && x.is_excluded) return false;
+                if (isViewingUgc) return isUgc;
+                return !isUgc;
+            }).length;
 
             let html = `
                 <button 
@@ -1123,14 +1299,24 @@
             `;
 
             (db.countries || []).forEach(c => {
-                // Ở chế độ học viên: Ẩn tab Việt Nam để chỉ giữ lại video nước ngoài
-                if (!appState.curationMode && c.id === 'vietnam') {
+                // Ở chế độ học viên: Nếu không xem UGC, ẩn tab Việt Nam để chỉ giữ lại video nước ngoài
+                if (!appState.curationMode && c.id === 'vietnam' && !isViewingUgc) {
                     return;
                 }
 
-                const count = (db.country_stats && db.country_stats[c.id]) || 0;
-                const totalInCountry = nonDeletedIdeas.filter(x => x.country && x.country.id === c.id).length;
-                const displayCount = appState.curationMode ? totalInCountry : count;
+                const totalInCountry = nonDeletedIdeas.filter(x => {
+                    if (!x.country || x.country.id !== c.id) return false;
+                    if (!appState.curationMode && x.is_excluded) return false;
+                    const isUgc = x.is_ad_bot || x.industry?.id === 'ugc';
+                    if (isViewingUgc) return isUgc;
+                    return !isUgc;
+                }).length;
+
+                // Nếu đang xem UGC mà nước đó không có video thì ẩn đi cho giao diện gọn gàng
+                if (isViewingUgc && totalInCountry === 0) {
+                    return;
+                }
+
                 const isActive = appState.currentCountry === c.id;
 
                 html += `
@@ -1140,7 +1326,7 @@
                         title="${escapeHtml(c.desc)}"
                     >
                         <span>${c.flag} ${escapeHtml(c.name)}</span>
-                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-amber-300">${displayCount}</span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800/80 text-amber-300">${totalInCountry}</span>
                     </button>
                 `;
             });
@@ -1152,7 +1338,7 @@
             if (countrySelect) {
                 const vnOption = countrySelect.querySelector('option[value="vietnam"]');
                 if (vnOption) {
-                    vnOption.style.display = appState.curationMode ? 'block' : 'none';
+                    vnOption.style.display = (appState.curationMode || isViewingUgc) ? 'block' : 'none';
                 }
             }
         }
@@ -1187,6 +1373,14 @@
             const mobCreatorsBtn = document.getElementById('mobileViewCreatorsBtn');
 
             if (view === 'grid') {
+                if (appState.currentIndustry === 'ugc' || appState.showUgc) {
+                    appState.currentIndustry = 'all';
+                    appState.showUgc = false;
+                    renderIndustryPills();
+                    renderCountryTabs();
+                    updateUgcButtonState();
+                    applyFilters();
+                }
                 gridView.classList.remove('hidden');
                 creatorsView.classList.add('hidden');
                 viewGridBtn?.classList.add('active');
@@ -1229,6 +1423,27 @@
                     if (appState.curationFilter === 'excluded' && !isEffectivelyExcluded) return false;
                 }
 
+                // 1.5. Video Bot Quảng Cáo & UGC Filter:
+                // Mặc định: TỰ ĐỘNG ẨN các video từ bot tải video quảng cáo (Shopee, Lazada, v.v.) hoặc thuộc ngành UGC.
+                // CHỈ KHI ấn vào mục UGC (appState.currentIndustry === 'ugc' hoặc appState.showUgc === true) thì các video này mới hiện ra!
+                const isUgcItem = Boolean(item.is_ad_bot === true || (item.industry && item.industry.id === 'ugc'));
+                const isViewingUgc = Boolean(appState.currentIndustry === 'ugc' || appState.showUgc);
+
+                if (!isViewingUgc) {
+                    // Mặc định: Ẩn 100% video UGC bot quảng cáo sàn TMĐT
+                    if (isUgcItem) return false;
+                } else {
+                    // Khi chọn xem UGC: CHỈ hiển thị các video UGC
+                    if (!isUgcItem) return false;
+                }
+
+                // 1.6. Khóa học Chuyển Cảnh (video.fedu.vn) - 2 Level Transitions
+                if (appState.currentTransitionLevel !== 'all') {
+                    if (item.transition_level !== appState.currentTransitionLevel) {
+                        return false;
+                    }
+                }
+
                 // 2. Shooting Style filter (Trục 1: Kiểu quay)
                 if (appState.currentStyle !== 'all') {
                     const itemStyleId = item.shooting_style ? item.shooting_style.id : '';
@@ -1236,8 +1451,12 @@
                 }
 
                 // 3. Industry filter (Trục 2: Ngành nghề)
-                if (appState.currentIndustry !== 'all' && item.industry.id !== appState.currentIndustry) {
-                    return false;
+                if (appState.currentIndustry !== 'all') {
+                    if (appState.currentIndustry === 'ugc') {
+                        if (!isUgcItem) return false;
+                    } else {
+                        if (!item.industry || item.industry.id !== appState.currentIndustry) return false;
+                    }
                 }
 
                 // 3.5. Country filter (Phân loại theo Quốc gia)
@@ -1279,6 +1498,11 @@
                         (item.title_vi || '') + ' ' + 
                         (item.quick_takeaway || '') + ' ' + 
                         (item.key_tech || '') + ' ' + 
+                        (item.transition_level || '') + ' ' +
+                        (item.fedu_optimization?.key_optimization_point || '') + ' ' +
+                        (item.fedu_optimization?.practice_focus || '') + ' ' +
+                        (item.fedu_optimization?.ig_seeding_hook || '') + ' ' +
+                        (item.fedu_optimization?.course_industry_mapping || '') + ' ' +
                         (item.shooting_style?.name || '') + ' ' +
                         (item.shooting_style?.en_name || '') + ' ' +
                         (item.industry?.name || '') + ' ' +
@@ -1314,10 +1538,17 @@
             const labelEl = document.getElementById('currentFilterLabel');
             if (labelEl) {
                 let parts = [];
-                if (currentStyleObj) parts.push(`${currentStyleObj.icon} ${currentStyleObj.name}`);
-                if (currentIndObj) parts.push(`${currentIndObj.icon} ${currentIndObj.name}`);
-                if (currentCountryObj) parts.push(`${currentCountryObj.flag} ${currentCountryObj.name}`);
-                labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Tất Cả Ý Tưởng & Mẫu Quay';
+                if (appState.currentIndustry === 'ugc' || appState.showUgc) {
+                    parts.push('📱 Video Quảng Cáo UGC Sàn TMĐT');
+                } else {
+                    if (appState.currentTransitionLevel !== 'all') {
+                        parts.push(`⚡ ${appState.currentTransitionLevel}`);
+                    }
+                    if (currentStyleObj) parts.push(`${currentStyleObj.icon} ${currentStyleObj.name}`);
+                    if (currentIndObj && currentIndObj.id !== 'all') parts.push(`${currentIndObj.icon} ${currentIndObj.name}`);
+                    if (currentCountryObj && currentCountryObj.id !== 'all') parts.push(`${currentCountryObj.flag} ${currentCountryObj.name}`);
+                }
+                labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Tất Cả Ngành';
             }
             const matchCounter = document.getElementById('matchCounterText');
             if (matchCounter) matchCounter.innerText = matched.length;
@@ -1325,6 +1556,7 @@
             renderCards(matched);
             renderFocusBanner();
             updateTeacherShareLink();
+            updateHeaderBadges();
         }
 
         // Render Cards Grid
@@ -1383,6 +1615,32 @@
                                         <span>${item.shooting_style.icon}</span>
                                         <span>${escapeHtml(item.shooting_style.name)}</span>
                                     </button>
+                                ` : ''}
+                                <!-- Chuyển Cảnh Level 1 / Level 2 Badge (Khóa học video.fedu.vn) -->
+                                ${item.transition_level === 'Chuyển cảnh Level 1' ? `
+                                    <button 
+                                        type="button"
+                                        onclick="event.stopPropagation(); filterTransitionLevel('Chuyển cảnh Level 1')"
+                                        class="px-2.5 py-0.5 rounded-lg text-xs font-black border transition cursor-pointer hover:scale-105 active:scale-95 flex items-center gap-1 bg-amber-500 text-slate-950 border-amber-400 shadow-md shadow-amber-500/30 ring-2 ring-amber-300/60"
+                                        title="Chuyển cảnh Level 1: Cầm tay selfie chỗ đông người, cử động đầu gật/lắc x2"
+                                    >
+                                        <span>⚡ Level 1 • Selfie Đông Người</span>
+                                    </button>
+                                ` : ''}
+                                ${item.transition_level === 'Chuyển cảnh Level 2' ? `
+                                    <button 
+                                        type="button"
+                                        onclick="event.stopPropagation(); filterTransitionLevel('Chuyển cảnh Level 2')"
+                                        class="px-2.5 py-0.5 rounded-lg text-xs font-black border transition cursor-pointer hover:scale-105 active:scale-95 flex items-center gap-1 bg-rose-500 text-white border-rose-400 shadow-md shadow-rose-500/30 ring-2 ring-rose-300/60"
+                                        title="Chuyển cảnh Level 2: Điện thoại đặt chân máy cố định, hành động cơ thể rõ ràng x2"
+                                    >
+                                        <span>📐 Level 2 • Chân Máy Cơ Thể</span>
+                                    </button>
+                                ` : ''}
+                                ${item.is_ad_bot ? `
+                                    <span class="px-2.5 py-0.5 rounded-lg text-xs font-bold border bg-purple-950/60 text-purple-300 border-purple-500/50 flex items-center gap-1">
+                                        <span>🤖 Bot QC TMĐT</span>
+                                    </span>
                                 ` : ''}
                                 <!-- Ngành nghề Badge -->
                                 <button 
@@ -1488,13 +1746,13 @@
                                 <span class="text-[11px] font-mono text-slate-400 truncate">${escapeHtml(item.creator.handle)}</span>
                             </div>
 
-                            <!-- Instagram Follow Link -->
+                            <!-- Instagram Follow Link (Học viên follow để huấn luyện feed gợi ý) -->
                             <a 
                                 href="${igProfileUrl}" 
                                 target="_blank" 
                                 rel="noopener" 
                                 class="btn-ig-gradient px-2.5 py-1 rounded-lg text-white font-bold text-[10px] flex items-center gap-1 shrink-0 shadow-sm"
-                                title="Theo dõi creator trên Instagram"
+                                title="Theo dõi creator trên Instagram để feed gợi ý ý tưởng tương tự"
                             >
                                 <span>📸 Follow</span>
                                 <span>↗</span>
@@ -1506,14 +1764,37 @@
                             ${highlightText(item.title_vi, appState.searchQuery)}
                         </h3>
 
-                        <!-- SKIMMABLE QUICK TAKEAWAY (2-LINE TAKEAWAY) -->
-                        <div class="mb-3 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 leading-relaxed">
-                            <div class="text-[10px] font-bold uppercase tracking-wider text-amber-400 flex items-center gap-1 mb-1">
-                                <span>💡 Điểm Ăn Tiền Của Ý Tưởng:</span>
+                        <!-- FEDU STUDIO OPTIMIZATION BLOCK (3 MỤC ĐÍCH THỰC CHIẾN) -->
+                        <div class="mb-3 p-2.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs text-slate-300 leading-relaxed flex flex-col gap-1.5">
+                            <!-- 1. Điểm Tối Ưu Phân Loại Dễ Tìm -->
+                            <div class="text-[11px] font-bold text-amber-300 flex items-start gap-1.5">
+                                <span class="shrink-0 text-xs">💡</span>
+                                <span class="leading-tight">${escapeHtml(item.fedu_optimization?.key_optimization_point || item.quick_takeaway)}</span>
                             </div>
-                            <p class="line-clamp-2 text-slate-300 font-normal">
-                                ${escapeHtml(item.quick_takeaway)}
-                            </p>
+                            
+                            <!-- 2. Bài Tập Thực Hành Cụ Thể (Cho Anh Việt) -->
+                            ${item.fedu_optimization?.practice_focus ? `
+                                <div class="text-[11px] text-emerald-300/90 flex items-start gap-1.5 pl-0.5 pt-1 border-t border-slate-800/80">
+                                    <span class="shrink-0">🎯</span>
+                                    <span class="leading-relaxed"><strong>Thực hành:</strong> ${escapeHtml(item.fedu_optimization.practice_focus)}</span>
+                                </div>
+                            ` : ''}
+
+                            <!-- 3. Instagram Seeding (Mục tiêu học viên) -->
+                            ${item.fedu_optimization?.ig_seeding_hook ? `
+                                <div class="text-[11px] text-sky-300/90 flex items-start gap-1.5 pl-0.5 pt-1 border-t border-slate-800/80">
+                                    <span class="shrink-0">📸</span>
+                                    <span class="leading-relaxed"><strong>Gợi ý Instagram:</strong> ${escapeHtml(item.fedu_optimization.ig_seeding_hook)}</span>
+                                </div>
+                            ` : ''}
+
+                            <!-- 4. Mẫu Ngành Hàng Khóa Học -->
+                            ${item.fedu_optimization?.course_industry_mapping ? `
+                                <div class="text-[11px] text-purple-300/90 flex items-start gap-1.5 pl-0.5 pt-1 border-t border-slate-800/80">
+                                    <span class="shrink-0">💼</span>
+                                    <span class="leading-relaxed"><strong>Ngành mẫu:</strong> ${escapeHtml(item.fedu_optimization.course_industry_mapping)}</span>
+                                </div>
+                            ` : ''}
                         </div>
 
                         <!-- Purpose & Key Technique Tags -->
@@ -2084,12 +2365,28 @@
 
             const shareUrl = `${window.location.origin}${window.location.pathname}?search=${encodeURIComponent(item.creator?.handle || item.id)}`;
 
+            let optSection = '';
+            if (item.transition_level) {
+                optSection += `\n⚡ Cấp độ chuyển cảnh: ${item.transition_level}`;
+            }
+            if (item.fedu_optimization?.key_optimization_point) {
+                optSection += `\n💡 Điểm tối ưu: ${item.fedu_optimization.key_optimization_point}`;
+            }
+            if (item.fedu_optimization?.practice_focus) {
+                optSection += `\n🎯 Bài tập thực hành: ${item.fedu_optimization.practice_focus}`;
+            }
+            if (item.fedu_optimization?.ig_seeding_hook) {
+                optSection += `\n📸 Theo dõi Creator: ${item.fedu_optimization.ig_seeding_hook}`;
+            }
+            if (item.fedu_optimization?.course_industry_mapping) {
+                optSection += `\n💼 Mẫu ngành hàng: ${item.fedu_optimization.course_industry_mapping}`;
+            }
+
             const formulaText = `🎬 CÔNG THỨC QUAY DỰNG - VIDEO CREATIVE
 📌 Tên mẫu: ${item.title_vi || ''}
 👤 Tác giả: ${item.creator?.name || ''} (${item.creator?.handle || ''})
 🎯 Mục đích: ${item.purpose || 'Tham chiếu quay dựng'}
-⚙️ Kỹ thuật quay: ${item.key_tech || 'Góc máy & chuyển động'}
-💡 Điểm ăn tiền: ${item.quick_takeaway || ''}
+⚙️ Kỹ thuật quay: ${item.key_tech || 'Góc máy & chuyển động'}${optSection}
 📊 Cấu trúc: ${item.media?.shots_count || 0} shots | ${item.media?.duration || ''}
 🔗 Xem video mẫu: ${shareUrl}`;
 
@@ -2294,7 +2591,17 @@
         function openReportModal(id) {
             if (!window.FEDU_IDEAS_DATABASE) return;
             const item = window.FEDU_IDEAS_DATABASE.ideas.find(x => x.id === id);
-            if (!item || !item.media.report_url) return;
+            if (!item) return;
+
+            // Fallback: Nếu không có report_url nhưng có video, mở thẳng modal video
+            if (!item.media?.report_url) {
+                if (item.media?.video_url || item.media?.youtube_id || item.media?.youtube_embed) {
+                    openVideoModal(id);
+                    return;
+                }
+                showToast("Báo cáo cho video này đang được chuẩn bị");
+                return;
+            }
 
             const modal = document.getElementById('reportEmbedModal');
             const iframe = document.getElementById('reportModalIframe');
@@ -2303,6 +2610,10 @@
             const spinner = document.getElementById('reportIframeSpinner');
 
             if (spinner) spinner.style.display = 'flex';
+            // Safety timeout: Tự động tắt spinner sau 1.2s đề phòng trình duyệt chặn onload do redirect/cross-origin
+            clearTimeout(window._reportSpinnerTimeout);
+            window._reportSpinnerTimeout = setTimeout(hideReportSpinner, 1200);
+
             if (title) title.innerText = `Báo Cáo: ${item.title_vi}`;
             if (iframe) iframe.src = item.media.report_url;
             if (extLink) extLink.href = item.media.report_url;
@@ -2572,8 +2883,13 @@
                 const indObj = db.industries.find(i => i.id === appState.currentIndustry);
                 if (indObj) {
                     iconText = indObj.icon;
-                    titleText = `Kho Mẫu Video Dành Riêng Cho Ngành ${indObj.name}`;
-                    subText = `Tuyển tập các mẫu video chuẩn quốc tế ngành ${indObj.name} do anh Việt chọn lọc thực chiến cho thương hiệu của bạn. Đã bóc tách phân cảnh, góc máy, ánh sáng và bài học áp dụng.`;
+                    if (indObj.id === 'ugc') {
+                        titleText = "Kho Video Mẫu Quảng Cáo UGC Sàn TMĐT (Shopee / Lazada)";
+                        subText = "Tuyển tập các mẫu video quảng cáo sản phẩm UGC chuẩn công thức AIDA: Gây chú ý tức thì, khơi gợi nhu cầu, kích thích mong muốn và kêu gọi hành động mua hàng.";
+                    } else {
+                        titleText = `Kho Mẫu Video Dành Riêng Cho Ngành ${indObj.name}`;
+                        subText = `Tuyển tập các mẫu video chuẩn quốc tế ngành ${indObj.name} do anh Việt chọn lọc thực chiến cho thương hiệu của bạn. Đã bóc tách phân cảnh, góc máy, ánh sáng và bài học áp dụng.`;
+                    }
                 }
             } else if (appState.currentStyle !== 'all') {
                 const styleObj = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
@@ -2796,6 +3112,7 @@
             renderCountryTabs();
             renderFocusBanner();
             updateTeacherShareLink();
+            updateHeaderBadges();
             applyFilters();
         });
     </script>
