@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 200,
-  "total_unique_ideas": 181,
-  "total_active_ideas": 149,
+  "total_scene_items": 202,
+  "total_unique_ideas": 183,
+  "total_active_ideas": 151,
   "total_excluded_ideas": 32,
-  "total_creators": 92,
+  "total_creators": 94,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 82,
-    "chuyen-canh": 30
+    "dien-anh": 83,
+    "chuyen-canh": 31
   },
   "industries": [
     {
@@ -142,14 +142,14 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 3,
+    "spa-lam-dep": 4,
     "thuong-hieu": 16,
     "thoi-trang": 10,
     "am-thuc": 16,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
-    "the-thao": 5,
+    "the-thao": 6,
     "ky-thuat-quay": 40
   },
   "countries": [
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 72,
+    "us_eu": 73,
     "korea": 9,
     "india": 6,
     "japan": 10,
@@ -497,6 +497,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@quinematic",
+      "name": "Quinn Welychka",
+      "profile_url": "https://www.instagram.com/quinematic/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run"
+      ]
+    },
+    {
+      "handle": "@dimasyudhystira",
+      "name": "Dimas Yudhystira",
+      "profile_url": "https://www.instagram.com/dimasyudhystira/",
+      "video_count": 1,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut"
       ]
     },
     {
@@ -1282,6 +1304,130 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run",
+      "shortcode": "DdH6HGNxEYT",
+      "title_vi": "Time To Go For A Run • Nghệ Thuật Kể Chuyện Thói Quen Chạy Bộ Điện Ảnh",
+      "quick_takeaway": "Bóc tách trọn vẹn 16 phân cảnh mẫu mực trong video Reel của @quinematic: Đỉnh cao nghệ thuật dựng phim nhịp điệu (Fast Montage) đồng bộ 9 frame/shot kết hợp âm thanh ASMR vi mô đời thường, chuyển hóa không gian ngoạn mục từ căn phòng ngủ...",
+      "key_tech": "Fast 9-Frame Montage, Temporal Hook (7:00 AM), Silhouette Chiaroscuro, Macro Ritual Details, POV Shadow Play, Extreme Wide Landscape Scale Shock, Side & Front Dynamic Tracking, Golden Rim Light Climax",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "global",
+        "name": "Toàn Cầu (Canada/USA)",
+        "en_name": "Global",
+        "flag": "🌐",
+        "badge_color": "indigo"
+      },
+      "purpose": "Thói quen kỷ luật buổi sáng & Kể chuyện thể thao truyền cảm hứng (Inspiring Running Routine)",
+      "tech_tags": [
+        "Fast 9-Frame Montage",
+        "Temporal Hook (7:00 AM)",
+        "Silhouette Chiaroscuro",
+        "Macro Ritual Details",
+        "POV Shadow Play",
+        "Extreme Wide Landscape",
+        "Side Tracking Biomechanics",
+        "Front Leading Tracking",
+        "Golden Hour Rim Light"
+      ],
+      "logic_explanation": "Mẫu mực về cấu trúc nhịp điệu 3 giai đoạn: Chuỗi micro-cut chuẩn bị thần tốc (9 frame/shot) -> Mở toang không gian viễn cảnh thiên nhiên và tracking chuyển động -> Khép lại bằng cú Hero Shot ngược sáng hoàng kim truyền tải trọn vẹn tinh thần kỷ luật tự thân.",
+      "creator": {
+        "raw": "@quinematic (Quinn Welychka)",
+        "name": "Quinn Welychka",
+        "handle": "@quinematic",
+        "profile_url": "https://www.instagram.com/quinematic/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdH6HGNxEYT/?stkn=cDN1MnVpZTM0YjQ0",
+      "gdrive_folder": "https://drive.google.com/open?id=11KKOJuXLuykv1ZlksHdjqcnk1S-9ek02",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Time%20To%20Go%20For%20A%20Run%20-%20@quinematic.mp4",
+        "report_url": "reports/Time To Go For A Run - @quinematic.html",
+        "shots_count": 16,
+        "duration": "0.2s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut",
+      "shortcode": "Dc3DUsvpkrP",
+      "title_vi": "Nghệ Thuật Match-Cut Từ Căn Hộ Lên Đỉnh Núi Sumbing (@dimasyudhystira)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 8 phân cảnh mẫu mực trong video 15.3s của Dimas Yudhystira: Tuyệt kỹ Match-Cut chuyển động vi mô (Micro-Motion Match Cut) dịch chuyển tức thời từ căn hộ lên chân núi Sumbing, bứt phá qua rừng thông sương mờ v...",
+      "key_tech": "Micro-Motion Match Cut • Teleportation Hook • Spatial Convergence • Gear Foreshadowing • Summit Hero Contrast • Kinetic Jump Cut • Closed-Loop Visual Rhythm",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Micro-Motion Match Cut • Teleportation Hook • Spatial Convergence • Gear Foreshadowing • Summit Hero Contrast • Kinetic Jump Cut • Closed-Loop Visual Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@dimasyudhystira (Dimas Yudhystira)",
+        "name": "Dimas Yudhystira",
+        "handle": "@dimasyudhystira",
+        "profile_url": "https://www.instagram.com/dimasyudhystira/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc3DUsvpkrP/?stkn=eDBybW93OWo3bWlz",
+      "gdrive_folder": "https://drive.google.com/open?id=1gZ8vi0mkdIejL6YPvrSIGtAYT02YQ5Cz",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_03_mid.jpg",
+        "video_url": "videos/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.mp4",
+        "report_url": "reports/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.html",
+        "shots_count": 8,
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "",
       "shortcode": "",
