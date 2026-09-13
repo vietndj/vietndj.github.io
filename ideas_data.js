@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 193,
-  "total_unique_ideas": 177,
-  "total_active_ideas": 145,
+  "total_scene_items": 194,
+  "total_unique_ideas": 178,
+  "total_active_ideas": 146,
   "total_excluded_ideas": 32,
-  "total_creators": 90,
+  "total_creators": 91,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 82,
+    "dien-anh": 83,
     "chuyen-canh": 26
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 71,
+    "us_eu": 72,
     "korea": 8,
     "india": 6,
     "japan": 10,
@@ -495,6 +495,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@hsuan_yunn",
+      "name": "鍾瑄芸Shanny",
+      "profile_url": "https://www.instagram.com/hsuan_yunn/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn"
       ]
     },
     {
@@ -1258,6 +1269,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn",
+      "shortcode": "DdLsL-cSekL",
+      "title_vi": "@鍾瑄芸Shanny - Video by hsuan yunn",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@鍾瑄芸Shanny",
+        "name": "鍾瑄芸Shanny",
+        "handle": "@hsuan_yunn",
+        "profile_url": "https://www.instagram.com/hsuan_yunn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdLsL-cSekL/?stkn=MWFyazduMXNnMmk0bg==",
+      "gdrive_folder": "https://drive.google.com/open?id=1nSmiyNhS-XJOp5Xh7kmiAOfiagiWLbZH",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdLsL-cSekL.mp4",
+        "report_url": "reports/IG_@鍾瑄芸Shanny_DdLsL-cSekL_Video_by_hsuan_yunn.html",
+        "shots_count": 6,
+        "duration": "0.15s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
       "shortcode": "DdM7gO4yD-c",
