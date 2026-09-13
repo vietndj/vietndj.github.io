@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 202,
-  "total_unique_ideas": 183,
-  "total_active_ideas": 151,
+  "total_scene_items": 204,
+  "total_unique_ideas": 185,
+  "total_active_ideas": 153,
   "total_excluded_ideas": 32,
-  "total_creators": 94,
+  "total_creators": 96,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 83,
-    "chuyen-canh": 31
+    "dien-anh": 84,
+    "chuyen-canh": 32
   },
   "industries": [
     {
@@ -144,13 +144,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 4,
     "thuong-hieu": 16,
-    "thoi-trang": 10,
+    "thoi-trang": 11,
     "am-thuc": 16,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 6,
-    "ky-thuat-quay": 40
+    "ky-thuat-quay": 41
   },
   "countries": [
     {
@@ -204,7 +204,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "country_stats": {
     "us_eu": 73,
-    "korea": 9,
+    "korea": 10,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -497,6 +497,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@kisho_men",
+      "name": "Kisho Kawamoto",
+      "profile_url": "https://www.instagram.com/kisho_men/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion"
+      ]
+    },
+    {
+      "handle": "@korea_bigmama",
+      "name": "Korea_Bigmama",
+      "profile_url": "https://www.instagram.com/korea_bigmama/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist"
       ]
     },
     {
@@ -1304,6 +1326,127 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion",
+      "shortcode": "DcxgmP1zZPk_",
+      "title_vi": "Allblack Is My Dominion • Nghệ Thuật Biến Hình Cú Đá Vô Hình & Thời Trang Nam Tối Giản",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "asia",
+        "name": "Châu Á",
+        "en_name": "Asia",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
+      "purpose": "Biến hình thời trang nam All-Black & Cú đá Match Cut vô hình",
+      "tech_tags": [
+        "High-Kick Kinetic Match Cut",
+        "Self-Deprecation Vulnerability Hook",
+        "Center Symmetrical Power Framing",
+        "Staccato Rhythm Editing",
+        "Hero Look Asymmetrical Jacket Sling",
+        "Infinite Seamless Replay Loop"
+      ],
+      "logic_explanation": "Mở đầu hài hước bằng pha xỏ bốt lò cò mất thăng bằng để xóa bỏ định kiến kiêu ngạo, trước khi kích hoạt cú đá cước vút cao đạt đỉnh vận tốc để nối match cut vô hình sang nguyên cây đồ All-Black bóng bẩy đầy quyền lực.",
+      "creator": {
+        "raw": "@kisho_men",
+        "name": "Kisho Kawamoto",
+        "handle": "@kisho_men",
+        "profile_url": "https://www.instagram.com/kisho_men/"
+      },
+      "ig_url": "https://www.instagram.com/kisho_men/",
+      "gdrive_folder": "https://drive.google.com/open?id=1daXkschS5VsG6IsiZ6RIgWNe8_TSYn12",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxgmP1zZPk.mp4",
+        "report_url": "reports/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion.html",
+        "shots_count": 5,
+        "duration": "11.9s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist",
+      "shortcode": "DdBnto_O0He",
+      "title_vi": "Nghịch Lý Ăn Kiêng & Quả Chuối Giấu Thanh Socola Snickers",
+      "quick_takeaway": "Phân tích 6 phân cảnh nghệ thuật tạo tiếng cười từ sự tự trào (Relatable Humor), bố cục đạo cụ đối lập và cú lật tẩy vật lý (Physical Gag Twist) siêu thực giấu socola trong vỏ chuối.",
+      "key_tech": "Visual Misdirection, Prop Juxtaposition, Suspense Build-up, Relatable Humor, Infinite Loop",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Visual Misdirection, Prop Juxtaposition, Suspense Build-up, Relatable Humor, Infinite Loop"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@korea_bigmama",
+        "name": "Korea_Bigmama",
+        "handle": "@korea_bigmama",
+        "profile_url": "https://www.instagram.com/korea_bigmama/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdBnto_O0He/?stkn=bjRkbW5jYmduOTR3",
+      "gdrive_folder": "https://drive.google.com/open?id=1EowHEhv1gKD7xejitZkm5hc8OK1D_eq0",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBnto_O0He.mp4",
+        "report_url": "reports/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist.html",
+        "shots_count": 6,
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run",
       "shortcode": "DdH6HGNxEYT",
