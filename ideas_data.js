@@ -1525,7 +1525,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/steven.vuu/"
       },
       "ig_url": "https://www.instagram.com/reel/DaBLA-QJcrk/?stkn=MXh2c2c3eWVjdTRtbA==",
-      "gdrive_folder": "https://drive.google.com/drive/folders/1rM64rI0Tf_Z-rC8pI8gL-s5rPz-X_yZZ?usp=sharing",
+      "gdrive_folder": "https://drive.google.com/open?id=1gWe4uEuHlmLN6ImVnvT98cDYsB0tz_Dl",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_03_mid.jpg",
