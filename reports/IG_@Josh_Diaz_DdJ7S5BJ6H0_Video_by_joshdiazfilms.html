@@ -823,98 +823,197 @@ video#mainPlayer {
     cursor: pointer;
 }
 
-/* Styling for Spoken Script & Remake Prompt Box */
-.dialogue-script-card {
-    background: #0e1420;
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 18px 20px;
+/* Styling for 2-Column Dialogue Script & Remake Prompt Box */
+.dialogue-container-2col {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
     margin-bottom: 20px;
 }
 
-.dialogue-header {
+@media (max-width: 900px) {
+    .dialogue-container-2col {
+        flex-direction: column;
+    }
+}
+
+/* CỘT CHÍNH (TRÁI): TIẾNG VIỆT ĐỌC LIỀN MẠCH */
+.col-vietnamese-flow {
+    flex: 1;
+    min-width: 0;
+    background: #0d1422;
+    border: 1px solid #1e2b40;
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-flow-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 14px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #1e293b;
+    border-bottom: 1px solid #1a2538;
     flex-wrap: wrap;
     gap: 8px;
 }
 
-.dialogue-title {
+.col-flow-badge {
     font-family: var(--font-heading);
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 14.5px;
+    font-weight: 800;
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
+    letter-spacing: 0.3px;
 }
 
-.dialogue-timeline-list {
+.col-flow-subtag {
+    font-size: 11.5px;
+    color: var(--accent-emerald);
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.vn-script-body {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
 }
 
-.dialogue-item {
-    background: #121928;
-    border: 1px solid #1f2c42;
+.vn-script-para {
+    background: #111a2c;
+    border: 1px solid #1e2c44;
     border-left: 3px solid var(--accent-amber);
     border-radius: 8px;
-    padding: 12px 14px;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
 }
 
-.dialogue-item-header {
+.vn-script-para:hover {
+    background: #162238;
+    border-color: #2b3d5c;
+    transform: translateX(2px);
+}
+
+.para-meta-line {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     gap: 8px;
-    margin-bottom: 8px;
-    flex-wrap: wrap;
+    margin-bottom: 4px;
 }
 
-.dialogue-beat-badge {
+.para-timestamp-tag {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+.para-beat-label {
     font-size: 11px;
     font-weight: 700;
     color: var(--accent-amber);
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.4px;
 }
 
-.dialogue-time-btn {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--accent-blue);
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    border-radius: 4px;
-    padding: 3px 8px;
-    cursor: pointer;
-    transition: all 0.15s;
-}
-
-.dialogue-time-btn:hover {
-    background: var(--accent-blue);
-    color: #041324;
-}
-
-.dialogue-en {
-    font-size: 13px;
-    color: #94a3b8;
-    font-style: italic;
-    margin-bottom: 6px;
-    line-height: 1.5;
-}
-
-.dialogue-vi {
-    font-size: 13.5px;
+.para-text {
+    font-size: 14.5px;
     color: #f8fafc;
+    line-height: 1.6;
     font-weight: 500;
-    line-height: 1.55;
+    display: block;
+}
+
+/* CỘT PHỤ (PHẢI): KHỐI NHỎ CHỮ BÉ XÍU TIẾNG ANH ĐỐI CHIẾU */
+.col-english-aside {
+    width: 270px;
+    min-width: 250px;
+    background: #090e18;
+    border: 1px solid #162030;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .col-english-aside {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.col-aside-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #141c2b;
+}
+
+.aside-title {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.aside-note {
+    font-size: 10px;
+    color: #475569;
+    font-style: italic;
+}
+
+.en-lines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.en-line-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #141d2c;
+    border-radius: 6px;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.en-line-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: #1e2c40;
+}
+
+.en-time {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: #475569;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.en-text {
+    font-size: 11px;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.45;
 }
 
 /* Remake Mega Prompt Box */
@@ -1018,7 +1117,6 @@ video#mainPlayer {
     white-space: pre-wrap;
     word-break: break-word;
 }
-
 </style>
 </head>
 <body>
@@ -1063,59 +1161,84 @@ video#mainPlayer {
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
             <div>Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.</div>
+        </div>
 
-        <!-- BẢNG KỊCH BẢN THOẠI SONG NGỮ & ÁNH XẠ SANG NGÀNH NGHỀ -->
-        <div class="dialogue-script-card">
-            <div class="dialogue-header">
-                <div class="dialogue-title">
-                    <span>🎙️ KỊCH BẢN THOẠI NGUYÊN BẢN (ENGLISH) &amp; BẢN DỊCH TIẾNG VIỆT</span>
+        <!-- BẢNG KỊCH BẢN THOẠI 2 CỘT (TIẾNG VIỆT ĐỌC LIỀN MẠCH + TIẾNG ANH KHỐI NHỎ BÊN CẠNH) -->
+        <div class="dialogue-container-2col">
+            <!-- CỘT CHÍNH (TRÁI): TIẾNG VIỆT ĐỌC LIỀN MẠCH KHÔNG NGẮT QUÃNG -->
+            <div class="col-vietnamese-flow">
+                <div class="col-flow-header">
+                    <div class="col-flow-badge">🎙️ KỊCH BẢN LỜI THOẠI (BẢN DỊCH THỰC CHIẾN)</div>
+                    <span class="col-flow-subtag">Đọc liền một mạch • Chuẩn 4 nhịp giữ chân</span>
                 </div>
-                <span style="font-size:11.5px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">4 PHÂN ĐOẠN THOẠI CHÍNH</span>
+                
+                <div class="vn-script-body">
+                    <div class="vn-script-para" onclick="playShot(0.00, 2.66, 'HOOK 3S')">
+                        <div class="para-meta-line">
+                            <span class="para-timestamp-tag">0.00s</span>
+                            <span class="para-beat-label">Hook 3s • Bẻ gãy niềm tin</span>
+                        </div>
+                        <span class="para-text">"Nghe bảo mấy ông lần đầu làm bố là phải chuẩn bị sẵn một cái túi đồ đi viện..."</span>
+                    </div>
+
+                    <div class="vn-script-para" onclick="playShot(7.00, 12.48, 'XUNG ĐỘT')">
+                        <div class="para-meta-line">
+                            <span class="para-timestamp-tag">7.00s</span>
+                            <span class="para-beat-label">Xung đột • Cái cớ giữ thể diện</span>
+                        </div>
+                        <span class="para-text">"Vợ mình cứ cằn nhằn giục giã suốt chuyện soạn cái túi này. Mình thì cứ bảo: 'Anh là đàn ông mà, soạn vèo cái 2 phút là xong!'..."</span>
+                    </div>
+
+                    <div class="vn-script-para" onclick="playShot(12.48, 17.60, 'THỰC TẾ')">
+                        <div class="para-meta-line">
+                            <span class="para-timestamp-tag">12.48s</span>
+                            <span class="para-beat-label">Sự thật khách quan • Tỉnh ngộ</span>
+                        </div>
+                        <span class="para-text">"Nhưng mà này các ông ơi, vào viện là phải ở lại đó vài ngày liền đấy. Chắc chắn là không thể nào xong trong 2 phút được đâu!"</span>
+                    </div>
+
+                    <div class="vn-script-para" onclick="playShot(19.36, 25.48, 'KẾT BÀI')">
+                        <div class="para-meta-line">
+                            <span class="para-timestamp-tag">19.36s</span>
+                            <span class="para-beat-label">Hạ màn tự trào • Kích hoạt bình luận</span>
+                        </div>
+                        <span class="para-text">"Kiểu gì mình cũng soạn thiếu một món nào đó rồi. Khổ nỗi vợ đang không có nhà để nhắc xem thiếu cái gì. Anh em nào có kinh nghiệm chỉ giùm với, và nhớ đón xem phần hai nhé!"</span>
+                    </div>
+                </div>
             </div>
-            <div class="dialogue-timeline-list">
-                <div class="dialogue-item">
-                    <div class="dialogue-item-header">
-                        <span class="dialogue-beat-badge">🎯 Hook 3s • Bẻ gãy niềm tin ngây thơ</span>
-                        <button class="dialogue-time-btn" onclick="playShot(0.00, 2.66, 'HOOK 3S')">▶ 0.00s - 2.66s</button>
-                    </div>
-                    <div class="dialogue-en">"Apparently first time dads need a hospital bag."</div>
-                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Nghe bảo mấy ông lần đầu làm bố là phải chuẩn bị sẵn một cái túi đồ đi viện..."</div>
-                </div>
 
-                <div class="dialogue-item">
-                    <div class="dialogue-item-header">
-                        <span class="dialogue-beat-badge">⚡ Xung đột • Cái cớ chủ quan giữ thể diện</span>
-                        <button class="dialogue-time-btn" onclick="playShot(7.00, 12.48, 'XUNG ĐỘT')">▶ 7.00s - 12.48s</button>
-                    </div>
-                    <div class="dialogue-en">"Katie's been on me about packing this bag and I'm always telling her I'm a guy. It's gonna take like two minutes."</div>
-                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Vợ mình cứ cằn nhằn giục giã suốt chuyện soạn cái túi này. Mình thì cứ bảo: 'Anh là đàn ông mà, soạn vèo cái 2 phút là xong!'..."</div>
+            <!-- CỘT PHỤ (PHẢI): KHỐI NHỎ CHỮ BÉ XÍU ĐỐI SOÁT TIẾNG ANH -->
+            <div class="col-english-aside">
+                <div class="col-aside-header">
+                    <span class="aside-title">ORIGINAL TRANSCRIPT</span>
+                    <span class="aside-note">Phụ / Đối chiếu</span>
                 </div>
-
-                <div class="dialogue-item">
-                    <div class="dialogue-item-header">
-                        <span class="dialogue-beat-badge">💡 Tỉnh ngộ • Bóc trần thực tế khách quan</span>
-                        <button class="dialogue-time-btn" onclick="playShot(12.48, 17.60, 'THỰC TẾ')">▶ 12.48s - 17.60s</button>
+                <div class="en-lines-list">
+                    <div class="en-line-item" onclick="playShot(0.00, 2.66, 'ORIGINAL')">
+                        <span class="en-time">0.00s</span>
+                        <div class="en-text">"Apparently first time dads need a hospital bag."</div>
                     </div>
-                    <div class="dialogue-en">"Fellas, you're gonna be living in the hospital for a few days. It's definitely gonna take more than two minutes."</div>
-                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Nhưng mà này các ông ơi, vào viện là phải ở lại đó vài ngày liền đấy. Chắc chắn là không thể nào xong trong 2 phút được đâu!"</div>
-                </div>
-
-                <div class="dialogue-item">
-                    <div class="dialogue-item-header">
-                        <span class="dialogue-beat-badge">💬 Hạ màn tự trào • Mở lời kêu gọi tương tác</span>
-                        <button class="dialogue-time-btn" onclick="playShot(19.36, 25.48, 'KẾT BÀI')">▶ 19.36s - 25.48s</button>
+                    <div class="en-line-item" onclick="playShot(7.00, 12.48, 'ORIGINAL')">
+                        <span class="en-time">7.00s</span>
+                        <div class="en-text">"Katie's been on me about packing this bag and I'm always telling her I'm a guy. It's gonna take like two minutes."</div>
                     </div>
-                    <div class="dialogue-en">"Pretty sure I'm missing something. Unfortunately, Katie's not home right now to let me know what it is. So keep an eye out for part two."</div>
-                    <div class="dialogue-vi">👉 <strong>Tiếng Việt:</strong> "Kiểu gì mình cũng soạn thiếu một món nào đó rồi. Khổ nỗi vợ đang không có nhà để nhắc xem thiếu cái gì. Anh em nào có kinh nghiệm chỉ giùm với, và nhớ đón xem phần hai nhé!"</div>
+                    <div class="en-line-item" onclick="playShot(12.48, 17.60, 'ORIGINAL')">
+                        <span class="en-time">12.48s</span>
+                        <div class="en-text">"Fellas, you're gonna be living in the hospital for a few days. It's definitely gonna take more than two minutes."</div>
+                    </div>
+                    <div class="en-line-item" onclick="playShot(19.36, 25.48, 'ORIGINAL')">
+                        <span class="en-time">19.36s</span>
+                        <div class="en-text">"Pretty sure I'm missing something. Unfortunately, Katie's not home right now to let me know what it is. So keep an eye out for part two."</div>
+                    </div>
                 </div>
             </div>
         </div>
 
-        <!-- KHỐI PROMPT ÁNH XẠ SANG NGÀNH NGHỀ (GEMINI MEGA PROMPT) -->
+        <!-- KHỐI PROMPT ÁNH XẠ SANG NGÀNH NGHỀ (GEMINI MEGA PROMPT THEO HỌC VIÊN STU) -->
         <div class="remake-prompt-card">
-            <div class="remake-header-badge">✨ CHUYỂN THỂ KỊCH BẢN 1-CHẠM</div>
+            <div class="remake-header-badge">✨ CHUYỂN THỂ KỊCH BẢN 1-CHẠM THEO NGÀNH STU</div>
             <h3 class="remake-headline">Muốn ánh xạ sang ngành nghề của bạn, hãy copy prompt bên dưới</h3>
-            <p class="remake-subtext">Sao chép Mega Prompt này dán vào Gemini. AI sẽ tự động hỏi ngành nghề &amp; đồ nghề của bạn để xuất bản ngay 3 phương án kịch bản tương ứng theo chuẩn văn phong mộc mạc anh Việt (đã lọc sạch 100% văn mẫu).</p>
+            <p class="remake-subtext">Sao chép Mega Prompt này dán vào Gemini. Hệ thống tự động gợi ý đúng các ngành nghề học viên thực tế trong STU để xuất bản ngay 3 phương án kịch bản tương ứng theo chuẩn văn phong mộc mạc anh Việt (đã lọc sạch 100% văn mẫu).</p>
 
             <div class="prompt-code-wrapper">
                 <div class="prompt-code-toolbar">
@@ -1136,21 +1259,20 @@ Tôi có cấu trúc logic giữ chân 26 giây đắt giá từ đạo diễn J
 - CẤM TUYỆT ĐỐI MƯỢN CỚ SỐ ĐÔNG: Không dùng 'anh em mình', 'nhiều người ngoài kia', 'chúng ta thường hay'. Đi thẳng một đường thẳng vào bản chất sự việc.
 - GIỮ TRỌN VĂN PHONG MỘC MẠC: Giọng người làm nghề khiêm tốn, biết đến đâu chia sẻ đến đấy, có nụ cười tự trào duyên dáng, tôn trọng thời gian người xem.
 
-=== HƯỚNG DẪN TƯƠNG TÁC (TRIỆT TIÊU MA SÁT) ===
+=== HƯỚNG DẪN TƯƠNG TÁC (QUÉT TỪ CÁC NGÀNH NGHỀ HỌC VIÊN TRONG STU) ===
 Nếu trong tin nhắn này tôi ĐÃ GHI SẴN thông tin ngành nghề ở cuối, hãy BỎ QUA bước hỏi và XUẤT BẢN NGAY 3 kịch bản.
 
 Nếu tôi CHƯA GHI ngành nghề, hãy DỪNG LẠI và chỉ gửi duy nhất menu 1 câu ngắn gọn sau:
 
-"Chào bạn, để viết đúng đồ nghề và cảnh quay thực tế tại chỗ làm việc của bạn, bạn chọn ngành nào dưới đây (chỉ cần gõ số 1, 2, 3, 4 hoặc gõ 1 dòng ngắn):
-1. Đồ da thủ công / May mặc / Mỹ nghệ (Bàn làm việc, dao kéo, búa gõ, kim chỉ)
-2. Thẩm mỹ / Spa / Nha khoa / Y tế (Bàn tư vấn, khay dụng cụ, kem dưỡng, máy móc)
-3. Kiến trúc / Nội thất / Xây dựng (Bản vẽ, thước đo, mẫu vật liệu gạch đá gỗ)
-4. Ngành khác: Bạn nhắn giúp mình: [Tên nghề] + [Khách hay tưởng lầm điều gì] + [3 món đồ trên bàn làm việc]"
+"Chào bạn, để viết đúng đồ nghề và cảnh quay thực tế tại chỗ làm việc của bạn (theo nhóm ngành học viên trong STU), bạn chọn ngành nào dưới đây (chỉ cần gõ số 1, 2, 3, 4, 5 hoặc gõ 1 dòng ngắn):
+1. Làm đẹp & Spa / Da liễu Clinic / Phun xăm / Salon tóc (Bàn soi da, khay dụng cụ, kem dưỡng, kéo lược)
+2. Nội thất / Decor / Kiến trúc / Vật liệu xây dựng (Bàn làm việc, thước đo, mẫu gỗ, bảng màu sơn, bản vẽ)
+3. Ẩm thực & F&B / Tiệm bánh / Trà đồ uống (Mặt bàn pha chế, thớt dao, cân tiểu ly, ly cốc)
+4. Nông nghiệp / Phân bón / Chăm sóc sức khỏe / Dược liệu (Bao bì mẫu, cây giống, khay dinh dưỡng, bình xịt)
+5. Ngành khác của bạn trong STU: Bạn nhắn giúp mình: [Tên nghề] + [Khách hay tưởng lầm điều gì] + [3 món đồ trên bàn làm việc]"
 
 Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG ÁN KỊCH BẢN CHI TIẾT TỪNG GIÂY (Gồm 4 cột: Thời lượng | Hình ảnh B-roll xúc giác | Lời thoại A-roll mộc mạc | Âm thanh Foley thực tế) được lọc sạch 100% văn mẫu!</div>
             </div>
-        </div>
-
         </div>
 
         <div class="action-toolbar">
