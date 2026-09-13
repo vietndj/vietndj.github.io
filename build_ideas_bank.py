@@ -237,7 +237,6 @@ def load_master_classifications():
 
 def load_portal_data():
     try:
-    try:
         import subprocess
         node_script = """
         const fs = require('fs');

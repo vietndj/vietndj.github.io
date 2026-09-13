@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 197,
-  "total_unique_ideas": 180,
-  "total_active_ideas": 148,
+  "total_scene_items": 198,
+  "total_unique_ideas": 181,
+  "total_active_ideas": 149,
   "total_excluded_ideas": 32,
   "total_creators": 92,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 18,
-    "dien-anh": 81,
+    "dien-anh": 82,
     "chuyen-canh": 29
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 38
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 72,
+    "us_eu": 73,
     "korea": 9,
     "india": 6,
     "japan": 10,
@@ -302,6 +302,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@steven.vuu",
+      "name": "Steven.Vuu",
+      "profile_url": "https://www.instagram.com/steven.vuu/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
+        "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
+        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
+      ]
+    },
+    {
       "handle": "@ju_seobang",
       "name": "Ju_Seobang",
       "profile_url": "https://www.instagram.com/ju_seobang/",
@@ -364,18 +377,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@steven.vuu",
-      "name": "Steven Vuu",
-      "profile_url": "https://www.instagram.com/steven.vuu/",
-      "video_count": 2,
-      "top_industry": "Làm Đẹp & Spa / Y Tế",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
-        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -1281,6 +1282,64 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
+      "shortcode": "DaBLA-QJcrk",
+      "title_vi": "Giấc Mơ Thức Dậy Ảo (False Awakening) & Cú Búa Siri Reality Check",
+      "quick_takeaway": "Bóc tách 3 phân cảnh chuẩn đạo diễn trong kiệt tác hài short-form của Steven Vuu (@steven.vuu): Nghệ thuật đánh lừa kỳ vọng người xem (False Expectations Hook) bằng thói quen buổi sáng mẫu mực, cú ngắt nhịp kịch tính (The Comic Beat Paus...",
+      "key_tech": "False Expectations Hook, The Comic Beat Pause, Match-Location Punchline, Hard Cut Reality Check, Lock-Off Camera Contrast, Micro-Expression Freeze, Tactile ASMR Sound",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "False Expectations Hook, The Comic Beat Pause, Match-Location Punchline, Hard Cut Reality Check, Lock-Off Camera Contrast, Micro-Expression Freeze, Tactile ASMR Sound"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@steven.vuu",
+        "name": "Steven.Vuu",
+        "handle": "@steven.vuu",
+        "profile_url": "https://www.instagram.com/steven.vuu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaBLA-QJcrk/?stkn=MXh2c2c3eWVjdTRtbA==",
+      "gdrive_folder": "https://drive.google.com/drive/folders/1rM64rI0Tf_Z-rC8pI8gL-s5rPz-X_yZZ?usp=sharing",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/How%20I%20Wake%20Up%20Skit%20-%20%40steven.vuu.mp4",
+        "report_url": "reports/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit.html",
+        "shots_count": 3,
+        "duration": "0.2s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "",
       "shortcode": "DdGRCKwsaaI",
