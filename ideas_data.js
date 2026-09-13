@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 198,
+  "total_scene_items": 199,
   "total_unique_ideas": 181,
   "total_active_ideas": 149,
   "total_excluded_ideas": 32,
@@ -63,8 +63,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 1,
     "voice-over": 8,
     "talking-head": 11,
-    "storytelling": 18,
-    "dien-anh": 82,
+    "storytelling": 19,
+    "dien-anh": 81,
     "chuyen-canh": 29
   },
   "industries": [
@@ -143,14 +143,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 3,
-    "thuong-hieu": 16,
+    "thuong-hieu": 17,
     "thoi-trang": 10,
     "am-thuc": 17,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 39
+    "ky-thuat-quay": 38
   },
   "countries": [
     {
@@ -203,7 +203,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 73,
+    "us_eu": 72,
     "korea": 9,
     "india": 6,
     "japan": 10,
@@ -315,19 +315,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@ju_seobang",
-      "name": "Ju_Seobang",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 3,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-      "video_ids": [
-        "",
-        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
       "handle": "@shogentle",
       "name": "Shogentle",
       "profile_url": "https://www.instagram.com/shogentle/",
@@ -377,6 +364,30 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@allure.cafebar",
+      "name": "Allure.Cafebar",
+      "profile_url": "https://www.instagram.com/allure.cafebar/",
+      "video_count": 2,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        "",
+        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
+      ]
+    },
+    {
+      "handle": "@ju_seobang",
+      "name": "주서방",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 2,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -530,17 +541,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
       "video_ids": [
         "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel"
-      ]
-    },
-    {
-      "handle": "@allure.cafebar",
-      "name": "Allure_Cafe_Bar",
-      "profile_url": "https://www.instagram.com/allure.cafebar/",
-      "video_count": 1,
-      "top_industry": "Ẩm Thực & F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
       ]
     },
     {
@@ -1283,6 +1283,64 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "",
+      "shortcode": "",
+      "title_vi": "The Place You Wanna Be • Nghệ Thuật Kể Chuyện Không Gian Cafe & Barista Showmanship",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@allure.cafebar",
+        "name": "Allure.Cafebar",
+        "handle": "@allure.cafebar",
+        "profile_url": "https://www.instagram.com/allure.cafebar/"
+      },
+      "ig_url": "https://www.instagram.com/allure.cafebar/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "",
+        "report_url": "",
+        "shots_count": 0,
+        "duration": "21.23s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
       "shortcode": "DaBLA-QJcrk",
       "title_vi": "Giấc Mơ Thức Dậy Ảo (False Awakening) & Cú Búa Siri Reality Check",
@@ -1461,64 +1519,6 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "",
-      "shortcode": "",
-      "title_vi": "Cách 'Câu' Kẹo Của Bố Vợ • Tuyệt Kỹ Hài Tình Huống Triệu View",
-      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
-      "key_tech": "",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic"
-      ],
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@ju_seobang",
-        "name": "Ju_Seobang",
-        "handle": "@ju_seobang",
-        "profile_url": "https://www.instagram.com/ju_seobang/"
-      },
-      "ig_url": "https://www.instagram.com/ju_seobang/",
-      "gdrive_folder": "",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
-        "video_url": "",
-        "report_url": "",
-        "shots_count": 0,
-        "duration": "11.95s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
       "id": "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
       "shortcode": "DdM7gO4yD-c",
       "title_vi": "Kính Thông Minh Meta Ray-Ban vs Trị Mụn Hero Cosmetics Skit • Nghệ Thuật Lồng Ghép Quảng Cáo Skit Comedy Đỉnh Cao",
@@ -1665,20 +1665,27 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "amber"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "vn",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "red"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Kể chuyện không gian cafe specialty & trải nghiệm đa tầng",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Open Bar Dual Barista Workflow",
+        "Audiophile Hi-Fi Listening Lounge",
+        "Macro Sensory Pour Over Crystal Ice",
+        "Frame-in-Frame Foreground Obscuration",
+        "Precision Plating via Tweezers",
+        "Japandi Minimalist Decor Aesthetics",
+        "Multi-Layer Gradient Matcha Pour",
+        "Irresistible Grand Finale Tray"
       ],
-      "logic_explanation": "",
+      "logic_explanation": "Công thức 17 phân cảnh điện ảnh giới thiệu quán cafe: Thao tác kép quầy bar mở, sảnh nghe nhạc loa thùng Hi-Fi, macro rót espresso đá pha lê, khung lồng khung cầu thang xoắn, gắp bánh nhíp inox, V60 thủ công, khách hàng sáng tạo nụ cười rạng rỡ, góc riêng tư dưới gầm cầu thang, đèn giấy Noguchi tầng lửng, sofa nỉ êm ái, bàn làm việc đón nắng cây xanh, sân vườn nhiệt đới, chill ghế cắm trại ngoài hiên, rót matcha 3 tầng, nhân viên phục vụ tận bàn, khép nhịp vòm cầu thang và bàn tiệc bánh nước thịnh soạn chốt hạ.",
       "creator": {
         "raw": "@ALLURE_cafe_bar",
-        "name": "Allure_Cafe_Bar",
+        "name": "Allure Cafe Bar",
         "handle": "@allure.cafebar",
         "profile_url": "https://www.instagram.com/allure.cafebar/"
       },
@@ -1691,9 +1698,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar.html",
         "shots_count": 17,
         "duration": "0.15s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -1716,11 +1723,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "amber"
       },
       "industry": {
-        "id": "am-thuc",
-        "name": "Ẩm Thực & F&B",
-        "en_name": "Food & Beverage",
-        "icon": "🍜",
-        "badge_color": "amber"
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
       },
       "country": {
         "id": "korea",
@@ -1729,9 +1736,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇰🇷",
         "badge_color": "blue"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Hài tình huống gia đình & slapstick gag",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Sound Cue Misdirection",
+        "Complete Blind Spot Exploitation",
+        "Over-The-Shoulder Target Lock",
+        "0.65s Smash Cut Slapstick Gag",
+        "Teleportation Gag & Whip-Pan Aftermath"
       ],
       "logic_explanation": "Tuyệt chiêu tạo viral skit 12 giây: Thiết lập sự thèm thuồng tại đảo bếp -> Đánh lạc hướng bằng âm thanh rơi đồ -> Ép đối phương vào tư thế mù quan sát -> Khóa mục tiêu thùng rác -> Cắt giật cực độ 0.65s đớp kẹo trên không trung -> Lia máy whip-pan về lại sofa giả vờ vô can.",
       "creator": {
