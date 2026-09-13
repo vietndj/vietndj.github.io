@@ -1,0 +1,2541 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View (Whip-Pan & Spin-On-Beat) - @lizzypalios</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Newsreader', Georgia, serif;
+      --font-ui: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      --color-slate-950: #090d16;
+      --color-slate-900: #0f172a;
+      --color-slate-800: #1e293b;
+      --color-slate-700: #334155;
+      --color-slate-500: #64748b;
+      --color-slate-200: #e2e8f0;
+      --color-slate-100: #f1f5f9;
+      --color-slate-50: #f8fafc;
+    }
+    body {
+      font-family: var(--font-ui);
+      background-color: #f8fafc;
+      color: var(--color-slate-900);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    .display-title {
+      font-family: var(--font-display);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
+      color: var(--color-slate-950);
+    }
+    .shot-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+    }
+    .reading-text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      line-height: 1.65;
+    }
+    .font-mono {
+      font-family: var(--font-mono) !important;
+    }
+    .text-xxs {
+      font-size: 0.72rem;
+    }
+    .cursor-pointer {
+      cursor: pointer;
+    }
+    .sticky-player-container {
+      position: sticky;
+      top: 1rem;
+      z-index: 1020;
+    }
+    .video-wrapper {
+      position: relative;
+      background: #000;
+      border-radius: 0.75rem;
+      overflow: hidden;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.2);
+    }
+    video {
+      display: block;
+      width: 100%;
+      max-height: 72vh;
+      object-fit: contain;
+      background: #000;
+    }
+    .shot-card {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      border: 1px solid rgba(0,0,0,0.08) !important;
+    }
+    .shot-card:hover {
+      box-shadow: 0 8px 20px -4px rgba(0,0,0,0.08) !important;
+    }
+    .shot-card.active-shot {
+      border-color: #3b82f6 !important;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+      background: #ffffff !important;
+    }
+    .drawer-menu {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      right: -320px;
+      width: 320px;
+      background: #fff;
+      z-index: 1050;
+      box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+      transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .drawer-menu.open {
+      right: 0;
+    }
+    .drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 1040;
+    }
+    .drawer-overlay.open {
+      display: block;
+    }
+    .grid-thumb-card:hover {
+      transform: translateY(-3px);
+      transition: transform 0.2s ease;
+    }
+  </style>
+</head>
+<body class="bg-slate-50">
+
+  <!-- TOP BAR -->
+  <header class="bg-white border-bottom border-slate-200 sticky-top py-2 px-3 shadow-xs" style="z-index: 1030;">
+    <div class="container-fluid d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <a href="https://fedu.vn/scene.html" class="btn btn-sm btn-outline-secondary font-mono text-xs">
+          ← CỔNG TRA CỨU SCENE.HTML
+        </a>
+        <span class="badge bg-slate-900 text-white font-mono text-xs d-none d-md-inline-block">21 SHOTS ANALYZED</span>
+      </div>
+      <div class="d-flex align-items-center gap-2">
+        <div class="btn-group btn-group-sm" role="group">
+          <button type="button" class="btn btn-primary font-mono text-xs" id="btnDetailView" onclick="switchView('detail')">BẢNG PHÂN CẢNH</button>
+          <button type="button" class="btn btn-outline-secondary font-mono text-xs" id="btnGridView" onclick="switchView('grid')">LƯỚI ẢNH (GRID)</button>
+        </div>
+        <button class="btn btn-sm btn-light border font-mono text-xs" onclick="toggleDrawer()">
+          ☰ MENU 21 SHOTS
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- DRAWER OVERLAY & MENU -->
+  <div class="drawer-overlay" id="drawerOverlay" onclick="closeDrawer()"></div>
+  <div class="drawer-menu d-flex flex-column" id="drawerMenu">
+    <div class="p-3 border-bottom d-flex align-items-center justify-content-between bg-slate-900 text-white">
+      <span class="font-mono fw-bold fs-6">DANH SÁCH 21 PHÂN CẢNH</span>
+      <button class="btn btn-sm text-white" onclick="closeDrawer()">✕</button>
+    </div>
+    <div class="overflow-y-auto flex-grow-1 list-group list-group-flush">
+      
+    <a href="#shot-01" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(0.0, 1.47, 1); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#01</span>
+        <span class="text-xs text-slate-800 text-truncate">Visual Hook 'Thức Dậy 6:15 AM': Kích hoạ...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">0.0s</span>
+    </a>
+    
+    <a href="#shot-02" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(1.5, 2.7, 2); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#02</span>
+        <span class="text-xs text-slate-800 text-truncate">Duy Trì Đà Chuyển Động Skincare 6:30 AM:...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">1.5s</span>
+    </a>
+    
+    <a href="#shot-03" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(2.73, 4.33, 3); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#03</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 1 'Film Panning Right To Left': Tận...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">2.7s</span>
+    </a>
+    
+    <a href="#shot-04" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(4.37, 5.63, 4); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#04</span>
+        <span class="text-xs text-slate-800 text-truncate">Thay Đổi Tương Phản Ánh Sáng Tủ Lạnh 7:2...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">4.4s</span>
+    </a>
+    
+    <a href="#shot-05" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(5.67, 6.3, 5); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#05</span>
+        <span class="text-xs text-slate-800 text-truncate">Micro-Beat Chớp Nhoáng Nấu Ăn 7:27 AM: N...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">5.7s</span>
+    </a>
+    
+    <a href="#shot-06" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(6.33, 7.43, 6); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#06</span>
+        <span class="text-xs text-slate-800 text-truncate">Hạ Cánh Tại Bàn Ăn Bữa Sáng: Khép lại ch...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">6.3s</span>
+    </a>
+    
+    <a href="#shot-07" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(7.47, 9.03, 7); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#07</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 2 'Add Into The Edits App' 7:31 AM:...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">7.5s</span>
+    </a>
+    
+    <a href="#shot-08" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(9.07, 9.5, 8); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#08</span>
+        <span class="text-xs text-slate-800 text-truncate">Cú Lướt Không Gian Cực Ngắn 0.47s: Nối c...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">9.1s</span>
+    </a>
+    
+    <a href="#shot-09" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(9.53, 10.87, 9); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#09</span>
+        <span class="text-xs text-slate-800 text-truncate">Trực Quan Hóa Màn Hình Biên Tập: Cung cấ...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">9.5s</span>
+    </a>
+    
+    <a href="#shot-10" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(10.9, 12.33, 10); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#10</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 3 'Speed Up The Turns To 2-3x Speed...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">10.9s</span>
+    </a>
+    
+    <a href="#shot-11" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(12.37, 13.8, 11); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#11</span>
+        <span class="text-xs text-slate-800 text-truncate">Điểm Neo Văn Hóa 'Proverbs & Sổ Tay' 7:3...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">12.4s</span>
+    </a>
+    
+    <a href="#shot-12" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(13.83, 15.3, 12); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#12</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước Vào Ca Làm Việc Sáng 8:12 AM: Chuyể...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">13.8s</span>
+    </a>
+    
+    <a href="#shot-13" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(15.33, 16.93, 13); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#13</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 4 'Add A Time Stamp In The Center' ...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">15.3s</span>
+    </a>
+    
+    <a href="#shot-14" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(16.97, 18.2, 14); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#14</span>
+        <span class="text-xs text-slate-800 text-truncate">Bẻ Nhịp Ăn Trưa Nhanh 12:07 PM: Đan xen ...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">17.0s</span>
+    </a>
+    
+    <a href="#shot-15" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(18.23, 19.8, 15); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#15</span>
+        <span class="text-xs text-slate-800 text-truncate">Chuyển Giao Năng Lượng Chiều 1:24 PM: Du...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">18.2s</span>
+    </a>
+    
+    <a href="#shot-16" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(19.83, 21.57, 16); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#16</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 5 'Spin On Beat' 1:56 PM: Cú xoay n...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">19.8s</span>
+    </a>
+    
+    <a href="#shot-17" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(21.6, 22.9, 17); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#17</span>
+        <span class="text-xs text-slate-800 text-truncate">Trở Lại Bàn Làm Việc 3:35 PM: Hạ cánh mư...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">21.6s</span>
+    </a>
+    
+    <a href="#shot-18" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(22.93, 23.6, 18); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#18</span>
+        <span class="text-xs text-slate-800 text-truncate">Bước 6 'Show Work & Downtime' 4:49 PM: M...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">22.9s</span>
+    </a>
+    
+    <a href="#shot-19" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(23.63, 24.5, 19); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#19</span>
+        <span class="text-xs text-slate-800 text-truncate">Downtime Chơi Game Giải Trí: Nét chấm ph...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">23.6s</span>
+    </a>
+    
+    <a href="#shot-20" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(24.53, 26.03, 20); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#20</span>
+        <span class="text-xs text-slate-800 text-truncate">Bữa Tối Hoàng Hôn 6:13 PM: Màu sắc ấm cú...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">24.5s</span>
+    </a>
+    
+    <a href="#shot-21" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center py-2 px-3 border-0 border-bottom drawer-item" onclick="jumpToShot(26.07, 27.87, 21); closeDrawer();">
+      <div class="d-flex align-items-center gap-2 text-truncate">
+        <span class="badge bg-slate-100 text-slate-800 font-mono">#21</span>
+        <span class="text-xs text-slate-800 text-truncate">Khép Lại Chu Trình 9:14 PM: Cú hạ màn êm...</span>
+      </div>
+      <span class="font-mono text-xxs text-slate-500 ms-2">26.1s</span>
+    </a>
+    
+    </div>
+  </div>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container-fluid px-3 px-md-4 py-4">
+    <div class="row g-4">
+      
+      <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
+      <div class="col-12 col-xl-5">
+        <div class="sticky-player-container">
+          <div class="video-wrapper mb-3">
+            <video id="mainVideo" controls playsinline preload="metadata">
+              <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdHMOB0xfd1.mp4" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ video HTML5.
+            </video>
+          </div>
+
+          <!-- DIRECTOR CONTROLS PANEL -->
+          <div class="bg-white rounded-3 p-3 border border-slate-200 shadow-sm mb-3">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="font-mono text-xs fw-bold text-slate-700">🎛 BỘ ĐIỀU KHIỂN ĐẠO DIỄN:</span>
+              <span class="font-mono text-xs text-primary" id="currentTimeDisplay">00:00.00 / 00:27.90</span>
+            </div>
+            <div class="d-flex align-items-center gap-1 flex-wrap mb-2">
+              <button class="btn btn-sm btn-outline-secondary font-mono text-xs py-1" onclick="stepFrame(-1)">⏮ -1F</button>
+              <button class="btn btn-sm btn-outline-secondary font-mono text-xs py-1" onclick="stepFrame(1)">+1F ⏭</button>
+              <button class="btn btn-sm btn-outline-secondary font-mono text-xs py-1" onclick="setSpeed(0.25)">0.25x</button>
+              <button class="btn btn-sm btn-outline-secondary font-mono text-xs py-1" onclick="setSpeed(0.5)">0.5x</button>
+              <button class="btn btn-sm btn-primary font-mono text-xs py-1" onclick="setSpeed(1.0)">1.0x</button>
+              <button class="btn btn-sm btn-outline-secondary font-mono text-xs py-1" onclick="setSpeed(1.5)">1.5x</button>
+              <button class="btn btn-sm btn-outline-warning font-mono text-xs py-1" id="btnLoopCurrent" onclick="toggleLoopCurrent()">🔁 Loop Shot</button>
+            </div>
+            <div class="p-2 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-600">
+              💡 Phím tắt: <b>Space</b> (Play/Pause) • <b>J / L</b> (Lùi/Tiến 1s) • <b>← / →</b> (Từng frame) • <b>[ / ]</b> (Nhảy Shot)
+            </div>
+          </div>
+
+          <!-- METADATA CARD -->
+          <div class="bg-white rounded-3 p-3 border border-slate-200 shadow-sm d-none d-xl-block">
+            <div class="d-flex align-items-center justify-content-between mb-2">
+              <span class="badge bg-slate-100 text-slate-700 font-mono text-xs">@lizzypalios</span>
+              <a href="https://www.instagram.com/reel/DdHMOB0xfd1/" target="_blank" class="text-xs font-mono text-primary text-decoration-none">Instagram Reel ↗</a>
+            </div>
+            <h1 class="display-title fs-5 mb-2">Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View (Whip-Pan & Spin-On-Beat) - @lizzypalios</h1>
+            <p class="text-slate-600 text-sm mb-3 reading-text">Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống 'A Day In The Life' của Business & Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật quay và dựng: Lia máy đồng hướng Phải sang Trái (Panning R-to-L), Tăng tốc đoạn lia máy 2-3x (Speed Up Turns Whip-Pan), Tạo điểm neo thời gian trung tâm (Centered Timestamps), Cú xoay người khớp phách nhạc (Spin on Beat) và Đan xen cân bằng giữa giờ làm việc tập trung và thời gian thư giãn nghỉ ngơi (Work & Downtime).</p>
+            <div class="border-top pt-2">
+              <span class="text-xxs font-mono text-slate-500 d-block mb-1">CÔNG THỨC KỸ THUẬT:</span>
+              <div class="d-flex flex-wrap gap-1">
+                <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">Whip-Pan Panning</span>
+                <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">Speed Ramping 2-3x</span>
+                <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">Centered Timestamps</span>
+                <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">Spin on Beat</span>
+                <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">Work & Downtime</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: SHOTS BREAKDOWN & GRID -->
+      <div class="col-12 col-xl-7">
+        
+        <!-- HEADER OVERVIEW (MOBILE/TABLET) -->
+        <div class="bg-white rounded-3 p-3 p-md-4 border border-slate-200 shadow-sm mb-4 d-xl-none">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-900 text-white font-mono">@lizzypalios</span>
+            <a href="https://www.instagram.com/reel/DdHMOB0xfd1/" target="_blank" class="text-xs font-mono text-primary text-decoration-none">Reel Gốc ↗</a>
+          </div>
+          <h1 class="display-title fs-4 mb-2">Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View (Whip-Pan & Spin-On-Beat) - @lizzypalios</h1>
+          <p class="text-slate-600 text-sm mb-0 reading-text">Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống 'A Day In The Life' của Business & Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật quay và dựng: Lia máy đồng hướng Phải sang Trái (Panning R-to-L), Tăng tốc đoạn lia máy 2-3x (Speed Up Turns Whip-Pan), Tạo điểm neo thời gian trung tâm (Centered Timestamps), Cú xoay người khớp phách nhạc (Spin on Beat) và Đan xen cân bằng giữa giờ làm việc tập trung và thời gian thư giãn nghỉ ngơi (Work & Downtime).</p>
+        </div>
+
+        <!-- DETAIL VIEW: 21 SHOTS -->
+        <div id="detailView">
+          
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-01" data-start="0.0" data-end="1.47">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #01</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(0.0, 1.47, 1)">
+            ⏱ 0.00s - 1.47s (1.50s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(0.0, 1.47)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Visual Hook 'Thức Dậy 6:15 AM': Kích hoạt bản năng tò mò bằng vector lia máy Phải sang Trái phá tan nhịp tĩnh
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(0.0, 1.47, 1)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.jpg" alt="Shot 01 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.50s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 0.00s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 0.73s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 1.47s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">6:15 AM. Lizzy nằm trên giường phủ chăn trắng tinh khôi, ánh ban mai rọi xiên qua cửa sổ. Cô thức dậy, vươn tay kéo chăn trong khi camera thực hiện cú lia ngang mượt mà từ mép phải sang mép trái khung hình. Chữ lớn trên màn hình: 'Viral day in the life trend // 6.15AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Bố cục góc chéo bắt trọn chuyển động mở màn tự nhiên; vector lia máy từ phải sang trái định hình ngay 'trục chuyển động chủ đạo' (Primary Motion Axis) cho toàn bộ 27 giây tiếp theo.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Ánh sáng cửa sổ phía sau hơi gắt nhẹ ở vùng highlight của drap giường, nếu kéo giảm exposure 0.3 EV sẽ giữ lại chi tiết nếp vải tốt hơn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Muốn mở màn video lifestyle mượt mà, hãy bắt đầu từ một chuyển động cơ thể đời thường (thức dậy, kéo chăn) kết hợp lia máy cùng hướng với các shot tiếp theo để khóa mắt người xem.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">0.00s - 1.47s (1.50s) • Wide 24mm f/2.2 • Giường ngủ phòng ngủ sáng sớm • Soft Morning Daylight • Whip Pan match cut sang Shot 02</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 01 → 02</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_01_to_02.jpg" alt="Chuyển cảnh Shot 01 sang 02" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-02" data-start="1.5" data-end="2.7">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #02</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(1.5, 2.7, 2)">
+            ⏱ 1.50s - 2.70s (1.23s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(1.5, 2.7)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Duy Trì Đà Chuyển Động Skincare 6:30 AM: Kế thừa quán tính lia máy đưa người xem vào không gian riêng tư trước gương
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(1.5, 2.7, 2)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_02_mid.jpg" alt="Shot 02 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.23s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 1.50s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 2.10s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 2.70s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">6:30 AM. Chuyển sang phòng tắm sáng bóng. Lizzy mặc áo thun be tối giản, tay cầm bông tẩy trang thoa nhẹ lên má trước gương lavabo, camera tiếp tục lia ngang từ phải sang trái quét qua người cô. Text: 'Viral day in the life trend // 6.30AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Sự liền mạch tuyệt đối của trục lia máy (Pan Continuity) khiến não bộ người xem không cảm thấy bị gián đoạn giữa 2 bối cảnh khác nhau; gương phòng tắm tạo chiều sâu phản chiếu nhân đôi không gian.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Thời lượng 1.23s khá nhanh khiến thao tác dưỡng da chưa kịp đặc tả giọt serum, chỉ mang tính chất thiết lập hành vi lướt qua.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Giữ đúng một hướng lia máy giữa các phòng khác nhau là bí quyết 'tàng hình vết cắt' (Invisible Cut) mạnh nhất mà không cần kỹ xảo phức tạp.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">1.50s - 2.70s (1.23s) • Standard 35mm f/2.0 • Phòng tắm gương Lavabo • Đèn gương dịu nhẹ kết hợp ánh sáng sạch • Whip Pan nối nhịp sang Bếp</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 02 → 03</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_02_to_03.jpg" alt="Chuyển cảnh Shot 02 sang 03" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-03" data-start="2.73" data-end="4.33">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #03</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(2.73, 4.33, 3)">
+            ⏱ 2.73s - 4.33s (1.63s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(2.73, 4.33)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 1 'Film Panning Right To Left': Tận dụng dòng chảy cà phê 7:03 AM làm điểm chạm thính giác & bài học kỹ thuật
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(2.73, 4.33, 3)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_03_mid.jpg" alt="Shot 03 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.63s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 2.73s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 3.53s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 4.33s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:03 AM. Cận cảnh máy pha Breville, dòng espresso đậm đặc sánh mịn rót xuống ly thủy tinh trong suốt. Camera lia ngang từ phải qua trái. Dòng text hướng dẫn xuất hiện đanh thép: '1. Film videos panning right to left. // 7.03AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Tạo điểm nhấn thính giác và xúc giác (Sensory B-Roll); chất lỏng chuyển động thẳng đứng vuông góc với hướng lia máy ngang tạo sự cân bằng động lực học thị giác rất đẹp mắt.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Dòng text phụ đề đặt hơi sát tâm ly cà phê, che mất một phần giọt cà phê đang rơi ở 0.5s đầu.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Chèn thông điệp bài học hoặc tips chính ngay tại khoảnh khắc B-roll đắt giá nhất (rót nước, pha cà phê) để người xem vừa thỏa mãn thị giác vừa ghi nhớ kiến thức.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">2.73s - 4.33s (1.63s) • Macro 50mm f/1.8 • Quầy bar bếp gia đình • Natural Key Light chiếu ngang tôn chất lỏng espresso • Whip Pan lia sang tủ lạnh</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 03 → 04</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_03_to_04.jpg" alt="Chuyển cảnh Shot 03 sang 04" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-04" data-start="4.37" data-end="5.63">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #04</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(4.37, 5.63, 4)">
+            ⏱ 4.37s - 5.63s (1.30s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(4.37, 5.63)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Thay Đổi Tương Phản Ánh Sáng Tủ Lạnh 7:27 AM: Tạo cú hích thị giác (Contrast Shift) bằng khoảng tối bí ẩn bên trong khoang lạnh
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(4.37, 5.63, 4)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_04_mid.jpg" alt="Shot 04 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.30s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 4.37s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 5.00s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 5.63s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:27 AM. Tay Lizzy mở cánh cửa tủ lạnh tối màu, bên trong sáng bừng ánh đèn LED tủ lạnh chiếu rọi gói phô mai Sargento Sharp Cheddar và đồ ăn sáng. Camera lia từ phải sang trái. Text: '1. Film videos panning right to left // 7.27AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Sự tương phản ánh sáng đột ngột (Low-key bao quanh High-key LED) đánh thức nhãn cầu người xem sau 3 cảnh sáng; góc nhìn POV cận cảnh tạo cảm giác chân thật đời thường.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Vùng tối xung quanh cánh tủ lạnh bị mất chi tiết hoàn toàn do độ tương phản động (dynamic range) quá rộng giữa bên trong và ngoài tủ.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Xen kẽ các phân cảnh có mức phơi sáng khác nhau (sáng ấm phòng khách -> sâu tối mở tủ lạnh) để video không bị phẳng lì và đều đều một màu.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">4.37s - 5.63s (1.30s) • Ultra-wide 18mm f/2.8 • Khoang tủ lạnh gia đình • Practical LED Light trong tủ lạnh • Lia máy nhanh sang chảo bếp</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 04 → 05</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_04_to_05.jpg" alt="Chuyển cảnh Shot 04 sang 05" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-05" data-start="5.67" data-end="6.3">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #05</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(5.67, 6.3, 5)">
+            ⏱ 5.67s - 6.30s (0.67s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(5.67, 6.3)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Micro-Beat Chớp Nhoáng Nấu Ăn 7:27 AM: Nhát cắt siêu ngắn 0.67s đóng vai trò 'Gia tốc nhịp thở' đẩy nhanh tiết tấu
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(5.67, 6.3, 5)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_05_mid.jpg" alt="Shot 05 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (0.67s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 5.67s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 5.98s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 6.30s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:27 AM. Chảo chống dính trên bếp nấu, món ăn xèo xèo bốc hơi nóng thơm lừng. Camera lướt thật nhanh qua mặt chảo đúng 0.67 giây rồi cắt cảnh. Text: '1. Film videos panning right to left // 7.27AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Shot diễn ra cực nhanh đóng vai trò một 'micro-beat chuyển nhịp', không để người xem kịp chán hay nhận ra điểm ngắt; tạo cảm giác buổi sáng bận rộn nhưng ngăn nắp.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Vì quá nhanh (dưới 20 frame) nên người xem chỉ kịp bắt hình bóng chảo chứ không đọc kịp text nếu không tua chậm.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Trong chuỗi B-roll sinh hoạt, hãy chèn 1-2 shot 'tốc độ cao' (micro-cut < 0.8s) để tạo nhịp co giật dopamine kích thích nhịp tim người xem.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">5.67s - 6.30s (0.67s) • Standard 35mm f/2.0 • Mặt bếp từ • Ánh sáng bếp tự nhiên • Cut lướt nhanh sang bàn ăn</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 05 → 06</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_05_to_06.jpg" alt="Chuyển cảnh Shot 05 sang 06" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-06" data-start="6.33" data-end="7.43">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #06</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(6.33, 7.43, 6)">
+            ⏱ 6.33s - 7.43s (1.13s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(6.33, 7.43)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Hạ Cánh Tại Bàn Ăn Bữa Sáng: Khép lại chuỗi hành động chuẩn bị bằng thành quả trọn vẹn giàu năng lượng
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(6.33, 7.43, 6)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_06_mid.jpg" alt="Shot 06 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.13s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 6.33s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 6.88s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 7.43s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:27 AM. Bàn ăn gỗ sáng màu, đĩa đồ ăn sáng tươm tất kết hợp ly cà phê đá sóng sánh, camera lia ngang kết thúc phân đoạn buổi sáng tại nhà. Text: '1. Film videos panning right to left // 7.27AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Đĩa thức ăn và ly cà phê tạo tam giác thị giác cân xứng; bề mặt gỗ sồi mang lại cảm giác ấm cúng, sang trọng và chuẩn thẩm mỹ 'Clean Aesthetic'.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Góc lia máy hơi thấp nên chưa khoe trọn vẹn toàn bộ bề mặt đĩa ăn từ trên cao (Top-down view).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Chuỗi hành vi chuẩn bị luôn cần một 'cú hạ cánh' (Payoff Shot) - cho thấy thành quả hoàn thiện trước khi chuyển sang phân đoạn tiếp theo.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">6.33s - 7.43s (1.13s) • Standard 35mm f/2.2 • Bàn ăn gỗ tự nhiên • Ánh ban mai ngập tràn phòng ăn • Whip Pan sang Bước 2</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 06 → 07</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_06_to_07.jpg" alt="Chuyển cảnh Shot 06 sang 07" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-07" data-start="7.47" data-end="9.03">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #07</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(7.47, 9.03, 7)">
+            ⏱ 7.47s - 9.03s (1.60s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(7.47, 9.03)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 2 'Add Into The Edits App' 7:31 AM: Mở khóa bí quyết hậu kỳ tại ranh giới chuyển dịch sang không gian làm việc
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(7.47, 9.03, 7)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_07_mid.jpg" alt="Shot 07 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.60s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 7.47s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 8.25s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 9.03s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:31 AM. Chuẩn bị đồ đạc cá nhân và bước vào không gian làm việc. Dòng text lớn xuất hiện: '2. Add them all into the Edits app // 7.31AM' kèm theo các thẻ nhãn phân loại nội dung.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Điểm neo thời gian 7:31 AM đánh dấu bước chuyển pha sinh học từ sinh hoạt cá nhân sang chuẩn bị làm việc; không gian gọn gàng tạo sự tin cậy cao của một coach chuyên nghiệp.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Các nhãn text xuất hiện hơi nhiều chi tiết phụ (Argento / Sharp / Cheddar) có thể gây phân tâm nhẹ khỏi thông điệp cốt lõi 'Add into Edits app'.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Khi hướng dẫn quy trình, hãy đặt bước 2 đúng vào thời điểm nhân vật di chuyển từ không gian sinh hoạt sang không gian sáng tạo để logic thời gian trùng khớp với logic nội dung.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">7.47s - 9.03s (1.60s) • Wide 28mm f/2.4 • Khu vực chuẩn bị làm việc • Ambient Light tự nhiên • Lia ngang sang mở bàn máy</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 07 → 08</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_07_to_08.jpg" alt="Chuyển cảnh Shot 07 sang 08" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-08" data-start="9.07" data-end="9.5">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #08</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(9.07, 9.5, 8)">
+            ⏱ 9.07s - 9.50s (0.47s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(9.07, 9.5)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Cú Lướt Không Gian Cực Ngắn 0.47s: Nối cầu thị giác giữa việc chuẩn bị và hạ đặt máy tính làm việc
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(9.07, 9.5, 8)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_08_mid.jpg" alt="Shot 08 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (0.47s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 9.07s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 9.29s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 9.50s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:37 AM. Camera lướt qua mép bàn làm việc, chuyển động cực dứt khoát chỉ trong gần nửa giây để chuẩn bị cho shot giao diện app tiếp theo. Text: '2. Add them all into the Edits app // 7.37AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Quán tính lia máy cực cao tạo hiệu ứng Motion Blur tự nhiên (In-camera blur) làm sạch khung hình và xóa tan cảm giác giật của một nhát cắt thô.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Thời lượng quá ngắn (0.47s) khiến người xem không nhận diện được vật thể nào cụ thể trên bàn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Khi cần chuyển từ cảnh người sang cảnh màn hình giao diện máy móc, hãy dùng một shot lướt siêu ngắn (Bridge Shot) có chuyển động mờ để mắt người xem trượt êm ái sang môi trường mới.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">9.07s - 9.50s (0.47s) • Standard 35mm f/2.0 • Mặt bàn làm việc • Ánh sáng bàn làm việc • Match Pan sang màn hình app</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 08 → 09</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_08_to_09.jpg" alt="Chuyển cảnh Shot 08 sang 09" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-09" data-start="9.53" data-end="10.87">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #09</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(9.53, 10.87, 9)">
+            ⏱ 9.53s - 10.87s (1.37s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(9.53, 10.87)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Trực Quan Hóa Màn Hình Biên Tập: Cung cấp bằng chứng thực tế nhập footage vào ứng dụng dựng video
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(9.53, 10.87, 9)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_09_mid.jpg" alt="Shot 09 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.37s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 9.53s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 10.20s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 10.87s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:37 AM. Góc quay cận màn hình hoặc thao tác đưa hàng loạt clip đã quay lia ngang vào timeline ứng dụng dựng video (Instagram Edits / CapCut). Text: '2. Add them all into the Edits app // 7.37AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Cung cấp bằng chứng thị giác trực quan (Visual Proof), chứng minh cho người xem thấy các clip vừa quay đều nằm ngăn nắp trong app sẵn sàng dựng.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Ánh sáng phản xạ từ màn hình điện tử hơi lóa nhẹ ở phần viền trên.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Hướng dẫn làm video thì bắt buộc phải có shot quay màn hình thực tế (Proof of Work) - người xem chỉ tin và làm theo khi nhìn thấy giao diện thật.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">9.53s - 10.87s (1.37s) • Close-up 50mm f/2.0 • Bàn làm việc công nghệ • Màn hình kết hợp ánh sáng phòng • Pan sang Bước 3</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 09 → 10</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_09_to_10.jpg" alt="Chuyển cảnh Shot 09 sang 10" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-10" data-start="10.9" data-end="12.33">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #10</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(10.9, 12.33, 10)">
+            ⏱ 10.90s - 12.33s (1.47s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(10.9, 12.33)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 3 'Speed Up The Turns To 2-3x Speed': 'Tuyệt kỹ vàng' tạo hiệu ứng Whip Pan siêu mượt bằng Split & Speed
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(10.9, 12.33, 10)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_10_mid.jpg" alt="Shot 10 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.47s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 10.90s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 11.62s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 12.33s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:38 AM. Thao tác trên timeline: cắt (split) đoạn camera đang xoay lia giữa 2 cảnh và đẩy tốc độ (speed) lên 2x - 3x. Dòng text: '3. Speed up the turns to 2-3 speed // using the split & speed features // 7.38AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Đây là giá trị kỹ thuật cốt lõi (Core Secret) của toàn bộ video - giải thích tại sao video trông cực kỳ chuyên nghiệp mà không cần plugin phức tạp; text hướng dẫn rõ ràng từng nút bấm.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Hướng dẫn dạng text hơi dài, người mới bắt đầu có thể cần pause lại để đọc kỹ thao tác.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Tăng tốc đoạn lia máy (Speed Ramping / Whip Pan) từ 1x lên 2.5x chính là chìa khóa biến các cảnh quay điện thoại bình thường thành những cú chuyển cảnh điện ảnh mượt mà.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">10.90s - 12.33s (1.47s) • Standard 35mm f/2.2 • Không gian bàn làm việc • Tự nhiên êm dịu • Nối tiếp nhịp làm việc</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 10 → 11</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_10_to_11.jpg" alt="Chuyển cảnh Shot 10 sang 11" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-11" data-start="12.37" data-end="13.8">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #11</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(12.37, 13.8, 11)">
+            ⏱ 12.37s - 13.80s (1.47s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(12.37, 13.8)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Điểm Neo Văn Hóa 'Proverbs & Sổ Tay' 7:39 AM: Khắc họa chiều sâu tư duy và kỷ luật nội tâm của creator
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(12.37, 13.8, 11)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_11_mid.jpg" alt="Shot 11 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.47s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 12.37s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 13.09s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 13.80s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">7:39 AM. Camera lia qua cuốn sổ tay ghi chép câu trích dẫn truyền cảm hứng Proverbs, bút viết và kế hoạch làm việc buổi sáng. Text: '3. Speed up the turns to 2-3 speed // 7.39AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Xây dựng hình tượng chuyên gia sâu sắc (Thoughtful Authority); chữ viết tay và trang sách tạo cảm giác mộc mạc, đối lập với sự bóng bẩy số học trên màn hình.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Chữ trên trang sách hơi nhỏ, camera lia nhanh nên người xem khó đọc hết trọn vẹn nội dung câu trích dẫn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Đừng chỉ quay màn hình và máy móc; hãy lồng ghép những chi tiết mang tính triết lý sống (sổ tay, trang sách) để tạo chiều sâu thương hiệu cá nhân.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">12.37s - 13.80s (1.47s) • Medium Close-up 40mm f/2.0 • Bàn gỗ đọc sách • Ánh sáng cửa sổ chiếu nghiêng 45 độ • Pan sang mở máy tính</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 11 → 12</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_11_to_12.jpg" alt="Chuyển cảnh Shot 11 sang 12" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-12" data-start="13.83" data-end="15.3">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #12</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(13.83, 15.3, 12)">
+            ⏱ 13.83s - 15.30s (1.50s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(13.83, 15.3)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước Vào Ca Làm Việc Sáng 8:12 AM: Chuyển dịch năng lượng sang chế độ tập trung cao độ (Deep Work Mode)
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(13.83, 15.3, 12)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_12_mid.jpg" alt="Shot 12 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.50s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 13.83s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 14.57s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 15.30s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">8:12 AM. Màn hình laptop hiển thị tài liệu công việc, camera lướt ngang qua bàn phím và không gian làm việc sáng sủa. Dòng text mốc giờ: '8.12AM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Tỷ lệ tương quan giữa màn hình và bàn làm việc cân đối; đường dẫn thị giác từ mép bàn hướng thẳng vào màn hình làm việc tạo sự tập trung.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Góc máy tương tự Shot 09, cần đổi tiêu cự hoặc góc cao hơn để tạo sự đa dạng thị giác.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Cần định vị rõ mốc thời gian chuyển giao (8:12 AM) để người xem cảm nhận được nhịp trôi thực tế của một ngày làm việc hiệu suất.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">13.83s - 15.30s (1.50s) • Standard 35mm f/2.0 • Bàn làm việc laptop • Neutral Daylight • Pan sang ly Stanley</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 12 → 13</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_12_to_13.jpg" alt="Chuyển cảnh Shot 12 sang 13" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-13" data-start="15.33" data-end="16.93">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #13</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(15.33, 16.93, 13)">
+            ⏱ 15.33s - 16.93s (1.63s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(15.33, 16.93)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 4 'Add A Time Stamp In The Center' 9:03 AM: Ly Stanley & Slogan định hình cá tính thương hiệu hiện đại
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(15.33, 16.93, 13)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_13_mid.jpg" alt="Shot 13 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.63s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 15.33s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 16.13s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 16.93s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">9:03 AM. Cận cảnh ly giữ nhiệt Stanley màu kem trendy bên cạnh sổ tay có dòng chữ 'stay humble, work hard, be kind'. Text hướng dẫn xuất hiện to rõ ở trung tâm: '4. Add a time stamp in the center // 9.03AM // HOOKS'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Bố cục trung tâm hoàn hảo; ly Stanley là một 'Prop' thị giác cực kỳ quen thuộc của giới creator hiện đại, tạo cảm giác thời thượng và gần gũi.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Chữ 'TANLEY' bị cắt mất chữ S ở rìa trái do khung dọc 9:16 crop hẹp.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Chèn mốc thời gian lớn (Time Stamp) ở chính tâm màn hình là một 'Anchor Point' thị giác cực mạnh, giúp người xem luôn định vị được câu chuyện đang ở đâu trong chu kỳ 24h.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">15.33s - 16.93s (1.63s) • Close-up 50mm f/1.8 • Bàn làm việc góc phong cách • High-key dịu nhẹ • Lia máy sang ăn trưa</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 13 → 14</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_13_to_14.jpg" alt="Chuyển cảnh Shot 13 sang 14" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-14" data-start="16.97" data-end="18.2">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #14</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(16.97, 18.2, 14)">
+            ⏱ 16.97s - 18.20s (1.27s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(16.97, 18.2)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bẻ Nhịp Ăn Trưa Nhanh 12:07 PM: Đan xen chi tiết đời thường chân thật phá vỡ tính khuôn mẫu dạy học
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(16.97, 18.2, 14)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_14_mid.jpg" alt="Shot 14 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.27s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 16.97s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 17.59s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 18.20s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">12:07 PM. Mốc trưa xuất hiện: '12.07PM // Quick Chick // SUPER NINTENDO'. Bữa ăn trưa nhanh tiện lợi và góc máy máy chơi game hoài niệm.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Nhịp chuyển từ bàn làm việc 9:03 AM sang ăn trưa 12:07 PM rất hợp lý; sự xuất hiện của đồ ăn mang lại năng lượng đời thường, chống nhàm chán.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Vùng chữ hơi dày đặc (Quick Chick, Super Nintendo, Time Stamp) làm màn hình hơi chật chội trong 1.27s.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Đừng làm video quá nghiêm túc; người xem thích những khoảnh khắc đời thường (ăn đồ ăn nhanh, chơi game) vì nó khiến creator trở nên chân thật và đáng mến hơn.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">16.97s - 18.20s (1.27s) • Standard 35mm f/2.2 • Khu vực ăn trưa / nghỉ ngơi • Giữa trưa tự nhiên qua cửa sổ • Lia sang đầu giờ chiều</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 14 → 15</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_14_to_15.jpg" alt="Chuyển cảnh Shot 14 sang 15" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-15" data-start="18.23" data-end="19.8">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #15</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(18.23, 19.8, 15)">
+            ⏱ 18.23s - 19.80s (1.60s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(18.23, 19.8)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Chuyển Giao Năng Lượng Chiều 1:24 PM: Duy trì đà bước đi và nhịp sống năng động sau bữa trưa
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(18.23, 19.8, 15)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_15_mid.jpg" alt="Shot 15 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.60s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 18.23s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 19.02s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 19.80s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">1:24 PM. Mốc thời gian trung tâm: '1.24PM'. Lizzy di chuyển hoặc hoạt động trong không gian ngập tràn ánh nắng ấm, cơ thể thả lỏng tự nhiên.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Ánh sáng ban chiều rực rỡ tạo cảm giác tươi mới; chuyển động bước đi chuẩn bị cho cú 'Spin on beat' bùng nổ ở shot tiếp theo.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Chi tiết nền hơi nhiều đồ vật trang trí nhỏ làm phân tán nhẹ điểm nhìn chính.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Trước khi thực hiện một cú chuyển cảnh điểm nhấn (Hero Transition), hãy dùng một shot đệm nhẹ nhàng để lấy đà thị giác cho người xem.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">18.23s - 19.80s (1.60s) • Wide 28mm f/2.4 • Phòng sinh hoạt chung • Golden-hour sớm ấm áp • Nối vào cú xoay người Spin</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 15 → 16</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_15_to_16.jpg" alt="Chuyển cảnh Shot 15 sang 16" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-16" data-start="19.83" data-end="21.57">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #16</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(19.83, 21.57, 16)">
+            ⏱ 19.83s - 21.57s (1.77s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(19.83, 21.57)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 5 'Spin On Beat' 1:56 PM: Cú xoay người 360 độ khớp chuẩn từng phách kick của bản nhạc bắt trend
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(19.83, 21.57, 16)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_16_mid.jpg" alt="Shot 16 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.77s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 19.83s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 20.70s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 21.57s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">1:56 PM. Lizzy xoay tròn toàn thân (Body Spin) theo chiều kim đồng hồ, tà áo và mái tóc tung nhẹ theo chuyển động. Text hướng dẫn: '5. Use this audio & spin on beat // -1.56PM-'. Cú xoay rơi chính xác vào nốt rơi của beat nhạc.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Đây là đỉnh cao của sự ăn khớp âm thanh và hình ảnh (Audio-Visual Sync); cú xoay cơ thể tạo ra lực ly tâm thị giác giữ chặt mắt người xem vào giữa màn hình.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Đáy khung hình hơi sát gấu quần của Lizzy, nếu lùi camera thêm 20cm sẽ có thêm không gian thở (foot room) hoàn mỹ hơn.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Cú xoay người khớp nhạc (Spin on beat) là một trong những chuyển động có tỷ lệ re-watch cao nhất trên Reels/TikTok vì mắt người luôn bị kích thích bởi vòng xoay tròn.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">19.83s - 21.57s (1.77s) • Medium 35mm f/2.0 Full Body Shot • Giữa phòng khách thoáng đãng • Soft Ambient Light • Xoay vòng nối sang Shot 17</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 16 → 17</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_16_to_17.jpg" alt="Chuyển cảnh Shot 16 sang 17" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-17" data-start="21.6" data-end="22.9">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #17</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(21.6, 22.9, 17)">
+            ⏱ 21.60s - 22.90s (1.33s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(21.6, 22.9)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Trở Lại Bàn Làm Việc 3:35 PM: Hạ cánh mượt mà sau cú xoay cơ thể để hoàn thành công việc buổi chiều
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(21.6, 22.9, 17)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_17_mid.jpg" alt="Shot 17 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.33s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 21.60s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 22.25s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 22.90s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">3:35 PM. Sau cú xoay người, camera hạ cánh ngay tại bàn làm việc buổi chiều. Lizzy tập trung tư vấn hoặc xử lý các đầu việc marketing quan trọng cuối ngày. Text: '3.35PM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Độ tương phản giữa sự vui tươi (cú xoay 1:56 PM) và sự nghiêm túc (làm việc 3:35 PM) khắc họa chân dung một người làm việc linh hoạt, vừa chill vừa kỷ luật.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Cắt cảnh từ chuyển động xoay nhanh sang ngồi tĩnh hơi gắt, cần chèn thêm 0.2s motion blur chuyển tiếp.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Cân bằng giữa 'Chơi' và 'Làm' là cốt lõi của nội dung phong cách sống hiện đại; đừng chỉ thể hiện mình cắm đầu làm việc 24/7.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">21.60s - 22.90s (1.33s) • Standard 35mm f/2.2 • Bàn làm việc chiều • Ánh chiều tà dịu dần • Chuyển sang Bước 6</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 17 → 18</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_17_to_18.jpg" alt="Chuyển cảnh Shot 17 sang 18" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-18" data-start="22.93" data-end="23.6">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #18</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(22.93, 23.6, 18)">
+            ⏱ 22.93s - 23.60s (0.70s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(22.93, 23.6)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bước 6 'Show Work & Downtime' 4:49 PM: Mở màn triết lý cân bằng cuộc sống của creator kinh doanh tự do
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(22.93, 23.6, 18)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_18_mid.jpg" alt="Shot 18 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (0.70s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 22.93s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 23.27s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 23.60s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">4:49 PM. Lizzy đóng laptop hoặc ngả lưng thư giãn bên ghế. Dòng text lớn bước cuối cùng: '6. Show work & downtime // 4.49PM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Thông điệp 'Show work & downtime' chạm đúng tâm lý của hàng triệu người theo dõi: khao khát một lối sống vừa kiếm ra tiền vừa có thời gian tận hưởng bản thân.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Thời lượng 0.7s hơi ngắn, đóng vai trò bản lề chuyển pha sang buổi tối.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Video phong cách sống viral không bán sản phẩm thô thiển, nó bán một 'Lối sống đáng mơ ước' (Aspirational Lifestyle) kết hợp giữa làm việc thông minh và nghỉ ngơi trọn vẹn.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">22.93s - 23.60s (0.70s) • Standard 35mm f/2.0 • Góc sofa thư giãn • Chạng vạng chiều • Lia sang màn hình giải trí</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 18 → 19</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_18_to_19.jpg" alt="Chuyển cảnh Shot 18 sang 19" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-19" data-start="23.63" data-end="24.5">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #19</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(23.63, 24.5, 19)">
+            ⏱ 23.63s - 24.50s (0.90s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(23.63, 24.5)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Downtime Chơi Game Giải Trí: Nét chấm phá hài hước và chân thật của thế hệ Creator trẻ
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(23.63, 24.5, 19)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_19_mid.jpg" alt="Shot 19 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (0.90s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 23.63s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 24.06s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 24.50s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">4:49 PM. Cận cảnh màn hình game console (Drafting game / Nintendo), hiển thị danh sách người chơi tham gia phòng game. Text: '6. Show work & downtime // 4.49PM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Thể hiện đúng nghĩa từ 'Downtime' - không phải nghỉ ngơi giả tạo như đi spa sang chảnh, mà là chơi game bình dị như bao bạn trẻ khác.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Màn hình game nhiều chữ nhỏ li ti có thể khiến người xem tập trung đọc chữ game thay vì nắm bắt nhịp video.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Những sở thích cá nhân cụ thể (chơi game, chăm mèo, đọc truyện) chính là 'chất keo gắn kết' (Relatability Glue) biến người xem vãng lai thành fan trung thành.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">23.63s - 24.50s (0.90s) • Close-up màn hình • Phòng giải trí • Ánh sáng màn hình • Lia sang bữa tối</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 19 → 20</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_19_to_20.jpg" alt="Chuyển cảnh Shot 19 sang 20" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-20" data-start="24.53" data-end="26.03">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #20</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(24.53, 26.03, 20)">
+            ⏱ 24.53s - 26.03s (1.53s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(24.53, 26.03)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Bữa Tối Hoàng Hôn 6:13 PM: Màu sắc ấm cúng xua tan mọi áp lực của một ngày làm việc dài
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(24.53, 26.03, 20)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_20_mid.jpg" alt="Shot 20 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.53s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 24.53s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 25.28s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 26.03s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">6:13 PM. Bếp ăn buổi tối ấm áp, đèn vàng ấm cúng rọi xuống bàn ăn, bữa tối nhẹ nhàng kết thúc một ngày làm việc hiệu suất cao. Text: '6. Show work & downtime // 6.13PM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Tông màu ấm (Warm Tungsten Tone) đối lập rõ nét với tông xanh mát ban sáng, báo hiệu nhịp sinh học đang chuyển dần về trạng thái nghỉ ngơi sâu.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Góc lia máy hơi nhanh ở đoạn cuối khiến chi tiết món ăn tối bị trôi nhanh.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Sử dụng nhiệt độ màu (Color Temperature) thay đổi theo thời gian thực (6000K sáng sớm -> 3200K tối) để dẫn dắt cảm xúc người xem một cách vô thức.</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">24.53s - 26.03s (1.53s) • Standard 35mm f/2.0 • Bàn ăn tối gia đình • Đèn vàng ấm cúng 3000K • Nối vào cảnh kết phòng ngủ</span>
+          </div>
+        </div>
+      </div>
+
+      
+        <div class="mt-4 pt-3 border-top border-slate-100">
+          <div class="d-flex align-items-center justify-content-between mb-2">
+            <span class="badge bg-slate-100 text-slate-600 font-mono text-xs">TRANSITION MATCH-CUT: SHOT 20 → 21</span>
+            <span class="text-xs text-slate-400 font-mono">Whip-Pan 2-3x</span>
+          </div>
+          <div class="trans-container rounded-2 overflow-hidden border border-slate-200" style="background:#090d16;">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/transitions/trans_20_to_21.jpg" alt="Chuyển cảnh Shot 20 sang 21" class="img-fluid w-100" loading="lazy" style="max-height:220px; object-fit:contain;">
+          </div>
+        </div>
+        
+    </div>
+    
+    <div class="shot-card bg-white rounded-3 p-3 p-md-4 mb-4 border border-slate-200 shadow-sm" id="shot-21" data-start="26.07" data-end="27.87">
+      <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 pb-2 border-bottom border-slate-100">
+        <div class="d-flex align-items-center gap-2">
+          <span class="badge bg-slate-900 text-white font-mono px-2 py-1 fs-6">SHOT #21</span>
+          <button class="btn btn-sm btn-outline-primary font-mono py-0 px-2 time-jump-btn" onclick="jumpToShot(26.07, 27.87, 21)">
+            ⏱ 26.07s - 27.87s (1.83s)
+          </button>
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-light border font-mono text-xs py-1" onclick="loopShot(26.07, 27.87)">🔁 Lặp Đoạn</button>
+          <span class="badge bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs">Pán R-to-L</span>
+        </div>
+      </div>
+
+      <h3 class="shot-title text-slate-950 fw-bold mb-3 fs-5" style="letter-spacing:-0.01em;">
+        Khép Lại Chu Trình 9:14 PM: Cú hạ màn êm ái hoàn tất vòng tuần hoàn hoàn hảo 24 giờ của một ngày
+      </h3>
+
+      <div class="row g-3 mb-3">
+        <div class="col-12 col-md-5">
+          <div class="position-relative rounded-2 overflow-hidden border border-slate-200 cursor-pointer shadow-sm" onclick="jumpToShot(26.07, 27.87, 21)">
+            <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_21_mid.jpg" alt="Shot 21 Keyframe" class="img-fluid w-100 d-block" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-2 text-white text-center font-mono text-xs" style="background: linear-gradient(transparent, rgba(9,13,22,0.85));">
+              ▶ Click Xem Đoạn Này (1.83s)
+            </div>
+          </div>
+          <div class="d-flex gap-1 mt-2">
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">START: 26.07s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">MID: 26.97s</div>
+            <div class="flex-fill text-center p-1 rounded bg-slate-50 border border-slate-200 text-xxs font-mono text-slate-500">END: 27.87s</div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-7 d-flex flex-column justify-content-between">
+          <div>
+            <div class="p-3 rounded-2 bg-slate-50 border border-slate-200 mb-3">
+              <div class="text-xs fw-bold font-mono text-slate-500 text-uppercase mb-1">🎬 Mô tả Đối Tượng & Diễn Biến</div>
+              <p class="mb-0 text-slate-800 fs-6 reading-text">9:14 PM. Phòng ngủ buổi tối dịu dàng, ánh đèn đầu giường ấm áp, Lizzy chuẩn bị đi ngủ hoặc tắt đèn, khép lại trọn vẹn một ngày 'Day In The Life' từ 6:15 AM đến 9:14 PM. Text: '6. Show work & downtime // 9.14PM'.</p>
+            </div>
+
+            <div class="row g-2 mb-3">
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-emerald-50 border border-emerald-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-emerald-800 mb-1">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Cấu trúc đóng khung đầu cuối tương ứng (Full Circle Narrative): mở màn ở giường ngủ lúc 6:15 AM và kết thúc tại giường ngủ lúc 9:14 PM tạo cảm giác trọn vẹn, thỏa mãn cho tâm lý người xem.</p>
+                </div>
+              </div>
+              <div class="col-12 col-lg-6">
+                <div class="p-3 rounded-2 bg-rose-50 border border-rose-200 h-100">
+                  <div class="text-xs fw-bold font-mono text-rose-800 mb-1">⚠️ Cần Lưu Ý (Hạn chế)</div>
+                  <p class="mb-0 text-slate-800 text-sm reading-text">Phần text CTA kêu gọi comment (theo caption) không xuất hiện trên màn hình video mà chỉ nằm trong caption Instagram.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-2 bg-amber-50 border border-amber-200">
+              <div class="text-xs fw-bold font-mono text-amber-900 mb-1">💡 Đúc Kết Đạo Diễn / Bài Học Thực Chiến</div>
+              <p class="mb-0 text-slate-900 text-sm fw-medium reading-text">Luôn kết thúc video lifestyle bằng cấu trúc vòng tròn (Circular Storytelling) - quay lại điểm xuất phát ban đầu để tạo cảm giác tròn trịa và kích thích người xem xem lại từ đầu (Looping).</p>
+            </div>
+          </div>
+
+          <div class="mt-3 pt-2 border-top border-slate-100">
+            <span class="text-xs font-mono text-slate-500">📐 THÔNG SỐ: </span>
+            <span class="text-xs font-mono text-slate-700">26.07s - 27.87s (1.83s) • Wide 28mm f/2.0 • Giường ngủ buổi tối • Low-key Warm Bedside Lamp • Fade out kết thúc</span>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+    
+        </div>
+
+        <!-- GRID VIEW: 21 THUMBNAILS -->
+        <div id="gridView" style="display:none;">
+          <div class="row g-3">
+            
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(0.0, 1.47, 1)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.jpg" alt="Shot 01" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#01</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.50s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Visual Hook 'Thức Dậy 6:15 AM': Kích hoạt bản năng tò mò bằng vector lia máy Phải sang Trái phá tan nhịp tĩnh">Visual Hook 'Thức Dậy 6:15 AM': Kích hoạt bản năng tò mò bằng vector lia máy Phải sang Trái phá tan nhịp tĩnh</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 0.00s - 1.47s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(1.5, 2.7, 2)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_02_mid.jpg" alt="Shot 02" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#02</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.23s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Duy Trì Đà Chuyển Động Skincare 6:30 AM: Kế thừa quán tính lia máy đưa người xem vào không gian riêng tư trước gương">Duy Trì Đà Chuyển Động Skincare 6:30 AM: Kế thừa quán tính lia máy đưa người xem vào không gian riêng tư trước gương</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 1.50s - 2.70s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(2.73, 4.33, 3)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_03_mid.jpg" alt="Shot 03" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#03</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.63s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 1 'Film Panning Right To Left': Tận dụng dòng chảy cà phê 7:03 AM làm điểm chạm thính giác & bài học kỹ thuật">Bước 1 'Film Panning Right To Left': Tận dụng dòng chảy cà phê 7:03 AM làm điểm chạm thính giác & bài học kỹ thuật</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 2.73s - 4.33s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(4.37, 5.63, 4)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_04_mid.jpg" alt="Shot 04" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#04</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.30s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Thay Đổi Tương Phản Ánh Sáng Tủ Lạnh 7:27 AM: Tạo cú hích thị giác (Contrast Shift) bằng khoảng tối bí ẩn bên trong khoang lạnh">Thay Đổi Tương Phản Ánh Sáng Tủ Lạnh 7:27 AM: Tạo cú hích thị giác (Contrast Shift) bằng khoảng tối bí ẩn bên trong khoang lạnh</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 4.37s - 5.63s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(5.67, 6.3, 5)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_05_mid.jpg" alt="Shot 05" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#05</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">0.67s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Micro-Beat Chớp Nhoáng Nấu Ăn 7:27 AM: Nhát cắt siêu ngắn 0.67s đóng vai trò 'Gia tốc nhịp thở' đẩy nhanh tiết tấu">Micro-Beat Chớp Nhoáng Nấu Ăn 7:27 AM: Nhát cắt siêu ngắn 0.67s đóng vai trò 'Gia tốc nhịp thở' đẩy nhanh tiết tấu</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 5.67s - 6.30s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(6.33, 7.43, 6)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_06_mid.jpg" alt="Shot 06" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#06</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.13s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Hạ Cánh Tại Bàn Ăn Bữa Sáng: Khép lại chuỗi hành động chuẩn bị bằng thành quả trọn vẹn giàu năng lượng">Hạ Cánh Tại Bàn Ăn Bữa Sáng: Khép lại chuỗi hành động chuẩn bị bằng thành quả trọn vẹn giàu năng lượng</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 6.33s - 7.43s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(7.47, 9.03, 7)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_07_mid.jpg" alt="Shot 07" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#07</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.60s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 2 'Add Into The Edits App' 7:31 AM: Mở khóa bí quyết hậu kỳ tại ranh giới chuyển dịch sang không gian làm việc">Bước 2 'Add Into The Edits App' 7:31 AM: Mở khóa bí quyết hậu kỳ tại ranh giới chuyển dịch sang không gian làm việc</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 7.47s - 9.03s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(9.07, 9.5, 8)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_08_mid.jpg" alt="Shot 08" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#08</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">0.47s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Cú Lướt Không Gian Cực Ngắn 0.47s: Nối cầu thị giác giữa việc chuẩn bị và hạ đặt máy tính làm việc">Cú Lướt Không Gian Cực Ngắn 0.47s: Nối cầu thị giác giữa việc chuẩn bị và hạ đặt máy tính làm việc</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 9.07s - 9.50s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(9.53, 10.87, 9)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_09_mid.jpg" alt="Shot 09" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#09</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.37s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Trực Quan Hóa Màn Hình Biên Tập: Cung cấp bằng chứng thực tế nhập footage vào ứng dụng dựng video">Trực Quan Hóa Màn Hình Biên Tập: Cung cấp bằng chứng thực tế nhập footage vào ứng dụng dựng video</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 9.53s - 10.87s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(10.9, 12.33, 10)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_10_mid.jpg" alt="Shot 10" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#10</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.47s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 3 'Speed Up The Turns To 2-3x Speed': 'Tuyệt kỹ vàng' tạo hiệu ứng Whip Pan siêu mượt bằng Split & Speed">Bước 3 'Speed Up The Turns To 2-3x Speed': 'Tuyệt kỹ vàng' tạo hiệu ứng Whip Pan siêu mượt bằng Split & Speed</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 10.90s - 12.33s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(12.37, 13.8, 11)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_11_mid.jpg" alt="Shot 11" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#11</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.47s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Điểm Neo Văn Hóa 'Proverbs & Sổ Tay' 7:39 AM: Khắc họa chiều sâu tư duy và kỷ luật nội tâm của creator">Điểm Neo Văn Hóa 'Proverbs & Sổ Tay' 7:39 AM: Khắc họa chiều sâu tư duy và kỷ luật nội tâm của creator</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 12.37s - 13.80s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(13.83, 15.3, 12)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_12_mid.jpg" alt="Shot 12" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#12</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.50s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước Vào Ca Làm Việc Sáng 8:12 AM: Chuyển dịch năng lượng sang chế độ tập trung cao độ (Deep Work Mode)">Bước Vào Ca Làm Việc Sáng 8:12 AM: Chuyển dịch năng lượng sang chế độ tập trung cao độ (Deep Work Mode)</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 13.83s - 15.30s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(15.33, 16.93, 13)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_13_mid.jpg" alt="Shot 13" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#13</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.63s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 4 'Add A Time Stamp In The Center' 9:03 AM: Ly Stanley & Slogan định hình cá tính thương hiệu hiện đại">Bước 4 'Add A Time Stamp In The Center' 9:03 AM: Ly Stanley & Slogan định hình cá tính thương hiệu hiện đại</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 15.33s - 16.93s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(16.97, 18.2, 14)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_14_mid.jpg" alt="Shot 14" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#14</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.27s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bẻ Nhịp Ăn Trưa Nhanh 12:07 PM: Đan xen chi tiết đời thường chân thật phá vỡ tính khuôn mẫu dạy học">Bẻ Nhịp Ăn Trưa Nhanh 12:07 PM: Đan xen chi tiết đời thường chân thật phá vỡ tính khuôn mẫu dạy học</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 16.97s - 18.20s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(18.23, 19.8, 15)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_15_mid.jpg" alt="Shot 15" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#15</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.60s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Chuyển Giao Năng Lượng Chiều 1:24 PM: Duy trì đà bước đi và nhịp sống năng động sau bữa trưa">Chuyển Giao Năng Lượng Chiều 1:24 PM: Duy trì đà bước đi và nhịp sống năng động sau bữa trưa</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 18.23s - 19.80s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(19.83, 21.57, 16)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_16_mid.jpg" alt="Shot 16" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#16</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.77s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 5 'Spin On Beat' 1:56 PM: Cú xoay người 360 độ khớp chuẩn từng phách kick của bản nhạc bắt trend">Bước 5 'Spin On Beat' 1:56 PM: Cú xoay người 360 độ khớp chuẩn từng phách kick của bản nhạc bắt trend</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 19.83s - 21.57s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(21.6, 22.9, 17)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_17_mid.jpg" alt="Shot 17" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#17</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.33s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Trở Lại Bàn Làm Việc 3:35 PM: Hạ cánh mượt mà sau cú xoay cơ thể để hoàn thành công việc buổi chiều">Trở Lại Bàn Làm Việc 3:35 PM: Hạ cánh mượt mà sau cú xoay cơ thể để hoàn thành công việc buổi chiều</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 21.60s - 22.90s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(22.93, 23.6, 18)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_18_mid.jpg" alt="Shot 18" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#18</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">0.70s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bước 6 'Show Work & Downtime' 4:49 PM: Mở màn triết lý cân bằng cuộc sống của creator kinh doanh tự do">Bước 6 'Show Work & Downtime' 4:49 PM: Mở màn triết lý cân bằng cuộc sống của creator kinh doanh tự do</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 22.93s - 23.60s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(23.63, 24.5, 19)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_19_mid.jpg" alt="Shot 19" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#19</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">0.90s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Downtime Chơi Game Giải Trí: Nét chấm phá hài hước và chân thật của thế hệ Creator trẻ">Downtime Chơi Game Giải Trí: Nét chấm phá hài hước và chân thật của thế hệ Creator trẻ</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 23.63s - 24.50s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(24.53, 26.03, 20)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_20_mid.jpg" alt="Shot 20" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#20</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.53s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Bữa Tối Hoàng Hôn 6:13 PM: Màu sắc ấm cúng xua tan mọi áp lực của một ngày làm việc dài">Bữa Tối Hoàng Hôn 6:13 PM: Màu sắc ấm cúng xua tan mọi áp lực của một ngày làm việc dài</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 24.53s - 26.03s</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="card h-100 border border-slate-200 shadow-sm cursor-pointer grid-thumb-card" onclick="jumpToShot(26.07, 27.87, 21)">
+        <div class="position-relative">
+          <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_21_mid.jpg" alt="Shot 21" class="card-img-top w-100" loading="lazy" style="aspect-ratio: 9/16; object-fit:cover;">
+          <span class="position-absolute top-0 start-0 m-2 badge bg-slate-900 text-white font-mono">#21</span>
+          <span class="position-absolute bottom-0 end-0 m-2 badge bg-dark bg-opacity-75 text-white font-mono text-xxs">1.83s</span>
+        </div>
+        <div class="card-body p-2 bg-white">
+          <div class="text-xs fw-bold text-slate-900 text-truncate" title="Khép Lại Chu Trình 9:14 PM: Cú hạ màn êm ái hoàn tất vòng tuần hoàn hoàn hảo 24 giờ của một ngày">Khép Lại Chu Trình 9:14 PM: Cú hạ màn êm ái hoàn tất vòng tuần hoàn hoàn hảo 24 giờ của một ngày</div>
+          <div class="text-xxs text-slate-500 font-mono mt-1">⏱ 26.07s - 27.87s</div>
+        </div>
+      </div>
+    </div>
+    
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- BOTTOM FOOTER -->
+  <footer class="bg-white border-top border-slate-200 py-4 mt-5 text-center">
+    <div class="container">
+      <p class="text-slate-500 text-xs font-mono mb-1">
+        BÁO CÁO PHÂN TÍCH ĐẠO DIỄN CHUYÊN SÂU • HỆ THỐNG KIẾN THỨC ĐIỆN ẢNH FEDU.VN
+      </p>
+      <p class="text-slate-400 text-xxs font-mono mb-0">
+        Engine: OpenCV HSV Scene Detection • Cloudflare R2 CDN • Typography: Plus Jakarta Sans + Newsreader
+      </p>
+    </div>
+  </footer>
+
+  <script>
+    const video = document.getElementById('mainVideo');
+    const timeDisplay = document.getElementById('currentTimeDisplay');
+    let loopActive = false;
+    let loopStart = 0;
+    let loopEnd = 0;
+    let currentShotId = 1;
+
+    const shots = [{"id": 1, "st": 0.0, "en": 1.47}, {"id": 2, "st": 1.5, "en": 2.7}, {"id": 3, "st": 2.73, "en": 4.33}, {"id": 4, "st": 4.37, "en": 5.63}, {"id": 5, "st": 5.67, "en": 6.3}, {"id": 6, "st": 6.33, "en": 7.43}, {"id": 7, "st": 7.47, "en": 9.03}, {"id": 8, "st": 9.07, "en": 9.5}, {"id": 9, "st": 9.53, "en": 10.87}, {"id": 10, "st": 10.9, "en": 12.33}, {"id": 11, "st": 12.37, "en": 13.8}, {"id": 12, "st": 13.83, "en": 15.3}, {"id": 13, "st": 15.33, "en": 16.93}, {"id": 14, "st": 16.97, "en": 18.2}, {"id": 15, "st": 18.23, "en": 19.8}, {"id": 16, "st": 19.83, "en": 21.57}, {"id": 17, "st": 21.6, "en": 22.9}, {"id": 18, "st": 22.93, "en": 23.6}, {"id": 19, "st": 23.63, "en": 24.5}, {"id": 20, "st": 24.53, "en": 26.03}, {"id": 21, "st": 26.07, "en": 27.87}];
+
+    video.addEventListener('timeupdate', () => {
+      const cur = video.currentTime;
+      const m = Math.floor(cur / 60);
+      const s = Math.floor(cur % 60);
+      const ms = Math.floor((cur % 1) * 100);
+      timeDisplay.textContent = `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}.${String(ms).padStart(2, '0')} / 00:27.90`;
+
+      if (loopActive && cur >= loopEnd) {
+        video.currentTime = loopStart;
+        video.play();
+      }
+
+      // Highlight active card
+      for (const sh of shots) {
+        if (cur >= sh.st && cur < sh.en) {
+          if (currentShotId !== sh.id) {
+            currentShotId = sh.id;
+            highlightCard(sh.id);
+          }
+          break;
+        }
+      }
+    });
+
+    function highlightCard(id) {
+      document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-shot'));
+      const activeEl = document.getElementById(`shot-${String(id).padStart(2, '0')}`);
+      if (activeEl) {
+        activeEl.classList.add('active-shot');
+      }
+    }
+
+    function jumpToShot(st, et, sid) {
+      loopActive = false;
+      document.getElementById('btnLoopCurrent').classList.remove('btn-warning');
+      document.getElementById('btnLoopCurrent').classList.add('btn-outline-warning');
+      video.currentTime = st;
+      video.play();
+      highlightCard(sid);
+      const el = document.getElementById(`shot-${String(sid).padStart(2, '0')}`);
+      if (el && document.getElementById('detailView').style.display !== 'none') {
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }
+
+    function loopShot(st, et) {
+      loopStart = st;
+      loopEnd = et;
+      loopActive = true;
+      document.getElementById('btnLoopCurrent').classList.remove('btn-outline-warning');
+      document.getElementById('btnLoopCurrent').classList.add('btn-warning');
+      video.currentTime = st;
+      video.play();
+    }
+
+    function toggleLoopCurrent() {
+      const cur = video.currentTime;
+      const sh = shots.find(s => cur >= s.st && cur < s.en);
+      if (sh) {
+        if (loopActive) {
+          loopActive = false;
+          document.getElementById('btnLoopCurrent').classList.remove('btn-warning');
+          document.getElementById('btnLoopCurrent').classList.add('btn-outline-warning');
+        } else {
+          loopShot(sh.st, sh.en);
+        }
+      }
+    }
+
+    function setSpeed(sp) {
+      video.playbackRate = sp;
+    }
+
+    function stepFrame(frames) {
+      video.pause();
+      video.currentTime += frames * (1 / 30.0);
+    }
+
+    function switchView(view) {
+      const d = document.getElementById('detailView');
+      const g = document.getElementById('gridView');
+      const btnD = document.getElementById('btnDetailView');
+      const btnG = document.getElementById('btnGridView');
+      if (view === 'detail') {
+        d.style.display = 'block';
+        g.style.display = 'none';
+        btnD.className = 'btn btn-primary font-mono text-xs';
+        btnG.className = 'btn btn-outline-secondary font-mono text-xs';
+      } else {
+        d.style.display = 'none';
+        g.style.display = 'block';
+        btnD.className = 'btn btn-outline-secondary font-mono text-xs';
+        btnG.className = 'btn btn-primary font-mono text-xs';
+      }
+    }
+
+    function toggleDrawer() {
+      document.getElementById('drawerMenu').classList.toggle('open');
+      document.getElementById('drawerOverlay').classList.toggle('open');
+    }
+
+    function closeDrawer() {
+      document.getElementById('drawerMenu').classList.remove('open');
+      document.getElementById('drawerOverlay').classList.remove('open');
+    }
+
+    // Keyboard shortcuts
+    window.addEventListener('keydown', (e) => {
+      if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return;
+      if (e.code === 'Space') {
+        e.preventDefault();
+        video.paused ? video.play() : video.pause();
+      } else if (e.code === 'ArrowLeft') {
+        e.preventDefault();
+        stepFrame(-1);
+      } else if (e.code === 'ArrowRight') {
+        e.preventDefault();
+        stepFrame(1);
+      } else if (e.code === 'KeyJ') {
+        video.currentTime = Math.max(0, video.currentTime - 1);
+      } else if (e.code === 'KeyL') {
+        video.currentTime = Math.min(video.duration, video.currentTime + 1);
+      }
+    });
+  </script>
+</body>
+</html>

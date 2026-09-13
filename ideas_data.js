@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 17,
-    "dien-anh": 83,
-    "chuyen-canh": 26
+    "dien-anh": 82,
+    "chuyen-canh": 27
   },
   "industries": [
     {
@@ -144,13 +144,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 3,
     "thuong-hieu": 16,
-    "thoi-trang": 8,
+    "thoi-trang": 9,
     "am-thuc": 15,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 40
+    "ky-thuat-quay": 39
   },
   "countries": [
     {
@@ -532,10 +532,10 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@parisexplorer",
-      "name": "Laurent_Derossi",
+      "name": "Parisexplorer",
       "profile_url": "https://www.instagram.com/parisexplorer/",
       "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "top_industry": "Thời Trang & Phụ Kiện",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer"
@@ -1634,22 +1634,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer",
       "shortcode": "DdJsv1AsGwt",
-      "title_vi": "Video by parisexplorer",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 2 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "title_vi": "Cú Rơi Giày Biến Hình Khải Hoàn Môn (@parisexplorer) • Cú Rơi Giày Biến Hình Khải Hoàn Môn",
+      "quick_takeaway": "Phân tích nghệ thuật thị giác và tư duy bố cục điện ảnh từ cú chuyển cảnh giấu vết cắt bằng giày rơi che kín ống kính (Shoe Drop Lens Occlusion): Khai thác góc quay ngước mặt đất 90 độ (Worm's Eye View) tôn vinh trần vòm Khải Hoàn Môn Pa...",
+      "key_tech": "Shoe Drop Lens Occlusion • 90° Symmetrical Worm's Eye View • Dynamic Camera Pickup & Dutch Tilt • Outfit Transformation • Natural Architectural Framing",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
         "id": "us_eu",
@@ -1660,12 +1660,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Shoe Drop Lens Occlusion • 90° Symmetrical Worm's Eye View • Dynamic Camera Pickup & Dutch Tilt • Outfit Transformation • Natural Architectural Framing"
       ],
       "logic_explanation": "",
       "creator": {
-        "raw": "@Laurent_Derossi",
-        "name": "Laurent_Derossi",
+        "raw": "@parisexplorer",
+        "name": "Parisexplorer",
         "handle": "@parisexplorer",
         "profile_url": "https://www.instagram.com/parisexplorer/"
       },
@@ -1676,8 +1676,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJsv1AsGwt.mp4",
         "report_url": "reports/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer.html",
-        "shots_count": 2,
-        "duration": "0.15s",
+        "shots_count": 3,
+        "duration": "0.2s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
