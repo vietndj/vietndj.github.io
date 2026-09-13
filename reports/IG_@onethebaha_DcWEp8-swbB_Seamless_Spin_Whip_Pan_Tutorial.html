@@ -787,6 +787,295 @@ body {
         grid-template-columns: 1fr;
     }
 }
+
+/* Styling for 2-Column Dialogue Script & Remake Prompt Box */
+.dialogue-container-2col {
+    display: flex;
+    gap: 16px;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+    .dialogue-container-2col {
+        flex-direction: column;
+    }
+}
+
+.col-vietnamese-flow {
+    flex: 1;
+    min-width: 0;
+    background: #0d1422;
+    border: 1px solid #1e2b40;
+    border-radius: 12px;
+    padding: 18px 22px;
+    display: flex;
+    flex-direction: column;
+}
+
+.col-flow-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1a2538;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.col-flow-badge {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 14.5px;
+    font-weight: 800;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    letter-spacing: 0.3px;
+}
+
+.col-flow-subtag {
+    font-size: 11.5px;
+    color: #10b981;
+    font-weight: 700;
+    background: rgba(16, 185, 129, 0.12);
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.vn-script-body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.vn-script-para {
+    background: #111a2c;
+    border: 1px solid #1e2c44;
+    border-left: 3px solid #f59e0b;
+    border-radius: 8px;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.vn-script-para:hover {
+    background: #162238;
+    border-color: #2b3d5c;
+    transform: translateX(2px);
+}
+
+.para-meta-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 4px;
+}
+
+.para-timestamp-tag {
+    font-family: monospace;
+    font-size: 11px;
+    font-weight: 700;
+    color: #38bdf8;
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.25);
+    padding: 1px 6px;
+    border-radius: 3px;
+}
+
+.para-beat-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: #f59e0b;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+.para-text {
+    font-size: 14.5px;
+    color: #f8fafc;
+    line-height: 1.6;
+    font-weight: 500;
+    display: block;
+}
+
+.col-english-aside {
+    width: 270px;
+    min-width: 250px;
+    background: #090e18;
+    border: 1px solid #162030;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+@media (max-width: 900px) {
+    .col-english-aside {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+.col-aside-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #141c2b;
+}
+
+.aside-title {
+    font-family: monospace;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+}
+
+.aside-note {
+    font-size: 10px;
+    color: #475569;
+    font-style: italic;
+}
+
+.en-lines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.en-line-item {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid #141d2c;
+    border-radius: 6px;
+    padding: 7px 10px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.en-line-item:hover {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: #1e2c40;
+}
+
+.en-time {
+    font-family: monospace;
+    font-size: 9.5px;
+    color: #475569;
+    font-weight: 600;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.en-text {
+    font-size: 11px;
+    color: #64748b;
+    font-style: italic;
+    line-height: 1.45;
+}
+
+.remake-prompt-card {
+    background: linear-gradient(135deg, #0e1726 0%, #16243b 100%);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 24px;
+}
+
+.remake-header-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 3px 10px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.remake-headline {
+    font-family: var(--font-heading, sans-serif);
+    font-size: 17px;
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.4;
+    margin-bottom: 6px;
+}
+
+.remake-subtext {
+    font-size: 13px;
+    color: #cbd5e1;
+    line-height: 1.5;
+    margin-bottom: 14px;
+}
+
+.prompt-code-wrapper {
+    position: relative;
+    background: #080d16;
+    border: 1px solid #1e2d45;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.prompt-code-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #0f172a;
+    padding: 8px 14px;
+    border-bottom: 1px solid #1e2d45;
+}
+
+.prompt-code-filename {
+    font-family: monospace;
+    font-size: 11.5px;
+    color: #94a3b8;
+    font-weight: 600;
+}
+
+.copy-prompt-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #38bdf8;
+    color: #041324;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.copy-prompt-btn:hover {
+    filter: brightness(1.1);
+    transform: translateY(-1px);
+}
+
+.prompt-code-content {
+    font-family: monospace;
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.6;
+    padding: 14px;
+    max-height: 280px;
+    overflow-y: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
 </style>
 </head>
 <body>
@@ -806,6 +1095,41 @@ body {
         </a>
     </div>
 </header>
+
+        <!-- KHỐI PROMPT ÁNH XẠ KỸ THUẬT CÚ MÁY SANG NGÀNH NGHỀ STU (KHÔNG THOẠI) -->
+        <div class="remake-prompt-card">
+            <div class="remake-header-badge">🎥 ỨNG DỤNG CÚ MÁY 1-CHẠM THEO NGÀNH STU</div>
+            <h3 class="remake-headline">Muốn ứng dụng kỹ thuật quay này vào sản phẩm của bạn, hãy copy prompt bên dưới</h3>
+            <p class="remake-subtext">Video này thuần túy về kỹ thuật quay (không thoại). Sao chép Mega Prompt này dán vào Gemini để AI hướng dẫn áp dụng cú máy/chuyển cảnh này vào quay sản phẩm thực tế cho học viên STU (100% hình ảnh xúc giác, không cần nói).</p>
+
+            <div class="prompt-code-wrapper">
+                <div class="prompt-code-toolbar">
+                    <span class="prompt-code-filename">📄 MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
+                    <button class="copy-prompt-btn" onclick="copyMegaPrompt(this)">📋 Sao chép Prompt</button>
+                </div>
+                <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến (In-Camera Cinematography) theo trường phái mộc mạc của anh Việt.
+
+Tôi vừa học được kỹ thuật quay / chuyển cảnh cực kỳ đắt giá: Kỹ Thuật Chuyển Cảnh Xoay Tròn Liền Mạch (Whip Pan Transition) - @onethebaha.
+Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
+
+=== QUY TẮC BẮT BUỘC (TUÂN THỦ 100%) ===
+- CẤM BỊA KỊCH BẢN NÓI DÔNG DÀI: Tôi không cần kịch bản nói hay lý thuyết đạo lý. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào, đặt góc nào tại bàn làm việc thực tế.
+- CẤM VĂN MẪU AI: Không dùng 'nâng tầm', 'bứt phá', 'thần thái', 'vũ khí', 'chuyển hóa'...
+- VĂN PHONG MỘC MẠC: Xưng 'mình - bạn', hướng dẫn cầm tay chỉ việc như người làm nghề chỉ cho nhau.
+
+=== HƯỚNG DẪN TƯƠNG TÁC THEO NGÀNH HỌC VIÊN STU ===
+Nếu tôi chưa ghi ngành, hãy hỏi đúng 1 câu:
+"Chào bạn, bạn muốn áp dụng cú máy này vào quay sản phẩm nào trong 4 nhóm ngành STU:
+1. Làm đẹp & Spa / Da liễu Clinic / Salon tóc (Quay cận cảnh chất kem, thao tác tay, máy soi da)
+2. Nội thất / Decor / Kiến trúc / Vật liệu xây dựng (Quay lia từ thớ gỗ/mẫu đá sang không gian hoàn thiện)
+3. Ẩm thực & F&B / Tiệm bánh / Trà đồ uống (Quay lia chuyển động quanh món ăn, đổ sốt, khói bốc lên)
+4. Nông nghiệp / Phân bón / Sức khỏe (Quay kiểm tra lá cây, rễ cây, hạt giống, bao bì sản phẩm)
+5. Ngành khác của bạn trong STU: [Tên nghề] + [Sản phẩm muốn quay]"
+
+Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (Gồm 4 thông số: Tiêu cự ống kính | Hướng lia máy & Điểm giấu vết cắt | Đạo cụ trên bàn | Cách phối ánh sáng tự nhiên)!</div>
+            </div>
+        </div>
+    
 
 <div class="main-wrapper">
 
@@ -1355,6 +1679,26 @@ document.addEventListener('keydown', (e) => {
         toggleDrawer(false);
     }
 });
+
+function copyMegaPrompt(btn) {
+    const codeEl = document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    const text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(() => {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = '✅ Đã sao chép!';
+        btn.style.background = '#10b981';
+        btn.style.color = '#fff';
+        setTimeout(() => {
+            btn.innerHTML = originalText;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2200);
+    }).catch(err => {
+        alert('Lỗi sao chép, bạn vui lòng bôi đen văn bản để copy nhé!');
+    });
+}
+
 </script>
 
 </body>
