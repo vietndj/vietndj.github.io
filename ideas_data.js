@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-08T23:55:00+07:00",
-  "total_scene_items": 199,
+  "total_scene_items": 200,
   "total_unique_ideas": 181,
   "total_active_ideas": 149,
   "total_excluded_ideas": 32,
@@ -63,9 +63,9 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 1,
     "voice-over": 8,
     "talking-head": 11,
-    "storytelling": 19,
-    "dien-anh": 81,
-    "chuyen-canh": 29
+    "storytelling": 17,
+    "dien-anh": 82,
+    "chuyen-canh": 30
   },
   "industries": [
     {
@@ -143,14 +143,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 3,
-    "thuong-hieu": 17,
+    "thuong-hieu": 16,
     "thoi-trang": 10,
-    "am-thuc": 17,
+    "am-thuc": 16,
     "du-lich": 20,
     "cong-nghe": 22,
     "kien-truc": 17,
     "the-thao": 5,
-    "ky-thuat-quay": 38
+    "ky-thuat-quay": 40
   },
   "countries": [
     {
@@ -302,6 +302,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ju_seobang",
+      "name": "Ju_Seobang",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        "",
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
+      ]
+    },
+    {
       "handle": "@steven.vuu",
       "name": "Steven.Vuu",
       "profile_url": "https://www.instagram.com/steven.vuu/",
@@ -364,30 +377,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@allure.cafebar",
-      "name": "Allure.Cafebar",
-      "profile_url": "https://www.instagram.com/allure.cafebar/",
-      "video_count": 2,
-      "top_industry": "Ẩm Thực & F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-      "video_ids": [
-        "",
-        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
-      ]
-    },
-    {
-      "handle": "@ju_seobang",
-      "name": "주서방",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 2,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -541,6 +530,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
       "video_ids": [
         "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel"
+      ]
+    },
+    {
+      "handle": "@allure.cafebar",
+      "name": "Allure Cafe Bar",
+      "profile_url": "https://www.instagram.com/allure.cafebar/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
       ]
     },
     {
@@ -1285,22 +1285,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "",
       "shortcode": "",
-      "title_vi": "The Place You Wanna Be • Nghệ Thuật Kể Chuyện Không Gian Cafe & Barista Showmanship",
+      "title_vi": "Cách 'Câu' Kẹo Của Bố Vợ • Tuyệt Kỹ Hài Tình Huống Triệu View",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "",
       "shooting_style": {
-        "id": "storytelling",
-        "name": "Storytelling",
-        "en_name": "Storytelling",
-        "icon": "📖",
-        "badge_color": "amber"
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "am-thuc",
-        "name": "Ẩm Thực & F&B",
-        "en_name": "Food & Beverage",
-        "icon": "🍜",
-        "badge_color": "amber"
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1315,12 +1315,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "logic_explanation": "",
       "creator": {
-        "raw": "@allure.cafebar",
-        "name": "Allure.Cafebar",
-        "handle": "@allure.cafebar",
-        "profile_url": "https://www.instagram.com/allure.cafebar/"
+        "raw": "@ju_seobang",
+        "name": "Ju_Seobang",
+        "handle": "@ju_seobang",
+        "profile_url": "https://www.instagram.com/ju_seobang/"
       },
-      "ig_url": "https://www.instagram.com/allure.cafebar/",
+      "ig_url": "https://www.instagram.com/ju_seobang/",
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
@@ -1328,7 +1328,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "",
         "report_url": "",
         "shots_count": 0,
-        "duration": "21.23s",
+        "duration": "11.95s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -1716,18 +1716,18 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
       "shooting_style": {
-        "id": "storytelling",
-        "name": "Storytelling",
-        "en_name": "Storytelling",
-        "icon": "📖",
-        "badge_color": "amber"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "thuong-hieu",
-        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
-        "en_name": "Personal Brand & Service",
-        "icon": "💼",
-        "badge_color": "indigo"
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "korea",
@@ -1736,7 +1736,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇰🇷",
         "badge_color": "blue"
       },
-      "purpose": "Hài tình huống gia đình & slapstick gag",
+      "purpose": "Hài tình huống gia đình và cú lừa bẻ gãy kỳ vọng triệu view",
       "tech_tags": [
         "Sound Cue Misdirection",
         "Complete Blind Spot Exploitation",
@@ -1747,7 +1747,7 @@ var FEDU_IDEAS_DATABASE = {
       "logic_explanation": "Tuyệt chiêu tạo viral skit 12 giây: Thiết lập sự thèm thuồng tại đảo bếp -> Đánh lạc hướng bằng âm thanh rơi đồ -> Ép đối phương vào tư thế mù quan sát -> Khóa mục tiêu thùng rác -> Cắt giật cực độ 0.65s đớp kẹo trên không trung -> Lia máy whip-pan về lại sofa giả vờ vô can.",
       "creator": {
         "raw": "@주서방",
-        "name": "주서방",
+        "name": "Ju Seobang",
         "handle": "@ju_seobang",
         "profile_url": "https://www.instagram.com/ju_seobang/"
       },
