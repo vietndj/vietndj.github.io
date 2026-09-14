@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 221,
-  "total_unique_ideas": 198,
-  "total_active_ideas": 166,
+  "total_scene_items": 225,
+  "total_unique_ideas": 202,
+  "total_active_ideas": 170,
   "total_excluded_ideas": 32,
-  "total_creators": 109,
+  "total_creators": 113,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 2,
     "voice-over": 8,
-    "talking-head": 11,
+    "talking-head": 12,
     "storytelling": 19,
-    "dien-anh": 93,
-    "chuyen-canh": 33
+    "dien-anh": 94,
+    "chuyen-canh": 35
   },
   "industries": [
     {
@@ -154,11 +154,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 18,
     "thoi-trang": 14,
     "am-thuc": 18,
-    "du-lich": 19,
+    "du-lich": 20,
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 42,
+    "ky-thuat-quay": 45,
     "ugc": 2
   },
   "countries": [
@@ -216,7 +216,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 3,
+    "vietnam": 4,
     "asia_other": 46
   },
   "transition_stats": {
@@ -511,6 +511,50 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@hanoi.liebe",
+      "name": "Hanoi Liebe | Wo Hanoi auf Deutsch trifft",
+      "profile_url": "https://www.instagram.com/hanoi.liebe/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha"
+      ]
+    },
+    {
+      "handle": "@vnexpress_hanoi",
+      "name": "Vietnam Express Tour Hanoi",
+      "profile_url": "https://www.instagram.com/vnexpress_hanoi/",
+      "video_count": 1,
+      "top_industry": "Du Lịch & Văn Hóa",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi"
+      ]
+    },
+    {
+      "handle": "@utsint",
+      "name": "Utsint",
+      "profile_url": "https://www.instagram.com/utsint/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour"
+      ]
+    },
+    {
+      "handle": "@the.isaacelguera",
+      "name": "Isaac | UGC Creator",
+      "profile_url": "https://www.instagram.com/the.isaacelguera/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence"
       ]
     },
     {
@@ -1483,6 +1527,269 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha",
+      "shortcode": "DdHf_1yA4WQ",
+      "title_vi": "Combo Thư Thái Hà Nội: Chiều Spa Trị Liệu & Trà Matcha Tea Space - @hanoi.liebe",
+      "quick_takeaway": "Bóc tách 30 phân cảnh chuẩn đạo diễn về nghệ thuật xây dựng kịch bản trải nghiệm du lịch kép (Sensory Pairing Lifestyle): Mở đầu bằng chuỗi Hook 7 nhịp siêu tốc (massage & matcha), dẫn lối khám phá không gian trị liệu đá bazan và ấn huyệ...",
+      "key_tech": "7-Beat Sensory Hook • Dual-Experience Lifestyle Pairing • Tactical Hot Stone Basalt • Chasen Whisking ASMR • Latte Marbling Pour • Seamless Walk Bridge • High-Converting DM Voucher CTA",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "vn",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Combo trải nghiệm thư giãn kép: Spa trị liệu cổ vai gáy & Cafe Matcha Wabi-sabi",
+      "tech_tags": [
+        "Sensory Pairing",
+        "7-Beat Rapid Hook",
+        "Hot Stone Therapy",
+        "Chasen Whisking ASMR",
+        "Latte Marbling Pour",
+        "DM Voucher CTA"
+      ],
+      "transition_level": "Chuyên Sâu (7-Beat Hook)",
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Làm Đẹp & Spa / F&B Lifestyle: Cấu trúc Chuyển Cảnh & B-Roll kết hợp Sensory Pairing, Hot Stone, Chasen ASMR và DM Voucher Call to Action."
+      },
+      "logic_explanation": "Kỹ thuật ghép đôi 2 trải nghiệm thư giãn liên tiếp (Spa & Trà đạo Matcha) với chuỗi Hook 7 nhịp kích thích đa giác quan, kéo chân khách hàng qua lộ trình du lịch thực tế tại Hà Nội.",
+      "creator": {
+        "raw": "@hanoi.liebe",
+        "name": "Hanoi Liebe | Wo Hanoi auf Deutsch trifft",
+        "handle": "@hanoi.liebe",
+        "profile_url": "https://www.instagram.com/hanoi.liebe/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdHf_1yA4WQ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1CGWSETD2YW3yOMbz5cls1Bvq52URsK5y",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdHf_1yA4WQ.mp4",
+        "report_url": "reports/IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha.html",
+        "shots_count": 30,
+        "duration": "34.80s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi",
+      "shortcode": "DdAyywnSxU8",
+      "title_vi": "8 Cú Máy B-Roll Beat-Sync Khám Phá Sắc Thu Hà Nội Tuyệt Sắc - @vnexpress_hanoi",
+      "quick_takeaway": "Bóc tách trọn vẹn 8 phân cảnh mẫu mực chuẩn đạo diễn trong video Reel triệu view tôn vinh sắc thu Hà Nội của @vnexpress_hanoi: Nghệ thuật Fast-Cut Beat Sync kết hợp bố cục ban công đa tầng lớp ngắm Nhà Thờ Lớn, hầm cây cổ thụ Phan Đình P...",
+      "key_tech": "Fast-Cut Beat Sync • Balcony Sensory Hook • One-Point Tree Canopy Tunnel • Street Food Sensory Contrast • Blossom Foreground Framing • Telephoto Urban Compression • Iconic Autumn Flower Cart • Heritage Anchor Outro",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "vn",
+        "name": "Việt Nam (Hà Nội)",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "rose"
+      },
+      "purpose": "Khám phá sắc thu Hà Nội qua 8 biểu tượng văn hóa thị giác đắt giá được cắt dựng theo nhịp beat âm nhạc",
+      "tech_tags": [
+        "Fast-Cut Beat Sync",
+        "Balcony Sensory Hook",
+        "One-Point Tree Tunnel",
+        "Street Food Sensory Contrast",
+        "Foreground Flower Layering",
+        "Telephoto Train Compression",
+        "Iconic Autumn Flower Cart",
+        "Rhythmic Tree Leaves Flow",
+        "Heritage Anchor Outro"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tuyển tập 8 cú máy mẫu mực bắt trọn linh hồn mùa thu Hà Nội: từ ban công trà chanh Nhà Thờ Lớn, hầm cây Phan Đình Phùng nắng sớm, quà vặt cốm non lá chuối, xe hoa bến buýt đến nốt kết mỏ neo di sản cổng Ô Quan Chưởng.",
+      "creator": {
+        "raw": "@vnexpress_hanoi",
+        "name": "Vietnam Express Tour Hanoi",
+        "handle": "@vnexpress_hanoi",
+        "profile_url": "https://www.instagram.com/vnexpress_hanoi/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdAyywnSxU8/?stkn=MTU1MXg3YXk4OW8xMQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1GXrw8FtkoFNuUrKGp36tTGduZf1gs5hL",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vnexpress_hanoi_DdAyywnSxU8_Autumn_In_Hanoi/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdAyywnSxU8.mp4",
+        "report_url": "reports/Autumn in Hanoi - @vnexpress_hanoi.html",
+        "shots_count": 8,
+        "duration": "14.43s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour",
+      "shortcode": "DdAYPcwgfv1",
+      "title_vi": "UTS Vietnam Open Day Campus Tour - @utsint",
+      "quick_takeaway": "Bóc tách 9 phân cảnh chuẩn đạo diễn theo phong cách Walk & Talk kết hợp Campus B-Roll tràn đầy năng lượng của sinh viên quốc tế UTS (@utsint) chiêu sinh sự kiện UTS Vietnam Open Day tại Hà Nội (Khách sạn Grand Mercure): từ cú chào sân tr...",
+      "key_tech": "National Flag Hook • Backward Walk-and-Talk Tracking • Atrium Low-Angle Power Dynamic • Library Study Pod Reveal • Cozy Alumni Corner • Multi-Level Mezzanine Skyward Angle • Mascot Pop-Up Joy • Looping Outro Anchor • Hero Architecture Title Card",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "National Flag Hook • Backward Walk-and-Talk Tracking • Atrium Low-Angle Power Dynamic • Library Study Pod Reveal • Cozy Alumni Corner • Multi-Level Mezzanine Skyward Angle • Mascot Pop-Up Joy • Looping Outro Anchor • Hero Architecture Title Card"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@utsint",
+        "name": "Utsint",
+        "handle": "@utsint",
+        "profile_url": "https://www.instagram.com/utsint/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdAYPcwgfv1/",
+      "gdrive_folder": "https://drive.google.com/open?id=1C_utEcBCcYsdTEz5UtXrdf9z5feCCOF-",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@utsint_DdAYPcwgfv1_UTS_Vietnam_Open_Day_Campus_Tour/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdAYPcwgfv1.mp4",
+        "report_url": "reports/UTS Vietnam Open Day Campus Tour - @utsint.html",
+        "shots_count": 9,
+        "duration": "34.00s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence",
+      "shortcode": "DdNKlIqPagO",
+      "title_vi": "Kiến Trúc Chuỗi Cảnh Điện Ảnh (Sequence Filmmaking): Công Thức 3 Nhịp Wide-Medium-Close & Nghệ Thuật Dẫn Mắt Xúc Giác - @the.isaacelguera",
+      "quick_takeaway": "Báo cáo đạo diễn phân tích chuyên sâu 21 phân cảnh của Isaac (@the.isaacelguera - 12 năm kinh nghiệm đạo diễn sáng tạo & UGC): Giải mã công thức chuỗi cảnh (Sequence) biến những clip B-roll rời rạc thành hành trình thị giác liền mạch, bộ...",
+      "key_tech": "Sequence Filmmaking • Wide-Medium-Close Formula • In-Camera Continuity • Trunk POV Natural Framing • Tactile Touchpoint • Walk-and-Talk Selfie Hook • Motion Parallax • High-Angle Intimacy",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us",
+        "name": "Hoa Kỳ",
+        "en_name": "United States",
+        "flag": "🇺🇸",
+        "badge_color": "blue"
+      },
+      "purpose": "Hướng dẫn nghệ thuật dựng chuỗi cảnh (Sequence) và công thức 3 nhịp Wide-Medium-Close",
+      "tech_tags": [
+        "Sequence Filmmaking",
+        "Wide-Medium-Close Formula",
+        "Trunk POV Natural Framing",
+        "Tactile Touchpoint",
+        "Walk-and-Talk Selfie"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Isaac phân tích 21 phân cảnh đan xen giữa tư thế nói chuyện phi truyền thống và chuỗi cảnh B-roll thực tế từ Joshua Tree đến quán cafe Nice Dream để thị phạm công thức Wide-Medium-Close.",
+      "creator": {
+        "raw": "@the.isaacelguera",
+        "name": "Isaac | UGC Creator",
+        "handle": "@the.isaacelguera",
+        "profile_url": "https://www.instagram.com/the.isaacelguera/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdNKlIqPagO/",
+      "gdrive_folder": "https://drive.google.com/open?id=1sf_OVQkhH_jNbbaQv1Yr0p7Bvao70uSE",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@the.isaacelguera_DdNKlIqPagO_Kien_Truc_Chuoi_Canh_Sequence/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdNKlIqPagO.mp4",
+        "report_url": "reports/Kien Truc Chuoi Canh Sequence - @the.isaacelguera.html",
+        "shots_count": 21,
+        "duration": "74.13s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway",
       "shortcode": "DbOMM0Pu1HA",
