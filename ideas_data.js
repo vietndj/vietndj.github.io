@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 231,
-  "total_unique_ideas": 207,
-  "total_active_ideas": 175,
+  "total_scene_items": 232,
+  "total_unique_ideas": 208,
+  "total_active_ideas": 176,
   "total_excluded_ideas": 32,
-  "total_creators": 117,
+  "total_creators": 118,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -61,7 +61,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 3,
-    "voice-over": 8,
+    "voice-over": 9,
     "talking-head": 12,
     "storytelling": 24,
     "dien-anh": 91,
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 47,
+    "ky-thuat-quay": 48,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 85,
+    "us_eu": 86,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -523,6 +523,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@victoriamorse",
+      "name": "Victoria_Morse",
+      "profile_url": "https://www.instagram.com/victoriamorse/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse"
       ]
     },
     {
@@ -1572,6 +1583,72 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse",
+      "shortcode": "DbESOapo-p3",
+      "title_vi": "The Art of Authentic Voiceover Storytelling — @victoriamorse",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 74 phân cảnh.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • Low-key Lighting • High-key Lighting",
+      "shooting_style": {
+        "id": "voice-over",
+        "name": "Voice Over",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
+        "badge_color": "purple"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Voice over",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot",
+        "Low-key Lighting",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Voice over. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Voice Over.",
+      "creator": {
+        "raw": "@Victoria_Morse",
+        "name": "Victoria_Morse",
+        "handle": "@victoriamorse",
+        "profile_url": "https://www.instagram.com/victoriamorse/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbESOapo-p3/?stkn=NTBwN2lnYmVtZGNt",
+      "gdrive_folder": "https://drive.google.com/open?id=16ZMvayBnB8p_2Odi4Jxtax9ZnsFheyj4",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbESOapo-p3.mp4",
+        "report_url": "reports/IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse.html",
+        "shots_count": 74,
+        "duration": "61.53s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount",
       "shortcode": "DdBorQ2KEli_",
