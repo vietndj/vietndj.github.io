@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 238,
-  "total_unique_ideas": 213,
-  "total_active_ideas": 181,
+  "total_scene_items": 239,
+  "total_unique_ideas": 214,
+  "total_active_ideas": 182,
   "total_excluded_ideas": 32,
   "total_creators": 121,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 12,
     "storytelling": 24,
     "dien-anh": 93,
-    "chuyen-canh": 38
+    "chuyen-canh": 39
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 20,
     "the-thao": 9,
-    "ky-thuat-quay": 52,
+    "ky-thuat-quay": 53,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 90,
+    "us_eu": 91,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -289,12 +289,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@yegor.sky",
-      "name": "Yegor.Sky",
+      "name": "Yegor Sky",
       "profile_url": "https://www.instagram.com/yegor.sky/",
-      "video_count": 4,
+      "video_count": 5,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky",
         "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
         "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
         "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
@@ -1618,6 +1619,74 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky",
+      "shortcode": "DaFDqk4CGB1",
+      "title_vi": "Video by yegor.sky",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 16 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Kỹ Thuật Quay Dựng • Visual Hook • In-camera Transition • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "kỹ thuật quay dựng, chuyển cảnh, visual hook, in-camera transition",
+      "tech_tags": [
+        "Kỹ Thuật Quay Dựng",
+        "Visual Hook",
+        "In-camera Transition",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: kỹ thuật quay dựng, chuyển cảnh, visual hook, in-camera transition. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Yegor.Sky",
+        "name": "Yegor Sky",
+        "handle": "@yegor.sky",
+        "profile_url": "https://www.instagram.com/yegor.sky/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaFDqk4CGB1/",
+      "gdrive_folder": "https://drive.google.com/open?id=1c0Rxq0zdAvDnnx6hQFJ8VlgONN-e5lqJ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaFDqk4CGB1.mp4",
+        "report_url": "reports/IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky.html",
+        "shots_count": 16,
+        "duration": "32s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co",
       "shortcode": "DcTcw8lhku5",
