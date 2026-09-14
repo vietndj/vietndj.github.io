@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 5,
     "voice-over": 9,
-    "talking-head": 13,
+    "talking-head": 12,
     "storytelling": 24,
     "dien-anh": 95,
-    "chuyen-canh": 39
+    "chuyen-canh": 40
   },
   "industries": [
     {
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 92,
+    "us_eu": 91,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -1635,15 +1635,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan",
       "shortcode": "Dc5uepPBXKq",
-      "title_vi": "Video by sg.genchan",
+      "title_vi": "Outfit Check Black Setup • Biến Hình In-Camera Match Cut & Phụ Kiện Xúc Giác",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
       "key_tech": "Thoi-trang • Outfit Check • Black Setup • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Talking Head",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "thoi-trang",
@@ -1653,27 +1653,27 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "pink"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "jp",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
       },
-      "purpose": "thoi-trang, outfit check, black setup",
+      "purpose": "Outfit Check, Biến hình Match Cut in-camera, B-roll phụ kiện xúc giác",
       "tech_tags": [
-        "Thoi-trang",
-        "Outfit Check",
+        "In-Camera Portal",
+        "Match Cut",
+        "State Contrast",
         "Black Setup",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Tactile Jewelry",
+        "Runway Walk"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: thoi-trang, outfit check, black setup. Phân loại vào Thời Trang & Phụ Kiện • Talking Head.",
+      "logic_explanation": "Outfit check chuẩn điện ảnh Nhật Bản: Khởi đầu bằng trạng thái thô mộc buổi sáng -> Thao tác tay tạo vòng tròn che ống kính (Optical Portal) -> Bùng nổ không gian đường phố với bộ suit đen hoàn hảo -> Zoom cận cảnh xúc giác nhẫn bạc -> Chân dung thần thái và bước đi catwalk phô diễn độ rủ của trang phục.",
       "creator": {
-        "raw": "@Genya",
+        "raw": "@sg.genchan (Genya)",
         "name": "Genya",
         "handle": "@sg.genchan",
         "profile_url": "https://www.instagram.com/sg.genchan/"
