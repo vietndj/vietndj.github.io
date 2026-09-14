@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 82,
+    "us_eu": 81,
     "korea": 12,
     "india": 6,
     "japan": 10,
@@ -515,7 +515,7 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@naohasa",
-      "name": "Naohasa",
+      "name": "NAOHASA (@naohasa)",
       "profile_url": "https://www.instagram.com/naohasa/",
       "video_count": 1,
       "top_industry": "Thời Trang & Phụ Kiện",
@@ -1449,23 +1449,29 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "pink"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "russia",
+        "name": "Nga / Đông Âu",
+        "en_name": "Russia & Eastern Europe",
+        "flag": "🇷🇺",
+        "badge_color": "blue"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Giới thiệu 5 set đồ cho 5 hoàn cảnh khác nhau (5 outfits for different plans) bằng kỹ thuật cắt nối bước chân liên hoàn mượt mà không cần lời thoại",
       "tech_tags": [
-        "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop"
+        "Kinetic Match Cut Walk",
+        "Footsteps Reveal Hook",
+        "One-Point Perspective Tracking",
+        "Color Pop Accent",
+        "Waist Layering Line",
+        "Parallax Zebra Crossing",
+        "Infinite Loop"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "",
+      "logic_explanation": "Mở đầu bằng góc thấp lia từ bước chân lên toàn cảnh để kích thích tò mò xúc giác, sau đó chuyển cảnh liên hoàn bằng cách khóa cứng vị trí mắt và nhịp chân trái chạm đất, tạo hiệu ứng biến hình trang phục mượt mà như ảo thuật.",
       "creator": {
         "raw": "@naohasa",
-        "name": "Naohasa",
+        "name": "NAOHASA (@naohasa)",
         "handle": "@naohasa",
         "profile_url": "https://www.instagram.com/naohasa/"
       },
@@ -1478,9 +1484,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
         "shots_count": 5,
         "duration": "13.68s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "de",
