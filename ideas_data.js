@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 216,
-  "total_unique_ideas": 193,
-  "total_active_ideas": 161,
+  "total_scene_items": 219,
+  "total_unique_ideas": 196,
+  "total_active_ideas": 164,
   "total_excluded_ideas": 32,
-  "total_creators": 104,
+  "total_creators": 107,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 19,
-    "dien-anh": 91,
-    "chuyen-canh": 31
+    "dien-anh": 92,
+    "chuyen-canh": 33
   },
   "industries": [
     {
@@ -152,13 +152,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 4,
     "thuong-hieu": 18,
-    "thoi-trang": 13,
-    "am-thuc": 17,
+    "thoi-trang": 14,
+    "am-thuc": 18,
     "du-lich": 18,
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 40,
+    "ky-thuat-quay": 41,
     "ugc": 2
   },
   "countries": [
@@ -216,7 +216,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 2,
+    "vietnam": 3,
     "asia_other": 46
   },
   "transition_stats": {
@@ -511,6 +511,39 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@saigonink_studio",
+      "name": "Saigon_Ink_Tattoo",
+      "profile_url": "https://www.instagram.com/saigonink_studio/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio"
+      ]
+    },
+    {
+      "handle": "@moodme.sg",
+      "name": "MoodMe Saigon",
+      "profile_url": "https://www.instagram.com/moodme.sg/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace"
+      ]
+    },
+    {
+      "handle": "@jassminechi",
+      "name": "jassminechi",
+      "profile_url": "https://www.instagram.com/jassminechi/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide"
       ]
     },
     {
@@ -1428,6 +1461,202 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio",
+      "shortcode": "DdNq5CxszVl",
+      "title_vi": "Video by saigonink studio",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@SAIGON_INK_TATTOO",
+        "name": "Saigon_Ink_Tattoo",
+        "handle": "@saigonink_studio",
+        "profile_url": "https://www.instagram.com/saigonink_studio/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdNq5CxszVl/?stkn=MWxrYTU5cWxta3R4dA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1scE_7t5UKyyv9_EMIsA5EJFxURCrA5uE",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdNq5CxszVl.mp4",
+        "report_url": "reports/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace",
+      "shortcode": "DdL904CMnq3",
+      "title_vi": "12 Cú Máy B-Roll Beat-Sync Khám Phá Không Gian Mùi Hương & Quà Tặng - @moodme.sg",
+      "quick_takeaway": "Bóc tách 12 phân cảnh chuẩn đạo diễn theo nhịp dựng Beat-Sync chuẩn xác 1.2 giây/cảnh trong video khám phá không gian mùi hương và quà tặng bản địa 'slow living (quiet places, soft moments)' của MoodMe Saigon (@moodme.sg): từ cú chào sân...",
+      "key_tech": "Decal Glass Framing • Action Match Cut Door Push • Multi-Layer Reflection • Symmetrical Shelf Grid • Scent Notes Pedestal • Earthy Tone Staggering • Whimsical Pop-Up • Tactile Handheld Showcase • Chromatic Array • Modern Local Accessory • Herbal Sanctuary • Facade Outro Anchor",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "vn",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "rose"
+      },
+      "purpose": "Khám phá không gian concept store quà tặng và mùi hương bản địa",
+      "tech_tags": [
+        "Beat-Sync Editing",
+        "Framing Through Glass",
+        "Action Match Cut",
+        "Tactile Handheld Showcase",
+        "Establishing Outro Anchor"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Chuỗi 12 cú máy nhịp 1.2s cắt chuẩn beat dẫn dắt người xem từ ngoài phố vào không gian tiệm mùi hương và quà tặng bản địa.",
+      "creator": {
+        "raw": "@moodme.sg",
+        "name": "MoodMe Saigon",
+        "handle": "@moodme.sg",
+        "profile_url": "https://www.instagram.com/moodme.sg/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdL904CMnq3/",
+      "gdrive_folder": "https://drive.google.com/open?id=1KphWjU1Qq6UKnDnKwc6hBPlEov2exaB6",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdL904CMnq3.mp4",
+        "report_url": "reports/Slow Living Scent & Giftspace - @moodme.sg.html",
+        "shots_count": 12,
+        "duration": "14.67s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide",
+      "shortcode": "DdFBLQMOTwM",
+      "title_vi": "Cẩm Nang 15 Quán Cà Phê Đặc Sản Thượng Hải • The Ultimate Shanghai Coffee Guide",
+      "quick_takeaway": "Bóc tách trọn vẹn 15 phân cảnh mẫu mực trong video Reel triệu view của @jassminechi: Nghệ thuật Fast-Cut Beat-Synced Travel Guide kết hợp bố cục chính diện cân xứng, nghệ thuật lồng khung hình trong khung hình, xếp lớp tiền cảnh hoài cổ ...",
+      "key_tech": "Fast-Cut Beat Sync, Shanghai Al-Fresco Lifestyle, Frontal Symmetry, Sensory Action Close-Up, Look-Through Framing, Social Proof Staging, Narrative Outro",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "asia",
+        "name": "Đông Á (Thượng Hải, Trung Quốc)",
+        "en_name": "China",
+        "flag": "🇨🇳",
+        "badge_color": "rose"
+      },
+      "purpose": "Cẩm nang review ẩm thực du lịch Thượng Hải bằng nhịp dựng Fast-cut chuẩn beat âm nhạc",
+      "tech_tags": [
+        "Fast-Cut Beat Sync",
+        "Al-Fresco Lifestyle",
+        "Frontal Symmetry",
+        "Through-the-Glass Framing",
+        "Foreground Turntable Layering",
+        "Sensory Zest Action",
+        "Motion Interception",
+        "Social Proof Staging",
+        "Inspiring Glass Typography",
+        "Narrative Calming Outro"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tuyển tập 15 quán cà phê đặc sản Thượng Hải được cắt chuẩn xác theo từng phách nhịp bài hát (0.8s/shot), kết hợp khéo léo giữa cảnh toàn hè phố rợp bóng cây, cận cảnh thao tác pha chế đắt giá và nhịp sống đô thị chân thật.",
+      "creator": {
+        "raw": "@jassminechi",
+        "name": "jassminechi",
+        "handle": "@jassminechi",
+        "profile_url": "https://www.instagram.com/jassminechi/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdFBLQMOTwM/?stkn=MXNweGVwdDRyYzA5YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1AbENDdElh2uh30BzczOghjm--9xxeP7f",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jassminechi_DdFBLQMOTwM_Shanghai_Coffee_Guide/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdFBLQMOTwM.mp4",
+        "report_url": "reports/The Ultimate Shanghai Coffee Guide - @jassminechi.html",
+        "shots_count": 15,
+        "duration": "12.57s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
       "shortcode": "Db-mZWEKECo",
