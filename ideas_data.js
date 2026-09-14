@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 215,
+  "total_scene_items": 216,
   "total_unique_ideas": 193,
   "total_active_ideas": 161,
   "total_excluded_ideas": 32,
@@ -213,7 +213,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "country_stats": {
     "us_eu": 81,
-    "korea": 12,
+    "korea": 11,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -317,13 +317,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@hena_film_vlog",
-      "name": "핸아_집에서_팔리는_영상_만드는_법",
+      "name": "핸아 | 집에서 팔리는 영상 만드는 법",
       "profile_url": "https://www.instagram.com/hena_film_vlog/",
       "video_count": 3,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog",
+        "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
         "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
         "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
       ]
@@ -1429,6 +1429,71 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
+      "shortcode": "Db-mZWEKECo",
+      "title_vi": "4 Cú Máy Siêu Thị Bằng Giá Đỡ Điện Thoại Ulanzi MA38 & MT85 - @hena_film_vlog",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 10 phân cảnh mẫu mực trong video 19.3s của nữ creator Hàn Quốc @hena_film_vlog: Tuyệt kỹ làm phim một mình (Solo Filmmaking) tại siêu thị chỉ với 2 chiếc giá đỡ Ulanzi MA38 & MT85. Bóc tách trọn vẹn 4 kỹ thuậ...",
+      "key_tech": "Pattern Interrupt Question Hook • Gear Demonstration Macro • 0.5x Ultra-Wide High-Angle • Cart Handle Dolly POV • Tactile Produce Pick-Up • Magnetic Surface Snap • Hands-Free Dual Hand Interaction • Mini Tripod Floor Grounding • Low-Angle Hero Pass-By • Personal Brand CTA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "kr",
+        "name": "Hàn Quốc",
+        "en_name": "Korea",
+        "flag": "🇰🇷",
+        "badge_color": "indigo"
+      },
+      "purpose": "Hướng dẫn 4 cú máy sáng tạo tại siêu thị chỉ với 2 chiếc giá đỡ Ulanzi MA38 & MT85",
+      "tech_tags": [
+        "Pattern Interrupt Question Hook",
+        "0.5x Ultra-Wide High-Angle",
+        "Cart Handle Dolly POV",
+        "Magnetic Surface Snap",
+        "Floor-Level Low-Angle Hero Pass-By"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Chuỗi 10 phân cảnh bóc tách chi tiết cách tự quay một mình ở không gian công cộng: biến xe đẩy thành dolly, tận dụng vách tủ đông làm chân máy nam châm, đặt tripod mini sát sàn đón cú lướt xe hoành tráng.",
+      "creator": {
+        "raw": "@hena_film_vlog (핸아 | 집에서 팔리는 영상 만드는 법)",
+        "name": "핸아 | 집에서 팔리는 영상 만드는 법",
+        "handle": "@hena_film_vlog",
+        "profile_url": "https://www.instagram.com/hena_film_vlog/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh",
+      "gdrive_folder": "https://drive.google.com/open?id=1Vs39vW4CcrmGQYDf6GGW3NnfMCyYmo12",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_mid.jpg",
+        "video_url": "videos/4 Cu May Sieu Thi Bang Gia Do Ulanzi MA38 MT85 - @hena_film_vlog.mp4",
+        "report_url": "reports/4 Cu May Sieu Thi Bang Gia Do Ulanzi MA38 MT85 - @hena_film_vlog.html",
+        "shots_count": 10,
+        "duration": "19.30s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk",
       "shortcode": "DdGp4XftvIn",
       "title_vi": "5 Bộ Phục Trang Phố Thị Moscow: Kỹ Thuật Match-Cut Bước Chân Động Năng Biến Hình Vô Tận",
@@ -1559,67 +1624,6 @@ var FEDU_IDEAS_DATABASE = {
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
-      },
-      "complexity": {
-        "id": "trung-binh",
-        "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog",
-      "shortcode": "Db-mZWEKECo",
-      "title_vi": "@핸아_집에서_팔리는_영상_만드는_법 - Video by hena film vlog",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 18 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "korea",
-        "name": "Hàn Quốc",
-        "en_name": "South Korea",
-        "flag": "🇰🇷",
-        "badge_color": "pink"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@핸아_집에서_팔리는_영상_만드는_법",
-        "name": "핸아_집에서_팔리는_영상_만드는_법",
-        "handle": "@hena_film_vlog",
-        "profile_url": "https://www.instagram.com/hena_film_vlog/"
-      },
-      "ig_url": "https://www.instagram.com/reel/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh",
-      "gdrive_folder": "https://drive.google.com/open?id=1_BIm271YxL9gtL6lLWqmEwBMMYKEm2DJ",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db-mZWEKECo.mp4",
-        "report_url": "reports/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog.html",
-        "shots_count": 18,
-        "duration": "36s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
       },
       "complexity": {
         "id": "trung-binh",
