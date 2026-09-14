@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 183,
-  "total_unique_ideas": 170,
-  "total_active_ideas": 138,
+  "total_scene_items": 211,
+  "total_unique_ideas": 190,
+  "total_active_ideas": 158,
   "total_excluded_ideas": 32,
-  "total_creators": 87,
+  "total_creators": 102,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -63,9 +63,9 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 1,
     "voice-over": 8,
     "talking-head": 11,
-    "storytelling": 18,
-    "dien-anh": 77,
-    "chuyen-canh": 23
+    "storytelling": 19,
+    "dien-anh": 90,
+    "chuyen-canh": 29
   },
   "industries": [
     {
@@ -150,15 +150,15 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 2,
+    "spa-lam-dep": 4,
     "thuong-hieu": 17,
-    "thoi-trang": 9,
-    "am-thuc": 14,
+    "thoi-trang": 12,
+    "am-thuc": 17,
     "du-lich": 18,
-    "cong-nghe": 20,
+    "cong-nghe": 21,
     "kien-truc": 19,
-    "the-thao": 6,
-    "ky-thuat-quay": 31,
+    "the-thao": 9,
+    "ky-thuat-quay": 39,
     "ugc": 2
   },
   "countries": [
@@ -212,12 +212,12 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 63,
-    "korea": 9,
+    "us_eu": 81,
+    "korea": 10,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
-    "asia_other": 45
+    "asia_other": 46
   },
   "transition_stats": {
     "level_1_count": 12,
@@ -272,18 +272,33 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@joshdiazfilms",
-      "name": "Josh Diaz",
+      "name": "Josh_Diaz",
       "profile_url": "https://www.instagram.com/joshdiazfilms/",
-      "video_count": 6,
+      "video_count": 7,
       "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms",
         "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
         "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
         "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
         "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
         "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
         "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
+      ]
+    },
+    {
+      "handle": "@yegor.sky",
+      "name": "Yegor.Sky",
+      "profile_url": "https://www.instagram.com/yegor.sky/",
+      "video_count": 4,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
+        "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
+        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
+        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
       ]
     },
     {
@@ -298,6 +313,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@steven.vuu",
+      "name": "Steven.Vuu",
+      "profile_url": "https://www.instagram.com/steven.vuu/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
+        "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
+        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -327,19 +355,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@yegor.sky",
-      "name": "Yegor.Sky",
-      "profile_url": "https://www.instagram.com/yegor.sky/",
-      "video_count": 3,
-      "top_industry": "Du Lịch & Văn Hóa",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@yegor.sky_Dc-6BFdi7bU_Cinematic_Suitcase_Sequence",
-        "IG_@Yegor.Sky_DbBQzyqimbi_Video_by_yegor.sky",
-        "IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing"
-      ]
-    },
-    {
       "handle": "@by.bennnj",
       "name": "By.Bennnj",
       "profile_url": "https://www.instagram.com/by.bennnj/",
@@ -363,6 +378,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@ju_seobang",
+      "name": "주서방",
+      "profile_url": "https://www.instagram.com/ju_seobang/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
       ]
     },
     {
@@ -486,6 +513,171 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@_e.jo",
+      "name": "_E.Jo",
+      "profile_url": "https://www.instagram.com/_e.jo/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo"
+      ]
+    },
+    {
+      "handle": "@sanjogchopra",
+      "name": "Sanjogchopra",
+      "profile_url": "https://www.instagram.com/sanjogchopra/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation"
+      ]
+    },
+    {
+      "handle": "@lizzypalios",
+      "name": "Lizzypalios",
+      "profile_url": "https://www.instagram.com/lizzypalios/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process"
+      ]
+    },
+    {
+      "handle": "@treechurchlogan",
+      "name": "Treechurchlogan",
+      "profile_url": "https://www.instagram.com/treechurchlogan/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        ""
+      ]
+    },
+    {
+      "handle": "@tattebakery",
+      "name": "Tattebakery",
+      "profile_url": "https://www.instagram.com/tattebakery/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC"
+      ]
+    },
+    {
+      "handle": "@saebomoh",
+      "name": "오새봄 / Oh Sae Bom",
+      "profile_url": "https://www.instagram.com/saebomoh/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog"
+      ]
+    },
+    {
+      "handle": "@kisho_men",
+      "name": "Kisho_Men",
+      "profile_url": "https://www.instagram.com/kisho_men/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion"
+      ]
+    },
+    {
+      "handle": "@korea_bigmama",
+      "name": "Korea_Bigmama",
+      "profile_url": "https://www.instagram.com/korea_bigmama/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist"
+      ]
+    },
+    {
+      "handle": "@quinematic",
+      "name": "Quinn Welychka",
+      "profile_url": "https://www.instagram.com/quinematic/",
+      "video_count": 1,
+      "top_industry": "Thể Thao & Năng Động",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run"
+      ]
+    },
+    {
+      "handle": "@dimasyudhystira",
+      "name": "Dimas Yudhystira",
+      "profile_url": "https://www.instagram.com/dimasyudhystira/",
+      "video_count": 1,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut"
+      ]
+    },
+    {
+      "handle": "@kulniyasally",
+      "name": "Kulniyasally",
+      "profile_url": "https://www.instagram.com/kulniyasally/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        ""
+      ]
+    },
+    {
+      "handle": "@hsuan_yunn",
+      "name": "Hsuan_Yunn",
+      "profile_url": "https://www.instagram.com/hsuan_yunn/",
+      "video_count": 1,
+      "top_industry": "Công Nghệ & Thiết Bị",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase"
+      ]
+    },
+    {
+      "handle": "@bysuncan",
+      "name": "Bysuncan",
+      "profile_url": "https://www.instagram.com/bysuncan/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel"
+      ]
+    },
+    {
+      "handle": "@allure.cafebar",
+      "name": "Allure_Cafe_Bar",
+      "profile_url": "https://www.instagram.com/allure.cafebar/",
+      "video_count": 1,
+      "top_industry": "Ẩm Thực & F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar"
+      ]
+    },
+    {
+      "handle": "@parisexplorer",
+      "name": "Parisexplorer",
+      "profile_url": "https://www.instagram.com/parisexplorer/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer"
+      ]
+    },
+    {
       "handle": "@aidana_adilkassym",
       "name": "Aidana Adilkassym",
       "profile_url": "https://www.instagram.com/aidana_adilkassym/",
@@ -527,28 +719,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mako__go_DaH7X34NTNX_Palermo_Sicily/shot_01_mid.jpg",
       "video_ids": [
         "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily"
-      ]
-    },
-    {
-      "handle": "@ju_seobang",
-      "name": "Ju Seobang",
-      "profile_url": "https://www.instagram.com/ju_seobang/",
-      "video_count": 1,
-      "top_industry": "Kiến Trúc & Không Gian Sống",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
-      "handle": "@steven.vuu",
-      "name": "Steven Vu",
-      "profile_url": "https://www.instagram.com/steven.vuu/",
-      "video_count": 1,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu"
       ]
     },
     {
@@ -1236,6 +1406,1226 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo",
+      "shortcode": "DbKxhucTAh4",
+      "title_vi": "Phân Tích Kính Chạy Bộ Carbon Tomdeer • E Jo 이원민 (Rhythmic Prop Dance & Bounce Stability Test)",
+      "quick_takeaway": "Bóc tách 17 phân cảnh bậc thầy về nghệ thuật sáng tạo B-Roll nhịp điệu (Rhythmic B-Roll) kết hợp vũ đạo đạo cụ và bài test vận động dậm chân tại chỗ cực hạn (High-Impact Bounce Stability Test) của Creator E Jo (@_e.jo) quảng bá kính thể ...",
+      "key_tech": "Rhythmic Prop Dance, Punch-to-Lens Hook, High-Impact Bounce Test, Photochromic Sheen Close-up, Routine Pack-with-me, Vanity Mirror Check",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Rhythmic Prop Dance, Punch-to-Lens Hook, High-Impact Bounce Test, Photochromic Sheen Close-up, Routine Pack-with-me, Vanity Mirror Check"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@_e.jo",
+        "name": "_E.Jo",
+        "handle": "@_e.jo",
+        "profile_url": "https://www.instagram.com/_e.jo/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbKxhucTAh4/?stkn=OWk2ZW9zdzRwcTUx",
+      "gdrive_folder": "https://drive.google.com/open?id=1NS1Ltv_-cGxfPoYB37gcFbS149M7K4aR",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbKxhucTAh4.mp4",
+        "report_url": "reports/IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo.html",
+        "shots_count": 17,
+        "duration": "34.07s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation",
+      "shortcode": "Dcxi128sxO9_",
+      "title_vi": "Dancing to the Beat • Phân Tích 17 Phân Cảnh B-Roll Gym Điện Ảnh & Tài Trợ Khéo Léo",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@sanjogchopra",
+        "name": "Sanjogchopra",
+        "handle": "@sanjogchopra",
+        "profile_url": "https://www.instagram.com/sanjogchopra/"
+      },
+      "ig_url": "https://www.instagram.com/sanjogchopra/",
+      "gdrive_folder": "https://drive.google.com/open?id=1-7BlIChO1_mFvDRdYTDQAFApRQmeNOrI",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dcxi128sxO9.mp4",
+        "report_url": "reports/IG_@sanjogchopra_Dcxi128sxO9_Dancing_To_The_Beat_Gym_Motivation.html",
+        "shots_count": 17,
+        "duration": "9.84s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process",
+      "shortcode": "DdHMOB0xfd1",
+      "title_vi": "Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View (Whip-Pan & Spin-On-Beat) - @lizzypalios",
+      "quick_takeaway": "Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống 'A Day In The Life' của Business & Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật: Lia máy Phải sang Trái, Tăng tốc đoạn lia 2-3x (Whip...",
+      "key_tech": "Day In The Life Formula, Pan Right-to-Left Continuity, Speed Ramping 2-3x Whip-Pan, Centered Timestamp Anchors, Spin-on-Beat Audio-Visual Sync, Work & Downtime Balance",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Day In The Life Formula, Pan Right-to-Left Continuity, Speed Ramping 2-3x Whip-Pan, Centered Timestamp Anchors, Spin-on-Beat Audio-Visual Sync, Work & Downtime Balance"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@lizzypalios",
+        "name": "Lizzypalios",
+        "handle": "@lizzypalios",
+        "profile_url": "https://www.instagram.com/lizzypalios/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdHMOB0xfd1/?stkn=MTU3djY2eTdqMjQxbw==",
+      "gdrive_folder": "https://drive.google.com/open?id=1JYbmscjwapUSFA9qM4zxdjxotMVSNkfc",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdHMOB0xfd1.mp4",
+        "report_url": "reports/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process.html",
+        "shots_count": 21,
+        "duration": "27.9s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "",
+      "shortcode": "",
+      "title_vi": "Bring A Friend To Church Skit • Đỉnh Cao Hài Hước Nghĩa Đen (Literal Comedy) & Hook 2 Nhịp Kêu Gọi Tham Dự Sự Kiện",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@treechurchlogan",
+        "name": "Treechurchlogan",
+        "handle": "@treechurchlogan",
+        "profile_url": "https://www.instagram.com/treechurchlogan/"
+      },
+      "ig_url": "https://www.instagram.com/treechurchlogan/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "",
+        "report_url": "",
+        "shots_count": 0,
+        "duration": "10.0s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC",
+      "shortcode": "DcJM7AWOa__",
+      "title_vi": "Bản Hòa Âm Cà Phê Mới Tại New York • Tuyệt Kỹ Video F&B Triệu View Bằng ASMR",
+      "quick_takeaway": "Bóc tách 12 phân cảnh chuẩn đạo diễn trong video quảng bá điểm đến F&B triệu view của Tatte Bakery (@tattebakery) tại New York: Nghệ thuật dùng âm thanh xúc giác (Tactile ASMR Soundscape) thay thế hoàn toàn lời bình, nhịp cắt tiết tấu nh...",
+      "key_tech": "Tactile ASMR Soundscape, NYC Street Reveal Hook, Macro Food Textures, Barista Craftsmanship, Sensory Foley Sync-Cut, 1.02s Fast Pacing, Hero Closing Branding",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Tactile ASMR Soundscape, NYC Street Reveal Hook, Macro Food Textures, Barista Craftsmanship, Sensory Foley Sync-Cut, 1.02s Fast Pacing, Hero Closing Branding"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@tattebakery",
+        "name": "Tattebakery",
+        "handle": "@tattebakery",
+        "profile_url": "https://www.instagram.com/tattebakery/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcJM7AWOa__/?stkn=MWE1N3JzbWlwZGVhOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=11KrjCL35NeaATtV2AePDjVWj0j90ywPY",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJM7AWOa__.mp4",
+        "report_url": "reports/Soundtrack%20of%20Newest%20Cafe%20NYC%20-%20%40tattebakery.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog",
+      "shortcode": "DbH76S5yg5W",
+      "title_vi": "A Little Hong Kong A Lot Of Happiness • Nghệ Thuật Vlog Du Lịch Hè Góc Thấp Đầy Bản Sắc",
+      "quick_takeaway": "Bóc tách 6 phân cảnh mẫu mực trong video Reel của @saebomoh: Thao lược góc máy thấp góc siêu rộng (Low-Angle Ultra-Wide POV) kết hợp chuyển động băng chuyền sân bay mượt mà như dolly track, kỹ thuật Match-Cut định hướng chuyển động (Moti...",
+      "key_tech": "Low-Angle Ultra-Wide POV, Travelator Natural Dolly, Motion Match-Cut, Urban Canyon Scale Shock, Seamless Outfit Switch, Wong Kar-wai Retro Street Aesthetic, Infinite Loop Narrative",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "asia_other",
+        "name": "Châu Á Khác",
+        "en_name": "Other Asia",
+        "flag": "🌏",
+        "badge_color": "sky"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Low-Angle Ultra-Wide POV, Travelator Natural Dolly, Motion Match-Cut, Urban Canyon Scale Shock, Seamless Outfit Switch, Wong Kar-wai Retro Street Aesthetic, Infinite Loop Narrative"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@saebomoh (오새봄 / Oh Sae Bom)",
+        "name": "오새봄 / Oh Sae Bom",
+        "handle": "@saebomoh",
+        "profile_url": "https://www.instagram.com/saebomoh/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbH76S5yg5W/?stkn=dmVsa2twaGoyNGI2",
+      "gdrive_folder": "https://drive.google.com/open?id=1-O9WxOLsK1gVAsxJh9ZZT7Ni4HxjImrz",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@saebomoh_DbH76S5yg5W_Summer_Hong_Kong_Travel_Vlog/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/A%20Little%20Hong%20Kong%20A%20Lot%20Of%20Happiness%20-%20@saebomoh.mp4",
+        "report_url": "reports/A Little Hong Kong A Lot Of Happiness - @saebomoh.html",
+        "shots_count": 6,
+        "duration": "16.33s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion",
+      "shortcode": "DcxgmP1zZPk_",
+      "title_vi": "Allblack Is My Dominion • Nghệ Thuật Biến Hình Cú Đá Vô Hình & Thời Trang Nam Tối Giản",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@kisho_men",
+        "name": "Kisho_Men",
+        "handle": "@kisho_men",
+        "profile_url": "https://www.instagram.com/kisho_men/"
+      },
+      "ig_url": "https://www.instagram.com/kisho_men/",
+      "gdrive_folder": "https://drive.google.com/open?id=1daXkschS5VsG6IsiZ6RIgWNe8_TSYn12",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxgmP1zZPk.mp4",
+        "report_url": "reports/IG_@kisho_men_DcxgmP1zZPk_Allblack_Is_My_Dominion.html",
+        "shots_count": 5,
+        "duration": "11.9s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist",
+      "shortcode": "DdBnto_O0He",
+      "title_vi": "Nghịch Lý Ăn Kiêng & Quả Chuối Giấu Thanh Socola Snickers",
+      "quick_takeaway": "Phân tích 6 phân cảnh nghệ thuật tạo tiếng cười từ sự tự trào (Relatable Humor), bố cục đạo cụ đối lập và cú lật tẩy vật lý (Physical Gag Twist) siêu thực giấu socola trong vỏ chuối.",
+      "key_tech": "Visual Misdirection, Prop Juxtaposition, Suspense Build-up, Relatable Humor, Infinite Loop",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Visual Misdirection, Prop Juxtaposition, Suspense Build-up, Relatable Humor, Infinite Loop"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@korea_bigmama",
+        "name": "Korea_Bigmama",
+        "handle": "@korea_bigmama",
+        "profile_url": "https://www.instagram.com/korea_bigmama/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdBnto_O0He/?stkn=bjRkbW5jYmduOTR3",
+      "gdrive_folder": "https://drive.google.com/open?id=1EowHEhv1gKD7xejitZkm5hc8OK1D_eq0",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBnto_O0He.mp4",
+        "report_url": "reports/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist.html",
+        "shots_count": 6,
+        "duration": "20.33s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run",
+      "shortcode": "DdH6HGNxEYT",
+      "title_vi": "Time To Go For A Run • Nghệ Thuật Kể Chuyện Thói Quen Chạy Bộ Điện Ảnh",
+      "quick_takeaway": "Bóc tách trọn vẹn 16 phân cảnh mẫu mực trong video Reel của @quinematic: Đỉnh cao nghệ thuật dựng phim nhịp điệu (Fast Montage) đồng bộ 9 frame/shot kết hợp âm thanh ASMR vi mô đời thường, chuyển hóa không gian ngoạn mục từ căn phòng ngủ...",
+      "key_tech": "Fast 9-Frame Montage, Temporal Hook (7:00 AM), Silhouette Chiaroscuro, Macro Ritual Details, POV Shadow Play, Extreme Wide Landscape Scale Shock, Side & Front Dynamic Tracking, Golden Rim Light Climax",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể Thao & Năng Động",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Fast 9-Frame Montage, Temporal Hook (7:00 AM), Silhouette Chiaroscuro, Macro Ritual Details, POV Shadow Play, Extreme Wide Landscape Scale Shock, Side & Front Dynamic Tracking, Golden Rim Light Climax"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@quinematic (Quinn Welychka)",
+        "name": "Quinn Welychka",
+        "handle": "@quinematic",
+        "profile_url": "https://www.instagram.com/quinematic/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdH6HGNxEYT/?stkn=cDN1MnVpZTM0YjQ0",
+      "gdrive_folder": "https://drive.google.com/open?id=11KKOJuXLuykv1ZlksHdjqcnk1S-9ek02",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@quinematic_DdH6HGNxEYT_Time_To_Go_For_A_Run/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Time%20To%20Go%20For%20A%20Run%20-%20@quinematic.mp4",
+        "report_url": "reports/Time To Go For A Run - @quinematic.html",
+        "shots_count": 16,
+        "duration": "12.26s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut",
+      "shortcode": "Dc3DUsvpkrP",
+      "title_vi": "Nghệ Thuật Match-Cut Từ Căn Hộ Lên Đỉnh Núi Sumbing (@dimasyudhystira)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 8 phân cảnh mẫu mực trong video 15.3s của Dimas Yudhystira: Tuyệt kỹ Match-Cut chuyển động vi mô (Micro-Motion Match Cut) dịch chuyển tức thời từ căn hộ lên chân núi Sumbing, bứt phá qua rừng thông sương mờ v...",
+      "key_tech": "Micro-Motion Match Cut • Teleportation Hook • Spatial Convergence • Gear Foreshadowing • Summit Hero Contrast • Kinetic Jump Cut • Closed-Loop Visual Rhythm",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Micro-Motion Match Cut • Teleportation Hook • Spatial Convergence • Gear Foreshadowing • Summit Hero Contrast • Kinetic Jump Cut • Closed-Loop Visual Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@dimasyudhystira (Dimas Yudhystira)",
+        "name": "Dimas Yudhystira",
+        "handle": "@dimasyudhystira",
+        "profile_url": "https://www.instagram.com/dimasyudhystira/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc3DUsvpkrP/?stkn=eDBybW93OWo3bWlz",
+      "gdrive_folder": "https://drive.google.com/open?id=1gZ8vi0mkdIejL6YPvrSIGtAYT02YQ5Cz",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut/shot_03_mid.jpg",
+        "video_url": "videos/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.mp4",
+        "report_url": "reports/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.html",
+        "shots_count": 8,
+        "duration": "15.30s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit",
+      "shortcode": "DaBLA-QJcrk",
+      "title_vi": "Giấc Mơ Thức Dậy Ảo (False Awakening) & Cú Búa Siri Reality Check",
+      "quick_takeaway": "Bóc tách 3 phân cảnh chuẩn đạo diễn trong kiệt tác hài short-form của Steven Vuu (@steven.vuu): Nghệ thuật đánh lừa kỳ vọng người xem (False Expectations Hook) bằng thói quen buổi sáng mẫu mực, cú ngắt nhịp kịch tính (The Comic Beat Paus...",
+      "key_tech": "False Expectations Hook, The Comic Beat Pause, Match-Location Punchline, Hard Cut Reality Check, Lock-Off Camera Contrast, Micro-Expression Freeze, Tactile ASMR Sound",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "False Expectations Hook, The Comic Beat Pause, Match-Location Punchline, Hard Cut Reality Check, Lock-Off Camera Contrast, Micro-Expression Freeze, Tactile ASMR Sound"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@steven.vuu",
+        "name": "Steven.Vuu",
+        "handle": "@steven.vuu",
+        "profile_url": "https://www.instagram.com/steven.vuu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaBLA-QJcrk/?stkn=MXh2c2c3eWVjdTRtbA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1gWe4uEuHlmLN6ImVnvT98cDYsB0tz_Dl",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/How%20I%20Wake%20Up%20Skit%20-%20%40steven.vuu.mp4",
+        "report_url": "reports/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit.html",
+        "shots_count": 3,
+        "duration": "20.03s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "",
+      "shortcode": "DdGRCKwsaaI",
+      "title_vi": "Kamera 0.5x Ultra-Wide Food POV: Phối Hợp Hậu Trường & Thành Phẩm Điện Ảnh",
+      "quick_takeaway": "Báo cáo phân tích đạo diễn chuyên sâu về kỹ thuật quay POV ẩm thực bằng ống kính góc siêu rộng 0.5x của smartphone kết hợp mồi nhử hậu trường Behind-the-scenes (BTS) và cú bùng nổ chuyển cảnh thành phẩm (Result).",
+      "key_tech": "Ultra-Wide 0.5x Smartphone POV, Behind-The-Scenes Hook, Rhythm Match Cut, Whip Zoom Transition, Sensory Food Visuals",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Ultra-Wide 0.5x Smartphone POV, Behind-The-Scenes Hook, Rhythm Match Cut, Whip Zoom Transition, Sensory Food Visuals"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@kulniyasally",
+        "name": "Kulniyasally",
+        "handle": "@kulniyasally",
+        "profile_url": "https://www.instagram.com/kulniyasally/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGRCKwsaaI/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Z2Uovd7AL7uKMnhRpBsTfc6mJ7U9RwSY",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdGRCKwsaaI.mp4",
+        "report_url": "reports/IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV.html",
+        "shots_count": 7,
+        "duration": "15.33s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase",
+      "shortcode": "DdLsL-cSekL",
+      "title_vi": "Outdoor Fashion Match Cut Gear Showcase • Nghệ Thuật Match Cut Biến Hình & Trưng Bày Đồ Dã Ngoại Siêu Cuốn",
+      "quick_takeaway": "Bóc tách trọn vẹn 7 phân cảnh mẫu mực trong video Reel của @hsuan_yunn (鍾瑄芸Shanny): Nghệ thuật kết hợp In-Camera Action Match Cut biến hình trang phục từ mặc nhà sang set đồ dã ngoại thể thao (Gorpcore/Athleisure) chỉ trong 0.43s, đồng t...",
+      "key_tech": "In-Camera Action Match Cut, Low-Angle Squat Visual Anchor, Prop Kicking Visual Hook, Athleisure Styling Harmony, Over-the-Shoulder Bag Reveal",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Công Nghệ & Thiết Bị",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "In-Camera Action Match Cut, Low-Angle Squat Visual Anchor, Prop Kicking Visual Hook, Athleisure Styling Harmony, Over-the-Shoulder Bag Reveal"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@hsuan_yunn",
+        "name": "Hsuan_Yunn",
+        "handle": "@hsuan_yunn",
+        "profile_url": "https://www.instagram.com/hsuan_yunn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdLsL-cSekL/?stkn=MWFyazduMXNnMmk0bg==",
+      "gdrive_folder": "https://drive.google.com/open?id=1rjW471Zu_gi1z0G-rV7sOnuhGM1aX1jq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hsuan_yunn_DdLsL-cSekL_Outdoor_Fashion_Match_Cut_Gear_Showcase/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdLsL-cSekL.mp4",
+        "report_url": "reports/Outdoor Fashion Match Cut Gear Showcase - @hsuan_yunn.html",
+        "shots_count": 7,
+        "duration": "9.27s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit",
+      "shortcode": "DdM7gO4yD-c",
+      "title_vi": "Kính Thông Minh Meta Ray-Ban vs Trị Mụn Hero Cosmetics Skit • Nghệ Thuật Lồng Ghép Quảng Cáo Skit Comedy Đỉnh Cao",
+      "quick_takeaway": "Bóc tách 10 phân cảnh mẫu mực về nghệ thuật lồng ghép quảng cáo tự nhiên (Native Advertising) trong video skit hài hước của Steven Vuu: Sử dụng kính thông minh Meta Ray-Ban làm nhân vật phản biện chê mụn phũ phàng, chuyển tiếp khéo léo s...",
+      "key_tech": "POV Speculative AI Fiction, Sensory Macro POV Dispense, Bathroom Mirror Routine, Subversive Comedy Punchline, Action Match Cut",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "POV Speculative AI Fiction, Sensory Macro POV Dispense, Bathroom Mirror Routine, Subversive Comedy Punchline, Action Match Cut"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@steven.vuu",
+        "name": "Steven.Vuu",
+        "handle": "@steven.vuu",
+        "profile_url": "https://www.instagram.com/steven.vuu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdM7gO4yD-c/?stkn=NnJjcHlkcTBheDBj",
+      "gdrive_folder": "https://drive.google.com/open?id=1T7j9z63Hh4qD1c86e01Yd-H_2pB1oQeW",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@steven.vuu_DdM7gO4yD-c_Meta_RayBan_Hero_Cosmetics_Skit/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdM7gO4yD-c.mp4",
+        "report_url": "reports/Meta Ray-Ban AI vs Tri Mun Hero Cosmetics Skit - @steven.vuu.html",
+        "shots_count": 10,
+        "duration": "24.20s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel",
+      "shortcode": "DcvZ-FowD_A",
+      "title_vi": "Smooth Criminal • Cú Đấm Chuyển Cảnh Xuyên Không Gian Lên Đỉnh Núi",
+      "quick_takeaway": "Bóc tách trọn vẹn 6 phân cảnh mẫu mực trong video Reel của @bysuncan: Nghệ thuật In-Camera Action Match Cut dùng cú đấm trực diện che ống kính (Physical Occlusion Transition) để chuyển cảnh từ phòng làm việc ra đỉnh núi lửa hoang sơ theo...",
+      "key_tech": "In-Camera Fist Wipe Match Cut, Momentum Kinetic Transition, Beat-Synced Action, Domestic-to-Epic Contrast, Symmetrical Hero Pose",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "In-Camera Fist Wipe Match Cut, Momentum Kinetic Transition, Beat-Synced Action, Domestic-to-Epic Contrast, Symmetrical Hero Pose"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@bysuncan",
+        "name": "Bysuncan",
+        "handle": "@bysuncan",
+        "profile_url": "https://www.instagram.com/bysuncan/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcvZ-FowD_A/?stkn=Ynd6aGE0bzBtZTF3",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcvZ-FowD_A.mp4",
+        "report_url": "reports/Smooth Criminal Punch Transition Travel - @bysuncan.html",
+        "shots_count": 6,
+        "duration": "17.00s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar",
+      "shortcode": "DdF81brAiIj",
+      "title_vi": "Video by allure.cafebar",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 17 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "Ẩm Thực & F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@ALLURE_cafe_bar",
+        "name": "Allure_Cafe_Bar",
+        "handle": "@allure.cafebar",
+        "profile_url": "https://www.instagram.com/allure.cafebar/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdF81brAiIj/?stkn=MXdyenBrNmg2cGwwcA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1cPah6ks_2kqe728ZOY_F0fIga3CGqpY5",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdF81brAiIj.mp4",
+        "report_url": "reports/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
+      "shortcode": "DbA22ywhMSI",
+      "title_vi": "@주서방 - Video by ju seobang",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@주서방",
+        "name": "주서방",
+        "handle": "@ju_seobang",
+        "profile_url": "https://www.instagram.com/ju_seobang/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbA22ywhMSI/?stkn=cjJhdGwzNG1kNXd3",
+      "gdrive_folder": "https://drive.google.com/open?id=1XUlvMvPzkWqk8A8L5hfAqze75-AaLavT",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbA22ywhMSI.mp4",
+        "report_url": "reports/IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City",
+      "shortcode": "DdJaKjQCMTm",
+      "title_vi": "How To Film Yourself In City • Công Thức 9 Phân Cảnh B-Roll Điện Ảnh",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu công thức 9 phân cảnh kinh điển quay phim bản thân giữa lòng đô thị của creator Yegor.Sky.",
+      "key_tech": "Urban Self-Filming Formula, 9-Shot Montage, 1x & 2x Focal Shift",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Urban Self-Filming Formula, 9-Shot Montage, 1x & 2x Focal Shift"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@yegor.sky",
+        "name": "Yegor.Sky",
+        "handle": "@yegor.sky",
+        "profile_url": "https://www.instagram.com/yegor.sky/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJaKjQCMTm/",
+      "gdrive_folder": "https://drive.google.com/open?id=1j4DIeOUcRDlGJVjvfLBO_2bq-8JQu9V6",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJaKjQCMTm.mp4",
+        "report_url": "reports/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City.html",
+        "shots_count": 10,
+        "duration": "16.21s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer",
+      "shortcode": "DdJsv1AsGwt",
+      "title_vi": "Cú Rơi Giày Biến Hình Khải Hoàn Môn (@parisexplorer) • Cú Rơi Giày Biến Hình Khải Hoàn Môn",
+      "quick_takeaway": "Phân tích nghệ thuật thị giác và tư duy bố cục điện ảnh từ cú chuyển cảnh giấu vết cắt bằng giày rơi che kín ống kính (Shoe Drop Lens Occlusion): Khai thác góc quay ngước mặt đất 90 độ (Worm's Eye View) tôn vinh trần vòm Khải Hoàn Môn Pa...",
+      "key_tech": "Shoe Drop Lens Occlusion • 90° Symmetrical Worm's Eye View • Dynamic Camera Pickup & Dutch Tilt • Outfit Transformation • Natural Architectural Framing",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Shoe Drop Lens Occlusion • 90° Symmetrical Worm's Eye View • Dynamic Camera Pickup & Dutch Tilt • Outfit Transformation • Natural Architectural Framing"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@parisexplorer",
+        "name": "Parisexplorer",
+        "handle": "@parisexplorer",
+        "profile_url": "https://www.instagram.com/parisexplorer/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJsv1AsGwt/?stkn=eXV3NHppdGRndXlq",
+      "gdrive_folder": "https://drive.google.com/open?id=11DGOFXeY0w92c7cEgt88C0SRc_RTHxyF",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJsv1AsGwt.mp4",
+        "report_url": "reports/IG_@Laurent_Derossi_DdJsv1AsGwt_Video_by_parisexplorer.html",
+        "shots_count": 3,
+        "duration": "6s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms",
+      "shortcode": "DdJ7S5BJ6H0",
+      "title_vi": "Video by joshdiazfilms",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@Josh_Diaz",
+        "name": "Josh_Diaz",
+        "handle": "@joshdiazfilms",
+        "profile_url": "https://www.instagram.com/joshdiazfilms/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdJ7S5BJ6H0/?stkn=NG53dXViY2pvZ3U3",
+      "gdrive_folder": "https://drive.google.com/open?id=1Wm9pN0Dn7n0rXpHNjXEu-IpofSVBOCPZ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJ7S5BJ6H0.mp4",
+        "report_url": "reports/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
       "shortcode": "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
       "title_vi": "Ulanzi UA20 Đèn LED Thanh Bơm Hơi 20W Bi-Color Tích Hợp Pin",
@@ -1287,7 +2677,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
       },
       "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://img.youtube.com/vi/adOF33KL6qk/hqdefault.jpg",
         "thumb_key": "https://img.youtube.com/vi/adOF33KL6qk/maxresdefault.jpg",
@@ -1358,7 +2748,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
       },
       "ig_url": "https://shopee.vn/ULANZI-MT80-Ch%C3%A2n-M%C3%A1y-Tripod-ULANZI-MT-80-Chi%E1%BB%81u-Cao-213cm-T%E1%BA%A3i-Tr%E1%BB%8Dng-5kg-H%C3%A0ng-Ch%C3%ADnh-H%C3%A3ng-i.1146051656.42829427636",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://img.youtube.com/vi/InZ6HgASLnE/hqdefault.jpg",
         "thumb_key": "https://img.youtube.com/vi/InZ6HgASLnE/maxresdefault.jpg",
@@ -2580,7 +3970,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoPBXdDPro.mp4",
         "report_url": "reports/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide.html",
         "shots_count": 7,
-        "duration": "9.3s",
+        "duration": "9.30s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2798,7 +4188,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20phone%20video%20ideas%20-%20%40valenti_k41.mp4",
         "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
         "shots_count": 6,
-        "duration": "12s",
+        "duration": "6.28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3017,7 +4407,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbJcoLdssK6.mp4",
         "report_url": "reports/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life.html",
         "shots_count": 18,
-        "duration": "11.8s",
+        "duration": "11.80s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3235,7 +4625,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Getting%20Ready%20Faster%20Than%20Ever%20-%20%40jesussropero.mp4",
         "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "6.00s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3305,7 +4695,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbILcfyxZot.mp4",
         "report_url": "reports/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds.html",
         "shots_count": 9,
-        "duration": "18s",
+        "duration": "74.44s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3375,7 +4765,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db_EEZtjJBI.mp4",
         "report_url": "reports/IG_@wowshoebwow_Db_EEZtjJBI_Moving_Postcards_London_Trafalgar.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "6.08s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3445,7 +4835,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db5TrGYlKbD.mp4",
         "report_url": "reports/IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "8.10s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3515,7 +4905,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcOUP2PsMsP.mp4",
         "report_url": "reports/IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority.html",
         "shots_count": 16,
-        "duration": "32s",
+        "duration": "44.93s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -3722,7 +5112,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJIT4DzPhj.mp4",
         "report_url": "reports/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro.html",
         "shots_count": 4,
-        "duration": "8s",
+        "duration": "9.00s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -4074,7 +5464,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTbD0MR-V_.mp4",
         "report_url": "reports/IG_@brandon.dtd_DcTbD0MR-V__Discipline_Motivation_Obsession.html",
         "shots_count": 18,
-        "duration": "36s",
+        "duration": "21.90s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -4706,7 +6096,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc0tEcOIdwy.mp4",
         "report_url": "reports/4 Cuts Mastery - @mridupawasharma.html",
         "shots_count": 24,
-        "duration": "48s",
+        "duration": "48.67s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6836,7 +8226,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": ""
       },
       "ig_url": "",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/broll_plans/BROLL_PLAN_20260827_TimesCity_Basketball/assets/scene_01.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/broll_plans/BROLL_PLAN_20260827_TimesCity_Basketball/assets/ref_01.jpg",
@@ -7656,7 +9046,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": ""
       },
       "ig_url": "",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_01.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_03.jpg",
@@ -7723,7 +9113,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/Self_Practice/"
       },
       "ig_url": "https://www.instagram.com/Self_Practice/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_001_d3929600.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Chay_Bo_Times_City_-_%40Self_Practice/img_003_f4a21091.jpg",
@@ -7790,7 +9180,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_001_f678a262.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Visual_Storytelling_Carousel_-_%40withyuee/img_003_ab7e9aa6.jpg",
@@ -7861,7 +9251,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_001_f338d92e.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Urban_Transitions_-_%40withyuee/img_003_5bd4e9f3.jpg",
@@ -7928,7 +9318,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_001_4c61efb5.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Cinematography_Guide_-_%40withyuee/img_003_469ee782.jpg",
@@ -7998,7 +9388,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/withyuee/"
       },
       "ig_url": "https://www.instagram.com/withyuee/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_001_84d02fa0.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bamboo_Scaffolding_-_%40withyuee/img_003_02cc6fea.jpg",
@@ -8068,7 +9458,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thodiahaiduongne/"
       },
       "ig_url": "https://www.tiktok.com/@thodiahaiduongne/video/7350657143906913544",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_start.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/TikTok_@thodiahaiduongne_7350657143906913544_Mua_Sua_Do_Hai_Duong/shot_01_end.jpg",
@@ -8140,7 +9530,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/tinanguyen2004/"
       },
       "ig_url": "https://www.tiktok.com/@tinanguyen2004/video/7673468312290037012",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_03_mid.jpg",
@@ -9295,7 +10685,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DbLToEpPPzm/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_001_94f415b0.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Bakery_Egg_Tart_-_%40jazziesillona/img_003_08e95b41.jpg",
@@ -9366,7 +10756,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DZzwqWBvfwT/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_001_a370a673.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Neon_Street_Night_-_%40jazziesillona/img_003_5aac8ee0.jpg",
@@ -9568,7 +10958,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mkxpresar/"
       },
       "ig_url": "https://www.instagram.com/p/DaP3EE-qgAQ/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_001_1a64c4c7.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Cinematic_Train_Japan_-_%40Katsuki/img_003_716d7781.jpg",
@@ -9638,7 +11028,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DYcM_9FPr7I/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_001_a101e3ca.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Hong_Kong_Rainy_Day_Cinematic_-_%40jazziesillona/img_003_172f4445.jpg",
@@ -9705,7 +11095,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DXoss18j011/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_015_0f87c40e.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Tai_Hang_Hong_Kong_Street_-_%40jazziesillona/img_017_781ec86d.jpg",
@@ -10882,7 +12272,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DaXdrAVzGcc/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DaXdrAVzGcc_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -10952,7 +12342,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DbnlAB5Twrw/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DbnlAB5Twrw_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -11022,7 +12412,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/mridupawasharma/"
       },
       "ig_url": "https://www.instagram.com/p/DcGbEVFznin/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Mridupawan_Sharma_DcGbEVFznin_Video_by_mridupawasharma/shot_03_mid.jpg",
@@ -11092,7 +12482,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/briantooker/"
       },
       "ig_url": "https://www.instagram.com/p/DZN-FfdyPgH/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Brian_Tooker_DZN-FfdyPgH_Video_by_briantooker/shot_03_mid.jpg",
@@ -11162,7 +12552,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/junko_livlog/"
       },
       "ig_url": "https://www.instagram.com/p/Da46F-lxueg/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Junko_Da46F-lxueg_Video_by_junko_livlog/shot_03_mid.jpg",
@@ -11229,7 +12619,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kerennilan/"
       },
       "ig_url": "https://www.instagram.com/p/DY5aQaoABsy/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Keren_Ilan_DY5aQaoABsy_Video_by_kerennilan/shot_03_mid.jpg",
@@ -11299,7 +12689,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/hana.konichiwa/"
       },
       "ig_url": "https://www.instagram.com/p/DbS3HNNIKR7/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Hana_Konichiwa_DbS3HNNIKR7_Video_by_hana.konichiwa/shot_03_mid.jpg",
@@ -11369,7 +12759,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/nicoolalah/"
       },
       "ig_url": "https://www.instagram.com/p/DaAm8suhCau/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Nicole_💖_DaAm8suhCau_Video_by_nicoolalah/shot_03_mid.jpg",
@@ -11439,7 +12829,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thewaytowherever/"
       },
       "ig_url": "https://www.instagram.com/p/DbomJ6-Tpry/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Erin_&_Jackson_Travel_Filmmakers_&_Photograph_DbomJ6-Tpry_Video_by_thewaytowherever/shot_03_mid.jpg",
@@ -11509,7 +12899,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/thomasmathewt2/"
       },
       "ig_url": "https://www.instagram.com/p/DcLwG_mKyKM/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_03_mid.jpg",
@@ -11576,7 +12966,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/bewoom/"
       },
       "ig_url": "https://www.instagram.com/p/DZVHH27S7Lf/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_03_mid.jpg",
@@ -11643,7 +13033,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/jazziesillona/"
       },
       "ig_url": "https://www.instagram.com/p/DZVAYFwvo4y/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_03_mid.jpg",
@@ -11713,7 +13103,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/photoknack.in/"
       },
       "ig_url": "https://www.instagram.com/p/DcJBTCoT6UT/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Neeraj_Khurana_Video,_Lighting_&_Photography_DcJBTCoT6UT_Video_by_photoknack.in/shot_03_mid.jpg",
@@ -11780,7 +13170,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kosnio/"
       },
       "ig_url": "https://www.instagram.com/p/DcI-darjckz/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg",
@@ -11850,7 +13240,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/austinrutland/"
       },
       "ig_url": "https://www.instagram.com/p/DYwzs3zRRkv/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Austin_Rutland_DYwzs3zRRkv_Video_by_austinrutland/shot_03_mid.jpg",
@@ -11917,7 +13307,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/kosnio/"
       },
       "ig_url": "https://www.instagram.com/p/DaC90d3tWuV/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_03_mid.jpg",
@@ -11984,7 +13374,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/creator/"
       },
       "ig_url": "https://www.instagram.com/creator/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_02_mid.jpg",
@@ -12051,7 +13441,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/local/"
       },
       "ig_url": "https://www.instagram.com/local/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_001_64380ecb.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_video/img_003_0fe2b694.jpg",
@@ -12121,7 +13511,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/ariffathulhakim/"
       },
       "ig_url": "https://www.instagram.com/ariffathulhakim/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Arif_Hakim_Db7P1GeOxvq_Video_by_ariffathulhakim/shot_03_mid.jpg",
@@ -12188,7 +13578,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/local/"
       },
       "ig_url": "https://www.instagram.com/local/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_001_3c289bad.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_video_ig_video_ig/img_003_7c3a7180.jpg",
@@ -12325,7 +13715,7 @@ var FEDU_IDEAS_DATABASE = {
         "profile_url": "https://www.instagram.com/bryanhynes/"
       },
       "ig_url": "https://www.instagram.com/reel/DacaMHwzEm3/",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1MuKg5h7d2w-hbxyV3ldPnKYBtjOJeVIn",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_080_ae283717.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/The_Art_of_Visual_Sequence_-_%40bryanhynes/img_082_406f7de9.jpg",
