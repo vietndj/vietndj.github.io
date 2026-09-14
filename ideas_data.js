@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 227,
+  "total_scene_items": 228,
   "total_unique_ideas": 204,
   "total_active_ideas": 172,
   "total_excluded_ideas": 32,
@@ -514,17 +514,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@hannya.tattoos",
-      "name": "Hannya Tattoos",
-      "profile_url": "https://www.instagram.com/hannya.tattoos/",
-      "video_count": 1,
-      "top_industry": "Làm Đẹp & Spa / Y Tế",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey"
-      ]
-    },
-    {
       "handle": "@celfstudies",
       "name": "Celina (celfstudies)",
       "profile_url": "https://www.instagram.com/celfstudies/",
@@ -533,6 +522,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_01_mid.jpg",
       "video_ids": [
         "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions"
+      ]
+    },
+    {
+      "handle": "@hannya.tattoos",
+      "name": "Hannya Tattoos",
+      "profile_url": "https://www.instagram.com/hannya.tattoos/",
+      "video_count": 1,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey"
       ]
     },
     {
@@ -1550,6 +1550,72 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
+      "shortcode": "DdN_aljAIY0",
+      "title_vi": "25 Phân Cảnh Kỹ Thuật Speed Ramp & Beat-Sync Dựng Day In My Life Cực Cuốn - @celfstudies",
+      "quick_takeaway": "Bóc tách chuyên sâu toàn diện 25 phân cảnh theo ngôn ngữ đạo diễn và kỹ thuật CapCut Speed Transitions trong video 'Day in my life' phong cách Clean Aesthetic tại San Francisco của lập trình viên kiêm creator Celina (@celfstudies): từ ch...",
+      "key_tech": "Staccato Beat Teaser • Frame-in-Frame Mirror • Tactile Speed Ramp • Low-Angle Ninja Walk • Transit Whip-Zoom • Aesthetic Flatlay • Sensory Scoop Macro • Horizontal Shelf Scan • Color Pop Array • Interactive App Showcase • Climax Pouring Pull • Circular Narrative Loop",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us",
+        "name": "Hoa Kỳ",
+        "en_name": "United States",
+        "flag": "🇺🇸",
+        "badge_color": "blue"
+      },
+      "purpose": "Vlog một ngày làm việc và phong cách sống Clean Aesthetic tại San Francisco",
+      "tech_tags": [
+        "Staccato Beat Teaser",
+        "Action Match Cut",
+        "Speed Ramp Transition",
+        "Horizontal Shelf Scan",
+        "Interactive Climax Showcase",
+        "Circular Outro Loop"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Chuỗi 25 phân cảnh ngắn 0.2s - 1.5s phối hợp nhuần nhuyễn giữa Staccato Teaser mở màn, Action Cut xỏ giày/mở cửa, và quét kệ hàng ngang siêu thị dẫn dắt người xem cuốn hút từng giây.",
+      "creator": {
+        "raw": "@celfstudies",
+        "name": "Celina (celfstudies)",
+        "handle": "@celfstudies",
+        "profile_url": "https://www.instagram.com/celfstudies/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdN_aljAIY0/",
+      "gdrive_folder": "https://drive.google.com/open?id=1yMebk10dOCBk2OADq2utwUE2AIkuwSHV",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdN_aljAIY0.mp4",
+        "report_url": "reports/Day In My Life SF Speed Transitions - @celfstudies.html",
+        "shots_count": 25,
+        "duration": "15.87s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey",
       "shortcode": "DdLedJjsbNW",
       "title_vi": "Asian Dragon Tattoo Journey • Hannya Tattoo Hà Nội",
@@ -1612,72 +1678,6 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
-      "shortcode": "DdN_aljAIY0",
-      "title_vi": "25 Phân Cảnh Kỹ Thuật Speed Ramp & Beat-Sync Dựng Day In My Life Cực Cuốn - @celfstudies",
-      "quick_takeaway": "Bóc tách chuyên sâu toàn diện 25 phân cảnh theo ngôn ngữ đạo diễn và kỹ thuật CapCut Speed Transitions trong video 'Day in my life' phong cách Clean Aesthetic tại San Francisco của lập trình viên kiêm creator Celina (@celfstudies): từ ch...",
-      "key_tech": "Staccato Beat Teaser • Frame-in-Frame Mirror • Tactile Speed Ramp • Low-Angle Ninja Walk • Transit Whip-Zoom • Aesthetic Flatlay • Sensory Scoop Macro • Horizontal Shelf Scan • Color Pop Array • Interactive App Showcase • Climax Pouring Pull • Circular Narrative Loop",
-      "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh (Transition)",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us",
-        "name": "Hoa Kỳ",
-        "en_name": "United States",
-        "flag": "🇺🇸",
-        "badge_color": "blue"
-      },
-      "purpose": "Vlog một ngày làm việc và phong cách sống Clean Aesthetic tại San Francisco",
-      "tech_tags": [
-        "Staccato Beat Teaser",
-        "Action Match Cut",
-        "Speed Ramp Transition",
-        "Horizontal Shelf Scan",
-        "Interactive Climax Showcase",
-        "Circular Outro Loop"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Chuỗi 25 phân cảnh ngắn 0.2s - 1.5s phối hợp nhuần nhuyễn giữa Staccato Teaser mở màn, Action Cut xỏ giày/mở cửa, và quét kệ hàng ngang siêu thị dẫn dắt người xem cuốn hút từng giây.",
-      "creator": {
-        "raw": "@celfstudies",
-        "name": "Celina (celfstudies)",
-        "handle": "@celfstudies",
-        "profile_url": "https://www.instagram.com/celfstudies/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DdN_aljAIY0/",
-      "gdrive_folder": "https://drive.google.com/open?id=1yMebk10dOCBk2OADq2utwUE2AIkuwSHV",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdN_aljAIY0.mp4",
-        "report_url": "reports/Day In My Life SF Speed Transitions - @celfstudies.html",
-        "shots_count": 25,
-        "duration": "15.87s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
-      },
-      "complexity": {
-        "id": "nang-cao",
-        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
