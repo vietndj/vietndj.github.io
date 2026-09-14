@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 214,
+  "total_scene_items": 215,
   "total_unique_ideas": 193,
   "total_active_ideas": 161,
   "total_excluded_ideas": 32,
@@ -514,17 +514,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@lee.rabo",
-      "name": "보라 (Bora)",
-      "profile_url": "https://www.instagram.com/lee.rabo/",
-      "video_count": 1,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog"
-      ]
-    },
-    {
       "handle": "@naohasa",
       "name": "Naohasa",
       "profile_url": "https://www.instagram.com/naohasa/",
@@ -533,6 +522,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_01_mid.jpg",
       "video_ids": [
         "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk"
+      ]
+    },
+    {
+      "handle": "@lee.rabo",
+      "name": "보라 (Bora)",
+      "profile_url": "https://www.instagram.com/lee.rabo/",
+      "video_count": 1,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog"
       ]
     },
     {
@@ -1429,6 +1429,67 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk",
+      "shortcode": "DdGp4XftvIn",
+      "title_vi": "5 Bộ Phục Trang Phố Thị Moscow: Kỹ Thuật Match-Cut Bước Chân Động Năng Biến Hình Vô Tận",
+      "quick_takeaway": "Báo cáo đạo diễn phân tích chuyên sâu 5 phân cảnh lookbook của @naohasa: Cú lia chân Footsteps Reveal Hook, kỹ thuật cắt nối bước chân Match-Cut chuẩn từng pixel trên trục đường một điểm tụ, điểm nhấn màu nóng (Color Pop Accent) và mẹo q...",
+      "key_tech": "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@naohasa",
+        "name": "Naohasa",
+        "handle": "@naohasa",
+        "profile_url": "https://www.instagram.com/naohasa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGp4XftvIn/",
+      "gdrive_folder": "https://drive.google.com/open?id=1DrCfVLsopXFieYTCiPaqPOd5ICV6wVBM",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_03_mid.jpg",
+        "video_url": "./videos/5 Outfits Match Cut Walk - @naohasa.mp4",
+        "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
+        "shots_count": 5,
+        "duration": "13.68s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog",
       "shortcode": "Dc3ifsHTIhL_",
       "title_vi": "A Day in the Life of an Introverted Freelancer • Phân Tích 16 Phân Cảnh B-Roll Nhịp Sống Tinh Tế",
@@ -1496,67 +1557,6 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk",
-      "shortcode": "DdGp4XftvIn",
-      "title_vi": "5 Bộ Phục Trang Phố Thị Moscow: Kỹ Thuật Match-Cut Bước Chân Động Năng Biến Hình Vô Tận",
-      "quick_takeaway": "Báo cáo đạo diễn phân tích chuyên sâu 5 phân cảnh lookbook của @naohasa: Cú lia chân Footsteps Reveal Hook, kỹ thuật cắt nối bước chân Match-Cut chuẩn từng pixel trên trục đường một điểm tụ, điểm nhấn màu nóng (Color Pop Accent) và mẹo q...",
-      "key_tech": "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop",
-      "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh (Transition)",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
-      },
-      "industry": {
-        "id": "thoi-trang",
-        "name": "Thời Trang & Phụ Kiện",
-        "en_name": "Fashion & Style",
-        "icon": "👔",
-        "badge_color": "pink"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
-      "tech_tags": [
-        "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "",
-      "creator": {
-        "raw": "@naohasa",
-        "name": "Naohasa",
-        "handle": "@naohasa",
-        "profile_url": "https://www.instagram.com/naohasa/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DdGp4XftvIn/",
-      "gdrive_folder": "https://drive.google.com/open?id=1DrCfVLsopXFieYTCiPaqPOd5ICV6wVBM",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_03_mid.jpg",
-        "video_url": "./videos/5 Outfits Match Cut Walk - @naohasa.mp4",
-        "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
-        "shots_count": 5,
-        "duration": "13.68s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
