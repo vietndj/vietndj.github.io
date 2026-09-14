@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 219,
-  "total_unique_ideas": 196,
-  "total_active_ideas": 164,
+  "total_scene_items": 220,
+  "total_unique_ideas": 197,
+  "total_active_ideas": 165,
   "total_excluded_ideas": 32,
-  "total_creators": 107,
+  "total_creators": 108,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 19,
-    "dien-anh": 92,
+    "dien-anh": 93,
     "chuyen-canh": 33
   },
   "industries": [
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 4,
+    "spa-lam-dep": 5,
     "thuong-hieu": 18,
     "thoi-trang": 14,
     "am-thuc": 18,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 81,
+    "us_eu": 82,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -511,6 +511,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@fabianamsolano",
+      "name": "Fabiana Solano",
+      "profile_url": "https://www.instagram.com/fabianamsolano/",
+      "video_count": 1,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut"
       ]
     },
     {
@@ -1461,6 +1472,67 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut",
+      "shortcode": "Dc4u6aOhR9r",
+      "title_vi": "Vũ Điệu Nhịp Cắt Beat-Match Tại Yosemite (@fabianamsolano)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 30 phân cảnh mẫu mực trong video âm nhạc du khảo 37.3s của Fabiana Solano: Tuyệt kỹ Beat-Matched Cutting, nhảy không gian (Spatial Teleportation Jump-Cut), tỷ lệ khung hình cổ điển 4:3 và sự hòa quyện giữa bi...",
+      "key_tech": "Beat-Matched Cutting • Spatial Teleportation Jump-Cut • Classic 4:3 Retro Framing • Hero Landscape Contrast • Natural Framing • Kinetic Motion Flow • Iconic Outro",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Beat-Matched Cutting • Spatial Teleportation Jump-Cut • Classic 4:3 Retro Framing • Hero Landscape Contrast • Natural Framing • Kinetic Motion Flow • Iconic Outro"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@fabianamsolano (Fabiana Solano)",
+        "name": "Fabiana Solano",
+        "handle": "@fabianamsolano",
+        "profile_url": "https://www.instagram.com/fabianamsolano/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc4u6aOhR9r/?stkn=bzEycGV4YWZvMWhj",
+      "gdrive_folder": "https://drive.google.com/open?id=1rOs1J_NBJ-N6slLq-lSoPAAGkTOY-HLb",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut/shot_03_mid.jpg",
+        "video_url": "videos/Yosemite National Park Music Video - @fabianamsolano.mp4",
+        "report_url": "reports/Yosemite National Park Music Video - @fabianamsolano.html",
+        "shots_count": 30,
+        "duration": "37.34s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio",
       "shortcode": "DdNq5CxszVl",
