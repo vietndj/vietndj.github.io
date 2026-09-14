@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 225,
-  "total_unique_ideas": 202,
-  "total_active_ideas": 170,
+  "total_scene_items": 226,
+  "total_unique_ideas": 203,
+  "total_active_ideas": 171,
   "total_excluded_ideas": 32,
-  "total_creators": 113,
+  "total_creators": 114,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -60,12 +60,12 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 2,
+    "walk-and-talk": 3,
     "voice-over": 8,
     "talking-head": 12,
     "storytelling": 19,
-    "dien-anh": 94,
-    "chuyen-canh": 35
+    "dien-anh": 93,
+    "chuyen-canh": 36
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 45,
+    "ky-thuat-quay": 46,
     "ugc": 2
   },
   "countries": [
@@ -216,7 +216,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 4,
+    "vietnam": 3,
     "asia_other": 46
   },
   "transition_stats": {
@@ -514,6 +514,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@celfstudies",
+      "name": "Celina (celfstudies)",
+      "profile_url": "https://www.instagram.com/celfstudies/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions"
+      ]
+    },
+    {
       "handle": "@hanoi.liebe",
       "name": "Hanoi Liebe | Wo Hanoi auf Deutsch trifft",
       "profile_url": "https://www.instagram.com/hanoi.liebe/",
@@ -537,7 +548,7 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@utsint",
-      "name": "Utsint",
+      "name": "UTS International Students",
       "profile_url": "https://www.instagram.com/utsint/",
       "video_count": 1,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
@@ -1528,6 +1539,72 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
+      "shortcode": "DdN_aljAIY0",
+      "title_vi": "25 Phân Cảnh Kỹ Thuật Speed Ramp & Beat-Sync Dựng Day In My Life Cực Cuốn - @celfstudies",
+      "quick_takeaway": "Bóc tách chuyên sâu toàn diện 25 phân cảnh theo ngôn ngữ đạo diễn và kỹ thuật CapCut Speed Transitions trong video 'Day in my life' phong cách Clean Aesthetic tại San Francisco của lập trình viên kiêm creator Celina (@celfstudies): từ ch...",
+      "key_tech": "Staccato Beat Teaser • Frame-in-Frame Mirror • Tactile Speed Ramp • Low-Angle Ninja Walk • Transit Whip-Zoom • Aesthetic Flatlay • Sensory Scoop Macro • Horizontal Shelf Scan • Color Pop Array • Interactive App Showcase • Climax Pouring Pull • Circular Narrative Loop",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us",
+        "name": "Hoa Kỳ",
+        "en_name": "United States",
+        "flag": "🇺🇸",
+        "badge_color": "blue"
+      },
+      "purpose": "Vlog một ngày làm việc và phong cách sống Clean Aesthetic tại San Francisco",
+      "tech_tags": [
+        "Staccato Beat Teaser",
+        "Action Match Cut",
+        "Speed Ramp Transition",
+        "Horizontal Shelf Scan",
+        "Interactive Climax Showcase",
+        "Circular Outro Loop"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Chuỗi 25 phân cảnh ngắn 0.2s - 1.5s phối hợp nhuần nhuyễn giữa Staccato Teaser mở màn, Action Cut xỏ giày/mở cửa, và quét kệ hàng ngang siêu thị dẫn dắt người xem cuốn hút từng giây.",
+      "creator": {
+        "raw": "@celfstudies",
+        "name": "Celina (celfstudies)",
+        "handle": "@celfstudies",
+        "profile_url": "https://www.instagram.com/celfstudies/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdN_aljAIY0/",
+      "gdrive_folder": "https://drive.google.com/open?id=1yMebk10dOCBk2OADq2utwUE2AIkuwSHV",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdN_aljAIY0.mp4",
+        "report_url": "reports/Day In My Life SF Speed Transitions - @celfstudies.html",
+        "shots_count": 25,
+        "duration": "15.87s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha",
       "shortcode": "DdHf_1yA4WQ",
       "title_vi": "Combo Thư Thái Hà Nội: Chiều Spa Trị Liệu & Trà Matcha Tea Space - @hanoi.liebe",
@@ -1671,11 +1748,11 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "Bóc tách 9 phân cảnh chuẩn đạo diễn theo phong cách Walk & Talk kết hợp Campus B-Roll tràn đầy năng lượng của sinh viên quốc tế UTS (@utsint) chiêu sinh sự kiện UTS Vietnam Open Day tại Hà Nội (Khách sạn Grand Mercure): từ cú chào sân tr...",
       "key_tech": "National Flag Hook • Backward Walk-and-Talk Tracking • Atrium Low-Angle Power Dynamic • Library Study Pod Reveal • Cozy Alumni Corner • Multi-Level Mezzanine Skyward Angle • Mascot Pop-Up Joy • Looping Outro Anchor • Hero Architecture Title Card",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -1685,23 +1762,31 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "country": {
-        "id": "vietnam",
-        "name": "Việt Nam",
-        "en_name": "Vietnam",
-        "flag": "🇻🇳",
-        "badge_color": "emerald"
+        "id": "au",
+        "name": "Úc",
+        "en_name": "Australia",
+        "flag": "🇦🇺",
+        "badge_color": "blue"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Chiêu sinh sự kiện UTS Vietnam Open Day tại Hà Nội kết hợp dẫn tour khám phá khuôn viên đại học số 1 nước Úc",
       "tech_tags": [
-        "National Flag Hook • Backward Walk-and-Talk Tracking • Atrium Low-Angle Power Dynamic • Library Study Pod Reveal • Cozy Alumni Corner • Multi-Level Mezzanine Skyward Angle • Mascot Pop-Up Joy • Looping Outro Anchor • Hero Architecture Title Card"
+        "Walk-and-Talk Tracking",
+        "National Flag Hook",
+        "Atrium Low-Angle",
+        "Study Pod Reveal",
+        "Cozy Alumni Symmetry",
+        "Skyward Mezzanine Angle",
+        "Mascot Joy Pop-up",
+        "Looping Outro Anchor",
+        "Swiss Info Card"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "",
+      "logic_explanation": "Nữ sinh viên đại sứ kết hợp khéo léo giữa cú máy dẫn dắt Walk & Talk kéo tầm mắt, góc hất thấp tôn vinh kiến trúc triệu đô, kén học công nghệ hiện đại, sảnh cựu sinh viên ấm cúng và cặp thú bông Koala - Kangaroo độc quyền để truyền tải toàn bộ quyền lợi học bổng 50% cùng thông tin Open Day Hà Nội.",
       "creator": {
         "raw": "@utsint",
-        "name": "Utsint",
+        "name": "UTS International Students",
         "handle": "@utsint",
         "profile_url": "https://www.instagram.com/utsint/"
       },
@@ -1714,9 +1799,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/UTS Vietnam Open Day Campus Tour - @utsint.html",
         "shots_count": 9,
         "duration": "34.00s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
