@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 235,
+  "total_scene_items": 236,
   "total_unique_ideas": 211,
   "total_active_ideas": 179,
   "total_excluded_ideas": 32,
@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 9,
-    "talking-head": 13,
+    "talking-head": 12,
     "storytelling": 24,
-    "dien-anh": 92,
+    "dien-anh": 93,
     "chuyen-canh": 38
   },
   "industries": [
@@ -539,13 +539,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@kawoon.lee",
-      "name": "Karen_Lee",
+      "name": "Karen Lee",
       "profile_url": "https://www.instagram.com/kawoon.lee/",
       "video_count": 1,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee"
+        "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency"
       ]
     },
     {
@@ -1607,6 +1607,75 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency",
+      "shortcode": "DatbbgJviTV",
+      "title_vi": "Nghệ Thuật Điều Hòa Hệ Thần Kinh - Giải Phóng Cơn Vội Vã Vô Thức (@kawoon.lee)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 8 phân cảnh mẫu mực trong video 27.3s của Karen Lee: Kỹ thuật Somatic Grounding Contrast, bẻ gãy nhịp điệu Pacing Whiplash, âm thanh tụng niệm chậm rãi và Thẻ Thoại Cứu Rỗi chạm đáy cảm xúc hàng triệu người xem.",
+      "key_tech": "Somatic Pattern Interrupt • Pacing Whiplash • Deceleration Arc • Direct-to-Lens Gaze • Ambient Sound Chant • Micro Jump-Cut • Affirmation Reveal Anchor",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Bẻ gãy quán tính vội vã vô thức và điều hòa hệ thần kinh bằng chuỗi thói quen đời thường",
+      "tech_tags": [
+        "Somatic Pattern Interrupt",
+        "Pacing Whiplash",
+        "Deceleration Arc",
+        "Direct-to-Lens Gaze",
+        "Ambient Sound Chant",
+        "Micro Jump-Cut",
+        "Affirmation Reveal Anchor"
+      ],
+      "transition_level": "Hard Cut & Jump Cut",
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Tâm Lý & Chữa Lành • Kỹ Thuật Kể Chuyện Thị Giác Masterclass: Phân loại theo cấu trúc Giảm Tốc Nhịp Điệu (Deceleration Arc) kết hợp Somatic Brake Hook và Affirmation Reveal Anchor"
+      },
+      "logic_explanation": "Khai thác 8 khoảnh khắc đời thường từ bước đi vội vã, ăn uống hối hả, trang điểm cuống cuồng đến căng thẳng khi lái xe, bẻ gãy nhịp điệu bằng các mỏ neo định tâm và khép lại bằng thẻ thoại cứu rỗi.",
+      "creator": {
+        "raw": "@kawoon.lee (Karen Lee)",
+        "name": "Karen Lee",
+        "handle": "@kawoon.lee",
+        "profile_url": "https://www.instagram.com/kawoon.lee/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==",
+      "gdrive_folder": "https://drive.google.com/open?id=1BZI-pZznTc7KAL7lbt-Iyj48UoJmujVC",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_mid.jpg",
+        "video_url": "videos/Teaching_Nervous_System_Not_Emergency_-_@kawoon.lee.mp4",
+        "report_url": "reports/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency.html",
+        "shots_count": 8,
+        "duration": "27.33s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho",
       "shortcode": "DbQtoVPRMWk_",
       "title_vi": "5 Cenas Criativas Trabalho • Nghệ Thuật Tự Quay B-Roll & Góc Làm Việc Chỉ Bằng Điện Thoại",
@@ -1738,69 +1807,6 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee",
-      "shortcode": "DatbbgJviTV",
-      "title_vi": "Video by kawoon.lee",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot",
-      "shooting_style": {
-        "id": "talking-head",
-        "name": "Talking Head",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Karen_Lee",
-      "tech_tags": [
-        "Establishing Hook Shot",
-        "Wide Establishing Shot",
-        "Close-Up / Macro Detail Shot"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
-      "creator": {
-        "raw": "@Karen_Lee",
-        "name": "Karen_Lee",
-        "handle": "@kawoon.lee",
-        "profile_url": "https://www.instagram.com/kawoon.lee/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==",
-      "gdrive_folder": "https://drive.google.com/open?id=1iZjPwe-E1yBVEnUWdN3kAMDnsmFAzXwQ",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DatbbgJviTV.mp4",
-        "report_url": "reports/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee.html",
-        "shots_count": 8,
-        "duration": "16s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
