@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 237,
-  "total_unique_ideas": 212,
-  "total_active_ideas": 180,
+  "total_scene_items": 238,
+  "total_unique_ideas": 213,
+  "total_active_ideas": 181,
   "total_excluded_ideas": 32,
-  "total_creators": 120,
+  "total_creators": 121,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -60,7 +60,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 4,
+    "walk-and-talk": 5,
     "voice-over": 9,
     "talking-head": 12,
     "storytelling": 24,
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 18,
     "du-lich": 20,
     "cong-nghe": 21,
-    "kien-truc": 19,
+    "kien-truc": 20,
     "the-thao": 9,
     "ky-thuat-quay": 52,
     "ugc": 2
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 89,
+    "us_eu": 90,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -547,6 +547,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@sellingsocial.co",
+      "name": "Quinn_Social_Media_For_Realtors",
+      "profile_url": "https://www.instagram.com/sellingsocial.co/",
+      "video_count": 1,
+      "top_industry": "Kiến Trúc & Không Gian Sống",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co"
       ]
     },
     {
@@ -1607,6 +1618,72 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co",
+      "shortcode": "DcTcw8lhku5",
+      "title_vi": "Video by sellingsocial.co",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Bất Động Sản • House Tour • Visual Hook • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Kiến Trúc & Không Gian Sống",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "kiến trúc, bất động sản, house tour, visual hook, walk and talk",
+      "tech_tags": [
+        "Bất Động Sản",
+        "House Tour",
+        "Visual Hook",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: kiến trúc, bất động sản, house tour, visual hook, walk and talk. Phân loại vào Kiến Trúc & Không Gian Sống • Walk and Talk.",
+      "creator": {
+        "raw": "@Quinn_Social_Media_for_Realtors",
+        "name": "Quinn_Social_Media_For_Realtors",
+        "handle": "@sellingsocial.co",
+        "profile_url": "https://www.instagram.com/sellingsocial.co/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcTcw8lhku5/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_EUmEtPINOcAg2ZjphuXAP-7H2hKTZC3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTcw8lhku5.mp4",
+        "report_url": "reports/IG_@Quinn_Social_Media_for_Realtors_DcTcw8lhku5_Video_by_sellingsocial.co.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video",
       "shortcode": "Dc9TAgjTmeR",
