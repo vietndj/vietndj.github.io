@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 212,
-  "total_unique_ideas": 191,
-  "total_active_ideas": 159,
+  "total_scene_items": 214,
+  "total_unique_ideas": 193,
+  "total_active_ideas": 161,
   "total_excluded_ideas": 32,
-  "total_creators": 102,
+  "total_creators": 104,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 11,
     "storytelling": 19,
     "dien-anh": 91,
-    "chuyen-canh": 29
+    "chuyen-canh": 31
   },
   "industries": [
     {
@@ -151,8 +151,8 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 4,
-    "thuong-hieu": 17,
-    "thoi-trang": 12,
+    "thuong-hieu": 18,
+    "thoi-trang": 13,
     "am-thuc": 17,
     "du-lich": 18,
     "cong-nghe": 21,
@@ -212,8 +212,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 81,
-    "korea": 11,
+    "us_eu": 82,
+    "korea": 12,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -511,6 +511,28 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@lee.rabo",
+      "name": "보라 (Bora)",
+      "profile_url": "https://www.instagram.com/lee.rabo/",
+      "video_count": 1,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog"
+      ]
+    },
+    {
+      "handle": "@naohasa",
+      "name": "Naohasa",
+      "profile_url": "https://www.instagram.com/naohasa/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk"
       ]
     },
     {
@@ -1406,6 +1428,139 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog",
+      "shortcode": "Dc3ifsHTIhL_",
+      "title_vi": "A Day in the Life of an Introverted Freelancer • Phân Tích 16 Phân Cảnh B-Roll Nhịp Sống Tinh Tế",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "rose"
+      },
+      "purpose": "Nhật ký số 24 giờ nhịp sống tinh tế của nữ freelancer làm việc tự do",
+      "tech_tags": [
+        "Digital Diary Timeline",
+        "Whip Blur Passing",
+        "Half-Face Conceal Mirror",
+        "Dual-Layer Screen & Keyboard",
+        "Overhead Flat Lay Food",
+        "Industrial Concrete Loft Perspective"
+      ],
+      "transition_level": "Nâng cao",
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Thương Hiệu Cá Nhân & Dịch Vụ: Dùng chuỗi B-roll 16 cảnh nhịp thở sinh học để truyền cảm hứng tự do tài chính và kỷ luật tự giác.",
+        "practice_focus": "Thực hành bài tập quay B-roll 1 ngày 5-8 cảnh: Thức dậy, chăm sóc bản thân, làm việc chuyên môn, bữa ăn dinh dưỡng, tập luyện và thư giãn buổi tối.",
+        "ig_seeding_hook": "Follow @lee.rabo để học hỏi tư duy dựng phim nhịp sống tối giản và thẩm mỹ hiện đại.",
+        "course_industry_mapping": "Thương Hiệu Cá Nhân & Dịch Vụ • Masterclass Video Ngắn",
+        "transition_level": "Nâng cao"
+      },
+      "logic_explanation": "Kỹ thuật kể chuyện nhịp sống (Daily Routine Storytelling) mẫu mực: Dùng các mốc thời gian tối giản (7:00 đến 22:00) chia nhịp ngày, xen kẽ giữa các cú cắt siêu tốc (0.3s) và cú máy nghỉ tĩnh (1.5s), chuyển biến linh hoạt từ không gian riêng tư (phòng ngủ, phòng tắm) sang kỷ luật thể thao (gym), ẩm thực tinh tế, không gian làm việc kiến trúc mở và khép lại bằng buổi tối ấm áp.",
+      "creator": {
+        "raw": "@lee.rabo",
+        "name": "보라 (Bora)",
+        "handle": "@lee.rabo",
+        "profile_url": "https://www.instagram.com/lee.rabo/"
+      },
+      "ig_url": "https://www.instagram.com/lee.rabo/",
+      "gdrive_folder": "https://drive.google.com/open?id=1TE1CCndPyCYYuVtA6nJMTOE8WhCrpg_C",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@lee.rabo_Dc3ifsHTIhL_Introverted_Homebody_Freelancer_Daily_Vlog/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc3ifsHTIhL.mp4",
+        "report_url": "reports/A Day in the Life of an Introverted Freelancer - @lee.rabo.html",
+        "shots_count": 16,
+        "duration": "15.83s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk",
+      "shortcode": "DdGp4XftvIn",
+      "title_vi": "5 Bộ Phục Trang Phố Thị Moscow: Kỹ Thuật Match-Cut Bước Chân Động Năng Biến Hình Vô Tận",
+      "quick_takeaway": "Báo cáo đạo diễn phân tích chuyên sâu 5 phân cảnh lookbook của @naohasa: Cú lia chân Footsteps Reveal Hook, kỹ thuật cắt nối bước chân Match-Cut chuẩn từng pixel trên trục đường một điểm tụ, điểm nhấn màu nóng (Color Pop Accent) và mẹo q...",
+      "key_tech": "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Kinetic Match Cut Walk, Footsteps Reveal Hook, One-Point Perspective Tracking, Color Pop Accent, Waist Layering Line, Parallax Zebra Crossing, Infinite Loop"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@naohasa",
+        "name": "Naohasa",
+        "handle": "@naohasa",
+        "profile_url": "https://www.instagram.com/naohasa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGp4XftvIn/",
+      "gdrive_folder": "https://drive.google.com/open?id=1DrCfVLsopXFieYTCiPaqPOd5ICV6wVBM",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk/shot_03_mid.jpg",
+        "video_url": "./videos/5 Outfits Match Cut Walk - @naohasa.mp4",
+        "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
+        "shots_count": 5,
+        "duration": "13.68s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog",
       "shortcode": "Db-mZWEKECo",
