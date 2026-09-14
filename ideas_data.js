@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 230,
-  "total_unique_ideas": 206,
-  "total_active_ideas": 174,
+  "total_scene_items": 231,
+  "total_unique_ideas": 207,
+  "total_active_ideas": 175,
   "total_excluded_ideas": 32,
   "total_creators": 117,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 12,
     "storytelling": 24,
-    "dien-anh": 90,
+    "dien-anh": 91,
     "chuyen-canh": 37
   },
   "industries": [
@@ -152,7 +152,7 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 18,
-    "thoi-trang": 15,
+    "thoi-trang": 16,
     "am-thuc": 18,
     "du-lich": 20,
     "cong-nghe": 21,
@@ -394,6 +394,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@turapinaanastasiia",
+      "name": "Анастасия Турапина (Anastasiia Turapina)",
+      "profile_url": "https://www.instagram.com/turapinaanastasiia/",
+      "video_count": 2,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount",
+        "IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia"
+      ]
+    },
+    {
       "handle": "@ju_seobang",
       "name": "주서방",
       "profile_url": "https://www.instagram.com/ju_seobang/",
@@ -511,17 +523,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
-      ]
-    },
-    {
-      "handle": "@turapinaanastasiia",
-      "name": "Турапина_Анастасия",
-      "profile_url": "https://www.instagram.com/turapinaanastasiia/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia"
       ]
     },
     {
@@ -1571,6 +1572,78 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount",
+      "shortcode": "DdBorQ2KEli_",
+      "title_vi": "Nghệ Thuật Tự Quay Video Một Mình Ở Quán Cà Phê • Bóc Tách Kỹ Thuật UGC Giá Đỡ Hút Chân Không Mini",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "russia",
+        "name": "Nga",
+        "en_name": "Russia",
+        "flag": "🇷🇺",
+        "badge_color": "blue"
+      },
+      "purpose": "Trình diễn quy trình tự quay video một mình ở quán cà phê bằng phụ kiện giá đỡ hút chân không MagSafe",
+      "tech_tags": [
+        "UGC BTS vs Result Pair",
+        "Vacuum Suction Cup Mount",
+        "High-Angle Downward Window",
+        "Frame-in-Frame Camera Phone",
+        "Tabletop Mini Tripod Placement",
+        "1-Second Conversion Macro"
+      ],
+      "transition_level": "Cơ bản đến Trung cấp",
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Khóa Học UGC & Video Ngắn FEDU: Áp dụng cấu trúc nhịp đôi BTS-Result để học viên quay review đồ công nghệ, thời trang, phụ kiện du lịch.",
+        "practice_focus": "Thực hành bài tập quay B-roll 1 người tự quay tại quán cà phê: 1 góc toàn dạo bước, 1 góc lồng khung điện thoại, 1 góc selfie từ trên cao.",
+        "ig_seeding_hook": "Follow @turapinaanastasiia để học tư duy quay UGC tự nhiên, thẩm mỹ thanh lịch không gượng gạo.",
+        "course_industry_mapping": "UGC & Sáng Tạo Nội Dung Cá Nhân • Masterclass Video Ngắn",
+        "transition_level": "Trung cấp"
+      },
+      "logic_explanation": "Kỹ thuật bán hàng UGC qua giải quyết vấn đề (Problem-Solving UGC Workflow): Đánh trúng tâm lý e dè của người sáng tạo khi quay nơi công cộng, đưa ra giải pháp 'chân máy vô hình' hút chân không mini. Video sử dụng cấu trúc nhịp đôi mẫu mực [Setup Hậu Trường (BTS)] -> [Thành Phẩm Góc Quay (Result)] lặp lại qua 3 bối cảnh (hút kính ngang tầm ngực dạo bước, để bàn quay quầy bánh, hút kính trên cao chụp selfie), và kết thúc bằng cú cận cảnh 360 độ món đồ công nghệ cùng hành động thả gọn vào túi xách du lịch.",
+      "creator": {
+        "raw": "@turapinaanastasiia",
+        "name": "Анастасия Турапина (Anastasiia Turapina)",
+        "handle": "@turapinaanastasiia",
+        "profile_url": "https://www.instagram.com/turapinaanastasiia/"
+      },
+      "ig_url": "https://www.instagram.com/turapinaanastasiia/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_edbje9S5JP2TMQ-TXsl0h1UUA3Nz5_s",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBorQ2KEli.mp4",
+        "report_url": "reports/How I Film Alone in a Cafe - UGC Suction Mount - @turapinaanastasiia.html",
+        "shots_count": 13,
+        "duration": "11.37s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia",
       "shortcode": "DdBorQ2KEli",
