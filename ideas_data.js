@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 229,
-  "total_unique_ideas": 205,
-  "total_active_ideas": 173,
+  "total_scene_items": 230,
+  "total_unique_ideas": 206,
+  "total_active_ideas": 174,
   "total_excluded_ideas": 32,
-  "total_creators": 116,
+  "total_creators": 117,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 12,
     "storytelling": 24,
     "dien-anh": 90,
-    "chuyen-canh": 36
+    "chuyen-canh": 37
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 47,
+    "ky-thuat-quay": 48,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 84,
+    "us_eu": 85,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -511,6 +511,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@turapinaanastasiia",
+      "name": "Турапина_Анастасия",
+      "profile_url": "https://www.instagram.com/turapinaanastasiia/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia"
       ]
     },
     {
@@ -1560,6 +1571,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia",
+      "shortcode": "DdBorQ2KEli",
+      "title_vi": "@Турапина_Анастасия - Video by turapinaanastasiia",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Турапина_Анастасия",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@Турапина_Анастасия",
+        "name": "Турапина_Анастасия",
+        "handle": "@turapinaanastasiia",
+        "profile_url": "https://www.instagram.com/turapinaanastasiia/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdBorQ2KEli/?stkn=ZzNjdTUyYnJoaGYx",
+      "gdrive_folder": "https://drive.google.com/open?id=1bUdTLC3SQCvagkleODQMD9P-Px8zBQY0",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBorQ2KEli.mp4",
+        "report_url": "reports/IG_@Турапина_Анастасия_DdBorQ2KEli_Video_by_turapinaanastasiia.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar",
       "shortcode": "DaGGMTdtawm",
