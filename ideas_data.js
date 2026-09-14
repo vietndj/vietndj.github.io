@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 228,
-  "total_unique_ideas": 204,
-  "total_active_ideas": 172,
+  "total_scene_items": 229,
+  "total_unique_ideas": 205,
+  "total_active_ideas": 173,
   "total_excluded_ideas": 32,
-  "total_creators": 115,
+  "total_creators": 116,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 12,
     "storytelling": 24,
-    "dien-anh": 89,
+    "dien-anh": 90,
     "chuyen-canh": 36
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 46,
+    "ky-thuat-quay": 47,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 83,
+    "us_eu": 84,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -511,6 +511,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@vicgaibar",
+      "name": "Vic_Gaibar",
+      "profile_url": "https://www.instagram.com/vicgaibar/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar"
       ]
     },
     {
@@ -1549,6 +1560,71 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar",
+      "shortcode": "DaGGMTdtawm",
+      "title_vi": "Video by vicgaibar",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Săm • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "săm",
+      "tech_tags": [
+        "Săm",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: săm. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Điện Ảnh (Cinematic).",
+      "creator": {
+        "raw": "@Vic_Gaibar",
+        "name": "Vic_Gaibar",
+        "handle": "@vicgaibar",
+        "profile_url": "https://www.instagram.com/vicgaibar/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DaGGMTdtawm/?stkn=Mm9kMzh4MG1ybzNx",
+      "gdrive_folder": "https://drive.google.com/open?id=1wkNlq6Ic5FwUmBx-1I1J10lwVNsCXPCJ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaGGMTdtawm.mp4",
+        "report_url": "reports/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar.html",
+        "shots_count": 8,
+        "duration": "16s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
       "shortcode": "DdN_aljAIY0",
