@@ -45,45 +45,50 @@
     }
     @font-face {
       font-family: 'Tiempos Text';
-      src: url('./fonts/FDTiemposText-Regular.otf') format('opentype'),
-           url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
-           local('Tiempos Text Regular'), local('Georgia');
+      src: url('./fonts/FDTiemposText-Regular.woff2') format('woff2'),
+           url('./fonts/FDTiemposText-Regular.otf') format('opentype'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Regular.woff2') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Regular.otf') format('opentype');
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Tiempos Text';
-      src: url('./fonts/FDTiemposText-Medium.otf') format('opentype'),
-           url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
-           local('Tiempos Text Medium'), local('Georgia');
+      src: url('./fonts/FDTiemposText-Medium.woff2') format('woff2'),
+           url('./fonts/FDTiemposText-Medium.otf') format('opentype'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Medium.woff2') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Medium.otf') format('opentype');
       font-weight: 500;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Tiempos Text';
-      src: url('./fonts/FDTiemposText-Semibold.otf') format('opentype'),
-           url('/Users/vietmac/Library/Fonts/FDTiemposText-Semibold.otf') format('opentype'),
-           local('Tiempos Text Semibold'), local('Georgia');
+      src: url('./fonts/FDTiemposText-Semibold.woff2') format('woff2'),
+           url('./fonts/FDTiemposText-Semibold.otf') format('opentype'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Semibold.woff2') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Semibold.otf') format('opentype');
       font-weight: 600;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Tiempos Text';
-      src: url('./fonts/FDTiemposText-Bold.otf') format('opentype'),
-           url('/Users/vietmac/Library/Fonts/FDTiemposText-Bold.otf') format('opentype'),
-           local('Tiempos Text Bold'), local('Georgia');
+      src: url('./fonts/FDTiemposText-Bold.woff2') format('woff2'),
+           url('./fonts/FDTiemposText-Bold.otf') format('opentype'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Bold.woff2') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-Bold.otf') format('opentype');
       font-weight: 700;
       font-style: normal;
       font-display: swap;
     }
     @font-face {
       font-family: 'Tiempos Text';
-      src: url('./fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-           url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-           local('Tiempos Text Regular Italic'), local('Georgia');
+      src: url('./fonts/FDTiemposText-RegularItalic.woff2') format('woff2'),
+           url('./fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-RegularItalic.woff2') format('woff2'),
+           url('https://font.fedu.vn/fonts/FDTiemposText-RegularItalic.otf') format('opentype');
       font-weight: 400;
       font-style: italic;
       font-display: swap;
@@ -299,6 +304,30 @@
     }
 
     /* ═══ 5. CARDS & INTERACTIVE COMPONENTS ═══ */
+    
+    .four-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    @media (max-width: 980px) {
+      .four-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .four-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
     .three-cards-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -309,7 +338,31 @@
     }
 
     @media (max-width: 860px) {
-      .three-cards-grid {
+      
+    .four-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      width: 100%;
+      margin-top: 28px;
+      text-align: left;
+    }
+
+    @media (max-width: 980px) {
+      .four-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .four-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    }
+
+    .three-cards-grid {
         grid-template-columns: 1fr;
         gap: 16px;
       }
@@ -426,6 +479,12 @@
     .apple-card__badge--emerald {
       background: var(--cl-emerald-tint);
       color: var(--cl-emerald);
+    }
+
+    
+    .apple-card__badge--purple {
+      background: rgba(124, 58, 237, 0.08);
+      color: #7c3aed;
     }
 
     .apple-card__badge--amber {
@@ -1267,12 +1326,13 @@
       </div>
     </div>
    
-<a href="#sec-hero">Video Gốc 🎥</a>
-    <a href="#sec-what">What</a>
-    <a href="#sec-why">6 Lợi Thế</a>
-    <a href="#sec-setup">1 Sải Tay</a>
-    <a href="#sec-voice">2 Camera</a>
-    <a href="#sec-sop">4 Bước Làm ↗</a>
+<a href="#sec-hero">Tổng Quan</a>
+    <a href="#sec-what">01. Bản Chất</a>
+    <a href="#sec-why">02. 6 Lợi Thế</a>
+    <a href="#sec-video">03. Video Mẫu 🎥</a>
+    <a href="#sec-setup">04. 1 Sải Tay</a>
+    <a href="#sec-voice">05. Kỹ Thuật Nói</a>
+    <a href="#sec-sop">06. 4 Bước Làm ↗</a>
   </nav>
 
   <!-- ═══ KHỐI 1: HERO & VIDEO MASTERCLASS (LIGHT) ═══ -->
@@ -1282,54 +1342,39 @@
       <h1 class="title-short">CÁCH QUAY TALKING HEAD:<br>ĐỊNH DẠNG TẠO NIỀM&nbsp;TIN</h1>
       <p class="editorial-hook">"Talking Head hiểu đơn giản là định dạng người thật việc thật: ngồi đối diện nói chuyện trực tiếp với ống kính máy quay. Xem kỹ 5 phút này để nắm trọn luồng công việc tại bàn làm việc trước khi bấm&nbsp;máy."</p>
 
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px; align-items: center; margin-top: 36px;">
-        <!-- Cột Video Player -->
-        <div style="background: #000; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.12); border: 1px solid rgba(0,0,0,0.08); aspect-ratio: 9/16; max-width: 360px; margin: 0 auto; width: 100%;">
-          <video 
-            poster="./images/poster_talkinghead_viet.jpg" 
-            controls 
-            playsinline 
-            preload="metadata"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;">
-            <source src="./videos/talkinghead_viet.mp4" type="video/mp4">
-            <source src="../videos/talkinghead_viet.mp4" type="video/mp4">
-            <source src="https://fedu.vn/videos/talkinghead_viet.mp4" type="video/mp4">
-            Trình duyệt của bạn không hỗ trợ thẻ video.
-          </video>
-        </div>
-
-        <!-- Cột 4 Điểm Đinh Từ Video -->
-        <div style="display: flex; flex-direction: column; gap: 12px; text-align: left;">
-          <div class="apple-card" style="padding: 18px 22px; text-align: left; align-items: flex-start;">
-            <div class="apple-card__badge apple-card__badge--blue" style="margin-bottom: 8px;"><span style="font-family: var(--font-mono); font-weight: 700;">00:32</span> • SETUP MỘT SẢI TAY</div>
-            <h3 class="apple-card__title" style="font-size: 15.5px; margin-bottom: 6px; text-align: left;">CỐ ĐỊNH TẠI BÀN LÀM&nbsp;VIỆC</h3>
-            <p style="font-size: 14px; color: var(--cl-text-body); line-height: 1.6; margin: 0; text-align: left;">Máy móc để sẵn trong một sải tay. Có ý tưởng là ngồi vào quay luôn, không mất công cắm rút hay dọn dẹp lỉnh&nbsp;kỉnh.</p>
+            <!-- 4 Thẻ Nhảy Nhanh: Cân xứng 4 cột -->
+      <div class="four-cards-grid">
+        <a href="#sec-what" style="text-decoration: none; color: inherit;">
+          <div class="apple-card" style="height: 100%; border-top: 4px solid var(--cl-accent);">
+            <div class="apple-card__badge apple-card__badge--blue">PHẦN 01 • BẢN CHẤT</div>
+            <h3 class="apple-card__title">ĐỐI THOẠI 1-1</h3>
+            <p class="apple-card__desc">Không bục giảng, không diễn kịch. Ngồi nói chuyện mộc mạc như tư vấn riêng cho người&nbsp;xem.</p>
           </div>
+        </a>
 
-          <div class="apple-card" style="padding: 18px 22px; text-align: left; align-items: flex-start;">
-            <div class="apple-card__badge apple-card__badge--amber" style="margin-bottom: 8px;"><span style="font-family: var(--font-mono); font-weight: 700;">01:40</span> • DẢI NHẠY SÁNG ĐIỆN THOẠI</div>
-            <h3 class="apple-card__title" style="font-size: 15.5px; margin-bottom: 6px; text-align: left;">BẬT SÁNG CẢ PHÒNG CỨU VÙNG&nbsp;TỐI</h3>
-            <p style="font-size: 14px; color: var(--cl-text-body); line-height: 1.6; margin: 0; text-align: left;">Dải nhạy sáng (Dynamic Range) của điện thoại rất hẹp. Bật sáng cả phòng để thu hẹp chênh sáng tối, chống bệt đen và sạch&nbsp;noise.</p>
+        <a href="#sec-why" style="text-decoration: none; color: inherit;">
+          <div class="apple-card" style="height: 100%; border-top: 4px solid var(--cl-amber);">
+            <div class="apple-card__badge apple-card__badge--amber">PHẦN 02 • SỨC MẠNH</div>
+            <h3 class="apple-card__title">6 ĐIỂM TỰA TIN CẬY</h3>
+            <p class="apple-card__desc">Định dạng duy nhất nhìn thẳng vào mắt khách hàng, rút ngắn tối đa thời gian chốt&nbsp;đơn.</p>
           </div>
+        </a>
 
-          <div class="apple-card" style="padding: 18px 22px; text-align: left; align-items: flex-start;">
-            <div class="apple-card__badge apple-card__badge--emerald" style="margin-bottom: 8px;"><span style="font-family: var(--font-mono); font-weight: 700;">02:55</span> • KỸ THUẬT SINGLE-LINE</div>
-            <h3 class="apple-card__title" style="font-size: 15.5px; margin-bottom: 6px; text-align: left;">ĐẾM NHỊP 1-2 AN&nbsp;TOÀN</h3>
-            <p style="font-size: 14px; color: var(--cl-text-body); line-height: 1.6; margin: 0; text-align: left;">Mỗi câu 1 dòng. Ngước lên đếm 1-2 mới nói; nói xong đếm 1-2 mới cúi xuống. Tạo khoảng rôi để cắt gọt êm ái, không chém vào&nbsp;chữ.</p>
+        <a href="#sec-video" style="text-decoration: none; color: inherit;">
+          <div class="apple-card" style="height: 100%; border-top: 4px solid #7c3aed;">
+            <div class="apple-card__badge apple-card__badge--purple">PHẦN 03 • VIDEO MẪU</div>
+            <h3 class="apple-card__title">XEM BẤM MÁY TẠI BÀN</h3>
+            <p class="apple-card__desc">Bóc tách trọn vẹn 5 phút hậu trường tại bàn làm việc: cách setup, bật đèn và nói không cần thuộc&nbsp;lòng.</p>
           </div>
+        </a>
 
-          <div class="apple-card" style="padding: 18px 22px; text-align: left; align-items: flex-start;">
-            <div class="apple-card__badge apple-card__badge--purple" style="margin-bottom: 8px;"><span style="font-family: var(--font-mono); font-weight: 700;">05:18</span> • HỆ THỐNG 2 CAMERA</div>
-            <h3 class="apple-card__title" style="font-size: 15.5px; margin-bottom: 6px; text-align: left;">LỆCH GÓC 30 ĐỘ XÓA VẾT&nbsp;CẮT</h3>
-            <p style="font-size: 14px; color: var(--cl-text-body); line-height: 1.6; margin: 0; text-align: left;">1 cam toàn thẳng mặt + 1 cam cận lệch 30°. Hậu kỳ chỉ cần lật góc cam giữa các câu, video liền mạch và che sạch khoảnh khắc nhìn&nbsp;giấy.</p>
+        <a href="#sec-setup" style="text-decoration: none; color: inherit;">
+          <div class="apple-card" style="height: 100%; border-top: 4px solid var(--cl-emerald);">
+            <div class="apple-card__badge apple-card__badge--emerald">PHẦN 04 • KỸ THUẬT</div>
+            <h3 class="apple-card__title">SETUP 1 SẢI TAY</h3>
+            <p class="apple-card__desc">Điện thoại và mic cố định tại bàn. Có ý tưởng là bấm máy ngay trong 30&nbsp;giây.</p>
           </div>
-
-          <div style="margin-top: 4px; text-align: left;">
-            <a href="https://www.facebook.com/reel/1039457391880112" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--cl-blue); text-decoration: none; font-size: 13.5px;">
-              <span>Mở xem bài gốc trên Facebook Reel ↗</span>
-            </a>
-          </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1482,10 +1527,40 @@
     </div>
   </section>
 
-  <!-- ═══ KHỐI 4: SETUP - THIẾT LẬP GÓC QUAY TỐI GIẢN (TINT) ═══ -->
-  <section class="cl-zebra-section cl-zebra--tint" id="sec-setup">
+  <!-- ═══ KHỐI 4: LIVE - XEM VIDEO THỰC TẾ HẬU TRƯỜNG (TINT) ═══ -->
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-video">
+    <div class="cl-sec-container cl-sec-container--wide apple-reveal" style="text-align: center;">
+      <div class="cl-badge">03 / VIDEO THỰC TẾ • BÓC TÁCH PHÒNG QUAY</div>
+      <h2 class="title-short">XEM ANH NGUYỄN VIỆT BẤM MÁY<br>TRỰC DIỆN TẠI BÀN LÀM&nbsp;VIỆC</h2>
+      <p class="editorial-hook">"Không lý thuyết suông. Hãy xem kỹ 5 phút hậu trường này để quan sát cách một người làm nghề ngồi trước camera: từ cách setup máy móc trong một sải tay, bật đèn cứu sáng điện thoại đến kỹ thuật ngắt từng câu giúp nói chuyện đĩnh đạc mà không cần thuộc một chữ kịch&nbsp;bản."</p>
+
+      <!-- Video Player Trung Tâm Căn Giữa -->
+      <div style="max-width: 360px; margin: 36px auto 0; background: #000; border-radius: 24px; overflow: hidden; box-shadow: 0 24px 50px rgba(0,0,0,0.14); border: 1px solid rgba(0,0,0,0.08); aspect-ratio: 9/16;">
+        <video 
+          poster="./images/poster_talkinghead_viet.jpg" 
+          controls 
+          playsinline 
+          preload="metadata"
+          style="width: 100%; height: 100%; object-fit: cover; display: block;">
+          <source src="./videos/talkinghead_viet.mp4" type="video/mp4">
+          <source src="../videos/talkinghead_viet.mp4" type="video/mp4">
+          <source src="https://fedu.vn/videos/talkinghead_viet.mp4" type="video/mp4">
+          Trình duyệt của bạn không hỗ trợ thẻ video.
+        </video>
+      </div>
+
+      <div style="margin-top: 20px; text-align: center;">
+        <a href="https://www.facebook.com/reel/1039457391880112" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 6px; font-weight: 600; color: var(--cl-accent); text-decoration: none; font-size: 14.5px;">
+          <span>Mở xem video gốc trên Facebook Reel ↗</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ KHỐI 5: SETUP - THIẾT LẬP GÓC QUAY TỐI GIẢN (TINT) ═══ -->
+  <section class="cl-zebra-section cl-zebra--light" id="sec-setup">
     <div class="cl-sec-container cl-sec-container--wide apple-reveal">
-      <div class="cl-badge">03 / SETUP • THIẾT LẬP GÓC QUAY TỐI GIẢN</div>
+      <div class="cl-badge"> 04 / SETUP • THIẾT LẬP GÓC QUAY TỐI GIẢN</div>
       <h2 class="title-short">SETUP MỘT SẢI TAY &<br>XỬ LÝ DẢI NHẠY&nbsp;SÁNG</h2>
       <p class="editorial-hook">Người xem không đòi hỏi bạn phải đẹp như diễn viên. Họ chỉ cần nhìn thấy một khung hình sáng rõ, sạch sẽ và người làm nghề nói năng đĩnh&nbsp;đạc.</p>
 
@@ -1494,8 +1569,8 @@
           <div class="apple-card__badge apple-card__badge--blue">NGUYÊN TẮC BÀN LÀM VIỆC</div>
           <h3 class="apple-card__title">CỐ ĐỊNH MỘT SẢI&nbsp;TAY</h3>
           <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
-            <div>• <b>Để nguyên mọi thứ:</b> Điện thoại, đèn, mic nằm gọn trong một sải tay trên bàn làm việc, không tháo lắp hay di&nbsp;chuyển.</div>
-            <div>• <b>Có ý tưởng là quay ngay:</b> Bấm quay trong 30 giây, triệt tiêu 100% cảm giác lười vì cắm rút lằng&nbsp;nhằng.</div>
+            <div>• <b>Đồ nghề để sẵn trên bàn:</b> Điện thoại, đèn, mic nằm trong một sải tay, không tháo lắp hay cất&nbsp;đi.</div>
+            <div>• <b>Bật máy quay trong 30 giây:</b> Có ý tưởng là bấm máy ngay, xóa sạch cảm giác ngại cắm rút dây&nbsp;nhợ.</div>
           </div>
         </div>
 
@@ -1503,8 +1578,8 @@
           <div class="apple-card__badge apple-card__badge--emerald">ÁNH SÁNG TẠO KHỐI</div>
           <h3 class="apple-card__title">ĐÈN 45 ĐỘ & VEN&nbsp;TÓC</h3>
           <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
-            <div>• <b>Đèn chính 45°:</b> Đánh chếch một bên để mặt có vùng sáng và vùng tối, tạo khối sâu điện&nbsp;ảnh.</div>
-            <div>• <b>Đèn ven sau tóc:</b> Chiếu sau gáy tạo viền sáng, giúp tách hoàn toàn chủ thể ra khỏi phông nền đằng&nbsp;sau.</div>
+            <div>• <b>Đèn chính chếch 45 độ:</b> Tạo mảng sáng tối tự nhiên trên mặt, giúp khung hình có chiều sâu như&nbsp;phim.</div>
+            <div>• <b>Đèn ven tóc sau gáy:</b> Đánh viền sáng quanh tóc, tách người nổi bật hẳn lên khỏi phông nền phía&nbsp;sau.</div>
           </div>
         </div>
 
@@ -1512,8 +1587,8 @@
           <div class="apple-card__badge apple-card__badge--amber">TỬ HUYỆT ĐIỆN THOẠI</div>
           <h3 class="apple-card__title">BÙ SÁNG DYNAMIC&nbsp;RANGE</h3>
           <div class="apple-card__desc" style="display: flex; flex-direction: column; gap: 8px;">
-            <div>• <b>Dải tương phản ngắn:</b> Nếu chênh lệch sáng tối quá gắt, vùng tối sẽ bệt đen và sinh nhiễu hạt&nbsp;(noise).</div>
-            <div>• <b>Bật sáng cả phòng:</b> Bật đèn trần hoặc thêm đèn phụ để nâng sáng tổng thể, camera điện thoại sẽ bắt nét mượt và giữ trọn chi&nbsp;tiết.</div>
+            <div>• <b>Tránh chênh sáng quá gắt:</b> Điện thoại dải tương phản hẹp, nếu tối quá sẽ bị bệt màu và nhiễu&nbsp;hạt.</div>
+            <div>• <b>Bật sáng cả căn phòng:</b> Nâng sáng tổng thể bằng đèn trần để camera bắt nét êm và mịn da tự&nbsp;nhiên.</div>
           </div>
         </div>
       </div>
@@ -1521,9 +1596,9 @@
   </section>
 
   <!-- ═══ KHỐI 5: KỸ THUẬT NÓI - KỊCH BẢN&nbsp;SINGLE-LINE & 2 CAM (LIGHT) ═══ -->
-  <section class="cl-zebra-section cl-zebra--light" id="sec-voice">
+  <section class="cl-zebra-section cl-zebra--tint" id="sec-voice">
     <div class="cl-sec-container cl-sec-container--wide apple-reveal">
-      <div class="cl-badge">04 / KỸ THUẬT NÓI • THÁO GỠ NỖI SỢ QUÊN CHỮ</div>
+      <div class="cl-badge"> 05 / KỸ THUẬT NÓI • THÁO GỠ NỖI SỢ QUÊN CHỮ</div>
       <h2 class="title-short">KỊCH BẢN&nbsp;SINGLE-LINE &<br>HỆ THỐNG 2&nbsp;CAMERA</h2>
       <p class="editorial-hook">Không ai có trí nhớ siêu phàm để học thuộc cả trang giấy. Hãy bẻ nhỏ câu nói và để kỹ thuật gánh vác phần còn&nbsp;lại.</p>
 
@@ -1559,9 +1634,9 @@
   </section>
 
   <!-- ═══ KHỐI 6: QUY TRÌNH & HÀNH ĐỘNG (TINT) ═══ -->
-  <section class="cl-zebra-section cl-zebra--tint" id="sec-sop">
+  <section class="cl-zebra-section cl-zebra--light" id="sec-sop">
     <div class="cl-sec-container cl-sec-container--wide apple-reveal">
-      <div class="cl-badge">05 / HÀNH ĐỘNG • THỰC HÀNH BẤM MÁY TẠI BÀN</div>
+      <div class="cl-badge"> 06 / HÀNH ĐỘNG • THỰC HÀNH BẤM MÁY TẠI BÀN</div>
       <h2 class="title-short">QUY TRÌNH 4 BƯỚC<br>LÊN VIDEO TRONG 30&nbsp;PHÚT</h2>
       <p class="editorial-hook">"Hiểu đúng bản chất rồi, hãy kê điện thoại lên bàn làm việc và hoàn thành video Talking Head đầu tiên ngay tại&nbsp;chỗ."</p>
 
@@ -1678,6 +1753,17 @@
       }, observerOptions);
 
       document.querySelectorAll(".apple-reveal").forEach(el => observer.observe(el));
+
+      // Kích hoạt hiển thị ngay nếu truy cập qua anchor hash (#sec-video, ...)
+      if (window.location.hash) {
+        try {
+          const target = document.querySelector(window.location.hash);
+          if (target) {
+            target.querySelectorAll(".apple-reveal").forEach(el => el.classList.add("is-visible"));
+            if (target.classList.contains("apple-reveal")) target.classList.add("is-visible");
+          }
+        } catch (e) {}
+      }
     });
   
     // Hỗ trợ bật/tắt popup dropdown trên màn hình cảm ứng di động
