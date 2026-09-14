@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 211,
-  "total_unique_ideas": 190,
-  "total_active_ideas": 158,
+  "total_scene_items": 212,
+  "total_unique_ideas": 191,
+  "total_active_ideas": 159,
   "total_excluded_ideas": 32,
   "total_creators": 102,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 19,
-    "dien-anh": 90,
+    "dien-anh": 91,
     "chuyen-canh": 29
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 39,
+    "ky-thuat-quay": 40,
     "ugc": 2
   },
   "countries": [
@@ -213,7 +213,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "country_stats": {
     "us_eu": 81,
-    "korea": 10,
+    "korea": 11,
     "india": 6,
     "japan": 10,
     "vietnam": 2,
@@ -313,6 +313,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@hena_film_vlog",
+      "name": "핸아_집에서_팔리는_영상_만드는_법",
+      "profile_url": "https://www.instagram.com/hena_film_vlog/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog",
+        "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
+        "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
       ]
     },
     {
@@ -426,18 +439,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa",
         "IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority"
-      ]
-    },
-    {
-      "handle": "@hena_film_vlog",
-      "name": "Hena_Film_Vlog",
-      "profile_url": "https://www.instagram.com/hena_film_vlog/",
-      "video_count": 2,
-      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
-        "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
       ]
     },
     {
@@ -1405,6 +1406,67 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog",
+      "shortcode": "Db-mZWEKECo",
+      "title_vi": "@핸아_집에서_팔리는_영상_만드는_법 - Video by hena film vlog",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 18 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "South Korea",
+        "flag": "🇰🇷",
+        "badge_color": "pink"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@핸아_집에서_팔리는_영상_만드는_법",
+        "name": "핸아_집에서_팔리는_영상_만드는_법",
+        "handle": "@hena_film_vlog",
+        "profile_url": "https://www.instagram.com/hena_film_vlog/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh",
+      "gdrive_folder": "https://drive.google.com/open?id=1_BIm271YxL9gtL6lLWqmEwBMMYKEm2DJ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db-mZWEKECo.mp4",
+        "report_url": "reports/IG_@핸아_집에서_팔리는_영상_만드는_법_Db-mZWEKECo_Video_by_hena_film_vlog.html",
+        "shots_count": 18,
+        "duration": "36s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@E_jo_이원민_DbKxhucTAh4_Video_by__e.jo",
       "shortcode": "DbKxhucTAh4",
