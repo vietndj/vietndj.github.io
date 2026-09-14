@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 220,
-  "total_unique_ideas": 197,
-  "total_active_ideas": 165,
+  "total_scene_items": 221,
+  "total_unique_ideas": 198,
+  "total_active_ideas": 166,
   "total_excluded_ideas": 32,
-  "total_creators": 108,
+  "total_creators": 109,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -60,7 +60,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 1,
+    "walk-and-talk": 2,
     "voice-over": 8,
     "talking-head": 11,
     "storytelling": 19,
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 41,
+    "ky-thuat-quay": 42,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 82,
+    "us_eu": 83,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -511,6 +511,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@hairpositiveofficial",
+      "name": "Hair Positive (House of Hair)",
+      "profile_url": "https://www.instagram.com/hairpositiveofficial/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway"
       ]
     },
     {
@@ -1472,6 +1483,74 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway",
+      "shortcode": "DbOMM0Pu1HA",
+      "title_vi": "House of Hair • Nghệ Thuật One-Take Runway Phô Diễn Suối Tóc Xoăn Bồng Bềnh Tự Nhiên",
+      "quick_takeaway": "Bóc tách trọn vẹn 8 micro-beats mẫu mực trong video One-Take của @hairpositiveofficial: Phong cách thời trang Carrie Bradshaw, bước chuyển bẻ quán tính Moonwalk, cú rướn người cận cảnh xúc giác và vòng lặp vô tận đỉnh cao.",
+      "key_tech": "One-Take Plan Séquence, Carrie Bradshaw Style Runway, Urban Catwalk Pacing, Reverse Moonwalk Beat, Close-Up Push-In Transition, Tactile Hair Play & Curl Bounce, Monochromatic Slate Backdrop, Seamless Infinite Loop Outro",
+      "shooting_style": {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Quảng bá dịch vụ uốn tóc xoăn cao cấp bằng phong cách sàn diễn đường phố New York",
+      "tech_tags": [
+        "One-Take Continuous Shot",
+        "Carrie Bradshaw Styling",
+        "Urban Catwalk Pacing",
+        "Reverse Moonwalk Beat",
+        "Close-Up Push-In Transition",
+        "Tactile Hair Play & Curl Bounce",
+        "Monochromatic Slate Backdrop",
+        "Seamless Infinite Loop Outro"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Thước phim 13 giây quay liền mạch một cú máy (One-take), đưa người mẫu sải bước tự tin trên vỉa hè với ly cà phê và tạp chí thời trang, kết hợp bước lùi gián đoạn thị giác và cú rướn người luồn tay vào lọn tóc để chứng minh độ tơi xốp, đàn hồi đỉnh cao của mái tóc uốn.",
+      "creator": {
+        "raw": "@hairpositiveofficial",
+        "name": "Hair Positive (House of Hair)",
+        "handle": "@hairpositiveofficial",
+        "profile_url": "https://www.instagram.com/hairpositiveofficial/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbOMM0Pu1HA/?stkn=bDQ5NGxlcDBtNGhz",
+      "gdrive_folder": "https://drive.google.com/open?id=1Jxwli-mCsHgBFhUoZhWFH5t9X9W7joNZ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hairpositiveofficial_DbOMM0Pu1HA_House_of_Hair_One_Take_Curly_Runway/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbOMM0Pu1HA.mp4",
+        "report_url": "reports/House of Hair One-Take Curly Runway - @hairpositiveofficial.html",
+        "shots_count": 8,
+        "duration": "13.08s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut",
       "shortcode": "Dc4u6aOhR9r",
