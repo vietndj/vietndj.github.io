@@ -1,0 +1,2696 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>Ulanzi UA12 & UA20 Inflatable Magnetic Tube Light • Phân Tích Điện Ảnh & B-Roll Thương Mại • Director's Report</title>
+
+<!-- Fonts: Google Fonts Fallbacks -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ═══ 1. FONT DECLARATIONS (Local & Web Fallbacks) ═══ */
+@font-face {
+    font-family: 'FD Aeonik Extended';
+    src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
+         url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
+         local('FD Aeonik Extended Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
+         local('FD Aeonik Regular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
+         local('FD Aeonik SemiBold');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'FD Aeonik';
+    src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
+         url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
+         local('FD Aeonik Bold');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
+         local('Tiempos Text Regular');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
+         local('Tiempos Text Medium');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
+         local('Tiempos Text Regular Italic');
+    font-weight: 400;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ═══ 2. DESIGN TOKENS (Light Theme - Chuẩn 30ngayviral.fedu.vn) ═══ */
+:root {
+    --cl-bg-main: #ffffff;
+    --cl-bg-tint: #f8fafc;
+    --cl-bg-card: #ffffff;
+    --cl-bg-card-muted: #f1f5f9;
+    --cl-border: rgba(0, 0, 0, 0.08);
+    --cl-border-hover: rgba(26, 115, 232, 0.35);
+    --cl-line: rgba(0, 0, 0, 0.06);
+
+    /* Ink Contrast WCAG AAA */
+    --cl-text-primary: #090d16;  /* Slate 950 (18.8:1) */
+    --cl-text-body: #0f172a;     /* Slate 900 (16.5:1 Mực in cao cấp) */
+    --cl-text-secondary: #475569;/* Slate 600 */
+    --cl-text-muted: #64748b;    /* Slate 500 */
+
+    /* Accent & Brand Colors */
+    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
+    --cl-accent-tint: rgba(26, 115, 232, 0.08);
+    --cl-amber: #d97706;         /* Amber 600 */
+    --cl-amber-bg: #fffbeb;      /* Amber 50 */
+    --cl-amber-border: #fef3c7;  /* Amber 100 */
+    --cl-emerald: #059669;       /* Emerald 600 */
+    --cl-emerald-bg: #f0fdf4;    /* Emerald 50 */
+    --cl-emerald-border: #bbf7d0;/* Emerald 200 */
+    --cl-rose: #e11d48;          /* Rose 600 */
+    --cl-rose-bg: #fff1f2;       /* Rose 50 */
+    --cl-rose-border: #fecdd3;   /* Rose 200 */
+
+    /* Typography Stacks */
+    --font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
+    --font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
+    --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Video Aspect Ratio */
+    --video-aspect-ratio: 3 / 4;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+body {
+    background-color: var(--cl-bg-main);
+    color: var(--cl-text-body);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.75;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ═══ 3. TOP NAVIGATION HEADER ═══ */
+.top-nav {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--cl-line);
+    padding: 12px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 200;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading-short);
+    font-weight: 700;
+    font-size: 14.5px;
+    color: var(--cl-text-primary);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+}
+.nav-badge {
+    background: var(--cl-accent-tint);
+    color: var(--cl-accent);
+    padding: 3px 9px;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+    border: 1px solid rgba(26, 115, 232, 0.18);
+}
+.nav-meta-title {
+    font-family: var(--font-ui);
+    font-size: 13.5px;
+    color: var(--cl-text-secondary);
+    font-weight: 500;
+    max-width: 480px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.nav-btn {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.nav-btn:hover {
+    background: var(--cl-bg-tint);
+    border-color: var(--cl-accent);
+    color: var(--cl-accent);
+}
+.nav-btn.primary {
+    background: var(--cl-accent);
+    border-color: var(--cl-accent);
+    color: #ffffff;
+}
+.nav-btn.primary:hover {
+    background: #1558b0;
+}
+
+/* ═══ 4. MAIN LAYOUT (DESKTOP SPLIT-SCREEN & MOBILE-FIRST) ═══ */
+.layout-container {
+    display: flex;
+    flex: 1;
+    max-width: 1680px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* LEFT COLUMN: STICKY DIRECTOR PLAYER */
+.left-player-col {
+    width: 460px;
+    flex-shrink: 0;
+    padding: 24px;
+    border-right: 1px solid var(--cl-line);
+    background: var(--cl-bg-tint);
+    position: sticky;
+    top: 57px;
+    height: calc(100vh - 57px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+.player-box {
+    background: #000000;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    aspect-ratio: var(--video-aspect-ratio);
+    max-height: 560px;
+    width: 100%;
+}
+.player-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+/* DIRECTOR CONTROLS BAR */
+.director-controls {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ctrl-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+.ctrl-btn-group {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.ctrl-btn {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    color: var(--cl-text-primary);
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-family: var(--font-ui);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.ctrl-btn:hover, .ctrl-btn.active {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
+}
+.time-display {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--cl-text-secondary);
+    font-weight: 600;
+}
+
+/* VIDEO INFO CARD IN SIDEBAR */
+.video-meta-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.video-meta-title {
+    font-family: var(--font-heading-long);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--cl-text-primary);
+    line-height: 1.4;
+}
+.video-meta-author {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    color: var(--cl-text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.author-link {
+    color: var(--cl-accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+.author-link:hover {
+    text-decoration: underline;
+}
+
+/* DRAWER QUICK JUMP MENU */
+.drawer-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-line);
+    border-radius: 12px;
+    padding: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+.drawer-title {
+    font-family: var(--font-heading-short);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--cl-text-muted);
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.drawer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    max-height: 240px;
+    overflow-y: auto;
+    padding-right: 4px;
+}
+.drawer-shot-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    background: var(--cl-bg-tint);
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    border: 1px solid transparent;
+}
+.drawer-shot-row:hover {
+    background: #eef2f6;
+    border-color: var(--cl-accent);
+}
+.d-badge {
+    background: var(--cl-accent);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.d-time {
+    color: var(--cl-text-muted);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    flex-shrink: 0;
+}
+.d-title {
+    color: var(--cl-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* RIGHT COLUMN: STORYBOARD CONTENT & AUDIT */
+.right-content-col {
+    flex: 1;
+    padding: 32px 40px 80px 40px;
+    min-width: 0;
+    background: #ffffff;
+}
+
+/* VIEW SWITCHER & HEADER BAR */
+.content-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--cl-line);
+}
+.view-tabs {
+    display: flex;
+    gap: 8px;
+    background: var(--cl-bg-tint);
+    padding: 4px;
+    border-radius: 10px;
+    border: 1px solid var(--cl-border);
+}
+.view-tab {
+    padding: 6px 14px;
+    border-radius: 7px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--cl-text-secondary);
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.view-tab.active {
+    background: #ffffff;
+    color: var(--cl-text-primary);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* HERO OVERVIEW CARD */
+.overview-hero-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 18px;
+    padding: 24px 28px;
+    margin-bottom: 32px;
+}
+.overview-hero-title {
+    font-family: var(--font-heading-short);
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cl-text-primary);
+    letter-spacing: -0.01em;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+.overview-hero-desc {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--cl-text-body);
+    margin-bottom: 18px;
+}
+.overview-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+    padding-top: 14px;
+    border-top: 1px solid var(--cl-line);
+}
+.overview-spec-item {
+    font-family: var(--font-ui);
+    font-size: 13px;
+}
+.spec-tag-label {
+    color: var(--cl-text-muted);
+    font-size: 11.5px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    display: block;
+    margin-bottom: 2px;
+}
+.spec-tag-value {
+    color: var(--cl-text-primary);
+    font-weight: 600;
+}
+
+/* ═══ 5. STORYBOARD CARDS (ZEBRA STRIPING) ═══ */
+.shots-container {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+.shot-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+.shot-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+.shot-card:nth-child(even) {
+    background: var(--cl-bg-tint);
+}
+
+/* SHOT CARD HEADER */
+.shot-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 14px;
+}
+.shot-id-pill {
+    background: var(--cl-text-primary);
+    color: #ffffff;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+}
+.shot-time-btn {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    color: var(--cl-accent);
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+.shot-time-btn:hover {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
+}
+.shot-headline {
+    font-family: var(--font-heading-long);
+    font-size: 18.5px;
+    font-weight: 700;
+    color: var(--cl-text-primary);
+    line-height: 1.45;
+    margin-bottom: 18px;
+}
+
+/* 3 KEYFRAMES GALLERY */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 22px;
+}
+.kf-card {
+    background: #000000;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: var(--video-aspect-ratio);
+    cursor: pointer;
+    border: 1px solid var(--cl-border);
+}
+.kf-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.25s ease;
+}
+.kf-card:hover img {
+    transform: scale(1.03);
+}
+.kf-label-tag {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    padding: 3px 8px;
+    border-radius: 5px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 600;
+}
+.kf-label-tag.start { border-left: 3px solid var(--cl-accent); }
+.kf-label-tag.mid { border-left: 3px solid var(--cl-amber); }
+.kf-label-tag.end { border-left: 3px solid var(--cl-emerald); }
+
+/* 3 STRUCTURED CRITIQUE BLOCKS */
+.critique-blocks-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+/* BLOCK 1: SUBJECT & ACTION */
+.block-subject-action {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+.block-label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--cl-text-muted);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.block-text {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--cl-text-body);
+    line-height: 1.7;
+}
+
+/* BLOCK 2: TWO-SIDED COMPOSITION CRITIQUE */
+.block-two-sided {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.critique-side {
+    padding: 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.critique-side.pro {
+    background: var(--cl-emerald-bg);
+    border: 1px solid var(--cl-emerald-border);
+}
+.critique-side.con {
+    background: var(--cl-rose-bg);
+    border: 1px solid var(--cl-rose-border);
+}
+.side-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.critique-side.pro .side-header { color: var(--cl-emerald); }
+.critique-side.con .side-header { color: var(--cl-rose); }
+.side-content {
+    font-family: var(--font-body);
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--cl-text-body);
+}
+
+/* BLOCK 3: ACTIONABLE TAKEAWAY */
+.block-takeaway {
+    background: var(--cl-amber-bg);
+    border: 1px solid var(--cl-amber-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+}
+.takeaway-header {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--cl-amber);
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.takeaway-body {
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 500;
+    color: #78350f;
+    line-height: 1.7;
+}
+
+/* SPECS STRIP */
+.shot-specs-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 16px;
+    padding: 12px 16px;
+    background: var(--cl-bg-tint);
+    border-radius: 10px;
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    color: var(--cl-text-secondary);
+    margin-bottom: 18px;
+}
+.spec-pill strong {
+    color: var(--cl-text-primary);
+}
+
+/* TRANSITION CARD */
+.transition-card {
+    background: var(--cl-bg-tint);
+    border: 1px dashed var(--cl-border);
+    border-radius: 14px;
+    padding: 16px;
+}
+.trans-title-bar {
+    font-family: var(--font-ui);
+    font-size: 12.5px;
+    font-weight: 700;
+    color: var(--cl-accent);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.trans-img-container {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid var(--cl-border);
+    background: #000000;
+}
+.trans-img-container img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.trans-zoom-badge {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 8px;
+    border-radius: 4px;
+}
+
+/* ═══ 6. VISUAL GRID VIEW (ALTERNATE VIEW) ═══ */
+.visual-grid-view {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+.grid-shot-card {
+    background: #ffffff;
+    border: 1px solid var(--cl-border);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.grid-shot-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.grid-thumb-wrap {
+    aspect-ratio: var(--video-aspect-ratio);
+    position: relative;
+    background: #000;
+}
+.grid-thumb-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.grid-thumb-badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+}
+.grid-card-body {
+    padding: 10px 12px;
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--cl-text-primary);
+    line-height: 1.4;
+}
+
+/* ═══ 7. LIGHTBOX MODAL ═══ */
+.lightbox-modal {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    z-index: 999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+.lightbox-modal.active { display: flex; }
+.lightbox-content {
+    max-width: 92vw;
+    max-height: 92vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 82vh;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+.lightbox-caption {
+    color: #ffffff;
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+}
+.lightbox-close {
+    position: absolute;
+    top: 20px; right: 24px;
+    color: #ffffff;
+    font-size: 32px;
+    background: none; border: none;
+    cursor: pointer;
+}
+
+/* ═══ 8. FOOTER LINKS BLOCK ═══ */
+.bottom-links-section {
+    margin-top: 50px;
+    padding-top: 30px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+.footer-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+.footer-link-card {
+    background: var(--cl-bg-tint);
+    border: 1px solid var(--cl-border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    text-decoration: none;
+    color: var(--cl-text-primary);
+    font-family: var(--font-ui);
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+}
+.footer-link-card:hover {
+    background: var(--cl-accent);
+    color: #ffffff;
+    border-color: var(--cl-accent);
+}
+
+/* ═══ 9. RESPONSIVE MOBILE RULES (< 992px) ═══ */
+@media (max-width: 992px) {
+    .layout-container {
+        flex-direction: column;
+    }
+    .left-player-col {
+        width: 100%;
+        position: sticky;
+        top: 57px;
+        height: auto;
+        padding: 16px;
+        border-right: none;
+        border-bottom: 1px solid var(--cl-line);
+        z-index: 100;
+    }
+    .player-box {
+        max-height: 420px;
+    }
+    .right-content-col {
+        padding: 20px 16px 60px 16px;
+    }
+    .block-two-sided {
+        grid-template-columns: 1fr;
+    }
+    .keyframes-row {
+        gap: 8px;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- TOP NAV -->
+<nav class="top-nav">
+    <div class="nav-left">
+        <a href="https://fedu.vn/scene.html" class="nav-brand">
+            <span>🎬 FEDU DIRECTOR REPORT</span>
+        </a>
+        <span class="nav-badge">18 PHÂN CẢNH</span>
+        <span class="nav-meta-title">Ulanzi UA12 & UA20 Inflatable Magnetic Tube Light • Phân Tích Điện Ảnh & B-Roll Thương Mại</span>
+    </div>
+    <div class="nav-right">
+        <a href="https://lazvideo.lazcdn.com/gv/lzd_gsp_assortment/video_target/gv9e-5f0a7231-8b341eb2-9e1510ee-73d2/trans/c4708b13-c020-431a-a4ce-5b57e1fef568-hd.mp4?auth_key=1789973212-0-0-f7b7280d6784f1245107ed1c6a2cf559" target="_blank" class="nav-btn primary">
+            <span>📸 Instagram Gốc ↗</span>
+        </a>
+        <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
+            <span>💡 Kho Ý Tưởng ↗</span>
+        </a>
+    </div>
+</nav>
+
+<!-- MAIN CONTAINER -->
+<div class="layout-container">
+    <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
+    <aside class="left-player-col">
+        <div class="player-box">
+            <video id="mainPlayer" playsinline preload="metadata">
+                <source src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Ulanzi%20UA12%20UA20%20Inflatable%20Magnetic%20Tube%20Light%20-%20%40ulanzi.mp4" type="video/mp4">
+                <source src="Ulanzi UA12 UA20 Inflatable Magnetic Tube Light - @ulanzi.mp4" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+        </div>
+
+        <!-- DIRECTOR CONTROLS -->
+        <div class="director-controls">
+            <div class="ctrl-row">
+                <div class="ctrl-btn-group">
+                    <button class="ctrl-btn" onclick="togglePlay()" id="playBtn">▶ Phát</button>
+                    <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
+                    <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
+                </div>
+                <span class="time-display" id="timeDisplay">0.00s / 42.67s</span>
+            </div>
+            <div class="ctrl-row">
+                <div class="ctrl-btn-group">
+                    <span style="font-size:11px; font-weight:600; color:var(--cl-text-muted);">Tốc độ:</span>
+                    <button class="ctrl-btn" onclick="setSpeed(0.25)">0.25x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(0.5)">0.5x</button>
+                    <button class="ctrl-btn active" onclick="setSpeed(1.0)">1.0x</button>
+                    <button class="ctrl-btn" onclick="setSpeed(1.5)">1.5x</button>
+                </div>
+                <button class="ctrl-btn" onclick="toggleLoop()" id="loopBtn">🔁 Lặp Shot</button>
+            </div>
+        </div>
+
+        <!-- VIDEO META -->
+        <div class="video-meta-card">
+            <div class="video-meta-title">Ulanzi UA12 & UA20 Inflatable Magnetic Tube Light • Phân Tích Điện Ảnh & B-Roll Thương Mại</div>
+            <div class="video-meta-author">
+                <span>Tác giả:</span>
+                <a href="https://lazvideo.lazcdn.com/gv/lzd_gsp_assortment/video_target/gv9e-5f0a7231-8b341eb2-9e1510ee-73d2/trans/c4708b13-c020-431a-a4ce-5b57e1fef568-hd.mp4?auth_key=1789973212-0-0-f7b7280d6784f1245107ed1c6a2cf559" target="_blank" class="author-link">@ulanzi (Ulanzi Official Store)</a>
+            </div>
+        </div>
+
+        <!-- DRAWER QUICK JUMP MENU -->
+        <div class="drawer-card">
+            <div class="drawer-title">📑 Nhảy Tới Phân Cảnh (Quick Jump)</div>
+            <div class="drawer-list">
+                
+        <div class="drawer-shot-row" onclick="jumpToShot(1, 0.0, 1.3)">
+            <span class="d-badge">Shot 01</span>
+            <span class="d-time">0.00s - 1.30s (1.33s)</span>
+            <span class="d-title">Hook mở túi ba lô rút đèn gấp gọn: Đánh thức khao khát giải ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(2, 1.33, 2.7)">
+            <span class="d-badge">Shot 02</span>
+            <span class="d-time">1.33s - 2.70s (1.40s)</span>
+            <span class="d-title">Thổi phồng thanh đèn trong 1 nhịp thở: Phô diễn cơ chế van m...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(3, 2.73, 4.1)">
+            <span class="d-badge">Shot 03</span>
+            <span class="d-time">2.73s - 4.10s (1.40s)</span>
+            <span class="d-title">Cắm máy bơm mini tự động căng bóng khí: Hoàn thiện thông điệ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(4, 4.13, 5.9)">
+            <span class="d-badge">Shot 04</span>
+            <span class="d-time">4.13s - 5.90s (1.80s)</span>
+            <span class="d-title">Cận cảnh màn hình màu TFT & cụm nút điều khiển: Khẳng định đ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(5, 5.93, 7.33)">
+            <span class="d-badge">Shot 05</span>
+            <span class="d-time">5.93s - 7.33s (1.43s)</span>
+            <span class="d-title">Xoay chỉnh độ sáng vô cấp 0-100%: Minh họa khả năng kiểm soá...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(6, 7.37, 9.27)">
+            <span class="d-badge">Shot 06</span>
+            <span class="d-time">7.37s - 9.27s (1.93s)</span>
+            <span class="d-title">So sánh đối chiếu trực quan 12W (60cm) vs 20W (90cm): Định h...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(7, 9.3, 13.17)">
+            <span class="d-badge">Shot 07</span>
+            <span class="d-time">9.30s - 13.17s (3.87s)</span>
+            <span class="d-title">Đối soát thời lượng pin 75 phút (12W) & 55 phút (20W): Cam k...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(8, 13.2, 16.37)">
+            <span class="d-badge">Shot 08</span>
+            <span class="d-time">13.20s - 16.37s (3.17s)</span>
+            <span class="d-title">Bóng LED toàn quang phổ CRI 95+: Tái tạo màu sắc chân thực v...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(9, 16.4, 17.57)">
+            <span class="d-badge">Shot 09</span>
+            <span class="d-time">16.40s - 17.57s (1.17s)</span>
+            <span class="d-title">Dải nhiệt độ màu kép Bi-Color 2700K-5600K: Biến hóa linh hoạ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(10, 17.6, 18.97)">
+            <span class="d-badge">Shot 10</span>
+            <span class="d-time">17.60s - 18.97s (1.37s)</span>
+            <span class="d-title">Trình diễn 12 chế độ hiệu ứng FX: Vũ khí kiến tạo không khí ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(11, 19.0, 20.7)">
+            <span class="d-badge">Shot 11</span>
+            <span class="d-time">19.00s - 20.70s (1.70s)</span>
+            <span class="d-title">Nam châm N52 hít chặt khung lưới sắt: Giải phóng chân đèn cồ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(12, 20.73, 21.87)">
+            <span class="d-badge">Shot 12</span>
+            <span class="d-time">20.73s - 21.87s (1.13s)</span>
+            <span class="d-title">Giật rung khung sắt kiểm chứng lực hút: Đập tan nỗi lo rơi v...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(13, 21.9, 24.97)">
+            <span class="d-badge">Shot 13</span>
+            <span class="d-time">21.90s - 24.97s (3.07s)</span>
+            <span class="d-title">Dây đai khóa dán sau lưng: Giải pháp treo móc linh hoạt trên...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(14, 25.0, 28.07)">
+            <span class="d-badge">Shot 14</span>
+            <span class="d-time">25.00s - 28.07s (3.07s)</span>
+            <span class="d-title">Cắm sạc nhanh Type-C 15W sạc đầy 2 giờ: Tối ưu hóa chu kỳ qu...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(15, 28.1, 32.47)">
+            <span class="d-badge">Shot 15</span>
+            <span class="d-time">28.10s - 32.47s (4.37s)</span>
+            <span class="d-title">Vỏ khí TPU chống nước IP66 rọi sáng mô hình thuyền buồm: Đỉn...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(16, 32.5, 34.1)">
+            <span class="d-badge">Shot 16</span>
+            <span class="d-time">32.50s - 34.10s (1.60s)</span>
+            <span class="d-title">Đế kim loại từ tính ren 1/4 inch tiêu chuẩn: Mảnh ghép hoàn ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(17, 34.13, 39.93)">
+            <span class="d-badge">Shot 17</span>
+            <span class="d-time">34.13s - 39.93s (5.80s)</span>
+            <span class="d-title">Tác nghiệp 1 người phố đêm trước quán Naixue: Thước đo thực ...</span>
+        </div>
+        
+
+        <div class="drawer-shot-row" onclick="jumpToShot(18, 39.97, 42.63)">
+            <span class="d-badge">Shot 18</span>
+            <span class="d-time">39.97s - 42.63s (2.70s)</span>
+            <span class="d-title">Chân dung mẫu nữ phố đêm rạng rỡ: Thành quả thị giác chứng t...</span>
+        </div>
+        
+            </div>
+        </div>
+    </aside>
+
+    <!-- RIGHT COLUMN: ANALYSIS & CRITIQUE -->
+    <main class="right-content-col">
+        <!-- HEADER BAR WITH VIEW SWITCHER -->
+        <div class="content-header-bar">
+            <div class="view-tabs">
+                <button class="view-tab active" id="tabDetail" onclick="switchView('detail')">📋 Bảng Phân Tích Đạo Diễn</button>
+                <button class="view-tab" id="tabGrid" onclick="switchView('grid')">🔲 Lưới Ảnh Keyframes</button>
+            </div>
+            <div style="font-family:var(--font-mono); font-size:12px; color:var(--cl-text-muted);">
+                Tỷ lệ: <strong>3:4 Dọc (Portrait Classic)</strong> • 42.67s
+            </div>
+        </div>
+
+        <!-- HERO OVERVIEW CARD -->
+        <div class="overview-hero-card">
+            <h1 class="overview-hero-title">Ulanzi UA12 & UA20 Inflatable Magnetic Tube Light • Phân Tích Điện Ảnh & B-Roll Thương Mại</h1>
+            <p class="overview-hero-desc">Báo cáo bóc tách chuyên sâu ngôn ngữ điện ảnh, nghệ thuật chiếu sáng B-Roll và kỹ thuật bán hàng thị giác (Visual Commercial) trong video quảng cáo đèn bóng khí từ tính Ulanzi UA12/UA20 (12W & 20W).</p>
+            <div class="overview-specs-grid">
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Kỹ Thuật Cốt Lõi</span>
+                    <span class="spec-tag-value">Inflatable Tube Light, Magnetic Mounting N52, Full Spectrum CRI 95+, Bi-Color 2700K-5600K, Commercial B-Roll Rhythm, Night Street Portrait</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Tổng Số Phân Cảnh</span>
+                    <span class="spec-tag-value">18 Shots • Nhịp trung bình 2.35s</span>
+                </div>
+                <div class="overview-spec-item">
+                    <span class="spec-tag-label">Độ Phân Giải</span>
+                    <span class="spec-tag-value">720x960 • 30.0 FPS</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- STORYBOARD DETAIL VIEW -->
+        <div class="shots-container" id="detailView">
+            
+        <article class="shot-card" id="shot-1">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 01</span>
+                <button class="shot-time-btn" onclick="jumpToShot(1, 0.0, 1.3)">
+                    ▶ 0.00s - 1.30s (1.33s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Hook mở túi ba lô rút đèn gấp gọn: Đánh thức khao khát giải phóng trọng lượng balo cho các nhà sáng tạo nội dung</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (0.00s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_mid.jpg', 'Shot 01 • Giữa (0.65s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (0.65s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_end.jpg', 'Shot 01 • Cuối (1.30s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (1.30s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bàn tay mở ngăn chứa ba lô máy ảnh chuyên dụng và rút ra túi bảo quản màu đen chứa đèn tuýp khí Ulanzi UA12 ở trạng thái xẹp gấp gọn hoàn toàn. Kích thước túi chỉ tương đương chiếc dù gấp mini, chiếm chưa tới 1/10 thể tích balo.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Đánh thẳng vào nỗi đau (Pain-point) cồng kềnh của đèn studio truyền thống; góc nhìn POV từ trên xuống (Top-down) tạo cảm giác trực quan chân thực.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Nhịp cắt 1.33s hơi nhanh khiến người xem chưa kịp đọc hết logo in trên túi vải bảo quản.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Mở đầu video bán phụ kiện quay chụp bằng hành động rút sản phẩm từ balo là công thức Hook vàng chứng minh tính cơ động tức thì.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard Wide 28mm • POV Top-Down</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio Bàn Làm Việc / Balo Nhiếp Ảnh</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng tán xạ mềm dịu từ trần hắt xuống làm rõ chất liệu vải đen</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Hard Cut dứt khoát sang thao tác mở van khí</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Hard Cut dứt khoát sang thao tác mở van khí</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-2">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 02</span>
+                <button class="shot-time-btn" onclick="jumpToShot(2, 1.33, 2.7)">
+                    ▶ 1.33s - 2.70s (1.40s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Thổi phồng thanh đèn trong 1 nhịp thở: Phô diễn cơ chế van một chiều thông minh không cần phụ kiện cồng kềnh</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_start.jpg', 'Shot 02 • Đầu (1.33s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (1.33s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_mid.jpg', 'Shot 02 • Giữa (2.02s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (2.02s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_end.jpg', 'Shot 02 • Cuối (2.70s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (2.70s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Nhân vật mở nắp van silicon màu đen và dùng miệng thổi hơi trực tiếp vào thân đèn. Chỉ sau một hơi thở dứt khoát, dải túi khí TPU lập tức phồng căng định hình thành một ống tuýp tròn trịa cứng cáp.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Góc quay cận trung (Medium Close-Up) bắt trọn khoảnh khắc biến hình kỳ diệu từ dải vải xẹp lép thành ống đèn phát sáng, tạo cảm giác thỏa mãn thị giác (Visual Satisfaction).</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Góc máy hơi chếch nghiêng làm khuất một phần ngón tay thao tác bấm chốt van sau khi thổi.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Luôn trình diễn tính năng dự phòng 'thổi bằng miệng' trước khi khoe máy bơm điện để người dùng an tâm không lo hết pin máy bơm khi tác nghiệp nơi hoang dã.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard 35mm • Medium Close-Up</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Góc Studio Tối Giản</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Key Light 45 độ chiếu sáng vùng mặt và thanh đèn</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Match Action Cut sang phương thức bơm bằng máy điện mini</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Match Action Cut sang phương thức bơm bằng máy điện mini</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-3">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 03</span>
+                <button class="shot-time-btn" onclick="jumpToShot(3, 2.73, 4.1)">
+                    ▶ 2.73s - 4.10s (1.40s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Cắm máy bơm mini tự động căng bóng khí: Hoàn thiện thông điệp đa dạng phương thức bơm hơi linh hoạt</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_start.jpg', 'Shot 03 • Đầu (2.73s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (2.73s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_mid.jpg', 'Shot 03 • Giữa (3.42s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (3.42s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_end.jpg', 'Shot 03 • Cuối (4.10s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (4.10s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Cận cảnh đầu máy bơm điện mini cầm tay cắm khớp vào miệng van khí của Ulanzi UA12. Luồng khí nén tốc độ cao bơm căng bóng khí TPU chỉ trong 3 giây mà không tốn chút sức lực nào.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Sự kết hợp giữa hai phương thức bơm (thủ công + điện tử) xóa tan mọi rào cản tâm lý ngại thổi hơi của người dùng chuyên nghiệp.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Đèn chưa bật sáng trong shot này nên tính thẩm mỹ ánh sáng phát ra chưa xuất hiện.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Kỹ thuật 'Trước - Sau' (Xẹp -> Bơm căng) tạo sự tò mò mạnh mẽ khiến người xem phải xem tiếp cách đèn hoạt động.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Macro Close-Up 50mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Kỹ Thuật Studio</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng trắng mát 5600K làm nổi bật bề mặt nhựa ABS đen bóng của van</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Whip Cut sang màn hình hiển thị thông số LED</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Whip Cut sang màn hình hiển thị thông số LED</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-4">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 04</span>
+                <button class="shot-time-btn" onclick="jumpToShot(4, 4.13, 5.9)">
+                    ▶ 4.13s - 5.90s (1.80s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Cận cảnh màn hình màu TFT & cụm nút điều khiển: Khẳng định đẳng cấp công nghệ phần cứng gia công chính xác</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_start.jpg', 'Shot 04 • Đầu (4.13s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (4.13s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_mid.jpg', 'Shot 04 • Giữa (5.02s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (5.02s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_end.jpg', 'Shot 04 • Cuối (5.90s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (5.90s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Ống kính macro lướt qua màn hình màu LCD sắc nét trên tay cầm đèn Ulanzi UA12, hiển thị đầy đủ công suất 12W Max, dung lượng pin 2500mAh 7.2V (18.5Wh) và giao diện menu điều khiển đồ họa trực quan.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Hình ảnh hiển thị sắc nét tới từng pixel của màn hình kỹ thuật số, tạo độ uy tín công nghệ vượt trội so với các loại đèn led giá rẻ chỉ có núm vặn mù.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Màn hình có độ phản xạ ánh sáng nhẹ từ đèn studio phía trên làm giảm độ tương phản ở mép phải.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Quay cận cảnh thông số kỹ thuật in nổi và màn hình hiển thị trực quan là cách thuyết phục khách hàng am hiểu công nghệ nhanh nhất.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Macro Prime 85mm • Extreme Close-Up</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio Bàn Tay Trực Quan</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng điểm dịu tránh lóa màn hình hiển thị</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Match Cut theo cử động ngón tay bấm nút sang shot chỉnh độ sáng</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • Match Cut theo cử động ngón tay bấm nút sang shot chỉnh độ sáng</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-5">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 05</span>
+                <button class="shot-time-btn" onclick="jumpToShot(5, 5.93, 7.33)">
+                    ▶ 5.93s - 7.33s (1.43s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Xoay chỉnh độ sáng vô cấp 0-100%: Minh họa khả năng kiểm soát cường độ ánh sáng mượt mà không nhấp nháy</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_start.jpg', 'Shot 05 • Đầu (5.93s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (5.93s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_mid.jpg', 'Shot 05 • Giữa (6.63s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (6.63s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_end.jpg', 'Shot 05 • Cuối (7.33s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (7.33s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Ngón tay nhấn giữ và lăn phím điều khiển, màn hình số nhảy liên tục từ 0% lên 75% rồi 100%, đồng thời ống đèn phát quang bừng sáng từ mức dịu êm đến cực đại với ánh sáng trắng tinh khiết 5600K.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Độ mượt mà của mạch Dimming không bị giật nấc (Stepless Dimming) được thể hiện rõ ràng qua cả màn hình số lẫn độ bừng sáng thực tế của bóng đèn.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Khi đèn đạt 100% độ sáng, camera bị quá sáng (Overexposed) cục bộ ở phần thân ống phát quang.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Khi quay thiết bị chiếu sáng tăng công suất, cần khóa phơi sáng (Lock Exposure) trên máy quay để thấy rõ sự khác biệt của vùng chiếu thay vì để máy tự bù sáng.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Medium Macro 50mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Góc Test Thiết Bị</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Chính ánh sáng tự thân của đèn Ulanzi làm nguồn sáng chủ đạo</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Split Screen Cut so sánh hai phiên bản 12W và 20W</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Split Screen Cut so sánh hai phiên bản 12W và 20W</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-6">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 06</span>
+                <button class="shot-time-btn" onclick="jumpToShot(6, 7.37, 9.27)">
+                    ▶ 7.37s - 9.27s (1.93s)
+                </button>
+            </div>
+            <h2 class="shot-headline">So sánh đối chiếu trực quan 12W (60cm) vs 20W (90cm): Định hình phân khúc rõ ràng cho từng nhu cầu tác nghiệp</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_start.jpg', 'Shot 06 • Đầu (7.37s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (7.37s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_mid.jpg', 'Shot 06 • Giữa (8.32s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (8.32s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_end.jpg', 'Shot 06 • Cuối (9.27s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (9.27s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Khung hình chia đôi đối xứng đặt 2 phiên bản đèn Ulanzi UA12 (dài 60cm) và UA20 (dài 90cm) chiếu sáng từ phía trên xuống bàn tiệc bánh ngọt, đĩa dâu tây và tách trà chiều ấm cúng.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bố cục chia đôi cân đối tuyệt đối (Split Composition); người mua có thể phân định ngay kích thước vùng phủ sáng của cây 60cm gọn nhẹ và cây 90cm chuyên nghiệp.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Hai món đồ ăn trên hai bàn giống hệt nhau khiến bố cục có phần hơi tĩnh và mang tính mô phạm.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Khi thương hiệu có 2 biến thể kích thước, đặt chúng song song trong cùng một điều kiện chiếu sáng là giải pháp tối ưu dập tắt mọi băn khoăn so sánh.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard 35mm • Symmetrical Split Setup</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Decor Trà Chiều / Ẩm Thực F&B</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Top Light đánh thẳng từ 2 thanh đèn Ulanzi xuống mặt bàn gỗ ấm</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cut chuyển sang bảng biểu thời lượng pin</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Cut chuyển sang bảng biểu thời lượng pin</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-7">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 07</span>
+                <button class="shot-time-btn" onclick="jumpToShot(7, 9.3, 13.17)">
+                    ▶ 9.30s - 13.17s (3.87s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Đối soát thời lượng pin 75 phút (12W) & 55 phút (20W): Cam kết hiệu năng bền bỉ xuyên suốt buổi chụp thực chiến</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_start.jpg', 'Shot 07 • Đầu (9.30s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (9.30s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_mid.jpg', 'Shot 07 • Giữa (11.23s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (11.23s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_end.jpg', 'Shot 07 • Cuối (13.17s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (13.17s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Đồ họa text nổi bật đối sánh thời lượng pin liên tục ở mức công suất 100% cực đại: UA12 hoạt động 75 phút, UA20 hoạt động 55 phút. Nền khung hình duy trì cảnh chiếu sáng ấm cúng của bàn tiệc ẩm thực.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Thời lượng 3.87s đủ dài để người xem đọc hiểu trọn vẹn thông số pin; số liệu thực tế ở mức công suất tối đa tạo sự tin cậy cao.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Khung hình bị giữ tĩnh hơi lâu (gần 4 giây) có thể làm giảm nhịp điệu kích thích của video ngắn.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Công bố thông số thời lượng pin ở mức 'Độ sáng tối đa 100%' thay vì số đo ở mức sáng thấp nhất là chuẩn mực tạo dựng lòng tin khách hàng bền vững.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard 35mm • Static Food Table</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Tiệc Studio F&B</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng khuếch tán diện rộng từ thân tuýp khí</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Smooth Pan Cut sang đặc tả dải LED toàn quang phổ</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 08 • Smooth Pan Cut sang đặc tả dải LED toàn quang phổ</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_07_to_08.jpg?v=2', 'Chuyển cảnh Shot 07 sang Shot 08')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_07_to_08.jpg?v=2" alt="Transition 7 to 8" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-8">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 08</span>
+                <button class="shot-time-btn" onclick="jumpToShot(8, 13.2, 16.37)">
+                    ▶ 13.20s - 16.37s (3.17s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Bóng LED toàn quang phổ CRI 95+: Tái tạo màu sắc chân thực và độ tươi tắn mọng nước của đĩa hoa quả</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_start.jpg', 'Shot 08 • Đầu (13.20s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (13.20s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_mid.jpg', 'Shot 08 • Giữa (14.79s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (14.79s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_end.jpg', 'Shot 08 • Cuối (16.37s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (16.37s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Ống kính máy quay lia chậm ngang qua đĩa dâu tây đỏ mọng, bánh waffle vàng óng và ly kem dưới nguồn sáng dịu êm của Ulanzi. Từng hạt đường, vân bánh và sắc đỏ của hoa quả hiện lên căng bóng, trung thực tuyệt đối.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Minh chứng thị giác đầy sức thuyết phục cho chỉ số hoàn màu CRI 95+; màu đỏ của quả dâu (vốn là màu khó tái tạo nhất trên LED rẻ tiền) đạt độ bão hòa rực rỡ tự nhiên.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Khoảng cách giữa đèn và đĩa bánh hơi gần khiến viền đĩa sứ bị một vệt highlight sáng lóa nhẹ.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Muốn chứng minh chất lượng hoàn màu của đèn quay phim, hãy luôn dùng đĩa dâu tây hoặc thực phẩm đỏ tươi để quay cận cảnh.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Macro Tele 85mm • Slow Dolly Shot</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Ẩm Thực Bánh Ngọt</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng dải dài tỏa đều không tạo bóng đổ đen gắt</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Dissolve Cut sang màn phô diễn dải nhiệt độ màu</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 09 • Dissolve Cut sang màn phô diễn dải nhiệt độ màu</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_08_to_09.jpg?v=2', 'Chuyển cảnh Shot 08 sang Shot 09')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_08_to_09.jpg?v=2" alt="Transition 8 to 9" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-9">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 09</span>
+                <button class="shot-time-btn" onclick="jumpToShot(9, 16.4, 17.57)">
+                    ▶ 16.40s - 17.57s (1.17s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Dải nhiệt độ màu kép Bi-Color 2700K-5600K: Biến hóa linh hoạt giữa không khí ấm áp cổ điển và ánh sáng ban ngày thanh khiết</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_start.jpg', 'Shot 09 • Đầu (16.40s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (16.40s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_mid.jpg', 'Shot 09 • Giữa (16.98s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (16.98s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_end.jpg', 'Shot 09 • Cuối (17.57s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (17.57s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Thao tác ngón tay gạt nút chuyển nhiệt độ màu, toàn bộ ánh sáng phát ra từ ống đèn chuyển đổi tức thì từ sắc vàng hổ phách ấm áp 2700K sang sắc trắng lạnh hiện đại 5600K.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Nhịp chuyển màu mượt mà trong 1.17s mang lại cảm giác biến ảo màu sắc phong phú, phục vụ cả quay phỏng vấn trong nhà lẫn chụp ngoại cảnh.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Cảnh lướt nhanh chưa kịp dừng lại ở mốc trung hòa 4300K (Golden Hour).</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Khả năng đổi nhiệt độ màu Bi-Color là tiêu chí sống còn của đèn quay lưu động, giúp hòa trộn tự nhiên với bất kỳ nguồn sáng môi trường nào.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard 50mm • Close-Up</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Góc Setup Studio Ánh Sáng</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Chuyển sắc thái từ Warm White (2700K) sang Cool White (5600K)</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Fast Strobe Cut sang trình diễn các chế độ hiệu ứng FX</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 10 • Fast Strobe Cut sang trình diễn các chế độ hiệu ứng FX</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_09_to_10.jpg?v=2', 'Chuyển cảnh Shot 09 sang Shot 10')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_09_to_10.jpg?v=2" alt="Transition 9 to 10" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-10">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 10</span>
+                <button class="shot-time-btn" onclick="jumpToShot(10, 17.6, 18.97)">
+                    ▶ 17.60s - 18.97s (1.37s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Trình diễn 12 chế độ hiệu ứng FX: Vũ khí kiến tạo không khí điện ảnh kịch tính cho phim ngắn và MV ca nhạc</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_start.jpg', 'Shot 10 • Đầu (17.60s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (17.60s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_mid.jpg', 'Shot 10 • Giữa (18.29s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (18.29s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_end.jpg', 'Shot 10 • Cuối (18.97s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (18.97s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Đèn liên tục nhấp nháy chuyển qua các hiệu ứng ánh sáng mô phỏng tia chớp sấm sét, ánh sáng đèn cứu thương cấp cứu, ánh lửa bập bùng và hiệu ứng màn hình TV rung rinh trong đêm tối.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Tốc độ chớp nháy bắt mắt kích thích thị giác mạnh mẽ, khẳng định đèn không chỉ dùng chiếu sáng tĩnh mà còn phục vụ diễn xuất điện ảnh chuyên sâu.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Hiệu ứng chớp liên tục có thể gây mỏi mắt nhẹ nếu xem trên màn hình điện thoại trong phòng tối.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Tích hợp sẵn hiệu ứng sấm sét và paparazzi giúp các đoàn làm phim độc lập tiết kiệm hàng giờ hậu kỳ chỉnh sửa ánh sáng giả lập.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Standard 35mm • Dynamic Lighting Display</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Không Gian Tối Studio</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Hiệu ứng FX đa sắc thái chớp tắt theo nhịp</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Snap Cut sang thao tác hít nam châm lên khung sắt</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 11 • Snap Cut sang thao tác hít nam châm lên khung sắt</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_10_to_11.jpg?v=2', 'Chuyển cảnh Shot 10 sang Shot 11')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_10_to_11.jpg?v=2" alt="Transition 10 to 11" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-11">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 11</span>
+                <button class="shot-time-btn" onclick="jumpToShot(11, 19.0, 20.7)">
+                    ▶ 19.00s - 20.70s (1.70s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Nam châm N52 hít chặt khung lưới sắt: Giải phóng chân đèn cồng kềnh với cơ chế gắn từ tính 1-chạm</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_start.jpg', 'Shot 11 • Đầu (19.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (19.00s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_mid.jpg', 'Shot 11 • Giữa (19.85s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (19.85s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_end.jpg', 'Shot 11 • Cuối (20.70s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (20.70s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bàn tay cầm thân đèn Ulanzi áp nhẹ vào khung lưới sắt màu đen. Hệ thống nam châm đất hiếm N52 cực mạnh tích hợp bên trong lập tức 'hít tách' dính chặt vào thanh kim loại mà không cần bất kỳ ốc vít hay ngàm kẹp nào.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Âm thanh va đập kim loại và chuyển động hít dính dứt khoát giải quyết triệt để bài toán gắn đèn ở những không gian chật hẹp không thể đặt chân tripod.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Chỉ hoạt động được trên các bề mặt có từ tính (sắt, thép), cần bề mặt phụ nếu gắn lên gỗ hoặc kính.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Nam châm N52 là vũ khí cơ động số 1 cho creator quay solo trong ô tô, thang máy hoặc phòng bếp có tủ lạnh/kệ sắt.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Medium Shot 35mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Khung Lưới Sắt Trang Trí</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Đèn tự phát sáng chiếu xiên góc 45 độ dọc thân lưới</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Match Action Cut sang thử nghiệm giật lắc lực hút</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 12 • Match Action Cut sang thử nghiệm giật lắc lực hút</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_11_to_12.jpg?v=2', 'Chuyển cảnh Shot 11 sang Shot 12')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_11_to_12.jpg?v=2" alt="Transition 11 to 12" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-12">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 12</span>
+                <button class="shot-time-btn" onclick="jumpToShot(12, 20.73, 21.87)">
+                    ▶ 20.73s - 21.87s (1.13s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Giật rung khung sắt kiểm chứng lực hút: Đập tan nỗi lo rơi vỡ hư hỏng thiết bị khi tác nghiệp ngoài hiện trường</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_start.jpg', 'Shot 12 • Đầu (20.73s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (20.73s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_mid.jpg', 'Shot 12 • Giữa (21.30s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (21.30s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_end.jpg', 'Shot 12 • Cuối (21.87s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (21.87s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Hai bàn tay dùng lực giật mạnh và lắc rung lắc mạnh mẽ khung lưới sắt. Thanh đèn Ulanzi vẫn dính chặt như hàn chết vào cột kim loại, không hề suy suyển hay trượt dốc dù chỉ 1 milimet.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bài kiểm tra độ bền thực tế (Torture Test) cực kỳ thuyết phục người dùng về độ tin cậy và an toàn cơ học của cụm nam châm N52.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Thời lượng 1.13s hơi ngắn, người xem vừa kịp thấy rung lắc thì cảnh đã chuyển.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Muốn bán sản phẩm gắn nam châm, bài kiểm tra giật mạnh không rơi là bằng chứng thị giác bắt buộc phải có trong video bán hàng.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Medium Wide 28mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Khung Sắt Chịu Lực</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng chiếu từ chính thanh đèn đang rung lắc</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Cut sang giải pháp treo đèn bằng dây đai dệt phía sau</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 13 • Cut sang giải pháp treo đèn bằng dây đai dệt phía sau</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_12_to_13.jpg?v=2', 'Chuyển cảnh Shot 12 sang Shot 13')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_12_to_13.jpg?v=2" alt="Transition 12 to 13" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-13">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 13</span>
+                <button class="shot-time-btn" onclick="jumpToShot(13, 21.9, 24.97)">
+                    ▶ 21.90s - 24.97s (3.07s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Dây đai khóa dán sau lưng: Giải pháp treo móc linh hoạt trên mọi địa hình phi kim loại</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_start.jpg', 'Shot 13 • Đầu (21.90s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (21.90s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_mid.jpg', 'Shot 13 • Giữa (23.43s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (23.43s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_end.jpg', 'Shot 13 • Cuối (24.97s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (24.97s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Cận cảnh bàn tay lật mặt sau thanh đèn, cài dây đai dệt dù nylon có khóa dán velcro vòng qua thanh treo và cành cây. Đèn được cố định thăng bằng hoàn hảo ngay cả ở những nơi không có bề mặt sắt từ.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Bổ khuyết hoàn hảo cho shot nam châm trước đó; chứng minh thiết kế công thái học toàn diện của Ulanzi cho cả quay trong nhà lẫn cắm trại ngoài trời.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Động tác luồn dây dán hơi chậm so với nhịp dựng sôi động chung của toàn video.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Thiết kế sản phẩm thông minh luôn phải có giải pháp dự phòng (Phương án A: Nam châm N52, Phương án B: Dây đai khóa dán).</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Close-Up 50mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Thanh Treo Studio / Dã Ngoại</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng môi trường tự nhiên kết hợp đèn hắt nhẹ mặt sau</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Hard Cut sang phân cảnh sạc pin nhanh</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 14 • Hard Cut sang phân cảnh sạc pin nhanh</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_13_to_14.jpg?v=2', 'Chuyển cảnh Shot 13 sang Shot 14')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_13_to_14.jpg?v=2" alt="Transition 13 to 14" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-14">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 14</span>
+                <button class="shot-time-btn" onclick="jumpToShot(14, 25.0, 28.07)">
+                    ▶ 25.00s - 28.07s (3.07s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Cắm sạc nhanh Type-C 15W sạc đầy 2 giờ: Tối ưu hóa chu kỳ quay chụp liên tục không bị gián đoạn</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_start.jpg', 'Shot 14 • Đầu (25.00s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (25.00s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_mid.jpg', 'Shot 14 • Giữa (26.54s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (26.54s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_end.jpg', 'Shot 14 • Cuối (28.07s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (28.07s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bàn tay cắm sợi cáp USB Type-C màu đen vào cổng sạc cạnh đáy đèn. Màn hình LCD lập tức hiển thị biểu tượng tia sét sạc nhanh 15W với thông báo đầy pin chỉ trong 2 giờ nạp điện.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Cổng sạc chuẩn Type-C phổ thông dùng chung với củ sạc điện thoại hoặc sạc dự phòng, giải phóng creator khỏi các adapter sạc cồng kềnh độc quyền.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Bối cảnh cắm sạc trên bàn nhìn hơi đơn điệu so với các cảnh quay hiện trường ngoài trời.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Nhấn mạnh thời gian sạc đầy 2h là đòn tâm lý mạnh mẽ giúp khách hàng yên tâm có thể sạc tranh thủ trong giờ nghỉ trưa giữa các buổi chụp.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Macro Close-Up 50mm</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Kỹ Thuật Studio</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng bàn làm việc tập trung vào cổng sạc Type-C</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Wipe Transition sang cảnh test chống nước IP66</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 15 • Wipe Transition sang cảnh test chống nước IP66</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_14_to_15.jpg?v=2', 'Chuyển cảnh Shot 14 sang Shot 15')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_14_to_15.jpg?v=2" alt="Transition 14 to 15" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-15">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 15</span>
+                <button class="shot-time-btn" onclick="jumpToShot(15, 28.1, 32.47)">
+                    ▶ 28.10s - 32.47s (4.37s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Vỏ khí TPU chống nước IP66 rọi sáng mô hình thuyền buồm: Đỉnh cao nghệ thuật Cinematic B-roll tĩnh vật</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_start.jpg', 'Shot 15 • Đầu (28.10s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (28.10s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_mid.jpg', 'Shot 15 • Giữa (30.29s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (30.29s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_end.jpg', 'Shot 15 • Cuối (32.47s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (32.47s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Thanh đèn Ulanzi uốn lượn mềm mại phía sau mô hình chiếc thuyền buồm cổ điển bằng gỗ đặt trong không gian tối. Ánh sáng vàng ấm êm dịu xuyên qua lớp vỏ khí TPU tạo thành dải hào quang mờ ảo tuyệt đẹp.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Shot quay đẹp và đậm chất điện ảnh nhất video; ánh sáng xuyên qua túi khí TPU hoạt động như một Softbox tản sáng tự nhiên siêu mềm, không hề thấy bóng gắt của hạt LED.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Có một chú vịt vàng đồ chơi bằng nhựa ở góc phải khung hình hơi lạc quẻ so với vẻ uy nghiêm cổ kính của mô hình thuyền buồm.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Bản chất của đèn tuýp khí chính là 'Đèn kiêm Softbox 2 trong 1' — lớp vỏ TPU bơm căng vừa bảo vệ đèn vừa đóng vai trò lớp tản sáng khổng lồ.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Cinematic Prime 50mm f/1.8 • Low Angle</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bối Cảnh Bể Kính / Bàn Trưng Bày Nghệ Thuật</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng vàng ấm 3200K hắt ngược tạo Silhouette cánh buồm cổ</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Slow Cut sang phụ kiện đế ren kim loại 1/4 inch</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 16 • Slow Cut sang phụ kiện đế ren kim loại 1/4 inch</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_15_to_16.jpg?v=2', 'Chuyển cảnh Shot 15 sang Shot 16')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_15_to_16.jpg?v=2" alt="Transition 15 to 16" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-16">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 16</span>
+                <button class="shot-time-btn" onclick="jumpToShot(16, 32.5, 34.1)">
+                    ▶ 32.50s - 34.10s (1.60s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Đế kim loại từ tính ren 1/4 inch tiêu chuẩn: Mảnh ghép hoàn thiện khả năng tích hợp vào hệ sinh thái studio chuyên nghiệp</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_start.jpg', 'Shot 16 • Đầu (32.50s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (32.50s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_mid.jpg', 'Shot 16 • Giữa (33.30s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (33.30s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_end.jpg', 'Shot 16 • Cuối (34.10s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (34.10s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bàn tay gắn tấm đế kim loại từ tính có sẵn lỗ ốc ren tiêu chuẩn 1/4 inch vào lưng đèn Ulanzi, sẵn sàng bắt vít lên bất kỳ chân đèn (Light Stand), gimbal hoặc tay cẩu C-Stand nào.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Xóa tan định kiến đèn khí chỉ là món đồ chơi; ren kim loại 1/4 inch chuẩn công nghiệp biến nó thành cây đèn chuyên nghiệp của các cameraman.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Thời lượng 1.6s chỉ lướt qua thao tác áp đế, chưa chiếu cảnh gắn hoàn chỉnh lên đỉnh chân tripod.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Để bán phụ kiện cho dân chuyên nghiệp, bắt buộc phải chứng minh sự tương thích với chuẩn ốc ren 1/4 inch và ngàm tripod quốc tế.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Macro 50mm • Top Angle</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Bàn Thao Tác Kỹ Thuật</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng tập trung vào rãnh ren ốc kim loại</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Hard Cut bùng nổ sang hiện trường chụp ảnh phố đêm</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 17 • Hard Cut bùng nổ sang hiện trường chụp ảnh phố đêm</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_16_to_17.jpg?v=2', 'Chuyển cảnh Shot 16 sang Shot 17')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_16_to_17.jpg?v=2" alt="Transition 16 to 17" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-17">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 17</span>
+                <button class="shot-time-btn" onclick="jumpToShot(17, 34.13, 39.93)">
+                    ▶ 34.13s - 39.93s (5.80s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Tác nghiệp 1 người phố đêm trước quán Naixue: Thước đo thực chiến tối thượng của creator lưu động</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_start.jpg', 'Shot 17 • Đầu (34.13s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (34.13s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_mid.jpg', 'Shot 17 • Giữa (37.03s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (37.03s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_end.jpg', 'Shot 17 • Cuối (39.93s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (39.93s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bối cảnh đường phố đô thị về đêm trước cửa hàng trà sữa Naixue rực rỡ ánh đèn. Cameraman nam một tay cầm máy ảnh ngắm bắn, tay kia giơ cao thanh đèn Ulanzi 90cm tạo nguồn sáng Key Light xiên 45 độ hoàn hảo lên gương mặt và bờ vai người mẫu nữ áo đen cá tính.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Cảnh hậu trường (BTS) đắt giá nhất video: chứng minh đèn siêu nhẹ tới mức một người có thể vừa cầm đèn vừa chụp ảnh liên tục mà không hề mỏi tay hay cần trợ lý đi kèm.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Hậu cảnh có nhiều người đi lại và biển hiệu đèn neon hơi gây xao nhãng mắt nhìn.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Nỗi ám ảnh lớn nhất của nhiếp ảnh gia chụp đêm là thiếu phụ tá cầm đèn; cảnh BTS '1 người kiêm cả thợ chụp lẫn thợ chiếu sáng' chính là đòn chốt sale mạnh nhất.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Wide Prime 24mm f/2.0 • Behind The Scenes (BTS) Walking Shot</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Phố Đi Bộ Đô Thị / Cửa Hàng Trà Naixue Về Đêm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng đô thị kết hợp Key Light tản mềm từ đèn Ulanzi</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Flash Cut sang bức ảnh chân dung thành phẩm</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 18 • Flash Cut sang bức ảnh chân dung thành phẩm</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_17_to_18.jpg?v=2', 'Chuyển cảnh Shot 17 sang Shot 18')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_17_to_18.jpg?v=2" alt="Transition 17 to 18" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+
+        <article class="shot-card" id="shot-18">
+            <div class="shot-card-header">
+                <span class="shot-id-pill">SHOT 18</span>
+                <button class="shot-time-btn" onclick="jumpToShot(18, 39.97, 42.63)">
+                    ▶ 39.97s - 42.63s (2.70s)
+                </button>
+            </div>
+            <h2 class="shot-headline">Chân dung mẫu nữ phố đêm rạng rỡ: Thành quả thị giác chứng thực sức mạnh chiếu sáng xóa tan bóng tối</h2>
+
+            <!-- 3 Keyframes -->
+            <div class="keyframes-row">
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_start.jpg', 'Shot 18 • Đầu (39.97s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
+                    <span class="kf-label-tag start">Đầu (39.97s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_mid.jpg', 'Shot 18 • Giữa (41.30s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
+                    <span class="kf-label-tag mid">Giữa (41.30s)</span>
+                </div>
+                <div class="kf-card" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_end.jpg', 'Shot 18 • Cuối (42.63s)')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
+                    <span class="kf-label-tag end">Cuối (42.63s)</span>
+                </div>
+            </div>
+
+            <!-- 3 Structured Critique Blocks -->
+            <div class="critique-blocks-grid">
+                <div class="block-subject-action">
+                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
+                    <div class="block-text">Bức ảnh chân dung hoàn thiện của người mẫu nữ khoanh tay trước ngực mỉm cười tự tin. Làn da trắng mịn, ánh mắt long lanh có Catchlight tròn trịa và vùng cơ bụng săn chắc được ánh sáng Ulanzi tách lớp nổi khối 3D trên nền phố đêm huyền ảo.</div>
+                </div>
+
+                <div class="block-two-sided">
+                    <div class="critique-side pro">
+                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
+                        <div class="side-content">Chất lượng hình ảnh thành phẩm (Payoff Result) tuyệt đẹp; da mẫu không bị bết sáng hay bóng nhờn, khẳng định chất lượng quang học tản sáng của túi khí TPU.</div>
+                    </div>
+                    <div class="critique-side con">
+                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
+                        <div class="side-content">Thời lượng hiển thị ảnh kết thúc nhanh chóng chuyển sang logo kết thúc thương hiệu Ulanzi.</div>
+                    </div>
+                </div>
+
+                <div class="block-takeaway">
+                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
+                    <div class="takeaway-body">Mọi video giới thiệu thiết bị chiếu sáng đều phải kết thúc bằng một 'Bức ảnh thành phẩm đẹp xuất thần' để thỏa mãn sự kỳ vọng thị giác của khách hàng.</div>
+                </div>
+            </div>
+
+            <!-- Specs Strip -->
+            <div class="shot-specs-strip">
+                <span class="spec-pill">📐 <strong>Góc máy:</strong> Portrait Prime 85mm f/1.4</span>
+                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Trước Cửa Hàng Naixue Về Đêm</span>
+                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Catchlight tròn đầy trong mắt mẫu, ánh sáng Key Light dịu dàng tôn màu da</span>
+                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Khép lại chuỗi phân cảnh quảng cáo thương mại đỉnh cao</span>
+            </div>
+
+            
+            <div class="transition-card">
+                <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
+                <div class="trans-img-container" onclick="openLightbox('https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_18_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
+                    <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/transitions/trans_18_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
+                </div>
+            </div>
+            
+        </article>
+        
+        </div>
+
+        <!-- VISUAL GRID VIEW -->
+        <div class="visual-grid-view" id="gridView">
+            
+        <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 1.3)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
+            </div>
+            <div class="grid-card-body">Hook mở túi ba lô rút đèn gấp gọn: Đánh thức khao khát giải phóng trọng lượng balo cho các nhà sáng tạo nội dung</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(2, 1.33, 2.7)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <span class="grid-thumb-badge">Shot 02 • 1.33s</span>
+            </div>
+            <div class="grid-card-body">Thổi phồng thanh đèn trong 1 nhịp thở: Phô diễn cơ chế van một chiều thông minh không cần phụ kiện cồng kềnh</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(3, 2.73, 4.1)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <span class="grid-thumb-badge">Shot 03 • 2.73s</span>
+            </div>
+            <div class="grid-card-body">Cắm máy bơm mini tự động căng bóng khí: Hoàn thiện thông điệp đa dạng phương thức bơm hơi linh hoạt</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(4, 4.13, 5.9)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <span class="grid-thumb-badge">Shot 04 • 4.13s</span>
+            </div>
+            <div class="grid-card-body">Cận cảnh màn hình màu TFT & cụm nút điều khiển: Khẳng định đẳng cấp công nghệ phần cứng gia công chính xác</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(5, 5.93, 7.33)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <span class="grid-thumb-badge">Shot 05 • 5.93s</span>
+            </div>
+            <div class="grid-card-body">Xoay chỉnh độ sáng vô cấp 0-100%: Minh họa khả năng kiểm soát cường độ ánh sáng mượt mà không nhấp nháy</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(6, 7.37, 9.27)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <span class="grid-thumb-badge">Shot 06 • 7.37s</span>
+            </div>
+            <div class="grid-card-body">So sánh đối chiếu trực quan 12W (60cm) vs 20W (90cm): Định hình phân khúc rõ ràng cho từng nhu cầu tác nghiệp</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(7, 9.3, 13.17)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <span class="grid-thumb-badge">Shot 07 • 9.30s</span>
+            </div>
+            <div class="grid-card-body">Đối soát thời lượng pin 75 phút (12W) & 55 phút (20W): Cam kết hiệu năng bền bỉ xuyên suốt buổi chụp thực chiến</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(8, 13.2, 16.37)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <span class="grid-thumb-badge">Shot 08 • 13.20s</span>
+            </div>
+            <div class="grid-card-body">Bóng LED toàn quang phổ CRI 95+: Tái tạo màu sắc chân thực và độ tươi tắn mọng nước của đĩa hoa quả</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(9, 16.4, 17.57)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+                <span class="grid-thumb-badge">Shot 09 • 16.40s</span>
+            </div>
+            <div class="grid-card-body">Dải nhiệt độ màu kép Bi-Color 2700K-5600K: Biến hóa linh hoạt giữa không khí ấm áp cổ điển và ánh sáng ban ngày thanh khiết</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(10, 17.6, 18.97)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <span class="grid-thumb-badge">Shot 10 • 17.60s</span>
+            </div>
+            <div class="grid-card-body">Trình diễn 12 chế độ hiệu ứng FX: Vũ khí kiến tạo không khí điện ảnh kịch tính cho phim ngắn và MV ca nhạc</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(11, 19.0, 20.7)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+                <span class="grid-thumb-badge">Shot 11 • 19.00s</span>
+            </div>
+            <div class="grid-card-body">Nam châm N52 hít chặt khung lưới sắt: Giải phóng chân đèn cồng kềnh với cơ chế gắn từ tính 1-chạm</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(12, 20.73, 21.87)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+                <span class="grid-thumb-badge">Shot 12 • 20.73s</span>
+            </div>
+            <div class="grid-card-body">Giật rung khung sắt kiểm chứng lực hút: Đập tan nỗi lo rơi vỡ hư hỏng thiết bị khi tác nghiệp ngoài hiện trường</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(13, 21.9, 24.97)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+                <span class="grid-thumb-badge">Shot 13 • 21.90s</span>
+            </div>
+            <div class="grid-card-body">Dây đai khóa dán sau lưng: Giải pháp treo móc linh hoạt trên mọi địa hình phi kim loại</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(14, 25.0, 28.07)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+                <span class="grid-thumb-badge">Shot 14 • 25.00s</span>
+            </div>
+            <div class="grid-card-body">Cắm sạc nhanh Type-C 15W sạc đầy 2 giờ: Tối ưu hóa chu kỳ quay chụp liên tục không bị gián đoạn</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(15, 28.1, 32.47)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+                <span class="grid-thumb-badge">Shot 15 • 28.10s</span>
+            </div>
+            <div class="grid-card-body">Vỏ khí TPU chống nước IP66 rọi sáng mô hình thuyền buồm: Đỉnh cao nghệ thuật Cinematic B-roll tĩnh vật</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(16, 32.5, 34.1)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+                <span class="grid-thumb-badge">Shot 16 • 32.50s</span>
+            </div>
+            <div class="grid-card-body">Đế kim loại từ tính ren 1/4 inch tiêu chuẩn: Mảnh ghép hoàn thiện khả năng tích hợp vào hệ sinh thái studio chuyên nghiệp</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(17, 34.13, 39.93)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
+                <span class="grid-thumb-badge">Shot 17 • 34.13s</span>
+            </div>
+            <div class="grid-card-body">Tác nghiệp 1 người phố đêm trước quán Naixue: Thước đo thực chiến tối thượng của creator lưu động</div>
+        </div>
+        
+
+        <div class="grid-shot-card" onclick="jumpToShot(18, 39.97, 42.63)">
+            <div class="grid-thumb-wrap">
+                <img src="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
+                <span class="grid-thumb-badge">Shot 18 • 39.97s</span>
+            </div>
+            <div class="grid-card-body">Chân dung mẫu nữ phố đêm rạng rỡ: Thành quả thị giác chứng thực sức mạnh chiếu sáng xóa tan bóng tối</div>
+        </div>
+        
+        </div>
+
+        <!-- FOOTER LINKS SECTION -->
+        <footer class="bottom-links-section">
+            <div style="font-family:var(--font-heading-short); font-size:14px; font-weight:700; text-transform:uppercase; color:var(--cl-text-primary);">
+                🔗 Hệ Sinh Thái &amp; Kho Tài Nguyên Liên Quan
+            </div>
+            <div class="footer-links-grid">
+                <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
+                    <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
+                </a>
+                <a href="https://fedu.vn/scene.html" target="_blank" class="footer-link-card">
+                    <span>🎬 Cổng Tra Cứu Điện Ảnh Scene.html ↗</span>
+                </a>
+                <a href="https://drive.google.com/open?id=19t43n4ACnEONaOpKK1ceJLg3Lel0AkLG" target="_blank" class="footer-link-card">
+                    <span>📁 Mở Thư Mục Google Drive ↗</span>
+                </a>
+                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@ulanzi_c4708b13_Ulanzi_UA12_UA20_Inflatable_Magnetic_Tube_Light" class="footer-link-card">
+                    <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
+                </a>
+            </div>
+        </footer>
+    </main>
+</div>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <div class="lightbox-content" onclick="event.stopPropagation()">
+        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+</div>
+
+<script>
+// Structured Shots Data
+const SHOTS_DATA = [{"id": 1, "st_frame": 0, "en_frame": 39, "st_time": 0.0, "en_time": 1.3, "duration": 1.33, "headline": "Hook mở túi ba lô rút đèn gấp gọn: Đánh thức khao khát giải phóng trọng lượng balo cho các nhà sáng tạo nội dung", "subject_action": "Bàn tay mở ngăn chứa ba lô máy ảnh chuyên dụng và rút ra túi bảo quản màu đen chứa đèn tuýp khí Ulanzi UA12 ở trạng thái xẹp gấp gọn hoàn toàn. Kích thước túi chỉ tương đương chiếc dù gấp mini, chiếm chưa tới 1/10 thể tích balo.", "pros": "Đánh thẳng vào nỗi đau (Pain-point) cồng kềnh của đèn studio truyền thống; góc nhìn POV từ trên xuống (Top-down) tạo cảm giác trực quan chân thực.", "cons": "Nhịp cắt 1.33s hơi nhanh khiến người xem chưa kịp đọc hết logo in trên túi vải bảo quản.", "takeaway": "Mở đầu video bán phụ kiện quay chụp bằng hành động rút sản phẩm từ balo là công thức Hook vàng chứng minh tính cơ động tức thì.", "lens": "Standard Wide 28mm • POV Top-Down", "location": "Studio Bàn Làm Việc / Balo Nhiếp Ảnh", "lighting": "Ánh sáng tán xạ mềm dịu từ trần hắt xuống làm rõ chất liệu vải đen", "transition": "Hard Cut dứt khoát sang thao tác mở van khí"}, {"id": 2, "st_frame": 40, "en_frame": 81, "st_time": 1.33, "en_time": 2.7, "duration": 1.4, "headline": "Thổi phồng thanh đèn trong 1 nhịp thở: Phô diễn cơ chế van một chiều thông minh không cần phụ kiện cồng kềnh", "subject_action": "Nhân vật mở nắp van silicon màu đen và dùng miệng thổi hơi trực tiếp vào thân đèn. Chỉ sau một hơi thở dứt khoát, dải túi khí TPU lập tức phồng căng định hình thành một ống tuýp tròn trịa cứng cáp.", "pros": "Góc quay cận trung (Medium Close-Up) bắt trọn khoảnh khắc biến hình kỳ diệu từ dải vải xẹp lép thành ống đèn phát sáng, tạo cảm giác thỏa mãn thị giác (Visual Satisfaction).", "cons": "Góc máy hơi chếch nghiêng làm khuất một phần ngón tay thao tác bấm chốt van sau khi thổi.", "takeaway": "Luôn trình diễn tính năng dự phòng 'thổi bằng miệng' trước khi khoe máy bơm điện để người dùng an tâm không lo hết pin máy bơm khi tác nghiệp nơi hoang dã.", "lens": "Standard 35mm • Medium Close-Up", "location": "Góc Studio Tối Giản", "lighting": "Key Light 45 độ chiếu sáng vùng mặt và thanh đèn", "transition": "Match Action Cut sang phương thức bơm bằng máy điện mini"}, {"id": 3, "st_frame": 82, "en_frame": 123, "st_time": 2.73, "en_time": 4.1, "duration": 1.4, "headline": "Cắm máy bơm mini tự động căng bóng khí: Hoàn thiện thông điệp đa dạng phương thức bơm hơi linh hoạt", "subject_action": "Cận cảnh đầu máy bơm điện mini cầm tay cắm khớp vào miệng van khí của Ulanzi UA12. Luồng khí nén tốc độ cao bơm căng bóng khí TPU chỉ trong 3 giây mà không tốn chút sức lực nào.", "pros": "Sự kết hợp giữa hai phương thức bơm (thủ công + điện tử) xóa tan mọi rào cản tâm lý ngại thổi hơi của người dùng chuyên nghiệp.", "cons": "Đèn chưa bật sáng trong shot này nên tính thẩm mỹ ánh sáng phát ra chưa xuất hiện.", "takeaway": "Kỹ thuật 'Trước - Sau' (Xẹp -> Bơm căng) tạo sự tò mò mạnh mẽ khiến người xem phải xem tiếp cách đèn hoạt động.", "lens": "Macro Close-Up 50mm", "location": "Bàn Kỹ Thuật Studio", "lighting": "Ánh sáng trắng mát 5600K làm nổi bật bề mặt nhựa ABS đen bóng của van", "transition": "Whip Cut sang màn hình hiển thị thông số LED"}, {"id": 4, "st_frame": 124, "en_frame": 177, "st_time": 4.13, "en_time": 5.9, "duration": 1.8, "headline": "Cận cảnh màn hình màu TFT & cụm nút điều khiển: Khẳng định đẳng cấp công nghệ phần cứng gia công chính xác", "subject_action": "Ống kính macro lướt qua màn hình màu LCD sắc nét trên tay cầm đèn Ulanzi UA12, hiển thị đầy đủ công suất 12W Max, dung lượng pin 2500mAh 7.2V (18.5Wh) và giao diện menu điều khiển đồ họa trực quan.", "pros": "Hình ảnh hiển thị sắc nét tới từng pixel của màn hình kỹ thuật số, tạo độ uy tín công nghệ vượt trội so với các loại đèn led giá rẻ chỉ có núm vặn mù.", "cons": "Màn hình có độ phản xạ ánh sáng nhẹ từ đèn studio phía trên làm giảm độ tương phản ở mép phải.", "takeaway": "Quay cận cảnh thông số kỹ thuật in nổi và màn hình hiển thị trực quan là cách thuyết phục khách hàng am hiểu công nghệ nhanh nhất.", "lens": "Macro Prime 85mm • Extreme Close-Up", "location": "Studio Bàn Tay Trực Quan", "lighting": "Ánh sáng điểm dịu tránh lóa màn hình hiển thị", "transition": "Match Cut theo cử động ngón tay bấm nút sang shot chỉnh độ sáng"}, {"id": 5, "st_frame": 178, "en_frame": 220, "st_time": 5.93, "en_time": 7.33, "duration": 1.43, "headline": "Xoay chỉnh độ sáng vô cấp 0-100%: Minh họa khả năng kiểm soát cường độ ánh sáng mượt mà không nhấp nháy", "subject_action": "Ngón tay nhấn giữ và lăn phím điều khiển, màn hình số nhảy liên tục từ 0% lên 75% rồi 100%, đồng thời ống đèn phát quang bừng sáng từ mức dịu êm đến cực đại với ánh sáng trắng tinh khiết 5600K.", "pros": "Độ mượt mà của mạch Dimming không bị giật nấc (Stepless Dimming) được thể hiện rõ ràng qua cả màn hình số lẫn độ bừng sáng thực tế của bóng đèn.", "cons": "Khi đèn đạt 100% độ sáng, camera bị quá sáng (Overexposed) cục bộ ở phần thân ống phát quang.", "takeaway": "Khi quay thiết bị chiếu sáng tăng công suất, cần khóa phơi sáng (Lock Exposure) trên máy quay để thấy rõ sự khác biệt của vùng chiếu thay vì để máy tự bù sáng.", "lens": "Medium Macro 50mm", "location": "Góc Test Thiết Bị", "lighting": "Chính ánh sáng tự thân của đèn Ulanzi làm nguồn sáng chủ đạo", "transition": "Split Screen Cut so sánh hai phiên bản 12W và 20W"}, {"id": 6, "st_frame": 221, "en_frame": 278, "st_time": 7.37, "en_time": 9.27, "duration": 1.93, "headline": "So sánh đối chiếu trực quan 12W (60cm) vs 20W (90cm): Định hình phân khúc rõ ràng cho từng nhu cầu tác nghiệp", "subject_action": "Khung hình chia đôi đối xứng đặt 2 phiên bản đèn Ulanzi UA12 (dài 60cm) và UA20 (dài 90cm) chiếu sáng từ phía trên xuống bàn tiệc bánh ngọt, đĩa dâu tây và tách trà chiều ấm cúng.", "pros": "Bố cục chia đôi cân đối tuyệt đối (Split Composition); người mua có thể phân định ngay kích thước vùng phủ sáng của cây 60cm gọn nhẹ và cây 90cm chuyên nghiệp.", "cons": "Hai món đồ ăn trên hai bàn giống hệt nhau khiến bố cục có phần hơi tĩnh và mang tính mô phạm.", "takeaway": "Khi thương hiệu có 2 biến thể kích thước, đặt chúng song song trong cùng một điều kiện chiếu sáng là giải pháp tối ưu dập tắt mọi băn khoăn so sánh.", "lens": "Standard 35mm • Symmetrical Split Setup", "location": "Bàn Decor Trà Chiều / Ẩm Thực F&B", "lighting": "Top Light đánh thẳng từ 2 thanh đèn Ulanzi xuống mặt bàn gỗ ấm", "transition": "Cut chuyển sang bảng biểu thời lượng pin"}, {"id": 7, "st_frame": 279, "en_frame": 395, "st_time": 9.3, "en_time": 13.17, "duration": 3.87, "headline": "Đối soát thời lượng pin 75 phút (12W) & 55 phút (20W): Cam kết hiệu năng bền bỉ xuyên suốt buổi chụp thực chiến", "subject_action": "Đồ họa text nổi bật đối sánh thời lượng pin liên tục ở mức công suất 100% cực đại: UA12 hoạt động 75 phút, UA20 hoạt động 55 phút. Nền khung hình duy trì cảnh chiếu sáng ấm cúng của bàn tiệc ẩm thực.", "pros": "Thời lượng 3.87s đủ dài để người xem đọc hiểu trọn vẹn thông số pin; số liệu thực tế ở mức công suất tối đa tạo sự tin cậy cao.", "cons": "Khung hình bị giữ tĩnh hơi lâu (gần 4 giây) có thể làm giảm nhịp điệu kích thích của video ngắn.", "takeaway": "Công bố thông số thời lượng pin ở mức 'Độ sáng tối đa 100%' thay vì số đo ở mức sáng thấp nhất là chuẩn mực tạo dựng lòng tin khách hàng bền vững.", "lens": "Standard 35mm • Static Food Table", "location": "Bàn Tiệc Studio F&B", "lighting": "Ánh sáng khuếch tán diện rộng từ thân tuýp khí", "transition": "Smooth Pan Cut sang đặc tả dải LED toàn quang phổ"}, {"id": 8, "st_frame": 396, "en_frame": 491, "st_time": 13.2, "en_time": 16.37, "duration": 3.17, "headline": "Bóng LED toàn quang phổ CRI 95+: Tái tạo màu sắc chân thực và độ tươi tắn mọng nước của đĩa hoa quả", "subject_action": "Ống kính máy quay lia chậm ngang qua đĩa dâu tây đỏ mọng, bánh waffle vàng óng và ly kem dưới nguồn sáng dịu êm của Ulanzi. Từng hạt đường, vân bánh và sắc đỏ của hoa quả hiện lên căng bóng, trung thực tuyệt đối.", "pros": "Minh chứng thị giác đầy sức thuyết phục cho chỉ số hoàn màu CRI 95+; màu đỏ của quả dâu (vốn là màu khó tái tạo nhất trên LED rẻ tiền) đạt độ bão hòa rực rỡ tự nhiên.", "cons": "Khoảng cách giữa đèn và đĩa bánh hơi gần khiến viền đĩa sứ bị một vệt highlight sáng lóa nhẹ.", "takeaway": "Muốn chứng minh chất lượng hoàn màu của đèn quay phim, hãy luôn dùng đĩa dâu tây hoặc thực phẩm đỏ tươi để quay cận cảnh.", "lens": "Macro Tele 85mm • Slow Dolly Shot", "location": "Bàn Ẩm Thực Bánh Ngọt", "lighting": "Ánh sáng dải dài tỏa đều không tạo bóng đổ đen gắt", "transition": "Dissolve Cut sang màn phô diễn dải nhiệt độ màu"}, {"id": 9, "st_frame": 492, "en_frame": 527, "st_time": 16.4, "en_time": 17.57, "duration": 1.17, "headline": "Dải nhiệt độ màu kép Bi-Color 2700K-5600K: Biến hóa linh hoạt giữa không khí ấm áp cổ điển và ánh sáng ban ngày thanh khiết", "subject_action": "Thao tác ngón tay gạt nút chuyển nhiệt độ màu, toàn bộ ánh sáng phát ra từ ống đèn chuyển đổi tức thì từ sắc vàng hổ phách ấm áp 2700K sang sắc trắng lạnh hiện đại 5600K.", "pros": "Nhịp chuyển màu mượt mà trong 1.17s mang lại cảm giác biến ảo màu sắc phong phú, phục vụ cả quay phỏng vấn trong nhà lẫn chụp ngoại cảnh.", "cons": "Cảnh lướt nhanh chưa kịp dừng lại ở mốc trung hòa 4300K (Golden Hour).", "takeaway": "Khả năng đổi nhiệt độ màu Bi-Color là tiêu chí sống còn của đèn quay lưu động, giúp hòa trộn tự nhiên với bất kỳ nguồn sáng môi trường nào.", "lens": "Standard 50mm • Close-Up", "location": "Góc Setup Studio Ánh Sáng", "lighting": "Chuyển sắc thái từ Warm White (2700K) sang Cool White (5600K)", "transition": "Fast Strobe Cut sang trình diễn các chế độ hiệu ứng FX"}, {"id": 10, "st_frame": 528, "en_frame": 569, "st_time": 17.6, "en_time": 18.97, "duration": 1.37, "headline": "Trình diễn 12 chế độ hiệu ứng FX: Vũ khí kiến tạo không khí điện ảnh kịch tính cho phim ngắn và MV ca nhạc", "subject_action": "Đèn liên tục nhấp nháy chuyển qua các hiệu ứng ánh sáng mô phỏng tia chớp sấm sét, ánh sáng đèn cứu thương cấp cứu, ánh lửa bập bùng và hiệu ứng màn hình TV rung rinh trong đêm tối.", "pros": "Tốc độ chớp nháy bắt mắt kích thích thị giác mạnh mẽ, khẳng định đèn không chỉ dùng chiếu sáng tĩnh mà còn phục vụ diễn xuất điện ảnh chuyên sâu.", "cons": "Hiệu ứng chớp liên tục có thể gây mỏi mắt nhẹ nếu xem trên màn hình điện thoại trong phòng tối.", "takeaway": "Tích hợp sẵn hiệu ứng sấm sét và paparazzi giúp các đoàn làm phim độc lập tiết kiệm hàng giờ hậu kỳ chỉnh sửa ánh sáng giả lập.", "lens": "Standard 35mm • Dynamic Lighting Display", "location": "Không Gian Tối Studio", "lighting": "Hiệu ứng FX đa sắc thái chớp tắt theo nhịp", "transition": "Snap Cut sang thao tác hít nam châm lên khung sắt"}, {"id": 11, "st_frame": 570, "en_frame": 621, "st_time": 19.0, "en_time": 20.7, "duration": 1.7, "headline": "Nam châm N52 hít chặt khung lưới sắt: Giải phóng chân đèn cồng kềnh với cơ chế gắn từ tính 1-chạm", "subject_action": "Bàn tay cầm thân đèn Ulanzi áp nhẹ vào khung lưới sắt màu đen. Hệ thống nam châm đất hiếm N52 cực mạnh tích hợp bên trong lập tức 'hít tách' dính chặt vào thanh kim loại mà không cần bất kỳ ốc vít hay ngàm kẹp nào.", "pros": "Âm thanh va đập kim loại và chuyển động hít dính dứt khoát giải quyết triệt để bài toán gắn đèn ở những không gian chật hẹp không thể đặt chân tripod.", "cons": "Chỉ hoạt động được trên các bề mặt có từ tính (sắt, thép), cần bề mặt phụ nếu gắn lên gỗ hoặc kính.", "takeaway": "Nam châm N52 là vũ khí cơ động số 1 cho creator quay solo trong ô tô, thang máy hoặc phòng bếp có tủ lạnh/kệ sắt.", "lens": "Medium Shot 35mm", "location": "Khung Lưới Sắt Trang Trí", "lighting": "Đèn tự phát sáng chiếu xiên góc 45 độ dọc thân lưới", "transition": "Match Action Cut sang thử nghiệm giật lắc lực hút"}, {"id": 12, "st_frame": 622, "en_frame": 656, "st_time": 20.73, "en_time": 21.87, "duration": 1.13, "headline": "Giật rung khung sắt kiểm chứng lực hút: Đập tan nỗi lo rơi vỡ hư hỏng thiết bị khi tác nghiệp ngoài hiện trường", "subject_action": "Hai bàn tay dùng lực giật mạnh và lắc rung lắc mạnh mẽ khung lưới sắt. Thanh đèn Ulanzi vẫn dính chặt như hàn chết vào cột kim loại, không hề suy suyển hay trượt dốc dù chỉ 1 milimet.", "pros": "Bài kiểm tra độ bền thực tế (Torture Test) cực kỳ thuyết phục người dùng về độ tin cậy và an toàn cơ học của cụm nam châm N52.", "cons": "Thời lượng 1.13s hơi ngắn, người xem vừa kịp thấy rung lắc thì cảnh đã chuyển.", "takeaway": "Muốn bán sản phẩm gắn nam châm, bài kiểm tra giật mạnh không rơi là bằng chứng thị giác bắt buộc phải có trong video bán hàng.", "lens": "Medium Wide 28mm", "location": "Khung Sắt Chịu Lực", "lighting": "Ánh sáng chiếu từ chính thanh đèn đang rung lắc", "transition": "Cut sang giải pháp treo đèn bằng dây đai dệt phía sau"}, {"id": 13, "st_frame": 657, "en_frame": 749, "st_time": 21.9, "en_time": 24.97, "duration": 3.07, "headline": "Dây đai khóa dán sau lưng: Giải pháp treo móc linh hoạt trên mọi địa hình phi kim loại", "subject_action": "Cận cảnh bàn tay lật mặt sau thanh đèn, cài dây đai dệt dù nylon có khóa dán velcro vòng qua thanh treo và cành cây. Đèn được cố định thăng bằng hoàn hảo ngay cả ở những nơi không có bề mặt sắt từ.", "pros": "Bổ khuyết hoàn hảo cho shot nam châm trước đó; chứng minh thiết kế công thái học toàn diện của Ulanzi cho cả quay trong nhà lẫn cắm trại ngoài trời.", "cons": "Động tác luồn dây dán hơi chậm so với nhịp dựng sôi động chung của toàn video.", "takeaway": "Thiết kế sản phẩm thông minh luôn phải có giải pháp dự phòng (Phương án A: Nam châm N52, Phương án B: Dây đai khóa dán).", "lens": "Close-Up 50mm", "location": "Thanh Treo Studio / Dã Ngoại", "lighting": "Ánh sáng môi trường tự nhiên kết hợp đèn hắt nhẹ mặt sau", "transition": "Hard Cut sang phân cảnh sạc pin nhanh"}, {"id": 14, "st_frame": 750, "en_frame": 842, "st_time": 25.0, "en_time": 28.07, "duration": 3.07, "headline": "Cắm sạc nhanh Type-C 15W sạc đầy 2 giờ: Tối ưu hóa chu kỳ quay chụp liên tục không bị gián đoạn", "subject_action": "Bàn tay cắm sợi cáp USB Type-C màu đen vào cổng sạc cạnh đáy đèn. Màn hình LCD lập tức hiển thị biểu tượng tia sét sạc nhanh 15W với thông báo đầy pin chỉ trong 2 giờ nạp điện.", "pros": "Cổng sạc chuẩn Type-C phổ thông dùng chung với củ sạc điện thoại hoặc sạc dự phòng, giải phóng creator khỏi các adapter sạc cồng kềnh độc quyền.", "cons": "Bối cảnh cắm sạc trên bàn nhìn hơi đơn điệu so với các cảnh quay hiện trường ngoài trời.", "takeaway": "Nhấn mạnh thời gian sạc đầy 2h là đòn tâm lý mạnh mẽ giúp khách hàng yên tâm có thể sạc tranh thủ trong giờ nghỉ trưa giữa các buổi chụp.", "lens": "Macro Close-Up 50mm", "location": "Bàn Kỹ Thuật Studio", "lighting": "Ánh sáng bàn làm việc tập trung vào cổng sạc Type-C", "transition": "Wipe Transition sang cảnh test chống nước IP66"}, {"id": 15, "st_frame": 843, "en_frame": 974, "st_time": 28.1, "en_time": 32.47, "duration": 4.37, "headline": "Vỏ khí TPU chống nước IP66 rọi sáng mô hình thuyền buồm: Đỉnh cao nghệ thuật Cinematic B-roll tĩnh vật", "subject_action": "Thanh đèn Ulanzi uốn lượn mềm mại phía sau mô hình chiếc thuyền buồm cổ điển bằng gỗ đặt trong không gian tối. Ánh sáng vàng ấm êm dịu xuyên qua lớp vỏ khí TPU tạo thành dải hào quang mờ ảo tuyệt đẹp.", "pros": "Shot quay đẹp và đậm chất điện ảnh nhất video; ánh sáng xuyên qua túi khí TPU hoạt động như một Softbox tản sáng tự nhiên siêu mềm, không hề thấy bóng gắt của hạt LED.", "cons": "Có một chú vịt vàng đồ chơi bằng nhựa ở góc phải khung hình hơi lạc quẻ so với vẻ uy nghiêm cổ kính của mô hình thuyền buồm.", "takeaway": "Bản chất của đèn tuýp khí chính là 'Đèn kiêm Softbox 2 trong 1' — lớp vỏ TPU bơm căng vừa bảo vệ đèn vừa đóng vai trò lớp tản sáng khổng lồ.", "lens": "Cinematic Prime 50mm f/1.8 • Low Angle", "location": "Bối Cảnh Bể Kính / Bàn Trưng Bày Nghệ Thuật", "lighting": "Ánh sáng vàng ấm 3200K hắt ngược tạo Silhouette cánh buồm cổ", "transition": "Slow Cut sang phụ kiện đế ren kim loại 1/4 inch"}, {"id": 16, "st_frame": 975, "en_frame": 1023, "st_time": 32.5, "en_time": 34.1, "duration": 1.6, "headline": "Đế kim loại từ tính ren 1/4 inch tiêu chuẩn: Mảnh ghép hoàn thiện khả năng tích hợp vào hệ sinh thái studio chuyên nghiệp", "subject_action": "Bàn tay gắn tấm đế kim loại từ tính có sẵn lỗ ốc ren tiêu chuẩn 1/4 inch vào lưng đèn Ulanzi, sẵn sàng bắt vít lên bất kỳ chân đèn (Light Stand), gimbal hoặc tay cẩu C-Stand nào.", "pros": "Xóa tan định kiến đèn khí chỉ là món đồ chơi; ren kim loại 1/4 inch chuẩn công nghiệp biến nó thành cây đèn chuyên nghiệp của các cameraman.", "cons": "Thời lượng 1.6s chỉ lướt qua thao tác áp đế, chưa chiếu cảnh gắn hoàn chỉnh lên đỉnh chân tripod.", "takeaway": "Để bán phụ kiện cho dân chuyên nghiệp, bắt buộc phải chứng minh sự tương thích với chuẩn ốc ren 1/4 inch và ngàm tripod quốc tế.", "lens": "Macro 50mm • Top Angle", "location": "Bàn Thao Tác Kỹ Thuật", "lighting": "Ánh sáng tập trung vào rãnh ren ốc kim loại", "transition": "Hard Cut bùng nổ sang hiện trường chụp ảnh phố đêm"}, {"id": 17, "st_frame": 1024, "en_frame": 1198, "st_time": 34.13, "en_time": 39.93, "duration": 5.8, "headline": "Tác nghiệp 1 người phố đêm trước quán Naixue: Thước đo thực chiến tối thượng của creator lưu động", "subject_action": "Bối cảnh đường phố đô thị về đêm trước cửa hàng trà sữa Naixue rực rỡ ánh đèn. Cameraman nam một tay cầm máy ảnh ngắm bắn, tay kia giơ cao thanh đèn Ulanzi 90cm tạo nguồn sáng Key Light xiên 45 độ hoàn hảo lên gương mặt và bờ vai người mẫu nữ áo đen cá tính.", "pros": "Cảnh hậu trường (BTS) đắt giá nhất video: chứng minh đèn siêu nhẹ tới mức một người có thể vừa cầm đèn vừa chụp ảnh liên tục mà không hề mỏi tay hay cần trợ lý đi kèm.", "cons": "Hậu cảnh có nhiều người đi lại và biển hiệu đèn neon hơi gây xao nhãng mắt nhìn.", "takeaway": "Nỗi ám ảnh lớn nhất của nhiếp ảnh gia chụp đêm là thiếu phụ tá cầm đèn; cảnh BTS '1 người kiêm cả thợ chụp lẫn thợ chiếu sáng' chính là đòn chốt sale mạnh nhất.", "lens": "Wide Prime 24mm f/2.0 • Behind The Scenes (BTS) Walking Shot", "location": "Phố Đi Bộ Đô Thị / Cửa Hàng Trà Naixue Về Đêm", "lighting": "Ánh sáng đô thị kết hợp Key Light tản mềm từ đèn Ulanzi", "transition": "Flash Cut sang bức ảnh chân dung thành phẩm"}, {"id": 18, "st_frame": 1199, "en_frame": 1279, "st_time": 39.97, "en_time": 42.63, "duration": 2.7, "headline": "Chân dung mẫu nữ phố đêm rạng rỡ: Thành quả thị giác chứng thực sức mạnh chiếu sáng xóa tan bóng tối", "subject_action": "Bức ảnh chân dung hoàn thiện của người mẫu nữ khoanh tay trước ngực mỉm cười tự tin. Làn da trắng mịn, ánh mắt long lanh có Catchlight tròn trịa và vùng cơ bụng săn chắc được ánh sáng Ulanzi tách lớp nổi khối 3D trên nền phố đêm huyền ảo.", "pros": "Chất lượng hình ảnh thành phẩm (Payoff Result) tuyệt đẹp; da mẫu không bị bết sáng hay bóng nhờn, khẳng định chất lượng quang học tản sáng của túi khí TPU.", "cons": "Thời lượng hiển thị ảnh kết thúc nhanh chóng chuyển sang logo kết thúc thương hiệu Ulanzi.", "takeaway": "Mọi video giới thiệu thiết bị chiếu sáng đều phải kết thúc bằng một 'Bức ảnh thành phẩm đẹp xuất thần' để thỏa mãn sự kỳ vọng thị giác của khách hàng.", "lens": "Portrait Prime 85mm f/1.4", "location": "Trước Cửa Hàng Naixue Về Đêm", "lighting": "Catchlight tròn đầy trong mắt mẫu, ánh sáng Key Light dịu dàng tôn màu da", "transition": "Khép lại chuỗi phân cảnh quảng cáo thương mại đỉnh cao"}];
+const player = document.getElementById('mainPlayer');
+const playBtn = document.getElementById('playBtn');
+const timeDisplay = document.getElementById('timeDisplay');
+const loopBtn = document.getElementById('loopBtn');
+
+let currentLoopShot = null;
+let isLooping = false;
+
+// Timeupdate listener
+player.addEventListener('timeupdate', () => {
+    const ct = player.currentTime;
+    timeDisplay.textContent = ct.toFixed(2) + 's / ' + (player.duration ? player.duration.toFixed(2) : '42.67') + 's';
+
+    if (isLooping && currentLoopShot) {
+        if (ct >= currentLoopShot.en_time) {
+            player.currentTime = currentLoopShot.st_time;
+        }
+    }
+});
+
+player.addEventListener('play', () => { playBtn.textContent = '⏸ Tạm dừng'; });
+player.addEventListener('pause', () => { playBtn.textContent = '▶ Phát'; });
+
+function togglePlay() {
+    if (player.paused) player.play();
+    else player.pause();
+}
+
+function setSpeed(speed) {
+    player.playbackRate = speed;
+    document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
+        if (b.textContent === speed + 'x') b.classList.add('active');
+        else if (b.textContent.includes('x')) b.classList.remove('active');
+    });
+}
+
+function stepFrame(frames) {
+    const fps = 30.0 || 24;
+    player.currentTime += frames / fps;
+}
+
+function jumpToShot(shotId, stTime, enTime) {
+    player.currentTime = stTime;
+    player.play();
+    currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
+
+    // Highlight card
+    document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
+    const targetCard = document.getElementById('shot-' + shotId);
+    if (targetCard) {
+        targetCard.style.borderColor = 'var(--cl-accent)';
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+}
+
+function toggleLoop() {
+    isLooping = !isLooping;
+    loopBtn.classList.toggle('active', isLooping);
+}
+
+function switchView(viewName) {
+    const detailView = document.getElementById('detailView');
+    const gridView = document.getElementById('gridView');
+    const tabDetail = document.getElementById('tabDetail');
+    const tabGrid = document.getElementById('tabGrid');
+
+    if (viewName === 'detail') {
+        detailView.style.display = 'flex';
+        gridView.style.display = 'none';
+        tabDetail.classList.add('active');
+        tabGrid.classList.remove('active');
+    } else {
+        detailView.style.display = 'none';
+        gridView.style.display = 'grid';
+        tabDetail.classList.remove('active');
+        tabGrid.classList.add('active');
+    }
+}
+
+// Lightbox
+function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    document.getElementById('lightboxModal').classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').classList.remove('active');
+}
+
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+});
+</script>
+
+</body>
+</html>
