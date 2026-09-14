@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 239,
-  "total_unique_ideas": 214,
-  "total_active_ideas": 182,
+  "total_scene_items": 240,
+  "total_unique_ideas": 215,
+  "total_active_ideas": 183,
   "total_excluded_ideas": 32,
   "total_creators": 121,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 9,
     "talking-head": 12,
     "storytelling": 24,
-    "dien-anh": 93,
+    "dien-anh": 94,
     "chuyen-canh": 39
   },
   "industries": [
@@ -159,7 +159,7 @@ var FEDU_IDEAS_DATABASE = {
     "kien-truc": 20,
     "the-thao": 9,
     "ky-thuat-quay": 53,
-    "ugc": 2
+    "ugc": 3
   },
   "countries": [
     {
@@ -216,13 +216,13 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 3,
+    "vietnam": 4,
     "asia_other": 46
   },
   "transition_stats": {
     "level_1_count": 12,
     "level_2_count": 18,
-    "ad_bot_count": 2
+    "ad_bot_count": 3
   },
   "creators_hub": [
     {
@@ -314,6 +314,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@ulanzi.vietnam",
+      "name": "Ulanzi Vietnam Official",
+      "profile_url": "https://www.instagram.com/ulanzi.vietnam/",
+      "video_count": 3,
+      "top_industry": "UGC",
+      "sample_thumb": "https://img.youtube.com/vi/ZUWZ5Uhbz28/hqdefault.jpg",
+      "video_ids": [
+        "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
+        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
       ]
     },
     {
@@ -440,18 +453,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@주서방_DbA22ywhMSI_Video_by_ju_seobang",
         "IG_@주서방_DcvmVl2hbuY_Video_by_ju_seobang"
-      ]
-    },
-    {
-      "handle": "@ulanzi.vietnam",
-      "name": "Ulanzi Vietnam Official",
-      "profile_url": "https://www.instagram.com/ulanzi.vietnam/",
-      "video_count": 2,
-      "top_industry": "UGC",
-      "sample_thumb": "https://img.youtube.com/vi/adOF33KL6qk/hqdefault.jpg",
-      "video_ids": [
-        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
       ]
     },
     {
@@ -1619,6 +1620,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
+      "shortcode": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
+      "title_vi": "Ulanzi | Chân Đế Tự Sướng Có Từ Tính với Hỗ Trợ Camera Điện Thoại, Đa Năng và Di Động",
+      "quick_takeaway": "Mẫu video quảng cáo UGC sản phẩm Lazada áp dụng công thức AIDA: Thu hút chú ý, khơi gợi nhu cầu, kích thích mong muốn và kêu gọi hành động mua hàng.",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ugc",
+        "name": "UGC",
+        "en_name": "UGC & Ads",
+        "icon": "📱",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Quảng cáo thương mại điện tử Lazada UGC chuẩn công thức AIDA",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA"
+      ],
+      "transition_level": null,
+      "is_ad_bot": true,
+      "fedu_optimization": {},
+      "logic_explanation": "Video UGC bán hàng thực chiến tối ưu cho sàn Lazada bám sát công thức AIDA: Mở đầu trực quan, giải quyết nỗi đau khách hàng và kích thích chuyển đổi.",
+      "creator": {
+        "raw": "@ulanzi.vietnam",
+        "name": "Ulanzi Vietnam Official",
+        "handle": "@ulanzi.vietnam",
+        "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
+      },
+      "ig_url": "https://s.lazada.vn/s.obGd6?c=s",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://img.youtube.com/vi/ZUWZ5Uhbz28/hqdefault.jpg",
+        "thumb_key": "images/LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính__thumb.jpg",
+        "video_url": "https://www.youtube.com/embed/ZUWZ5Uhbz28",
+        "report_url": "",
+        "shots_count": 8,
+        "duration": "29.1s",
+        "youtube_id": "ZUWZ5Uhbz28",
+        "youtube_embed": "https://www.youtube.com/embed/ZUWZ5Uhbz28",
+        "youtube_url": "https://youtu.be/ZUWZ5Uhbz28"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Yegor.Sky_DaFDqk4CGB1_Video_by_yegor.sky",
       "shortcode": "DaFDqk4CGB1",
