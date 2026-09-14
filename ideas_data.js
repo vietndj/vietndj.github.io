@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 236,
-  "total_unique_ideas": 211,
-  "total_active_ideas": 179,
+  "total_scene_items": 237,
+  "total_unique_ideas": 212,
+  "total_active_ideas": 180,
   "total_excluded_ideas": 32,
   "total_creators": 120,
   "shooting_styles": [
@@ -60,7 +60,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "shooting_style_stats": {
-    "walk-and-talk": 3,
+    "walk-and-talk": 4,
     "voice-over": 9,
     "talking-head": 12,
     "storytelling": 24,
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 51,
+    "ky-thuat-quay": 52,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 88,
+    "us_eu": 89,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -391,6 +391,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@layton_video",
+      "name": "Layton",
+      "profile_url": "https://www.instagram.com/layton_video/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video",
+        "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds"
       ]
     },
     {
@@ -1044,17 +1056,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@layton_video",
-      "name": "Layton",
-      "profile_url": "https://www.instagram.com/layton_video/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds"
-      ]
-    },
-    {
       "handle": "@wowshoebwow",
       "name": "Wowshoebwow",
       "profile_url": "https://www.instagram.com/wowshoebwow/",
@@ -1606,6 +1607,74 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video",
+      "shortcode": "Dc9TAgjTmeR",
+      "title_vi": "Video by layton video",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 38 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Kỹ Thuật Quay Dựng • Day In The Life • Creator Gear • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "walk-and-talk",
+        "name": "Walk and Talk",
+        "en_name": "Walk and Talk",
+        "icon": "🚶",
+        "badge_color": "emerald"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "kỹ thuật quay dựng, walk and talk, day in the life, creator gear",
+      "tech_tags": [
+        "Kỹ Thuật Quay Dựng",
+        "Day In The Life",
+        "Creator Gear",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: kỹ thuật quay dựng, walk and talk, day in the life, creator gear. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Walk and Talk.",
+      "creator": {
+        "raw": "@LAYTON",
+        "name": "Layton",
+        "handle": "@layton_video",
+        "profile_url": "https://www.instagram.com/layton_video/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc9TAgjTmeR/",
+      "gdrive_folder": "https://drive.google.com/open?id=1RSCSSFrHoBBaGsrBsDEsAtr8b-YfcirM",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc9TAgjTmeR.mp4",
+        "report_url": "reports/IG_@LAYTON_Dc9TAgjTmeR_Video_by_layton_video.html",
+        "shots_count": 38,
+        "duration": "76s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency",
       "shortcode": "DatbbgJviTV",
