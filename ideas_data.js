@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 226,
-  "total_unique_ideas": 203,
-  "total_active_ideas": 171,
+  "total_scene_items": 227,
+  "total_unique_ideas": 204,
+  "total_active_ideas": 172,
   "total_excluded_ideas": 32,
-  "total_creators": 114,
+  "total_creators": 115,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -63,7 +63,7 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 3,
     "voice-over": 8,
     "talking-head": 12,
-    "storytelling": 19,
+    "storytelling": 20,
     "dien-anh": 93,
     "chuyen-canh": 36
   },
@@ -150,7 +150,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 4,
+    "spa-lam-dep": 5,
     "thuong-hieu": 18,
     "thoi-trang": 14,
     "am-thuc": 18,
@@ -216,7 +216,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 3,
+    "vietnam": 4,
     "asia_other": 46
   },
   "transition_stats": {
@@ -511,6 +511,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@hannya.tattoos",
+      "name": "Hannya Tattoos",
+      "profile_url": "https://www.instagram.com/hannya.tattoos/",
+      "video_count": 1,
+      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey"
       ]
     },
     {
@@ -1538,6 +1549,73 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey",
+      "shortcode": "DdLedJjsbNW",
+      "title_vi": "Asian Dragon Tattoo Journey • Hannya Tattoo Hà Nội",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, nghệ thuật xăm rồng Irezumi, ánh sáng và nhịp dựng 18 phân cảnh.",
+      "key_tech": "Irezumi Japanese Tattoo • Dragon & Katana • White Ink Highlights • Phố Cổ Hà Nội • Voice-Over Storytelling • ASMR Wipe",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "spa-lam-dep",
+        "name": "Làm Đẹp & Spa / Y Tế",
+        "en_name": "Beauty, Spa & Medical",
+        "icon": "💆",
+        "badge_color": "rose"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "red"
+      },
+      "purpose": "Showcase nghệ thuật xăm rồng Irezumi & Trải nghiệm văn hóa phố cổ Hà Nội",
+      "tech_tags": [
+        "Irezumi Japanese Tattoo",
+        "Dragon Katana",
+        "White Ink Highlights",
+        "Hanoi Old Quarter",
+        "Voice Over Storytelling",
+        "ASMR Wipe",
+        "Satisfying Reveal"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Kể chuyện bằng lời thoại mộc mạc kết hợp nhịp dựng 18 phân cảnh: từ nghi thức uống trà ban công phố cổ, trò chơi tương tác thả đồng xu đến quy trình xăm vô trùng 6 tiếng và thành phẩm rực rỡ.",
+      "creator": {
+        "raw": "@hannya.tattoos",
+        "name": "Hannya Tattoos",
+        "handle": "@hannya.tattoos",
+        "profile_url": "https://www.instagram.com/hannya.tattoos/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdLedJjsbNW/",
+      "gdrive_folder": "https://drive.google.com/open?id=1RIepbYRGh8Y4hiyQeXd8L4YOGxn0N9JR",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Asian%20Dragon%20Tattoo%20Journey%20-%20%40hannya.tattoos.mp4",
+        "report_url": "reports/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey.html",
+        "shots_count": 18,
+        "duration": "63.03s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions",
       "shortcode": "DdN_aljAIY0",
