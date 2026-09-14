@@ -150,11 +150,11 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "industry_stats": {
-    "spa-lam-dep": 5,
+    "spa-lam-dep": 4,
     "thuong-hieu": 18,
     "thoi-trang": 14,
     "am-thuc": 18,
-    "du-lich": 18,
+    "du-lich": 19,
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
@@ -518,7 +518,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Fabiana Solano",
       "profile_url": "https://www.instagram.com/fabianamsolano/",
       "video_count": 1,
-      "top_industry": "Làm Đẹp & Spa / Y Tế",
+      "top_industry": "Du Lịch & Văn Hóa",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut/shot_01_mid.jpg",
       "video_ids": [
         "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut"
@@ -1486,11 +1486,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "spa-lam-dep",
-        "name": "Làm Đẹp & Spa / Y Tế",
-        "en_name": "Beauty, Spa & Medical",
-        "icon": "💆",
-        "badge_color": "rose"
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
@@ -1499,14 +1499,26 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Video âm nhạc du khảo lip-sync Eminem tại Công viên Quốc gia Yosemite",
       "tech_tags": [
-        "Beat-Matched Cutting • Spatial Teleportation Jump-Cut • Classic 4:3 Retro Framing • Hero Landscape Contrast • Natural Framing • Kinetic Motion Flow • Iconic Outro"
+        "Beat-Matched Cutting",
+        "Spatial Teleportation Jump-Cut",
+        "Classic 4:3 Retro Framing",
+        "Hero Landscape Contrast",
+        "Natural Framing",
+        "Kinetic Motion Flow",
+        "Iconic Outro"
       ],
-      "transition_level": null,
+      "transition_level": "Nâng cao (Match-Cut & Jump-Cut theo beat)",
       "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "",
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Du Lịch & Dã Ngoại Outdoor • Kỹ Thuật Quay Dựng Nhịp Điệu Masterclass: Khai thác nhịp cắt beat trống, tỷ lệ khung hình 4:3 cổ điển và cú kết outro điểm tụ chiều sâu.",
+        "practice_focus": "Bài tập bắt nhịp âm nhạc dã ngoại: Đồng bộ chuyển động cơ thể với tiết tấu trống, chuyển đổi liên tục giữa toàn cảnh cực rộng (Extreme Wide) và cận góc thấp (Low-Angle Close-Up).",
+        "ig_seeding_hook": "Follow @fabianamsolano để học hỏi cách biến những chuyến leo núi dã ngoại thành video âm nhạc triệu view tràn đầy cảm hứng.",
+        "course_industry_mapping": "Du Lịch & Sáng Tạo Nội Dung Du Khảo",
+        "transition_level": "Nâng cao"
+      },
+      "logic_explanation": "Vũ điệu hip-hop lip-sync theo tiết tấu rap Eminem tại kỳ quan Yosemite, bẻ tỷ lệ đối lập giữa con người nhỏ bé và thiên nhiên Half Dome, Glacier Point, Yosemite Falls bằng nhịp cắt giật nảy chính xác từng phách trống.",
       "creator": {
         "raw": "@fabianamsolano (Fabiana Solano)",
         "name": "Fabiana Solano",
@@ -1522,9 +1534,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/Yosemite National Park Music Video - @fabianamsolano.html",
         "shots_count": 30,
         "duration": "37.34s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
