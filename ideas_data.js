@@ -2138,13 +2138,13 @@ var FEDU_IDEAS_DATABASE = {
       "fedu_optimization": {},
       "logic_explanation": "Kịch bản viral đa tầng: Đánh gục người xem ngay giây đầu bằng thành phẩm tô bún bò siêu nhỏ sắc nét đến từng sợi bún hạt vừng; giữ chân bằng chuỗi phân cảnh vi phẫu đi kim dặm màu ASMR cực khoái; neo đậu cảm xúc bằng cuộc phỏng vấn khách hàng khẳng định tình yêu quê hương xứ Huế và tuyên ngôn gây tranh luận ẩm thực ('ngon hơn Phở'); kết liễu bằng cú trượt macro bảo tàng ánh sáng sang trọng.",
       "creator": {
-        "raw": "@SAIGON_INK_TATTOO",
+        "raw": "@saigonink_studio",
         "name": "Saigon Ink Tattoo (Artist Nikko)",
         "handle": "@saigonink_studio",
         "profile_url": "https://www.instagram.com/saigonink_studio/"
       },
       "ig_url": "https://www.instagram.com/p/DdNq5CxszVl/?stkn=MWxrYTU5cWxta3R4dA==",
-      "gdrive_folder": "https://drive.google.com/open?id=1scE_7t5UKyyv9_EMIsA5EJFxURCrA5uE",
+      "gdrive_folder": "https://drive.google.com/open?id=1ni9bFJjwKeZu_K8kabcfeTb6_pqXalrc",
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_03_mid.jpg",
