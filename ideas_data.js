@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 232,
-  "total_unique_ideas": 208,
-  "total_active_ideas": 176,
+  "total_scene_items": 233,
+  "total_unique_ideas": 209,
+  "total_active_ideas": 177,
   "total_excluded_ideas": 32,
-  "total_creators": 118,
+  "total_creators": 119,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 9,
-    "talking-head": 12,
+    "talking-head": 13,
     "storytelling": 24,
     "dien-anh": 91,
     "chuyen-canh": 37
@@ -152,13 +152,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 18,
-    "thoi-trang": 15,
-    "am-thuc": 19,
+    "thoi-trang": 16,
+    "am-thuc": 18,
     "du-lich": 20,
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 48,
+    "ky-thuat-quay": 49,
     "ugc": 2
   },
   "countries": [
@@ -395,10 +395,10 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@turapinaanastasiia",
-      "name": "Turapinaanastasiia",
+      "name": "Анастасия Турапина (Anastasiia Turapina)",
       "profile_url": "https://www.instagram.com/turapinaanastasiia/",
       "video_count": 2,
-      "top_industry": "Ẩm Thực & F&B",
+      "top_industry": "Thời Trang & Phụ Kiện",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount/shot_01_mid.jpg",
       "video_ids": [
         "IG_@turapinaanastasiia_DdBorQ2KEli_How_I_Film_Alone_Cafe_UGC_Suction_Mount",
@@ -523,6 +523,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@kawoon.lee",
+      "name": "Karen_Lee",
+      "profile_url": "https://www.instagram.com/kawoon.lee/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee"
       ]
     },
     {
@@ -1584,6 +1595,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee",
+      "shortcode": "DatbbgJviTV",
+      "title_vi": "Video by kawoon.lee",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Karen_Lee",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@Karen_Lee",
+        "name": "Karen_Lee",
+        "handle": "@kawoon.lee",
+        "profile_url": "https://www.instagram.com/kawoon.lee/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==",
+      "gdrive_folder": "https://drive.google.com/open?id=1iZjPwe-E1yBVEnUWdN3kAMDnsmFAzXwQ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DatbbgJviTV.mp4",
+        "report_url": "reports/IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee.html",
+        "shots_count": 8,
+        "duration": "16s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@Victoria_Morse_DbESOapo-p3_Video_by_victoriamorse",
       "shortcode": "DbESOapo-p3",
       "title_vi": "Nghệ Thuật Kể Chuyện Voice-Over Độc Bản & Kịch Bản Dạng Nhật Ký • Victoria Morse",
@@ -1663,30 +1737,41 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "am-thuc",
-        "name": "Ẩm Thực & F&B",
-        "en_name": "Food & Beverage",
-        "icon": "🍜",
-        "badge_color": "amber"
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "russia",
+        "name": "Nga",
+        "en_name": "Russia",
+        "flag": "🇷🇺",
+        "badge_color": "blue"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Trình diễn quy trình tự quay video một mình ở quán cà phê bằng phụ kiện giá đỡ hút chân không MagSafe",
       "tech_tags": [
-        "Cinematic"
+        "UGC BTS vs Result Pair",
+        "Vacuum Suction Cup Mount",
+        "High-Angle Downward Window",
+        "Frame-in-Frame Camera Phone",
+        "Tabletop Mini Tripod Placement",
+        "1-Second Conversion Macro"
       ],
-      "transition_level": null,
+      "transition_level": "Cơ bản đến Trung cấp",
       "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "",
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Khóa Học UGC & Video Ngắn FEDU: Áp dụng cấu trúc nhịp đôi BTS-Result để học viên quay review đồ công nghệ, thời trang, phụ kiện du lịch.",
+        "practice_focus": "Thực hành bài tập quay B-roll 1 người tự quay tại quán cà phê: 1 góc toàn dạo bước, 1 góc lồng khung điện thoại, 1 góc selfie từ trên cao.",
+        "ig_seeding_hook": "Follow @turapinaanastasiia để học tư duy quay UGC tự nhiên, thẩm mỹ thanh lịch không gượng gạo.",
+        "course_industry_mapping": "UGC & Sáng Tạo Nội Dung Cá Nhân • Masterclass Video Ngắn",
+        "transition_level": "Trung cấp"
+      },
+      "logic_explanation": "Kỹ thuật bán hàng UGC qua giải quyết vấn đề (Problem-Solving UGC Workflow): Đánh trúng tâm lý e dè của người sáng tạo khi quay nơi công cộng, đưa ra giải pháp 'chân máy vô hình' hút chân không mini. Video sử dụng cấu trúc nhịp đôi mẫu mực [Setup Hậu Trường (BTS)] -> [Thành Phẩm Góc Quay (Result)] lặp lại qua 3 bối cảnh (hút kính ngang tầm ngực dạo bước, để bàn quay quầy bánh, hút kính trên cao chụp selfie), và kết thúc bằng cú cận cảnh 360 độ món đồ công nghệ cùng hành động thả gọn vào túi xách du lịch.",
       "creator": {
         "raw": "@turapinaanastasiia",
-        "name": "Turapinaanastasiia",
+        "name": "Анастасия Турапина (Anastasiia Turapina)",
         "handle": "@turapinaanastasiia",
         "profile_url": "https://www.instagram.com/turapinaanastasiia/"
       },
@@ -1699,9 +1784,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/How I Film Alone in a Cafe - UGC Suction Mount - @turapinaanastasiia.html",
         "shots_count": 13,
         "duration": "11.37s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2305,7 +2390,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbOMM0Pu1HA.mp4",
         "report_url": "reports/House of Hair One-Take Curly Runway - @hairpositiveofficial.html",
         "shots_count": 8,
-        "duration": "16s",
+        "duration": "13.08s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2378,7 +2463,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "videos/Yosemite National Park Music Video - @fabianamsolano.mp4",
         "report_url": "reports/Yosemite National Park Music Video - @fabianamsolano.html",
         "shots_count": 30,
-        "duration": "60s",
+        "duration": "37.34s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2447,7 +2532,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdNq5CxszVl.mp4",
         "report_url": "reports/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio.html",
         "shots_count": 14,
-        "duration": "28s",
+        "duration": "28.77s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2582,7 +2667,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdFBLQMOTwM.mp4",
         "report_url": "reports/The Ultimate Shanghai Coffee Guide - @jassminechi.html",
         "shots_count": 15,
-        "duration": "30s",
+        "duration": "12.57s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2714,7 +2799,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "./videos/5 Outfits Match Cut Walk - @naohasa.mp4",
         "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
         "shots_count": 5,
-        "duration": "10s",
+        "duration": "13.68s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -5363,7 +5448,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoPBXdDPro.mp4",
         "report_url": "reports/IG_@inbex.id_DcoPBXdDPro_Lighting_Tripod_Setup_Guide.html",
         "shots_count": 7,
-        "duration": "9.3s",
+        "duration": "9.30s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -5581,7 +5666,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20phone%20video%20ideas%20-%20%40valenti_k41.mp4",
         "report_url": "reports/Creative phone video ideas - @valenti_k41.html",
         "shots_count": 6,
-        "duration": "12s",
+        "duration": "6.28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -5800,7 +5885,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbJcoLdssK6.mp4",
         "report_url": "reports/IG_@nicorauchenwald_DbJcoLdssK6_99_Laps_Prep_Day_In_The_Life.html",
         "shots_count": 18,
-        "duration": "11.8s",
+        "duration": "11.80s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6018,7 +6103,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Getting%20Ready%20Faster%20Than%20Ever%20-%20%40jesussropero.mp4",
         "report_url": "reports/Getting Ready Faster Than Ever - @jesussropero.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "6.00s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6088,7 +6173,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbILcfyxZot.mp4",
         "report_url": "reports/IG_@layton_video_DbILcfyxZot_6_Shots_in_60_Seconds.html",
         "shots_count": 9,
-        "duration": "18s",
+        "duration": "74.44s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6158,7 +6243,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db_EEZtjJBI.mp4",
         "report_url": "reports/IG_@wowshoebwow_Db_EEZtjJBI_Moving_Postcards_London_Trafalgar.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "6.08s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6228,7 +6313,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db5TrGYlKbD.mp4",
         "report_url": "reports/IG_@gogosapu_Db5TrGYlKbD_Still_vs_Moving_Frame_Story.html",
         "shots_count": 3,
-        "duration": "6s",
+        "duration": "8.10s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6298,7 +6383,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcOUP2PsMsP.mp4",
         "report_url": "reports/IG_@neolumo.uralsk_DcOUP2PsMsP_Medical_Commercial_Authority.html",
         "shots_count": 16,
-        "duration": "32s",
+        "duration": "44.93s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6505,7 +6590,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJIT4DzPhj.mp4",
         "report_url": "reports/IG_@jackwebstter_DcJIT4DzPhj_Minimalist_Discipline_Chiaroscuro.html",
         "shots_count": 4,
-        "duration": "8s",
+        "duration": "9.00s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6857,7 +6942,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTbD0MR-V_.mp4",
         "report_url": "reports/IG_@brandon.dtd_DcTbD0MR-V__Discipline_Motivation_Obsession.html",
         "shots_count": 18,
-        "duration": "36s",
+        "duration": "21.90s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -7489,7 +7574,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc0tEcOIdwy.mp4",
         "report_url": "reports/4 Cuts Mastery - @mridupawasharma.html",
         "shots_count": 24,
-        "duration": "48s",
+        "duration": "48.67s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
