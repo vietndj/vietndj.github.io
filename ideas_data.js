@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 233,
-  "total_unique_ideas": 209,
-  "total_active_ideas": 177,
+  "total_scene_items": 234,
+  "total_unique_ideas": 210,
+  "total_active_ideas": 178,
   "total_excluded_ideas": 32,
-  "total_creators": 119,
+  "total_creators": 120,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 13,
     "storytelling": 24,
     "dien-anh": 91,
-    "chuyen-canh": 37
+    "chuyen-canh": 38
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 49,
+    "ky-thuat-quay": 50,
     "ugc": 2
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 87,
+    "us_eu": 88,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -523,6 +523,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@mercantegi",
+      "name": "Giovanna_Mercante_Criadora_Estratégica",
+      "profile_url": "https://www.instagram.com/mercantegi/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi"
       ]
     },
     {
@@ -1594,6 +1605,68 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi",
+      "shortcode": "DbQtoVPRMWk",
+      "title_vi": "@Giovanna_Mercante_Criadora_estratégica - Video by mercantegi",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 11 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Giovanna_Mercante_Criadora_estratégica",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "creator": {
+        "raw": "@Giovanna_Mercante_Criadora_estratégica",
+        "name": "Giovanna_Mercante_Criadora_Estratégica",
+        "handle": "@mercantegi",
+        "profile_url": "https://www.instagram.com/mercantegi/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbQtoVPRMWk/?stkn=MXZ6b251NGRoeG1sOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1rwzCK46stbs5UxmbYPSSIjQQU3QQ2p4_",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbQtoVPRMWk.mp4",
+        "report_url": "reports/IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi.html",
+        "shots_count": 11,
+        "duration": "22s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Karen_Lee_DatbbgJviTV_Video_by_kawoon.lee",
       "shortcode": "DatbbgJviTV",
