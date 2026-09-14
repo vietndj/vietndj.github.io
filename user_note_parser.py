@@ -83,7 +83,7 @@ INDUSTRIES = [
         "keywords": [
             "kiến trúc", "kien truc", "không gian sống", "khong gian song", "không gian", "khong gian",
             "nhà đẹp", "nha dep", "nội thất", "noi that", "thiết kế nội thất", "nhà gỗ", "nha go",
-            "villa", "decor", "căn hộ", "can ho", "slow living", "thiết kế nhà", "architecture", "interior"
+            "villa", "decor", "căn hộ", "can ho", "thiết kế nhà", "architecture", "interior"
         ]
     },
     {
@@ -174,6 +174,45 @@ SHOOTING_STYLES = [
     }
 ]
 
+# 3. Danh mục từ khóa chi tiết (Sub-keywords) tự động trích xuất thành Tags
+SUB_KEYWORDS = {
+    "spa-lam-dep": [
+        "trị mụn", "nặn mụn", "chăm sóc da", "lăn kim", "laser", "da liễu", "skincare",
+        "gội đầu dưỡng sinh", "nha khoa", "răng", "răng sứ", "filler", "botox", "before after", "trẻ hóa", "tế bào gốc"
+    ],
+    "thoi-trang": [
+        "outfit", "lookbook", "phối đồ", "streetwear", "váy vóc", "túi xách", "giày", "sneaker", "dạo phố", "thời trang thu đông", "thời trang hè"
+    ],
+    "am-thuc": [
+        "cafe", "cà phê", "quán cafe", "quán ăn", "nhà hàng", "nấu ăn", "nấu nướng", "bếp củi",
+        "asmr", "pha chế", "món ngon", "street food", "ẩm thực đường phố", "cafe trứng"
+    ],
+    "du-lich": [
+        "phong cảnh", "phượt", "khám phá", "nghỉ dưỡng", "resort", "khách sạn", "đà lạt", "tây bắc", "phố cổ", "checkin", "du lịch trải nghiệm"
+    ],
+    "cong-nghe": [
+        "unboxing", "mở hộp", "máy ảnh", "camera", "gear", "gimbal", "iphone", "lens", "ống kính", "setup bàn làm việc", "đèn", "ulanzi", "sony"
+    ],
+    "kien-truc": [
+        "không gian", "nội thất", "nhà đẹp", "nhà gỗ", "villa", "decor", "căn hộ", "slow living", "minimal", "rustic", "nhà phố"
+    ],
+    "the-thao": [
+        "gym", "chạy bộ", "running", "thể hình", "workout", "fitness", "bơi lội", "bóng rổ", "yoga", "pilates", "thể thao ngoài trời"
+    ],
+    "thuong-hieu": [
+        "xây kênh", "solo creator", "bán khóa học", "coaching", "tư duy", "kinh doanh", "chia sẻ bài học", "phát triển bản thân"
+    ],
+    "ky-thuat-quay": [
+        "4 cuts", "góc máy", "cú máy", "lighting", "bố cục", "match cut", "whip pan", "slow motion", "speed ramp", "cinematic visual"
+    ],
+    "ugc": [
+        "quảng cáo", "review", "shopee", "tiktok shop", "aida", "affiliate", "review chân thực", "đập hộp review"
+    ]
+}
+
+INDUSTRY_MAP = {ind["id"]: ind for ind in INDUSTRIES}
+STYLE_MAP = {st["id"]: st for st in SHOOTING_STYLES}
+
 def clean_tag(raw: str) -> str:
     """Làm sạch và chuẩn hóa tag"""
     t = re.sub(r"^[#•\-\*\s]+", "", raw)
@@ -201,6 +240,7 @@ def parse_user_note(raw_text: str) -> dict:
     """
     Phân tích ghi chú từ người dùng (text hoặc caption).
     Trả về dict gồm:
+    - raw_note: Chuỗi gốc
     - matched_industry: Dict ngành nghề hoặc None
     - matched_style: Dict kiểu quay hoặc None
     - user_tags: Danh sách các tag người dùng chỉ định
@@ -216,78 +256,165 @@ def parse_user_note(raw_text: str) -> dict:
         }
 
     text = raw_text.strip()
+    extracted_tags = []
     
     # 1. Bóc tách hashtag trước
     hashtags = re.findall(r"#([A-Za-z0-9_À-ỹ]+)", text)
-    extracted_tags = [clean_tag(h.replace("_", " ")) for h in hashtags if clean_tag(h)]
+    extracted_tags.extend([clean_tag(h.replace("_", " ")) for h in hashtags if clean_tag(h)])
 
-    # 2. Bóc tách đoạn sau từ khóa tag / tags / thẻ
-    tag_patterns = [
-        r'(?:tags?|thẻ|gắn tag|gán tag|tag là|thẻ là)[\s:]+([^;\r\n\.]+)',
-    ]
-    for pattern in tag_patterns:
-        m = re.search(pattern, text, re.IGNORECASE)
-        if m:
-            raw_tag_str = m.group(1)
-            # Tách riêng hashtag nếu có trong chuỗi tag
-            if '#' in raw_tag_str:
-                sub_hash = re.findall(r'#([A-Za-z0-9_À-ỹ]+)', raw_tag_str)
-                for sh in sub_hash:
-                    c_sh = clean_tag(sh.replace('_', ' '))
-                    if c_sh and c_sh.lower() not in [x.lower() for x in extracted_tags]:
-                        extracted_tags.append(c_sh)
-                raw_tag_str = re.sub(r'#[A-Za-z0-9_À-ỹ]+', '', raw_tag_str)
+    # 2. Bóc tách các mệnh đề chỉ định rõ ràng: mục / ngành / kiểu / tag
+    explicit_ind_str = ""
+    m_ind = re.search(r'(?:mục|ngành|chủ đề|thể loại|cho vào mục|cho vào)[\s:]+([^;\r\n\.]*?)(?=(?:\s+(?:tags?|thẻ|kiểu|style)[\s:]|$))', text, re.IGNORECASE)
+    if m_ind:
+        explicit_ind_str = m_ind.group(1).strip()
+        
+    explicit_style_str = ""
+    m_sty = re.search(r'(?:kiểu|style|kiểu quay|thể loại quay)[\s:]+([^;\r\n\.]*?)(?=(?:\s+(?:tags?|thẻ|mục|ngành|chủ đề)[\s:]|$))', text, re.IGNORECASE)
+    if m_sty:
+        explicit_style_str = m_sty.group(1).strip()
 
-            parts = re.split(r'[,;/•]+', raw_tag_str)
-            for p in parts:
-                cleaned = clean_tag(p)
-                if cleaned and cleaned.lower() not in [x.lower() for x in extracted_tags] and len(cleaned) > 1:
-                    extracted_tags.append(cleaned)
+    m_tag = re.search(r'(?:tags?|thẻ|gắn tag|gán tag|tag là|thẻ là)[\s:]+([^;\r\n\.]*?)(?=(?:\s+(?:mục|ngành|chủ đề|kiểu|style|thể loại)[\s:]|$))', text, re.IGNORECASE)
+    if m_tag:
+        raw_tag_str = m_tag.group(1)
+        # Tách riêng hashtag nếu có trong chuỗi tag
+        if '#' in raw_tag_str:
+            sub_hash = re.findall(r'#([A-Za-z0-9_À-ỹ]+)', raw_tag_str)
+            for sh in sub_hash:
+                c_sh = clean_tag(sh.replace('_', ' '))
+                if c_sh and c_sh.lower() not in [x.lower() for x in extracted_tags]:
+                    extracted_tags.append(c_sh)
+            raw_tag_str = re.sub(r'#[A-Za-z0-9_À-ỹ]+', '', raw_tag_str)
 
-    # 3. Nhận diện ngành nghề
+        parts = re.split(r'[,;/•]+', raw_tag_str)
+        for p in parts:
+            cleaned = clean_tag(p)
+            if cleaned and cleaned.lower() not in [x.lower() for x in extracted_tags] and len(cleaned) > 1:
+                extracted_tags.append(cleaned)
+
+    # 3. Nhận diện ngành nghề (Ưu tiên mệnh đề chỉ định rõ trước)
     norm_text = normalize_for_search(text)
     matched_industry = None
-    best_ind_len = 0
+    best_ind_score = 0
 
-    for ind in INDUSTRIES:
-        for kw in ind["keywords"]:
-            search_target = f" {kw.lower()} "
-            if search_target in norm_text:
-                if len(kw) > best_ind_len:
-                    best_ind_len = len(kw)
+    if explicit_ind_str:
+        norm_exp = normalize_for_search(explicit_ind_str)
+        for ind in INDUSTRIES:
+            for kw in ind["keywords"]:
+                if f" {kw.lower()} " in norm_exp:
                     matched_industry = {
                         "id": ind["id"],
                         "name": ind["name"],
                         "icon": ind["icon"]
                     }
+                    best_ind_score = 1000 + len(kw)
+                    break
+            if matched_industry:
+                break
 
-    # 4. Nhận diện kiểu quay
+    if not matched_industry:
+        for ind in INDUSTRIES:
+            for kw in ind["keywords"]:
+                search_target = f" {kw.lower()} "
+                if search_target in norm_text:
+                    score = len(kw)
+                    if score > best_ind_score:
+                        best_ind_score = score
+                        matched_industry = {
+                            "id": ind["id"],
+                            "name": ind["name"],
+                            "icon": ind["icon"]
+                        }
+
+    # 4. Nhận diện kiểu quay (Ưu tiên mệnh đề chỉ định rõ trước)
     matched_style = None
-    best_style_len = 0
-    for st in SHOOTING_STYLES:
-        for kw in st["keywords"]:
-            search_target = f" {kw.lower()} "
-            if search_target in norm_text:
-                if len(kw) > best_style_len:
-                    best_style_len = len(kw)
+    best_style_score = 0
+
+    if explicit_style_str:
+        norm_exp = normalize_for_search(explicit_style_str)
+        for st in SHOOTING_STYLES:
+            for kw in st["keywords"]:
+                if f" {kw.lower()} " in norm_exp:
                     matched_style = {
                         "id": st["id"],
                         "name": st["name"],
                         "icon": st["icon"]
                     }
+                    best_style_score = 1000 + len(kw)
+                    break
+            if matched_style:
+                break
 
-    # 5. Nếu chưa có tags nhưng có các cụm từ phân cách bởi dấu phẩy
-    if not extracted_tags and "," in text:
-        parts = text.split(",")
-        for p in parts[1:]:
-            c = clean_tag(p)
-            if c and len(c) < 35 and not any(kw in c.lower() for kw in ["mục", "ngành", "cho vào", "kiểu"]):
-                extracted_tags.append(c)
+    if not matched_style:
+        for st in SHOOTING_STYLES:
+            for kw in st["keywords"]:
+                search_target = f" {kw.lower()} "
+                if search_target in norm_text:
+                    score = len(kw)
+                    if score > best_style_score:
+                        best_style_score = score
+                        matched_style = {
+                            "id": st["id"],
+                            "name": st["name"],
+                            "icon": st["icon"]
+                        }
 
-    # 6. Làm sạch trùng lặp
+    # 5. Bóc tách các cụm từ cách nhau bởi dấu phẩy / gạch đầu dòng (Chunk extraction)
+    text_for_chunks = re.sub(r'https?://[^\s]+', '', text)
+    text_for_chunks = re.sub(r'#([A-Za-z0-9_À-ỹ]+)', '', text_for_chunks)
+    if m_ind:
+        text_for_chunks = text_for_chunks.replace(m_ind.group(0), '')
+    if m_sty:
+        text_for_chunks = text_for_chunks.replace(m_sty.group(0), '')
+    if m_tag:
+        text_for_chunks = text_for_chunks.replace(m_tag.group(0), '')
+
+    chunks = re.split(r'[,;•\n]+', text_for_chunks)
+    for ch in chunks:
+        c = clean_tag(ch)
+        if not c or len(c) < 2 or len(c) > 35:
+            continue
+        c_low = c.lower()
+        if any(c_low.startswith(pfx) for pfx in ['mục:', 'mục ', 'ngành:', 'ngành ', 'kiểu:', 'kiểu quay:', 'tag:', 'thẻ:']):
+            continue
+        # Bỏ nếu trùng với tên ngành nghề hoặc từ khóa nhận diện ngành nghề
+        if matched_industry:
+            ind_info = INDUSTRY_MAP.get(matched_industry["id"], {})
+            ind_kws = [k.lower() for k in ind_info.get("keywords", [])]
+            if c_low == matched_industry['name'].lower() or c_low in ind_kws:
+                continue
+        # Bỏ nếu trùng với tên kiểu quay hoặc từ khóa nhận diện kiểu quay
+        if matched_style:
+            sty_info = STYLE_MAP.get(matched_style["id"], {})
+            sty_kws = [k.lower() for k in sty_info.get("keywords", [])]
+            if c_low == matched_style['name'].lower() or c_low in sty_kws:
+                continue
+        if c_low not in [x.lower() for x in extracted_tags]:
+            extracted_tags.append(c)
+
+    # 6. Tự động nhận diện Sub-Keywords (chỉ thêm nếu chưa được bao hàm trong tag dài hơn)
+    for cat_id, kws in SUB_KEYWORDS.items():
+        for sk in kws:
+            search_sk = f" {sk.lower()} "
+            if search_sk in norm_text:
+                c_sk = clean_tag(sk)
+                sk_low = c_sk.lower()
+                # Bỏ nếu trùng tên ngành hoặc kiểu quay
+                if matched_industry:
+                    ind_info = INDUSTRY_MAP.get(matched_industry["id"], {})
+                    if sk_low == matched_industry['name'].lower() or sk_low in [k.lower() for k in ind_info.get("keywords", [])]:
+                        continue
+                if matched_style:
+                    sty_info = STYLE_MAP.get(matched_style["id"], {})
+                    if sk_low == matched_style['name'].lower() or sk_low in [k.lower() for k in sty_info.get("keywords", [])]:
+                        continue
+                # Bỏ nếu tag này đã nằm gọn trong một tag dài hơn đã bóc tách
+                already_covered = any(sk_low in t.lower() for t in extracted_tags)
+                if not already_covered:
+                    extracted_tags.append(c_sk)
+
+    # 7. Làm sạch và chuẩn hóa danh sách tag cuối cùng
     final_tags = []
     for t in extracted_tags:
-        # Bỏ các tag quá dài hoặc trùng với tên mục đã chọn
         if t and t.lower() not in [x.lower() for x in final_tags]:
             final_tags.append(t)
 
