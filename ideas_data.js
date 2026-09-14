@@ -152,13 +152,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 18,
-    "thoi-trang": 14,
+    "thoi-trang": 15,
     "am-thuc": 18,
     "du-lich": 20,
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 48,
+    "ky-thuat-quay": 47,
     "ugc": 2
   },
   "countries": [
@@ -526,13 +526,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@vicgaibar",
-      "name": "Vic_Gaibar",
+      "name": "Vic Gaibar",
       "profile_url": "https://www.instagram.com/vicgaibar/",
       "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_01_mid.jpg",
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar"
+        "IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD"
       ]
     },
     {
@@ -1635,11 +1635,11 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar",
+      "id": "IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD",
       "shortcode": "DaGGMTdtawm",
-      "title_vi": "Video by vicgaibar",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Săm • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "title_vi": "Cannes Street Fit Check • Nghệ Thuật Tự Quay OOTD Điện Ảnh Chỉ Với 1 Chiếc Tripod & iPhone",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu 18 phân cảnh lookbook thời trang của @vicgaibar tại Cannes: Giải phẫu kỹ thuật tự quay 2 nhịp BTS Setup ➔ Result Cinema Lookbook, bố cục đối xứng kiến trúc Địa Trung Hải, căn góc qua màn hình iPhone và chuyển...",
+      "key_tech": "BTS to Cinema Result Structure • Self-Shooting Tripod Mastery • Phone-in-Scene Framing • Widescreen 2.39:1 Letterbox • Street Catwalk Pacing • Pastel Palette Color Grading • Infinite Loop Walk-Past",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -1648,11 +1648,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
         "id": "us_eu",
@@ -1661,40 +1661,47 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "săm",
+      "purpose": "Nghệ thuật tự quay OOTD thời trang điện ảnh bằng tripod và điện thoại",
       "tech_tags": [
-        "Săm",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "BTS to Cinema Result",
+        "Self-Shooting Tripod Mastery",
+        "Phone-in-Scene Framing",
+        "Widescreen 2.39:1 Letterbox",
+        "Pastel Palette Color Grading",
+        "Tactile Texture Extreme Close-Up"
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: săm. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Điện Ảnh (Cinematic).",
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Thời Trang & Phụ Kiện: Công thức tự quay OOTD 2 nhịp BTS Setup ➔ Cinema Result bằng tripod và iPhone",
+        "practice_focus": "Bài tập tự quay ngoài trời: Căn góc ngang tầm mắt trước kiến trúc đối xứng, kiểm tra khung hình qua màn hình và chuyển cảnh dồn dập vào chi tiết sản phẩm.",
+        "ig_seeding_hook": "Follow @vicgaibar để học cách tự quay Lookbook thời trang ngoài trời chuẩn phong cách châu Âu chỉ với 1 chân máy mini.",
+        "course_industry_mapping": "Thời Trang & Phụ Kiện • Kỹ Thuật Tự Quay OOTD Masterclass",
+        "transition_level": null
+      },
+      "logic_explanation": "Video Lookbook thời trang tại Cannes kết hợp 2 nhịp: Hậu trường chuẩn bị máy móc dạo phố cổ chuyển mượt sang thành phẩm Widescreen điện ảnh 18 phân cảnh.",
       "creator": {
-        "raw": "@Vic_Gaibar",
-        "name": "Vic_Gaibar",
+        "raw": "@vicgaibar",
+        "name": "Vic Gaibar",
         "handle": "@vicgaibar",
         "profile_url": "https://www.instagram.com/vicgaibar/"
       },
       "ig_url": "https://www.instagram.com/reel/DaGGMTdtawm/?stkn=Mm9kMzh4MG1ybzNx",
-      "gdrive_folder": "https://drive.google.com/open?id=1wkNlq6Ic5FwUmBx-1I1J10lwVNsCXPCJ",
+      "gdrive_folder": "https://drive.google.com/open?id=145DqOK7p01WVztGU3ZUhvoxc_JivIain",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@vicgaibar_DaGGMTdtawm_Cannes_Street_Fit_Check_Tripod_OOTD/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaGGMTdtawm.mp4",
-        "report_url": "reports/IG_@Vic_Gaibar_DaGGMTdtawm_Video_by_vicgaibar.html",
-        "shots_count": 8,
-        "duration": "16s",
+        "report_url": "reports/Cannes Street Fit Check - @vicgaibar.html",
+        "shots_count": 18,
+        "duration": "27.20s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
       },
       "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
