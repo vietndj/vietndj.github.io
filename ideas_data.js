@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 234,
-  "total_unique_ideas": 210,
-  "total_active_ideas": 178,
+  "total_scene_items": 235,
+  "total_unique_ideas": 211,
+  "total_active_ideas": 179,
   "total_excluded_ideas": 32,
   "total_creators": 120,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 9,
     "talking-head": 13,
     "storytelling": 24,
-    "dien-anh": 91,
+    "dien-anh": 92,
     "chuyen-canh": 38
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 21,
     "kien-truc": 19,
     "the-thao": 9,
-    "ky-thuat-quay": 50,
+    "ky-thuat-quay": 51,
     "ugc": 2
   },
   "countries": [
@@ -394,6 +394,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@mercantegi",
+      "name": "Giovanna Mercante",
+      "profile_url": "https://www.instagram.com/mercantegi/",
+      "video_count": 2,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho",
+        "IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi"
+      ]
+    },
+    {
       "handle": "@turapinaanastasiia",
       "name": "Анастасия Турапина (Anastasiia Turapina)",
       "profile_url": "https://www.instagram.com/turapinaanastasiia/",
@@ -523,17 +535,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
-      ]
-    },
-    {
-      "handle": "@mercantegi",
-      "name": "Giovanna_Mercante_Criadora_Estratégica",
-      "profile_url": "https://www.instagram.com/mercantegi/",
-      "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi"
       ]
     },
     {
@@ -1605,6 +1606,80 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho",
+      "shortcode": "DbQtoVPRMWk_",
+      "title_vi": "5 Cenas Criativas Trabalho • Nghệ Thuật Tự Quay B-Roll & Góc Làm Việc Chỉ Bằng Điện Thoại",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "latin_brazil",
+        "name": "Brazil",
+        "en_name": "Brazil",
+        "flag": "🇧🇷",
+        "badge_color": "green"
+      },
+      "purpose": "Bóc tách 5 mẹo tự quay B-roll góc làm việc bằng điện thoại không cần thợ quay",
+      "tech_tags": [
+        "BTS to Result Formula",
+        "Self-Shooting Desk Hacks",
+        "Low-Angle Keyboard Macro",
+        "Top-Down Laptop Screen Clamp",
+        "Eye Reflection Macro Catchlight",
+        "Phone-in-Scene Frontal Setup",
+        "MagSafe Ecosystem Mount",
+        "Kinetic Outro CTA"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Sáng Tạo Nội Dung • Kỹ Thuật Tự Quay UGC Masterclass: Cặp đôi BTS Setup chuyển sang Result Angle.",
+        "practice_focus": "Bài tập thực hành: Tự quay 1 video B-roll 15s tại bàn làm việc áp dụng đúng 5 góc máy của @mercantegi.",
+        "ig_seeding_hook": "Follow @mercantegi để học thêm nhiều góc quay B-roll sáng tạo chỉ bằng điện thoại.",
+        "course_industry_mapping": "Sáng Tạo Nội Dung • Kỹ Thuật Tự Quay B-Roll Điện Thoại",
+        "transition_level": null
+      },
+      "logic_explanation": "Cấu trúc cặp đôi chặt chẽ: mỗi shot hậu trường chỉ ra vật dụng tựa máy đời thường (bình nước, nắp máy, tượng decor) nối ngay sang shot thành phẩm ấn tượng, kết bằng nụ cười selfie hài hước kích thích bình luận.",
+      "creator": {
+        "raw": "@mercantegi",
+        "name": "Giovanna Mercante",
+        "handle": "@mercantegi",
+        "profile_url": "https://www.instagram.com/mercantegi/"
+      },
+      "ig_url": "https://www.instagram.com/mercantegi/",
+      "gdrive_folder": "https://drive.google.com/open?id=19USS6XpFGWQSJzEzK6ZsT-g4aoCa7QSJ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbQtoVPRMWk.mp4",
+        "report_url": "reports/5 Cenas Criativas Trabalho - @mercantegi.html",
+        "shots_count": 11,
+        "duration": "19.17s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Giovanna_Mercante_Criadora_estratégica_DbQtoVPRMWk_Video_by_mercantegi",
       "shortcode": "DbQtoVPRMWk",
