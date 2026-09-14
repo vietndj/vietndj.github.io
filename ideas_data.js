@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 240,
-  "total_unique_ideas": 215,
-  "total_active_ideas": 183,
+  "total_scene_items": 241,
+  "total_unique_ideas": 216,
+  "total_active_ideas": 184,
   "total_excluded_ideas": 32,
   "total_creators": 121,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 9,
     "talking-head": 12,
     "storytelling": 24,
-    "dien-anh": 94,
+    "dien-anh": 95,
     "chuyen-canh": 39
   },
   "industries": [
@@ -159,7 +159,7 @@ var FEDU_IDEAS_DATABASE = {
     "kien-truc": 20,
     "the-thao": 9,
     "ky-thuat-quay": 53,
-    "ugc": 3
+    "ugc": 4
   },
   "countries": [
     {
@@ -216,13 +216,13 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 4,
+    "vietnam": 5,
     "asia_other": 46
   },
   "transition_stats": {
     "level_1_count": 12,
     "level_2_count": 18,
-    "ad_bot_count": 3
+    "ad_bot_count": 4
   },
   "creators_hub": [
     {
@@ -303,6 +303,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi.vietnam",
+      "name": "Ulanzi Vietnam Official",
+      "profile_url": "https://www.instagram.com/ulanzi.vietnam/",
+      "video_count": 4,
+      "top_industry": "UGC",
+      "sample_thumb": "https://img.youtube.com/vi/L4YUJh9ltF0/hqdefault.jpg",
+      "video_ids": [
+        "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
+        "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
+        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
+        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
+      ]
+    },
+    {
       "handle": "@jeromememe",
       "name": "Jerome Teo",
       "profile_url": "https://www.instagram.com/jeromememe/",
@@ -314,19 +328,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
-      ]
-    },
-    {
-      "handle": "@ulanzi.vietnam",
-      "name": "Ulanzi Vietnam Official",
-      "profile_url": "https://www.instagram.com/ulanzi.vietnam/",
-      "video_count": 3,
-      "top_industry": "UGC",
-      "sample_thumb": "https://img.youtube.com/vi/ZUWZ5Uhbz28/hqdefault.jpg",
-      "video_ids": [
-        "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
-        "LAZADA_Ulanzi_UA20_Đèn_LED_Thanh_Bơm_Hơi_20W_Bi",
-        "SHOPEE_ULANZI_MT80_Chân_Máy_Tripod_Cao_213cm_Tả"
       ]
     },
     {
@@ -1620,6 +1621,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
+      "shortcode": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
+      "title_vi": "Ulanzi | Đèn LED Thanh Bơm Hơi UA20, 20W Bi-Color, Tích Hợp Pin",
+      "quick_takeaway": "Mẫu video quảng cáo UGC sản phẩm Lazada áp dụng công thức AIDA: Thu hút chú ý, khơi gợi nhu cầu, kích thích mong muốn và kêu gọi hành động mua hàng.",
+      "key_tech": "UGC, Quảng cáo, AIDA",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ugc",
+        "name": "UGC",
+        "en_name": "UGC & Ads",
+        "icon": "📱",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "vietnam",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "emerald"
+      },
+      "purpose": "Quảng cáo thương mại điện tử Lazada UGC chuẩn công thức AIDA",
+      "tech_tags": [
+        "UGC",
+        "Quảng cáo",
+        "AIDA"
+      ],
+      "transition_level": null,
+      "is_ad_bot": true,
+      "fedu_optimization": {},
+      "logic_explanation": "Video UGC bán hàng thực chiến tối ưu cho sàn Lazada bám sát công thức AIDA: Mở đầu trực quan, giải quyết nỗi đau khách hàng và kích thích chuyển đổi.",
+      "creator": {
+        "raw": "@ulanzi.vietnam",
+        "name": "Ulanzi Vietnam Official",
+        "handle": "@ulanzi.vietnam",
+        "profile_url": "https://www.instagram.com/ulanzi.vietnam/"
+      },
+      "ig_url": "https://www.lazada.vn/products/pdp-i13344148344-s116633631361.html?c=&channelLpJumpArgs=&clickTrackInfo=query%253Aulanzi%252Bua20%253Bnid%253A13344148344%253Bsrc%253ALazadaMainSrp%253Brn%253A3805aba107017d1fa391a06bedb3781a%253Bregion%253Avn%253Bsku%253A13344148344_VNAMZ%253Bprice%253A1242000%253Bclient%253Adesktop%253Bsupplier_id%253A201110528696%253Bsession_id%253A%253Bbiz_source%253Ah5_internal%253Bslot%253A1%253Butlog_bucket_id%253A470687%253Basc_category_id%253A11068%253Bitem_id%253A13344148344%253Bsku_id%253A116633631361%253Bshop_id%253A5088557%253BtemplateInfo%253A107883_E%2523-1_A3_C%2523164594_J%2523&freeshipping=1&fs_ab=2&fuse_fs=&lang=vi&location=China&price=1.242E%206&priceCompare=skuId%3A116633631361%3Bsource%3Alazada-search-voucher%3Bsn%3A3805aba107017d1fa391a06bedb3781a%3BoriginPrice%3A1242000%3BdisplayPrice%3A1242000%3BisGray%3Afalse%3BsinglePromotionId%3A460000000000000%3BsingleToolCode%3ApromPrice%3BvoucherPricePlugin%3A0%3Btimestamp%3A1789368392145&ratingscore=4.875&request_id=3805aba107017d1fa391a06bedb3781a&review=16&sale=32&search=1&source=search&spm=a2o4n.searchlist.list.1&stock=1",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://img.youtube.com/vi/L4YUJh9ltF0/hqdefault.jpg",
+        "thumb_key": "images/LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,__thumb.jpg",
+        "video_url": "https://www.youtube.com/embed/L4YUJh9ltF0",
+        "report_url": "",
+        "shots_count": 8,
+        "duration": "42.7s",
+        "youtube_id": "L4YUJh9ltF0",
+        "youtube_embed": "https://www.youtube.com/embed/L4YUJh9ltF0",
+        "youtube_url": "https://youtu.be/L4YUJh9ltF0"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
       "shortcode": "LAZADA_Ulanzi_Chân_Đế_Tự_Sướng_Có_Từ_Tính_",
