@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 241,
-  "total_unique_ideas": 216,
-  "total_active_ideas": 184,
+  "total_scene_items": 242,
+  "total_unique_ideas": 217,
+  "total_active_ideas": 185,
   "total_excluded_ideas": 32,
-  "total_creators": 121,
+  "total_creators": 122,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 5,
     "voice-over": 9,
-    "talking-head": 12,
+    "talking-head": 13,
     "storytelling": 24,
     "dien-anh": 95,
     "chuyen-canh": 39
@@ -152,7 +152,7 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 18,
-    "thoi-trang": 16,
+    "thoi-trang": 17,
     "am-thuc": 18,
     "du-lich": 20,
     "cong-nghe": 21,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 91,
+    "us_eu": 92,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -550,6 +550,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@sg.genchan",
+      "name": "Genya",
+      "profile_url": "https://www.instagram.com/sg.genchan/",
+      "video_count": 1,
+      "top_industry": "Thời Trang & Phụ Kiện",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan"
       ]
     },
     {
@@ -1621,6 +1632,72 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan",
+      "shortcode": "Dc5uepPBXKq",
+      "title_vi": "Video by sg.genchan",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Thoi-trang • Outfit Check • Black Setup • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "thoi-trang, outfit check, black setup",
+      "tech_tags": [
+        "Thoi-trang",
+        "Outfit Check",
+        "Black Setup",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: thoi-trang, outfit check, black setup. Phân loại vào Thời Trang & Phụ Kiện • Talking Head.",
+      "creator": {
+        "raw": "@Genya",
+        "name": "Genya",
+        "handle": "@sg.genchan",
+        "profile_url": "https://www.instagram.com/sg.genchan/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc5uepPBXKq/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1II_Hobp2GjZTd1MUaDRCHaRGKAq86H_r",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc5uepPBXKq.mp4",
+        "report_url": "reports/IG_@Genya_Dc5uepPBXKq_Video_by_sg.genchan.html",
+        "shots_count": 6,
+        "duration": "12s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
       "shortcode": "LAZADA_Ulanzi_Đèn_LED_Thanh_Bơm_Hơi_UA20,_",
