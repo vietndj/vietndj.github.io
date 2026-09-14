@@ -63,8 +63,8 @@ var FEDU_IDEAS_DATABASE = {
     "walk-and-talk": 3,
     "voice-over": 8,
     "talking-head": 12,
-    "storytelling": 20,
-    "dien-anh": 93,
+    "storytelling": 24,
+    "dien-anh": 89,
     "chuyen-canh": 36
   },
   "industries": [
@@ -216,7 +216,7 @@ var FEDU_IDEAS_DATABASE = {
     "korea": 11,
     "india": 6,
     "japan": 10,
-    "vietnam": 4,
+    "vietnam": 3,
     "asia_other": 46
   },
   "transition_stats": {
@@ -603,7 +603,7 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@saigonink_studio",
-      "name": "Saigon_Ink_Tattoo",
+      "name": "Saigon Ink Tattoo (Artist Nikko)",
       "profile_url": "https://www.instagram.com/saigonink_studio/",
       "video_count": 1,
       "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
@@ -2097,15 +2097,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio",
       "shortcode": "DdNq5CxszVl",
-      "title_vi": "Video by saigonink studio",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "title_vi": "Nghệ Thuật Xăm Mini Tô Bún Bò Huế Thực Tế - Saigon Ink Tattoo (Artist Nikko)",
+      "quick_takeaway": "Bóc tách 14 phân cảnh chuẩn đạo diễn video nghệ thuật xăm mini siêu thực tô Bún Bò Huế trên da tại Saigon Ink Tattoo (@saigonink_studio) thực hiện bởi Artist Nikko (@nikko_sgink): từ cú lừa thị giác Hero Shot mở màn, chân dung nghệ nhân ...",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -2115,23 +2115,31 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "country": {
-        "id": "vietnam",
+        "id": "vn",
         "name": "Việt Nam",
         "en_name": "Vietnam",
         "flag": "🇻🇳",
-        "badge_color": "emerald"
+        "badge_color": "red"
       },
-      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "purpose": "Quảng bá dịch vụ xăm nghệ thuật siêu thực cao cấp kết hợp kể chuyện văn hóa ẩm thực và tôn vinh nguồn cội Việt Nam",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Hyper-Realistic Food Tattoo",
+        "Result-First Hook",
+        "Macro Needle ASMR",
+        "Wet Towel Wipe Reveal",
+        "Audio-Visual Rhyme",
+        "Cultural Identity Storytelling",
+        "Unpopular Opinion Hook",
+        "Procreate iPad Mockup",
+        "Museum Lighting Glide"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "",
+      "logic_explanation": "Kịch bản viral đa tầng: Đánh gục người xem ngay giây đầu bằng thành phẩm tô bún bò siêu nhỏ sắc nét đến từng sợi bún hạt vừng; giữ chân bằng chuỗi phân cảnh vi phẫu đi kim dặm màu ASMR cực khoái; neo đậu cảm xúc bằng cuộc phỏng vấn khách hàng khẳng định tình yêu quê hương xứ Huế và tuyên ngôn gây tranh luận ẩm thực ('ngon hơn Phở'); kết liễu bằng cú trượt macro bảo tàng ánh sáng sang trọng.",
       "creator": {
         "raw": "@SAIGON_INK_TATTOO",
-        "name": "Saigon_Ink_Tattoo",
+        "name": "Saigon Ink Tattoo (Artist Nikko)",
         "handle": "@saigonink_studio",
         "profile_url": "https://www.instagram.com/saigonink_studio/"
       },
@@ -2142,11 +2150,11 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdNq5CxszVl.mp4",
         "report_url": "reports/IG_@SAIGON_INK_TATTOO_DdNq5CxszVl_Video_by_saigonink_studio.html",
-        "shots_count": 12,
-        "duration": "24s",
-        "youtube_id": "",
-        "youtube_embed": "",
-        "youtube_url": ""
+        "shots_count": 14,
+        "duration": "28.77s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "trung-binh",
@@ -2207,7 +2215,7 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@moodme.sg_DdL904CMnq3_Slow_Living_Scent_Giftspace/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdL904CMnq3.mp4",
         "report_url": "reports/Slow Living Scent & Giftspace - @moodme.sg.html",
-        "shots_count": 12,
+        "shots_count": 14,
         "duration": "14.67s",
         "youtube_id": null,
         "youtube_embed": null,
@@ -2786,8 +2794,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJM7AWOa__.mp4",
         "report_url": "reports/Soundtrack%20of%20Newest%20Cafe%20NYC%20-%20%40tattebakery.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -3414,13 +3422,13 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DdF81brAiIj",
       "title_vi": "Video by allure.cafebar",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 17 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
         "id": "am-thuc",
@@ -3438,7 +3446,7 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3475,13 +3483,13 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DbA22ywhMSI",
       "title_vi": "@주서방 - Video by ju seobang",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -3499,7 +3507,7 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3658,13 +3666,13 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DdJ7S5BJ6H0",
       "title_vi": "Video by joshdiazfilms",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "storytelling",
+        "name": "Storytelling",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -3682,7 +3690,7 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Showcase thị giác & Thẩm mỹ",
       "tech_tags": [
-        "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm"
+        "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3701,8 +3709,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdJ7S5BJ6H0.mp4",
         "report_url": "reports/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -4338,7 +4346,7 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@allinbcoffee_Dc-LDGRsCDN_allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc-LDGRsCDN.mp4",
         "report_url": "reports/allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon_-_@allinbcoffee.html",
-        "shots_count": 12,
+        "shots_count": 14,
         "duration": "14.43s",
         "youtube_id": null,
         "youtube_embed": null,
@@ -4576,7 +4584,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DcvmVl2hbuY",
       "title_vi": "@주서방 - Video by ju seobang",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 6 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "storytelling",
         "name": "Storytelling",
@@ -4700,7 +4708,7 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DchxEAkJ9Hw.mp4",
         "report_url": "reports/IG_@Steven_🇻🇳_Vu_DchxEAkJ9Hw_Video_by_steven.vuu.html",
-        "shots_count": 12,
+        "shots_count": 14,
         "duration": "21.87s",
         "youtube_id": null,
         "youtube_embed": null,
@@ -6270,8 +6278,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@srdtrv_DcbJDDNi7h8_Behind_The_Scenes_Directing_Mastery/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcbJDDNi7h8.mp4",
         "report_url": "reports/IG_@srdtrv_DcbJDDNi7h8_Behind_The_Scenes_Directing_Mastery.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -6920,7 +6928,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DXf1LldT5co",
       "title_vi": "Jenny Tsang • Calvin Klein Baggy Jeans Hong Kong Lookbook",
       "quick_takeaway": "Tác phẩm Fashion Motion Lookbook gồm 16 phân cảnh nhịp thở đô thị đỉnh cao của Jenny Tsang hợp tác cùng Calvin Klein. Sử dụng chiếc quần Baggy Jeans làm mỏ neo thị giác xuyên suốt 4 outfit biến hóa tại các địa danh biểu tượng Hong Kong (...",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh (Transition)",
@@ -7455,8 +7463,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/Practice_Cinematic_Chay_0903_2_@vietmac/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Practice_Cinematic_Chay_0903_2_@vietmac.mp4",
         "report_url": "reports/Practice_Cinematic_Chay_0903_2 - @vietmac.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -8422,8 +8430,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db1hf_vO67m.mp4",
         "report_url": "reports/Simple Life Dinner Routine - @joshdiazfilms.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -8492,8 +8500,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dbow9xKOCje.mp4",
         "report_url": "reports/Falling Behind Mindset - @joshdiazfilms.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -8651,7 +8659,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "Dcxsw50zIR8",
       "title_vi": "How to Film Boring Tasks to be Interesting (Báo Cáo Đạo Diễn)",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 16 phân cảnh.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -8721,7 +8729,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DcwPu99sDKI",
       "title_vi": "The Yap Triangle: Khắc phục lỗi nói chuyện trên Camera",
       "quick_takeaway": "Bản phân tích đạo diễn chuyên sâu bóc tách cấu trúc 22 phân cảnh của chuyên gia video Aayush Swamy (@iamaayushswamy). Video áp dụng mô hình \"The Yap Triangle\" (D-S-G: Drop-in, Solve it, Give direction) cùng kỹ thuật dựng hình đối lập thị...",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "talking-head",
         "name": "Talking Head",
@@ -9339,7 +9347,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "IG_@Startup_TM_xnAU8Pazc6A_Joe_Rogan_Elon_Musk_Podcast",
       "title_vi": "Phân Tích Đạo Diễn: Joe Rogan & Elon Musk Podcast | Master Breakdown",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -9748,7 +9756,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DZB9Ls3No6p",
       "title_vi": "Video by jade.got.curious",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 65 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -9815,7 +9823,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DYXiic5xMeC",
       "title_vi": "Chiến Lược Xây Hệ Thống Phễu Trước Khi Video Hoàn Hảo",
       "quick_takeaway": "Phân tích chuyên sâu 20 phân cảnh video ngắn đỉnh cao của Jade Sheng (@jade.got.curious). Video khai thác xuất sắc kỹ thuật Phân thân đa nhân cách (Visual Multi-Clone), chuyển cảnh đối lập không gian (Pattern Interrupt giữa Home Studio &...",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "talking-head",
         "name": "Talking Head",
@@ -9952,7 +9960,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DZa9pzKRsAU",
       "title_vi": "Video by jade.got.curious",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 30 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -10019,7 +10027,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DcbAqchxJ2t",
       "title_vi": "Start Stupid - @Jade Sheng (Nghịch Lý Quá Thông Minh Để Bắt Đầu)",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn xuất sắc của Jade Sheng gồm 54 phân cảnh được tính toán chuẩn mực từng giây. Video là một bài học sâu sắc về tâm lý sáng tạo: Internet cho chúng ta gu thẩm mỹ và tiêu chuẩn trước khi có kỹ năng cơ bắp, khiến ta sợ ...",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "storytelling",
         "name": "Storytelling",
@@ -10141,8 +10149,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/locations/raw/loc_03.jpg",
         "video_url": "",
         "report_url": "reports/Bao_Cao_Boi_Canh_Thuc_Chien_R2.html",
-        "shots_count": 124,
-        "duration": "248s",
+        "shots_count": 144,
+        "duration": "288s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -10625,8 +10633,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/7673468312290037012.mp4",
         "report_url": "reports/IG_@tinanguyen2004_7673468312290037012_Double_Day_luôn_là_dịp_để_khách_hàng_lựa_được.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -13157,8 +13165,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Rilo_Dau0C9AzXc8_Video_by_17th.visuals/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dau0C9AzXc8.mp4",
         "report_url": "reports/IG_@Rilo_Dau0C9AzXc8_Video_by_17th.visuals.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -13994,8 +14002,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcLwG_mKyKM.mp4",
         "report_url": "reports/IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcLwG_mKyKM_Video_by_thomasmathewt2.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -14061,8 +14069,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVHH27S7Lf.mp4",
         "report_url": "reports/IG_@비움_-_양희종_DZVHH27S7Lf_Video_by_bewoom.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -14128,8 +14136,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZVAYFwvo4y.mp4",
         "report_url": "reports/IG_@Jazzie_DZVAYFwvo4y_Video_by_jazziesillona.html",
-        "shots_count": 12,
-        "duration": "24s",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -14420,7 +14428,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DaC90d3tWuV_",
       "title_vi": "Cinematic Urban Color Mastery - Nghệ Thuật Chuyển Động Camera & Phối Màu Đô Thị Sống Động",
       "quick_takeaway": "Phân tích nghệ thuật lia máy gimbal xoay quanh chủ thể (Orbital Tracking) và phối màu phân tách dải sắc độ (Color Separation) của Andrei Kostromskikh.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -14487,7 +14495,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "IG_@local_creator_video_video",
       "title_vi": "Báo Cáo Phân Tích Phân Cảnh & Quay Dựng",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 5 phân cảnh của tác phẩm IG_@local_creator_video_video.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -14554,7 +14562,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "Db7P1GeOxvq_",
       "title_vi": "Bố Cục Tương Phản Ánh Sáng & Khung Hình Kiến Trúc - Arif Hakim",
       "quick_takeaway": "Phân tích nghệ thuật đóng khung kiến trúc đô thị kết hợp tỷ lệ tương phản sáng tối Chiaroscuro của nhà làm phim Arif Hakim.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
@@ -14624,7 +14632,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "IG_@local_creator_video_ig_video_ig",
       "title_vi": "Báo Cáo Phân Tích Phân Cảnh & Quay Dựng",
       "quick_takeaway": "🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:\nBáo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 14 phân cảnh của tác phẩm IG_@local_creator_video_ig_video_ig.",
-      "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Điện Ảnh (Cinematic)",
