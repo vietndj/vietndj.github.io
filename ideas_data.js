@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 189,
-  "total_unique_ideas": 178,
-  "total_active_ideas": 154,
+  "total_scene_items": 190,
+  "total_unique_ideas": 179,
+  "total_active_ideas": 155,
   "total_excluded_ideas": 24,
-  "total_creators": 111,
+  "total_creators": 112,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -61,11 +61,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 3,
-    "voice-over": 11,
-    "talking-head": 16,
+    "voice-over": 10,
+    "talking-head": 17,
     "storytelling": 17,
     "dien-anh": 76,
-    "chuyen-canh": 31
+    "chuyen-canh": 32
   },
   "industries": [
     {
@@ -152,7 +152,7 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 17,
-    "thoi-trang": 16,
+    "thoi-trang": 17,
     "am-thuc": 17,
     "du-lich": 12,
     "cong-nghe": 21,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 68,
+    "us_eu": 69,
     "korea": 9,
     "india": 3,
     "japan": 6,
@@ -478,6 +478,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@megantanhweewen",
+      "name": "Megan_Tan",
+      "profile_url": "https://www.instagram.com/megantanhweewen/",
+      "video_count": 1,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen"
+      ]
+    },
+    {
       "handle": "@iman.lizi",
       "name": "Iman Lizi",
       "profile_url": "https://www.instagram.com/iman.lizi/",
@@ -559,7 +570,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Aki",
       "profile_url": "https://www.instagram.com/aki_japan/",
       "video_count": 1,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "top_industry": "Thời Trang & Phụ Kiện",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aki_japan_DaDFH_TSii8/shot_01_mid.jpg",
       "video_ids": [
         "IG_@aki_japan_DaDFH_TSii8"
@@ -1492,6 +1503,75 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen",
+      "shortcode": "DOd8XMMjxcH",
+      "title_vi": "Video by megantanhweewen",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 4 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @megantanhweewen • Shared September 11 • 2025 • Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Talking Head",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Instagram Liked 24h: Video, 1 of 18, by @megantanhweewen, shared September 11, 2025",
+      "tech_tags": [
+        "Instagram Liked 24h: Video",
+        "1 Of 18",
+        "By @megantanhweewen",
+        "Shared September 11",
+        "2025",
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Instagram Liked 24h: Video, 1 of 18, by @megantanhweewen, shared September 11, 2025. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Talking Head.",
+      "creator": {
+        "raw": "@Megan_Tan",
+        "name": "Megan_Tan",
+        "handle": "@megantanhweewen",
+        "profile_url": "https://www.instagram.com/megantanhweewen/"
+      },
+      "ig_url": "https://www.instagram.com/p/DOd8XMMjxcH",
+      "gdrive_folder": "https://drive.google.com/open?id=1M46LI4n-xF4i6uQL_fG0-D_3dwAp5-TD",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DOd8XMMjxcH.mp4",
+        "report_url": "reports/IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen.html",
+        "shots_count": 4,
+        "duration": "8s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@Caleb_Natale_Dcbn7Bix-X-_Video_by_calebnatale",
       "shortcode": "Dcbn7Bix-X-",
       "title_vi": "Video by calebnatale",
@@ -1557,8 +1637,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle",
       "shortcode": "DdTeHleIqkg",
-      "title_vi": "@AL,_The_Creator_Videography_Reels - Video by shogentle",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 24 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Director's Report • Director's Report",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 24 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
         "id": "talking-head",
@@ -1606,7 +1686,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdTeHleIqkg.mp4",
         "report_url": "reports/IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle.html",
         "shots_count": 24,
-        "duration": "48s",
+        "duration": "48.00s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
@@ -2025,7 +2105,7 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yuto_creator_DdBlAWRO1Hl/shot_03_mid.jpg",
         "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBlAWRO1Hl.mp4",
         "report_url": "reports/IG_@yuto_creator_DdBlAWRO1Hl.html",
-        "shots_count": 8,
+        "shots_count": 6,
         "duration": "25.0s",
         "youtube_id": null,
         "youtube_embed": null,
@@ -2111,8 +2191,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@layton_video_DdKGq2TMhf4",
       "shortcode": "DdKGq2TMhf4",
-      "title_vi": "Layton • Sự Thật Về Việc Xây Kênh: Đừng Làm Ra Vẻ Chuyên Gia Khi Chưa Có Bằng Chứng",
-      "quick_takeaway": "Mẫu kịch bản nói trực diện thương hiệu: Bóc trần tâm lý giả vờ chuyên gia, xây dựng niềm tin bằng sự minh bạch.",
+      "title_vi": "Layton • Sự Thật Khắc Nghiệt Khi Làm Creator: Cứ Làm Đi Thay Vì Dạy Đời",
+      "quick_takeaway": "Mẫu kịch bản nói trực diện thương hiệu: Không cần cố gắng đóng vai chuyên gia ngay từ đầu. Hãy cứ làm, sai và sửa, ý tưởng sẽ tự động xuất hiện.",
       "key_tech": "Thương Hiệu Cá Nhân & Dịch Vụ • Contrarian Hook • Talking Head Confidence • Kinetic Subtitles • Authentic Transparency",
       "shooting_style": {
         "id": "talking-head",
@@ -2135,7 +2215,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🌐",
         "badge_color": "sky"
       },
-      "purpose": "Kịch bản đanh thép bóc trần ảo tưởng xây kênh của người mới: Thừa nhận mình là người học việc thay vì đóng giả chuyên gia",
+      "purpose": "Kịch bản cảnh tỉnh cho các nhà sáng tạo nội dung mới: Không cần cố gắng hoàn hảo hay dạy người khác cách làm, chỉ cần bắt tay vào thực hiện trong một khoảng thời gian nhất định.",
       "tech_tags": [
         "Contrarian Hook",
         "Talking Head Confidence",
@@ -2146,12 +2226,12 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {
-        "key_optimization_point": "⚡ Khán giả bây giờ cực kỳ dị ứng với những ai mới lập kênh đã lên mặt dạy đời. Thừa nhận hành trình học hỏi của chính mình mới là vũ khí giữ chân mạnh nhất (Tầng 2.5).",
-        "practice_focus": "Thực hành: Hook đảo ngược: 'Hầu hết mọi người cố tỏ ra có thẩm quyền mà không có bằng chứng'. Tác giả thừa nhận sự thật khi mới bắt đầu mình cũng không biết gì, chính sự thành thật đó tạo nên uy tín.",
+        "key_optimization_point": "⚡ Không cần cố gắng đóng vai chuyên gia ngay từ đầu. Hãy cứ làm, sai và sửa trong một khoảng thời gian đủ dài, ý tưởng sẽ tự động xuất hiện.",
+        "practice_focus": "Thực hành: Hook trực diện 'Sự thật khắc nghiệt khi làm creator'. Sự luân phiên giữa cảnh ngồi nói chuyện tại bàn và cảnh B-roll tạo nhịp điệu.",
         "ig_seeding_hook": "Follow @layton_video để cập nhật mẫu video Thương Hiệu Cá Nhân & Dịch Vụ",
         "course_industry_mapping": "Thương Hiệu Cá Nhân & Dịch Vụ"
       },
-      "logic_explanation": "Hook đảo ngược: 'Hầu hết mọi người cố tỏ ra có thẩm quyền mà không có bằng chứng'. Tác giả thừa nhận sự thật khi mới bắt đầu mình cũng không biết gì, chính sự thành thật đó tạo nên uy tín.",
+      "logic_explanation": "Hook trực diện 'Sự thật khắc nghiệt khi làm creator'. Sự luân phiên giữa cảnh ngồi nói chuyện tại bàn (talking head) và cảnh B-roll (outside/tripod) tạo nhịp điệu. Nhấn mạnh việc thực hành thay vì chỉ lên kế hoạch.",
       "creator": {
         "raw": "@layton_video (Layton Video)",
         "name": "Layton Video",
@@ -2251,22 +2331,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aki_japan_DaDFH_TSii8",
       "shortcode": "DaDFH_TSii8",
-      "title_vi": "Aki • Tự Sự Mùa Hè Thứ Hai Trôi Qua & Nghệ Thuật Chấp Nhận Tích Cực (Positive Surrender)",
-      "quick_takeaway": "Mẫu video tự sự chữa lành: Kể chuyện bằng giọng đọc trầm ấm và những khung hình đời thường đượm buồn.",
-      "key_tech": "Kể Chuyện (Storytelling) • Philosophical Voiceover • Street Photography Frames • Subdued Japanese Film Tone • Slow Rhythm Breathing",
+      "title_vi": "Aki • Kỹ Thuật Match Cut Đổi Trang Phục Siêu Mượt Của Barista Đường Phố",
+      "quick_takeaway": "Mẫu video kết hợp thời trang và cà phê: Cố định góc máy, búng tay đổi trang phục cực mượt trên cùng một dòng chảy hành động pha chế.",
+      "key_tech": "Match Cut Transition • Outfit Change • Coffee Brewing • Fixed Camera Angle • Seamless Loop",
       "shooting_style": {
-        "id": "voice-over",
-        "name": "Voice Over",
-        "en_name": "Voice Over",
-        "icon": "🎙️",
-        "badge_color": "purple"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "thoi-trang",
+        "name": "Thời Trang & Phụ Kiện",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
         "id": "global",
@@ -2275,21 +2355,21 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🌐",
         "badge_color": "sky"
       },
-      "purpose": "Kể chuyện tản văn tự sự triết lý thời gian qua lăng kính đời sống đô thị Nhật Bản",
+      "purpose": "Thể hiện phong cách thời trang đa dạng kết hợp nhịp điệu pha cà phê (Coffee Brewing) mượt mà qua kỹ thuật Match Cut.",
       "tech_tags": [
-        "Philosophical Voiceover",
-        "Street Photography Frames",
-        "Subdued Japanese Film Tone",
-        "Slow Rhythm Breathing",
-        "Emotional Resonance"
+        "Match Cut Transition",
+        "Outfit Change",
+        "Coffee Brewing",
+        "Fixed Camera Angle",
+        "Seamless Loop"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {
-        "key_optimization_point": "⚡ Video tự sự cảm xúc không cần hiệu ứng hào nhoáng. Sự chân thành trong câu chữ kết hợp khung hình tĩnh có chiều sâu sẽ giữ chân người xem đến giây cuối cùng.",
-        "practice_focus": "Thực hành: Kết hợp nhịp thở chậm của các khung hình tĩnh ngoài phố: Tàu điện lướt qua, bóng nắng đổ dài trên tường bê tông, kết hợp giọng đọc trầm lắng về sự trôi chảy của một năm.",
-        "ig_seeding_hook": "Follow @aki_japan để cập nhật mẫu video Kể Chuyện (Storytelling)",
-        "course_industry_mapping": "Kể Chuyện (Storytelling)"
+        "key_optimization_point": "⚡ Cố định hoàn toàn góc máy (tripod) và vị trí đứng, chỉ thay đổi trang phục để tạo hiệu ứng thị giác bất ngờ trên cùng một dòng chảy hành động.",
+        "practice_focus": "Thực hành: Khóa sáng, khóa nét (AE/AF Lock) và đánh dấu vị trí chân. Thực hiện cùng một hành động (rót nước/pha trà) với 5-6 bộ trang phục khác nhau, sau đó cắt ghép tại điểm rơi của chuyển động.",
+        "ig_seeding_hook": "Follow @aki_japan để cập nhật mẫu video Thời Trang & Chuyển Cảnh",
+        "course_industry_mapping": "Thời Trang & Phụ Kiện"
       },
       "logic_explanation": "Kết hợp nhịp thở chậm của các khung hình tĩnh ngoài phố: Tàu điện lướt qua, bóng nắng đổ dài trên tường bê tông, kết hợp giọng đọc trầm lắng về sự trôi chảy của một năm.",
       "creator": {
