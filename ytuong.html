@@ -44,6 +44,12 @@
         }
     </script>
     
+    <script>
+        window.hideReportSpinner = function() {
+            var spinner = document.getElementById('reportIframeSpinner');
+            if (spinner) spinner.style.display = 'none';
+        };
+    </script>
     <style>
         :root {
             --bg-main: #070a0f;
@@ -258,6 +264,7 @@
 
                 <!-- Mobile View Switcher -->
                 <div class="flex md:hidden items-center gap-1.5">
+                    <button id="mobileShareFilterBtn" onclick="copyCurrentFilterLink()" class="hidden p-2 rounded-lg bg-sky-500/25 text-sky-300 border border-sky-400/60 text-xs font-bold animate-pulse shadow-sm" title="Chia sẻ link bộ lọc">🔗</button>
                     <button id="mobileViewGridBtn" onclick="switchMainView('grid')" class="p-2 rounded-lg bg-slate-800 text-sky-400 border border-slate-700 text-xs font-bold" title="Kho Ý Tưởng">💡</button>
                     <button id="mobileViewUgcBtn" onclick="toggleUgcMode()" class="p-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-xs font-bold" title="Mục UGC">📱</button>
                     <button id="mobileViewCreatorsBtn" onclick="switchMainView('creators')" class="p-2 rounded-lg bg-slate-800 text-slate-400 border border-slate-700 text-xs font-bold" title="Danh Mục Kênh">👥</button>
@@ -266,9 +273,21 @@
             </div>
 
             <!-- Global Search & Main View Switcher -->
-            <div class="flex items-center gap-3">
+            <div class="flex items-center gap-2.5">
+                <!-- Quick Share Filter Link (Desktop Header) -->
+                <button 
+                    id="headerShareFilterBtn" 
+                    onclick="copyCurrentFilterLink()" 
+                    class="hidden md:hidden items-center gap-1.5 px-3 py-1.5 rounded-xl border border-sky-400/60 bg-sky-500/20 hover:bg-sky-500/30 text-sky-200 hover:text-white text-xs font-bold transition shadow-sm cursor-pointer shrink-0 animate-pulse"
+                    title="Sao chép hoặc gửi liên kết bộ lọc đang chọn"
+                >
+                    <span class="text-sky-300">🔗</span>
+                    <span class="hidden lg:inline">Gửi Link Lọc</span>
+                    <span id="headerShareBadge" class="px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-sky-400 text-slate-950 font-black">0</span>
+                </button>
+
                 <!-- Search Box with Shortcut -->
-                <div class="relative flex-1 md:w-64 lg:w-72">
+                <div class="relative flex-1 md:w-60 lg:w-68">
                     <input 
                         type="text" 
                         id="globalSearchInput" 
@@ -294,6 +313,10 @@
                         <span>👥 Kênh Mẫu</span>
                         <span id="creatorsCountBadge" class="px-1.5 py-0.2 rounded-full text-[10px] bg-slate-800 text-purple-300">86</span>
                     </button>
+                    <a href="learning_hub.html" class="view-btn px-3 py-1.5 rounded-lg text-amber-400 hover:text-amber-300 hover:bg-slate-800 transition flex items-center gap-1.5 font-bold" title="Xem tiến trình học phân loại của AI">
+                        <span>🧠 Học Phân Loại</span>
+                        <span class="px-1.5 py-0.2 rounded-full text-[10px] bg-amber-500/20 text-amber-300 border border-amber-500/30">88.5%</span>
+                    </a>
                 </div>
 
                 <!-- Admin Curation Toggle -->
@@ -509,6 +532,28 @@
                         <span id="creatorActiveFilterName" class="text-white font-bold"></span>
                         <button onclick="clearCreatorFilter()" class="ml-1 w-4 h-4 rounded-full bg-slate-800 hover:bg-rose-600 text-slate-300 hover:text-white flex items-center justify-center text-[10px] transition cursor-pointer" title="Bỏ lọc Creator">✕</button>
                     </div>
+
+                    <!-- 1-CLICK SHARE / COPY FILTER LINK BUTTON -->
+                    <button 
+                        id="btnCopyShareFilterLink" 
+                        onclick="copyCurrentFilterLink()" 
+                        class="px-3 py-1.5 rounded-xl border border-sky-500/50 bg-sky-500/15 hover:bg-sky-500/25 text-sky-300 hover:text-white text-xs font-bold transition flex items-center gap-1.5 cursor-pointer shadow-sm group"
+                        title="Sao chép liên kết bộ lọc này để gửi cho học viên hoặc khách hàng"
+                    >
+                        <span id="btnCopyShareFilterIcon" class="text-sky-400 group-hover:scale-110 transition-transform">🔗</span>
+                        <span id="btnCopyShareFilterText">Gửi Link Bộ Lọc</span>
+                        <span id="activeFilterCounterBadge" class="hidden px-1.5 py-0.2 rounded-full text-[10px] font-mono bg-sky-500 text-slate-950 font-black">0</span>
+                    </button>
+
+                    <!-- QUICK RESET ALL FILTERS SHORTCUT -->
+                    <button 
+                        id="quickResetFiltersBtn" 
+                        onclick="resetAllFilters()" 
+                        class="hidden px-2.5 py-1.5 rounded-xl border border-rose-500/40 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-white text-xs font-semibold transition items-center gap-1 cursor-pointer"
+                        title="Bỏ toàn bộ bộ lọc và trở về mặc định"
+                    >
+                        <span>✕ Xóa lọc</span>
+                    </button>
                 </div>
 
                 <!-- Quick Complexity Pills for Students -->
@@ -557,11 +602,11 @@
                 <!-- Filter by Purpose -->
                 <select id="purposeFilter" onchange="handleFilterChange()" class="bg-slate-900 border border-slate-800 rounded-lg px-2.5 py-1.5 text-slate-300 focus:outline-none focus:border-sky-400">
                     <option value="">🎯 Mục đích: Tất Cả</option>
-                    <option value="bán hàng">Bán Hàng & Chuyển Đổi</option>
-                    <option value="hướng dẫn">Hướng Dẫn & Tips</option>
-                    <option value="kỷ luật">Kỷ Luật & Cảm Hứng</option>
-                    <option value="showcase">Thị Giác & Thẩm Mỹ</option>
-                    <option value="vlog">Vlog Đời Sống</option>
+                    <option value="chốt đơn">Chốt Đơn</option>
+                    <option value="mẹo">Mẹo</option>
+                    <option value="tạo động lực">Tạo Động Lực</option>
+                    <option value="thưởng thức">Thưởng Thức</option>
+                    <option value="vlog">VLog</option>
                 </select>
 
                 <!-- Filter by Complexity / Shots -->
@@ -761,7 +806,7 @@
                     <div class="w-10 h-10 border-4 border-sky-500/20 border-t-sky-400 rounded-full animate-spin mb-3"></div>
                     <span class="text-xs font-mono text-slate-300 animate-pulse">Đang tải báo cáo phân tích cảnh quay...</span>
                 </div>
-                <iframe id="reportModalIframe" src="" class="w-full h-full border-none" loading="lazy" onload="hideReportSpinner()" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
+                <iframe id="reportModalIframe" src="" class="w-full h-full border-none" loading="lazy" onload="if(window.hideReportSpinner) hideReportSpinner()" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" allowfullscreen></iframe>
             </div>
         </div>
     </div>
@@ -953,6 +998,7 @@
             currentCreatorName: '',
             currentTransitionLevel: 'all', // 'all', 'Chuyển cảnh Level 1', 'Chuyển cảnh Level 2'
             showUgc: false, // Default false: auto-hide ad bot videos until clicked
+            showFilterBarsInFocus: true, // Default true: keep all filter bars visible when opening shared filter links
             openFilterAccordion: null, // 'industry' | 'country' | null (Ẩn bớt bộ lọc theo accordion)
             currentTech: '',
             currentPurpose: '',
@@ -1264,7 +1310,7 @@
             renderShootingStyleTabs();
             renderFocusBanner();
             updateTeacherShareLink();
-            applyFilters();
+            applyFilters(true);
 
             if (appState.currentView !== 'grid') {
                 switchMainView('grid');
@@ -1280,7 +1326,7 @@
             }
             appState.currentPage = 1;
             updateTransitionFilterUI();
-            applyFilters();
+            applyFilters(true);
 
             if (appState.currentView !== 'grid') {
                 switchMainView('grid');
@@ -1570,9 +1616,6 @@
             appState.currentIndustry = (appState.currentIndustry === indId) ? 'all' : indId;
             appState.showUgc = (appState.currentIndustry === 'ugc');
             appState.currentPage = 1;
-            appState.currentCountry = 'all';
-            const countrySelect = document.getElementById('countryFilter');
-            if (countrySelect) countrySelect.value = '';
 
             // Bộ lọc thông minh: Nếu đang lọc Creator mà Creator không có video trong ngành mới, tự động bỏ lọc Creator
             if (appState.currentCreator && appState.currentIndustry !== 'all') {
@@ -1608,7 +1651,7 @@
             renderCountryTabs();
             renderFocusBanner();
             updateTeacherShareLink();
-            applyFilters();
+            applyFilters(true);
             
             if (appState.currentView !== 'grid') {
                 switchMainView('grid');
@@ -1727,7 +1770,7 @@
             renderCountryTabs();
             renderFocusBanner();
             updateTeacherShareLink();
-            applyFilters();
+            applyFilters(true);
 
             if (appState.currentView !== 'grid') {
                 switchMainView('grid');
@@ -1772,7 +1815,7 @@
         }
 
         // Filter and Render Ideas Cards (4-Axis Multi-Dimensional Filter)
-        function applyFilters() {
+        function applyFilters(pushToHistory = false) {
             if (!window.FEDU_IDEAS_DATABASE) return;
             const db = window.FEDU_IDEAS_DATABASE;
             const searchVal = appState.searchQuery.trim().toLowerCase();
@@ -1863,8 +1906,16 @@
                 // 5. Purpose filter (Trục 4: Mục đích)
                 if (appState.currentPurpose) {
                     const pVal = appState.currentPurpose.toLowerCase();
-                    const purposeHaystack = ((item.purpose || '') + ' ' + (item.quick_takeaway || '') + ' ' + (item.title_vi || '')).toLowerCase();
-                    if (!purposeHaystack.includes(pVal)) return false;
+                    const PURPOSE_SYNONYMS = {
+                        'chốt đơn': ['chốt đơn', 'bán hàng', 'chuyển đổi', 'thương mại', 'sale', 'quảng cáo'],
+                        'mẹo': ['mẹo', 'hướng dẫn', 'tips', 'tutorial', 'công thức', 'cách quay'],
+                        'tạo động lực': ['tạo động lực', 'kỷ luật', 'cảm hứng', 'routine', 'thói quen', 'phát triển bản thân'],
+                        'thưởng thức': ['thưởng thức', 'thị giác', 'thẩm mỹ', 'showcase', 'mãn nhãn', 'chỉn chu', 'asmr'],
+                        'vlog': ['vlog', 'đời sống', 'nhật ký', 'sinh hoạt', 'hàng ngày']
+                    };
+                    const searchTerms = PURPOSE_SYNONYMS[pVal] || [pVal];
+                    const purposeHaystack = ((item.purpose || '') + ' ' + (item.quick_takeaway || '') + ' ' + (item.title_vi || '') + ' ' + (item.tech_tags ? item.tech_tags.join(' ') : '')).toLowerCase();
+                    if (!searchTerms.some(term => purposeHaystack.includes(term))) return false;
                 }
 
                 // 6. Complexity filter
@@ -1936,7 +1987,58 @@
                     if (currentIndObj && currentIndObj.id !== 'all') parts.push(`${currentIndObj.icon} ${currentIndObj.name}`);
                     if (currentCountryObj && currentCountryObj.id !== 'all') parts.push(`${currentCountryObj.flag} ${currentCountryObj.name}`);
                 }
-                labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Tất Cả Ngành';
+
+                // Tác giả (Creator)
+                if (appState.currentCreator) {
+                    const cName = appState.currentCreatorName ? `${appState.currentCreatorName}` : `@${appState.currentCreator}`;
+                    parts.unshift(`👤 Tác giả: ${cName}`);
+                }
+
+                // Mục đích (Purpose)
+                if (appState.currentPurpose) {
+                    const purposeDisplayMap = {
+                        'bán hàng': '🎯 Bán Hàng & Chuyển Đổi',
+                        'hướng dẫn': '🎯 Hướng Dẫn & Tips',
+                        'kỷ luật': '🎯 Kỷ Luật & Cảm Hứng',
+                        'showcase': '🎯 Thị Giác & Thẩm Mỹ',
+                        'thưởng thức': '🎯 Thị Giác & Thẩm Mỹ',
+                        'tham my': '🎯 Thị Giác & Thẩm Mỹ',
+                        'vlog': '🎯 Vlog Đời Sống'
+                    };
+                    parts.push(purposeDisplayMap[appState.currentPurpose.toLowerCase()] || `🎯 Mục đích: ${appState.currentPurpose}`);
+                }
+
+                // Kỹ thuật (Tech)
+                if (appState.currentTech) {
+                    parts.push(`⚙️ ${appState.currentTech}`);
+                }
+
+                // Độ khó (Complexity)
+                if (appState.complexity) {
+                    const compDisplayMap = {
+                        'de': '🟢 Dễ (3-8 shots)',
+                        'trung-binh': '🟡 Vừa (9-18 shots)',
+                        'nang-cao': '🔴 Cao (>18 shots)'
+                    };
+                    parts.push(compDisplayMap[appState.complexity] || appState.complexity);
+                }
+
+                // Thời lượng (Duration)
+                if (appState.duration) {
+                    const durDisplayMap = {
+                        'short': '⏱️ Ngắn (<15s)',
+                        'medium': '⏱️ Vừa (15-30s)',
+                        'long': '⏱️ Dài (>30s)'
+                    };
+                    parts.push(durDisplayMap[appState.duration] || appState.duration);
+                }
+
+                // Tìm kiếm (Search)
+                if (appState.searchQuery && appState.searchQuery.trim()) {
+                    parts.push(`🔍 "${appState.searchQuery.trim()}"`);
+                }
+
+                labelEl.innerText = parts.length ? parts.join(' • ') : '🌟 Toàn Bộ Kho Ý Tưởng';
             }
             const matchCounter = document.getElementById('matchCounterText');
             if (matchCounter) matchCounter.innerText = matched.length;
@@ -1959,9 +2061,10 @@
 
             renderCards(matched);
             renderFocusBanner();
-            updateTeacherShareLink();
+            syncStateToUrl(pushToHistory);
             updateHeaderBadges();
             updateFilterAccordionUI();
+            updateDropdownHighlightUI();
         }
 
         // Render Cards Grid
@@ -2160,8 +2263,14 @@
                                 <span class="shrink-0 text-xs">💡</span>
                                 <span class="line-clamp-2">${escapeHtml(item.fedu_optimization?.key_optimization_point || item.quick_takeaway)}</span>
                             </div>
+                            ${item.purpose ? `
+                                <div class="text-[10px] text-slate-400 flex items-center gap-1.5 pt-1 border-t border-slate-800/60 truncate ${appState.currentPurpose ? 'text-sky-300 font-bold' : ''}">
+                                    <span class="text-slate-500 font-semibold shrink-0">🎯 Mục đích:</span>
+                                    <span class="truncate ${appState.currentPurpose ? 'text-sky-300 font-semibold' : 'text-slate-300'}">${escapeHtml(item.purpose)}</span>
+                                </div>
+                            ` : ''}
                             ${item.key_tech ? `
-                                <div class="text-[10px] text-slate-400 flex items-center gap-1.5 pt-1 border-t border-slate-800/60 truncate">
+                                <div class="text-[10px] text-slate-400 flex items-center gap-1.5 pt-1 border-t border-slate-800/60 truncate ${appState.currentTech ? 'text-sky-300 font-bold' : ''}">
                                     <span class="text-slate-500 font-semibold shrink-0">⚙️ Kỹ thuật:</span>
                                     <span class="text-sky-300 font-mono truncate">${escapeHtml(item.key_tech)}</span>
                                 </div>
@@ -2339,14 +2448,7 @@
                 switchMainView('grid');
             }
 
-            // Đồng bộ URL query param
-            try {
-                const url = new URL(window.location);
-                url.searchParams.set('creator', appState.currentCreator);
-                window.history.pushState({}, '', url);
-            } catch (err) {}
-
-            applyFilters();
+            applyFilters(true);
 
             // Cuộn mượt xuống danh sách video
             const targetEl = document.getElementById('ideasGridView');
@@ -2364,16 +2466,7 @@
             appState.currentCreator = '';
             appState.currentCreatorName = '';
             appState.currentPage = 1;
-
-            try {
-                const url = new URL(window.location);
-                url.searchParams.delete('creator');
-                url.searchParams.delete('c');
-                url.searchParams.delete('tac-gia');
-                window.history.pushState({}, '', url);
-            } catch (err) {}
-
-            applyFilters();
+            applyFilters(true);
             showToast("Đã bỏ lọc theo tác giả");
         }
 
@@ -2827,7 +2920,7 @@
             if (cSelect) cSelect.value = appState.complexity;
             updateComplexityPillsUI();
             appState.currentPage = 1;
-            applyFilters();
+            applyFilters(true);
             const labels = {
                 'de': '🟢 Dễ làm theo (3-8 shots)',
                 'trung-binh': '🟡 Trung bình (9-18 shots)',
@@ -2878,7 +2971,7 @@
             const dSelect = document.getElementById('durationFilter');
             if (dSelect) dSelect.value = appState.duration;
             appState.currentPage = 1;
-            applyFilters();
+            applyFilters(true);
             showToast(appState.duration ? `⏱️ Đang lọc video thời lượng ${target === 'short' ? '<15s' : target === 'medium' ? '15-30s' : '>30s'}` : '⏱️ Đã bỏ lọc thời lượng');
         }
 
@@ -2891,7 +2984,7 @@
             const pSelect = document.getElementById('purposeFilter');
             if (pSelect) pSelect.value = appState.currentPurpose;
             appState.currentPage = 1;
-            applyFilters();
+            applyFilters(true);
             showToast(appState.currentPurpose ? `🎯 Đang lọc mục đích: ${purpose}` : '🎯 Đã bỏ lọc mục đích');
         }
 
@@ -2904,7 +2997,7 @@
             const tSelect = document.getElementById('techFilter');
             if (tSelect) tSelect.value = appState.currentTech;
             appState.currentPage = 1;
-            applyFilters();
+            applyFilters(true);
             showToast(appState.currentTech ? `⚙️ Đang lọc kỹ thuật: ${tech}` : '⚙️ Đã bỏ lọc kỹ thuật');
         }
 
@@ -3318,15 +3411,43 @@
             syncHeroSearch('');
         }
 
+        function updateDropdownHighlightUI() {
+            const dropdowns = [
+                { id: 'purposeFilter', active: Boolean(appState.currentPurpose) },
+                { id: 'techFilter', active: Boolean(appState.currentTech) },
+                { id: 'countryFilter', active: Boolean(appState.currentCountry && appState.currentCountry !== 'all') },
+                { id: 'complexityFilter', active: Boolean(appState.complexity) },
+                { id: 'durationFilter', active: Boolean(appState.duration) },
+                { id: 'sortFilter', active: Boolean(appState.sortBy && appState.sortBy !== 'default') }
+            ];
+
+            dropdowns.forEach(({ id, active }) => {
+                const el = document.getElementById(id);
+                if (!el) return;
+                if (active) {
+                    el.classList.add('border-sky-400', 'bg-sky-950/60', 'text-sky-200', 'ring-1', 'ring-sky-400/50', 'font-bold');
+                    el.classList.remove('border-slate-800', 'bg-slate-900', 'text-slate-300', 'font-normal');
+                } else {
+                    el.classList.remove('border-sky-400', 'bg-sky-950/60', 'text-sky-200', 'ring-1', 'ring-sky-400/50', 'font-bold');
+                    el.classList.add('border-slate-800', 'bg-slate-900', 'text-slate-300', 'font-normal');
+                }
+            });
+        }
+
         function handleFilterChange() {
             const cSelect = document.getElementById('complexityFilter');
             const dSelect = document.getElementById('durationFilter');
             const sSelect = document.getElementById('sortFilter');
-
+            const tSelect = document.getElementById('techFilter');
+            const pSelect = document.getElementById('purposeFilter');
             const countrySelect = document.getElementById('countryFilter');
+
             appState.complexity = cSelect?.value || '';
             appState.duration = dSelect?.value || '';
             appState.sortBy = sSelect?.value || 'default';
+            appState.currentTech = tSelect?.value || '';
+            appState.currentPurpose = pSelect?.value || '';
+
             if (countrySelect) {
                 appState.currentCountry = countrySelect.value || 'all';
                 renderCountryTabs();
@@ -3334,26 +3455,25 @@
             appState.currentPage = 1;
 
             updateComplexityPillsUI();
-            applyFilters();
+            applyFilters(true);
         }
 
         function resetAllFilters() {
+            appState.currentStyle = 'all';
             appState.currentIndustry = 'all';
+            appState.currentCountry = 'all';
             appState.currentCreator = '';
             appState.currentCreatorName = '';
-            appState.searchQuery = '';
+            appState.currentTech = '';
+            appState.currentPurpose = '';
             appState.complexity = '';
             appState.duration = '';
+            appState.currentTransitionLevel = 'all';
+            appState.searchQuery = '';
             appState.sortBy = 'default';
+            appState.showUgc = false;
+            appState.focusMode = false;
             appState.currentPage = 1;
-
-            try {
-                const url = new URL(window.location);
-                url.searchParams.delete('creator');
-                url.searchParams.delete('c');
-                url.searchParams.delete('tac-gia');
-                window.history.pushState({}, '', url);
-            } catch (err) {}
 
             const sInput = document.getElementById('globalSearchInput');
             if (sInput) sInput.value = '';
@@ -3370,6 +3490,10 @@
             if (dSelect) dSelect.value = '';
             const sSelect = document.getElementById('sortFilter');
             if (sSelect) sSelect.value = 'default';
+            const tSelect = document.getElementById('techFilter');
+            if (tSelect) tSelect.value = '';
+            const pSelect = document.getElementById('purposeFilter');
+            if (pSelect) pSelect.value = '';
 
             appState.currentCountry = 'all';
             const countrySelect = document.getElementById('countryFilter');
@@ -3391,7 +3515,8 @@
             renderCountryTabs();
             renderFocusBanner();
             updateComplexityPillsUI();
-            updateTeacherShareLink();
+            updateTransitionFilterUI();
+            updateUgcButtonState();
             applyFilters();
         }
 
@@ -3402,13 +3527,16 @@
 
 
         // =========================================================================
-        // DEEP-LINKING, FOCUS MODE & TEACHER SHARE ENGINE
+        // DEEP-LINKING, FOCUS MODE & UNIVERSAL 2-WAY URL SHARE ENGINE
         // =========================================================================
         const INDUSTRY_ALIASES = {
             'spa': 'spa-lam-dep',
             'spa-lam-dep': 'spa-lam-dep',
             'lam-dep': 'spa-lam-dep',
+            'lamdep': 'spa-lam-dep',
             'y-te': 'spa-lam-dep',
+            'yte': 'spa-lam-dep',
+            'beauty': 'spa-lam-dep',
             'thuong-hieu': 'thuong-hieu',
             'thuonghieu': 'thuong-hieu',
             'personal-brand': 'thuong-hieu',
@@ -3419,117 +3547,640 @@
             'amthuc': 'am-thuc',
             'fnb': 'am-thuc',
             'food': 'am-thuc',
+            'cafe': 'am-thuc',
             'du-lich': 'du-lich',
             'dulich': 'du-lich',
             'travel': 'du-lich',
             'cong-nghe': 'cong-nghe',
             'congnghe': 'cong-nghe',
             'tech': 'cong-nghe',
+            'gear': 'cong-nghe',
             'kien-truc': 'kien-truc',
             'kientruc': 'kien-truc',
             'architecture': 'kien-truc',
             'the-thao': 'the-thao',
             'thethao': 'the-thao',
             'sports': 'the-thao',
+            'gym': 'the-thao',
+            'fitness': 'the-thao',
             'ky-thuat': 'ky-thuat-quay',
             'kythuat': 'ky-thuat-quay',
-            'filmmaking': 'ky-thuat-quay'
+            'ky-thuat-quay': 'ky-thuat-quay',
+            'filmmaking': 'ky-thuat-quay',
+            'ugc': 'ugc',
+            'ads': 'ugc',
+            'quang-cao': 'ugc'
         };
 
         const STYLE_ALIASES = {
             'walk-and-talk': 'walk-and-talk',
             'walk': 'walk-and-talk',
             'walkandtalk': 'walk-and-talk',
+            'vua-di-vua-noi': 'walk-and-talk',
             'voice-over': 'voice-over',
             'voice': 'voice-over',
             'voiceover': 'voice-over',
+            'long-tieng': 'voice-over',
             'talking-head': 'talking-head',
             'talking': 'talking-head',
             'talkinghead': 'talking-head',
+            'noi-truc-dien': 'talking-head',
             'storytelling': 'storytelling',
             'story': 'storytelling',
+            'ke-chuyen': 'storytelling',
             'dien-anh': 'dien-anh',
             'cinematic': 'dien-anh',
+            'cinema': 'dien-anh',
             'chuyen-canh': 'chuyen-canh',
-            'transition': 'chuyen-canh'
+            'transition': 'chuyen-canh',
+            'transitions': 'chuyen-canh'
         };
 
         const COUNTRY_ALIASES = {
             'us_eu': 'us_eu',
             'aumy': 'us_eu',
             'au-my': 'us_eu',
+            'us': 'us_eu',
+            'eu': 'us_eu',
             'korea': 'korea',
             'han-quoc': 'korea',
             'hanquoc': 'korea',
+            'kr': 'korea',
             'india': 'india',
             'an-do': 'india',
             'ando': 'india',
+            'in': 'india',
             'japan': 'japan',
             'nhat-ban': 'japan',
             'nhatban': 'japan',
+            'jp': 'japan',
             'vietnam': 'vietnam',
             'viet-nam': 'vietnam',
+            'vn': 'vietnam',
             'asia_other': 'asia_other',
-            'chau-a': 'asia_other'
+            'chau-a': 'asia_other',
+            'asia': 'asia_other'
         };
 
-        function initUrlParams() {
+        const COMPLEXITY_ALIASES = {
+            'de': 'de',
+            'easy': 'de',
+            '3-8': 'de',
+            'trung-binh': 'trung-binh',
+            'trungbinh': 'trung-binh',
+            'tb': 'trung-binh',
+            'medium': 'trung-binh',
+            '9-18': 'trung-binh',
+            'nang-cao': 'nang-cao',
+            'nangcao': 'nang-cao',
+            'hard': 'nang-cao',
+            'cao': 'nang-cao',
+            'advanced': 'nang-cao',
+            '>18': 'nang-cao'
+        };
+
+        const DURATION_ALIASES = {
+            'short': 'short',
+            'ngan': 'short',
+            '<15s': 'short',
+            'medium': 'medium',
+            'vua': 'medium',
+            '15-30s': 'medium',
+            'long': 'long',
+            'dai': 'long',
+            '>30s': 'long'
+        };
+
+        const TRANSITION_ALIASES = {
+            'level-1': 'Chuyển cảnh Level 1',
+            'level1': 'Chuyển cảnh Level 1',
+            'l1': 'Chuyển cảnh Level 1',
+            '1': 'Chuyển cảnh Level 1',
+            'chuyen-canh-1': 'Chuyển cảnh Level 1',
+            'chuyển cảnh level 1': 'Chuyển cảnh Level 1',
+            'level-2': 'Chuyển cảnh Level 2',
+            'level2': 'Chuyển cảnh Level 2',
+            'l2': 'Chuyển cảnh Level 2',
+            '2': 'Chuyển cảnh Level 2',
+            'chuyen-canh-2': 'Chuyển cảnh Level 2',
+            'chuyển cảnh level 2': 'Chuyển cảnh Level 2'
+        };
+
+        const PURPOSE_ALIASES = {
+            'ban-hang': 'bán hàng',
+            'banhang': 'bán hàng',
+            'bán hàng': 'bán hàng',
+            'sales': 'bán hàng',
+            'sale': 'bán hàng',
+            'huong-dan': 'hướng dẫn',
+            'huongdan': 'hướng dẫn',
+            'hướng dẫn': 'hướng dẫn',
+            'tips': 'hướng dẫn',
+            'tutorial': 'hướng dẫn',
+            'ky-luat': 'kỷ luật',
+            'kyluat': 'kỷ luật',
+            'kỷ luật': 'kỷ luật',
+            'showcase': 'showcase',
+            'thuong-thuc': 'thưởng thức',
+            'thuongthuc': 'thưởng thức',
+            'thưởng thức': 'thưởng thức',
+            'tham-my': 'thưởng thức',
+            'thammy': 'thưởng thức',
+            'thẩm mỹ': 'thưởng thức',
+            'vlog': 'vlog'
+        };
+
+        const TECH_ALIASES = {
+            'walk-in': 'walk-in',
+            'static': 'static',
+            'match-cut': 'match cut',
+            'matchcut': 'match cut',
+            'match cut': 'match cut',
+            'whip-pan': 'whip pan',
+            'whippan': 'whip pan',
+            'whip pan': 'whip pan',
+            'split-screen': 'split screen',
+            'splitscreen': 'split screen',
+            'split screen': 'split screen',
+            'asmr': 'asmr',
+            'chiaroscuro': 'chiaroscuro',
+            'fpv': 'fpv',
+            'macro': 'macro'
+        };
+
+        // Trả về chuỗi tóm tắt người dùng thân thiện cho bộ lọc đang chọn
+        function getFilterSummaryText() {
+            let parts = [];
+            const db = window.FEDU_IDEAS_DATABASE;
+            if (appState.currentIndustry === 'ugc' || appState.showUgc) {
+                parts.push('📱 UGC Sàn TMĐT');
+            } else {
+                if (appState.currentTransitionLevel !== 'all') {
+                    parts.push(appState.currentTransitionLevel);
+                }
+                if (appState.currentStyle && appState.currentStyle !== 'all' && db) {
+                    const st = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
+                    if (st) parts.push(`${st.icon} ${st.name}`);
+                }
+                if (appState.currentIndustry && appState.currentIndustry !== 'all' && db) {
+                    const ind = (db.industries || []).find(i => i.id === appState.currentIndustry);
+                    if (ind) parts.push(`${ind.icon} ${ind.name}`);
+                }
+                if (appState.currentCountry && appState.currentCountry !== 'all' && db) {
+                    const c = (db.countries || []).find(x => x.id === appState.currentCountry);
+                    if (c) parts.push(`${c.flag} ${c.name}`);
+                }
+            }
+            if (appState.currentCreator) {
+                const cName = appState.currentCreatorName || appState.currentCreator;
+                parts.unshift(`👤 ${cName}`);
+            }
+            if (appState.currentPurpose) {
+                const purposeNameMap = {
+                    'bán hàng': 'Bán Hàng',
+                    'hướng dẫn': 'Hướng Dẫn',
+                    'kỷ luật': 'Kỷ Luật',
+                    'showcase': 'Thị Giác',
+                    'thưởng thức': 'Thị Giác',
+                    'vlog': 'Vlog'
+                };
+                parts.push(`🎯 ${purposeNameMap[appState.currentPurpose.toLowerCase()] || appState.currentPurpose}`);
+            }
+            if (appState.currentTech) {
+                parts.push(`⚙️ ${appState.currentTech}`);
+            }
+            if (appState.complexity) {
+                const labels = { 'de': '🟢 Dễ (3-8)', 'trung-binh': '🟡 Vừa (9-18)', 'nang-cao': '🔴 Cao (>18)' };
+                parts.push(labels[appState.complexity] || appState.complexity);
+            }
+            if (appState.searchQuery && appState.searchQuery.trim()) {
+                parts.push(`🔍 "${appState.searchQuery.trim()}"`);
+            }
+            return parts.length ? parts.join(' • ') : 'Toàn bộ kho';
+        }
+
+        // Parse incoming URL query params and initialize appState + DOM
+        function syncUrlToState() {
             const params = new URLSearchParams(window.location.search);
             const hash = window.location.hash.replace('#', '').trim().toLowerCase();
 
-            let indParam = params.get('nganh') || params.get('n') || (hash.startsWith('nganh-') ? hash.replace('nganh-', '') : hash);
-            let styleParam = params.get('kieu') || params.get('k') || (hash.startsWith('kieu-') ? hash.replace('kieu-', '') : '');
-            let countryParam = params.get('quoc-gia') || params.get('qg') || (hash.startsWith('qg-') ? hash.replace('qg-', '') : '');
-            let techParam = params.get('ky-thuat') || params.get('kt') || '';
-            let purposeParam = params.get('muc-dich') || params.get('md') || '';
-            let searchParam = params.get('q') || params.get('tim-kiem') || '';
+            let indParam = params.get('nganh') || params.get('industry') || params.get('n') || (hash.startsWith('nganh-') ? hash.replace('nganh-', '') : '');
+            let styleParam = params.get('kieu') || params.get('style') || params.get('k') || (hash.startsWith('kieu-') ? hash.replace('kieu-', '') : '');
+            let countryParam = params.get('quoc-gia') || params.get('qg') || params.get('country') || (hash.startsWith('qg-') ? hash.replace('qg-', '') : '');
             let creatorParam = params.get('creator') || params.get('c') || params.get('tac-gia') || '';
+            let techParam = params.get('ky-thuat') || params.get('kt') || params.get('tech') || '';
+            let purposeParam = params.get('muc-dich') || params.get('md') || params.get('purpose') || '';
+            let compParam = params.get('dokho') || params.get('complexity') || params.get('shots') || '';
+            let durParam = params.get('thoiluong') || params.get('duration') || '';
+            let transParam = params.get('transition') || params.get('level') || params.get('l') || '';
+            let searchParam = params.get('q') || params.get('tim-kiem') || params.get('search') || '';
+            let sortParam = params.get('sort') || params.get('sapxep') || '';
+            let ugcParam = params.get('ugc');
             let focusParam = params.get('focus') || params.get('f');
 
+            // Reset state to defaults before parsing
+            appState.currentStyle = 'all';
+            appState.currentIndustry = 'all';
+            appState.currentCountry = 'all';
+            appState.currentCreator = '';
+            appState.currentCreatorName = '';
+            appState.currentTech = '';
+            appState.currentPurpose = '';
+            appState.complexity = '';
+            appState.duration = '';
+            appState.currentTransitionLevel = 'all';
+            appState.searchQuery = '';
+            appState.sortBy = 'default';
+            appState.showUgc = false;
+            appState.currentPage = 1;
+
+            if (styleParam) {
+                const sKey = styleParam.toLowerCase().trim().replace(/[_ ]/g, '-');
+                if (STYLE_ALIASES[sKey]) {
+                    appState.currentStyle = STYLE_ALIASES[sKey];
+                } else if (window.FEDU_IDEAS_DATABASE?.shooting_styles?.some(s => s.id === sKey)) {
+                    appState.currentStyle = sKey;
+                }
+            }
+
+            if (indParam) {
+                const iKey = indParam.toLowerCase().trim().replace(/[_ ]/g, '-');
+                if (INDUSTRY_ALIASES[iKey]) {
+                    appState.currentIndustry = INDUSTRY_ALIASES[iKey];
+                } else if (window.FEDU_IDEAS_DATABASE?.industries?.some(i => i.id === iKey)) {
+                    appState.currentIndustry = iKey;
+                }
+                if (appState.currentIndustry === 'ugc') {
+                    appState.showUgc = true;
+                }
+            }
+
+            if (ugcParam === '1' || ugcParam === 'true') {
+                appState.showUgc = true;
+                if (appState.currentIndustry === 'all') {
+                    appState.currentIndustry = 'ugc';
+                }
+            }
+
+            if (countryParam) {
+                const cKey = countryParam.toLowerCase().trim().replace(/[- ]/g, '_');
+                if (COUNTRY_ALIASES[cKey] || COUNTRY_ALIASES[countryParam.toLowerCase().trim()]) {
+                    appState.currentCountry = COUNTRY_ALIASES[cKey] || COUNTRY_ALIASES[countryParam.toLowerCase().trim()];
+                } else if (window.FEDU_IDEAS_DATABASE?.countries?.some(c => c.id === cKey)) {
+                    appState.currentCountry = cKey;
+                }
+            }
+
             if (creatorParam) {
-                appState.currentCreator = creatorParam.trim();
+                const cleanCreator = creatorParam.replace(/^@/, '').trim();
+                appState.currentCreator = cleanCreator;
                 if (window.FEDU_IDEAS_DATABASE) {
-                    const matchItem = window.FEDU_IDEAS_DATABASE.ideas.find(it => {
-                        const h = (it.creator?.handle || '').toLowerCase().replace('@', '').trim();
-                        const n = (it.creator?.name || '').toLowerCase().trim();
-                        const q = creatorParam.toLowerCase().replace('@', '').trim();
-                        return h === q || n === q || h.includes(q) || n.includes(q);
+                    const db = window.FEDU_IDEAS_DATABASE;
+                    const cleanQuery = cleanCreator.toLowerCase().replace(/[@_.\s-]/g, '');
+                    const matchItem = db.ideas.find(it => {
+                        const h = (it.creator?.handle || '').toLowerCase().replace(/[@_.\s-]/g, '');
+                        const n = (it.creator?.name || '').toLowerCase().replace(/[@_.\s-]/g, '');
+                        return h === cleanQuery || n === cleanQuery || h.includes(cleanQuery) || n.includes(cleanQuery);
                     });
                     if (matchItem && matchItem.creator) {
                         appState.currentCreatorName = matchItem.creator.name || matchItem.creator.handle;
+                    } else {
+                        appState.currentCreatorName = cleanCreator;
                     }
                 }
             }
 
-            if (indParam && INDUSTRY_ALIASES[indParam]) {
-                appState.currentIndustry = INDUSTRY_ALIASES[indParam];
-            }
-            if (styleParam && STYLE_ALIASES[styleParam]) {
-                appState.currentStyle = STYLE_ALIASES[styleParam];
-            }
-            if (countryParam && COUNTRY_ALIASES[countryParam]) {
-                appState.currentCountry = COUNTRY_ALIASES[countryParam];
-            }
             if (techParam) {
-                appState.currentTech = techParam;
-                const tSelect = document.getElementById('techFilter');
-                if (tSelect) tSelect.value = techParam;
-            }
-            if (purposeParam) {
-                appState.currentPurpose = purposeParam;
-                const pSelect = document.getElementById('purposeFilter');
-                if (pSelect) pSelect.value = purposeParam;
-            }
-            if (searchParam) {
-                appState.searchQuery = searchParam;
-                const sInput = document.getElementById('globalSearchInput');
-                if (sInput) sInput.value = searchParam;
+                const cleanTech = techParam.trim().toLowerCase();
+                appState.currentTech = TECH_ALIASES[cleanTech] || techParam.trim();
             }
 
-            // Auto-activate Focus Mode if focus=1 or if user opened an industry/style link
-            if (focusParam === '1' || focusParam === 'true' || (appState.currentIndustry !== 'all') || (appState.currentStyle !== 'all')) {
+            if (purposeParam) {
+                const cleanPurpose = purposeParam.trim().toLowerCase();
+                appState.currentPurpose = PURPOSE_ALIASES[cleanPurpose] || purposeParam.trim();
+            }
+
+            if (compParam && COMPLEXITY_ALIASES[compParam.toLowerCase()]) {
+                appState.complexity = COMPLEXITY_ALIASES[compParam.toLowerCase()];
+            }
+
+            if (durParam && DURATION_ALIASES[durParam.toLowerCase()]) {
+                appState.duration = DURATION_ALIASES[durParam.toLowerCase()];
+            }
+
+            if (transParam && TRANSITION_ALIASES[transParam.toLowerCase()]) {
+                appState.currentTransitionLevel = TRANSITION_ALIASES[transParam.toLowerCase()];
+            }
+
+            if (searchParam) {
+                appState.searchQuery = searchParam.trim();
+            }
+
+            if (sortParam) {
+                appState.sortBy = sortParam.trim();
+            }
+
+            if (focusParam === '1' || focusParam === 'true') {
                 appState.focusMode = true;
             }
+
+            // Đồng bộ UI Select Controls
+            const tSelect = document.getElementById('techFilter');
+            if (tSelect) {
+                tSelect.value = appState.currentTech;
+                if (!tSelect.value && appState.currentTech) {
+                    for (let opt of tSelect.options) {
+                        if (opt.value.toLowerCase() === appState.currentTech.toLowerCase()) {
+                            tSelect.value = opt.value;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            const pSelect = document.getElementById('purposeFilter');
+            if (pSelect) {
+                pSelect.value = appState.currentPurpose;
+                if (!pSelect.value && appState.currentPurpose) {
+                    for (let opt of pSelect.options) {
+                        if (opt.value.toLowerCase() === appState.currentPurpose.toLowerCase()) {
+                            pSelect.value = opt.value;
+                            break;
+                        }
+                    }
+                }
+            }
+
+            const cSelect = document.getElementById('countryFilter');
+            if (cSelect) cSelect.value = (appState.currentCountry === 'all' ? '' : appState.currentCountry);
+
+            const compSelect = document.getElementById('complexityFilter');
+            if (compSelect) compSelect.value = appState.complexity;
+
+            const durSelect = document.getElementById('durationFilter');
+            if (durSelect) durSelect.value = appState.duration;
+
+            const sortSelect = document.getElementById('sortFilter');
+            if (sortSelect) sortSelect.value = appState.sortBy;
+
+            const sInput = document.getElementById('globalSearchInput');
+            if (sInput) sInput.value = appState.searchQuery;
+
+            const heroInput = document.getElementById('heroSearchInput');
+            if (heroInput) heroInput.value = appState.searchQuery;
+
+            const heroClearBtn = document.getElementById('heroClearSearchBtn');
+            if (heroClearBtn) {
+                heroClearBtn.style.display = appState.searchQuery ? 'inline-flex' : 'none';
+            }
+        }
+
+        // Backward compatibility
+        function initUrlParams() {
+            syncUrlToState();
+        }
+
+        // Synchronize state back to URL query parameters & update Share Toolbar UI
+        function syncStateToUrl(pushToHistory = false) {
+            const params = new URLSearchParams();
+
+            if (appState.currentStyle && appState.currentStyle !== 'all') {
+                params.set('kieu', appState.currentStyle);
+            }
+            if (appState.currentIndustry && appState.currentIndustry !== 'all') {
+                params.set('nganh', appState.currentIndustry);
+            }
+            if (appState.currentCountry && appState.currentCountry !== 'all') {
+                params.set('qg', appState.currentCountry);
+            }
+            if (appState.currentCreator) {
+                params.set('creator', appState.currentCreator.replace(/^@/, ''));
+            }
+            if (appState.currentTech) {
+                params.set('kt', appState.currentTech);
+            }
+            if (appState.currentPurpose) {
+                params.set('md', appState.currentPurpose);
+            }
+            if (appState.complexity) {
+                params.set('dokho', appState.complexity);
+            }
+            if (appState.duration) {
+                params.set('thoiluong', appState.duration);
+            }
+            if (appState.currentTransitionLevel && appState.currentTransitionLevel !== 'all') {
+                params.set('transition', appState.currentTransitionLevel === 'Chuyển cảnh Level 1' ? 'l1' : 'l2');
+            }
+            if (appState.searchQuery && appState.searchQuery.trim()) {
+                params.set('q', appState.searchQuery.trim());
+            }
+            if (appState.sortBy && appState.sortBy !== 'default') {
+                params.set('sort', appState.sortBy);
+            }
+            if (appState.showUgc || appState.currentIndustry === 'ugc') {
+                params.set('ugc', '1');
+            }
+
+            const queryString = params.toString();
+            const newRelativeUrl = queryString ? `?${queryString}` : window.location.pathname;
+
+            try {
+                const currentSearch = window.location.search || '';
+                const currentTarget = currentSearch ? currentSearch : window.location.pathname;
+
+                if (newRelativeUrl !== currentTarget) {
+                    if (pushToHistory) {
+                        window.history.pushState({ ...appState }, '', newRelativeUrl);
+                    } else {
+                        window.history.replaceState({ ...appState }, '', newRelativeUrl);
+                    }
+                }
+            } catch (e) {}
+
+            updateShareToolbarUI(params);
+        }
+
+        function updateShareToolbarUI(params) {
+            let activeCount = 0;
+            if (appState.currentStyle && appState.currentStyle !== 'all') activeCount++;
+            if (appState.currentIndustry && appState.currentIndustry !== 'all') activeCount++;
+            if (appState.currentCountry && appState.currentCountry !== 'all') activeCount++;
+            if (appState.currentCreator) activeCount++;
+            if (appState.currentTech) activeCount++;
+            if (appState.currentPurpose) activeCount++;
+            if (appState.complexity) activeCount++;
+            if (appState.duration) activeCount++;
+            if (appState.currentTransitionLevel && appState.currentTransitionLevel !== 'all') activeCount++;
+            if (appState.searchQuery && appState.searchQuery.trim()) activeCount++;
+
+            const badge = document.getElementById('activeFilterCounterBadge');
+            const resetBtn = document.getElementById('quickResetFiltersBtn');
+            const shareBtn = document.getElementById('btnCopyShareFilterLink');
+            const headerShareBtn = document.getElementById('headerShareFilterBtn');
+            const headerBadge = document.getElementById('headerShareBadge');
+            const mobileShareBtn = document.getElementById('mobileShareFilterBtn');
+            const floatingBar = document.getElementById('floatingFilterBar');
+            const floatingName = document.getElementById('floatingFilterName');
+
+            const summaryText = getFilterSummaryText();
+            const matchCount = document.getElementById('matchCounterText')?.innerText || '0';
+
+            if (badge) {
+                if (activeCount > 0) {
+                    badge.textContent = activeCount;
+                    badge.classList.remove('hidden');
+                } else {
+                    badge.classList.add('hidden');
+                }
+            }
+
+            if (headerShareBtn) {
+                if (activeCount > 0) {
+                    headerShareBtn.classList.remove('hidden', 'md:hidden');
+                    headerShareBtn.classList.add('hidden', 'md:inline-flex');
+                    if (headerBadge) headerBadge.textContent = activeCount;
+                } else {
+                    headerShareBtn.classList.remove('md:inline-flex');
+                    headerShareBtn.classList.add('hidden', 'md:hidden');
+                }
+            }
+
+            if (mobileShareBtn) {
+                if (activeCount > 0) {
+                    mobileShareBtn.classList.remove('hidden');
+                } else {
+                    mobileShareBtn.classList.add('hidden');
+                }
+            }
+
+            if (floatingBar) {
+                if (activeCount > 0) {
+                    floatingBar.classList.remove('translate-y-28', 'opacity-0', 'pointer-events-none');
+                    floatingBar.classList.add('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                    if (floatingName) {
+                        floatingName.textContent = `${summaryText} (${matchCount} mẫu)`;
+                    }
+                } else {
+                    floatingBar.classList.add('translate-y-28', 'opacity-0', 'pointer-events-none');
+                    floatingBar.classList.remove('translate-y-0', 'opacity-100', 'pointer-events-auto');
+                }
+            }
+
+            if (resetBtn) {
+                if (activeCount > 0) {
+                    resetBtn.classList.remove('hidden');
+                    resetBtn.classList.add('inline-flex');
+                } else {
+                    resetBtn.classList.add('hidden');
+                    resetBtn.classList.remove('inline-flex');
+                }
+            }
+
+            if (shareBtn) {
+                if (activeCount > 0) {
+                    shareBtn.classList.add('border-sky-400', 'bg-sky-500/25', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+                    shareBtn.classList.remove('border-sky-500/50', 'bg-sky-500/15', 'text-sky-300');
+                } else {
+                    shareBtn.classList.remove('border-sky-400', 'bg-sky-500/25', 'text-white', 'shadow-md', 'shadow-sky-500/20');
+                    shareBtn.classList.add('border-sky-500/50', 'bg-sky-500/15', 'text-sky-300');
+                }
+            }
+        }
+
+        // Universal 1-Click Share & Copy Filter Link (Native Share + Clipboard Fallback)
+        function copyCurrentFilterLink() {
+            // Đảm bảo đồng bộ URL mới nhất trước khi copy
+            syncStateToUrl(false);
+
+            const url = window.location.href;
+            const activeSummary = getFilterSummaryText();
+            const matchCount = document.getElementById('matchCounterText')?.innerText || '';
+            const shareTitle = activeSummary !== 'Toàn bộ kho' 
+                ? `Kho Ý Tưởng Video - ${activeSummary}`
+                : 'Kho Ý Tưởng Video Thực Chiến - FEDU';
+            const shareText = activeSummary !== 'Toàn bộ kho'
+                ? `Xem tuyển tập ${matchCount} video mẫu cho ${activeSummary} trên Kho Ý Tưởng:`
+                : 'Khám phá hơn 200 mẫu video ngắn thực chiến phân tích đạo diễn:';
+
+            const onCopySuccess = () => {
+                const btnText = document.getElementById('btnCopyShareFilterText');
+                const btnIcon = document.getElementById('btnCopyShareFilterIcon');
+                const btn = document.getElementById('btnCopyShareFilterLink');
+                const floatText = document.getElementById('floatingShareText');
+                const floatIcon = document.getElementById('floatingShareIcon');
+                const headerBtn = document.getElementById('headerShareFilterBtn');
+
+                if (btnText) btnText.textContent = '✓ Đã Chép!';
+                if (btnIcon) btnIcon.textContent = '✅';
+                if (btn) {
+                    btn.classList.add('border-emerald-400', 'bg-emerald-500/25', 'text-emerald-200');
+                }
+                if (floatText) floatText.textContent = '✓ Đã Chép!';
+                if (floatIcon) floatIcon.textContent = '✅';
+                if (headerBtn) headerBtn.classList.add('border-emerald-400', 'text-emerald-200');
+
+                setTimeout(() => {
+                    if (btnText) btnText.textContent = 'Gửi Link Bộ Lọc';
+                    if (btnIcon) btnIcon.textContent = '🔗';
+                    if (btn) btn.classList.remove('border-emerald-400', 'bg-emerald-500/25', 'text-emerald-200');
+                    if (floatText) floatText.textContent = 'Chia Sẻ';
+                    if (floatIcon) floatIcon.textContent = '📤';
+                    if (headerBtn) headerBtn.classList.remove('border-emerald-400', 'text-emerald-200');
+                }, 2200);
+
+                showToast(`📋 Đã chép link lọc: ${activeSummary}! Dán để gửi Zalo/Telegram ngay.`, '🔗');
+            };
+
+            // Hỗ trợ Native Web Share API trên điện thoại di động (iOS Safari / Android)
+            const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobileDevice && navigator.share) {
+                navigator.share({
+                    title: shareTitle,
+                    text: shareText,
+                    url: url
+                }).then(() => {
+                    showToast('✅ Đã mở khay chia sẻ hệ thống!', '📤');
+                }).catch((err) => {
+                    if (err.name !== 'AbortError') {
+                        fallbackCopyToClipboard(url, onCopySuccess);
+                    }
+                });
+                return;
+            }
+
+            // Desktop hoặc trình duyệt không hỗ trợ navigator.share: Tự động copy clipboard
+            fallbackCopyToClipboard(url, onCopySuccess);
+        }
+
+        function fallbackCopyToClipboard(url, onSuccess) {
+            if (navigator.clipboard && window.isSecureContext) {
+                navigator.clipboard.writeText(url).then(onSuccess).catch(() => {
+                    prompt("Sao chép liên kết bộ lọc này gửi học viên/khách hàng:", url);
+                });
+            } else {
+                const ta = document.createElement("textarea");
+                ta.value = url;
+                ta.style.position = "fixed";
+                ta.style.left = "-999999px";
+                document.body.appendChild(ta);
+                ta.focus();
+                ta.select();
+                try {
+                    document.execCommand('copy');
+                    onSuccess();
+                } catch (e) {
+                    prompt("Sao chép liên kết bộ lọc này gửi học viên/khách hàng:", url);
+                }
+                document.body.removeChild(ta);
+            }
+        }
+
+        function copyStudentShareLink() {
+            copyCurrentFilterLink();
+        }
+
+        function updateTeacherShareLink() {
+            // No-op: syncStateToUrl is cleanly triggered inside applyFilters(pushToHistory)
         }
 
         function renderFocusBanner() {
@@ -3538,7 +4189,8 @@
             if (!banner || !window.FEDU_IDEAS_DATABASE) return;
 
             const db = window.FEDU_IDEAS_DATABASE;
-            const hasFocus = appState.focusMode && (appState.currentIndustry !== 'all' || appState.currentStyle !== 'all' || appState.currentCountry !== 'all');
+            const hasCustomFilters = (appState.currentIndustry !== 'all' || appState.currentStyle !== 'all' || appState.currentCountry !== 'all' || appState.currentCreator);
+            const hasFocus = appState.focusMode && hasCustomFilters;
 
             if (!hasFocus) {
                 banner.classList.add('hidden');
@@ -3547,9 +4199,7 @@
             }
 
             banner.classList.remove('hidden');
-            if (allFilterBars && !appState.showFilterBarsInFocus) {
-                allFilterBars.classList.add('hidden');
-            } else if (allFilterBars) {
+            if (allFilterBars) {
                 allFilterBars.classList.remove('hidden');
             }
 
@@ -3562,32 +4212,32 @@
             let subText = "Tuyển tập các mẫu quay dựng chuẩn quốc tế do anh Việt chọn lọc thực chiến cho bạn.";
             let iconText = "🎯";
 
+            let labelParts = [];
+            if (appState.currentStyle !== 'all') {
+                const st = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
+                if (st) {
+                    labelParts.push(st.name);
+                    iconText = st.icon;
+                }
+            }
             if (appState.currentIndustry !== 'all') {
-                const indObj = db.industries.find(i => i.id === appState.currentIndustry);
-                if (indObj) {
-                    iconText = indObj.icon;
-                    if (indObj.id === 'ugc') {
-                        titleText = "Kho Video Mẫu Quảng Cáo UGC Sàn TMĐT (Shopee / Lazada)";
-                        subText = "Tuyển tập các mẫu video quảng cáo sản phẩm UGC chuẩn công thức AIDA: Gây chú ý tức thì, khơi gợi nhu cầu, kích thích mong muốn và kêu gọi hành động mua hàng.";
-                    } else {
-                        titleText = `Kho Mẫu Video Dành Riêng Cho Ngành ${indObj.name}`;
-                        subText = `Tuyển tập các mẫu video chuẩn quốc tế ngành ${indObj.name} do anh Việt chọn lọc thực chiến cho thương hiệu của bạn. Đã bóc tách phân cảnh, góc máy, ánh sáng và bài học áp dụng.`;
-                    }
+                const ind = (db.industries || []).find(i => i.id === appState.currentIndustry);
+                if (ind) {
+                    labelParts.push(ind.name);
+                    if (labelParts.length === 1) iconText = ind.icon;
                 }
-            } else if (appState.currentStyle !== 'all') {
-                const styleObj = (db.shooting_styles || []).find(s => s.id === appState.currentStyle);
-                if (styleObj) {
-                    iconText = styleObj.icon;
-                    titleText = `Chuyên Đề Kiểu Quay: ${styleObj.name}`;
-                    subText = `Thao lược các phân cảnh ứng dụng phong cách ${styleObj.name}, nhịp thở thị giác và kỹ thuật dựng bám sát bối cảnh thực chiến.`;
-                }
-            } else if (appState.currentCountry !== 'all') {
-                const countryObj = (db.countries || []).find(c => c.id === appState.currentCountry);
-                if (countryObj) {
-                    iconText = countryObj.flag;
-                    titleText = `Kho Mẫu Video Phong Cách: ${countryObj.name}`;
-                    subText = `Tổng hợp các góc máy và ngôn ngữ điện ảnh đặc trưng của các creator hàng đầu khu vực ${countryObj.name}.`;
-                }
+            }
+            if (appState.currentCountry !== 'all') {
+                const c = (db.countries || []).find(x => x.id === appState.currentCountry);
+                if (c) labelParts.push(c.name);
+            }
+            if (appState.currentCreator) {
+                labelParts.push(appState.currentCreatorName || appState.currentCreator);
+            }
+
+            if (labelParts.length > 0) {
+                titleText = `Kho Mẫu Video: ${labelParts.join(' • ')}`;
+                subText = `Tuyển tập các mẫu video chọn lọc thực chiến theo bộ lọc ${labelParts.join(' kết hợp ')}. Đã bóc tách phân cảnh, góc máy, ánh sáng và bài học áp dụng.`;
             }
 
             if (iconEl) iconEl.innerText = iconText;
@@ -3613,104 +4263,7 @@
 
         function exitFocusMode() {
             appState.focusMode = false;
-            appState.showFilterBarsInFocus = true;
-            appState.currentIndustry = 'all';
-            appState.currentStyle = 'all';
-            appState.currentCountry = 'all';
-            appState.currentTech = '';
-            appState.currentPurpose = '';
-            appState.searchQuery = '';
-
-            const sInput = document.getElementById('globalSearchInput');
-            if (sInput) sInput.value = '';
-            const tSelect = document.getElementById('techFilter');
-            if (tSelect) tSelect.value = '';
-            const pSelect = document.getElementById('purposeFilter');
-            if (pSelect) pSelect.value = '';
-            const cSelect = document.getElementById('countryFilter');
-            if (cSelect) cSelect.value = '';
-
-            try {
-                window.history.pushState({}, '', window.location.pathname);
-            } catch(e) {}
-
-            renderFocusBanner();
-            renderShootingStyleTabs();
-            renderIndustryPills();
-            renderCountryTabs();
-            renderFocusBanner();
-            updateTeacherShareLink();
-            applyFilters();
-        }
-
-        function updateTeacherShareLink() {
-            const previewEl = document.getElementById('shareUrlPreview');
-            if (!previewEl) return;
-
-            let urlParams = [];
-            let shortAlias = '';
-
-            if (appState.currentIndustry !== 'all') {
-                urlParams.push(`nganh=${encodeURIComponent(appState.currentIndustry)}`);
-                if (appState.currentIndustry === 'spa-lam-dep') shortAlias = 'spa.html';
-                else if (appState.currentIndustry === 'am-thuc') shortAlias = 'fnb.html';
-                else if (appState.currentIndustry === 'thoi-trang') shortAlias = 'thoitrang.html';
-                else if (appState.currentIndustry === 'thuong-hieu') shortAlias = 'thuonghieu.html';
-                else if (appState.currentIndustry === 'du-lich') shortAlias = 'dulich.html';
-                else if (appState.currentIndustry === 'cong-nghe') shortAlias = 'congnghe.html';
-                else if (appState.currentIndustry === 'kien-truc') shortAlias = 'kientruc.html';
-                else if (appState.currentIndustry === 'the-thao') shortAlias = 'thethao.html';
-                else if (appState.currentIndustry === 'ky-thuat-quay') shortAlias = 'kythuat.html';
-            }
-            if (appState.currentStyle !== 'all') {
-                urlParams.push(`kieu=${encodeURIComponent(appState.currentStyle)}`);
-                if (!shortAlias) {
-                    if (appState.currentStyle === 'walk-and-talk') shortAlias = 'walkandtalk.html';
-                    else if (appState.currentStyle === 'voice-over') shortAlias = 'voiceover.html';
-                    else if (appState.currentStyle === 'talking-head') shortAlias = 'talkinghead.html';
-                    else if (appState.currentStyle === 'storytelling') shortAlias = 'storytelling.html';
-                }
-            }
-            if (appState.currentCountry !== 'all') {
-                urlParams.push(`quoc-gia=${encodeURIComponent(appState.currentCountry)}`);
-            }
-            if (appState.currentTech) {
-                urlParams.push(`ky-thuat=${encodeURIComponent(appState.currentTech)}`);
-            }
-            if (appState.currentPurpose) {
-                urlParams.push(`muc-dich=${encodeURIComponent(appState.currentPurpose)}`);
-            }
-
-            let fullShareUrl = 'https://ytuong.fedu.vn/';
-            if (urlParams.length > 0) {
-                urlParams.push('focus=1');
-                fullShareUrl = `https://ytuong.fedu.vn/?${urlParams.join('&')}`;
-                if (shortAlias && urlParams.length === 2) {
-                    fullShareUrl = `https://ytuong.fedu.vn/${shortAlias}`;
-                }
-            }
-
-            previewEl.innerText = fullShareUrl;
-            previewEl.dataset.url = fullShareUrl;
-
-            try {
-                if (urlParams.length > 0) {
-                    window.history.replaceState({}, '', `?${urlParams.join('&')}`);
-                } else {
-                    window.history.replaceState({}, '', window.location.pathname);
-                }
-            } catch (e) {}
-        }
-
-        function copyStudentShareLink() {
-            const previewEl = document.getElementById('shareUrlPreview');
-            const url = previewEl?.dataset.url || previewEl?.innerText || window.location.href;
-            
-            navigator.clipboard.writeText(url).then(() => {
-                showToast("Đã sao chép link gửi học viên! Dán vào Zalo/Facebook ngay.", "📋");
-            }).catch(() => {
-                prompt("Sao chép liên kết này gửi cho học viên:", url);
-            });
+            resetAllFilters();
         }
 
         function showToast(msg, icon = "✅") {
@@ -3722,12 +4275,13 @@
             if (msgEl) msgEl.innerText = msg;
             if (iconEl) iconEl.innerText = icon;
 
-            toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+            toast.classList.remove('-translate-y-12', 'opacity-0', 'pointer-events-none');
             toast.classList.add('translate-y-0', 'opacity-100');
 
-            setTimeout(() => {
+            clearTimeout(toast._timeout);
+            toast._timeout = setTimeout(() => {
                 toast.classList.remove('translate-y-0', 'opacity-100');
-                toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+                toast.classList.add('-translate-y-12', 'opacity-0', 'pointer-events-none');
             }, 3000);
         }
 
@@ -3811,20 +4365,81 @@
         document.addEventListener('DOMContentLoaded', () => {
             initStorage();
             updateAdminBarUI();
-            appState.currentCountry = 'all';
-            const countrySelect = document.getElementById('countryFilter');
-            if (countrySelect) countrySelect.value = '';
+            syncUrlToState();
             renderShootingStyleTabs();
             renderIndustryPills();
             renderCountryTabs();
+            updateComplexityPillsUI();
+            updateTransitionFilterUI();
             renderFocusBanner();
-            updateTeacherShareLink();
+            updateHeaderBadges();
+            applyFilters();
+
+            // Phản hồi thị giác khi người dùng mở một link chia sẻ có bộ lọc
+            const summaryText = getFilterSummaryText();
+            if (summaryText !== 'Toàn bộ kho') {
+                const count = document.getElementById('matchCounterText')?.innerText || '';
+                showToast(`🎯 Đang xem bộ lọc: ${summaryText} (${count} video)!`, '🔗');
+
+                // Tự động cuộn tab kiểu quay đang active vào tầm mắt nếu có
+                if (appState.currentStyle !== 'all') {
+                    setTimeout(() => {
+                        const activeStyleTab = document.querySelector('#shootingStyleTabsContainer .style-tab.active');
+                        if (activeStyleTab) {
+                            activeStyleTab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        }
+                    }, 350);
+                }
+            }
+        });
+
+        // Browser Back / Forward History Restoration
+        window.addEventListener('popstate', () => {
+            syncUrlToState();
+            renderShootingStyleTabs();
+            renderIndustryPills();
+            renderCountryTabs();
+            updateComplexityPillsUI();
+            updateTransitionFilterUI();
+            renderFocusBanner();
             updateHeaderBadges();
             applyFilters();
         });
     </script>
-    <!-- Toast Notification -->
-    <div id="toastNotification" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 border border-sky-500/40 text-slate-100 shadow-2xl shadow-sky-950/50 text-xs font-semibold backdrop-blur-md">
+    <!-- FLOATING STICKY ACTIVE FILTER & SHARE BAR (ALWAYS VISIBLE WHEN FILTERING) -->
+    <div 
+        id="floatingFilterBar" 
+        class="fixed bottom-5 left-1/2 transform -translate-x-1/2 z-40 w-[92%] sm:w-auto min-w-[310px] max-w-lg bg-slate-900/95 backdrop-blur-xl border border-sky-400/50 shadow-2xl shadow-sky-950/90 rounded-2xl p-2 sm:p-2.5 transition-all duration-300 translate-y-28 opacity-0 pointer-events-none flex items-center justify-between gap-3"
+    >
+        <div class="flex items-center gap-2 overflow-hidden flex-1 pl-1.5">
+            <span class="text-base shrink-0 animate-pulse">🎯</span>
+            <div class="flex flex-col min-w-0">
+                <span class="text-[10px] font-bold text-sky-400 uppercase tracking-wider">Đang xem bộ lọc:</span>
+                <span id="floatingFilterName" class="text-xs font-bold text-white truncate max-w-[170px] sm:max-w-[270px]">...</span>
+            </div>
+        </div>
+        <div class="flex items-center gap-1.5 shrink-0">
+            <button 
+                onclick="copyCurrentFilterLink()" 
+                id="floatingShareBtn"
+                class="px-3.5 py-1.5 rounded-xl bg-sky-500 hover:bg-sky-400 text-slate-950 text-xs font-black transition flex items-center gap-1.5 shadow-md shadow-sky-500/30 cursor-pointer active:scale-95"
+                title="Gửi link bộ lọc này cho học viên hoặc khách hàng"
+            >
+                <span id="floatingShareIcon">📤</span>
+                <span id="floatingShareText">Chia Sẻ</span>
+            </button>
+            <button 
+                onclick="resetAllFilters()" 
+                class="w-8 h-8 rounded-xl bg-slate-800/90 hover:bg-rose-600 border border-slate-700 hover:border-rose-500 text-slate-300 hover:text-white text-xs flex items-center justify-center transition cursor-pointer active:scale-95"
+                title="Bỏ toàn bộ lọc"
+            >
+                ✕
+            </button>
+        </div>
+    </div>
+
+    <!-- Toast Notification (Top Screen Banner - Không bao giờ che nút bấm dưới chân) -->
+    <div id="toastNotification" class="fixed top-5 left-1/2 -translate-x-1/2 sm:left-auto sm:right-6 sm:translate-x-0 z-50 transform -translate-y-12 opacity-0 pointer-events-none transition-all duration-300 flex items-center gap-2.5 px-4 py-3 rounded-2xl bg-slate-900/95 border border-sky-400/60 text-slate-100 shadow-2xl shadow-sky-950/80 text-xs font-semibold backdrop-blur-md max-w-[92vw]">
         <span id="toastIcon" class="text-lg">✅</span>
         <span id="toastMsg">Đã sao chép link chuyên đề!</span>
     </div>
