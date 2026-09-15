@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 265,
-  "total_unique_ideas": 240,
-  "total_active_ideas": 208,
+  "total_scene_items": 266,
+  "total_unique_ideas": 241,
+  "total_active_ideas": 209,
   "total_excluded_ideas": 32,
   "total_creators": 138,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 20,
     "storytelling": 25,
     "dien-anh": 102,
-    "chuyen-canh": 44
+    "chuyen-canh": 45
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 22,
     "kien-truc": 22,
     "the-thao": 9,
-    "ky-thuat-quay": 64,
+    "ky-thuat-quay": 65,
     "ugc": 5
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 94,
+    "us_eu": 95,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -332,6 +332,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@turkishairlines",
+      "name": "Turkish_Airlines",
+      "profile_url": "https://www.instagram.com/turkishairlines/",
+      "video_count": 3,
+      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines",
+        "IG_@Turkish_Airlines_DdJYSokAkAj_Video_by_turkishairlines",
+        "IG_@Turkish_Airlines_DaxjeQ4A9dP_Video_by_turkishairlines"
+      ]
+    },
+    {
       "handle": "@layton_video",
       "name": "Layton Video",
       "profile_url": "https://www.instagram.com/layton_video/",
@@ -420,18 +433,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@turkishairlines",
-      "name": "Turkish_Airlines",
-      "profile_url": "https://www.instagram.com/turkishairlines/",
-      "video_count": 2,
-      "top_industry": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Turkish_Airlines_DdJYSokAkAj_Video_by_turkishairlines/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@Turkish_Airlines_DdJYSokAkAj_Video_by_turkishairlines",
-        "IG_@Turkish_Airlines_DaxjeQ4A9dP_Video_by_turkishairlines"
       ]
     },
     {
@@ -1815,6 +1816,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines",
+      "shortcode": "DchBUgVMvrp_",
+      "title_vi": "Video by turkishairlines",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 70 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh (Transition)",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyển cảnh, ",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh, . Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Turkish_Airlines",
+        "name": "Turkish_Airlines",
+        "handle": "@turkishairlines",
+        "profile_url": "https://www.instagram.com/turkishairlines/"
+      },
+      "ig_url": "https://www.instagram.com/reels/DchBUgVMvrp/",
+      "gdrive_folder": "https://drive.google.com/open?id=1OxfmG4mG7jk-3tdsC38y44eF6EEOWtED",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DchBUgVMvrp.mp4",
+        "report_url": "reports/IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines.html",
+        "shots_count": 70,
+        "duration": "140s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Turkish_Airlines_DdJYSokAkAj_Video_by_turkishairlines",
       "shortcode": "DdJYSokAkAj",
