@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FEDU Omni-Hub • Trung Tâm Điều Hành & Kho Tri Thức Số (go.fedu.vn)</title>
+  <title>VIDEO Omni-Hub • Trung Tâm Điều Hành & Kho Tri Thức Số</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -53,7 +53,7 @@
     }
     a { color: inherit; text-decoration: none; }
     
-    /* TOP NAVBAR */
+    /* TOP NAVBAR - ĐÃ GỠ BỎ NÚT GÓC TRÊN PHẢI THEO YÊU CẦU */
     .navbar {
       position: sticky; top: 0; z-index: 100;
       background: rgba(6, 9, 17, 0.88);
@@ -71,14 +71,12 @@
     }
     .brand-name { font-family: var(--font-display); font-size: 15px; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 6px; }
     .brand-domain { color: var(--cyan); font-family: var(--font-mono); font-size: 12px; font-weight: 600; background: var(--cyan-glow); padding: 3px 8px; border-radius: 6px; }
-    .nav-actions { display: flex; align-items: center; gap: 10px; }
-    .nav-pill {
-      font-size: 12px; font-weight: 600; color: var(--text-secondary);
-      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle);
-      padding: 6px 14px; border-radius: 999px; display: inline-flex; align-items: center; gap: 6px;
+    .nav-hints {
+      font-size: 12px; font-family: var(--font-mono); color: var(--text-muted);
+      display: flex; align-items: center; gap: 8px;
     }
-    .nav-pill kbd {
-      background: rgba(255, 255, 255, 0.12); color: #fff; padding: 1px 6px; border-radius: 4px; font-family: var(--font-mono); font-size: 11px;
+    .nav-hints kbd {
+      background: rgba(255, 255, 255, 0.08); color: var(--text-secondary); padding: 1px 5px; border-radius: 4px; border: 1px solid var(--border-subtle);
     }
 
     /* CONTAINER */
@@ -86,7 +84,7 @@
 
     /* HERO */
     .hero {
-      text-align: center; padding: 28px 16px 20px;
+      text-align: center; padding: 20px 16px 16px;
     }
     .hero-badge {
       display: inline-flex; align-items: center; gap: 6px;
@@ -95,16 +93,16 @@
     }
     .hero h1 {
       font-family: var(--font-display);
-      font-size: clamp(26px, 4.2vw, 38px); font-weight: 800; color: #fff; margin-bottom: 10px; letter-spacing: -0.02em;
+      font-size: clamp(26px, 4.2vw, 36px); font-weight: 800; color: #fff; margin-bottom: 8px; letter-spacing: -0.02em;
     }
     .hero p {
       font-family: var(--font-serif);
-      color: #cbd5e1; font-size: 16.5px; font-weight: 400; line-height: 1.65; max-width: 760px; margin: 0 auto 24px;
+      color: #cbd5e1; font-size: 16px; font-weight: 400; line-height: 1.6; max-width: 760px; margin: 0 auto 20px;
     }
 
     /* SEARCH BAR */
     .search-box {
-      max-width: 780px; margin: 0 auto 24px; position: relative;
+      max-width: 780px; margin: 0 auto 18px; position: relative;
     }
     .search-inner {
       display: flex; align-items: center;
@@ -140,109 +138,139 @@
       margin-left: 8px;
     }
 
-    /* PINNED ESSENTIALS */
+    /* MỚI DÙNG GẦN ĐÂY (RECENTLY USED) */
+    .recent-section {
+      max-width: 1100px; margin: 0 auto 16px; display: none;
+    }
+    .recent-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;
+    }
+    .recent-label {
+      font-size: 11.5px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
+      color: var(--cyan); display: flex; align-items: center; gap: 6px;
+    }
+    .recent-clear-btn {
+      font-size: 11px; color: var(--text-muted); background: transparent; border: none; cursor: pointer; text-decoration: underline;
+    }
+    .recent-clear-btn:hover { color: var(--rose); }
+    .recent-chips {
+      display: flex; gap: 8px; overflow-x: auto; padding-bottom: 4px; scrollbar-width: none;
+    }
+    .recent-chip {
+      flex-shrink: 0; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.22);
+      border-radius: var(--radius-sm); padding: 6px 12px; display: flex; align-items: center; gap: 8px;
+      font-size: 12.5px; font-weight: 600; color: #fff; cursor: pointer; transition: all 0.18s; text-decoration: none;
+    }
+    .recent-chip:hover {
+      background: rgba(56, 189, 248, 0.16); border-color: var(--cyan); transform: translateY(-1px);
+    }
+    .recent-chip-icon { font-size: 15px; }
+    .recent-chip-title { max-width: 180px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    /* PINNED ESSENTIALS ĐỘNG (INTERACTIVE PINNED) */
     .pinned-section {
-      max-width: 1100px; margin: 0 auto 28px;
+      max-width: 1100px; margin: 0 auto 24px;
+    }
+    .pinned-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
     }
     .pinned-label {
       font-size: 11.5px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px;
-      color: var(--amber); margin-bottom: 12px; display: flex; align-items: center; gap: 6px;
+      color: var(--amber); display: flex; align-items: center; gap: 6px;
     }
+    .pinned-reset-btn {
+      font-size: 11px; color: var(--text-muted); background: transparent; border: none; cursor: pointer;
+    }
+    .pinned-reset-btn:hover { color: var(--amber); }
     .pinned-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 12px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
     }
     .pinned-card {
       background: linear-gradient(145deg, rgba(245, 158, 11, 0.06) 0%, rgba(16, 23, 38, 0.9) 100%);
       border: 1px solid rgba(245, 158, 11, 0.25);
-      border-radius: var(--radius-md); padding: 12px 14px;
+      border-radius: var(--radius-md); padding: 10px 12px;
       display: flex; align-items: center; gap: 10px;
-      transition: all 0.2s ease; text-decoration: none; color: inherit;
+      transition: all 0.2s ease; text-decoration: none; color: inherit; position: relative;
     }
     .pinned-card:hover {
       transform: translateY(-2px); border-color: var(--amber);
       box-shadow: 0 8px 24px rgba(245, 158, 11, 0.15);
     }
-    .pinned-icon { font-size: 22px; }
-    .pinned-info { overflow: hidden; }
-    .pinned-title { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-    .pinned-meta { font-family: var(--font-mono); font-size: 11px; color: var(--text-muted); }
+    .pinned-icon { font-size: 20px; flex-shrink: 0; }
+    .pinned-info { overflow: hidden; flex: 1; }
+    .pinned-title { font-family: var(--font-display); font-size: 12.5px; font-weight: 700; color: #fff; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .pinned-meta { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-muted); }
+    .pinned-unpin {
+      position: absolute; top: 4px; right: 4px; background: rgba(0, 0, 0, 0.5);
+      border: none; color: #94a3b8; border-radius: 50%; width: 20px; height: 20px;
+      display: flex; align-items: center; justify-content: center; font-size: 10px;
+      cursor: pointer; transition: all 0.18s; opacity: 0;
+    }
+    .pinned-card:hover .pinned-unpin { opacity: 1; }
+    .pinned-unpin:hover { color: #f43f5e; background: rgba(244, 63, 94, 0.25); transform: scale(1.1); }
 
-    /* CATEGORY TABS (BỐ CỤC 2 DÒNG THỰC CHIẾN - DỄ ẤN) */
+    /* SMART STATUS FILTER PILLS */
+    .status-filter-bar {
+      display: flex; align-items: center; gap: 8px; margin-bottom: 14px; flex-wrap: wrap;
+    }
+    .status-pill {
+      background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border-subtle);
+      color: var(--text-secondary); font-size: 12px; font-weight: 700; font-family: var(--font-display);
+      padding: 5px 12px; border-radius: 999px; cursor: pointer; transition: all 0.18s;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .status-pill:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+    .status-pill.active {
+      background: var(--cyan-glow); border-color: var(--cyan); color: var(--cyan);
+    }
+    .status-pill[data-status="pinned"].active {
+      background: rgba(245, 158, 11, 0.15); border-color: var(--amber); color: var(--amber);
+    }
+    .status-pill[data-status="latest"].active {
+      background: rgba(244, 63, 94, 0.15); border-color: var(--rose); color: var(--rose);
+    }
+
+    /* CATEGORY TABS */
     .tabs-bar {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 24px;
-      padding-bottom: 16px;
-      border-bottom: 1px solid var(--border-subtle);
+      display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--border-subtle);
     }
-    .tabs-row {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
+    .tabs-row { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .tab-btn {
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-secondary);
-      font-size: 13.5px;
-      font-weight: 600;
-      font-family: var(--font-display);
-      padding: 8px 16px;
-      border-radius: var(--radius-sm);
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      white-space: nowrap;
-      transition: all 0.2s ease;
-      min-height: 40px;
-      user-select: none;
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);
+      color: var(--text-secondary); font-size: 13px; font-weight: 600; font-family: var(--font-display);
+      padding: 7px 14px; border-radius: var(--radius-sm); cursor: pointer; display: inline-flex;
+      align-items: center; gap: 8px; white-space: nowrap; transition: all 0.2s ease; min-height: 38px;
     }
-    .tab-btn:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.07);
-      border-color: rgba(255, 255, 255, 0.16);
-      transform: translateY(-1px);
-    }
+    .tab-btn:hover { color: #fff; background: rgba(255, 255, 255, 0.07); border-color: rgba(255, 255, 255, 0.16); transform: translateY(-1px); }
     .tab-btn.active {
-      background: var(--bg-card);
-      color: var(--cyan);
-      border-color: rgba(56, 189, 248, 0.45);
+      background: var(--bg-card); color: var(--cyan); border-color: rgba(56, 189, 248, 0.45);
       box-shadow: 0 2px 14px var(--cyan-glow);
     }
     .tab-btn[data-cat="megaprompts"].active {
-      border-color: rgba(56, 189, 248, 0.6);
-      box-shadow: 0 2px 16px rgba(56, 189, 248, 0.35);
+      border-color: rgba(56, 189, 248, 0.6); box-shadow: 0 2px 16px rgba(56, 189, 248, 0.35);
     }
     .tab-badge {
-      font-size: 11px;
-      font-family: var(--font-mono);
-      font-weight: 700;
-      background: rgba(255, 255, 255, 0.08);
-      padding: 2px 8px;
-      border-radius: 999px;
+      font-size: 11px; font-family: var(--font-mono); font-weight: 700;
+      background: rgba(255, 255, 255, 0.08); padding: 2px 7px; border-radius: 999px;
     }
-    .tab-btn.active .tab-badge {
-      background: var(--cyan-glow);
-      color: var(--cyan);
-    }
+    .tab-btn.active .tab-badge { background: var(--cyan-glow); color: var(--cyan); }
 
     /* RESULTS STATS */
     .results-header {
-      display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;
       font-size: 13px; color: var(--text-muted); font-weight: 600;
     }
     .results-count span { color: var(--text-primary); font-weight: 700; font-family: var(--font-mono); }
+    .results-hint { font-family: var(--font-mono); font-size: 11.5px; }
 
     /* CARDS GRID */
     .cards-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px;
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px;
     }
     .card {
       background: var(--bg-surface); border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md); padding: 18px;
+      border-radius: var(--radius-md); padding: 16px;
       display: flex; flex-direction: column; justify-content: space-between;
       transition: all 0.22s ease; position: relative;
     }
@@ -250,15 +278,21 @@
       transform: translateY(-3px); border-color: var(--cyan);
       background: var(--bg-card-hover); box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5);
     }
-    .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 12px; }
+    .card.is-focused {
+      border-color: var(--cyan) !important;
+      box-shadow: 0 0 0 2px var(--cyan), 0 12px 35px rgba(0, 0, 0, 0.6) !important;
+      transform: translateY(-3px); background: var(--bg-card-hover) !important;
+    }
+    .card-top { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px; }
     .card-icon {
-      font-size: 26px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center;
+      font-size: 24px; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
       background: rgba(255, 255, 255, 0.04); border-radius: 10px; flex-shrink: 0;
     }
     .card-title-group { flex: 1; overflow: hidden; }
+    .card-badges-row { display: flex; align-items: center; gap: 6px; margin-bottom: 5px; flex-wrap: wrap; }
     .card-badge {
-      display: inline-block; font-size: 10.5px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
-      letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-bottom: 6px;
+      display: inline-block; font-size: 10px; font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.5px; padding: 2px 7px; border-radius: 4px;
     }
     .badge-apps { background: rgba(56, 189, 248, 0.15); color: #38bdf8; }
     .badge-landings { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
@@ -266,42 +300,56 @@
     .badge-podcasts { background: rgba(168, 85, 247, 0.15); color: #c084fc; }
     .badge-skills { background: rgba(244, 63, 94, 0.15); color: #fb7185; }
     .badge-storyboards { background: rgba(251, 146, 60, 0.15); color: #fb923c; }
+    .badge-megaprompts { background: rgba(56, 189, 248, 0.2); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.4); }
+
+    .card-date-badge {
+      font-size: 9.5px; font-family: var(--font-mono); color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04); padding: 1px 5px; border-radius: 4px;
+    }
+
+    /* CARD PIN BUTTON */
+    .btn-card-pin {
+      background: transparent; border: none; color: var(--text-muted); cursor: pointer;
+      font-size: 16px; padding: 3px 5px; border-radius: 6px; transition: all 0.18s; line-height: 1;
+    }
+    .btn-card-pin:hover { color: var(--amber); background: rgba(245, 158, 11, 0.15); transform: scale(1.15); }
+    .btn-card-pin.is-pinned { color: var(--amber); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.6)); }
 
     .card-title {
-      font-family: var(--font-display);
-      font-size: 15px; font-weight: 700; color: #fff; line-height: 1.4; letter-spacing: -0.01em;
-      margin-bottom: 6px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+      font-family: var(--font-display); font-size: 14.5px; font-weight: 700; color: #fff; line-height: 1.4;
+      letter-spacing: -0.01em; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
     }
     .card-desc {
-      font-family: var(--font-serif);
-      font-size: 13.5px; color: var(--text-secondary); line-height: 1.55;
-      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 14px;
+      font-family: var(--font-serif); font-size: 13px; color: var(--text-secondary); line-height: 1.55;
+      display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; margin-bottom: 12px;
     }
-    .card-tags {
-      display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 14px;
-    }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 12px; }
     .tag-chip {
-      font-family: var(--font-mono);
-      font-size: 10.5px; font-weight: 600; color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.04); padding: 2px 7px; border-radius: 4px;
+      font-family: var(--font-mono); font-size: 10px; font-weight: 600; color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.04); padding: 2px 6px; border-radius: 4px;
       cursor: pointer; transition: all 0.15s;
     }
     .tag-chip:hover { color: var(--cyan); background: var(--cyan-glow); }
 
     .card-actions {
-      display: flex; gap: 8px; align-items: center; border-top: 1px solid var(--border-subtle); padding-top: 12px; margin-top: auto;
+      display: flex; gap: 6px; align-items: center; border-top: 1px solid var(--border-subtle);
+      padding-top: 10px; margin-top: auto;
     }
     .btn-open {
       flex: 1; background: var(--bg-base); border: 1px solid rgba(56, 189, 248, 0.3);
-      color: #fff; font-family: var(--font-display); font-size: 12px; font-weight: 700; padding: 7px 12px; border-radius: var(--radius-sm);
-      display: flex; align-items: center; justify-content: center; gap: 6px; transition: all 0.2s;
+      color: #fff; font-family: var(--font-display); font-size: 12px; font-weight: 700; padding: 7px 10px;
+      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; gap: 5px; transition: all 0.2s;
     }
-    .btn-open:hover {
-      background: var(--cyan); color: #000; border-color: var(--cyan);
+    .btn-open:hover { background: var(--cyan); color: #000; border-color: var(--cyan); }
+    .btn-preview {
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle);
+      color: var(--text-secondary); font-family: var(--font-display); font-size: 11.5px; font-weight: 600; padding: 7px 9px;
+      border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 4px;
     }
+    .btn-preview:hover { color: var(--cyan); background: var(--cyan-glow); border-color: rgba(56, 189, 248, 0.4); }
     .btn-copy {
       background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-subtle);
-      color: var(--text-secondary); font-family: var(--font-mono); font-size: 12px; font-weight: 600; padding: 7px 10px;
+      color: var(--text-secondary); font-family: var(--font-mono); font-size: 11.5px; font-weight: 600; padding: 7px 9px;
       border-radius: var(--radius-sm); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 4px;
     }
     .btn-copy:hover { color: #fff; background: rgba(255, 255, 255, 0.1); }
@@ -310,13 +358,11 @@
     mark { background: rgba(56, 189, 248, 0.3); color: #fff; padding: 0 2px; border-radius: 3px; }
 
     /* EMPTY STATE */
-    .empty-state {
-      text-align: center; padding: 60px 20px; color: var(--text-muted);
-    }
+    .empty-state { text-align: center; padding: 60px 20px; color: var(--text-muted); }
     .empty-icon { font-size: 48px; margin-bottom: 12px; }
 
     /* LOAD MORE */
-    .load-more-wrap { text-align: center; margin-top: 32px; }
+    .load-more-wrap { text-align: center; margin-top: 28px; }
     .btn-load-more {
       background: var(--bg-surface); border: 1px solid var(--border-subtle);
       color: var(--text-secondary); font-family: var(--font-display); font-size: 13px; font-weight: 700; padding: 10px 24px;
@@ -324,16 +370,71 @@
     }
     .btn-load-more:hover { border-color: var(--cyan); color: #fff; background: var(--bg-card); }
 
+    /* QUICK PREVIEW SLIDE-OVER DRAWER */
+    .drawer-overlay {
+      position: fixed; inset: 0; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px);
+      z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.25s ease;
+    }
+    .drawer-overlay.open { opacity: 1; pointer-events: auto; }
+    .drawer-panel {
+      position: fixed; top: 0; right: 0; bottom: 0; width: min(760px, 94vw);
+      background: #0c121e; border-left: 1px solid var(--border-subtle); z-index: 1001;
+      transform: translateX(100%); transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex; flex-direction: column; box-shadow: -20px 0 60px rgba(0, 0, 0, 0.85);
+    }
+    .drawer-overlay.open .drawer-panel { transform: translateX(0); }
+    .drawer-header {
+      padding: 16px 20px; border-bottom: 1px solid var(--border-subtle);
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 12px;
+      background: rgba(6, 9, 17, 0.9);
+    }
+    .drawer-header-left { flex: 1; overflow: hidden; }
+    .drawer-badge-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+    .drawer-title {
+      font-family: var(--font-display); font-size: 17px; font-weight: 800; color: #fff; line-height: 1.35;
+    }
+    .drawer-actions-top { display: flex; align-items: center; gap: 8px; }
+    .drawer-close {
+      background: rgba(255, 255, 255, 0.08); border: none; color: #fff;
+      width: 32px; height: 32px; border-radius: 50%; font-size: 16px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all 0.2s;
+    }
+    .drawer-close:hover { background: rgba(255, 255, 255, 0.2); }
+    .drawer-body {
+      flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 16px;
+    }
+    .drawer-meta-box {
+      background: rgba(255, 255, 255, 0.03); border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md); padding: 14px 16px; display: flex; flex-direction: column; gap: 10px;
+    }
+    .drawer-url { font-family: var(--font-mono); font-size: 12px; color: var(--cyan); word-break: break-all; }
+    .drawer-desc { font-family: var(--font-serif); font-size: 14.5px; color: var(--text-primary); line-height: 1.6; }
+    .drawer-btn-row { display: flex; gap: 10px; flex-wrap: wrap; }
+    .drawer-btn {
+      padding: 9px 16px; border-radius: var(--radius-sm); font-family: var(--font-display);
+      font-size: 13px; font-weight: 700; cursor: pointer; display: inline-flex; align-items: center; gap: 6px;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .drawer-btn-primary { background: var(--cyan); color: #000; border: none; }
+    .drawer-btn-primary:hover { background: #7dd3fc; }
+    .drawer-btn-secondary { background: rgba(255, 255, 255, 0.08); color: #fff; border: 1px solid var(--border-subtle); }
+    .drawer-btn-secondary:hover { background: rgba(255, 255, 255, 0.15); }
+    .drawer-iframe-wrap {
+      width: 100%; height: 480px; border-radius: var(--radius-md); overflow: hidden;
+      border: 1px solid var(--border-subtle); background: #000; position: relative;
+    }
+    .drawer-iframe { width: 100%; height: 100%; border: none; }
+
     /* FOOTER */
     .footer {
-      border-top: 1px solid var(--border-subtle); padding: 24px; text-align: center;
+      border-top: 1px solid var(--border-subtle); padding: 20px; text-align: center;
       font-size: 12px; color: var(--text-muted); margin-top: auto;
     }
     .footer strong { color: var(--text-secondary); }
 
     /* TOAST */
     .toast {
-      position: fixed; bottom: 24px; right: 24px; z-index: 999;
+      position: fixed; bottom: 24px; right: 24px; z-index: 1200;
       background: #10b981; color: #fff; font-size: 13px; font-weight: 700;
       padding: 10px 18px; border-radius: var(--radius-sm); box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
       display: flex; align-items: center; gap: 8px; opacity: 0; transform: translateY(12px);
@@ -344,24 +445,21 @@
     @media (max-width: 768px) {
       .navbar { padding: 10px 16px; }
       .brand-domain { display: none; }
+      .nav-hints { display: none; }
       .hero h1 { font-size: 24px; }
       .pinned-grid { grid-template-columns: repeat(2, 1fr); }
       .cards-grid { grid-template-columns: 1fr; }
+      .drawer-panel { width: 100vw; }
     }
   </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
+  <!-- NAVBAR (ĐÃ GỠ BỎ NÚT GÓC TRÊN PHẢI) -->
   <header class="navbar">
     <div class="brand-wrap">
-      <div class="brand-logo">FEDU</div>
-      <div class="brand-name">Omni-Hub <span class="brand-domain">go.fedu.vn</span></div>
-    </div>
-    <div class="nav-actions">
-      <div class="nav-pill">
-        <span>Raycast Quicklink:</span> <kbd>Option + Space</kbd> gõ <kbd>hub</kbd>
-      </div>
+      <div class="brand-logo">VIDEO</div>
+      <div class="brand-name">Omni-Hub <span class="brand-domain">Omni-Hub</span></div>
     </div>
   </header>
 
@@ -372,111 +470,50 @@
     <section class="hero">
       <div class="hero-badge">⚡ Trung Tâm Điều Hành & Kho Tri Thức Số</div>
       <h1>Cổng Tra Cứu Toàn Bộ Tài Nguyên Số</h1>
-      <p>Gom toàn bộ Web Apps, Landing Pages (SPAs), Kho Khóa Học, 517+ Podcast Tri Thức và AI Skills về một mối duy nhất.</p>
+      <p>Gom toàn bộ Web Apps, Landing Pages, Kho Khóa Học, 580+ Podcast Tri Thức, Kịch Bản và AI Skills về một mối duy nhất.</p>
 
       <!-- SEARCH BOX -->
       <div class="search-box">
         <div class="search-inner">
           <span class="search-icon">🔍</span>
-          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm font, scene, broll, podcast, kịch bản, spa, skill... (Bấm '/' để tìm)" autocomplete="off">
+          <input type="text" id="searchInput" class="search-input" placeholder="Tìm kiếm font, scene, broll, podcast, kịch bản, spa, skill... (Bấm '/' để tìm, 'Enter' mở ngay)" autocomplete="off">
           <button id="clearSearchBtn" class="search-clear" title="Xóa tìm kiếm">✕</button>
           <span class="search-kbd">/</span>
         </div>
       </div>
     </section>
 
-    <!-- PINNED ESSENTIALS -->
-    <section class="pinned-section">
-      <div class="pinned-label">⭐ Công cụ thiết yếu dùng hàng ngày</div>
-      <div class="pinned-grid">
-        <a href="https://fedu.vn/course/4tang.html" target="_blank" class="pinned-card" style="border-color: rgba(56, 189, 248, 0.45); background: linear-gradient(145deg, rgba(56, 189, 248, 0.12) 0%, rgba(16, 23, 38, 0.9) 100%);">
-          <div class="pinned-icon">⚡</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Bóc Tách 4 Tầng</div>
-            <div class="pinned-meta">Megaprompt 1 Dòng</div>
-          </div>
-        </a>
-        <a href="http://localhost:8890" target="_blank" class="pinned-card" style="border-color: rgba(56, 189, 248, 0.35); background: linear-gradient(145deg, rgba(56, 189, 248, 0.08) 0%, rgba(16, 23, 38, 0.9) 100%);">
-          <div class="pinned-icon">🏠</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Quản Gia Smart Home</div>
-            <div class="pinned-meta">Hub Điều Khiển Nhà</div>
-          </div>
-        </a>
-        <a href="https://cms.fedu.vn" target="_blank" class="pinned-card">
-          <div class="pinned-icon">⚙️</div>
-          <div class="pinned-info">
-            <div class="pinned-title">CMS Workspace</div>
-            <div class="pinned-meta">cms.fedu.vn</div>
-          </div>
-        </a>
-        <a href="https://fedu.vn/k/index.html" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🎙️</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Repo K Podcast</div>
-            <div class="pinned-meta">518+ Bài Tri Thức</div>
-          </div>
-        </a>
-        <a href="https://fedu.vn/course/" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🎓</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Course Archive</div>
-            <div class="pinned-meta">fedu.vn/course/</div>
-          </div>
-        </a>
-        <a href="https://ytuong.fedu.vn" target="_blank" class="pinned-card">
-          <div class="pinned-icon">💡</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Reference Hub</div>
-            <div class="pinned-meta">ytuong.fedu.vn</div>
-          </div>
-        </a>
-        <a href="https://fonthub.fedu.vn" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🔤</div>
-          <div class="pinned-info">
-            <div class="pinned-title">FONTHUB Foundry</div>
-            <div class="pinned-meta">fonthub.fedu.vn</div>
-          </div>
-        </a>
-        <a href="https://fedu.vn/scene.html" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🎬</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Scene Inspector</div>
-            <div class="pinned-meta">200+ Cảnh Điện Ảnh</div>
-          </div>
-        </a>
-        <a href="https://fedu.vn/brollbank.html" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🎥</div>
-          <div class="pinned-info">
-            <div class="pinned-title">B-Roll Bank YouTube</div>
-            <div class="pinned-meta">150+ Clips Thực Chiến</div>
-          </div>
-        </a>
-        <a href="https://ai.fedu.vn" target="_blank" class="pinned-card">
-          <div class="pinned-icon">🤖</div>
-          <div class="pinned-info">
-            <div class="pinned-title">AI Doanh Nghiệp 1 Người</div>
-            <div class="pinned-meta">ai.fedu.vn</div>
-          </div>
-        </a>
-        <a href="https://typography.fedu.vn" target="_blank" class="pinned-card">
-          <div class="pinned-icon">📐</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Typography Masterclass</div>
-            <div class="pinned-meta">typography.fedu.vn</div>
-          </div>
-        </a>
-        <a href="https://fedu.vn/hocvien.html" target="_blank" class="pinned-card">
-          <div class="pinned-icon">👥</div>
-          <div class="pinned-info">
-            <div class="pinned-title">Học Viên & CRM Leads</div>
-            <div class="pinned-meta">SePay Real-time</div>
-          </div>
-        </a>
+    <!-- MỚI DÙNG GẦN ĐÂY (RECENTLY USED) -->
+    <section class="recent-section" id="recentSection">
+      <div class="recent-header">
+        <div class="recent-label">🕒 Mới dùng gần đây</div>
+        <button class="recent-clear-btn" id="clearRecentBtn">Xóa lịch sử</button>
+      </div>
+      <div class="recent-chips" id="recentChips">
+        <!-- Rendered via JS -->
       </div>
     </section>
 
-    <!-- CATEGORY TABS (BỐ CỤC 2 DÒNG THỰC CHIẾN - DỄ ẤN) -->
+    <!-- PINNED ESSENTIALS ĐỘNG (INTERACTIVE PINNED) -->
+    <section class="pinned-section" id="pinnedSection">
+      <div class="pinned-header">
+        <div class="pinned-label">⭐ Công cụ đã đính yêu thích</div>
+        <button class="pinned-reset-btn" id="resetPinnedBtn" title="Khôi phục danh sách mặc định ban đầu">Khôi phục mặc định</button>
+      </div>
+      <div class="pinned-grid" id="pinnedGrid">
+        <!-- Rendered via JS -->
+      </div>
+    </section>
+
+    <!-- SMART STATUS FILTER PILLS -->
+    <div class="status-filter-bar" id="statusFilterBar">
+      <button class="status-pill active" data-status="all">🌟 Tất Cả Mục</button>
+      <button class="status-pill" data-status="pinned">⭐ Đã Đính (<span id="count-status-pinned">0</span>)</button>
+      <button class="status-pill" data-status="recent">🕒 Vừa Dùng (<span id="count-status-recent">0</span>)</button>
+      <button class="status-pill" data-status="latest">🔥 Mới Cập Nhật (30 Ngày)</button>
+    </div>
+
+    <!-- CATEGORY TABS -->
     <nav class="tabs-bar" id="tabsBar">
       <div class="tabs-row">
         <button class="tab-btn active" data-cat="all">🌟 Tất Cả <span class="tab-badge" id="badge-all">0</span></button>
@@ -495,7 +532,7 @@
     <!-- RESULTS INFO -->
     <div class="results-header">
       <div class="results-count" id="resultsCount">Đang tải tài nguyên...</div>
-      <div class="results-hint" id="resultsHint">Gõ từ khóa không dấu để lọc siêu tốc</div>
+      <div class="results-hint" id="resultsHint">Gõ từ khóa không dấu • Enter để mở kết quả đầu tiên</div>
     </div>
 
     <!-- CARDS GRID -->
@@ -517,9 +554,47 @@
 
   </main>
 
+  <!-- QUICK PREVIEW SLIDE-OVER DRAWER -->
+  <div class="drawer-overlay" id="drawerOverlay">
+    <div class="drawer-panel" id="drawerPanel">
+      <div class="drawer-header">
+        <div class="drawer-header-left">
+          <div class="drawer-badge-row">
+            <span class="card-badge" id="drawerBadge">CATEGORY</span>
+            <span class="card-date-badge" id="drawerDate">2026-09-15</span>
+          </div>
+          <h2 class="drawer-title" id="drawerTitle">Tên Tài Nguyên</h2>
+        </div>
+        <div class="drawer-actions-top">
+          <button class="drawer-close" id="drawerCloseBtn" title="Đóng (Esc)">✕</button>
+        </div>
+      </div>
+      <div class="drawer-body">
+        <div class="drawer-meta-box">
+          <div class="drawer-url" id="drawerUrl">https://...</div>
+          <p class="drawer-desc" id="drawerDesc">Mô tả tài nguyên...</p>
+          <div class="drawer-btn-row">
+            <a href="#" target="_blank" rel="noopener noreferrer" class="drawer-btn drawer-btn-primary" id="drawerLaunchBtn">
+              <span>Mở Toàn Trang</span> <span>↗</span>
+            </a>
+            <button class="drawer-btn drawer-btn-secondary" id="drawerCopyBtn">
+              <span>📋 Copy Link</span>
+            </button>
+            <button class="drawer-btn drawer-btn-secondary" id="drawerPinBtn">
+              <span>⭐ Đính Yêu Thích</span>
+            </button>
+          </div>
+        </div>
+        <div class="drawer-iframe-wrap" id="drawerIframeWrap">
+          <iframe id="drawerIframe" class="drawer-iframe" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer class="footer">
-    <div>Hệ Thống Điều Hành & Kho Tri Thức <strong>FEDU Omni-Hub</strong> • Cập nhật tự động 1-Shot</div>
+    <div>Hệ Thống Điều Hành & Kho Tri Thức <strong>VIDEO Omni-Hub</strong> • Cập nhật tự động 1-Shot</div>
     <div style="margin-top: 4px;">Dành riêng cho <strong>anh Việt</strong> • Powered by Antigravity AI Engine</div>
   </footer>
 
@@ -545,12 +620,113 @@
       return str.trim();
     }
 
+    const DEFAULT_PINNED_IDS = [
+      'app-mau-thiet-ke',
+      'megaprompt-4tang',
+      'app-smarthome',
+      'app-cms',
+      'app-k-hub',
+      'app-course-archive',
+      'app-ytuong',
+      'app-font',
+      'app-scene',
+      'app-brollbank',
+      'landing-ai-hedieuhanh',
+      'landing-typography',
+      'app-hocvien'
+    ];
+
     let allItems = [];
     let currentCategory = 'all';
+    let currentStatus = 'all'; // 'all', 'pinned', 'recent', 'latest'
     let searchQuery = '';
     let visibleCount = 48;
     const PAGE_CHUNK = 36;
+    let focusedIndex = -1;
+    let currentFilteredList = [];
 
+    // LocalStorage Keys
+    const STORAGE_PINNED = 'video_omni_pinned_ids';
+    const STORAGE_RECENTS = 'video_omni_recent_items';
+
+    function getPinnedIds() {
+      try {
+        const raw = localStorage.getItem(STORAGE_PINNED);
+        if (raw) {
+          const parsed = JSON.parse(raw);
+          if (!parsed.includes('app-mau-thiet-ke')) {
+            parsed.unshift('app-mau-thiet-ke');
+          }
+          return parsed;
+        }
+      } catch (e) {}
+      return [...DEFAULT_PINNED_IDS];
+    }
+
+    function savePinnedIds(ids) {
+      try {
+        localStorage.setItem(STORAGE_PINNED, JSON.stringify(ids));
+      } catch (e) {}
+    }
+
+    function isItemPinned(id) {
+      return getPinnedIds().includes(id);
+    }
+
+    function togglePin(id) {
+      let ids = getPinnedIds();
+      let nowPinned = false;
+      if (ids.includes(id)) {
+        ids = ids.filter(x => x !== id);
+        nowPinned = false;
+        showToast('📌 Đã bỏ đính');
+      } else {
+        ids.unshift(id);
+        nowPinned = true;
+        showToast('⭐ Đã đính vào yêu thích!');
+      }
+      savePinnedIds(ids);
+      renderPinnedSection();
+      updateStatusFilterCounts();
+      render();
+    }
+
+    function getRecentItems() {
+      try {
+        const raw = localStorage.getItem(STORAGE_RECENTS);
+        if (raw) return JSON.parse(raw);
+      } catch (e) {}
+      return [];
+    }
+
+    function recordRecent(item) {
+      if (!item || !item.id) return;
+      let list = getRecentItems().filter(x => x.id !== item.id);
+      list.unshift({
+        id: item.id,
+        title: item.title,
+        url: item.url,
+        icon: item.icon || '⚡',
+        timestamp: Date.now()
+      });
+      list = list.slice(0, 10);
+      try {
+        localStorage.setItem(STORAGE_RECENTS, JSON.stringify(list));
+      } catch (e) {}
+      renderRecentSection();
+      updateStatusFilterCounts();
+    }
+
+    function clearRecent() {
+      try {
+        localStorage.removeItem(STORAGE_RECENTS);
+      } catch (e) {}
+      renderRecentSection();
+      updateStatusFilterCounts();
+      showToast('Đã xóa lịch sử mới dùng');
+    }
+
+    // DOM Elements
     const searchInput = document.getElementById('searchInput');
     const clearSearchBtn = document.getElementById('clearSearchBtn');
     const cardsGrid = document.getElementById('cardsGrid');
@@ -559,13 +735,84 @@
     const loadMoreWrap = document.getElementById('loadMoreWrap');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
     const tabsBar = document.getElementById('tabsBar');
+    const statusFilterBar = document.getElementById('statusFilterBar');
+    const pinnedSection = document.getElementById('pinnedSection');
+    const pinnedGrid = document.getElementById('pinnedGrid');
+    const resetPinnedBtn = document.getElementById('resetPinnedBtn');
+    const recentSection = document.getElementById('recentSection');
+    const recentChips = document.getElementById('recentChips');
+    const clearRecentBtn = document.getElementById('clearRecentBtn');
     const toast = document.getElementById('toast');
     const toastMsg = document.getElementById('toastMsg');
+
+    // Drawer Elements
+    const drawerOverlay = document.getElementById('drawerOverlay');
+    const drawerCloseBtn = document.getElementById('drawerCloseBtn');
+    const drawerBadge = document.getElementById('drawerBadge');
+    const drawerDate = document.getElementById('drawerDate');
+    const drawerTitle = document.getElementById('drawerTitle');
+    const drawerUrl = document.getElementById('drawerUrl');
+    const drawerDesc = document.getElementById('drawerDesc');
+    const drawerLaunchBtn = document.getElementById('drawerLaunchBtn');
+    const drawerCopyBtn = document.getElementById('drawerCopyBtn');
+    const drawerPinBtn = document.getElementById('drawerPinBtn');
+    const drawerIframe = document.getElementById('drawerIframe');
+    let activeDrawerItem = null;
 
     function showToast(text) {
       toastMsg.textContent = text;
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2000);
+    }
+
+    function updateStatusFilterCounts() {
+      const pinnedCount = getPinnedIds().length;
+      const recentCount = getRecentItems().length;
+      document.getElementById('count-status-pinned').textContent = pinnedCount;
+      document.getElementById('count-status-recent').textContent = recentCount;
+    }
+
+    function renderRecentSection() {
+      const recents = getRecentItems();
+      if (!recents || recents.length === 0) {
+        recentSection.style.display = 'none';
+        return;
+      }
+      recentSection.style.display = 'block';
+      recentChips.innerHTML = recents.map(it => `
+        <a href="${it.url}" target="_blank" class="recent-chip" onclick="recordRecentById('${it.id}')">
+          <span class="recent-chip-icon">${it.icon}</span>
+          <span class="recent-chip-title" title="${it.title}">${it.title}</span>
+        </a>
+      `).join('');
+    }
+
+    function renderPinnedSection() {
+      const pinnedIds = getPinnedIds();
+      const pinnedMap = new Map(allItems.map(it => [it.id, it]));
+      const pinnedItems = pinnedIds.map(id => pinnedMap.get(id)).filter(Boolean);
+
+      if (pinnedItems.length === 0) {
+        pinnedSection.style.display = 'none';
+        return;
+      }
+      pinnedSection.style.display = 'block';
+
+      pinnedGrid.innerHTML = pinnedItems.map(it => `
+        <a href="${it.url}" target="_blank" class="pinned-card" onclick="recordRecentById('${it.id}')">
+          <div class="pinned-icon">${it.icon || '⭐'}</div>
+          <div class="pinned-info">
+            <div class="pinned-title" title="${it.title}">${it.title}</div>
+            <div class="pinned-meta">${it.badge || it.category_name}</div>
+          </div>
+          <button class="pinned-unpin" onclick="event.preventDefault(); event.stopPropagation(); togglePin('${it.id}');" title="Bỏ đính khỏi danh sách">✕</button>
+        </a>
+      `).join('');
+    }
+
+    function recordRecentById(id) {
+      const item = allItems.find(x => x.id === id);
+      if (item) recordRecent(item);
     }
 
     // Tải dữ liệu catalog.json
@@ -583,15 +830,11 @@
           if (el) el.textContent = v;
         }
 
-        // Đếm chính xác số lượng Mega Prompts (category megaprompts + item có tag megaprompt)
-        const megaItemsCount = allItems.filter(it => it.category === 'megaprompts' || (it.tags && it.tags.some(t => {
-          const tn = removeVietnameseTones(t).toLowerCase();
-          return tn.includes('megaprompt') || tn.includes('prompt');
-        }))).length;
-        const badgeMega = document.getElementById('badge-megaprompts');
-        if (badgeMega) badgeMega.textContent = stats['megaprompts'] || megaItemsCount;
+        renderPinnedSection();
+        renderRecentSection();
+        updateStatusFilterCounts();
 
-        // Đọc URL params ban đầu (?q=... và ?c=...)
+        // Đọc URL params ban đầu
         const params = new URLSearchParams(window.location.search);
         if (params.has('q')) {
           searchQuery = params.get('q');
@@ -627,8 +870,18 @@
 
     function filterItems() {
       const qNorm = removeVietnameseTones(searchQuery);
-      return allItems.filter(item => {
-        // Lọc category
+      const pinnedIds = new Set(getPinnedIds());
+      const recentIds = new Set(getRecentItems().map(x => x.id));
+      const nowSec = Date.now() / 1000;
+      const thirtyDaysSec = 30 * 24 * 3600;
+
+      let list = allItems.filter(item => {
+        // Lọc Status filter
+        if (currentStatus === 'pinned' && !pinnedIds.has(item.id)) return false;
+        if (currentStatus === 'recent' && !recentIds.has(item.id)) return false;
+        if (currentStatus === 'latest' && (nowSec - (item.mtime || 0) > thirtyDaysSec)) return false;
+
+        // Lọc category tab
         if (currentCategory !== 'all') {
           if (currentCategory === 'megaprompts') {
             const isMega = item.category === 'megaprompts' ||
@@ -641,6 +894,7 @@
             return false;
           }
         }
+
         // Lọc search
         if (qNorm) {
           const titleNorm = removeVietnameseTones(item.title || '');
@@ -653,13 +907,28 @@
         }
         return true;
       });
+
+      // Sắp xếp
+      if (currentStatus === 'latest') {
+        list.sort((a, b) => (b.mtime || 0) - (a.mtime || 0));
+      } else if (!searchQuery) {
+        list.sort((a, b) => {
+          const aPin = pinnedIds.has(a.id);
+          const bPin = pinnedIds.has(b.id);
+          if (aPin && !bPin) return -1;
+          if (!aPin && bPin) return 1;
+          return (b.mtime || 0) - (a.mtime || 0);
+        });
+      }
+
+      return list;
     }
 
     function render() {
-      const filtered = filterItems();
-      resultsCount.innerHTML = `Hiển thị <span>${Math.min(visibleCount, filtered.length)}</span> / <span>${filtered.length}</span> tài nguyên`;
+      currentFilteredList = filterItems();
+      resultsCount.innerHTML = `Hiển thị <span>${Math.min(visibleCount, currentFilteredList.length)}</span> / <span>${currentFilteredList.length}</span> tài nguyên`;
 
-      if (filtered.length === 0) {
+      if (currentFilteredList.length === 0) {
         cardsGrid.innerHTML = '';
         emptyState.style.display = 'block';
         loadMoreWrap.style.display = 'none';
@@ -667,40 +936,44 @@
       }
 
       emptyState.style.display = 'none';
-      const sorted = [...filtered].sort((a, b) => {
-        if (!searchQuery) {
-          if (a.pinned && !b.pinned) return -1;
-          if (!a.pinned && b.pinned) return 1;
-        }
-        return 0;
-      });
-      const toShow = sorted.slice(0, visibleCount);
+      const toShow = currentFilteredList.slice(0, visibleCount);
 
-      cardsGrid.innerHTML = toShow.map(it => {
+      cardsGrid.innerHTML = toShow.map((it, idx) => {
         const badgeClass = `badge-${it.category}`;
         const titleHl = highlightText(it.title, searchQuery);
         const descHl = highlightText(it.desc, searchQuery);
         const tagsHtml = (it.tags || []).slice(0, 4).map(t => 
           `<span class="tag-chip" onclick="searchByTag('${t}')">#${t}</span>`
         ).join('');
+        const isPinned = isItemPinned(it.id);
+        const focusedClass = (idx === focusedIndex) ? 'is-focused' : '';
 
         return `
-          <div class="card">
+          <div class="card ${focusedClass}" id="card-item-${idx}" data-idx="${idx}">
             <div>
               <div class="card-top">
                 <div class="card-icon">${it.icon || '📄'}</div>
                 <div class="card-title-group">
-                  <span class="card-badge ${badgeClass}">${it.badge || it.category_name}</span>
+                  <div class="card-badges-row">
+                    <span class="card-badge ${badgeClass}">${it.badge || it.category_name}</span>
+                    ${it.updated_at ? `<span class="card-date-badge" title="Cập nhật gần nhất">${it.updated_at}</span>` : ''}
+                  </div>
                   <h3 class="card-title" title="${it.title}">${titleHl}</h3>
                 </div>
+                <button class="btn-card-pin ${isPinned ? 'is-pinned' : ''}" onclick="togglePin('${it.id}')" title="${isPinned ? 'Bỏ đính' : 'Đính lên đầu'}">
+                  ${isPinned ? '⭐' : '☆'}
+                </button>
               </div>
               <p class="card-desc">${descHl || 'Không có mô tả chi tiết.'}</p>
               <div class="card-tags">${tagsHtml}</div>
             </div>
             <div class="card-actions">
-              <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="btn-open">
+              <a href="${it.url}" target="_blank" rel="noopener noreferrer" class="btn-open" onclick="recordRecentById('${it.id}')">
                 <span>Mở Trang</span> <span>↗</span>
               </a>
+              <button class="btn-preview" onclick="openQuickPreview('${it.id}')" title="Xem nhanh trực tiếp">
+                👁️ Xem Nhanh
+              </button>
               <button class="btn-copy" onclick="copyLink('${it.url}')" title="Sao chép liên kết">
                 📋 Copy
               </button>
@@ -709,12 +982,59 @@
         `;
       }).join('');
 
-      if (filtered.length > visibleCount) {
+      if (currentFilteredList.length > visibleCount) {
         loadMoreWrap.style.display = 'block';
       } else {
         loadMoreWrap.style.display = 'none';
       }
     }
+
+    // QUICK PREVIEW DRAWER
+    function openQuickPreview(id) {
+      const item = allItems.find(x => x.id === id);
+      if (!item) return;
+      activeDrawerItem = item;
+      recordRecent(item);
+
+      drawerBadge.className = `card-badge badge-${item.category}`;
+      drawerBadge.textContent = item.badge || item.category_name;
+      drawerDate.textContent = item.updated_at || 'Mới cập nhật';
+      drawerTitle.textContent = item.title;
+      drawerUrl.textContent = item.url;
+      drawerDesc.textContent = item.desc || 'Không có mô tả chi tiết.';
+      drawerLaunchBtn.href = item.url;
+
+      const isPinned = isItemPinned(item.id);
+      drawerPinBtn.innerHTML = isPinned ? '<span>⭐ Bỏ Đính</span>' : '<span>⭐ Đính Yêu Thích</span>';
+
+      // Thử tải iframe preview
+      drawerIframe.src = item.url;
+
+      drawerOverlay.classList.add('open');
+    }
+
+    function closeQuickPreview() {
+      drawerOverlay.classList.remove('open');
+      drawerIframe.src = 'about:blank';
+      activeDrawerItem = null;
+    }
+
+    drawerCloseBtn.addEventListener('click', closeQuickPreview);
+    drawerOverlay.addEventListener('click', (e) => {
+      if (e.target === drawerOverlay) closeQuickPreview();
+    });
+
+    drawerCopyBtn.addEventListener('click', () => {
+      if (activeDrawerItem) copyLink(activeDrawerItem.url);
+    });
+
+    drawerPinBtn.addEventListener('click', () => {
+      if (activeDrawerItem) {
+        togglePin(activeDrawerItem.id);
+        const isPinned = isItemPinned(activeDrawerItem.id);
+        drawerPinBtn.innerHTML = isPinned ? '<span>⭐ Bỏ Đính</span>' : '<span>⭐ Đính Yêu Thích</span>';
+      }
+    });
 
     function updateUrlParams() {
       const url = new URL(window.location);
@@ -732,6 +1052,7 @@
       searchInput.value = tag;
       clearSearchBtn.style.display = 'flex';
       visibleCount = PAGE_CHUNK;
+      focusedIndex = -1;
       updateUrlParams();
       render();
     }
@@ -749,6 +1070,7 @@
       searchQuery = e.target.value.trim();
       clearSearchBtn.style.display = searchQuery ? 'flex' : 'none';
       visibleCount = PAGE_CHUNK;
+      focusedIndex = -1;
       updateUrlParams();
       render();
     });
@@ -758,12 +1080,25 @@
       searchQuery = '';
       clearSearchBtn.style.display = 'none';
       visibleCount = PAGE_CHUNK;
+      focusedIndex = -1;
       updateUrlParams();
       render();
       searchInput.focus();
     });
 
-    // SỰ KIỆN TABS
+    // STATUS FILTER BAR
+    statusFilterBar.addEventListener('click', (e) => {
+      const btn = e.target.closest('.status-pill');
+      if (!btn) return;
+      document.querySelectorAll('.status-pill').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStatus = btn.dataset.status;
+      visibleCount = PAGE_CHUNK;
+      focusedIndex = -1;
+      render();
+    });
+
+    // CATEGORY TABS
     tabsBar.addEventListener('click', (e) => {
       const btn = e.target.closest('.tab-btn');
       if (!btn) return;
@@ -771,9 +1106,23 @@
       btn.classList.add('active');
       currentCategory = btn.dataset.cat;
       visibleCount = PAGE_CHUNK;
+      focusedIndex = -1;
       updateUrlParams();
       render();
     });
+
+    // RESET PINNED DEFAULTS
+    resetPinnedBtn.addEventListener('click', () => {
+      if (confirm('Khôi phục 12 công cụ đính mặc định ban đầu?')) {
+        savePinnedIds([...DEFAULT_PINNED_IDS]);
+        renderPinnedSection();
+        updateStatusFilterCounts();
+        render();
+        showToast('Đã khôi phục danh sách đính mặc định');
+      }
+    });
+
+    clearRecentBtn.addEventListener('click', clearRecent);
 
     // XEM THÊM
     loadMoreBtn.addEventListener('click', () => {
@@ -781,19 +1130,95 @@
       render();
     });
 
-    // PHÍM TẮT
+    // RAYCAST-STYLE KEYBOARD NAVIGATION
+    searchInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        if (currentFilteredList && currentFilteredList.length > 0) {
+          const topItem = currentFilteredList[0];
+          recordRecent(topItem);
+          window.open(topItem.url, '_blank');
+          showToast('⚡ Mở top 1: ' + topItem.title);
+        }
+      } else if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        if (currentFilteredList && currentFilteredList.length > 0) {
+          focusedIndex = 0;
+          render();
+          const firstCard = document.getElementById('card-item-0');
+          if (firstCard) firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    });
+
     window.addEventListener('keydown', (e) => {
-      if (e.key === '/' && document.activeElement !== searchInput) {
+      // Đóng drawer bằng Escape
+      if (e.key === 'Escape') {
+        if (drawerOverlay.classList.contains('open')) {
+          closeQuickPreview();
+          return;
+        }
+        if (document.activeElement === searchInput) {
+          searchInput.value = '';
+          searchQuery = '';
+          clearSearchBtn.style.display = 'none';
+          updateUrlParams();
+          render();
+          searchInput.blur();
+          return;
+        }
+        if (focusedIndex >= 0) {
+          focusedIndex = -1;
+          render();
+          return;
+        }
+      }
+
+      // Phím tắt '/' focus search khi không gõ text
+      if (e.key === '/' && document.activeElement !== searchInput && !drawerOverlay.classList.contains('open')) {
         e.preventDefault();
         searchInput.focus();
         searchInput.select();
-      } else if (e.key === 'Escape' && document.activeElement === searchInput) {
-        searchInput.value = '';
-        searchQuery = '';
-        clearSearchBtn.style.display = 'none';
-        updateUrlParams();
-        render();
-        searchInput.blur();
+        return;
+      }
+
+      // Điều hướng thẻ bằng phím mũi tên khi không gõ search
+      if (document.activeElement !== searchInput && !drawerOverlay.classList.contains('open')) {
+        const maxIndex = Math.min(visibleCount, currentFilteredList.length) - 1;
+        if (maxIndex < 0) return;
+
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          focusedIndex = (focusedIndex < maxIndex) ? focusedIndex + 1 : 0;
+          render();
+          const el = document.getElementById(`card-item-${focusedIndex}`);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          focusedIndex = (focusedIndex > 0) ? focusedIndex - 1 : maxIndex;
+          render();
+          const el = document.getElementById(`card-item-${focusedIndex}`);
+          if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else if (e.key === 'Enter' && focusedIndex >= 0) {
+          e.preventDefault();
+          const item = currentFilteredList[focusedIndex];
+          if (item) {
+            recordRecent(item);
+            window.open(item.url, '_blank');
+          }
+        } else if ((e.key === 'p' || e.key === 'P') && focusedIndex >= 0) {
+          e.preventDefault();
+          const item = currentFilteredList[focusedIndex];
+          if (item) togglePin(item.id);
+        } else if ((e.key === 'c' || e.key === 'C') && focusedIndex >= 0) {
+          e.preventDefault();
+          const item = currentFilteredList[focusedIndex];
+          if (item) copyLink(item.url);
+        } else if ((e.key === 'v' || e.key === 'V' || e.key === ' ') && focusedIndex >= 0) {
+          e.preventDefault();
+          const item = currentFilteredList[focusedIndex];
+          if (item) openQuickPreview(item.id);
+        }
       }
     });
 
