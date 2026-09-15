@@ -1829,7 +1829,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Không cần nói một lời nào, chỉ cần khóa ánh sáng tự nhiên một góc bàn và thu âm foley cực nét (tiếng nước rót, tiếng ấm đặt xuống bàn) là video tự khắc đạt hàng trăm ngàn lượt xem.",
+        "practice_focus": "Thực hành: Khai thác tối đa ánh sáng mềm qua khung cửa sổ, âm thanh foley rót trà và hơi nước bốc lên từ ấm đun Audo Copenhagen để tạo nên không gian chữa lành êm ái.",
+        "ig_seeding_hook": "Follow @iman.lizi để cập nhật mẫu video Kiến Trúc & Không Gian / Nội Thất",
+        "course_industry_mapping": "Kiến Trúc & Không Gian / Nội Thất"
+      },
       "logic_explanation": "Khai thác tối đa ánh sáng mềm qua khung cửa sổ, âm thanh foley rót trà và hơi nước bốc lên từ ấm đun Audo Copenhagen để tạo nên không gian chữa lành êm ái.",
       "creator": {
         "raw": "@iman.lizi (Iman Lizi)",
@@ -1842,7 +1847,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@iman.lizi_Dc6qXoKoYKh/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@iman.lizi_Dc6qXoKoYKh/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/Dc6qXoKoYKh/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc6qXoKoYKh.mp4",
         "report_url": "reports/IG_@iman.lizi_Dc6qXoKoYKh.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -1894,7 +1899,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Với video ẩm thực hướng dẫn, công thức phải hiện to rõ ở 3s đầu, kèm tiếng chiên xào xèo xèo thật to để kích thích vị giác người xem ngay lập tức.",
+        "practice_focus": "Thực hành: Góc quay thẳng từ trên xuống (Top-down 90 độ) kết hợp góc ngang 45 độ chảo rán xèo xèo. Cắt cảnh nhịp 1.2s mỗi thao tác cắt gọt giúp video không có giây chết.",
+        "ig_seeding_hook": "Follow @hayancook để cập nhật mẫu video Ẩm Thực & F&B",
+        "course_industry_mapping": "Ẩm Thực & F&B"
+      },
       "logic_explanation": "Góc quay thẳng từ trên xuống (Top-down 90 độ) kết hợp góc ngang 45 độ chảo rán xèo xèo. Cắt cảnh nhịp 1.2s mỗi thao tác cắt gọt giúp video không có giây chết.",
       "creator": {
         "raw": "@hayancook (Hayan Cook (정하얀))",
@@ -1907,7 +1917,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hayancook_DdSUI9BvhqR/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@hayancook_DdSUI9BvhqR/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdSUI9BvhqR/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdSUI9BvhqR.mp4",
         "report_url": "reports/IG_@hayancook_DdSUI9BvhqR.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -1959,7 +1969,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Nội dung chữa lành (healing) phải mộc mạc, không dùng nhạc giật gân, nhịp nói chậm rãi và màu sắc cây cỏ phải được giữ độ tươi tự nhiên.",
+        "practice_focus": "Thực hành: Tận dụng sương sớm và giọt nước trên lá cây, chuyển động tay nhẹ nhàng tưới nước kết hợp giọng thủ thỉ mộc mạc như đang tâm sự cùng người bạn thân.",
+        "ig_seeding_hook": "Follow @cushygarden để cập nhật mẫu video Đời Thường & Chữa Lành",
+        "course_industry_mapping": "Đời Thường & Chữa Lành"
+      },
       "logic_explanation": "Tận dụng sương sớm và giọt nước trên lá cây, chuyển động tay nhẹ nhàng tưới nước kết hợp giọng thủ thỉ mộc mạc như đang tâm sự cùng người bạn thân.",
       "creator": {
         "raw": "@cushygarden (Cushy Garden)",
@@ -1972,7 +1987,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@cushygarden_DdL6pHDSKRc/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@cushygarden_DdL6pHDSKRc/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdL6pHDSKRc/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdL6pHDSKRc.mp4",
         "report_url": "reports/IG_@cushygarden_DdL6pHDSKRc.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2024,7 +2039,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Xây dựng thương hiệu chuyên gia không nhất thiết phải thuyết giảng. Đôi khi chỉ cần quay một chuỗi hành động kỷ luật trong không gian làm việc sạch sẽ là đủ tạo niềm tin.",
+        "practice_focus": "Thực hành: Kể chuyện một buổi tối không dùng lời: Từ bàn phím cơ gõ code, chuyển sang ngón tay gảy đàn guitar, rồi xỏ giày chạy bộ. Mỗi hành động đại diện cho 1 mảnh ghép phát triển bản thân.",
+        "ig_seeding_hook": "Follow @dev_zero để cập nhật mẫu video Công Nghệ & Lập Trình",
+        "course_industry_mapping": "Công Nghệ & Lập Trình"
+      },
       "logic_explanation": "Kể chuyện một buổi tối không dùng lời: Từ bàn phím cơ gõ code, chuyển sang ngón tay gảy đàn guitar, rồi xỏ giày chạy bộ. Mỗi hành động đại diện cho 1 mảnh ghép phát triển bản thân.",
       "creator": {
         "raw": "@dev_zero (Zero (주니어 개발자))",
@@ -2037,7 +2057,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dev_zero_Db-S8i1hXwF/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@dev_zero_Db-S8i1hXwF/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/Db-S8i1hXwF/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Db-S8i1hXwF.mp4",
         "report_url": "reports/IG_@dev_zero_Db-S8i1hXwF.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2089,7 +2109,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Quay nội thất phải tôn trọng tỷ lệ không gian: Tránh dùng góc siêu rộng 0.5x làm méo tường, hãy dùng tiêu cự 24mm - 35mm và lia máy thật đằm tay.",
+        "practice_focus": "Thực hành: Sử dụng các đường thẳng kiến trúc làm khung định hình (framing), camera lia chậm theo phương ngang (slow dolly-pan) giúp người xem cảm nhận trọn vẹn độ sâu và sự thoáng đãng của căn phòng.",
+        "ig_seeding_hook": "Follow @nagisa.decor để cập nhật mẫu video Kiến Trúc & Không Gian / Nội Thất",
+        "course_industry_mapping": "Kiến Trúc & Không Gian / Nội Thất"
+      },
       "logic_explanation": "Sử dụng các đường thẳng kiến trúc làm khung định hình (framing), camera lia chậm theo phương ngang (slow dolly-pan) giúp người xem cảm nhận trọn vẹn độ sâu và sự thoáng đãng của căn phòng.",
       "creator": {
         "raw": "@nagisa.decor (Nagisa Decor)",
@@ -2102,7 +2127,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nagisa.decor_Dco_DevvUla/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nagisa.decor_Dco_DevvUla/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/Dco_DevvUla/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dco_DevvUla.mp4",
         "report_url": "reports/IG_@nagisa.decor_Dco_DevvUla.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2154,7 +2179,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Đừng sợ trời mưa hay âm u khi đi quay! Thời tiết u tối chính là lúc ánh sáng tán xạ đều nhất, giúp màu xanh thiên nhiên lên phim sâu và điện ảnh nhất.",
+        "practice_focus": "Thực hành: Biến nhược điểm ngày mưa âm u thành lợi thế cảm xúc: Tận dụng mây sương bay qua đỉnh núi, giọt nước đọng trên mái ngói đền cổ và màu xanh thẫm của rừng thông.",
+        "ig_seeding_hook": "Follow @yuto_creator để cập nhật mẫu video Du Lịch & Văn Hóa",
+        "course_industry_mapping": "Du Lịch & Văn Hóa"
+      },
       "logic_explanation": "Biến nhược điểm ngày mưa âm u thành lợi thế cảm xúc: Tận dụng mây sương bay qua đỉnh núi, giọt nước đọng trên mái ngói đền cổ và màu xanh thẫm của rừng thông.",
       "creator": {
         "raw": "@yuto_creator (Yuto (地方創生クリエイター))",
@@ -2167,7 +2197,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yuto_creator_DdBlAWRO1Hl/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@yuto_creator_DdBlAWRO1Hl/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdBlAWRO1Hl/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBlAWRO1Hl.mp4",
         "report_url": "reports/IG_@yuto_creator_DdBlAWRO1Hl.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2219,7 +2249,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Dạng video so sánh Trước / Sau (Before vs After) hoặc Sai vs Đúng luôn có tỷ lệ lưu bài (Save rate) cao nhất vì cung cấp giá trị tức thì cho người xem.",
+        "practice_focus": "Thực hành: Trực quan hóa sự khác biệt giữa 'Sai' và 'Đúng': Đặt tiền cảnh che một phần ba khung hình, sử dụng đường dẫn mắt tự nhiên (con đường, hàng rào) hút mắt vào chủ thể.",
+        "ig_seeding_hook": "Follow @beixin để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Trực quan hóa sự khác biệt giữa 'Sai' và 'Đúng': Đặt tiền cảnh che một phần ba khung hình, sử dụng đường dẫn mắt tự nhiên (con đường, hàng rào) hút mắt vào chủ thể.",
       "creator": {
         "raw": "@beixin (Beixin (Travel & Nature))",
@@ -2232,7 +2267,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@beixin_DdRGd8evPK-/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@beixin_DdRGd8evPK-/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdRGd8evPK-/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdRGd8evPK-.mp4",
         "report_url": "reports/IG_@beixin_DdRGd8evPK-.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2284,7 +2319,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Khán giả bây giờ cực kỳ dị ứng với những ai mới lập kênh đã lên mặt dạy đời. Thừa nhận hành trình học hỏi của chính mình mới là vũ khí giữ chân mạnh nhất (Tầng 2.5).",
+        "practice_focus": "Thực hành: Hook đảo ngược: 'Hầu hết mọi người cố tỏ ra có thẩm quyền mà không có bằng chứng'. Tác giả thừa nhận sự thật khi mới bắt đầu mình cũng không biết gì, chính sự thành thật đó tạo nên uy tín.",
+        "ig_seeding_hook": "Follow @layton_video để cập nhật mẫu video Thương Hiệu Cá Nhân & Dịch Vụ",
+        "course_industry_mapping": "Thương Hiệu Cá Nhân & Dịch Vụ"
+      },
       "logic_explanation": "Hook đảo ngược: 'Hầu hết mọi người cố tỏ ra có thẩm quyền mà không có bằng chứng'. Tác giả thừa nhận sự thật khi mới bắt đầu mình cũng không biết gì, chính sự thành thật đó tạo nên uy tín.",
       "creator": {
         "raw": "@layton_video (Layton Video)",
@@ -2297,7 +2337,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DdKGq2TMhf4/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@layton_video_DdKGq2TMhf4/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdKGq2TMhf4/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdKGq2TMhf4.mp4",
         "report_url": "reports/IG_@layton_video_DdKGq2TMhf4.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2349,7 +2389,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Mọi cú máy chuyển động đều phải có lý do cảm xúc: Muốn khán giả chú ý vào bí mật hay nội tâm của nhân vật, hãy đẩy camera chậm dần về phía họ.",
+        "practice_focus": "Thực hành: Minh họa trực tiếp: Khi khung hình đứng yên, cảm xúc phẳng lặng. Khi máy quay từ từ trượt lại gần nhân vật, sự căng thẳng và đồng cảm tăng vọt theo từng centimet chuyển động.",
+        "ig_seeding_hook": "Follow @kienobifilms để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Minh họa trực tiếp: Khi khung hình đứng yên, cảm xúc phẳng lặng. Khi máy quay từ từ trượt lại gần nhân vật, sự căng thẳng và đồng cảm tăng vọt theo từng centimet chuyển động.",
       "creator": {
         "raw": "@kienobifilms (Kien Nguyen)",
@@ -2362,7 +2407,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kienobifilms_DdPLvUpBwCl/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@kienobifilms_DdPLvUpBwCl/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdPLvUpBwCl/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdPLvUpBwCl.mp4",
         "report_url": "reports/IG_@kienobifilms_DdPLvUpBwCl.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2414,7 +2459,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Video tự sự cảm xúc không cần hiệu ứng hào nhoáng. Sự chân thành trong câu chữ kết hợp khung hình tĩnh có chiều sâu sẽ giữ chân người xem đến giây cuối cùng.",
+        "practice_focus": "Thực hành: Kết hợp nhịp thở chậm của các khung hình tĩnh ngoài phố: Tàu điện lướt qua, bóng nắng đổ dài trên tường bê tông, kết hợp giọng đọc trầm lắng về sự trôi chảy của một năm.",
+        "ig_seeding_hook": "Follow @aki_japan để cập nhật mẫu video Kể Chuyện (Storytelling)",
+        "course_industry_mapping": "Kể Chuyện (Storytelling)"
+      },
       "logic_explanation": "Kết hợp nhịp thở chậm của các khung hình tĩnh ngoài phố: Tàu điện lướt qua, bóng nắng đổ dài trên tường bê tông, kết hợp giọng đọc trầm lắng về sự trôi chảy của một năm.",
       "creator": {
         "raw": "@aki_japan (Aki)",
@@ -2427,7 +2477,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aki_japan_DaDFH_TSii8/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@aki_japan_DaDFH_TSii8/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DaDFH_TSii8/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaDFH_TSii8.mp4",
         "report_url": "reports/IG_@aki_japan_DaDFH_TSii8.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2479,7 +2529,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Bán hàng thời trang hiệu quả nhất là bọc trong một thử thách có giới hạn (tiền bạc hoặc thời gian): Vừa tạo tính giải trí, vừa xóa tan rào cản giá đắt trong đầu khách.",
+        "practice_focus": "Thực hành: Đặt ra con số ngân sách cụ thể (€150) tạo sự tò mò ngay giây đầu tiên. Từng món đồ được ném vào khung hình và biến thành set đồ hoàn chỉnh chỉ bằng cú búng tay.",
+        "ig_seeding_hook": "Follow @nathanael.lct để cập nhật mẫu video Thời Trang & Phụ Kiện",
+        "course_industry_mapping": "Thời Trang & Phụ Kiện"
+      },
       "logic_explanation": "Đặt ra con số ngân sách cụ thể (€150) tạo sự tò mò ngay giây đầu tiên. Từng món đồ được ném vào khung hình và biến thành set đồ hoàn chỉnh chỉ bằng cú búng tay.",
       "creator": {
         "raw": "@nathanael.lct (Nathanael Lucantoni)",
@@ -2492,7 +2547,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nathanael.lct_DdRg_ybtlKI/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@nathanael.lct_DdRg_ybtlKI/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdRg_ybtlKI/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdRg_ybtlKI.mp4",
         "report_url": "reports/IG_@nathanael.lct_DdRg_ybtlKI.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2544,7 +2599,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Không cần gimbal xịn: Hãy dùng các vật thể có sẵn ngoài đường (vũng nước, cột đèn, kẽ tường) làm điểm che (natural wipe) để chuyển cảnh mượt mà.",
+        "practice_focus": "Thực hành: Sử dụng vũng nước để lấy hình phản chiếu lộn ngược, đặt điện thoại sát mặt đất đẩy qua kẽ lá, xoay máy 180 độ khi đi qua khung cửa để giấu vết cắt cảnh.",
+        "ig_seeding_hook": "Follow @c.j.visuals để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Sử dụng vũng nước để lấy hình phản chiếu lộn ngược, đặt điện thoại sát mặt đất đẩy qua kẽ lá, xoay máy 180 độ khi đi qua khung cửa để giấu vết cắt cảnh.",
       "creator": {
         "raw": "@c.j.visuals (CJ Visuals)",
@@ -2557,7 +2617,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@c.j.visuals_DdMrb4ARxHv/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@c.j.visuals_DdMrb4ARxHv/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdMrb4ARxHv/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdMrb4ARxHv.mp4",
         "report_url": "reports/IG_@c.j.visuals_DdMrb4ARxHv.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2609,7 +2669,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Quay đồ ăn muốn ngon mắt thì chìa khóa là Ánh Sáng Ngược (Backlight) và Chuyển Động Xúc Giác (gắp lên, bẻ đôi, rưới sốt).",
+        "practice_focus": "Thực hành: Kỹ thuật đánh sáng ngược (Backlight) để bắt trọn làn khói nghi ngút bốc lên từ bát mì nóng hổi, cú gắp thức ăn chậm rãi làm nổi bật độ bóng bẩy của nước sốt.",
+        "ig_seeding_hook": "Follow @genya_jp để cập nhật mẫu video Ẩm Thực & F&B",
+        "course_industry_mapping": "Ẩm Thực & F&B"
+      },
       "logic_explanation": "Kỹ thuật đánh sáng ngược (Backlight) để bắt trọn làn khói nghi ngút bốc lên từ bát mì nóng hổi, cú gắp thức ăn chậm rãi làm nổi bật độ bóng bẩy của nước sốt.",
       "creator": {
         "raw": "@genya_jp (Genya)",
@@ -2622,7 +2687,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@genya_jp_Dc3PgRbBp-m/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@genya_jp_Dc3PgRbBp-m/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/Dc3PgRbBp-m/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc3PgRbBp-m.mp4",
         "report_url": "reports/IG_@genya_jp_Dc3PgRbBp-m.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2674,7 +2739,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": true,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Đừng đợi có ý tưởng mới đi quay B-roll. Đi đâu cũng hãy quay sẵn 5 kiểu shot cơ bản (bước chân, cầm ly nước, góc nhìn qua cửa sổ, gõ máy tính) để làm kho dự trữ.",
+        "practice_focus": "Thực hành: Biến chuyến đi du lịch thành đợt tích lũy tài sản nội dung: Quay sẵn hàng trăm shot đi bộ, uống cafe, ngắm phố để sau này chỉ việc đè chữ lên làm video bán hàng.",
+        "ig_seeding_hook": "Follow @charlotte.arsenault để cập nhật mẫu video UGC & Quảng Cáo",
+        "course_industry_mapping": "UGC & Quảng Cáo"
+      },
       "logic_explanation": "Biến chuyến đi du lịch thành đợt tích lũy tài sản nội dung: Quay sẵn hàng trăm shot đi bộ, uống cafe, ngắm phố để sau này chỉ việc đè chữ lên làm video bán hàng.",
       "creator": {
         "raw": "@charlotte.arsenault (Charlotte Arsenault)",
@@ -2687,7 +2757,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@charlotte.arsenault_DdHGBpZOzIm/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@charlotte.arsenault_DdHGBpZOzIm/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdHGBpZOzIm/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdHGBpZOzIm.mp4",
         "report_url": "reports/IG_@charlotte.arsenault_DdHGBpZOzIm.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2739,7 +2809,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Chuyển cảnh đắt giá không phải do plugin After Effects mà nằm ở việc canh đúng vận tốc chuyển động (speed matching) giữa 2 cảnh quay thực tế.",
+        "practice_focus": "Thực hành: Dùng một động tác vung tay hoặc xoay kính râm làm điểm neo chuyển cảnh (Match-point), khung cảnh đằng sau lập tức biến đổi từ ngõ nhỏ sang nhà thờ Sagrada Família hoành tráng.",
+        "ig_seeding_hook": "Follow @arturbr để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Dùng một động tác vung tay hoặc xoay kính râm làm điểm neo chuyển cảnh (Match-point), khung cảnh đằng sau lập tức biến đổi từ ngõ nhỏ sang nhà thờ Sagrada Família hoành tráng.",
       "creator": {
         "raw": "@arturbr (ArturBr)",
@@ -2752,7 +2827,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@arturbr_DdO2XLIKiXo/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@arturbr_DdO2XLIKiXo/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdO2XLIKiXo/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdO2XLIKiXo.mp4",
         "report_url": "reports/IG_@arturbr_DdO2XLIKiXo.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2804,7 +2879,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Nhiều người nghĩ máy ảnh xịn mới quay đẹp, nhưng 90% video bị mờ đục là do không lau kính camera điện thoại và để camera tự động nhảy sáng liên tục.",
+        "practice_focus": "Thực hành: Chia sẻ các nguyên tắc vàng bất biến: Khóa nét và phơi sáng để không bị nhảy sáng khi di chuyển, luôn lau sạch camera trước khi bấm máy và kiểm soát hướng ánh sáng chính.",
+        "ig_seeding_hook": "Follow @jazziesillona để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Chia sẻ các nguyên tắc vàng bất biến: Khóa nét và phơi sáng để không bị nhảy sáng khi di chuyển, luôn lau sạch camera trước khi bấm máy và kiểm soát hướng ánh sáng chính.",
       "creator": {
         "raw": "@jazziesillona (Jazzie Sillona)",
@@ -2817,7 +2897,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jazziesillona_Dc6Cxf-QRWh/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jazziesillona_Dc6Cxf-QRWh/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/Dc6Cxf-QRWh/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Dc6Cxf-QRWh.mp4",
         "report_url": "reports/IG_@jazziesillona_Dc6Cxf-QRWh.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2869,7 +2949,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Ưu điểm lớn nhất của điện thoại so với máy ảnh lớn là sự nhỏ gọn. Hãy cho điện thoại chui vào những nơi máy ảnh to không vào được (gầm bàn, khe cửa, kẽ lá).",
+        "practice_focus": "Thực hành: Tận dụng kích thước nhỏ gọn của điện thoại để đưa camera chui qua khe kính ô tô đang hé mở, tạo cảm giác như máy quay bay xuyên qua vật thể rắn.",
+        "ig_seeding_hook": "Follow @c.j.visuals để cập nhật mẫu video Kỹ Thuật Quay Dựng",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng"
+      },
       "logic_explanation": "Tận dụng kích thước nhỏ gọn của điện thoại để đưa camera chui qua khe kính ô tô đang hé mở, tạo cảm giác như máy quay bay xuyên qua vật thể rắn.",
       "creator": {
         "raw": "@c.j.visuals (CJ Visuals)",
@@ -2882,7 +2967,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@c.j.visuals_DdR7dEIxzT9/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@c.j.visuals_DdR7dEIxzT9/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdR7dEIxzT9/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdR7dEIxzT9.mp4",
         "report_url": "reports/IG_@c.j.visuals_DdR7dEIxzT9.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2934,7 +3019,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Review quán cafe muốn đông khách không nên quay lia liên tục. Hãy đặt camera tĩnh ngắm trọn góc đắt giá nhất của quán (view cửa sổ) để khách thấy sự thư thái.",
+        "practice_focus": "Thực hành: Bố cục đối xứng đặt chiếc bàn cafe ngay giữa khung hình, mở rộng ra bức tranh thiên nhiên xanh mướt sau ô kính, tạo cảm giác người xem đang được ngồi nghỉ ngơi thực sự.",
+        "ig_seeding_hook": "Follow @jusorok_korea để cập nhật mẫu video Ẩm Thực & F&B",
+        "course_industry_mapping": "Ẩm Thực & F&B"
+      },
       "logic_explanation": "Bố cục đối xứng đặt chiếc bàn cafe ngay giữa khung hình, mở rộng ra bức tranh thiên nhiên xanh mướt sau ô kính, tạo cảm giác người xem đang được ngồi nghỉ ngơi thực sự.",
       "creator": {
         "raw": "@jusorok_korea (Jusorok (주소록))",
@@ -2947,7 +3037,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jusorok_korea_DdBr6LZqkFd/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@jusorok_korea_DdBr6LZqkFd/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdBr6LZqkFd/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBr6LZqkFd.mp4",
         "report_url": "reports/IG_@jusorok_korea_DdBr6LZqkFd.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -2999,7 +3089,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Quảng cáo đồ thể thao phải cho thấy sản phẩm hoạt động trong trạng thái căng nhất: Chạy nước rút, kéo căng vải, mồ hôi rơi... Khách hàng mua năng lượng đó.",
+        "practice_focus": "Thực hành: Các cú máy quay chậm (slow-motion 60fps) bắt trọn chuyển động cơ bắp, độ co giãn thoáng khí của sợi vải dưới ánh nắng gắt đô thị, khẳng định độ bền và sự thoải mái.",
+        "ig_seeding_hook": "Follow @arianballate để cập nhật mẫu video Thời Trang & Phụ Kiện",
+        "course_industry_mapping": "Thời Trang & Phụ Kiện"
+      },
       "logic_explanation": "Các cú máy quay chậm (slow-motion 60fps) bắt trọn chuyển động cơ bắp, độ co giãn thoáng khí của sợi vải dưới ánh nắng gắt đô thị, khẳng định độ bền và sự thoải mái.",
       "creator": {
         "raw": "@arianballate (Arian Ballate)",
@@ -3012,7 +3107,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@arianballate_DdRe4-xpHs2/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@arianballate_DdRe4-xpHs2/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdRe4-xpHs2/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdRe4-xpHs2.mp4",
         "report_url": "reports/IG_@arianballate_DdRe4-xpHs2.html",
         "shots_count": 8,
         "duration": "25.0s",
@@ -3064,7 +3159,12 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "transition_level": null,
       "is_ad_bot": false,
-      "fedu_optimization": {},
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Thời trang cao cấp (Quiet Luxury) thu hút bằng chất liệu xúc giác: Hãy quay thật gần sợi len, đường may và phụ kiện thay vì chỉ đứng tạo dáng chung chung.",
+        "practice_focus": "Thực hành: Bố cục toàn thân tỉ lệ vàng kết hợp các cú cắt cảnh cận cảnh (Macro) đường dệt của áo len Auralee và nhẫn bạc Tom Wood, toát lên sự lịch lãm không phô trương.",
+        "ig_seeding_hook": "Follow @genya_jp để cập nhật mẫu video Thời Trang & Phụ Kiện",
+        "course_industry_mapping": "Thời Trang & Phụ Kiện"
+      },
       "logic_explanation": "Bố cục toàn thân tỉ lệ vàng kết hợp các cú cắt cảnh cận cảnh (Macro) đường dệt của áo len Auralee và nhẫn bạc Tom Wood, toát lên sự lịch lãm không phô trương.",
       "creator": {
         "raw": "@genya_jp (Genya)",
@@ -3077,7 +3177,7 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@genya_jp_DdD_QqPB7aW/shot_01_mid.jpg",
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@genya_jp_DdD_QqPB7aW/shot_03_mid.jpg",
-        "video_url": "https://www.instagram.com/reel/DdD_QqPB7aW/",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdD_QqPB7aW.mp4",
         "report_url": "reports/IG_@genya_jp_DdD_QqPB7aW.html",
         "shots_count": 8,
         "duration": "25.0s",
