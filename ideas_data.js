@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 5,
     "voice-over": 12,
-    "talking-head": 19,
+    "talking-head": 18,
     "storytelling": 25,
-    "dien-anh": 102,
+    "dien-anh": 103,
     "chuyen-canh": 45
   },
   "industries": [
@@ -154,11 +154,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 19,
     "thoi-trang": 20,
     "am-thuc": 21,
-    "du-lich": 21,
+    "du-lich": 22,
     "cong-nghe": 22,
     "kien-truc": 22,
     "the-thao": 9,
-    "ky-thuat-quay": 64,
+    "ky-thuat-quay": 63,
     "ugc": 5
   },
   "countries": [
@@ -2000,40 +2000,43 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Turkish_Airlines_DaxjeQ4A9dP_Video_by_turkishairlines",
       "shortcode": "DaxjeQ4A9dP",
-      "title_vi": "Aviation Showcase Istanbul Airport",
+      "title_vi": "Turkish Airlines - Aviation Showcase Istanbul Airport",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 15 phân cảnh được tính toán chuẩn xác từng mili-giây của Turkish Airlines tại siêu sân bay quốc tế Istanbul (iGA). Video kết hợp nghệ thuật nén tiêu cự telephoto, bố cục phân lớp không gian đa tầng và đối xứng ...",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
+      "key_tech": "Aviation B-Roll • Istanbul Airport • Telephoto Compression • Leading Lines • Scale Contrast • Skytrax 2025",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Talking Head",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "du-lich",
+        "name": "Du Lịch & Văn Hóa",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
         "name": "Âu Mỹ",
         "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "flag": "🇹🇷/🇪🇺",
+        "badge_color": "sky"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Turkish_Airlines",
+      "purpose": "Showcase năng lực đội bay và siêu sân bay trung chuyển Istanbul Airport, khẳng định danh hiệu Hãng hàng không tốt nhất Châu Âu Skytrax 2025.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "High-key Lighting"
+        "Aviation B-Roll",
+        "Istanbul Airport",
+        "Telephoto Compression",
+        "Leading Lines",
+        "Scale Contrast",
+        "Skytrax 2025"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "logic_explanation": "Tác phẩm điện ảnh ngắn gồm 15 phân cảnh được tính toán chuẩn xác từng mili-giây, kết hợp nghệ thuật nén tiêu cự telephoto và bố cục đối xứng trục chữ Thập.",
       "creator": {
         "raw": "@Turkish_Airlines",
         "name": "Turkish_Airlines",
