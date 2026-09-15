@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 266,
-  "total_unique_ideas": 241,
-  "total_active_ideas": 208,
+  "total_scene_items": 267,
+  "total_unique_ideas": 242,
+  "total_active_ideas": 209,
   "total_excluded_ideas": 33,
   "total_creators": 137,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 18,
     "storytelling": 25,
-    "dien-anh": 103,
+    "dien-anh": 104,
     "chuyen-canh": 45
   },
   "industries": [
@@ -151,7 +151,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 5,
-    "thuong-hieu": 19,
+    "thuong-hieu": 20,
     "thoi-trang": 20,
     "am-thuc": 21,
     "du-lich": 22,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 94,
+    "us_eu": 95,
     "korea": 11,
     "india": 6,
     "japan": 10,
@@ -433,6 +433,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@creator",
+      "name": "Creator",
+      "profile_url": "https://www.instagram.com/creator/",
+      "video_count": 2,
+      "top_industry": "Thương Hiệu Cá Nhân & Dịch Vụ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg",
+        "IG_@creator_DaC90d3tWuV_Video_DaC90d3tWuV"
       ]
     },
     {
@@ -1771,17 +1783,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@creator",
-      "name": "Andrei Kostromskikh",
-      "profile_url": "https://www.instagram.com/creator/",
-      "video_count": 1,
-      "top_industry": "Kiến Trúc & Không Gian Sống",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@Andrei_Kostromskikh_DaC90d3tWuV_Video_by_kosnio/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@creator_DaC90d3tWuV_Video_DaC90d3tWuV"
-      ]
-    },
-    {
       "handle": "@ariffathulhakim",
       "name": "Ariffathulhakim",
       "profile_url": "https://www.instagram.com/ariffathulhakim/",
@@ -1805,6 +1806,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg",
+      "shortcode": "DdTeHleIqkg",
+      "title_vi": "@creator DdTeHleIqkg Video DdTeHleIqkg",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 0 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Điện Ảnh (Cinematic)",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
+        "en_name": "Personal Brand & Service",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @creator",
+      "tech_tags": [
+        "Cinematic Lighting",
+        "Composition Mastery",
+        "Visual Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Thương Hiệu Cá Nhân & Dịch Vụ.",
+      "creator": {
+        "raw": "@creator",
+        "name": "Creator",
+        "handle": "@creator",
+        "profile_url": "https://www.instagram.com/creator/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdTeHleIqkg/",
+      "gdrive_folder": "https://drive.google.com/open?id=1mCN4t5J-9-a9nHDdW022VAifhNMkg5Rs",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdTeHleIqkg.mp4",
+        "report_url": "reports/IG_@creator_DdTeHleIqkg_Video_DdTeHleIqkg.html",
+        "shots_count": 0,
+        "duration": "15s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Turkish_Airlines_DchBUgVMvrp_Video_by_turkishairlines",
       "shortcode": "DchBUgVMvrp_",
