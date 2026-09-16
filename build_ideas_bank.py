@@ -27,7 +27,7 @@ OUTPUT_JS_PATH = os.path.join(BASE_DIR, "ideas_data.js")
 SHOOTING_STYLES = [
     {
         "id": "walk-and-talk",
-        "name": "Walk and Talk",
+        "name": "Walk & Talk",
         "en_name": "Walk and Talk",
         "icon": "🚶",
         "badge_color": "emerald",
@@ -35,7 +35,7 @@ SHOOTING_STYLES = [
     },
     {
         "id": "voice-over",
-        "name": "Voice Over",
+        "name": "Lồng Tiếng",
         "en_name": "Voice Over",
         "icon": "🎙️",
         "badge_color": "purple",
@@ -43,7 +43,7 @@ SHOOTING_STYLES = [
     },
     {
         "id": "talking-head",
-        "name": "Talking Head",
+        "name": "Nói Trực Diện",
         "en_name": "Talking Head",
         "icon": "🗣️",
         "badge_color": "blue",
@@ -51,7 +51,7 @@ SHOOTING_STYLES = [
     },
     {
         "id": "storytelling",
-        "name": "Storytelling",
+        "name": "Kể Chuyện",
         "en_name": "Storytelling",
         "icon": "📖",
         "badge_color": "amber",
@@ -59,7 +59,7 @@ SHOOTING_STYLES = [
     },
     {
         "id": "dien-anh",
-        "name": "Điện Ảnh (Cinematic)",
+        "name": "Chỉn Chu",
         "en_name": "Cinematic Mastery",
         "icon": "🎬",
         "badge_color": "sky",
@@ -67,7 +67,7 @@ SHOOTING_STYLES = [
     },
     {
         "id": "chuyen-canh",
-        "name": "Chuyển Cảnh (Transition)",
+        "name": "Chuyển Cảnh",
         "en_name": "Transitions & Flow",
         "icon": "⚡",
         "badge_color": "rose",
@@ -79,23 +79,23 @@ SHOOTING_STYLES = [
 INDUSTRIES = [
     {
         "id": "spa-lam-dep",
-        "name": "Làm Đẹp & Spa / Y Tế",
-        "en_name": "Beauty, Spa & Medical",
+        "name": "Làm đẹp",
+        "en_name": "Beauty & Spa",
         "icon": "💆",
         "badge_color": "rose",
         "desc": "Dịch vụ spa, phòng khám thẩm mỹ, da liễu Before/After, phẫu thuật, Flash Sale dịch vụ."
     },
     {
         "id": "thuong-hieu",
-        "name": "Thương Hiệu Cá Nhân & Dịch Vụ",
-        "en_name": "Personal Brand & Service",
+        "name": "Xây kênh",
+        "en_name": "Personal Brand",
         "icon": "💼",
         "badge_color": "indigo",
         "desc": "Kịch bản bán khóa học, tâm lý creator trước camera, tư duy làm kênh Solo Creator, coaching."
     },
     {
         "id": "thoi-trang",
-        "name": "Thời Trang & Phụ Kiện",
+        "name": "Thời trang",
         "en_name": "Fashion & Style",
         "icon": "👔",
         "badge_color": "pink",
@@ -103,7 +103,7 @@ INDUSTRIES = [
     },
     {
         "id": "am-thuc",
-        "name": "Ẩm Thực & F&B",
+        "name": "F&B",
         "en_name": "Food & Beverage",
         "icon": "🍜",
         "badge_color": "amber",
@@ -111,7 +111,7 @@ INDUSTRIES = [
     },
     {
         "id": "du-lich",
-        "name": "Du Lịch & Văn Hóa",
+        "name": "Du lịch",
         "en_name": "Travel & Culture",
         "icon": "✈️",
         "badge_color": "sky",
@@ -119,7 +119,7 @@ INDUSTRIES = [
     },
     {
         "id": "cong-nghe",
-        "name": "Công Nghệ & Thiết Bị",
+        "name": "Đồ công nghệ",
         "en_name": "Tech & Gear",
         "icon": "📱",
         "badge_color": "purple",
@@ -127,7 +127,7 @@ INDUSTRIES = [
     },
     {
         "id": "kien-truc",
-        "name": "Kiến Trúc & Không Gian Sống",
+        "name": "Góc nhà đẹp",
         "en_name": "Architecture & Living",
         "icon": "🏛️",
         "badge_color": "emerald",
@@ -135,7 +135,7 @@ INDUSTRIES = [
     },
     {
         "id": "the-thao",
-        "name": "Thể Thao & Năng Động",
+        "name": "Thể thao",
         "en_name": "Sports & Motion",
         "icon": "🏃",
         "badge_color": "orange",
@@ -143,7 +143,7 @@ INDUSTRIES = [
     },
     {
         "id": "ky-thuat-quay",
-        "name": "Kỹ Thuật Quay Dựng & Điện Ảnh",
+        "name": "Bố cục",
         "en_name": "Filmmaking Mastery",
         "icon": "🎯",
         "badge_color": "blue",
@@ -269,14 +269,25 @@ def extract_shortcode(item):
     ig = item.get("ig_url", "")
     m = re.search(r"/(?:p|reel|tv)/([A-Za-z0-9_-]+)", ig)
     if m:
-        return m.group(1)
+        return m.group(1).strip().rstrip("_")
     
     vid_id = item.get("id", "")
-    m_code = re.search(r"_(D[A-Za-z0-9_-]{9,11})", vid_id)
+    # Ưu tiên mã Instagram chuẩn 11 ký tự dạng D...
+    m_code = re.search(r"_(D[A-Za-z0-9_-]{10})(?:_|$)", vid_id)
     if m_code:
-        return m_code.group(1)
+        return m_code.group(1).strip().rstrip("_")
         
-    return vid_id
+    m_code2 = re.search(r"_(D[A-Za-z0-9_-]{9,11})", vid_id)
+    if m_code2:
+        return m_code2.group(1).strip().rstrip("_")
+        
+    # Thử bóc tách từ tên file video nếu có mã D...
+    vurl = item.get("main_vid_rel", "") or item.get("root_vid_rel", "")
+    m_v = re.search(r"/([A-Za-z0-9_-]{11})\.mp4", vurl)
+    if m_v:
+        return m_v.group(1).strip().rstrip("_")
+        
+    return vid_id.strip()
 
 def clean_creator_info(creator_raw, ig_url="", vid_id="", item=None):
     handle = ""
@@ -468,18 +479,42 @@ def build_database():
     curation_cfg = load_curation_config()
     master_dict = load_master_classifications()
     manually_excluded_ids = set(curation_cfg.get("excluded_ids", []))
+    deleted_ids = set(curation_cfg.get("deleted_ids", []))
     title_overrides = curation_cfg.get("custom_title_overrides", {})
     
     print(f"Loaded {len(portal_data)} items from scene.html")
     print(f"Loaded {len(master_dict)} items from master_classifications.json")
+    print(f"Loaded {len(deleted_ids)} permanently deleted video IDs")
+
+    def calculate_item_quality(it):
+        score = 0
+        title = it.get("title_vi", "").strip()
+        # Ưu tiên tiêu đề tiếng Việt đã chau chuốt, không phải tên raw @handle
+        if title:
+            score += len(title)
+            if not title.startswith("@") and not title.startswith("Video by"):
+                score += 80
+        # Ưu tiên có báo cáo HTML đầy đủ
+        rep = it.get("main_html_rel") or it.get("root_html_rel") or ""
+        if rep:
+            score += 150
+        # Ưu tiên có mô tả phân tích sâu
+        desc = it.get("desc_vi") or ""
+        if len(desc) > 20:
+            score += 50
+        # Ưu tiên có thumbnails rõ ràng
+        thumbs = it.get("thumbnails") or it.get("thumbs") or []
+        if thumbs:
+            score += 30
+        return score
 
     unique_items_map = {}
     for idx, item in enumerate(portal_data):
         code = extract_shortcode(item)
         if code in unique_items_map:
             prev = unique_items_map[code]
-            cur_score = len(item.get("title_vi", "")) + (0 if item.get("title_vi", "").startswith("@") else 40)
-            prev_score = len(prev.get("title_vi", "")) + (0 if prev.get("title_vi", "").startswith("@") else 40)
+            cur_score = calculate_item_quality(item)
+            prev_score = calculate_item_quality(prev)
             if cur_score > prev_score:
                 unique_items_map[code] = item
         else:
@@ -492,6 +527,10 @@ def build_database():
 
     for code, item in unique_items_map.items():
         vid_id = item.get("id", "")
+        # Bỏ qua hoàn toàn các video đã bị xóa khỏi hệ thống
+        if (vid_id in deleted_ids) or (code in deleted_ids):
+            continue
+
         creator_raw = item.get("creator") or item.get("author") or item.get("channel_tag") or "Unknown"
         c_info = clean_creator_info(creator_raw, item.get("ig_url", ""), vid_id, item=item)
         master = master_dict.get(vid_id) or master_dict.get(code)
@@ -508,6 +547,10 @@ def build_database():
         is_excluded = is_personal or (vid_id in manually_excluded_ids) or (code in manually_excluded_ids)
         
         clean_title, short_takeaway, rep_dur = clean_title_and_takeaway(item, title_overrides)
+        if master and master.get("title") and not master.get("title").startswith("Video by") and not master.get("title").startswith("@"):
+            clean_title = master["title"]
+        if master and master.get("quick_takeaway") and not master.get("quick_takeaway").startswith("Tác phẩm điện ảnh ngắn gồm"):
+            short_takeaway = master["quick_takeaway"]
         style_obj, ind_obj, country_obj, purpose, tech_tags, logic_exp = get_item_classification(
             vid_id, code, clean_title, short_takeaway, item.get("key_tech", ""), c_info["handle"], curation_cfg, master_dict
         )
@@ -524,6 +567,24 @@ def build_database():
         else:
             thumb_hook = thumbs[0]
             thumb_key = thumbs[1] if len(thumbs) > 1 else thumbs[0]
+
+        # Chuẩn hóa thumbnail URL thành R2 CDN tuyệt đối và an toàn URL encoding
+        import urllib.parse
+        def normalize_thumb_url(u, fld, default_name):
+            if not u:
+                return f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{urllib.parse.quote(fld)}/{default_name}"
+            if not u.startswith("http"):
+                clean = u.lstrip("./")
+                if clean.startswith("images/"):
+                    clean = clean[7:]
+                return f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{urllib.parse.quote(clean, safe='/')}"
+            # Encode non-ascii path characters in R2 URLs
+            p = urllib.parse.urlsplit(u)
+            safe_path = urllib.parse.quote(p.path, safe="/")
+            return urllib.parse.urlunsplit((p.scheme, p.netloc, safe_path, p.query, p.fragment))
+
+        thumb_hook = normalize_thumb_url(thumb_hook, folder, "shot_01_mid.jpg")
+        thumb_key = normalize_thumb_url(thumb_key, folder, "shot_03_mid.jpg")
 
         vid_url = item.get("root_vid_rel") or item.get("main_vid_rel") or ""
         if not vid_url and item.get("all_vids"):
@@ -549,10 +610,22 @@ def build_database():
             "IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTk0RGgtBO.mp4",
             "IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbRak0lsesY.mp4",
             "IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbjCyKgxp8S.mp4",
-            "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTqPjitJl1.mp4"
+            "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTqPjitJl1.mp4",
+            "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Yosemite%20National%20Park%20Music%20Video%20-%20%40fabianamsolano.mp4",
+            "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Teaching_Nervous_System_Not_Emergency_-_%40kawoon.lee.mp4",
+            "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/4%20Cu%20May%20Sieu%20Thi%20Bang%20Gia%20Do%20Ulanzi%20MA38%20MT85%20-%20%40hena_film_vlog.mp4",
+            "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Gunung%20Sumbing%20Trekking%20Match%20Cut%20-%20%40dimasyudhystira.mp4",
+            "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdGp4XftvIn.mp4",
+            "IG_@Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis/slide_01.mp4",
+            "Visual_Storytelling_Carousel_@withyuee": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
+            "IG_@treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church_Skit": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoGfdghNwd.mp4"
         }
         if vid_id in R2_OVERRIDE_MAP:
             vid_url = R2_OVERRIDE_MAP[vid_id]
+        elif vid_url and not vid_url.startswith("http"):
+            import urllib.parse
+            clean_rel = vid_url.lstrip("./")
+            vid_url = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/" + urllib.parse.quote(clean_rel, safe="/")
             
         html_url = item.get("root_html_rel") or item.get("main_html_rel") or ""
         shots_count = item.get("shots_count", 0)
@@ -691,6 +764,7 @@ def build_database():
         "countries": COUNTRIES,
         "country_stats": country_stats,
         "transition_stats": transition_stats,
+        "deleted_ids": list(deleted_ids),
         "creators_hub": creators_hub,
         "ideas": processed_ideas
     }
@@ -699,6 +773,20 @@ def build_database():
 
     with open(OUTPUT_JS_PATH, "w", encoding="utf-8") as f:
         f.write(js_content)
+
+    # Automatically sync output files to dist/ for Cloudflare Pages deployment
+    import shutil
+    dist_dir = os.path.join(BASE_DIR, "dist")
+    if os.path.exists(dist_dir):
+        shutil.copy2(OUTPUT_JS_PATH, os.path.join(dist_dir, "ideas_data.js"))
+        if os.path.exists(MASTER_CLASSIFICATIONS_PATH):
+            shutil.copy2(MASTER_CLASSIFICATIONS_PATH, os.path.join(dist_dir, "master_classifications.json"))
+        if os.path.exists(EXCLUDED_CONFIG_PATH):
+            shutil.copy2(EXCLUDED_CONFIG_PATH, os.path.join(dist_dir, "curation_config.json"))
+        index_path = os.path.join(BASE_DIR, "index.html")
+        if os.path.exists(index_path):
+            shutil.copy2(index_path, os.path.join(dist_dir, "index.html"))
+        print("Synchronized all build files to dist/ directory.")
 
     print(f"Successfully generated {OUTPUT_JS_PATH}")
     print(f"Total active ideas: {len(active_ideas)}")
