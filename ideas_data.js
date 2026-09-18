@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 11,
-    "talking-head": 22,
+    "talking-head": 21,
     "storytelling": 18,
-    "dien-anh": 89,
+    "dien-anh": 90,
     "chuyen-canh": 36
   },
   "industries": [
@@ -152,13 +152,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
-    "thoi-trang": 19,
-    "am-thuc": 19,
-    "du-lich": 12,
-    "cong-nghe": 26,
+    "thoi-trang": 18,
+    "am-thuc": 20,
+    "du-lich": 14,
+    "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 7,
-    "ky-thuat-quay": 46,
+    "ky-thuat-quay": 45,
     "ugc": 6
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 93,
+    "us_eu": 92,
     "korea": 9,
     "india": 3,
     "japan": 6,
@@ -507,7 +507,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
       "profile_url": "https://www.instagram.com/nemo_ooo/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E5%B0%BC%E8%8E%ABNemo_%E0%BD%B2%E0%BE%80_%E1%97%A6%E2%86%9E%E2%97%83_DclWb98PiK_Video_by_nemo_ooo/shot_01_mid.jpg",
       "video_ids": [
         "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DclWb98PiK_Video_by_nemo_ooo"
@@ -639,7 +639,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "규리🍊ㅣCorporate_Girlie🇰🇷",
       "profile_url": "https://www.instagram.com/gyuree_k/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%EA%B7%9C%EB%A6%AC%F0%9F%8D%8A%E3%85%A3Corporate_Girlie%F0%9F%87%B0%F0%9F%87%B7_DdTZsoxTVFz_Video_by_gyuree_k/shot_01_mid.jpg",
       "video_ids": [
         "IG_@규리🍊ㅣCorporate_Girlie🇰🇷_DdTZsoxTVFz_Video_by_gyuree_k"
@@ -826,7 +826,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Aki",
       "profile_url": "https://www.instagram.com/aki_japan/",
       "video_count": 1,
-      "top_industry": "Thời trang",
+      "top_industry": "F&B",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aki_japan_DaDFH_TSii8/shot_01_mid.jpg",
       "video_ids": [
         "IG_@aki_japan_DaDFH_TSii8"
@@ -1750,9 +1750,9 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DclWb98PiK_Video_by_nemo_ooo",
       "shortcode": "DclWb98PiK",
-      "title_vi": "@尼莫Nemo_ིྀ_ᗦ↞◃ - Video by nemo ooo",
-      "quick_takeaway": "voice over",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "title_vi": "Trải Nghiệm Triển Lãm Nghệ Thuật Số Arte Museum Busan.",
+      "quick_takeaway": "Kết hợp nhịp dồn dập của sóng 3D với nhịp tĩnh gương đối xứng và voice over mộc mạc chia sẻ kinh nghiệm thẻ Busan Pass.",
+      "key_tech": "Voice Over • Anamorphic Wave • Góc Nhìn POV • Phản Chiếu Gương Đối Xứng • B-Roll Không Gian Số",
       "shooting_style": {
         "id": "voice-over",
         "name": "Lồng Tiếng",
@@ -1761,29 +1761,31 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "purple"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "asia",
+        "name": "Châu Á",
+        "en_name": "Asia",
+        "flag": "🌏",
+        "badge_color": "green"
       },
-      "purpose": "voice over",
+      "purpose": "Trải nghiệm không gian & Hướng dẫn đi bằng thẻ Busan Pass",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Voice Over",
+        "Anamorphic Wave",
+        "Góc Nhìn POV",
+        "Phản Chiếu Gương Đối Xứng",
+        "B-Roll Không Gian Số"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: voice over. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Voice Over.",
+      "logic_explanation": "Video Voice Over trải nghiệm bảo tàng số Arte Museum Busan; ưu tiên kiểu quay voice-over theo chỉ định của anh Việt.",
       "creator": {
         "raw": "@尼莫Nemo_ིྀ_ᗦ↞◃",
         "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
@@ -2568,11 +2570,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
@@ -4210,11 +4212,11 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "Mọi cú máy chuyển động đều phải có lý do cảm xúc: Muốn khán giả chú ý vào bí mật hay nội tâm của nhân vật, hãy đẩy camera chậm dần về phía họ.",
       "key_tech": "Kỹ Thuật Quay Dựng • Dolly-In Push Movement • Emotional Camera Language • Studio Key Lighting • Visual Proof Demonstration",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -4287,11 +4289,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "thoi-trang",
-        "name": "Thời trang",
-        "en_name": "Fashion & Style",
-        "icon": "👔",
-        "badge_color": "pink"
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
       },
       "country": {
         "id": "global",
