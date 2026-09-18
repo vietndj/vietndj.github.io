@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 216,
-  "total_unique_ideas": 205,
-  "total_active_ideas": 180,
-  "total_excluded_ideas": 25,
-  "total_creators": 135,
+  "total_scene_items": 218,
+  "total_unique_ideas": 207,
+  "total_active_ideas": 181,
+  "total_excluded_ideas": 26,
+  "total_creators": 136,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 21,
     "storytelling": 18,
     "dien-anh": 90,
-    "chuyen-canh": 37
+    "chuyen-canh": 38
   },
   "industries": [
     {
@@ -152,7 +152,7 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
-    "thoi-trang": 18,
+    "thoi-trang": 19,
     "am-thuc": 20,
     "du-lich": 14,
     "cong-nghe": 25,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 93,
+    "us_eu": 94,
     "korea": 9,
     "india": 3,
     "japan": 6,
@@ -500,6 +500,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@sarodeele",
+      "name": "Saro_Deele",
+      "profile_url": "https://www.instagram.com/sarodeele/",
+      "video_count": 1,
+      "top_industry": "Thời trang",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Saro_Deele_DXjRnwCISNU_Video_by_sarodeele/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Saro_Deele_DXjRnwCISNU_Video_by_sarodeele"
       ]
     },
     {
@@ -1758,6 +1769,134 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Saro_Deele_DXjRnwCISNU_Video_by_sarodeele",
+      "shortcode": "DXjRnwCISNU",
+      "title_vi": "Video by sarodeele",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 23 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời trang",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "thời trang, chuyển cảnh",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: thời trang, chuyển cảnh. Phân loại vào Thời Trang & Phụ Kiện • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Saro_Deele",
+        "name": "Saro_Deele",
+        "handle": "@sarodeele",
+        "profile_url": "https://www.instagram.com/sarodeele/"
+      },
+      "ig_url": "https://www.instagram.com/sarodeele/reel/DXjRnwCISNU/",
+      "gdrive_folder": "https://drive.google.com/open?id=1SxMHEKzO1xMFvhCrIfqgVjE5Hdj_ujen",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Saro_Deele_DXjRnwCISNU_Video_by_sarodeele/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Saro_Deele_DXjRnwCISNU_Video_by_sarodeele/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DXjRnwCISNU.mp4",
+        "report_url": "reports/IG_@Saro_Deele_DXjRnwCISNU_Video_by_sarodeele.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
+      "shortcode": "DZwO5X6N_MS",
+      "title_vi": "Video by jade.got.curious",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 14 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Thêm • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Xây kênh",
+        "en_name": "Personal Brand",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "thêm mục chuyển cảnh",
+      "tech_tags": [
+        "Thêm",
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: thêm mục chuyển cảnh. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Jade_Sheng",
+        "name": "Jade_Sheng",
+        "handle": "@jade.got.curious",
+        "profile_url": "https://www.instagram.com/jade.got.curious/"
+      },
+      "ig_url": "https://www.instagram.com/jade.got.curious/reel/DZwO5X6N_MS/",
+      "gdrive_folder": "https://drive.google.com/open?id=1LYPp5c8V2Fiz8JEoPaLi9OvAvDSfr8sd",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DZwO5X6N_MS.mp4",
+        "report_url": "reports/IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious.html",
+        "shots_count": 14,
+        "duration": "28s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": true
+    },
     {
       "id": "IG_@Leticia_Quadros_DYXXgkbxPj7_Video_by_leticiaqdrs",
       "shortcode": "DYXXgkbxPj7",
