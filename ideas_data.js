@@ -61,10 +61,10 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "shooting_style_stats": {
     "walk-and-talk": 3,
-    "voice-over": 11,
-    "talking-head": 24,
+    "voice-over": 12,
+    "talking-head": 22,
     "storytelling": 18,
-    "dien-anh": 90,
+    "dien-anh": 91,
     "chuyen-canh": 38
   },
   "industries": [
@@ -153,10 +153,10 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
     "thoi-trang": 19,
-    "am-thuc": 20,
-    "du-lich": 14,
+    "am-thuc": 21,
+    "du-lich": 15,
     "cong-nghe": 25,
-    "kien-truc": 22,
+    "kien-truc": 20,
     "the-thao": 7,
     "ky-thuat-quay": 47,
     "ugc": 6
@@ -212,8 +212,8 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 97,
-    "korea": 9,
+    "us_eu": 95,
+    "korea": 10,
     "india": 3,
     "japan": 6,
     "vietnam": 5,
@@ -282,7 +282,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Hena_Film_Vlog",
       "profile_url": "https://www.instagram.com/hena_film_vlog/",
       "video_count": 4,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "F&B",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hena_film_vlog_DdbCdHFKZsP_%ED%96%87%EB%B9%9B_%EC%97%86%EB%8A%94_%EC%A7%91%2C_%EC%9D%8C%EC%8B%9D_%EC%B4%AC%EC%98%81_%EA%B0%80%EB%8A%A5%ED%95%A8%F0%9F%A4%94_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.jpg",
       "video_ids": [
         "IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공",
@@ -508,7 +508,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "German991020",
       "profile_url": "https://www.instagram.com/german991020/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg",
       "video_ids": [
         "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul"
@@ -1795,40 +1795,42 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공",
       "shortcode": "DdbCdHFKZsP",
-      "title_vi": "햇빛 없는 집, 음식 촬영 가능함🤔 제품제공",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "title_vi": "Setup Đèn Quay Cận Cảnh Ẩm Thực Nhà Thiếu Sáng",
+      "quick_takeaway": "Nhà không có ánh sáng tự nhiên vẫn quay đồ ăn ngon mắt bằng cách dùng 1 đèn LED spot đánh chéo tạo khối và tương phản.",
+      "key_tech": "Macro Detail Shot • Tabletop Lighting • Food Cinematography • Side Lighting 45°",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
-      },
-      "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
+        "id": "voice-over",
+        "name": "Lồng Tiếng",
+        "en_name": "Voice Over",
+        "icon": "🎙️",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @hena_film_vlog",
+      "industry": {
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "korea",
+        "name": "Hàn Quốc",
+        "en_name": "Korea",
+        "flag": "🇰🇷",
+        "badge_color": "blue"
+      },
+      "purpose": "Hướng dẫn dùng 1 đèn LED spot quay cận cảnh món ăn nổi khối khi nhà thiếu sáng",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Macro Detail Shot",
+        "Tabletop Lighting",
+        "Food Cinematography",
+        "Side Lighting 45°",
+        "Behind The Scenes"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Video hướng dẫn setup đèn quay ẩm thực trong nhà thiếu sáng, kết hợp Voice Over và B-Roll cận cảnh đồ ăn.",
       "creator": {
         "raw": "@hena_film_vlog",
         "name": "Hena_Film_Vlog",
@@ -1859,39 +1861,42 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul",
       "shortcode": "DdiSb5Rp2LB",
       "title_vi": "Lost in Seoul",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "quick_takeaway": "⚡ Tận dụng người qua lại làm lớp tiền cảnh chuyển động (Wipe transition) tự nhiên, dùng góc cận xen kẽ góc toàn để tạo nhịp thở thị giác.",
+      "key_tech": "Visual Hook • Foreground Motion Wipe • Telephoto Compression • Dirty Foreground",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "asia",
+        "name": "Châu Á",
+        "en_name": "Asia",
+        "flag": "🌏",
+        "badge_color": "blue"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @german991020",
+      "purpose": "B-roll điện ảnh đường phố Seoul: cú máy tĩnh đóng khung nhân vật, typography tối giản và bảng màu phim hoài niệm.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Visual Hook",
+        "Foreground Motion Wipe",
+        "Telephoto Compression",
+        "Low-Angle Canyon Framing",
+        "Dirty Foreground",
+        "Teal & Amber Film Grade"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Series b-roll du lịch điện ảnh Hàn Quốc kết hợp góc quay đường phố, tàu điện ngầm và ẩm thực đời thường.",
       "creator": {
         "raw": "@german991020",
         "name": "German991020",
@@ -3951,7 +3956,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "Dcbn7Bix-X-",
       "title_vi": "Video by calebnatale",
       "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "key_tech": "Macro Detail Shot • Tabletop Lighting • Food Cinematography • Side Lighting 45°",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
