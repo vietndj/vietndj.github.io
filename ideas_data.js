@@ -8,7 +8,7 @@ var FEDU_IDEAS_DATABASE = {
   "total_unique_ideas": 208,
   "total_active_ideas": 182,
   "total_excluded_ideas": 26,
-  "total_creators": 136,
+  "total_creators": 137,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 11,
-    "talking-head": 21,
+    "talking-head": 22,
     "storytelling": 18,
-    "dien-anh": 91,
+    "dien-anh": 90,
     "chuyen-canh": 38
   },
   "industries": [
@@ -151,14 +151,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 5,
-    "thuong-hieu": 20,
+    "thuong-hieu": 19,
     "thoi-trang": 19,
     "am-thuc": 20,
     "du-lich": 14,
     "cong-nghe": 25,
     "kien-truc": 20,
     "the-thao": 7,
-    "ky-thuat-quay": 46,
+    "ky-thuat-quay": 47,
     "ugc": 6
   },
   "countries": [
@@ -359,18 +359,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@creator",
-      "name": "Creator",
-      "profile_url": "https://www.instagram.com/creator/",
-      "video_count": 2,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB",
-        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
-      ]
-    },
-    {
       "handle": "@pascal_blaurock",
       "name": "Pascal Blaurock",
       "profile_url": "https://www.instagram.com/pascal_blaurock/",
@@ -512,6 +500,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@mylenesmind",
+      "name": "Mylene_Mae",
+      "profile_url": "https://www.instagram.com/mylenesmind/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind"
       ]
     },
     {
@@ -721,6 +720,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis"
+      ]
+    },
+    {
+      "handle": "@creator",
+      "name": "Hayan Cook",
+      "profile_url": "https://www.instagram.com/creator/",
+      "video_count": 1,
+      "top_industry": "F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdVBqUzj3o5_Video_DdVBqUzj3o5/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
       ]
     },
     {
@@ -1771,24 +1781,24 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB",
-      "shortcode": "DdiSb5Rp2LB",
-      "title_vi": "@creator DdiSb5Rp2LB Video DdiSb5Rp2LB",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 0 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
-      "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
+      "id": "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind",
+      "shortcode": "DdeCKRRRGvd",
+      "title_vi": "Video by mylenesmind",
+      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 21 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
-        "id": "thuong-hieu",
-        "name": "Xây kênh",
-        "en_name": "Personal Brand",
-        "icon": "💼",
-        "badge_color": "indigo"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1797,38 +1807,40 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @creator",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mylene_mae",
       "tech_tags": [
-        "Cinematic Lighting",
-        "Composition Mastery",
-        "Visual Rhythm"
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "High-key Lighting"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Thương Hiệu Cá Nhân & Dịch Vụ.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
       "creator": {
-        "raw": "@creator",
-        "name": "Creator",
-        "handle": "@creator",
-        "profile_url": "https://www.instagram.com/creator/"
+        "raw": "@mylene_mae",
+        "name": "Mylene_Mae",
+        "handle": "@mylenesmind",
+        "profile_url": "https://www.instagram.com/mylenesmind/"
       },
-      "ig_url": "https://www.instagram.com/reel/DdiSb5Rp2LB/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
-      "gdrive_folder": "https://drive.google.com/open?id=15bc8MfxxUk4Xk1JdO0hLx80SHVNpYnif",
+      "ig_url": "https://www.instagram.com/reel/DdeCKRRRGvd/",
+      "gdrive_folder": "https://drive.google.com/open?id=1CR7hseDvzdQYlIY2V8apXle_98MVzGFz",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB/shot_03_mid.jpg",
-        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdiSb5Rp2LB.mp4",
-        "report_url": "reports/IG_@creator_DdiSb5Rp2LB_Video_DdiSb5Rp2LB.html",
-        "shots_count": 0,
-        "duration": "15s",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind/shot_03_mid.jpg",
+        "video_url": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdeCKRRRGvd.mp4",
+        "report_url": "reports/IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind.html",
+        "shots_count": 21,
+        "duration": "42s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
       },
       "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
