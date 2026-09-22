@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 97,
+    "us_eu": 96,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -506,7 +506,7 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@yok.lagun",
-      "name": "หยก ละกัน_ꔛ",
+      "name": "Yok Lagun",
       "profile_url": "https://www.instagram.com/yok.lagun/",
       "video_count": 1,
       "top_industry": "Bố cục",
@@ -1818,8 +1818,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun",
       "shortcode": "DcA80Aez6Aw",
-      "title_vi": "@หยก.ละกัน_ꔛ - Video by yok.lagun",
-      "quick_takeaway": "Hook, diễn",
+      "title_vi": "5 Visual Hooks - 5 Kiểu Diễn Mở Màn Tự Nhiên Chặn Feed (@yok.lagun)",
+      "quick_takeaway": "5 chiêu diễn Hook động thái tự nhiên: Biến camera thành đồ vật trong túi xách, vừa nói vừa thả người ngồi xuống ghế lười, hoặc hất vạt áo khoác tạo swipe che khung hình thay vì kỹ xảo giả tạo.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -1836,26 +1836,33 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
+        "id": "asia",
+        "name": "Thái Lan",
+        "en_name": "Thailand",
+        "flag": "🇹🇭",
+        "badge_color": "blue"
       },
-      "purpose": "Hook, diễn",
+      "purpose": "5 Visual Hooks mở màn tự nhiên: POV đáy túi, kéo tay, vừa nói vừa ngồi xuống, hất vạt áo, nằm ngửa và góc nhìn chéo từ trên cao",
       "tech_tags": [
         "Hook",
         "Diễn",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "Tote Bag POV",
+        "Hand Reveal",
+        "Sitting Down Motion",
+        "Jacket Wipe Transition",
+        "Top-Down Intimate Angle",
+        "High-Angle 45°"
       ],
-      "transition_level": null,
+      "transition_level": "Action Match Cut & Organic Wipe",
       "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Hook, diễn. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "fedu_optimization": {
+        "key_optimization_point": "⚡ Kết hợp 5 chiêu diễn Hook chuyển động tự nhiên (đáy túi vải POV, kéo tay che thấu kính, ngồi xuống ghế, hất áo khoác, góc cao nhìn xuống) ➔ Xóa tan cảm giác đơ cứng khi mở đầu video.",
+        "practice_focus": "⚡ Thực chiến: Thay vì đứng im trước máy rồi mới nói, hãy bấm máy trước và bắt đầu nói ngay khi đang thực hiện một hành động cơ thể (thả người ngồi xuống ghế, kéo tay hoặc hất áo) để giữ mắt người xem 2 giây đầu."
+      },
+      "logic_explanation": "Phân tích 5 kiểu diễn Hook thị giác từ creator @yok.lagun. Kỹ thuật tận dụng chuyển động tự nhiên của cơ thể và đồ vật đời thường để chặn feed mà không cần kỹ xảo phức tạp.",
       "creator": {
         "raw": "@หยก.ละกัน_ꔛ",
-        "name": "หยก ละกัน_ꔛ",
+        "name": "Yok Lagun",
         "handle": "@yok.lagun",
         "profile_url": "https://www.instagram.com/yok.lagun/"
       },
