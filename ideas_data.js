@@ -155,8 +155,8 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 19,
     "am-thuc": 21,
     "du-lich": 15,
-    "cong-nghe": 25,
-    "kien-truc": 22,
+    "cong-nghe": 26,
+    "kien-truc": 21,
     "the-thao": 7,
     "ky-thuat-quay": 47,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 97,
+    "us_eu": 96,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -338,7 +338,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Megan_Tan",
       "profile_url": "https://www.instagram.com/megantanhweewen/",
       "video_count": 3,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Đồ công nghệ",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen",
@@ -1833,6 +1833,8 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Жамьяна_Осознанный_стилист_UGC",
       "tech_tags": [
+        "Diễn",
+        "Hook",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "Medium Tracking Shot"
@@ -1870,9 +1872,9 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Megan_Tan_DdgwV6dsxcS_Video_by_megantanhweewen",
       "shortcode": "DdgwV6dsxcS",
-      "title_vi": "Video by megantanhweewen",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "title_vi": "Đừng Để Tương Lai Đánh Cắp Hiện Tại - Bí Quyết Giải Phóng Thời Gian Cùng Claude AI (@megantanhweewen)",
+      "quick_takeaway": "⚡ Sử dụng nhịp cắt chuyển cảnh theo âm tiết (Cut on Syllable) kết hợp Double Exposure để giữ nhịp thở nội tâm. ➔ Đưa công nghệ vào cuối như chiếc chìa khóa giải phóng thời gian sống.",
+      "key_tech": "Chuyển Cảnh (Transition) • Phơi Sáng Kép Double Exposure • Match Cut Đời Thường • Extreme Close-Up Phin Cafe",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -1881,25 +1883,26 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Megan_Tan",
+      "country": {
+        "id": "asia",
+        "name": "Châu Á",
+        "en_name": "Asia",
+        "flag": "🇲🇾/🇸🇬",
+        "badge_color": "emerald"
+      },
+      "purpose": "Kể chuyện triết lý thời gian kết hợp chuyển cảnh điện ảnh để giới thiệu công cụ Claude AI",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "Match Cut chuyển cảnh",
+        "Double Exposure phơi sáng kép",
+        "Kinetic Light Painting vệt sáng",
+        "Extreme Close-Up phin cafe",
+        "Diffused Window Light ánh sáng cửa sổ"
       ],
       "transition_level": null,
       "is_ad_bot": false,
