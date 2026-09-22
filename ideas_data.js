@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 223,
-  "total_unique_ideas": 212,
-  "total_active_ideas": 186,
+  "total_scene_items": 224,
+  "total_unique_ideas": 213,
+  "total_active_ideas": 187,
   "total_excluded_ideas": 26,
-  "total_creators": 139,
+  "total_creators": 140,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 23,
     "storytelling": 18,
     "dien-anh": 91,
-    "chuyen-canh": 39
+    "chuyen-canh": 40
   },
   "industries": [
     {
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 21,
     "du-lich": 15,
     "cong-nghe": 26,
-    "kien-truc": 21,
+    "kien-truc": 22,
     "the-thao": 7,
     "ky-thuat-quay": 47,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 96,
+    "us_eu": 97,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -502,6 +502,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@yok.lagun",
+      "name": "หยก ละกัน_ꔛ",
+      "profile_url": "https://www.instagram.com/yok.lagun/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E0%B8%AB%E0%B8%A2%E0%B8%81.%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99_%EA%94%9B_DcA80Aez6Aw_Video_by_yok.lagun/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun"
       ]
     },
     {
@@ -1804,6 +1815,68 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun",
+      "shortcode": "DcA80Aez6Aw",
+      "title_vi": "@หยก.ละกัน_ꔛ - Video by yok.lagun",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @หยก.ละกัน_ꔛ",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@หยก.ละกัน_ꔛ",
+        "name": "หยก ละกัน_ꔛ",
+        "handle": "@yok.lagun",
+        "profile_url": "https://www.instagram.com/yok.lagun/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcA80Aez6Aw/?stkn=MTNmN3ZsbDhjYm5xcA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1oVTlUavPqlb8l_meLPGGTilWnvIFiGWj",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E0%B8%AB%E0%B8%A2%E0%B8%81.%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99_%EA%94%9B_DcA80Aez6Aw_Video_by_yok.lagun/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E0%B8%AB%E0%B8%A2%E0%B8%81.%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99_%EA%94%9B_DcA80Aez6Aw_Video_by_yok.lagun/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcA80Aez6Aw.mp4",
+        "report_url": "reports/IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Жамьяна_Осознанный_стилист_UGC_DdeWMWLsaHA_Video_by_zhamyana",
       "shortcode": "DdeWMWLsaHA",
