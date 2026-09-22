@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 21,
     "du-lich": 15,
     "cong-nghe": 26,
-    "kien-truc": 22,
+    "kien-truc": 21,
     "the-thao": 7,
-    "ky-thuat-quay": 47,
+    "ky-thuat-quay": 48,
     "ugc": 6
   },
   "countries": [
@@ -509,7 +509,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "หยก ละกัน_ꔛ",
       "profile_url": "https://www.instagram.com/yok.lagun/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E0%B8%AB%E0%B8%A2%E0%B8%81.%E0%B8%A5%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99_%EA%94%9B_DcA80Aez6Aw_Video_by_yok.lagun/shot_01_mid.jpg",
       "video_ids": [
         "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun"
@@ -1819,7 +1819,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun",
       "shortcode": "DcA80Aez6Aw",
       "title_vi": "@หยก.ละกัน_ꔛ - Video by yok.lagun",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "quick_takeaway": "Hook, diễn",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -1829,11 +1829,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1842,17 +1842,17 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @หยก.ละกัน_ꔛ",
+      "purpose": "Hook, diễn",
       "tech_tags": [
-        "Diễn",
         "Hook",
+        "Diễn",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Ghi chú người dùng: Hook, diễn. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
       "creator": {
         "raw": "@หยก.ละกัน_ꔛ",
         "name": "หยก ละกัน_ꔛ",
