@@ -1844,6 +1844,8 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @หยก.ละกัน_ꔛ",
       "tech_tags": [
+        "Diễn",
+        "Hook",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot"
       ],
