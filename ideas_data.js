@@ -6,8 +6,8 @@ var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
   "total_scene_items": 234,
   "total_unique_ideas": 223,
-  "total_active_ideas": 196,
-  "total_excluded_ideas": 27,
+  "total_active_ideas": 197,
+  "total_excluded_ideas": 26,
   "total_creators": 145,
   "shooting_styles": [
     {
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 94,
+    "dien-anh": 95,
     "chuyen-canh": 44
   },
   "industries": [
@@ -151,7 +151,7 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 5,
-    "thuong-hieu": 19,
+    "thuong-hieu": 20,
     "thoi-trang": 22,
     "am-thuc": 21,
     "du-lich": 16,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 104,
+    "us_eu": 105,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -408,6 +408,18 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
         "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul"
+      ]
+    },
+    {
+      "handle": "@creator",
+      "name": "Creator",
+      "profile_url": "https://www.instagram.com/creator/",
+      "video_count": 2,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_video_Video_video/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@creator_video_Video_video",
+        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
       ]
     },
     {
@@ -803,17 +815,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis"
-      ]
-    },
-    {
-      "handle": "@creator",
-      "name": "Hayan Cook",
-      "profile_url": "https://www.instagram.com/creator/",
-      "video_count": 1,
-      "top_industry": "F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdVBqUzj3o5_Video_DdVBqUzj3o5/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
       ]
     },
     {
@@ -2196,7 +2197,7 @@ var FEDU_IDEAS_DATABASE = {
         "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
-      "is_excluded": true
+      "is_excluded": false
     },
     {
       "id": "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
