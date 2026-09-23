@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 232,
-  "total_unique_ideas": 220,
-  "total_active_ideas": 194,
-  "total_excluded_ideas": 26,
-  "total_creators": 143,
+  "total_scene_items": 233,
+  "total_unique_ideas": 222,
+  "total_active_ideas": 195,
+  "total_excluded_ideas": 27,
+  "total_creators": 145,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 25,
+    "talking-head": 26,
     "storytelling": 18,
-    "dien-anh": 93,
-    "chuyen-canh": 43
+    "dien-anh": 92,
+    "chuyen-canh": 44
   },
   "industries": [
     {
@@ -151,12 +151,12 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 5,
-    "thuong-hieu": 20,
-    "thoi-trang": 21,
+    "thuong-hieu": 19,
+    "thoi-trang": 22,
     "am-thuc": 21,
     "du-lich": 16,
     "cong-nghe": 28,
-    "kien-truc": 22,
+    "kien-truc": 23,
     "the-thao": 7,
     "ky-thuat-quay": 48,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 102,
+    "us_eu": 103,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -399,18 +399,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@creator",
-      "name": "Creator",
-      "profile_url": "https://www.instagram.com/creator/",
-      "video_count": 2,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_video_Video_video/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@creator_video_Video_video",
-        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
-      ]
-    },
-    {
       "handle": "@pascal_blaurock",
       "name": "Pascal Blaurock",
       "profile_url": "https://www.instagram.com/pascal_blaurock/",
@@ -528,6 +516,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@maxryman",
+      "name": "Maxryman",
+      "profile_url": "https://www.instagram.com/maxryman/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40maxryman_DdlVIp9S9zv_day_in_the_life_%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️"
       ]
     },
     {
@@ -803,6 +802,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis"
+      ]
+    },
+    {
+      "handle": "@creator",
+      "name": "Hayan Cook",
+      "profile_url": "https://www.instagram.com/creator/",
+      "video_count": 1,
+      "top_industry": "F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40creator_DdVBqUzj3o5_Video_DdVBqUzj3o5/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@creator_DdVBqUzj3o5_Video_DdVBqUzj3o5"
       ]
     },
     {
@@ -1174,9 +1184,9 @@ var FEDU_IDEAS_DATABASE = {
       "profile_url": "https://www.instagram.com/treechurchlogan/",
       "video_count": 1,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church/shot_01_mid.jpg",
       "video_ids": [
-        ""
+        "IG_@treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church"
       ]
     },
     {
@@ -1188,6 +1198,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC/shot_01_mid.jpg",
       "video_ids": [
         "IG_@tattebakery_DcJM7AWOa___Soundtrack_Of_Newest_Cafe_NYC"
+      ]
+    },
+    {
+      "handle": "@kristinagoose",
+      "name": "Kristinagoose",
+      "profile_url": "https://www.instagram.com/kristinagoose/",
+      "video_count": 1,
+      "top_industry": "Thời trang",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "video_ids": [
+        ""
       ]
     },
     {
@@ -1251,9 +1272,9 @@ var FEDU_IDEAS_DATABASE = {
       "profile_url": "https://www.instagram.com/kulniyasally/",
       "video_count": 1,
       "top_industry": "F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV/shot_01_mid.jpg",
       "video_ids": [
-        ""
+        "IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV"
       ]
     },
     {
@@ -1853,6 +1874,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️",
+      "shortcode": "DdlVIp9S9zv",
+      "title_vi": "day in the life ☕️",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @maxryman",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@maxryman",
+        "name": "Maxryman",
+        "handle": "@maxryman",
+        "profile_url": "https://www.instagram.com/maxryman/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdlVIp9S9zv/?stkn=MWQ1NGtnaHRzdDZocw==",
+      "gdrive_folder": "https://drive.google.com/open?id=192K5ZToaZSIbmAlMJk3yBQWJALTmjl32",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40maxryman_DdlVIp9S9zv_day_in_the_life_%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40maxryman_DdlVIp9S9zv_day_in_the_life_%E2%98%95%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdlVIp9S9zv.mp4",
+        "report_url": "reports/IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@mcjacoub_Ddlh5pagYie_Carousel_Analysis",
       "shortcode": "DdllA9dAfBt",
       "title_vi": "5 film techniques yang menurut gue worth bang",
@@ -2042,7 +2127,7 @@ var FEDU_IDEAS_DATABASE = {
         "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
-      "is_excluded": false
+      "is_excluded": true
     },
     {
       "id": "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
@@ -7544,8 +7629,8 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "",
-      "shortcode": "",
+      "id": "IG_@treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church",
+      "shortcode": "DcoGfdghNwd",
       "title_vi": "Bring A Friend To Church Skit • Đỉnh Cao Hài Hước Nghĩa Đen (Literal Comedy) & Hook 2 Nhịp Kêu Gọi Tham Dự Sự Kiện",
       "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
       "key_tech": "",
@@ -7587,8 +7672,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/treechurchlogan/",
       "gdrive_folder": "",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church/shot_03_mid.jpg",
         "video_url": "",
         "report_url": "",
         "shots_count": 0,
@@ -7661,6 +7746,67 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "",
+      "shortcode": "",
+      "title_vi": "Casual But Make It Bomb • Kỹ Thuật Chuyển Cảnh Match Cut Đồ Vật (Bag Wipe Transition) & Trình Diễn Thời Trang Viral Cực Bén",
+      "quick_takeaway": "Bóc tách ngôn ngữ điện ảnh và nghệ thuật thị giác: .",
+      "key_tech": "",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời trang",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Cinematic"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@kristinagoose",
+        "name": "Kristinagoose",
+        "handle": "@kristinagoose",
+        "profile_url": "https://www.instagram.com/kristinagoose/"
+      },
+      "ig_url": "https://www.instagram.com/kristinagoose/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "video_url": "",
+        "report_url": "",
+        "shots_count": 0,
+        "duration": "7.25s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
@@ -8032,7 +8178,7 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "",
+      "id": "IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV",
       "shortcode": "DdGRCKwsaaI",
       "title_vi": "Kamera 0.5x Ultra-Wide Food POV: Phối Hợp Hậu Trường & Thành Phẩm Điện Ảnh",
       "quick_takeaway": "Báo cáo phân tích đạo diễn chuyên sâu về kỹ thuật quay POV ẩm thực bằng ống kính góc siêu rộng 0.5x của smartphone kết hợp mồi nhử hậu trường Behind-the-scenes (BTS) và cú bùng nổ chuyển cảnh thành phẩm (Result).",
@@ -8075,8 +8221,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdGRCKwsaaI/",
       "gdrive_folder": "https://drive.google.com/open?id=1Z2Uovd7AL7uKMnhRpBsTfc6mJ7U9RwSY",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images//shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdGRCKwsaaI.mp4",
         "report_url": "reports/IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV.html",
         "shots_count": 7,
