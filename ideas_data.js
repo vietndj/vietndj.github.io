@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 230,
-  "total_unique_ideas": 218,
-  "total_active_ideas": 192,
+  "total_scene_items": 231,
+  "total_unique_ideas": 219,
+  "total_active_ideas": 193,
   "total_excluded_ideas": 26,
-  "total_creators": 142,
+  "total_creators": 143,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 24,
+    "talking-head": 25,
     "storytelling": 18,
     "dien-anh": 92,
     "chuyen-canh": 43
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 21,
     "am-thuc": 21,
     "du-lich": 16,
-    "cong-nghe": 27,
+    "cong-nghe": 28,
     "kien-truc": 21,
     "the-thao": 7,
     "ky-thuat-quay": 48,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 100,
+    "us_eu": 101,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -527,6 +527,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@EcomBrand",
+      "name": "Ecombrand",
+      "profile_url": "https://www.instagram.com/EcomBrand/",
+      "video_count": 1,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40EcomBrand_ECOM_Ulanzi_Ulanzi/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi"
       ]
     },
     {
@@ -1840,6 +1851,71 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi",
+      "shortcode": "ECOM_Ulanzi",
+      "title_vi": "Ulanzi",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @EcomBrand",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@EcomBrand",
+        "name": "Ecombrand",
+        "handle": "@EcomBrand",
+        "profile_url": "https://www.instagram.com/EcomBrand/"
+      },
+      "ig_url": "https://www.lazada.vn//products/i13340911294-s116601459985.html?spm=a2o42.cart.0.0.358c6f2692mkhg&urlFlag=true&tradePath=%2CcartPriceDrop%2Ccart",
+      "gdrive_folder": "https://drive.google.com/open?id=13TlqCDe1yswRqKF3yVF6CP91t6kEmmlI",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40EcomBrand_ECOM_Ulanzi_Ulanzi/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40EcomBrand_ECOM_Ulanzi_Ulanzi/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/ECOM_Ulanzi.mp4",
+        "report_url": "reports/IG_@EcomBrand_ECOM_Ulanzi_Ulanzi.html",
+        "shots_count": 16,
+        "duration": "32s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@creator_video_Video_video",
       "shortcode": "IG_@creator_video_Video_video",
