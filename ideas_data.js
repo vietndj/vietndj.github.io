@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 226,
+  "total_scene_items": 227,
   "total_unique_ideas": 215,
   "total_active_ideas": 189,
   "total_excluded_ideas": 26,
@@ -154,11 +154,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 19,
     "thoi-trang": 20,
     "am-thuc": 21,
-    "du-lich": 15,
+    "du-lich": 16,
     "cong-nghe": 26,
     "kien-truc": 20,
     "the-thao": 7,
-    "ky-thuat-quay": 50,
+    "ky-thuat-quay": 49,
     "ugc": 6
   },
   "countries": [
@@ -506,13 +506,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@mario.prawira",
-      "name": "Mario_Prawira_Schönmann",
+      "name": "Mario Prawira",
       "profile_url": "https://www.instagram.com/mario.prawira/",
       "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_01_mid.jpg",
+      "top_industry": "Du lịch",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira"
+        "IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room"
       ]
     },
     {
@@ -1838,9 +1838,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira",
+      "id": "IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room",
       "shortcode": "DdXdf-aBCMu",
-      "title_vi": "@Mario_Prawira_Schönmann - Video by mario.prawira",
+      "title_vi": "How to film your solo travels in a hotel room",
       "quick_takeaway": "Chuyển cảnh 1, tân thủ",
       "key_tech": "Chuyển Cảnh 1 • Tân Thủ • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -1851,11 +1851,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
@@ -1876,20 +1876,20 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh 1, tân thủ. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh 1, tân thủ. Phân loại vào Du Lịch & Văn Hóa • Chuyển Cảnh (Transition).",
       "creator": {
-        "raw": "@Mario_Prawira_Schönmann",
-        "name": "Mario_Prawira_Schönmann",
+        "raw": "@mario.prawira",
+        "name": "Mario Prawira",
         "handle": "@mario.prawira",
         "profile_url": "https://www.instagram.com/mario.prawira/"
       },
       "ig_url": "https://www.instagram.com/reel/DdXdf-aBCMu/?stkn=MWVibnk2b3F6bGYwaw==",
-      "gdrive_folder": "",
+      "gdrive_folder": "https://drive.google.com/open?id=1-9gi_IIJzlG2aNDnJ5YT-dlqdQmDc-Bv",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdXdf-aBCMu.mp4",
-        "report_url": "reports/IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira.html",
+        "report_url": "reports/IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room.html",
         "shots_count": 20,
         "duration": "40s",
         "youtube_id": null,
