@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 233,
-  "total_unique_ideas": 222,
-  "total_active_ideas": 195,
+  "total_scene_items": 234,
+  "total_unique_ideas": 223,
+  "total_active_ideas": 196,
   "total_excluded_ideas": 27,
   "total_creators": 145,
   "shooting_styles": [
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 26,
+    "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 92,
-    "chuyen-canh": 44
+    "dien-anh": 93,
+    "chuyen-canh": 45
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 28,
     "kien-truc": 23,
     "the-thao": 7,
-    "ky-thuat-quay": 48,
+    "ky-thuat-quay": 49,
     "ugc": 6
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 103,
+    "us_eu": 104,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -399,6 +399,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@german991020",
+      "name": "German991020",
+      "profile_url": "https://www.instagram.com/german991020/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
+        "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul"
+      ]
+    },
+    {
       "handle": "@pascal_blaurock",
       "name": "Pascal Blaurock",
       "profile_url": "https://www.instagram.com/pascal_blaurock/",
@@ -523,7 +535,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Maxryman",
       "profile_url": "https://www.instagram.com/maxryman/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40maxryman_DdlVIp9S9zv_day_in_the_life_%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
       "video_ids": [
         "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️"
@@ -571,17 +583,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%96%D0%B0%D0%BC%D1%8C%D1%8F%D0%BD%D0%B0_%D0%9E%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D1%82%D0%B8%D0%BB%D0%B8%D1%81%D1%82_UGC_DdeWMWLsaHA_Video_by_zhamyana/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Жамьяна_Осознанный_стилист_UGC_DdeWMWLsaHA_Video_by_zhamyana"
-      ]
-    },
-    {
-      "handle": "@german991020",
-      "name": "German991020",
-      "profile_url": "https://www.instagram.com/german991020/",
-      "video_count": 1,
-      "top_industry": "Du lịch",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul"
       ]
     },
     {
@@ -1874,17 +1875,17 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️",
-      "shortcode": "DdlVIp9S9zv",
-      "title_vi": "day in the life ☕️",
+      "id": "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
+      "shortcode": "DdnXgxUyok1",
+      "title_vi": "South Korea stills - Final Series",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "kien-truc",
@@ -1900,17 +1901,83 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @maxryman",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @german991020",
       "tech_tags": [
         "Establishing Hook Shot",
-        "High-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Low-key Lighting",
+        "Medium Tracking Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@german991020",
+        "name": "German991020",
+        "handle": "@german991020",
+        "profile_url": "https://www.instagram.com/german991020/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdnXgxUyok1/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1Sq5tKwyS6UMOGGb7TjvpL7C0kI91dDjp",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdnXgxUyok1.mp4",
+        "report_url": "reports/IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series.html",
+        "shots_count": 29,
+        "duration": "58s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@maxryman_DdlVIp9S9zv_day_in_the_life_☕️",
+      "shortcode": "DdlVIp9S9zv",
+      "title_vi": "Day In The Life ☕️: Công Thức Split-Kinetic Typography &amp; Nhịp Cắt Siêu Nhanh (Micro-Montage)",
+      "quick_takeaway": "⚡ Mở màn bằng sinh hoạt đời thường ➔ Chuyển tiếp cơ học & POV ➔ Bố cục đối xứng Deep Work tĩnh lặng.",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Bóc tách công thức Day In The Life 17 shots Micro-Montage kết hợp Split-Kinetic Typography",
+      "tech_tags": [
+        "Split-Kinetic Typography",
+        "Micro-Montage (0.7s/shot)",
+        "Establishing Hook",
+        "Low-key Moody",
+        "POV Driver Shot",
+        "Symmetrical Deep Work"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Chuỗi 17 shots nhịp nhanh (0.7s) kết hợp chữ động hai biên: Hoạt động in hoa bên trái và mốc thời gian bên phải.",
       "creator": {
         "raw": "@maxryman",
         "name": "Maxryman",
