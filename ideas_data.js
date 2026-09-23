@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 26,
+    "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 95,
+    "dien-anh": 96,
     "chuyen-canh": 45
   },
   "industries": [
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 22,
     "am-thuc": 21,
     "du-lich": 16,
-    "cong-nghe": 30,
+    "cong-nghe": 29,
     "kien-truc": 22,
     "the-thao": 7,
-    "ky-thuat-quay": 50,
+    "ky-thuat-quay": 51,
     "ugc": 6
   },
   "countries": [
@@ -403,7 +403,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ulanzi",
       "profile_url": "https://www.instagram.com/ulanzi/",
       "video_count": 2,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
@@ -1890,22 +1890,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
       "shortcode": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-      "title_vi": "Easy Open Portable Aluminum Trigopod",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Bóc Tách Nghệ Thuật Match Cut Đỉnh Cao &amp; Logic Bán Hàng Thiết Bị Du Lịch - Ulanzi Trigopod",
+      "quick_takeaway": "⚡ Chuỗi Match Cut bung chân tức thì qua 6 địa điểm du lịch ➔ Bóc tách cơ cấu chạm đất bung chân, ballhead 360°, lỗ neo cọc cắm đất và chiều cao khủng 2M",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1914,12 +1914,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "purpose": "Quảng cáo thương mại TMĐT chuyển đổi cao cho chân máy du lịch",
       "tech_tags": [
         "Establishing Hook Shot",
+        "Match Cut",
         "High-key Lighting",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Low Angle",
+        "Macro Detail"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -1954,15 +1955,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
       "shortcode": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
-      "title_vi": "Quick Release Folding L Bracket and Plate Cam",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "title_vi": "Bóc Tách Nghệ Thuật Giới Thiệu Phụ Kiện: Ngàm Chữ L Gập Thông Minh Ulanzi UKA11",
+      "quick_takeaway": "⚡ Hook thị giác: Lật máy quay dọc ngay trên trục trung tâm tripod ➔ Tháo lắp siêu tốc Arca-Swiss/F38, xếp phẳng bỏ túi mini cơ động",
       "key_tech": "Establishing Hook Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "cong-nghe",
@@ -1978,9 +1979,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "purpose": "Quảng cáo công năng thiết bị quay phim thực chiến: Giải quyết triệt để nỗi đau quay dọc bị lệch trọng tâm và cấn màn hình lật",
       "tech_tags": [
-        "Establishing Hook Shot"
+        "Quảng Cáo Sản Phẩm",
+        "Folding L-Bracket",
+        "Arca-Swiss",
+        "F38 Quick Release",
+        "Match Cut",
+        "B-roll Gear"
       ],
       "transition_level": null,
       "is_ad_bot": false,
