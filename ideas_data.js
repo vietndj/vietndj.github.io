@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 224,
-  "total_unique_ideas": 213,
-  "total_active_ideas": 187,
+  "total_scene_items": 225,
+  "total_unique_ideas": 214,
+  "total_active_ideas": 188,
   "total_excluded_ideas": 26,
-  "total_creators": 140,
+  "total_creators": 141,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 22,
+    "talking-head": 23,
     "storytelling": 18,
     "dien-anh": 91,
     "chuyen-canh": 41
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 20,
     "the-thao": 7,
-    "ky-thuat-quay": 48,
+    "ky-thuat-quay": 49,
     "ugc": 6
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 96,
+    "us_eu": 97,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -502,6 +502,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@pau.liine",
+      "name": "Pauline_폴린_ᥫ᭡。༘⋆✿",
+      "profile_url": "https://www.instagram.com/pau.liine/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pauline_%ED%8F%B4%EB%A6%B0_%E1%A5%AB%E1%AD%A1%E3%80%82%E0%BC%98%E2%8B%86%E2%9C%BF_DdlWfRSMioH_Video_by_pau.liine/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@pauline_폴린_ᥫ᭡。༘⋆✿_DdlWfRSMioH_Video_by_pau.liine"
       ]
     },
     {
@@ -1815,6 +1826,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@pauline_폴린_ᥫ᭡。༘⋆✿_DdlWfRSMioH_Video_by_pau.liine",
+      "shortcode": "DdlWfRSMioH",
+      "title_vi": "@pauline_폴린_ᥫ᭡。༘⋆✿ - Video by pau.liine",
+      "quick_takeaway": "Thần thái",
+      "key_tech": "Thần Thái • Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Thần thái",
+      "tech_tags": [
+        "Thần Thái",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Thần thái. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Talking Head.",
+      "creator": {
+        "raw": "@pauline_폴린_ᥫ᭡。༘⋆✿",
+        "name": "Pauline_폴린_ᥫ᭡。༘⋆✿",
+        "handle": "@pau.liine",
+        "profile_url": "https://www.instagram.com/pau.liine/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdlWfRSMioH/?stkn=dXN2ZGJtdXduamQ4",
+      "gdrive_folder": "https://drive.google.com/open?id=1Wl29ZNaQVd-t8wMBakkcrfsJ8mG4Nd4Z",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pauline_%ED%8F%B4%EB%A6%B0_%E1%A5%AB%E1%AD%A1%E3%80%82%E0%BC%98%E2%8B%86%E2%9C%BF_DdlWfRSMioH_Video_by_pau.liine/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pauline_%ED%8F%B4%EB%A6%B0_%E1%A5%AB%E1%AD%A1%E3%80%82%E0%BC%98%E2%8B%86%E2%9C%BF_DdlWfRSMioH_Video_by_pau.liine/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdlWfRSMioH.mp4",
+        "report_url": "reports/IG_@pauline_폴린_ᥫ᭡。༘⋆✿_DdlWfRSMioH_Video_by_pau.liine.html",
+        "shots_count": 2,
+        "duration": "4s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@หยก.ละกัน_ꔛ_DcA80Aez6Aw_Video_by_yok.lagun",
       "shortcode": "DcA80Aez6Aw",
