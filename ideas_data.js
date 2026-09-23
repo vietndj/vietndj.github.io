@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 228,
-  "total_unique_ideas": 216,
-  "total_active_ideas": 190,
+  "total_scene_items": 229,
+  "total_unique_ideas": 217,
+  "total_active_ideas": 191,
   "total_excluded_ideas": 26,
   "total_creators": 142,
   "shooting_styles": [
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 23,
+    "talking-head": 24,
     "storytelling": 18,
     "dien-anh": 91,
     "chuyen-canh": 43
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 21,
     "am-thuc": 21,
     "du-lich": 16,
-    "cong-nghe": 26,
+    "cong-nghe": 27,
     "kien-truc": 21,
     "the-thao": 7,
     "ky-thuat-quay": 48,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 98,
+    "us_eu": 99,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -334,6 +334,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@mario.prawira",
+      "name": "Mario Prawira",
+      "profile_url": "https://www.instagram.com/mario.prawira/",
+      "video_count": 3,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
+        "IG_@mario.prawira_Ddga_xPq9fE_Jutsu_Transition_Shisha_Version",
+        "IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room"
+      ]
+    },
+    {
       "handle": "@megantanhweewen",
       "name": "Megan_Tan",
       "profile_url": "https://www.instagram.com/megantanhweewen/",
@@ -370,18 +383,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@mario.prawira",
-      "name": "Mario Prawira",
-      "profile_url": "https://www.instagram.com/mario.prawira/",
-      "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_Ddga_xPq9fE_Jutsu_Transition_Shisha_Version/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@mario.prawira_Ddga_xPq9fE_Jutsu_Transition_Shisha_Version",
-        "IG_@mario.prawira_DdXdf-aBCMu_How_to_film_your_solo_travels_in_a_hotel_room"
       ]
     },
     {
@@ -1838,6 +1839,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your",
+      "shortcode": "DcgEuvwx47P",
+      "title_vi": "How to do a before after with a prop and your",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mario.prawira",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@mario.prawira",
+        "name": "Mario Prawira",
+        "handle": "@mario.prawira",
+        "profile_url": "https://www.instagram.com/mario.prawira/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcgEuvwx47P/?stkn=Mno5azhnM3l2amp6",
+      "gdrive_folder": "https://drive.google.com/open?id=1179_EAbMzoN3AwtT6rP9fOwKUoBNdTTv",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcgEuvwx47P.mp4",
+        "report_url": "reports/IG_@mario.prawira_DcgEuvwx47P_How_to_do_a_before_after_with_a_prop_and_your.html",
+        "shots_count": 18,
+        "duration": "36s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@mario.prawira_Ddga_xPq9fE_Jutsu_Transition_Shisha_Version",
       "shortcode": "Ddga_xPq9fE",
