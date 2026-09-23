@@ -1855,6 +1855,8 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Thần thái",
       "tech_tags": [
+        "Tân Thủ",
+        "Thần Thái Chuỷen Cảnh",
         "Thần Thái",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot"
