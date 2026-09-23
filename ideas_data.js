@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 235,
-  "total_unique_ideas": 224,
-  "total_active_ideas": 198,
+  "total_scene_items": 236,
+  "total_unique_ideas": 225,
+  "total_active_ideas": 199,
   "total_excluded_ideas": 26,
   "total_creators": 146,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 26,
     "storytelling": 18,
     "dien-anh": 95,
-    "chuyen-canh": 44
+    "chuyen-canh": 45
   },
   "industries": [
     {
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 22,
     "am-thuc": 21,
     "du-lich": 16,
-    "cong-nghe": 29,
+    "cong-nghe": 30,
     "kien-truc": 22,
     "the-thao": 7,
     "ky-thuat-quay": 50,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 106,
+    "us_eu": 107,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -399,6 +399,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi",
+      "name": "Ulanzi",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 2,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
+      ]
+    },
+    {
       "handle": "@german991020",
       "name": "German991020",
       "profile_url": "https://www.instagram.com/german991020/",
@@ -540,17 +552,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 1,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -1886,6 +1887,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+      "shortcode": "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+      "title_vi": "Easy Open Portable Aluminum Trigopod",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.oU2Dk?c=s",
+      "gdrive_folder": "https://drive.google.com/open?id=1RgH7Nkpid8CWVfmCfA_Rqqj4J_CHlge9",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/lazada.mp4",
+        "report_url": "reports/IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod.html",
+        "shots_count": 15,
+        "duration": "30s",
+        "youtube_id": "GV5S7So_VTc",
+        "youtube_embed": "https://www.youtube.com/embed/GV5S7So_VTc",
+        "youtube_url": "https://youtu.be/GV5S7So_VTc"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
       "shortcode": "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam",
