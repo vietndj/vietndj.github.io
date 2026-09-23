@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 225,
-  "total_unique_ideas": 214,
-  "total_active_ideas": 188,
+  "total_scene_items": 226,
+  "total_unique_ideas": 215,
+  "total_active_ideas": 189,
   "total_excluded_ideas": 26,
-  "total_creators": 141,
+  "total_creators": 142,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 23,
     "storytelling": 18,
     "dien-anh": 91,
-    "chuyen-canh": 41
+    "chuyen-canh": 42
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 26,
     "kien-truc": 20,
     "the-thao": 7,
-    "ky-thuat-quay": 49,
+    "ky-thuat-quay": 50,
     "ugc": 6
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 97,
+    "us_eu": 98,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -502,6 +502,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@mario.prawira",
+      "name": "Mario_Prawira_Schönmann",
+      "profile_url": "https://www.instagram.com/mario.prawira/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira"
       ]
     },
     {
@@ -1826,6 +1837,72 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira",
+      "shortcode": "DdXdf-aBCMu",
+      "title_vi": "@Mario_Prawira_Schönmann - Video by mario.prawira",
+      "quick_takeaway": "Chuyển cảnh 1, tân thủ",
+      "key_tech": "Chuyển Cảnh 1 • Tân Thủ • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyển cảnh 1, tân thủ",
+      "tech_tags": [
+        "Chuyển Cảnh 1",
+        "Tân Thủ",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh 1, tân thủ. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Mario_Prawira_Schönmann",
+        "name": "Mario_Prawira_Schönmann",
+        "handle": "@mario.prawira",
+        "profile_url": "https://www.instagram.com/mario.prawira/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdXdf-aBCMu/?stkn=MWVibnk2b3F6bGYwaw==",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Mario_Prawira_Sch%C3%B6nmann_DdXdf-aBCMu_Video_by_mario.prawira/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdXdf-aBCMu.mp4",
+        "report_url": "reports/IG_@Mario_Prawira_Schönmann_DdXdf-aBCMu_Video_by_mario.prawira.html",
+        "shots_count": 20,
+        "duration": "40s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@pauline_폴린_ᥫ᭡。༘⋆✿_DdlWfRSMioH_Video_by_pau.liine",
       "shortcode": "DdlWfRSMioH",
