@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 231,
-  "total_unique_ideas": 219,
-  "total_active_ideas": 193,
+  "total_scene_items": 232,
+  "total_unique_ideas": 220,
+  "total_active_ideas": 194,
   "total_excluded_ideas": 26,
   "total_creators": 143,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 92,
+    "dien-anh": 93,
     "chuyen-canh": 43
   },
   "industries": [
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 21,
     "du-lich": 16,
     "cong-nghe": 28,
-    "kien-truc": 21,
+    "kien-truc": 22,
     "the-thao": 7,
     "ky-thuat-quay": 48,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 101,
+    "us_eu": 102,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -331,6 +331,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@mcjacoub",
+      "name": "Mcjacoub",
+      "profile_url": "https://www.instagram.com/mcjacoub/",
+      "video_count": 3,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mcjacoub_Ddlh5pagYie_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@mcjacoub_Ddlh5pagYie_Carousel_Analysis",
+        "IG_@Jakarta_Videographer_Jacoub_Anwar_DbnwnkrAVQ9_Carousel_Analysis",
+        "IG_@mcjacoub_Db22SIxAVtJ_Camera_Angles_Mastery"
       ]
     },
     {
@@ -503,18 +516,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
         "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
-      ]
-    },
-    {
-      "handle": "@mcjacoub",
-      "name": "Jacoub Anwar - Jakarta Cinematographer",
-      "profile_url": "https://www.instagram.com/mcjacoub/",
-      "video_count": 2,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://media.fedu.vn/images/Quy_Tac_Quay_Phim_Carousel_-_%2540Jacoub_Anwar/img_001_35384a7a.jpg",
-      "video_ids": [
-        "IG_@Jakarta_Videographer_Jacoub_Anwar_DbnwnkrAVQ9_Carousel_Analysis",
-        "IG_@mcjacoub_Db22SIxAVtJ_Camera_Angles_Mastery"
       ]
     },
     {
@@ -1851,6 +1852,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@mcjacoub_Ddlh5pagYie_Carousel_Analysis",
+      "shortcode": "DdllA9dAfBt",
+      "title_vi": "5 film techniques yang menurut gue worth bang",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mcjacoub",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mcjacoub",
+        "name": "Mcjacoub",
+        "handle": "@mcjacoub",
+        "profile_url": "https://www.instagram.com/mcjacoub/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdllA9dAfBt/",
+      "gdrive_folder": "https://drive.google.com/open?id=1NYPJnPfl1XDYsQyub0HGUq-lQMv5EjIW",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mcjacoub_Ddlh5pagYie_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mcjacoub_Ddlh5pagYie_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40mcjacoub_Ddlh5pagYie_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@mcjacoub_Ddlh5pagYie_Carousel_Analysis.html",
+        "shots_count": 7,
+        "duration": "14s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi",
       "shortcode": "ECOM_Ulanzi",
