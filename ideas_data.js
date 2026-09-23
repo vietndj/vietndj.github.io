@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 93,
-    "chuyen-canh": 45
+    "dien-anh": 94,
+    "chuyen-canh": 44
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 21,
     "du-lich": 16,
     "cong-nghe": 28,
-    "kien-truc": 23,
+    "kien-truc": 22,
     "the-thao": 7,
-    "ky-thuat-quay": 49,
+    "ky-thuat-quay": 50,
     "ugc": 6
   },
   "countries": [
@@ -403,7 +403,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "German991020",
       "profile_url": "https://www.instagram.com/german991020/",
       "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series/shot_01_mid.jpg",
       "video_ids": [
         "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
@@ -1877,22 +1877,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
       "shortcode": "DdnXgxUyok1",
-      "title_vi": "South Korea stills - Final Series",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Khung Hình A24: Ghim Chữ Định Tâm &amp; Nén Tiêu Cự Đô Thị Seoul",
+      "quick_takeaway": "Nghệ thuật khung hình A24: Ghim chữ định tâm (Central Typography) kết hợp ống kính tele nén sâu lát cắt đời sống đô thị Seoul đầy chất thơ.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -1903,10 +1903,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @german991020",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "A24 Aesthetic",
+        "Telephoto Compression",
+        "Central Typography",
+        "Urban Street Life",
+        "Film Color Grading",
+        "Beat Cut Montage"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -1927,9 +1929,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series.html",
         "shots_count": 29,
         "duration": "58s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "k9-hxSQmHC4",
+        "youtube_embed": "https://www.youtube.com/embed/k9-hxSQmHC4",
+        "youtube_url": "https://youtu.be/k9-hxSQmHC4"
       },
       "complexity": {
         "id": "nang-cao",
