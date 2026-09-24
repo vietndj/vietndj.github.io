@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 284,
-  "total_unique_ideas": 263,
-  "total_active_ideas": 237,
+  "total_scene_items": 285,
+  "total_unique_ideas": 264,
+  "total_active_ideas": 238,
   "total_excluded_ideas": 26,
-  "total_creators": 176,
+  "total_creators": 177,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 31,
     "storytelling": 19,
-    "dien-anh": 124,
+    "dien-anh": 125,
     "chuyen-canh": 48
   },
   "industries": [
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 24,
     "du-lich": 18,
     "cong-nghe": 31,
-    "kien-truc": 28,
+    "kien-truc": 29,
     "the-thao": 7,
     "ky-thuat-quay": 74,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 145,
+    "us_eu": 146,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -607,6 +607,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@kuzya.tm",
+      "name": "Kuzya_Монтаж_Reels",
+      "profile_url": "https://www.instagram.com/kuzya.tm/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40KUZYA_%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6_Reels_DdYHuz_sXs0_Video_by_kuzya.tm/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@KUZYA_монтаж_Reels_DdYHuz_sXs0_Video_by_kuzya.tm"
       ]
     },
     {
@@ -2228,6 +2239,74 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@KUZYA_монтаж_Reels_DdYHuz_sXs0_Video_by_kuzya.tm",
+      "shortcode": "DdYHuz_sXs0",
+      "title_vi": "@KUZYA_монтаж_Reels - Video by kuzya.tm",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Instagram Liked 24h: Video • 12 Of 18 • By @kuzya.tm • Shared September 16 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Instagram Liked 24h: Video, 12 of 18, by @kuzya.tm, shared September 16, 2026",
+      "tech_tags": [
+        "Instagram Liked 24h: Video",
+        "12 Of 18",
+        "By @kuzya.tm",
+        "Shared September 16",
+        "2026",
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Instagram Liked 24h: Video, 12 of 18, by @kuzya.tm, shared September 16, 2026. Phân loại vào Kiến Trúc & Không Gian Sống • Điện Ảnh (Cinematic).",
+      "creator": {
+        "raw": "@KUZYA_монтаж_Reels",
+        "name": "Kuzya_Монтаж_Reels",
+        "handle": "@kuzya.tm",
+        "profile_url": "https://www.instagram.com/kuzya.tm/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdYHuz_sXs0",
+      "gdrive_folder": "https://drive.google.com/open?id=1_s9Y0nQITKOKXapdjDfmXtO-JNVcu9Vo",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40KUZYA_%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6_Reels_DdYHuz_sXs0_Video_by_kuzya.tm/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40KUZYA_%D0%BC%D0%BE%D0%BD%D1%82%D0%B0%D0%B6_Reels_DdYHuz_sXs0_Video_by_kuzya.tm/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdYHuz_sXs0.mp4",
+        "report_url": "reports/IG_@KUZYA_монтаж_Reels_DdYHuz_sXs0_Video_by_kuzya.tm.html",
+        "shots_count": 6,
+        "duration": "12s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks",
       "shortcode": "DdPESzcNS-W",
