@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 26,
+    "talking-head": 24,
     "storytelling": 18,
-    "dien-anh": 95,
+    "dien-anh": 97,
     "chuyen-canh": 46
   },
   "industries": [
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 6
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -1894,15 +1894,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
       "shortcode": "Desktop_Stan",
-      "title_vi": "Magnetic Phone Tripod Desktop Stand",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
-      "key_tech": "Establishing Hook Shot",
+      "title_vi": "Giải Phẫu Video Triệu View Phụ Kiện MagSafe Ulanzi MA60: Nghệ Thuật Kích Hoạt Nhu Cầu Qua Đa Điểm Chạm Không Gian",
+      "quick_takeaway": "Video quảng bá phụ kiện Ulanzi MA60 là bài học mẫu mực về kịch bản bán hàng thị giác: mở màn bằng dải màu kích thích thị giác, tiếp nối bằng đòn bẩy so sánh độ mỏng 1:1 với iPhone, và dẫn dắt người xem qua 5 kịch bản sử dụng thực tế (quay đập hộp, làm việc văn phòng, họp online, dạo phố vlogging và nhảy đường phố góc ngước cực thấp).",
+      "key_tech": "Ulanzi • MagSafe Tripod • Lifestyle B-Roll • Product Demo • Overhead Shot • Worm’s-eye View",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "cong-nghe",
@@ -1920,7 +1920,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot"
+        "Ulanzi",
+        "MagSafe Tripod",
+        "Lifestyle B-Roll",
+        "Product Demo",
+        "Kích Hoạt Nhu Cầu",
+        "Overhead Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -1939,15 +1944,15 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/oUVbZ.mp4",
         "report_url": "reports/IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand.html",
-        "shots_count": 1,
-        "duration": "2s",
+        "shots_count": 19,
+        "duration": "38s",
         "youtube_id": "VFbhow8GDWQ",
         "youtube_embed": "https://www.youtube.com/embed/VFbhow8GDWQ",
         "youtube_url": "https://youtu.be/VFbhow8GDWQ"
       },
       "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
@@ -1955,15 +1960,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
       "shortcode": "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-      "title_vi": "MT86 Auto-Deploy Tripod &amp; Selfie Stick, 1.52m",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "title_vi": "Đòn Bẩy Cơ Học Một Chạm &amp; Nhịp Thở Trực Quan Cho Phụ Kiện Quay Phim Cơ Động",
+      "quick_takeaway": "Cú đấm thị giác chạm đất bung 4 chân tức thì giải quyết triệt để nỗi đau thao tác mở tripod rườm rà.",
       "key_tech": "Establishing Hook Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "cong-nghe",
@@ -1981,7 +1986,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot"
+        "Auto-Deploy",
+        "Quadpod Base",
+        "Cold Shoe Mount",
+        "Bluetooth Remote",
+        "1.52m Extension"
       ],
       "transition_level": null,
       "is_ad_bot": false,
