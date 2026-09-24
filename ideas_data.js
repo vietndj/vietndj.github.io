@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 263,
-  "total_unique_ideas": 246,
-  "total_active_ideas": 220,
+  "total_scene_items": 264,
+  "total_unique_ideas": 247,
+  "total_active_ideas": 221,
   "total_excluded_ideas": 26,
-  "total_creators": 162,
+  "total_creators": 163,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 29,
+    "talking-head": 28,
     "storytelling": 19,
-    "dien-anh": 110,
-    "chuyen-canh": 47
+    "dien-anh": 111,
+    "chuyen-canh": 48
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 28,
+    "kien-truc": 27,
     "the-thao": 7,
-    "ky-thuat-quay": 61,
+    "ky-thuat-quay": 63,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 128,
+    "us_eu": 129,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -574,6 +574,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@rubtsov.a",
+      "name": "Ekaterina_Модель_Уфа_,_Питер",
+      "profile_url": "https://www.instagram.com/rubtsov.a/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a"
+      ]
+    },
+    {
       "handle": "@starsinmycam",
       "name": "Starsinmycam",
       "profile_url": "https://www.instagram.com/starsinmycam/",
@@ -611,7 +622,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Aangelazunigaa",
       "profile_url": "https://www.instagram.com/aangelazunigaa/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I/shot_01_mid.jpg",
       "video_ids": [
         "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I"
@@ -2072,6 +2083,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a",
+      "shortcode": "DdkHw7gIXLj",
+      "title_vi": "@Ekaterina_модель_Уфа_,_Питер - Video by rubtsov.a",
+      "quick_takeaway": "Chuyen canh 1",
+      "key_tech": "Chuyen Canh 1 • Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyen canh 1",
+      "tech_tags": [
+        "Chuyen Canh 1",
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Chuyen canh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Ekaterina_модель_Уфа_,_Питер",
+        "name": "Ekaterina_Модель_Уфа_,_Питер",
+        "handle": "@rubtsov.a",
+        "profile_url": "https://www.instagram.com/rubtsov.a/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdkHw7gIXLj/?stkn=cTg4YnJ5dWo4Zno4",
+      "gdrive_folder": "https://drive.google.com/open?id=1AiDw3T4a7SHY32QWcS4m_BiPVQyCrHMD",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdkHw7gIXLj.mp4",
+        "report_url": "reports/IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time",
       "shortcode": "DddgEE5R2CW",
       "title_vi": "i blink and it’s night time",
@@ -2264,22 +2339,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I",
       "shortcode": "DdrBPIwIpg-",
-      "title_vi": "BTS from Day 56 of Capturing 10 Clips Until I",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Giả Lập Drone FPV Bằng Máy Bay Giấy: Bí Quyết Chia Đôi Màn Hình The Shot vs BTS Giữ Chân Người Xem 100%",
+      "quick_takeaway": "⚡ Top-down Origami Hook ➔ Paper Airplane POV xé gió xuyên hành lang và cú đáp đất chốt CTA liên hoan phim",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2290,10 +2365,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @aangelazunigaa",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "POV",
+        "BTS",
+        "Split Screen",
+        "FPV",
+        "Paper Airplane",
+        "Sáng Tạo Nội Dung"
       ],
       "transition_level": null,
       "is_ad_bot": false,
