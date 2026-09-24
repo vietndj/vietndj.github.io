@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 261,
-  "total_unique_ideas": 245,
-  "total_active_ideas": 219,
+  "total_scene_items": 263,
+  "total_unique_ideas": 246,
+  "total_active_ideas": 220,
   "total_excluded_ideas": 26,
-  "total_creators": 161,
+  "total_creators": 162,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 28,
+    "talking-head": 29,
     "storytelling": 19,
     "dien-anh": 110,
     "chuyen-canh": 47
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 27,
+    "kien-truc": 28,
     "the-thao": 7,
     "ky-thuat-quay": 61,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 127,
+    "us_eu": 128,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -574,14 +574,14 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@lisha_ho",
-      "name": "Lisha_Ho",
-      "profile_url": "https://www.instagram.com/lisha_ho/",
+      "handle": "@starsinmycam",
+      "name": "Starsinmycam",
+      "profile_url": "https://www.instagram.com/starsinmycam/",
       "video_count": 1,
       "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40starsinmycam_DddgEE5R2CW_i_blink_and_it%E2%80%99s_night_time/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀"
+        "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time"
       ]
     },
     {
@@ -593,6 +593,17 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Flying_DdplzLRytOA_Video_by_loveqinghe/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe"
+      ]
+    },
+    {
+      "handle": "@lisha_ho",
+      "name": "Lisha_Ho",
+      "profile_url": "https://www.instagram.com/lisha_ho/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀"
       ]
     },
     {
@@ -2061,17 +2072,17 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀",
-      "shortcode": "Ddqo7-eTI2A",
-      "title_vi": "Wait… @ralphlauren + coffee at KLCC 👀",
+      "id": "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time",
+      "shortcode": "DddgEE5R2CW",
+      "title_vi": "i blink and it’s night time",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
         "id": "kien-truc",
@@ -2087,7 +2098,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @lisha_ho",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @starsinmycam",
       "tech_tags": [
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
@@ -2096,29 +2107,29 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@lisha_ho",
-        "name": "Lisha_Ho",
-        "handle": "@lisha_ho",
-        "profile_url": "https://www.instagram.com/lisha_ho/"
+        "raw": "@starsinmycam",
+        "name": "Starsinmycam",
+        "handle": "@starsinmycam",
+        "profile_url": "https://www.instagram.com/starsinmycam/"
       },
-      "ig_url": "https://www.instagram.com/reel/Ddqo7-eTI2A/?stkn=MWI3aWJzbTlyaXRkOQ==",
-      "gdrive_folder": "https://drive.google.com/open?id=173H2_gYQ3Jb3fG2L7QBDsKKW1i9UpoLq",
+      "ig_url": "https://www.instagram.com/reel/DddgEE5R2CW/",
+      "gdrive_folder": "https://drive.google.com/open?id=1jHLlwt2VYjylAA_kzJTiiYF_qRlKIdnK",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_03_mid.jpg",
-        "video_url": "https://media.fedu.vn/videos/Ddqo7-eTI2A.mp4",
-        "report_url": "reports/IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀.html",
-        "shots_count": 26,
-        "duration": "52s",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40starsinmycam_DddgEE5R2CW_i_blink_and_it%E2%80%99s_night_time/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40starsinmycam_DddgEE5R2CW_i_blink_and_it%E2%80%99s_night_time/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DddgEE5R2CW.mp4",
+        "report_url": "reports/IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time.html",
+        "shots_count": 14,
+        "duration": "28s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
       },
       "complexity": {
-        "id": "nang-cao",
-        "label": "🔴 Nâng cao (>18 shots)"
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
@@ -2183,6 +2194,69 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀",
+      "shortcode": "Ddqo7-eTI2A",
+      "title_vi": "Wait… @ralphlauren + coffee at KLCC 👀",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @lisha_ho",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@lisha_ho",
+        "name": "Lisha_Ho",
+        "handle": "@lisha_ho",
+        "profile_url": "https://www.instagram.com/lisha_ho/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddqo7-eTI2A/?stkn=MWI3aWJzbTlyaXRkOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=173H2_gYQ3Jb3fG2L7QBDsKKW1i9UpoLq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddqo7-eTI2A.mp4",
+        "report_url": "reports/IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀.html",
+        "shots_count": 26,
+        "duration": "52s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
