@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 258,
-  "total_unique_ideas": 243,
-  "total_active_ideas": 217,
+  "total_scene_items": 259,
+  "total_unique_ideas": 244,
+  "total_active_ideas": 218,
   "total_excluded_ideas": 26,
-  "total_creators": 159,
+  "total_creators": 160,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 27,
     "storytelling": 19,
     "dien-anh": 110,
-    "chuyen-canh": 46
+    "chuyen-canh": 47
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 30,
     "kien-truc": 25,
     "the-thao": 7,
-    "ky-thuat-quay": 61,
+    "ky-thuat-quay": 62,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 125,
+    "us_eu": 126,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -571,6 +571,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@lisha_ho",
+      "name": "Lisha_Ho",
+      "profile_url": "https://www.instagram.com/lisha_ho/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho"
       ]
     },
     {
@@ -2038,6 +2049,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho",
+      "shortcode": "Ddqo7-eTI2A",
+      "title_vi": "Video by lisha ho",
+      "quick_takeaway": "Chuyen canh Chuyen canh 1",
+      "key_tech": "Chuyen Canh Chuyen Canh 1 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyen canh Chuyen canh 1",
+      "tech_tags": [
+        "Chuyen Canh Chuyen Canh 1",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Chuyen canh Chuyen canh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@Lisha_Ho",
+        "name": "Lisha_Ho",
+        "handle": "@lisha_ho",
+        "profile_url": "https://www.instagram.com/lisha_ho/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddqo7-eTI2A/?stkn=MWI3aWJzbTlyaXRkOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1yYneiYB07NL3zeKtq1Bm_spZp6r3vjbY",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddqo7-eTI2A.mp4",
+        "report_url": "reports/IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho.html",
+        "shots_count": 26,
+        "duration": "52s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I",
       "shortcode": "DdrBPIwIpg-",
