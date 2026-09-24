@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 245,
-  "total_unique_ideas": 233,
-  "total_active_ideas": 207,
+  "total_scene_items": 247,
+  "total_unique_ideas": 235,
+  "total_active_ideas": 209,
   "total_excluded_ideas": 26,
-  "total_creators": 151,
+  "total_creators": 152,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 28,
-    "storytelling": 18,
-    "dien-anh": 99,
-    "chuyen-canh": 47
+    "talking-head": 27,
+    "storytelling": 19,
+    "dien-anh": 100,
+    "chuyen-canh": 48
   },
   "industries": [
     {
@@ -152,14 +152,14 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
-    "thoi-trang": 22,
+    "thoi-trang": 23,
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 27,
+    "kien-truc": 26,
     "the-thao": 7,
-    "ky-thuat-quay": 51,
-    "ugc": 6
+    "ky-thuat-quay": 52,
+    "ugc": 7
   },
   "countries": [
     {
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 115,
+    "us_eu": 117,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -222,11 +222,11 @@ var FEDU_IDEAS_DATABASE = {
   "transition_stats": {
     "level_1_count": 5,
     "level_2_count": 14,
-    "ad_bot_count": 6
+    "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -282,6 +282,21 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@hena_film_vlog",
+      "name": "Hena_Film_Vlog",
+      "profile_url": "https://www.instagram.com/hena_film_vlog/",
+      "video_count": 5,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hena_film_vlog_DdlmZczPsCE_혼자_만드는데_촬영은_누가_하냐고요🤷🏻‍♀️_제품제공",
+        "IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공",
+        "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
+        "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
+        "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
+      ]
+    },
+    {
       "handle": "@ulanzi",
       "name": "Ulanzi",
       "profile_url": "https://www.instagram.com/ulanzi/",
@@ -293,20 +308,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
         "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
         "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
-      ]
-    },
-    {
-      "handle": "@hena_film_vlog",
-      "name": "Hena_Film_Vlog",
-      "profile_url": "https://www.instagram.com/hena_film_vlog/",
-      "video_count": 4,
-      "top_industry": "F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hena_film_vlog_DdbCdHFKZsP_%ED%96%87%EB%B9%9B_%EC%97%86%EB%8A%94_%EC%A7%91%2C_%EC%9D%8C%EC%8B%9D_%EC%B4%AC%EC%98%81_%EA%B0%80%EB%8A%A5%ED%95%A8%F0%9F%A4%94_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공",
-        "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
-        "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
-        "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
       ]
     },
     {
@@ -421,7 +422,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Etaemin",
       "profile_url": "https://www.instagram.com/etaemin/",
       "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Thời trang",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.jpg",
       "video_ids": [
         "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
@@ -561,6 +562,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@laylaa_398",
+      "name": "Laylaa_398",
+      "profile_url": "https://www.instagram.com/laylaa_398/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40laylaa_398_Ddj6wlTxAAJ_%E2%99%A5%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@laylaa_398_Ddj6wlTxAAJ_♥️"
+      ]
+    },
+    {
       "handle": "@jigummmmm",
       "name": "Jigummmmm",
       "profile_url": "https://www.instagram.com/jigummmmm/",
@@ -576,7 +588,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Dopeitsdamo",
       "profile_url": "https://www.instagram.com/dopeitsdamo/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_%F0%9F%8E%A5/shot_01_mid.jpg",
       "video_ids": [
         "IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥"
@@ -1949,6 +1961,132 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@laylaa_398_Ddj6wlTxAAJ_♥️",
+      "shortcode": "Ddj6wlTxAAJ",
+      "title_vi": "@laylaa 398 Ddj6wlTxAAJ ♥️",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @laylaa_398",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@laylaa_398",
+        "name": "Laylaa_398",
+        "handle": "@laylaa_398",
+        "profile_url": "https://www.instagram.com/laylaa_398/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddj6wlTxAAJ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1VY54zEq1qtEnDTwc_dLiZev9WOe2Adcr",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40laylaa_398_Ddj6wlTxAAJ_%E2%99%A5%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40laylaa_398_Ddj6wlTxAAJ_%E2%99%A5%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddj6wlTxAAJ.mp4",
+        "report_url": "reports/IG_@laylaa_398_Ddj6wlTxAAJ_♥️.html",
+        "shots_count": 21,
+        "duration": "42s",
+        "youtube_id": "QDvKHNd9rfk",
+        "youtube_embed": "https://www.youtube.com/embed/QDvKHNd9rfk",
+        "youtube_url": "https://youtu.be/QDvKHNd9rfk"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@hena_film_vlog_DdlmZczPsCE_혼자_만드는데_촬영은_누가_하냐고요🤷🏻‍♀️_제품제공",
+      "shortcode": "DdlmZczPsCE",
+      "title_vi": "혼자 만드는데 촬영은 누가 하냐고요🤷🏻‍♀️ 제품제공",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @hena_film_vlog",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@hena_film_vlog",
+        "name": "Hena_Film_Vlog",
+        "handle": "@hena_film_vlog",
+        "profile_url": "https://www.instagram.com/hena_film_vlog/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdlmZczPsCE/",
+      "gdrive_folder": "https://drive.google.com/open?id=1cBNVTDKPkVxlbKpHBZYiKnQDN-qsbSlX",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdlmZczPsCE.mp4",
+        "report_url": "reports/IG_@hena_film_vlog_DdlmZczPsCE_혼자_만드는데_촬영은_누가_하냐고요🤷🏻‍♀️_제품제공.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": "dtL6KuAYHqI",
+        "youtube_embed": "https://www.youtube.com/embed/dtL6KuAYHqI",
+        "youtube_url": "https://youtu.be/dtL6KuAYHqI"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@jigummmmm_DdnqexOTN8A_설거지하는_모습도_예쁘게_찍을_수_있냐고요",
       "shortcode": "DdnqexOTN8A",
       "title_vi": "설거지하는 모습도 예쁘게 찍을 수 있냐고요",
@@ -2015,22 +2153,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥",
       "shortcode": "DdpZ0RvhwXu",
-      "title_vi": "Art of Static Shots 🎥",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Bố Cục Cú Máy Tĩnh (The Art of Static Shots)",
+      "quick_takeaway": "Bật mí nghệ thuật bố cục 6 cú máy tĩnh: Biến chuyển động cơ học và dòng người tự nhiên thành linh hồn cho khung hình khóa cứng.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2041,9 +2179,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @dopeitsdamo",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Bố Cục Cú Máy Tĩnh",
+        "Dirty Foreground",
+        "Diagonal Dynamics",
+        "Over-The-Shoulder",
+        "Radial Symmetry"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2078,22 +2218,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
       "shortcode": "DdoooYmq-cd",
-      "title_vi": "Get ready for the shoot",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "title_vi": "Kỹ Thuật Chuyển Cảnh Tân Thủ Level 1: Che Ống Kính Bàn Tay (Hand Lens Block) Biến Hình Thời Trang Cực Dễ",
+      "quick_takeaway": "⚡ Tân thủ Level 1: Mượn bàn tay che ống kính làm điểm giấu vết cắt (Hand Lens Block) để biến hình từ mặt mộc phòng tắm sang diện mạo Lookbook chỉ trong 1 nhịp nhạc.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "thoi-trang",
+        "name": "Thời trang",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
         "id": "us_eu",
@@ -2102,10 +2242,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @etaemin",
+      "purpose": "Hướng dẫn kỹ thuật chuyển cảnh che ống kính bằng bàn tay (Level 1) cho tân thủ biến hình thời trang",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting"
+        "Chuyển Cảnh Level 1",
+        "Tân Thủ Dễ Làm",
+        "Hand Lens Block",
+        "Biến Hình Thời Trang",
+        "In & Out Wipe",
+        "Rhythm Match"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2204,22 +2348,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
       "shortcode": "Ddo-TSWMZpG",
-      "title_vi": "Video by joshdiazfilms",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kỹ Thuật UGC Commercial &amp; Storytelling Solo-Filmmaker: Đòn Bẩy Thắt Nút &amp; Gỡ Nút Tài Chính (2026 Ford Bronco × @joshdiazfilms)",
+      "quick_takeaway": "Chiến lược UGC Commercial mẫu mực kết hợp Storytelling chân thực: Khởi đầu bằng trải nghiệm cá nhân hóa của một solo-filmmaker bên chiếc SUV việt dã 2026 Ford Bronco, giải quyết công năng cốp chứa đồ nghề và cảm giác lái, rồi chốt hạ bằng cách tháo gỡ rào cản chi phí trả góp qua công cụ Ford Credit.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "storytelling",
+        "name": "Kể Chuyện",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ugc",
+        "name": "UGC",
+        "en_name": "UGC & Ads",
+        "icon": "📱",
+        "badge_color": "amber"
       },
       "country": {
         "id": "us_eu",
@@ -2230,13 +2374,16 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @joshdiazfilms",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "High-key Lighting"
+        "Ford Bronco",
+        "UGC Commercial",
+        "Solo Filmmaker",
+        "Car Review",
+        "B-Roll",
+        "Ford Credit",
+        "Storytelling"
       ],
       "transition_level": null,
-      "is_ad_bot": false,
+      "is_ad_bot": true,
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
