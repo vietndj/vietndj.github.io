@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 256,
-  "total_unique_ideas": 242,
-  "total_active_ideas": 216,
+  "total_scene_items": 257,
+  "total_unique_ideas": 243,
+  "total_active_ideas": 217,
   "total_excluded_ideas": 26,
-  "total_creators": 158,
+  "total_creators": 159,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 26,
+    "talking-head": 27,
     "storytelling": 19,
     "dien-anh": 110,
     "chuyen-canh": 46
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 30,
     "kien-truc": 24,
     "the-thao": 7,
-    "ky-thuat-quay": 61,
+    "ky-thuat-quay": 62,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 124,
+    "us_eu": 125,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -571,6 +571,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@aangelazunigaa",
+      "name": "Angela",
+      "profile_url": "https://www.instagram.com/aangelazunigaa/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa"
       ]
     },
     {
@@ -2027,6 +2038,71 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa",
+      "shortcode": "DdrBPIwIpg-",
+      "title_vi": "Video by aangelazunigaa",
+      "quick_takeaway": "Pov",
+      "key_tech": "Pov • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Pov",
+      "tech_tags": [
+        "Pov",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Pov. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Talking Head.",
+      "creator": {
+        "raw": "@Angela",
+        "name": "Angela",
+        "handle": "@aangelazunigaa",
+        "profile_url": "https://www.instagram.com/aangelazunigaa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdrBPIwIpg-/?stkn=MWcweWE4azhyaWJhbg==",
+      "gdrive_folder": "https://drive.google.com/open?id=1mgxDxki6RATm6i-zH79P5Ymbl9UjeqF9",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdrBPIwIpg-.mp4",
+        "report_url": "reports/IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa.html",
+        "shots_count": 8,
+        "duration": "16s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@bysuncan_DcvZ-FowD_A_Smooth_Criminal_Punch_Transition_Travel",
       "shortcode": "DcvZ-FowD_A",
