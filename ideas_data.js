@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 283,
-  "total_unique_ideas": 262,
-  "total_active_ideas": 236,
+  "total_scene_items": 284,
+  "total_unique_ideas": 263,
+  "total_active_ideas": 237,
   "total_excluded_ideas": 26,
-  "total_creators": 175,
+  "total_creators": 176,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 30,
+    "talking-head": 31,
     "storytelling": 19,
     "dien-anh": 124,
     "chuyen-canh": 48
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 24,
     "du-lich": 18,
     "cong-nghe": 31,
-    "kien-truc": 27,
+    "kien-truc": 28,
     "the-thao": 7,
     "ky-thuat-quay": 74,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 144,
+    "us_eu": 145,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -607,6 +607,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@alecrijks",
+      "name": "Ałec_Rijks",
+      "profile_url": "https://www.instagram.com/alecrijks/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40A%C5%81EC_RIJKS_DdPESzcNS-W_Video_by_alecrijks/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks"
       ]
     },
     {
@@ -2217,6 +2228,75 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks",
+      "shortcode": "DdPESzcNS-W",
+      "title_vi": "@AŁEC_RIJKS - Video by alecrijks",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @alecrijks_ • Shared September 13 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Instagram Liked 24h: Video, 5 of 18, by @alecrijks_, shared September 13, 2026",
+      "tech_tags": [
+        "Instagram Liked 24h: Video",
+        "5 Of 18",
+        "By @alecrijks_",
+        "Shared September 13",
+        "2026",
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Instagram Liked 24h: Video, 5 of 18, by @alecrijks_, shared September 13, 2026. Phân loại vào Kiến Trúc & Không Gian Sống • Talking Head.",
+      "creator": {
+        "raw": "@AŁEC_RIJKS",
+        "name": "Ałec_Rijks",
+        "handle": "@alecrijks",
+        "profile_url": "https://www.instagram.com/alecrijks/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdPESzcNS-W",
+      "gdrive_folder": "https://drive.google.com/open?id=1rDkR-ZuXss0KP_8xVHHV7CcjRH5glT-A",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40A%C5%81EC_RIJKS_DdPESzcNS-W_Video_by_alecrijks/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40A%C5%81EC_RIJKS_DdPESzcNS-W_Video_by_alecrijks/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdPESzcNS-W.mp4",
+        "report_url": "reports/IG_@AŁEC_RIJKS_DdPESzcNS-W_Video_by_alecrijks.html",
+        "shots_count": 18,
+        "duration": "36s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Harry_DdlmRIcBw81_Video_by_hdnimedia",
       "shortcode": "DdlmRIcBw81",
