@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 243,
-  "total_unique_ideas": 231,
-  "total_active_ideas": 205,
+  "total_scene_items": 244,
+  "total_unique_ideas": 232,
+  "total_active_ideas": 206,
   "total_excluded_ideas": 26,
-  "total_creators": 149,
+  "total_creators": 150,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 26,
+    "talking-head": 27,
     "storytelling": 18,
     "dien-anh": 99,
     "chuyen-canh": 47
@@ -154,9 +154,9 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 19,
     "thoi-trang": 22,
     "am-thuc": 22,
-    "du-lich": 17,
-    "cong-nghe": 31,
-    "kien-truc": 25,
+    "du-lich": 18,
+    "cong-nghe": 30,
+    "kien-truc": 26,
     "the-thao": 7,
     "ky-thuat-quay": 51,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 113,
+    "us_eu": 114,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 6
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -561,6 +561,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@dopeitsdamo",
+      "name": "Dopeitsdamo",
+      "profile_url": "https://www.instagram.com/dopeitsdamo/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_%F0%9F%8E%A5/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥"
+      ]
+    },
+    {
       "handle": "@davidmurphyfilm",
       "name": "Davidmurphyfilm",
       "profile_url": "https://www.instagram.com/davidmurphyfilm/",
@@ -576,7 +587,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Yifan Liii",
       "profile_url": "https://www.instagram.com/yifan.liii/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yifan.liii_Dap0s2RhySa_summer_in_florence_%F0%9F%A4%8D/shot_01_mid.jpg",
       "video_ids": [
         "IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍"
@@ -1927,6 +1938,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥",
+      "shortcode": "DdpZ0RvhwXu",
+      "title_vi": "Art of Static Shots 🎥",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @dopeitsdamo",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@dopeitsdamo",
+        "name": "Dopeitsdamo",
+        "handle": "@dopeitsdamo",
+        "profile_url": "https://www.instagram.com/dopeitsdamo/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdpZ0RvhwXu/",
+      "gdrive_folder": "https://drive.google.com/open?id=1265iDt_n4n25KqIrRQiWIdU-nBAFrlfZ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_%F0%9F%8E%A5/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_%F0%9F%8E%A5/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdpZ0RvhwXu.mp4",
+        "report_url": "reports/IG_@dopeitsdamo_DdpZ0RvhwXu_Art_of_Static_Shots_🎥.html",
+        "shots_count": 6,
+        "duration": "12s",
+        "youtube_id": "3cTg5Bx6_Zo",
+        "youtube_embed": "https://www.youtube.com/embed/3cTg5Bx6_Zo",
+        "youtube_url": "https://youtu.be/3cTg5Bx6_Zo"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
       "shortcode": "DdoooYmq-cd",
       "title_vi": "Get ready for the shoot",
@@ -2119,8 +2193,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍",
       "shortcode": "Dap0s2RhySa",
-      "title_vi": "summer in florence 🤍",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Chuyển Cảnh Level 1 Cho Tân Thủ: Match Cut Bước Đi Đổi 4 Outfit Giữa Florence",
+      "quick_takeaway": "Kỹ thuật chuyển cảnh Level 1 căn bản nhất cho tân thủ: Khóa chuyển động đi ngang (Profile Walk) làm mỏ neo, cắt đúng phách nhạc (~0.9s/shot) để đổi liên hoàn 4 trang phục và 5 bối cảnh, kết thúc bằng cú bẻ hướng đi thẳng vào ống kính.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -2130,11 +2204,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
@@ -2143,12 +2217,13 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yifan.liii",
+      "purpose": "Hướng dẫn kỹ thuật Match Cut bước đi cấp độ tân thủ kết hợp đổi outfit và bẻ trục chuyển động kết bài cho video du lịch / OOTD.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting",
-        "Wide Establishing Shot"
+        "Match Cut Bước Đi",
+        "Chuyển Cảnh Tân Thủ Level 1",
+        "Beat Sync Cut",
+        "OOTD Du Lịch",
+        "Bẻ Trục Kết Bài"
       ],
       "transition_level": null,
       "is_ad_bot": false,
