@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 239,
-  "total_unique_ideas": 227,
-  "total_active_ideas": 201,
+  "total_scene_items": 241,
+  "total_unique_ideas": 229,
+  "total_active_ideas": 203,
   "total_excluded_ideas": 26,
-  "total_creators": 147,
+  "total_creators": 148,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 25,
     "storytelling": 18,
-    "dien-anh": 97,
+    "dien-anh": 99,
     "chuyen-canh": 46
   },
   "industries": [
@@ -154,8 +154,8 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 19,
     "thoi-trang": 22,
     "am-thuc": 22,
-    "du-lich": 16,
-    "cong-nghe": 30,
+    "du-lich": 17,
+    "cong-nghe": 31,
     "kien-truc": 23,
     "the-thao": 7,
     "ky-thuat-quay": 51,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 109,
+    "us_eu": 111,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -248,6 +248,23 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@joshdiazfilms",
+      "name": "Joshdiazfilms",
+      "profile_url": "https://www.instagram.com/joshdiazfilms/",
+      "video_count": 7,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
+        "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
+        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
+        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
+        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
+        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
+        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
+      ]
+    },
+    {
       "handle": "@jazziesillona",
       "name": "Jazzie Sillona",
       "profile_url": "https://www.instagram.com/jazziesillona/",
@@ -262,22 +279,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
         "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
         "IG_@jazziesillona_DbIA2jwPHCV"
-      ]
-    },
-    {
-      "handle": "@joshdiazfilms",
-      "name": "Josh Diaz",
-      "profile_url": "https://www.instagram.com/joshdiazfilms/",
-      "video_count": 6,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@joshdiazfilms_DdEshZtz9Rb_Lifestyle_Habit_Cinematic_Routine",
-        "IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together",
-        "IG_@joshdiazfilms_DceDPc2yVm0_Worst_Person_To_Text",
-        "IG_@joshdiazfilms_DcJjGy1tG7d_DJI_Drone_Unboxing",
-        "IG_@joshdiazfilms_Db1hf_vO67m_Simple_Life_Routine",
-        "IG_@joshdiazfilms_Dbow9xKOCje_Falling_Behind_Mindset"
       ]
     },
     {
@@ -548,11 +549,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@yifan.liii",
+      "name": "Yifan Liii",
+      "profile_url": "https://www.instagram.com/yifan.liii/",
+      "video_count": 1,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yifan.liii_Dap0s2RhySa_summer_in_florence_%F0%9F%A4%8D/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍"
+      ]
+    },
+    {
       "handle": "@la6vish",
       "name": "La6Vish",
       "profile_url": "https://www.instagram.com/la6vish/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40la6vish_DakwX2NBYs1_Fukuoka_%F0%9F%87%AF%F0%9F%87%B5/shot_01_mid.jpg",
       "video_ids": [
         "IG_@la6vish_DakwX2NBYs1_Fukuoka_🇯🇵"
@@ -1903,11 +1915,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@la6vish_DakwX2NBYs1_Fukuoka_🇯🇵",
-      "shortcode": "DakwX2NBYs1",
-      "title_vi": "Fukuoka 🇯🇵",
+      "id": "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
+      "shortcode": "Ddo-TSWMZpG",
+      "title_vi": "Video by joshdiazfilms",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -1929,11 +1941,142 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @la6vish",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @joshdiazfilms",
       "tech_tags": [
         "Establishing Hook Shot",
+        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@joshdiazfilms",
+        "name": "Joshdiazfilms",
+        "handle": "@joshdiazfilms",
+        "profile_url": "https://www.instagram.com/joshdiazfilms/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddo-TSWMZpG/",
+      "gdrive_folder": "https://drive.google.com/open?id=1xSm9N6e0gF6gcGmMxKf80K1qurSAwJXm",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddo-TSWMZpG.mp4",
+        "report_url": "reports/IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms.html",
+        "shots_count": 15,
+        "duration": "30s",
+        "youtube_id": "xDqN0flMCK0",
+        "youtube_embed": "https://www.youtube.com/embed/xDqN0flMCK0",
+        "youtube_url": "https://youtu.be/xDqN0flMCK0"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍",
+      "shortcode": "Dap0s2RhySa",
+      "title_vi": "summer in florence 🤍",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yifan.liii",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@yifan.liii",
+        "name": "Yifan Liii",
+        "handle": "@yifan.liii",
+        "profile_url": "https://www.instagram.com/yifan.liii/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dap0s2RhySa/",
+      "gdrive_folder": "https://drive.google.com/open?id=127YaHjxy_jWKLU8lu486KFqQDziCpugs",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yifan.liii_Dap0s2RhySa_summer_in_florence_%F0%9F%A4%8D/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yifan.liii_Dap0s2RhySa_summer_in_florence_%F0%9F%A4%8D/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dap0s2RhySa.mp4",
+        "report_url": "reports/IG_@yifan.liii_Dap0s2RhySa_summer_in_florence_🤍.html",
+        "shots_count": 7,
+        "duration": "14s",
+        "youtube_id": "OKjffTTi-dQ",
+        "youtube_embed": "https://www.youtube.com/embed/OKjffTTi-dQ",
+        "youtube_url": "https://youtu.be/OKjffTTi-dQ"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@la6vish_DakwX2NBYs1_Fukuoka_🇯🇵",
+      "shortcode": "DakwX2NBYs1",
+      "title_vi": "Chuyển Cảnh Che Ống Kính Level 1: Cú Nhảy Không Gian Sân Bay Sang Phố Đêm Fukuoka",
+      "quick_takeaway": "Chuyển cảnh che ống kính Level 1: Biến chuyến bay hàng nghìn cây số thành cú dịch chuyển không gian tức thì trong 0.1 giây bằng động tác lấy tay che camera.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyển cảnh du lịch che ống kính level 1 biến hình từ sảnh sân bay sang phố đêm Fukuoka Nhật Bản",
+      "tech_tags": [
+        "Chuyển Cảnh Che Ống Kính",
+        "Level 1 Tân Thủ",
+        "Biến Hình Du Lịch",
+        "Lens Cover Transition",
+        "Travel Vlog",
+        "Fukuoka Nhật Bản"
       ],
       "transition_level": null,
       "is_ad_bot": false,
