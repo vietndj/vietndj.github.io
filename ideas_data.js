@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 253,
-  "total_unique_ideas": 241,
-  "total_active_ideas": 215,
+  "total_scene_items": 254,
+  "total_unique_ideas": 242,
+  "total_active_ideas": 216,
   "total_excluded_ideas": 26,
-  "total_creators": 157,
+  "total_creators": 158,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 25,
     "storytelling": 19,
-    "dien-anh": 109,
+    "dien-anh": 110,
     "chuyen-canh": 47
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 30,
     "kien-truc": 23,
     "the-thao": 7,
-    "ky-thuat-quay": 61,
+    "ky-thuat-quay": 62,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 123,
+    "us_eu": 124,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -574,11 +574,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@adz.mov",
+      "name": "Createdbyadz_⚡️",
+      "profile_url": "https://www.instagram.com/adz.mov/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov"
+      ]
+    },
+    {
       "handle": "@iamaayushswamy",
       "name": "Iamaayushswamy",
       "profile_url": "https://www.instagram.com/iamaayushswamy/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iamaayushswamy_DdpxcaOMaQS_caption_placement/shot_01_mid.jpg",
       "video_ids": [
         "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement"
@@ -2017,11 +2028,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement",
-      "shortcode": "DdpxcaOMaQS",
-      "title_vi": "caption placement",
+      "id": "IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov",
+      "shortcode": "DdGQQL-ih_O",
+      "title_vi": "@createdbyadz_⚡️ - Video by adz.mov",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2043,12 +2054,77 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iamaayushswamy",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @createdbyadz_⚡️",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "High-key Lighting"
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@createdbyadz_⚡️",
+        "name": "Createdbyadz_⚡️",
+        "handle": "@adz.mov",
+        "profile_url": "https://www.instagram.com/adz.mov/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGQQL-ih_O/?stkn=MXhxM3lzcnZrbjI1ZA==",
+      "gdrive_folder": "https://drive.google.com/open?id=1UeaKeSgt_1CeGgxNECaf_VUaLhIi1Fzv",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdGQQL-ih_O.mp4",
+        "report_url": "reports/IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement",
+      "shortcode": "DdpxcaOMaQS",
+      "title_vi": "Nghệ Thuật Bố Cục Chữ Không Gian (Spatial Typography) & Kỹ Thuật Walk & Talk Vòng Lặp Vô Tận",
+      "quick_takeaway": "⚡ Visual Hook Mở Màn: Góc Bird-Eye View từ trần nhà phá vỡ hoàn toàn góc quay talking head truyền thống ➔ Vòng Lặp Vô Tận (Seamless Loop Closure): Khóa đuôi bằng góc Top-Down trùng khớp 100% với mở màn",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iamaayushswamy",
+      "tech_tags": [
+        "Walk and Talk",
+        "Kinetic Typography",
+        "Dynamic Framing",
+        "Seamless Loop",
+        "Pattern Interrupt"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2544,7 +2620,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jigummmmm_DdnqexOTN8A_설거지하는_모습도_예쁘게_찍을_수_있냐고요",
       "shortcode": "DdnqexOTN8A",
-      "title_vi": "설거지하는 모습도 예쁘게 찍을 수 있냐고요",
+      "title_vi": "Nghệ Thuật Băm Nhỏ Chuyển Động (Micro-Actions) & ASMR B-Roll Đời Thường",
       "quick_takeaway": "⚡ Mở Màn Đảo Khung Hình: Nhìn xuyên giàn inox úp ly thủy tinh trong suốt ➔ Cú Chốt Cảm Xúc: Tráng ly thủy tinh dưới chùm tia sen trong suốt như pha lê",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
