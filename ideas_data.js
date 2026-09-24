@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 273,
+  "total_scene_items": 274,
   "total_unique_ideas": 255,
   "total_active_ideas": 229,
   "total_excluded_ideas": 26,
@@ -418,18 +418,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@nana_icroom",
-      "name": "Nana_Icroom",
-      "profile_url": "https://www.instagram.com/nana_icroom/",
-      "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nana_icroom_DdoJCWrT0Do_vlog%E6%92%AE%E5%BD%B1%E3%80%81%E3%81%A9%E3%82%93%E3%81%AA%E7%94%BB%E8%A7%92%E3%81%A7%E4%BD%95%E3%82%92%E6%92%AE%E3%81%A3%E3%81%9F%E3%82%89%E3%81%84%E3%81%84%E3%81%8B%E3%82%8F%E3%81%8B%E3%82%93%E3%81%AA%E3%81%84%E2%80%A6/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@nana_icroom_DdoJCWrT0Do_vlog撮影、どんな画角で何を撮ったらいいかわかんない…",
-        "IG_@nana_icroom_Db-jmp6TXNT_5_Japanese_Vlog_Compositions"
-      ]
-    },
-    {
       "handle": "@celfstudies",
       "name": "Celfstudies",
       "profile_url": "https://www.instagram.com/celfstudies/",
@@ -439,6 +427,18 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
         "IG_@celfstudies_DdN_aljAIY0_Day_In_My_Life_SF_Speed_Transitions"
+      ]
+    },
+    {
+      "handle": "@nana_icroom",
+      "name": "Nana_Icroom",
+      "profile_url": "https://www.instagram.com/nana_icroom/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nana_icroom_DdoJCWrT0Do_vlog%E6%92%AE%E5%BD%B1%E3%80%81%E3%81%A9%E3%82%93%E3%81%AA%E7%94%BB%E8%A7%92%E3%81%A7%E4%BD%95%E3%82%92%E6%92%AE%E3%81%A3%E3%81%9F%E3%82%89%E3%81%84%E3%81%84%E3%81%8B%E3%82%8F%E3%81%8B%E3%82%93%E3%81%AA%E3%81%84%E2%80%A6/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@nana_icroom_DdoJCWrT0Do_vlog撮影、どんな画角で何を撮ったらいいかわかんない…",
+        "IG_@nana_icroom_Db-jmp6TXNT_5_Japanese_Vlog_Compositions"
       ]
     },
     {
@@ -2151,6 +2151,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
+      "shortcode": "DajU5I5AKIu",
+      "title_vi": "LA VLOG !! (horizontal edition🤳)",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @celfstudies",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@celfstudies",
+        "name": "Celfstudies",
+        "handle": "@celfstudies",
+        "profile_url": "https://www.instagram.com/celfstudies/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DajU5I5AKIu/?stkn=c25rZGpmMjFrYmVr",
+      "gdrive_folder": "https://drive.google.com/open?id=1j4mO6nKt6LgUO3IxuX5mZqds_Jx5kiyc",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40celfstudies_DajU5I5AKIu_LA_VLOG_%21%21_%28horizontal_edition%F0%9F%A4%B3%29/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40celfstudies_DajU5I5AKIu_LA_VLOG_%21%21_%28horizontal_edition%F0%9F%A4%B3%29/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DajU5I5AKIu.mp4",
+        "report_url": "reports/IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳).html",
+        "shots_count": 21,
+        "duration": "42s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@minghan1004_DdESxNlE2Ay_Carousel_Analysis",
       "shortcode": "DdES7VSk4Fc",
       "title_vi": "A walk through Petaling Street, testing diffe",
@@ -2336,70 +2400,6 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "de",
         "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
-      "shortcode": "DajU5I5AKIu",
-      "title_vi": "LA VLOG !! (horizontal edition🤳)",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
-      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
-      "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
-      },
-      "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @celfstudies",
-      "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot",
-        "Wide Establishing Shot"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
-      "creator": {
-        "raw": "@celfstudies",
-        "name": "Celfstudies",
-        "handle": "@celfstudies",
-        "profile_url": "https://www.instagram.com/celfstudies/"
-      },
-      "ig_url": "https://www.instagram.com/reel/DajU5I5AKIu/?stkn=c25rZGpmMjFrYmVr",
-      "gdrive_folder": "https://drive.google.com/open?id=1j4mO6nKt6LgUO3IxuX5mZqds_Jx5kiyc",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40celfstudies_DajU5I5AKIu_LA_VLOG_%21%21_%28horizontal_edition%F0%9F%A4%B3%29/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40celfstudies_DajU5I5AKIu_LA_VLOG_%21%21_%28horizontal_edition%F0%9F%A4%B3%29/shot_03_mid.jpg",
-        "video_url": "https://media.fedu.vn/videos/DajU5I5AKIu.mp4",
-        "report_url": "reports/IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳).html",
-        "shots_count": 21,
-        "duration": "42s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
-      },
-      "complexity": {
-        "id": "nang-cao",
-        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
