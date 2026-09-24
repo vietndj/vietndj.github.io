@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 247,
-  "total_unique_ideas": 235,
-  "total_active_ideas": 209,
+  "total_scene_items": 248,
+  "total_unique_ideas": 236,
+  "total_active_ideas": 210,
   "total_excluded_ideas": 26,
-  "total_creators": 152,
+  "total_creators": 153,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 27,
+    "talking-head": 28,
     "storytelling": 19,
     "dien-anh": 100,
     "chuyen-canh": 48
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 26,
+    "kien-truc": 27,
     "the-thao": 7,
     "ky-thuat-quay": 52,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 117,
+    "us_eu": 118,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -559,6 +559,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@filmwithred",
+      "name": "Filmwithred",
+      "profile_url": "https://www.instagram.com/filmwithred/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._%F0%9F%87%AF%F0%9F%87%B5/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._🇯🇵"
       ]
     },
     {
@@ -1960,6 +1971,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._🇯🇵",
+      "shortcode": "DdpIITJKrmR",
+      "title_vi": "An escape from the noise of Tokyo. 🇯🇵",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @filmwithred",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@filmwithred",
+        "name": "Filmwithred",
+        "handle": "@filmwithred",
+        "profile_url": "https://www.instagram.com/filmwithred/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdpIITJKrmR/",
+      "gdrive_folder": "https://drive.google.com/open?id=1cF57zbVIVagOUg77YE_I4WuhjojWi3qH",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._%F0%9F%87%AF%F0%9F%87%B5/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._%F0%9F%87%AF%F0%9F%87%B5/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdpIITJKrmR.mp4",
+        "report_url": "reports/IG_@filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._🇯🇵.html",
+        "shots_count": 25,
+        "duration": "50s",
+        "youtube_id": "bVSKHhDYsbc",
+        "youtube_embed": "https://www.youtube.com/embed/bVSKHhDYsbc",
+        "youtube_url": "https://youtu.be/bVSKHhDYsbc"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@laylaa_398_Ddj6wlTxAAJ_♥️",
       "shortcode": "Ddj6wlTxAAJ",
