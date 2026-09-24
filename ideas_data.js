@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 276,
-  "total_unique_ideas": 256,
-  "total_active_ideas": 230,
+  "total_scene_items": 277,
+  "total_unique_ideas": 257,
+  "total_active_ideas": 231,
   "total_excluded_ideas": 26,
-  "total_creators": 169,
+  "total_creators": 170,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 31,
     "storytelling": 19,
-    "dien-anh": 115,
+    "dien-anh": 116,
     "chuyen-canh": 50
   },
   "industries": [
@@ -153,7 +153,7 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
     "thoi-trang": 24,
-    "am-thuc": 22,
+    "am-thuc": 23,
     "du-lich": 18,
     "cong-nghe": 33,
     "kien-truc": 29,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 138,
+    "us_eu": 139,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -610,6 +610,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@shotsbyzaid",
+      "name": "Shotsbyzaid",
+      "profile_url": "https://www.instagram.com/shotsbyzaid/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shotsbyzaid_DdkimD5DPNL_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@shotsbyzaid_DdkimD5DPNL_Carousel_Analysis"
+      ]
+    },
+    {
       "handle": "@elenabuntushak",
       "name": "Elena_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲",
       "profile_url": "https://www.instagram.com/elenabuntushak/",
@@ -669,7 +680,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Holberrydietitian",
       "profile_url": "https://www.instagram.com/holberrydietitian/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "F&B",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40holberrydietitian_DcODbRTu-E1_sunday_morn_%3D_%F0%9F%A5%96%F0%9F%8D%93%F0%9F%AB%90%F0%9F%8D%AF%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
       "video_ids": [
         "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️"
@@ -2152,6 +2163,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@shotsbyzaid_DdkimD5DPNL_Carousel_Analysis",
+      "shortcode": "DdkintwjDuE",
+      "title_vi": "Day 261365",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @shotsbyzaid",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@shotsbyzaid",
+        "name": "Shotsbyzaid",
+        "handle": "@shotsbyzaid",
+        "profile_url": "https://www.instagram.com/shotsbyzaid/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdkintwjDuE/?stkn=MW9kcGQ5cm51ODBqYQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1pwQ4qBZFqfQvdBLbseH_oyIjTgkk3xCl",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shotsbyzaid_DdkimD5DPNL_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shotsbyzaid_DdkimD5DPNL_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40shotsbyzaid_DdkimD5DPNL_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@shotsbyzaid_DdkimD5DPNL_Carousel_Analysis.html",
+        "shots_count": 7,
+        "duration": "14s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak",
       "shortcode": "Ddb6rA7NwQd",
       "title_vi": "@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲 - Video by elenabuntushak",
@@ -2663,8 +2737,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️",
       "shortcode": "DcODbRTu-E1",
-      "title_vi": "sunday morn = 🥖🍓🫐🍯☕️",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Góc Máy POV Lọt Lòng Độc Bản & Cắt Cảnh Xúc Giác Đa Chiều (Sunday Morning French Toast)",
+      "quick_takeaway": "Bữa sáng Chủ nhật tràn đầy năng lượng với nghệ thuật dựng phim nhịp nhanh 0.4s/shot, khai thác triệt để các góc máy POV độc bản: đặt camera trong ly nước, lòng tô đập trứng và cú đớp ngoạm ống kính đầy kích thích.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -2674,11 +2748,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
       },
       "country": {
         "id": "us_eu",
@@ -2689,9 +2763,13 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @holberrydietitian",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Chuyen canh 2",
+        "POV Angle",
+        "Inside-Glass Shot",
+        "Match Cut",
+        "Sensory Cooking",
+        "Micro-Beat Editing",
+        "Loop Hook"
       ],
       "transition_level": null,
       "is_ad_bot": false,
