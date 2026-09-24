@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 280,
-  "total_unique_ideas": 260,
-  "total_active_ideas": 234,
+  "total_scene_items": 282,
+  "total_unique_ideas": 261,
+  "total_active_ideas": 235,
   "total_excluded_ideas": 26,
-  "total_creators": 173,
+  "total_creators": 174,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 31,
     "storytelling": 19,
-    "dien-anh": 119,
+    "dien-anh": 120,
     "chuyen-canh": 50
   },
   "industries": [
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 23,
     "du-lich": 18,
-    "cong-nghe": 33,
-    "kien-truc": 30,
+    "cong-nghe": 32,
+    "kien-truc": 31,
     "the-thao": 7,
-    "ky-thuat-quay": 68,
+    "ky-thuat-quay": 69,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 142,
+    "us_eu": 143,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -422,7 +422,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jsnhow",
       "profile_url": "https://www.instagram.com/jsnhow/",
       "video_count": 2,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jsnhow_DdncdgVRBIp_Soft_sounds%2C_quiet_minds%2C_and_a_moment_to_jus/shot_01_mid.jpg",
       "video_ids": [
         "IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus",
@@ -607,6 +607,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@takashi.film",
+      "name": "Takashi Film",
+      "profile_url": "https://www.instagram.com/takashi.film/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40takashi.film_DddqrBQy8lQ_One_day%2C_Vietnam._%F0%9F%87%BB%F0%9F%87%B3/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@takashi.film_DddqrBQy8lQ_One_day,_Vietnam._🇻🇳"
       ]
     },
     {
@@ -2196,6 +2207,71 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@takashi.film_DddqrBQy8lQ_One_day,_Vietnam._🇻🇳",
+      "shortcode": "DddqrBQy8lQ",
+      "title_vi": "One day, Vietnam. 🇻🇳",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Wide Establishing Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @takashi.film",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Wide Establishing Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@takashi.film",
+        "name": "Takashi Film",
+        "handle": "@takashi.film",
+        "profile_url": "https://www.instagram.com/takashi.film/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DddqrBQy8lQ/?stkn=NDVweTFxeTk5ejZ4",
+      "gdrive_folder": "https://drive.google.com/open?id=1JR5GcB9GC5FtB7o4s6ymo4qNrtxZFHE1",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40takashi.film_DddqrBQy8lQ_One_day%2C_Vietnam._%F0%9F%87%BB%F0%9F%87%B3/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40takashi.film_DddqrBQy8lQ_One_day%2C_Vietnam._%F0%9F%87%BB%F0%9F%87%B3/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DddqrBQy8lQ.mp4",
+        "report_url": "reports/IG_@takashi.film_DddqrBQy8lQ_One_day,_Vietnam._🇻🇳.html",
+        "shots_count": 11,
+        "duration": "22s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota",
       "shortcode": "Dblr-88PjlJ",
       "title_vi": "yelena belova would call this small baby pota",
@@ -2514,22 +2590,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus",
       "shortcode": "DdncdgVRBIp",
-      "title_vi": "Soft sounds, quiet minds, and a moment to jus",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "title_vi": "Bí Kíp Dựng Video Chữa Lành Nghệ Thuật: Công Thức Băm Nhịp Breathe In - Breathe Out Của Điện Ảnh Nhật Bản",
+      "quick_takeaway": "Mổ xẻ công thức băm nhịp 20 phân cảnh chuẩn điện ảnh Nhật Bản: đan xen tinh tế giữa các cú cắt siêu nhanh (0.3s) đánh thức xúc giác và các nốt lặng toàn cảnh (>3s-5s) giúp người xem thực sự thở và ngấm trọn vẹn cảm xúc bình yên.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2540,10 +2616,13 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jsnhow",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Breathe In Breathe Out",
+        "Nhịp Thở Điện Ảnh",
+        "Komorebi Light",
+        "Visual Hook",
+        "ASMR Thị Giác",
+        "Natural Framing",
+        "Tối Giản Nghệ Thuật"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2564,9 +2643,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus.html",
         "shots_count": 20,
         "duration": "40s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "jALNOsIArJQ",
+        "youtube_embed": "https://www.youtube.com/embed/jALNOsIArJQ",
+        "youtube_url": "https://youtu.be/jALNOsIArJQ"
       },
       "complexity": {
         "id": "nang-cao",
@@ -2774,7 +2853,7 @@ var FEDU_IDEAS_DATABASE = {
       "shortcode": "DdrKmGFBMzc",
       "title_vi": "8 Kỹ Thuật Quay Chụp Bánh Trung Thu Triệu View Bằng Điện Thoại (Split Screen Hậu Trường)",
       "quick_takeaway": "Bóc tách 8 kỹ thuật quay chụp bánh Trung Thu đỉnh cao bằng điện thoại với màn hình chia đôi Hậu trường vs Thành phẩm, từ đòn bẩy thị giác xuyên thấu đến cú twist mặt trăng vắt mì tôm viral.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting",
+      "key_tech": "Split Screen • Kỹ Thuật Điện Thoại • Ẩm Thực F&B • Visual Gag • Trung Thu • Setup Tại Nhà",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Chỉn Chu",
@@ -2822,8 +2901,8 @@ var FEDU_IDEAS_DATABASE = {
         "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hu321938_DdrKmGFBMzc_%E6%8B%8D%E5%87%BA%E4%B8%AD%E7%A7%8B%E8%8A%82%E7%9A%84%E6%B0%9B%E5%9B%B4%E6%84%9F/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdrKmGFBMzc.mp4",
         "report_url": "reports/IG_@hu321938_DdrKmGFBMzc_拍出中秋节的氛围感.html",
-        "shots_count": 1,
-        "duration": "2s",
+        "shots_count": 8,
+        "duration": "16s",
         "youtube_id": "ANLAvVS4i3k",
         "youtube_embed": "https://www.youtube.com/embed/ANLAvVS4i3k",
         "youtube_url": "https://youtu.be/ANLAvVS4i3k"
