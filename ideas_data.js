@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 264,
-  "total_unique_ideas": 247,
-  "total_active_ideas": 221,
+  "total_scene_items": 265,
+  "total_unique_ideas": 248,
+  "total_active_ideas": 222,
   "total_excluded_ideas": 26,
-  "total_creators": 163,
+  "total_creators": 164,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 28,
     "storytelling": 19,
     "dien-anh": 111,
-    "chuyen-canh": 48
+    "chuyen-canh": 49
   },
   "industries": [
     {
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 27,
+    "kien-truc": 28,
     "the-thao": 7,
     "ky-thuat-quay": 63,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 129,
+    "us_eu": 130,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -571,6 +571,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@holberrydietitian",
+      "name": "Holberrydietitian",
+      "profile_url": "https://www.instagram.com/holberrydietitian/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40holberrydietitian_DcODbRTu-E1_sunday_morn_%3D_%F0%9F%A5%96%F0%9F%8D%93%F0%9F%AB%90%F0%9F%8D%AF%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️"
       ]
     },
     {
@@ -2082,6 +2093,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️",
+      "shortcode": "DcODbRTu-E1",
+      "title_vi": "sunday morn = 🥖🍓🫐🍯☕️",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @holberrydietitian",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@holberrydietitian",
+        "name": "Holberrydietitian",
+        "handle": "@holberrydietitian",
+        "profile_url": "https://www.instagram.com/holberrydietitian/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcODbRTu-E1/?stkn=MWxhNjhuZGRlZHBxOQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=14DzuicpD8Ppi-G99YgIBSmYVtG6VhHF3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40holberrydietitian_DcODbRTu-E1_sunday_morn_%3D_%F0%9F%A5%96%F0%9F%8D%93%F0%9F%AB%90%F0%9F%8D%AF%E2%98%95%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40holberrydietitian_DcODbRTu-E1_sunday_morn_%3D_%F0%9F%A5%96%F0%9F%8D%93%F0%9F%AB%90%F0%9F%8D%AF%E2%98%95%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcODbRTu-E1.mp4",
+        "report_url": "reports/IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️.html",
+        "shots_count": 33,
+        "duration": "66s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a",
       "shortcode": "DdkHw7gIXLj",
