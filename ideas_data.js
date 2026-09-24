@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 248,
-  "total_unique_ideas": 236,
-  "total_active_ideas": 210,
+  "total_scene_items": 251,
+  "total_unique_ideas": 239,
+  "total_active_ideas": 213,
   "total_excluded_ideas": 26,
-  "total_creators": 153,
+  "total_creators": 155,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 28,
+    "talking-head": 30,
     "storytelling": 19,
-    "dien-anh": 100,
-    "chuyen-canh": 48
+    "dien-anh": 102,
+    "chuyen-canh": 47
   },
   "industries": [
     {
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 23,
     "am-thuc": 22,
     "du-lich": 18,
-    "cong-nghe": 30,
+    "cong-nghe": 31,
     "kien-truc": 27,
     "the-thao": 7,
-    "ky-thuat-quay": 52,
+    "ky-thuat-quay": 54,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 118,
+    "us_eu": 121,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -418,6 +418,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@mylenesmind",
+      "name": "Mylenesmind",
+      "profile_url": "https://www.instagram.com/mylenesmind/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_%F0%9F%91%80/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
+        "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind"
+      ]
+    },
+    {
       "handle": "@etaemin",
       "name": "Etaemin",
       "profile_url": "https://www.instagram.com/etaemin/",
@@ -562,6 +574,28 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@acupper",
+      "name": "Acupper",
+      "profile_url": "https://www.instagram.com/acupper/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40acupper_DdoYrPsy9g-_hello_is_konnichiwa/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@acupper_DdoYrPsy9g-_hello_is_konnichiwa"
+      ]
+    },
+    {
+      "handle": "@yongandmike",
+      "name": "Yongandmike",
+      "profile_url": "https://www.instagram.com/yongandmike/",
+      "video_count": 1,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yongandmike_DdolqWHEsws_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@yongandmike_DdolqWHEsws_Carousel_Analysis"
+      ]
+    },
+    {
       "handle": "@filmwithred",
       "name": "Filmwithred",
       "profile_url": "https://www.instagram.com/filmwithred/",
@@ -588,7 +622,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jigummmmm",
       "profile_url": "https://www.instagram.com/jigummmmm/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jigummmmm_DdnqexOTN8A_%EC%84%A4%EA%B1%B0%EC%A7%80%ED%95%98%EB%8A%94_%EB%AA%A8%EC%8A%B5%EB%8F%84_%EC%98%88%EC%81%98%EA%B2%8C_%EC%B0%8D%EC%9D%84_%EC%88%98_%EC%9E%88%EB%83%90%EA%B3%A0%EC%9A%94/shot_01_mid.jpg",
       "video_ids": [
         "IG_@jigummmmm_DdnqexOTN8A_설거지하는_모습도_예쁘게_찍을_수_있냐고요"
@@ -610,7 +644,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Davidmurphyfilm",
       "profile_url": "https://www.instagram.com/davidmurphyfilm/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis"
@@ -691,17 +725,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%96%D0%B0%D0%BC%D1%8C%D1%8F%D0%BD%D0%B0_%D0%9E%D1%81%D0%BE%D0%B7%D0%BD%D0%B0%D0%BD%D0%BD%D1%8B%D0%B9_%D1%81%D1%82%D0%B8%D0%BB%D0%B8%D1%81%D1%82_UGC_DdeWMWLsaHA_Video_by_zhamyana/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Жамьяна_Осознанный_стилист_UGC_DdeWMWLsaHA_Video_by_zhamyana"
-      ]
-    },
-    {
-      "handle": "@mylenesmind",
-      "name": "Mylene_Mae",
-      "profile_url": "https://www.instagram.com/mylenesmind/",
-      "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind"
       ]
     },
     {
@@ -1972,6 +1995,198 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@acupper_DdoYrPsy9g-_hello_is_konnichiwa",
+      "shortcode": "DdoYrPsy9g-",
+      "title_vi": "hello is konnichiwa",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Khi quay góc rộng khung dọc, luôn bố trí một trục chuyển động hoặc đường dẫn (Leading Lines) về trung tâm.",
+      "key_tech": "Establishing Hook Shot • Wide Establishing Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @acupper",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Wide Establishing Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@acupper",
+        "name": "Acupper",
+        "handle": "@acupper",
+        "profile_url": "https://www.instagram.com/acupper/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdoYrPsy9g-/",
+      "gdrive_folder": "https://drive.google.com/open?id=11A-_2ispdj1ZnybNBJ6sAPh5XqIoZF-4",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40acupper_DdoYrPsy9g-_hello_is_konnichiwa/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40acupper_DdoYrPsy9g-_hello_is_konnichiwa/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdoYrPsy9g-.mp4",
+        "report_url": "reports/IG_@acupper_DdoYrPsy9g-_hello_is_konnichiwa.html",
+        "shots_count": 18,
+        "duration": "36s",
+        "youtube_id": "TA2gE4FMf9s",
+        "youtube_embed": "https://www.youtube.com/embed/TA2gE4FMf9s",
+        "youtube_url": "https://youtu.be/TA2gE4FMf9s"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
+      "shortcode": "DdoWrpERdvD",
+      "title_vi": "can you guess the theme 👀",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mylenesmind",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mylenesmind",
+        "name": "Mylenesmind",
+        "handle": "@mylenesmind",
+        "profile_url": "https://www.instagram.com/mylenesmind/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdoWrpERdvD/",
+      "gdrive_folder": "https://drive.google.com/open?id=1rO12yj-J-PJ9dovhucnms7wAZeF5HIqU",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_%F0%9F%91%80/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_%F0%9F%91%80/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdoWrpERdvD.mp4",
+        "report_url": "reports/IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀.html",
+        "shots_count": 18,
+        "duration": "36s",
+        "youtube_id": "JlUn02PFeWU",
+        "youtube_embed": "https://www.youtube.com/embed/JlUn02PFeWU",
+        "youtube_url": "https://youtu.be/JlUn02PFeWU"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@yongandmike_DdolqWHEsws_Carousel_Analysis",
+      "shortcode": "DdolzhBkiLA",
+      "title_vi": "BỐ CỤC ĐIỆN ẢNH NGHỈ DƯỠNG: CÔNG THỨC 10 PHÂN CẢNH CAROUSEL DU LỊCH ĐA TẦNG CỦA YONG &amp; MIKE (CHIANG RAI)",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yongandmike",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@yongandmike",
+        "name": "Yongandmike",
+        "handle": "@yongandmike",
+        "profile_url": "https://www.instagram.com/yongandmike/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdolzhBkiLA/",
+      "gdrive_folder": "https://drive.google.com/open?id=1NtzhI2ky7qXfw7rUx15vALfaCxGnyKKv",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yongandmike_DdolqWHEsws_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yongandmike_DdolqWHEsws_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40yongandmike_DdolqWHEsws_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@yongandmike_DdolqWHEsws_Carousel_Analysis.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@filmwithred_DdpIITJKrmR_An_escape_from_the_noise_of_Tokyo._🇯🇵",
       "shortcode": "DdpIITJKrmR",
       "title_vi": "An escape from the noise of Tokyo. 🇯🇵",
@@ -2164,22 +2379,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@jigummmmm_DdnqexOTN8A_설거지하는_모습도_예쁘게_찍을_수_있냐고요",
       "shortcode": "DdnqexOTN8A",
-      "title_vi": "설거지하는 모습도 예쁘게 찍을 수 있냐고요",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Băm Nhỏ Hành Vi (Micro-Actions): Biến Việc Rửa Bát Thành Thước Phim Điện Ảnh Cho Vlog Đời Thường",
+      "quick_takeaway": "Biến hành động rửa bát đơn điệu thành thước phim điện ảnh chuẩn Hàn Quốc nhờ kỹ thuật băm nhỏ thao tác (Micro-Actions 1 ➔ 5 shots) và đa góc máy điểm nhìn (Multi-POV).",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2190,10 +2405,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jigummmmm",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Low-key Lighting"
+        "Vlog Đời Thường",
+        "Micro-Actions",
+        "B-Roll Đời Thường",
+        "ASMR Kitchen",
+        "Tích Lũy 7 Tiếng"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2359,22 +2575,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis",
       "shortcode": "Ddo3h4YDGFv",
-      "title_vi": "Some rules I follow while filming and documen",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "10 QUY TẮC ĐIỆN ẢNH HÓA ĐỜI THƯỜNG: BIẾN KHOẢNH KHẮC THƯỜNG NHẬT THÀNH THƯỚC PHIM ĐẮT GIÁ",
+      "quick_takeaway": "⚡ 10 quy tắc vàng điện ảnh hóa đời thường: từ góc nhìn xuyên kẽ hở, đại cảnh tương phản quy mô đến khép khẩu sâu và thiết kế âm thanh cơ học.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2383,12 +2599,16 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @davidmurphyfilm",
+      "purpose": "Đúc kết 10 kỹ thuật quay phim đời thường biến những khoảnh khắc bình dị thành thước phim điện ảnh đắt giá.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "Cinematography Rules",
+        "Visual Hook",
+        "Framing Within A Frame",
+        "Public Space Production Value",
+        "Deep Depth Of Field",
+        "Sound Design ASMR",
+        "Scale Contrast",
+        "In-frame Entrance"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2409,9 +2629,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis.html",
         "shots_count": 11,
         "duration": "22s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "WZyaT5cnJmM",
+        "youtube_embed": "https://www.youtube.com/embed/WZyaT5cnJmM",
+        "youtube_url": "https://youtu.be/WZyaT5cnJmM"
       },
       "complexity": {
         "id": "trung-binh",
