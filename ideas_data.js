@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 257,
+  "total_scene_items": 258,
   "total_unique_ideas": 243,
   "total_active_ideas": 217,
   "total_excluded_ideas": 26,
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 24,
+    "kien-truc": 25,
     "the-thao": 7,
-    "ky-thuat-quay": 62,
+    "ky-thuat-quay": 61,
     "ugc": 7
   },
   "countries": [
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -575,13 +575,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@aangelazunigaa",
-      "name": "Angela",
+      "name": "Aangelazunigaa",
       "profile_url": "https://www.instagram.com/aangelazunigaa/",
       "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_01_mid.jpg",
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa"
+        "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I"
       ]
     },
     {
@@ -2039,11 +2039,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa",
+      "id": "IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I",
       "shortcode": "DdrBPIwIpg-",
-      "title_vi": "Video by aangelazunigaa",
-      "quick_takeaway": "Pov",
-      "key_tech": "Pov • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "title_vi": "BTS from Day 56 of Capturing 10 Clips Until I",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2052,11 +2052,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -2065,9 +2065,8 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Pov",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @aangelazunigaa",
       "tech_tags": [
-        "Pov",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "Low-key Lighting",
@@ -2076,20 +2075,20 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Pov. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Talking Head.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@Angela",
-        "name": "Angela",
+        "raw": "@aangelazunigaa",
+        "name": "Aangelazunigaa",
         "handle": "@aangelazunigaa",
         "profile_url": "https://www.instagram.com/aangelazunigaa/"
       },
       "ig_url": "https://www.instagram.com/reel/DdrBPIwIpg-/?stkn=MWcweWE4azhyaWJhbg==",
-      "gdrive_folder": "https://drive.google.com/open?id=1mgxDxki6RATm6i-zH79P5Ymbl9UjeqF9",
+      "gdrive_folder": "https://drive.google.com/open?id=1EXCY7mh_1c249E-QyK-S-bNXpvCUi1sb",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Angela_DdrBPIwIpg-_Video_by_aangelazunigaa/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdrBPIwIpg-.mp4",
-        "report_url": "reports/IG_@Angela_DdrBPIwIpg-_Video_by_aangelazunigaa.html",
+        "report_url": "reports/IG_@aangelazunigaa_DdrBPIwIpg-_BTS_from_Day_56_of_Capturing_10_Clips_Until_I.html",
         "shots_count": 8,
         "duration": "16s",
         "youtube_id": null,
