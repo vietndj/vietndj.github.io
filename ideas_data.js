@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 265,
-  "total_unique_ideas": 248,
-  "total_active_ideas": 222,
+  "total_scene_items": 266,
+  "total_unique_ideas": 249,
+  "total_active_ideas": 223,
   "total_excluded_ideas": 26,
-  "total_creators": 164,
+  "total_creators": 165,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 28,
     "storytelling": 19,
-    "dien-anh": 111,
-    "chuyen-canh": 49
+    "dien-anh": 113,
+    "chuyen-canh": 48
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 28,
+    "kien-truc": 27,
     "the-thao": 7,
-    "ky-thuat-quay": 63,
+    "ky-thuat-quay": 65,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 130,
+    "us_eu": 131,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -574,6 +574,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@31.ioa",
+      "name": "Sodam_Kim",
+      "profile_url": "https://www.instagram.com/31.ioa/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa"
+      ]
+    },
+    {
       "handle": "@holberrydietitian",
       "name": "Holberrydietitian",
       "profile_url": "https://www.instagram.com/holberrydietitian/",
@@ -600,7 +611,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Starsinmycam",
       "profile_url": "https://www.instagram.com/starsinmycam/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40starsinmycam_DddgEE5R2CW_i_blink_and_it%E2%80%99s_night_time/shot_01_mid.jpg",
       "video_ids": [
         "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time"
@@ -622,7 +633,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Lisha_Ho",
       "profile_url": "https://www.instagram.com/lisha_ho/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀"
@@ -2094,6 +2105,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa",
+      "shortcode": "DcYZMc7Sc49",
+      "title_vi": "Video by 31.ioa",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Sodam_Kim",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@Sodam_Kim",
+        "name": "Sodam_Kim",
+        "handle": "@31.ioa",
+        "profile_url": "https://www.instagram.com/31.ioa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcYZMc7Sc49/?stkn=NTNzYnhqY2xldDUw",
+      "gdrive_folder": "https://drive.google.com/open?id=1zGqGRyDAPcrgo_sBQlxwyQKhi3-ttG1W",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcYZMc7Sc49.mp4",
+        "report_url": "reports/IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@holberrydietitian_DcODbRTu-E1_sunday_morn_=_🥖🍓🫐🍯☕️",
       "shortcode": "DcODbRTu-E1",
       "title_vi": "sunday morn = 🥖🍓🫐🍯☕️",
@@ -2223,22 +2297,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@starsinmycam_DddgEE5R2CW_i_blink_and_it’s_night_time",
       "shortcode": "DddgEE5R2CW",
-      "title_vi": "i blink and it’s night time",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kể Chuyện Bằng Chuỗi Hành Động Vi Mô & Chuyển Đổi Ánh Sáng Tương Phản (After-Work Micro Routine)",
+      "quick_takeaway": "Kể chuyện không lời bằng chuỗi hành động vi mô đời thường ➔ Cú Match Cut chuyển đổi ánh sáng nén thời gian",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2249,9 +2323,13 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @starsinmycam",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Chuyển cảnh 2",
+        "Kể chuyện",
+        "Micro-actions",
+        "Cinematic Vlog",
+        "After Work Routine",
+        "Match Cut",
+        "Lighting Shift"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2350,22 +2428,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀",
       "shortcode": "Ddqo7-eTI2A",
-      "title_vi": "Wait… @ralphlauren + coffee at KLCC 👀",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kỹ Thuật Chuyển Cảnh Khung Cửa Vòm & Cắt Theo Nhịp Điệu (Rhythm Cut) Trong Lookbook Ralph Lauren KLCC",
+      "quick_takeaway": "Bóc tách 26 phân cảnh chuyển đổi nhịp thở bậc thầy: từ Visual Hook cửa vòm, cắt dồn dập đồ vật thương hiệu, bẻ cua trải nghiệm Ralph's Coffee đến khép màn rèm nhung điện ảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2376,9 +2454,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @lisha_ho",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Chuyen canh 1",
+        "Chuyển Cảnh (Transition)",
+        "Archway Framing",
+        "Rhythm Cut",
+        "Ralph Lauren",
+        "Ralph's Coffee"
       ],
       "transition_level": null,
       "is_ad_bot": false,
