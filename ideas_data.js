@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 254,
+  "total_scene_items": 255,
   "total_unique_ideas": 242,
   "total_active_ideas": 216,
   "total_excluded_ideas": 26,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -575,13 +575,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@adz.mov",
-      "name": "Createdbyadz_⚡️",
+      "name": "Adz Mov",
       "profile_url": "https://www.instagram.com/adz.mov/",
       "video_count": 1,
       "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40adz.mov_DdGQQL-ih_O_the_land_of_smiles_%F0%9F%87%B9%F0%9F%87%AD_#thailand_#cinematograp/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov"
+        "IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp"
       ]
     },
     {
@@ -2028,9 +2028,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov",
+      "id": "IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp",
       "shortcode": "DdGQQL-ih_O",
-      "title_vi": "@createdbyadz_⚡️ - Video by adz.mov",
+      "title_vi": "the land of smiles 🇹🇭 #thailand #cinematograp",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -2054,7 +2054,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @createdbyadz_⚡️",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @adz.mov",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
@@ -2066,18 +2066,18 @@ var FEDU_IDEAS_DATABASE = {
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@createdbyadz_⚡️",
-        "name": "Createdbyadz_⚡️",
+        "raw": "@adz.mov",
+        "name": "Adz Mov",
         "handle": "@adz.mov",
         "profile_url": "https://www.instagram.com/adz.mov/"
       },
       "ig_url": "https://www.instagram.com/reel/DdGQQL-ih_O/?stkn=MXhxM3lzcnZrbjI1ZA==",
-      "gdrive_folder": "https://drive.google.com/open?id=1UeaKeSgt_1CeGgxNECaf_VUaLhIi1Fzv",
+      "gdrive_folder": "https://drive.google.com/open?id=1VKWWYnGNESEaygN1xFyg1tFjIwpk0fEO",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40createdbyadz_%E2%9A%A1%EF%B8%8F_DdGQQL-ih_O_Video_by_adz.mov/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40adz.mov_DdGQQL-ih_O_the_land_of_smiles_%F0%9F%87%B9%F0%9F%87%AD_#thailand_#cinematograp/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40adz.mov_DdGQQL-ih_O_the_land_of_smiles_%F0%9F%87%B9%F0%9F%87%AD_#thailand_#cinematograp/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdGQQL-ih_O.mp4",
-        "report_url": "reports/IG_@createdbyadz_⚡️_DdGQQL-ih_O_Video_by_adz.mov.html",
+        "report_url": "reports/IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp.html",
         "shots_count": 17,
         "duration": "34s",
         "youtube_id": null,
