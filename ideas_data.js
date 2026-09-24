@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 251,
-  "total_unique_ideas": 239,
-  "total_active_ideas": 213,
+  "total_scene_items": 252,
+  "total_unique_ideas": 240,
+  "total_active_ideas": 214,
   "total_excluded_ideas": 26,
-  "total_creators": 155,
+  "total_creators": 156,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 30,
+    "talking-head": 27,
     "storytelling": 19,
-    "dien-anh": 102,
-    "chuyen-canh": 47
+    "dien-anh": 105,
+    "chuyen-canh": 48
   },
   "industries": [
     {
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 23,
     "am-thuc": 22,
     "du-lich": 18,
-    "cong-nghe": 31,
-    "kien-truc": 27,
+    "cong-nghe": 30,
+    "kien-truc": 26,
     "the-thao": 7,
-    "ky-thuat-quay": 54,
+    "ky-thuat-quay": 57,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 121,
+    "us_eu": 122,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -422,7 +422,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Mylenesmind",
       "profile_url": "https://www.instagram.com/mylenesmind/",
       "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
@@ -574,6 +574,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@jxnjuvv",
+      "name": "Jxnjuvv",
+      "profile_url": "https://www.instagram.com/jxnjuvv/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_%E2%99%A5%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_♥️"
+      ]
+    },
+    {
       "handle": "@acupper",
       "name": "Acupper",
       "profile_url": "https://www.instagram.com/acupper/",
@@ -589,7 +600,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Yongandmike",
       "profile_url": "https://www.instagram.com/yongandmike/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40yongandmike_DdolqWHEsws_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@yongandmike_DdolqWHEsws_Carousel_Analysis"
@@ -611,7 +622,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Laylaa_398",
       "profile_url": "https://www.instagram.com/laylaa_398/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40laylaa_398_Ddj6wlTxAAJ_%E2%99%A5%EF%B8%8F/shot_01_mid.jpg",
       "video_ids": [
         "IG_@laylaa_398_Ddj6wlTxAAJ_♥️"
@@ -1995,6 +2006,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_♥️",
+      "shortcode": "Dc-d8hKRMQm",
+      "title_vi": "A city full of joy everywhere I go ♥️",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jxnjuvv",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@jxnjuvv",
+        "name": "Jxnjuvv",
+        "handle": "@jxnjuvv",
+        "profile_url": "https://www.instagram.com/jxnjuvv/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc-d8hKRMQm/",
+      "gdrive_folder": "https://drive.google.com/open?id=1RywY47h3XGUj7Jm-QuXorTNz1xgNCykp",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_%E2%99%A5%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_%E2%99%A5%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dc-d8hKRMQm.mp4",
+        "report_url": "reports/IG_@jxnjuvv_Dc-d8hKRMQm_A_city_full_of_joy_everywhere_I_go_♥️.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": "DDBW0WZ1UEc",
+        "youtube_embed": "https://www.youtube.com/embed/DDBW0WZ1UEc",
+        "youtube_url": "https://youtu.be/DDBW0WZ1UEc"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@acupper_DdoYrPsy9g-_hello_is_konnichiwa",
       "shortcode": "DdoYrPsy9g-",
       "title_vi": "hello is konnichiwa",
@@ -2061,22 +2136,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mylenesmind_DdoWrpERdvD_can_you_guess_the_theme_👀",
       "shortcode": "DdoWrpERdvD",
-      "title_vi": "can you guess the theme 👀",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Công thức Walk &amp; Talk kết hợp B-Roll bàn làm việc kiểu phim tài liệu tự sự (Documentary Essay)",
+      "quick_takeaway": "Kỹ thuật làm vlog Walk and Talk kết hợp phim tài liệu tự sự cao cấp: đan xen 3 bối cảnh A-roll ngoài trời với bàn làm việc Flat-lay kính lúp và Typography tạp chí.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2087,10 +2162,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mylenesmind",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Walk and Talk",
+        "Documentary Essay",
+        "Paper B-Roll",
+        "Physical Magnifying Glass",
+        "Sandwich Typography",
+        "Golden Hour"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2126,21 +2203,21 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@yongandmike_DdolqWHEsws_Carousel_Analysis",
       "shortcode": "DdolzhBkiLA",
       "title_vi": "BỐ CỤC ĐIỆN ẢNH NGHỈ DƯỠNG: CÔNG THỨC 10 PHÂN CẢNH CAROUSEL DU LỊCH ĐA TẦNG CỦA YONG &amp; MIKE (CHIANG RAI)",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "quick_takeaway": "Chuỗi 10 phân cảnh carousel kết hợp video tĩnh và chuyển động vi mô tại Chiang Rai, làm chủ kỹ thuật phân tầng tiền - trung - hậu cảnh, bố cục một điểm tụ và ánh sáng chiaroscuro ẩm thực.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2151,10 +2228,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yongandmike",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Bố cục điện ảnh",
+        "Du lịch Chiang Rai",
+        "Carousel đa tầng",
+        "Nghỉ dưỡng",
+        "Kiến trúc resort"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2253,22 +2331,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@laylaa_398_Ddj6wlTxAAJ_♥️",
       "shortcode": "Ddj6wlTxAAJ",
-      "title_vi": "@laylaa 398 Ddj6wlTxAAJ ♥️",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật B-Roll Nhịp Vi Mô: 21 Shot Đắm Chìm Vào Mùa Thu Copenhagen &amp; Phong Cách Hygge Đan Mạch",
+      "quick_takeaway": "Thước phim phong cách sống mùa thu Copenhagen với nhịp cắt vi mô 0.5s chuẩn nhịp thở Hygge, kết hợp POV đắm chìm và đại cảnh công viên cổ tích Tivoli.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2279,10 +2357,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @laylaa_398",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Aesthetic B-Roll",
+        "POV Lifestyle",
+        "Copenhagen Hygge",
+        "Fast Micro-Beats",
+        "Tivoli Gardens",
+        "Specialty Coffee"
       ],
       "transition_level": null,
       "is_ad_bot": false,
