@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 241,
-  "total_unique_ideas": 229,
-  "total_active_ideas": 203,
+  "total_scene_items": 243,
+  "total_unique_ideas": 231,
+  "total_active_ideas": 205,
   "total_excluded_ideas": 26,
-  "total_creators": 148,
+  "total_creators": 149,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 25,
+    "talking-head": 26,
     "storytelling": 18,
     "dien-anh": 99,
-    "chuyen-canh": 46
+    "chuyen-canh": 47
   },
   "industries": [
     {
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 17,
     "cong-nghe": 31,
-    "kien-truc": 23,
+    "kien-truc": 25,
     "the-thao": 7,
     "ky-thuat-quay": 51,
     "ugc": 6
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 111,
+    "us_eu": 113,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 6
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -417,6 +417,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@etaemin",
+      "name": "Etaemin",
+      "profile_url": "https://www.instagram.com/etaemin/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
+        "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode"
+      ]
+    },
+    {
       "handle": "@german991020",
       "name": "German991020",
       "profile_url": "https://www.instagram.com/german991020/",
@@ -546,6 +558,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@davidmurphyfilm",
+      "name": "Davidmurphyfilm",
+      "profile_url": "https://www.instagram.com/davidmurphyfilm/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis"
       ]
     },
     {
@@ -1495,17 +1518,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@etaemin",
-      "name": "이태민 (Lee Tae-min)",
-      "profile_url": "https://www.instagram.com/etaemin/",
-      "video_count": 1,
-      "top_industry": "Thể thao",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@etaemin_DcgN1bsKUmi_Transition_Into_Running_Mode"
-      ]
-    },
-    {
       "handle": "@jesussropero",
       "name": "Jesús Ropero",
       "profile_url": "https://www.instagram.com/jesussropero/",
@@ -1914,6 +1926,132 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot",
+      "shortcode": "DdoooYmq-cd",
+      "title_vi": "Get ready for the shoot",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @etaemin",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@etaemin",
+        "name": "Etaemin",
+        "handle": "@etaemin",
+        "profile_url": "https://www.instagram.com/etaemin/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdoooYmq-cd/",
+      "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
+        "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
+        "shots_count": 1,
+        "duration": "2s",
+        "youtube_id": "Vf2GS8tIPlM",
+        "youtube_embed": "https://www.youtube.com/embed/Vf2GS8tIPlM",
+        "youtube_url": "https://youtu.be/Vf2GS8tIPlM"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis",
+      "shortcode": "Ddo3h4YDGFv",
+      "title_vi": "Some rules I follow while filming and documen",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @davidmurphyfilm",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@davidmurphyfilm",
+        "name": "Davidmurphyfilm",
+        "handle": "@davidmurphyfilm",
+        "profile_url": "https://www.instagram.com/davidmurphyfilm/"
+      },
+      "ig_url": "https://www.instagram.com/p/Ddo3h4YDGFv/",
+      "gdrive_folder": "https://drive.google.com/open?id=1oyvXqkBFmADg382K5xr5RIlrD03DPTFT",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis.html",
+        "shots_count": 11,
+        "duration": "22s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@joshdiazfilms_Ddo-TSWMZpG_Video_by_joshdiazfilms",
       "shortcode": "Ddo-TSWMZpG",
