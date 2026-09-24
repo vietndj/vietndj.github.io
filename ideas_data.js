@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 259,
-  "total_unique_ideas": 244,
-  "total_active_ideas": 218,
+  "total_scene_items": 261,
+  "total_unique_ideas": 245,
+  "total_active_ideas": 219,
   "total_excluded_ideas": 26,
-  "total_creators": 160,
+  "total_creators": 161,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 27,
+    "talking-head": 28,
     "storytelling": 19,
     "dien-anh": 110,
     "chuyen-canh": 47
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 22,
     "du-lich": 18,
     "cong-nghe": 30,
-    "kien-truc": 25,
+    "kien-truc": 27,
     "the-thao": 7,
-    "ky-thuat-quay": 62,
+    "ky-thuat-quay": 61,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 126,
+    "us_eu": 127,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -578,10 +578,21 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Lisha_Ho",
       "profile_url": "https://www.instagram.com/lisha_ho/",
       "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_01_mid.jpg",
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho"
+        "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀"
+      ]
+    },
+    {
+      "handle": "@loveqinghe",
+      "name": "Flying",
+      "profile_url": "https://www.instagram.com/loveqinghe/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Flying_DdplzLRytOA_Video_by_loveqinghe/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe"
       ]
     },
     {
@@ -2050,11 +2061,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho",
+      "id": "IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀",
       "shortcode": "Ddqo7-eTI2A",
-      "title_vi": "Video by lisha ho",
-      "quick_takeaway": "Chuyen canh Chuyen canh 1",
-      "key_tech": "Chuyen Canh Chuyen Canh 1 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "title_vi": "Wait… @ralphlauren + coffee at KLCC 👀",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -2063,11 +2074,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -2076,9 +2087,8 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Chuyen canh Chuyen canh 1",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @lisha_ho",
       "tech_tags": [
-        "Chuyen Canh Chuyen Canh 1",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "Low-key Lighting"
@@ -2086,20 +2096,20 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Chuyen canh Chuyen canh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@Lisha_Ho",
+        "raw": "@lisha_ho",
         "name": "Lisha_Ho",
         "handle": "@lisha_ho",
         "profile_url": "https://www.instagram.com/lisha_ho/"
       },
       "ig_url": "https://www.instagram.com/reel/Ddqo7-eTI2A/?stkn=MWI3aWJzbTlyaXRkOQ==",
-      "gdrive_folder": "https://drive.google.com/open?id=1yYneiYB07NL3zeKtq1Bm_spZp6r3vjbY",
+      "gdrive_folder": "https://drive.google.com/open?id=173H2_gYQ3Jb3fG2L7QBDsKKW1i9UpoLq",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40lisha_ho_Ddqo7-eTI2A_Wait%E2%80%A6_%40ralphlauren_%2B_coffee_at_KLCC_%F0%9F%91%80/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddqo7-eTI2A.mp4",
-        "report_url": "reports/IG_@Lisha_Ho_Ddqo7-eTI2A_Video_by_lisha_ho.html",
+        "report_url": "reports/IG_@lisha_ho_Ddqo7-eTI2A_Wait…_@ralphlauren_+_coffee_at_KLCC_👀.html",
         "shots_count": 26,
         "duration": "52s",
         "youtube_id": null,
@@ -2109,6 +2119,70 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "nang-cao",
         "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe",
+      "shortcode": "DdplzLRytOA",
+      "title_vi": "Video by loveqinghe",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Flying",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@Flying",
+        "name": "Flying",
+        "handle": "@loveqinghe",
+        "profile_url": "https://www.instagram.com/loveqinghe/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdplzLRytOA/?stkn=Ymt5M3cwZW1meWFr",
+      "gdrive_folder": "https://drive.google.com/open?id=13fPjZdgXQRbuS6b0XBKHXh83prqe7jn3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Flying_DdplzLRytOA_Video_by_loveqinghe/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Flying_DdplzLRytOA_Video_by_loveqinghe/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdplzLRytOA.mp4",
+        "report_url": "reports/IG_@Flying_DdplzLRytOA_Video_by_loveqinghe.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
