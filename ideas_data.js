@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 274,
-  "total_unique_ideas": 255,
-  "total_active_ideas": 229,
+  "total_scene_items": 275,
+  "total_unique_ideas": 256,
+  "total_active_ideas": 230,
   "total_excluded_ideas": 26,
   "total_creators": 169,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 31,
     "storytelling": 19,
     "dien-anh": 115,
-    "chuyen-canh": 49
+    "chuyen-canh": 50
   },
   "industries": [
     {
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 23,
     "am-thuc": 22,
     "du-lich": 18,
-    "cong-nghe": 33,
+    "cong-nghe": 34,
     "kien-truc": 30,
     "the-thao": 7,
     "ky-thuat-quay": 65,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 137,
+    "us_eu": 138,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -415,6 +415,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@jsnhow",
+      "name": "Jsnhow",
+      "profile_url": "https://www.instagram.com/jsnhow/",
+      "video_count": 2,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jsnhow_DdncdgVRBIp_Soft_sounds%2C_quiet_minds%2C_and_a_moment_to_jus/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus",
+        "IG_@jsnhow_Dcz7nniBEFe_Unwinding"
       ]
     },
     {
@@ -1907,17 +1919,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@jsnhow",
-      "name": "Jsnhow",
-      "profile_url": "https://www.instagram.com/jsnhow/",
-      "video_count": 1,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jsnhow_Dcz7nniBEFe_Unwinding/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@jsnhow_Dcz7nniBEFe_Unwinding"
-      ]
-    },
-    {
       "handle": "@sajad_machu",
       "name": "Sajad_Machu",
       "profile_url": "https://www.instagram.com/sajad_machu/",
@@ -2150,6 +2151,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus",
+      "shortcode": "DdncdgVRBIp",
+      "title_vi": "Soft sounds, quiet minds, and a moment to jus",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jsnhow",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@jsnhow",
+        "name": "Jsnhow",
+        "handle": "@jsnhow",
+        "profile_url": "https://www.instagram.com/jsnhow/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdncdgVRBIp/?stkn=MXFrMm8xaWhrN3ViaA==",
+      "gdrive_folder": "https://drive.google.com/open?id=15f4ENSXRedq4eLtFI1lp4sl0POS5aiaB",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jsnhow_DdncdgVRBIp_Soft_sounds%2C_quiet_minds%2C_and_a_moment_to_jus/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jsnhow_DdncdgVRBIp_Soft_sounds%2C_quiet_minds%2C_and_a_moment_to_jus/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdncdgVRBIp.mp4",
+        "report_url": "reports/IG_@jsnhow_DdncdgVRBIp_Soft_sounds,_quiet_minds,_and_a_moment_to_jus.html",
+        "shots_count": 20,
+        "duration": "40s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@celfstudies_DajU5I5AKIu_LA_VLOG_!!_(horizontal_edition🤳)",
       "shortcode": "DajU5I5AKIu",
