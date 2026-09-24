@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 279,
-  "total_unique_ideas": 259,
-  "total_active_ideas": 233,
+  "total_scene_items": 280,
+  "total_unique_ideas": 260,
+  "total_active_ideas": 234,
   "total_excluded_ideas": 26,
-  "total_creators": 172,
+  "total_creators": 173,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 31,
     "storytelling": 19,
-    "dien-anh": 118,
+    "dien-anh": 119,
     "chuyen-canh": 50
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 33,
     "kien-truc": 30,
     "the-thao": 7,
-    "ky-thuat-quay": 67,
+    "ky-thuat-quay": 68,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 141,
+    "us_eu": 142,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -610,6 +610,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@qaqu_uu",
+      "name": "Qaqu_Uu",
+      "profile_url": "https://www.instagram.com/qaqu_uu/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota"
+      ]
+    },
+    {
       "handle": "@cinematic_lee",
       "name": "Cinematic_Lee",
       "profile_url": "https://www.instagram.com/cinematic_lee/",
@@ -669,7 +680,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Hu321938",
       "profile_url": "https://www.instagram.com/hu321938/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hu321938_DdrKmGFBMzc_%E6%8B%8D%E5%87%BA%E4%B8%AD%E7%A7%8B%E8%8A%82%E7%9A%84%E6%B0%9B%E5%9B%B4%E6%84%9F/shot_01_mid.jpg",
       "video_ids": [
         "IG_@hu321938_DdrKmGFBMzc_拍出中秋节的氛围感"
@@ -2185,6 +2196,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota",
+      "shortcode": "Dblr-88PjlJ",
+      "title_vi": "yelena belova would call this small baby pota",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @qaqu_uu",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@qaqu_uu",
+        "name": "Qaqu_Uu",
+        "handle": "@qaqu_uu",
+        "profile_url": "https://www.instagram.com/qaqu_uu/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dblr-88PjlJ/?stkn=MXJ3Ym5mMjBlc24ydw==",
+      "gdrive_folder": "https://drive.google.com/open?id=1A7n_9slaFXFz-YEHw0m1sT8r6GI-sXKC",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dblr-88PjlJ.mp4",
+        "report_url": "reports/IG_@qaqu_uu_Dblr-88PjlJ_yelena_belova_would_call_this_small_baby_pota.html",
+        "shots_count": 25,
+        "duration": "50s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@cinematic_lee_Dbd8gmqRAc3_It’s_a_constant_struggle_😅",
       "shortcode": "Dbd8gmqRAc3",
       "title_vi": "It’s a constant struggle 😅",
@@ -2697,22 +2772,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@hu321938_DdrKmGFBMzc_拍出中秋节的氛围感",
       "shortcode": "DdrKmGFBMzc",
-      "title_vi": "拍出中秋节的氛围感",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "title_vi": "8 Kỹ Thuật Quay Chụp Bánh Trung Thu Triệu View Bằng Điện Thoại (Split Screen Hậu Trường)",
+      "quick_takeaway": "Bóc tách 8 kỹ thuật quay chụp bánh Trung Thu đỉnh cao bằng điện thoại với màn hình chia đôi Hậu trường vs Thành phẩm, từ đòn bẩy thị giác xuyên thấu đến cú twist mặt trăng vắt mì tôm viral.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2723,8 +2798,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @hu321938",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting"
+        "Split Screen",
+        "Ẩm Thực F&B",
+        "Kỹ Thuật Điện Thoại",
+        "Visual Gag",
+        "Trung Thu",
+        "Setup Tại Nhà"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2745,9 +2824,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@hu321938_DdrKmGFBMzc_拍出中秋节的氛围感.html",
         "shots_count": 1,
         "duration": "2s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "ANLAvVS4i3k",
+        "youtube_embed": "https://www.youtube.com/embed/ANLAvVS4i3k",
+        "youtube_url": "https://youtu.be/ANLAvVS4i3k"
       },
       "complexity": {
         "id": "de",
