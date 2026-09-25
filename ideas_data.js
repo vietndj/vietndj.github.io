@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 291,
-  "total_unique_ideas": 268,
-  "total_active_ideas": 242,
+  "total_scene_items": 292,
+  "total_unique_ideas": 269,
+  "total_active_ideas": 243,
   "total_excluded_ideas": 26,
-  "total_creators": 180,
+  "total_creators": 181,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 32,
+    "talking-head": 31,
     "storytelling": 19,
-    "dien-anh": 128,
-    "chuyen-canh": 48
+    "dien-anh": 129,
+    "chuyen-canh": 49
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 31,
     "kien-truc": 30,
     "the-thao": 7,
-    "ky-thuat-quay": 77,
+    "ky-thuat-quay": 78,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 150,
+    "us_eu": 151,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -622,11 +622,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@framebygeorge",
+      "name": "Framebygeorge",
+      "profile_url": "https://www.instagram.com/framebygeorge/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
+      ]
+    },
+    {
       "handle": "@iz_hxn",
       "name": "Iz_Hxn",
       "profile_url": "https://www.instagram.com/iz_hxn/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_%F0%9F%95%B6%EF%B8%8F_#fitcheck_#l/shot_01_mid.jpg",
       "video_ids": [
         "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l"
@@ -2274,17 +2285,17 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l",
-      "shortcode": "DdgqYzZM67T",
-      "title_vi": "How we pull up in Smart Style 🕶️ #fitcheck #l",
+      "id": "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography",
+      "shortcode": "DdjxG1Hu8P6",
+      "title_vi": "Day 24 learning cinematography",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "kien-truc",
@@ -2300,10 +2311,75 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iz_hxn",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @framebygeorge",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot"
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@framebygeorge",
+        "name": "Framebygeorge",
+        "handle": "@framebygeorge",
+        "profile_url": "https://www.instagram.com/framebygeorge/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdjxG1Hu8P6/",
+      "gdrive_folder": "https://drive.google.com/open?id=1jUMmD4k4pIklvJPWWiCfRx0ZidgMiM65",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdjxG1Hu8P6.mp4",
+        "report_url": "reports/IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography.html",
+        "shots_count": 9,
+        "duration": "18s",
+        "youtube_id": "3K2d7oEhiTY",
+        "youtube_embed": "https://www.youtube.com/embed/3K2d7oEhiTY",
+        "youtube_url": "https://youtu.be/3K2d7oEhiTY"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l",
+      "shortcode": "DdgqYzZM67T",
+      "title_vi": "Bóc Tách Góc Máy Lookbook Đường Phố: Cách Show Trang Phục Quyền Lực",
+      "quick_takeaway": "Video khoe trang phục đường phố cực chất với các góc máy low angle và chuyển cảnh dứt khoát.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iz_hxn",
+      "tech_tags": [
+        "Streetwear",
+        "Couple Outfit",
+        "Transitions"
       ],
       "transition_level": null,
       "is_ad_bot": false,
