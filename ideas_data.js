@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 290,
-  "total_unique_ideas": 267,
-  "total_active_ideas": 241,
+  "total_scene_items": 291,
+  "total_unique_ideas": 268,
+  "total_active_ideas": 242,
   "total_excluded_ideas": 26,
-  "total_creators": 179,
+  "total_creators": 180,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 127,
+    "dien-anh": 128,
     "chuyen-canh": 48
   },
   "industries": [
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 24,
     "du-lich": 18,
     "cong-nghe": 31,
-    "kien-truc": 29,
-    "the-thao": 8,
-    "ky-thuat-quay": 76,
+    "kien-truc": 30,
+    "the-thao": 7,
+    "ky-thuat-quay": 77,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 149,
+    "us_eu": 150,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -422,7 +422,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Jackwebstter",
       "profile_url": "https://www.instagram.com/jackwebstter/",
       "video_count": 2,
-      "top_industry": "Thể thao",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40jackwebstter_DdtKOH-TN_c_How_to_film_cinematic_running_shots_part_2/shot_01_mid.jpg",
       "video_ids": [
         "IG_@jackwebstter_DdtKOH-TN_c_How_to_film_cinematic_running_shots_part_2",
@@ -619,6 +619,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@iz_hxn",
+      "name": "Iz_Hxn",
+      "profile_url": "https://www.instagram.com/iz_hxn/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_%F0%9F%95%B6%EF%B8%8F_#fitcheck_#l/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l"
       ]
     },
     {
@@ -2263,11 +2274,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@jackwebstter_DdtKOH-TN_c_How_to_film_cinematic_running_shots_part_2",
-      "shortcode": "DdtKOH-TN_c",
-      "title_vi": "How to film cinematic running shots part 2",
+      "id": "IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l",
+      "shortcode": "DdgqYzZM67T",
+      "title_vi": "How we pull up in Smart Style 🕶️ #fitcheck #l",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2276,11 +2287,73 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "the-thao",
-        "name": "Thể thao",
-        "en_name": "Sports & Motion",
-        "icon": "🏃",
-        "badge_color": "orange"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iz_hxn",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@iz_hxn",
+        "name": "Iz_Hxn",
+        "handle": "@iz_hxn",
+        "profile_url": "https://www.instagram.com/iz_hxn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdgqYzZM67T/",
+      "gdrive_folder": "https://drive.google.com/open?id=1gHfcuXLxNrWlpg6JewI95liPvBzQfXr3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_%F0%9F%95%B6%EF%B8%8F_#fitcheck_#l/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_%F0%9F%95%B6%EF%B8%8F_#fitcheck_#l/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdgqYzZM67T.mp4",
+        "report_url": "reports/IG_@iz_hxn_DdgqYzZM67T_How_we_pull_up_in_Smart_Style_🕶️_#fitcheck_#l.html",
+        "shots_count": 4,
+        "duration": "8s",
+        "youtube_id": "CGHS-gGSNJQ",
+        "youtube_embed": "https://www.youtube.com/embed/CGHS-gGSNJQ",
+        "youtube_url": "https://youtu.be/CGHS-gGSNJQ"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@jackwebstter_DdtKOH-TN_c_How_to_film_cinematic_running_shots_part_2",
+      "shortcode": "DdtKOH-TN_c",
+      "title_vi": "Bóc tách kỹ thuật quay video chạy bộ Cinematic",
+      "quick_takeaway": "Phân tích kỹ thuật quay góc thấp, góc toàn và lia máy để tạo ra những khung hình chạy bộ chuẩn điện ảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2291,9 +2364,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jackwebstter",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Góc thấp",
+        "Cận cảnh",
+        "Chuyển động"
       ],
       "transition_level": null,
       "is_ad_bot": false,
