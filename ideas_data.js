@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 288,
+  "total_scene_items": 289,
   "total_unique_ideas": 266,
   "total_active_ideas": 240,
   "total_excluded_ideas": 26,
@@ -610,14 +610,14 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@_mariapark",
-      "name": "Маша_Пак_Фешн-Инфлюенсер",
-      "profile_url": "https://www.instagram.com/_mariapark/",
+      "handle": "@mariapark",
+      "name": "Mariapark",
+      "profile_url": "https://www.instagram.com/mariapark/",
       "video_count": 1,
       "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark"
+        "IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь"
       ]
     },
     {
@@ -2262,9 +2262,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark",
+      "id": "IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь",
       "shortcode": "DdeYvmLsms6",
-      "title_vi": "@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР - Video by  mariapark",
+      "title_vi": "Чакра на осенние образы открыта 🤩 Ставь огонь",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -2288,7 +2288,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mariapark",
       "tech_tags": [
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
@@ -2299,23 +2299,23 @@ var FEDU_IDEAS_DATABASE = {
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
-        "name": "Маша_Пак_Фешн-Инфлюенсер",
-        "handle": "@_mariapark",
-        "profile_url": "https://www.instagram.com/_mariapark/"
+        "raw": "@mariapark",
+        "name": "Mariapark",
+        "handle": "@mariapark",
+        "profile_url": "https://www.instagram.com/mariapark/"
       },
-      "ig_url": "https://www.instagram.com/reel/DdeYvmLsms6/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
-      "gdrive_folder": "https://drive.google.com/open?id=12nNGR0hvF8lHvGMcZSDPXkEUVz1Jfsvr",
+      "ig_url": "https://www.instagram.com/reel/DdeYvmLsms6/",
+      "gdrive_folder": "https://drive.google.com/open?id=1s3gHzDTW7z54g7HT2ZzXW9g-ScJEPZtD",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mariapark_DdeYvmLsms6_%D0%A7%D0%B0%D0%BA%D1%80%D0%B0_%D0%BD%D0%B0_%D0%BE%D1%81%D0%B5%D0%BD%D0%BD%D0%B8%D0%B5_%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D1%8B_%D0%BE%D1%82%D0%BA%D1%80%D1%8B%D1%82%D0%B0_%F0%9F%A4%A9_%D0%A1%D1%82%D0%B0%D0%B2%D1%8C_%D0%BE%D0%B3%D0%BE%D0%BD%D1%8C/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdeYvmLsms6.mp4",
-        "report_url": "reports/IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark.html",
+        "report_url": "reports/IG_@mariapark_DdeYvmLsms6_Чакра_на_осенние_образы_открыта_🤩_Ставь_огонь.html",
         "shots_count": 9,
         "duration": "18s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "sxtLWq0KqAo",
+        "youtube_embed": "https://www.youtube.com/embed/sxtLWq0KqAo",
+        "youtube_url": "https://youtu.be/sxtLWq0KqAo"
       },
       "complexity": {
         "id": "trung-binh",
