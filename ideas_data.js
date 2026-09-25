@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 286,
+  "total_scene_items": 287,
   "total_unique_ideas": 265,
   "total_active_ideas": 239,
   "total_excluded_ideas": 26,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -611,13 +611,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@pausehereii",
-      "name": "Pause_Here",
+      "name": "Pausehereii",
       "profile_url": "https://www.instagram.com/pausehereii/",
       "video_count": 1,
       "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Pause_Here_DdGx-fkPeeU_Video_by_pausehereii/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Pause_Here_DdGx-fkPeeU_Video_by_pausehereii"
+        "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI"
       ]
     },
     {
@@ -2251,9 +2251,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@Pause_Here_DdGx-fkPeeU_Video_by_pausehereii",
+      "id": "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI",
       "shortcode": "DdGx-fkPeeU",
-      "title_vi": "Video by pausehereii",
+      "title_vi": "A DAY IN CHIANG MAI",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
@@ -2277,7 +2277,7 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Pause_Here",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @pausehereii",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
@@ -2289,23 +2289,23 @@ var FEDU_IDEAS_DATABASE = {
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
-        "raw": "@Pause_Here",
-        "name": "Pause_Here",
+        "raw": "@pausehereii",
+        "name": "Pausehereii",
         "handle": "@pausehereii",
         "profile_url": "https://www.instagram.com/pausehereii/"
       },
       "ig_url": "https://www.instagram.com/reel/DdGx-fkPeeU/?stkn=N3dkZjY5NXhob2Rp",
-      "gdrive_folder": "https://drive.google.com/open?id=1__Z3BgSCGPAzd8AwVGRBj9Aj0e56KeWD",
+      "gdrive_folder": "https://drive.google.com/open?id=1HIlhpyXrcRgOZAaeHmXU0CTZ-0TEIMC8",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Pause_Here_DdGx-fkPeeU_Video_by_pausehereii/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Pause_Here_DdGx-fkPeeU_Video_by_pausehereii/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdGx-fkPeeU.mp4",
-        "report_url": "reports/IG_@Pause_Here_DdGx-fkPeeU_Video_by_pausehereii.html",
+        "report_url": "reports/IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI.html",
         "shots_count": 37,
         "duration": "74s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
+        "youtube_id": "O1eLfJHQ69k",
+        "youtube_embed": "https://www.youtube.com/embed/O1eLfJHQ69k",
+        "youtube_url": "https://youtu.be/O1eLfJHQ69k"
       },
       "complexity": {
         "id": "nang-cao",
