@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 293,
-  "total_unique_ideas": 270,
-  "total_active_ideas": 244,
+  "total_scene_items": 295,
+  "total_unique_ideas": 272,
+  "total_active_ideas": 246,
   "total_excluded_ideas": 26,
   "total_creators": 181,
   "shooting_styles": [
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 130,
-    "chuyen-canh": 48
+    "dien-anh": 131,
+    "chuyen-canh": 49
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 24,
     "du-lich": 18,
     "cong-nghe": 31,
-    "kien-truc": 30,
+    "kien-truc": 31,
     "the-thao": 7,
-    "ky-thuat-quay": 79,
+    "ky-thuat-quay": 80,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 152,
+    "us_eu": 154,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -294,6 +294,20 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
         "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
         "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
+      ]
+    },
+    {
+      "handle": "@framebygeorge",
+      "name": "Framebygeorge",
+      "profile_url": "https://www.instagram.com/framebygeorge/",
+      "video_count": 4,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography",
+        "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
+        "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
+        "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
       ]
     },
     {
@@ -415,18 +429,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@framebygeorge",
-      "name": "Framebygeorge",
-      "profile_url": "https://www.instagram.com/framebygeorge/",
-      "video_count": 2,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
-        "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
       ]
     },
     {
@@ -2286,11 +2288,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
-      "shortcode": "DdhHCL6OOfK",
-      "title_vi": "Day 23 learning cinematography",
+      "id": "IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography",
+      "shortcode": "DdPQJLvulmd",
+      "title_vi": "Day 17 learning cinematography",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2315,8 +2317,134 @@ var FEDU_IDEAS_DATABASE = {
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @framebygeorge",
       "tech_tags": [
         "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@framebygeorge",
+        "name": "Framebygeorge",
+        "handle": "@framebygeorge",
+        "profile_url": "https://www.instagram.com/framebygeorge/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdPQJLvulmd/",
+      "gdrive_folder": "https://drive.google.com/open?id=10XajVkentv46mXLHUEbmQjW0FMgBbFEo",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdPQJLvulmd.mp4",
+        "report_url": "reports/IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography.html",
+        "shots_count": 8,
+        "duration": "16s",
+        "youtube_id": "0APEJfI-0ac",
+        "youtube_embed": "https://www.youtube.com/embed/0APEJfI-0ac",
+        "youtube_url": "https://youtu.be/0APEJfI-0ac"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
+      "shortcode": "DdcH-N-ONJw",
+      "title_vi": "Day 21 learning cinematography",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @framebygeorge",
+      "tech_tags": [
+        "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@framebygeorge",
+        "name": "Framebygeorge",
+        "handle": "@framebygeorge",
+        "profile_url": "https://www.instagram.com/framebygeorge/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdcH-N-ONJw/",
+      "gdrive_folder": "https://drive.google.com/open?id=1yk4wFncaPLdsSvNHlNxbRbrNocNvYT3-",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdcH-N-ONJw.mp4",
+        "report_url": "reports/IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography.html",
+        "shots_count": 9,
+        "duration": "18s",
+        "youtube_id": "SBBGhDIIs5g",
+        "youtube_embed": "https://www.youtube.com/embed/SBBGhDIIs5g",
+        "youtube_url": "https://youtu.be/SBBGhDIIs5g"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
+      "shortcode": "DdhHCL6OOfK",
+      "title_vi": "Bóc Tách Kỹ Thuật Cinematic B-roll & Khai Thác Nắng Sớm",
+      "quick_takeaway": "Video thực hành quay Cinematic Lifestyle với ánh sáng tự nhiên, rim light và shadow cực đẹp mắt.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @framebygeorge",
+      "tech_tags": [
+        "Ánh sáng tự nhiên",
+        "Backlight",
+        "Food Videography"
       ],
       "transition_level": null,
       "is_ad_bot": false,
