@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 287,
-  "total_unique_ideas": 265,
-  "total_active_ideas": 239,
+  "total_scene_items": 288,
+  "total_unique_ideas": 266,
+  "total_active_ideas": 240,
   "total_excluded_ideas": 26,
-  "total_creators": 178,
+  "total_creators": 179,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 125,
+    "dien-anh": 126,
     "chuyen-canh": 48
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 31,
     "kien-truc": 30,
     "the-thao": 7,
-    "ky-thuat-quay": 74,
+    "ky-thuat-quay": 75,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 147,
+    "us_eu": 148,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -610,11 +610,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@_mariapark",
+      "name": "Маша_Пак_Фешн-Инфлюенсер",
+      "profile_url": "https://www.instagram.com/_mariapark/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark"
+      ]
+    },
+    {
       "handle": "@pausehereii",
       "name": "Pausehereii",
       "profile_url": "https://www.instagram.com/pausehereii/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI/shot_01_mid.jpg",
       "video_ids": [
         "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI"
@@ -2251,11 +2262,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI",
-      "shortcode": "DdGx-fkPeeU",
-      "title_vi": "A DAY IN CHIANG MAI",
+      "id": "IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark",
+      "shortcode": "DdeYvmLsms6",
+      "title_vi": "@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР - Video by  mariapark",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2277,12 +2288,79 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @pausehereii",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР",
+        "name": "Маша_Пак_Фешн-Инфлюенсер",
+        "handle": "@_mariapark",
+        "profile_url": "https://www.instagram.com/_mariapark/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdeYvmLsms6/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=12nNGR0hvF8lHvGMcZSDPXkEUVz1Jfsvr",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%D0%9C%D0%B0%D1%88%D0%B0_%D0%9F%D0%B0%D0%BA_%D0%A4%D0%95%D0%A8%D0%9D-%D0%98%D0%9D%D0%A4%D0%9B%D0%AE%D0%95%D0%9D%D0%A1%D0%95%D0%A0_DdeYvmLsms6_Video_by__mariapark/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdeYvmLsms6.mp4",
+        "report_url": "reports/IG_@Маша_Пак_ФЕШН-ИНФЛЮЕНСЕР_DdeYvmLsms6_Video_by__mariapark.html",
+        "shots_count": 9,
+        "duration": "18s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@pausehereii_DdGx-fkPeeU_A_DAY_IN_CHIANG_MAI",
+      "shortcode": "DdGx-fkPeeU",
+      "title_vi": "Bậc Thầy Gài Gắm Sản Phẩm Ẩn Danh (Stealth Product Placement): Nghệ Thuật Kể Chuyện 37 Shots Dẫn Dắt Qua 9 Tọa Độ Chiang Mai",
+      "quick_takeaway": "Một ngày dạo quanh 9 tọa độ biểu tượng khu phố Chang Moi (Chiang Mai) được kể bằng ngôn ngữ điện ảnh 37 shots dồn dập, khéo léo gài cắm chiếc túi xách da nâu AN-A-ERA làm bạn đồng hành xuyên suốt mà không lộ liễu bán hàng.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @pausehereii",
+      "tech_tags": [
+        "Stealth Product Placement",
+        "POV Hook",
+        "Breathe-in Breathe-out",
+        "Color Harmony",
+        "In-Product POV",
+        "Invisible Transition",
+        "Golden Hour",
+        "EDC Bag"
       ],
       "transition_level": null,
       "is_ad_bot": false,
