@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỹ Năng AI | AI Tạo Ảnh Chân Dung</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#05070c',
+            surface: '#0d111a',
+            accent: '#10b981',
+            gold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background-color: #05070c;
+      color: #f8fafc;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .glass-box {
+      background: rgba(13, 17, 26, 0.75);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .gradient-emerald-text {
+      background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #059669 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body class="selection:bg-emerald-500 selection:text-black pb-20">
+
+  <!-- BACK BUTTON -->
+  <a href="javascript:history.back()" class="fixed bottom-6 left-6 z-50 flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-900/95 border border-emerald-500/40 text-emerald-300 hover:text-white hover:bg-emerald-950 transition shadow-2xl backdrop-blur-xl font-mono text-xs font-semibold">
+    <span>← Quay lại</span>
+  </a>
+
+  <!-- HERO SECTION -->
+  <div class="max-w-4xl mx-auto px-4 pt-16 pb-12 text-center">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400 mb-6">
+      <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      ANTIGRAVITY SKILL
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
+      AI TẠO ẢNH <span class="gradient-emerald-text">CHÂN DUNG</span>
+    </h1>
+    <p class="text-slate-400 max-w-2xl mx-auto text-lg">
+      Biến trợ lý AI của bạn thành nhiếp ảnh gia cá nhân. Tạo ảnh cực nét, chính xác >99% khuôn mặt bạn trong mọi bối cảnh đời thường và chuyên nghiệp.
+    </p>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-4 space-y-12">
+    
+    <!-- INSTALL SECTION -->
+    <section class="glass-box rounded-3xl p-6 md:p-8 border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
+      <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+        <span class="text-emerald-400 text-2xl">⚡</span> Cài Đặt Chỉ 1 Lệnh
+      </h2>
+      
+      <div class="space-y-4 mb-6 text-sm text-slate-300">
+        <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">1</span> Mở phần mềm Antigravity của bạn.</p>
+        <div class="flex gap-3 items-start">
+          <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">2</span> 
+          <div class="flex-1">
+            <p class="mb-2">Copy và dán lệnh sau vào terminal của Antigravity:</p>
+            <div class="bg-black/50 border border-slate-700 rounded-lg p-3 flex justify-between items-center group">
+              <code class="font-mono text-emerald-300 text-xs break-all">curl -sSL https://fedu.vn/skill/install-taoanh.sh | bash</code>
+              <button onclick="navigator.clipboard.writeText('curl -sSL https://fedu.vn/skill/install-taoanh.sh | bash'); alert('Đã copy!')" class="text-slate-500 hover:text-emerald-400 ml-2">📋</button>
+            </div>
+          </div>
+        </div>
+        <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">3</span> Làm theo hướng dẫn cung cấp 2 ảnh của bạn là xong!</p>
+      </div>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section>
+      <h2 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2">Ảnh Đầu Vào Cần Gì?</h2>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="glass-box p-5 rounded-2xl border-l-4 border-l-emerald-500">
+          <h3 class="font-bold text-emerald-400 mb-2">📸 Ảnh 1: Cận Cảnh (Headshot)</h3>
+          <ul class="text-sm text-slate-400 space-y-1.5 list-disc pl-4">
+            <li>Góc chụp thẳng, thấy rõ nét mặt.</li>
+            <li>Bắt buộc cười hở răng trên, mắt có catchlight (đốm sáng).</li>
+            <li>Giúp AI khóa nụ cười, ngũ quan chi tiết.</li>
+          </ul>
+        </div>
+        <div class="glass-box p-5 rounded-2xl border-l-4 border-l-gold">
+          <h3 class="font-bold text-gold mb-2">👤 Ảnh 2: Bán Thân (Half-body)</h3>
+          <ul class="text-sm text-slate-400 space-y-1.5 list-disc pl-4">
+            <li>Thấy rõ từ ngực/eo trở lên.</li>
+            <li>Giúp AI học tỷ lệ đầu, vai và vóc dáng tổng thể.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-4 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-sm text-slate-300">
+        <strong class="text-red-400">Lưu ý bắt buộc:</strong> Không dùng beauty filter, ánh sáng có khối rõ ràng (như Rembrandt/Split), tóc và lông mày sắc nét.
+      </div>
+    </section>
+
+    <!-- PROMPTS -->
+    <section>
+      <h2 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2">Bạn Có Thể Yêu Cầu Gì?</h2>
+      <p class="text-sm text-slate-400 mb-4">Sau khi cài, bạn chỉ việc chat với AI tự nhiên:</p>
+      <div class="flex flex-wrap gap-3">
+        <div class="px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-slate-200 font-mono">"Tạo ảnh tôi giống poster phim Avatar"</div>
+        <div class="px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-slate-200 font-mono">"Tạo ảnh tôi đang đi chạy bộ ở công viên"</div>
+        <div class="px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-slate-200 font-mono">"Tạo ảnh tôi đang uống cà phê bên cửa sổ"</div>
+        <div class="px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-slate-200 font-mono">"Tạo ảnh tôi mặc vest đen đứng thuyết trình"</div>
+        <div class="px-4 py-2 rounded-full bg-slate-800/80 border border-slate-700 text-sm text-slate-200 font-mono">"Tạo storyboard 5 phân cảnh lifestyle của tôi"</div>
+      </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section>
+      <h2 class="text-xl font-bold text-white mb-6 border-b border-slate-800 pb-2">Kết Quả Thực Tế</h2>
+      <div class="grid md:grid-cols-3 gap-5">
+        <div class="glass-box rounded-xl overflow-hidden">
+          <img src="assets/face-clone/gen_01_desk.jpg" alt="Làm việc bàn gỗ" class="w-full aspect-[4/3] object-cover hover:scale-105 transition duration-500" />
+          <div class="p-3 text-center text-xs text-slate-300 font-medium">Deep Work Bàn Gỗ</div>
+        </div>
+        <div class="glass-box rounded-xl overflow-hidden">
+          <img src="assets/face-clone/gen_03_studio.jpg" alt="Avatar Studio" class="w-full aspect-[4/3] object-cover hover:scale-105 transition duration-500" />
+          <div class="p-3 text-center text-xs text-slate-300 font-medium">Avatar Chuyên Gia Studio</div>
+        </div>
+        <div class="glass-box rounded-xl overflow-hidden">
+          <img src="assets/face-clone/gen_06_trada.jpg" alt="Trà đá vỉa hè" class="w-full aspect-[4/3] object-cover hover:scale-105 transition duration-500" />
+          <div class="p-3 text-center text-xs text-slate-300 font-medium">Trà Đá Vỉa Hè Phố Cổ</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
