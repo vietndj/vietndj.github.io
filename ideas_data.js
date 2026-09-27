@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 25,
     "du-lich": 18,
     "cong-nghe": 32,
-    "kien-truc": 32,
+    "kien-truc": 33,
     "the-thao": 7,
-    "ky-thuat-quay": 89,
+    "ky-thuat-quay": 88,
     "ugc": 7
   },
   "countries": [
@@ -647,7 +647,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Page_Vrn",
       "profile_url": "https://www.instagram.com/page_vrn/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Góc nhà đẹp",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40page_vrn_DdT9nr_o_SP_%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC_%D0%B1%D1%8B_%D0%BD%D0%B8_%D0%B1%D1%8B%D0%BB_%D0%B2%D0%B0%D1%88_%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%2C_%D0%B2_P%2BAGE_%D0%BE%D0%BD_%D0%B1%D1%83%D0%B4%D0%B5%D1%82/shot_01_mid.jpg",
       "video_ids": [
         "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет"
@@ -2353,7 +2353,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
       "shortcode": "DdT9nr_o_SP",
       "title_vi": "Каким бы ни был ваш завтрак, в P+AGE он будет",
-      "quick_takeaway": "Chuyển cảnh 1",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Chuyển Cảnh 1 • Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -2363,11 +2363,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -2376,9 +2376,8 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Chuyển cảnh 1",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @page_vrn",
       "tech_tags": [
-        "Chuyển Cảnh 1",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "High-key Lighting"
@@ -2386,7 +2385,7 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
         "raw": "@page_vrn",
         "name": "Page_Vrn",
@@ -2402,9 +2401,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет.html",
         "shots_count": 14,
         "duration": "28s",
-        "youtube_id": "GMFQlgpDqKA",
-        "youtube_embed": "https://www.youtube.com/embed/GMFQlgpDqKA",
-        "youtube_url": "https://youtu.be/GMFQlgpDqKA"
+        "youtube_id": "lWy9YUeTwSI",
+        "youtube_embed": "https://www.youtube.com/embed/lWy9YUeTwSI",
+        "youtube_url": "https://youtu.be/lWy9YUeTwSI"
       },
       "complexity": {
         "id": "trung-binh",
