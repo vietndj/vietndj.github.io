@@ -153,13 +153,13 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
     "thoi-trang": 24,
-    "am-thuc": 26,
+    "am-thuc": 25,
     "du-lich": 18,
     "cong-nghe": 32,
     "kien-truc": 31,
     "the-thao": 7,
     "ky-thuat-quay": 87,
-    "ugc": 7
+    "ugc": 8
   },
   "countries": [
     {
@@ -222,7 +222,7 @@ var FEDU_IDEAS_DATABASE = {
   "transition_stats": {
     "level_1_count": 5,
     "level_2_count": 14,
-    "ad_bot_count": 7
+    "ad_bot_count": 8
   },
   "deleted_ids": [
     "video",
@@ -647,7 +647,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ecuator_Cafe",
       "profile_url": "https://www.instagram.com/ecuator_cafe/",
       "video_count": 1,
-      "top_industry": "F&B",
+      "top_industry": "UGC",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ecuator_cafe_Dc0iEdiuYZ-_Exist%C4%83_pauze_de_cafea_%C8%99i_exist%C4%83_momente_%C3%AEn_ca/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca"
@@ -2341,10 +2341,10 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "am-thuc",
-        "name": "F&B",
-        "en_name": "Food & Beverage",
-        "icon": "🍜",
+        "id": "ugc",
+        "name": "UGC",
+        "en_name": "UGC & Ads",
+        "icon": "📱",
         "badge_color": "amber"
       },
       "country": {
@@ -2356,13 +2356,14 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Life",
       "tech_tags": [
+        "Life Quảng Cáo",
         "Life",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "Low-key Lighting"
       ],
       "transition_level": null,
-      "is_ad_bot": false,
+      "is_ad_bot": true,
       "fedu_optimization": {},
       "logic_explanation": "Ghi chú người dùng: Life. Phân loại vào Ẩm Thực & F&B • Chuyển Cảnh (Transition).",
       "creator": {
