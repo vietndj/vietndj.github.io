@@ -69,26 +69,34 @@
   <main class="max-w-4xl mx-auto px-4 space-y-12">
     
     <!-- INSTALL SECTION -->
-    <section class="glass-box rounded-3xl p-6 md:p-8 border border-emerald-500/30 shadow-2xl shadow-emerald-500/10">
-      <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
-        <span class="text-emerald-400 text-2xl">⚡</span> Cài Đặt Chỉ 1 Lệnh
-      </h2>
-      
-      <div class="space-y-4 mb-6 text-sm text-slate-300">
-        <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">1</span> Mở phần mềm Antigravity của bạn.</p>
-        <div class="flex gap-3 items-start">
-          <span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">2</span> 
-          <div class="flex-1">
-            <p class="mb-2">Copy và dán lệnh sau vào terminal của Antigravity <span class="text-slate-500">(Phím tắt mở Terminal: <kbd class="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 font-mono text-emerald-400">Cmd + J</kbd> trên Mac / <kbd class="px-1.5 py-0.5 rounded bg-slate-900 border border-slate-700 font-mono text-emerald-400">Ctrl + J</kbd> trên Windows)</span>:</p>
-            <div class="bg-black/50 border border-slate-700 rounded-lg p-3 flex justify-between items-center group">
-              <code class="font-mono text-emerald-300 text-xs break-all">curl -sSL https://fedu.vn/skill/install-taoanh.sh | bash</code>
-              <button onclick="navigator.clipboard.writeText('curl -sSL https://fedu.vn/skill/install-taoanh.sh | bash'); alert('Đã copy!')" class="text-slate-500 hover:text-emerald-400 ml-2">📋</button>
-            </div>
-          </div>
+    <section class="glass-box rounded-3xl p-6 md:p-8 border border-emerald-500/30 shadow-2xl shadow-emerald-500/10 flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1">
+        <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-3">
+          <span class="text-emerald-400 text-2xl">⚡</span> Cài Đặt Bằng Mã QR
+        </h2>
+        <div class="space-y-4 text-sm text-slate-300">
+          <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">1</span> <span><strong>Lưu mã QR</strong> bên cạnh về máy tính (hoặc chuột phải chọn Copy Image).</span></p>
+          <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">2</span> <span><strong>Thả ảnh QR</strong> đó vào khung chat phần mềm Antigravity.</span></p>
+          <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">3</span> <span>Nhập <strong>mật khẩu</strong> khi được hỏi để kích hoạt tiến trình tự động.</span></p>
         </div>
-        <p class="flex gap-3 items-start"><span class="px-2 py-0.5 rounded bg-slate-800 text-emerald-400 font-mono font-bold">3</span> Làm theo hướng dẫn cung cấp 2 ảnh của bạn là xong!</p>
+      </div>
+      <div class="bg-white p-3 rounded-2xl shrink-0 flex flex-col items-center justify-center">
+        <div id="qrcode"></div>
+        <p class="text-[10px] text-center font-bold text-slate-800 mt-2 tracking-widest uppercase">ACTIVATE FACE CLONE</p>
       </div>
     </section>
+    <script>
+      setTimeout(() => {
+        new QRCode(document.getElementById("qrcode"), {
+          text: "ACTIVATE_FACE_CLONE_SKILL_https://fedu.vn/skill/install-taoanh.sh",
+          width: 140,
+          height: 140,
+          colorDark : "#05070c",
+          colorLight : "#ffffff",
+          correctLevel : QRCode.CorrectLevel.H
+        });
+      }, 100);
+    </script>
 
     <!-- REQUIREMENTS -->
     <section>
