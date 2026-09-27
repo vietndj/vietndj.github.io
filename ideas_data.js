@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 308,
-  "total_unique_ideas": 284,
-  "total_active_ideas": 258,
+  "total_scene_items": 309,
+  "total_unique_ideas": 285,
+  "total_active_ideas": 259,
   "total_excluded_ideas": 26,
   "total_creators": 186,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 32,
     "storytelling": 19,
     "dien-anh": 143,
-    "chuyen-canh": 49
+    "chuyen-canh": 50
   },
   "industries": [
     {
@@ -153,12 +153,12 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
     "thoi-trang": 24,
-    "am-thuc": 25,
+    "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 32,
-    "kien-truc": 33,
+    "cong-nghe": 33,
+    "kien-truc": 31,
     "the-thao": 7,
-    "ky-thuat-quay": 88,
+    "ky-thuat-quay": 89,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 166,
+    "us_eu": 167,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -267,6 +267,23 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi",
+      "name": "Ulanzi",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 7,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSaTN_Tripod_%26_G%E1%BA%ADy_Selfie_T%E1%BB%B1_%C4%90%E1%BB%99ng_MT86%2C_Cao_1.52m_4/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
+        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
+        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
+        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
+      ]
+    },
+    {
       "handle": "@joshdiazfilms",
       "name": "Joshdiazfilms",
       "profile_url": "https://www.instagram.com/joshdiazfilms/",
@@ -298,22 +315,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jazziesillona_DWrDUymD4_a_Carousel_Analysis",
         "IG_@Jazzie_DU2CTKzEqvl_Carousel_Analysis",
         "IG_@jazziesillona_DbIA2jwPHCV"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 6,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohBhc_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_Ulanzi_MT85_C%C3%B3_%C4%90%C3%A8n_Pin_Nh%E1%BB%8F_v%C3%A0_Ch/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
-        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -647,7 +648,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Page_Vrn",
       "profile_url": "https://www.instagram.com/page_vrn/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40page_vrn_DdT9nr_o_SP_%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC_%D0%B1%D1%8B_%D0%BD%D0%B8_%D0%B1%D1%8B%D0%BB_%D0%B2%D0%B0%D1%88_%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%2C_%D0%B2_P%2BAGE_%D0%BE%D0%BD_%D0%B1%D1%83%D0%B4%D0%B5%D1%82/shot_01_mid.jpg",
       "video_ids": [
         "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет"
@@ -658,7 +659,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Fiveseven Idn",
       "profile_url": "https://www.instagram.com/fiveseven.idn/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "F&B",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside/shot_01_mid.jpg",
       "video_ids": [
         "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside"
@@ -2350,11 +2351,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
-      "shortcode": "DdT9nr_o_SP",
-      "title_vi": "Каким бы ни был ваш завтрак, в P+AGE он будет",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Chuyển Cảnh 1 • Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
+      "id": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+      "shortcode": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+      "title_vi": "Tripod &amp; Gậy Selfie Tự Động MT86, Cao 1.52m 4",
+      "quick_takeaway": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
+      "key_tech": "1.52m Height • Quadpod Base. Get it on Lazada now! • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -2363,11 +2364,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
       },
       "country": {
         "id": "us_eu",
@@ -2376,11 +2377,81 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @page_vrn",
+      "purpose": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
       "tech_tags": [
+        "1.52m Height",
+        "Quadpod Base. Get it on Lazada now!",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
         "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!. Phân loại vào Công Nghệ & Thiết Bị • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.oSaTN?c=w",
+      "gdrive_folder": "https://drive.google.com/open?id=1fl62ubttCgd7PIq2mxGVcQruaCCGH7S_",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSaTN_Tripod_%26_G%E1%BA%ADy_Selfie_T%E1%BB%B1_%C4%90%E1%BB%99ng_MT86%2C_Cao_1.52m_4/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSaTN_Tripod_%26_G%E1%BA%ADy_Selfie_T%E1%BB%B1_%C4%90%E1%BB%99ng_MT86%2C_Cao_1.52m_4/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/oSaTN.mp4",
+        "report_url": "reports/IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": "Ec9MP_oPHdE",
+        "youtube_embed": "https://www.youtube.com/embed/Ec9MP_oPHdE",
+        "youtube_url": "https://youtu.be/Ec9MP_oPHdE"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
+      "shortcode": "DdT9nr_o_SP",
+      "title_vi": "Cú Đấm Thị Giác F&B: Kỹ Thuật Spin Match Cut & Macro Đồ Ăn Sáng Đánh Thức Tuyến Nước Bọt (@page_vrn)",
+      "quick_takeaway": "Khai thác đòn bẩy Spin Match Cut xoay đĩa trên bàn gỗ và chuỗi đặc tả Macro cận cảnh (lòng đào trứng chần ùa chảy, thịt bò hun khói mỏng tơi, rosti khoai tây giòn rụm) biến video 7 giây thành cỗ máy kích hoạt cơn thèm ăn đỉnh cao.",
+      "key_tech": "Chuyển cảnh 1 • Spin Match Cut • Macro Food Porn • Visual Hook • Yolk Ooze Money Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Kích hoạt cơn đói và tuyến nước bọt của khách hàng bằng chuỗi tương tác dao dĩa Macro cực nét, nâng tầm trải nghiệm bữa sáng tại nhà hàng.",
+      "tech_tags": [
+        "Chuyển cảnh 1",
+        "Match Cut",
+        "Spin Transition",
+        "Macro Food Porn",
+        "Visual Hook",
+        "Yolk Ooze Money Shot",
+        "Crisp Action"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2415,22 +2486,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside",
       "shortcode": "DbDAdZShiS9",
-      "title_vi": "Crispy outside. Tender inside",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "title_vi": "Tuyệt Kỹ Match Cut Phi Đĩa F&B: Phá Vỡ Quy Chuẩn Bưng Bê Để Giật 100% Chú Ý Về Món Ăn",
+      "quick_takeaway": "Cú phi đĩa frisbee giật mình kết hợp Action Match Cut 0.3s hoán đổi đĩa rỗng thành mâm gà nướng sốt nấm vàng giòn cực phẩm.",
+      "key_tech": "Chuyển Cảnh (Transition) • Match Cut • Action Cut • Ẩm Thực & F&B",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
       },
       "country": {
         "id": "us_eu",
@@ -2439,12 +2510,14 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @fiveseven.idn",
+      "purpose": "Mổ xẻ kỹ thuật Match Cut hành động và chuyển cảnh giật gân (Disruptive Action Hook) ứng dụng cho F&B thực chiến.",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Chuyển cảnh",
+        "Match Cut",
+        "Action Cut",
+        "Ẩm Thực & F&B",
+        "Visual Hook",
+        "Food Cinematography"
       ],
       "transition_level": null,
       "is_ad_bot": false,
