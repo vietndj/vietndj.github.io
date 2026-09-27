@@ -214,6 +214,20 @@
 
       </div>
     </section>
+    <!-- QR CODE FOR QUICK INSTALL -->
+    <section class="glass-box p-8 rounded-2xl text-center mb-8">
+      <h2 class="text-xl font-bold text-white mb-4">📱 Quét QR → Cài Ngay Trên Máy Khác</h2>
+      <div class="bg-white p-2 rounded-2xl mx-auto mb-4 w-max shadow-lg">
+        <canvas id="qrCanvas" class="rounded-lg"></canvas>
+      </div>
+      <p class="text-sm text-slate-400 mb-4">
+        <span class="block font-mono text-emerald-400 mb-2">https://fedu.vn/skill/quanlykhachhang.html</span>
+        Mở Camera → Quét → Mở link → Cài đặt xong
+      </p>
+      <button onclick="navigator.clipboard.writeText('https://fedu.vn/skill/quanlykhachhang.html').then(() => alert('Đã sao chép link!'))" class="px-4 py-2 rounded-lg bg-slate-800 border border-slate-700 hover:bg-slate-700 text-white text-sm font-medium transition-colors inline-flex items-center gap-2">
+        <i class="ph ph-copy"></i> Sao chép link
+      </button>
+    </section>
 
     <!-- HOW TO START -->
     <section class="glass-box p-8 rounded-2xl text-center">
@@ -228,5 +242,24 @@
     </section>
 
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var canvas = document.getElementById('qrCanvas');
+      if (canvas) {
+        QRCode.toCanvas(canvas, 'https://fedu.vn/skill/quanlykhachhang.html', {
+          width: 200,
+          margin: 1,
+          color: {
+            dark: '#000000',
+            light: '#ffffff'
+          }
+        }, function (error) {
+          if (error) console.error(error);
+        });
+      }
+    });
+  </script>
 </body>
 </html>
