@@ -81,22 +81,10 @@
         </div>
       </div>
       <div class="bg-white p-3 rounded-2xl shrink-0 flex flex-col items-center justify-center">
-        <div id="qrcode"></div>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=ACTIVATE_FACE_CLONE_SKILL_https://fedu.vn/skill/install-taoanh.sh&margin=1" alt="QR Code" class="rounded-lg shadow-sm" />
         <p class="text-[10px] text-center font-bold text-slate-800 mt-2 tracking-widest uppercase">ACTIVATE FACE CLONE</p>
       </div>
     </section>
-    <script>
-      setTimeout(() => {
-        new QRCode(document.getElementById("qrcode"), {
-          text: "ACTIVATE_FACE_CLONE_SKILL_https://fedu.vn/skill/install-taoanh.sh",
-          width: 140,
-          height: 140,
-          colorDark : "#05070c",
-          colorLight : "#ffffff",
-          correctLevel : QRCode.CorrectLevel.H
-        });
-      }, 100);
-    </script>
 
     <!-- REQUIREMENTS -->
     <section>
