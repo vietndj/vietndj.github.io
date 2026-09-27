@@ -2331,7 +2331,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
       "shortcode": "Dc0iEdiuYZ-",
       "title_vi": "Există pauze de cafea și există momente în ca",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "quick_takeaway": "Life",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -2354,8 +2354,9 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ecuator_cafe",
+      "purpose": "Life",
       "tech_tags": [
+        "Life",
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
         "Low-key Lighting"
@@ -2363,7 +2364,7 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Ẩm Thực & F&B.",
+      "logic_explanation": "Ghi chú người dùng: Life. Phân loại vào Ẩm Thực & F&B • Chuyển Cảnh (Transition).",
       "creator": {
         "raw": "@ecuator_cafe",
         "name": "Ecuator_Cafe",
@@ -2379,9 +2380,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca.html",
         "shots_count": 12,
         "duration": "24s",
-        "youtube_id": "9NoGdaidqNo",
-        "youtube_embed": "https://www.youtube.com/embed/9NoGdaidqNo",
-        "youtube_url": "https://youtu.be/9NoGdaidqNo"
+        "youtube_id": "kpCfb4kchSM",
+        "youtube_embed": "https://www.youtube.com/embed/kpCfb4kchSM",
+        "youtube_url": "https://youtu.be/kpCfb4kchSM"
       },
       "complexity": {
         "id": "trung-binh",
