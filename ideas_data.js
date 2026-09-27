@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 309,
-  "total_unique_ideas": 285,
-  "total_active_ideas": 259,
+  "total_scene_items": 310,
+  "total_unique_ideas": 286,
+  "total_active_ideas": 260,
   "total_excluded_ideas": 26,
   "total_creators": 186,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 32,
     "storytelling": 19,
     "dien-anh": 143,
-    "chuyen-canh": 50
+    "chuyen-canh": 51
   },
   "industries": [
     {
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 33,
+    "cong-nghe": 34,
     "kien-truc": 31,
     "the-thao": 7,
     "ky-thuat-quay": 89,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 167,
+    "us_eu": 168,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -249,6 +249,24 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ulanzi",
+      "name": "Ulanzi",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 8,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSa57_Ch%C3%A2n_%C4%90%E1%BA%BF_M%C3%A1y_%E1%BA%A2nh_Nh%E1%BA%B9_v%C3%A0_%C4%90a_N%C4%83ng/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
+        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
+        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
+        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
+        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
+      ]
+    },
+    {
       "handle": "@withyuee",
       "name": "Withyuee",
       "profile_url": "https://www.instagram.com/withyuee/",
@@ -264,23 +282,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@withyuee_DUqQaPbkfcQ_Chinese_New_Year_Hong_Kong",
         "IG_@withyuee_DO8arRxEZvh_Hong_Kong_Visual_Rhythm_Carousel",
         "IG_@withyuee_DVQ3Gh6Efk1_Spring_in_Hong_Kong"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 7,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSaTN_Tripod_%26_G%E1%BA%ADy_Selfie_T%E1%BB%B1_%C4%90%E1%BB%99ng_MT86%2C_Cao_1.52m_4/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
-        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -2351,9 +2352,73 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
+      "shortcode": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
+      "title_vi": "Chân Đế Máy Ảnh Nhẹ và Đa Năng",
+      "quick_takeaway": "Check out Ulanzi | Mini Folding Portable Tripod. Get it on Lazada now! Ugc",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Check out Ulanzi | Mini Folding Portable Tripod. Get it on Lazada now! Ugc",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Check out Ulanzi | Mini Folding Portable Tripod. Get it on Lazada now! Ugc. Phân loại vào Công Nghệ & Thiết Bị • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.oSa57?c=w",
+      "gdrive_folder": "https://drive.google.com/open?id=1Y3ujEAuM1abKPYALopAbpU9Jq9eGiYKi",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSa57_Ch%C3%A2n_%C4%90%E1%BA%BF_M%C3%A1y_%E1%BA%A2nh_Nh%E1%BA%B9_v%C3%A0_%C4%90a_N%C4%83ng/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSa57_Ch%C3%A2n_%C4%90%E1%BA%BF_M%C3%A1y_%E1%BA%A2nh_Nh%E1%BA%B9_v%C3%A0_%C4%90a_N%C4%83ng/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/oSa57.mp4",
+        "report_url": "reports/IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": "wbRlOKO71Ws",
+        "youtube_embed": "https://www.youtube.com/embed/wbRlOKO71Ws",
+        "youtube_url": "https://youtu.be/wbRlOKO71Ws"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
       "shortcode": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-      "title_vi": "Tripod &amp; Gậy Selfie Tự Động MT86, Cao 1.52m 4",
+      "title_vi": "Ulanzi MT86 Auto-Deploy Tripod & Selfie Stick (Cao 1.52m, Chân Quadpod Bật Nảy)",
       "quick_takeaway": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
       "key_tech": "1.52m Height • Quadpod Base. Get it on Lazada now! • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
@@ -2379,12 +2444,14 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
       "tech_tags": [
-        "1.52m Height",
-        "Quadpod Base. Get it on Lazada now!",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "High-key Lighting"
+        "Ulanzi MT86",
+        "Auto-Deploy Tripod",
+        "Quadpod Base",
+        "Selfie Stick 1.52m",
+        "Chạm Đất Tự Bung",
+        "Cold Shoe Mount",
+        "Bluetooth Remote",
+        "Worm's-Eye View"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2405,9 +2472,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4.html",
         "shots_count": 17,
         "duration": "34s",
-        "youtube_id": "Ec9MP_oPHdE",
-        "youtube_embed": "https://www.youtube.com/embed/Ec9MP_oPHdE",
-        "youtube_url": "https://youtu.be/Ec9MP_oPHdE"
+        "youtube_id": "sLuhZ01D3e8",
+        "youtube_embed": "https://www.youtube.com/embed/sLuhZ01D3e8",
+        "youtube_url": "https://youtu.be/sLuhZ01D3e8"
       },
       "complexity": {
         "id": "trung-binh",
