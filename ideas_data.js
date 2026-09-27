@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 307,
-  "total_unique_ideas": 283,
-  "total_active_ideas": 257,
+  "total_scene_items": 308,
+  "total_unique_ideas": 284,
+  "total_active_ideas": 258,
   "total_excluded_ideas": 26,
-  "total_creators": 185,
+  "total_creators": 186,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 142,
+    "dien-anh": 143,
     "chuyen-canh": 49
   },
   "industries": [
@@ -158,8 +158,8 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 32,
     "kien-truc": 32,
     "the-thao": 7,
-    "ky-thuat-quay": 87,
-    "ugc": 8
+    "ky-thuat-quay": 89,
+    "ugc": 7
   },
   "countries": [
     {
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 165,
+    "us_eu": 166,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -222,11 +222,11 @@ var FEDU_IDEAS_DATABASE = {
   "transition_stats": {
     "level_1_count": 5,
     "level_2_count": 14,
-    "ad_bot_count": 8
+    "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -643,6 +643,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@page_vrn",
+      "name": "Page_Vrn",
+      "profile_url": "https://www.instagram.com/page_vrn/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40page_vrn_DdT9nr_o_SP_%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC_%D0%B1%D1%8B_%D0%BD%D0%B8_%D0%B1%D1%8B%D0%BB_%D0%B2%D0%B0%D1%88_%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%2C_%D0%B2_P%2BAGE_%D0%BE%D0%BD_%D0%B1%D1%83%D0%B4%D0%B5%D1%82/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет"
+      ]
+    },
+    {
       "handle": "@fiveseven.idn",
       "name": "Fiveseven Idn",
       "profile_url": "https://www.instagram.com/fiveseven.idn/",
@@ -658,7 +669,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ecuator_Cafe",
       "profile_url": "https://www.instagram.com/ecuator_cafe/",
       "video_count": 1,
-      "top_industry": "UGC",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ecuator_cafe_Dc0iEdiuYZ-_Exist%C4%83_pauze_de_cafea_%C8%99i_exist%C4%83_momente_%C3%AEn_ca/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca"
@@ -2339,6 +2350,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
+      "shortcode": "DdT9nr_o_SP",
+      "title_vi": "Каким бы ни был ваш завтрак, в P+AGE он будет",
+      "quick_takeaway": "Chuyển cảnh 1",
+      "key_tech": "Chuyển Cảnh 1 • Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Chuyển cảnh 1",
+      "tech_tags": [
+        "Chuyển Cảnh 1",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Chuyển cảnh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "creator": {
+        "raw": "@page_vrn",
+        "name": "Page_Vrn",
+        "handle": "@page_vrn",
+        "profile_url": "https://www.instagram.com/page_vrn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdT9nr_o_SP/?stkn=OXl5eGE5emFteGds",
+      "gdrive_folder": "https://drive.google.com/open?id=121Ucux2VwHoHXQDEwrOrmBM-lwAhvWdS",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40page_vrn_DdT9nr_o_SP_%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC_%D0%B1%D1%8B_%D0%BD%D0%B8_%D0%B1%D1%8B%D0%BB_%D0%B2%D0%B0%D1%88_%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%2C_%D0%B2_P%2BAGE_%D0%BE%D0%BD_%D0%B1%D1%83%D0%B4%D0%B5%D1%82/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40page_vrn_DdT9nr_o_SP_%D0%9A%D0%B0%D0%BA%D0%B8%D0%BC_%D0%B1%D1%8B_%D0%BD%D0%B8_%D0%B1%D1%8B%D0%BB_%D0%B2%D0%B0%D1%88_%D0%B7%D0%B0%D0%B2%D1%82%D1%80%D0%B0%D0%BA%2C_%D0%B2_P%2BAGE_%D0%BE%D0%BD_%D0%B1%D1%83%D0%B4%D0%B5%D1%82/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdT9nr_o_SP.mp4",
+        "report_url": "reports/IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет.html",
+        "shots_count": 14,
+        "duration": "28s",
+        "youtube_id": "GMFQlgpDqKA",
+        "youtube_embed": "https://www.youtube.com/embed/GMFQlgpDqKA",
+        "youtube_url": "https://youtu.be/GMFQlgpDqKA"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside",
       "shortcode": "DbDAdZShiS9",
       "title_vi": "Crispy outside. Tender inside",
@@ -2405,22 +2480,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
       "shortcode": "Dc0iEdiuYZ-",
-      "title_vi": "Există pauze de cafea și există momente în ca",
-      "quick_takeaway": "Life",
+      "title_vi": "B-Roll F&B Đỉnh Cao: Kể Chuyện Bằng Hành Động & Chi Tiết Giác Quan",
+      "quick_takeaway": "Chuỗi B-Roll quảng cáo F&B chuẩn nhịp điện ảnh: dẫn dắt từ bước chân dạo phố, tiếng đẩy cửa, tiếng rót Nitro Matcha bọt tuyết đến cú bẻ bánh ngàn lớp giòn rụm và chiếc ly cạn đáy.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "ugc",
-        "name": "UGC",
-        "en_name": "UGC & Ads",
-        "icon": "📱",
-        "badge_color": "amber"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2431,14 +2506,17 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Life",
       "tech_tags": [
-        "Life Quảng Cáo",
         "Life",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Quảng cáo",
+        "B-Roll F&B",
+        "Matcha Nitro",
+        "ASMR",
+        "Macro Detail",
+        "POV",
+        "Flatlay"
       ],
       "transition_level": null,
-      "is_ad_bot": true,
+      "is_ad_bot": false,
       "fedu_optimization": {},
       "logic_explanation": "Ghi chú người dùng: Life. Phân loại vào Ẩm Thực & F&B • Chuyển Cảnh (Transition).",
       "creator": {
@@ -2456,9 +2534,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca.html",
         "shots_count": 12,
         "duration": "24s",
-        "youtube_id": "kpCfb4kchSM",
-        "youtube_embed": "https://www.youtube.com/embed/kpCfb4kchSM",
-        "youtube_url": "https://youtu.be/kpCfb4kchSM"
+        "youtube_id": "9NoGdaidqNo",
+        "youtube_embed": "https://www.youtube.com/embed/9NoGdaidqNo",
+        "youtube_url": "https://youtu.be/9NoGdaidqNo"
       },
       "complexity": {
         "id": "trung-binh",
