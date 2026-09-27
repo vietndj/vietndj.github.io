@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 304,
-  "total_unique_ideas": 280,
-  "total_active_ideas": 254,
+  "total_scene_items": 305,
+  "total_unique_ideas": 281,
+  "total_active_ideas": 255,
   "total_excluded_ideas": 26,
   "total_creators": 183,
   "shooting_styles": [
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 32,
     "storytelling": 19,
     "dien-anh": 140,
-    "chuyen-canh": 48
+    "chuyen-canh": 49
   },
   "industries": [
     {
@@ -155,7 +155,7 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 25,
     "du-lich": 18,
-    "cong-nghe": 32,
+    "cong-nghe": 33,
     "kien-truc": 31,
     "the-thao": 7,
     "ky-thuat-quay": 86,
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 162,
+    "us_eu": 163,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -304,10 +304,11 @@ var FEDU_IDEAS_DATABASE = {
       "handle": "@ulanzi",
       "name": "Ulanzi",
       "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 5,
+      "video_count": 6,
       "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohBhc_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_Ulanzi_MT85_C%C3%B3_%C4%90%C3%A8n_Pin_Nh%E1%BB%8F_v%C3%A0_Ch/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
         "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
         "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
         "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
@@ -2316,10 +2317,75 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+      "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+      "title_vi": "[UGC] Gậy Tự Sướng Ulanzi MT85 - Đa Năng 3 in 1, Từ Tính MagSafe",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "High-key Lighting",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.ohBhc?c=s",
+      "gdrive_folder": "https://drive.google.com/open?id=1LwBMuvrx5NJ4WaH-ksXAk2AI37qsQaNT",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohBhc_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_Ulanzi_MT85_C%C3%B3_%C4%90%C3%A8n_Pin_Nh%E1%BB%8F_v%C3%A0_Ch/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohBhc_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_Ulanzi_MT85_C%C3%B3_%C4%90%C3%A8n_Pin_Nh%E1%BB%8F_v%C3%A0_Ch/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/ohBhc.mp4",
+        "report_url": "reports/IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch.html",
+        "shots_count": 27,
+        "duration": "54s",
+        "youtube_id": "2XikfROzIFI",
+        "youtube_embed": "https://www.youtube.com/embed/2XikfROzIFI",
+        "youtube_url": "https://youtu.be/2XikfROzIFI"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
       "shortcode": "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-      "title_vi": "MagSafe Compatible Selfie Stick Tripod Produc",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
+      "title_vi": "Gậy Chụp Hình Tripod MagSafe Ulanzi Đa Năng 2 Trong 1: Cú Đấm Thị Giác Cơ Học & Trải Nghiệm Đời Thực",
+      "quick_takeaway": "Cấu trúc kịch bản review thiết bị công nghệ mẫu mực: Đi thẳng từ đòn bẩy cơ học (MagSafe, mở ngàm), chứng minh tải trọng bằng góc Top-down và chân kiềng kép, biến hình thành trạm làm vlog di động và chốt hạ bằng kích thước gập gọn thanh lịch.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -2344,8 +2410,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting"
+        "MagSafe",
+        "Tripod",
+        "Selfie Stick",
+        "UGC",
+        "Product Commercial"
       ],
       "transition_level": null,
       "is_ad_bot": false,
