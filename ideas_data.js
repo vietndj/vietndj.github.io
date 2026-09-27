@@ -4,7 +4,7 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 302,
+  "total_scene_items": 303,
   "total_unique_ideas": 279,
   "total_active_ideas": 253,
   "total_excluded_ideas": 26,
@@ -641,6 +641,17 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@dwslestari",
+      "name": "Dwslestari",
+      "profile_url": "https://www.instagram.com/dwslestari/",
+      "video_count": 1,
+      "top_industry": "F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai%2C/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,"
+      ]
+    },
+    {
       "handle": "@Chibuzor_Ossai",
       "name": "Chibuzor_Ossai",
       "profile_url": "https://www.instagram.com/Chibuzor_Ossai/",
@@ -649,17 +660,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis"
-      ]
-    },
-    {
-      "handle": "@dwslestari",
-      "name": "Halooo,_Aku_Suci!_✨",
-      "profile_url": "https://www.instagram.com/dwslestari/",
-      "video_count": 1,
-      "top_industry": "F&B",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40halooo%2C_aku_Suci%21_%E2%9C%A8_Ddga9BDzenm_Video_by_dwslestari/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@halooo,_aku_Suci!_✨_Ddga9BDzenm_Video_by_dwslestari"
       ]
     },
     {
@@ -2315,6 +2315,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,",
+      "shortcode": "Ddga9BDzenm",
+      "title_vi": "buat yang sering nanyain font yang aku pakai,",
+      "quick_takeaway": "F n B , đồ ăn",
+      "key_tech": "F N B • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "F n B , đồ ăn",
+      "tech_tags": [
+        "F N B",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: F n B , đồ ăn. Phân loại vào Ẩm Thực & F&B • Điện Ảnh (Cinematic).",
+      "creator": {
+        "raw": "@dwslestari",
+        "name": "Dwslestari",
+        "handle": "@dwslestari",
+        "profile_url": "https://www.instagram.com/dwslestari/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddga9BDzenm/?stkn=cGFvamRqczU1czY3",
+      "gdrive_folder": "https://drive.google.com/open?id=1kbyWWOFSA450bGpxr-VkkpNSuAu12Lc_",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai%2C/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai%2C/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddga9BDzenm.mp4",
+        "report_url": "reports/IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,.html",
+        "shots_count": 8,
+        "duration": "16s",
+        "youtube_id": "rMANbHwCYW4",
+        "youtube_embed": "https://www.youtube.com/embed/rMANbHwCYW4",
+        "youtube_url": "https://youtu.be/rMANbHwCYW4"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis",
       "shortcode": "DdRGMalgl4E",
       "title_vi": "Video by hellochibuzor",
@@ -2366,70 +2430,6 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis.html",
         "shots_count": 7,
         "duration": "14s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@halooo,_aku_Suci!_✨_Ddga9BDzenm_Video_by_dwslestari",
-      "shortcode": "Ddga9BDzenm",
-      "title_vi": "@halooo,_aku_Suci!_✨ - Video by dwslestari",
-      "quick_takeaway": "F n B , đồ ăn",
-      "key_tech": "F N B • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "am-thuc",
-        "name": "F&B",
-        "en_name": "Food & Beverage",
-        "icon": "🍜",
-        "badge_color": "amber"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "F n B , đồ ăn",
-      "tech_tags": [
-        "F N B",
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: F n B , đồ ăn. Phân loại vào Ẩm Thực & F&B • Điện Ảnh (Cinematic).",
-      "creator": {
-        "raw": "@halooo,_aku_Suci!_✨",
-        "name": "Halooo,_Aku_Suci!_✨",
-        "handle": "@dwslestari",
-        "profile_url": "https://www.instagram.com/dwslestari/"
-      },
-      "ig_url": "https://www.instagram.com/reel/Ddga9BDzenm/?stkn=cGFvamRqczU1czY3",
-      "gdrive_folder": "https://drive.google.com/open?id=1_5klesVjffapz2DGiS1FkmMncL82mv9O",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40halooo%2C_aku_Suci%21_%E2%9C%A8_Ddga9BDzenm_Video_by_dwslestari/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40halooo%2C_aku_Suci%21_%E2%9C%A8_Ddga9BDzenm_Video_by_dwslestari/shot_03_mid.jpg",
-        "video_url": "https://media.fedu.vn/videos/Ddga9BDzenm.mp4",
-        "report_url": "reports/IG_@halooo,_aku_Suci!_✨_Ddga9BDzenm_Video_by_dwslestari.html",
-        "shots_count": 8,
-        "duration": "16s",
         "youtube_id": null,
         "youtube_embed": null,
         "youtube_url": null
