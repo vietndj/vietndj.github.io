@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 306,
-  "total_unique_ideas": 282,
-  "total_active_ideas": 256,
+  "total_scene_items": 307,
+  "total_unique_ideas": 283,
+  "total_active_ideas": 257,
   "total_excluded_ideas": 26,
-  "total_creators": 184,
+  "total_creators": 185,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 141,
+    "dien-anh": 142,
     "chuyen-canh": 49
   },
   "industries": [
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 25,
     "du-lich": 18,
     "cong-nghe": 32,
-    "kien-truc": 31,
+    "kien-truc": 32,
     "the-thao": 7,
     "ky-thuat-quay": 87,
     "ugc": 8
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 164,
+    "us_eu": 165,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 8
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -640,6 +640,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@fiveseven.idn",
+      "name": "Fiveseven Idn",
+      "profile_url": "https://www.instagram.com/fiveseven.idn/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside"
       ]
     },
     {
@@ -2327,6 +2338,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside",
+      "shortcode": "DbDAdZShiS9",
+      "title_vi": "Crispy outside. Tender inside",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @fiveseven.idn",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@fiveseven.idn",
+        "name": "Fiveseven Idn",
+        "handle": "@fiveseven.idn",
+        "profile_url": "https://www.instagram.com/fiveseven.idn/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbDAdZShiS9/?stkn=NTd5bGVocHJiMnNl",
+      "gdrive_folder": "https://drive.google.com/open?id=1Cjm9sRyI88sb0MWtS663qdhBftwoEI2w",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DbDAdZShiS9.mp4",
+        "report_url": "reports/IG_@fiveseven.idn_DbDAdZShiS9_Crispy_outside._Tender_inside.html",
+        "shots_count": 5,
+        "duration": "10s",
+        "youtube_id": "eAD2xfh7q7M",
+        "youtube_embed": "https://www.youtube.com/embed/eAD2xfh7q7M",
+        "youtube_url": "https://youtu.be/eAD2xfh7q7M"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
       "shortcode": "Dc0iEdiuYZ-",
