@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 305,
-  "total_unique_ideas": 281,
-  "total_active_ideas": 255,
+  "total_scene_items": 306,
+  "total_unique_ideas": 282,
+  "total_active_ideas": 256,
   "total_excluded_ideas": 26,
-  "total_creators": 183,
+  "total_creators": 184,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 140,
+    "dien-anh": 141,
     "chuyen-canh": 49
   },
   "industries": [
@@ -153,12 +153,12 @@ var FEDU_IDEAS_DATABASE = {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
     "thoi-trang": 24,
-    "am-thuc": 25,
+    "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 33,
+    "cong-nghe": 32,
     "kien-truc": 31,
     "the-thao": 7,
-    "ky-thuat-quay": 86,
+    "ky-thuat-quay": 87,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 163,
+    "us_eu": 164,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -640,6 +640,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@ecuator_cafe",
+      "name": "Ecuator_Cafe",
+      "profile_url": "https://www.instagram.com/ecuator_cafe/",
+      "video_count": 1,
+      "top_industry": "F&B",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ecuator_cafe_Dc0iEdiuYZ-_Exist%C4%83_pauze_de_cafea_%C8%99i_exist%C4%83_momente_%C3%AEn_ca/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca"
       ]
     },
     {
@@ -2317,11 +2328,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-      "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-      "title_vi": "[UGC] Gậy Tự Sướng Ulanzi MT85 - Đa Năng 3 in 1, Từ Tính MagSafe",
+      "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
+      "shortcode": "Dc0iEdiuYZ-",
+      "title_vi": "Există pauze de cafea și există momente în ca",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -2330,11 +2341,74 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "rose"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
+        "id": "am-thuc",
+        "name": "F&B",
+        "en_name": "Food & Beverage",
+        "icon": "🍜",
+        "badge_color": "amber"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ecuator_cafe",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Ẩm Thực & F&B.",
+      "creator": {
+        "raw": "@ecuator_cafe",
+        "name": "Ecuator_Cafe",
+        "handle": "@ecuator_cafe",
+        "profile_url": "https://www.instagram.com/ecuator_cafe/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dc0iEdiuYZ-/?stkn=NnEzaWt2MjRxdTdi",
+      "gdrive_folder": "https://drive.google.com/open?id=14jZqD0bo7o1vrrEX-TlNU52h_9oVt3OQ",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ecuator_cafe_Dc0iEdiuYZ-_Exist%C4%83_pauze_de_cafea_%C8%99i_exist%C4%83_momente_%C3%AEn_ca/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ecuator_cafe_Dc0iEdiuYZ-_Exist%C4%83_pauze_de_cafea_%C8%99i_exist%C4%83_momente_%C3%AEn_ca/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dc0iEdiuYZ-.mp4",
+        "report_url": "reports/IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca.html",
+        "shots_count": 12,
+        "duration": "24s",
+        "youtube_id": "9NoGdaidqNo",
+        "youtube_embed": "https://www.youtube.com/embed/9NoGdaidqNo",
+        "youtube_url": "https://youtu.be/9NoGdaidqNo"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+      "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+      "title_vi": "Công Thức UGC Bán Hàng: Đòn Bẩy Tương Phản Cũ vs Mới & Chuỗi Stress Test Nam Châm",
+      "quick_takeaway": "⚡ Đòn bẩy tương phản Cũ vs Mới (A/B Test) kết hợp chuỗi bài kiểm tra va đập thực tế (Stress Test) đập tan mọi nghi ngờ của người mua hàng.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2345,11 +2419,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "High-key Lighting",
-        "Low-key Lighting"
+        "Ugc",
+        "Magsafe",
+        "Gậy Tự Sướng",
+        "Stress Testing",
+        "Contrast Hook",
+        "Visual Rhythm"
       ],
       "transition_level": null,
       "is_ad_bot": false,
