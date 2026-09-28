@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 313,
-  "total_unique_ideas": 288,
-  "total_active_ideas": 262,
+  "total_scene_items": 314,
+  "total_unique_ideas": 289,
+  "total_active_ideas": 263,
   "total_excluded_ideas": 26,
-  "total_creators": 188,
+  "total_creators": 189,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 32,
     "storytelling": 19,
     "dien-anh": 145,
-    "chuyen-canh": 51
+    "chuyen-canh": 52
   },
   "industries": [
     {
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 33,
-    "kien-truc": 32,
+    "kien-truc": 33,
     "the-thao": 7,
     "ky-thuat-quay": 91,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 170,
+    "us_eu": 171,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -642,6 +642,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@nouince",
+      "name": "Nouince",
+      "profile_url": "https://www.instagram.com/nouince/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_%F0%9F%91%80/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀"
       ]
     },
     {
@@ -2373,6 +2384,69 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀",
+      "shortcode": "DduU6THJQ8y",
+      "title_vi": "O que traz mais autoridade 👀",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @nouince",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@nouince",
+        "name": "Nouince",
+        "handle": "@nouince",
+        "profile_url": "https://www.instagram.com/nouince/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DduU6THJQ8y/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Wy867kfUetobBstiBdby-tdGzqcAhOlu",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_%F0%9F%91%80/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_%F0%9F%91%80/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DduU6THJQ8y.mp4",
+        "report_url": "reports/IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀.html",
+        "shots_count": 20,
+        "duration": "40s",
+        "youtube_id": "c9Lwac8Lk60",
+        "youtube_embed": "https://www.youtube.com/embed/c9Lwac8Lk60",
+        "youtube_url": "https://youtu.be/c9Lwac8Lk60"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️",
       "shortcode": "DdsodC0hSmZ",
