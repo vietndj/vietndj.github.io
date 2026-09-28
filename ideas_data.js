@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 314,
-  "total_unique_ideas": 289,
-  "total_active_ideas": 263,
+  "total_scene_items": 315,
+  "total_unique_ideas": 290,
+  "total_active_ideas": 264,
   "total_excluded_ideas": 26,
-  "total_creators": 189,
+  "total_creators": 190,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 145,
+    "dien-anh": 146,
     "chuyen-canh": 52
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 33,
     "kien-truc": 33,
     "the-thao": 7,
-    "ky-thuat-quay": 91,
+    "ky-thuat-quay": 92,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 171,
+    "us_eu": 172,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@sametxhunter",
+      "name": "Sametxhunter",
+      "profile_url": "https://www.instagram.com/sametxhunter/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40sametxhunter_DdwxosERt7n_It%E2%80%99s_Now_or_Never/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never"
+      ]
+    },
+    {
       "handle": "@nouince",
       "name": "Nouince",
       "profile_url": "https://www.instagram.com/nouince/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀"
@@ -2385,11 +2396,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀",
-      "shortcode": "DduU6THJQ8y",
-      "title_vi": "O que traz mais autoridade 👀",
+      "id": "IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never",
+      "shortcode": "DdwxosERt7n",
+      "title_vi": "It’s Now or Never",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -2411,11 +2422,75 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @nouince",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @sametxhunter",
       "tech_tags": [
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@sametxhunter",
+        "name": "Sametxhunter",
+        "handle": "@sametxhunter",
+        "profile_url": "https://www.instagram.com/sametxhunter/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdwxosERt7n/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=13IG0wJyf9fn_OfT-5xefar1Vrpwly6Ue",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40sametxhunter_DdwxosERt7n_It%E2%80%99s_Now_or_Never/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40sametxhunter_DdwxosERt7n_It%E2%80%99s_Now_or_Never/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdwxosERt7n.mp4",
+        "report_url": "reports/IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never.html",
+        "shots_count": 21,
+        "duration": "42s",
+        "youtube_id": "fedr6x8RGuI",
+        "youtube_embed": "https://www.youtube.com/embed/fedr6x8RGuI",
+        "youtube_url": "https://youtu.be/fedr6x8RGuI"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@nouince_DduU6THJQ8y_O_que_traz_mais_autoridade_👀",
+      "shortcode": "DduU6THJQ8y",
+      "title_vi": "Phỏng vấn sự kiện (Event Interview) - Walk & Talk Hook",
+      "quick_takeaway": "Mở màn bằng kỹ thuật Walk & Talk năng lượng cao để hút sự chú ý, sau đó chuyển sang format phỏng vấn chớp nhoáng khách mời tại sự kiện Hotmart Fire.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @nouince",
+      "tech_tags": [
+        "Walk and Talk",
+        "Event Interview",
+        "Dynamic Hook"
       ],
       "transition_level": null,
       "is_ad_bot": false,
