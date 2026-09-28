@@ -1,0 +1,3165 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mridupawan Sharma • 4 Kỹ Thuật Cắt Cảnh Nâng Tầm Video Điện Ảnh</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
+
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
+
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
+
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
+
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
+
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/KetLXEHPVZ8?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+        </div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
+        </div>
+    </div>
+
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Kỹ Thuật Quay Dựng &amp; Điện Ảnh</span> <span class="badge badge-alt">Chuyển Cảnh (Transition)</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/Dc0tEcOIdwy/" target="_blank" rel="noopener">Mridupawan Sharma • 4 Kỹ Thuật Cắt Cảnh Nâng Tầm Video Điện Ảnh</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/mridupawasharma/" target="_blank" class="creator-link">@mridupawasharma ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">37 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">48.63s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">Nhịp 1: Phủ định chuyển cảnh rẻ tiền &amp; Hook không gian giật sự chú ý ➔ Nhịp 2: Trực quan hóa 4 kỹ thuật cắt dựng (Mask, Match, L-Cut, J-Cut) bằng hành động thực tế ➔ Nhịp 3: Khóa vòng lặp vô tận (Infinite Loop) câu cuối nối đầu video</div>
+        </section>
+
+        <div class="overview-card">
+            Bóc tách 37 phân cảnh chuẩn đạo diễn về 4 kỹ thuật cắt dựng kinh điển (Mask Cut, Match Cut, L-Cut, J-Cut) giúp video ngắn cuốn hút mượt mà không vết gợn cùng kỹ thuật khóa vòng lặp vô tận Infinite Loop.
+        </div>
+
+        
+        <div class="remake-prompt-card" id="remakePromptCard">
+            <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
+                <div class="prompt-left">
+                    <span class="prompt-badge">CÚ MÁY STU</span>
+                    <span class="prompt-title">Ánh xạ kỹ thuật quay sang ngành nghề của bạn</span>
+                </div>
+                <div class="prompt-right">
+                    <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép</button>
+                    <div class="prompt-toggle">
+                        <span class="toggle-icon">▼</span>
+                        <span class="toggle-label">Mở xem</span>
+                    </div>
+                </div>
+            </div>
+            <div class="prompt-accordion-body" style="display: none;">
+                <p class="prompt-desc">Video kỹ thuật quay thuần túy (không thoại). Sao chép Prompt để AI hướng dẫn áp dụng cú máy vào quay sản phẩm thực tế.</p>
+                <div class="prompt-code-wrap">
+                    <div class="prompt-code-bar">
+                        <span>MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
+                        <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép Prompt</button>
+                    </div>
+                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến.
+
+Tôi vừa học được kỹ thuật quay đắt giá: @mridupawasharma - 4 cuts to instantly make your videos 🔥.
+Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
+
+=== QUY TẮC ===
+- CẤM BỊA KỊCH BẢN NÓI. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào.
+- CẤM VĂN MẪU AI.
+- VĂN PHONG MỘC MẠC: Xưng mình - bạn.
+
+=== HƯỚNG DẪN ===
+Nếu tôi chưa ghi ngành, hỏi 1 câu:
+1. Làm đẹp &amp; Spa (quay kem, thao tác tay, máy soi da)
+2. Nội thất / Decor (quay lia thớ gỗ/mẫu đá sang không gian)
+3. Ẩm thực &amp; F&amp;B (quay lia quanh món ăn, đổ sốt, khói)
+4. Nông nghiệp / Sức khỏe (kiểm tra lá cây, hạt giống, bao bì)
+5. Ngành khác: [Tên nghề] + [Sản phẩm muốn quay]
+
+Sau khi chọn → xuất 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (37)</button>
+            </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 1.25, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 1.2s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">1.29s</span>
+                </div>
+                <h4 class="shot-headline">Hook Mở Màn Táo Bạo: Phủ định chuyển cảnh rẻ tiền giữa sa mạc Thar</h4>
+                <p class="shot-insight">Mở đầu bằng câu nói phủ định trực diện (Stop using...) kết hợp bối cảnh hùng vĩ để giật đứt sự chú ý trong 1 giây đầu.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sa mạc cát Thar</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cảnh (Wide Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên sa mạc gắt (Direct Sunlight)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut động tác bước chân</span></div>
+                    </div>
+                    <div class="critique-good">Bố cục đường chân trời 1/3 dưới, bầu trời xanh ngắt đối lập cát vàng cam; nhân vật di chuyển tiến thẳng vào tâm điểm ống kính tạo áp lực thị giác.</div>
+                    <div class="critique-warn">Ống kính góc rộng có viền vignette đen hơi dày ở 4 góc.</div>
+                    <div class="shot-narrative">Mridupawan Sharma bước đi trên đồi cát sa mạc Thar, tay cầm áo khoác, nói thẳng vào ống kính: &quot;Stop using transitions...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-2">
+            <div class="shot-thumb" onclick="playShot(1.29, 2.46, 'SHOT 02')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">1.3s – 2.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 02</span>
+                    <span class="shot-dur">1.21s</span>
+                </div>
+                <h4 class="shot-headline">Jump Không Gian Chớp Nhoáng: Giữ nguyên đà bước từ sa mạc vào phòng khách</h4>
+                <p class="shot-insight">Bẻ gãy không gian nhưng giữ nguyên quán tính động tác và nhịp câu nói để tạo cảm giác di chuyển tức thời.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Phòng khách trong nhà</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cao (High Angle Wide Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key ánh sáng cửa sổ khuếch tán</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut On Action</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy Top-down dốc từ trên trần nhà xuống, giữ nguyên đà chuyển động bước chân của shot 1, tạo cú bẻ không gian 180 độ.</div>
+                    <div class="critique-warn">Ánh sáng phòng hơi tối so với shot ngoài trời rực rỡ khiến mắt người xem phải điều tiết nhanh.</div>
+                    <div class="shot-narrative">Nhân vật tiếp tục bước tới và vung tay trong phòng khách tối, nói tiếp cụm: &quot;...that are boring&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-3">
+            <div class="shot-thumb" onclick="playShot(2.5, 4.55, 'SHOT 03')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">2.5s – 4.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 03</span>
+                    <span class="shot-dur">2.09s</span>
+                </div>
+                <h4 class="shot-headline">Bẻ Góc Cực Thấp: Bước xuống từ xe Jeep dã chiến sa mạc</h4>
+                <p class="shot-insight">Thay đổi góc máy từ góc cao (Shot 2) sang góc ngước sát đất (Shot 3) &gt;90 độ loại bỏ hoàn toàn cảm giác giật cục.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Xe Jeep trên sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Góc ngước thấp (Low Angle Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ngoài trời gắt</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut quán tính hạ chân</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy ngước cực thấp (Ultra Low-Angle) áp sát lốp xe Jeep, nhân vật bước tràn qua máy tạo cảm giác quyền lực và tốc độ.</div>
+                    <div class="critique-warn">Thân xe chiếm nửa trái khung hình dễ che mất một phần cử động tay của nhân vật.</div>
+                    <div class="shot-narrative">Nhân vật nhảy bước từ bậc cửa xe safari Jeep xuống bãi cát sa mạc, tiếp tục câu thoại: &quot;instead use...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-4">
+            <div class="shot-thumb" onclick="playShot(4.59, 7.01, 'SHOT 04')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">4.6s – 7.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 04</span>
+                    <span class="shot-dur">2.46s</span>
+                </div>
+                <h4 class="shot-headline">Đổi Trang Phục &amp; Bối Cảnh Pháo Đài: Khẳng định giá trị giải pháp</h4>
+                <p class="shot-insight">Sử dụng trang phục có độ tương phản màu sắc cực cao (Đỏ trên nền Vàng Cát) để khóa chặt điểm nhìn của khán giả.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sân thượng pháo đài Jaisalmer</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cảnh toàn (Medium Full Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên đỉnh đầu</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut trực tiếp theo nhịp thoại</span></div>
+                    </div>
+                    <div class="critique-good">Hậu cảnh pháo đài sa mạc vàng cổ kính đồ sộ; màu áo đỏ tươi của nhân vật bật hẳn lên trên nền đá vàng và trời xanh ngắt.</div>
+                    <div class="critique-warn">Bóng đổ dưới chân hơi gắt do quay giữa trưa.</div>
+                    <div class="shot-narrative">Đổi sang áo sơ mi đỏ, đứng trên sân thượng pháo đài cổ Jaisalmer, chỉ tay vào ống kính nói dứt khoát: &quot;...improve!&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-5">
+            <div class="shot-thumb" onclick="playShot(7.05, 8.51, 'SHOT 05')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">7.0s – 8.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 05</span>
+                    <span class="shot-dur">1.50s</span>
+                </div>
+                <h4 class="shot-headline">Khởi Động Kỹ Thuật 1: Giới thiệu The Mask Cut trên đường quốc lộ sa mạc</h4>
+                <p class="shot-insight">Bố cục trung tâm tĩnh lặng là cái bẫy hoàn hảo chuẩn bị cho một cú quét chuyển động bất ngờ tràn qua màn hình.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Đường quốc lộ sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cảnh trung tâm (Center Symmetrical Wide Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ban ngày đồng đều</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Foreground Mask Cut</span></div>
+                    </div>
+                    <div class="critique-good">Bố cục cân xứng tuyệt đối (Center Symmetrical), nhân vật đứng giữa vạch kẻ đường, dẫn hướng mắt hút vào trung tâm.</div>
+                    <div class="critique-warn">Thời lượng chỉ 1.5s, người xem chưa kịp đọc hết bối cảnh xung quanh đã bị xe che.</div>
+                    <div class="shot-narrative">Nhân vật dang rộng hai tay giữa đường nhựa sa mạc, tiêu đề chữ đỏ rực hiện lên: &quot;the MASK CUT&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-6">
+            <div class="shot-thumb" onclick="playShot(8.55, 8.93, 'SHOT 06')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">8.6s – 8.9s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 06</span>
+                    <span class="shot-dur">0.42s</span>
+                </div>
+                <h4 class="shot-headline">Vật Thể Tiền Cảnh Che Kín Ống Kính: Chiếc xe ô tô trắng quét ngang</h4>
+                <p class="shot-insight">Thay vì dùng hiệu ứng chuyển cảnh phần mềm, hãy để một vật thể lớn ngoài đời thực lướt sát camera để giấu vết cắt.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Đường quốc lộ</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh chuyển động lướt (Wipe Insert Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên phản xạ thân xe</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Wipe Cut tự nhiên</span></div>
+                    </div>
+                    <div class="critique-good">Tận dụng thân xe làm chiếc mặt nạ tự nhiên (Natural Wipe), biến vật cản đời thực thành công cụ xóa cảnh không tì vết.</div>
+                    <div class="critique-warn">Cần tốc độ màn trập (shutter speed) chuẩn để vệt mờ chuyển động (motion blur) không bị gãy hạt.</div>
+                    <div class="shot-narrative">Một chiếc xe ô tô SUV màu trắng phóng vút từ phải qua trái, thân xe che kín 100% diện tích cảm biến máy quay trong 0.4s</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-7">
+            <div class="shot-thumb" onclick="playShot(8.97, 9.34, 'SHOT 07')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">9.0s – 9.3s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 07</span>
+                    <span class="shot-dur">0.42s</span>
+                </div>
+                <h4 class="shot-headline">Hé Lộ Bối Cảnh Bàn Cờ Đêm: Góc máy macro nghiêng đầy tính điện ảnh</h4>
+                <p class="shot-insight">Sau một cú chuyển cảnh mạnh, đập vào mắt người xem một khung hình macro có DOF nông sẽ tạo cảm giác sang xịn ngay lập tức.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn làm việc trong phòng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh macro (Macro Detail Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key tương phản cao (High Contrast Rim Light)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Độ sâu trường ảnh cực nông (Shallow DOF), góc nghiêng Dutch Angle tạo cảm giác bí ẩn, kịch tính ngay sau cú wipe.</div>
+                    <div class="critique-warn">Shot diễn ra quá nhanh (0.42s) chỉ đóng vai trò đệm thị giác.</div>
+                    <div class="shot-narrative">Thân xe lướt qua để lộ ra bàn cờ vua với các quân cờ đứng so le, tiền cảnh mờ ảo ánh xanh lá cây</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-8">
+            <div class="shot-thumb" onclick="playShot(9.38, 10.47, 'SHOT 08')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">9.4s – 10.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 08</span>
+                    <span class="shot-dur">1.13s</span>
+                </div>
+                <h4 class="shot-headline">Mở Rộng Không Gian Bàn Làm Việc: Quân cờ, lon Coca và màn hình laptop</h4>
+                <p class="shot-insight">Đạo cụ quen thuộc (Coca, bàn cờ, laptop) giúp khán giả lập tức nhận diện phong cách sống của người sáng tạo nội dung.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn làm việc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận trung nghiêng (Dutch Angle Medium Close-up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng màn hình laptop kết hợp đèn bàn ấm</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Sắp đặt đạo cụ kể chuyện (Environmental Storytelling) cho thấy không gian sáng tạo làm việc đêm khuya đầy năng lượng.</div>
+                    <div class="critique-warn">Nhiều chi tiết trên bàn có thể làm phân tán điểm nhấn chính.</div>
+                    <div class="shot-narrative">Góc nhìn từ trên bàn cờ bao quát lon nước ngọt Coca-Cola đỏ, bàn phím và màn hình laptop đang phát video</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-9">
+            <div class="shot-thumb" onclick="playShot(10.51, 10.84, 'SHOT 09')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">10.5s – 10.8s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 09</span>
+                    <span class="shot-dur">0.38s</span>
+                </div>
+                <h4 class="shot-headline">Micro-Beat Gõ Phím: Nhấn mạnh thao tác lao động sáng tạo</h4>
+                <p class="shot-insight">Chèn micro-shot 0.3s hành động tay để duy trì tiết tấu dồn dập trước khi nhân vật nói chuyện.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn phím MacBook</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cực cận (Extreme Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng hắt màn hình (Screen Glow)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Ánh sáng từ màn hình hắt ngược lên bàn tay và bàn phím, tạo khối sáng tối góc cạnh sắc bén.</div>
+                    <div class="critique-warn">Thời lượng 0.38s cực ngắn chỉ đủ làm nhịp thở chuyển động.</div>
+                    <div class="shot-narrative">Góc cận sát bàn tay gõ phím lướt trên MacBook trên mặt bàn đá hoa cương vân cẩm thạch</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-10">
+            <div class="shot-thumb" onclick="playShot(10.89, 14.26, 'SHOT 10')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">10.9s – 14.3s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 10</span>
+                    <span class="shot-dur">3.42s</span>
+                </div>
+                <h4 class="shot-headline">Chủ Thể Giảng Giải Mask Cut: Trực quan hóa khái niệm vật thể cắt ngang</h4>
+                <p class="shot-insight">Khi nói về kỹ thuật, người nói phải dùng ngôn ngữ cơ thể (cử chỉ tay) đồng bộ 100% với khái niệm đang truyền đạt.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn cờ phòng làm việc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận (Medium Close-Up Talking Head)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Key light mềm kết hợp đèn nền ấm</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Wipe bằng nắp vali</span></div>
+                    </div>
+                    <div class="critique-good">Nhân vật ngồi chính diện, ánh sáng dịu ven mặt, tay chỉ hướng chuyển động minh họa lời nói sinh động.</div>
+                    <div class="critique-warn">Hậu cảnh rèm sọc dọc hơi sáng có thể tranh chấp với bờ vai nhân vật.</div>
+                    <div class="shot-narrative">Mridupawan Sharma ngồi bên bàn cờ, chỉ tay giải thích trực tiếp: &quot;...crossing the frame&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-11">
+            <div class="shot-thumb" onclick="playShot(14.31, 14.93, 'SHOT 11')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">14.3s – 14.9s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 11</span>
+                    <span class="shot-dur">0.67s</span>
+                </div>
+                <h4 class="shot-headline">Mở Nắp Chiếc Vali Da Cổ Điển: Tấm ảnh Polaroid hé lộ</h4>
+                <p class="shot-insight">Sử dụng đạo cụ vật lý mang tính biểu tượng (Vali da, ảnh polaroid) thay vì chèn đồ họa số 2D phẳng lì.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Chiếc vali cổ điển</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh Flat Lay (Overhead Detail Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng studio ấm tập trung</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Mask Wipe nắp vali</span></div>
+                    </div>
+                    <div class="critique-good">Bố cục flat-lay cân xứng, tông màu hoài niệm ấm áp; tấm ảnh polaroid là điểm neo thị giác hoàn hảo.</div>
+                    <div class="critique-warn">Góc nhìn trực diện hơi tĩnh.</div>
+                    <div class="shot-narrative">Nắp chiếc vali da màu mận đỏ mở lên, để lộ tập tài liệu dày và tấm ảnh polaroid kẹp ghim giấy chụp chân dung tác giả</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-12">
+            <div class="shot-thumb" onclick="playShot(14.97, 15.72, 'SHOT 12')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">15.0s – 15.7s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 12</span>
+                    <span class="shot-dur">0.79s</span>
+                </div>
+                <h4 class="shot-headline">Khẳng Định Hiệu Ứng Mở Ra: Dòng chữ &quot;thereby revealing&quot;</h4>
+                <p class="shot-insight">Mọi hành động vật lý đóng/mở đều có thể biến thành đòn bẩy Mask Cut chuyển cảnh cực mượt.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Chiếc vali cổ điển</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh (Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ấm tập trung</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut sang Silhouette</span></div>
+                    </div>
+                    <div class="critique-good">Chiếc nắp vali đóng vai trò như một bức màn sân khấu mở ra thế giới tiếp theo.</div>
+                    <div class="critique-warn">Shot ngắn lặp lại góc nhìn của shot 11.</div>
+                    <div class="shot-narrative">Góc máy lùi nhẹ nhấn mạnh toàn bộ cấu trúc mở nắp vali kèm phụ đề giải thích: &quot;thereby revealing...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-13">
+            <div class="shot-thumb" onclick="playShot(15.77, 16.98, 'SHOT 13')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">15.8s – 17.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 13</span>
+                    <span class="shot-dur">1.25s</span>
+                </div>
+                <h4 class="shot-headline">Kỹ Thuật 2 Khởi Động: Silhouette bóng đen đầu người đầy kịch tính</h4>
+                <p class="shot-insight">Dùng bóng Silhouette để tạo cú sốc thị giác tối giản trước khi bước vào giải thích kỹ thuật Match Cut.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Phòng tối sau màn chiếu</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Bóng đen đồ họa (Silhouette Profile Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Backlight chiếu xuyên màn hình vàng</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut theo hình khối đầu</span></div>
+                    </div>
+                    <div class="critique-good">Độ tương phản đen - vàng tuyệt đối; đường nét bóng nghiêng (Profile Silhouette) ấn tượng hút mắt lập tức.</div>
+                    <div class="critique-warn">Không nhìn rõ nét mặt biểu cảm do tạo hình bóng.</div>
+                    <div class="shot-narrative">Bóng đen góc nghiêng của nhân vật in trên khung màn chiếu vàng ấm áp, nói cụm: &quot;the second shot...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-14">
+            <div class="shot-thumb" onclick="playShot(17.02, 20.1, 'SHOT 14')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">17.0s – 20.1s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 14</span>
+                    <span class="shot-dur">3.13s</span>
+                </div>
+                <h4 class="shot-headline">Cú Rướn Người Kéo Sự Chú Ý: Ánh sáng điện thoại xuyên màn đêm</h4>
+                <p class="shot-insight">Thay đổi khoảng cách đột ngột (từ xa lao tới sát máy) phá tan sự nhàm chán của video giải thích thông thường.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Phòng tối</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận chuyển cận (Medium to Close Move)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Vệt sáng cửa sổ chéo hắt tường và màn hình điện thoại</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cắt sàn nhà</span></div>
+                    </div>
+                    <div class="critique-good">Cú rướn người đột ngột thay đổi khoảng cách vật lý tạo cảm giác tương tác trực diện 1:1 với người xem.</div>
+                    <div class="critique-warn">Phòng tối nên vùng hậu cảnh bị chìm vào mảng đen lớn.</div>
+                    <div class="shot-narrative">Nhân vật từ bóng tối rướn người sát ống kính, tay cầm điện thoại sáng màn hình, nói: &quot;the viewers attention&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-15">
+            <div class="shot-thumb" onclick="playShot(20.15, 20.77, 'SHOT 15')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">20.1s – 20.8s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 15</span>
+                    <span class="shot-dur">0.67s</span>
+                </div>
+                <h4 class="shot-headline">Match Cut Ví Dụ 1: Đặt chiếc giày Timberland vàng xuống sàn nhà bóng</h4>
+                <p class="shot-insight">Khóa chặt một vật thể có màu sắc và hình khối đặc trưng (giày vàng) làm mỏ neo chuyển cảnh.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sàn nhà phòng khách</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Sát mặt sàn (Floor-Level Macro Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ven chiếu bóng phản chiếu</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut On Subject</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy sát sàn nhà (Worm-eye view), bóng phản chiếu của chiếc giày trên mặt gạch bóng tạo chiều sâu gấp đôi.</div>
+                    <div class="critique-warn">Thời lượng 0.67s rất nhanh đòi hỏi người xem phải tập trung vào chiếc giày.</div>
+                    <div class="shot-narrative">Bàn tay đặt mạnh chiếc bốt Timberland vàng cam xuống mặt sàn nhà bóng loáng phản chiếu, hiện chữ &quot;the Match Cut&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-16">
+            <div class="shot-thumb" onclick="playShot(20.81, 21.65, 'SHOT 16')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">20.8s – 21.6s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 16</span>
+                    <span class="shot-dur">0.88s</span>
+                </div>
+                <h4 class="shot-headline">Cú Cắt Nối Động Tác Đỉnh Cao: Đang buộc dây chính chiếc giày ấy ngoài trời</h4>
+                <p class="shot-insight">Công thức Match Cut chuẩn: Giữ nguyên vị trí vật thể trên khung hình, đổi bối cảnh đằng sau, người xem sẽ bị thôi miên.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sàn gỗ hồ bơi ngoài trời</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận sát mặt sàn (Floor-Level Macro Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên ban ngày</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut On Action &amp; Subject</span></div>
+                    </div>
+                    <div class="critique-good">Khớp 100% vị trí, kích thước và màu sắc của chiếc giày giữa trong nhà và ngoài trời; người xem không hề nhận ra sự thay đổi bối cảnh.</div>
+                    <div class="critique-warn">Vết cắt chuẩn xác đến mức nếu không soi kỹ sẽ tưởng cùng một không gian.</div>
+                    <div class="shot-narrative">Cắt ngay sang bối cảnh sàn gỗ ngoài trời, hai tay đang thắt dây chính chiếc bốt Timberland vàng ở cùng góc máy</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-17">
+            <div class="shot-thumb" onclick="playShot(21.69, 23.98, 'SHOT 17')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">21.7s – 24.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 17</span>
+                    <span class="shot-dur">2.34s</span>
+                </div>
+                <h4 class="shot-headline">Đứng Lên Giải Thích Nguyên Lý: Mỏ neo nguyên tố cụ thể (Specific Element)</h4>
+                <p class="shot-insight">Giải thích ngay tại hiện trường sau khi vừa thực hiện xong cú cắt để bài học lập tức được thẩm thấu.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bể bơi khu nghỉ dưỡng</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung toàn (Medium Full Low Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên hồ bơi</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut sang kính</span></div>
+                    </div>
+                    <div class="critique-good">Tông màu xanh dương hồ bơi đối lập hoàn hảo với màu vàng cam của chiếc giày và sắc ấm của sàn gỗ.</div>
+                    <div class="critique-warn">Góc máy ngước hơi chếch khiến tòa nhà phía sau hơi nghiêng.</div>
+                    <div class="shot-narrative">Nhân vật quỳ một gối trên sàn gỗ cạnh hồ bơi xanh mát, chỉ tay xuống chiếc giày: &quot;specific element...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-18">
+            <div class="shot-thumb" onclick="playShot(24.02, 24.61, 'SHOT 18')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">24.0s – 24.6s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 18</span>
+                    <span class="shot-dur">0.63s</span>
+                </div>
+                <h4 class="shot-headline">Match Cut Ví Dụ 2: Chiếc kính râm đính đá đặt trên sàn gỗ</h4>
+                <p class="shot-insight">Chọn đạo cụ có chất liệu phản quang cao (kính râm, kim loại) để hút ánh nhìn ngay tức thì.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sàn gỗ hồ bơi</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh Macro (Macro Detail Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh nắng mặt trời trực diện</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut theo vật thể</span></div>
+                    </div>
+                    <div class="critique-good">Tiêu cự macro làm nổi bật chi tiết chạm khắc gọng kính; ánh nắng tạo bóng đổ sắc nét trên mặt gỗ.</div>
+                    <div class="critique-warn">Chủ thể phía sau bị làm mờ hoàn toàn.</div>
+                    <div class="shot-narrative">Góc cận sát chiếc kính râm gọng vàng viền đá lấp lánh đặt trên sàn gỗ dưới nắng, tác giả mờ mờ ở hậu cảnh</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-19">
+            <div class="shot-thumb" onclick="playShot(24.65, 25.65, 'SHOT 19')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">24.6s – 25.6s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 19</span>
+                    <span class="shot-dur">1.04s</span>
+                </div>
+                <h4 class="shot-headline">Cắt Khớp Không Gian Đêm: Bàn tay nhấc chiếc kính râm trong phòng tối</h4>
+                <p class="shot-insight">Match Cut không chỉ áp dụng cho người mà còn cực kỳ hiệu quả với phụ kiện thời trang và sản phẩm tiêu dùng.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bàn phòng ngủ/làm việc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh (Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh đèn vàng ấm (Warm Tungsten Key)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Match Cut On Action</span></div>
+                    </div>
+                    <div class="critique-good">Khớp chuẩn xác vị trí chiếc kính râm từ sàn gỗ ngoài trời sang mặt bàn trong nhà, biến chuyển mượt mà khó tin.</div>
+                    <div class="critique-warn">Màu ánh sáng thay đổi từ nắng trắng sang đèn vàng ấm.</div>
+                    <div class="shot-narrative">Cắt ngay sang phòng tối với ánh đèn vàng ấm, một bàn tay với xuống nhấc chiếc kính râm lên đúng vị trí cũ</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-20">
+            <div class="shot-thumb" onclick="playShot(25.69, 27.99, 'SHOT 20')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">25.7s – 28.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 20</span>
+                    <span class="shot-dur">2.34s</span>
+                </div>
+                <h4 class="shot-headline">Đeo Kính Chốt Hạ: &quot;And that carry it!&quot;</h4>
+                <p class="shot-insight">Một chuỗi Match Cut hoàn chỉnh phải gồm 3 nhịp: Đặt xuống -&gt; Nhặt lên -&gt; Sử dụng trên cơ thể.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Phòng trong nhà</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận (Medium Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ven tóc và đèn trần</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut sang pháo đài</span></div>
+                    </div>
+                    <div class="critique-good">Động tác đeo kính kết thúc chuỗi hành động nhấc kính ở shot 19, hoàn thiện trọn vẹn chu kỳ Match Action.</div>
+                    <div class="critique-warn">Ánh sáng trong phòng hơi gắt ở phía đỉnh đầu.</div>
+                    <div class="shot-narrative">Mridupawan hai tay đeo chiếc kính lên mắt trong phòng tối, mỉm cười nói: &quot;and that carry it&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-21">
+            <div class="shot-thumb" onclick="playShot(28.03, 29.53, 'SHOT 21')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">28.0s – 29.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 21</span>
+                    <span class="shot-dur">1.54s</span>
+                </div>
+                <h4 class="shot-headline">Kỹ Thuật 3: Giới thiệu The L-Cut trước cổng thành sa mạc đồ sộ</h4>
+                <p class="shot-insight">Dùng bối cảnh kiến trúc hùng vĩ để chuyển giao sang phần nội dung mang tính lý thuyết nặng hơn.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Cổng thành cổ pháo đài</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cảnh kiến trúc (Architectural Wide Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng hoàng hôn sa mạc dịu nhẹ</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Chuyển sang dải film strip</span></div>
+                    </div>
+                    <div class="critique-good">Quy mô kiến trúc pháo đài cổ hai bên cổng tạo cảm giác kỳ vĩ đồ sộ; nhân vật đứng giữa khung hình tạo sự uy nghiêm.</div>
+                    <div class="critique-warn">Mặt đất bằng phẳng phía trước hơi trống.</div>
+                    <div class="shot-narrative">Nhân vật đứng trước cổng thành cổ sa mạc khổng lồ, bắt đầu nói: &quot;Now...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-22">
+            <div class="shot-thumb" onclick="playShot(29.57, 30.32, 'SHOT 22')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">29.6s – 30.3s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 22</span>
+                    <span class="shot-dur">0.79s</span>
+                </div>
+                <h4 class="shot-headline">Minh Họa Film Contact Sheet: Phân tích kỹ thuật L-Cut bằng hình ảnh in ấn</h4>
+                <p class="shot-insight">Biến đổi phong cách thị giác (chuyển sang dạng ảnh in/contact sheet) khi cần giải thích một khái niệm kỹ thuật trừu tượng.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bản in phim tiếp xúc (Contact Sheet Graphic)</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Khung hình đồ họa phim (Stylized Film Frame)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Đồ họa tương phản cao</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cuộn phim dọc</span></div>
+                    </div>
+                    <div class="critique-good">Hiệu ứng thẩm mỹ báo chí/điện ảnh analogue độc đáo; màu cam neon tạo cú nổ thị giác giữa video.</div>
+                    <div class="critique-warn">Chữ phụ đề màu trắng hơi lẫn vào nền màu be xám bên dưới.</div>
+                    <div class="shot-narrative">Hình ảnh chuyển thành một tấm in tiếp xúc (Contact Sheet) màu cam rực, nhân vật đang vung tay trước thành cổ kèm chữ: &quot;this is when the audio...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-23">
+            <div class="shot-thumb" onclick="playShot(30.36, 30.95, 'SHOT 23')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">30.4s – 30.9s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 23</span>
+                    <span class="shot-dur">0.63s</span>
+                </div>
+                <h4 class="shot-headline">Chạy Về Phía Cổng Thành: Dải phim contact sheet cuộn tiếp</h4>
+                <p class="shot-insight">Hiển thị mã số kỹ thuật (Timecode/Still ID) là đòn bẩy tâm lý khẳng định tư duy đạo diễn chuyên nghiệp.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bản in phim tiếp xúc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Khung hình đồ họa phim</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Đồ họa phong cách poster</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cuộn phim</span></div>
+                    </div>
+                    <div class="critique-good">Mô phỏng đúng mã timecode và số frame (Still016) của quy trình dựng phim chuyên nghiệp, tăng uy tín chuyên gia.</div>
+                    <div class="critique-warn">Ảnh tĩnh có hạt noise cố ý có thể làm giảm độ sắc nét.</div>
+                    <div class="shot-narrative">Tấm ảnh in tiếp theo cho thấy nhân vật quay lưng chạy về phía cổng thành, hiện chữ: &quot;from the 1st shot...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-24">
+            <div class="shot-thumb" onclick="playShot(30.99, 31.36, 'SHOT 24')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">31.0s – 31.4s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 24</span>
+                    <span class="shot-dur">0.42s</span>
+                </div>
+                <h4 class="shot-headline">Đỉnh Điểm Chạy Trốn: Âm thanh cảnh trước chuẩn bị tràn qua cảnh sau</h4>
+                <p class="shot-insight">Dùng hình ảnh tĩnh chuyển động nhanh để kéo tai người nghe chú ý vào phần âm thanh đang biến đổi.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bản in phim tiếp xúc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Khung hình đồ họa phim</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Đồ họa phong cách poster</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">L-Cut Audio Lead</span></div>
+                    </div>
+                    <div class="critique-good">Nhịp cắt cực nhanh (0.42s) tạo cảm giác dồn dập cho phần giải thích âm thanh L-Cut.</div>
+                    <div class="critique-warn">Khung hình rất ngắn, chỉ đóng vai trò nối nhịp.</div>
+                    <div class="shot-narrative">Bản in cận hơn hình bóng chạy vào cổng thành, tiếng bước chân và tiếng gió vẫn tiếp tục vang lên</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-25">
+            <div class="shot-thumb" onclick="playShot(31.41, 33.49, 'SHOT 25')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">31.4s – 33.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 25</span>
+                    <span class="shot-dur">2.13s</span>
+                </div>
+                <h4 class="shot-headline">Cú Va Chạm L-Cut: Hình ảnh gian bếp xuất hiện nhưng tiếng sa mạc vẫn kéo dài</h4>
+                <p class="shot-insight">L-Cut (Âm thanh cảnh cũ tràn sang cảnh mới) là liều thuốc gây nghiện giúp xóa tan cảm giác giật cục khi đổi bối cảnh 180 độ.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Gian bếp nấu ăn</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận (Medium Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Top light đèn trần kết hợp softbox dịu</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">L-Cut</span></div>
+                    </div>
+                    <div class="critique-good">Hình ảnh đã đổi sang căn bếp hoàn toàn khác biệt nhưng âm thanh của cảnh chạy trước đó vẫn ngân vang 0.5s rồi mới dứt.</div>
+                    <div class="critique-warn">Gian bếp hơi tối, cần thêm đèn ven để làm nổi khối cơ bắp của nhân vật.</div>
+                    <div class="shot-narrative">Hình ảnh đổi ngoạn mục sang gian bếp với tạp dề đỏ và con dao bản to, miệng nói: &quot;continues over to...&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-26">
+            <div class="shot-thumb" onclick="playShot(33.53, 34.24, 'SHOT 26')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">33.5s – 34.2s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 26</span>
+                    <span class="shot-dur">0.75s</span>
+                </div>
+                <h4 class="shot-headline">Kỹ Thuật 4: Tác giả cầm dao chuẩn bị trình diễn The J-Cut</h4>
+                <p class="shot-insight">Tạo tư thế đón đầu (Anticipation) trước khi chuyển sang chuỗi B-roll thao tác nhanh.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Gian bếp nấu ăn</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận (Medium Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key studio bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">J-Cut Audio Pre-lap</span></div>
+                    </div>
+                    <div class="critique-good">Tư thế sẵn sàng hành động (Anticipation Pose), tạo sự tò mò cho người xem về món đồ sắp được xử lý.</div>
+                    <div class="critique-warn">Thời lượng 0.75s khá ngắn.</div>
+                    <div class="shot-narrative">Nhân vật cầm con dao chặt đứng trong bếp, mắt nhìn thẳng vào ống kính chuẩn bị thao tác</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-27">
+            <div class="shot-thumb" onclick="playShot(34.28, 34.95, 'SHOT 27')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">34.3s – 35.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 27</span>
+                    <span class="shot-dur">0.71s</span>
+                </div>
+                <h4 class="shot-headline">J-Cut Âm Thanh Dẫn Đường: Tiếng dao băm ớt vang lên trước hình</h4>
+                <p class="shot-insight">J-Cut (Âm thanh cảnh sau phát trước hình) kích hoạt trí tưởng tượng của khán giả trước khi mắt kịp nhìn thấy.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Thớt gỗ nhà bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cực cận thao tác (Extreme Close-Up Action)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng nhấn cạnh (Rim Light trên thớt)</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Âm thanh tiếng chặt thớt vang lên trước khi khung hình này xuất hiện 3-5 frame, dẫn dắt não bộ người xem tò mò.</div>
+                    <div class="critique-warn">Góc nhìn nghiêng hơi khuất một phần lát cắt bên trái.</div>
+                    <div class="shot-narrative">Cận cảnh lưỡi dao đen sắc lẹm băm bổ quả ớt chuông vàng rực trên thớt gỗ, tiếng thớt vang giòn giã</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-28">
+            <div class="shot-thumb" onclick="playShot(34.99, 35.29, 'SHOT 28')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">35.0s – 35.3s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 28</span>
+                    <span class="shot-dur">0.33s</span>
+                </div>
+                <h4 class="shot-headline">Quả Ớt Chuông Đỏ Chạm Thớt: Nhịp đập thị giác 0.3 giây</h4>
+                <p class="shot-insight">Sử dụng các nhịp cắt siêu ngắn 0.3s như tiếng trống gõ dồn dập vào mắt người xem.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Thớt gỗ nhà bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh (Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng bàn bếp tập trung</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Màu đỏ tươi của ớt chuông bật tung trên nền thớt gỗ trầm và đá vân cẩm thạch; chuyển động dứt khoát.</div>
+                    <div class="critique-warn">Chớp nhoáng, chỉ là một nhịp gõ nhịp điệu (Percussive Cut).</div>
+                    <div class="shot-narrative">Bàn tay vỗ nhẹ quả ớt chuông đỏ tươi xuống thớt gỗ trong nhịp cắt cực nhanh 0.33s</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-29">
+            <div class="shot-thumb" onclick="playShot(35.33, 35.74, 'SHOT 29')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">35.3s – 35.7s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 29</span>
+                    <span class="shot-dur">0.46s</span>
+                </div>
+                <h4 class="shot-headline">Quả Ớt Đỏ Lắc Lư: Tạo đà cho cú thả nguyên liệu tiếp theo</h4>
+                <p class="shot-insight">Không để bất kỳ khung hình nào bị &quot;chết&quot; (đứng yên hoàn toàn); luôn có chuyển động vật thể.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Thớt gỗ nhà bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh (Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tập trung thớt</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Quán tính lắc lư của quả ớt giữ cho khung hình luôn có chuyển động vi mô sống động.</div>
+                    <div class="critique-warn">Góc máy tương tự shot 28.</div>
+                    <div class="shot-narrative">Quả ớt đỏ ngả nghiêng trên thớt, nhân vật lùi tay ra sau tạo đà chuyển cảnh</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-30">
+            <div class="shot-thumb" onclick="playShot(35.79, 36.45, 'SHOT 30')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">35.8s – 36.5s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 30</span>
+                    <span class="shot-dur">0.71s</span>
+                </div>
+                <h4 class="shot-headline">Mưa Ớt Chuông Rơi Từ Trên Cao: Trực quan hóa B-roll đỉnh cao</h4>
+                <p class="shot-insight">Chuyển động rơi tự do của hạt nguyên liệu từ trên cao xuống luôn là cảnh B-roll ăn tiền nhất trong video ẩm thực.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Không gian bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Góc ngước cận rơi tự do (Falling Action Low Angle)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng ven tóc và bắt sáng từng hạt ớt</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut sang chảo</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy ngước lên, các mảnh ớt vàng bay lơ lửng trong không trung bắt sáng óng ả; thẩm mỹ ẩm thực cực kỳ kích thích giác quan.</div>
+                    <div class="critique-warn">Hậu cảnh cửa đen hơi tối.</div>
+                    <div class="shot-narrative">Bàn tay thả một nắm ớt chuông vàng thái hạt lựu rơi tự do xuống từ góc máy ngước, hiện chữ: &quot;best while showing B-roll&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-31">
+            <div class="shot-thumb" onclick="playShot(36.49, 37.04, 'SHOT 31')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">36.5s – 37.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 31</span>
+                    <span class="shot-dur">0.58s</span>
+                </div>
+                <h4 class="shot-headline">Thả Vào Chảo Nóng Xèo Xèo: Tiếng xèo xèo bùng nổ thính giác</h4>
+                <p class="shot-insight">Kỹ thuật J-Cut tỏa sáng rực rỡ nhất khi ứng dụng vào âm thanh ASMR nấu nướng hoặc thao tác đồ nghề.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bếp ga nhà bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận bao quát chảo (Medium Close-Up Cooking)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Key light mềm và phản xạ dầu ăn</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut</span></div>
+                    </div>
+                    <div class="critique-good">Sự kết hợp hoàn hảo giữa màu sắc (ớt đỏ, ớt vàng, hành tím) và âm thanh xèo xèo kích hoạt tối đa cảm xúc thèm ăn.</div>
+                    <div class="critique-warn">Chảo hơi lệch sang bên phải.</div>
+                    <div class="shot-narrative">Hạt ớt đỏ vàng rơi vào chảo xào chống dính đang sôi dầu trên bếp ga, nhân vật chăm chú nhìn xuống</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-32">
+            <div class="shot-thumb" onclick="playShot(37.08, 38.08, 'SHOT 32')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">37.1s – 38.1s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 32</span>
+                    <span class="shot-dur">1.04s</span>
+                </div>
+                <h4 class="shot-headline">Đảo Chảo Sôi Động: Cụm từ &quot;to connect your story&quot;</h4>
+                <p class="shot-insight">Cận cảnh hành động xoay tròn giữ mắt người xem cuốn vào tâm điểm chảo.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Mặt chảo trên bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh macro nấu nướng (Macro Cooking Action)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng chiếu thẳng mặt chảo</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut sang mặt tác giả</span></div>
+                    </div>
+                    <div class="critique-good">Cận cảnh đặc tả chuyển động xoay tròn của muôi gỗ; khói bốc nhẹ và dầu sôi tăng tính chân thực và ngon mắt.</div>
+                    <div class="critique-warn">Shot kết thúc hơi sớm (1.04s).</div>
+                    <div class="shot-narrative">Muôi gỗ đảo nhanh rau củ sặc sỡ đang sôi bốc khói nhẹ trong chảo, hiện chữ: &quot;to connect your story&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-33">
+            <div class="shot-thumb" onclick="playShot(38.12, 40.67, 'SHOT 33')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">38.1s – 40.7s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 33</span>
+                    <span class="shot-dur">2.59s</span>
+                </div>
+                <h4 class="shot-headline">Chốt Hạ Tên Kỹ Thuật: &quot;The J CUT&quot; bên chiếc chảo đang xào</h4>
+                <p class="shot-insight">Nói tên kỹ thuật sau khi khán giả đã trải nghiệm hiệu ứng thực tế sẽ giúp họ ghi nhớ sâu gấp 10 lần.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Bếp nấu</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận góc thấp (Low Angle Medium Close-Up)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key studio bếp</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Direct Cut sang sa mạc</span></div>
+                    </div>
+                    <div class="critique-good">Chốt hạ tên kỹ thuật ngay tại bối cảnh thực hành, biến lý thuyết thành kinh nghiệm sống động dễ nhớ.</div>
+                    <div class="critique-warn">Ánh sáng phòng tối khiến bóng dưới cằm hơi đậm.</div>
+                    <div class="shot-narrative">Mridupawan Sharma tay vẫn cầm chảo, ngước mặt lên dõng dạc nói tên kỹ thuật: &quot;the J CUT&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-34">
+            <div class="shot-thumb" onclick="playShot(40.71, 44.34, 'SHOT 34')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">40.7s – 44.3s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 34</span>
+                    <span class="shot-dur">3.67s</span>
+                </div>
+                <h4 class="shot-headline">Quay Lại Sa Mạc Bao La: Bắt đầu câu kết nối &quot;2nd shot begins over the...&quot;</h4>
+                <p class="shot-insight">Đưa người xem trở về bối cảnh mở màn để chuẩn bị cho cú chốt vòng lặp vô tận (Infinite Loop).</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sa mạc Thar</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cảnh (Wide Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut theo nhịp bước</span></div>
+                    </div>
+                    <div class="critique-good">Tái hiện không gian sa mạc của Shot 1 tạo cảm giác cấu trúc vòng tròn hoàn chỉnh (Circular Narrative).</div>
+                    <div class="critique-warn">Gió sa mạc có thể làm phấp phới vạt áo che mất tay.</div>
+                    <div class="shot-narrative">Trở lại đồi cát sa mạc Thar, nhân vật tay cầm chiếc áo khoác họa tiết quen thuộc, vừa đi vừa nói</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-35">
+            <div class="shot-thumb" onclick="playShot(44.38, 47.13, 'SHOT 35')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">44.4s – 47.1s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 35</span>
+                    <span class="shot-dur">2.79s</span>
+                </div>
+                <h4 class="shot-headline">Ngồi Xổm Trên Cát Vàng: Nụ cười tự tin &quot;smooth and seamless&quot;</h4>
+                <p class="shot-insight">Hạ thấp độ cao cơ thể tạo nhịp thở lắng đọng trước khi tung đòn chốt hạ cuối cùng.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Triền cát sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Trung cận góc thấp (Low Angle Medium Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh nắng mặt trời chéo</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cận cảnh tay</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy hạ thấp ngang tầm mắt nhân vật đang ngồi xổm tạo cảm giác gần gũi, chia sẻ chân tình.</div>
+                    <div class="critique-warn">Chữ phụ đề trắng đặt ở 1/3 dưới hơi sát mép chân.</div>
+                    <div class="shot-narrative">Nhân vật ngồi xổm xuống triền cát, tay xếp gọn chiếc áo khoác, mỉm cười nói: &quot;smooth and seamless&quot;</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-36">
+            <div class="shot-thumb" onclick="playShot(47.17, 48.01, 'SHOT 36')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">47.2s – 48.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 36</span>
+                    <span class="shot-dur">0.88s</span>
+                </div>
+                <h4 class="shot-headline">Hạ Áo Xuống Đồi Cát: Chuẩn bị động tác tiếp nối cho đầu video</h4>
+                <p class="shot-insight">Một hành động đơn giản (đặt áo / nhặt áo) là chìa khóa then chốt để khóa mối nối vòng lặp (Loop Lock).</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Cát sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Cận cảnh thao tác (Close-Up Action Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên ban ngày</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut sang đứng dậy</span></div>
+                    </div>
+                    <div class="critique-good">Đặc tả chi tiết họa tiết áo khoác và hạt cát sa mạc lấp lánh; chuẩn bị cho cú nhặt áo đứng lên.</div>
+                    <div class="critique-warn">Shot rất ngắn 0.88s.</div>
+                    <div class="shot-narrative">Cận cảnh hai tay đặt chiếc áo khoác xuống mặt cát vàng mịn màng</div>
+                </details>
+            </div>
+        </div>
+
+        <div class="shot-card" id="shot-card-37">
+            <div class="shot-thumb" onclick="playShot(48.05, 48.63, 'SHOT 37')">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">48.0s – 48.6s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 37</span>
+                    <span class="shot-dur">0.63s</span>
+                </div>
+                <h4 class="shot-headline">Cú Nối Infinite Loop Hoàn Hảo: &quot;Which is why you should...&quot;</h4>
+                <p class="shot-insight">Kỹ thuật Infinite Loop Scripting: Câu kết thúc video chính là nửa đầu của câu mở đầu video, biến reel thành vòng lặp vô tận đẩy lượt giữ chân (retention) lên &gt;120%.</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        <div class="meta-item"><span class="meta-label">Bối cảnh</span><span class="meta-val">Sa mạc Thar</span></div>
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Toàn cảnh bước đi (Full Walking Shot)</span></div>
+                        <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Ánh sáng tự nhiên sa mạc</span></div>
+                        <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Infinite Loop Match Cut</span></div>
+                    </div>
+                    <div class="critique-good">Góc máy, trang phục, dáng bước và hướng chuyển động trùng khớp 100% với Shot 1; câu nói dang dở tạo vòng lặp vô tận khiến người xem xem lại lần 2 mà không nhận ra.</div>
+                    <div class="critique-warn">Cần canh thời gian chính xác từng miligiây trên timeline để âm thanh không bị giật tiếng.</div>
+                    <div class="shot-narrative">Nhân vật đứng thẳng dậy, sải bước tự tin về phía trước trên cồn cát, cất câu nói: &quot;which is why you should...&quot; nối thẳng vào shot 1: &quot;Stop using transitions...&quot;</div>
+                </details>
+            </div>
+        </div>
+        </div>
+
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 1.25, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 1.2s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_01_mid.jpg', 'SHOT 01 • Hook Mở Màn Táo Bạo: Phủ định chuyển cảnh rẻ tiền giữa sa mạc Thar')">⊕</button>
+            </div>
+            <div class="grid-title">Hook Mở Màn Táo Bạo: Phủ định chuyển cản</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(1.29, 2.46, 'SHOT 02')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <span class="grid-num">SHOT 02</span>
+                <span class="grid-time">1.3s – 2.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_02_mid.jpg', 'SHOT 02 • Jump Không Gian Chớp Nhoáng: Giữ nguyên đà bước từ sa mạc vào phòng khách')">⊕</button>
+            </div>
+            <div class="grid-title">Jump Không Gian Chớp Nhoáng: Giữ nguyên </div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(2.5, 4.55, 'SHOT 03')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <span class="grid-num">SHOT 03</span>
+                <span class="grid-time">2.5s – 4.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_03_mid.jpg', 'SHOT 03 • Bẻ Góc Cực Thấp: Bước xuống từ xe Jeep dã chiến sa mạc')">⊕</button>
+            </div>
+            <div class="grid-title">Bẻ Góc Cực Thấp: Bước xuống từ xe Jeep d</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(4.59, 7.01, 'SHOT 04')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <span class="grid-num">SHOT 04</span>
+                <span class="grid-time">4.6s – 7.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_04_mid.jpg', 'SHOT 04 • Đổi Trang Phục &amp; Bối Cảnh Pháo Đài: Khẳng định giá trị giải pháp')">⊕</button>
+            </div>
+            <div class="grid-title">Đổi Trang Phục &amp; Bối Cảnh Pháo Đài: Khẳn</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(7.05, 8.51, 'SHOT 05')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <span class="grid-num">SHOT 05</span>
+                <span class="grid-time">7.0s – 8.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_05_mid.jpg', 'SHOT 05 • Khởi Động Kỹ Thuật 1: Giới thiệu The Mask Cut trên đường quốc lộ sa mạc')">⊕</button>
+            </div>
+            <div class="grid-title">Khởi Động Kỹ Thuật 1: Giới thiệu The Mas</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(8.55, 8.93, 'SHOT 06')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <span class="grid-num">SHOT 06</span>
+                <span class="grid-time">8.6s – 8.9s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_06_mid.jpg', 'SHOT 06 • Vật Thể Tiền Cảnh Che Kín Ống Kính: Chiếc xe ô tô trắng quét ngang')">⊕</button>
+            </div>
+            <div class="grid-title">Vật Thể Tiền Cảnh Che Kín Ống Kính: Chiế</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(8.97, 9.34, 'SHOT 07')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <span class="grid-num">SHOT 07</span>
+                <span class="grid-time">9.0s – 9.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_07_mid.jpg', 'SHOT 07 • Hé Lộ Bối Cảnh Bàn Cờ Đêm: Góc máy macro nghiêng đầy tính điện ảnh')">⊕</button>
+            </div>
+            <div class="grid-title">Hé Lộ Bối Cảnh Bàn Cờ Đêm: Góc máy macro</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(9.38, 10.47, 'SHOT 08')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <span class="grid-num">SHOT 08</span>
+                <span class="grid-time">9.4s – 10.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_08_mid.jpg', 'SHOT 08 • Mở Rộng Không Gian Bàn Làm Việc: Quân cờ, lon Coca và màn hình laptop')">⊕</button>
+            </div>
+            <div class="grid-title">Mở Rộng Không Gian Bàn Làm Việc: Quân cờ</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(10.51, 10.84, 'SHOT 09')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <span class="grid-num">SHOT 09</span>
+                <span class="grid-time">10.5s – 10.8s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_09_mid.jpg', 'SHOT 09 • Micro-Beat Gõ Phím: Nhấn mạnh thao tác lao động sáng tạo')">⊕</button>
+            </div>
+            <div class="grid-title">Micro-Beat Gõ Phím: Nhấn mạnh thao tác l</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(10.89, 14.26, 'SHOT 10')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <span class="grid-num">SHOT 10</span>
+                <span class="grid-time">10.9s – 14.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_10_mid.jpg', 'SHOT 10 • Chủ Thể Giảng Giải Mask Cut: Trực quan hóa khái niệm vật thể cắt ngang')">⊕</button>
+            </div>
+            <div class="grid-title">Chủ Thể Giảng Giải Mask Cut: Trực quan h</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(14.31, 14.93, 'SHOT 11')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <span class="grid-num">SHOT 11</span>
+                <span class="grid-time">14.3s – 14.9s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_11_mid.jpg', 'SHOT 11 • Mở Nắp Chiếc Vali Da Cổ Điển: Tấm ảnh Polaroid hé lộ')">⊕</button>
+            </div>
+            <div class="grid-title">Mở Nắp Chiếc Vali Da Cổ Điển: Tấm ảnh Po</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(14.97, 15.72, 'SHOT 12')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <span class="grid-num">SHOT 12</span>
+                <span class="grid-time">15.0s – 15.7s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_12_mid.jpg', 'SHOT 12 • Khẳng Định Hiệu Ứng Mở Ra: Dòng chữ &quot;thereby revealing&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Khẳng Định Hiệu Ứng Mở Ra: Dòng chữ &quot;the</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(15.77, 16.98, 'SHOT 13')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <span class="grid-num">SHOT 13</span>
+                <span class="grid-time">15.8s – 17.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_13_mid.jpg', 'SHOT 13 • Kỹ Thuật 2 Khởi Động: Silhouette bóng đen đầu người đầy kịch tính')">⊕</button>
+            </div>
+            <div class="grid-title">Kỹ Thuật 2 Khởi Động: Silhouette bóng đe</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(17.02, 20.1, 'SHOT 14')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <span class="grid-num">SHOT 14</span>
+                <span class="grid-time">17.0s – 20.1s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_14_mid.jpg', 'SHOT 14 • Cú Rướn Người Kéo Sự Chú Ý: Ánh sáng điện thoại xuyên màn đêm')">⊕</button>
+            </div>
+            <div class="grid-title">Cú Rướn Người Kéo Sự Chú Ý: Ánh sáng điệ</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(20.15, 20.77, 'SHOT 15')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <span class="grid-num">SHOT 15</span>
+                <span class="grid-time">20.1s – 20.8s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_15_mid.jpg', 'SHOT 15 • Match Cut Ví Dụ 1: Đặt chiếc giày Timberland vàng xuống sàn nhà bóng')">⊕</button>
+            </div>
+            <div class="grid-title">Match Cut Ví Dụ 1: Đặt chiếc giày Timber</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(20.81, 21.65, 'SHOT 16')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <span class="grid-num">SHOT 16</span>
+                <span class="grid-time">20.8s – 21.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_16_mid.jpg', 'SHOT 16 • Cú Cắt Nối Động Tác Đỉnh Cao: Đang buộc dây chính chiếc giày ấy ngoài trời')">⊕</button>
+            </div>
+            <div class="grid-title">Cú Cắt Nối Động Tác Đỉnh Cao: Đang buộc </div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(21.69, 23.98, 'SHOT 17')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <span class="grid-num">SHOT 17</span>
+                <span class="grid-time">21.7s – 24.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_17_mid.jpg', 'SHOT 17 • Đứng Lên Giải Thích Nguyên Lý: Mỏ neo nguyên tố cụ thể (Specific Element)')">⊕</button>
+            </div>
+            <div class="grid-title">Đứng Lên Giải Thích Nguyên Lý: Mỏ neo ng</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(24.02, 24.61, 'SHOT 18')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <span class="grid-num">SHOT 18</span>
+                <span class="grid-time">24.0s – 24.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_18_mid.jpg', 'SHOT 18 • Match Cut Ví Dụ 2: Chiếc kính râm đính đá đặt trên sàn gỗ')">⊕</button>
+            </div>
+            <div class="grid-title">Match Cut Ví Dụ 2: Chiếc kính râm đính đ</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(24.65, 25.65, 'SHOT 19')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <span class="grid-num">SHOT 19</span>
+                <span class="grid-time">24.6s – 25.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_19_mid.jpg', 'SHOT 19 • Cắt Khớp Không Gian Đêm: Bàn tay nhấc chiếc kính râm trong phòng tối')">⊕</button>
+            </div>
+            <div class="grid-title">Cắt Khớp Không Gian Đêm: Bàn tay nhấc ch</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(25.69, 27.99, 'SHOT 20')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <span class="grid-num">SHOT 20</span>
+                <span class="grid-time">25.7s – 28.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_20_mid.jpg', 'SHOT 20 • Đeo Kính Chốt Hạ: &quot;And that carry it!&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Đeo Kính Chốt Hạ: &quot;And that carry it!&quot;</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(28.03, 29.53, 'SHOT 21')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <span class="grid-num">SHOT 21</span>
+                <span class="grid-time">28.0s – 29.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_21_mid.jpg', 'SHOT 21 • Kỹ Thuật 3: Giới thiệu The L-Cut trước cổng thành sa mạc đồ sộ')">⊕</button>
+            </div>
+            <div class="grid-title">Kỹ Thuật 3: Giới thiệu The L-Cut trước c</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(29.57, 30.32, 'SHOT 22')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <span class="grid-num">SHOT 22</span>
+                <span class="grid-time">29.6s – 30.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_22_mid.jpg', 'SHOT 22 • Minh Họa Film Contact Sheet: Phân tích kỹ thuật L-Cut bằng hình ảnh in ấn')">⊕</button>
+            </div>
+            <div class="grid-title">Minh Họa Film Contact Sheet: Phân tích k</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(30.36, 30.95, 'SHOT 23')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <span class="grid-num">SHOT 23</span>
+                <span class="grid-time">30.4s – 30.9s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_23_mid.jpg', 'SHOT 23 • Chạy Về Phía Cổng Thành: Dải phim contact sheet cuộn tiếp')">⊕</button>
+            </div>
+            <div class="grid-title">Chạy Về Phía Cổng Thành: Dải phim contac</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(30.99, 31.36, 'SHOT 24')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <span class="grid-num">SHOT 24</span>
+                <span class="grid-time">31.0s – 31.4s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_24_mid.jpg', 'SHOT 24 • Đỉnh Điểm Chạy Trốn: Âm thanh cảnh trước chuẩn bị tràn qua cảnh sau')">⊕</button>
+            </div>
+            <div class="grid-title">Đỉnh Điểm Chạy Trốn: Âm thanh cảnh trước</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(31.41, 33.49, 'SHOT 25')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <span class="grid-num">SHOT 25</span>
+                <span class="grid-time">31.4s – 33.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_25_mid.jpg', 'SHOT 25 • Cú Va Chạm L-Cut: Hình ảnh gian bếp xuất hiện nhưng tiếng sa mạc vẫn kéo dài')">⊕</button>
+            </div>
+            <div class="grid-title">Cú Va Chạm L-Cut: Hình ảnh gian bếp xuất</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(33.53, 34.24, 'SHOT 26')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <span class="grid-num">SHOT 26</span>
+                <span class="grid-time">33.5s – 34.2s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_26_mid.jpg', 'SHOT 26 • Kỹ Thuật 4: Tác giả cầm dao chuẩn bị trình diễn The J-Cut')">⊕</button>
+            </div>
+            <div class="grid-title">Kỹ Thuật 4: Tác giả cầm dao chuẩn bị trì</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(34.28, 34.95, 'SHOT 27')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <span class="grid-num">SHOT 27</span>
+                <span class="grid-time">34.3s – 35.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_27_mid.jpg', 'SHOT 27 • J-Cut Âm Thanh Dẫn Đường: Tiếng dao băm ớt vang lên trước hình')">⊕</button>
+            </div>
+            <div class="grid-title">J-Cut Âm Thanh Dẫn Đường: Tiếng dao băm </div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(34.99, 35.29, 'SHOT 28')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <span class="grid-num">SHOT 28</span>
+                <span class="grid-time">35.0s – 35.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_28_mid.jpg', 'SHOT 28 • Quả Ớt Chuông Đỏ Chạm Thớt: Nhịp đập thị giác 0.3 giây')">⊕</button>
+            </div>
+            <div class="grid-title">Quả Ớt Chuông Đỏ Chạm Thớt: Nhịp đập thị</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(35.33, 35.74, 'SHOT 29')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <span class="grid-num">SHOT 29</span>
+                <span class="grid-time">35.3s – 35.7s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_29_mid.jpg', 'SHOT 29 • Quả Ớt Đỏ Lắc Lư: Tạo đà cho cú thả nguyên liệu tiếp theo')">⊕</button>
+            </div>
+            <div class="grid-title">Quả Ớt Đỏ Lắc Lư: Tạo đà cho cú thả nguy</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(35.79, 36.45, 'SHOT 30')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <span class="grid-num">SHOT 30</span>
+                <span class="grid-time">35.8s – 36.5s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_30_mid.jpg', 'SHOT 30 • Mưa Ớt Chuông Rơi Từ Trên Cao: Trực quan hóa B-roll đỉnh cao')">⊕</button>
+            </div>
+            <div class="grid-title">Mưa Ớt Chuông Rơi Từ Trên Cao: Trực quan</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(36.49, 37.04, 'SHOT 31')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <span class="grid-num">SHOT 31</span>
+                <span class="grid-time">36.5s – 37.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_31_mid.jpg', 'SHOT 31 • Thả Vào Chảo Nóng Xèo Xèo: Tiếng xèo xèo bùng nổ thính giác')">⊕</button>
+            </div>
+            <div class="grid-title">Thả Vào Chảo Nóng Xèo Xèo: Tiếng xèo xèo</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(37.08, 38.08, 'SHOT 32')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <span class="grid-num">SHOT 32</span>
+                <span class="grid-time">37.1s – 38.1s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_32_mid.jpg', 'SHOT 32 • Đảo Chảo Sôi Động: Cụm từ &quot;to connect your story&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Đảo Chảo Sôi Động: Cụm từ &quot;to connect yo</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(38.12, 40.67, 'SHOT 33')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <span class="grid-num">SHOT 33</span>
+                <span class="grid-time">38.1s – 40.7s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_33_mid.jpg', 'SHOT 33 • Chốt Hạ Tên Kỹ Thuật: &quot;The J CUT&quot; bên chiếc chảo đang xào')">⊕</button>
+            </div>
+            <div class="grid-title">Chốt Hạ Tên Kỹ Thuật: &quot;The J CUT&quot; bên ch</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(40.71, 44.34, 'SHOT 34')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <span class="grid-num">SHOT 34</span>
+                <span class="grid-time">40.7s – 44.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_34_mid.jpg', 'SHOT 34 • Quay Lại Sa Mạc Bao La: Bắt đầu câu kết nối &quot;2nd shot begins over the...&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Quay Lại Sa Mạc Bao La: Bắt đầu câu kết </div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(44.38, 47.13, 'SHOT 35')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <span class="grid-num">SHOT 35</span>
+                <span class="grid-time">44.4s – 47.1s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_35_mid.jpg', 'SHOT 35 • Ngồi Xổm Trên Cát Vàng: Nụ cười tự tin &quot;smooth and seamless&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Ngồi Xổm Trên Cát Vàng: Nụ cười tự tin &quot;</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(47.17, 48.01, 'SHOT 36')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <span class="grid-num">SHOT 36</span>
+                <span class="grid-time">47.2s – 48.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_36_mid.jpg', 'SHOT 36 • Hạ Áo Xuống Đồi Cát: Chuẩn bị động tác tiếp nối cho đầu video')">⊕</button>
+            </div>
+            <div class="grid-title">Hạ Áo Xuống Đồi Cát: Chuẩn bị động tác t</div>
+        </div>
+
+        <div class="grid-item" onclick="playShot(48.05, 48.63, 'SHOT 37')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <span class="grid-num">SHOT 37</span>
+                <span class="grid-time">48.0s – 48.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_37_mid.jpg', 'SHOT 37 • Cú Nối Infinite Loop Hoàn Hảo: &quot;Which is why you should...&quot;')">⊕</button>
+            </div>
+            <div class="grid-title">Cú Nối Infinite Loop Hoàn Hảo: &quot;Which is</div>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (37)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
+        </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 1.25, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Hook Mở Màn Táo Bạo: Phủ định chuyển cảnh </div>
+                <div class="drawer-shot-time">0.00s – 1.25s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(2, 1.29, 2.46, 'SHOT 02')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 02</div>
+                <div class="drawer-shot-hl">Jump Không Gian Chớp Nhoáng: Giữ nguyên đà</div>
+                <div class="drawer-shot-time">1.29s – 2.46s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(3, 2.5, 4.55, 'SHOT 03')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 03</div>
+                <div class="drawer-shot-hl">Bẻ Góc Cực Thấp: Bước xuống từ xe Jeep dã </div>
+                <div class="drawer-shot-time">2.50s – 4.55s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(4, 4.59, 7.01, 'SHOT 04')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 04</div>
+                <div class="drawer-shot-hl">Đổi Trang Phục &amp; Bối Cảnh Pháo Đài: Khẳng </div>
+                <div class="drawer-shot-time">4.59s – 7.01s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(5, 7.05, 8.51, 'SHOT 05')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 05</div>
+                <div class="drawer-shot-hl">Khởi Động Kỹ Thuật 1: Giới thiệu The Mask </div>
+                <div class="drawer-shot-time">7.05s – 8.51s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(6, 8.55, 8.93, 'SHOT 06')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 06</div>
+                <div class="drawer-shot-hl">Vật Thể Tiền Cảnh Che Kín Ống Kính: Chiếc </div>
+                <div class="drawer-shot-time">8.55s – 8.93s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(7, 8.97, 9.34, 'SHOT 07')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 07</div>
+                <div class="drawer-shot-hl">Hé Lộ Bối Cảnh Bàn Cờ Đêm: Góc máy macro n</div>
+                <div class="drawer-shot-time">8.97s – 9.34s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(8, 9.38, 10.47, 'SHOT 08')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 08</div>
+                <div class="drawer-shot-hl">Mở Rộng Không Gian Bàn Làm Việc: Quân cờ, </div>
+                <div class="drawer-shot-time">9.38s – 10.47s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(9, 10.51, 10.84, 'SHOT 09')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 09</div>
+                <div class="drawer-shot-hl">Micro-Beat Gõ Phím: Nhấn mạnh thao tác lao</div>
+                <div class="drawer-shot-time">10.51s – 10.84s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(10, 10.89, 14.26, 'SHOT 10')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 10</div>
+                <div class="drawer-shot-hl">Chủ Thể Giảng Giải Mask Cut: Trực quan hóa</div>
+                <div class="drawer-shot-time">10.89s – 14.26s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(11, 14.31, 14.93, 'SHOT 11')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 11</div>
+                <div class="drawer-shot-hl">Mở Nắp Chiếc Vali Da Cổ Điển: Tấm ảnh Pola</div>
+                <div class="drawer-shot-time">14.31s – 14.93s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(12, 14.97, 15.72, 'SHOT 12')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 12</div>
+                <div class="drawer-shot-hl">Khẳng Định Hiệu Ứng Mở Ra: Dòng chữ &quot;there</div>
+                <div class="drawer-shot-time">14.97s – 15.72s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(13, 15.77, 16.98, 'SHOT 13')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 13</div>
+                <div class="drawer-shot-hl">Kỹ Thuật 2 Khởi Động: Silhouette bóng đen </div>
+                <div class="drawer-shot-time">15.77s – 16.98s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(14, 17.02, 20.1, 'SHOT 14')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 14</div>
+                <div class="drawer-shot-hl">Cú Rướn Người Kéo Sự Chú Ý: Ánh sáng điện </div>
+                <div class="drawer-shot-time">17.02s – 20.10s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(15, 20.15, 20.77, 'SHOT 15')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 15</div>
+                <div class="drawer-shot-hl">Match Cut Ví Dụ 1: Đặt chiếc giày Timberla</div>
+                <div class="drawer-shot-time">20.15s – 20.77s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(16, 20.81, 21.65, 'SHOT 16')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 16</div>
+                <div class="drawer-shot-hl">Cú Cắt Nối Động Tác Đỉnh Cao: Đang buộc dâ</div>
+                <div class="drawer-shot-time">20.81s – 21.65s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(17, 21.69, 23.98, 'SHOT 17')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 17</div>
+                <div class="drawer-shot-hl">Đứng Lên Giải Thích Nguyên Lý: Mỏ neo nguy</div>
+                <div class="drawer-shot-time">21.69s – 23.98s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(18, 24.02, 24.61, 'SHOT 18')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 18</div>
+                <div class="drawer-shot-hl">Match Cut Ví Dụ 2: Chiếc kính râm đính đá </div>
+                <div class="drawer-shot-time">24.02s – 24.61s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(19, 24.65, 25.65, 'SHOT 19')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 19</div>
+                <div class="drawer-shot-hl">Cắt Khớp Không Gian Đêm: Bàn tay nhấc chiế</div>
+                <div class="drawer-shot-time">24.65s – 25.65s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(20, 25.69, 27.99, 'SHOT 20')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 20</div>
+                <div class="drawer-shot-hl">Đeo Kính Chốt Hạ: &quot;And that carry it!&quot;</div>
+                <div class="drawer-shot-time">25.69s – 27.99s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(21, 28.03, 29.53, 'SHOT 21')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 21</div>
+                <div class="drawer-shot-hl">Kỹ Thuật 3: Giới thiệu The L-Cut trước cổn</div>
+                <div class="drawer-shot-time">28.03s – 29.53s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(22, 29.57, 30.32, 'SHOT 22')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 22</div>
+                <div class="drawer-shot-hl">Minh Họa Film Contact Sheet: Phân tích kỹ </div>
+                <div class="drawer-shot-time">29.57s – 30.32s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(23, 30.36, 30.95, 'SHOT 23')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 23</div>
+                <div class="drawer-shot-hl">Chạy Về Phía Cổng Thành: Dải phim contact </div>
+                <div class="drawer-shot-time">30.36s – 30.95s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(24, 30.99, 31.36, 'SHOT 24')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 24</div>
+                <div class="drawer-shot-hl">Đỉnh Điểm Chạy Trốn: Âm thanh cảnh trước c</div>
+                <div class="drawer-shot-time">30.99s – 31.36s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(25, 31.41, 33.49, 'SHOT 25')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 25</div>
+                <div class="drawer-shot-hl">Cú Va Chạm L-Cut: Hình ảnh gian bếp xuất h</div>
+                <div class="drawer-shot-time">31.41s – 33.49s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(26, 33.53, 34.24, 'SHOT 26')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 26</div>
+                <div class="drawer-shot-hl">Kỹ Thuật 4: Tác giả cầm dao chuẩn bị trình</div>
+                <div class="drawer-shot-time">33.53s – 34.24s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(27, 34.28, 34.95, 'SHOT 27')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 27</div>
+                <div class="drawer-shot-hl">J-Cut Âm Thanh Dẫn Đường: Tiếng dao băm ớt</div>
+                <div class="drawer-shot-time">34.28s – 34.95s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(28, 34.99, 35.29, 'SHOT 28')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 28</div>
+                <div class="drawer-shot-hl">Quả Ớt Chuông Đỏ Chạm Thớt: Nhịp đập thị g</div>
+                <div class="drawer-shot-time">34.99s – 35.29s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(29, 35.33, 35.74, 'SHOT 29')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 29</div>
+                <div class="drawer-shot-hl">Quả Ớt Đỏ Lắc Lư: Tạo đà cho cú thả nguyên</div>
+                <div class="drawer-shot-time">35.33s – 35.74s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(30, 35.79, 36.45, 'SHOT 30')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 30</div>
+                <div class="drawer-shot-hl">Mưa Ớt Chuông Rơi Từ Trên Cao: Trực quan h</div>
+                <div class="drawer-shot-time">35.79s – 36.45s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(31, 36.49, 37.04, 'SHOT 31')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 31</div>
+                <div class="drawer-shot-hl">Thả Vào Chảo Nóng Xèo Xèo: Tiếng xèo xèo b</div>
+                <div class="drawer-shot-time">36.49s – 37.04s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(32, 37.08, 38.08, 'SHOT 32')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 32</div>
+                <div class="drawer-shot-hl">Đảo Chảo Sôi Động: Cụm từ &quot;to connect your</div>
+                <div class="drawer-shot-time">37.08s – 38.08s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(33, 38.12, 40.67, 'SHOT 33')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 33</div>
+                <div class="drawer-shot-hl">Chốt Hạ Tên Kỹ Thuật: &quot;The J CUT&quot; bên chiế</div>
+                <div class="drawer-shot-time">38.12s – 40.67s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(34, 40.71, 44.34, 'SHOT 34')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 34</div>
+                <div class="drawer-shot-hl">Quay Lại Sa Mạc Bao La: Bắt đầu câu kết nố</div>
+                <div class="drawer-shot-time">40.71s – 44.34s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(35, 44.38, 47.13, 'SHOT 35')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 35</div>
+                <div class="drawer-shot-hl">Ngồi Xổm Trên Cát Vàng: Nụ cười tự tin &quot;sm</div>
+                <div class="drawer-shot-time">44.38s – 47.13s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(36, 47.17, 48.01, 'SHOT 36')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 36</div>
+                <div class="drawer-shot-hl">Hạ Áo Xuống Đồi Cát: Chuẩn bị động tác tiế</div>
+                <div class="drawer-shot-time">47.17s – 48.01s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div>
+
+        <div class="drawer-item" onclick="jumpToShot(37, 48.05, 48.63, 'SHOT 37')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@mridupawasharma_Dc0tEcOIdwy_4_cuts_to_instantly_make_your_videos_🔥/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 37</div>
+                <div class="drawer-shot-hl">Cú Nối Infinite Loop Hoàn Hảo: &quot;Which is w</div>
+                <div class="drawer-shot-time">48.05s – 48.63s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
+    </div>
+</div>
+
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<script>
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://media.fedu.vn/videos/Dc0tEcOIdwy.mp4';
+let currentEndTime = null;
+
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
+}
+
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
+}
+
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
+}
+
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+}
+
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
+}
+
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
+}
+
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
+}
+
+function togglePlayerFullscreen() {
+    var v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        togglePlayerFullscreen();
+    }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
+});
+
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
+
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+</script>
+</body>
+</html>
