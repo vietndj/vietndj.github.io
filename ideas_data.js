@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 311,
-  "total_unique_ideas": 286,
-  "total_active_ideas": 260,
+  "total_scene_items": 312,
+  "total_unique_ideas": 287,
+  "total_active_ideas": 261,
   "total_excluded_ideas": 26,
-  "total_creators": 186,
+  "total_creators": 187,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -65,7 +65,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 32,
     "storytelling": 19,
     "dien-anh": 144,
-    "chuyen-canh": 50
+    "chuyen-canh": 51
   },
   "industries": [
     {
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 33,
-    "kien-truc": 31,
+    "kien-truc": 32,
     "the-thao": 7,
     "ky-thuat-quay": 90,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 168,
+    "us_eu": 169,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -642,6 +642,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@alexmegino",
+      "name": "Alexmegino",
+      "profile_url": "https://www.instagram.com/alexmegino/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40alexmegino_DdzHC1ljMjk_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis"
       ]
     },
     {
@@ -2351,6 +2362,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis",
+      "shortcode": "DdzHJCMDAbl",
+      "title_vi": "A Day in the Life — Sunday Routine",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @alexmegino",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@alexmegino",
+        "name": "Alexmegino",
+        "handle": "@alexmegino",
+        "profile_url": "https://www.instagram.com/alexmegino/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdzHJCMDAbl/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1XRNo3e6pNubqB-3XC18ed-xIkIiba9Yu",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40alexmegino_DdzHC1ljMjk_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40alexmegino_DdzHC1ljMjk_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40alexmegino_DdzHC1ljMjk_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis.html",
+        "shots_count": 13,
+        "duration": "26s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@mridupawasharma_Dc0tEcOIdwy_4_Cuts_Mastery",
       "shortcode": "Dc0tEcOIdwy",
