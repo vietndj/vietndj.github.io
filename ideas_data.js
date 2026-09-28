@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 312,
-  "total_unique_ideas": 287,
-  "total_active_ideas": 261,
+  "total_scene_items": 313,
+  "total_unique_ideas": 288,
+  "total_active_ideas": 262,
   "total_excluded_ideas": 26,
-  "total_creators": 187,
+  "total_creators": 188,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 144,
+    "dien-anh": 145,
     "chuyen-canh": 51
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 33,
     "kien-truc": 32,
     "the-thao": 7,
-    "ky-thuat-quay": 90,
+    "ky-thuat-quay": 91,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 169,
+    "us_eu": 170,
     "korea": 10,
     "india": 3,
     "japan": 6,
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@ajit_rathore886",
+      "name": "Ajit_Rathore886",
+      "profile_url": "https://www.instagram.com/ajit_rathore886/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ajit_rathore886_DdsodC0hSmZ_Static_Shots%F0%9F%94%A5%F0%9F%93%BD%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️"
+      ]
+    },
+    {
       "handle": "@alexmegino",
       "name": "Alexmegino",
       "profile_url": "https://www.instagram.com/alexmegino/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40alexmegino_DdzHC1ljMjk_Carousel_Analysis/slide_01_mid.jpg",
       "video_ids": [
         "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis"
@@ -2363,11 +2374,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis",
-      "shortcode": "DdzHJCMDAbl",
-      "title_vi": "A Day in the Life — Sunday Routine",
+      "id": "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️",
+      "shortcode": "DdsodC0hSmZ",
+      "title_vi": "Static Shots🔥📽️",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "chuyen-canh",
         "name": "Chuyển Cảnh",
@@ -2389,12 +2400,77 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @alexmegino",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ajit_rathore886",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@ajit_rathore886",
+        "name": "Ajit_Rathore886",
+        "handle": "@ajit_rathore886",
+        "profile_url": "https://www.instagram.com/ajit_rathore886/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdsodC0hSmZ/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1eL2BQyOGvKffMN1c1Xz4Cqq3dSrOOv9Q",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ajit_rathore886_DdsodC0hSmZ_Static_Shots%F0%9F%94%A5%F0%9F%93%BD%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ajit_rathore886_DdsodC0hSmZ_Static_Shots%F0%9F%94%A5%F0%9F%93%BD%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdsodC0hSmZ.mp4",
+        "report_url": "reports/IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️.html",
+        "shots_count": 10,
+        "duration": "20s",
+        "youtube_id": "SC6L4jNgbGY",
+        "youtube_embed": "https://www.youtube.com/embed/SC6L4jNgbGY",
+        "youtube_url": "https://youtu.be/SC6L4jNgbGY"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@alexmegino_DdzHC1ljMjk_Carousel_Analysis",
+      "shortcode": "DdzHJCMDAbl",
+      "title_vi": "Kỷ Luật Thép Của Kẻ Hành Động: Cách Dùng Thời Gian Để Kể Chuyện",
+      "quick_takeaway": "Khắc họa một ngày kỷ luật thép (từ 8:08 sáng đến 19:59 tối) thông qua chuỗi không gian tối giản, nhịp điệu từ tốn và cách chơi ánh sáng Low-key xuất sắc.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @alexmegino",
+      "tech_tags": [
+        "Productivity",
+        "Morning Routine",
+        "ASMR",
+        "Low-key Lighting",
+        "Time-lapse Narrative"
       ],
       "transition_level": null,
       "is_ad_bot": false,
