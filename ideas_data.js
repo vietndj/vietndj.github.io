@@ -4,10 +4,10 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 315,
-  "total_unique_ideas": 290,
+  "total_scene_items": 316,
+  "total_unique_ideas": 291,
   "total_active_ideas": 264,
-  "total_excluded_ideas": 26,
+  "total_excluded_ideas": 27,
   "total_creators": 190,
   "shooting_styles": [
     {
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 146,
-    "chuyen-canh": 52
+    "dien-anh": 147,
+    "chuyen-canh": 51
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 33,
-    "kien-truc": 33,
+    "kien-truc": 32,
     "the-thao": 7,
-    "ky-thuat-quay": 92,
+    "ky-thuat-quay": 93,
     "ugc": 7
   },
   "countries": [
@@ -671,7 +671,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Ajit_Rathore886",
       "profile_url": "https://www.instagram.com/ajit_rathore886/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ajit_rathore886_DdsodC0hSmZ_Static_Shots%F0%9F%94%A5%F0%9F%93%BD%EF%B8%8F/shot_01_mid.jpg",
       "video_ids": [
         "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️"
@@ -2396,6 +2396,70 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@local_creator_fb_ad_fb_ad",
+      "shortcode": "IG_@local_creator_fb_ad_fb_ad",
+      "title_vi": "@local creator fb ad fb ad",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "thuong-hieu",
+        "name": "Xây kênh",
+        "en_name": "Personal Brand",
+        "icon": "💼",
+        "badge_color": "indigo"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @local_creator",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Thương Hiệu Cá Nhân & Dịch Vụ.",
+      "creator": {
+        "raw": "@local_creator",
+        "name": "Local_Creator",
+        "handle": "@local_creator",
+        "profile_url": "https://www.instagram.com/local_creator/"
+      },
+      "ig_url": "https://www.instagram.com/local_creator/",
+      "gdrive_folder": "https://drive.google.com/open?id=1OgT8n8xTSdX1qfvLNylxJd9YNLKDUrm1",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_fb_ad_fb_ad/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_fb_ad_fb_ad/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/fb_ad.mp4",
+        "report_url": "reports/IG_@local_creator_fb_ad_fb_ad.html",
+        "shots_count": 11,
+        "duration": "22s",
+        "youtube_id": "xW_7amOXoXM",
+        "youtube_embed": "https://www.youtube.com/embed/xW_7amOXoXM",
+        "youtube_url": "https://youtu.be/xW_7amOXoXM"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": true,
+      "is_excluded": true
+    },
+    {
       "id": "IG_@sametxhunter_DdwxosERt7n_It’s_Now_or_Never",
       "shortcode": "DdwxosERt7n",
       "title_vi": "It’s Now or Never",
@@ -2525,22 +2589,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ajit_rathore886_DdsodC0hSmZ_Static_Shots🔥📽️",
       "shortcode": "DdsodC0hSmZ",
-      "title_vi": "Static Shots🔥📽️",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Giải Phẫu Bố Cục Máy Tĩnh (Static Shots)",
+      "quick_takeaway": "Nghệ thuật sử dụng máy tĩnh (Static Shots) để lột tả nhịp sống đường phố Ấn Độ: lộn xộn nhưng đầy chất điện ảnh qua từng góc máy, ánh sáng và khung hình.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2551,10 +2615,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ajit_rathore886",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot"
+        "Static Shots",
+        "Bố cục tĩnh",
+        "Ấn Độ",
+        "Street Life"
       ],
       "transition_level": null,
       "is_ad_bot": false,
