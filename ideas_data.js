@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 317,
-  "total_unique_ideas": 292,
-  "total_active_ideas": 265,
+  "total_scene_items": 319,
+  "total_unique_ideas": 294,
+  "total_active_ideas": 267,
   "total_excluded_ideas": 27,
-  "total_creators": 191,
+  "total_creators": 193,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 147,
+    "dien-anh": 149,
     "chuyen-canh": 51
   },
   "industries": [
@@ -155,8 +155,8 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 33,
-    "kien-truc": 33,
+    "cong-nghe": 34,
+    "kien-truc": 34,
     "the-thao": 7,
     "ky-thuat-quay": 93,
     "ugc": 7
@@ -212,10 +212,10 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 173,
+    "us_eu": 174,
     "korea": 10,
     "india": 3,
-    "japan": 6,
+    "japan": 7,
     "vietnam": 5,
     "asia_other": 29
   },
@@ -645,11 +645,33 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@austinwhite711",
+      "name": "Austinwhite711",
+      "profile_url": "https://www.instagram.com/austinwhite711/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40austinwhite711_DdUK7JNtjGG_is_this_%E2%80%9Callowed%E2%80%9D_%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@austinwhite711_DdUK7JNtjGG_is_this_“allowed”_🤷🏻‍♂️"
+      ]
+    },
+    {
+      "handle": "@hana.konichiwa",
+      "name": "Hana.Konichiwa",
+      "profile_url": "https://www.instagram.com/hana.konichiwa/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_%F0%9F%8D%83%F0%9F%8C%A6%EF%B8%8F/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_🍃🌦️"
+      ]
+    },
+    {
       "handle": "@kfconcept",
       "name": "Kfconcept",
       "profile_url": "https://www.instagram.com/kfconcept/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Đồ công nghệ",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀"
@@ -2407,11 +2429,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀",
-      "shortcode": "Dd08G0PBtKk",
-      "title_vi": "5 Creative Ways to Use a Magic Arm 👀",
+      "id": "IG_@austinwhite711_DdUK7JNtjGG_is_this_“allowed”_🤷🏻‍♂️",
+      "shortcode": "DdUK7JNtjGG",
+      "title_vi": "is this “allowed” 🤷🏻‍♂️",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2433,12 +2455,139 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @kfconcept",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @austinwhite711",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
         "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@austinwhite711",
+        "name": "Austinwhite711",
+        "handle": "@austinwhite711",
+        "profile_url": "https://www.instagram.com/austinwhite711/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdUK7JNtjGG/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1npvD9PD_XcF29kfKYFQlYP3jFbfz9_zd",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40austinwhite711_DdUK7JNtjGG_is_this_%E2%80%9Callowed%E2%80%9D_%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40austinwhite711_DdUK7JNtjGG_is_this_%E2%80%9Callowed%E2%80%9D_%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%82%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdUK7JNtjGG.mp4",
+        "report_url": "reports/IG_@austinwhite711_DdUK7JNtjGG_is_this_“allowed”_🤷🏻‍♂️.html",
+        "shots_count": 64,
+        "duration": "128s",
+        "youtube_id": "_dAnkolItkY",
+        "youtube_embed": "https://www.youtube.com/embed/_dAnkolItkY",
+        "youtube_url": "https://youtu.be/_dAnkolItkY"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_🍃🌦️",
+      "shortcode": "Dd1A6GRz1QN",
+      "title_vi": "hana.konichiwa Dd1A6GRz1QN A slow day between sunshine and rain 🍃🌦️",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 42 phân cảnh.",
+      "key_tech": "Slow Living • ASMR Cooking • Japanese Aesthetic • Food Styling • Montage Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "japan",
+        "name": "Nhật Bản",
+        "en_name": "Japan",
+        "flag": "🇯🇵",
+        "badge_color": "rose"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Slow Living • ASMR Cooking • Japanese Aesthetic • Food Styling • Montage Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@hana.konichiwa",
+        "name": "Hana.Konichiwa",
+        "handle": "@hana.konichiwa",
+        "profile_url": "https://www.instagram.com/hana.konichiwa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dd1A6GRz1QN/?stkn=MXIzazRsMm5iY2htZw==",
+      "gdrive_folder": "https://drive.google.com/open?id=1vOfo_SFSb4CnuDi49bfJAom-Ur6-kW40",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_%F0%9F%8D%83%F0%9F%8C%A6%EF%B8%8F/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_%F0%9F%8D%83%F0%9F%8C%A6%EF%B8%8F/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dd1A6GRz1QN.mp4",
+        "report_url": "reports/IG_@hana.konichiwa_Dd1A6GRz1QN_A_slow_day_between_sunshine_and_rain_🍃🌦️.html",
+        "shots_count": 42,
+        "duration": "84s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀",
+      "shortcode": "Dd08G0PBtKk",
+      "title_vi": "5 CÚ MÁY SPLIT-SCREEN ĐỘT PHÁ VỚI TAY ĐÒN MAGIC ARM",
+      "quick_takeaway": "5 Cú máy Split-Screen (The Setup vs The Shot) đột phá với tay đòn Magic Arm kẹp ly rượu, đầu giường, chân cửa, khe sách và điều khiển TV",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @kfconcept",
+      "tech_tags": [
+        "Magic Arm",
+        "Split-Screen",
+        "The Setup vs The Shot",
+        "Góc Máy POV",
+        "Locked-on Shot",
+        "B-Roll Sáng Tạo"
       ],
       "transition_level": null,
       "is_ad_bot": false,
