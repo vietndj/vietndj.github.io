@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 322,
-  "total_unique_ideas": 297,
-  "total_active_ideas": 270,
+  "total_scene_items": 323,
+  "total_unique_ideas": 298,
+  "total_active_ideas": 271,
   "total_excluded_ideas": 27,
-  "total_creators": 196,
+  "total_creators": 197,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 152,
+    "dien-anh": 153,
     "chuyen-canh": 51
   },
   "industries": [
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 25,
     "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 35,
-    "kien-truc": 33,
+    "cong-nghe": 34,
+    "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 95,
+    "ky-thuat-quay": 96,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 177,
+    "us_eu": 178,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@aleexsea",
+      "name": "Aleexsea",
+      "profile_url": "https://www.instagram.com/aleexsea/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog"
+      ]
+    },
+    {
       "handle": "@therealmarcozavala",
       "name": "Therealmarcozavala",
       "profile_url": "https://www.instagram.com/therealmarcozavala/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40therealmarcozavala_DcSXWp_O1JQ_Comment_%E2%80%9Cshot%E2%80%9D_for_a_list_of_10/shot_01_mid.jpg",
       "video_ids": [
         "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10"
@@ -2462,11 +2473,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10",
-      "shortcode": "DcSXWp_O1JQ",
-      "title_vi": "Comment “shot” for a list of 10",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
-      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "id": "IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog",
+      "shortcode": "Ddac5QTtTFH",
+      "title_vi": "Making memories and editing videos. New vlog",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot • Low-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2475,11 +2486,76 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @aleexsea",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@aleexsea",
+        "name": "Aleexsea",
+        "handle": "@aleexsea",
+        "profile_url": "https://www.instagram.com/aleexsea/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Ddac5QTtTFH/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=1kUr1gMlPH0YyxiOjFaT555sTlfE0W12s",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddac5QTtTFH.mp4",
+        "report_url": "reports/IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog.html",
+        "shots_count": 19,
+        "duration": "38s",
+        "youtube_id": "dMZtkjhAyxs",
+        "youtube_embed": "https://www.youtube.com/embed/dMZtkjhAyxs",
+        "youtube_url": "https://youtu.be/dMZtkjhAyxs"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10",
+      "shortcode": "DcSXWp_O1JQ",
+      "title_vi": "Hiệu ứng Walk and Talk giữ chân người xem liên tục",
+      "quick_takeaway": "Cách sử dụng chuyển động đi bộ liên tục (Walk and talk) để duy trì sự chú ý của người xem trong suốt video chia sẻ kiến thức.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2490,9 +2566,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @therealmarcozavala",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Medium Tracking Shot",
-        "Close-Up / Macro Detail Shot"
+        "Walking",
+        "Tracking Shot",
+        "Hook",
+        "Chuyển động liên tục"
       ],
       "transition_level": null,
       "is_ad_bot": false,
