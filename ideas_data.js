@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 326,
-  "total_unique_ideas": 301,
-  "total_active_ideas": 274,
+  "total_scene_items": 327,
+  "total_unique_ideas": 302,
+  "total_active_ideas": 275,
   "total_excluded_ideas": 27,
   "total_creators": 200,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 156,
+    "dien-anh": 157,
     "chuyen-canh": 51
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 34,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 99,
+    "ky-thuat-quay": 100,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 181,
+    "us_eu": 182,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -319,6 +319,21 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@shogentle",
+      "name": "Shogentle",
+      "profile_url": "https://www.instagram.com/shogentle/",
+      "video_count": 5,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
+        "IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle",
+        "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
+        "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
+        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
+      ]
+    },
+    {
       "handle": "@hena_film_vlog",
       "name": "Hena_Film_Vlog",
       "profile_url": "https://www.instagram.com/hena_film_vlog/",
@@ -331,20 +346,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85",
         "IG_@hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog",
         "IG_@hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow"
-      ]
-    },
-    {
-      "handle": "@shogentle",
-      "name": "Al,_The_Creator_Videography_Reels",
-      "profile_url": "https://www.instagram.com/shogentle/",
-      "video_count": 4,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40AL%2C_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle",
-        "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant",
-        "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five",
-        "IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video"
       ]
     },
     {
@@ -649,7 +650,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Taimoorm",
       "profile_url": "https://www.instagram.com/taimoorm/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40taimoorm_Db1jadggnGA_Vibe_coding_is_the_future/shot_01_mid.jpg",
       "video_ids": [
         "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future"
@@ -2506,11 +2507,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future",
-      "shortcode": "Db1jadggnGA",
-      "title_vi": "Vibe coding is the future",
+      "id": "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
+      "shortcode": "Dah5Tp8oji1",
+      "title_vi": "The Sound Transition Thing That Makes Cuts Fe",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2532,13 +2533,75 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @taimoorm",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @shogentle",
       "tech_tags": [
         "Establishing Hook Shot",
         "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Medium Tracking Shot",
-        "High-key Lighting"
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@shogentle",
+        "name": "Shogentle",
+        "handle": "@shogentle",
+        "profile_url": "https://www.instagram.com/shogentle/"
+      },
+      "ig_url": "https://www.instagram.com/p/Dah5Tp8oji1/",
+      "gdrive_folder": "https://drive.google.com/open?id=1JrrZCbipHd48EvYjCLNx8_kOxn0MC_KC",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dah5Tp8oji1.mp4",
+        "report_url": "reports/IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe.html",
+        "shots_count": 9,
+        "duration": "18s",
+        "youtube_id": "Vi1V1d50qtA",
+        "youtube_embed": "https://www.youtube.com/embed/Vi1V1d50qtA",
+        "youtube_url": "https://youtu.be/Vi1V1d50qtA"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future",
+      "shortcode": "Db1jadggnGA",
+      "title_vi": "Kỹ Thuật Walk and Talk Đa Bối Cảnh - Dynamic Anchor Pacing",
+      "quick_takeaway": "Video kết hợp kỹ thuật walk and talk và b-roll lifestyle (vibe coding), thay đổi bối cảnh liên tục để truyền tải thông điệp về công việc creator.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @taimoorm",
+      "tech_tags": [
+        "Walk and Talk",
+        "Creator Lifestyle",
+        "Vibe Coding",
+        "Dynamic Pacing"
       ],
       "transition_level": null,
       "is_ad_bot": false,
