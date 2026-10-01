@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 32,
+    "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 152,
+    "dien-anh": 151,
     "chuyen-canh": 51
   },
   "industries": [
@@ -2457,11 +2457,11 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
         "id": "kien-truc",
@@ -2486,7 +2486,7 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
         "raw": "@itsbybrandon",
         "name": "Itsbybrandon",
@@ -2502,9 +2502,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty.html",
         "shots_count": 7,
         "duration": "14s",
-        "youtube_id": "3nDCtqOsEOQ",
-        "youtube_embed": "https://www.youtube.com/embed/3nDCtqOsEOQ",
-        "youtube_url": "https://youtu.be/3nDCtqOsEOQ"
+        "youtube_id": "eX5SmsbZquw",
+        "youtube_embed": "https://www.youtube.com/embed/eX5SmsbZquw",
+        "youtube_url": "https://youtu.be/eX5SmsbZquw"
       },
       "complexity": {
         "id": "de",
