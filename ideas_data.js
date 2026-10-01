@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 324,
-  "total_unique_ideas": 299,
-  "total_active_ideas": 272,
+  "total_scene_items": 325,
+  "total_unique_ideas": 300,
+  "total_active_ideas": 273,
   "total_excluded_ideas": 27,
-  "total_creators": 198,
+  "total_creators": 199,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 34,
+    "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 153,
+    "dien-anh": 155,
     "chuyen-canh": 51
   },
   "industries": [
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 34,
-    "kien-truc": 35,
+    "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 96,
+    "ky-thuat-quay": 98,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 179,
+    "us_eu": 180,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@corentinhuard",
+      "name": "Corentinhuard",
+      "profile_url": "https://www.instagram.com/corentinhuard/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40corentinhuard_DbbVPaTsaun_The_Age_of_Distraction/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction"
+      ]
+    },
+    {
       "handle": "@anatta.ha",
       "name": "Anatta Ha",
       "profile_url": "https://www.instagram.com/anatta.ha/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_%F0%9F%98%97/shot_01_mid.jpg",
       "video_ids": [
         "IG_@anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_😗"
@@ -660,7 +671,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Aleexsea",
       "profile_url": "https://www.instagram.com/aleexsea/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog/shot_01_mid.jpg",
       "video_ids": [
         "IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog"
@@ -2484,11 +2495,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_😗",
-      "shortcode": "Dd6kWLjxNQJ",
-      "title_vi": "solo date to the bookstore 😗",
+      "id": "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction",
+      "shortcode": "DbbVPaTsaun",
+      "title_vi": "The Age of Distraction",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2510,11 +2521,76 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @anatta.ha",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @corentinhuard",
       "tech_tags": [
         "Establishing Hook Shot",
+        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
+        "High-key Lighting",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@corentinhuard",
+        "name": "Corentinhuard",
+        "handle": "@corentinhuard",
+        "profile_url": "https://www.instagram.com/corentinhuard/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DbbVPaTsaun/?utm_source=ig_web_copy_link&stkn=NTc4MTIwNjQ2YQ==",
+      "gdrive_folder": "https://drive.google.com/open?id=18IupHiZVPWV55H7cc-yODrPu0bsB4MuC",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40corentinhuard_DbbVPaTsaun_The_Age_of_Distraction/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40corentinhuard_DbbVPaTsaun_The_Age_of_Distraction/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DbbVPaTsaun.mp4",
+        "report_url": "reports/IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction.html",
+        "shots_count": 39,
+        "duration": "78s",
+        "youtube_id": "IXRWnIihCAQ",
+        "youtube_embed": "https://www.youtube.com/embed/IXRWnIihCAQ",
+        "youtube_url": "https://youtu.be/IXRWnIihCAQ"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@anatta.ha_Dd6kWLjxNQJ_solo_date_to_the_bookstore_😗",
+      "shortcode": "Dd6kWLjxNQJ",
+      "title_vi": "Tự thưởng bản thân (Solo Date) / Kỷ luật bản thân (Romanticize your life)",
+      "quick_takeaway": "Vlog ghi lại hành trình chuẩn bị và đi đến nhà sách thư giãn (solo date), truyền tải thông điệp 'romanticize your life' qua các góc quay đẹp và chuyển cảnh mượt mà.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @anatta.ha",
+      "tech_tags": [
+        "Romanticize your life",
+        "Solo date",
+        "Bookstore"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2549,22 +2625,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@aleexsea_Ddac5QTtTFH_Making_memories_and_editing_videos._New_vlog",
       "shortcode": "Ddac5QTtTFH",
-      "title_vi": "Making memories and editing videos. New vlog",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Kỹ thuật Anchor Text & Montage: Cắt vào hành động 2s đầu",
+      "quick_takeaway": "Video vlog mở đầu bằng kỹ thuật neo thị giác (giữ nguyên Text chữ #VLOG) kết hợp với chuỗi chuyển cảnh cực nhanh (Montage), băm nhỏ bối cảnh để tạo nhịp điệu dồn dập ngay 2 giây đầu.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2575,11 +2651,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @aleexsea",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot",
-        "Low-key Lighting"
+        "Fast Cut",
+        "Visual Anchor",
+        "Typography",
+        "Vlog"
       ],
       "transition_level": null,
       "is_ad_bot": false,
