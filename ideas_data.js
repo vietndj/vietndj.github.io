@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 325,
-  "total_unique_ideas": 300,
-  "total_active_ideas": 273,
+  "total_scene_items": 326,
+  "total_unique_ideas": 301,
+  "total_active_ideas": 274,
   "total_excluded_ideas": 27,
-  "total_creators": 199,
+  "total_creators": 200,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 155,
+    "dien-anh": 156,
     "chuyen-canh": 51
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 34,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 98,
+    "ky-thuat-quay": 99,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 180,
+    "us_eu": 181,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@taimoorm",
+      "name": "Taimoorm",
+      "profile_url": "https://www.instagram.com/taimoorm/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40taimoorm_Db1jadggnGA_Vibe_coding_is_the_future/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future"
+      ]
+    },
+    {
       "handle": "@corentinhuard",
       "name": "Corentinhuard",
       "profile_url": "https://www.instagram.com/corentinhuard/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40corentinhuard_DbbVPaTsaun_The_Age_of_Distraction/shot_01_mid.jpg",
       "video_ids": [
         "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction"
@@ -2495,11 +2506,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction",
-      "shortcode": "DbbVPaTsaun",
-      "title_vi": "The Age of Distraction",
+      "id": "IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future",
+      "shortcode": "Db1jadggnGA",
+      "title_vi": "Vibe coding is the future",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2521,13 +2532,77 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @corentinhuard",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @taimoorm",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "High-key Lighting",
-        "Medium Tracking Shot"
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@taimoorm",
+        "name": "Taimoorm",
+        "handle": "@taimoorm",
+        "profile_url": "https://www.instagram.com/taimoorm/"
+      },
+      "ig_url": "https://www.instagram.com/p/Db1jadggnGA/?utm_source=ig_web_copy_link&stkn=MzRlODBiNWFlZA==",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40taimoorm_Db1jadggnGA_Vibe_coding_is_the_future/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40taimoorm_Db1jadggnGA_Vibe_coding_is_the_future/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Db1jadggnGA.mp4",
+        "report_url": "reports/IG_@taimoorm_Db1jadggnGA_Vibe_coding_is_the_future.html",
+        "shots_count": 25,
+        "duration": "50s",
+        "youtube_id": "iqOrd8jL9xM",
+        "youtube_embed": "https://www.youtube.com/embed/iqOrd8jL9xM",
+        "youtube_url": "https://youtu.be/iqOrd8jL9xM"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction",
+      "shortcode": "DbbVPaTsaun",
+      "title_vi": "Vòng Lặp 'The Age of Distraction'",
+      "quick_takeaway": "Video mô tả nhịp sống hối hả hiện đại với cấu trúc lặp (loop), từ lúc thức dậy, đối mặt lạm phát, ăn uống đến nỗ lực làm việc và cuối cùng chìm vào giấc ngủ.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @corentinhuard",
+      "tech_tags": [
+        "Daily Routine",
+        "Motivation",
+        "Cinematic",
+        "Loop"
       ],
       "transition_level": null,
       "is_ad_bot": false,
