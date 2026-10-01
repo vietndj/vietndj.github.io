@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 320,
-  "total_unique_ideas": 295,
-  "total_active_ideas": 268,
+  "total_scene_items": 321,
+  "total_unique_ideas": 296,
+  "total_active_ideas": 269,
   "total_excluded_ideas": 27,
-  "total_creators": 194,
+  "total_creators": 195,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 32,
     "storytelling": 19,
-    "dien-anh": 150,
-    "chuyen-canh": 52
+    "dien-anh": 152,
+    "chuyen-canh": 51
   },
   "industries": [
     {
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 34,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 94,
+    "ky-thuat-quay": 95,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 175,
+    "us_eu": 176,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@itsbybrandon",
+      "name": "Itsbybrandon",
+      "profile_url": "https://www.instagram.com/itsbybrandon/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
+      ]
+    },
+    {
       "handle": "@mendozallopis",
       "name": "Mendozallopis",
       "profile_url": "https://www.instagram.com/mendozallopis/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mendozallopis_Dd4L578RNhz_The_Assembling/shot_01_mid.jpg",
       "video_ids": [
         "IG_@mendozallopis_Dd4L578RNhz_The_Assembling"
@@ -2440,17 +2451,17 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@mendozallopis_Dd4L578RNhz_The_Assembling",
-      "shortcode": "Dd4L578RNhz",
-      "title_vi": "The Assembling",
+      "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
+      "shortcode": "DdGa4hxzlJi",
+      "title_vi": "Paradigme le parfum by @pradabeauty",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "kien-truc",
@@ -2466,11 +2477,77 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mendozallopis",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @itsbybrandon",
       "tech_tags": [
         "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@itsbybrandon",
+        "name": "Itsbybrandon",
+        "handle": "@itsbybrandon",
+        "profile_url": "https://www.instagram.com/itsbybrandon/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdGa4hxzlJi/?stkn=MTkzZnZ6djdpZmp5",
+      "gdrive_folder": "https://drive.google.com/open?id=1_XocUdQOznz8oNJLkkle6Tgja3ZHWxU8",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdGa4hxzlJi.mp4",
+        "report_url": "reports/IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty.html",
+        "shots_count": 7,
+        "duration": "14s",
+        "youtube_id": "3nDCtqOsEOQ",
+        "youtube_embed": "https://www.youtube.com/embed/3nDCtqOsEOQ",
+        "youtube_url": "https://youtu.be/3nDCtqOsEOQ"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mendozallopis_Dd4L578RNhz_The_Assembling",
+      "shortcode": "Dd4L578RNhz",
+      "title_vi": "Nghệ Thuật Lắp Ráp LEGO Cinematic: Tối Đa Hóa Cảm Xúc Bằng Nhịp Cắt Siêu Nhanh & Góc Cận Đặc Tả",
+      "quick_takeaway": "Video lắp ráp LEGO Nintendo Game Boy với nhịp điệu dồn dập, kết hợp các góc máy siêu cận (macro) vào ánh mắt và chi tiết mảnh ghép, dưới ánh sáng low-key đậm chất điện ảnh.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mendozallopis",
+      "tech_tags": [
+        "LEGO",
+        "Game Boy",
+        "ASMR",
+        "Macro",
+        "Fast Cut",
+        "Low-key"
       ],
       "transition_level": null,
       "is_ad_bot": false,
