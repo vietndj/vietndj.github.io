@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 327,
-  "total_unique_ideas": 302,
-  "total_active_ideas": 275,
+  "total_scene_items": 328,
+  "total_unique_ideas": 303,
+  "total_active_ideas": 276,
   "total_excluded_ideas": 27,
-  "total_creators": 200,
+  "total_creators": 201,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 157,
+    "dien-anh": 158,
     "chuyen-canh": 51
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 34,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 100,
+    "ky-thuat-quay": 101,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 182,
+    "us_eu": 183,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -323,7 +323,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Shogentle",
       "profile_url": "https://www.instagram.com/shogentle/",
       "video_count": 5,
-      "top_industry": "Xây kênh",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe/shot_01_mid.jpg",
       "video_ids": [
         "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
@@ -643,6 +643,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@mridupawasharma",
+      "name": "Mridupawasharma",
+      "profile_url": "https://www.instagram.com/mridupawasharma/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time%2C/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,"
       ]
     },
     {
@@ -2507,11 +2518,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
-      "shortcode": "Dah5Tp8oji1",
-      "title_vi": "The Sound Transition Thing That Makes Cuts Fe",
+      "id": "IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,",
+      "shortcode": "Dd6G0lnI0zj",
+      "title_vi": "Shot my little moments differently this time,",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2533,11 +2544,76 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @shogentle",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "tech_tags": [
         "Establishing Hook Shot",
+        "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/Dd6G0lnI0zj/",
+      "gdrive_folder": "https://drive.google.com/open?id=1M2cAoQGHOjfeuB19hg1PobW2kIHwxvSr",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time%2C/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time%2C/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dd6G0lnI0zj.mp4",
+        "report_url": "reports/IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,.html",
+        "shots_count": 43,
+        "duration": "86s",
+        "youtube_id": "AYK45S4m7lo",
+        "youtube_embed": "https://www.youtube.com/embed/AYK45S4m7lo",
+        "youtube_url": "https://youtu.be/AYK45S4m7lo"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@shogentle_Dah5Tp8oji1_The_Sound_Transition_Thing_That_Makes_Cuts_Fe",
+      "shortcode": "Dah5Tp8oji1",
+      "title_vi": "Bí Quyết Điện Ảnh: Kỹ Thuật J-Cut Giúp Chuyển Cảnh Mượt Mà Bằng Âm Thanh",
+      "quick_takeaway": "Bóc tách kỹ thuật J-cut, cho âm thanh đi trước hình ảnh để chuyển cảnh mượt mà chuẩn điện ảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @shogentle",
+      "tech_tags": [
+        "J-cut",
+        "Sound Design",
+        "Transition"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2636,8 +2712,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@corentinhuard_DbbVPaTsaun_The_Age_of_Distraction",
       "shortcode": "DbbVPaTsaun",
-      "title_vi": "Vòng Lặp 'The Age of Distraction'",
-      "quick_takeaway": "Video mô tả nhịp sống hối hả hiện đại với cấu trúc lặp (loop), từ lúc thức dậy, đối mặt lạm phát, ăn uống đến nỗ lực làm việc và cuối cùng chìm vào giấc ngủ.",
+      "title_vi": "Vòng Lặp The Age of Distraction",
+      "quick_takeaway": "Video mô tả nhịp sống hối hả hiện đại với cấu trúc lặp (loop)",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
