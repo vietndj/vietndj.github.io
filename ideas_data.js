@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 321,
-  "total_unique_ideas": 296,
-  "total_active_ideas": 269,
+  "total_scene_items": 322,
+  "total_unique_ideas": 297,
+  "total_active_ideas": 270,
   "total_excluded_ideas": 27,
-  "total_creators": 195,
+  "total_creators": 196,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 151,
+    "dien-anh": 152,
     "chuyen-canh": 51
   },
   "industries": [
@@ -152,11 +152,11 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 19,
-    "thoi-trang": 24,
+    "thoi-trang": 25,
     "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 34,
-    "kien-truc": 34,
+    "cong-nghe": 35,
+    "kien-truc": 33,
     "the-thao": 7,
     "ky-thuat-quay": 95,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 176,
+    "us_eu": 177,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -645,11 +645,22 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@therealmarcozavala",
+      "name": "Therealmarcozavala",
+      "profile_url": "https://www.instagram.com/therealmarcozavala/",
+      "video_count": 1,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40therealmarcozavala_DcSXWp_O1JQ_Comment_%E2%80%9Cshot%E2%80%9D_for_a_list_of_10/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10"
+      ]
+    },
+    {
       "handle": "@itsbybrandon",
       "name": "Itsbybrandon",
       "profile_url": "https://www.instagram.com/itsbybrandon/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Thời trang",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
       "video_ids": [
         "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
@@ -2451,11 +2462,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
-      "shortcode": "DdGa4hxzlJi",
-      "title_vi": "Paradigme le parfum by @pradabeauty",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "id": "IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10",
+      "shortcode": "DcSXWp_O1JQ",
+      "title_vi": "Comment “shot” for a list of 10",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2464,11 +2475,74 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @therealmarcozavala",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@therealmarcozavala",
+        "name": "Therealmarcozavala",
+        "handle": "@therealmarcozavala",
+        "profile_url": "https://www.instagram.com/therealmarcozavala/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DcSXWp_O1JQ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1-l_dIjh6cZGRLpkNMv6mpJzR-LXIGTSK",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40therealmarcozavala_DcSXWp_O1JQ_Comment_%E2%80%9Cshot%E2%80%9D_for_a_list_of_10/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40therealmarcozavala_DcSXWp_O1JQ_Comment_%E2%80%9Cshot%E2%80%9D_for_a_list_of_10/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcSXWp_O1JQ.mp4",
+        "report_url": "reports/IG_@therealmarcozavala_DcSXWp_O1JQ_Comment_“shot”_for_a_list_of_10.html",
+        "shots_count": 5,
+        "duration": "10s",
+        "youtube_id": "6cXYodt7BHI",
+        "youtube_embed": "https://www.youtube.com/embed/6cXYodt7BHI",
+        "youtube_url": "https://youtu.be/6cXYodt7BHI"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
+      "shortcode": "DdGa4hxzlJi",
+      "title_vi": "Cú Chuyển Dịch Hệ Hình (Paradigm Shift): Bậc Thầy Phối Màu Xanh Lục Bảo & Nghệ Thuật Hoài Niệm Điện Ảnh Prada",
+      "quick_takeaway": "Cú bắt tay thượng thừa giữa thời trang cao cấp và triết lý sống: Biến sản phẩm nước hoa thành cú hích chuyển dịch hệ hình tư duy (Paradigm Shift) tìm lại điều kỳ diệu trong đời thường.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "thoi-trang",
+        "name": "Thời trang",
+        "en_name": "Fashion & Style",
+        "icon": "👔",
+        "badge_color": "pink"
       },
       "country": {
         "id": "us_eu",
@@ -2479,9 +2553,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @itsbybrandon",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "Prada Paradigme",
+        "Nuoc hoa nam",
+        "Dien anh Wes Anderson",
+        "Vu dao phong khoang",
+        "Color Continuity Law",
+        "3-Beat Rhythm"
       ],
       "transition_level": null,
       "is_ad_bot": false,
