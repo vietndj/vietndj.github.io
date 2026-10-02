@@ -1,24 +1,34 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Build ultra-robust, pre-rendered brollbank.html with inline YouTube embeds,
-B-Roll category filtering, AI Script-to-Broll matcher, and Integrated YouTube Delete Engine.
+Build brollbank.fedu.vn index.html
+Features:
+- Password protection '0070' with sleek UI and keypad
+- High-speed R2 direct MP4 streaming for videos with audio/copyright flags
+- Inline YouTube embeds for standard clips
+- Multi-category B-Roll Fedu 8 types filtering
+- AI Script-to-Broll matcher
+- Integrated delete modal
 """
 
 import json
 import os
 
-DB_PATH = '/Users/vietmac/Documents/CODE/vietndj.github.io/broll_bank_master.json'
-HTML_OUT = '/Users/vietmac/Documents/CODE/vietndj.github.io/brollbank.html'
+BASE_DIR = '/Users/vietmac/Documents/CODE/vietndj.github.io'
+DB_PATH = os.path.join(BASE_DIR, 'broll_bank_master.json')
+HTML_OUT = os.path.join(BASE_DIR, 'index.html')
+HTML_OUT_LEGACY = os.path.join(BASE_DIR, 'brollbank.html')
 
 with open(DB_PATH, 'r', encoding='utf-8') as f:
     db = json.load(f)
 
+db['videos'].reverse()
 json_data_str = json.dumps(db, ensure_ascii=False)
 videos = db.get('videos', [])
 
 def render_card_html(v):
     yt_id = v.get('video_id', '')
+    r2_url = v.get('r2_url', '')
     orient_label = '📱 Dọc 9:16' if v['orientation'] == 'vertical' else '🖥️ Ngang 16:9'
     aspect_class = 'aspect-[9/16] max-h-[380px]' if v['orientation'] == 'vertical' else 'aspect-video'
     
@@ -28,28 +38,59 @@ def render_card_html(v):
     dl_href = gdrive_dl if gdrive_dl else (gdrive_view if gdrive_view else "https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA")
     escaped_title = v['title'].replace("'", "\\'").replace('"', '&quot;')
     
-    # Pre-render card
-    return f'''
-    <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-slate-800 hover:border-purple-500/60 transition shadow-lg bg-slate-900/90 relative" id="card-{v['id']}" data-cat="{v['category_id']}" data-orient="{v['orientation']}">
-        <!-- Video Box / Embed -->
-        <div class="relative bg-black {aspect_class} overflow-hidden flex items-center justify-center" id="player-box-{v['id']}">
-            <!-- Responsive Iframe Embed -->
+    # Video player box: HTML5 video if hosted on R2, else YouTube iframe
+    if r2_url:
+        player_html = f'''
+            <video src="{r2_url}" 
+                   controls 
+                   playsinline 
+                   preload="metadata" 
+                   class="w-full h-full object-contain bg-black" 
+                   title="{escaped_title}"></video>
+        '''
+        source_badge = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">⚡ R2 Cloud Stream</span>'
+        primary_btn = f'''
+            <a href="{r2_url}" target="_blank" class="px-2 py-1 rounded-lg bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 text-[11px] font-semibold transition flex items-center gap-1" title="Xem video stream chất lượng gốc từ Cloudflare R2">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z"/></svg>
+                R2 Host
+            </a>
+        '''
+    else:
+        player_html = f'''
             <iframe src="https://www.youtube.com/embed/{yt_id}?enablejsapi=1&rel=0" 
                     title="{escaped_title}" 
                     loading="lazy"
                     class="w-full h-full border-0" 
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                     allowfullscreen></iframe>
+        '''
+        source_badge = ''
+        primary_btn = f'''
+            <a href="https://www.youtube.com/watch?v={yt_id}" target="_blank" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 text-[11px] font-semibold transition flex items-center gap-1">
+                <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                YouTube
+            </a>
+        '''
+
+    # Pre-render card
+    return f'''
+    <div class="glass-card rounded-2xl overflow-hidden flex flex-col group border border-slate-800 hover:border-purple-500/60 transition shadow-lg bg-slate-900/90 relative" id="card-{v['id']}" data-cat="{v['category_id']}" data-orient="{v['orientation']}">
+        <!-- Video Box / Embed -->
+        <div class="relative bg-black {aspect_class} overflow-hidden flex items-center justify-center" id="player-box-{v['id']}">
+            {player_html}
         </div>
 
         <!-- Card Info -->
         <div class="p-4 flex-1 flex flex-col justify-between space-y-3 bg-gradient-to-b from-slate-900 to-slate-950">
             <div>
                 <div class="flex items-center justify-between gap-2 mb-1.5">
-                    <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold badge-{v['category_id']}">
-                        {v['category_icon']} {v['category_badge']}
-                    </span>
-                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700">
+                    <div class="flex items-center gap-1.5 flex-wrap">
+                        <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold badge-{v['category_id']}">
+                            {v['category_icon']} {v['category_badge']}
+                        </span>
+                        {source_badge}
+                    </div>
+                    <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-300 border border-slate-700 shrink-0">
                         {orient_label} • {v['duration']}
                     </span>
                 </div>
@@ -62,7 +103,7 @@ def render_card_html(v):
                     <span class="truncate">{v['location']}</span>
                 </div>
                 <p class="text-xs text-slate-400 mt-2 line-clamp-2 leading-relaxed">
-                    {v['director_note']}
+                    {v.get('director_note', v.get('youtube_description', ''))}
                 </p>
             </div>
 
@@ -70,14 +111,11 @@ def render_card_html(v):
             <div class="pt-2.5 border-t border-slate-800/80 space-y-2">
                 <div class="text-[10px] text-slate-500 font-semibold uppercase">🎯 Khớp câu thoại:</div>
                 <p class="text-[11px] text-purple-300/90 italic line-clamp-2 bg-purple-950/20 p-2 rounded-lg border border-purple-900/30">
-                    "{v['dialogue_cues'][0] if v['dialogue_cues'] else 'Thao tác thực chiến...'}"
+                    "{v.get('dialogue_cues', [''])[0] if v.get('dialogue_cues') else 'Thao tác thực chiến...'}"
                 </p>
                 <div class="flex items-center justify-between gap-1.5 pt-1">
                     <div class="flex items-center gap-1.5">
-                        <a href="https://www.youtube.com/watch?v={yt_id}" target="_blank" class="px-2 py-1 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 text-[11px] font-semibold transition flex items-center gap-1">
-                            <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                            YouTube
-                        </a>
+                        {primary_btn}
                         <a href="{dl_href}" target="_blank" class="px-2 py-1 rounded-lg bg-blue-600/20 hover:bg-blue-600 text-blue-300 hover:text-white border border-blue-500/30 text-[11px] font-semibold transition flex items-center gap-1" title="Tải file video MP4 gốc sạch từ Google Drive (không logo Shorts)">
                             <svg class="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
                             Tải Drive
@@ -99,15 +137,33 @@ def render_card_html(v):
     '''
 
 cards_pre_rendered = '\n'.join([render_card_html(v) for v in videos])
+r2_count = len([x for x in videos if x.get('r2_url')])
 
 html_content = f'''<!DOCTYPE html>
 <html lang="vi" class="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B-Roll Bank Master | Kho Cảnh Trám Chuẩn Điện Ảnh Fedu</title>
+    <title>B-Roll Bank Master | brollbank.fedu.vn</title>
     <meta name="description" content="Thư viện quản lý cảnh trám thông minh của Nguyễn Đức Việt (VietMac) - Phân loại theo 8 loại B-roll Fedu Master và Hệ thống ráp kịch bản thoại tự động.">
+    <link rel="canonical" href="https://brollbank.fedu.vn/">
     
+    <!-- Instant Auth Protection Script (Zero Flicker) -->
+    <script>
+        if (localStorage.getItem('brollbank_pin') === '0070') {{
+            document.documentElement.classList.add('authenticated');
+        }}
+    </script>
+    <style>
+        /* Hide guarded content if not authenticated */
+        html:not(.authenticated) #main-app {{
+            display: none !important;
+        }}
+        html.authenticated #auth-guard {{
+            display: none !important;
+        }}
+    </style>
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -193,370 +249,455 @@ html_content = f'''<!DOCTYPE html>
             opacity: 0;
             transition: all 0.4s ease;
         }}
+
+        @keyframes shake {{
+            0%, 100% {{ transform: translateX(0); }}
+            20%, 60% {{ transform: translateX(-8px); }}
+            40%, 80% {{ transform: translateX(8px); }}
+        }}
+        .shake {{
+            animation: shake 0.4s ease-in-out;
+        }}
     </style>
 </head>
 <body class="min-h-screen selection:bg-purple-500 selection:text-white flex flex-col bg-[#0b0f19]">
 
-    <!-- TOP NAVIGATION -->
-    <nav class="sticky top-0 z-40 glass border-b border-slate-800 px-4 lg:px-8 py-3.5 flex items-center justify-between">
-        <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 text-white font-extrabold text-lg">
+    <!-- ============================================== -->
+    <!-- PASSWORD AUTH GUARD (PIN: 0070) -->
+    <!-- ============================================== -->
+    <div id="auth-guard" class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-[#0b0f19] transition-all duration-300">
+        <div class="glass p-8 sm:p-10 rounded-3xl border border-purple-500/40 shadow-2xl shadow-purple-950/80 max-w-md w-full text-center space-y-6 relative overflow-hidden bg-slate-900/95" id="pin-card">
+            <!-- Glow background -->
+            <div class="absolute -top-24 -left-24 w-48 h-48 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-24 -right-24 w-48 h-48 bg-indigo-600/30 rounded-full blur-3xl pointer-events-none"></div>
+
+            <div class="mx-auto w-16 h-16 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/30 text-white font-black text-2xl">
                 B
             </div>
+
             <div>
-                <div class="flex items-center gap-2">
-                    <span class="font-extrabold text-lg tracking-tight text-white">B-ROLL BANK</span>
-                    <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold" id="nav-counter">{len(videos)} CLIPS NHÚNG YOUTUBE & DRIVE</span>
-                </div>
-                <p class="text-xs text-slate-400">Thư viện cảnh trám điện ảnh • Nguyễn Đức Việt (VietMac)</p>
+                <span class="px-3 py-1 rounded-full bg-purple-500/10 text-purple-300 border border-purple-500/30 text-[11px] font-bold uppercase tracking-wider">
+                    Khu Vực Bảo Mật • FEDU MASTER
+                </span>
+                <h2 class="text-2xl font-black text-white mt-2.5 tracking-tight">KHO B-ROLL BANK</h2>
+                <p class="text-xs text-slate-400 mt-1">Vui lòng nhập mật khẩu 4 số để truy cập kho cảnh trám</p>
+            </div>
+
+            <!-- PIN inputs -->
+            <div class="flex justify-center gap-3 pt-2">
+                <input type="password" maxlength="1" inputmode="numeric" pattern="[0-9]*" class="pin-digit w-12 h-14 text-center text-2xl font-black rounded-xl bg-slate-950 border-2 border-slate-700 focus:border-purple-500 focus:outline-none text-white transition shadow-inner" data-idx="0" />
+                <input type="password" maxlength="1" inputmode="numeric" pattern="[0-9]*" class="pin-digit w-12 h-14 text-center text-2xl font-black rounded-xl bg-slate-950 border-2 border-slate-700 focus:border-purple-500 focus:outline-none text-white transition shadow-inner" data-idx="1" />
+                <input type="password" maxlength="1" inputmode="numeric" pattern="[0-9]*" class="pin-digit w-12 h-14 text-center text-2xl font-black rounded-xl bg-slate-950 border-2 border-slate-700 focus:border-purple-500 focus:outline-none text-white transition shadow-inner" data-idx="2" />
+                <input type="password" maxlength="1" inputmode="numeric" pattern="[0-9]*" class="pin-digit w-12 h-14 text-center text-2xl font-black rounded-xl bg-slate-950 border-2 border-slate-700 focus:border-purple-500 focus:outline-none text-white transition shadow-inner" data-idx="3" />
+            </div>
+
+            <!-- Status msg -->
+            <div id="pin-status" class="text-xs font-semibold h-5 transition-all text-slate-500">
+                Nhập mã PIN bí mật
+            </div>
+
+            <!-- Submit button -->
+            <button onclick="submitPin()" id="pin-submit-btn" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold text-sm shadow-lg shadow-purple-600/30 transition flex items-center justify-center gap-2">
+                <span>Mở Khóa Kho B-Roll</span>
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+            </button>
+
+            <!-- Touch Keypad -->
+            <div class="grid grid-cols-3 gap-2 pt-2 border-t border-slate-800 text-sm">
+                <button onclick="pressPinKey('1')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">1</button>
+                <button onclick="pressPinKey('2')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">2</button>
+                <button onclick="pressPinKey('3')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">3</button>
+                <button onclick="pressPinKey('4')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">4</button>
+                <button onclick="pressPinKey('5')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">5</button>
+                <button onclick="pressPinKey('6')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">6</button>
+                <button onclick="pressPinKey('7')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">7</button>
+                <button onclick="pressPinKey('8')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">8</button>
+                <button onclick="pressPinKey('9')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">9</button>
+                <button onclick="clearPin()" class="py-2.5 rounded-lg bg-slate-800/40 hover:bg-red-900/40 text-slate-400 hover:text-red-300 text-xs font-semibold transition">Xóa</button>
+                <button onclick="pressPinKey('0')" class="py-2.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-white font-bold text-base transition">0</button>
+                <button onclick="backspacePin()" class="py-2.5 rounded-lg bg-slate-800/40 hover:bg-slate-700 text-slate-400 hover:text-white text-base transition">⌫</button>
             </div>
         </div>
+    </div>
 
-        <!-- Links -->
-        <div class="flex items-center gap-3">
-            <a href="{db.get('gdrive_folder_url', 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA')}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
-                Google Drive Folder (<span id="top-gdrive-count">{len(videos)}</span>)
-            </a>
-            <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
-                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                Playlist YouTube
-            </a>
-            <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
-                8 Loại B-Roll Fedu
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO HEADER -->
-    <header class="relative px-4 lg:px-8 py-10 overflow-hidden bg-gradient-to-b from-purple-950/40 via-slate-900 to-[#0b0f19] border-b border-slate-800">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+    <!-- ============================================== -->
+    <!-- MAIN APPLICATION -->
+    <!-- ============================================== -->
+    <div id="main-app" class="flex flex-col min-h-screen">
+        <!-- TOP NAVIGATION -->
+        <nav class="sticky top-0 z-40 glass border-b border-slate-800 px-4 lg:px-8 py-3.5 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 to-indigo-500 flex items-center justify-center shadow-lg shadow-purple-500/20 text-white font-extrabold text-lg">
+                    B
+                </div>
                 <div>
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-3">
-                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                        100% Video Đã Nhúng Trực Tiếp • Xem & Tải Gốc Google Drive Ngay Trên Trang
+                    <div class="flex items-center gap-2">
+                        <span class="font-extrabold text-lg tracking-tight text-white">B-ROLL BANK</span>
+                        <span class="text-xs px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30 font-semibold" id="nav-counter">{len(videos)} CLIPS NHÚNG YOUTUBE, R2 & DRIVE</span>
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
-                        Kho Cảnh Trám <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-amber-300">B-Roll Bank Master</span>
-                    </h1>
-                    <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
-                        Phân loại chuẩn 8 nhóm B-Roll Fedu Master. Bấm Play xem trực tiếp từng video, bấm <strong>Tải Drive</strong> để lấy file gốc không dính logo Shorts, hoặc dán kịch bản để AI tự động ráp phân cảnh.
+                    <p class="text-xs text-slate-400">brollbank.fedu.vn • Thư viện cảnh trám điện ảnh Nguyễn Đức Việt (VietMac)</p>
+                </div>
+            </div>
+
+            <!-- Links & Lock button -->
+            <div class="flex items-center gap-2.5">
+                <a href="{db.get('gdrive_folder_url', 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA')}" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-blue-600 text-white hover:bg-blue-700 text-xs font-bold shadow-lg shadow-blue-600/30 transition">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                    Google Drive (<span id="top-gdrive-count">{len(videos)}</span>)
+                </a>
+                <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-600 text-white hover:bg-red-700 text-xs font-bold shadow-lg shadow-red-600/30 transition">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    YouTube
+                </a>
+                <a href="https://fedu.vn/course/slide-8-loai-broll-video-course.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-indigo-600/30 text-indigo-300 border border-indigo-500/40 hover:bg-indigo-600 hover:text-white text-xs font-semibold transition">
+                    8 Loại B-Roll
+                </a>
+                <a href="https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/reports/Bao_Cao_Boi_Canh_Thuc_Chien_R2.html" target="_blank" class="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-emerald-600/30 text-emerald-300 border border-emerald-500/40 hover:bg-emerald-600 hover:text-white text-xs font-semibold transition">
+                    Báo Cáo Bối Cảnh
+                </a>
+                <!-- Lock button -->
+                <button onclick="lockScreen()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-red-950/60 text-slate-300 hover:text-red-300 border border-slate-700 hover:border-red-800/60 text-xs font-bold transition flex items-center gap-1.5" title="Khóa bảo vệ kho B-Roll (yêu cầu mã PIN 0070)">
+                    <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                    <span class="hidden sm:inline">Khóa PIN</span>
+                </button>
+            </div>
+        </nav>
+
+        <!-- HERO HEADER -->
+        <header class="relative px-4 lg:px-8 py-10 overflow-hidden bg-gradient-to-b from-purple-950/40 via-slate-900 to-[#0b0f19] border-b border-slate-800">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+                    <div>
+                        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 text-xs font-semibold mb-3">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            100% Video Sẵn Sàng (YouTube & Cloudflare R2 Stream) • Xem & Tải Gốc Google Drive
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+                            Kho Cảnh Trám <span class="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-indigo-300 to-amber-300">B-Roll Bank Master</span>
+                        </h1>
+                        <p class="mt-2 text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+                            Phân loại chuẩn 8 nhóm B-Roll Fedu Master. Bấm Play xem trực tiếp từng video, bấm <strong>Tải Drive</strong> để lấy file gốc không dính logo Shorts, hoặc dán kịch bản để AI tự động ráp phân cảnh.
+                        </p>
+                    </div>
+
+                    <!-- Metrics -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
+                        <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                            <div class="text-2xl font-black text-white font-mono" id="stat-total">{len(videos)}</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng Video</div>
+                        </div>
+                        <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                            <div class="text-2xl font-black text-purple-400 font-mono" id="stat-vertical">{len([x for x in videos if x['orientation'] == 'vertical'])}</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dọc 9:16 Shorts</div>
+                        </div>
+                        <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                            <div class="text-2xl font-black text-indigo-400 font-mono" id="stat-horizontal">{len([x for x in videos if x['orientation'] == 'horizontal'])}</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ngang 16:9 4K</div>
+                        </div>
+                        <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
+                            <div class="text-2xl font-black text-emerald-400 font-mono">{r2_count} R2</div>
+                            <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Host CDN R2</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TABS -->
+                <div class="mt-8 flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 w-fit">
+                    <button onclick="switchMainTab('library')" id="tab-btn-library" class="tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition">
+                        📺 Xem Toàn Bộ <span id="tab-counter">{len(videos)}</span> Video Nhúng
+                    </button>
+                    <button onclick="switchMainTab('script-matcher')" id="tab-btn-script" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
+                        ✨ Ráp Kịch Bản Thoại Thông Minh (AI)
+                    </button>
+                    <button onclick="switchMainTab('handbook')" id="tab-btn-handbook" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
+                        🎓 Sổ Tay 8 Loại B-Roll Fedu
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- TAB 1: THƯ VIỆN B-ROLL -->
+        <main id="tab-content-library" class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
+            <!-- SEARCH & FILTER TOOLBAR -->
+            <div class="glass p-5 rounded-2xl border border-slate-800 space-y-4">
+                <!-- Search Bar -->
+                <div class="relative">
+                    <input type="text" id="search-input" oninput="handleSearch()" placeholder="🔍 Tìm kiếm nhanh: gõ phím, nước cam, cafe nhỏ giọt, ban công, FPT, bế tắc, câu thoại..." 
+                           class="w-full bg-slate-900 text-white pl-4 pr-10 py-3 rounded-xl border border-slate-700 focus:outline-none focus:border-purple-500 text-sm placeholder-slate-500 transition">
+                    <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">✕</button>
+                </div>
+
+                <!-- 8 B-Roll Category Pills -->
+                <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="cat-pills-container">
+                    <button onclick="filterCategory('all')" class="cat-pill active shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold transition" data-cat="all">
+                        Tất cả (<span id="pill-all-count">{len(videos)}</span>)
+                    </button>
+                    <button onclick="filterCategory('cutaway')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="cutaway">
+                        ✂️ 1. Cutaway
+                    </button>
+                    <button onclick="filterCategory('sequence')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="sequence">
+                        🎞️ 2. Sequence
+                    </button>
+                    <button onclick="filterCategory('pov')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="pov">
+                        👁️ 3. Góc POV
+                    </button>
+                    <button onclick="filterCategory('in_situ')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="in_situ">
+                        🎬 4. Thoại In-situ
+                    </button>
+                    <button onclick="filterCategory('intercut')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="intercut">
+                        ⚖️ 5. Dựng Intercut
+                    </button>
+                    <button onclick="filterCategory('metaphor')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="metaphor">
+                        ♟️ 6. Metaphor
+                    </button>
+                    <button onclick="filterCategory('negative_space')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="negative_space">
+                        ⏸️ 7. Negative Space
+                    </button>
+                    <button onclick="filterCategory('archival')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="archival">
+                        ⏳ 8. Archival
+                    </button>
+                </div>
+
+                <!-- Multi-axis Selectors -->
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 border-t border-slate-800">
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Tỉ lệ khung hình</label>
+                        <select id="filter-orientation" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
+                            <option value="all">Tất cả định dạng</option>
+                            <option value="vertical">📱 Dọc 9:16 (Shorts/Reel)</option>
+                            <option value="horizontal">🖥️ Ngang 16:9 (Cinematic 4K)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Bối cảnh / Vị trí</label>
+                        <select id="filter-location" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
+                            <option value="all">Tất cả địa điểm</option>
+                            <option value="Home Studio">🏠 Home Studio (Bàn gỗ)</option>
+                            <option value="Ban công">🌿 Ban công Times City</option>
+                            <option value="FPT">🎓 Giảng đường FPT</option>
+                            <option value="Bếp">☕ Bếp / Barista / Nước cam</option>
+                            <option value="Lương Yên">🎬 Ngoại cảnh Lương Yên</option>
+                            <option value="Gym">💪 Phòng Gym / Lái xe</option>
+                        </select>
+                    </div>
+                    <div class="col-span-2 sm:col-span-1">
+                        <label class="block text-[11px] font-semibold text-slate-400 mb-1">Góc máy / Cự ly</label>
+                        <select id="filter-shot" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
+                            <option value="all">Tất cả góc quay</option>
+                            <option value="Close-up">🔍 Cận cảnh (CU / ECU)</option>
+                            <option value="Medium">👤 Trung cảnh (MCU / MS)</option>
+                            <option value="POV">👁️ Góc nhìn thứ nhất (POV)</option>
+                            <option value="Top-down">📐 Góc từ trên xuống (Top-down)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STATUS BAR -->
+            <div class="flex items-center justify-between text-xs text-slate-400 px-1">
+                <div>
+                    Đang hiển thị <span id="filtered-count" class="font-bold text-purple-400">{len(videos)}</span> / <span id="total-clips-count">{len(videos)}</span> video cảnh trám
+                </div>
+                <div class="text-[11px] text-slate-500 flex items-center gap-2">
+                    <span class="inline-flex items-center gap-1 text-emerald-400 font-mono">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                        {r2_count} R2 Hosted
+                    </span>
+                    <span>•</span>
+                    <span>Domain: brollbank.fedu.vn</span>
+                </div>
+            </div>
+
+            <!-- VIDEO GRID CONTAINER (PRE-RENDERED) -->
+            <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {cards_pre_rendered}
+            </div>
+
+            <!-- EMPTY STATE -->
+            <div id="empty-state" class="hidden text-center py-20 glass rounded-2xl border border-slate-800">
+                <h3 class="text-lg font-bold text-slate-300">Không tìm thấy cảnh trám phù hợp</h3>
+                <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Hãy thử xóa từ khóa tìm kiếm để hiển thị toàn bộ video.</p>
+                <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition">
+                    Đặt lại bộ lọc
+                </button>
+            </div>
+        </main>
+
+        <!-- TAB 2: AI SCRIPT-TO-BROLL MATCHER -->
+        <main id="tab-content-script" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
+            <div class="glass p-6 sm:p-8 rounded-2xl border border-purple-500/40">
+                <div class="max-w-3xl">
+                    <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-semibold mb-3">
+                        ✨ Công Cụ AI Đạo Diễn
+                    </span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ráp Cảnh Trám Thông Minh Theo Kịch Bản Thoại</h2>
+                    <p class="text-sm text-slate-300 mt-1">
+                        Dán bất kỳ kịch bản thoại nào của anh Việt vào đây. Hệ thống tự động phân tích ngữ cảnh từng câu thoại và nhúng ngay video B-roll demo tương ứng để xem trực tiếp!
                     </p>
                 </div>
 
-                <!-- Metrics -->
-                <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 w-full lg:w-auto">
-                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-white font-mono" id="stat-total">{len(videos)}</div>
-                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Tổng Video</div>
-                    </div>
-                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-purple-400 font-mono" id="stat-vertical">{len([x for x in videos if x['orientation'] == 'vertical'])}</div>
-                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Dọc 9:16 Shorts</div>
-                    </div>
-                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-indigo-400 font-mono" id="stat-horizontal">{len([x for x in videos if x['orientation'] == 'horizontal'])}</div>
-                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Ngang 16:9 4K</div>
-                    </div>
-                    <div class="glass p-3.5 rounded-xl border border-slate-800 text-center">
-                        <div class="text-2xl font-black text-emerald-400 font-mono">8/8</div>
-                        <div class="text-[11px] text-slate-400 uppercase tracking-wider font-semibold">Nhóm Fedu</div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- TABS -->
-            <div class="mt-8 flex flex-wrap items-center gap-2 p-1.5 rounded-xl bg-slate-900 border border-slate-800 w-fit">
-                <button onclick="switchMainTab('library')" id="tab-btn-library" class="tab-btn active px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 transition">
-                    📺 Xem Toàn Bộ <span id="tab-counter">{len(videos)}</span> Video Nhúng
-                </button>
-                <button onclick="switchMainTab('script-matcher')" id="tab-btn-script" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
-                    ✨ Ráp Kịch Bản Thoại Thông Minh (AI)
-                </button>
-                <button onclick="switchMainTab('handbook')" id="tab-btn-handbook" class="tab-btn px-4 py-2 rounded-lg text-xs sm:text-sm font-bold flex items-center gap-2 text-slate-300 hover:text-white transition">
-                    🎓 Sổ Tay 8 Loại B-Roll Fedu
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <!-- TAB 1: THƯ VIỆN B-ROLL -->
-    <main id="tab-content-library" class="flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
-        
-        <!-- SEARCH & FILTER TOOLBAR -->
-        <div class="glass p-5 rounded-2xl border border-slate-800 space-y-4">
-            <!-- Search Bar -->
-            <div class="relative">
-                <input type="text" id="search-input" oninput="handleSearch()" placeholder="🔍 Tìm kiếm nhanh: gõ phím, nước cam, cafe nhỏ giọt, ban công, FPT, bế tắc, câu thoại..." 
-                       class="w-full bg-slate-900 text-white pl-4 pr-10 py-3 rounded-xl border border-slate-700 focus:outline-none focus:border-purple-500 text-sm placeholder-slate-500 transition">
-                <button onclick="clearSearch()" id="clear-search-btn" class="hidden absolute right-3.5 top-1/2 -translate-y-1/2 text-slate-400 hover:text-white">✕</button>
-            </div>
-
-            <!-- 8 B-Roll Category Pills -->
-            <div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="cat-pills-container">
-                <button onclick="filterCategory('all')" class="cat-pill active shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-700 text-xs font-semibold transition" data-cat="all">
-                    Tất cả (<span id="pill-all-count">{len(videos)}</span>)
-                </button>
-                <button onclick="filterCategory('cutaway')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="cutaway">
-                    ✂️ 1. Cutaway
-                </button>
-                <button onclick="filterCategory('sequence')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="sequence">
-                    🎞️ 2. Sequence
-                </button>
-                <button onclick="filterCategory('pov')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="pov">
-                    👁️ 3. Góc POV
-                </button>
-                <button onclick="filterCategory('in_situ')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="in_situ">
-                    🎬 4. Thoại In-situ
-                </button>
-                <button onclick="filterCategory('intercut')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="intercut">
-                    ⚖️ 5. Dựng Intercut
-                </button>
-                <button onclick="filterCategory('metaphor')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="metaphor">
-                    ♟️ 6. Metaphor
-                </button>
-                <button onclick="filterCategory('negative_space')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="negative_space">
-                    ⏸️ 7. Negative Space
-                </button>
-                <button onclick="filterCategory('archival')" class="cat-pill shrink-0 px-3.5 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400 hover:text-slate-200 transition" data-cat="archival">
-                    ⏳ 8. Archival
-                </button>
-            </div>
-
-            <!-- Multi-axis Selectors -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 border-t border-slate-800">
-                <div>
-                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Tỉ lệ khung hình</label>
-                    <select id="filter-orientation" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
-                        <option value="all">Tất cả định dạng</option>
-                        <option value="vertical">📱 Dọc 9:16 (Shorts/Reel)</option>
-                        <option value="horizontal">🖥️ Ngang 16:9 (Cinematic 4K)</option>
-                    </select>
-                </div>
-                <div>
-                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Bối cảnh / Vị trí</label>
-                    <select id="filter-location" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
-                        <option value="all">Tất cả địa điểm</option>
-                        <option value="Home Studio">🏠 Home Studio (Bàn gỗ)</option>
-                        <option value="Ban công">🌿 Ban công Times City</option>
-                        <option value="FPT">🎓 Giảng đường FPT</option>
-                        <option value="Bếp">☕ Bếp / Barista / Nước cam</option>
-                        <option value="Lương Yên">🎬 Ngoại cảnh Lương Yên</option>
-                        <option value="Gym">💪 Phòng Gym / Lái xe</option>
-                    </select>
-                </div>
-                <div class="col-span-2 sm:col-span-1">
-                    <label class="block text-[11px] font-semibold text-slate-400 mb-1">Góc máy / Cự ly</label>
-                    <select id="filter-shot" onchange="applyFilters()" class="w-full bg-slate-900 border border-slate-700 text-xs text-slate-200 rounded-lg px-2.5 py-2">
-                        <option value="all">Tất cả góc quay</option>
-                        <option value="Close-up">🔍 Cận cảnh (CU / ECU)</option>
-                        <option value="Medium">👤 Trung cảnh (MCU / MS)</option>
-                        <option value="POV">👁️ Góc nhìn thứ nhất (POV)</option>
-                        <option value="Top-down">📐 Góc từ trên xuống (Top-down)</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-
-        <!-- STATUS BAR -->
-        <div class="flex items-center justify-between text-xs text-slate-400 px-1">
-            <div>
-                Đang hiển thị <span id="filtered-count" class="font-bold text-purple-400">{len(videos)}</span> / <span id="total-clips-count">{len(videos)}</span> video cảnh trám
-            </div>
-            <div class="text-[11px] text-slate-500 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-green-500"></span>
-                API Xóa YouTube: <span id="api-status-badge" class="text-slate-400">Đang kết nối...</span>
-            </div>
-        </div>
-
-        <!-- VIDEO GRID CONTAINER (PRE-RENDERED) -->
-        <div id="video-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {cards_pre_rendered}
-        </div>
-
-        <!-- EMPTY STATE -->
-        <div id="empty-state" class="hidden text-center py-20 glass rounded-2xl border border-slate-800">
-            <h3 class="text-lg font-bold text-slate-300">Không tìm thấy cảnh trám phù hợp</h3>
-            <p class="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Hãy thử xóa từ khóa tìm kiếm để hiển thị toàn bộ video.</p>
-            <button onclick="resetAllFilters()" class="mt-4 px-4 py-2 rounded-lg bg-purple-600 hover:bg-purple-700 text-white text-xs font-semibold transition">
-                Đặt lại bộ lọc
-            </button>
-        </div>
-    </main>
-
-    <!-- TAB 2: AI SCRIPT-TO-BROLL MATCHER -->
-    <main id="tab-content-script" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-6">
-        <div class="glass p-6 sm:p-8 rounded-2xl border border-purple-500/40">
-            <div class="max-w-3xl">
-                <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/30 text-xs font-semibold mb-3">
-                    ✨ Công Cụ AI Đạo Diễn
-                </span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold text-white">Ráp Cảnh Trám Thông Minh Theo Kịch Bản Thoại</h2>
-                <p class="text-sm text-slate-300 mt-1">
-                    Dán bất kỳ kịch bản thoại nào của anh Việt vào đây. Hệ thống tự động phân tích ngữ cảnh từng câu thoại và nhúng ngay video B-roll demo tương ứng để xem trực tiếp!
-                </p>
-            </div>
-
-            <!-- PRESET PROMPTS -->
-            <div class="mt-6">
-                <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Thử nhanh kịch bản mẫu:</label>
-                <div class="flex flex-wrap gap-2">
-                    <button onclick="loadSampleScript(1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
-                        🎯 Kịch bản 1: "Thoát Bẫy Quá Tải & Xây Dựng Hệ Thống"
-                    </button>
-                    <button onclick="loadSampleScript(2)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
-                        ⚡ Kịch bản 2: "Kỷ Luật Sáng Sớm & Năng Lượng Deep Work"
-                    </button>
-                    <button onclick="loadSampleScript(3)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
-                        🎬 Kịch bản 3: "Bí Quyết Chuyển Cảnh Triệu View Fedu"
-                    </button>
-                </div>
-            </div>
-
-            <!-- TEXT AREA INPUT -->
-            <div class="mt-4 space-y-3">
-                <textarea id="script-input" rows="5" placeholder="Dán kịch bản thoại của bạn vào đây..."
-                          class="w-full bg-slate-900 text-white p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-purple-500 text-sm leading-relaxed placeholder-slate-500 font-sans"></textarea>
-                
-                <div class="flex flex-wrap items-center justify-between gap-3">
-                    <div class="text-xs text-slate-400">
-                        💡 Gợi ý: Mỗi câu thoại xuống 1 dòng để AI chia nhịp cắt cảnh chuẩn nhất.
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <button onclick="clearScript()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
-                            Xóa trắng
+                <!-- PRESET PROMPTS -->
+                <div class="mt-6">
+                    <label class="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Thử nhanh kịch bản mẫu:</label>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="loadSampleScript(1)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
+                            🎯 Kịch bản 1: "Thoát Bẫy Quá Tải & Xây Dựng Hệ Thống"
                         </button>
-                        <button onclick="analyzeAndMatchScript()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-500/25 flex items-center gap-2 transition">
-                            ⚡ Phân Tích & Ráp B-Roll Ngay
+                        <button onclick="loadSampleScript(2)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
+                            ⚡ Kịch bản 2: "Kỷ Luật Sáng Sớm & Năng Lượng Deep Work"
+                        </button>
+                        <button onclick="loadSampleScript(3)" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-purple-600/30 text-slate-300 hover:text-white border border-slate-700 text-xs transition">
+                            🎬 Kịch bản 3: "Bí Quyết Chuyển Cảnh Triệu View Fedu"
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
 
-        <!-- MATCHING RESULTS CONTAINER -->
-        <div id="script-results-container" class="space-y-4">
-            <!-- Rendered by JS -->
-        </div>
-    </main>
-
-    <!-- TAB 3: SỔ TAY 8 LOẠI B-ROLL FEDU -->
-    <main id="tab-content-handbook" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-8">
-        <div class="glass p-8 rounded-2xl border border-indigo-500/30">
-            <div class="max-w-3xl">
-                <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-bold">
-                    GIÁO TRÌNH ĐIỆN ẢNH MASTER
-                </span>
-                <h2 class="text-3xl font-extrabold text-white mt-3">Bộ Khung 8 Loại B-Roll Chuẩn Fedu</h2>
-                <p class="text-sm text-slate-300 mt-2 leading-relaxed">
-                    Được đúc kết từ khoa học thần kinh (Neuroscience) và tâm lý học nhận thức của Allan Paivio (Thuyết mã hóa kép) kết hợp kinh nghiệm đạo diễn thực chiến của Nguyễn Đức Việt.
-                </p>
-            </div>
-
-            <!-- 8 CARDS GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-                <!-- 1 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-blue-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">✂️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">LOẠI 1</span>
+                <!-- TEXT AREA INPUT -->
+                <div class="mt-4 space-y-3">
+                    <textarea id="script-input" rows="5" placeholder="Dán kịch bản thoại của bạn vào đây..."
+                              class="w-full bg-slate-900 text-white p-4 rounded-xl border border-slate-700 focus:outline-none focus:border-purple-500 text-sm leading-relaxed placeholder-slate-500 font-sans"></textarea>
+                    
+                    <div class="flex flex-wrap items-center justify-between gap-3">
+                        <div class="text-xs text-slate-400">
+                            💡 Gợi ý: Mỗi câu thoại xuống 1 dòng để AI chia nhịp cắt cảnh chuẩn nhất.
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="clearScript()" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
+                                Xóa trắng
+                            </button>
+                            <button onclick="analyzeAndMatchScript()" class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white text-xs font-bold shadow-lg shadow-purple-500/25 flex items-center gap-2 transition">
+                                ⚡ Phân Tích & Ráp B-Roll Ngay
+                            </button>
+                        </div>
                     </div>
-                    <h3 class="text-xl font-bold text-white">1. Cutaway (Insert Shot)</h3>
-                    <p class="text-xs text-blue-300 font-semibold">"Nói gì, hình nấy" • Cảnh chèn minh họa trực diện</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Cảnh quay cận đặc tả chi tiết vật thể, thao tác ngón tay bấm phím, hoa, cốc nước để giấu vết cắt và neo thị giác.</p>
-                </div>
-                <!-- 2 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-purple-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">🎞️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">LOẠI 2</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">2. Sequence (Montage)</h3>
-                    <p class="text-xs text-purple-300 font-semibold">"Băng chuyền hành động" • Chuỗi quy trình liên hoàn</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Nhiều góc máy khác nhau nối tiếp nhau miêu tả trọn vẹn quy trình (vắt cam, nén cà phê, nấu mỳ, gõ máy) giữ retention >70%.</p>
-                </div>
-                <!-- 3 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-teal-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">👁️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 font-bold border border-teal-500/30">LOẠI 3</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">3. Góc POV (Point Of View)</h3>
-                    <p class="text-xs text-teal-300 font-semibold">"Mượn mắt khán giả" • Góc nhìn thứ nhất</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Máy quay đặt ngang tầm mắt chĩa xuống đôi tay (lái xe, viết sổ, tập gym) kích hoạt nơ-ron gương tăng chuyển đổi.</p>
-                </div>
-                <!-- 4 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-red-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">🎬</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 font-bold border border-red-500/30">LOẠI 4</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">4. Thoại In-Situ (Walk-and-Talk)</h3>
-                    <p class="text-xs text-red-300 font-semibold">"Vừa làm vừa nói" • Thoại hiện trường sống động</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Người nói trực tiếp thực hiện công việc (giảng bài tại FPT, xếp cây, đứng ban công) tăng Social Proof uy tín.</p>
-                </div>
-                <!-- 5 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">⚖️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">LOẠI 5</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">5. Dựng Intercut (Docu-Style)</h3>
-                    <p class="text-xs text-indigo-300 font-semibold">"Nửa tĩnh, nửa động" • Dựng luân phiên</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Cắt xen kẽ giữa người nói chính và thao tác kỹ thuật hiện trường, phá vỡ sự nhàm chán.</p>
-                </div>
-                <!-- 6 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-amber-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">♟️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">LOẠI 6</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">6. Metaphor (Ẩn Dụ Thị Giác)</h3>
-                    <p class="text-xs text-amber-300 font-semibold">"Mượn vật thay lời" • Biểu tượng hóa ý niệm</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Mượn hình ảnh biểu tượng gián tiếp (cà phê nhỏ giọt = thời gian/bế tắc; note lộn xộn = quá tải) để neo cảm xúc sâu sắc.</p>
-                </div>
-                <!-- 7 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">⏸️</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-300 font-bold border border-slate-500/30">LOẠI 7</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">7. Negative Space (Khoảng Lặng)</h3>
-                    <p class="text-xs text-slate-300 font-semibold">"Khoảng lặng đắt giá" • Thư giãn thị giác</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Khung hình tĩnh lặng (ban công, sân uống nước cam) tạo điểm nghỉ cho não bộ tiêu hóa bài học.</p>
-                </div>
-                <!-- 8 -->
-                <div class="p-6 rounded-2xl bg-slate-900 border border-emerald-500/30 space-y-2">
-                    <div class="flex items-center justify-between">
-                        <span class="text-2xl">⏳</span>
-                        <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">LOẠI 8</span>
-                    </div>
-                    <h3 class="text-xl font-bold text-white">8. Archival / Timeline (Tư Liệu)</h3>
-                    <p class="text-xs text-emerald-300 font-semibold">"Cỗ máy thời gian" • Tư liệu thực chứng</p>
-                    <p class="text-xs text-slate-300 leading-relaxed">Màn hình Timeline CapCut/Premiere đang chạy, thao tác kéo layer, chứng minh luận điểm chắc chắn.</p>
                 </div>
             </div>
-        </div>
-    </main>
 
-    <!-- FOOTER -->
-    <footer class="mt-auto border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500 bg-slate-950">
-        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div>
-                © 2026 <strong class="text-slate-300">B-Roll Bank Master</strong> • Nguyễn Đức Việt (VietMac).
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="https://fedu.vn/brollbank.html" class="hover:text-purple-400 transition">fedu.vn/brollbank.html</a>
-                <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hover:text-red-400 transition">YouTube Playlist</a>
-            </div>
-        </div>
-    </footer>
+            <!-- MATCHING RESULTS CONTAINER -->
+            <div id="script-results-container" class="space-y-4"></div>
+        </main>
 
+        <!-- TAB 3: SỔ TAY 8 LOẠI B-ROLL FEDU -->
+        <main id="tab-content-handbook" class="hidden flex-1 max-w-7xl w-full mx-auto px-4 lg:px-8 py-8 space-y-8">
+            <div class="glass p-8 rounded-2xl border border-indigo-500/30">
+                <div class="max-w-3xl">
+                    <span class="px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-300 border border-indigo-500/30 text-xs font-bold">
+                        GIÁO TRÌNH ĐIỆN ẢNH MASTER
+                    </span>
+                    <h2 class="text-3xl font-extrabold text-white mt-3">Bộ Khung 8 Loại B-Roll Chuẩn Fedu</h2>
+                    <p class="text-sm text-slate-300 mt-2 leading-relaxed">
+                        Được đúc kết từ khoa học thần kinh (Neuroscience) và tâm lý học nhận thức của Allan Paivio (Thuyết mã hóa kép) kết hợp kinh nghiệm đạo diễn thực chiến của Nguyễn Đức Việt.
+                    </p>
+                </div>
+
+                <!-- 8 CARDS GRID -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <!-- 1 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-blue-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">✂️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-blue-500/20 text-blue-300 font-bold border border-blue-500/30">LOẠI 1</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">1. Cutaway (Insert Shot)</h3>
+                        <p class="text-xs text-blue-300 font-semibold">"Nói gì, hình nấy" • Cảnh chèn minh họa trực diện</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Cảnh quay cận đặc tả chi tiết vật thể, thao tác ngón tay bấm phím, hoa, cốc nước để giấu vết cắt và neo thị giác.</p>
+                    </div>
+                    <!-- 2 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-purple-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">🎞️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-purple-500/20 text-purple-300 font-bold border border-purple-500/30">LOẠI 2</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">2. Sequence (Montage)</h3>
+                        <p class="text-xs text-purple-300 font-semibold">"Băng chuyền hành động" • Chuỗi quy trình liên hoàn</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Nhiều góc máy khác nhau nối tiếp nhau miêu tả trọn vẹn quy trình (vắt cam, nén cà phê, nấu mỳ, gõ máy) giữ retention >70%.</p>
+                    </div>
+                    <!-- 3 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-teal-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">👁️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-teal-500/20 text-teal-300 font-bold border border-teal-500/30">LOẠI 3</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">3. Góc POV (Point Of View)</h3>
+                        <p class="text-xs text-teal-300 font-semibold">"Mượn mắt khán giả" • Góc nhìn thứ nhất</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Máy quay đặt ngang tầm mắt chĩa xuống đôi tay (lái xe, viết sổ, tập gym) kích hoạt nơ-ron gương tăng chuyển đổi.</p>
+                    </div>
+                    <!-- 4 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-red-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">🎬</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-red-500/20 text-red-300 font-bold border border-red-500/30">LOẠI 4</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">4. Thoại In-Situ (Walk-and-Talk)</h3>
+                        <p class="text-xs text-red-300 font-semibold">"Vừa làm vừa nói" • Thoại hiện trường sống động</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Người nói trực tiếp thực hiện công việc (giảng bài tại FPT, xếp cây, đứng ban công) tăng Social Proof uy tín.</p>
+                    </div>
+                    <!-- 5 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-indigo-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">⚖️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-indigo-500/20 text-indigo-300 font-bold border border-indigo-500/30">LOẠI 5</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">5. Dựng Intercut (Docu-Style)</h3>
+                        <p class="text-xs text-indigo-300 font-semibold">"Nửa tĩnh, nửa động" • Dựng luân phiên</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Cắt xen kẽ giữa người nói chính và thao tác kỹ thuật hiện trường, phá vỡ sự nhàm chán.</p>
+                    </div>
+                    <!-- 6 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-amber-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">♟️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-amber-500/20 text-amber-300 font-bold border border-amber-500/30">LOẠI 6</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">6. Metaphor (Ẩn Dụ Thị Giác)</h3>
+                        <p class="text-xs text-amber-300 font-semibold">"Mượn vật thay lời" • Biểu tượng hóa ý niệm</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Mượn hình ảnh biểu tượng gián tiếp (cà phê nhỏ giọt = thời gian/bế tắc; note lộn xộn = quá tải) để neo cảm xúc sâu sắc.</p>
+                    </div>
+                    <!-- 7 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-slate-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">⏸️</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-slate-500/20 text-slate-300 font-bold border border-slate-500/30">LOẠI 7</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">7. Negative Space (Khoảng Lặng)</h3>
+                        <p class="text-xs text-slate-300 font-semibold">"Khoảng lặng đắt giá" • Thư giãn thị giác</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Khung hình tĩnh lặng (ban công, sân uống nước cam) tạo điểm nghỉ cho não bộ tiêu hóa bài học.</p>
+                    </div>
+                    <!-- 8 -->
+                    <div class="p-6 rounded-2xl bg-slate-900 border border-emerald-500/30 space-y-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-2xl">⏳</span>
+                            <span class="text-xs px-2.5 py-1 rounded-full bg-emerald-500/20 text-emerald-300 font-bold border border-emerald-500/30">LOẠI 8</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white">8. Archival / Timeline (Tư Liệu)</h3>
+                        <p class="text-xs text-emerald-300 font-semibold">"Cỗ máy thời gian" • Tư liệu thực chứng</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Màn hình Timeline CapCut/Premiere đang chạy, thao tác kéo layer, chứng minh luận điểm chắc chắn.</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="mt-auto border-t border-slate-800 py-8 px-4 text-center text-xs text-slate-500 bg-slate-950">
+            <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div>
+                    © 2026 <strong class="text-slate-300">B-Roll Bank Master</strong> • Nguyễn Đức Việt (VietMac).
+                </div>
+                <div class="flex items-center gap-4">
+                    <a href="https://brollbank.fedu.vn" class="hover:text-purple-400 transition">brollbank.fedu.vn</a>
+                    <a href="https://www.youtube.com/playlist?list=PLPs82ezbs9Lo" target="_blank" class="hover:text-red-400 transition">YouTube Playlist</a>
+                    <button onclick="lockScreen()" class="hover:text-purple-400 transition">Khóa PIN</button>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MODALS -->
+    <!-- ============================================== -->
     <!-- MODAL CHI TIẾT ĐẠO DIỄN -->
     <div id="video-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 sm:p-6 opacity-0 transition-opacity duration-300">
         <div class="glass max-w-3xl w-full max-h-[90vh] rounded-2xl border border-slate-700 flex flex-col overflow-hidden shadow-2xl bg-slate-900">
-            <!-- Modal Header -->
+            <!-- Header -->
             <div class="p-4 sm:px-6 border-b border-slate-800 flex items-center justify-between bg-slate-950">
                 <div class="flex items-center gap-3">
                     <span id="modal-category-badge" class="px-2.5 py-1 rounded-full text-xs font-bold badge-cutaway">Cutaway</span>
@@ -565,14 +706,12 @@ html_content = f'''<!DOCTYPE html>
                 <button onclick="closeModal()" class="p-2 rounded-lg bg-slate-800 text-slate-400 hover:text-white border border-slate-700 transition">✕</button>
             </div>
 
-            <!-- Modal Body -->
+            <!-- Body -->
             <div class="p-4 sm:p-6 overflow-y-auto space-y-5 flex-1">
                 <!-- Video Player Container -->
-                <div class="bg-black rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-slate-800" id="modal-player-container">
-                    <!-- Embedded YouTube Player -->
-                </div>
+                <div class="bg-black rounded-xl overflow-hidden aspect-video relative flex items-center justify-center border border-slate-800" id="modal-player-container"></div>
 
-                <!-- Modal Actions Row -->
+                <!-- Actions Row -->
                 <div class="flex flex-wrap items-center gap-2.5">
                     <a id="modal-gdrive-btn" href="#" target="_blank" class="flex-1 py-2.5 px-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-lg shadow-blue-600/30 transition flex items-center justify-center gap-2 min-w-[160px]">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
@@ -580,7 +719,7 @@ html_content = f'''<!DOCTYPE html>
                     </a>
                     <a id="modal-yt-btn" href="#" target="_blank" class="py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        YouTube
+                        <span id="modal-yt-btn-label">YouTube</span>
                     </a>
                     <button id="modal-delete-btn" onclick="openDeleteModalFromDetail()" class="py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5" title="Xóa vĩnh viễn trên YouTube & Thư viện">
                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
@@ -613,9 +752,7 @@ html_content = f'''<!DOCTYPE html>
                     <div class="text-xs font-bold text-purple-300">
                         🎬 Lời Khuyên Của Đạo Diễn (Tâm Lý Học Tiếp Nhận):
                     </div>
-                    <p class="text-xs text-purple-100/90 leading-relaxed" id="modal-director-note">
-                        Mô tả chi tiết.
-                    </p>
+                    <p class="text-xs text-purple-100/90 leading-relaxed" id="modal-director-note"></p>
                 </div>
 
                 <!-- Dialogue Cues -->
@@ -655,21 +792,18 @@ html_content = f'''<!DOCTYPE html>
                     </div>
                 </div>
 
-                <!-- Warning message -->
                 <div class="p-3 rounded-xl bg-red-950/30 border border-red-900/50 flex items-start gap-2.5 text-xs text-red-200/90 leading-relaxed">
                     <span class="text-base shrink-0">⚠️</span>
                     <div>
-                        Video sẽ bị <strong>xóa vĩnh viễn trên YouTube</strong> và loại bỏ khỏi kho B-Roll Bank Master.
+                        Video sẽ bị <strong>loại bỏ khỏi kho B-Roll Bank Master</strong>.
                     </div>
                 </div>
 
-                <!-- 4 Action options (No background daemon needed) -->
                 <div class="space-y-3 pt-1">
-                    <!-- Option 1: Copy Chat Prompt for AI -->
                     <div class="p-3 rounded-xl bg-purple-950/30 border border-purple-900/50">
                         <div class="text-[11px] text-purple-300 font-bold mb-1.5 flex items-center justify-between">
                             <span>💬 Cách 1: Nhắn Cho Trợ Lý Antigravity / Gemini</span>
-                            <span class="text-[10px] text-purple-400 font-normal">Tự động xóa YT & Git Push</span>
+                            <span class="text-[10px] text-purple-400 font-normal">Tự động xóa YT & Deploy</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <input id="del-chat-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-lg border border-purple-800/60 font-mono text-[11px] text-purple-200 select-all" />
@@ -680,31 +814,17 @@ html_content = f'''<!DOCTYPE html>
                         </div>
                     </div>
 
-                    <!-- Option 2: Terminal CLI Command -->
                     <div class="p-3 rounded-xl bg-slate-950 border border-slate-800">
                         <div class="text-[11px] text-slate-300 font-bold mb-1.5 flex items-center justify-between">
-                            <span>⚡ Cách 2: Chạy Terminal CLI (1 giây)</span>
+                            <span>⚡ Cách 2: Chạy Terminal CLI</span>
                             <span class="text-[10px] text-slate-500 font-mono">xoa-broll ID --yes</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <input id="del-cli-cmd" readonly class="flex-1 bg-black/60 p-2.5 rounded-lg border border-slate-700 font-mono text-[11px] text-emerald-400 select-all" />
                             <button onclick="copyCliCmd()" class="px-3.5 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold shrink-0 shadow-lg transition flex items-center gap-1">
-                                <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
                                 Copy CLI
                             </button>
                         </div>
-                    </div>
-
-                    <!-- Option 3: Telegram Bot NOVA-CORE -->
-                    <div class="p-3 rounded-xl bg-blue-950/20 border border-blue-900/40">
-                        <div class="text-[11px] text-blue-300 font-bold mb-1.5 flex items-center justify-between">
-                            <span>📱 Cách 3: Bắn Lệnh Qua Bot Telegram</span>
-                            <span class="text-[10px] text-blue-400">@nova0410_bot</span>
-                        </div>
-                        <a id="del-tele-link" href="#" target="_blank" class="w-full py-2.5 px-4 rounded-lg bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs flex items-center justify-center gap-2 shadow-lg shadow-blue-900/30 transition">
-                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
-                            Mở Bot Telegram Xóa Ngay
-                        </a>
                     </div>
                 </div>
             </div>
@@ -718,7 +838,6 @@ html_content = f'''<!DOCTYPE html>
                 <button onclick="closeDeleteModal()" class="px-5 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-bold transition">
                     Đóng
                 </button>
-            </div>
             </div>
         </div>
     </div>
@@ -735,6 +854,121 @@ html_content = f'''<!DOCTYPE html>
         let currentDetailVideo = null;
         let pendingDeleteVideo = null;
 
+        // --- PASSWORD AUTHENTICATION ENGINE (PIN: 0070) ---
+        const CORRECT_PIN = '0070';
+        const pinDigits = document.querySelectorAll('.pin-digit');
+
+        pinDigits.forEach((input, index) => {{
+            input.addEventListener('input', (e) => {{
+                const val = e.target.value;
+                if (val.length >= 1) {{
+                    e.target.value = val.slice(-1);
+                    if (index < pinDigits.length - 1) {{
+                        pinDigits[index + 1].focus();
+                    }} else {{
+                        submitPin();
+                    }}
+                }}
+            }});
+
+            input.addEventListener('keydown', (e) => {{
+                if (e.key === 'Backspace' && !input.value && index > 0) {{
+                    pinDigits[index - 1].focus();
+                }} else if (e.key === 'Enter') {{
+                    submitPin();
+                }}
+            }});
+
+            input.addEventListener('paste', (e) => {{
+                e.preventDefault();
+                const pasteData = (e.clipboardData || window.clipboardData).getData('text').trim();
+                if (/^\\d{{4}}$/.test(pasteData)) {{
+                    for (let i = 0; i < 4; i++) {{
+                        pinDigits[i].value = pasteData[i];
+                    }}
+                    submitPin();
+                }}
+            }});
+        }});
+
+        function pressPinKey(digit) {{
+            for (let i = 0; i < pinDigits.length; i++) {{
+                if (!pinDigits[i].value) {{
+                    pinDigits[i].value = digit;
+                    if (i < pinDigits.length - 1) {{
+                        pinDigits[i + 1].focus();
+                    }} else {{
+                        submitPin();
+                    }}
+                    break;
+                }}
+            }}
+        }}
+
+        function clearPin() {{
+            pinDigits.forEach(d => d.value = '');
+            pinDigits[0].focus();
+            const status = document.getElementById('pin-status');
+            status.innerText = 'Nhập mật khẩu 0070';
+            status.className = 'text-xs font-semibold h-5 transition-all text-slate-500';
+        }}
+
+        function backspacePin() {{
+            for (let i = pinDigits.length - 1; i >= 0; i--) {{
+                if (pinDigits[i].value) {{
+                    pinDigits[i].value = '';
+                    pinDigits[i].focus();
+                    break;
+                }}
+            }}
+        }}
+
+        function submitPin() {{
+            let entered = '';
+            pinDigits.forEach(d => entered += d.value);
+            const status = document.getElementById('pin-status');
+            const card = document.getElementById('pin-card');
+
+            if (entered === CORRECT_PIN) {{
+                status.innerText = '✓ Xác thực thành công! Đang mở kho...';
+                status.className = 'text-xs font-bold h-5 transition-all text-emerald-400';
+                localStorage.setItem('brollbank_pin', CORRECT_PIN);
+                document.documentElement.classList.add('authenticated');
+                const guard = document.getElementById('auth-guard');
+                guard.style.opacity = '0';
+                setTimeout(() => {{
+                    guard.style.display = 'none';
+                    showToast('Chào mừng anh Việt đến với Kho B-Roll Bank!');
+                }}, 300);
+            }} else {{
+                status.innerText = '✕ Mật khẩu không chính xác! Vui lòng thử lại.';
+                status.className = 'text-xs font-bold h-5 transition-all text-red-400';
+                card.classList.add('shake');
+                setTimeout(() => {{
+                    card.classList.remove('shake');
+                    clearPin();
+                }}, 600);
+            }}
+        }}
+
+        function lockScreen() {{
+            localStorage.removeItem('brollbank_pin');
+            document.documentElement.classList.remove('authenticated');
+            const guard = document.getElementById('auth-guard');
+            guard.style.display = 'flex';
+            guard.style.opacity = '1';
+            clearPin();
+            showToast('Đã khóa bảo mật kho B-Roll.');
+        }}
+
+        // Focus first PIN box on load if not authenticated
+        window.addEventListener('DOMContentLoaded', () => {{
+            if (!localStorage.getItem('brollbank_pin')) {{
+                setTimeout(() => pinDigits[0]?.focus(), 200);
+            }}
+        }});
+
+        // --- APP CONTROLS ---
         function switchMainTab(tabId) {{
             document.getElementById('tab-content-library').classList.add('hidden');
             document.getElementById('tab-content-script').classList.add('hidden');
@@ -850,16 +1084,35 @@ html_content = f'''<!DOCTYPE html>
 
             const gdriveLink = v.gdrive_download_url || v.gdrive_view_url || 'https://drive.google.com/open?id=1R4Wyl_c8MxLPqBJRR-5Dc5I3P3Hb7tSA';
             document.getElementById('modal-gdrive-btn').href = gdriveLink;
-            document.getElementById('modal-yt-btn').href = v.youtube_url || `https://www.youtube.com/watch?v=${{v.video_id}}`;
 
+            const ytBtn = document.getElementById('modal-yt-btn');
+            const ytLabel = document.getElementById('modal-yt-btn-label');
             const playerBox = document.getElementById('modal-player-container');
-            playerBox.innerHTML = `
-                <iframe src="https://www.youtube.com/embed/${{v.video_id}}?autoplay=1&rel=0" 
-                        title="${{v.title}}" 
-                        class="w-full h-full border-0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen></iframe>
-            `;
+
+            if (v.r2_url) {{
+                ytBtn.href = v.r2_url;
+                ytLabel.innerText = 'R2 Video Stream';
+                ytBtn.className = 'py-2.5 px-4 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-300 hover:text-white border border-emerald-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5';
+                playerBox.innerHTML = `
+                    <video src="${{v.r2_url}}" 
+                           controls 
+                           autoplay 
+                           playsinline 
+                           class="w-full h-full object-contain bg-black" 
+                           title="${{v.title}}"></video>
+                `;
+            }} else {{
+                ytBtn.href = v.youtube_url || `https://www.youtube.com/watch?v=${{v.video_id}}`;
+                ytLabel.innerText = 'YouTube';
+                ytBtn.className = 'py-2.5 px-4 rounded-xl bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white border border-red-500/30 font-bold text-xs transition flex items-center justify-center gap-1.5';
+                playerBox.innerHTML = `
+                    <iframe src="https://www.youtube.com/embed/${{v.video_id}}?autoplay=1&rel=0" 
+                            title="${{v.title}}" 
+                            class="w-full h-full border-0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                `;
+            }}
 
             const cuesBox = document.getElementById('modal-dialogue-cues');
             cuesBox.innerHTML = v.dialogue_cues.map(c => `
@@ -884,24 +1137,18 @@ html_content = f'''<!DOCTYPE html>
             }}, 300);
         }}
 
-        // DELETE MODAL ACTIONS (Zero Daemon Required)
+        // DELETE MODAL ACTIONS
         function openDeleteModal(id) {{
             const v = MASTER_DATA.videos.find(x => x.id === id);
             if (!v) return;
             pendingDeleteVideo = v;
             document.getElementById('del-modal-id').innerText = `ID: #${{v.id}}`;
             document.getElementById('del-modal-title').innerText = v.title;
-            document.getElementById('del-modal-yt').innerText = `YT: ${{v.video_id || 'N/A'}}`;
+            document.getElementById('del-modal-yt').innerText = `YT: ${{v.video_id || 'R2 Direct'}}`;
             document.getElementById('del-modal-file').innerText = v.filename;
 
-            // Option 1: Chat Prompt (Antigravity / Gemini)
             document.getElementById('del-chat-cmd').value = `xoa broll ${{v.id}}`;
-
-            // Option 2: CLI Command
             document.getElementById('del-cli-cmd').value = `xoa-broll ${{v.id}} --yes`;
-
-            // Option 3: Telegram Link (NOVA-CORE Bot)
-            document.getElementById('del-tele-link').href = `https://t.me/nova0410_bot?text=xoa%20broll%20${{v.id}}`;
 
             const modal = document.getElementById('delete-modal');
             modal.classList.remove('hidden');
@@ -946,7 +1193,6 @@ html_content = f'''<!DOCTYPE html>
                 card.style.transform = 'scale(0.8)';
                 setTimeout(() => {{
                     card.style.display = 'none';
-                    // Update index in MASTER_DATA locally
                     const idx = MASTER_DATA.videos.findIndex(x => x.id === targetId);
                     if (idx !== -1) MASTER_DATA.videos.splice(idx, 1);
                     updateCounters(MASTER_DATA.videos.length);
@@ -966,12 +1212,7 @@ html_content = f'''<!DOCTYPE html>
             document.getElementById('tab-counter').innerText = total;
             document.getElementById('pill-all-count').innerText = total;
             document.getElementById('top-gdrive-count').innerText = total;
-            document.getElementById('nav-counter').innerText = `${{total}} CLIPS NHÚNG YOUTUBE & DRIVE`;
-        }}
-
-        function copyCliCmd() {{
-            const cmd = document.getElementById('del-cli-cmd').value;
-            navigator.clipboard.writeText(cmd).then(() => showToast('Đã sao chép lệnh xóa Terminal!'));
+            document.getElementById('nav-counter').innerText = `${{total}} CLIPS NHÚNG YOUTUBE, R2 & DRIVE`;
         }}
 
         function copyText(txt) {{
@@ -1091,6 +1332,7 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
                                             <span class="text-slate-400 text-[11px]">${{item.video.shot_type}}</span>
                                             <span class="text-slate-500">•</span>
                                             <span class="text-slate-400 text-[11px]">${{item.video.location}}</span>
+                                            ${{item.video.r2_url ? '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">⚡ R2 Host</span>' : ''}}
                                         </div>
                                         <div class="text-[11px] text-purple-300/80 italic">
                                             💡 Đạo diễn: ${{item.video.director_note}}
@@ -1098,14 +1340,21 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
                                     </div>
                                 </div>
 
-                                <!-- Inline YouTube Video Player on Matched Beat -->
+                                <!-- Player on Matched Beat -->
                                 <div class="w-full lg:w-72 aspect-video bg-black rounded-xl overflow-hidden shrink-0 border border-slate-800">
-                                    <iframe src="https://www.youtube.com/embed/${{item.video.video_id}}?rel=0" 
-                                            title="${{item.video.title}}" 
-                                            loading="lazy"
-                                            class="w-full h-full border-0" 
-                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                                            allowfullscreen></iframe>
+                                    ${{item.video.r2_url ? `
+                                        <video src="${{item.video.r2_url}}" 
+                                               controls 
+                                               playsinline 
+                                               class="w-full h-full object-contain bg-black"></video>
+                                    ` : `
+                                        <iframe src="https://www.youtube.com/embed/${{item.video.video_id}}?rel=0" 
+                                                title="${{item.video.title}}" 
+                                                loading="lazy"
+                                                class="w-full h-full border-0" 
+                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                                allowfullscreen></iframe>
+                                    `}}
                                 </div>
                             </div>
                         `).join('')}}
@@ -1118,7 +1367,7 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
         function copyStoryboardShotlist() {{
             if (!window.latestStoryboard) return;
             const text = window.latestStoryboard.map(b => 
-                `BEAT ${{b.beat}}: "${{b.sentence}}"\\n  -> B-ROLL: [${{b.video.category_name}}] ${{b.video.title}}\\n  -> FILE: ${{b.video.filename}} (${{b.video.duration}})\\n  -> GÓC MÁY: ${{b.video.shot_type}} | BỐI CẢNH: ${{b.video.location}}\\n  -> LINK DEMO: https://www.youtube.com/watch?v=${{b.video.video_id}}\\n`
+                `BEAT ${{b.beat}}: "${{b.sentence}}"\\n  -> B-ROLL: [${{b.video.category_name}}] ${{b.video.title}}\\n  -> FILE: ${{b.video.filename}} (${{b.video.duration}})\\n  -> GÓC MÁY: ${{b.video.shot_type}} | BỐI CẢNH: ${{b.video.location}}\\n  -> LINK DEMO: ${{b.video.r2_url ? b.video.r2_url : 'https://www.youtube.com/watch?v=' + b.video.video_id}}\\n`
             ).join(String.fromCharCode(10));
             navigator.clipboard.writeText(text).then(() => showToast('Đã sao chép toàn bộ Shotlist phân cảnh B-Roll!'));
         }}
@@ -1130,4 +1379,8 @@ Hãy kiểm chứng điều này qua bài thực hành thực tế ngay hôm nay
 with open(HTML_OUT, 'w', encoding='utf-8') as f:
     f.write(html_content)
 
-print(f"Generated pre-rendered HTML with delete action & {len(videos)} inline YouTube embeds: {HTML_OUT} ({len(html_content)} bytes)")
+with open(HTML_OUT_LEGACY, 'w', encoding='utf-8') as f:
+    f.write(html_content)
+
+print(f"Generated pre-rendered HTML for brollbank.fedu.vn ({HTML_OUT}): {len(html_content)} bytes")
+print(f"Total videos: {len(videos)}, R2 videos: {r2_count}")
