@@ -1,13 +1,13 @@
 ---
 name: agy-optimize
-description: Quét, chẩn đoán và tối ưu hệ thống Antigravity. Giảm lag, tiết kiệm token, dọn rác context.
+description: Quét, chẩn đoán và tối ưu hệ thống Hệ Thống AI. Giảm lag, tiết kiệm token, dọn rác context.
 ---
 
-# 🚀 KỸ NĂNG: TỐI ƯU HỆ THỐNG ANTIGRAVITY (AGY-OPTIMIZE)
+# 🚀 KỸ NĂNG: TỐI ƯU HỆ THỐNG HỆ THỐNG AI (AGY-OPTIMIZE)
 
 **Mantra Triggers:** `OPTIMIZE`, `TỐI ƯU`, `DỌN RÁC AGY`
 
-Kỹ năng này giúp Agent tự động quét, phân tích và đề xuất các hành động tối ưu hóa để dọn dẹp hệ thống Antigravity của User, giảm thiểu tình trạng phình to context (context bloat), tiết kiệm token và giảm lag.
+Kỹ năng này giúp Agent tự động quét, phân tích và đề xuất các hành động tối ưu hóa để dọn dẹp hệ thống Hệ Thống AI của User, giảm thiểu tình trạng phình to context (context bloat), tiết kiệm token và giảm lag.
 
 ## 📋 HƯỚNG DẪN THỰC THI CHO AGENT
 Khi kích hoạt kỹ năng này, bạn **PHẢI** thực hiện theo đúng thứ tự 5 Phase sau đây. Tuân thủ nghiêm ngặt các mốc giới hạn (threshold).
@@ -15,7 +15,7 @@ Khi kích hoạt kỹ năng này, bạn **PHẢI** thực hiện theo đúng th�
 ---
 
 ### PHASE 1: AUDIT (TỰ ĐỘNG - KHÔNG HỎI USER)
-Sử dụng công cụ `run_command` để kiểm tra thư mục hệ thống của Antigravity (thường ở `~/.gemini/config/`). Thu thập các thông tin sau:
+Sử dụng công cụ `run_command` để kiểm tra thư mục hệ thống của Hệ Thống AI (thường ở `~/.gemini/config/`). Thu thập các thông tin sau:
 1. **Quét Skills (`skills/`):** Dùng `ls -la` và `du -sh` để liệt kê tất cả các kỹ năng đã cài đặt và dung lượng của từng cái.
 2. **Quét Rules (`rules/`):** Liệt kê tất cả rule, kiểm tra dung lượng từng rule và tính TỔNG dung lượng thư mục `rules/`.
 3. **Quét MCP và Hooks:** Đọc file `mcp_config.json` (liệt kê danh sách server/tool) và `hooks.json` (nếu có).
