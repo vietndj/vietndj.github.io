@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="vi" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kỹ Năng AI | Tối Ưu Hệ Thống AGY</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            obsidian: '#05070c',
+            surface: '#0d111a',
+            accent: '#10b981',
+            gold: '#f59e0b',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background-color: #05070c; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
+    .glass-box { background: rgba(13, 17, 26, 0.75); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.07); }
+    .gradient-emerald-text { background: linear-gradient(135deg, #6ee7b7 0%, #10b981 50%, #059669 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+  </style>
+</head>
+<body class="antialiased min-h-screen selection:bg-accent/30 selection:text-white">
+
+  <!-- Background effects -->
+  <div class="fixed inset-0 z-[-1] overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-emerald-900/20 blur-[120px]"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-[30%] h-[30%] rounded-full bg-blue-900/20 blur-[100px]"></div>
+  </div>
+
+  <main class="max-w-4xl mx-auto px-6 py-16 sm:py-24 space-y-16">
+    
+    <!-- 1. HERO SECTION -->
+    <header class="text-center space-y-6">
+      <div class="inline-flex items-center px-3 py-1 rounded-full border border-accent/30 bg-accent/10 text-accent text-xs font-semibold tracking-widest uppercase mb-2">
+        TỐI ƯU HỆ THỐNG
+      </div>
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white">
+        <span class="gradient-emerald-text">Tối Ưu</span> Antigravity
+      </h1>
+      <p class="text-lg sm:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed">
+        Biến trợ lý AI từ chậm chạp, hay sai thành nhanh gọn, chính xác. Tự động quét, chẩn đoán và tinh gọn hệ thống skills, rules & MCP chỉ trong 1 lệnh.
+      </p>
+    </header>
+
+    <!-- 2. INSTALL SECTION (QR Code Card) -->
+    <section class="glass-box rounded-3xl p-8 sm:p-10 shadow-2xl shadow-black/50 border border-white/10 relative overflow-hidden">
+      <!-- Decor lines -->
+      <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-accent to-transparent opacity-50"></div>
+      
+      <div class="grid sm:grid-cols-2 gap-10 items-center">
+        <div class="space-y-8">
+          <div>
+            <h2 class="text-2xl font-bold text-white mb-2">Cài Đặt Kỹ Năng</h2>
+            <p class="text-slate-400 text-sm">3 bước đơn giản để kích hoạt bộ tối ưu.</p>
+          </div>
+          
+          <ul class="space-y-6 relative before:absolute before:inset-y-0 before:left-3 before:w-px before:bg-white/10">
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">1</div>
+              <p class="text-slate-300 font-medium">Lưu mã QR bên cạnh về máy tính</p>
+            </li>
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">2</div>
+              <p class="text-slate-300 font-medium">Thả ảnh QR vào khung chat Antigravity</p>
+            </li>
+            <li class="relative pl-10">
+              <div class="absolute left-0 top-0.5 w-6 h-6 rounded-full bg-surface border border-accent flex items-center justify-center text-xs font-bold text-accent">3</div>
+              <p class="text-slate-300 font-medium">Gõ <code class="text-accent font-mono bg-accent/10 px-1.5 py-0.5 rounded text-sm">"TỐI ƯU"</code> hoặc <code class="text-accent font-mono bg-accent/10 px-1.5 py-0.5 rounded text-sm">"OPTIMIZE"</code> để bắt đầu quét</p>
+            </li>
+          </ul>
+        </div>
+        
+        <div class="flex flex-col items-center justify-center p-6 bg-black/40 rounded-2xl border border-white/5">
+          <div class="p-4 bg-white rounded-xl shadow-lg mb-4">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=ACTIVATE_AGY_OPTIMIZE_https://fedu.vn/skill/install-agyoptimize.sh&margin=1" alt="QR Code Activate" class="w-32 h-32" />
+          </div>
+          <span class="text-xs font-mono text-slate-500 tracking-widest uppercase">ACTIVATE OPTIMIZER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. VẤN ĐỀ ĐANG GẶP (Problem Statement) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Vấn Đề Hệ Thống Phình To</h3>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <div class="glass-box p-5 rounded-2xl border-white/5 hover:border-white/10 transition-colors">
+          <div class="text-3xl mb-3">🐌</div>
+          <h4 class="font-bold text-slate-200 mb-1">AI phản hồi chậm</h4>
+          <p class="text-sm text-slate-400">Context window bị lấp đầy bởi skills không dùng đến.</p>
+        </div>
+        <div class="glass-box p-5 rounded-2xl border-white/5 hover:border-white/10 transition-colors">
+          <div class="text-3xl mb-3">🔄</div>
+          <h4 class="font-bold text-slate-200 mb-1">Trùng lặp ngầm</h4>
+          <p class="text-sm text-slate-400">Rules và Skills chứa nội dung giống nhau, token bị đốt 2 lần.</p>
+        </div>
+        <div class="glass-box p-5 rounded-2xl border-white/5 hover:border-white/10 transition-colors">
+          <div class="text-3xl mb-3">📦</div>
+          <h4 class="font-bold text-slate-200 mb-1">Skills quá nặng</h4>
+          <p class="text-sm text-slate-400">Một skill 25KB đang chiếm slot của 5 skill nhẹ.</p>
+        </div>
+        <div class="glass-box p-5 rounded-2xl border-white/5 hover:border-white/10 transition-colors">
+          <div class="text-3xl mb-3">🗑️</div>
+          <h4 class="font-bold text-slate-200 mb-1">Rác tích lũy</h4>
+          <p class="text-sm text-slate-400">Skills cũ, rules hết hạn, MCP không dùng vẫn nạp mỗi phiên.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. GIẢI PHÁP 5 PHA (Solution Workflow) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Quy Trình Tối Ưu 5 Pha</h3>
+      <div class="space-y-3">
+        <!-- Pha 1 -->
+        <div class="glass-box p-4 rounded-xl border-white/5 flex gap-4 items-center">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-surface border border-accent/30 flex items-center justify-center font-mono text-accent font-bold">01</div>
+          <div>
+            <h4 class="font-bold text-slate-200 text-sm">📊 AUDIT</h4>
+            <p class="text-xs text-slate-400 mt-1">Quét toàn bộ skills, rules, MCP, hooks. Tính context footprint.</p>
+          </div>
+        </div>
+        <!-- Pha 2 -->
+        <div class="glass-box p-4 rounded-xl border-white/5 flex gap-4 items-center">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-surface border border-accent/30 flex items-center justify-center font-mono text-accent font-bold">02</div>
+          <div>
+            <h4 class="font-bold text-slate-200 text-sm">🔬 DIAGNOSE</h4>
+            <p class="text-xs text-slate-400 mt-1">Phát hiện trùng lặp, skill phình, rule vượt ngưỡng 12KB.</p>
+          </div>
+        </div>
+        <!-- Pha 3 -->
+        <div class="glass-box p-4 rounded-xl border-white/5 flex gap-4 items-center">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-surface border border-accent/30 flex items-center justify-center font-mono text-accent font-bold">03</div>
+          <div>
+            <h4 class="font-bold text-slate-200 text-sm">💡 RECOMMEND</h4>
+            <p class="text-xs text-slate-400 mt-1">Phân loại 4 nhóm: Auto-fix / Merge / User Decision / MCP Packaging</p>
+          </div>
+        </div>
+        <!-- Pha 4 -->
+        <div class="glass-box p-4 rounded-xl border-white/5 flex gap-4 items-center">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-surface border border-accent/30 flex items-center justify-center font-mono text-accent font-bold">04</div>
+          <div>
+            <h4 class="font-bold text-slate-200 text-sm">⚡ EXECUTE</h4>
+            <p class="text-xs text-slate-400 mt-1">Backup → Thực thi → Verify → Báo cáo Before/After</p>
+          </div>
+        </div>
+        <!-- Pha 5 -->
+        <div class="glass-box p-4 rounded-xl border-white/5 flex gap-4 items-center">
+          <div class="w-10 h-10 shrink-0 rounded-lg bg-surface border border-accent/30 flex items-center justify-center font-mono text-accent font-bold">05</div>
+          <div>
+            <h4 class="font-bold text-slate-200 text-sm">📅 MAINTAIN</h4>
+            <p class="text-xs text-slate-400 mt-1">Lịch bảo trì: Weekly check, Monthly audit, On-demand khi lag</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. KẾT QUẢ THỰC TẾ (Results Section) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Kết Quả Trước / Sau</h3>
+      <div class="glass-box rounded-2xl border-white/10 overflow-hidden">
+        <div class="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-white/10">
+          <div class="p-6 bg-red-950/10">
+            <h4 class="text-red-400 font-bold mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+              Trước Khi Tối Ưu
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• 11 active skills (95KB)</li>
+              <li>• 6 rules (13.8KB <span class="text-red-400">> 12KB limit!</span>)</li>
+              <li>• 2 MCP servers</li>
+            </ul>
+          </div>
+          <div class="p-6 bg-emerald-950/10">
+            <h4 class="text-accent font-bold mb-4 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+              Sau Khi Tối Ưu
+            </h4>
+            <ul class="space-y-2 text-sm text-slate-300">
+              <li>• 8 active skills (52KB)</li>
+              <li>• 4 rules (9.2KB <span class="text-accent">✓</span>)</li>
+              <li>• 2 MCP servers + 3 migrated tools</li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-4 bg-surface border-t border-white/5 text-center">
+          <p class="text-sm font-medium text-slate-200">
+            Token savings: <span class="text-accent font-bold">~43KB context reduction</span> per session (~35% faster)
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CÂU LỆNH SỬ DỤNG (Prompt Pills) -->
+    <section class="space-y-6">
+      <h3 class="text-xl font-bold text-white text-center">Ví Dụ Câu Lệnh (Prompts)</h3>
+      <div class="flex flex-wrap justify-center gap-3">
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"TỐI ƯU"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"OPTIMIZE"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Quét hệ thống xem đang phình cỡ nào"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Gộp các skill trùng lặp"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Chuyển skill X sang MCP"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"DỌN RÁC AGY"</span>
+        <span class="px-4 py-2 rounded-full glass-box border-white/10 font-mono text-sm text-slate-300 hover:text-white hover:border-accent/50 cursor-default transition-colors">"Đánh giá sức khỏe hệ thống"</span>
+      </div>
+    </section>
+
+    <!-- 7. FOOTER LINKS -->
+    <footer class="pt-8 border-t border-white/10">
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="https://fedu.vn/skill/taoanh.html" class="glass-box p-4 rounded-xl border-white/5 hover:border-white/20 transition-all flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">🧠</span>
+            <span class="font-medium text-slate-300 group-hover:text-white">Skill AI tạo ảnh</span>
+          </div>
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </a>
+        <a href="https://go.fedu.vn" class="glass-box p-4 rounded-xl border-white/5 hover:border-white/20 transition-all flex items-center justify-between group">
+          <div class="flex items-center gap-3">
+            <span class="text-xl">📚</span>
+            <span class="font-medium text-slate-300 group-hover:text-white">Kho tài liệu FEDU</span>
+          </div>
+          <svg class="w-5 h-5 text-slate-500 group-hover:text-white transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+        </a>
+      </div>
+      <div class="text-center mt-12 text-slate-500 text-sm">
+        &copy; 2026 Antigravity OS. Crafted for efficiency.
+      </div>
+    </footer>
+
+  </main>
+</body>
+</html>
