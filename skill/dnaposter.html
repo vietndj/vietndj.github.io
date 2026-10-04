@@ -90,6 +90,9 @@
         </div>
         
         <div class="flex flex-col items-center justify-center p-6 bg-black/40 rounded-2xl border border-white/5 gap-4">
+          <img src="assets/install/qr-dnaposter.png" alt="Thẻ QR cài đặt" class="w-56 rounded-xl border border-white/10" />
+          <a href="assets/install/qr-dnaposter.png" download="cai-dat-dnaposter.png" class="px-5 py-2 rounded-full bg-white text-black text-sm font-bold hover:opacity-90">⬇ Tải ảnh QR về máy</a>
+          <p class="text-xs text-slate-400 text-center">Cách 1: Tải ảnh QR → thả vào khung chat Hệ Thống AI → AI tự cài.<br>Cách 2: Copy lệnh bên dưới dán vào Terminal.</p>
           <code id="cmd" class="block w-full text-xs font-mono text-accent bg-accent/10 p-4 rounded-xl break-all select-all">curl -sSL https://fedu.vn/skill/install-dnaposter.sh | bash</code>
           <button onclick="navigator.clipboard.writeText(document.getElementById('cmd').innerText).then(()=>{this.innerText='✓ Đã copy'})" class="px-5 py-2 rounded-full bg-accent text-black text-sm font-bold hover:opacity-90">Copy lệnh cài đặt</button>
           <span class="text-xs font-mono text-slate-500 tracking-widest uppercase">Hỗ trợ macOS / Linux</span>
