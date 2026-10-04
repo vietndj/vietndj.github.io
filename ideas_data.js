@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 330,
-  "total_unique_ideas": 305,
-  "total_active_ideas": 277,
+  "total_scene_items": 331,
+  "total_unique_ideas": 306,
+  "total_active_ideas": 278,
   "total_excluded_ideas": 28,
   "total_creators": 202,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 33,
     "storytelling": 19,
-    "dien-anh": 159,
+    "dien-anh": 160,
     "chuyen-canh": 51
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 34,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 102,
+    "ky-thuat-quay": 103,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 184,
+    "us_eu": 185,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -442,6 +442,18 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@MasterClass",
+      "name": "Masterclass",
+      "profile_url": "https://www.instagram.com/MasterClass/",
+      "video_count": 2,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off",
+        "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi"
+      ]
+    },
+    {
       "handle": "@jackwebstter",
       "name": "Jackwebstter",
       "profile_url": "https://www.instagram.com/jackwebstter/",
@@ -643,17 +655,6 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
-      ]
-    },
-    {
-      "handle": "@MasterClass",
-      "name": "Masterclass",
-      "profile_url": "https://www.instagram.com/MasterClass/",
-      "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi"
       ]
     },
     {
@@ -2529,11 +2530,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi",
-      "shortcode": "vw77HWoTdoA",
-      "title_vi": "Business Rebels Turn Buyers Into Believers wi",
+      "id": "IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off",
+      "shortcode": "q8rX4GUZSsU",
+      "title_vi": "Chris Voss Teaches the Art of Negotiation Off",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2560,7 +2561,71 @@ var FEDU_IDEAS_DATABASE = {
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
+        "High-key Lighting",
         "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@MasterClass",
+        "name": "Masterclass",
+        "handle": "@MasterClass",
+        "profile_url": "https://www.instagram.com/MasterClass/"
+      },
+      "ig_url": "https://www.youtube.com/watch?v=q8rX4GUZSsU",
+      "gdrive_folder": "https://drive.google.com/open?id=1urerNxGpW_QtVgdvQcwyTgYn3AdEHzsr",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/q8rX4GUZSsU.mp4",
+        "report_url": "reports/IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off.html",
+        "shots_count": 64,
+        "duration": "128s",
+        "youtube_id": "JR5-DWov8Uc",
+        "youtube_embed": "https://www.youtube.com/embed/JR5-DWov8Uc",
+        "youtube_url": "https://youtu.be/JR5-DWov8Uc"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi",
+      "shortcode": "vw77HWoTdoA",
+      "title_vi": "Nghệ Thuật Kể Chuyện Đa Góc Máy: Mổ xẻ Setup Talking Head Kinh Điển Của MasterClass",
+      "quick_takeaway": "Kỹ thuật setup 2 góc máy (trực diện & góc nghiêng) kết hợp ngắt nhịp bằng text (Title Card) tạo sự lôi cuốn cho video phỏng vấn/giảng dạy dài.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @MasterClass",
+      "tech_tags": [
+        "ngồi nói trực tiếp",
+        "multi-cam",
+        "podcast"
       ],
       "transition_level": null,
       "is_ad_bot": false,
