@@ -15,7 +15,7 @@ mkdir -p "$ASSETS_DIR"
 
 # 2. Tải SKILL.md từ GitHub
 echo -e "\n\033[0;36m[1/4] Đang tải cấu hình kỹ năng từ GitHub...\033[0m"
-curl -sSL "https://raw.githubusercontent.com/vietndj/vietndj.github.io/main/skill/SKILL_dnaposter.md" -o "$SKILL_DIR/SKILL.md"
+curl -sSL "https://fedu.vn/skill/SKILL_dnaposter.md" -o "$SKILL_DIR/SKILL.md"
 echo -e "\033[0;32m  ✓ Đã tải SKILL.md\033[0m"
 
 # 3. Yêu cầu ảnh mỏ neo

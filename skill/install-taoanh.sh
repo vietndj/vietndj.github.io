@@ -11,7 +11,7 @@ mkdir -p "$ASSETS_DIR"
 
 # 2. Tải SKILL.md
 echo -e "\033[0;36mĐang tải cấu hình kỹ năng...\033[0m"
-curl -sSL "https://raw.githubusercontent.com/vietndj/vietndj.github.io/main/skill/SKILL_taoanh.md" -o "$SKILL_DIR/SKILL.md"
+curl -sSL "https://fedu.vn/skill/SKILL_taoanh.md" -o "$SKILL_DIR/SKILL.md"
 
 # 3. Yêu cầu ảnh mỏ neo
 echo -e "\n\033[1;33mHÃY CUNG CẤP 2 ẢNH MỎ NEO ĐỂ AI NHẬN DIỆN KHUÔN MẶT BẠN:\033[0m"
