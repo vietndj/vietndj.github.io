@@ -15,13 +15,18 @@ Khi kích hoạt kỹ năng này, bạn **PHẢI** thực hiện theo đúng th�
 ---
 
 ### PHASE 1: AUDIT (TỰ ĐỘNG - KHÔNG HỎI USER)
-Sử dụng công cụ `run_command` để kiểm tra thư mục hệ thống của Hệ Thống AI (thường ở `~/.gemini/config/`). Thu thập các thông tin sau:
-1. **Quét Skills (`skills/`):** Dùng `ls -la` và `du -sh` để liệt kê tất cả các kỹ năng đã cài đặt và dung lượng của từng cái.
-2. **Quét Rules (`rules/`):** Liệt kê tất cả rule, kiểm tra dung lượng từng rule và tính TỔNG dung lượng thư mục `rules/`.
-3. **Quét MCP và Hooks:** Đọc file `mcp_config.json` (liệt kê danh sách server/tool) và `hooks.json` (nếu có).
-4. **Kiểm tra trạng thái tạm dừng:** Tìm kiếm các thư mục `skills-paused/`, `rules-paused/` hoặc các thư mục lưu trữ (archive).
-5. **Đánh giá Context Footprint:** Tính tổng số bytes của tất cả file `SKILL.md` đang bật + toàn bộ dung lượng `rules/`.
-6. **Kiểm tra Threshold:** Ghi nhận xem tổng dung lượng `rules/` có vượt qua mức cảnh báo **12KB** hay không.
+Kiểm tra xem có file `context_audit.py` trong `~/.gemini/config/skills/agy-optimize/scripts/` không.
+- Nếu **CÓ** → chạy `python3 ~/.gemini/config/skills/agy-optimize/scripts/context_audit.py --json` để lấy report tự động.
+- Nếu **KHÔNG** → báo lỗi hoặc quét thủ công bằng các lệnh shell.
+
+Quét thủ công hoặc sử dụng công cụ `run_command` để thu thập các thông tin sau:
+1. **Quét Workspace Rules:** Kiểm tra dung lượng và nội dung các file `AGENTS.md`, `GEMINI.md` trong thư mục gốc của workspace.
+2. **Quét Skills (`skills/`):** Dùng `ls -la` và `du -sh` để liệt kê tất cả các kỹ năng đã cài đặt và dung lượng của từng cái (thường ở `~/.gemini/config/skills/`).
+3. **Quét Rules (`rules/`):** Liệt kê tất cả rule, kiểm tra dung lượng từng rule và tính TỔNG dung lượng thư mục `rules/`.
+4. **Quét MCP và Hooks:** Đọc file `mcp_config.json` (liệt kê danh sách server/tool) và `hooks.json` (nếu có).
+5. **Kiểm tra trạng thái tạm dừng:** Tìm kiếm các thư mục `skills-paused/`, `rules-paused/` hoặc các thư mục lưu trữ (archive).
+6. **Đánh giá Context Footprint:** Tính tổng số bytes của tất cả file `SKILL.md` đang bật + toàn bộ dung lượng `rules/` + workspace rules.
+7. **Kiểm tra Threshold:** Ghi nhận xem tổng dung lượng các rule có vượt qua mức cảnh báo không.
 
 ---
 
@@ -30,44 +35,55 @@ Tiến hành phân tích sâu các dữ liệu từ Phase 1:
 
 - **Đánh giá Health Score cho từng Skill:**
   - *Dung lượng:* Cảnh báo BÉO PHÌ (Bloated) nếu 1 skill > 20KB.
-  - *Trùng lặp:* Kiểm tra nhanh nội dung (dùng `grep` hoặc `cat`) xem có 2 skill nào tương tự chức năng không.
+  - *Trùng lặp:* Kiểm tra nhanh nội dung xem có 2 skill nào tương tự chức năng không.
   - *Tính chất công cụ:* Kỹ năng nào chỉ là script/công cụ đơn giản có thể được gợi ý chuyển thành MCP Tool.
-- **Đánh giá Rule:**
+- **Đánh giá Rule (Workspace & Global):**
+  - **Pattern phát hiện 'Rules nhồi Workflows':** Rule file mà có:
+    - Heading `##` với > 3 sub-heading `###`
+    - Code blocks hướng dẫn chi tiết
+    - Numbered lists > 5 items
+    - Dung lượng > 4KB
+    → **Đó là WORKFLOW BỊ NHỒI SAI CHỖ, cần tách ra thành Skill.**
+  - **Pattern phát hiện 'Workspace Rules béo phì':** File `GEMINI.md` hoặc `AGENTS.md` > 5KB → Cảnh báo nghiêm trọng.
   - Xem có rule nào trùng lặp với nội dung đã có trong skill không.
-  - Có rule nào vượt **4KB** không (giới hạn khuyến nghị cho 1 rule).
-  - Tổng rule có vượt quá **12KB** không.
+  - Tổng rule hệ thống có vượt quá **12KB** không.
 
-**Tạo Báo Cáo:** Sử dụng file artifact (định dạng HTML - INKDOC theo thiết kế Dark Glassmorphic Obsidian điểm nhấn Emerald) để hiển thị chi tiết chẩn đoán này.
+**Tạo Báo Cáo:** Sử dụng file artifact (định dạng HTML - INKDOC theo thiết kế Dark Glassmorphic Obsidian điểm nhấn Emerald) hoặc Markdown để hiển thị chi tiết chẩn đoán này, kèm theo **Health Score 0-100**.
 
 ---
 
 ### PHASE 3: RECOMMEND (TƯƠNG TÁC VỚI USER)
-Trình bày kết quả phân tích cho User dưới dạng một Bảng Markdown gồm 4 nhóm hành động:
+Trình bày kết quả phân tích cho User dưới dạng một Bảng Markdown gồm các nhóm hành động:
 
 | Trạng thái | Thể loại | Mô tả & Đề xuất |
 |---|---|---|
-| 🟢 **AUTO-FIX** | Tự động xử lý ngay | - Chuyển rule trùng lặp/dư thừa thành rule định tuyến 1 dòng.<br>- Thu gọn tổng `rules/` < 12KB.<br>- Xóa các thư mục skill trống/lỗi. |
-| 🟡 **RECOMMEND MERGE** | Đề xuất gộp | - Liệt kê các skill trùng lắp chức năng.<br>- Ước tính số token tiết kiệm được nếu gộp. |
+| 🔴 **CRITICAL** | Context bloat nghiêm trọng | - Cảnh báo workspace rules (`GEMINI.md`, `AGENTS.md`) quá lớn.<br>- Yêu cầu dọn dẹp hoặc tách thành skill. |
+| 🟢 **AUTO-FIX** | Tự động xử lý ngay | - Chuyển rule trùng lặp/dư thừa thành rule định tuyến 1 dòng.<br>- Xóa các thư mục skill trống/lỗi. |
+| 🟡 **RECOMMEND MERGE/SPLIT** | Đề xuất gộp/tách | - Liệt kê skill trùng lắp cần gộp.<br>- Đề xuất tách các rule chứa workflow sang skill riêng.<br>- *Ước tính token tiết kiệm: `saved_bytes * 0.35`*. |
 | 🔴 **USER DECISION** | Chờ quyết định | - Danh sách skill ít dùng nên chuyển sang `skills-paused/`.<br>- Các rule có thể tạm tắt. |
-| 🔵 **MCP PACKAGING** | Đóng gói thành MCP | - Danh sách skill nên chuyển sang dạng MCP để gọi On-demand (tiết kiệm token do không phải load thường xuyên). |
+| 🔵 **MCP PACKAGING** | Đóng gói thành MCP | - Danh sách skill nên chuyển sang dạng MCP để gọi On-demand. |
 
-*Lúc này, hãy DỪNG LẠI và hỏi User xem họ muốn áp dụng những đề xuất nào ở nhóm 🟡, 🔴, và 🔵 (nhóm 🟢 sẽ tự chạy nếu user đồng ý "Tiến hành sửa").*
+*Lúc này, hãy DỪNG LẠI và hỏi User xem họ muốn áp dụng những đề xuất nào (nhóm 🟢 sẽ tự chạy nếu user đồng ý "Tiến hành sửa").*
 
 ---
 
 ### PHASE 4: EXECUTE (CHỜ USER XÁC NHẬN)
 Sau khi có lệnh duyệt từ User:
-1. **Backup:** Chạy lệnh tạo bản sao lưu: `cp -r ~/.gemini/config/skills/ ~/.gemini/config/skills-backup-$(date +%Y%m%d)/`
+1. **Backup:** 
+   - Backup skills: `cp -r ~/.gemini/config/skills/ ~/.gemini/config/skills-backup-$(date +%Y%m%d)/`
+   - Backup workspace rules: `cp GEMINI.md GEMINI.md.bak-$(date +%Y%m%d)` (và tương tự với `AGENTS.md` nếu có).
 2. **Thực thi:** Lần lượt thực hiện các hành động đã được duyệt (gộp, di chuyển vào paused, xóa, sửa nội dung).
-3. **Xác minh:** Kiểm tra lại file sau mỗi bước (dùng `ls` hoặc `cat`).
-4. **Báo cáo sau tối ưu:** Tạo bảng so sánh Before/After về dung lượng, token tiết kiệm được.
-5. *(Tùy chọn)* Nếu User có kỹ năng hoặc tool `sao_luu` để commit lên Git, hãy gợi ý chạy nó.
+3. **Tách workflow ra skill:** Nếu được yêu cầu, tạo skill mới trong `~/.gemini/config/skills/`, ghi file `SKILL.md` với frontmatter chuẩn YAML ở đầu.
+4. **Xác minh:** Kiểm tra lại file sau mỗi bước.
 
 ---
 
-### PHASE 5: MAINTENANCE GUIDE (HƯỚNG DẪN BẢO TRÌ)
-Kết thúc phiên, in ra lịch trình bảo trì hệ thống để User lưu ý:
-- 📅 **Hàng Tuần:** Kiểm tra tổng dung lượng context (đặc biệt thư mục Rules).
-- 🧩 **Khi thêm Skill mới:** Chạy lại `OPTIMIZE` để kiểm tra độ tương thích.
-- 🐌 **Khi hệ thống giật, lag hoặc quên context:** Hô Mantra `DỌN RÁC AGY`.
-- 📆 **Hàng Tháng:** Audit toàn diện.
+### PHASE 5: REPORT & MAINTENANCE (BÁO CÁO & BẢO TRÌ)
+Kết thúc phiên, hãy thực hiện báo cáo:
+- **Tạo Artifact:** Tạo một artifact (HTML hoặc Markdown) trình bày bảng **Before/After** so sánh dung lượng trước và sau tối ưu.
+- **Health Score:** Hiển thị điểm số sức khỏe mới (0-100) của hệ thống.
+- **Lịch trình bảo trì:**
+  - 📅 **Hàng Tuần:** Kiểm tra tổng dung lượng context (đặc biệt thư mục Rules).
+  - 🧩 **Khi thêm Skill mới:** Chạy lại `OPTIMIZE` để kiểm tra độ tương thích.
+  - 🐌 **Khi hệ thống giật, lag hoặc quên context:** Hô Mantra `DỌN RÁC AGY`.
+  - 📆 **Hàng Tháng:** Audit toàn diện.
