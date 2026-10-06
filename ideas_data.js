@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 332,
-  "total_unique_ideas": 307,
-  "total_active_ideas": 279,
-  "total_excluded_ideas": 28,
-  "total_creators": 202,
+  "total_scene_items": 338,
+  "total_unique_ideas": 312,
+  "total_active_ideas": 285,
+  "total_excluded_ideas": 27,
+  "total_creators": 204,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 33,
-    "storytelling": 19,
-    "dien-anh": 161,
-    "chuyen-canh": 51
+    "talking-head": 35,
+    "storytelling": 20,
+    "dien-anh": 163,
+    "chuyen-canh": 52
   },
   "industries": [
     {
@@ -151,14 +151,14 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "industry_stats": {
     "spa-lam-dep": 5,
-    "thuong-hieu": 19,
+    "thuong-hieu": 20,
     "thoi-trang": 25,
     "am-thuc": 26,
     "du-lich": 18,
-    "cong-nghe": 34,
+    "cong-nghe": 35,
     "kien-truc": 34,
     "the-thao": 7,
-    "ky-thuat-quay": 104,
+    "ky-thuat-quay": 108,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 186,
+    "us_eu": 191,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -319,6 +319,21 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@MasterClass",
+      "name": "MasterClass",
+      "profile_url": "https://www.instagram.com/MasterClass/",
+      "video_count": 5,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%2540MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_02_mid.webp",
+      "video_ids": [
+        "IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi",
+        "IG_@MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio",
+        "IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off",
+        "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi",
+        "IG_@MasterClass_6nDfNUb-28I_Certificates"
+      ]
+    },
+    {
       "handle": "@shogentle",
       "name": "Shogentle",
       "profile_url": "https://www.instagram.com/shogentle/",
@@ -374,19 +389,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
-      ]
-    },
-    {
-      "handle": "@MasterClass",
-      "name": "Masterclass",
-      "profile_url": "https://www.instagram.com/MasterClass/",
-      "video_count": 3,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi",
-        "IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off",
-        "IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi"
       ]
     },
     {
@@ -452,6 +454,18 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
+      ]
+    },
+    {
+      "handle": "@iamaayushswamy",
+      "name": "Iamaayushswamy",
+      "profile_url": "https://www.instagram.com/iamaayushswamy/",
+      "video_count": 2,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera",
+        "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement"
       ]
     },
     {
@@ -536,6 +550,18 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@german991020_DdnXgxUyok1_South_Korea_stills_-_Final_Series",
         "IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul"
+      ]
+    },
+    {
+      "handle": "@nemo_ooo",
+      "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
+      "profile_url": "https://www.instagram.com/nemo_ooo/",
+      "video_count": 2,
+      "top_industry": "Du lịch",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E5%B0%BC%E8%8E%ABNemo_%E0%BD%B2%E0%BE%80_%E1%97%A6%E2%86%9E%E2%97%83_DclWb98PiK_Video_by_nemo_ooo/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DclWb98PiK_Video_by_nemo_ooo",
+        "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DbF_D2MB6BR_Video_by_nemo_ooo"
       ]
     },
     {
@@ -656,6 +682,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@TheConflictPlaybook",
+      "name": "local",
+      "profile_url": "https://www.instagram.com/TheConflictPlaybook/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%2540local_creator_uU8uPchm7is_uU8uPchm7is/shot_02_mid.webp",
+      "video_ids": [
+        "IG_@TheConflictPlaybook_uU8uPchm7is_uU8uPchm7is"
       ]
     },
     {
@@ -1067,13 +1104,13 @@ var FEDU_IDEAS_DATABASE = {
     },
     {
       "handle": "@rubtsov.a",
-      "name": "Ekaterina_Модель_Уфа_,_Питер",
+      "name": "Rubtsov A",
       "profile_url": "https://www.instagram.com/rubtsov.a/",
       "video_count": 1,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40rubtsov.a_DdkHw7gIXLj_%D0%92_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D1%83/shot_01_mid.jpg",
       "video_ids": [
-        "IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a"
+        "IG_@rubtsov.a_DdkHw7gIXLj_В_библиотеку"
       ]
     },
     {
@@ -1140,17 +1177,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40adz.mov_DdGQQL-ih_O_the_land_of_smiles_%F0%9F%87%B9%F0%9F%87%AD_#thailand_#cinematograp/shot_01_mid.jpg",
       "video_ids": [
         "IG_@adz.mov_DdGQQL-ih_O_the_land_of_smiles_🇹🇭_#thailand_#cinematograp"
-      ]
-    },
-    {
-      "handle": "@iamaayushswamy",
-      "name": "Iamaayushswamy",
-      "profile_url": "https://www.instagram.com/iamaayushswamy/",
-      "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iamaayushswamy_DdpxcaOMaQS_caption_placement/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@iamaayushswamy_DdpxcaOMaQS_caption_placement"
       ]
     },
     {
@@ -1338,17 +1364,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Leticia_Quadros_DYXXgkbxPj7_Video_by_leticiaqdrs/shot_01_mid.jpg",
       "video_ids": [
         "IG_@Leticia_Quadros_DYXXgkbxPj7_Video_by_leticiaqdrs"
-      ]
-    },
-    {
-      "handle": "@nemo_ooo",
-      "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
-      "profile_url": "https://www.instagram.com/nemo_ooo/",
-      "video_count": 1,
-      "top_industry": "Du lịch",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E5%B0%BC%E8%8E%ABNemo_%E0%BD%B2%E0%BE%80_%E1%97%A6%E2%86%9E%E2%97%83_DclWb98PiK_Video_by_nemo_ooo/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DclWb98PiK_Video_by_nemo_ooo"
       ]
     },
     {
@@ -2527,15 +2542,26 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@kenshoji.visuals_DZOzwweTc5a_The_Art_of_Static_Shot"
       ]
+    },
+    {
+      "handle": "@saigonink_studio",
+      "name": "Saigon Ink Tattoo (Artist Nikko)",
+      "profile_url": "https://www.instagram.com/saigonink_studio/",
+      "video_count": 1,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo"
+      ]
     }
   ],
   "ideas": [
     {
-      "id": "IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi",
-      "shortcode": "nNkE1fK9eQs",
-      "title_vi": "Coach K Teaches Values-Driven Leadership Offi",
+      "id": "IG_@iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera",
+      "shortcode": "DcwPu99sDKI",
+      "title_vi": "how to yap on camera",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2544,11 +2570,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "blue"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
       },
       "country": {
         "id": "us_eu",
@@ -2557,39 +2583,221 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @MasterClass",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @iamaayushswamy",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Close-Up / Macro Detail Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
       "creator": {
-        "raw": "@MasterClass",
-        "name": "Masterclass",
-        "handle": "@MasterClass",
-        "profile_url": "https://www.instagram.com/MasterClass/"
+        "raw": "@iamaayushswamy",
+        "name": "Iamaayushswamy",
+        "handle": "@iamaayushswamy",
+        "profile_url": "https://www.instagram.com/iamaayushswamy/"
       },
-      "ig_url": "https://www.youtube.com/watch?v=nNkE1fK9eQs",
-      "gdrive_folder": "https://drive.google.com/open?id=1YmSXKjTHziUndmlB38s0XVxiGZhbs6YX",
+      "ig_url": "https://www.instagram.com/p/DcwPu99sDKI/",
+      "gdrive_folder": "https://drive.google.com/open?id=1X3z2SO0M-lGX8YK6eiutTSOrf6GWxQVw",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_03_mid.jpg",
-        "video_url": "https://media.fedu.vn/videos/nNkE1fK9eQs.mp4",
-        "report_url": "reports/IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi.html",
-        "shots_count": 22,
-        "duration": "44s",
-        "youtube_id": "hn8hsWUSWhE",
-        "youtube_embed": "https://www.youtube.com/embed/hn8hsWUSWhE",
-        "youtube_url": "https://youtu.be/hn8hsWUSWhE"
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcwPu99sDKI.mp4",
+        "report_url": "reports/IG_@iamaayushswamy_DcwPu99sDKI_how_to_yap_on_camera.html",
+        "shots_count": 30,
+        "duration": "60s",
+        "youtube_id": "4pgkHrYun9A",
+        "youtube_embed": "https://www.youtube.com/embed/4pgkHrYun9A",
+        "youtube_url": "https://youtu.be/4pgkHrYun9A"
       },
       "complexity": {
         "id": "nang-cao",
         "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi",
+      "shortcode": "nNkE1fK9eQs",
+      "title_vi": "Coach K Teaches Values-Driven Leadership Official Trailer",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh",
+      "key_tech": "ngồi nói trực tiếp",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "ngồi nói trực tiếp"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@MasterClass",
+        "name": "MasterClass",
+        "handle": "@MasterClass",
+        "profile_url": "https://www.instagram.com/MasterClass/"
+      },
+      "ig_url": "https://www.youtube.com/watch?v=nNkE1fK9eQs",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/nNkE1fK9eQs.mp4",
+        "report_url": "reports/IG_@MasterClass_nNkE1fK9eQs_Coach_K_Teaches_Values-Driven_Leadership_Offi.html",
+        "shots_count": 22,
+        "duration": "44s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio",
+      "shortcode": "UOAgJxrGKzk",
+      "title_vi": "Make the Markets Work for You With Ray Dalio",
+      "quick_takeaway": "Phân tích tự động",
+      "key_tech": "ngồi nói trực tiếp",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "ngồi nói trực tiếp"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@MasterClass",
+        "name": "MasterClass",
+        "handle": "@MasterClass",
+        "profile_url": "https://www.instagram.com/MasterClass/"
+      },
+      "ig_url": "https://www.instagram.com/MasterClass/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/UOAgJxrGKzk.mp4",
+        "report_url": "reports/IG_@MasterClass_UOAgJxrGKzk_Make_the_Markets_Work_for_You_With_Ray_Dalio.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@TheConflictPlaybook_uU8uPchm7is_uU8uPchm7is",
+      "shortcode": "IG_@TheConflictPlaybook_uU8uPchm7is_uU8uPchm7is",
+      "title_vi": "The Conflict Playbook",
+      "quick_takeaway": "Phân tích tự động",
+      "key_tech": "ngồi nói trực tiếp",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "ngồi nói trực tiếp"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@TheConflictPlaybook",
+        "name": "local",
+        "handle": "@TheConflictPlaybook",
+        "profile_url": "https://www.instagram.com/TheConflictPlaybook/"
+      },
+      "ig_url": "https://www.instagram.com/TheConflictPlaybook/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540local_creator_uU8uPchm7is_uU8uPchm7is/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540local_creator_uU8uPchm7is_uU8uPchm7is/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/creator.mp4",
+        "report_url": "reports/IG_@local_creator_uU8uPchm7is_uU8uPchm7is.html",
+        "shots_count": 3,
+        "duration": "6s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
       },
       "is_personal": false,
       "is_excluded": false
@@ -2641,8 +2849,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.youtube.com/watch?v=q8rX4GUZSsU",
       "gdrive_folder": "https://drive.google.com/open?id=1urerNxGpW_QtVgdvQcwyTgYn3AdEHzsr",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_03_mid.jpg",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/q8rX4GUZSsU.mp4",
         "report_url": "reports/IG_@MasterClass_q8rX4GUZSsU_Chris_Voss_Teaches_the_Art_of_Negotiation_Off.html",
         "shots_count": 64,
@@ -2704,8 +2912,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.youtube.com/watch?v=vw77HWoTdoA",
       "gdrive_folder": "https://drive.google.com/open?id=1VNjqMlpogvSqEEcH40UAjL81VcP-fsg1",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi/shot_03_mid.jpg",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/vw77HWoTdoA.mp4",
         "report_url": "reports/IG_@MasterClass_vw77HWoTdoA_Business_Rebels_Turn_Buyers_Into_Believers_wi.html",
         "shots_count": 55,
@@ -2722,8 +2930,8 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "IG_@local_creator_Introducing：_MasterClass_Certificates_[6nDfNU_Introducing：_MasterClass_Certificates_[6nDfNU",
-      "shortcode": "IG_@local_creator_Introducing：_MasterClass_Certificates_[6nDfNU_Introducing：_MasterClass_Certificates_[6nDfNU",
+      "id": "IG_@MasterClass_6nDfNUb-28I_Certificates",
+      "shortcode": "IG_@MasterClass_6nDfNUb-28I_Certificates",
       "title_vi": "Introducing： MasterClass Certificates [6nDfNU",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
@@ -2760,16 +2968,16 @@ var FEDU_IDEAS_DATABASE = {
       "fedu_optimization": {},
       "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Thương Hiệu Cá Nhân & Dịch Vụ.",
       "creator": {
-        "raw": "@local_creator",
+        "raw": "@MasterClass",
         "name": "Local_Creator",
-        "handle": "@local_creator",
-        "profile_url": "https://www.instagram.com/local_creator/"
+        "handle": "@MasterClass",
+        "profile_url": "https://www.instagram.com/MasterClass/"
       },
-      "ig_url": "https://www.instagram.com/local_creator/",
+      "ig_url": "https://www.instagram.com/MasterClass/",
       "gdrive_folder": "https://drive.google.com/open?id=1AkPXeX_AOvwx8LYw3CpNXiay6jRJtHTh",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_Introducing%EF%BC%9A_MasterClass_Certificates_%5B6nDfNU_Introducing%EF%BC%9A_MasterClass_Certificates_%5B6nDfNU/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40local_creator_Introducing%EF%BC%9A_MasterClass_Certificates_%5B6nDfNU_Introducing%EF%BC%9A_MasterClass_Certificates_%5B6nDfNU/shot_03_mid.jpg",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%2540local_creator_Introducing%25EF%25BC%259A_MasterClass_Certificates_%255B6nDfNU_Introducing%25EF%25BC%259A_MasterClass_Certificates_%255B6nDfNU/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%2540local_creator_Introducing%25EF%25BC%259A_MasterClass_Certificates_%255B6nDfNU_Introducing%25EF%25BC%259A_MasterClass_Certificates_%255B6nDfNU/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/Introducing%EF%BC%9A_MasterClass_Certificates_%5B6nDfNU.mp4",
         "report_url": "reports/IG_@local_creator_Introducing：_MasterClass_Certificates_[6nDfNU_Introducing：_MasterClass_Certificates_[6nDfNU.html",
         "shots_count": 34,
@@ -2782,8 +2990,8 @@ var FEDU_IDEAS_DATABASE = {
         "id": "nang-cao",
         "label": "🔴 Nâng cao (>18 shots)"
       },
-      "is_personal": true,
-      "is_excluded": true
+      "is_personal": false,
+      "is_excluded": false
     },
     {
       "id": "IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,",
@@ -6496,11 +6704,11 @@ var FEDU_IDEAS_DATABASE = {
       "is_excluded": false
     },
     {
-      "id": "IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a",
+      "id": "IG_@rubtsov.a_DdkHw7gIXLj_В_библиотеку",
       "shortcode": "DdkHw7gIXLj",
-      "title_vi": "Biến Hình Dark Academia Đi Thư Viện: Kỹ Thuật Match Cut Quán Tính Tay & Outro Phá Cách - @Ekaterina_модель_Уфа_,_Питер",
+      "title_vi": "Biến Hình Dark Academia Đi Thư Viện: Kỹ Thuật Match Cut Quán Tính Tay & Outro Phá Cách - @rubtsov.a",
       "quick_takeaway": "⚡ Hook Mở Màn Tương Phản: Quấn khăn tắm mặt mộc tạo tiền đề bùng nổ biến hình ➔ Outro Phá Cách Hóm Hỉnh: Nháy mắt bĩu môi quirky face kích hoạt tỷ lệ xem lại",
-      "key_tech": "Chuyen Canh 1 • Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "key_tech": "Chuyen canh 1 • Biến Hình • Match Cut • Dark Academia • Geek Chic • OOTD • Visual Hook",
       "shooting_style": {
         "id": "dien-anh",
         "name": "Chỉn Chu",
@@ -6535,20 +6743,20 @@ var FEDU_IDEAS_DATABASE = {
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Ghi chú người dùng: Chuyen canh 1. Phân loại vào Kỹ Thuật Quay Dựng & Điện Ảnh • Chuyển Cảnh (Transition).",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
       "creator": {
-        "raw": "@Ekaterina_модель_Уфа_,_Питер",
-        "name": "Ekaterina_Модель_Уфа_,_Питер",
+        "raw": "@rubtsov.a",
+        "name": "Rubtsov A",
         "handle": "@rubtsov.a",
         "profile_url": "https://www.instagram.com/rubtsov.a/"
       },
-      "ig_url": "https://www.instagram.com/reel/DdkHw7gIXLj/?stkn=cTg4YnJ5dWo4Zno4",
-      "gdrive_folder": "https://drive.google.com/open?id=1AiDw3T4a7SHY32QWcS4m_BiPVQyCrHMD",
+      "ig_url": "https://www.instagram.com/rubtsov.a/",
+      "gdrive_folder": "",
       "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Ekaterina_%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C_%D0%A3%D1%84%D0%B0_%2C_%D0%9F%D0%B8%D1%82%D0%B5%D1%80_DdkHw7gIXLj_Video_by_rubtsov.a/shot_03_mid.jpg",
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40rubtsov.a_DdkHw7gIXLj_%D0%92_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D1%83/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40rubtsov.a_DdkHw7gIXLj_%D0%92_%D0%B1%D0%B8%D0%B1%D0%BB%D0%B8%D0%BE%D1%82%D0%B5%D0%BA%D1%83/shot_03_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/DdkHw7gIXLj.mp4",
-        "report_url": "reports/IG_@Ekaterina_модель_Уфа_,_Питер_DdkHw7gIXLj_Video_by_rubtsov.a.html",
+        "report_url": "reports/IG_@rubtsov.a_DdkHw7gIXLj_В_библиотеку.html",
         "shots_count": 10,
         "duration": "20s",
         "youtube_id": null,
@@ -23231,6 +23439,142 @@ var FEDU_IDEAS_DATABASE = {
       "complexity": {
         "id": "trung-binh",
         "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo",
+      "shortcode": "DdNq5CxszVl",
+      "title_vi": "Nghệ Thuật Xăm Mini Tô Bún Bò Huế Thực Tế - Saigon Ink Tattoo (Artist Nikko) - @saigonink_studio",
+      "quick_takeaway": "Nghệ thuật làm video dịch vụ thủ công/nghệ thuật: Đừng chỉ quay người thợ đang làm việc, hãy đưa sản phẩm đỉnh cao nhất lên đầu, quay thật sâu vào cảm giác thỏa mãn thị giác (ASMR Wipe / Color Blending) và kết nối sản phẩm với một câu chuyện văn hóa cá nhân sâu sắc.",
+      "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
+      "shooting_style": {
+        "id": "storytelling",
+        "name": "Kể Chuyện",
+        "en_name": "Storytelling",
+        "icon": "📖",
+        "badge_color": "amber"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "vn",
+        "name": "Việt Nam",
+        "en_name": "Vietnam",
+        "flag": "🇻🇳",
+        "badge_color": "red"
+      },
+      "purpose": "Quảng bá dịch vụ xăm nghệ thuật siêu thực cao cấp kết hợp kể chuyện văn hóa ẩm thực và tôn vinh nguồn cội Việt Nam",
+      "tech_tags": [
+        "Hyper-Realistic Food Tattoo",
+        "Result-First Hook",
+        "Macro Needle ASMR",
+        "Wet Towel Wipe Reveal",
+        "Audio-Visual Rhyme",
+        "Cultural Identity Storytelling",
+        "Unpopular Opinion Hook",
+        "Procreate iPad Mockup",
+        "Museum Lighting Glide"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Kịch bản viral đa tầng: Đánh gục người xem ngay giây đầu bằng thành phẩm tô bún bò siêu nhỏ sắc nét đến từng sợi bún hạt vừng; giữ chân bằng chuỗi phân cảnh vi phẫu đi kim dặm màu ASMR cực khoái; neo đậu cảm xúc bằng cuộc phỏng vấn khách hàng khẳng định tình yêu quê hương xứ Huế và tuyên ngôn gây tranh luận ẩm thực ('ngon hơn Phở'); kết liễu bằng cú trượt macro bảo tàng ánh sáng sang trọng.",
+      "creator": {
+        "raw": "@saigonink_studio",
+        "name": "Saigon Ink Tattoo (Artist Nikko)",
+        "handle": "@saigonink_studio",
+        "profile_url": "https://www.instagram.com/saigonink_studio/"
+      },
+      "ig_url": "https://www.instagram.com/saigonink_studio/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/studio.mp4",
+        "report_url": "reports/IG_@saigonink_studio_DdNq5CxszVl_Bun_Bo_Hue_Tattoo.html",
+        "shots_count": 14,
+        "duration": "28s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DbF_D2MB6BR_Video_by_nemo_ooo",
+      "shortcode": "DbF_D2MB6BR",
+      "title_vi": "@尼莫Nemo_ིྀ_ᗦ↞◃ - Video by nemo ooo",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @nemo_ooo__ • Shared July 30 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Instagram Liked 24h: Video, 1 of 18, by @nemo_ooo__, shared July 30, 2026",
+      "tech_tags": [
+        "Instagram Liked 24h: Video",
+        "1 Of 18",
+        "By @nemo_ooo__",
+        "Shared July 30",
+        "2026",
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Ghi chú người dùng: Instagram Liked 24h: Video, 1 of 18, by @nemo_ooo__, shared July 30, 2026. Phân loại vào Kiến Trúc & Không Gian Sống • Talking Head.",
+      "creator": {
+        "raw": "@尼莫Nemo_ིྀ_ᗦ↞◃",
+        "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
+        "handle": "@nemo_ooo",
+        "profile_url": "https://www.instagram.com/nemo_ooo/"
+      },
+      "ig_url": "https://www.instagram.com/nemo_ooo/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E5%B0%BC%E8%8E%ABNemo_%E0%BD%B2%E0%BE%80_%E1%97%A6%E2%86%9E%E2%97%83_DbF_D2MB6BR_Video_by_nemo_ooo/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40%E5%B0%BC%E8%8E%ABNemo_%E0%BD%B2%E0%BE%80_%E1%97%A6%E2%86%9E%E2%97%83_DbF_D2MB6BR_Video_by_nemo_ooo/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/ིྀ.mp4",
+        "report_url": "reports/IG_@尼莫Nemo_ིྀ_ᗦ↞◃_DbF_D2MB6BR_Video_by_nemo_ooo.html",
+        "shots_count": 25,
+        "duration": "50s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
       },
       "is_personal": false,
       "is_excluded": false
