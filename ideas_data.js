@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 35,
     "storytelling": 20,
-    "dien-anh": 164,
-    "chuyen-canh": 52
+    "dien-anh": 163,
+    "chuyen-canh": 53
   },
   "industries": [
     {
@@ -156,9 +156,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 35,
-    "kien-truc": 34,
+    "kien-truc": 35,
     "the-thao": 7,
-    "ky-thuat-quay": 109,
+    "ky-thuat-quay": 108,
     "ugc": 7
   },
   "countries": [
@@ -689,7 +689,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Turkishairlines",
       "profile_url": "https://www.instagram.com/turkishairlines/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Góc nhà đẹp",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c/shot_01_mid.jpg",
       "video_ids": [
         "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c"
@@ -2571,21 +2571,21 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c",
       "shortcode": "Dd8gb9ss84q",
       "title_vi": "A timeless destination where two continents c",
-      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -2596,14 +2596,14 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @turkishairlines",
       "tech_tags": [
-        "Cinematic Lighting",
-        "Composition Mastery",
-        "Visual Rhythm"
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kỹ Thuật Quay Dựng & Điện Ảnh.",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
         "raw": "@turkishairlines",
         "name": "Turkishairlines",
@@ -2619,9 +2619,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c.html",
         "shots_count": 0,
         "duration": "15s",
-        "youtube_id": "QcRdfgdOAQ4",
-        "youtube_embed": "https://www.youtube.com/embed/QcRdfgdOAQ4",
-        "youtube_url": "https://youtu.be/QcRdfgdOAQ4"
+        "youtube_id": "K_ilfe2vmAw",
+        "youtube_embed": "https://www.youtube.com/embed/K_ilfe2vmAw",
+        "youtube_url": "https://youtu.be/K_ilfe2vmAw"
       },
       "complexity": {
         "id": "de",
