@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 339,
-  "total_unique_ideas": 313,
-  "total_active_ideas": 286,
+  "total_scene_items": 340,
+  "total_unique_ideas": 314,
+  "total_active_ideas": 287,
   "total_excluded_ideas": 27,
-  "total_creators": 205,
+  "total_creators": 206,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 35,
+    "talking-head": 36,
     "storytelling": 20,
     "dien-anh": 163,
     "chuyen-canh": 53
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 18,
     "cong-nghe": 35,
-    "kien-truc": 35,
+    "kien-truc": 36,
     "the-thao": 7,
     "ky-thuat-quay": 108,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 192,
+    "us_eu": 193,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -682,6 +682,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@pablogalafat",
+      "name": "Pablogalafat",
+      "profile_url": "https://www.instagram.com/pablogalafat/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pablogalafat_DdxIiI-C4KI_Var%C3%ADa_los_planos/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@pablogalafat_DdxIiI-C4KI_Varía_los_planos"
       ]
     },
     {
@@ -2567,6 +2578,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@pablogalafat_DdxIiI-C4KI_Varía_los_planos",
+      "shortcode": "DdxIiI-C4KI",
+      "title_vi": "Varía los planos",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @pablogalafat",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@pablogalafat",
+        "name": "Pablogalafat",
+        "handle": "@pablogalafat",
+        "profile_url": "https://www.instagram.com/pablogalafat/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DdxIiI-C4KI/",
+      "gdrive_folder": "https://drive.google.com/open?id=17KRXRysfrb2EL1Xy6GyDuVN7iD0oLZkF",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pablogalafat_DdxIiI-C4KI_Var%C3%ADa_los_planos/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40pablogalafat_DdxIiI-C4KI_Var%C3%ADa_los_planos/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DdxIiI-C4KI.mp4",
+        "report_url": "reports/IG_@pablogalafat_DdxIiI-C4KI_Varía_los_planos.html",
+        "shots_count": 6,
+        "duration": "12s",
+        "youtube_id": "vLV1ygMy-HM",
+        "youtube_embed": "https://www.youtube.com/embed/vLV1ygMy-HM",
+        "youtube_url": "https://youtu.be/vLV1ygMy-HM"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c",
       "shortcode": "Dd8gb9ss84q",
