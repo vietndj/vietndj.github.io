@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 374,
-  "total_unique_ideas": 347,
-  "total_active_ideas": 319,
+  "total_scene_items": 375,
+  "total_unique_ideas": 348,
+  "total_active_ideas": 320,
   "total_excluded_ideas": 28,
   "total_creators": 209,
   "shooting_styles": [
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 41,
+    "talking-head": 42,
     "storytelling": 20,
     "dien-anh": 189,
     "chuyen-canh": 54
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 19,
     "cong-nghe": 40,
-    "kien-truc": 39,
+    "kien-truc": 40,
     "the-thao": 8,
     "ky-thuat-quay": 131,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 220,
+    "us_eu": 221,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -233,10 +233,11 @@ var FEDU_IDEAS_DATABASE = {
       "handle": "@mridupawasharma",
       "name": "Mridupawasharma",
       "profile_url": "https://www.instagram.com/mridupawasharma/",
-      "video_count": 28,
+      "video_count": 29,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo%E2%80%A6_to_a_figurine%E2%80%A6_to_a_vide/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_%40emergentlabs/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs",
         "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
         "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
         "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
@@ -2640,6 +2641,70 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs",
+      "shortcode": "DPjD-CTE0iY",
+      "title_vi": "Giải Pháp Tạo App Bằng AI: Biến Nỗi Đau Thành Hành Động",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting",
+        "High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DPjD-CTE0iY/",
+      "gdrive_folder": "https://drive.google.com/open?id=1K315XyoIkBwTX0OyYw_smgdpZrBGIx2C",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_%40emergentlabs/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_%40emergentlabs/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DPjD-CTE0iY.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs.html",
+        "shots_count": 21,
+        "duration": "42s",
+        "youtube_id": "40kwtL0MEPU",
+        "youtube_embed": "https://www.youtube.com/embed/40kwtL0MEPU",
+        "youtube_url": "https://youtu.be/40kwtL0MEPU"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
       "shortcode": "DO-oBZ4kzBA",
