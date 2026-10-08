@@ -64,8 +64,8 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 41,
     "storytelling": 20,
-    "dien-anh": 186,
-    "chuyen-canh": 54
+    "dien-anh": 187,
+    "chuyen-canh": 53
   },
   "industries": [
     {
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 26,
     "du-lich": 19,
-    "cong-nghe": 42,
-    "kien-truc": 37,
+    "cong-nghe": 40,
+    "kien-truc": 38,
     "the-thao": 8,
-    "ky-thuat-quay": 128,
+    "ky-thuat-quay": 129,
     "ugc": 7
   },
   "countries": [
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -848,7 +848,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Itsbybrandon",
       "profile_url": "https://www.instagram.com/itsbybrandon/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Góc nhà đẹp",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
       "video_ids": [
         "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
@@ -2630,22 +2630,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
       "shortcode": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
-      "title_vi": "Gậy Tự Sướng Có Từ Tính Cho Vlogging Tương Th",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Ulanzi MagSafe Tripod: Gậy Selfie Biến Hình Siêu Tốc",
+      "quick_takeaway": "Video trình diễn tính năng gậy selfie tripod MagSafe của Ulanzi với hiệu ứng bóng rèm (Orange Gobo).",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2656,9 +2656,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "MagSafe",
+        "Tripod",
+        "Ulanzi"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5616,22 +5616,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
       "shortcode": "DdGa4hxzlJi",
-      "title_vi": "Nghệ Thuật Kể Chuyện Ký Ức Tuổi Thơ Bằng Hương Thơm",
-      "quick_takeaway": "Quảng cáo Prada Paradigme bằng thủ pháp kết nối hoài niệm tuổi thơ và sự chuyển mình của người đàn ông trưởng thành.",
+      "title_vi": "Paradigme le parfum by @pradabeauty",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -5642,9 +5642,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @itsbybrandon",
       "tech_tags": [
-        "fragrance",
-        "nostalgia",
-        "prada"
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5665,9 +5665,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty.html",
         "shots_count": 7,
         "duration": "14s",
-        "youtube_id": "eX5SmsbZquw",
-        "youtube_embed": "https://www.youtube.com/embed/eX5SmsbZquw",
-        "youtube_url": "https://youtu.be/eX5SmsbZquw"
+        "youtube_id": "IAhheB7UXp8",
+        "youtube_embed": "https://www.youtube.com/embed/IAhheB7UXp8",
+        "youtube_url": "https://youtu.be/IAhheB7UXp8"
       },
       "complexity": {
         "id": "de",
@@ -6644,22 +6644,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
       "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-      "title_vi": "Gậy Tự Sướng Ulanzi MT85 Có Đèn Pin Nhỏ và Ch",
-      "quick_takeaway": "Check out Ulanzi | Magsafe-Compatible Portable Selfie Stick. Get it on Lazada now! Ugc",
+      "title_vi": "Gậy Tự Sướng Ulanzi MT85 Magsafe (UGC Lazada)",
+      "quick_takeaway": "UGC video khoe tính năng gậy tự sướng Ulanzi MT85 tích hợp ngàm Magsafe và đèn LED mini siêu sáng, hướng luồng traffic mua hàng Lazada.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -6670,11 +6670,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Check out Ulanzi | Magsafe-Compatible Portable Selfie Stick. Get it on Lazada now! Ugc",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "High-key Lighting",
-        "Low-key Lighting"
+        "Magsafe",
+        "Selfie Stick",
+        "Ulanzi",
+        "UGC",
+        "Ecom"
       ],
       "transition_level": null,
       "is_ad_bot": false,
