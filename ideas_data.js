@@ -2658,7 +2658,8 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "MagSafe",
         "Tripod",
-        "Ulanzi"
+        "Ulanzi",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -4568,7 +4569,8 @@ var FEDU_IDEAS_DATABASE = {
         "Close-Up / Macro Detail Shot",
         "High-key Lighting",
         "Low-key Lighting",
-        "Medium Tracking Shot"
+        "Medium Tracking Shot",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -4698,7 +4700,8 @@ var FEDU_IDEAS_DATABASE = {
         "travel",
         "stopover",
         "istanbul",
-        "airline"
+        "airline",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5644,7 +5647,8 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "fragrance",
         "nostalgia",
-        "prada"
+        "prada",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5898,7 +5902,8 @@ var FEDU_IDEAS_DATABASE = {
         "Creative",
         "POV",
         "Magic Arm",
-        "B-roll"
+        "B-roll",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6353,7 +6358,8 @@ var FEDU_IDEAS_DATABASE = {
         "ulanzi",
         "mini",
         "portable",
-        "ugc"
+        "ugc",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6416,7 +6422,8 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "phụ kiện",
         "tripod",
-        "vlog"
+        "vlog",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6480,7 +6487,8 @@ var FEDU_IDEAS_DATABASE = {
         "am-thuc",
         "review-do-an",
         "match-cut",
-        "chuyen-canh-1"
+        "chuyen-canh-1",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6609,7 +6617,8 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "cafe",
         "matcha",
-        "pastry"
+        "pastry",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6674,7 +6683,8 @@ var FEDU_IDEAS_DATABASE = {
         "Selfie Stick",
         "Ulanzi",
         "UGC",
-        "Ecom"
+        "Ecom",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6739,7 +6749,8 @@ var FEDU_IDEAS_DATABASE = {
         "Tripod",
         "Selfie Stick",
         "UGC",
-        "Product Commercial"
+        "Product Commercial",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -6803,7 +6814,8 @@ var FEDU_IDEAS_DATABASE = {
         "f-n-b",
         "do-an",
         "cach-quay",
-        "setup"
+        "setup",
+        "private"
       ],
       "transition_level": null,
       "is_ad_bot": false,
