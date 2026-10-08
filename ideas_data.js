@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 373,
-  "total_unique_ideas": 346,
-  "total_active_ideas": 318,
+  "total_scene_items": 374,
+  "total_unique_ideas": 347,
+  "total_active_ideas": 319,
   "total_excluded_ideas": 28,
   "total_creators": 209,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 41,
     "storytelling": 20,
-    "dien-anh": 188,
+    "dien-anh": 189,
     "chuyen-canh": 54
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 40,
     "kien-truc": 39,
     "the-thao": 8,
-    "ky-thuat-quay": 130,
+    "ky-thuat-quay": 131,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 219,
+    "us_eu": 220,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -225,18 +225,19 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
       "handle": "@mridupawasharma",
       "name": "Mridupawasharma",
       "profile_url": "https://www.instagram.com/mridupawasharma/",
-      "video_count": 27,
+      "video_count": 28,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DNQLGoAyuYM_Comment_%E2%80%9CAPP%E2%80%9D_and_I%E2%80%99ll_send_the_link%21/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo%E2%80%A6_to_a_figurine%E2%80%A6_to_a_vide/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
         "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
         "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
         "IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under",
@@ -2640,9 +2641,9 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
-      "shortcode": "DNQLGoAyuYM",
-      "title_vi": "Comment “APP” and I’ll send the link!",
+      "id": "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
+      "shortcode": "DO-oBZ4kzBA",
+      "title_vi": "From a simple photo… to a figurine… to a vide",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -2671,6 +2672,70 @@ var FEDU_IDEAS_DATABASE = {
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DO-oBZ4kzBA/",
+      "gdrive_folder": "https://drive.google.com/open?id=1vD-vPjzz5U9xU3nRsE4YZ9NCzwKh5_Ld",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo%E2%80%A6_to_a_figurine%E2%80%A6_to_a_vide/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo%E2%80%A6_to_a_figurine%E2%80%A6_to_a_vide/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DO-oBZ4kzBA.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide.html",
+        "shots_count": 22,
+        "duration": "44s",
+        "youtube_id": "IyA-FrkDmh8",
+        "youtube_embed": "https://www.youtube.com/embed/IyA-FrkDmh8",
+        "youtube_url": "https://youtu.be/IyA-FrkDmh8"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
+      "shortcode": "DNQLGoAyuYM",
+      "title_vi": "Giải mã cách tạo kỹ xảo Hollywood tại nhà với Ciney App",
+      "quick_takeaway": "Video hướng dẫn tạo kỹ xảo Hollywood (VFX) ngay trên điện thoại bằng app Ciney, sử dụng kỹ thuật AR Mesh.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "an-creator",
+        "vfx",
+        "app-review",
+        "ar"
       ],
       "transition_level": null,
       "is_ad_bot": false,
