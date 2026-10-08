@@ -4,10 +4,10 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 351,
-  "total_unique_ideas": 325,
-  "total_active_ideas": 298,
-  "total_excluded_ideas": 27,
+  "total_scene_items": 371,
+  "total_unique_ideas": 344,
+  "total_active_ideas": 316,
+  "total_excluded_ideas": 28,
   "total_creators": 208,
   "shooting_styles": [
     {
@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 38,
+    "talking-head": 41,
     "storytelling": 20,
-    "dien-anh": 172,
-    "chuyen-canh": 53
+    "dien-anh": 186,
+    "chuyen-canh": 54
   },
   "industries": [
     {
@@ -152,13 +152,13 @@ var FEDU_IDEAS_DATABASE = {
   "industry_stats": {
     "spa-lam-dep": 5,
     "thuong-hieu": 20,
-    "thoi-trang": 25,
+    "thoi-trang": 24,
     "am-thuc": 26,
-    "du-lich": 18,
-    "cong-nghe": 36,
+    "du-lich": 19,
+    "cong-nghe": 42,
     "kien-truc": 37,
-    "the-thao": 7,
-    "ky-thuat-quay": 117,
+    "the-thao": 8,
+    "ky-thuat-quay": 128,
     "ugc": 7
   },
   "countries": [
@@ -212,9 +212,9 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 204,
+    "us_eu": 217,
     "korea": 10,
-    "india": 3,
+    "india": 8,
     "japan": 7,
     "vietnam": 5,
     "asia_other": 29
@@ -233,10 +233,26 @@ var FEDU_IDEAS_DATABASE = {
       "handle": "@mridupawasharma",
       "name": "Mridupawasharma",
       "profile_url": "https://www.instagram.com/mridupawasharma/",
-      "video_count": 10,
+      "video_count": 26,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DBDkvXPyeSN_If_you_videos_are_boring%2C_try_these_3_sound_d/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaH_rTUTe14_I%E2%80%99ve_always_been_someone_who_ends_up_taking_w/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
+        "IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under",
+        "IG_@mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_)",
+        "IG_@mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par",
+        "IG_@mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ",
+        "IG_@mridupawasharma_DU7mCyVE4EJ_Comment_“LUTS”_to_get_these_luts_in_your_DMs",
+        "IG_@mridupawasharma_DaXdrAVzGcc_Some_days_you_don’t_need_more_motivation,_you",
+        "IG_@mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake",
+        "IG_@mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter",
+        "IG_@mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life!",
+        "IG_@mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH…",
+        "IG_@mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO",
+        "IG_@mridupawasharma_DSe7DfDEz9L_Everything’s_perfect",
+        "IG_@mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_🧐",
+        "IG_@mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING!",
+        "IG_@mridupawasharma_DQbUum4E5Pu_Don’t_let_storage_limits_stop_your_creativity",
         "IG_@mridupawasharma_DBDkvXPyeSN_If_you_videos_are_boring,_try_these_3_sound_d",
         "IG_@mridupawasharma_DBl0O1RSMtU_Stop_thinking_and_start_creating!",
         "IG_@mridupawasharma_DEcQIYAyLRq_Master_Cinematography_with_just_one_light!",
@@ -247,6 +263,25 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@mridupawasharma_DJqXz8pxEh6_“No_words._Just_fear,_silence…_and_a_phone_ca",
         "IG_@mridupawasharma_DLW8fdfRG6w_Carousel_Analysis",
         "IG_@mridupawasharma_Dd6G0lnI0zj_Shot_my_little_moments_differently_this_time,"
+      ]
+    },
+    {
+      "handle": "@ulanzi",
+      "name": "Ulanzi",
+      "profile_url": "https://www.instagram.com/ulanzi/",
+      "video_count": 9,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohxID_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_C%C3%B3_T%E1%BB%AB_T%C3%ADnh_Cho_Vlogging_T%C6%B0%C6%A1ng_Th/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
+        "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
+        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
+        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
+        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
+        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
+        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
+        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
+        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -266,24 +301,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
         "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
         "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
-      ]
-    },
-    {
-      "handle": "@ulanzi",
-      "name": "Ulanzi",
-      "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 8,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_oSa57_Ch%C3%A2n_%C4%90%E1%BA%BF_M%C3%A1y_%E1%BA%A2nh_Nh%E1%BA%B9_v%C3%A0_%C4%90a_N%C4%83ng/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
-        "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-        "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-        "IG_@ulanzi_ohxID_MagSafe_Compatible_Selfie_Stick_Tripod_Produc",
-        "IG_@ulanzi_oUVbZ_Magnetic_Phone_Tripod_Desktop_Stand",
-        "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
-        "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
-        "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
       ]
     },
     {
@@ -409,6 +426,19 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@jeromememe_DQuEXMbj8fT_People_of_Porto",
         "IG_@jeromememe_DQmKgPDEWgJ_Artisans_of_Venice",
         "IG_@jeromememe_DbGMt3oIaZm_People_of_Copenhagen"
+      ]
+    },
+    {
+      "handle": "@by.bennnj",
+      "name": "By Bennnj",
+      "profile_url": "https://www.instagram.com/by.bennnj/",
+      "video_count": 3,
+      "top_industry": "Bố cục",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
+        "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
+        "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
       ]
     },
     {
@@ -681,18 +711,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@by.bennnj",
-      "name": "By.Bennnj",
-      "profile_url": "https://www.instagram.com/by.bennnj/",
-      "video_count": 2,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp/shot_01_mid.jpg",
-      "video_ids": [
-        "IG_@by.bennnj_Dcvxba1OvrD_Koti_Sunset_Ambient_Lamp",
-        "IG_@by.bennnj_DbKauxkoJU_Making_beginner_cameras_look_cinematic"
-      ]
-    },
-    {
       "handle": "@qfroost",
       "name": "Quyen Van / Q",
       "profile_url": "https://www.instagram.com/qfroost/",
@@ -702,6 +720,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@Chibuzor_Ossai",
+      "name": "Chibuzor_Ossai",
+      "profile_url": "https://www.instagram.com/Chibuzor_Ossai/",
+      "video_count": 1,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01_mid.jpg",
+      "video_ids": [
+        "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis"
       ]
     },
     {
@@ -742,7 +771,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Turkishairlines",
       "profile_url": "https://www.instagram.com/turkishairlines/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c/shot_01_mid.jpg",
       "video_ids": [
         "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c"
@@ -819,7 +848,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Itsbybrandon",
       "profile_url": "https://www.instagram.com/itsbybrandon/",
       "video_count": 1,
-      "top_industry": "Thời trang",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
       "video_ids": [
         "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
@@ -863,7 +892,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Kfconcept",
       "profile_url": "https://www.instagram.com/kfconcept/",
       "video_count": 1,
-      "top_industry": "Đồ công nghệ",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀"
@@ -955,17 +984,6 @@ var FEDU_IDEAS_DATABASE = {
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai%2C/shot_01_mid.jpg",
       "video_ids": [
         "IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,"
-      ]
-    },
-    {
-      "handle": "@Chibuzor_Ossai",
-      "name": "Chibuzor_Ossai",
-      "profile_url": "https://www.instagram.com/Chibuzor_Ossai/",
-      "video_count": 1,
-      "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01_mid.jpg",
-      "video_ids": [
-        "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis"
       ]
     },
     {
@@ -2610,11 +2628,391 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@mridupawasharma_DBDkvXPyeSN_If_you_videos_are_boring,_try_these_3_sound_d",
-      "shortcode": "DBDkvXPyeSN",
-      "title_vi": "If you videos are boring, try these 3 sound d",
+      "id": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
+      "shortcode": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
+      "title_vi": "Gậy Tự Sướng Có Từ Tính Cho Vlogging Tương Th",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.ohxID?c=s",
+      "gdrive_folder": "https://drive.google.com/open?id=1wvlGnqucbJJMguvRsIakAt9vwwUb-Gv3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohxID_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_C%C3%B3_T%E1%BB%AB_T%C3%ADnh_Cho_Vlogging_T%C6%B0%C6%A1ng_Th/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohxID_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_C%C3%B3_T%E1%BB%AB_T%C3%ADnh_Cho_Vlogging_T%C6%B0%C6%A1ng_Th/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/ohxID.mp4",
+        "report_url": "reports/IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th.html",
+        "shots_count": 20,
+        "duration": "40s",
+        "youtube_id": "vpDgBQDV9XE",
+        "youtube_embed": "https://www.youtube.com/embed/vpDgBQDV9XE",
+        "youtube_url": "https://youtu.be/vpDgBQDV9XE"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis",
+      "shortcode": "DdRGMalgl4E",
+      "title_vi": "Góc Máy Điện Ảnh Biến B-roll Đồ Gia Dụng Thành Cú Đấm Thị Giác",
+      "quick_takeaway": "Hướng dẫn quay dựng video B-roll mượt mà khi set up chiếc quạt điện",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Kỹ thuật phân rã cỡ cảnh và góc máy linh hoạt để solo creator tự quay B-roll lắp ráp sản phẩm cuốn hút",
+      "tech_tags": [
+        "quay-dung",
+        "vlog",
+        "unboxing",
+        "san-pham"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@Chibuzor_Ossai",
+        "name": "Chibuzor_Ossai",
+        "handle": "@Chibuzor_Ossai",
+        "profile_url": "https://www.instagram.com/Chibuzor_Ossai/"
+      },
+      "ig_url": "https://www.instagram.com/p/DdRGMalgl4E/?img_index=6&stkn=MTlheHZpanpqcWYxYg==",
+      "gdrive_folder": "https://drive.google.com/open?id=1CNnLeiXJaNlkwwcnwWipR5ttQpAsqPIh",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01.mp4",
+        "report_url": "reports/IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis.html",
+        "shots_count": 7,
+        "duration": "14s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
+      "shortcode": "DaH_rTUTe14",
+      "title_vi": "Mỏ Neo Tâm Lý Bằng Sự Tương Phản Góc Nhìn (POV)",
+      "quick_takeaway": "Phân tích sự khác biệt giữa góc nhìn người thường và Creator bằng kỹ thuật quay Dutch Angle và Frame in Frame.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • Wide Establishing Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "storytelling",
+        "private"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DaH_rTUTe14/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_urHA0rnETAYG0Wg8jTxh6AhH36Y_mNG",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaH_rTUTe14_I%E2%80%99ve_always_been_someone_who_ends_up_taking_w/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaH_rTUTe14_I%E2%80%99ve_always_been_someone_who_ends_up_taking_w/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DaH_rTUTe14.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w.html",
+        "shots_count": 52,
+        "duration": "104s",
+        "youtube_id": "Ta2ir3OBhCI",
+        "youtube_embed": "https://www.youtube.com/embed/Ta2ir3OBhCI",
+        "youtube_url": "https://youtu.be/Ta2ir3OBhCI"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under",
+      "shortcode": "DR3xJ1tE6mM",
+      "title_vi": "Nghệ Thuật Giới Thiệu Outfit Bằng Chuyển Cảnh & Bối Cảnh Thực Tế",
+      "quick_takeaway": "Video thời trang nam chuyển cảnh liên tục qua nhiều bối cảnh thực tế.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Mix and Match",
+        "Động Tác Động",
+        "Thời Trang Nam"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DR3xJ1tE6mM/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_TOGsp9oZVATuWPHKvBtYaFEzJZQyfwp",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DR3xJ1tE6mM.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under.html",
+        "shots_count": 60,
+        "duration": "120s",
+        "youtube_id": "ed5Htxw4Ttc",
+        "youtube_embed": "https://www.youtube.com/embed/ed5Htxw4Ttc",
+        "youtube_url": "https://youtu.be/ed5Htxw4Ttc"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_)",
+      "shortcode": "DXJvcyqEyoF",
+      "title_vi": "Nghệ Thuật Thiết Kế Balo Công Nghệ: Tối Ưu Trải Nghiệm Qua Từng Chi Tiết Nhỏ",
+      "quick_takeaway": "Đánh giá chi tiết thiết kế thông minh của balo công nghệ qua từng tiểu tiết nhỏ nhất.",
+      "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Balo",
+        "Review",
+        "YKK"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DXJvcyqEyoF/",
+      "gdrive_folder": "https://drive.google.com/open?id=1rzuDIZCLKQZdpLxA60bCoT6Bt4VDHz2S",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_%29/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_%29/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DXJvcyqEyoF.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_).html",
+        "shots_count": 35,
+        "duration": "70s",
+        "youtube_id": "HCBFDPfizZU",
+        "youtube_embed": "https://www.youtube.com/embed/HCBFDPfizZU",
+        "youtube_url": "https://youtu.be/HCBFDPfizZU"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par",
+      "shortcode": "DS17TKwE-Yg",
+      "title_vi": "When your backpack goes from gym buddy to par",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "the-thao",
+        "name": "Thể thao",
+        "en_name": "Sports & Motion",
+        "icon": "🏃",
+        "badge_color": "orange"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Thể Thao & Năng Động.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DS17TKwE-Yg/",
+      "gdrive_folder": "https://drive.google.com/open?id=1NKtkxNfVsutkcX2ZDvVkKn7ade8VZLQ1",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DS17TKwE-Yg.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DS17TKwE-Yg_When_your_backpack_goes_from_gym_buddy_to_par.html",
+        "shots_count": 29,
+        "duration": "58s",
+        "youtube_id": "Hi4RpQ1E2-g",
+        "youtube_embed": "https://www.youtube.com/embed/Hi4RpQ1E2-g",
+        "youtube_url": "https://youtu.be/Hi4RpQ1E2-g"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ",
+      "shortcode": "DcGbEVFznin",
+      "title_vi": "A Typical Saturday Routine - Sức Mạnh Của Cận Cảnh",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2640,8 +3038,900 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot"
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DcGbEVFznin/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Wf8PPDBQek2_O9Bu8OhJ6sayysne0tja",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DcGbEVFznin.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DcGbEVFznin_Everything_looks_better_in_closeup._Am_I_righ.html",
+        "shots_count": 27,
+        "duration": "54s",
+        "youtube_id": "OwXUkepRWyA",
+        "youtube_embed": "https://www.youtube.com/embed/OwXUkepRWyA",
+        "youtube_url": "https://youtu.be/OwXUkepRWyA"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DU7mCyVE4EJ_Comment_“LUTS”_to_get_these_luts_in_your_DMs",
+      "shortcode": "DU7mCyVE4EJ",
+      "title_vi": "Thủ Thuật Color Grading Điện Ảnh Trực Tiếp Trên Điện Thoại",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 32 phân cảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DU7mCyVE4EJ/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DU7mCyVE4EJ_Comment_%E2%80%9CLUTS%E2%80%9D_to_get_these_luts_in_your_DMs/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DU7mCyVE4EJ_Comment_%E2%80%9CLUTS%E2%80%9D_to_get_these_luts_in_your_DMs/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DU7mCyVE4EJ.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DU7mCyVE4EJ_Comment_“LUTS”_to_get_these_luts_in_your_DMs.html",
+        "shots_count": 32,
+        "duration": "64s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DaXdrAVzGcc_Some_days_you_don’t_need_more_motivation,_you",
+      "shortcode": "DaXdrAVzGcc",
+      "title_vi": "Nghệ Thuật Kể Chuyện Bằng Nỗi Đau & Tương Phản Màu Sắc",
+      "quick_takeaway": "Quảng cáo tai nghe JBL mượn câu chuyện nỗi đau mất tập trung để dẫn dắt sản phẩm như vị cứu tinh. Nổi bật với màu sắc tương phản mạnh và kỹ thuật typography đè lên bokeh mờ.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Quảng cáo tai nghe chống ồn JBL Noise Cancelling",
+      "tech_tags": [
+        "Product Hero",
+        "Typography",
+        "Action",
+        "Pain Point"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Review Thiết Bị, Mở Hộp Unboxing Đồ Công Nghệ & Gear: Phân loại theo cấu trúc Storytelling kết hợp kỹ thuật Distraction Isolation Hook, Sound Mute Effect, Commercial Pacing, Urban Focus",
+        "practice_focus": "Bài tập unboxing 5 nhịp: Cắt xé hộp dứt khoát, quay trượt mượt mà trên bề mặt kim loại, zoom macro chi tiết nút bấm và thử nghiệm tính năng tức thì.",
+        "ig_seeding_hook": "Follow @mridupawasharma để học cách trình bày thông số công nghệ hấp dẫn, bố cục bàn làm việc hiện đại và phong cách unboxing cuốn hút.",
+        "course_industry_mapping": "Review Thiết Bị, Mở Hộp Unboxing Đồ Công Nghệ & Gear",
+        "transition_level": null
+      },
+      "logic_explanation": "Kể câu chuyện về người làm sáng tạo cần sự yên tĩnh giữa phố thị ồn ào, dùng hiệu ứng triệt tiêu âm thanh khi đeo tai nghe JBL để làm nổi bật sản phẩm.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawan Sharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DaXdrAVzGcc/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaXdrAVzGcc_Some_days_you_don%E2%80%99t_need_more_motivation%2C_you/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaXdrAVzGcc_Some_days_you_don%E2%80%99t_need_more_motivation%2C_you/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DaXdrAVzGcc.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DaXdrAVzGcc_Some_days_you_don’t_need_more_motivation,_you.html",
+        "shots_count": 41,
+        "duration": "82s",
+        "youtube_id": "jl3OgHjcn00",
+        "youtube_embed": "https://www.youtube.com/embed/jl3OgHjcn00",
+        "youtube_url": "https://youtu.be/jl3OgHjcn00"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake",
+      "shortcode": "DbnlAB5Twrw",
+      "title_vi": "Kỹ Thuật Đổi Góc Thoại Liên Tục Bẻ Gãy Quán Tính",
+      "quick_takeaway": "Video hướng dẫn tránh 3 sai lầm quay dựng bằng cách thay đổi góc máy và trang phục liên tục.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Chỉ ra 3 thói quen xấu phá hỏng chất lượng video",
+      "tech_tags": [
+        "private",
+        "unlisted",
+        "huong-dan",
+        "chong-nham-chan"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {
+        "key_optimization_point": "Tối ưu cho Kỹ Thuật Quay Dựng & Điện Ảnh • Kỹ Thuật Quay Dựng Điện Ảnh Masterclass: Phân loại theo cấu trúc Talking Head kết hợp kỹ thuật Mistake Breakdown, Camera Shake Fix, Lighting Pitfalls, Director Direct Advice",
+        "practice_focus": "Bài tập bóc tách ngôn ngữ điện ảnh: Phân tích tỷ lệ khung hình, hướng sáng chính (Key Light), chiều sâu trường ảnh và tiết tấu nhịp cắt.",
+        "ig_seeding_hook": "Follow @mridupawasharma để mở rộng tầm nhìn thẩm mỹ thị giác và nâng cao kỹ năng quay dựng chuyên nghiệp mỗi ngày.",
+        "course_industry_mapping": "Kỹ Thuật Quay Dựng & Điện Ảnh • Kỹ Thuật Quay Dựng Điện Ảnh Masterclass",
+        "transition_level": null
+      },
+      "logic_explanation": "Đạo diễn Mridupawan Sharma nói chuyện trực diện cảnh báo 3 sai lầm phổ biến người mới hay mắc phải: rung máy, ánh sáng phẳng và cắt cảnh thiếu mục đích.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawan Sharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DbnlAB5Twrw/",
+      "gdrive_folder": "",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DbnlAB5Twrw.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DbnlAB5Twrw_Stop_ruining_your_videos_with_these_3_mistake.html",
+        "shots_count": 33,
+        "duration": "66s",
+        "youtube_id": "c_UQkjulVj8",
+        "youtube_embed": "https://www.youtube.com/embed/c_UQkjulVj8",
+        "youtube_url": "https://youtu.be/c_UQkjulVj8"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter",
+      "shortcode": "DV73FCHk1Ej",
+      "title_vi": "Fastrack Ease: Đánh Bật Giác Quan Bằng B-Roll Sản Phẩm Điện Ảnh",
+      "quick_takeaway": "Quảng cáo nước hoa nam Fastrack Ease với các cú máy macro sắc nét, đánh sáng đẹp khoe chất liệu trong suốt, và tia sương xịt bay bổng, tôn lên sự tươi mát.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Product B-roll",
+        "Perfume",
+        "Macro",
+        "Cinematic lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DV73FCHk1Ej/",
+      "gdrive_folder": "https://drive.google.com/open?id=1b8S5DN5qn61KizPDqQ_BR15f2lXQGtT3",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DV73FCHk1Ej.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DV73FCHk1Ej_Some_days_feel_lighter.html",
+        "shots_count": 33,
+        "duration": "66s",
+        "youtube_id": "-GVbbAHSGMA",
+        "youtube_embed": "https://www.youtube.com/embed/-GVbbAHSGMA",
+        "youtube_url": "https://youtu.be/-GVbbAHSGMA"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life!",
+      "shortcode": "DZcSt_xzqBB",
+      "title_vi": "Mridupawan Sharma • Kỹ Thuật Match-cut Bằng Đạo Cụ Áo Đỏ (Object Wipe)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 34 phân cảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DZcSt_xzqBB/",
+      "gdrive_folder": "https://drive.google.com/open?id=1lFaE0N5dKsoWbxQ9oBfeBmYzpFAb_MKo",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life%21/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life%21/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DZcSt_xzqBB.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life!.html",
+        "shots_count": 34,
+        "duration": "68s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH…",
+      "shortcode": "DYpArQyzs3G",
+      "title_vi": "Đòn Bẩy Thị Giác: Cú Mồi Mắt Đóng Khung Vấn Đề (Prop Anchor Hook)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DYpArQyzs3G/",
+      "gdrive_folder": "https://drive.google.com/open?id=19or5wP7UxmRbx8izQBlwFrfymioEmu_A",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH%E2%80%A6/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH%E2%80%A6/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DYpArQyzs3G.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DYpArQyzs3G_Your_phone_videos_are_MEH….html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DW8w1XNE-Ya_Important_meeting…_but_the_match_matters_more",
+      "shortcode": "DW8w1XNE-Ya",
+      "title_vi": "Domino&#x27;s Pizza • Kịch Bản Plot Twist Văn Phòng &amp; Đòn Tâm Lý Kéo Gần Sếp - Nhân Viên",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "india",
+        "name": "Ấn Độ",
+        "en_name": "India",
+        "flag": "🇮🇳",
+        "badge_color": "amber"
+      },
+      "purpose": "Showcase thị giác & Thẩm mỹ",
+      "tech_tags": [
+        "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DW8w1XNE-Ya/",
+      "gdrive_folder": "https://drive.google.com/open?id=1oZe_zJJaAZfAfwulGBIISOhBB3tHSpbd",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DW8w1XNE-Ya_Important_meeting%E2%80%A6_but_the_match_matters_more/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DW8w1XNE-Ya_Important_meeting%E2%80%A6_but_the_match_matters_more/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DW8w1XNE-Ya.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DW8w1XNE-Ya_Important_meeting…_but_the_match_matters_more.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": "",
+        "youtube_embed": "",
+        "youtube_url": ""
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": true
+    },
+    {
+      "id": "IG_@mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO",
+      "shortcode": "DUaii-skyis",
+      "title_vi": "Kỹ Thuật Kể Chuyện Chậm (Slow Cinema): Tạo Khoảng Lặng Bằng Góc Cận Đồ Vật",
+      "quick_takeaway": "Một góc nhìn điện ảnh chậm rãi, kéo gần khoảng cách qua text message, sau đó lùi lại suy ngẫm.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "private",
+        "cinematic",
+        "low-key"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DUaii-skyis/",
+      "gdrive_folder": "https://drive.google.com/open?id=1DOx-JdqOrRqjx9qpmziciKKrnvAcjZxT",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DUaii-skyis.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DUaii-skyis_Graded_with_my_Signature_LUTs-_LINK_IN_BIO.html",
+        "shots_count": 17,
+        "duration": "34s",
+        "youtube_id": "ID3jhWUqm2U",
+        "youtube_embed": "https://www.youtube.com/embed/ID3jhWUqm2U",
+        "youtube_url": "https://youtu.be/ID3jhWUqm2U"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DSe7DfDEz9L_Everything’s_perfect",
+      "shortcode": "DSe7DfDEz9L",
+      "title_vi": "Quảng cáo Ứng Dụng Đỉnh Cao: Khơi Gợi Cảm Xúc & Kêu Gọi Hành Động Nhanh",
+      "quick_takeaway": "Quảng cáo Zomato mùa Giáng Sinh với hook ấm áp, dẫn dắt nhanh gọn đến giải pháp đồ ăn giao tận nhà.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Giáng Sinh",
+        "Giao Đồ Ăn",
+        "Zomato"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DSe7DfDEz9L/",
+      "gdrive_folder": "https://drive.google.com/open?id=1b3VNum8ruLHQjRu4jv9yOUjFvbJgvXQK",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DSe7DfDEz9L_Everything%E2%80%99s_perfect/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DSe7DfDEz9L_Everything%E2%80%99s_perfect/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DSe7DfDEz9L.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DSe7DfDEz9L_Everything’s_perfect.html",
+        "shots_count": 15,
+        "duration": "30s",
+        "youtube_id": "QrzVsCxjb_M",
+        "youtube_embed": "https://www.youtube.com/embed/QrzVsCxjb_M",
+        "youtube_url": "https://youtu.be/QrzVsCxjb_M"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_🧐",
+      "shortcode": "DYEyL_OT1_s",
+      "title_vi": "Make Boring Videos Interesting",
+      "quick_takeaway": "Cách làm video bớt nhàm chán bằng kỹ thuật chia nhỏ câu nói và chèn B-roll cận cảnh theo nhịp hành động",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Visual Hook",
+        "Jump Cut",
+        "B-Roll",
+        "Impact Point"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DYEyL_OT1_s/",
+      "gdrive_folder": "https://drive.google.com/open?id=1eOJl4nHCycLGQEDA6P7YupehUVWAPnyX",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_%F0%9F%A7%90/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_%F0%9F%A7%90/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DYEyL_OT1_s.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DYEyL_OT1_s_Make_boring_videos_Interesting_🧐.html",
+        "shots_count": 13,
+        "duration": "26s",
+        "youtube_id": "I4idKmF6FXY",
+        "youtube_embed": "https://www.youtube.com/embed/I4idKmF6FXY",
+        "youtube_url": "https://youtu.be/I4idKmF6FXY"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING!",
+      "shortcode": "DVYdxPpE7Ji",
+      "title_vi": "Bí Quyết Match Cut Kịch Tính Từ Mridul Sharma",
+      "quick_takeaway": "Bóc tách kỹ thuật quay chuyển cảnh (match cut) ấn tượng bằng cách tận dụng hành động và tĩnh vật.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Match Cut",
+        "Visual Hook",
+        "B-Roll",
+        "Chuyển Cảnh"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DVYdxPpE7Ji/",
+      "gdrive_folder": "https://drive.google.com/open?id=1_jNSF7LWFBhcaSmetM-nXQE6Bms_OSUq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING%21/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING%21/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DVYdxPpE7Ji.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DVYdxPpE7Ji_Make_BORING_videos_INTERESTING!.html",
+        "shots_count": 11,
+        "duration": "22s",
+        "youtube_id": "IRrUSGTwPks",
+        "youtube_embed": "https://www.youtube.com/embed/IRrUSGTwPks",
+        "youtube_url": "https://youtu.be/IRrUSGTwPks"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DQbUum4E5Pu_Don’t_let_storage_limits_stop_your_creativity",
+      "shortcode": "DQbUum4E5Pu",
+      "title_vi": "Giải Pháp Lưu Trữ Cho iPhone Filmmaking Với SanDisk SSD",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DQbUum4E5Pu/",
+      "gdrive_folder": "https://drive.google.com/open?id=1Ciip8DbtuVW-O3KN-JYBPKavFLcRwrRS",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DQbUum4E5Pu_Don%E2%80%99t_let_storage_limits_stop_your_creativity/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DQbUum4E5Pu_Don%E2%80%99t_let_storage_limits_stop_your_creativity/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DQbUum4E5Pu.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DQbUum4E5Pu_Don’t_let_storage_limits_stop_your_creativity.html",
+        "shots_count": 42,
+        "duration": "84s",
+        "youtube_id": "b9U2IV9fDZo",
+        "youtube_embed": "https://www.youtube.com/embed/b9U2IV9fDZo",
+        "youtube_url": "https://youtu.be/b9U2IV9fDZo"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with",
+      "shortcode": "Ddfa3zCu3kj",
+      "title_vi": "Vẻ Đẹp Điện Ảnh Tự Nhiên & Sức Mạnh 'Straight Out Of Camera'",
+      "quick_takeaway": "Vẻ đẹp điện ảnh tự nhiên với máy ảnh Sony a6400, phô diễn ánh sáng Blue Hour và Golden Hour.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Wide Establishing Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @by.bennnj",
+      "tech_tags": [
+        "sony a6400",
+        "nature",
+        "blue hour",
+        "b-roll"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@by.bennnj",
+        "name": "By Bennnj",
+        "handle": "@by.bennnj",
+        "profile_url": "https://www.instagram.com/by.bennnj/"
+      },
+      "ig_url": "https://www.instagram.com/p/Ddfa3zCu3kj/",
+      "gdrive_folder": "https://drive.google.com/open?id=1BUZMbHm8ZliOOhauokKC-qEMr2N2xtgy",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Ddfa3zCu3kj.mp4",
+        "report_url": "reports/IG_@by.bennnj_Ddfa3zCu3kj_Making_cinematic_videos_on_my_Sony_a6400_with.html",
+        "shots_count": 9,
+        "duration": "18s",
+        "youtube_id": "Ed7rzh938ow",
+        "youtube_embed": "https://www.youtube.com/embed/Ed7rzh938ow",
+        "youtube_url": "https://youtu.be/Ed7rzh938ow"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DBDkvXPyeSN_If_you_videos_are_boring,_try_these_3_sound_d",
+      "shortcode": "DBDkvXPyeSN",
+      "title_vi": "Bí Quyết Thiết Kế Âm Thanh (Sound Design) Cứu Rỗi Video Nhàm Chán",
+      "quick_takeaway": "Bí quyết cứu rỗi video nhàm chán bằng cách áp dụng 3 kỹ thuật Sound Design (Foley, Sound Effects) và thêm B-roll động lực học.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Âm Thanh",
+        "Foley",
+        "B-Roll",
+        "Chuyển Cảnh"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -2866,22 +4156,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DK_9B30RrSD_Three_devices_walk_into_a_bar…_none_of_them_h",
       "shortcode": "DK_9B30RrSD",
-      "title_vi": "Three devices walk into a bar… none of them h",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Giải Pháp Chống Sập Nguồn Cực Chill Từ Belkin",
+      "quick_takeaway": "Bán giải pháp (sự rảnh tay, an tâm) thay vì chỉ bán tính năng sạc dự phòng thông qua cách tiếp cận giải quyết nỗi đau hết pin trực tiếp.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • High-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2892,10 +4182,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "High-key Lighting"
+        "Pain Point",
+        "Solution",
+        "Lifestyle",
+        "Qi2"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -3379,8 +4669,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@turkishairlines_Dd8gb9ss84q_A_timeless_destination_where_two_continents_c",
       "shortcode": "Dd8gb9ss84q",
-      "title_vi": "Đòn Bẩy Lỗ Khóa & Match Cut Ký Họa: Nghệ Thuật Kể Chuyện Đẳng Cấp Biến Chuyến Bay Nối Chuyến Thành Kỳ Nghỉ Hoàng Gia",
-      "quick_takeaway": "Cú lừa thị giác qua lỗ khóa mở ra trải nghiệm Stopover trọn gói: Biến thời gian quá cảnh thành kỳ nghỉ thượng lưu khám phá kỳ quan Istanbul.",
+      "title_vi": "Nghệ thuật quảng bá trải nghiệm Stopover: Khi Layover trở thành một kỳ nghỉ ngàn đô",
+      "quick_takeaway": "Quảng bá chương trình Stopover của Turkish Airlines với góc nhìn POV cá nhân hóa, kết hợp giữa sự sang trọng của dịch vụ và nét cổ kính của Istanbul.",
       "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
         "id": "dien-anh",
@@ -3390,11 +4680,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "du-lich",
+        "name": "Du lịch",
+        "en_name": "Travel & Culture",
+        "icon": "✈️",
+        "badge_color": "sky"
       },
       "country": {
         "id": "us_eu",
@@ -3405,12 +4695,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @turkishairlines",
       "tech_tags": [
-        "Sub-framing Keyhole",
-        "Match Cut Vest",
-        "Stopover Proof",
-        "Architectural Sketch",
-        "Golden Hour Aerial",
-        "Vintage Super 8"
+        "travel",
+        "stopover",
+        "istanbul",
+        "airline"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -4328,8 +5616,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
       "shortcode": "DdGa4hxzlJi",
-      "title_vi": "Cú Chuyển Dịch Hệ Hình (Paradigm Shift): Bậc Thầy Phối Màu Xanh Lục Bảo & Nghệ Thuật Hoài Niệm Điện Ảnh Prada",
-      "quick_takeaway": "Cú bắt tay thượng thừa giữa thời trang cao cấp và triết lý sống: Biến sản phẩm nước hoa thành cú hích chuyển dịch hệ hình tư duy (Paradigm Shift) tìm lại điều kỳ diệu trong đời thường.",
+      "title_vi": "Nghệ Thuật Kể Chuyện Ký Ức Tuổi Thơ Bằng Hương Thơm",
+      "quick_takeaway": "Quảng cáo Prada Paradigme bằng thủ pháp kết nối hoài niệm tuổi thơ và sự chuyển mình của người đàn ông trưởng thành.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -4339,11 +5627,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "thoi-trang",
-        "name": "Thời trang",
-        "en_name": "Fashion & Style",
-        "icon": "👔",
-        "badge_color": "pink"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -4354,12 +5642,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @itsbybrandon",
       "tech_tags": [
-        "Prada Paradigme",
-        "Nuoc hoa nam",
-        "Dien anh Wes Anderson",
-        "Vu dao phong khoang",
-        "Color Continuity Law",
-        "3-Beat Rhythm"
+        "fragrance",
+        "nostalgia",
+        "prada"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -4584,8 +5869,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀",
       "shortcode": "Dd08G0PBtKk",
-      "title_vi": "5 CÚ MÁY SPLIT-SCREEN ĐỘT PHÁ VỚI TAY ĐÒN MAGIC ARM",
-      "quick_takeaway": "5 Cú máy Split-Screen (The Setup vs The Shot) đột phá với tay đòn Magic Arm kẹp ly rượu, đầu giường, chân cửa, khe sách và điều khiển TV",
+      "title_vi": "Đòn Bẩy Thị Giác: 5 Góc Máy Sáng Tạo Với Magic Arm (K&F Concept)",
+      "quick_takeaway": "Video giới thiệu 5 góc máy độc đáo và sáng tạo với K&F Concept Magic Arm, kết hợp giữa góc sát sàn, góc đỉnh đầu và object-POV.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4595,11 +5880,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "cong-nghe",
-        "name": "Đồ công nghệ",
-        "en_name": "Tech & Gear",
-        "icon": "📱",
-        "badge_color": "purple"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -4610,17 +5895,15 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @kfconcept",
       "tech_tags": [
+        "Creative",
+        "POV",
         "Magic Arm",
-        "Split-Screen",
-        "The Setup vs The Shot",
-        "Góc Máy POV",
-        "Locked-on Shot",
-        "B-Roll Sáng Tạo"
+        "B-roll"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
         "raw": "@kfconcept",
         "name": "Kfconcept",
@@ -4636,9 +5919,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@kfconcept_Dd08G0PBtKk_5_Creative_Ways_to_Use_a_Magic_Arm_👀.html",
         "shots_count": 6,
         "duration": "12s",
-        "youtube_id": "Mwza4-NcIJ0",
-        "youtube_embed": "https://www.youtube.com/embed/Mwza4-NcIJ0",
-        "youtube_url": "https://youtu.be/Mwza4-NcIJ0"
+        "youtube_id": "XHDlVTpv7Io",
+        "youtube_embed": "https://www.youtube.com/embed/XHDlVTpv7Io",
+        "youtube_url": "https://youtu.be/XHDlVTpv7Io"
       },
       "complexity": {
         "id": "de",
@@ -5040,8 +6323,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
       "shortcode": "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
-      "title_vi": "Công Thức Video UGC Đa Năng: Từ Tripod Bỏ Túi Đến Studio Di Động 1 Chạm",
-      "quick_takeaway": "Bóc tách đòn bẩy thị giác của video UGC bán phụ kiện: Từ giải quyết nỗi đau cồng kềnh bằng tripod bỏ túi 26.5cm, chứng minh tải trọng với máy ảnh thật, đến cú đấm công năng ngàm kẹp 2-trong-1 làm máy nhắc chữ và biến hình thành gậy selfie du lịch.",
+      "title_vi": "Review Chân Đế Máy Ảnh Nhẹ và Đa Năng Ulanzi oSa57",
+      "quick_takeaway": "Video UGC review chân máy ảnh mini gập gọn của Ulanzi, nhắm vào sự tiện dụng và đa năng.",
       "key_tech": "Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -5051,11 +6334,11 @@ var FEDU_IDEAS_DATABASE = {
         "badge_color": "sky"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
       },
       "country": {
         "id": "us_eu",
@@ -5066,14 +6349,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Check out Ulanzi | Mini Folding Portable Tripod. Get it on Lazada now! Ugc",
       "tech_tags": [
-        "UGC",
-        "Tripod Mini",
-        "Đập Hộp & Review",
-        "Studio Di Động",
-        "Đa Năng 2 Trong 1",
-        "Ulanzi",
-        "Teleprompter",
-        "Selfie Stick"
+        "tripod",
+        "ulanzi",
+        "mini",
+        "portable",
+        "ugc"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5108,15 +6388,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
       "shortcode": "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
-      "title_vi": "Ulanzi MT86 Auto-Deploy Tripod & Selfie Stick (Cao 1.52m, Chân Quadpod Bật Nảy)",
-      "quick_takeaway": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
+      "title_vi": "Phô diễn sức mạnh cơ khí 1-Chạm: Kích hoạt chân Quadpod Ulanzi MT86",
+      "quick_takeaway": "Video review Tripod & Gậy Selfie Ulanzi MT86 tự động bung 4 chân Quadpod.",
       "key_tech": "1.52m Height • Quadpod Base. Get it on Lazada now! • Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
-        "id": "chuyen-canh",
-        "name": "Chuyển Cảnh",
-        "en_name": "Transitions & Flow",
-        "icon": "⚡",
-        "badge_color": "rose"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "cong-nghe",
@@ -5134,14 +6414,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Check out Ulanzi | MT86 Auto-Deploy Tripod & Selfie Stick, 1.52m Height, Quadpod Base. Get it on Lazada now!",
       "tech_tags": [
-        "Ulanzi MT86",
-        "Auto-Deploy Tripod",
-        "Quadpod Base",
-        "Selfie Stick 1.52m",
-        "Chạm Đất Tự Bung",
-        "Cold Shoe Mount",
-        "Bluetooth Remote",
-        "Worm's-Eye View"
+        "phụ kiện",
+        "tripod",
+        "vlog"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5176,15 +6451,15 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@page_vrn_DdT9nr_o_SP_Каким_бы_ни_был_ваш_завтрак,_в_P+AGE_он_будет",
       "shortcode": "DdT9nr_o_SP",
-      "title_vi": "Cú Đấm Thị Giác F&B: Kỹ Thuật Spin Match Cut & Macro Đồ Ăn Sáng Đánh Thức Tuyến Nước Bọt (@page_vrn)",
-      "quick_takeaway": "Khai thác đòn bẩy Spin Match Cut xoay đĩa trên bàn gỗ và chuỗi đặc tả Macro cận cảnh (lòng đào trứng chần ùa chảy, thịt bò hun khói mỏng tơi, rosti khoai tây giòn rụm) biến video 7 giây thành cỗ máy kích hoạt cơn thèm ăn đỉnh cao.",
+      "title_vi": "Nghệ Thuật Match Cut: Chuyển Cảnh Mượt Mà Trong Video Ẩm Thực",
+      "quick_takeaway": "Video review đồ ăn sáng với kỹ thuật chuyển cảnh mượt mà, sử dụng Match Cut và Macro để tôn lên chất lượng món ăn (Chuyển cảnh 1).",
       "key_tech": "Chuyển cảnh 1 • Spin Match Cut • Macro Food Porn • Visual Hook • Yolk Ooze Money Shot",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
         "id": "ky-thuat-quay",
@@ -5202,13 +6477,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Kích hoạt cơn đói và tuyến nước bọt của khách hàng bằng chuỗi tương tác dao dĩa Macro cực nét, nâng tầm trải nghiệm bữa sáng tại nhà hàng.",
       "tech_tags": [
-        "Chuyển cảnh 1",
-        "Match Cut",
-        "Spin Transition",
-        "Macro Food Porn",
-        "Visual Hook",
-        "Yolk Ooze Money Shot",
-        "Crisp Action"
+        "am-thuc",
+        "review-do-an",
+        "match-cut",
+        "chuyen-canh-1"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5309,8 +6581,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ecuator_cafe_Dc0iEdiuYZ-_Există_pauze_de_cafea_și_există_momente_în_ca",
       "shortcode": "Dc0iEdiuYZ-",
-      "title_vi": "B-Roll F&B Đỉnh Cao: Kể Chuyện Bằng Hành Động & Chi Tiết Giác Quan",
-      "quick_takeaway": "Chuỗi B-Roll quảng cáo F&B chuẩn nhịp điện ảnh: dẫn dắt từ bước chân dạo phố, tiếng đẩy cửa, tiếng rót Nitro Matcha bọt tuyết đến cú bẻ bánh ngàn lớp giòn rụm và chiếc ly cạn đáy.",
+      "title_vi": "Nghệ Thuật Khơi Gợi Vị Giác Qua Từng Cú Chạm Góc Máy",
+      "quick_takeaway": "Trải nghiệm không gian cafe tối giản với điểm nhấn là món Nitro Matcha sủi bọt và bánh ngàn lớp.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -5335,14 +6607,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Life",
       "tech_tags": [
-        "Life",
-        "Quảng cáo",
-        "B-Roll F&B",
-        "Matcha Nitro",
-        "ASMR",
-        "Macro Detail",
-        "POV",
-        "Flatlay"
+        "cafe",
+        "matcha",
+        "pastry"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5377,22 +6644,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
       "shortcode": "IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch",
-      "title_vi": "Công Thức UGC Bán Hàng: Đòn Bẩy Tương Phản Cũ vs Mới & Chuỗi Stress Test Nam Châm",
-      "quick_takeaway": "⚡ Đòn bẩy tương phản Cũ vs Mới (A/B Test) kết hợp chuỗi bài kiểm tra va đập thực tế (Stress Test) đập tan mọi nghi ngờ của người mua hàng.",
+      "title_vi": "Gậy Tự Sướng Ulanzi MT85 Có Đèn Pin Nhỏ và Ch",
+      "quick_takeaway": "Check out Ulanzi | Magsafe-Compatible Portable Selfie Stick. Get it on Lazada now! Ugc",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • High-key Lighting • Low-key Lighting",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
       },
       "country": {
         "id": "us_eu",
@@ -5401,19 +6668,18 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "purpose": "Check out Ulanzi | Magsafe-Compatible Portable Selfie Stick. Get it on Lazada now! Ugc",
       "tech_tags": [
-        "Ugc",
-        "Magsafe",
-        "Gậy Tự Sướng",
-        "Stress Testing",
-        "Contrast Hook",
-        "Visual Rhythm"
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "High-key Lighting",
+        "Low-key Lighting"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Công Nghệ & Thiết Bị.",
+      "logic_explanation": "Ghi chú người dùng: Check out Ulanzi | Magsafe-Compatible Portable Selfie Stick. Get it on Lazada now! Ugc. Phân loại vào Công Nghệ & Thiết Bị • Talking Head.",
       "creator": {
         "raw": "@ulanzi",
         "name": "Ulanzi",
@@ -5429,9 +6695,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ulanzi_ohBhc_Gậy_Tự_Sướng_Ulanzi_MT85_Có_Đèn_Pin_Nhỏ_và_Ch.html",
         "shots_count": 27,
         "duration": "54s",
-        "youtube_id": "2XikfROzIFI",
-        "youtube_embed": "https://www.youtube.com/embed/2XikfROzIFI",
-        "youtube_url": "https://youtu.be/2XikfROzIFI"
+        "youtube_id": "ocj57rzJ84A",
+        "youtube_embed": "https://www.youtube.com/embed/ocj57rzJ84A",
+        "youtube_url": "https://youtu.be/ocj57rzJ84A"
       },
       "complexity": {
         "id": "nang-cao",
@@ -5508,8 +6774,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@dwslestari_Ddga9BDzenm_buat_yang_sering_nanyain_font_yang_aku_pakai,",
       "shortcode": "Ddga9BDzenm",
-      "title_vi": "Nghệ Thuật Setup Ánh Sáng Nắng Xiên & Phối Font Chữ Điện Ảnh Cho Video Nấu Ăn",
-      "quick_takeaway": "⚡ Setup đèn spotlight qua nan lưới tạo bóng nắng xiên ➔ Trưng bày món mì Maluku vàng ruộm dưới ánh nắng hổ phách",
+      "title_vi": "Bóc Trần Kỹ Thuật Đánh Sáng Gobo & Setup Góc Máy Quay F&B",
+      "quick_takeaway": "Video hậu trường hướng dẫn cách setup ánh sáng giả nắng bằng Gobo, thiết lập góc máy và chia sẻ 4 cặp font chữ (Advercase, Britti Sans, Strong, Playfair) thường dùng cho video nấu ăn F&B.",
       "key_tech": "F N B • Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "dien-anh",
@@ -5534,13 +6800,10 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Bóc tách bí quyết setup ánh sáng nắng xiên nhân tạo trong studio bàn bếp và công thức phối font chữ điện ảnh cho video ẩm thực F&B.",
       "tech_tags": [
-        "F n B",
-        "Đồ ăn",
-        "Cách quay setup",
-        "Gobo Lighting",
-        "Font Pairing",
-        "Aesthetic Cooking",
-        "Food ASMR"
+        "f-n-b",
+        "do-an",
+        "cach-quay",
+        "setup"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -5564,73 +6827,6 @@ var FEDU_IDEAS_DATABASE = {
         "youtube_id": "rMANbHwCYW4",
         "youtube_embed": "https://www.youtube.com/embed/rMANbHwCYW4",
         "youtube_url": "https://youtu.be/rMANbHwCYW4"
-      },
-      "complexity": {
-        "id": "de",
-        "label": "🟢 Dễ làm theo (3-8 shots)"
-      },
-      "is_personal": false,
-      "is_excluded": false
-    },
-    {
-      "id": "IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis",
-      "shortcode": "DdRGMalgl4E",
-      "title_vi": "Đòn Bẩy Đa Góc Máy B-Roll: Nghệ Thuật Tự Quay Quy Trình Lắp Ráp Sản Phẩm Cuốn Hút Cho Solo Creator",
-      "quick_takeaway": "Giáo trình thị giác 7 bước tự quay B-roll quy trình lắp ráp sản phẩm cho Solo Creator. Biến hành động đơn điệu thành chuỗi hình ảnh điện ảnh bằng việc đan xen 6 cỡ cảnh & góc máy độc đáo (Dutch Angle, Establishing, Top-Down, Worm's Eye POV, Tilt Down, Hero Wide).",
-      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
-      "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
-      },
-      "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
-      },
-      "country": {
-        "id": "us_eu",
-        "name": "Âu Mỹ",
-        "en_name": "US & Europe",
-        "flag": "🇺🇸/🇪🇺",
-        "badge_color": "purple"
-      },
-      "purpose": "Kỹ thuật phân rã cỡ cảnh và góc máy linh hoạt để solo creator tự quay B-roll lắp ráp sản phẩm cuốn hút",
-      "tech_tags": [
-        "Solo Filmmaking",
-        "How To Film Yourself",
-        "B-Roll Angles",
-        "POV Shot",
-        "Product Assembly",
-        "Establishing Shot",
-        "Close Up Shot"
-      ],
-      "transition_level": null,
-      "is_ad_bot": false,
-      "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Kiến Trúc & Không Gian Sống.",
-      "creator": {
-        "raw": "@Chibuzor_Ossai",
-        "name": "Chibuzor_Ossai",
-        "handle": "@Chibuzor_Ossai",
-        "profile_url": "https://www.instagram.com/Chibuzor_Ossai/"
-      },
-      "ig_url": "https://www.instagram.com/p/DdRGMalgl4E/?img_index=6&stkn=MTlheHZpanpqcWYxYg==",
-      "gdrive_folder": "https://drive.google.com/open?id=1CNnLeiXJaNlkwwcnwWipR5ttQpAsqPIh",
-      "media": {
-        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01_mid.jpg",
-        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_03_mid.jpg",
-        "video_url": "https://media.fedu.vn/videos/carousel_slides/IG_%40Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis/slide_01.mp4",
-        "report_url": "reports/IG_@Chibuzor_Ossai_DdRGI36Aj0X_Carousel_Analysis.html",
-        "shots_count": 7,
-        "duration": "14s",
-        "youtube_id": null,
-        "youtube_embed": null,
-        "youtube_url": null
       },
       "complexity": {
         "id": "de",
