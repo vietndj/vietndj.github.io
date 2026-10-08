@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 372,
-  "total_unique_ideas": 345,
-  "total_active_ideas": 317,
+  "total_scene_items": 373,
+  "total_unique_ideas": 346,
+  "total_active_ideas": 318,
   "total_excluded_ideas": 28,
   "total_creators": 209,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 41,
     "storytelling": 20,
-    "dien-anh": 187,
+    "dien-anh": 188,
     "chuyen-canh": 54
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 40,
     "kien-truc": 39,
     "the-thao": 8,
-    "ky-thuat-quay": 129,
+    "ky-thuat-quay": 130,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 218,
+    "us_eu": 219,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -225,18 +225,19 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
       "handle": "@mridupawasharma",
       "name": "Mridupawasharma",
       "profile_url": "https://www.instagram.com/mridupawasharma/",
-      "video_count": 26,
+      "video_count": 27,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DaH_rTUTe14_I%E2%80%99ve_always_been_someone_who_ends_up_taking_w/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DNQLGoAyuYM_Comment_%E2%80%9CAPP%E2%80%9D_and_I%E2%80%99ll_send_the_link%21/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
         "IG_@mridupawasharma_DaH_rTUTe14_I’ve_always_been_someone_who_ends_up_taking_w",
         "IG_@mridupawasharma_DR3xJ1tE6mM_One_menswear_brand_that_has_everything_under",
         "IG_@mridupawasharma_DXJvcyqEyoF_Not_less._Just_better_)",
@@ -727,7 +728,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Debyauliaa",
       "profile_url": "https://www.instagram.com/debyauliaa/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_%F0%9F%A5%B0%E2%9C%A8/shot_01_mid.jpg",
       "video_ids": [
         "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨"
@@ -2639,11 +2640,11 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨",
-      "shortcode": "DeEiCwlhMwT",
-      "title_vi": "Sudut Vietnam dan warna warninya 🥰✨",
+      "id": "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
+      "shortcode": "DNQLGoAyuYM",
+      "title_vi": "Comment “APP” and I’ll send the link!",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
@@ -2665,13 +2666,75 @@ var FEDU_IDEAS_DATABASE = {
         "flag": "🇺🇸/🇪🇺",
         "badge_color": "purple"
       },
-      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @debyauliaa",
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "tech_tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
-        "Close-Up / Macro Detail Shot",
-        "Medium Tracking Shot",
-        "Wide Establishing Shot"
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DNQLGoAyuYM/",
+      "gdrive_folder": "https://drive.google.com/open?id=16RlDQzSSDNI2ReO8VzK49bLe-uFpLFYq",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DNQLGoAyuYM_Comment_%E2%80%9CAPP%E2%80%9D_and_I%E2%80%99ll_send_the_link%21/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DNQLGoAyuYM_Comment_%E2%80%9CAPP%E2%80%9D_and_I%E2%80%99ll_send_the_link%21/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DNQLGoAyuYM.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!.html",
+        "shots_count": 23,
+        "duration": "46s",
+        "youtube_id": "jI-H8fqZcJk",
+        "youtube_embed": "https://www.youtube.com/embed/jI-H8fqZcJk",
+        "youtube_url": "https://youtu.be/jI-H8fqZcJk"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨",
+      "shortcode": "DeEiCwlhMwT",
+      "title_vi": "Phân Tích Reel: Nhịp Sống Đa Sắc Màu Tại Việt Nam",
+      "quick_takeaway": "Bức tranh rực rỡ sắc màu về những góc phố và nhịp sống đời thường tại Việt Nam, sử dụng kỹ thuật cắt cảnh nhanh (fast-paced) để liên tục kích thích thị giác.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @debyauliaa",
+      "tech_tags": [
+        "Fast Paced",
+        "Colorful",
+        "Vietnam",
+        "Lifestyle"
       ],
       "transition_level": null,
       "is_ad_bot": false,
@@ -4489,7 +4552,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@mridupawasharma_DLW8fdfRG6w_Carousel_Analysis",
       "shortcode": "DLW90GBRre8",
       "title_vi": "B-Roll Bằng Điện Thoại Đơn Giản Mà Đỉnh Cao",
-      "quick_takeaway": "Tổng hợp 9 ý tưởng quay B-Roll sản phẩm sáng tạo với các góc máy độc lạ và ánh sáng điện ảnh.",
+      "quick_takeaway": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -4516,7 +4579,8 @@ var FEDU_IDEAS_DATABASE = {
       "tech_tags": [
         "B-Roll",
         "Product Video",
-        "Macro Shot"
+        "Macro Shot",
+        "an-creator"
       ],
       "transition_level": null,
       "is_ad_bot": false,
