@@ -62,10 +62,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 41,
+    "talking-head": 40,
     "storytelling": 20,
     "dien-anh": 187,
-    "chuyen-canh": 53
+    "chuyen-canh": 54
   },
   "industries": [
     {
@@ -749,7 +749,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Sheratonsaigon",
       "profile_url": "https://www.instagram.com/sheratonsaigon/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Góc nhà đẹp",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40sheratonsaigon_Dd_sDyfMRjd_Saigon%E2%80%99s_best-kept_luxury_secret_%F0%9F%91%80/shot_01_mid.jpg",
       "video_ids": [
         "IG_@sheratonsaigon_Dd_sDyfMRjd_Saigon’s_best-kept_luxury_secret_👀"
@@ -848,7 +848,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Itsbybrandon",
       "profile_url": "https://www.instagram.com/itsbybrandon/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_%40pradabeauty/shot_01_mid.jpg",
       "video_ids": [
         "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty"
@@ -4538,22 +4538,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@sheratonsaigon_Dd_sDyfMRjd_Saigon’s_best-kept_luxury_secret_👀",
       "shortcode": "Dd_sDyfMRjd",
-      "title_vi": "Nghệ Thuật Kể Chuyện Staycation 5 Sao: Đòn Bẩy Thị Giác Từ Phố Thị Đến Không Gian Thượng Lưu",
-      "quick_takeaway": "Hành trình staycation đẳng cấp tại Sheraton Grand Opera Tower: Đòn bẩy thị giác từ nhịp đập phố thị Sài Gòn đến không gian nghỉ dưỡng biệt lập hướng trọn tầm nhìn Nhà hát Thành phố.",
+      "title_vi": "Khám phá &#x27;Bí mật xa xỉ&#x27; giữa lòng Sài Gòn cùng Sheraton",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • High-key Lighting • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industry": {
-        "id": "ky-thuat-quay",
-        "name": "Bố cục",
-        "en_name": "Filmmaking Mastery",
-        "icon": "🎯",
-        "badge_color": "blue"
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
       },
       "country": {
         "id": "us_eu",
@@ -4564,16 +4564,16 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @sheratonsaigon",
       "tech_tags": [
-        "Luxury Hotel",
-        "Staycation",
-        "B-Roll Storytelling",
-        "Grand Opera Tower",
-        "Sài Gòn"
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "High-key Lighting",
+        "Low-key Lighting",
+        "Medium Tracking Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
       "creator": {
         "raw": "@sheratonsaigon",
         "name": "Sheratonsaigon",
@@ -4589,9 +4589,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@sheratonsaigon_Dd_sDyfMRjd_Saigon’s_best-kept_luxury_secret_👀.html",
         "shots_count": 53,
         "duration": "106s",
-        "youtube_id": "l_PPDUhxAfM",
-        "youtube_embed": "https://www.youtube.com/embed/l_PPDUhxAfM",
-        "youtube_url": "https://youtu.be/l_PPDUhxAfM"
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
       },
       "complexity": {
         "id": "nang-cao",
@@ -5616,22 +5616,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@itsbybrandon_DdGa4hxzlJi_Paradigme_le_parfum_by_@pradabeauty",
       "shortcode": "DdGa4hxzlJi",
-      "title_vi": "Paradigme le parfum by @pradabeauty",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Kể Chuyện Ký Ức Tuổi Thơ Bằng Hương Thơm",
+      "quick_takeaway": "Quảng cáo Prada Paradigme bằng thủ pháp kết nối hoài niệm tuổi thơ và sự chuyển mình của người đàn ông trưởng thành.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -5642,9 +5642,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @itsbybrandon",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Close-Up / Macro Detail Shot",
-        "Low-key Lighting"
+        "fragrance",
+        "nostalgia",
+        "prada"
       ],
       "transition_level": null,
       "is_ad_bot": false,
