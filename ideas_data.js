@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 371,
-  "total_unique_ideas": 344,
-  "total_active_ideas": 316,
+  "total_scene_items": 372,
+  "total_unique_ideas": 345,
+  "total_active_ideas": 317,
   "total_excluded_ideas": 28,
-  "total_creators": 208,
+  "total_creators": 209,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -62,7 +62,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 40,
+    "talking-head": 41,
     "storytelling": 20,
     "dien-anh": 187,
     "chuyen-canh": 54
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 19,
     "cong-nghe": 40,
-    "kien-truc": 38,
+    "kien-truc": 39,
     "the-thao": 8,
     "ky-thuat-quay": 129,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 217,
+    "us_eu": 218,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -720,6 +720,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@debyauliaa",
+      "name": "Debyauliaa",
+      "profile_url": "https://www.instagram.com/debyauliaa/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_%F0%9F%A5%B0%E2%9C%A8/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨"
       ]
     },
     {
@@ -2628,6 +2639,71 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨",
+      "shortcode": "DeEiCwlhMwT",
+      "title_vi": "Sudut Vietnam dan warna warninya 🥰✨",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @debyauliaa",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@debyauliaa",
+        "name": "Debyauliaa",
+        "handle": "@debyauliaa",
+        "profile_url": "https://www.instagram.com/debyauliaa/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DeEiCwlhMwT/",
+      "gdrive_folder": "https://drive.google.com/open?id=122n7DXJRLb7-vZmxG7X7ZU24EKGJHx72",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_%F0%9F%A5%B0%E2%9C%A8/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_%F0%9F%A5%B0%E2%9C%A8/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DeEiCwlhMwT.mp4",
+        "report_url": "reports/IG_@debyauliaa_DeEiCwlhMwT_Sudut_Vietnam_dan_warna_warninya_🥰✨.html",
+        "shots_count": 39,
+        "duration": "78s",
+        "youtube_id": "O-BMQ_zLDP4",
+        "youtube_embed": "https://www.youtube.com/embed/O-BMQ_zLDP4",
+        "youtube_url": "https://youtu.be/O-BMQ_zLDP4"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
       "shortcode": "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
       "title_vi": "Ulanzi MagSafe Tripod: Gậy Selfie Biến Hình Siêu Tốc",
@@ -3074,7 +3150,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DU7mCyVE4EJ_Comment_“LUTS”_to_get_these_luts_in_your_DMs",
       "shortcode": "DU7mCyVE4EJ",
-      "title_vi": "Thủ Thuật Color Grading Điện Ảnh Trực Tiếp Trên Điện Thoại",
+      "title_vi": "Comment “LUTS” to get these luts in your DMs",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 32 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -3339,7 +3415,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DZcSt_xzqBB_You_just_need_these_3_friends_in_your_life!",
       "shortcode": "DZcSt_xzqBB",
-      "title_vi": "Mridupawan Sharma • Kỹ Thuật Match-cut Bằng Đạo Cụ Áo Đỏ (Object Wipe)",
+      "title_vi": "xzqBB You just need these 3 friends in your life!",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 34 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
@@ -3461,7 +3537,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DW8w1XNE-Ya_Important_meeting…_but_the_match_matters_more",
       "shortcode": "DW8w1XNE-Ya",
-      "title_vi": "Domino&#x27;s Pizza • Kịch Bản Plot Twist Văn Phòng &amp; Đòn Tâm Lý Kéo Gần Sếp - Nhân Viên",
+      "title_vi": "Important meeting… but the match matters more",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
