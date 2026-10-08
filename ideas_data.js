@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 375,
-  "total_unique_ideas": 348,
-  "total_active_ideas": 320,
+  "total_scene_items": 376,
+  "total_unique_ideas": 349,
+  "total_active_ideas": 321,
   "total_excluded_ideas": 28,
   "total_creators": 209,
   "shooting_styles": [
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 42,
     "storytelling": 20,
-    "dien-anh": 189,
+    "dien-anh": 190,
     "chuyen-canh": 54
   },
   "industries": [
@@ -158,7 +158,7 @@ var FEDU_IDEAS_DATABASE = {
     "cong-nghe": 40,
     "kien-truc": 40,
     "the-thao": 8,
-    "ky-thuat-quay": 131,
+    "ky-thuat-quay": 132,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 221,
+    "us_eu": 222,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -233,10 +233,11 @@ var FEDU_IDEAS_DATABASE = {
       "handle": "@mridupawasharma",
       "name": "Mridupawasharma",
       "profile_url": "https://www.instagram.com/mridupawasharma/",
-      "video_count": 29,
+      "video_count": 30,
       "top_industry": "Bố cục",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_%40emergentlabs/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you%E2%80%99re_h/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h",
         "IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs",
         "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
         "IG_@mridupawasharma_DNQLGoAyuYM_Comment_“APP”_and_I’ll_send_the_link!",
@@ -2642,6 +2643,69 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h",
+      "shortcode": "DQ1DeeckxAZ",
+      "title_vi": "A bag that feels like it knows where you’re h",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@mridupawasharma",
+        "name": "Mridupawasharma",
+        "handle": "@mridupawasharma",
+        "profile_url": "https://www.instagram.com/mridupawasharma/"
+      },
+      "ig_url": "https://www.instagram.com/p/DQ1DeeckxAZ/",
+      "gdrive_folder": "https://drive.google.com/open?id=1tuYoWG8IKmY35RcBpA2N89ZiUB20CiBO",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you%E2%80%99re_h/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you%E2%80%99re_h/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/DQ1DeeckxAZ.mp4",
+        "report_url": "reports/IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h.html",
+        "shots_count": 30,
+        "duration": "60s",
+        "youtube_id": "-xtpDo9JTDM",
+        "youtube_embed": "https://www.youtube.com/embed/-xtpDo9JTDM",
+        "youtube_url": "https://youtu.be/-xtpDo9JTDM"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@mridupawasharma_DPjD-CTE0iY_Build_an_app_in_minutes_with_@emergentlabs",
       "shortcode": "DPjD-CTE0iY",
       "title_vi": "Giải Pháp Tạo App Bằng AI: Biến Nỗi Đau Thành Hành Động",
@@ -2708,22 +2772,22 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mridupawasharma_DO-oBZ4kzBA_From_a_simple_photo…_to_a_figurine…_to_a_vide",
       "shortcode": "DO-oBZ4kzBA",
-      "title_vi": "From a simple photo… to a figurine… to a vide",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Biến Ảnh Thành Figure 3D: Cú Đấm Thị Giác Bằng Công Nghệ AI",
+      "quick_takeaway": "Biến bức ảnh bình thường thành mô hình 3D thực tế ảo với độ chi tiết cao, mở ra hướng ứng dụng AI cực mạnh trong thiết kế vật phẩm phái sinh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2734,9 +2798,9 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "AI",
+        "3D Figurine",
+        "an-creator"
       ],
       "transition_level": null,
       "is_ad_bot": false,
