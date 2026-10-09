@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 41,
+    "talking-head": 42,
     "storytelling": 20,
-    "dien-anh": 192,
+    "dien-anh": 191,
     "chuyen-canh": 54
   },
   "industries": [
@@ -2647,14 +2647,14 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
       "shortcode": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
       "title_vi": "Đế Đỡ Điện Thoại Nhôm Gập Được Đa Năng Có Tín",
-      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
-        "id": "dien-anh",
-        "name": "Chỉn Chu",
-        "en_name": "Cinematic Mastery",
-        "icon": "🎬",
-        "badge_color": "sky"
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
       },
       "industry": {
         "id": "cong-nghe",
@@ -2672,14 +2672,14 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Cinematic Lighting",
-        "Composition Mastery",
-        "Visual Rhythm"
+        "Establishing Hook Shot",
+        "High-key Lighting",
+        "Close-Up / Macro Detail Shot"
       ],
       "transition_level": null,
       "is_ad_bot": false,
       "fedu_optimization": {},
-      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Công Nghệ & Thiết Bị.",
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Công Nghệ & Thiết Bị.",
       "creator": {
         "raw": "@ulanzi",
         "name": "Ulanzi",
@@ -2695,9 +2695,9 @@ var FEDU_IDEAS_DATABASE = {
         "report_url": "reports/IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín.html",
         "shots_count": 0,
         "duration": "15s",
-        "youtube_id": "zvObWrK_1Qk",
-        "youtube_embed": "https://www.youtube.com/embed/zvObWrK_1Qk",
-        "youtube_url": "https://youtu.be/zvObWrK_1Qk"
+        "youtube_id": "6ZJCIaLnBro",
+        "youtube_embed": "https://www.youtube.com/embed/6ZJCIaLnBro",
+        "youtube_url": "https://youtu.be/6ZJCIaLnBro"
       },
       "complexity": {
         "id": "de",
