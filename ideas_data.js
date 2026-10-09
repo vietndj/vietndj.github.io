@@ -4,9 +4,9 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 376,
-  "total_unique_ideas": 349,
-  "total_active_ideas": 321,
+  "total_scene_items": 377,
+  "total_unique_ideas": 350,
+  "total_active_ideas": 322,
   "total_excluded_ideas": 28,
   "total_creators": 209,
   "shooting_styles": [
@@ -62,9 +62,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 3,
     "voice-over": 12,
-    "talking-head": 42,
+    "talking-head": 41,
     "storytelling": 20,
-    "dien-anh": 190,
+    "dien-anh": 192,
     "chuyen-canh": 54
   },
   "industries": [
@@ -155,10 +155,10 @@ var FEDU_IDEAS_DATABASE = {
     "thoi-trang": 24,
     "am-thuc": 26,
     "du-lich": 19,
-    "cong-nghe": 40,
-    "kien-truc": 40,
+    "cong-nghe": 41,
+    "kien-truc": 39,
     "the-thao": 8,
-    "ky-thuat-quay": 132,
+    "ky-thuat-quay": 133,
     "ugc": 7
   },
   "countries": [
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 222,
+    "us_eu": 223,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -273,10 +273,11 @@ var FEDU_IDEAS_DATABASE = {
       "handle": "@ulanzi",
       "name": "Ulanzi",
       "profile_url": "https://www.instagram.com/ulanzi/",
-      "video_count": 9,
+      "video_count": 10,
       "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_ohxID_G%E1%BA%ADy_T%E1%BB%B1_S%C6%B0%E1%BB%9Bng_C%C3%B3_T%E1%BB%AB_T%C3%ADnh_Cho_Vlogging_T%C6%B0%C6%A1ng_Th/shot_01_mid.jpg",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_opMhu_%C4%90%E1%BA%BF_%C4%90%E1%BB%A1_%C4%90i%E1%BB%87n_Tho%E1%BA%A1i_Nh%C3%B4m_G%E1%BA%ADp_%C4%90%C6%B0%E1%BB%A3c_%C4%90a_N%C4%83ng_C%C3%B3_T%C3%ADn/shot_01_mid.jpg",
       "video_ids": [
+        "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
         "IG_@ulanzi_ohxID_Gậy_Tự_Sướng_Có_Từ_Tính_Cho_Vlogging_Tương_Th",
         "IG_@ulanzi_oSa57_Chân_Đế_Máy_Ảnh_Nhẹ_và_Đa_Năng",
         "IG_@ulanzi_oSaTN_Tripod_&_Gậy_Selfie_Tự_Động_MT86,_Cao_1.52m_4",
@@ -2643,24 +2644,87 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h",
-      "shortcode": "DQ1DeeckxAZ",
-      "title_vi": "A bag that feels like it knows where you’re h",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "id": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
+      "shortcode": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
+      "title_vi": "Đế Đỡ Điện Thoại Nhôm Gập Được Đa Năng Có Tín",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
+      "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
-        "id": "kien-truc",
-        "name": "Góc nhà đẹp",
-        "en_name": "Architecture & Living",
-        "icon": "🏛️",
-        "badge_color": "emerald"
+        "id": "cong-nghe",
+        "name": "Đồ công nghệ",
+        "en_name": "Tech & Gear",
+        "icon": "📱",
+        "badge_color": "purple"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
+      "tech_tags": [
+        "Cinematic Lighting",
+        "Composition Mastery",
+        "Visual Rhythm"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Điện Ảnh (Cinematic) ngành Công Nghệ & Thiết Bị.",
+      "creator": {
+        "raw": "@ulanzi",
+        "name": "Ulanzi",
+        "handle": "@ulanzi",
+        "profile_url": "https://www.instagram.com/ulanzi/"
+      },
+      "ig_url": "https://s.lazada.vn/s.opMhu?c=d",
+      "gdrive_folder": "https://drive.google.com/open?id=1xfcsqZxqYY7ED2wYgkFdgkrU8e4j5aBE",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_opMhu_%C4%90%E1%BA%BF_%C4%90%E1%BB%A1_%C4%90i%E1%BB%87n_Tho%E1%BA%A1i_Nh%C3%B4m_G%E1%BA%ADp_%C4%90%C6%B0%E1%BB%A3c_%C4%90a_N%C4%83ng_C%C3%B3_T%C3%ADn/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40ulanzi_opMhu_%C4%90%E1%BA%BF_%C4%90%E1%BB%A1_%C4%90i%E1%BB%87n_Tho%E1%BA%A1i_Nh%C3%B4m_G%E1%BA%ADp_%C4%90%C6%B0%E1%BB%A3c_%C4%90a_N%C4%83ng_C%C3%B3_T%C3%ADn/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/opMhu.mp4",
+        "report_url": "reports/IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín.html",
+        "shots_count": 0,
+        "duration": "15s",
+        "youtube_id": "zvObWrK_1Qk",
+        "youtube_embed": "https://www.youtube.com/embed/zvObWrK_1Qk",
+        "youtube_url": "https://youtu.be/zvObWrK_1Qk"
+      },
+      "complexity": {
+        "id": "de",
+        "label": "🟢 Dễ làm theo (3-8 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@mridupawasharma_DQ1DeeckxAZ_A_bag_that_feels_like_it_knows_where_you’re_h",
+      "shortcode": "DQ1DeeckxAZ",
+      "title_vi": "B-Roll Đặc Tả Túi Du Lịch Canvas",
+      "quick_takeaway": "Một video B-roll chất lượng cao tôn vinh tính bền bỉ và không gian chứa đồ khổng lồ của chiếc túi xách du lịch.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industry": {
+        "id": "ky-thuat-quay",
+        "name": "Bố cục",
+        "en_name": "Filmmaking Mastery",
+        "icon": "🎯",
+        "badge_color": "blue"
       },
       "country": {
         "id": "us_eu",
@@ -2671,9 +2735,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @mridupawasharma",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Balo",
+        "Túi xách",
+        "Canvas",
+        "B-roll",
+        "an-creator"
       ],
       "transition_level": null,
       "is_ad_bot": false,
