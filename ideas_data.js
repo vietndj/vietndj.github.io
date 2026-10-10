@@ -4,11 +4,11 @@
  */
 var FEDU_IDEAS_DATABASE = {
   "generated_at": "2026-09-13T18:00:00+07:00",
-  "total_scene_items": 377,
-  "total_unique_ideas": 350,
-  "total_active_ideas": 322,
+  "total_scene_items": 378,
+  "total_unique_ideas": 351,
+  "total_active_ideas": 323,
   "total_excluded_ideas": 28,
-  "total_creators": 209,
+  "total_creators": 210,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -64,7 +64,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 42,
     "storytelling": 20,
-    "dien-anh": 191,
+    "dien-anh": 192,
     "chuyen-canh": 54
   },
   "industries": [
@@ -156,7 +156,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 26,
     "du-lich": 19,
     "cong-nghe": 41,
-    "kien-truc": 39,
+    "kien-truc": 40,
     "the-thao": 8,
     "ky-thuat-quay": 133,
     "ugc": 7
@@ -212,7 +212,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 223,
+    "us_eu": 224,
     "korea": 10,
     "india": 8,
     "japan": 7,
@@ -225,8 +225,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 7
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -725,6 +725,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
         "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
+      "handle": "@khaochobtiew6",
+      "name": "Khaochobtiew6",
+      "profile_url": "https://www.instagram.com/khaochobtiew6/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40khaochobtiew6_Dd5zh4sqpuA_%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A_One_Day_Trip/shot_01_mid.jpg",
+      "video_ids": [
+        "IG_@khaochobtiew6_Dd5zh4sqpuA_เที่ยวเชียงดาวคนเดียว_ฉบับ_One_Day_Trip"
       ]
     },
     {
@@ -2644,17 +2655,81 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
-      "id": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
-      "shortcode": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
-      "title_vi": "Đế Đỡ Điện Thoại Nhôm Gập Được Đa Năng Có Tín",
+      "id": "IG_@khaochobtiew6_Dd5zh4sqpuA_เที่ยวเชียงดาวคนเดียว_ฉบับ_One_Day_Trip",
+      "shortcode": "Dd5zh4sqpuA",
+      "title_vi": "เที่ยวเชียงดาวคนเดียว ฉบับ One Day Trip",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
-      "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
         "name": "Nói Trực Diện",
         "en_name": "Talking Head",
         "icon": "🗣️",
         "badge_color": "blue"
+      },
+      "industry": {
+        "id": "kien-truc",
+        "name": "Góc nhà đẹp",
+        "en_name": "Architecture & Living",
+        "icon": "🏛️",
+        "badge_color": "emerald"
+      },
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @khaochobtiew6",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@khaochobtiew6",
+        "name": "Khaochobtiew6",
+        "handle": "@khaochobtiew6",
+        "profile_url": "https://www.instagram.com/khaochobtiew6/"
+      },
+      "ig_url": "https://www.instagram.com/reel/Dd5zh4sqpuA/",
+      "gdrive_folder": "https://drive.google.com/open?id=1uwaTERrxceixE8L-M3ukHf8tBOcItSXn",
+      "media": {
+        "thumb_hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40khaochobtiew6_Dd5zh4sqpuA_%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A_One_Day_Trip/shot_01_mid.jpg",
+        "thumb_key": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/IG_%40khaochobtiew6_Dd5zh4sqpuA_%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%A7%E0%B9%80%E0%B8%8A%E0%B8%B5%E0%B8%A2%E0%B8%87%E0%B8%94%E0%B8%B2%E0%B8%A7%E0%B8%84%E0%B8%99%E0%B9%80%E0%B8%94%E0%B8%B5%E0%B8%A2%E0%B8%A7_%E0%B8%89%E0%B8%9A%E0%B8%B1%E0%B8%9A_One_Day_Trip/shot_03_mid.jpg",
+        "video_url": "https://media.fedu.vn/videos/Dd5zh4sqpuA.mp4",
+        "report_url": "reports/IG_@khaochobtiew6_Dd5zh4sqpuA_เที่ยวเชียงดาวคนเดียว_ฉบับ_One_Day_Trip.html",
+        "shots_count": 57,
+        "duration": "114s",
+        "youtube_id": null,
+        "youtube_embed": null,
+        "youtube_url": null
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
+      "id": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
+      "shortcode": "IG_@ulanzi_opMhu_Đế_Đỡ_Điện_Thoại_Nhôm_Gập_Được_Đa_Năng_Có_Tín",
+      "title_vi": "Đế Gập MagSafe Ulanzi MA50: Đòn Bẩy Thị Giác Từ Cơ Chế Đa Khớp Đến Hệ Sinh Thái Quay Chụp Chuyên Nghiệp",
+      "quick_takeaway": "Video quảng cáo thương mại tinh gọn giới thiệu giá đỡ điện thoại nhôm gập từ tính Ulanzi MA50 (hệ Uka). Đòn bẩy thị giác đến từ việc khoe kích thước siêu mỏng bỏ túi ở 2s đầu, phô diễn cơ chế gập đa khớp cơ học, chứng minh tính vững chãi khi dựng bàn lướt TikTok, và chốt hạ bằng khả năng hít tủ sắt cùng ngàm ren 1/4 tương thích hệ sinh thái máy ảnh chuyên nghiệp.",
+      "key_tech": "Cinematic Lighting • Composition Mastery • Visual Rhythm",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industry": {
         "id": "cong-nghe",
@@ -2672,9 +2747,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @ulanzi",
       "tech_tags": [
-        "Establishing Hook Shot",
-        "High-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Ulanzi",
+        "MagSafe",
+        "Đế Gập Đa Năng",
+        "Phụ Kiện Điện Thoại",
+        "Creator Setup",
+        "Uka Quick Release"
       ],
       "transition_level": null,
       "is_ad_bot": false,
