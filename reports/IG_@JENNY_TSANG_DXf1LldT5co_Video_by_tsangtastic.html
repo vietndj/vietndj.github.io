@@ -823,6 +823,46 @@ video#mainPlayer {
     cursor: pointer;
 }
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -864,18 +904,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/MOk3zCj3y1w?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DXf1LldT5co.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1sXzCgbeW4-cDaiIlsycKxWsnfjxoDKaC/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -898,7 +939,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">@tsangtastic - Calvin Klein Baggy Jeans Hong Kong Lookbook</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <strong>@tsangtastic</strong></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@tsangtastic" onclick="handleCreatorClick(event, '@tsangtastic', 'Tsangtastic')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Tsangtastic trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Tsangtastic</strong>
+                        <span class="author-handle">(@tsangtastic)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
                 <span>Tệp: <strong>IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -922,7 +970,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 5.17, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -981,7 +1029,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.2, 7.07, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1040,7 +1088,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.1, 8.8, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1099,7 +1147,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(8.83, 9.23, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1158,7 +1206,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.27, 10.97, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1217,7 +1265,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.0, 11.23, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1276,7 +1324,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.27, 13.07, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1335,7 +1383,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.1, 13.33, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1394,7 +1442,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.37, 15.2, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1453,7 +1501,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.23, 16.93, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1512,7 +1560,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.97, 18.7, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1571,7 +1619,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.73, 20.47, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1630,7 +1678,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.5, 22.23, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1689,7 +1737,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(22.27, 23.97, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1748,7 +1796,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.0, 24.23, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1807,7 +1855,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-16">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.27, 26.07, 'SHOT 16')">
-                    <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1868,7 +1916,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 5.17, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg', 'SHOT 01 [0.0s - 5.17s] • Visual Hook Đời Thường & Match-Action: Uống trà sữa trước quầy ẩm thực truyền thống Hong Kong')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -1880,7 +1928,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.2, 7.07, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg', 'SHOT 02 [5.2s - 7.07s] • Match-Cut Không Gian & Bố Cục Tối Giản: Tương phản kiến trúc đá thuộc địa trắng')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -1892,7 +1940,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.1, 8.8, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg', 'SHOT 03 [7.1s - 8.8s] • Nhịp Chuyển Động Đô Thị (Urban Pace): Sải bước qua giao lộ vạch vàng Hong Kong')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -1904,7 +1952,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(8.83, 9.23, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg', 'SHOT 04 [8.83s - 9.23s] • Whip-Pan Gia Tốc (Speed Whip Transition): Nén thời gian và đẩy xung lực thị giác')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -1916,7 +1964,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.27, 10.97, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg', 'SHOT 05 [9.27s - 10.97s] • Khung Cảnh Tầm Cao (Elevated Perspective): Sải bước trên cầu vượt bộ hành tài chính')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -1928,7 +1976,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.0, 11.23, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg', 'SHOT 06 [11.0s - 11.23s] • Black Beat Transit (Nhịp Nghỉ Thị Giác): Điểm dừng nhịp trước khi bước vào không gian kín')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -1940,7 +1988,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.27, 13.07, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg', 'SHOT 07 [11.27s - 13.07s] • Chiều Sâu Hội Tụ (One-Point Vanishing Point): Di chuyển bên trong xe điện Ding Ding cổ điển')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -1952,7 +2000,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.1, 13.33, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg', 'SHOT 08 [13.1s - 13.33s] • Motion Whip Cutout: Cú xoay máy bẻ góc chuyển tiếp không gian')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -1964,7 +2012,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.37, 15.2, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg', 'SHOT 09 [13.37s - 15.2s] • Đóng Khung Đối Xứng (Frame in Frame): Thang máy lồng kính kiến trúc vị lai')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -1976,7 +2024,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.23, 16.93, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg', 'SHOT 10 [15.23s - 16.93s] • Chi Tiết Nhận Diện Thương Hiệu (Brand Identity Hook): Cạp quần CK Monogram & Nụ cười rạng rỡ')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -1988,7 +2036,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.97, 18.7, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg', 'SHOT 11 [16.97s - 18.7s] • Góc Quay Lén Điện Ảnh (Dirty Frame Voyeurism): Bước đi dọc sân ga ngầm MTR')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2000,7 +2048,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.73, 20.47, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg', 'SHOT 12 [18.73s - 20.47s] • Đường Gióng Hút Sâu (Deep Vanishing Hallway): Tĩnh lặng trong khoang tàu vắng')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -2012,7 +2060,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.5, 22.23, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg', 'SHOT 13 [20.5s - 22.23s] • Bừng Sáng Chuyển Không Gian (Subway Exit Daylight): Trở về với ánh sáng tự nhiên')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -2024,7 +2072,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(22.27, 23.97, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg', 'SHOT 14 [22.27s - 23.97s] • Đặc Tả Chi Tiết Phía Sau (Back Detail Tracking): Tag da Calvin Klein & Form dáng Baggy')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -2036,7 +2084,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.0, 24.23, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg', 'SHOT 15 [24.0s - 24.23s] • Whip Loop Transition: Khóa xoay đưa nhịp trở về vạch xuất phát')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -2048,7 +2096,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.27, 26.07, 'SHOT 16')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg', 'SHOT 16 [24.27s - 26.07s] • Vòng Lặp Vô Tận (Infinite Loop Ending): Trở lại quán ăn Hong Kong hoàn tất hành trình')">🔍</button>
                 <div class="grid-badge-top">SHOT 16</div>
@@ -2071,7 +2119,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 5.17, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2084,7 +2132,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 5.2, 7.07, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2097,7 +2145,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 7.1, 8.8, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2110,7 +2158,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 8.83, 9.23, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2123,7 +2171,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 9.27, 10.97, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2136,7 +2184,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 11.0, 11.23, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2149,7 +2197,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 11.27, 13.07, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2162,7 +2210,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 13.1, 13.33, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2175,7 +2223,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 13.37, 15.2, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2188,7 +2236,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 15.23, 16.93, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2201,7 +2249,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 16.97, 18.7, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2214,7 +2262,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 18.73, 20.47, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2227,7 +2275,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 20.5, 22.23, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -2240,7 +2288,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 22.27, 23.97, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -2253,7 +2301,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 24.0, 24.23, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -2266,7 +2314,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(16, 24.27, 26.07, 'SHOT 16')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@JENNY_TSANG_DXf1LldT5co_Video_by_tsangtastic/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 16</div>
@@ -2282,46 +2330,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DXf1LldT5co.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1sXzCgbeW4-cDaiIlsycKxWsnfjxoDKaC";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2421,6 +2451,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

@@ -1,0 +1,2689 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn • DJI Mic 3 ASMR Sound Design Showcase - @valenti_k41</title>
+<style>
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Bl'), local('GT America Black'), local('GT-America-LCGV-Standard-Black'), local('GTAmericaLCG-Bl');
+    font-weight: 900;
+    font-style: normal;
+}
+
+
+:root {
+    --font-heading: 'SVN-Acta', 'Plus Jakarta Sans', serif;
+    --font-body: 'GT America', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bg-main: #0b0f17;
+    --bg-card: #131b2a;
+    --bg-card-alt: #1a2436;
+    --border-color: #24324a;
+    --accent-amber: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    font-size: 13.5px;
+    padding: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+
+.header {
+    background: linear-gradient(135deg, #101726 0%, #1e293b 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-amber), var(--accent-rose));
+}
+
+.badge-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-gold { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+
+.header-title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.header-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.author-ig-badge {
+    background: rgba(225, 48, 108, 0.15);
+    border: 1px solid rgba(225, 48, 108, 0.35);
+    color: #ff6b9d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.author-ig-badge:hover {
+    background: rgba(225, 48, 108, 0.3);
+    color: #ffffff;
+}
+
+/* Control Bar */
+.control-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.view-tabs {
+    display: flex;
+    gap: 8px;
+}
+
+.tab-btn {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.tab-btn.active {
+    background: var(--accent-blue);
+    color: #0b0f17;
+    border-color: var(--accent-blue);
+}
+
+.action-btns {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-drawer {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    color: var(--accent-amber);
+    padding: 6px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Overview Pillars */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.overview-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 18px 20px;
+}
+
+.overview-card h4 {
+    font-family: var(--font-heading);
+    font-size: 15px;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.overview-card p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.section-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border-color);
+    letter-spacing: 0.5px;
+}
+
+/* Shot Cards */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    margin-bottom: 24px;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
+
+.shot-header {
+    background: var(--bg-card-alt);
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.shot-title-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.shot-badge {
+    font-size: 11px;
+    font-weight: 800;
+    color: var(--accent-amber);
+    letter-spacing: 0.5px;
+}
+
+.shot-headline-text {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+}
+
+.shot-time-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent-blue);
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.shot-time-btn:hover {
+    background: rgba(56, 189, 248, 0.25);
+}
+
+.dur-pill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+}
+
+.play-hint {
+    font-weight: 700;
+    color: #38bdf8;
+}
+
+.shot-body {
+    padding: 20px;
+}
+
+/* Keyframes Row */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.kf-col {
+    cursor: pointer;
+}
+
+.kf-box {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background: #000;
+    aspect-ratio: 9/16;
+}
+
+.kf-col.main-kf .kf-box {
+    border: 2px solid var(--accent-amber);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+}
+
+.shot-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.kf-col:hover .shot-thumb {
+    transform: scale(1.03);
+}
+
+.kf-tag {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #e2e8f0;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+.kf-tag.gold {
+    background: rgba(245, 158, 11, 0.9);
+    color: #0b0f17;
+    font-weight: 800;
+}
+
+/* Action & Breakdown Blocks */
+.content-block {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+}
+
+.block-title {
+    font-family: var(--font-heading);
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+}
+
+.block-text {
+    font-size: 13px;
+    color: #e2e8f0;
+    line-height: 1.5;
+}
+
+.shot-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.info-block {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 10px 14px;
+}
+
+.info-block.full-width {
+    grid-column: 1 / -1;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.info-val {
+    font-size: 12.5px;
+    color: #f1f5f9;
+    font-weight: 500;
+}
+
+/* Critique 2-sided Grid */
+.critique-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+@media (max-width: 768px) {
+    .critique-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.critique-card {
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    line-height: 1.5;
+}
+
+.pro-card {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #d1fae5;
+}
+
+.pro-card .critique-head {
+    color: #34d399;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.con-card {
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    color: #ffe4e6;
+}
+
+.con-card .critique-head {
+    color: #fb7185;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+/* Takeaway Box */
+.takeaway-box {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.12) 0%, rgba(245, 158, 11, 0.04) 100%);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+}
+
+.takeaway-title {
+    font-size: 12px;
+    font-weight: 800;
+    color: #fbbf24;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.takeaway-text {
+    font-size: 13px;
+    color: #fef3c7;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* Transition Box */
+.trans-section {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+}
+
+.trans-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+}
+
+.trans-box {
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.trans-img {
+    width: 100%;
+    display: block;
+}
+
+/* Grid View Container */
+.grid-view-container {
+    display: none;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.grid-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.grid-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent-blue);
+}
+
+.grid-img-wrap {
+    position: relative;
+    aspect-ratio: 9/16;
+    background: #000;
+}
+
+.grid-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.grid-tag {
+    position: absolute;
+    bottom: 6px;
+    left: 6px;
+    background: rgba(0,0,0,0.8);
+    color: #fbbf24;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.grid-info {
+    padding: 10px 12px;
+}
+
+.grid-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.4;
+    margin-bottom: 4px;
+}
+
+.grid-sub {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Guide Box */
+.guide-box {
+    background: linear-gradient(135deg, #101726 0%, #172554 100%);
+    border: 1px solid #1e3a8a;
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+
+.guide-box h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    color: #60a5fa;
+    margin-bottom: 14px;
+}
+
+.guide-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.guide-list li {
+    font-size: 13.5px;
+    color: #e2e8f0;
+    line-height: 1.6;
+    padding-left: 20px;
+    position: relative;
+}
+
+.guide-list li::before {
+    content: '➔';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+}
+
+/* Modals */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #131b2a;
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 20px;
+    max-width: 440px;
+    width: 90%;
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #f43f5e;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-video {
+    width: 100%;
+    border-radius: 10px;
+    background: #000;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.player-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.speed-btn {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    color: #94a3b8;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.speed-btn.active {
+    background: var(--accent-amber);
+    color: #0b0f17;
+    border-color: var(--accent-amber);
+}
+
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    border: 1px solid #334155;
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+}
+
+.lightbox-caption {
+    margin-top: 14px;
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+    max-width: 600px;
+}
+
+/* Drawer Menu */
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 300px;
+    height: 100%;
+    background: #0f172a;
+    border-left: 1px solid var(--border-color);
+    z-index: 9998;
+    transition: right 0.3s ease;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.drawer.open {
+    right: 0;
+}
+
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.drawer-title {
+    font-family: var(--font-heading);
+    font-size: 16px;
+    color: var(--accent-amber);
+    font-weight: 700;
+}
+
+.drawer-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    color: #e2e8f0;
+    text-decoration: none;
+    font-size: 12px;
+    margin-bottom: 6px;
+    background: rgba(255, 255, 255, 0.03);
+    transition: background 0.2s ease;
+}
+
+.drawer-item:hover {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+}
+
+.drawer-num {
+    font-weight: 800;
+    color: var(--accent-amber);
+}
+
+.drawer-time {
+    color: var(--text-muted);
+    font-size: 11px;
+}
+
+.floating-play-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: linear-gradient(135deg, #f59e0b, #d97706);
+    color: #000;
+    font-weight: 800;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(245, 158, 11, 0.4);
+    cursor: pointer;
+    z-index: 9000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s ease;
+}
+
+.floating-play-btn:hover {
+    transform: scale(1.05);
+}
+
+@media print {
+    body {
+        background: #fff !important;
+        color: #000 !important;
+        padding: 0 !important;
+    }
+    .header {
+        background: #f8fafc !important;
+        border: 1px solid #cbd5e1 !important;
+        color: #000 !important;
+    }
+    .header-title { color: #000 !important; }
+    .shot-card {
+        background: #fff !important;
+        border: 1px solid #cbd5e1 !important;
+        margin-bottom: 20px !important;
+    }
+    .shot-header {
+        background: #f1f5f9 !important;
+        border-bottom: 1px solid #cbd5e1 !important;
+    }
+    .shot-headline-text { color: #000 !important; }
+    .info-block {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    .info-val { color: #000 !important; }
+    .content-block {
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+    .block-text { color: #1e293b !important; }
+    .pro-card { background: #f0fdf4 !important; color: #14532d !important; border: 1px solid #bbf7d0 !important; }
+    .con-card { background: #fff1f2 !important; color: #881337 !important; border: 1px solid #fecdd3 !important; }
+    .takeaway-box { background: #fffbeb !important; color: #78350f !important; border: 1px solid #fde68a !important; }
+    .takeaway-text { color: #78350f !important; }
+    .control-bar, .floating-play-btn, .drawer, #videoModal, #lightboxModal {
+        display: none !important;
+    }
+}
+
+.player-box { position: relative !important; }
+.player-box video { cursor: pointer; }
+.player-fs-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: var(--font-ui, sans-serif);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+.player-fs-btn:hover {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    transform: scale(1.04);
+}
+.fs-ctrl-btn {
+    background: #fffbeb !important;
+    color: #b45309 !important;
+    border-color: #fef3c7 !important;
+    font-weight: 700 !important;
+}
+.fs-ctrl-btn:hover {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #fcd34d !important;
+}
+
+</style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+</head>
+<body>
+
+<div class="header">
+    <div class="badge-row">
+        <span class="badge badge-gold">DIRECTOR BREAKDOWN</span>
+        <span class="badge badge-blue">ASMR SOUND DESIGN</span>
+        <span class="badge badge-green">OPENCV 14 SHOTS</span>
+        <span class="badge badge-rose">DJI MIC 3 SHOWCASE</span>
+    </div>
+    <h1 class="header-title">Báo Cáo Đạo Diễn • Nghệ Thuật ASMR Điện Ảnh &amp; Sound Design Đỉnh Cao Cùng DJI Mic 3</h1>
+    <div class="header-meta">
+        <a href="https://www.instagram.com/p/DcL1W34I6lz/" target="_blank" class="author-ig-badge">
+            <span>📸 @valenti_k41 (Valenti | content creator)</span>
+            <span>↗</span>
+        </a>
+        <span>⏱ Thời lượng: 11.32s</span>
+        <span>🎞 Tốc độ khung hình: 25.00 FPS</span>
+        <span>📐 Độ phân giải: 1080x1920 (9:16 Vertical)</span>
+        <span>🎯 Phân cảnh: 14 Shots Chi Tiết</span>
+    </div>
+</div>
+
+<div class="control-bar">
+    <div class="view-tabs">
+        <button class="tab-btn active" id="btnDetailView" onclick="switchView('detail')">📋 Chế Độ Storyboard Chi Tiết</button>
+        <button class="tab-btn" id="btnGridView" onclick="switchView('grid')">🖼 Chế Độ Lưới Ảnh (Visual Grid)</button>
+    </div>
+    <div class="action-btns">
+        <button class="btn-drawer" onclick="toggleDrawer()">📑 Mục Lục 14 Phân Cảnh</button>
+        <button class="tab-btn" onclick="playVideoAt(0)">▶ Phát Video Player</button>
+    </div>
+</div>
+
+<div class="overview-grid">
+    <div class="overview-card">
+        <h4>⚡ 01. Sound Design Siêu Cận Nguồn Âm (Foley ASMR)</h4>
+        <p>Gắn trực tiếp micro lên các công cụ phát ra âm thanh (lưỡi dao Tefal, thân bút bi, bàn phím MacBook, chén cà phê) để thu trọn từng tần số siêu nhỏ với độ nét và âm lượng cực đại.</p>
+    </div>
+    <div class="overview-card">
+        <h4>🎥 02. Đa Dạng Hóa Cỡ Cảnh &amp; Góc Nhìn Bất Ngờ</h4>
+        <p>Biến đổi liên tục giữa Macro Extreme Close-Up, POV trực diện, Low-Angle gầm bàn, High-Angle bàn làm việc và Top-Down Flat-lay đối xứng giúp 11 giây luôn dồn dập sự mới lạ.</p>
+    </div>
+    <div class="overview-card">
+        <h4>🎨 03. Thẩm Mỹ Scandinavian Tối Giản &amp; Kể Chuyện Tự Nhiên</h4>
+        <p>Bảng màu ấm áp, ánh sáng ban ngày tự nhiên và phong cách bài trí đồ vật chỉn chu biến một video quảng cáo tính năng sản phẩm thành một tác phẩm nghệ thuật phong cách sống.</p>
+    </div>
+</div>
+
+<div class="section-title">01 / BẢNG BÓC TÁCH TOÀN BỘ 14 PHÂN CẢNH (STORYBOARD BREAKDOWN)</div>
+
+<div id="detailViewContainer" class="shots-container">
+    
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 01 / 14</span>
+                <h3 class="shot-headline-text">Macro Hook thị giác trực diện: Định danh chủ thể DJI Mic siêu nhỏ gọn và mở màn chuỗi trải nghiệm ASMR thính giác</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(0.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 0.00s ➔ 0.60s</span>
+                <span class="dur-pill">0.60s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_1.jpeg', 'Shot 01 — Đầu Phân Cảnh (0.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_2.jpeg" class="shot-thumb" alt="Shot 1 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (0.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_3.jpeg', 'Shot 01 — Khoảnh Khắc Vàng (Macro Hook thị giác trực diện: Định danh chủ thể DJI Mic siêu nhỏ gọn và mở màn chuỗi trải nghiệm ASMR thính giác)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_4.jpeg" class="shot-thumb" alt="Shot 1 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_5.jpeg', 'Shot 01 — Cuối Phân Cảnh (0.60s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_6.jpeg" class="shot-thumb" alt="Shot 1 End" />
+                        <span class="kf-tag">CUỐI SHOT (0.60s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Ngón tay cái và ngón trỏ cầm chiếc transmitter DJI Mic màu đen nhám đặt sát ống kính máy quay trên phông nền ánh sáng ban ngày ấm áp. Đèn LED chỉ thị nhấp nháy chuyển trạng thái khi bật nguồn.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Macro Extreme Close-Up • 9:16 Vertical Framing</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Lens 90mm f/2.8 (1:1 Reproduction)</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Natural Soft Daylight (5600K) kết hợp đèn viền ven ấm (Warm Rim 3200K)</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Clean Commercial Look • Tông ấm Scandinavian kết hợp đen nhám nguyên bản</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Âm thanh tactile click dứt khoát khi bật micro + Tiếng ma sát vân tay lên thân vỏ nhựa nhám</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Tách lớp chủ thể hoàn hảo với độ sâu trường ảnh mỏng (DoF), độ tương phản cao giữa logo DJI trắng nổi bật trên thân vỏ đen nhám, background bokeh ấm áp tạo sự tập trung tuyệt đối vào sản phẩm.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Thời lượng 0.60s cực nhanh đòi hỏi mắt người xem phải phản xạ tức thì; ngón tay che khuất một phần viền dưới của transmitter.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Mở đầu video sản phẩm bằng cú quay cận cảnh Macro kết hợp âm thanh bật nguồn vật lý (Tactile Click) là chiếc neo giữ chân người xem hiệu quả nhất ngay giây đầu tiên.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_01_mid.webp', '⚡ So Sánh Chuyển Cảnh: Shot 01 ➔ Shot 02')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 01 (0.60s) ➔ Shot 02 (0.60s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_01_mid.webp" class="trans-img" alt="Transition 1 to 2" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 02 / 14</span>
+                <h3 class="shot-headline-text">Hít nam châm đa năng lên đèn nấm kim loại: Trình diễn tính năng ngàm hít siêu tốc và âm thanh 'Clack' thỏa mãn</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(0.6)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 0.60s ➔ 1.00s</span>
+                <span class="dur-pill">0.40s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_7.jpeg', 'Shot 02 — Đầu Phân Cảnh (0.60s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_8.jpeg" class="shot-thumb" alt="Shot 2 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (0.60s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_9.jpeg', 'Shot 02 — Khoảnh Khắc Vàng (Hít nam châm đa năng lên đèn nấm kim loại: Trình diễn tính năng ngàm hít siêu tốc và âm thanh 'Clack' thỏa mãn)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_10.jpeg" class="shot-thumb" alt="Shot 2 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_11.jpeg', 'Shot 02 — Cuối Phân Cảnh (1.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_12.jpeg" class="shot-thumb" alt="Shot 2 End" />
+                        <span class="kf-tag">CUỐI SHOT (1.00s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Bàn tay đưa chiếc DJI Mic lại gần thân kim loại của chiếc đèn bàn hình nấm (Mushroom Lamp) bằng thép không gỉ, chiếc mic tự động hít chặt vào bề mặt kim loại với lực hút từ tính mạnh.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Medium Close-Up • Bàn làm việc & Đèn nấm kim loại</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Standard Prime 35mm f/1.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng tán xạ từ khung cửa sổ lớn bên trái tạo dải specular highlight trên thân đèn</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Modern Metallic Look • Tông xám bạc kim loại kết hợp trắng kem mặt bàn</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng hít nam châm kim loại 'Clack' đanh ròn, dứt khoát và cực kỳ thỏa mãn thính giác (Satisfying Magnet Click)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Khai thác bề mặt kim loại bóng bẩy của món đồ nội thất thiết kế tạo đường phản chiếu ánh sáng sang trọng, góc máy 1/3 phô diễn hoàn hảo tính tiện dụng của ngàm nam châm.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Vạt áo tối màu ở cạnh phải hơi choán diện tích khung hình; góc hít nghiêng làm logo DJI bị xoay nhẹ so với trục thẳng đứng.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Khi giới thiệu tính năng nam châm của phụ kiện công nghệ, gắn lên đồ decor cao cấp sẽ nâng tầm giá trị sản phẩm hơn nhiều so với chỉ kẹp lên cổ áo thông thường.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_03_mid.webp', '⚡ So Sánh Chuyển Cảnh: Shot 02 ➔ Shot 03')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 02 (1.00s) ➔ Shot 03 (1.00s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_03_mid.webp" class="trans-img" alt="Transition 2 to 3" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 03 / 14</span>
+                <h3 class="shot-headline-text">Gắn ngầm dưới dầm bàn làm việc: Phô diễn khả năng giấu mic vô hình (Hidden Mic Rigging) cho mọi không gian làm việc</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(1.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 1.00s ➔ 1.60s</span>
+                <span class="dur-pill">0.60s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_13.jpeg', 'Shot 03 — Đầu Phân Cảnh (1.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_14.jpeg" class="shot-thumb" alt="Shot 3 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (1.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_15.jpeg', 'Shot 03 — Khoảnh Khắc Vàng (Gắn ngầm dưới dầm bàn làm việc: Phô diễn khả năng giấu mic vô hình (Hidden Mic Rigging) cho mọi không gian làm việc)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_16.jpeg" class="shot-thumb" alt="Shot 3 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_17.jpeg', 'Shot 03 — Cuối Phân Cảnh (1.60s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_18.jpeg" class="shot-thumb" alt="Shot 3 End" />
+                        <span class="kf-tag">CUỐI SHOT (1.60s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Góc máy thấp đặt dưới gầm bàn nhìn chếch lên: Bàn tay đưa chiếc DJI Mic hít thẳng vào thanh dầm thép chịu lực dưới đáy mặt bàn màu trắng. Đèn LED đỏ trên mic phát sáng rực rỡ trong vùng tối.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Low-Angle Under-Desk Point of View</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Wide-Angle 24mm f/2.0</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Low-Key Under-Table Lighting với ánh sáng hắt dịu từ sàn nhà và điểm nhấn đèn LED đỏ</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Moody Dark Shadow kết hợp ánh kim loại xanh thép</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng hít nam châm dội nhẹ dưới gầm bàn kim loại (Damped Magnetic Thud)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Góc quay Low-Angle Under-Desk bất ngờ, độ tương phản ánh sáng giữa vùng tối gầm bàn và ánh sáng viền mặt bàn làm bật lên đèn LED trạng thái màu đỏ.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Chuyển động rút tay ra ở những frame cuối hơi nhanh tạo vệt mờ chuyển động (Motion Blur) nhẹ.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Khai thác các góc đặt mic khuất tầm nhìn (Under-desk/Under-shelf) để kích thích trí tò mò của creator về các giải pháp thu âm hiện trường kín đáo và tinh gọn.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_05_mid.webp', '⚡ So Sánh Chuyển Cảnh: Shot 03 ➔ Shot 04')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 03 (1.60s) ➔ Shot 04 (1.60s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_05_mid.webp" class="trans-img" alt="Transition 3 to 4" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-04">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 04 / 14</span>
+                <h3 class="shot-headline-text">Ngàm hít trực tiếp lên lưỡi dao Tefal: Cú gài bẫy thị giác táo bạo (Bold Prop Pairing) chuẩn bị cho phân đoạn ASMR cắt gọt</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(1.6)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 1.60s ➔ 2.00s</span>
+                <span class="dur-pill">0.40s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_19.jpeg', 'Shot 04 — Đầu Phân Cảnh (1.60s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_20.jpeg" class="shot-thumb" alt="Shot 4 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (1.60s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_21.jpeg', 'Shot 04 — Khoảnh Khắc Vàng (Ngàm hít trực tiếp lên lưỡi dao Tefal: Cú gài bẫy thị giác táo bạo (Bold Prop Pairing) chuẩn bị cho phân đoạn ASMR cắt gọt)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_22.jpeg" class="shot-thumb" alt="Shot 4 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_23.jpeg', 'Shot 04 — Cuối Phân Cảnh (2.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_24.jpeg" class="shot-thumb" alt="Shot 4 End" />
+                        <span class="kf-tag">CUỐI SHOT (2.00s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Lưỡi dao đầu bếp Tefal bằng thép sáng loáng dựng đứng giữa khung hình; bàn tay dứt khoát đưa chiếc DJI Mic ốp chặt vào mặt phẳng lưỡi dao.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Vertical Close-Up • Dao bếp Tefal</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Lens 50mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng studio định hướng tạo vệt sáng sắc bén dọc theo mép lưỡi dao</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">High-Contrast Chrome & Steel • Ánh bạc kim loại lạnh tương phản vỏ đen</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng kim loại va chạm sắc lẹm 'Ping-Clink' vang âm thanh đanh thép</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Lưỡi dao vát xéo chia đôi khung hình tạo đường chéo thị giác (Diagonal Dynamic Line) cực kỳ sắc sảo; ý tưởng gắn micro lên dao bếp kích thích mạnh mẽ trí tò mò của khán giả.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Ánh phản quang trên lưỡi kim loại hơi chói nhẹ ở mép trên; ngón tay che một phần thân mic khi vừa chạm vào.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Gắn micro trực tiếp lên công cụ hành động (lưỡi dao, bút vẽ, cọ sơn) là bí quyết thu trọn âm thanh siêu cận nguồn phát mà không cần thiết bị thu âm cồng kềnh.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_07_mid.webp', '⚡ So Sánh Chuyển Cảnh: Shot 04 ➔ Shot 05')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 04 (2.00s) ➔ Shot 05 (2.00s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40valenti_k41_DcL1W34I6lz_DJI_Mic_3_ASMR/shot_07_mid.webp" class="trans-img" alt="Transition 4 to 5" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-05">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 05 / 14</span>
+                <h3 class="shot-headline-text">Cú máy hạ thấp theo quỹ đạo lưỡi dao: Duy trì nhịp chuyển tiếp mượt mà nối liền khâu setup sang thao tác nấu nướng</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(2.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 2.00s ➔ 3.00s</span>
+                <span class="dur-pill">1.00s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_25.jpeg', 'Shot 05 — Đầu Phân Cảnh (2.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_26.jpeg" class="shot-thumb" alt="Shot 5 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (2.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_27.jpeg', 'Shot 05 — Khoảnh Khắc Vàng (Cú máy hạ thấp theo quỹ đạo lưỡi dao: Duy trì nhịp chuyển tiếp mượt mà nối liền khâu setup sang thao tác nấu nướng)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_28.jpeg" class="shot-thumb" alt="Shot 5 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_29.jpeg', 'Shot 05 — Cuối Phân Cảnh (3.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_30.jpeg" class="shot-thumb" alt="Shot 5 End" />
+                        <span class="kf-tag">CUỐI SHOT (3.00s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Máy quay chuyển động hạ thấp (Tilt Down Tracking) theo quỹ đạo lưỡi dao có gắn DJI Mic, lưỡi dao lướt êm ái tiến sát mặt thớt gỗ chuẩn bị thực hiện thao tác cắt bánh mì.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Dynamic Tilt-Down Tracking Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Standard Prime 50mm f/1.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng xiên dịu nhẹ chiếu vào mặt phẳng thớt gỗ và lưỡi dao</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Warm Kitchen Tone • Tông gỗ mộc ấm áp kết hợp sắc kim loại lạnh</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Âm thanh xé gió êm ái của lưỡi dao và tiếng chạm nhẹ đầu tiên vào mặt thớt gỗ</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Chuyển động máy mượt mà đồng bộ với hành động hạ dao, xóa mờ hậu cảnh tối ưu giúp giữ trọn tiêu điểm vào chiếc mic gắn trên thân dao.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Hậu cảnh góc trái hơi thiếu sáng (underexposed) làm mất một phần chi tiết không gian bếp.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Sử dụng cú máy di chuyển có hướng rõ ràng (Directional Movement) để làm cầu nối mượt mà giữa cảnh lắp đặt thiết bị và cảnh hành động thực tế.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_31.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 05 ➔ Shot 06')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 05 (3.00s) ➔ Shot 06 (3.00s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_32.jpeg" class="trans-img" alt="Transition 5 to 6" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-06">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 06 / 14</span>
+                <h3 class="shot-headline-text">Cắt bánh mì giòn rụm với mic gắn lưỡi dao: Trải nghiệm ASMR thính giác cực hạn biến âm thanh đời thường thành khoái cảm</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(3.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 3.00s ➔ 3.96s</span>
+                <span class="dur-pill">0.96s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_33.jpeg', 'Shot 06 — Đầu Phân Cảnh (3.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_34.jpeg" class="shot-thumb" alt="Shot 6 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (3.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_35.jpeg', 'Shot 06 — Khoảnh Khắc Vàng (Cắt bánh mì giòn rụm với mic gắn lưỡi dao: Trải nghiệm ASMR thính giác cực hạn biến âm thanh đời thường thành khoái cảm)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_36.jpeg" class="shot-thumb" alt="Shot 6 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_37.jpeg', 'Shot 06 — Cuối Phân Cảnh (3.96s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_38.jpeg" class="shot-thumb" alt="Shot 6 End" />
+                        <span class="kf-tag">CUỐI SHOT (3.96s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Hai bàn tay cầm dao có gắn DJI Mic cắt dứt khoát qua ổ bánh mì vỏ giòn (Artisanal sourdough loaf) trên mặt thớt gỗ, từng mảnh vỏ bánh mì vỡ vụn bắn ra sinh động.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Eye-Level Medium Close-Up • Mặt thớt gỗ nhà bếp</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Standard Prime 50mm f/2.0</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng tự nhiên 5600K chiếu ngang làm nổi bật kết cấu sần sùi của vỏ bánh mì</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Warm Organic Tone • Sắc nâu vàng của bánh mì và vân gỗ sồi</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Âm thanh vỏ bánh mì nứt vỡ giòn tan rôm rốp (Crispy Bread Crust ASMR Crunch) chân thực từng micro-decibel</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Bố cục cân xứng hoàn hảo, ánh sáng ban ngày làm nổi bật từng thớ vụn bánh mì vàng óng, âm thanh đồng bộ tuyệt đối với từng nhịp ấn dao tạo khoái cảm ASMR cực đại.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Cạnh trên khung hình hơi sát đầu ngón tay của người cắt; góc quay ngang có thể quen thuộc nếu thiếu yếu tố micro độc lạ.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Khai thác các vật thể có kết cấu âm thanh đa tầng (vỏ giòn, ruột mềm) để tạo nội dung ASMR có tính kích thích giác quan cao nhất.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_39.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 06 ➔ Shot 07')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 06 (3.96s) ➔ Shot 07 (3.96s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_40.jpeg" class="trans-img" alt="Transition 6 to 7" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-07">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 07 / 14</span>
+                <h3 class="shot-headline-text">Hạt cà phê rơi mưa rào quanh micro: Tận dụng chuyển động rơi tự do tạo hiệu ứng thị giác phân tán và âm thanh lách tách</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(3.96)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 3.96s ➔ 4.56s</span>
+                <span class="dur-pill">0.60s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_41.jpeg', 'Shot 07 — Đầu Phân Cảnh (3.96s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_42.jpeg" class="shot-thumb" alt="Shot 7 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (3.96s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_43.jpeg', 'Shot 07 — Khoảnh Khắc Vàng (Hạt cà phê rơi mưa rào quanh micro: Tận dụng chuyển động rơi tự do tạo hiệu ứng thị giác phân tán và âm thanh lách tách)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_44.jpeg" class="shot-thumb" alt="Shot 7 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_45.jpeg', 'Shot 07 — Cuối Phân Cảnh (4.56s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_46.jpeg" class="shot-thumb" alt="Shot 7 End" />
+                        <span class="kf-tag">CUỐI SHOT (4.56s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Góc nhìn từ trên xuống vào lòng bát sứ trắng: Cơn mưa hạt cà phê rang nâu bóng rơi xối xả nảy tanh tách xung quanh chiếc DJI Mic đặt cố định ở tâm đáy bát.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">High-Angle Top-Down Macro Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Lens 50mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng hắt trần mềm mại tạo điểm phản quang bóng loáng trên từng hạt cà phê</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Rich Coffee Brown & Porcelain White • Tông nâu đậm đà cà phê Espresso</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng hạt cà phê rơi rào rào va đập nảy tanh tách (Coffee Beans Rhythmic Cascade ASMR)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Hàng trăm hạt cà phê rơi tạo mật độ chuyển động dày đặc (Kinetic Density), sắc nâu cánh gián bóng bẩy tương phản với màu trắng của bát sứ và logo DJI.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Hạt cà phê rơi quá nhanh che khuất một phần micro trong 0.15s ở giữa phân cảnh.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Đặt micro vào tâm điểm của quỹ đạo rơi tự do (hạt cà phê, đá viên, giọt nước) là công thức kinh điển để tạo ra shot commercial ẩm thực đẳng cấp.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_47.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 07 ➔ Shot 08')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 07 (4.56s) ➔ Shot 08 (4.56s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_48.jpeg" class="trans-img" alt="Transition 7 to 8" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-08">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 08 / 14</span>
+                <h3 class="shot-headline-text">Rót sữa tươi cuộn xoáy vào ly cà phê: Vũ điệu hòa tan màu sắc (Color Swirl Dynamics) và âm thanh rót nước êm dịu</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(4.56)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 4.56s ➔ 5.64s</span>
+                <span class="dur-pill">1.08s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_49.jpeg', 'Shot 08 — Đầu Phân Cảnh (4.56s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_50.jpeg" class="shot-thumb" alt="Shot 8 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (4.56s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_51.jpeg', 'Shot 08 — Khoảnh Khắc Vàng (Rót sữa tươi cuộn xoáy vào ly cà phê: Vũ điệu hòa tan màu sắc (Color Swirl Dynamics) và âm thanh rót nước êm dịu)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_52.jpeg" class="shot-thumb" alt="Shot 8 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_53.jpeg', 'Shot 08 — Cuối Phân Cảnh (5.64s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_54.jpeg" class="shot-thumb" alt="Shot 8 End" />
+                        <span class="kf-tag">CUỐI SHOT (5.64s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Cận cảnh ly thủy tinh vuông đựng cà phê đá: Dòng sữa tươi trắng muốt được rót từ từ hòa tan cuộn xoáy vào lớp cà phê nâu sẫm, trong khi chiếc DJI Mic được kẹp sát ngay thành ly.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Close-Up Fluid Dynamics Shot • Ly thủy tinh vuông</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Prime 60mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Key light 45 độ từ phía sau tạo hiệu ứng xuyên sáng (Backlit Glow) qua làn sữa</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Creamy Caramel Latte • Sự hòa trộn mê hoặc giữa trắng sữa và nâu caramel</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng dòng sữa rót róc rách và tiếng bọt cà phê sủi tăm li ti êm dịu (Liquid Pouring & Swirl ASMR)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Hiệu ứng cuộn xoáy màu sắc lộng lẫy (Fluid Vortex dynamics), ly thủy tinh trong suốt giúp quan sát toàn bộ diễn biến thị giác đầy mê hoặc.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Thành ly thủy tinh có vệt phản xạ ánh sáng đèn trần nhẹ, cần kính phân cực CPL để triệt tiêu hoàn toàn bóng gương.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Rót chất lỏng có độ tương phản màu cao (sữa trắng vào cà phê đen) luôn là shot quay giữ chân người xem tốt nhất trong các video đồ uống và lifestyle.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_55.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 08 ➔ Shot 09')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 08 (5.64s) ➔ Shot 09 (5.64s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_56.jpeg" class="trans-img" alt="Transition 8 to 9" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-09">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 09 / 14</span>
+                <h3 class="shot-headline-text">Khoảnh khắc nhấp cà phê thư thái: Điểm nghỉ nhịp thị giác (Visual Breathing Pause) nhân cách hóa tác giả và tạo kết nối cảm xúc</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(5.64)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 5.64s ➔ 6.32s</span>
+                <span class="dur-pill">0.68s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_57.jpeg', 'Shot 09 — Đầu Phân Cảnh (5.64s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_58.jpeg" class="shot-thumb" alt="Shot 9 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (5.64s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_59.jpeg', 'Shot 09 — Khoảnh Khắc Vàng (Khoảnh khắc nhấp cà phê thư thái: Điểm nghỉ nhịp thị giác (Visual Breathing Pause) nhân cách hóa tác giả và tạo kết nối cảm xúc)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_60.jpeg" class="shot-thumb" alt="Shot 9 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_61.jpeg', 'Shot 09 — Cuối Phân Cảnh (6.32s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_62.jpeg" class="shot-thumb" alt="Shot 9 End" />
+                        <span class="kf-tag">CUỐI SHOT (6.32s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Trung cảnh nhân vật nữ tác giả mặc áo thun trắng, quần jeans rách ngồi thư thái bên bàn làm việc, đưa ly cà phê sữa lên môi nhấp một ngụm, phía sau là bức tranh nghệ thuật đồ họa đen trắng.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Medium Profile Shot • Góc nghiêng 45 độ</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Portrait Prime 50mm f/1.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng tản tự nhiên từ cửa sổ bên hông làm sáng khuôn mặt và bờ vai</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Minimalist Nordic Tone • Tông trắng sáng, xám khói và màu da tự nhiên</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng nhấp ngụm cà phê êm ái và tiếng thở nhẹ thư giãn (Satisfying Coffee Sip)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Bố cục góc 45 độ thanh lịch, phong cách thời trang tối giản đồng điệu với không gian căn phòng, tạo điểm nghỉ hoàn hảo sau chuỗi shot macro dồn dập.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Mặt bàn ở góc dưới hơi tối; thời lượng 0.68s hơi ngắn để người xem kịp cảm nhận trọn vẹn biểu cảm thư thái của nhân vật.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Sau một chuỗi các shot macro đồ vật liên tiếp, luôn cần một shot trung cảnh có sự hiện diện của con người để làm 'điểm thở' cân bằng nhịp điệu video.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_63.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 09 ➔ Shot 10')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 09 (6.32s) ➔ Shot 10 (6.32s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_64.jpeg" class="trans-img" alt="Transition 9 to 10" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 10 / 14</span>
+                <h3 class="shot-headline-text">Toàn cảnh góc cao viết sổ tay: Thiết lập không gian sáng tạo tĩnh lặng chuyển tiếp mạch nội dung sang góc làm việc trí tuệ</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(6.32)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 6.32s ➔ 7.36s</span>
+                <span class="dur-pill">1.04s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_65.jpeg', 'Shot 10 — Đầu Phân Cảnh (6.32s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_66.jpeg" class="shot-thumb" alt="Shot 10 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (6.32s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_67.jpeg', 'Shot 10 — Khoảnh Khắc Vàng (Toàn cảnh góc cao viết sổ tay: Thiết lập không gian sáng tạo tĩnh lặng chuyển tiếp mạch nội dung sang góc làm việc trí tuệ)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_68.jpeg" class="shot-thumb" alt="Shot 10 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_69.jpeg', 'Shot 10 — Cuối Phân Cảnh (7.36s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_70.jpeg" class="shot-thumb" alt="Shot 10 End" />
+                        <span class="kf-tag">CUỐI SHOT (7.36s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Góc máy từ trên cao nhìn xuống (High-Angle Overhead): Tác giả ngồi khoanh chân trên sàn gỗ, tay cầm cây bút có gắn chiếc DJI Mic trên thân bút, bắt đầu đặt bút viết vào cuốn sổ tay kẻ ô carô.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">High-Angle Overhead Establishing Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Wide-Angle 28mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng trần gián tiếp lan tỏa đều khắp căn phòng và mặt sàn gỗ</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Warm Studio Palette • Sắc gỗ sồi tự nhiên kết hợp áo trắng tinh khôi</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng lật mở bìa sổ và tiếng ma sát quần áo khi điều chỉnh tư thế ngồi</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Góc nhìn 90 độ từ trên xuống bao quát toàn bộ không gian làm việc tĩnh lặng, mái tóc dài buông xõa tạo đường dẫn mắt tự nhiên xuống trang sổ mở rộng.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Khoảng cách máy tương đối xa làm chiếc micro bị thu nhỏ trong tổng thể bố cục khung hình.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Sử dụng cú máy toàn cảnh thiết lập không gian (Establishing Shot) trước khi cắt vào cận cảnh chi tiết giúp người xem nắm bắt rõ bối cảnh và hành động.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_71.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 10 ➔ Shot 11')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 10 (7.36s) ➔ Shot 11 (7.36s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_72.jpeg" class="trans-img" alt="Transition 10 to 11" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 11 / 14</span>
+                <h3 class="shot-headline-text">Nét chữ 'DJI mic 3' cào trên giấy carô: Âm thanh viết bút sột soạt ma mị khắc sâu tên sản phẩm vào tâm trí khán giả</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(7.36)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 7.36s ➔ 8.32s</span>
+                <span class="dur-pill">0.96s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_73.jpeg', 'Shot 11 — Đầu Phân Cảnh (7.36s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_74.jpeg" class="shot-thumb" alt="Shot 11 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (7.36s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_75.jpeg', 'Shot 11 — Khoảnh Khắc Vàng (Nét chữ 'DJI mic 3' cào trên giấy carô: Âm thanh viết bút sột soạt ma mị khắc sâu tên sản phẩm vào tâm trí khán giả)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_76.jpeg" class="shot-thumb" alt="Shot 11 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_77.jpeg', 'Shot 11 — Cuối Phân Cảnh (8.32s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_78.jpeg" class="shot-thumb" alt="Shot 11 End" />
+                        <span class="kf-tag">CUỐI SHOT (8.32s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Cận cảnh đặc tả (Extreme Close-Up POV) ngòi bút bi kim loại lướt trên giấy kẻ ô viết từng nét chữ 'DJI mic 3', với chiếc micro DJI Mic được kẹp chắc chắn trên thân bút ngay sát ngón tay.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Extreme Close-Up POV • Ngòi bút & Trang giấy</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Lens 90mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng directional tập trung làm nổi bật bóng đổ của ngòi bút và sợi giấy</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Tactile Paper White • Tương phản giữa mực xanh đen và giấy kẻ ô trắng</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng ngòi bút kim loại cào sột soạt trên sợi giấy (Scratchy Pen-on-Paper ASMR) siêu chi tiết</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Góc nhìn POV siêu cận cảnh, nét chữ viết tay tạo cảm giác nghệ thuật thủ công, âm thanh cào giấy là đỉnh cao kích thích thính giác ASMR.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Góc nhìn ngược 180 độ theo hướng người viết đòi hỏi người xem mất một tích tắc để đọc xuôi dòng chữ.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Viết tên sản phẩm bằng tay kèm âm thanh ngòi bút cào giấy chân thực là cách định vị thương hiệu (Product Placement) tinh tế và khó quên nhất.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_79.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 11 ➔ Shot 12')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 11 (8.32s) ➔ Shot 12 (8.32s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_80.jpeg" class="trans-img" alt="Transition 11 to 12" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 12 / 14</span>
+                <h3 class="shot-headline-text">Bố cục Flat-Lay đối xứng lật trang sách: Tạo nhịp điệu thính giác xào xạc và phô diễn không gian làm việc tối giản</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(8.32)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 8.32s ➔ 9.40s</span>
+                <span class="dur-pill">1.08s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_81.jpeg', 'Shot 12 — Đầu Phân Cảnh (8.32s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_82.jpeg" class="shot-thumb" alt="Shot 12 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (8.32s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_83.jpeg', 'Shot 12 — Khoảnh Khắc Vàng (Bố cục Flat-Lay đối xứng lật trang sách: Tạo nhịp điệu thính giác xào xạc và phô diễn không gian làm việc tối giản)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_84.jpeg" class="shot-thumb" alt="Shot 12 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_85.jpeg', 'Shot 12 — Cuối Phân Cảnh (9.40s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_86.jpeg" class="shot-thumb" alt="Shot 12 End" />
+                        <span class="kf-tag">CUỐI SHOT (9.40s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Bố cục phẳng từ trên xuống (Flat-Lay Top-Down): Bàn làm việc bố trí cân xứng với MacBook Pro phía trên, cuốn sách ảnh nghệ thuật mở ở giữa, hai bàn tay lật nhanh từng trang sách bên cạnh chiếc DJI Mic.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Flat-Lay Symmetrical Overhead Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Standard Prime 35mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng trần đều phẳng không tạo bóng gắt trên bề mặt trang sách</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Editorial Monochrome & Timber • Tông màu tạp chí nghệ thuật cao cấp</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng lật các trang sách giấy mỹ thuật xào xạc liên tiếp (Crisp Page Turning ASMR)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Bố cục Flat-lay chuẩn mực studio, các đường nét hình học vuông vắn tạo trật tự thị giác thư thái, âm thanh lật giấy liên hồi tạo nhịp điệu vui tươi.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Hai bàn tay khi di chuyển nhanh che khuất một phần trang sách ở những khung hình giữa.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Sắp xếp các món đồ công nghệ và sách vở theo các trục đối xứng song song là phương pháp hữu hiệu nhất để tạo khung hình Flat-lay chuyên nghiệp.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_87.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 12 ➔ Shot 13')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 12 (9.40s) ➔ Shot 13 (9.40s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_88.jpeg" class="trans-img" alt="Transition 12 to 13" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 13 / 14</span>
+                <h3 class="shot-headline-text">Gõ phím MacBook với micro đặt giữa keycaps: Khai thác âm thanh gõ phím ASMR quen thuộc của giới sáng tạo nội dung</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(9.4)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 9.40s ➔ 10.44s</span>
+                <span class="dur-pill">1.04s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_89.jpeg', 'Shot 13 — Đầu Phân Cảnh (9.40s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_90.jpeg" class="shot-thumb" alt="Shot 13 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (9.40s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_91.jpeg', 'Shot 13 — Khoảnh Khắc Vàng (Gõ phím MacBook với micro đặt giữa keycaps: Khai thác âm thanh gõ phím ASMR quen thuộc của giới sáng tạo nội dung)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_92.jpeg" class="shot-thumb" alt="Shot 13 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_93.jpeg', 'Shot 13 — Cuối Phân Cảnh (10.44s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_94.jpeg" class="shot-thumb" alt="Shot 13 End" />
+                        <span class="kf-tag">CUỐI SHOT (10.44s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Cận cảnh bàn phím MacBook Pro: Chiếc DJI Mic được đặt nằm ngang trên hàng phím số (4-5-6-7), các đầu ngón tay lướt gõ phím với tốc độ cao xung quanh micro.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Macro Keyboard Close-Up</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Lens 70mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng đèn nền bàn phím kết hợp ánh sáng viền dịu từ màn hình máy tính</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Tech Matte Black & Silver • Đen nhám phím Apple và nhôm bạc</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng gõ phím bàn phím MacBook lách cách ròn rã nhịp nhàng (Tactile Keyboard Tapping ASMR)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Góc quay Macro bắt trọn kết cấu phím nhám Apple và logo DJI, ngón tay gõ phím tạo chuyển động tràn đầy năng lượng làm việc.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Ngón tay gõ nhanh đôi lúc che khuất ánh sáng chiếu vào logo DJI trên thân micro.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Tận dụng những âm thanh đời thường quen thuộc nhất của dân văn phòng/creator và thu âm ở cự ly siêu gần để tạo sự đồng cảm giác quan tức thì.</p>
+            </div>
+
+            
+        <div class="trans-section" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_95.jpeg', '⚡ So Sánh Chuyển Cảnh: Shot 13 ➔ Shot 14')">
+            <div class="trans-title">⚡ So Sánh Chuyển Cảnh (Transition Match): Shot 13 (10.44s) ➔ Shot 14 (10.44s)</div>
+            <div class="trans-box">
+                <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_96.jpeg" class="trans-img" alt="Transition 13 to 14" />
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 14 / 14</span>
+                <h3 class="shot-headline-text">Khung tròn Lens Filter khóa trọn chữ 'DJI mic 3': Cú chốt hạ điện ảnh hoàn hảo kết hợp thiết bị máy ảnh và micro chuyên nghiệp</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(10.44)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 10.44s ➔ 11.32s</span>
+                <span class="dur-pill">0.88s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_97.jpeg', 'Shot 14 — Đầu Phân Cảnh (10.44s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_98.jpeg" class="shot-thumb" alt="Shot 14 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (10.44s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_99.jpeg', 'Shot 14 — Khoảnh Khắc Vàng (Khung tròn Lens Filter khóa trọn chữ 'DJI mic 3': Cú chốt hạ điện ảnh hoàn hảo kết hợp thiết bị máy ảnh và micro chuyên nghiệp)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_100.jpeg" class="shot-thumb" alt="Shot 14 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_101.jpeg', 'Shot 14 — Cuối Phân Cảnh (11.32s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_102.jpeg" class="shot-thumb" alt="Shot 14 End" />
+                        <span class="kf-tag">CUỐI SHOT (11.32s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Góc nhìn trên xuống trang giấy kẻ ô: Bàn tay đặt vòng filter tròn bằng kim loại của ống kính máy ảnh bao bọc xung quanh dòng chữ viết tay 'DJI mic 3', bên cạnh là chiếc micro DJI Mic nằm ngay ngắn.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Top-Down Circular Frame-in-Frame Finale Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Macro Prime 50mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng tự nhiên tinh khiết chiếu rọi trang giấy trắng và viền nhôm đen của filter</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Clean Aesthetic Finish • Trắng tinh khôi, đen nhám kim loại và đường kẻ xanh</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; ASMR Foley</div>
+                    <div class="info-val">Tiếng vòng kim loại filter chạm nhẹ 'Clack' lên mặt giấy kết thúc video dứt khoát</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Vòng tròn filter đóng vai trò 'khung trong khung' (Circular Framing) cô đọng hoàn hảo tên sản phẩm và lĩnh vực nhiếp ảnh/làm phim, bố cục tối giản và thanh lịch.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Thời lượng 0.88s kết thúc hơi nhanh; nếu giữ thêm 0.5s sẽ tạo độ lắng sâu hơn cho cái kết của video.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Sử dụng phụ kiện làm phim (Filter, Lens Cap) làm đạo cụ kết bài để khẳng định đẳng cấp chuyên nghiệp và đối tượng khách hàng mục tiêu của sản phẩm.</p>
+            </div>
+
+            
+        </div>
+    </div>
+    
+</div>
+
+<div id="gridViewContainer" class="grid-view-container">
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_103.jpeg', 'Shot 01: Macro Hook thị giác trực diện: Định danh chủ thể DJI Mic siêu nhỏ gọn và mở màn chuỗi trải nghiệm ASMR thính giác'); playVideoAt(0.0);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_104.jpeg" alt="Shot 1 Mid" />
+            <span class="grid-tag">S01 • 0.00s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Macro Hook thị giác trực diện: Định danh chủ thể DJI Mic siêu nhỏ gọn và mở màn chuỗi trải nghiệm ASMR thính giác</div>
+            <div class="grid-sub">Macro Extreme Close-Up • 9:16 Vertical Framing</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_105.jpeg', 'Shot 02: Hít nam châm đa năng lên đèn nấm kim loại: Trình diễn tính năng ngàm hít siêu tốc và âm thanh 'Clack' thỏa mãn'); playVideoAt(0.6);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_106.jpeg" alt="Shot 2 Mid" />
+            <span class="grid-tag">S02 • 0.60s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Hít nam châm đa năng lên đèn nấm kim loại: Trình diễn tính năng ngàm hít siêu tốc và âm thanh 'Clack' thỏa mãn</div>
+            <div class="grid-sub">Medium Close-Up • Bàn làm việc & Đèn nấm kim loại</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_107.jpeg', 'Shot 03: Gắn ngầm dưới dầm bàn làm việc: Phô diễn khả năng giấu mic vô hình (Hidden Mic Rigging) cho mọi không gian làm việc'); playVideoAt(1.0);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_108.jpeg" alt="Shot 3 Mid" />
+            <span class="grid-tag">S03 • 1.00s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Gắn ngầm dưới dầm bàn làm việc: Phô diễn khả năng giấu mic vô hình (Hidden Mic Rigging) cho mọi không gian làm việc</div>
+            <div class="grid-sub">Low-Angle Under-Desk Point of View</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_109.jpeg', 'Shot 04: Ngàm hít trực tiếp lên lưỡi dao Tefal: Cú gài bẫy thị giác táo bạo (Bold Prop Pairing) chuẩn bị cho phân đoạn ASMR cắt gọt'); playVideoAt(1.6);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_110.jpeg" alt="Shot 4 Mid" />
+            <span class="grid-tag">S04 • 1.60s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Ngàm hít trực tiếp lên lưỡi dao Tefal: Cú gài bẫy thị giác táo bạo (Bold Prop Pairing) chuẩn bị cho phân đoạn ASMR cắt gọt</div>
+            <div class="grid-sub">Vertical Close-Up • Dao bếp Tefal</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_111.jpeg', 'Shot 05: Cú máy hạ thấp theo quỹ đạo lưỡi dao: Duy trì nhịp chuyển tiếp mượt mà nối liền khâu setup sang thao tác nấu nướng'); playVideoAt(2.0);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_112.jpeg" alt="Shot 5 Mid" />
+            <span class="grid-tag">S05 • 2.00s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Cú máy hạ thấp theo quỹ đạo lưỡi dao: Duy trì nhịp chuyển tiếp mượt mà nối liền khâu setup sang thao tác nấu nướng</div>
+            <div class="grid-sub">Dynamic Tilt-Down Tracking Shot</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_113.jpeg', 'Shot 06: Cắt bánh mì giòn rụm với mic gắn lưỡi dao: Trải nghiệm ASMR thính giác cực hạn biến âm thanh đời thường thành khoái cảm'); playVideoAt(3.0);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_114.jpeg" alt="Shot 6 Mid" />
+            <span class="grid-tag">S06 • 3.00s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Cắt bánh mì giòn rụm với mic gắn lưỡi dao: Trải nghiệm ASMR thính giác cực hạn biến âm thanh đời thường thành khoái cảm</div>
+            <div class="grid-sub">Eye-Level Medium Close-Up • Mặt thớt gỗ nhà bếp</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_115.jpeg', 'Shot 07: Hạt cà phê rơi mưa rào quanh micro: Tận dụng chuyển động rơi tự do tạo hiệu ứng thị giác phân tán và âm thanh lách tách'); playVideoAt(3.96);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_116.jpeg" alt="Shot 7 Mid" />
+            <span class="grid-tag">S07 • 3.96s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Hạt cà phê rơi mưa rào quanh micro: Tận dụng chuyển động rơi tự do tạo hiệu ứng thị giác phân tán và âm thanh lách tách</div>
+            <div class="grid-sub">High-Angle Top-Down Macro Shot</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_117.jpeg', 'Shot 08: Rót sữa tươi cuộn xoáy vào ly cà phê: Vũ điệu hòa tan màu sắc (Color Swirl Dynamics) và âm thanh rót nước êm dịu'); playVideoAt(4.56);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_118.jpeg" alt="Shot 8 Mid" />
+            <span class="grid-tag">S08 • 4.56s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Rót sữa tươi cuộn xoáy vào ly cà phê: Vũ điệu hòa tan màu sắc (Color Swirl Dynamics) và âm thanh rót nước êm dịu</div>
+            <div class="grid-sub">Close-Up Fluid Dynamics Shot • Ly thủy tinh vuông</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_119.jpeg', 'Shot 09: Khoảnh khắc nhấp cà phê thư thái: Điểm nghỉ nhịp thị giác (Visual Breathing Pause) nhân cách hóa tác giả và tạo kết nối cảm xúc'); playVideoAt(5.64);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_120.jpeg" alt="Shot 9 Mid" />
+            <span class="grid-tag">S09 • 5.64s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Khoảnh khắc nhấp cà phê thư thái: Điểm nghỉ nhịp thị giác (Visual Breathing Pause) nhân cách hóa tác giả và tạo kết nối cảm xúc</div>
+            <div class="grid-sub">Medium Profile Shot • Góc nghiêng 45 độ</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_121.jpeg', 'Shot 10: Toàn cảnh góc cao viết sổ tay: Thiết lập không gian sáng tạo tĩnh lặng chuyển tiếp mạch nội dung sang góc làm việc trí tuệ'); playVideoAt(6.32);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_122.jpeg" alt="Shot 10 Mid" />
+            <span class="grid-tag">S10 • 6.32s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Toàn cảnh góc cao viết sổ tay: Thiết lập không gian sáng tạo tĩnh lặng chuyển tiếp mạch nội dung sang góc làm việc trí tuệ</div>
+            <div class="grid-sub">High-Angle Overhead Establishing Shot</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_123.jpeg', 'Shot 11: Nét chữ 'DJI mic 3' cào trên giấy carô: Âm thanh viết bút sột soạt ma mị khắc sâu tên sản phẩm vào tâm trí khán giả'); playVideoAt(7.36);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_124.jpeg" alt="Shot 11 Mid" />
+            <span class="grid-tag">S11 • 7.36s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Nét chữ 'DJI mic 3' cào trên giấy carô: Âm thanh viết bút sột soạt ma mị khắc sâu tên sản phẩm vào tâm trí khán giả</div>
+            <div class="grid-sub">Extreme Close-Up POV • Ngòi bút & Trang giấy</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_125.jpeg', 'Shot 12: Bố cục Flat-Lay đối xứng lật trang sách: Tạo nhịp điệu thính giác xào xạc và phô diễn không gian làm việc tối giản'); playVideoAt(8.32);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_126.jpeg" alt="Shot 12 Mid" />
+            <span class="grid-tag">S12 • 8.32s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Bố cục Flat-Lay đối xứng lật trang sách: Tạo nhịp điệu thính giác xào xạc và phô diễn không gian làm việc tối giản</div>
+            <div class="grid-sub">Flat-Lay Symmetrical Overhead Shot</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_127.jpeg', 'Shot 13: Gõ phím MacBook với micro đặt giữa keycaps: Khai thác âm thanh gõ phím ASMR quen thuộc của giới sáng tạo nội dung'); playVideoAt(9.4);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_128.jpeg" alt="Shot 13 Mid" />
+            <span class="grid-tag">S13 • 9.40s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Gõ phím MacBook với micro đặt giữa keycaps: Khai thác âm thanh gõ phím ASMR quen thuộc của giới sáng tạo nội dung</div>
+            <div class="grid-sub">Macro Keyboard Close-Up</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="openLightbox('assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_129.jpeg', 'Shot 14: Khung tròn Lens Filter khóa trọn chữ 'DJI mic 3': Cú chốt hạ điện ảnh hoàn hảo kết hợp thiết bị máy ảnh và micro chuyên nghiệp'); playVideoAt(10.44);">
+        <div class="grid-thumb">
+            <img crossorigin="anonymous" src="assets/DJI_Mic_3_ASMR_Cinematic_-_valenti_k41_130.jpeg" alt="Shot 14 Mid" />
+            <span class="grid-tag">S14 • 10.44s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Khung tròn Lens Filter khóa trọn chữ 'DJI mic 3': Cú chốt hạ điện ảnh hoàn hảo kết hợp thiết bị máy ảnh và micro chuyên nghiệp</div>
+            <div class="grid-sub">Top-Down Circular Frame-in-Frame Finale Shot</div>
+        </div>
+    </div>
+    
+</div>
+
+<div class="guide-box">
+    <h3>💡 HƯỚNG DẪN THỰC THI &amp; SẢN XUẤT CHO NHÀ SÁNG TẠO (SHOOTING SCRIPT)</h3>
+    <ul class="guide-list">
+        <li><strong>Giai đoạn Mở Đầu (0.0s - 2.0s):</strong> Định danh micro tức thì bằng cú Macro Close-up cầm tay và liên hoàn 3 cú hít nam châm (Đèn nấm ➔ Gầm bàn ➔ Lưỡi dao). Tận dụng âm thanh cơ khí kim loại để neo thính giác người xem.</li>
+        <li><strong>Giai đoạn ASMR Ẩm Thực &amp; Đồ Uống (2.0s - 5.6s):</strong> Cắt dứt khoát sang nhát dao xẻ ổ bánh mì giòn rụm ➔ Đổ mưa hạt cà phê ➔ Rót sữa xoáy vào ly thủy tinh. Giữ nhịp cắt 0.6s - 1.0s đồng bộ chuẩn xác với đỉnh âm thanh.</li>
+        <li><strong>Giai đoạn Điểm Nghỉ &amp; Con Người (5.6s - 6.3s):</strong> Dừng lại 0.68s ở trung cảnh tác giả nhấp ngụm cà phê thư thái để tạo 'điểm thở' cân bằng nhịp điệu và nhân cách hóa nhân vật.</li>
+        <li><strong>Giai đoạn ASMR Văn Phòng &amp; Bàn Làm Việc (6.3s - 10.4s):</strong> Chuyển sang chuỗi âm thanh làm việc trí tuệ: Cào bút viết tên 'DJI mic 3' ➔ Lật trang sách xào xạc ➔ Gõ bàn phím tốc ký MacBook Pro.</li>
+        <li><strong>Giai đoạn Kết Bài &amp; Khóa Khung Định Vị (10.4s - 11.3s):</strong> Dùng vòng tròn kim loại của Filter ống kính máy ảnh đặt chụp lên chữ 'DJI mic 3' viết tay, khóa trọn nhận diện thương hiệu một cách thông minh và đẳng cấp.</li>
+    </ul>
+</div>
+
+<div id="videoModal" class="modal-overlay" onclick="closeModalOnBg(event)">
+    <div class="modal-content">
+        <button class="modal-close" onclick="closeVideoModal()">&times;</button>
+        <iframe id="mainPlayer" src="https://www.youtube.com/embed/GgD96cr8P5k?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+        <div style="margin-top:12px; font-size:12px; color:#94a3b8; display:flex; justify-content:space-between; align-items:center;">
+            <span id="videoStatus">Đang phát video...</span>
+            <span style="color:#38bdf8;">@valenti_k41 • DJI Mic 3</span>
+        </div>
+        <div class="player-controls">
+            <button class="speed-btn" onclick="setPlaySpeed(0.25)">0.25x (Match)</button>
+            <button class="speed-btn" onclick="setPlaySpeed(0.5)">0.5x</button>
+            <button class="speed-btn active" id="spd1" onclick="setPlaySpeed(1.0)">1.0x</button>
+            <button class="speed-btn" onclick="setPlaySpeed(1.5)">1.5x</button>
+            <button class="speed-btn" onclick="setPlaySpeed(2.0)">2.0x</button>
+            <button class="speed-btn" onclick="stepFrame(-1)">⏮ -1F</button>
+            <button class="speed-btn" onclick="stepFrame(1)">+1F ⏭</button>
+        </div>
+    </div>
+</div>
+
+<div id="lightboxModal" class="lightbox-overlay" onclick="closeLightbox()">
+    <img crossorigin="anonymous" id="lightboxImg" class="lightbox-img" src="" alt="Zoomed Keyframe" />
+    <div id="lightboxCaption" class="lightbox-caption"></div>
+</div>
+
+<div id="drawerMenu" class="drawer">
+    <div class="drawer-header">
+        <span class="drawer-title">📑 14 Phân Cảnh Video</span>
+        <button class="modal-close" style="position:static;" onclick="toggleDrawer()">&times;</button>
+    </div>
+    
+    <a href="#shot-01" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S01</span>
+        <span class="drawer-time">0.00s</span>
+        <span class="drawer-text">Macro Hook thị giác trực diện: Định danh chủ thể...</span>
+    </a>
+    
+    <a href="#shot-02" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S02</span>
+        <span class="drawer-time">0.60s</span>
+        <span class="drawer-text">Hít nam châm đa năng lên đèn nấm kim loại: Trình...</span>
+    </a>
+    
+    <a href="#shot-03" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S03</span>
+        <span class="drawer-time">1.00s</span>
+        <span class="drawer-text">Gắn ngầm dưới dầm bàn làm việc: Phô diễn khả năn...</span>
+    </a>
+    
+    <a href="#shot-04" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S04</span>
+        <span class="drawer-time">1.60s</span>
+        <span class="drawer-text">Ngàm hít trực tiếp lên lưỡi dao Tefal: Cú gài bẫ...</span>
+    </a>
+    
+    <a href="#shot-05" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S05</span>
+        <span class="drawer-time">2.00s</span>
+        <span class="drawer-text">Cú máy hạ thấp theo quỹ đạo lưỡi dao: Duy trì nh...</span>
+    </a>
+    
+    <a href="#shot-06" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S06</span>
+        <span class="drawer-time">3.00s</span>
+        <span class="drawer-text">Cắt bánh mì giòn rụm với mic gắn lưỡi dao: Trải ...</span>
+    </a>
+    
+    <a href="#shot-07" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S07</span>
+        <span class="drawer-time">3.96s</span>
+        <span class="drawer-text">Hạt cà phê rơi mưa rào quanh micro: Tận dụng chu...</span>
+    </a>
+    
+    <a href="#shot-08" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S08</span>
+        <span class="drawer-time">4.56s</span>
+        <span class="drawer-text">Rót sữa tươi cuộn xoáy vào ly cà phê: Vũ điệu hò...</span>
+    </a>
+    
+    <a href="#shot-09" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S09</span>
+        <span class="drawer-time">5.64s</span>
+        <span class="drawer-text">Khoảnh khắc nhấp cà phê thư thái: Điểm nghỉ nhịp...</span>
+    </a>
+    
+    <a href="#shot-10" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S10</span>
+        <span class="drawer-time">6.32s</span>
+        <span class="drawer-text">Toàn cảnh góc cao viết sổ tay: Thiết lập không g...</span>
+    </a>
+    
+    <a href="#shot-11" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S11</span>
+        <span class="drawer-time">7.36s</span>
+        <span class="drawer-text">Nét chữ 'DJI mic 3' cào trên giấy carô: Âm thanh...</span>
+    </a>
+    
+    <a href="#shot-12" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S12</span>
+        <span class="drawer-time">8.32s</span>
+        <span class="drawer-text">Bố cục Flat-Lay đối xứng lật trang sách: Tạo nhị...</span>
+    </a>
+    
+    <a href="#shot-13" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S13</span>
+        <span class="drawer-time">9.40s</span>
+        <span class="drawer-text">Gõ phím MacBook với micro đặt giữa keycaps: Khai...</span>
+    </a>
+    
+    <a href="#shot-14" class="drawer-item" onclick="toggleDrawer()">
+        <span class="drawer-num">S14</span>
+        <span class="drawer-time">10.44s</span>
+        <span class="drawer-text">Khung tròn Lens Filter khóa trọn chữ 'DJI mic 3'...</span>
+    </a>
+    
+</div>
+
+<div class="floating-play-btn" onclick="playVideoAt(0)">
+    <span>▶ Phát Video Gốc</span>
+</div>
+
+<script>
+var videoModal = document.getElementById('videoModal');
+var playerVideo = document.getElementById('playerVideo');
+var videoStatus = document.getElementById('videoStatus');
+var lightboxModal = document.getElementById('lightboxModal');
+var lightboxImg = document.getElementById('lightboxImg');
+var lightboxCaption = document.getElementById('lightboxCaption');
+var drawerMenu = document.getElementById('drawerMenu');
+var detailView = document.getElementById('detailViewContainer');
+var gridView = document.getElementById('gridViewContainer');
+var btnDetail = document.getElementById('btnDetailView');
+var btnGrid = document.getElementById('btnGridView');
+
+function playVideoAt(seconds) {
+    videoModal.style.display = 'flex';
+    playerVideo.currentTime = seconds;
+    playerVideo.play();
+    videoStatus.innerText = 'Đang phát tại mốc: ' + seconds.toFixed(2) + 's';
+}
+
+function setPlaySpeed(rate) {
+    playerVideo.playbackRate = rate;
+    var btns = document.querySelectorAll('.speed-btn');
+    btns.forEach(function(b) { b.classList.remove('active'); });
+    event.target.classList.add('active');
+}
+
+function stepFrame(frames) {
+    playerVideo.pause();
+    playerVideo.currentTime += (frames * (1.0 / 25.0));
+    videoStatus.innerText = 'Frame: ' + playerVideo.currentTime.toFixed(2) + 's';
+}
+
+function closeVideoModal() {
+    playerVideo.pause();
+    videoModal.style.display = 'none';
+}
+
+function closeModalOnBg(e) {
+    if (e.target === videoModal) {
+        closeVideoModal();
+    }
+}
+
+function openLightbox(src, caption) {
+    lightboxImg.src = src;
+    lightboxCaption.innerText = caption;
+    lightboxModal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    lightboxModal.style.display = 'none';
+}
+
+function toggleDrawer() {
+    drawerMenu.classList.toggle('open');
+}
+
+function switchView(view) {
+    if (view === 'grid') {
+        detailView.style.display = 'none';
+        gridView.style.display = 'grid';
+        btnGrid.classList.add('active');
+        btnDetail.classList.remove('active');
+    } else {
+        detailView.style.display = 'block';
+        gridView.style.display = 'none';
+        btnDetail.classList.add('active');
+        btnGrid.classList.remove('active');
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeVideoModal();
+        closeLightbox();
+        drawerMenu.classList.remove('open');
+    }
+});
+
+function togglePlayerFullscreen() {
+    const v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) {
+            v.requestFullscreen().catch(() => {});
+        } else if (v.webkitRequestFullscreen) {
+            v.webkitRequestFullscreen();
+        } else if (v.webkitEnterFullscreen) {
+            v.webkitEnterFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        togglePlayerFullscreen();
+    }
+});
+
+</script>
+
+</body>
+</html>

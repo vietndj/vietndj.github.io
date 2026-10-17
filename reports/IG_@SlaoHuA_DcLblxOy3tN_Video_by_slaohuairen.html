@@ -864,18 +864,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/nhpbGFxin08?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DcLblxOy3tN.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1aP0xZwgOGhha_xTvNZmluaOr9yd-SSYJ/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -922,7 +923,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 14.04, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -981,7 +982,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.08, 15.84, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1040,7 +1041,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.88, 18.28, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1099,7 +1100,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.32, 20.24, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1158,7 +1159,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.28, 22.64, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1217,7 +1218,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(22.68, 24.84, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1276,7 +1277,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.88, 27.96, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1335,7 +1336,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(28.0, 31.68, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1394,7 +1395,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(31.72, 34.28, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1453,7 +1454,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(34.32, 36.28, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1512,7 +1513,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(36.32, 38.76, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1571,7 +1572,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(38.8, 41.0, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1630,7 +1631,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(41.04, 43.2, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1689,7 +1690,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(43.24, 47.96, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1748,7 +1749,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(48.0, 48.68, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1809,7 +1810,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 14.04, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg', 'SHOT 01 [0.0s - 14.04s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -1821,7 +1822,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.08, 15.84, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg', 'SHOT 02 [14.08s - 15.84s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -1833,7 +1834,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.88, 18.28, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg', 'SHOT 03 [15.88s - 18.28s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -1845,7 +1846,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.32, 20.24, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg', 'SHOT 04 [18.32s - 20.24s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -1857,7 +1858,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.28, 22.64, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg', 'SHOT 05 [20.28s - 22.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -1869,7 +1870,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(22.68, 24.84, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg', 'SHOT 06 [22.68s - 24.84s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -1881,7 +1882,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.88, 27.96, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg', 'SHOT 07 [24.88s - 27.96s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -1893,7 +1894,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(28.0, 31.68, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg', 'SHOT 08 [28.0s - 31.68s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -1905,7 +1906,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(31.72, 34.28, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg', 'SHOT 09 [31.72s - 34.28s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -1917,7 +1918,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(34.32, 36.28, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg', 'SHOT 10 [34.32s - 36.28s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -1929,7 +1930,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(36.32, 38.76, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg', 'SHOT 11 [36.32s - 38.76s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -1941,7 +1942,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(38.8, 41.0, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg', 'SHOT 12 [38.8s - 41.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -1953,7 +1954,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(41.04, 43.2, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg', 'SHOT 13 [41.04s - 43.2s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -1965,7 +1966,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(43.24, 47.96, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg', 'SHOT 14 [43.24s - 47.96s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -1977,7 +1978,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(48.0, 48.68, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg', 'SHOT 15 [48.0s - 48.68s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -2000,7 +2001,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 14.04, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2013,7 +2014,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 14.08, 15.84, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2026,7 +2027,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 15.88, 18.28, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2039,7 +2040,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 18.32, 20.24, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2052,7 +2053,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 20.28, 22.64, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2065,7 +2066,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 22.68, 24.84, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2078,7 +2079,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 24.88, 27.96, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2091,7 +2092,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 28.0, 31.68, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2104,7 +2105,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 31.72, 34.28, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2117,7 +2118,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 34.32, 36.28, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2130,7 +2131,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 36.32, 38.76, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2143,7 +2144,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 38.8, 41.0, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2156,7 +2157,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 41.04, 43.2, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -2169,7 +2170,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 43.24, 47.96, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -2182,7 +2183,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 48.0, 48.68, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@SlaoHuA_DcLblxOy3tN_Video_by_slaohuairen/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -2198,46 +2199,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DcLblxOy3tN.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1aP0xZwgOGhha_xTvNZmluaOr9yd-SSYJ";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;

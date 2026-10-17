@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Next Station Is Vietnam - @madisonkjan | Báo Cáo Phân Tích Đạo Diễn</title>
+<style>
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 10mm;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+body {
+    font-family: 'SVN-Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #1e293b;
+    background-color: #0b0f19;
+    font-size: 11px;
+    line-height: 1.45;
+}
+
+.report-container {
+    max-width: 960px;
+    margin: 20px auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+@media print {
+    body { background: #fff; }
+    .report-container { max-width: 100%; margin: 0; padding: 0; box-shadow: none; }
+    .no-print { display: none !important; }
+    .page-break { page-break-after: always; }
+}
+
+.header-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #991b1b 100%);
+    color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.header-badge {
+    display: inline-block;
+    background: #eab308;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 9.5px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+h1 {
+    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
+    font-size: 22px;
+    font-weight: 800;
+    color: #f8fafc;
+    margin-bottom: 4px;
+    letter-spacing: -0.01em;
+}
+
+.header-sub {
+    font-size: 11.5px;
+    color: #cbd5e1;
+    margin-bottom: 10px;
+}
+
+.meta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    padding-top: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 10.5px;
+    color: #e2e8f0;
+}
+
+.meta-item strong {
+    color: #fbbf24;
+}
+
+.summary-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #dc2626;
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.summary-card h2 {
+    font-family: 'SVN-Acta', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 4px;
+}
+
+.summary-card p {
+    font-size: 11px;
+    color: #334155;
+    line-height: 1.45;
+}
+
+.overview-table-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 20px;
+}
+
+.overview-table-card h3 {
+    font-family: 'SVN-Aeonik', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #b91c1c;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.master-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.master-table th {
+    background: #f1f5f9;
+    color: #334155;
+    text-align: left;
+    padding: 6px 8px;
+    border-bottom: 1.5px solid #cbd5e1;
+    font-weight: 700;
+}
+
+.master-table td {
+    padding: 5px 8px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #475569;
+}
+
+.master-table tr:nth-child(even) td {
+    background: #f8fafc;
+}
+
+.master-table tr:hover td {
+    background: #fef2f2;
+    cursor: pointer;
+}
+
+.shot-card {
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 16px;
+    page-break-inside: avoid;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    border-bottom: 1.5px solid #e2e8f0;
+    margin-bottom: 10px;
+}
+
+.shot-num {
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 800;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 8px;
+}
+
+.shot-name {
+    font-family: 'SVN-Acta', serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #0f172a;
+}
+
+.shot-tag {
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+    font-weight: 700;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-right: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.shot-tag:hover {
+    background: #dc2626;
+    color: #fff;
+}
+
+.shot-type {
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 9.5px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+.shot-content {
+    display: flex;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.shot-left {
+    width: 36%;
+    flex-shrink: 0;
+}
+
+.shot-right {
+    width: 64%;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.shot-thumb-wrapper {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    background: #000;
+}
+
+.shot-thumb {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    border-radius: 6px;
+    transition: transform 0.3s;
+}
+
+.shot-thumb:hover {
+    transform: scale(1.03);
+}
+
+.zoom-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    font-size: 8.5px;
+    padding: 2px 6px;
+    border-radius: 3px;
+}
+
+.voice-box {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    padding: 6px 8px;
+    border-radius: 6px;
+    margin-top: 8px;
+}
+
+.voice-icon {
+    font-size: 8.5px;
+    font-weight: 700;
+    color: #b91c1c;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.voice-text {
+    font-size: 10px;
+    color: #7f1d1d;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.info-group {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+.info-title {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #0f172a;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 3px;
+}
+
+.info-body {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.4;
+}
+
+.badge-tech {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 9.5px;
+    font-weight: 600;
+}
+
+.tip-group {
+    background: #fffbeb;
+    border: 1px solid #fef3c7;
+    border-left: 3px solid #f59e0b;
+    border-radius: 6px;
+    padding: 8px 10px;
+}
+
+.tip-title {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #92400e;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.tip-body {
+    font-size: 10px;
+    color: #78350f;
+    line-height: 1.35;
+}
+
+.trans-container {
+    background: #fdf4ff;
+    border: 1px solid #f5d0fe;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-top: 6px;
+}
+
+.trans-header {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: #86198f;
+    margin-bottom: 6px;
+}
+
+.trans-img-wrapper {
+    text-align: center;
+    background: #0f172a;
+    border-radius: 6px;
+    padding: 6px;
+    cursor: pointer;
+}
+
+.trans-img {
+    max-width: 440px;
+    width: auto;
+    height: auto;
+    max-height: 180px;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s;
+}
+
+.trans-img:hover {
+    transform: scale(1.02);
+}
+
+.guide-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.guide-card {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 14px;
+}
+
+.guide-card h3 {
+    font-family: 'SVN-Acta', serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #b91c1c;
+    margin-bottom: 8px;
+}
+
+.guide-card p {
+    font-size: 10.5px;
+    color: #334155;
+    line-height: 1.45;
+    margin-bottom: 6px;
+}
+
+/* Lightbox Modal */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(11, 15, 25, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.8);
+}
+
+.lightbox-caption {
+    color: #fff;
+    font-size: 13px;
+    margin-top: 12px;
+    font-weight: 600;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(11, 15, 25, 0.95);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal video {
+    max-width: 85vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    background: #000;
+}
+
+.video-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+/* Floating Button */
+.floating-video-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #dc2626;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 18px;
+    border-radius: 50px;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4);
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.floating-video-btn:hover {
+    transform: scale(1.05);
+    background: #b91c1c;
+}
+
+/* Author Instagram Direct Link Button */
+.author-ig-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(192, 132, 252, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: #e879f9;
+    padding: 2px 8px 2px 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    vertical-align: middle;
+}
+.author-ig-badge:hover {
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
+    border-color: #f43f5e;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+}
+.author-ig-badge strong {
+    color: #fff;
+}
+.author-ig-badge .ig-ext-btn {
+    background: linear-gradient(135deg, #c084fc, #f43f5e);
+    color: #0b0f17;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.15s;
+    letter-spacing: 0.2px;
+}
+.author-ig-badge:hover .ig-ext-btn {
+    background: #ffffff;
+    color: #0b0f17;
+}
+
+
+.player-box { position: relative !important; }
+.player-box video { cursor: pointer; }
+.player-fs-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: var(--font-ui, sans-serif);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+.player-fs-btn:hover {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    transform: scale(1.04);
+}
+.fs-ctrl-btn {
+    background: #fffbeb !important;
+    color: #b45309 !important;
+    border-color: #fef3c7 !important;
+    font-weight: 700 !important;
+}
+.fs-ctrl-btn:hover {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #fcd34d !important;
+}
+
+</style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+</head>
+<body>
+
+<div class="report-container">
+    <!-- HEADER -->
+    <div class="header-banner">
+        <div class="header-badge">DIRECTOR BREAKDOWN REPORT</div>
+        <h1>THE NEXT STATION IS VIETNAM: BÓC TÁCH KỸ THUẬT QUAY DỰNG</h1>
+        <div class="header-sub">Phân tích chuyên sâu 15 phân cảnh du lịch điện ảnh, nhịp cắt Montage theo beat nhạc và cơ chế chuyển cảnh</div>
+        <div class="meta-bar">
+            <div class="meta-item"><strong>Creator:</strong> @madisonkjan</div>
+            <div class="meta-item"><strong>Mã bài:</strong> Da7V4egSQxv</div>
+            <div class="meta-item"><strong>Thời lượng:</strong> 20.56s (15 Shots ~1.0s/shot)</div>
+            <div class="meta-item"><strong>Độ phân giải:</strong> 1276x718 (16:9 Widescreen)</div>
+            <div class="meta-item"><strong>Âm nhạc:</strong> Cinematic Beat Sync Travel Track</div>
+        </div>
+    </div>
+
+    <!-- EXECUTIVE SUMMARY -->
+    <div class="summary-card">
+        <h2>CẤU TRÚC KỂ CHUYỆN &amp; NGHỆ THUẬT DỰNG PHIM (EXECUTIVE SUMMARY)</h2>
+        <p><strong>Cốt lõi điện ảnh:</strong> Video là một bản giao hưởng hình ảnh tôn vinh vẻ đẹp đất nước và con người Việt Nam từ miền núi phía Bắc (Hà Giang, Sông Nho Quế, Hẻm Tu Sản) đến miền Trung cổ kính (Hội An, hoa đăng, phố cổ) và kỳ quan vịnh biển Hạ Long. Video kết hợp nhịp nhàng giữa <strong>Intro 4.9s tạo khoảng lặng (Breath Hook)</strong> với <strong>chuỗi 14 nhát cắt nhanh (Fast Montage ~1.0s/shot) đồng bộ hoàn hảo từng nhịp trống</strong>, mang lại trải nghiệm thị giác cuốn hút và cảm xúc tự hào bất tận.</p>
+    </div>
+
+    <!-- MASTER SHOT LIST -->
+    <div class="overview-table-card">
+        <h3>BẢNG TỔNG HỢP 15 PHÂN CẢNH (MASTER SHOT LIST)</h3>
+        <table class="master-table">
+            <thead>
+                <tr>
+                    <th width="6%">Shot</th>
+                    <th width="14%">Timestamp</th>
+                    <th width="20%">Cỡ cảnh &amp; Góc máy</th>
+                    <th width="30%">Nội dung thị giác</th>
+                    <th width="30%">Kỹ thuật chuyển cảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr onclick="jumpToVideo(0.00)"><td><b>01</b></td><td>0.00s - 4.88s (4.92s)</td><td>ELS Panoramic Landscape</td><td>Cờ Tổ quốc tung bay trên núi</td><td>Beat-Drop Match Cut / Scale Shift</td></tr>
+                <tr onclick="jumpToVideo(4.92)"><td><b>02</b></td><td>4.92s - 5.84s (0.96s)</td><td>WS Architectural Frontal</td><td>Cà phê Ban Công phố cổ Hội An</td><td>Motion Continuity Cut</td></tr>
+                <tr onclick="jumpToVideo(5.88)"><td><b>03</b></td><td>5.88s - 6.88s (1.04s)</td><td>Forward POV Tracking</td><td>Lướt xe máy đèo Hà Giang</td><td>Kinetic Match Cut / Leading Lines</td></tr>
+                <tr onclick="jumpToVideo(6.92)"><td><b>04</b></td><td>6.92s - 7.97s (1.08s)</td><td>MLS Cultural Portrait</td><td>Chàng trai thổi sáo Mông nương ngô</td><td>Cultural Rhythm Match</td></tr>
+                <tr onclick="jumpToVideo(8.01)"><td><b>05</b></td><td>8.01s - 9.01s (1.04s)</td><td>ECU Top-Down 45°</td><td>Chọn bưu thiếp lưu niệm vỉa hè</td><td>Tactile Memory Cut</td></tr>
+                <tr onclick="jumpToVideo(9.05)"><td><b>06</b></td><td>9.05s - 10.09s (1.08s)</td><td>MS Low Water Tracking</td><td>Thuyền nan nón lá trên sông ngọc</td><td>Mood Elevation Cut</td></tr>
+                <tr onclick="jumpToVideo(10.14)"><td><b>07</b></td><td>10.14s - 11.05s (0.96s)</td><td>Full Shot Gimbal Walk</td><td>Ngõ hoa giấy rợp nắng phố cổ</td><td>Center Frame Focus Cut</td></tr>
+                <tr onclick="jumpToVideo(11.09)"><td><b>08</b></td><td>11.09s - 13.01s (1.96s)</td><td>MCU Emotional Portrait</td><td>Nụ cười em bé gái vùng cao</td><td>Emotional Anchor Match Cut</td></tr>
+                <tr onclick="jumpToVideo(13.05)"><td><b>09</b></td><td>13.05s - 14.10s (1.08s)</td><td>Wide Low Angle Tilt-Up</td><td>Tuyến phố rợp bóng cờ đỏ sao vàng</td><td>Patriotic Color Rhythm</td></tr>
+                <tr onclick="jumpToVideo(14.14)"><td><b>10</b></td><td>14.14s - 15.22s (1.13s)</td><td>EWS Seascape Drift</td><td>Vịnh Hạ Long trùng điệp kỳ quan</td><td>Horizon Match Cut</td></tr>
+                <tr onclick="jumpToVideo(15.27)"><td><b>11</b></td><td>15.27s - 16.22s (1.00s)</td><td>Drone Aerial Extreme Wide</td><td>Flycam Hẻm Tu Sản - Sông Nho Quế</td><td>Macro-to-Micro Spatial Jump</td></tr>
+                <tr onclick="jumpToVideo(16.27)"><td><b>12</b></td><td>16.27s - 17.23s (1.00s)</td><td>High Angle 60° Down</td><td>Chợ phiên vùng cao rực rỡ thổ cẩm</td><td>Cultural Lifestyle Cut</td></tr>
+                <tr onclick="jumpToVideo(17.27)"><td><b>13</b></td><td>17.27s - 18.35s (1.13s)</td><td>MCU Night Glide</td><td>Hoa đăng đèn lồng phố cổ Hội An</td><td>Luminescence Match Cut</td></tr>
+                <tr onclick="jumpToVideo(18.39)"><td><b>14</b></td><td>18.39s - 19.44s (1.08s)</td><td>ECU High Close-Up</td><td>Chan nước dùng phở nóng bốc khói</td><td>Fluid Dynamic Action Cut</td></tr>
+                <tr onclick="jumpToVideo(19.48)"><td><b>15</b></td><td>19.48s - 20.52s (1.08s)</td><td>High Angle Waterfall</td><td>Tắm thác ngọc bích giữa rừng xanh</td><td>Nature Climax / Infinite Loop</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- SHOT-BY-SHOT BREAKDOWN -->
+    
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 01</span>
+                <span class="shot-name">Cảnh 1: Lá cờ Tổ quốc trên đỉnh núi mờ sương (Intro Flag Hook)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(0.0)" title="Nhấp để xem video cảnh này">⏱️ 0.00s - 4.88s (118 frames - 4.92s)</span>
+                <span class="shot-type">ELS (Extreme Long Shot) - Landscape Panoramic</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_1.jpeg', 'Shot 01: Cảnh 1: Lá cờ Tổ quốc trên đỉnh núi mờ sương (Intro Flag Hook)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_2.jpeg" class="shot-thumb" alt="Shot 01" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"The next station is... Việt Nam. Nơi hành trình bắt đầu từ những dãy núi trùng điệp ngút ngàn mây..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Toàn cảnh núi non Tây Bắc hùng vĩ mờ ảo trong sương sớm. Lá cờ đỏ sao vàng tung bay kiêu hãnh trên đỉnh đồi, dòng chữ typography 'The next station is...' xuất hiện trang nhã đón đầu thị giác.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Lá cờ đỏ sao vàng tung bay trong gió nhẹ làm điểm neo thị giác trung tâm, nhịp thở tĩnh tại 4.9s tạo khoảng lặng chờ đón beat drop bùng nổ.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 2: Cut on Beat Drop (Nhát cắt đồng bộ nhịp trống dứt khoát) chuyển ngay về không gian kiến trúc phố cổ Hội An.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Beat-Drop Match Cut / Spatial Scale Shift</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Ống kính 24mm hoặc 35mm f/5.6 - f/8 để nét sâu toàn dải, tripod chống rung tuyệt đối, khóa phơi sáng bầu trời để cờ đỏ không bị cháy sáng.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 01 (OUTGOING) ➔ SHOT 02 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_3.jpeg', 'So sánh chuyển cảnh Shot 01 sang Shot 02')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_4.jpeg" class="trans-img" alt="Transition 1 to 2" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 02</span>
+                <span class="shot-name">Cảnh 2: Quán cà phê Ban Công phố cổ Hội An (Hoi An Ancient Corner)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(4.92)" title="Nhấp để xem video cảnh này">⏱️ 4.92s - 5.84s (23 frames - 0.96s)</span>
+                <span class="shot-type">WS (Wide Shot) - Architectural Frontal View</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_5.jpeg', 'Shot 02: Cảnh 2: Quán cà phê Ban Công phố cổ Hội An (Hoi An Ancient Corner)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_6.jpeg" class="shot-thumb" alt="Shot 02" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...chạm vào những góc phố rực rỡ sắc hoa và tường vàng cổ kính..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Mặt tiền quán cà phê BANCÔNG cổ kính màu vàng đặc trưng Hội An với giàn hoa tử đằng/hoa giấy tím rủ bóng, người phụ nữ đội nón lá đẩy xe đi ngang qua khung hình.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Người phụ nữ nón lá di chuyển từ phải sang trái cắt ngang tiền cảnh tạo đường dẫn thị giác sinh động.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 3: Cut on Movement Direction (Chuyển động tiến về phía trước) trên cung đường đèo hiểm trở.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Motion Continuity / Cultural Motif Transition</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tiêu cự 35mm f/4.0 bắt trọn kiến trúc đối xứng, cân bằng trắng 5500K để tôn sắc vàng ấm áp của tường vôi Hội An.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 02 (OUTGOING) ➔ SHOT 03 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_7.jpeg', 'So sánh chuyển cảnh Shot 02 sang Shot 03')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_8.jpeg" class="trans-img" alt="Transition 2 to 3" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 03</span>
+                <span class="shot-name">Cảnh 3: Lướt xe trên cung đường đèo Hà Giang (Mountain Pass Ride)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(5.88)" title="Nhấp để xem video cảnh này">⏱️ 5.88s - 6.88s (25 frames - 1.04s)</span>
+                <span class="shot-type">Forward POV Tracking Shot - Dynamic Motorbike</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_9.jpeg', 'Shot 03: Cảnh 3: Lướt xe trên cung đường đèo Hà Giang (Mountain Pass Ride)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_10.jpeg" class="shot-thumb" alt="Shot 03" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...những khúc cua uốn lượn ôm trọn sườn non..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Chiếc xe máy lướt nhanh trên cung đường đèo Hà Giang uốn lượn bên vách núi đá và thung lũng ruộng bậc thang xanh ngát, phía trước là bạn đồng hành dẫn lối.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Mặt đường lướt nhanh tạo vệt chuyển động hướng tâm (Leading Lines) hút người xem lao về phía trước.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 4: Spatial Continuity (Cùng không gian đèo dốc Tây Bắc) dừng lại ở góc trung cảnh nghệ nhân thổi sáo.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Kinetic Match Cut / Depth Rush Transition</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Gắn Action Cam hoặc Gimbal trên tay lái xe máy, set 24fps với ND filter để đạt 180° Shutter Rule tạo motion blur ven đường chân thực.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 03 (OUTGOING) ➔ SHOT 04 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_11.jpeg', 'So sánh chuyển cảnh Shot 03 sang Shot 04')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_12.jpeg" class="trans-img" alt="Transition 3 to 4" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-04">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 04</span>
+                <span class="shot-name">Cảnh 4: Tiếng sáo Mông giữa thung lũng ngô xanh (H'Mong Bamboo Flute)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(6.92)" title="Nhấp để xem video cảnh này">⏱️ 6.92s - 7.97s (26 frames - 1.08s)</span>
+                <span class="shot-type">MLS (Medium Long Shot) - Cultural Portrait</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_13.jpeg', 'Shot 04: Cảnh 4: Tiếng sáo Mông giữa thung lũng ngô xanh (H'Mong Bamboo Flute)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_14.jpeg" class="shot-thumb" alt="Shot 04" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...lắng nghe tiếng khèn tiếng sáo vang vọng giữa đại ngàn..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Chàng trai người H'Mông trong trang phục truyền thống đứng bên bờ rào đá thổi sáo trúc (sáo Mông), hậu cảnh là thung lũng nương ngô và bản làng yên bình.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Ngón tay bấm lỗ sáo và điệu bộ nghiêng người thổi nhạc tạo nhịp điệu âm nhạc thị giác.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 5: Cut on Scale & Subject (Từ người biểu diễn sang du khách trải nghiệm) chuyển về góc nhìn cận cảnh vỉa hè.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Cultural Rhythm Cut / Action-to-Detail Match</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tiêu cự 50mm hoặc 85mm f/2.8 xóa mờ nhẹ hậu cảnh núi non, lấy nét mắt nhân vật, ánh sáng tản tự nhiên không chói gắt.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 04 (OUTGOING) ➔ SHOT 05 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_15.jpeg', 'So sánh chuyển cảnh Shot 04 sang Shot 05')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_16.jpeg" class="trans-img" alt="Transition 4 to 5" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-05">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 05</span>
+                <span class="shot-name">Cảnh 5: Lựa chọn bưu thiếp và cờ lưu niệm (Postcard Memories)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(8.01)" title="Nhấp để xem video cảnh này">⏱️ 8.01s - 9.01s (25 frames - 1.04s)</span>
+                <span class="shot-type">ECU (Extreme Close-Up) - Top-Down Ground Angle</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_17.jpeg', 'Shot 05: Cảnh 5: Lựa chọn bưu thiếp và cờ lưu niệm (Postcard Memories)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_18.jpeg" class="shot-thumb" alt="Shot 05" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...lưu giữ từng mảnh ghép kỷ niệm trong lòng bàn tay..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Bàn tay của hai nữ du khách nước ngoài ngồi bệt trên vỉa hè cùng chọn mua những tấm bưu thiếp vẽ tay phong cảnh Việt Nam và cờ đỏ sao vàng.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Bàn tay lật giở từng tấm bưu thiếp tạo chuyển động vi mô tinh tế và cảm xúc gần gũi.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 6: Cut on Activity (Trải nghiệm du khách) sang cảnh ngồi thuyền ngắm cảnh sông nước.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Tactile Memory Cut / Narrative Association</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Ống kính 35mm f/2.0, lấy nét chuẩn vào hoa văn bưu thiếp, tận dụng ánh sáng phản xạ từ nền gạch vỉa hè.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 05 (OUTGOING) ➔ SHOT 06 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_19.jpeg', 'So sánh chuyển cảnh Shot 05 sang Shot 06')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_20.jpeg" class="trans-img" alt="Transition 5 to 6" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-06">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 06</span>
+                <span class="shot-name">Cảnh 6: Du ngoạn thuyền nan đội nón lá trên sông ngọc (River Drift in Conical Hats)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(9.05)" title="Nhấp để xem video cảnh này">⏱️ 9.05s - 10.09s (26 frames - 1.08s)</span>
+                <span class="shot-type">MS (Medium Shot) - Low Water Tracking</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_21.jpeg', 'Shot 06: Cảnh 6: Du ngoạn thuyền nan đội nón lá trên sông ngọc (River Drift in Conical Hats)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_22.jpeg" class="shot-thumb" alt="Shot 06" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...thả mình trôi theo dòng nước ngọc bích êm đềm..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Nhóm bạn du khách quốc tế cởi trần đội nón lá thư giãn trên chiếc thuyền nan/bè tre trôi êm ả trên dòng nước xanh ngọc bích của Sông Nho Quế / Tràng An.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Chiếc thuyền rẽ nước tiến thẳng, ánh nhìn và nụ cười rạng rỡ của du khách tạo năng lượng tự do.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 7: Cut on Stroll (Chuyển từ du ngoạn sông nước sang dạo bước phố cổ).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Environment Contrast / Mood Elevation</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Đặt máy sát mặt nước trên mũi thuyền, tiêu cự 24mm bao quát cả người và vách núi đá soi bóng nước ngọc bích.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 06 (OUTGOING) ➔ SHOT 07 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_23.jpeg', 'So sánh chuyển cảnh Shot 06 sang Shot 07')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_24.jpeg" class="trans-img" alt="Transition 6 to 7" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-07">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 07</span>
+                <span class="shot-name">Cảnh 7: Dạo bước trong ngõ hoa giấy rợp nắng (Bougainvillea Alley)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(10.14)" title="Nhấp để xem video cảnh này">⏱️ 10.14s - 11.05s (23 frames - 0.96s)</span>
+                <span class="shot-type">Full Shot - Forward Gimbal Walkthrough</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_25.jpeg', 'Shot 07: Cảnh 7: Dạo bước trong ngõ hoa giấy rợp nắng (Bougainvillea Alley)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_26.jpeg" class="shot-thumb" alt="Shot 07" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...lạc bước giữa những con ngõ hoa rợp bóng nắng vàng..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Bước chân dạo qua ngõ phố cổ vắng người ngập tràn sắc hoa giấy nở rộ, những ngôi nhà mái ngói rêu phong và ánh nắng vàng mật rót xuống lòng đường.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Động tác đẩy máy (Push-in) tiến sâu vào ngõ tạo cảm giác lôi cuốn khám phá.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 8: Center Subject Match (Điểm tụ trung tâm) sang nụ cười em bé vùng cao.</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Center Frame Focus Cut / Atmosphere Transition</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Gimbal 3 trục đi bộ bước Ninja (Heel-to-toe), tiêu cự 28mm hoặc 35mm, khẩu f/4.0 bắt nét toàn dải từ hoa giấy đến nền gạch.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 07 (OUTGOING) ➔ SHOT 08 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_27.jpeg', 'So sánh chuyển cảnh Shot 07 sang Shot 08')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_28.jpeg" class="trans-img" alt="Transition 7 to 8" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-08">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 08</span>
+                <span class="shot-name">Cảnh 8: Nụ cười thiên thần của em bé H'Mông (Highland Girl Smile)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(11.09)" title="Nhấp để xem video cảnh này">⏱️ 11.09s - 13.01s (47 frames - 1.96s)</span>
+                <span class="shot-type">MCU (Medium Close-Up) - Emotional Portrait</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_29.jpeg', 'Shot 08: Cảnh 8: Nụ cười thiên thần của em bé H'Mông (Highland Girl Smile)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_30.jpeg" class="shot-thumb" alt="Shot 08" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...để rồi say đắm trước nụ cười hồn nhiên của em bé vùng cao."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Em bé gái vùng cao mặc váy thổ cẩm màu hồng xanh rực rỡ đứng bên chậu hoa cúc vạn thọ, ngước nhìn ống kính cười bẽn lẽn hồn nhiên, phía sau là dốc đèo uốn lượn và lá cờ đỏ sao vàng tung bay.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Nụ cười tỏa sáng và ánh mắt trong veo của em bé giữ chân người xem trọn vẹn 2 giây (điểm nhấn cảm xúc cao nhất video).</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 9: Flag Match Cut (Nối hình ảnh lá cờ đỏ phía sau em bé sang hàng cờ đỏ rợp phố).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Emotional Anchor Match Cut / Thematic Echo</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Ống kính 50mm f/1.8 hoặc 85mm f/2.0, hạ máy ngang tầm mắt trẻ em, lấy nét liên tục (Eye-AF), bắt sáng ven tóc tự nhiên.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 08 (OUTGOING) ➔ SHOT 09 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_31.jpeg', 'So sánh chuyển cảnh Shot 08 sang Shot 09')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_32.jpeg" class="trans-img" alt="Transition 8 to 9" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-09">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 09</span>
+                <span class="shot-name">Cảnh 9: Tuyến phố rợp bóng cờ đỏ sao vàng (Red Flag Boulevard)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(13.05)" title="Nhấp để xem video cảnh này">⏱️ 13.05s - 14.10s (26 frames - 1.08s)</span>
+                <span class="shot-type">Wide Street View - Low Angle Tilt-Up</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_33.jpeg', 'Shot 09: Cảnh 9: Tuyến phố rợp bóng cờ đỏ sao vàng (Red Flag Boulevard)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_34.jpeg" class="shot-thumb" alt="Shot 09" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"Tự hào sắc cờ đỏ tung bay khắp phố phường..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Hàng cây xanh rợp bóng cờ đỏ sao vàng bay phấp phới dọc tuyến phố sầm uất với những cửa hàng lưu niệm và người dân đi lại tấp nập.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Những dải cờ đỏ bay phần phật trong gió dẫn dắt ánh nhìn lên cao khoáng đạt.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 10: Horizon Match Cut (Nối từ đường chân trời phố xá sang đường chân trời mênh mông biển vịnh).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Patriotic Color Rhythm / Scale Expansion Cut</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tiêu cự 24mm góc rộng, lia nhẹ theo hướng gió bay của cờ, tốc độ màn trập 1/50s để giữ độ mềm mại của vải cờ.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 09 (OUTGOING) ➔ SHOT 10 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_35.jpeg', 'So sánh chuyển cảnh Shot 09 sang Shot 10')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_36.jpeg" class="trans-img" alt="Transition 9 to 10" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 10</span>
+                <span class="shot-name">Cảnh 10: Vịnh Hạ Long kỳ quan giữa mây trời (Ha Long Bay Majesty)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(14.14)" title="Nhấp để xem video cảnh này">⏱️ 14.14s - 15.22s (27 frames - 1.13s)</span>
+                <span class="shot-type">EWS (Extreme Wide Shot) - Seascape Boat Drift</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_37.jpeg', 'Shot 10: Cảnh 10: Vịnh Hạ Long kỳ quan giữa mây trời (Ha Long Bay Majesty)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_38.jpeg" class="shot-thumb" alt="Shot 10" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...ngỡ ngàng trước kỳ quan biển trời vịnh di sản..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Mặt nước vịnh Hạ Long / Lan Hạ xanh thẳm phẳng lặng như gương, các đảo đá vôi trùng điệp sừng sững giữa trời biển bao la, một chiếc du thuyền trắng lướt êm phía xa.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Thuyền di chuyển ngang chậm rãi mang lại cảm giác tĩnh tại, kỳ vĩ vô tận.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 11: Aerial Perspective Cut (Từ mặt nước vịnh chuyển sang góc nhìn Flycam trên đỉnh núi).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Geological Wonder Cut / Horizon-to-Chasm Transition</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Kính lọc phân cực CPL để khử chói mặt nước và làm nổi bật màu xanh ngọc bích của biển vịnh, tiêu cự 50mm nén các dãy đảo đá.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 10 (OUTGOING) ➔ SHOT 11 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_39.jpeg', 'So sánh chuyển cảnh Shot 10 sang Shot 11')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_40.jpeg" class="trans-img" alt="Transition 10 to 11" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 11</span>
+                <span class="shot-name">Cảnh 11: Flycam hẻm vực Tu Sản - Sông Nho Quế (Tu San Canyon Aerial)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(15.27)" title="Nhấp để xem video cảnh này">⏱️ 15.27s - 16.22s (24 frames - 1.00s)</span>
+                <span class="shot-type">Drone Aerial Extreme Wide - Forward Push-Through</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_41.jpeg', 'Shot 11: Cảnh 11: Flycam hẻm vực Tu Sản - Sông Nho Quế (Tu San Canyon Aerial)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_42.jpeg" class="shot-thumb" alt="Shot 11" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...xuyên qua hẻm vực sâu thẳm đẹp tựa tranh thủy mặc..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Toàn cảnh hẻm vực Tu Sản - Đèo Mã Pí Lèng hùng vĩ với dòng sông Nho Quế uốn lượn sâu thẳm giữa hai sườn núi đá vôi dốc đứng ngoạn mục.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Drone bay tiến về phía trước (Forward Push) xuyên qua khe núi tạo cảm giác choáng ngợp và bứt phá.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 12: Scale Drop (Từ góc nhìn chim bay trên trời hạ thẳng xuống đời sống con người dưới chợ).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Macro-to-Micro Spatial Jump Cut</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Flycam góc rộng 24mm, bay đều tay ga tốc độ 20km/h, profile màu D-Log M để giữ chi tiết cả vùng tối hẻm núi lẫn mây trời.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 11 (OUTGOING) ➔ SHOT 12 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_43.jpeg', 'So sánh chuyển cảnh Shot 11 sang Shot 12')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_44.jpeg" class="trans-img" alt="Transition 11 to 12" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 12</span>
+                <span class="shot-name">Cảnh 12: Nhịp sống chợ phiên rực rỡ thổ cẩm (Highland Market Vibrance)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(16.27)" title="Nhấp để xem video cảnh này">⏱️ 16.27s - 17.23s (24 frames - 1.00s)</span>
+                <span class="shot-type">High Angle Medium Shot - Cultural Market</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_45.jpeg', 'Shot 12: Cảnh 12: Nhịp sống chợ phiên rực rỡ thổ cẩm (Highland Market Vibrance)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_46.jpeg" class="shot-thumb" alt="Shot 12" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...hòa vào sự mộc mạc chân phương của chợ phiên vùng cao..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Không khí náo nhiệt của phiên chợ vùng cao, các chị em phụ nữ H'Mông, Dao đỏ xúm quanh mẹt rau củ quả, chọn từng nải chuối chín vàng và đỗ que tươi.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Bàn tay chọn chuối và cử chỉ rôm rả của các bà mẹ vùng cao.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 13: Color Transition (Từ màu sắc nông sản ban ngày chuyển sang ánh sáng đèn lồng rực rỡ ban đêm).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Cultural Lifestyle Cut / Chromatic Contrast</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tiêu cự 35mm f/2.8, đứng ngang tầm vai chụp chéo xuống, bắt trọn hoa văn thổ cẩm tinh xảo trên trang phục đồng bào.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 12 (OUTGOING) ➔ SHOT 13 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_47.jpeg', 'So sánh chuyển cảnh Shot 12 sang Shot 13')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_48.jpeg" class="trans-img" alt="Transition 12 to 13" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 13</span>
+                <span class="shot-name">Cảnh 13: Lung linh ngàn hoa đăng đèn lồng Hội An (Hoi An Lantern Magic)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(17.27)" title="Nhấp để xem video cảnh này">⏱️ 17.27s - 18.35s (27 frames - 1.13s)</span>
+                <span class="shot-type">MCU (Medium Close-Up) - Night Slow Pan</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_49.jpeg', 'Shot 13: Cảnh 13: Lung linh ngàn hoa đăng đèn lồng Hội An (Hoi An Lantern Magic)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_50.jpeg" class="shot-thumb" alt="Shot 13" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...đắm chìm trong biển đèn lồng huyền ảo khi đêm về..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Cận cảnh những chiếc đèn lồng Hội An thủ công hình quả trám, hình tròn đủ sắc đỏ, cam, vàng, xanh, trắng thắp sáng lung linh ấm áp trong đêm.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Ánh sáng đèn lồng phát quang rực rỡ lấp đầy khung hình.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 14: Sensory Shift (Từ thị giác ánh sáng đêm sang ẩm thực bốc khói).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Luminescence Match Cut / Cultural Atmosphere Cut</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Ống kính 50mm f/1.4 hoặc f/1.8 để tạo hiệu ứng bokeh bong bóng tròn trịa ở hậu cảnh, phơi sáng vừa phải giữ chi tiết hoa văn vải lụa.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 13 (OUTGOING) ➔ SHOT 14 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_51.jpeg', 'So sánh chuyển cảnh Shot 13 sang Shot 14')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_52.jpeg" class="trans-img" alt="Transition 13 to 14" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 14</span>
+                <span class="shot-name">Cảnh 14: Nước dùng phở nóng hổi bốc khói (Street Food Steaming Pho)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(18.39)" title="Nhấp để xem video cảnh này">⏱️ 18.39s - 19.44s (26 frames - 1.08s)</span>
+                <span class="shot-type">ECU (Extreme Close-Up) - Culinary Motion</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_53.jpeg', 'Shot 14: Cảnh 14: Nước dùng phở nóng hổi bốc khói (Street Food Steaming Pho)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_54.jpeg" class="shot-thumb" alt="Shot 14" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...thưởng thức tô phở nóng hổi đậm đà hồn quê..."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Bàn tay người bán hàng gắp thịt, múc muôi nước dùng sôi sùng sục chan vào tô phở/hủ tiếu nóng hổi, khói bốc nghi ngút cạnh rổ rau húng quế và lát chanh tươi.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Dòng nước dùng sôi chan vào tô phở tạo hiệu ứng kích thích vị giác cực mạnh (Appetite Hook).</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Sang Cảnh 15: Liquid-to-Liquid Match Cut (Từ dòng nước súp nóng sang làn nước thác mát lạnh bọt tung trắng xóa).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Match Action / Fluid Dynamic Cut</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tiêu cự 50mm f/2.0 lấy nét sát vào miệng muôi chan nước dùng, đèn xiên tạo quầng khói trắng bốc lên rõ nét.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+            <div class="trans-container">
+                <div class="trans-header">
+                    <span>⚡ CƠ CHẾ NỐI CHUYỂN CẢNH: SHOT 14 (OUTGOING) ➔ SHOT 15 (INCOMING)</span>
+                </div>
+                <div class="trans-img-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_55.jpeg', 'So sánh chuyển cảnh Shot 14 sang Shot 15')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_56.jpeg" class="trans-img" alt="Transition 14 to 15" />
+                </div>
+            </div>
+            
+    </div>
+    
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-title-left">
+                <span class="shot-num">SHOT 15</span>
+                <span class="shot-name">Cảnh 15: Tắm thác ngọc bích giữa rừng nguyên sinh (Wild Waterfall Climax)</span>
+            </div>
+            <div class="shot-title-right">
+                <span class="shot-tag" onclick="jumpToVideo(19.48)" title="Nhấp để xem video cảnh này">⏱️ 19.48s - 20.52s (26 frames - 1.08s)</span>
+                <span class="shot-type">High Angle Wide - Waterfall Climax</span>
+            </div>
+        </div>
+        
+        <div class="shot-content">
+            <div class="shot-left">
+                <div class="shot-thumb-wrapper" onclick="openLightbox('assets/The_Next_Station_Is_Vietnam_-_madisonkjan_57.jpeg', 'Shot 15: Cảnh 15: Tắm thác ngọc bích giữa rừng nguyên sinh (Wild Waterfall Climax)')">
+                    <img crossorigin="anonymous" src="assets/The_Next_Station_Is_Vietnam_-_madisonkjan_58.jpeg" class="shot-thumb" alt="Shot 15" />
+                    <div class="zoom-badge">🔍 Phóng to</div>
+                </div>
+                <div class="voice-box">
+                    <div class="voice-icon">💬 LỜI THOẠI KHỚP CẢNH:</div>
+                    <div class="voice-text">"...và hòa mình vào dòng thác đại ngàn nguyên sơ. Việt Nam – Nơi mỗi bước chân là một kiệt tác."</div>
+                </div>
+            </div>
+            <div class="shot-right">
+                <div class="info-group">
+                    <div class="info-title">🎬 Mô Tả Chi Tiết Khung Hình</div>
+                    <div class="info-body">Dòng thác nước thiên nhiên trắng xóa đổ ào ạt xuống hồ nước xanh biếc giữa rừng cây xanh ngắt, du khách đắm mình bơi lội thư giãn tận hưởng thiên nhiên thuần khiết.</div>
+                </div>
+                
+                <div class="info-group">
+                    <div class="info-title">🎣 Kỹ Thuật Mồi (Outgoing) &amp; Nối (Incoming)</div>
+                    <div class="info-body">
+                        <p><strong>• Kỹ thuật Mồi (Out):</strong> Dòng nước thác đổ cuồn cuộn khép lại hành trình đầy năng lượng và tự do.</p>
+                        <p><strong>• Kỹ thuật Nối (In):</strong> Outro Loop (Kết thúc video, sẵn sàng lặp lại chu kỳ).</p>
+                        <p><strong>• Loại chuyển cảnh:</strong> <span class="badge-tech">Nature Climax / Visual Release & Infinite Loop</span></p>
+                    </div>
+                </div>
+                
+                <div class="tip-group">
+                    <div class="tip-title">💡 Hướng Dẫn Setup &amp; Mẹo Đạo Diễn</div>
+                    <div class="tip-body">Tốc độ màn trập 1/60s hoặc 1/120s làm mịn dải nước trắng, góc máy cao bao quát toàn bộ vẻ đẹp hoang sơ của núi rừng.</div>
+                </div>
+            </div>
+        </div>
+        
+        
+    </div>
+    
+
+    <!-- PRACTICAL GUIDE & CHECKLIST -->
+    <div class="summary-card" style="margin-top: 24px; border-left-color: #0284c7;">
+        <h2>HƯỚNG DẪN THỰC HÀNH SETUP QUAY DỰNG THEO MẪU (PRACTICE GUIDE)</h2>
+        <p>Bảng thông số máy quay, quy tắc ánh sáng và cẩm nang dựng phim giúp bạn tái hiện trọn vẹn chất cinematic du lịch của video mẫu:</p>
+        
+        <div class="guide-grid">
+            <div class="guide-card">
+                <h3>📹 1. THIẾT BỊ KHUYÊN DÙNG</h3>
+                <p><strong>• Thân máy (Camera):</strong> Sony FX30 / A6700 / A7C II, Fujifilm X-T5 / X-H2S hoặc iPhone 15/16 Pro (Blackmagic Camera App).</p>
+                <p><strong>• Ống kính (Lens):</strong> Bộ đôi Zoom đa dụng 24-70mm f/2.8 kết hợp Prime 50mm f/1.4 hoặc 85mm f/1.8 để chụp chân dung cảm xúc.</p>
+                <p><strong>• Flycam &amp; Gimbal:</strong> DJI Mini 4 Pro / Mavic 3 Pro + Gimbal DJI RS3 / RS4 mini.</p>
+                <p><strong>• Kính lọc:</strong> Polarizer (CPL) bắt buộc để quay nước biển/sông ngọc bích + Variable ND (VND) quay trời nắng gắt.</p>
+            </div>
+
+            <div class="guide-card">
+                <h3>⚙️ 2. THÔNG SỐ CÀI ĐẶT (SETTINGS)</h3>
+                <p><strong>• Frame Rate:</strong> 24 fps (chuẩn Cinematic) cho các cảnh phố xá, xe chạy; 60 fps / 120 fps cho các cảnh slow-motion (nước chan phở, nụ cười em bé, tắm thác).</p>
+                <p><strong>• Shutter Speed:</strong> Quy tắc 180° (1/50s khi quay 24fps, 1/120s khi quay 60fps) để giữ motion blur tự nhiên.</p>
+                <p><strong>• Picture Profile:</strong> Log Profile (S-Log3, F-Log2, D-Log) để giữ dải dynamic range cao nhất giữa nắng gắt và vùng tối khe núi.</p>
+            </div>
+
+            <div class="guide-card">
+                <h3>🎨 3. CHỈNH MÀU (COLOR GRADING)</h3>
+                <p><strong>• Tone màu chủ đạo:</strong> Warm Heritage Gold kết hợp Emerald Green (Sắc vàng Hội An ấm áp + Xanh ngọc bích Sông Nho Quế/Vịnh Hạ Long + Đỏ thắm cờ Tổ quốc).</p>
+                <p><strong>• Highlight &amp; Shadow:</strong> Nén highlight mượt mà (soft roll-off), giữ shadow sâu nhưng không bết đen chi tiết.</p>
+                <p><strong>• Film Emulation:</strong> Thêm 10-15% hạt phim 35mm (Kodak 250D) để tăng độ vintage cổ điển.</p>
+            </div>
+
+            <div class="guide-card">
+                <h3>🎵 4. DỰNG PHIM &amp; SOUND DESIGN</h3>
+                <p><strong>• Beat Syncing:</strong> Đặt marker nhịp trống trên timeline. Cắt chính xác mỗi cảnh đúng 1 nhịp (0.96s - 1.13s).</p>
+                <p><strong>• Cấu trúc Hook:</strong> Giữ cảnh đầu 4.9s làm khoảng lặng trước khi dồn dập giải phóng năng lượng.</p>
+                <p><strong>• Foley Sound:</strong> Lồng ghép tiếng gió đèo, tiếng sáo trúc, tiếng nước rẽ thuyền nan, tiếng xèo xèo nước dùng để chạm đến đa giác quan.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Floating Button -->
+<div class="floating-video-btn no-print" onclick="jumpToVideo(0)">
+    ▶ Xem Video Gốc
+</div>
+
+<!-- Lightbox Modal -->
+<div class="lightbox no-print" id="lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img crossorigin="anonymous" id="lightbox-img" src="" alt="Zoom" />
+    <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+
+<!-- Video Modal -->
+<div class="video-modal no-print" id="video-modal">
+    <span class="video-close" onclick="closeVideo()">&times;</span>
+    <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+</div>
+
+<script>
+function openLightbox(src, caption) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox-caption').innerText = caption;
+    document.getElementById('lightbox').classList.add('active');
+}
+
+function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+}
+
+function jumpToVideo(sec) {
+    const modal = document.getElementById('video-modal');
+    const vid = document.getElementById('player');
+    modal.classList.add('active');
+    vid.currentTime = sec;
+    vid.play();
+}
+
+function closeVideo() {
+    const modal = document.getElementById('video-modal');
+    const vid = document.getElementById('player');
+    vid.pause();
+    modal.classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideo();
+    }
+});
+
+function togglePlayerFullscreen() {
+    const v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) {
+            v.requestFullscreen().catch(() => {});
+        } else if (v.webkitRequestFullscreen) {
+            v.webkitRequestFullscreen();
+        } else if (v.webkitEnterFullscreen) {
+            v.webkitEnterFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        togglePlayerFullscreen();
+    }
+});
+
+</script>
+
+</body>
+</html>

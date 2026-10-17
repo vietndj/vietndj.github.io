@@ -1,14 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
+<!DOCTYPE html><html lang="vi"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@davidmurphyfilm - Carousel Analysis</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
     
     <style>
         @font-face {
@@ -1007,14 +1005,41 @@
             }
         }
     </style>
+
+<style class="carousel-yt-fix-css">
+.video-player-container { height: 75vh !important; max-height: none !important; aspect-ratio: auto !important; overflow: hidden !important; position: relative !important; }
+.carousel-stack { overflow-y: scroll !important; scroll-snap-type: y mandatory !important; height: 100% !important; }
+.carousel-stack > * { flex: 0 0 100% !important; height: 100% !important; object-fit: contain !important; scroll-snap-align: start !important; }
+.carousel-stack iframe { border: none !important; }
+</style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar">
         <div class="video-wrap">
-            <iframe id="mainPlayer" src="https://www.youtube.com/embed/MtMAV2OiRiE?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
-        </div>
+
+<style>.carousel-stack::-webkit-scrollbar { display: none; }</style>
+<div class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
+<iframe id="mainPlayer" src="https://www.youtube.com/embed/MtMAV2OiRiE?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+</div>
+
+<div class="carousel-nav-overlay" style="position:absolute; right:10px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:100;">
+    <button onclick="var s=document.querySelector('.carousel-stack');if(s)s.scrollBy({top:-s.clientHeight,behavior:'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:44px; height:44px; cursor:pointer; font-size:16px;">▲</button>
+    <button onclick="var s=document.querySelector('.carousel-stack');if(s)s.scrollBy({top:s.clientHeight,behavior:'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width:44px; height:44px; cursor:pointer; font-size:16px;">▼</button>
+</div>
+</div>
         <div class="video-controls">
             <div class="speed-row">
                 <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
@@ -1036,7 +1061,7 @@
         <header class="report-header">
             <div class="header-badges"><span class="badge">STORYBOARD BREAKDOWN</span></div>
             <h1 class="report-title">
-                <a href="https://www.instagram.com/reels/Ddo3aQxjMeq/" target="_blank" rel="noopener">@davidmurphyfilm - Carousel Analysis</a>
+                <a href="https://www.instagram.com/p/Ddo3aQxjMeq/" target="_blank" rel="noopener">@davidmurphyfilm - Carousel Analysis</a>
             </h1>
             <div class="header-meta">
                 <span>Nguồn: <a href="https://www.instagram.com/davidmurphyfilm/" target="_blank" class="creator-link">@davidmurphyfilm ↗</a></span>
@@ -1068,8 +1093,8 @@
             
         <div class="shot-card" id="shot-card-1">
             <div class="shot-thumb" onclick="playShot(0.0, 4.64, 'SHOT 01')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 4.6s</span>
             </div>
             <div class="shot-body">
@@ -1089,15 +1114,15 @@
                     </div>
                     <div class="critique-good">Bố cục trung tâm với thân cây cổ thụ làm trục neo vững chãi; tiền cảnh thảm cỏ mờ nhẹ tạo chiều sâu thư thái, mộc mạc và chân thực.</div>
                     <div class="critique-warn">Chữ màu trắng không có viền đổ bóng (drop shadow), nếu hậu cảnh có vệt sáng mạnh sẽ bị lóa nhẹ.</div>
-                    <div class="shot-narrative">Chàng trai ngồi bệt dưới gốc cây cổ thụ trên thảm cỏ, mở laptop làm việc với balo đặt bên cạnh. Dòng chữ &#x27;Some rules I follow while filming my life...&#x27; xuất hiện chính giữa.</div>
+                    <div class="shot-narrative">Chàng trai ngồi bệt dưới gốc cây cổ thụ trên thảm cỏ, mở laptop làm việc với balo đặt bên cạnh. Dòng chữ 'Some rules I follow while filming my life...' xuất hiện chính giữa.</div>
                 </details>
             </div>
         </div>
 
         <div class="shot-card" id="shot-card-2">
             <div class="shot-thumb" onclick="playShot(0.0, 5.2, 'SHOT 02')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 5.2s</span>
             </div>
             <div class="shot-body">
@@ -1105,7 +1130,7 @@
                     <span class="shot-num">SHOT 02</span>
                     <span class="shot-dur">5.20s</span>
                 </div>
-                <h4 class="shot-headline">Quy Tắc 1: Đừng Quên Quay Lại Những &#x27;Lỗi Lầm&#x27; &amp; Cảnh Hỏng (Outtakes)</h4>
+                <h4 class="shot-headline">Quy Tắc 1: Đừng Quên Quay Lại Những 'Lỗi Lầm' &amp; Cảnh Hỏng (Outtakes)</h4>
                 <p class="shot-insight">Giữ lại những thước phim không hoàn hảo (outtakes thường nhật) vì chính sự không hoàn hảo mới tạo nên tính chân thật (authenticity).</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
@@ -1115,7 +1140,7 @@
                         <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Low-key Warm Tungsten (Ánh sáng vàng ấm phòng khách, tương phản nhẹ)</span></div>
                         <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut</span></div>
                     </div>
-                    <div class="critique-good">Góc nhìn xuyên thấu từ tầm thấp (Worm&#x27;s-eye view) qua nan gỗ tiền cảnh, tông màu vàng ấm (Tungsten amber) tạo cảm giác riêng tư và ấm cúng.</div>
+                    <div class="critique-good">Góc nhìn xuyên thấu từ tầm thấp (Worm's-eye view) qua nan gỗ tiền cảnh, tông màu vàng ấm (Tungsten amber) tạo cảm giác riêng tư và ấm cúng.</div>
                     <div class="critique-warn">Khẩu độ mở lớn khiến nan gỗ tiền cảnh chiếm diện tích đáng kể, đòi hỏi người xem dừng lại để cảm nhận không gian.</div>
                     <div class="shot-narrative">Đôi chân mang dép lê êm ái ngồi thư giãn trên ghế sofa, máy quay đặt thấp sát mặt sàn nhìn xuyên qua khe nan gỗ của bàn trà.</div>
                 </details>
@@ -1124,8 +1149,8 @@
 
         <div class="shot-card" id="shot-card-3">
             <div class="shot-thumb" onclick="playShot(0.0, 7.96, 'SHOT 03')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 8.0s</span>
             </div>
             <div class="shot-body">
@@ -1152,8 +1177,8 @@
 
         <div class="shot-card" id="shot-card-4">
             <div class="shot-thumb" onclick="playShot(0.0, 6.44, 'SHOT 04')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 6.4s</span>
             </div>
             <div class="shot-body">
@@ -1161,7 +1186,7 @@
                     <span class="shot-num">SHOT 04</span>
                     <span class="shot-dur">6.44s</span>
                 </div>
-                <h4 class="shot-headline">Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả Tò Mò &#x27;Làm Sao Quay Được?&#x27;</h4>
+                <h4 class="shot-headline">Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả Tò Mò 'Làm Sao Quay Được?'</h4>
                 <p class="shot-insight">Đổi vị trí đặt máy lên cao vượt bậc hoặc xuống cực thấp để mang lại góc nhìn thị giác mới lạ mà mắt thường hiếm khi nhìn thấy.</p>
                 <details class="shot-details">
                     <summary>Chi tiết kỹ thuật ▸</summary>
@@ -1180,8 +1205,8 @@
 
         <div class="shot-card" id="shot-card-5">
             <div class="shot-thumb" onclick="playShot(0.0, 3.2, 'SHOT 05')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 3.2s</span>
             </div>
             <div class="shot-body">
@@ -1208,8 +1233,8 @@
 
         <div class="shot-card" id="shot-card-6">
             <div class="shot-thumb" onclick="playShot(0.0, 11.6, 'SHOT 06')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 11.6s</span>
             </div>
             <div class="shot-body">
@@ -1236,8 +1261,8 @@
 
         <div class="shot-card" id="shot-card-7">
             <div class="shot-thumb" onclick="playShot(0.0, 3.16, 'SHOT 07')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 3.2s</span>
             </div>
             <div class="shot-body">
@@ -1264,8 +1289,8 @@
 
         <div class="shot-card" id="shot-card-8">
             <div class="shot-thumb" onclick="playShot(0.0, 4.56, 'SHOT 08')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 4.6s</span>
             </div>
             <div class="shot-body">
@@ -1292,8 +1317,8 @@
 
         <div class="shot-card" id="shot-card-9">
             <div class="shot-thumb" onclick="playShot(0.0, 5.36, 'SHOT 09')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 5.4s</span>
             </div>
             <div class="shot-body">
@@ -1320,8 +1345,8 @@
 
         <div class="shot-card" id="shot-card-10">
             <div class="shot-thumb" onclick="playShot(0.0, 7.44, 'SHOT 10')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 7.4s</span>
             </div>
             <div class="shot-body">
@@ -1339,7 +1364,7 @@
                         <div class="meta-item"><span class="meta-label">Ánh sáng</span><span class="meta-val">Late Afternoon Golden Sunlight (Ánh nắng vàng xiên chiều muộn)</span></div>
                         <div class="meta-item"><span class="meta-label">Chuyển cảnh</span><span class="meta-val">Cut</span></div>
                     </div>
-                    <div class="critique-good">Phá vỡ định kiến &#x27;phải xóa phông mịt mù mới là điện ảnh&#x27;. Độ sâu trường ảnh dày (Deep Depth of Field) làm rõ mối tương quan giữa con người và công trình kiến trúc biểu tượng.</div>
+                    <div class="critique-good">Phá vỡ định kiến 'phải xóa phông mịt mù mới là điện ảnh'. Độ sâu trường ảnh dày (Deep Depth of Field) làm rõ mối tương quan giữa con người và công trình kiến trúc biểu tượng.</div>
                     <div class="critique-warn">Cần ánh sáng ban ngày đủ mạnh để khép khẩu độ nhỏ mà không bị đẩy ISO lên quá cao gây hạt (noise).</div>
                     <div class="shot-narrative">Nhóm bạn đang ngồi chơi và ném bóng trên thảm cỏ công viên, phía sau là sân vận động thể thao khổng lồ SuperValu Páirc Uí Chaoimh sừng sững dưới nắng chiều.</div>
                 </details>
@@ -1348,8 +1373,8 @@
 
         <div class="shot-card" id="shot-card-11">
             <div class="shot-thumb" onclick="playShot(0.0, 3.8, 'SHOT 11')">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy" />
-                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy">
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>
                 <span class="shot-time-badge">0.0s – 3.8s</span>
             </div>
             <div class="shot-body">
@@ -1379,7 +1404,7 @@
             
         <div class="grid-item" onclick="playShot(0.0, 4.64, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy">
                 <span class="grid-num">SHOT 01</span>
                 <span class="grid-time">0.0s – 4.6s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg', 'SHOT 01 • Hook Mở Màn Đời Thường: Tĩnh lặng định vị chủ đề ghi lại cuộc sống')">⊕</button>
@@ -1389,17 +1414,17 @@
 
         <div class="grid-item" onclick="playShot(0.0, 5.2, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy">
                 <span class="grid-num">SHOT 02</span>
                 <span class="grid-time">0.0s – 5.2s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg', 'SHOT 02 • Quy Tắc 1: Đừng Quên Quay Lại Những &#x27;Lỗi Lầm&#x27; &amp; Cảnh Hỏng (Outtakes)')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg', 'SHOT 02 • Quy Tắc 1: Đừng Quên Quay Lại Những 'Lỗi Lầm' &amp; Cảnh Hỏng (Outtakes)')">⊕</button>
             </div>
-            <div class="grid-title">Quy Tắc 1: Đừng Quên Quay Lại Những &#x27;Lỗi</div>
+            <div class="grid-title">Quy Tắc 1: Đừng Quên Quay Lại Những 'Lỗi</div>
         </div>
 
         <div class="grid-item" onclick="playShot(0.0, 7.96, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy">
                 <span class="grid-num">SHOT 03</span>
                 <span class="grid-time">0.0s – 8.0s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg', 'SHOT 03 • Quy Tắc 2: Mượn Không Gian Công Cộng Giả Lập Trị Giá Sản Xuất Khủng (Mimic Production Value)')">⊕</button>
@@ -1409,17 +1434,17 @@
 
         <div class="grid-item" onclick="playShot(0.0, 6.44, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy">
                 <span class="grid-num">SHOT 04</span>
                 <span class="grid-time">0.0s – 6.4s</span>
-                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg', 'SHOT 04 • Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả Tò Mò &#x27;Làm Sao Quay Được?&#x27;')">⊕</button>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg', 'SHOT 04 • Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả Tò Mò 'Làm Sao Quay Được?'')">⊕</button>
             </div>
             <div class="grid-title">Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả T</div>
         </div>
 
         <div class="grid-item" onclick="playShot(0.0, 3.2, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy">
                 <span class="grid-num">SHOT 05</span>
                 <span class="grid-time">0.0s – 3.2s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg', 'SHOT 05 • Quy Tắc 4: Đại Cảnh Rộng Thênh Thang (Wide Shots Cực Độ)')">⊕</button>
@@ -1429,7 +1454,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 11.6, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy">
                 <span class="grid-num">SHOT 06</span>
                 <span class="grid-time">0.0s – 11.6s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg', 'SHOT 06 • Quy Tắc 5: Đừng Ngại Cho Chủ Thể Bắt Đầu Từ Ngoài Khung Hình (Begin Outside The Frame)')">⊕</button>
@@ -1439,7 +1464,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 3.16, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy">
                 <span class="grid-num">SHOT 07</span>
                 <span class="grid-time">0.0s – 3.2s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg', 'SHOT 07 • Quy Tắc 6: Thiết Kế Âm Thanh Cơ Học (Sound Design) – Chi Tiết Vô Hình Quyết Định Cảm Xúc')">⊕</button>
@@ -1449,7 +1474,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 4.56, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy">
                 <span class="grid-num">SHOT 08</span>
                 <span class="grid-time">0.0s – 4.6s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg', 'SHOT 08 • Quy Tắc 7: Luôn Nắm Bắt Mọi Chuyển Động Tự Nhiên (Film Movement When You Can)')">⊕</button>
@@ -1459,7 +1484,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 5.36, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy">
                 <span class="grid-num">SHOT 09</span>
                 <span class="grid-time">0.0s – 5.4s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg', 'SHOT 09 • Quy Tắc 8: Chuyển Động Vi Mô Thụ Động Báo Hiệu Hành Trình (Micro-Movement Like This)')">⊕</button>
@@ -1469,7 +1494,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 7.44, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy">
                 <span class="grid-num">SHOT 10</span>
                 <span class="grid-time">0.0s – 7.4s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg', 'SHOT 10 • Quy Tắc 9: Khép Khẩu Sâu Thay Vì Lúc Nào Cũng Xóa Phông Mù Mịt (Deep Depth Of Field)')">⊕</button>
@@ -1479,7 +1504,7 @@
 
         <div class="grid-item" onclick="playShot(0.0, 3.8, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy">
                 <span class="grid-num">SHOT 11</span>
                 <span class="grid-time">0.0s – 3.8s</span>
                 <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg', 'SHOT 11 • Chốt Hạ &amp; Kêu Gọi Hành Động (CTA): Mỹ Cảm Thị Giác Giữ Chân Người Xem')">⊕</button>
@@ -1494,11 +1519,11 @@
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-head">
             <span>MỤC LỤC (11)</span>
-            <button onclick="toggleDrawer(false)">&times;</button>
+            <button onclick="toggleDrawer(false)">×</button>
         </div>
         <div class="drawer-list">
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 4.64, 'SHOT 01')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 01</div>
                 <div class="drawer-shot-hl">Hook Mở Màn Đời Thường: Tĩnh lặng định vị </div>
@@ -1508,17 +1533,17 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(2, 0.0, 5.2, 'SHOT 02')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 02</div>
-                <div class="drawer-shot-hl">Quy Tắc 1: Đừng Quên Quay Lại Những &#x27;Lỗi L</div>
+                <div class="drawer-shot-hl">Quy Tắc 1: Đừng Quên Quay Lại Những 'Lỗi L</div>
                 <div class="drawer-shot-time">0.00s – 5.20s</div>
             </div>
             <div class="drawer-arrow">▶</div>
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(3, 0.0, 7.96, 'SHOT 03')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 03</div>
                 <div class="drawer-shot-hl">Quy Tắc 2: Mượn Không Gian Công Cộng Giả L</div>
@@ -1528,7 +1553,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(4, 0.0, 6.44, 'SHOT 04')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 04</div>
                 <div class="drawer-shot-hl">Quy Tắc 3: Chọn Góc Máy Khiến Khán Giả Tò </div>
@@ -1538,7 +1563,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(5, 0.0, 3.2, 'SHOT 05')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 05</div>
                 <div class="drawer-shot-hl">Quy Tắc 4: Đại Cảnh Rộng Thênh Thang (Wide</div>
@@ -1548,7 +1573,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(6, 0.0, 11.6, 'SHOT 06')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 06</div>
                 <div class="drawer-shot-hl">Quy Tắc 5: Đừng Ngại Cho Chủ Thể Bắt Đầu T</div>
@@ -1558,7 +1583,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(7, 0.0, 3.16, 'SHOT 07')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 07</div>
                 <div class="drawer-shot-hl">Quy Tắc 6: Thiết Kế Âm Thanh Cơ Học (Sound</div>
@@ -1568,7 +1593,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(8, 0.0, 4.56, 'SHOT 08')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 08</div>
                 <div class="drawer-shot-hl">Quy Tắc 7: Luôn Nắm Bắt Mọi Chuyển Động Tự</div>
@@ -1578,7 +1603,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(9, 0.0, 5.36, 'SHOT 09')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_09_mid.jpg" alt="SHOT 09" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 09</div>
                 <div class="drawer-shot-hl">Quy Tắc 8: Chuyển Động Vi Mô Thụ Động Báo </div>
@@ -1588,7 +1613,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(10, 0.0, 7.44, 'SHOT 10')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_10_mid.jpg" alt="SHOT 10" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 10</div>
                 <div class="drawer-shot-hl">Quy Tắc 9: Khép Khẩu Sâu Thay Vì Lúc Nào C</div>
@@ -1598,7 +1623,7 @@
         </div>
 
         <div class="drawer-item" onclick="jumpToShot(11, 0.0, 3.8, 'SHOT 11')">
-            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy" /></div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_@davidmurphyfilm_Ddo3aQxjMeq_Carousel_Analysis/slide_11_mid.jpg" alt="SHOT 11" loading="lazy"></div>
             <div class="drawer-info">
                 <div class="drawer-shot-num">SHOT 11</div>
                 <div class="drawer-shot-hl">Chốt Hạ &amp; Kêu Gọi Hành Động (CTA): Mỹ Cảm </div>
@@ -1610,8 +1635,8 @@
 </div>
 
 <div id="lightboxModal" onclick="closeLightbox()">
-    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <span class="lightbox-x" onclick="closeLightbox()">×</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()">
     <div id="lightboxCaption"></div>
 </div>
 
@@ -1654,6 +1679,20 @@ if (player && player.tagName !== 'IFRAME') {
 }
 
 function playShot(startTime, endTime, label) {
+
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        if (match) {
+            var index = parseInt(match[1]) - 1;
+            var children = stack.children;
+            if (index >= 0 && index < children.length) {
+                children[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+    
+
     if (!player) return;
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     var tag = document.getElementById('shotStatusTag');
@@ -1673,14 +1712,10 @@ function playShot(startTime, endTime, label) {
             args: []
         }), '*');
     } else {
-        player.currentTime = startTime;
+        if(player) player.currentTime = startTime;
         var p = player.play();
-        if (p !== undefined) {
-            p.catch(function() {
-                player.muted = true;
-                player.play().catch(function() {});
-            });
-        }
+        if (p !== undefined) { p.catch(function(e) {}); }
+        
     }
     document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
     var cards = document.querySelectorAll('.shot-card');
@@ -1845,5 +1880,6 @@ function copyMegaPrompt(e, btn) {
     });
 }
 </script>
-</body>
-</html>
+
+
+</body></html>

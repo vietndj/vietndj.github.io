@@ -866,6 +866,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -907,18 +947,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/Ta2ir3OBhCI?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DaH_rTUTe14.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1GV8aJUmapXHfapNudB3MssdQNUBc87GT/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -941,7 +982,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">OPPO Find X9s - 3 Picture Collage & Nghệ Thuật Kể Chuyện Đa Góc Nhìn</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/p/DaH_rTUTe14/" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @mridupawasharma (Mridupawan Sharma)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@mridupawasharma (Mridupawan Sharma)</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@mridupawasharma" onclick="handleCreatorClick(event, '@mridupawasharma', 'Mridupawan Sharma')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Mridupawan Sharma trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Mridupawan Sharma</strong>
+                        <span class="author-handle">(@mridupawasharma)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span></a></span>
                 <span>Tệp: <strong>IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -965,7 +1013,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 3.0, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1024,7 +1072,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.04, 4.56, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1083,7 +1131,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.6, 5.56, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1142,7 +1190,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.6, 6.08, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1201,7 +1249,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.12, 6.64, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1260,7 +1308,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.68, 7.64, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1319,7 +1367,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.68, 9.28, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1378,7 +1426,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.32, 9.88, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1437,7 +1485,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.92, 10.36, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1496,7 +1544,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.4, 11.2, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1555,7 +1603,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.24, 12.52, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1614,7 +1662,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.56, 14.2, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1673,7 +1721,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.24, 15.0, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1732,7 +1780,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.04, 16.04, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1791,7 +1839,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.08, 16.8, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1850,7 +1898,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-16">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.84, 18.88, 'SHOT 16')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1909,7 +1957,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-17">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.92, 21.76, 'SHOT 17')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1968,7 +2016,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-18">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(21.8, 24.12, 'SHOT 18')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2027,7 +2075,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-19">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.16, 24.72, 'SHOT 19')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2086,7 +2134,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-20">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.76, 26.64, 'SHOT 20')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2145,7 +2193,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-21">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(26.68, 27.2, 'SHOT 21')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2204,7 +2252,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-22">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(27.24, 27.92, 'SHOT 22')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2263,7 +2311,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-23">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(27.96, 28.96, 'SHOT 23')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2322,7 +2370,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-24">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(29.0, 30.44, 'SHOT 24')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2381,7 +2429,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-25">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(30.48, 30.84, 'SHOT 25')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2440,7 +2488,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-26">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(30.88, 31.16, 'SHOT 26')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2499,7 +2547,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-27">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(31.2, 31.92, 'SHOT 27')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2558,7 +2606,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-28">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(31.96, 33.24, 'SHOT 28')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2617,7 +2665,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-29">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(33.28, 34.2, 'SHOT 29')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2676,7 +2724,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-30">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(34.24, 35.4, 'SHOT 30')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2735,7 +2783,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-31">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(35.44, 37.04, 'SHOT 31')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2794,7 +2842,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-32">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(37.08, 37.6, 'SHOT 32')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2853,7 +2901,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-33">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(37.64, 39.12, 'SHOT 33')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2912,7 +2960,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-34">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(39.16, 39.76, 'SHOT 34')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2971,7 +3019,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-35">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(39.8, 41.68, 'SHOT 35')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3030,7 +3078,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-36">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(41.72, 43.6, 'SHOT 36')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3089,7 +3137,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-37">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(43.64, 45.12, 'SHOT 37')">
-                    <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3150,7 +3198,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 3.0, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg', 'SHOT 01 [0.0s - 3.0s] • Hook tâm lý "Creators are annoying": Mở màn tự trào phá vỡ khoảng cách người xem bằng góc cận ly cà phê')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -3162,7 +3210,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.04, 4.56, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg', 'SHOT 02 [3.04s - 4.56s] • Tương phản nhận thức "Food vs Thumbnail": Khắc họa góc nhìn nghề nghiệp qua ống kính cận cảnh đĩa thức ăn')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -3174,7 +3222,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(4.6, 5.56, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg', 'SHOT 03 [4.6s - 5.56s] • Chuyển đổi góc chụp nhanh (0.96s): Tăng nhịp thị giác mô phỏng hành vi ngắm tìm góc của Creator')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -3186,7 +3234,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.6, 6.08, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg', 'SHOT 04 [5.6s - 6.08s] • Micro-cut 0.48s: Điểm chạm nhịp điệu hoàn tất câu nói "There is no going back"')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -3198,7 +3246,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(6.12, 6.64, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg', 'SHOT 05 [6.12s - 6.64s] • Cắt cảnh nhịp đối thoại: Tách lớp không gian quán cafe bằng chuyển động xoay ly')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -3210,7 +3258,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(6.68, 7.64, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg', 'SHOT 06 [6.68s - 7.64s] • Khắc họa căn phòng làm việc "Everything becomes a show": Khung hình góc trung mở rộng bối cảnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -3222,7 +3270,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.68, 9.28, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg', 'SHOT 07 [7.68s - 9.28s] • Đặc tả chi tiết "The Desk & The Lights": Đưa mắt người xem dạo quanh các thiết bị tác nghiệp')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -3234,7 +3282,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.32, 9.88, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg', 'SHOT 08 [9.32s - 9.88s] • Cắt nhanh đồ vật ngẫu nhiên (Random Stuff): Tái hiện tâm trí tò mò của người làm sáng tạo')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -3246,7 +3294,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.92, 10.36, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg', 'SHOT 09 [9.92s - 10.36s] • B-roll Montage nhịp dồn dập: Khai thác góc quay từ dưới lên (Low-angle)')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -3258,7 +3306,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.4, 11.2, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg', 'SHOT 10 [10.4s - 11.2s] • Chi tiết phản chiếu ánh sáng: Biến đồ vật tĩnh thành điểm nhấn thị giác động')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -3270,7 +3318,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.24, 12.52, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg', 'SHOT 11 [11.24s - 12.52s] • Khắc họa sự bừa bộn có tính toán: Đặc tả các cuộn phim và phụ kiện nhiếp ảnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -3282,7 +3330,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.56, 14.2, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg', 'SHOT 12 [12.56s - 14.2s] • Chuyển đoạn tự sự "I am not shooting anything": Tác giả bước ra khỏi studio để nghỉ ngơi')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -3294,7 +3342,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.24, 15.0, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg', 'SHOT 13 [14.24s - 15.0s] • Cú cắt chuyển cảnh ra xe: Duy trì tính liên tục của hành trình di chuyển')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -3306,7 +3354,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.04, 16.04, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg', 'SHOT 14 [15.04s - 16.04s] • Cận cảnh nội thất xe: Gợi mở sự thư thái trước khi cơn nghiện chụp ảnh quay trở lại')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -3318,7 +3366,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.08, 16.8, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg', 'SHOT 15 [16.08s - 16.8s] • Lướt nhìn đường phố qua kính xe: Điểm chuyển nhịp trước khoảnh khắc bùng nổ')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -3330,7 +3378,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.84, 18.88, 'SHOT 16')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg', 'SHOT 16 [16.84s - 18.88s] • Khoảnh khắc "That lasts about 5 minutes": Lời tự nhủ bị phá vỡ khi phát hiện bối cảnh độc đáo')">🔍</button>
                 <div class="grid-badge-top">SHOT 16</div>
@@ -3342,7 +3390,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.92, 21.76, 'SHOT 17')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg', 'SHOT 17 [18.92s - 21.76s] • Bắt gặp bối cảnh đường phố sống động: Thiết lập chủ thể và không gian chụp thực tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 17</div>
@@ -3354,7 +3402,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(21.8, 24.12, 'SHOT 18')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg', 'SHOT 18 [21.8s - 24.12s] • Rút điện thoại OPPO Find X9s: Chuyển dịch mượt mà từ câu chuyện tự sự sang phô diễn tính năng')">🔍</button>
                 <div class="grid-badge-top">SHOT 18</div>
@@ -3366,7 +3414,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.16, 24.72, 'SHOT 19')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg', 'SHOT 19 [24.16s - 24.72s] • Cận cảnh thao tác tay trên màn hình: Kích hoạt tính năng "3 Picture Collage"')">🔍</button>
                 <div class="grid-badge-top">SHOT 19</div>
@@ -3378,7 +3426,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.76, 26.64, 'SHOT 20')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg', 'SHOT 20 [24.76s - 26.64s] • Góc chụp 0.6x Ultra-wide cho Bối Cảnh (Scene): Mở rộng tối đa không gian xung quanh chủ thể')">🔍</button>
                 <div class="grid-badge-top">SHOT 20</div>
@@ -3390,7 +3438,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(26.68, 27.2, 'SHOT 21')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg', 'SHOT 21 [26.68s - 27.2s] • Chuyển đổi tiêu cự tức thì: Tăng tốc độ dẫn dắt từ Toàn sang Trung')">🔍</button>
                 <div class="grid-badge-top">SHOT 21</div>
@@ -3402,7 +3450,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(27.24, 27.92, 'SHOT 22')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg', 'SHOT 22 [27.24s - 27.92s] • Góc chụp 1x Wide cho Không Khí (Vibe): Cân bằng hoàn hảo giữa nhân vật và môi trường')">🔍</button>
                 <div class="grid-badge-top">SHOT 22</div>
@@ -3414,7 +3462,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(27.96, 28.96, 'SHOT 23')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg', 'SHOT 23 [27.96s - 28.96s] • Góc chụp 3x Telephoto cho Cảm Xúc (Emotion): Bắt trọn nụ cười và thần thái chủ thể')">🔍</button>
                 <div class="grid-badge-top">SHOT 23</div>
@@ -3426,7 +3474,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(29.0, 30.44, 'SHOT 24')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg', 'SHOT 24 [29.0s - 30.44s] • Trình diễn khung ghép "3 Picture Collage": 3 góc nhìn hoàn chỉnh trong cùng một khoảnh khắc')">🔍</button>
                 <div class="grid-badge-top">SHOT 24</div>
@@ -3438,7 +3486,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(30.48, 30.84, 'SHOT 25')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg', 'SHOT 25 [30.48s - 30.84s] • Flash-cut chuyển tiếp bộ ảnh số 2: Tăng tốc độ chứng minh tính ứng dụng đa dạng')">🔍</button>
                 <div class="grid-badge-top">SHOT 25</div>
@@ -3450,7 +3498,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(30.88, 31.16, 'SHOT 26')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg', 'SHOT 26 [30.88s - 31.16s] • Micro-transition: Nhịp cắt đồng bộ theo tiếng click máy ảnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 26</div>
@@ -3462,7 +3510,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(31.2, 31.92, 'SHOT 27')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg', 'SHOT 27 [31.2s - 31.92s] • Bộ Collage số 2 - Chủ thể đời thường: Khắc họa con người và không gian truyền thống')">🔍</button>
                 <div class="grid-badge-top">SHOT 27</div>
@@ -3474,7 +3522,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(31.96, 33.24, 'SHOT 28')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg', 'SHOT 28 [31.96s - 33.24s] • Phân tích chi tiết từng mảnh ghép Collage: Dẫn mắt người xem từ Trái sang Phải')">🔍</button>
                 <div class="grid-badge-top">SHOT 28</div>
@@ -3486,7 +3534,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(33.28, 34.2, 'SHOT 29')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg', 'SHOT 29 [33.28s - 34.2s] • Bộ Collage số 3 - Nghệ thuật kiến trúc: Đối chiếu tỷ lệ con người và công trình đồ sộ')">🔍</button>
                 <div class="grid-badge-top">SHOT 29</div>
@@ -3498,7 +3546,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(34.24, 35.4, 'SHOT 30')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg', 'SHOT 30 [34.24s - 35.4s] • Củng cố thông điệp "Three different photos, same moment": Khóa chặt giá trị cốt lõi')">🔍</button>
                 <div class="grid-badge-top">SHOT 30</div>
@@ -3510,7 +3558,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(35.44, 37.04, 'SHOT 31')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg', 'SHOT 31 [35.44s - 37.04s] • Giải quyết nỗi đau "Frame feels small": Trực quan hóa tình huống khung hình bị chật hẹp')">🔍</button>
                 <div class="grid-badge-top">SHOT 31</div>
@@ -3522,7 +3570,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(37.08, 37.6, 'SHOT 32')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg', 'SHOT 32 [37.08s - 37.6s] • Thao tác chuyển góc 0.6x: Điểm chạm công nghệ trên màn hình')">🔍</button>
                 <div class="grid-badge-top">SHOT 32</div>
@@ -3534,7 +3582,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(37.64, 39.12, 'SHOT 33')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg', 'SHOT 33 [37.64s - 39.12s] • Bùng nổ không gian "Make it wider": Khung cảnh bao la được thu trọn vẹn vào ống kính 0.6x')">🔍</button>
                 <div class="grid-badge-top">SHOT 33</div>
@@ -3546,7 +3594,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(39.16, 39.76, 'SHOT 34')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg', 'SHOT 34 [39.16s - 39.76s] • Cú chốt chuyển động lia máy: Dẫn dắt từ bối cảnh trở về với cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 34</div>
@@ -3558,7 +3606,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(39.8, 41.68, 'SHOT 35')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg', 'SHOT 35 [39.8s - 41.68s] • Khoảnh khắc thỏa mãn của Creator: Nhìn lại thành phẩm ảnh chụp trên OPPO Find X9s')">🔍</button>
                 <div class="grid-badge-top">SHOT 35</div>
@@ -3570,7 +3618,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(41.72, 43.6, 'SHOT 36')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg', 'SHOT 36 [41.72s - 43.6s] • Câu chốt đắt giá "So yeah, this is exactly why": Đóng gói trọn vẹn thông điệp sáng tạo')">🔍</button>
                 <div class="grid-badge-top">SHOT 36</div>
@@ -3582,7 +3630,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(43.64, 45.12, 'SHOT 37')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg', 'SHOT 37 [43.64s - 45.12s] • Outro thương hiệu & Hashtag chiến dịch: OPPO Find X9s #YourStoryMatters')">🔍</button>
                 <div class="grid-badge-top">SHOT 37</div>
@@ -3605,7 +3653,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 3.0, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -3618,7 +3666,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 3.04, 4.56, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -3631,7 +3679,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 4.6, 5.56, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -3644,7 +3692,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 5.6, 6.08, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -3657,7 +3705,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 6.12, 6.64, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -3670,7 +3718,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 6.68, 7.64, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -3683,7 +3731,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 7.68, 9.28, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -3696,7 +3744,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 9.32, 9.88, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -3709,7 +3757,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 9.92, 10.36, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -3722,7 +3770,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 10.4, 11.2, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -3735,7 +3783,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 11.24, 12.52, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -3748,7 +3796,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 12.56, 14.2, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -3761,7 +3809,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 14.24, 15.0, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -3774,7 +3822,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 15.04, 16.04, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -3787,7 +3835,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 16.08, 16.8, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -3800,7 +3848,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(16, 16.84, 18.88, 'SHOT 16')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 16</div>
@@ -3813,7 +3861,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(17, 18.92, 21.76, 'SHOT 17')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 17</div>
@@ -3826,7 +3874,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(18, 21.8, 24.12, 'SHOT 18')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 18</div>
@@ -3839,7 +3887,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(19, 24.16, 24.72, 'SHOT 19')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 19</div>
@@ -3852,7 +3900,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(20, 24.76, 26.64, 'SHOT 20')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 20</div>
@@ -3865,7 +3913,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(21, 26.68, 27.2, 'SHOT 21')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 21</div>
@@ -3878,7 +3926,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(22, 27.24, 27.92, 'SHOT 22')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 22</div>
@@ -3891,7 +3939,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(23, 27.96, 28.96, 'SHOT 23')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 23</div>
@@ -3904,7 +3952,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(24, 29.0, 30.44, 'SHOT 24')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 24</div>
@@ -3917,7 +3965,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(25, 30.48, 30.84, 'SHOT 25')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 25</div>
@@ -3930,7 +3978,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(26, 30.88, 31.16, 'SHOT 26')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 26</div>
@@ -3943,7 +3991,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(27, 31.2, 31.92, 'SHOT 27')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 27</div>
@@ -3956,7 +4004,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(28, 31.96, 33.24, 'SHOT 28')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 28</div>
@@ -3969,7 +4017,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(29, 33.28, 34.2, 'SHOT 29')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 29</div>
@@ -3982,7 +4030,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(30, 34.24, 35.4, 'SHOT 30')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 30</div>
@@ -3995,7 +4043,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(31, 35.44, 37.04, 'SHOT 31')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 31</div>
@@ -4008,7 +4056,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(32, 37.08, 37.6, 'SHOT 32')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 32</div>
@@ -4021,7 +4069,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(33, 37.64, 39.12, 'SHOT 33')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 33</div>
@@ -4034,7 +4082,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(34, 39.16, 39.76, 'SHOT 34')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 34</div>
@@ -4047,7 +4095,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(35, 39.8, 41.68, 'SHOT 35')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 35</div>
@@ -4060,7 +4108,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(36, 41.72, 43.6, 'SHOT 36')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 36</div>
@@ -4073,7 +4121,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(37, 43.64, 45.12, 'SHOT 37')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Mridupawan_Sharma_DaH_rTUTe14_Video_by_mridupawasharma/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 37</div>
@@ -4089,46 +4137,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DaH_rTUTe14.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1GV8aJUmapXHfapNudB3MssdQNUBc87GT";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -4228,6 +4258,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

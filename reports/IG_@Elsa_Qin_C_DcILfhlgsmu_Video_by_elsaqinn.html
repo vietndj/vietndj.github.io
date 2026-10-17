@@ -275,6 +275,46 @@ video { width: 100%; height: 100%; object-fit: contain; }
   border: none; color: #fff; font-size: 26px; cursor: pointer;
 }
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -316,15 +356,23 @@ video { width: 100%; height: 100%; object-fit: contain; }
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <header class="hero">
   <div class="hero-inner">
     <div class="author-badge">
-      <span>Tác giả:</span>
+      <span>Tác giả: 
+                    <a href="../index.html?creator=@elsaqinn" onclick="handleCreatorClick(event, '@elsaqinn', 'Elsa Qin')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Elsa Qin trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Elsa Qin</strong>
+                        <span class="author-handle">(@elsaqinn)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
       <a href="https://instagram.com/elsaqinn" target="_blank" rel="noopener">@elsaqinn (Elsa Qin)</a>
-      <span>• Video gốc: <a href="https://www.instagram.com/reels/DcILfhlgsmu/" target="_blank" rel="noopener">Instagram Reel</a></span>
+      <span>• Video gốc: <a href="https://www.instagram.com/p/DcILfhlgsmu/" target="_blank" rel="noopener">Instagram Reel</a></span>
     </div>
     <h1>Báo Cáo Đạo Diễn: Choices / Wrong Answers</h1>
     <p class="hero-desc">Bóc tách điện ảnh 44 phân cảnh: Kỹ thuật tạo dựng nỗi sợ giả định (False Dilemma), giải tỏa tâm lý bằng Match Cut bẻ cong không gian và bài học triết lý cuộc đời.</p>
@@ -340,7 +388,7 @@ video { width: 100%; height: 100%; object-fit: contain; }
 <section class="player-container">
   <div class="player-inner">
     <div class="video-wrapper">
-      <video id="mainVideo" playsinline controls preload="metadata" src="https://media.fedu.vn/videos/DcILfhlgsmu.mp4"></video>
+      <iframe id="mainPlayer" src="https://www.youtube.com/embed/OwXUkepRWyA?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
     </div>
     <div class="active-tracker">
       <span class="tracker-shot" id="trackerShot">Đang xem: Phân cảnh 01</span>
@@ -374,7 +422,7 @@ video { width: 100%; height: 100%; object-fit: contain; }
 <div class="modal" id="imgModal" onclick="closeModal()">
   <div class="modal-content" onclick="event.stopPropagation()">
     <button type="button" class="modal-close" onclick="closeModal()">✕</button>
-    <img class="modal-img" id="modalImg" src="" alt="Zoom">
+    <img crossorigin="anonymous" class="modal-img" id="modalImg" src="" alt="Zoom">
     <div class="modal-caption" id="modalCaption"></div>
   </div>
 </div>
@@ -407,7 +455,7 @@ function renderAll() {
       </div>
       <h3 class="shot-title">${s.hl}</h3>
       <div class="img-wrap">
-        <img class="main-img" id="img-disp-${s.i}" src="${s.img}" alt="Shot ${s.i}" loading="lazy" onclick="openModal(this.src, 'Phân Cảnh ${sidPad}')">
+        <img crossorigin="anonymous" class="main-img" id="img-disp-${s.i}" src="${s.img}" alt="Shot ${s.i}" loading="lazy" onclick="openModal(this.src, 'Phân Cảnh ${sidPad}')">
         <div class="kframe-tabs">
           <button type="button" class="tab-btn" onclick="swapImg(${s.i}, '${s.st_img}', this)">Đầu</button>
           <button type="button" class="tab-btn active" onclick="swapImg(${s.i}, '${s.img}', this)">Giữa</button>
@@ -432,7 +480,7 @@ function renderAll() {
     gridHtml += `
     <div class="grid-item" id="grid-${s.i}" onclick="jumpTo(${s.st}); scrollToCard(${s.i})">
       <div class="g-thumb">
-        <img src="${s.img}" alt="Shot ${s.i}" loading="lazy">
+        <img crossorigin="anonymous" src="${s.img}" alt="Shot ${s.i}" loading="lazy">
         <span class="g-dur">${dur}s</span>
         <span class="g-id">#${sidPad}</span>
       </div>
@@ -444,7 +492,7 @@ function renderAll() {
 
     drawerHtml += `
     <div class="drawer-item" id="drw-${s.i}" onclick="jumpTo(${s.st}); scrollToCard(${s.i}); closeDrawer()">
-      <img src="${s.img}" alt="Shot ${s.i}" loading="lazy">
+      <img crossorigin="anonymous" src="${s.img}" alt="Shot ${s.i}" loading="lazy">
       <div class="drw-info">
         <div class="drw-head"><span class="d-badge">#${sidPad}</span> <span>${s.st.toFixed(1)}s - ${s.et.toFixed(1)}s</span></div>
         <div class="drw-hl">${s.hl}</div>
@@ -533,6 +581,22 @@ video.addEventListener('timeupdate', () => {
     highlightCard(cur.i);
   }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

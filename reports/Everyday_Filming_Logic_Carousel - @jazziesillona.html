@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
+<!DOCTYPE html><html lang="vi"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Phân Tích Chi Tiết Logic & Bí Quyết Quay Video Đời Thường</title>
+<title>Phân Tích Chi Tiết Logic &amp; Bí Quyết Quay Video Đời Thường</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-main: #070a0f;
@@ -702,6 +700,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -743,18 +781,34 @@ video#mainPlayer {
 }
 
 </style>
+
+<style class="video-player-container-fix">
+.video-player-container { height: 75vh !important; max-height: none !important; aspect-ratio: auto !important; }
+.carousel-stack { overflow-y: scroll !important; scroll-snap-type: y mandatory !important; }
+.carousel-stack > * { flex: 0 0 100% !important; height: 100% !important; object-fit: contain !important; scroll-snap-align: start !important; border: none !important; }
+</style>
+        <style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+
+<style>.carousel-stack::-webkit-scrollbar { display: none; }</style>
+<div class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
+<iframe id="mainPlayer" src="https://www.youtube.com/embed/QaVf8oET0PA?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+<div class="carousel-nav-overlay" style="position:absolute; right:10px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:100;">
+    <button class="nav-btn" onclick="const stack = document.querySelector('.carousel-stack'); if(stack) stack.scrollBy({top: -stack.clientHeight, behavior: 'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;">▲</button>
+    <button class="nav-btn" onclick="const stack = document.querySelector('.carousel-stack'); if(stack) stack.scrollBy({top: stack.clientHeight, behavior: 'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;">▼</button>
+</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/carousel_slides/slide_01.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1eGTIdQjBYuwWvLlxQ8btCkwlKDo_6MUP/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -773,11 +827,18 @@ video#mainPlayer {
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">7 SHOTS &bull; 17.50s</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">7 SHOTS • 17.50s</span>
             </div>
-            <h1 class="report-title">Phân Tích Chi Tiết Logic & Bí Quyết Quay Video Đời Thường</h1>
+            <h1 class="report-title">Phân Tích Chi Tiết Logic &amp; Bí Quyết Quay Video Đời Thường</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/p/DWnsVqWj2XN/" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @jazziesillona (Jazzie Sillona)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@jazziesillona (Jazzie Sillona)</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@jazziesillona" onclick="handleCreatorClick(event, '@jazziesillona', 'Jazzie Sillona')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Jazzie Sillona trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Jazzie Sillona</strong>
+                        <span class="author-handle">(@jazziesillona)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
                 <span>Tệp: <strong>Everyday_Filming_Logic_Carousel - @jazziesillona.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -792,17 +853,17 @@ video#mainPlayer {
 <div class="overview-grid">
 <div class="overview-item">
 <b>1. THIẾT BỊ &amp; ỨNG DỤNG</b>
-            iPhone + Blackmagic Camera App<br/>
+            iPhone + Blackmagic Camera App<br>
             Khóa Manual White Balance &amp; Shutter
         </div>
 <div class="overview-item">
 <b>2. THÔNG SỐ CHUẨN</b>
-            4K • 24 FPS • Apple Log<br/>
+            4K • 24 FPS • Apple Log<br>
             Tỷ lệ màn hình 4:3 / 4:5 Nostalgia
         </div>
 <div class="overview-item">
 <b>3. COLOR GRADING</b>
-            Supercolors / Day Star LUTs<br/>
+            Supercolors / Day Star LUTs<br>
             Tone vàng ấm hoàng hôn &amp; Teal dịu
         </div>
 </div>
@@ -823,11 +884,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.5, 'SHOT 01')">
-                    <img src="carousel_slides/slide_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp" alt="SHOT 01" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_01_mid.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
                     <span class="thumb-time-badge">0.00s - 2.50s</span>
                 </div>
             </div>
@@ -845,11 +906,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(0.0, 3.0, 'Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)HOOK / CONCEPT')">
-<img alt="Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)HOOK / CONCEPT" class="shot-img" loading="lazy" src="carousel_slides/slide_01_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)HOOK / CONCEPT" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_01_mid.jpg', 'Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)HOOK / CONCEPT [0.0s - 3.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp', 'Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)HOOK / CONCEPT [0.0s - 3.0s]')">🔍</button>
 <span class="thumb-time-badge">0.00s - 3.00s</span>
 </div>
 </div>
@@ -865,15 +926,15 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_01_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 01: The Philosophy &amp; Hook (Khơi gợi cảm xúc)</span>
 <span class="slide-tag">HOOK / CONCEPT</span>
 </div>
 <div class="info-desc">
-<b>Thông điệp:</b> <i>"a simple guide on how to film &amp; edit the beauty in the ordinary"</i><br/>
-<b>Bố cục Đa tầng (Layering):</b> Tiền cảnh (lan can bến tàu + phao cứu sinh đỏ tạo điểm nhấn tương phản màu) → Trung cảnh (cậu bé đứng câu cá hướng ra biển) → Hậu cảnh (dãy núi phủ mây và đoàn tàu mờ ảo).<br/>
+<b>Thông điệp:</b> <i>"a simple guide on how to film &amp; edit the beauty in the ordinary"</i><br>
+<b>Bố cục Đa tầng (Layering):</b> Tiền cảnh (lan can bến tàu + phao cứu sinh đỏ tạo điểm nhấn tương phản màu) → Trung cảnh (cậu bé đứng câu cá hướng ra biển) → Hậu cảnh (dãy núi phủ mây và đoàn tàu mờ ảo).<br>
 <b>Bài học:</b> Hãy tìm những khoảnh khắc tĩnh lặng mang tính "thơ" trong đời sống thường nhật để mở đầu chuỗi video, định vị cảm xúc yên bình ngay giây đầu tiên.
         </div>
 </div>
@@ -895,11 +956,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.5, 5.0, 'SHOT 02')">
-                    <img src="carousel_slides/slide_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp" alt="SHOT 02" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_02_mid.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
                     <span class="thumb-time-badge">2.50s - 5.00s</span>
                 </div>
             </div>
@@ -917,11 +978,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(3.0, 6.0, 'Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)TECHNICAL SETUP')">
-<img alt="Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)TECHNICAL SETUP" class="shot-img" loading="lazy" src="carousel_slides/slide_02_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)TECHNICAL SETUP" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_02_mid.jpg', 'Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)TECHNICAL SETUP [3.0s - 6.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp', 'Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)TECHNICAL SETUP [3.0s - 6.0s]')">🔍</button>
 <span class="thumb-time-badge">3.00s - 6.00s</span>
 </div>
 </div>
@@ -937,15 +998,15 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_02_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 02: Camera Setup (Thiết lập phần cứng &amp; phần mềm)</span>
 <span class="slide-tag">TECHNICAL SETUP</span>
 </div>
 <div class="info-desc">
-<b>Thiết lập:</b> <span class="highlight-text">iPhone + Blackmagic Camera App | 4K 24fps | Apple Log</span><br/>
-<b>Tại sao cần Blackmagic App?</b> Tắt thuật toán làm nét quá đà (over-sharpening) của app mặc định, can thiệp Shutter Speed chuẩn 180 độ (1/48s), khóa lấy nét và ISO thấp nhất.<br/>
+<b>Thiết lập:</b> <span class="highlight-text">iPhone + Blackmagic Camera App | 4K 24fps | Apple Log</span><br>
+<b>Tại sao cần Blackmagic App?</b> Tắt thuật toán làm nét quá đà (over-sharpening) của app mặc định, can thiệp Shutter Speed chuẩn 180 độ (1/48s), khóa lấy nét và ISO thấp nhất.<br>
 <b>Tại sao chọn 24fps Apple Log?</b> Đem lại chuyển động mềm mại tự nhiên chuẩn rạp chiếu phim và giữ nguyên chi tiết vùng tối/sáng để kéo màu không bị bết vỡ.
         </div>
 </div>
@@ -967,11 +1028,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.0, 7.5, 'SHOT 03')">
-                    <img src="carousel_slides/slide_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp" alt="SHOT 03" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_03_mid.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
                     <span class="thumb-time-badge">5.00s - 7.50s</span>
                 </div>
             </div>
@@ -989,11 +1050,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(6.0, 9.0, 'Slide 03: Find Moments (Quan sát nhịp sống xung quanh)OBSERVATION')">
-<img alt="Slide 03: Find Moments (Quan sát nhịp sống xung quanh)OBSERVATION" class="shot-img" loading="lazy" src="carousel_slides/slide_03_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 03: Find Moments (Quan sát nhịp sống xung quanh)OBSERVATION" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_03_mid.jpg', 'Slide 03: Find Moments (Quan sát nhịp sống xung quanh)OBSERVATION [6.0s - 9.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp', 'Slide 03: Find Moments (Quan sát nhịp sống xung quanh)OBSERVATION [6.0s - 9.0s]')">🔍</button>
 <span class="thumb-time-badge">6.00s - 9.00s</span>
 </div>
 </div>
@@ -1009,15 +1070,15 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_03_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 03: Find Moments (Quan sát nhịp sống xung quanh)</span>
 <span class="slide-tag">OBSERVATION</span>
 </div>
 <div class="info-desc">
-<b>Thông điệp:</b> <i>"start noticing the life happening around"</i><br/>
-<b>Kỹ thuật tạo chiều sâu:</b> Đặt camera thấp sau các phương tiện đậu trước cửa tiệm (bicycles in foreground), làm mờ tiền cảnh để đóng khung nhân vật đạp xe lướt qua trung cảnh.<br/>
+<b>Thông điệp:</b> <i>"start noticing the life happening around"</i><br>
+<b>Kỹ thuật tạo chiều sâu:</b> Đặt camera thấp sau các phương tiện đậu trước cửa tiệm (bicycles in foreground), làm mờ tiền cảnh để đóng khung nhân vật đạp xe lướt qua trung cảnh.<br>
 <b>Bài học:</b> Đừng bắt chủ thể diễn. Hãy hòa mình vào không gian, tìm một góc nhìn có lớp tiền cảnh tự nhiên và bấm máy chờ khoảnh khắc xuất hiện.
         </div>
 </div>
@@ -1039,11 +1100,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.5, 10.0, 'SHOT 04')">
-                    <img src="carousel_slides/slide_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp" alt="SHOT 04" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_04_mid.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
                     <span class="thumb-time-badge">7.50s - 10.00s</span>
                 </div>
             </div>
@@ -1061,11 +1122,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(9.0, 12.0, 'Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)STILLNESS RULE')">
-<img alt="Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)STILLNESS RULE" class="shot-img" loading="lazy" src="carousel_slides/slide_04_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)STILLNESS RULE" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_04_mid.jpg', 'Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)STILLNESS RULE [9.0s - 12.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp', 'Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)STILLNESS RULE [9.0s - 12.0s]')">🔍</button>
 <span class="thumb-time-badge">9.00s - 12.00s</span>
 </div>
 </div>
@@ -1081,15 +1142,15 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_04_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 04: Stay Still &amp; Let it Breathe (Kỹ thuật Máy tĩnh 10 giây)</span>
 <span class="slide-tag">STILLNESS RULE</span>
 </div>
 <div class="info-desc">
-<b>Nguyên tắc vàng:</b> <span class="highlight-text">"10 seconds of stillness" (10 giây bất động máy)</span><br/>
-<b>Bố cục Hút sáng (Tunnel / Leading Lines):</b> Khung hình con hẻm tối với hai bức tường gạch kẹp hai bên tạo độ tương phản cao, dẫn mắt người xem thẳng ra khoảng trời rực sáng bến cảng nơi hai mẹ con nắm tay dắt nhau đi.<br/>
+<b>Nguyên tắc vàng:</b> <span class="highlight-text">"10 seconds of stillness" (10 giây bất động máy)</span><br>
+<b>Bố cục Hút sáng (Tunnel / Leading Lines):</b> Khung hình con hẻm tối với hai bức tường gạch kẹp hai bên tạo độ tương phản cao, dẫn mắt người xem thẳng ra khoảng trời rực sáng bến cảng nơi hai mẹ con nắm tay dắt nhau đi.<br>
 <b>Bài học:</b> Giữ cố định máy hoàn toàn, để chuyển động của con người và ánh sáng tự kể câu chuyện mà không cần di chuyển camera.
         </div>
 </div>
@@ -1111,11 +1172,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.0, 12.5, 'SHOT 05')">
-                    <img src="carousel_slides/slide_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp" alt="SHOT 05" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_05_mid.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
                     <span class="thumb-time-badge">10.00s - 12.50s</span>
                 </div>
             </div>
@@ -1133,11 +1194,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(12.0, 15.0, 'Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)COLOR SCIENCE')">
-<img alt="Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)COLOR SCIENCE" class="shot-img" loading="lazy" src="carousel_slides/slide_05_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)COLOR SCIENCE" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_05_mid.jpg', 'Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)COLOR SCIENCE [12.0s - 15.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp', 'Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)COLOR SCIENCE [12.0s - 15.0s]')">🔍</button>
 <span class="thumb-time-badge">12.00s - 15.00s</span>
 </div>
 </div>
@@ -1153,14 +1214,14 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_05_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 05: Color Grading for Emotion (Màu sắc tạo hoài niệm)</span>
 <span class="slide-tag">COLOR SCIENCE</span>
 </div>
 <div class="info-desc">
-<b>Kỹ thuật:</b> Sử dụng LUTs <i>Supercolors / Day Star</i> trên hệ file Log.<br/>
+<b>Kỹ thuật:</b> Sử dụng LUTs <i>Supercolors / Day Star</i> trên hệ file Log.<br>
 <b>Phân tích sắc độ:</b> Tăng tông vàng ấm (Amber/Warm Glow) ở dải Highlight/Midtone, giữ bóng đổ (Shadows) ngả xanh dịu (Soft Teal/Teal-Orange Harmony). Chi tiết lưới đánh cá bắt sáng lấp lánh trên mặt nước tạo cảm giác ấm áp, điện ảnh hoài niệm.
         </div>
 </div>
@@ -1182,11 +1243,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.5, 15.0, 'SHOT 06')">
-                    <img src="carousel_slides/slide_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp" alt="SHOT 06" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_06_mid.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
                     <span class="thumb-time-badge">12.50s - 15.00s</span>
                 </div>
             </div>
@@ -1204,11 +1265,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(15.0, 18.0, 'Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)POST-PRODUCTION')">
-<img alt="Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)POST-PRODUCTION" class="shot-img" loading="lazy" src="carousel_slides/slide_06_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)POST-PRODUCTION" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_06_mid.jpg', 'Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)POST-PRODUCTION [15.0s - 18.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp', 'Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)POST-PRODUCTION [15.0s - 18.0s]')">🔍</button>
 <span class="thumb-time-badge">15.00s - 18.00s</span>
 </div>
 </div>
@@ -1224,14 +1285,14 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_06_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 06: Reframing &amp; Composition (Hậu kỳ tái bố cục)</span>
 <span class="slide-tag">POST-PRODUCTION</span>
 </div>
 <div class="info-desc">
-<b>Chiến lược:</b> Quay 4K để có khoảng trống (room) điều chỉnh crop và tỉ lệ trong hậu kỳ.<br/>
+<b>Chiến lược:</b> Quay 4K để có khoảng trống (room) điều chỉnh crop và tỉ lệ trong hậu kỳ.<br>
 <b>Kỹ thuật Tiền cảnh chuyển động (Dynamic Occlusion):</b> Nhân vật cắt ngang cận cảnh làm lu mờ rồi mở ra nhóm bạn đang bước về phía hoàng hôn. Tạo cảm giác mắt nhìn chân thực của người đi đường.
         </div>
 </div>
@@ -1253,11 +1314,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.0, 17.5, 'SHOT 07')">
-                    <img src="carousel_slides/slide_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp" alt="SHOT 07" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_07_mid.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
                     <span class="thumb-time-badge">15.00s - 17.50s</span>
                 </div>
             </div>
@@ -1275,11 +1336,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(18.0, 21.0, 'Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)CORE MESSAGE')">
-<img alt="Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)CORE MESSAGE" class="shot-img" loading="lazy" src="carousel_slides/slide_07_mid.jpg"/>
+<img crossorigin="anonymous" alt="Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)CORE MESSAGE" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp">
 <div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
+<svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_07_mid.jpg', 'Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)CORE MESSAGE [18.0s - 21.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp', 'Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)CORE MESSAGE [18.0s - 21.0s]')">🔍</button>
 <span class="thumb-time-badge">18.00s - 21.00s</span>
 </div>
 </div>
@@ -1295,14 +1356,14 @@ video#mainPlayer {
 </div>
 <div class="props-list">
 <div class="raw-card-content">
-<div class="img-box"><img src="carousel_slides/slide_07_mid.jpg"/></div>
+<div class="img-box"><img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp"></div>
 <div class="info">
 <div class="slide-title">
 <span>Slide 07: The Mindset (Chiếc máy ảnh tốt nhất)</span>
 <span class="slide-tag">CORE MESSAGE</span>
 </div>
 <div class="info-desc">
-<b>Thông điệp kết:</b> <i>"The best camera is the one that's with you"</i><br/>
+<b>Thông điệp kết:</b> <i>"The best camera is the one that's with you"</i><br>
 <b>Bố cục Ngược sáng (Backlit Silhouette):</b> Khung hình bóng người giơ chiếc smartphone lên bắt trọn ánh hoàng hôn bến tàu. Khẳng định: Công cụ chỉ là phương tiện, ánh mắt quan sát và cảm xúc mới là thứ tạo nên thước phim đẹp.
         </div>
 </div>
@@ -1326,9 +1387,9 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 2.5, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp" alt="SHOT 01" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_01_mid.jpg', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp', 'SHOT 01 [0.0s - 2.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
                 <div class="grid-badge-bottom">0.0s - 2.5s</div>
             </div>
@@ -1337,9 +1398,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(2.5, 5.0, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp" alt="SHOT 02" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_02_mid.jpg', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp', 'SHOT 02 [2.5s - 5.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
                 <div class="grid-badge-bottom">2.5s - 5.0s</div>
             </div>
@@ -1348,9 +1409,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.0, 7.5, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp" alt="SHOT 03" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_03_mid.jpg', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp', 'SHOT 03 [5.0s - 7.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
                 <div class="grid-badge-bottom">5.0s - 7.5s</div>
             </div>
@@ -1359,9 +1420,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.5, 10.0, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp" alt="SHOT 04" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_04_mid.jpg', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp', 'SHOT 04 [7.5s - 10.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
                 <div class="grid-badge-bottom">7.5s - 10.0s</div>
             </div>
@@ -1370,9 +1431,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.0, 12.5, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp" alt="SHOT 05" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_05_mid.jpg', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp', 'SHOT 05 [10.0s - 12.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
                 <div class="grid-badge-bottom">10.0s - 12.5s</div>
             </div>
@@ -1381,9 +1442,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.5, 15.0, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp" alt="SHOT 06" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_06_mid.jpg', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp', 'SHOT 06 [12.5s - 15.0s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
                 <div class="grid-badge-bottom">12.5s - 15.0s</div>
             </div>
@@ -1392,9 +1453,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.0, 17.5, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="carousel_slides/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp" alt="SHOT 07" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('carousel_slides/slide_07_mid.jpg', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp', 'SHOT 07 [15.0s - 17.5s]')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
                 <div class="grid-badge-bottom">15.0s - 17.5s</div>
             </div>
@@ -1408,13 +1469,13 @@ video#mainPlayer {
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
             <div class="drawer-title">📑 MỤC LỤC PHÂN CẢNH (7)</div>
-            <button class="drawer-close-btn" onclick="toggleDrawer(false)">&times;</button>
+            <button class="drawer-close-btn" onclick="toggleDrawer(false)">×</button>
         </div>
         <div class="drawer-list">
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_01_mid.webp" alt="SHOT 01" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -1426,7 +1487,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.5, 5.0, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_02_mid.webp" alt="SHOT 02" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -1438,7 +1499,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 5.0, 7.5, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_03_mid.webp" alt="SHOT 03" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -1450,7 +1511,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 7.5, 10.0, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_04_mid.webp" alt="SHOT 04" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -1462,7 +1523,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 10.0, 12.5, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_05_mid.webp" alt="SHOT 05" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -1474,7 +1535,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 12.5, 15.0, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_06_mid.webp" alt="SHOT 06" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -1486,7 +1547,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 15.0, 17.5, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="carousel_slides/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40Jazzie_DWnsVqWj2XN_Carousel_Analysis/carousel_slides/slide_07_mid.webp" alt="SHOT 07" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -1500,63 +1561,52 @@ video#mainPlayer {
 </div>
 
 <div id="lightboxModal" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()">
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/carousel_slides/slide_01.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1OdaG7XZYuiDZHiQBJFjv_2UGX72heP3c";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
 
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
-
 function playShot(startTime, endTime, label) {
+
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        if (match) {
+            var index = parseInt(match[1]) - 1;
+            var children = stack.children;
+            if (index >= 0 && index < children.length) {
+                children[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+    
+
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
     if (tag) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
-    }
+    if(player) player.currentTime = startTime;
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
@@ -1641,6 +1691,22 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
+
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');
     if (!v) return;
@@ -1669,5 +1735,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</body>
-</html>
+
+</body></html>

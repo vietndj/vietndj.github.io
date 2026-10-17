@@ -896,7 +896,7 @@ body {
     }
     .left-player-col {
         width: 100%;
-        position: sticky;
+        position: relative;
         top: 57px;
         height: auto;
         padding: 16px;
@@ -917,6 +917,46 @@ body {
         gap: 8px;
     }
 }
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
@@ -959,6 +999,7 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
@@ -972,7 +1013,7 @@ body {
         <span class="nav-meta-title">4 Cú Máy Siêu Thị Bằng Giá Đỡ Điện Thoại Ulanzi MA38 & MT85 - @hena_film_vlog</span>
     </div>
     <div class="nav-right">
-        <a href="https://www.instagram.com/reels/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh" target="_blank" class="nav-btn primary">
+        <a href="https://www.instagram.com/p/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh" target="_blank" class="nav-btn primary">
             <span>📸 Instagram Gốc ↗</span>
         </a>
         <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
@@ -986,11 +1027,7 @@ body {
     <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
     <aside class="left-player-col">
         <div class="player-box">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/4%20Cu%20May%20Sieu%20Thi%20Bang%20Gia%20Do%20Ulanzi%20MA38%20MT85%20-%20@hena_film_vlog.mp4" type="video/mp4">
-                <source src="../videos/4 Cu May Sieu Thi Bang Gia Do Ulanzi MA38 MT85 - @hena_film_vlog.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/FKDuLkfKepY?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
 
         <!-- DIRECTOR CONTROLS -->
@@ -1019,8 +1056,15 @@ body {
         <div class="video-meta-card">
             <div class="video-meta-title">4 Cú Máy Siêu Thị Bằng Giá Đỡ Điện Thoại Ulanzi MA38 & MT85 - @hena_film_vlog</div>
             <div class="video-meta-author">
-                <span>Tác giả:</span>
-                <a href="https://www.instagram.com/reels/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh" target="_blank" class="author-link">핸아 | 집에서 팔리는 영상 만드는 법 (@hena_film_vlog)</a>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@hena_film_vlog" onclick="handleCreatorClick(event, '@hena_film_vlog', '핸아 | 집에서 팔리는 영상 만드는 법')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của 핸아 | 집에서 팔리는 영상 만드는 법 trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>핸아 | 집에서 팔리는 영상 만드는 법</strong>
+                        <span class="author-handle">(@hena_film_vlog)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+                <a href="https://www.instagram.com/p/Db-mZWEKECo/?stkn=bHhhcnlqeDJnNDZh" target="_blank" class="author-link">핸아 | 집에서 팔리는 영상 만드는 법 (@hena_film_vlog)</a>
             </div>
         </div>
 
@@ -1257,16 +1301,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_start.webp', 'Shot 01 • Đầu (0.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_start.webp" alt="Shot 01 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.jpg', 'Shot 01 • Giữa (0.95s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.webp', 'Shot 01 • Giữa (0.95s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.webp" alt="Shot 01 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (0.95s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_end.jpg', 'Shot 01 • Cuối (1.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_end.webp', 'Shot 01 • Cuối (1.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_end.webp" alt="Shot 01 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (1.90s)</span>
                 </div>
             </div>
@@ -1306,8 +1350,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Hard Cut dứt khoát sang góc cận phụ kiện Ulanzi Shot 02</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_01_to_02.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_01_to_02.webp" alt="Transition 1 to 2" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1326,16 +1370,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_start.jpg', 'Shot 02 • Đầu (1.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_start.webp', 'Shot 02 • Đầu (1.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_start.webp" alt="Shot 02 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (1.90s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_mid.jpg', 'Shot 02 • Giữa (2.61s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_mid.webp', 'Shot 02 • Giữa (2.61s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_mid.webp" alt="Shot 02 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (2.61s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_end.jpg', 'Shot 02 • Cuối (3.32s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_end.webp', 'Shot 02 • Cuối (3.32s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_end.webp" alt="Shot 02 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (3.32s)</span>
                 </div>
             </div>
@@ -1375,8 +1419,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Action Vector Match-Cut sang khung hình selfie thực tế Shot 03</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_02_to_03.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_02_to_03.webp" alt="Transition 2 to 3" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1395,16 +1439,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_start.jpg', 'Shot 03 • Đầu (3.32s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_start.webp', 'Shot 03 • Đầu (3.32s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_start.webp" alt="Shot 03 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (3.32s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.jpg', 'Shot 03 • Giữa (4.20s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_mid.webp', 'Shot 03 • Giữa (4.20s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_mid.webp" alt="Shot 03 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (4.20s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_end.jpg', 'Shot 03 • Cuối (5.07s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_end.webp', 'Shot 03 • Cuối (5.07s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_end.webp" alt="Shot 03 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (5.07s)</span>
                 </div>
             </div>
@@ -1444,8 +1488,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Hard Cut chuyển sang Kỹ thuật 2 Shot 04</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_03_to_04.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_03_to_04.webp" alt="Transition 3 to 4" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1464,16 +1508,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_start.jpg', 'Shot 04 • Đầu (5.07s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_start.webp', 'Shot 04 • Đầu (5.07s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_start.webp" alt="Shot 04 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (5.07s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_mid.jpg', 'Shot 04 • Giữa (5.77s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_mid.webp', 'Shot 04 • Giữa (5.77s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_mid.webp" alt="Shot 04 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (5.77s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_end.jpg', 'Shot 04 • Cuối (6.47s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_end.webp', 'Shot 04 • Cuối (6.47s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_end.webp" alt="Shot 04 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (6.47s)</span>
                 </div>
             </div>
@@ -1513,8 +1557,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • POV Forward Cut sang góc nhìn xe đẩy lướt đi Shot 05</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_04_to_05.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_04_to_05.webp" alt="Transition 4 to 5" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1533,16 +1577,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_start.jpg', 'Shot 05 • Đầu (6.47s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_start.webp', 'Shot 05 • Đầu (6.47s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_start.webp" alt="Shot 05 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (6.47s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_mid.jpg', 'Shot 05 • Giữa (8.25s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_mid.webp', 'Shot 05 • Giữa (8.25s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_mid.webp" alt="Shot 05 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (8.25s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_end.jpg', 'Shot 05 • Cuối (10.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_end.webp', 'Shot 05 • Cuối (10.03s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_end.webp" alt="Shot 05 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (10.03s)</span>
                 </div>
             </div>
@@ -1582,8 +1626,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Hard Cut dứt khoát sang Kỹ thuật 3 Shot 06</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_05_to_06.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_05_to_06.webp" alt="Transition 5 to 6" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1602,16 +1646,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_start.jpg', 'Shot 06 • Đầu (10.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_start.webp', 'Shot 06 • Đầu (10.03s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_start.webp" alt="Shot 06 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (10.03s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_mid.jpg', 'Shot 06 • Giữa (10.61s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_mid.webp', 'Shot 06 • Giữa (10.61s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_mid.webp" alt="Shot 06 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (10.61s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_end.jpg', 'Shot 06 • Cuối (11.20s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_end.webp', 'Shot 06 • Cuối (11.20s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_end.webp" alt="Shot 06 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (11.20s)</span>
                 </div>
             </div>
@@ -1651,8 +1695,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Action Continuity Cut sang góc mở cửa tủ Shot 07</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_06_to_07.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_06_to_07.webp" alt="Transition 6 to 7" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1671,16 +1715,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_start.jpg', 'Shot 07 • Đầu (11.20s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_start.webp', 'Shot 07 • Đầu (11.20s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_start.webp" alt="Shot 07 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (11.20s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_mid.jpg', 'Shot 07 • Giữa (12.25s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_mid.webp', 'Shot 07 • Giữa (12.25s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_mid.webp" alt="Shot 07 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (12.25s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_end.jpg', 'Shot 07 • Cuối (13.30s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_end.webp', 'Shot 07 • Cuối (13.30s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_end.webp" alt="Shot 07 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (13.30s)</span>
                 </div>
             </div>
@@ -1720,8 +1764,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 08 • Hard Cut chuyển tiếp sang Kỹ thuật 4 Shot 08</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_07_to_08.jpg?v=2', 'Chuyển cảnh Shot 07 sang Shot 08')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_07_to_08.jpg?v=2" alt="Transition 7 to 8" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_07_to_08.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_07_to_08.webp" alt="Transition 7 to 8" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1740,16 +1784,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_start.jpg', 'Shot 08 • Đầu (13.30s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_start.webp', 'Shot 08 • Đầu (13.30s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_start.webp" alt="Shot 08 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (13.30s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_mid.jpg', 'Shot 08 • Giữa (14.10s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_mid.webp', 'Shot 08 • Giữa (14.10s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_mid.webp" alt="Shot 08 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (14.10s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_end.jpg', 'Shot 08 • Cuối (14.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_end.webp', 'Shot 08 • Cuối (14.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_end.webp" alt="Shot 08 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (14.90s)</span>
                 </div>
             </div>
@@ -1789,8 +1833,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 09 • Ground-to-Motion Match Cut sang cú lướt xe Shot 09</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_08_to_09.jpg?v=2', 'Chuyển cảnh Shot 08 sang Shot 09')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_08_to_09.jpg?v=2" alt="Transition 8 to 9" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_08_to_09.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_08_to_09.webp" alt="Transition 8 to 9" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1809,16 +1853,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_start.jpg', 'Shot 09 • Đầu (14.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_start.webp', 'Shot 09 • Đầu (14.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_start.webp" alt="Shot 09 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (14.90s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_mid.jpg', 'Shot 09 • Giữa (15.91s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_mid.webp', 'Shot 09 • Giữa (15.91s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_mid.webp" alt="Shot 09 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (15.91s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_end.jpg', 'Shot 09 • Cuối (16.93s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_end.webp', 'Shot 09 • Cuối (16.93s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_end.webp" alt="Shot 09 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (16.93s)</span>
                 </div>
             </div>
@@ -1858,8 +1902,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 10 • Motion Whip Cut sang màn hình kết bài Shot 10</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_09_to_10.jpg?v=2', 'Chuyển cảnh Shot 09 sang Shot 10')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_09_to_10.jpg?v=2" alt="Transition 9 to 10" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_09_to_10.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/transitions/trans_09_to_10.webp" alt="Transition 9 to 10" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1878,16 +1922,16 @@ function copyMegaPrompt() {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_start.jpg', 'Shot 10 • Đầu (16.93s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_start.webp', 'Shot 10 • Đầu (16.93s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_start.webp" alt="Shot 10 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (16.93s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_mid.jpg', 'Shot 10 • Giữa (18.12s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_mid.webp', 'Shot 10 • Giữa (18.12s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_mid.webp" alt="Shot 10 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (18.12s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_end.jpg', 'Shot 10 • Cuối (19.30s)')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_end.webp', 'Shot 10 • Cuối (19.30s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_end.webp" alt="Shot 10 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (19.30s)</span>
                 </div>
             </div>
@@ -1927,8 +1971,8 @@ function copyMegaPrompt() {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_10_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
-                    <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/transitions/trans_10_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.webp" alt="Loop Transition" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1942,7 +1986,7 @@ function copyMegaPrompt() {
             
         <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 1.9)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_01_mid.webp" alt="Shot 01" loading="lazy">
                 <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
             </div>
             <div class="grid-card-body">Hook Đặt Câu Hỏi Ngược '마트 브이로그 이렇게 찍는다고?' Đánh Vào Tâm Lý Tò Mò Của Khán Giả Đang Bế Tắc Ý Tưởng Quay Siêu Thị</div>
@@ -1951,7 +1995,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(2, 1.9, 3.32)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_02_mid.webp" alt="Shot 02" loading="lazy">
                 <span class="grid-thumb-badge">Shot 02 • 1.90s</span>
             </div>
             <div class="grid-card-body">Cận Cảnh Gập Khớp Tay Cầm Ulanzi MA38 (Gear Demonstration Close-Up) Trực Quan Hóa Thao Tác Biến Giá Đỡ Thành Gậy Selfie Siêu Gọn</div>
@@ -1960,7 +2004,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(3, 3.32, 5.07)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_03_mid.webp" alt="Shot 03" loading="lazy">
                 <span class="grid-thumb-badge">Shot 03 • 3.32s</span>
             </div>
             <div class="grid-card-body">Cú Máy 0.5x Nâng Cao Hơn Tầm Mắt (High-Angle 0.5x Ultra-Wide) Mở Rộng Biên Độ Không Gian Quầy Hàng ZERO Vừa Thấy Mặt Vừa Bao Quát Tiệm</div>
@@ -1969,7 +2013,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(4, 5.07, 6.47)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_04_mid.webp" alt="Shot 04" loading="lazy">
                 <span class="grid-thumb-badge">Shot 04 • 5.07s</span>
             </div>
             <div class="grid-card-body">Khóa Ngàm Kẹp MA38 Trực Tiếp Lên Tay Cầm Xe Đẩy (Cart Handle Mounting) Biến Xe Mua Sắm Thành Hệ Thống Dolly Trượt Mượt Mà</div>
@@ -1978,7 +2022,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(5, 6.47, 10.03)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_05_mid.webp" alt="Shot 05" loading="lazy">
                 <span class="grid-thumb-badge">Shot 05 • 6.47s</span>
             </div>
             <div class="grid-card-body">Góc Nhìn Người Mua Sắm (Cart POV & Dynamic Pick-up) Nhập Vai Khán Giả Vào Hành Động Lướt Xe Chọn Cam Quýt Jeju Tươi Ngon</div>
@@ -1987,7 +2031,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(6, 10.03, 11.2)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_06_mid.webp" alt="Shot 06" loading="lazy">
                 <span class="grid-thumb-badge">Shot 06 • 10.03s</span>
             </div>
             <div class="grid-card-body">Hít Nam Châm Cực Mạnh Lên Vách Tủ Đông Kim Loại (Magnetic Surface Snap) Khai Phóng Góc Đặt Máy Hands-Free Không Tưởng</div>
@@ -1996,7 +2040,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(7, 11.2, 13.3)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_07_mid.webp" alt="Shot 07" loading="lazy">
                 <span class="grid-thumb-badge">Shot 07 • 11.20s</span>
             </div>
             <div class="grid-card-body">Góc Máy Rảnh Tay Hoàn Toàn (Hands-Free Magnetic Perspective) Bắt Trọn Thao Tác Hai Tay Mở Cửa Kính Tủ Đông Nhấc Khay Thịt Bò Mỹ</div>
@@ -2005,7 +2049,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(8, 13.3, 14.9)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_08_mid.webp" alt="Shot 08" loading="lazy">
                 <span class="grid-thumb-badge">Shot 08 • 13.30s</span>
             </div>
             <div class="grid-card-body">Đặt Tripod Mini Ulanzi MT85 Sát Sàn Gạch (Low Floor Grounding) Thiết Lập Cú Đón Hướng Tới Với Độ Vững Chãi Tuyệt Đối</div>
@@ -2014,7 +2058,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(9, 14.9, 16.93)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_09_mid.webp" alt="Shot 09" loading="lazy">
                 <span class="grid-thumb-badge">Shot 09 • 14.90s</span>
             </div>
             <div class="grid-card-body">Cú Máy Góc Thấp Hướng Ngước (Low-Angle Hero Pass-By) Bắt Trọn Bánh Xe Và Dáng Vóc Đầy Năng Động Lướt Qua Ống Kính</div>
@@ -2023,7 +2067,7 @@ function copyMegaPrompt() {
 
         <div class="grid-shot-card" onclick="jumpToShot(10, 16.93, 19.3)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/shot_10_mid.webp" alt="Shot 10" loading="lazy">
                 <span class="grid-thumb-badge">Shot 10 • 16.93s</span>
             </div>
             <div class="grid-card-body">Title Card Định Danh Thương Hiệu [핸아필름] hena_film_vlog Và Kêu Gọi Lưu Lại Mẹo Quay Đời Thường Thành Phim Điện Ảnh</div>
@@ -2046,7 +2090,7 @@ function copyMegaPrompt() {
                 <a href="https://drive.google.com/open?id=1Vs39vW4CcrmGQYDf6GGW3NnfMCyYmo12" target="_blank" class="footer-link-card">
                     <span>📁 Mở Thư Mục Google Drive ↗</span>
                 </a>
-                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85" class="footer-link-card">
+                <a href="#" style="display:none;" class="footer-link-card">
                     <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
                 </a>
             </div>
@@ -2058,7 +2102,7 @@ function copyMegaPrompt() {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoomed Keyframe">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
@@ -2159,6 +2203,22 @@ function closeLightbox() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');
