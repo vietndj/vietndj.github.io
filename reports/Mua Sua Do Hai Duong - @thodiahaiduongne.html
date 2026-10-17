@@ -200,7 +200,7 @@
             <div class="lg:col-span-5 lg:sticky lg:top-24 space-y-4">
                 <div class="rounded-2xl glass-panel p-4 border border-white/10 shadow-2xl overflow-hidden">
                     <div class="relative aspect-[9/16] bg-black rounded-xl overflow-hidden border border-white/10 group">
-                        <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+                        <div id="mainPlayer" data-yt-config="enablejsapi=1" style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
                         
                         <!-- Overlay Time Badge -->
                         <div class="absolute top-3 left-3 px-2.5 py-1 rounded-lg bg-black/70 backdrop-blur-md border border-white/10 text-[11px] font-mono text-red-400 font-bold flex items-center gap-1.5">
@@ -1889,5 +1889,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</body>
+<script>function playShot(s){var p=document.getElementById('mainPlayer');if(p&&p.tagName==='IFRAME'&&p.contentWindow){p.contentWindow.postMessage(JSON.stringify({event:'command',func:'seekTo',args:[s,true]}),'*');}}</script></body>
 </html>

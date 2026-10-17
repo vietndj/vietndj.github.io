@@ -2651,5 +2651,5 @@ document.addEventListener('keydown', (e) => {
 
 </script>
 
-</body>
+<script>function playShot(s){var p=document.getElementById('mainPlayer');if(p&&p.tagName==='IFRAME'&&p.contentWindow){p.contentWindow.postMessage(JSON.stringify({event:'command',func:'seekTo',args:[s,true]}),'*');}}</script></body>
 </html>

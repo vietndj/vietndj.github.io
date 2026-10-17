@@ -555,7 +555,7 @@ Video thương mại phong cách sống (Lifestyle Commercial Reel) mẫu mực 
 const player = document.getElementById('mainPlayer');
 let endTimeLimit = null;
 
-function playShot(st, et, label) {
+/* IFRAME supported */ function playShot(st, et, label) {
     endTimeLimit = et;
     const tag = document.getElementById('shotStatusTag');
     if (tag) tag.innerText = '🎬 ' + label + ': [' + st.toFixed(2) + 's - ' + et.toFixed(2) + 's]';

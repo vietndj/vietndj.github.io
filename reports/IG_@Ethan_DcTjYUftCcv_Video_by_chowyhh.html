@@ -1448,7 +1448,7 @@ const player = document.getElementById('mainPlayer');
 const statusTag = document.getElementById('shotStatusTag');
 let activeLoop = null;
 
-function playShot(start, end, label) {
+/* IFRAME supported */ function playShot(start, end, label) {
     if (activeLoop) clearInterval(activeLoop);
     player.currentTime = start;
     player.play();

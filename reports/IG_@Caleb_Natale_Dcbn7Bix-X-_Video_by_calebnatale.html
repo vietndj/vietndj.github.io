@@ -984,7 +984,7 @@ body {
     <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
     <aside class="left-player-col">
         <div class="player-box" style="position: relative;">
-            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+            <div id="mainPlayer" data-yt-config="enablejsapi=1" style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
             <button class="player-fs-btn" onclick="togglePlayerFullscreen()" title="Toàn màn hình (Phím F hoặc nhấp đúp)">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M7 14H5v5h5v-2H7v-3zm-2-4h2V7h3V5H5v5zm12 7h-3v2h5v-5h-2v3zM14 5v2h3v3h2V5h-5z"/></svg>
                 <span>Toàn màn hình</span>
@@ -1900,5 +1900,5 @@ function togglePlayerFullscreen() {
 }
 </script>
 
-</body>
+<script>function playShot(s){var p=document.getElementById('mainPlayer');if(p&&p.tagName==='IFRAME'&&p.contentWindow){p.contentWindow.postMessage(JSON.stringify({event:'command',func:'seekTo',args:[s,true]}),'*');}}</script></body>
 </html>

@@ -1761,7 +1761,7 @@
 const player = document.getElementById('mainPlayer');
 let shotInterval = null;
 
-function playShot(start, end, label) {
+/* IFRAME supported */ function playShot(start, end, label) {
     if (shotInterval) clearInterval(shotInterval);
     player.currentTime = start;
     player.play();

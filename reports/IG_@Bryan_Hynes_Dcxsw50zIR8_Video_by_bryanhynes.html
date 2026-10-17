@@ -2005,10 +2005,16 @@ function seekTo(time) {
     }
 }
 
+function playShot(start, end, sid) { return playShotRange(start, end, sid); }
 function playShotRange(start, end, shotId) {
     shotRange = { start: start, end: end, id: shotId };
-    player.currentTime = start;
-    player.play();
+    if (player && player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [start, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player) {
+        player.currentTime = start;
+        player.play();
+    }
 }
 
 function stepFrame(dir) {
