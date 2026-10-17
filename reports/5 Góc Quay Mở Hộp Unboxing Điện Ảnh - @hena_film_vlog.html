@@ -216,6 +216,46 @@ video#main-player { width: 100%; height: 100%; object-fit: contain; }
 .lightbox-img-wrap img { max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 8px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); }
 .lightbox-caption { margin-top: 14px; color: #e2e8f0; font-size: 13.5px; text-align: center; max-width: 760px; }
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -257,6 +297,7 @@ video#main-player { width: 100%; height: 100%; object-fit: contain; }
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
@@ -269,9 +310,7 @@ video#main-player { width: 100%; height: 100%; object-fit: contain; }
                 <span style="color: #94a3b8; font-size: 11px;">26.93s</span>
             </div>
             <div class="video-player-wrap">
-                <video id="main-player" playsinline preload="metadata">
-                    <source src="https://media.fedu.vn/videos/DY_0KNxvNJa.mp4" type="video/mp4">
-                </video>
+                <iframe id="mainPlayer" src="https://www.youtube.com/embed/M9sFLuxvR4U?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
             </div>
             <div class="director-controls">
                 <div class="control-row">
@@ -310,8 +349,15 @@ video#main-player { width: 100%; height: 100%; object-fit: contain; }
             <h1 class="hero-title">5 Bố Cục Mở Hộp Unboxing Chuẩn Điện Ảnh</h1>
             <div class="meta-tags-flex">
                 <div class="author-ig-badge">
-                    <span>Tác giả: @hena_film_vlog</span>
-                    <a href="https://www.instagram.com/reels/DY_0KNxvNJa/" target="_blank" rel="noopener noreferrer" class="ig-btn">📸 Xem Instagram Gốc ↗</a>
+                    <span>Tác giả: 
+                    <a href="../index.html?creator=@hena_film_vlog" onclick="handleCreatorClick(event, '@hena_film_vlog', 'Hena_Film_Vlog')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Hena_Film_Vlog trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Hena_Film_Vlog</strong>
+                        <span class="author-handle">(@hena_film_vlog)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+                    <a href="https://www.instagram.com/p/DY_0KNxvNJa/" target="_blank" rel="noopener noreferrer" class="ig-btn">📸 Xem Instagram Gốc ↗</a>
                 </div>
                 <span class="meta-pill">🎬 26 Phân Cảnh</span>
                 <span class="meta-pill">⏱ 26.93s</span>
@@ -360,7 +406,7 @@ video#main-player { width: 100%; height: 100%; object-fit: contain; }
 <div class="lightbox-modal" id="lightbox-modal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
-        <img id="lightbox-img" src="" alt="Zoom Keyframe" />
+        <img crossorigin="anonymous" id="lightbox-img" src="" alt="Zoom Keyframe" />
     </div>
     <div class="lightbox-caption" id="lightbox-caption"></div>
 </div>
@@ -403,7 +449,7 @@ function renderUI() {
         <div class="shot-card" id="shot-card-${sid}">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(${s.st}, ${s.et}, '${stTitle}')">
-                    <img id="thumb-img-${sid}" src="${midUrl}" alt="${stTitle}" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" id="thumb-img-${sid}" src="${midUrl}" alt="${stTitle}" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -463,7 +509,7 @@ function renderUI() {
         gHtml += `
         <div class="grid-card" onclick="playShot(${s.st}, ${s.et}, '${stTitle}')">
             <div class="grid-thumb">
-                <img src="${midUrl}" alt="${stTitle}" loading="lazy" />
+                <img crossorigin="anonymous" src="${midUrl}" alt="${stTitle}" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('${midUrl}', '${stTitle} [${s.st.toFixed(2)}s - ${s.et.toFixed(2)}s] • ${s.hl}')">🔍</button>
                 <div class="grid-badge-top">SHOT ${sidStr}</div>
@@ -476,7 +522,7 @@ function renderUI() {
         dHtml += `
         <div class="drawer-item" onclick="jumpToShot(${sid}, ${s.st}, ${s.et}, '${stTitle}')">
             <div class="drawer-thumb">
-                <img src="${midUrl}" alt="${stTitle}" loading="lazy" />
+                <img crossorigin="anonymous" src="${midUrl}" alt="${stTitle}" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT ${sidStr}</div>
@@ -628,6 +674,22 @@ document.addEventListener('keydown', (e) => {
         closeDrawer();
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

@@ -873,15 +873,16 @@ grid-template-columns: 1fr;
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 <header class="top-nav">
-<a href="https://ytuong.fedu.vn" class="nav-brand">
-<span class="nav-badge">FEDU DIRECTOR</span>
+<a href="https://fedu.vn/scene.html" class="nav-brand">
+<span class="nav-badge">VIDEO DIRECTOR</span>
 <span>AI Scene Analysis</span>
 </a>
 <div class="nav-actions">
-<a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">💡 Kho Ý Tưởng ↗</a>
+<a href="https://fedu.vn/scene.html" class="nav-btn">🌐 Cổng Phân Cảnh</a>
 <a href="https://www.instagram.com/p/Dc0zzrWj8Vu/" target="_blank" class="nav-btn" style="color:var(--accent-rose); border-color:rgba(244,63,94,0.4);">📸 Bài Đăng Instagram ↗</a>
 </div>
 </header>
@@ -889,10 +890,7 @@ grid-template-columns: 1fr;
 <!-- Left Sticky Video Column -->
 <aside class="player-column">
 <div class="video-frame-box">
-<video id="mainPlayer" controls playsinline preload="auto">
-<source src="https://media.fedu.vn/videos/Dc0zzrWj8Vu.mp4" type="video/mp4">
-Trình duyệt không hỗ trợ thẻ video HTML5.
-</video>
+<iframe id="mainPlayer" src="https://www.youtube.com/embed/cYftSXcvBVo?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
 </div>
 <div class="player-controls">
 <div class="player-status-tag" id="shotStatusTag">🎬 Master Reel: Toàn Bộ 7 Phân Cảnh (34.52s)</div>
@@ -968,22 +966,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_start.jpg', 'Shot #01 Start Frame (0.00s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_start.jpg" alt="Shot #01 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_start.jpg" alt="Shot #01 Start" loading="lazy" />
 <span class="kf-badge start">START (0.00s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_mid.jpg', 'Shot #01 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_mid.jpg" alt="Shot #01 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_mid.jpg" alt="Shot #01 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_end.jpg', 'Shot #01 End Frame (2.62s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_end.jpg" alt="Shot #01 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_end.jpg" alt="Shot #01 End" loading="lazy" />
 <span class="kf-badge end">END (2.62s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #01 ➔ SHOT #02 (Match Cut / Direct Cut theo nhịp gõ phím)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_01_to_02.jpg', 'So sánh chuyển cảnh Shot #01 sang #02')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_01_to_02.jpg" alt="Chuyển cảnh #01" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_01_to_02.jpg" alt="Chuyển cảnh #01" loading="lazy" />
 <span class="kf-badge end">Shot #01 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #02 Start</span>
 </div>
@@ -1035,22 +1033,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_start.jpg', 'Shot #02 Start Frame (2.62s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_start.jpg" alt="Shot #02 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_start.jpg" alt="Shot #02 Start" loading="lazy" />
 <span class="kf-badge start">START (2.62s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_mid.jpg', 'Shot #02 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_mid.jpg" alt="Shot #02 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_mid.jpg" alt="Shot #02 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_end.jpg', 'Shot #02 End Frame (7.84s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_end.jpg" alt="Shot #02 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_end.jpg" alt="Shot #02 End" loading="lazy" />
 <span class="kf-badge end">END (7.84s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #02 ➔ SHOT #03 (Hard Cut đồng bộ nhịp chuyển slide)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_02_to_03.jpg', 'So sánh chuyển cảnh Shot #02 sang #03')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_02_to_03.jpg" alt="Chuyển cảnh #02" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_02_to_03.jpg" alt="Chuyển cảnh #02" loading="lazy" />
 <span class="kf-badge end">Shot #02 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #03 Start</span>
 </div>
@@ -1102,22 +1100,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_start.jpg', 'Shot #03 Start Frame (7.84s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_start.jpg" alt="Shot #03 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_start.jpg" alt="Shot #03 Start" loading="lazy" />
 <span class="kf-badge start">START (7.84s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_mid.jpg', 'Shot #03 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_mid.jpg" alt="Shot #03 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_mid.jpg" alt="Shot #03 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_end.jpg', 'Shot #03 End Frame (12.91s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_end.jpg" alt="Shot #03 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_end.jpg" alt="Shot #03 End" loading="lazy" />
 <span class="kf-badge end">END (12.91s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #03 ➔ SHOT #04 (Direct Cut theo nhịp gõ trống lân)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_03_to_04.jpg', 'So sánh chuyển cảnh Shot #03 sang #04')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_03_to_04.jpg" alt="Chuyển cảnh #03" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_03_to_04.jpg" alt="Chuyển cảnh #03" loading="lazy" />
 <span class="kf-badge end">Shot #03 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #04 Start</span>
 </div>
@@ -1169,22 +1167,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_start.jpg', 'Shot #04 Start Frame (12.91s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_start.jpg" alt="Shot #04 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_start.jpg" alt="Shot #04 Start" loading="lazy" />
 <span class="kf-badge start">START (12.91s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_mid.jpg', 'Shot #04 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_mid.jpg" alt="Shot #04 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_mid.jpg" alt="Shot #04 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_end.jpg', 'Shot #04 End Frame (17.28s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_end.jpg" alt="Shot #04 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_end.jpg" alt="Shot #04 End" loading="lazy" />
 <span class="kf-badge end">END (17.28s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #04 ➔ SHOT #05 (Match Cut nhịp chuyển động nước sang lụa)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_04_to_05.jpg', 'So sánh chuyển cảnh Shot #04 sang #05')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_04_to_05.jpg" alt="Chuyển cảnh #04" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_04_to_05.jpg" alt="Chuyển cảnh #04" loading="lazy" />
 <span class="kf-badge end">Shot #04 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #05 Start</span>
 </div>
@@ -1236,22 +1234,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_start.jpg', 'Shot #05 Start Frame (17.28s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_start.jpg" alt="Shot #05 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_start.jpg" alt="Shot #05 Start" loading="lazy" />
 <span class="kf-badge start">START (17.28s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_mid.jpg', 'Shot #05 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_mid.jpg" alt="Shot #05 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_mid.jpg" alt="Shot #05 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_end.jpg', 'Shot #05 End Frame (22.25s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_end.jpg" alt="Shot #05 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_end.jpg" alt="Shot #05 End" loading="lazy" />
 <span class="kf-badge end">END (22.25s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #05 ➔ SHOT #06 (Cut chuyển tiếp sang cảnh tốc độ cao)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_05_to_06.jpg', 'So sánh chuyển cảnh Shot #05 sang #06')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_05_to_06.jpg" alt="Chuyển cảnh #05" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_05_to_06.jpg" alt="Chuyển cảnh #05" loading="lazy" />
 <span class="kf-badge end">Shot #05 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #06 Start</span>
 </div>
@@ -1303,22 +1301,22 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_start.jpg', 'Shot #06 Start Frame (22.25s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_start.jpg" alt="Shot #06 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_start.jpg" alt="Shot #06 Start" loading="lazy" />
 <span class="kf-badge start">START (22.25s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_mid.jpg', 'Shot #06 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_mid.jpg" alt="Shot #06 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_mid.jpg" alt="Shot #06 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_end.jpg', 'Shot #06 End Frame (29.55s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_end.jpg" alt="Shot #06 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_end.jpg" alt="Shot #06 End" loading="lazy" />
 <span class="kf-badge end">END (29.55s)</span>
 </div>
 </div>
 <div class="trans-preview-box">
 <div class="trans-title">🔄 CHUYỂN CẢNH: SHOT #06 ➔ SHOT #07 (Cut chuyển cảnh đối nghịch sang cảnh tĩnh cung đình)</div>
 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_06_to_07.jpg', 'So sánh chuyển cảnh Shot #06 sang #07')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_06_to_07.jpg" alt="Chuyển cảnh #06" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/trans_06_to_07.jpg" alt="Chuyển cảnh #06" loading="lazy" />
 <span class="kf-badge end">Shot #06 End</span>
 <span class="kf-badge start" style="left:auto; right:6px;">Shot #07 Start</span>
 </div>
@@ -1370,15 +1368,15 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="keyframes-grid">
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_start.jpg', 'Shot #07 Start Frame (29.55s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_start.jpg" alt="Shot #07 Start" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_start.jpg" alt="Shot #07 Start" loading="lazy" />
 <span class="kf-badge start">START (29.55s)</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_mid.jpg', 'Shot #07 Mid Keyframe')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_mid.jpg" alt="Shot #07 Mid" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_mid.jpg" alt="Shot #07 Mid" loading="lazy" />
 <span class="kf-badge mid">MID KEYFRAME</span>
 </div>
 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_end.jpg', 'Shot #07 End Frame (34.52s)')">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_end.jpg" alt="Shot #07 End" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_end.jpg" alt="Shot #07 End" loading="lazy" />
 <span class="kf-badge end">END (34.52s)</span>
 </div>
 </div>
@@ -1417,7 +1415,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 <div class="grid-container" id="gridView" style="display:none;">
 <div class="grid-shot-card" onclick="scrollToShot(1)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_mid.jpg" alt="Shot #01" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_01_mid.jpg" alt="Shot #01" loading="lazy" />
 <span class="grid-idx">#01</span>
 <span class="grid-dur">2.62s</span>
 </div>
@@ -1431,7 +1429,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(2)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_mid.jpg" alt="Shot #02" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_02_mid.jpg" alt="Shot #02" loading="lazy" />
 <span class="grid-idx">#02</span>
 <span class="grid-dur">5.22s</span>
 </div>
@@ -1445,7 +1443,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(3)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_mid.jpg" alt="Shot #03" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_03_mid.jpg" alt="Shot #03" loading="lazy" />
 <span class="grid-idx">#03</span>
 <span class="grid-dur">5.07s</span>
 </div>
@@ -1459,7 +1457,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(4)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_mid.jpg" alt="Shot #04" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_04_mid.jpg" alt="Shot #04" loading="lazy" />
 <span class="grid-idx">#04</span>
 <span class="grid-dur">4.37s</span>
 </div>
@@ -1473,7 +1471,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(5)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_mid.jpg" alt="Shot #05" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_05_mid.jpg" alt="Shot #05" loading="lazy" />
 <span class="grid-idx">#05</span>
 <span class="grid-dur">4.97s</span>
 </div>
@@ -1487,7 +1485,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(6)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_mid.jpg" alt="Shot #06" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_06_mid.jpg" alt="Shot #06" loading="lazy" />
 <span class="grid-idx">#06</span>
 <span class="grid-dur">7.30s</span>
 </div>
@@ -1501,7 +1499,7 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 </div>
 <div class="grid-shot-card" onclick="scrollToShot(7)">
 <div class="grid-thumb">
-<img src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_mid.jpg" alt="Shot #07" loading="lazy" />
+<img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@beixin_Dc0zzrWj8Vu_Sony_Kando_2026_Camera_Gear/shot_07_mid.jpg" alt="Shot #07" loading="lazy" />
 <span class="grid-idx">#07</span>
 <span class="grid-dur">4.97s</span>
 </div>
@@ -1600,13 +1598,18 @@ Bộ tác phẩm Carousel Album 7 phân cảnh của đạo diễn hình ảnh <
 <!-- Lightbox Modal -->
 <div id="lightboxModal" onclick="closeLightbox()">
 <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-<img id="lightboxImg" src="" alt="Zoom Keyframe" onclick="event.stopPropagation()">
+<img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoom Keyframe" onclick="event.stopPropagation()">
 <div id="lightboxCaption"></div>
 </div>
 <script>
 const player = document.getElementById('mainPlayer');
 let currentEndTime = null;
 function playShot(startTime, endTime, label) {
+    const _ytp = document.getElementById('mainPlayer');
+    if (_ytp && _ytp.tagName === 'IFRAME' && _ytp.contentWindow) {
+        _ytp.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        _ytp.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    }
 currentEndTime = (typeof endTime === 'number') ? endTime : null;
 const tag = document.getElementById('shotStatusTag');
 if (tag) {
@@ -1614,11 +1617,11 @@ const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
 tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
 }
 player.currentTime = startTime;
-const p = player.play();
+const p = (player && player.play) ? player.play() : undefined;
 if (p !== undefined) {
 p.catch(() => {
 player.muted = true;
-player.play().catch(e => console.log('Autoplay muted'));
+if (player && player.play) player.play().catch(e => console.log('Autoplay muted'));
 });
 }
 document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));

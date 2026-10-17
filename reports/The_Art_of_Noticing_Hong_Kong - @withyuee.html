@@ -702,6 +702,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -743,18 +783,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -777,7 +818,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">Báo Cáo Phân Tích Toàn Diện: The Art of Noticing - Hong Kong</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/p/DYKO1v3g3U2/" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @withyuee"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@withyuee</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@withyuee" onclick="handleCreatorClick(event, '@withyuee', 'Withyuee')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Withyuee trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Withyuee</strong>
+                        <span class="author-handle">(@withyuee)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span></a></span>
                 <span>Tệp: <strong>The_Art_of_Noticing_Hong_Kong - @withyuee.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -804,11 +852,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.07, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg', 'SHOT 01 [0.0s - 2.07s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg">🔍</button>
                     <span class="thumb-time-badge">0.00s - 2.07s</span>
                 </div>
             </div>
@@ -826,11 +874,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.07, 'SHOT 01')">
-<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 01" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg', 'SHOT 01 [0.0s - 2.07s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg">🔍</button>
 <span class="thumb-time-badge">0.00s - 2.07s</span>
 </div>
 </div>
@@ -848,7 +896,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 01" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg"/>
+<img crossorigin="anonymous" alt="Shot 01" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg"/>
 <span class="shot-badge">SHOT 01</span>
 <span class="shot-time">2.07s</span>
 </div>
@@ -884,11 +932,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.07, 4.03, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg', 'SHOT 02 [2.07s - 4.03s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg">🔍</button>
                     <span class="thumb-time-badge">2.07s - 4.03s</span>
                 </div>
             </div>
@@ -906,11 +954,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(2.07, 4.03, 'SHOT 02')">
-<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 02" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg', 'SHOT 02 [2.07s - 4.03s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg">🔍</button>
 <span class="thumb-time-badge">2.07s - 4.03s</span>
 </div>
 </div>
@@ -928,7 +976,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 02" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg"/>
+<img crossorigin="anonymous" alt="Shot 02" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg"/>
 <span class="shot-badge">SHOT 02</span>
 <span class="shot-time">1.97s</span>
 </div>
@@ -964,11 +1012,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.03, 5.87, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg', 'SHOT 03 [4.03s - 5.87s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg">🔍</button>
                     <span class="thumb-time-badge">4.03s - 5.87s</span>
                 </div>
             </div>
@@ -986,11 +1034,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(4.03, 5.87, 'SHOT 03')">
-<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 03" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg', 'SHOT 03 [4.03s - 5.87s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg">🔍</button>
 <span class="thumb-time-badge">4.03s - 5.87s</span>
 </div>
 </div>
@@ -1008,7 +1056,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 03" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg"/>
+<img crossorigin="anonymous" alt="Shot 03" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg"/>
 <span class="shot-badge">SHOT 03</span>
 <span class="shot-time">1.83s</span>
 </div>
@@ -1044,11 +1092,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.87, 7.6, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg', 'SHOT 04 [5.87s - 7.6s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg">🔍</button>
                     <span class="thumb-time-badge">5.87s - 7.60s</span>
                 </div>
             </div>
@@ -1066,11 +1114,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(5.87, 7.6, 'SHOT 04')">
-<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 04" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg', 'SHOT 04 [5.87s - 7.6s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg">🔍</button>
 <span class="thumb-time-badge">5.87s - 7.60s</span>
 </div>
 </div>
@@ -1088,7 +1136,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 04" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg"/>
+<img crossorigin="anonymous" alt="Shot 04" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg"/>
 <span class="shot-badge">SHOT 04</span>
 <span class="shot-time">1.73s</span>
 </div>
@@ -1124,11 +1172,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.6, 9.47, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg', 'SHOT 05 [7.6s - 9.47s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg">🔍</button>
                     <span class="thumb-time-badge">7.60s - 9.47s</span>
                 </div>
             </div>
@@ -1146,11 +1194,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(7.6, 9.47, 'SHOT 05')">
-<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 05" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg', 'SHOT 05 [7.6s - 9.47s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg">🔍</button>
 <span class="thumb-time-badge">7.60s - 9.47s</span>
 </div>
 </div>
@@ -1168,7 +1216,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 05" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg"/>
+<img crossorigin="anonymous" alt="Shot 05" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg"/>
 <span class="shot-badge">SHOT 05</span>
 <span class="shot-time">1.87s</span>
 </div>
@@ -1204,11 +1252,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.47, 11.23, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg', 'SHOT 06 [9.47s - 11.23s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg">🔍</button>
                     <span class="thumb-time-badge">9.47s - 11.23s</span>
                 </div>
             </div>
@@ -1226,11 +1274,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(9.47, 11.23, 'SHOT 06')">
-<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 06" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg', 'SHOT 06 [9.47s - 11.23s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg">🔍</button>
 <span class="thumb-time-badge">9.47s - 11.23s</span>
 </div>
 </div>
@@ -1248,7 +1296,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 06" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg"/>
+<img crossorigin="anonymous" alt="Shot 06" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg"/>
 <span class="shot-badge">SHOT 06</span>
 <span class="shot-time">1.77s</span>
 </div>
@@ -1284,11 +1332,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.23, 13.03, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg', 'SHOT 07 [11.23s - 13.03s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg">🔍</button>
                     <span class="thumb-time-badge">11.23s - 13.03s</span>
                 </div>
             </div>
@@ -1306,11 +1354,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(11.23, 13.03, 'SHOT 07')">
-<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 07" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg', 'SHOT 07 [11.23s - 13.03s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg">🔍</button>
 <span class="thumb-time-badge">11.23s - 13.03s</span>
 </div>
 </div>
@@ -1328,7 +1376,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 07" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg"/>
+<img crossorigin="anonymous" alt="Shot 07" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg"/>
 <span class="shot-badge">SHOT 07</span>
 <span class="shot-time">1.80s</span>
 </div>
@@ -1364,11 +1412,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.03, 14.83, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg', 'SHOT 08 [13.03s - 14.83s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg">🔍</button>
                     <span class="thumb-time-badge">13.03s - 14.83s</span>
                 </div>
             </div>
@@ -1386,11 +1434,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(13.03, 14.83, 'SHOT 08')">
-<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 08" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg', 'SHOT 08 [13.03s - 14.83s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg">🔍</button>
 <span class="thumb-time-badge">13.03s - 14.83s</span>
 </div>
 </div>
@@ -1408,7 +1456,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 08" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg"/>
+<img crossorigin="anonymous" alt="Shot 08" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg"/>
 <span class="shot-badge">SHOT 08</span>
 <span class="shot-time">1.80s</span>
 </div>
@@ -1444,11 +1492,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.83, 16.57, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg', 'SHOT 09 [14.83s - 16.57s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg">🔍</button>
                     <span class="thumb-time-badge">14.83s - 16.57s</span>
                 </div>
             </div>
@@ -1466,11 +1514,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(14.83, 16.57, 'SHOT 09')">
-<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 09" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg', 'SHOT 09 [14.83s - 16.57s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg">🔍</button>
 <span class="thumb-time-badge">14.83s - 16.57s</span>
 </div>
 </div>
@@ -1488,7 +1536,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 09" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg"/>
+<img crossorigin="anonymous" alt="Shot 09" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg"/>
 <span class="shot-badge">SHOT 09</span>
 <span class="shot-time">1.73s</span>
 </div>
@@ -1524,11 +1572,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.57, 18.37, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg', 'SHOT 10 [16.57s - 18.37s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg">🔍</button>
                     <span class="thumb-time-badge">16.57s - 18.37s</span>
                 </div>
             </div>
@@ -1546,11 +1594,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(16.57, 18.37, 'SHOT 10')">
-<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 10" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg', 'SHOT 10 [16.57s - 18.37s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg">🔍</button>
 <span class="thumb-time-badge">16.57s - 18.37s</span>
 </div>
 </div>
@@ -1568,7 +1616,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 10" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg"/>
+<img crossorigin="anonymous" alt="Shot 10" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg"/>
 <span class="shot-badge">SHOT 10</span>
 <span class="shot-time">1.80s</span>
 </div>
@@ -1604,11 +1652,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.37, 20.23, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg', 'SHOT 11 [18.37s - 20.23s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg">🔍</button>
                     <span class="thumb-time-badge">18.37s - 20.23s</span>
                 </div>
             </div>
@@ -1626,11 +1674,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(18.37, 20.23, 'SHOT 11')">
-<img alt="SHOT 11" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 11" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg', 'SHOT 11 [18.37s - 20.23s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg">🔍</button>
 <span class="thumb-time-badge">18.37s - 20.23s</span>
 </div>
 </div>
@@ -1648,7 +1696,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 11" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg"/>
+<img crossorigin="anonymous" alt="Shot 11" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg"/>
 <span class="shot-badge">SHOT 11</span>
 <span class="shot-time">1.87s</span>
 </div>
@@ -1684,11 +1732,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.23, 22.07, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg', 'SHOT 12 [20.23s - 22.07s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg">🔍</button>
                     <span class="thumb-time-badge">20.23s - 22.07s</span>
                 </div>
             </div>
@@ -1706,11 +1754,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(20.23, 22.07, 'SHOT 12')">
-<img alt="SHOT 12" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 12" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg', 'SHOT 12 [20.23s - 22.07s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg">🔍</button>
 <span class="thumb-time-badge">20.23s - 22.07s</span>
 </div>
 </div>
@@ -1728,7 +1776,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 12" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg"/>
+<img crossorigin="anonymous" alt="Shot 12" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg"/>
 <span class="shot-badge">SHOT 12</span>
 <span class="shot-time">1.84s</span>
 </div>
@@ -1764,11 +1812,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(22.07, 23.87, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg', 'SHOT 13 [22.07s - 23.87s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg">🔍</button>
                     <span class="thumb-time-badge">22.07s - 23.87s</span>
                 </div>
             </div>
@@ -1786,11 +1834,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(22.07, 23.87, 'SHOT 13')">
-<img alt="SHOT 13" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 13" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg', 'SHOT 13 [22.07s - 23.87s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg">🔍</button>
 <span class="thumb-time-badge">22.07s - 23.87s</span>
 </div>
 </div>
@@ -1808,7 +1856,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 13" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg"/>
+<img crossorigin="anonymous" alt="Shot 13" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg"/>
 <span class="shot-badge">SHOT 13</span>
 <span class="shot-time">1.80s</span>
 </div>
@@ -1844,11 +1892,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(23.87, 25.63, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg', 'SHOT 14 [23.87s - 25.63s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg">🔍</button>
                     <span class="thumb-time-badge">23.87s - 25.63s</span>
                 </div>
             </div>
@@ -1866,11 +1914,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(23.87, 25.63, 'SHOT 14')">
-<img alt="SHOT 14" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 14" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg', 'SHOT 14 [23.87s - 25.63s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg">🔍</button>
 <span class="thumb-time-badge">23.87s - 25.63s</span>
 </div>
 </div>
@@ -1888,7 +1936,7 @@ video#mainPlayer {
 <div class="raw-card-content">
 <div class="shot-img-col">
 <div class="img-box">
-<img alt="Shot 14" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg"/>
+<img crossorigin="anonymous" alt="Shot 14" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg"/>
 <span class="shot-badge">SHOT 14</span>
 <span class="shot-time">1.76s</span>
 </div>
@@ -1926,9 +1974,9 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 2.07, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg', 'SHOT 01 [0.0s - 2.07s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
                 <div class="grid-badge-bottom">0.0s - 2.1s</div>
             </div>
@@ -1937,9 +1985,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(2.07, 4.03, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg', 'SHOT 02 [2.07s - 4.03s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
                 <div class="grid-badge-bottom">2.1s - 4.0s</div>
             </div>
@@ -1948,9 +1996,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(4.03, 5.87, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg', 'SHOT 03 [4.03s - 5.87s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
                 <div class="grid-badge-bottom">4.0s - 5.9s</div>
             </div>
@@ -1959,9 +2007,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.87, 7.6, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg', 'SHOT 04 [5.87s - 7.6s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
                 <div class="grid-badge-bottom">5.9s - 7.6s</div>
             </div>
@@ -1970,9 +2018,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.6, 9.47, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg', 'SHOT 05 [7.6s - 9.47s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
                 <div class="grid-badge-bottom">7.6s - 9.5s</div>
             </div>
@@ -1981,9 +2029,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.47, 11.23, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg', 'SHOT 06 [9.47s - 11.23s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
                 <div class="grid-badge-bottom">9.5s - 11.2s</div>
             </div>
@@ -1992,9 +2040,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.23, 13.03, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg', 'SHOT 07 [11.23s - 13.03s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
                 <div class="grid-badge-bottom">11.2s - 13.0s</div>
             </div>
@@ -2003,9 +2051,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.03, 14.83, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg', 'SHOT 08 [13.03s - 14.83s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
                 <div class="grid-badge-bottom">13.0s - 14.8s</div>
             </div>
@@ -2014,9 +2062,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.83, 16.57, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg', 'SHOT 09 [14.83s - 16.57s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
                 <div class="grid-badge-bottom">14.8s - 16.6s</div>
             </div>
@@ -2025,9 +2073,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.57, 18.37, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg', 'SHOT 10 [16.57s - 18.37s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
                 <div class="grid-badge-bottom">16.6s - 18.4s</div>
             </div>
@@ -2036,9 +2084,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.37, 20.23, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg', 'SHOT 11 [18.37s - 20.23s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
                 <div class="grid-badge-bottom">18.4s - 20.2s</div>
             </div>
@@ -2047,9 +2095,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.23, 22.07, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg', 'SHOT 12 [20.23s - 22.07s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
                 <div class="grid-badge-bottom">20.2s - 22.1s</div>
             </div>
@@ -2058,9 +2106,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(22.07, 23.87, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg', 'SHOT 13 [22.07s - 23.87s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
                 <div class="grid-badge-bottom">22.1s - 23.9s</div>
             </div>
@@ -2069,9 +2117,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(23.87, 25.63, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg', 'SHOT 14 [23.87s - 25.63s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
                 <div class="grid-badge-bottom">23.9s - 25.6s</div>
             </div>
@@ -2091,7 +2139,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.07, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_001_38273934.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2103,7 +2151,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.07, 4.03, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_002_ad3ab569.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2115,7 +2163,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 4.03, 5.87, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_003_0b3dcfda.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2127,7 +2175,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 5.87, 7.6, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_004_a5d2dd52.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2139,7 +2187,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 7.6, 9.47, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_005_f6e5752e.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2151,7 +2199,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 9.47, 11.23, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_006_2dccf65b.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2163,7 +2211,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 11.23, 13.03, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_007_63d4bad6.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2175,7 +2223,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 13.03, 14.83, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_008_03469bf5.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2187,7 +2235,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 14.83, 16.57, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_009_86574353.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2199,7 +2247,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 16.57, 18.37, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_010_8955b0ce.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2211,7 +2259,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 18.37, 20.23, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_011_39b8219f.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2223,7 +2271,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 20.23, 22.07, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_012_8d45c18f.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2235,7 +2283,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 22.07, 23.87, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_013_28a93774.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -2247,7 +2295,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 23.87, 25.63, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/The_Art_of_Noticing_Hong_Kong_-_%40withyuee/img_014_78a3d5d5.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -2262,46 +2310,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=The_Art_of_Noticing_Hong_Kong%20-%20%40withyuee";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2401,6 +2431,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

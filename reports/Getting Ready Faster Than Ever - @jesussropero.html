@@ -2,856 +2,857 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-<title>Phân Tích Video Điện Ảnh - @jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever • Director's Report</title>
-
-<!-- Fonts: Google Fonts Fallbacks -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=JetBrains+Mono:wght@500;600;700&display=swap" rel="stylesheet">
-
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Đạo Diễn • Getting Ready Faster Than Ever - @jesussropero</title>
 <style>
-/* ═══ 1. FONT DECLARATIONS (Local & Web Fallbacks) ═══ */
+
 @font-face {
-    font-family: 'FD Aeonik Extended';
-    src: url('../fonts/FDAeonikExtended-Bold.woff2') format('woff2'),
-         url('../fonts/FDAeonikExtended-Bold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-Bold.otf') format('opentype'),
-         local('FD Aeonik Extended Bold');
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Bold'), local('SVN-Acta'), local('SVN Acta');
     font-weight: 700;
     font-style: normal;
-    font-display: swap;
 }
 @font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikRegular.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikRegular.ttf') format('truetype'),
-         local('FD Aeonik Regular');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikExtended-SemiBold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikExtended-SemiBold.otf') format('opentype'),
-         local('FD Aeonik SemiBold');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'FD Aeonik';
-    src: url('../fonts/FDAeonikBold.ttf') format('truetype'),
-         url('/Users/vietmac/Library/Fonts/FDAeonikBold.ttf') format('truetype'),
-         local('FD Aeonik Bold');
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-Regular.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-Regular.otf') format('opentype'),
-         local('Tiempos Text Regular');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
-}
-@font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-Medium.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-Medium.otf') format('opentype'),
-         local('Tiempos Text Medium');
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Medium'), local('SVN-Acta'), local('SVN Acta');
     font-weight: 500;
     font-style: normal;
-    font-display: swap;
 }
 @font-face {
-    font-family: 'Tiempos Text';
-    src: url('../fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-         url('/Users/vietmac/Library/Fonts/FDTiemposText-RegularItalic.otf') format('opentype'),
-         local('Tiempos Text Regular Italic');
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype'),
+         local('SVN-Acta-Book'), local('SVN-Acta-Regular'), local('SVN-Acta'), local('SVN Acta');
     font-weight: 400;
-    font-style: italic;
-    font-display: swap;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Rg'), local('GT America'), local('GT-America-LCGV-Standard-Regular'), local('GTAmericaLCG-Rg');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Md'), local('GT America Medium'), local('GT-America-LCGV-Standard-Medium'), local('GTAmericaLCG-Md');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Bd'), local('GT America Bold'), local('GT-America-LCGV-Standard-Bold'), local('GTAmericaLCG-Bd');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GT America';
+    src: url('data:,') format('truetype'),
+         local('GT America LCG Blk'), local('GT America Black'), local('GT-America-LCGV-Standard-Black'), local('GTAmericaLCG-Blk');
+    font-weight: 900;
+    font-style: normal;
 }
 
-/* ═══ 2. DESIGN TOKENS (Light Theme - Chuẩn 30ngayviral.fedu.vn) ═══ */
+
 :root {
-    --cl-bg-main: #ffffff;
-    --cl-bg-tint: #f8fafc;
-    --cl-bg-card: #ffffff;
-    --cl-bg-card-muted: #f1f5f9;
-    --cl-border: rgba(0, 0, 0, 0.08);
-    --cl-border-hover: rgba(26, 115, 232, 0.35);
-    --cl-line: rgba(0, 0, 0, 0.06);
-
-    /* Ink Contrast WCAG AAA */
-    --cl-text-primary: #090d16;  /* Slate 950 (18.8:1) */
-    --cl-text-body: #0f172a;     /* Slate 900 (16.5:1 Mực in cao cấp) */
-    --cl-text-secondary: #475569;/* Slate 600 */
-    --cl-text-muted: #64748b;    /* Slate 500 */
-
-    /* Accent & Brand Colors */
-    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
-    --cl-accent-tint: rgba(26, 115, 232, 0.08);
-    --cl-amber: #d97706;         /* Amber 600 */
-    --cl-amber-bg: #fffbeb;      /* Amber 50 */
-    --cl-amber-border: #fef3c7;  /* Amber 100 */
-    --cl-emerald: #059669;       /* Emerald 600 */
-    --cl-emerald-bg: #f0fdf4;    /* Emerald 50 */
-    --cl-emerald-border: #bbf7d0;/* Emerald 200 */
-    --cl-rose: #e11d48;          /* Rose 600 */
-    --cl-rose-bg: #fff1f2;       /* Rose 50 */
-    --cl-rose-border: #fecdd3;   /* Rose 200 */
-
-    /* Typography Stacks */
-    --font-heading-short: 'FD Aeonik Extended', 'Plus Jakarta Sans', -apple-system, sans-serif;
-    --font-heading-long: 'FD Aeonik', 'Plus Jakarta Sans', -apple-system, sans-serif;
-    --font-body: 'Tiempos Text', 'Newsreader', Georgia, serif;
-    --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-
-    /* Video Aspect Ratio */
-    --video-aspect-ratio: 9 / 16;
+    --font-heading: 'SVN-Acta', 'Plus Jakarta Sans', serif;
+    --font-body: 'GT America', 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bg-main: #0b0f17;
+    --bg-card: #131b2a;
+    --bg-card-alt: #1a2436;
+    --border-color: #24324a;
+    --accent-amber: #f59e0b;
+    --accent-blue: #38bdf8;
+    --accent-emerald: #10b981;
+    --accent-rose: #f43f5e;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --text-muted: #64748b;
 }
 
-* { box-sizing: border-box; margin: 0; padding: 0; -webkit-font-smoothing: antialiased; }
+@page {
+    size: A4 portrait;
+    margin: 12mm;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact !important;
+}
+
 body {
-    background-color: var(--cl-bg-main);
-    color: var(--cl-text-body);
     font-family: var(--font-body);
-    font-size: 15px;
-    line-height: 1.75;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+    color: var(--text-primary);
+    background-color: var(--bg-main);
+    line-height: 1.6;
+    font-size: 13.5px;
+    padding: 24px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
-/* ═══ 3. TOP NAVIGATION HEADER ═══ */
-.top-nav {
-    background: rgba(255, 255, 255, 0.94);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid var(--cl-line);
-    padding: 12px 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-}
-.nav-left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.nav-brand {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-family: var(--font-heading-short);
-    font-weight: 700;
-    font-size: 14.5px;
-    color: var(--cl-text-primary);
-    text-decoration: none;
-    letter-spacing: -0.01em;
-}
-.nav-badge {
-    background: var(--cl-accent-tint);
-    color: var(--cl-accent);
-    padding: 3px 9px;
-    border-radius: 9999px;
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 600;
-    border: 1px solid rgba(26, 115, 232, 0.18);
-}
-.nav-meta-title {
-    font-family: var(--font-ui);
-    font-size: 13.5px;
-    color: var(--cl-text-secondary);
-    font-weight: 500;
-    max-width: 480px;
-    white-space: nowrap;
+.header {
+    background: linear-gradient(135deg, #101726 0%, #1e293b 100%);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    position: relative;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
-.nav-right {
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-rose), var(--accent-amber));
+}
+
+.badge-row {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
 }
-.nav-btn {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    color: var(--cl-text-primary);
-    padding: 6px 14px;
-    border-radius: 8px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 600;
+
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.badge-gold { background: rgba(245, 158, 11, 0.15); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3); }
+.badge-blue { background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); }
+.badge-green { background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3); }
+.badge-rose { background: rgba(244, 63, 94, 0.15); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.3); }
+
+.header-title {
+    font-family: var(--font-heading);
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 12px;
+    color: #ffffff;
+}
+
+.header-meta {
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    align-items: center;
+}
+
+.author-ig-badge {
+    background: rgba(225, 48, 108, 0.15);
+    border: 1px solid rgba(225, 48, 108, 0.35);
+    color: #ff6b9d;
+    padding: 4px 12px;
+    border-radius: 20px;
     text-decoration: none;
+    font-weight: 600;
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    cursor: pointer;
     transition: all 0.2s ease;
 }
-.nav-btn:hover {
-    background: var(--cl-bg-tint);
-    border-color: var(--cl-accent);
-    color: var(--cl-accent);
-}
-.nav-btn.primary {
-    background: var(--cl-accent);
-    border-color: var(--cl-accent);
+
+.author-ig-badge:hover {
+    background: rgba(225, 48, 108, 0.3);
     color: #ffffff;
 }
-.nav-btn.primary:hover {
-    background: #1558b0;
-}
 
-/* ═══ 4. MAIN LAYOUT (DESKTOP SPLIT-SCREEN & MOBILE-FIRST) ═══ */
-.layout-container {
-    display: flex;
-    flex: 1;
-    max-width: 1680px;
-    margin: 0 auto;
-    width: 100%;
-}
-
-/* LEFT COLUMN: STICKY DIRECTOR PLAYER */
-.left-player-col {
-    width: 460px;
-    flex-shrink: 0;
-    padding: 24px;
-    border-right: 1px solid var(--cl-line);
-    background: var(--cl-bg-tint);
-    position: sticky;
-    top: 57px;
-    height: calc(100vh - 57px);
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
-.player-box {
-    background: #000000;
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    aspect-ratio: var(--video-aspect-ratio);
-    max-height: 560px;
-    width: 100%;
-}
-.player-box video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    display: block;
-}
-
-/* DIRECTOR CONTROLS BAR */
-.director-controls {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
+/* Control Bar */
+.control-bar {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-.ctrl-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 8px;
-}
-.ctrl-btn-group {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.ctrl-btn {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    color: var(--cl-text-primary);
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-family: var(--font-ui);
-    font-size: 11.5px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-.ctrl-btn:hover, .ctrl-btn.active {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
-}
-.time-display {
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--cl-text-secondary);
-    font-weight: 600;
-}
-
-/* VIDEO INFO CARD IN SIDEBAR */
-.video-meta-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.video-meta-title {
-    font-family: var(--font-heading-long);
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--cl-text-primary);
-    line-height: 1.4;
-}
-.video-meta-author {
-    font-family: var(--font-ui);
-    font-size: 13px;
-    color: var(--cl-text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.author-link {
-    color: var(--cl-accent);
-    text-decoration: none;
-    font-weight: 600;
-}
-.author-link:hover {
-    text-decoration: underline;
-}
-
-/* RIGHT COLUMN: STORYBOARD CONTENT & AUDIT */
-.right-content-col {
-    flex: 1;
-    padding: 32px 40px 80px 40px;
-    min-width: 0;
-    background: #ffffff;
-}
-
-/* VIEW SWITCHER & HEADER BAR */
-.content-header-bar {
+    padding: 14px 20px;
+    margin-bottom: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 28px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--cl-line);
+    flex-wrap: wrap;
+    gap: 12px;
 }
+
 .view-tabs {
     display: flex;
     gap: 8px;
-    background: var(--cl-bg-tint);
-    padding: 4px;
-    border-radius: 10px;
-    border: 1px solid var(--cl-border);
 }
-.view-tab {
+
+.tab-btn {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
     padding: 6px 14px;
-    border-radius: 7px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 600;
-    color: var(--cl-text-secondary);
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.view-tab.active {
-    background: #ffffff;
-    color: var(--cl-text-primary);
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* HERO OVERVIEW CARD */
-.overview-hero-card {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    border-radius: 18px;
-    padding: 24px 28px;
-    margin-bottom: 32px;
-}
-.overview-hero-title {
-    font-family: var(--font-heading-short);
-    font-size: 24px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--cl-text-primary);
-    letter-spacing: -0.01em;
-    line-height: 1.35;
-    margin-bottom: 12px;
-}
-.overview-hero-desc {
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.8;
-    color: var(--cl-text-body);
-    margin-bottom: 18px;
-}
-.overview-specs-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 12px;
-    padding-top: 14px;
-    border-top: 1px solid var(--cl-line);
-}
-.overview-spec-item {
-    font-family: var(--font-ui);
-    font-size: 13px;
-}
-.spec-tag-label {
-    color: var(--cl-text-muted);
-    font-size: 11.5px;
-    text-transform: uppercase;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    display: block;
-    margin-bottom: 2px;
-}
-.spec-tag-value {
-    color: var(--cl-text-primary);
-    font-weight: 600;
-}
-
-/* ═══ 5. STORYBOARD CARDS (ZEBRA STRIPING) ═══ */
-.shots-container {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-}
-.shot-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 20px;
-    padding: 28px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-.shot-card:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-.shot-card:nth-child(even) {
-    background: var(--cl-bg-tint);
-}
-
-/* SHOT CARD HEADER */
-.shot-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 14px;
-}
-.shot-id-pill {
-    background: var(--cl-text-primary);
-    color: #ffffff;
-    padding: 4px 12px;
-    border-radius: 9999px;
-    font-family: var(--font-mono);
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-}
-.shot-time-btn {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    color: var(--cl-accent);
-    padding: 4px 12px;
     border-radius: 8px;
-    font-family: var(--font-mono);
-    font-size: 12.5px;
+    cursor: pointer;
+    font-size: 13px;
     font-weight: 600;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     gap: 6px;
-    cursor: pointer;
-    transition: all 0.15s;
-}
-.shot-time-btn:hover {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
-}
-.shot-headline {
-    font-family: var(--font-heading-long);
-    font-size: 18.5px;
-    font-weight: 700;
-    color: var(--cl-text-primary);
-    line-height: 1.45;
-    margin-bottom: 18px;
+    transition: all 0.2s;
 }
 
-/* 3 KEYFRAMES GALLERY */
-.keyframes-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 22px;
+.tab-btn:hover, .tab-btn.active {
+    background: rgba(56, 189, 248, 0.15);
+    color: var(--accent-blue);
+    border-color: var(--accent-blue);
 }
-.kf-card {
-    background: #000000;
+
+.action-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    border: 1px solid #38bdf8;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.btn-primary:hover {
+    opacity: 0.95;
+    box-shadow: 0 0 12px rgba(56, 189, 248, 0.4);
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.grid-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
-    position: relative;
-    aspect-ratio: var(--video-aspect-ratio);
     cursor: pointer;
-    border: 1px solid var(--cl-border);
+    transition: transform 0.2s, border-color 0.2s;
 }
-.kf-card img {
+
+.grid-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent-blue);
+}
+
+.grid-thumb-box {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    overflow: hidden;
+    background: #000;
+}
+
+.grid-thumb-box img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform 0.25s ease;
+    object-position: center 30%;
 }
-.kf-card:hover img {
-    transform: scale(1.03);
-}
-.kf-label-tag {
+
+.grid-tag {
     position: absolute;
     bottom: 8px;
     left: 8px;
     background: rgba(0, 0, 0, 0.75);
     backdrop-filter: blur(4px);
-    color: #ffffff;
+    color: #38bdf8;
     padding: 3px 8px;
-    border-radius: 5px;
-    font-family: var(--font-mono);
+    border-radius: 4px;
     font-size: 11px;
-    font-weight: 600;
+    font-weight: 700;
+    border: 1px solid rgba(56, 189, 248, 0.4);
 }
-.kf-label-tag.start { border-left: 3px solid var(--cl-accent); }
-.kf-label-tag.mid { border-left: 3px solid var(--cl-amber); }
-.kf-label-tag.end { border-left: 3px solid var(--cl-emerald); }
 
-/* 3 STRUCTURED CRITIQUE BLOCKS */
-.critique-blocks-grid {
+.grid-info {
+    padding: 12px 14px;
+}
+
+.grid-title {
+    font-weight: 600;
+    font-size: 13.5px;
+    color: #ffffff;
+    margin-bottom: 4px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.grid-sub {
+    font-size: 11.5px;
+    color: var(--text-muted);
+}
+
+/* Executive Insights Section */
+.insights-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 28px;
+}
+
+.section-headline {
+    font-family: var(--font-heading);
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 16px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.insights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.insight-card {
+    background: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 16px;
+}
+
+.insight-title {
+    font-weight: 700;
+    font-size: 13.5px;
+    color: var(--accent-amber);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.insight-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.55;
+}
+
+/* Shot Detail Cards */
+.shot-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    margin-bottom: 28px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.shot-header {
+    background: linear-gradient(90deg, #162032 0%, #1a273e 100%);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.shot-title-group {
+    flex: 1;
+    min-width: 260px;
+}
+
+.shot-badge {
+    display: inline-block;
+    background: rgba(244, 63, 94, 0.2);
+    color: #fb7185;
+    border: 1px solid rgba(244, 63, 94, 0.4);
+    font-size: 11px;
+    font-weight: 800;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+}
+
+.shot-headline-text {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+}
+
+.shot-time-btn {
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--accent-blue);
+    padding: 8px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 12.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+}
+
+.shot-time-btn:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: var(--accent-blue);
+    color: #ffffff;
+    transform: scale(1.02);
+}
+
+.dur-pill {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 11px;
+}
+
+.play-hint {
+    font-size: 11px;
+    color: var(--accent-amber);
+}
+
+.shot-body {
+    padding: 20px;
+}
+
+/* Keyframes Row */
+.keyframes-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 14px;
     margin-bottom: 20px;
 }
 
-/* BLOCK 1: SUBJECT & ACTION */
-.block-subject-action {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    padding: 16px 20px;
-}
-.block-label {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--cl-text-muted);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.block-text {
-    font-family: var(--font-body);
-    font-size: 15px;
-    color: var(--cl-text-body);
-    line-height: 1.7;
-}
-
-/* BLOCK 2: TWO-SIDED COMPOSITION CRITIQUE */
-.block-two-sided {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-.critique-side {
-    padding: 16px;
-    border-radius: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-.critique-side.pro {
-    background: var(--cl-emerald-bg);
-    border: 1px solid var(--cl-emerald-border);
-}
-.critique-side.con {
-    background: var(--cl-rose-bg);
-    border: 1px solid var(--cl-rose-border);
-}
-.side-header {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.critique-side.pro .side-header { color: var(--cl-emerald); }
-.critique-side.con .side-header { color: var(--cl-rose); }
-.side-content {
-    font-family: var(--font-body);
-    font-size: 14px;
-    line-height: 1.65;
-    color: var(--cl-text-body);
-}
-
-/* BLOCK 3: ACTIONABLE TAKEAWAY */
-.block-takeaway {
-    background: var(--cl-amber-bg);
-    border: 1px solid var(--cl-amber-border);
-    border-radius: 12px;
-    padding: 16px 20px;
-}
-.takeaway-header {
-    font-family: var(--font-ui);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: var(--cl-amber);
-    margin-bottom: 6px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.takeaway-body {
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 500;
-    color: #78350f;
-    line-height: 1.7;
-}
-
-/* SPECS STRIP */
-.shot-specs-strip {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px 16px;
-    padding: 12px 16px;
-    background: var(--cl-bg-tint);
-    border-radius: 10px;
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    color: var(--cl-text-secondary);
-    margin-bottom: 18px;
-}
-.spec-pill strong {
-    color: var(--cl-text-primary);
-}
-
-/* TRANSITION CARD */
-.transition-card {
-    background: var(--cl-bg-tint);
-    border: 1px dashed var(--cl-border);
-    border-radius: 14px;
-    padding: 16px;
-}
-.trans-title-bar {
-    font-family: var(--font-ui);
-    font-size: 12.5px;
-    font-weight: 700;
-    color: var(--cl-accent);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-.trans-img-container {
+.kf-col {
     cursor: pointer;
+    position: relative;
     border-radius: 10px;
     overflow: hidden;
-    position: relative;
-    border: 1px solid var(--cl-border);
-    background: #000000;
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s, border-color 0.2s;
 }
-.trans-img-container img {
+
+.kf-col:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-blue);
+}
+
+.kf-col.main-kf {
+    border-color: rgba(245, 158, 11, 0.5);
+    box-shadow: 0 0 12px rgba(245, 158, 11, 0.15);
+}
+
+.kf-box {
+    position: relative;
+    width: 100%;
+    padding-top: 130%; /* 9:16 vertical ratio */
+    background: #000;
+}
+
+.shot-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.kf-tag {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    color: #94a3b8;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    font-weight: 700;
+}
+
+.kf-tag.gold {
+    background: rgba(245, 158, 11, 0.9);
+    color: #000000;
+}
+
+/* Content Blocks */
+.content-block {
+    background: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin-bottom: 16px;
+}
+
+.block-title {
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--accent-blue);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.block-text {
+    font-size: 13.5px;
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* Shot Info Grid */
+.shot-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.info-block {
+    background: var(--bg-card-alt);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 8px;
+    padding: 12px 14px;
+}
+
+.info-block.full-width {
+    grid-column: span 2;
+}
+
+.info-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.info-val {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+/* Critique Grid */
+.critique-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.critique-card {
+    border-radius: 8px;
+    padding: 12px 14px;
+    font-size: 12.5px;
+    line-height: 1.55;
+}
+
+.pro-card {
+    background: rgba(16, 185, 129, 0.08);
+    border: 1px solid rgba(16, 185, 129, 0.25);
+    color: #d1fae5;
+}
+
+.con-card {
+    background: rgba(244, 63, 94, 0.08);
+    border: 1px solid rgba(244, 63, 94, 0.25);
+    color: #ffe4e6;
+}
+
+.critique-head {
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.pro-card .critique-head { color: #34d399; }
+.con-card .critique-head { color: #fb7185; }
+
+/* Takeaway Box */
+.takeaway-box {
+    background: linear-gradient(135deg, rgba(245, 158, 11, 0.1) 0%, rgba(245, 158, 11, 0.03) 100%);
+    border-left: 4px solid var(--accent-amber);
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin-bottom: 16px;
+}
+
+.takeaway-title {
+    font-size: 11.5px;
+    font-weight: 800;
+    color: #fbbf24;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.takeaway-text {
+    font-size: 13px;
+    color: #fef3c7;
+    line-height: 1.5;
+}
+
+/* Transition Section */
+.trans-section {
+    background: #0e1420;
+    border: 1px dashed rgba(245, 158, 11, 0.4);
+    border-radius: 10px;
+    padding: 14px;
+    margin-top: 16px;
+}
+
+.trans-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent-amber);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.trans-box {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+}
+
+.trans-img {
     width: 100%;
     height: auto;
     display: block;
 }
-.trans-zoom-badge {
+
+.trans-tag {
     position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0, 0, 0, 0.7);
-    color: #ffffff;
-    font-family: var(--font-ui);
-    font-size: 11px;
-    font-weight: 600;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.85);
+    color: var(--accent-amber);
+    font-size: 10px;
+    font-weight: 800;
     padding: 3px 8px;
     border-radius: 4px;
+    border: 1px solid rgba(245, 158, 11, 0.5);
 }
 
-/* ═══ 6. VISUAL GRID VIEW (ALTERNATE VIEW) ═══ */
-.visual-grid-view {
-    display: none;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
-}
-.grid-shot-card {
-    background: #ffffff;
-    border: 1px solid var(--cl-border);
-    border-radius: 12px;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-.grid-shot-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-.grid-thumb-wrap {
-    aspect-ratio: var(--video-aspect-ratio);
-    position: relative;
-    background: #000;
-}
-.grid-thumb-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-.grid-thumb-badge {
-    position: absolute;
-    top: 6px;
-    left: 6px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #fff;
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    font-weight: 600;
-}
-.grid-card-body {
-    padding: 10px 12px;
-    font-family: var(--font-ui);
+.trans-desc {
     font-size: 12px;
-    font-weight: 600;
-    color: var(--cl-text-primary);
-    line-height: 1.4;
+    color: var(--text-secondary);
+    margin-top: 8px;
+    line-height: 1.5;
 }
 
-/* ═══ 7. LIGHTBOX MODAL ═══ */
-.lightbox-modal {
-    position: fixed;
-    top: 0; left: 0; width: 100vw; height: 100vh;
-    background: rgba(0, 0, 0, 0.88);
-    backdrop-filter: blur(10px);
-    z-index: 999;
+/* Lightbox Modal */
+.modal {
     display: none;
-    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.92);
+    backdrop-filter: blur(8px);
     justify-content: center;
-    padding: 24px;
-}
-.lightbox-modal.active { display: flex; }
-.lightbox-content {
-    max-width: 92vw;
-    max-height: 92vh;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: 12px;
+    flex-direction: column;
 }
-.lightbox-content img {
-    max-width: 100%;
+
+.modal-content {
+    max-width: 90vw;
     max-height: 82vh;
-    border-radius: 12px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    object-fit: contain;
 }
-.lightbox-caption {
+
+.modal-caption {
+    margin-top: 14px;
     color: #ffffff;
-    font-family: var(--font-ui);
     font-size: 14px;
-    font-weight: 500;
+    text-align: center;
+    max-width: 80vw;
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    font-size: 36px;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 300;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: var(--accent-rose);
+}
+
+/* Video Player Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.94);
+    backdrop-filter: blur(10px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.video-box {
+    position: relative;
+    max-width: 460px;
+    width: 90vw;
+    background: #000;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 0 40px rgba(56, 189, 248, 0.2);
+}
+
+.modal-video {
+    width: 100%;
+    display: block;
+    max-height: 80vh;
+}
+
+.video-info-bar {
+    background: #111827;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Footer Links */
+.footer-links {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 32px;
     text-align: center;
 }
-.lightbox-close {
-    position: absolute;
-    top: 20px; right: 24px;
-    color: #ffffff;
-    font-size: 32px;
-    background: none; border: none;
-    cursor: pointer;
+
+.footer-btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
 }
 
-/* ═══ 8. FOOTER LINKS BLOCK ═══ */
-.bottom-links-section {
-    margin-top: 50px;
-    padding-top: 30px;
-    border-top: 1px solid var(--cl-line);
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-.footer-links-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-}
-.footer-link-card {
-    background: var(--cl-bg-tint);
-    border: 1px solid var(--cl-border);
-    border-radius: 10px;
-    padding: 12px 16px;
+.link-btn {
+    background: var(--bg-card-alt);
+    border: 1px solid var(--border-color);
+    color: #ffffff;
     text-decoration: none;
-    color: var(--cl-text-primary);
-    font-family: var(--font-ui);
+    padding: 8px 16px;
+    border-radius: 8px;
     font-size: 13px;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.15s;
-}
-.footer-link-card:hover {
-    background: var(--cl-accent);
-    color: #ffffff;
-    border-color: var(--cl-accent);
+    transition: all 0.2s;
 }
 
-/* ═══ 9. RESPONSIVE MOBILE RULES (< 992px) ═══ */
-@media (max-width: 992px) {
-    .layout-container {
-        flex-direction: column;
-    }
-    .left-player-col {
-        width: 100%;
-        position: sticky;
-        top: 57px;
-        height: auto;
-        padding: 16px;
-        border-right: none;
-        border-bottom: 1px solid var(--cl-line);
-        z-index: 100;
-    }
-    .player-box {
-        max-height: 420px;
-    }
-    .right-content-col {
-        padding: 20px 16px 60px 16px;
-    }
-    .block-two-sided {
-        grid-template-columns: 1fr;
-    }
-    .keyframes-row {
-        gap: 8px;
-    }
+.link-btn:hover {
+    background: rgba(56, 189, 248, 0.2);
+    border-color: var(--accent-blue);
+    color: #ffffff;
 }
+
+@media (max-width: 768px) {
+    body { padding: 12px; font-size: 13px; }
+    .header { padding: 20px 16px; }
+    .header-title { font-size: 20px; }
+    .shot-info-grid, .critique-grid { grid-template-columns: 1fr; }
+    .info-block.full-width { grid-column: span 1; }
+    .keyframes-row { gap: 8px; }
+}
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
@@ -894,472 +895,515 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
-<!-- TOP NAV -->
-<nav class="top-nav">
-    <div class="nav-left">
-        <a href="https://ytuong.fedu.vn" class="nav-brand">
-            <span>🎬 FEDU DIRECTOR REPORT</span>
-        </a>
-        <span class="nav-badge">3 PHÂN CẢNH</span>
-        <span class="nav-meta-title">Phân Tích Video Điện Ảnh - @jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever</span>
+<div class="header">
+    <div class="badge-row">
+        <span class="badge badge-rose">⚡ CHUYỂN CẢNH (TRANSITION)</span>
+        <span class="badge badge-gold">👔 THỜI TRANG &amp; PHỤ KIỆN (OOTD)</span>
+        <span class="badge badge-blue">⏱ 6.00 GIÂY • 120 BPM BEAT SYNC</span>
+        <span class="badge badge-green">🇪🇸 ÂU MỸ (TÂY BAN NHA)</span>
     </div>
-    <div class="nav-right">
-        <a href="https://www.instagram.com/reels/Dc9LUXLAHkc/" target="_blank" class="nav-btn primary">
-            <span>📸 Instagram Gốc ↗</span>
-        </a>
-        <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
-            <span>💡 Kho Ý Tưởng ↗</span>
+    <h1 class="header-title">Getting Ready Faster Than Ever • Nghệ Thuật Match Cut Dậm Chân &amp; Nhịp Điệu 120 BPM</h1>
+    <div class="header-meta">
+        <span>Tác giả: 
+                    <a href="../index.html?creator=@jesussropero" onclick="handleCreatorClick(event, '@jesussropero', 'Jesús Ropero')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Jesús Ropero trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Jesús Ropero</strong>
+                        <span class="author-handle">(@jesussropero)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+        <span>•</span>
+        <span>Mã bài: <code>Dc9LUXLAHkc</code></span>
+        <span>•</span>
+        <span>Quy cách: <strong>1440x2560 (9:16) • 30.00 FPS • 180 Frames</strong></span>
+        <span>•</span>
+        <a href="https://www.instagram.com/p/Dc9LUXLAHkc/" target="_blank" class="author-ig-badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Xem Video Gốc Instagram
         </a>
     </div>
-</nav>
-
-<!-- MAIN CONTAINER -->
-<div class="layout-container">
-    <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
-    <aside class="left-player-col">
-        <div class="player-box">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/jesussroper.mp4" type="video/mp4">
-                <source src="videos/jesussroper.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
-        </div>
-
-        <!-- DIRECTOR CONTROLS -->
-        <div class="director-controls">
-            <div class="ctrl-row">
-                <div class="ctrl-btn-group">
-                    <button class="ctrl-btn" onclick="togglePlay()" id="playBtn">▶ Phát</button>
-                    <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
-                    <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
-                </div>
-                <span class="time-display" id="timeDisplay">0.00s / 6.00s</span>
-            </div>
-            <div class="ctrl-row">
-                <div class="ctrl-btn-group">
-                    <span style="font-size:11px; font-weight:600; color:var(--cl-text-muted);">Tốc độ:</span>
-                    <button class="ctrl-btn" onclick="setSpeed(0.25)">0.25x</button>
-                    <button class="ctrl-btn" onclick="setSpeed(0.5)">0.5x</button>
-                    <button class="ctrl-btn active" onclick="setSpeed(1.0)">1.0x</button>
-                    <button class="ctrl-btn" onclick="setSpeed(1.5)">1.5x</button>
-                </div>
-                <button class="ctrl-btn" onclick="toggleLoop()" id="loopBtn">🔁 Lặp Shot</button>
-            </div>
-        </div>
-
-        <!-- VIDEO META -->
-        <div class="video-meta-card">
-            <div class="video-meta-title">Phân Tích Video Điện Ảnh - @jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever</div>
-            <div class="video-meta-author">
-                <span>Tác giả:</span>
-                <a href="https://www.instagram.com/reels/Dc9LUXLAHkc/" target="_blank" class="author-link">@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever</a>
-            </div>
-        </div>
-    </aside>
-
-    <!-- RIGHT COLUMN: ANALYSIS & CRITIQUE -->
-    <main class="right-content-col">
-        <!-- HEADER BAR WITH VIEW SWITCHER -->
-        <div class="content-header-bar">
-            <div class="view-tabs">
-                <button class="view-tab active" id="tabDetail" onclick="switchView('detail')">📋 Bảng Phân Tích Đạo Diễn</button>
-                <button class="view-tab" id="tabGrid" onclick="switchView('grid')">🔲 Lưới Ảnh Keyframes</button>
-            </div>
-            <div style="font-family:var(--font-mono); font-size:12px; color:var(--cl-text-muted);">
-                Tỷ lệ: <strong>9:16 Dọc (Vertical Reel)</strong> • 6.00s
-            </div>
-        </div>
-
-        <!-- HERO OVERVIEW CARD -->
-        <div class="overview-hero-card">
-            <h1 class="overview-hero-title">Phân Tích Video Điện Ảnh - @jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever</h1>
-            <p class="overview-hero-desc">Bóc tách chi tiết 3 phân cảnh theo chuẩn đạo diễn chuyên nghiệp.</p>
-            <div class="overview-specs-grid">
-                <div class="overview-spec-item">
-                    <span class="spec-tag-label">Kỹ Thuật Cốt Lõi</span>
-                    <span class="spec-tag-value">Cinematic Storytelling, Composition Critique, Micro-Beats Pacing</span>
-                </div>
-                <div class="overview-spec-item">
-                    <span class="spec-tag-label">Tổng Số Phân Cảnh</span>
-                    <span class="spec-tag-value">3 Shots • Nhịp trung bình 1.98s</span>
-                </div>
-                <div class="overview-spec-item">
-                    <span class="spec-tag-label">Độ Phân Giải</span>
-                    <span class="spec-tag-value">1440x2560 • 30.0 FPS</span>
-                </div>
-            </div>
-        </div>
-
-        <!-- STORYBOARD DETAIL VIEW -->
-        <div class="shots-container" id="detailView">
-            
-        <article class="shot-card" id="shot-1">
-            <div class="shot-card-header">
-                <span class="shot-id-pill">SHOT 01</span>
-                <button class="shot-time-btn" onclick="jumpToShot(1, 0.0, 2.07)">
-                    ▶ 0.00s - 2.07s (2.07s)
-                </button>
-            </div>
-            <h2 class="shot-headline">Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation)</h2>
-
-            <!-- 3 Keyframes -->
-            <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
-                    <span class="kf-label-tag start">Đầu (0.00s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.jpg', 'Shot 01 • Giữa (1.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
-                    <span class="kf-label-tag mid">Giữa (1.03s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_end.jpg', 'Shot 01 • Cuối (2.07s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
-                    <span class="kf-label-tag end">Cuối (2.07s)</span>
-                </div>
-            </div>
-
-            <!-- 3 Structured Critique Blocks -->
-            <div class="critique-blocks-grid">
-                <div class="block-subject-action">
-                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
-                    <div class="block-text">Diễn viên nằm bẹp trên sàn phòng để đồ hiện đại với áo ba lỗ trắng và quần short đen. Anh ta tung bổng chiếc giày lười da đen (penny loafer) lên trần nhà theo trục thẳng đứng rồi đón lấy bằng hai tay trước ngực. Ngay sau đó, anh ta tung nhẹ chiếc giày lần nữa và bất ngờ tung một cú đạp chân trần trực diện che kín hoàn toàn ống kính máy quay.</div>
-                </div>
-
-                <div class="block-two-sided">
-                    <div class="critique-side pro">
-                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <div class="side-content">Góc quay cực thấp (Ground-Level Worm's-eye view) biến trần nhà có rèm kính tán quang thành hậu cảnh hình học tinh tế. Chuyển động tung - bắt giày tạo cảm giác tò mò dự đoán (Anticipation Hook). Cú đạp chân che kín ống kính (Lens Block) tạo điểm cắt nối hoàn hảo không một vết gợn.</div>
-                    </div>
-                    <div class="critique-side con">
-                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <div class="side-content">Thời lượng 2.07s đòi hỏi động tác ném và bắt phải dứt khoát tuyệt đối; diễn viên nằm sát sàn nên ánh sáng hắt từ trần có thể tạo bóng đổ nhẹ dưới hốc mắt nếu không có đèn ven hỗ trợ.</div>
-                    </div>
-                </div>
-
-                <div class="block-takeaway">
-                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
-                    <div class="takeaway-body">Khi quay video biến hình thời trang, mở đầu bằng hành động chơi đùa với một phụ kiện (giày, kính, đồng hồ) ở góc máy lạ sẽ tạo lực hút thị giác cao gấp 3 lần so với đứng tạo dáng thụ động.</div>
-                </div>
-            </div>
-
-            <!-- Specs Strip -->
-            <div class="shot-specs-strip">
-                <span class="spec-pill">📐 <strong>Góc máy:</strong> Ultra-Wide Lens 16-20mm f/2.8</span>
-                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio / Bối cảnh</span>
-                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh sáng tự nhiên dịu nhẹ tán xạ qua trần kính mờ (Diffused Skylight) kết hợp đèn viền tủ đồ âm tường</span>
-                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Foot Stamp Lens-Wipe Match Cut (Cắt gối dậm chân che kín ống kính sang bối cảnh ngoài trời)</span>
-            </div>
-
-            
-            <div class="transition-card">
-                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Foot Stamp Lens-Wipe Match Cut (Cắt gối dậm chân che kín ống kính sang bối cảnh ngoài trời)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
-                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
-                </div>
-            </div>
-            
-        </article>
-        
-
-        <article class="shot-card" id="shot-2">
-            <div class="shot-card-header">
-                <span class="shot-id-pill">SHOT 02</span>
-                <button class="shot-time-btn" onclick="jumpToShot(2, 2.1, 3.97)">
-                    ▶ 2.10s - 3.97s (1.87s)
-                </button>
-            </div>
-            <h2 class="shot-headline">Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM</h2>
-
-            <!-- 3 Keyframes -->
-            <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_start.jpg', 'Shot 02 • Đầu (2.10s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
-                    <span class="kf-label-tag start">Đầu (2.10s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.jpg', 'Shot 02 • Giữa (3.04s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
-                    <span class="kf-label-tag mid">Giữa (3.04s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_end.jpg', 'Shot 02 • Cuối (3.97s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
-                    <span class="kf-label-tag end">Cuối (3.97s)</span>
-                </div>
-            </div>
-
-            <!-- 3 Structured Critique Blocks -->
-            <div class="critique-blocks-grid">
-                <div class="block-subject-action">
-                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
-                    <div class="block-text">Chiếc giày lười da đen (đã mang vào chân cùng tất trắng và quần âu xếp ly ống rộng màu nâu) dậm thẳng lên ống kính máy quay đặt trên mặt đá quảng trường châu Âu ngập nắng. Diễn viên nhấc chân bước lùi lại, xuất hiện với diện mạo hoàn chỉnh: áo sơ mi ca-rô xanh mở cúc, áo ba lỗ trắng, kính râm đen và vòng cổ bạc. Dòng chữ Kinetic Typography 'ARE YOU READY?' nhấp nháy giật nảy chính giữa khung hình đồng bộ theo từng phách beat EDM. Anh ta nhìn thẳng xuống rồi cúi người vươn tay chạm vào camera.</div>
-                </div>
-
-                <div class="block-two-sided">
-                    <div class="critique-side pro">
-                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <div class="side-content">Cú Match Cut 'chân trần dậm ➔ giày da dậm' giải phóng năng lượng bùng nổ cực mạnh. Góc máy từ mặt đất tôn vinh tối đa chiều dài chân và độ rủ mềm mại của phom quần âu ống rộng. Typography in hoa đậm nét nổi bật trên nền trời xanh Địa Trung Hải đồng bộ từng khung hình với vocal hook.</div>
-                    </div>
-                    <div class="critique-side con">
-                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <div class="side-content">Góc quay ngược sáng thẳng lên bầu trời buổi trưa đòi hỏi dải tương phản động (Dynamic Range) cực cao để không bị cháy sáng mây trời hoặc tối đen khuôn mặt.</div>
-                    </div>
-                </div>
-
-                <div class="block-takeaway">
-                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
-                    <div class="takeaway-body">Đồng bộ hóa 3 yếu tố: Cắt cảnh vật lý (Match Cut) + Điểm rơi âm thanh (Bass Drop) + Đồ họa chuyển động (Kinetic Text) tại đúng 1 khung hình duy nhất là bí quyết vàng tạo hiệu ứng viral thôi miên người xem.</div>
-                </div>
-            </div>
-
-            <!-- Specs Strip -->
-            <div class="shot-specs-strip">
-                <span class="spec-pill">📐 <strong>Góc máy:</strong> Ultra-Wide Lens 16-20mm f/2.8</span>
-                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio / Bối cảnh</span>
-                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh nắng gắt buổi trưa Địa Trung Hải (High Noon Direct Sun), bóng đổ ngắn sắc nét trên mặt đá cẩm thạch</span>
-                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Hand Grab POV Pickup Transition (Bàn tay vươn xuống chạm vào thân máy và nhấc bổng lên)</span>
-            </div>
-
-            
-            <div class="transition-card">
-                <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Hand Grab POV Pickup Transition (Bàn tay vươn xuống chạm vào thân máy và nhấc bổng lên)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
-                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
-                </div>
-            </div>
-            
-        </article>
-        
-
-        <article class="shot-card" id="shot-3">
-            <div class="shot-card-header">
-                <span class="shot-id-pill">SHOT 03</span>
-                <button class="shot-time-btn" onclick="jumpToShot(3, 4.0, 6.0)">
-                    ▶ 4.00s - 6.00s (2.00s)
-                </button>
-            </div>
-            <h2 class="shot-headline">Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ</h2>
-
-            <!-- 3 Keyframes -->
-            <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_start.jpg', 'Shot 03 • Đầu (4.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
-                    <span class="kf-label-tag start">Đầu (4.00s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.jpg', 'Shot 03 • Giữa (5.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
-                    <span class="kf-label-tag mid">Giữa (5.00s)</span>
-                </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_end.jpg', 'Shot 03 • Cuối (6.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
-                    <span class="kf-label-tag end">Cuối (6.00s)</span>
-                </div>
-            </div>
-
-            <!-- 3 Structured Critique Blocks -->
-            <div class="critique-blocks-grid">
-                <div class="block-subject-action">
-                    <div class="block-label">🎬 Mô Tả Đối Tượng &amp; Diễn Biến</div>
-                    <div class="block-text">Bàn tay nhấc máy quay lên ngang tầm ngực, chuyển máy từ trạng thái tĩnh trên mặt đất sang góc quay selfie di động (Handheld Selfie POV). Diễn viên sải bước tự tin lướt qua quảng trường lịch sử tân cổ điển, vừa đi vừa xoay người khoe trọn phom dáng trang phục phóng khoáng, tà áo sơ mi bay nhẹ trong gió, kính râm thời thượng và hậu cảnh vòm cổng cổ kính tráng lệ.</div>
-                </div>
-
-                <div class="block-two-sided">
-                    <div class="critique-side pro">
-                        <div class="side-header">✅ Điểm Sáng Thị Giác (Ưu điểm)</div>
-                        <div class="side-content">Cú nhấc máy tạo sự chuyển đổi không gian ngoạn mục từ góc nhìn cố định sang chuyển động đồng hành, mở rộng trường nhìn 360 độ bao trọn kiến trúc di sản. Thần thái nhân vật tự tin, phóng khoáng, chuẩn chất phong cách sống châu Âu cao cấp.</div>
-                    </div>
-                    <div class="critique-side con">
-                        <div class="side-header">⚠️ Điểm Cần Lưu Ý (Hạn chế)</div>
-                        <div class="side-content">Thời lượng 2 giây lướt qua rất nhanh, đòi hỏi biên độ xoay người và sải bước phải chuẩn xác để người xem kịp quan sát cả outfit lẫn bối cảnh.</div>
-                    </div>
-                </div>
-
-                <div class="block-takeaway">
-                    <div class="takeaway-header">💡 Bài Học Đúc Kết Thực Chiến</div>
-                    <div class="takeaway-body">Kết thúc video thời trang bằng một cú máy di động sải bước (Hero Strut) hướng về phía trước giúp video duy trì năng lượng cao đến giây cuối cùng, kích thích người xem xem lại từ đầu (Seamless Replay Loop).</div>
-                </div>
-            </div>
-
-            <!-- Specs Strip -->
-            <div class="shot-specs-strip">
-                <span class="spec-pill">📐 <strong>Góc máy:</strong> Action-cam / Ultra-Wide 16mm Lens</span>
-                <span class="spec-pill">📍 <strong>Bối cảnh:</strong> Studio / Bối cảnh</span>
-                <span class="spec-pill">💡 <strong>Ánh sáng:</strong> Ánh nắng xiên tạo viền tóc vàng óng (Golden Rim Light), phản xạ từ nền đá quảng trường làm sáng đều diện mạo</span>
-                <span class="spec-pill">⚡ <strong>Cắt cảnh:</strong> Hard Cut Out / Seamless Loop Potential (Kích thích người xem bấm loop xem lại)</span>
-            </div>
-
-            
-            <div class="transition-card">
-                <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_03_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
-                    <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/transitions/trans_03_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
-                    <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
-                </div>
-            </div>
-            
-        </article>
-        
-        </div>
-
-        <!-- VISUAL GRID VIEW -->
-        <div class="visual-grid-view" id="gridView">
-            
-        <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 2.07)">
-            <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
-                <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
-            </div>
-            <div class="grid-card-body">Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation)</div>
-        </div>
-        
-
-        <div class="grid-shot-card" onclick="jumpToShot(2, 2.1, 3.97)">
-            <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
-                <span class="grid-thumb-badge">Shot 02 • 2.10s</span>
-            </div>
-            <div class="grid-card-body">Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM</div>
-        </div>
-        
-
-        <div class="grid-shot-card" onclick="jumpToShot(3, 4.0, 6.0)">
-            <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
-                <span class="grid-thumb-badge">Shot 03 • 4.00s</span>
-            </div>
-            <div class="grid-card-body">Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ</div>
-        </div>
-        
-        </div>
-
-        <!-- FOOTER LINKS SECTION -->
-        <footer class="bottom-links-section">
-            <div style="font-family:var(--font-heading-short); font-size:14px; font-weight:700; text-transform:uppercase; color:var(--cl-text-primary);">
-                🔗 Hệ Sinh Thái &amp; Kho Tài Nguyên Liên Quan
-            </div>
-            <div class="footer-links-grid">
-                <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
-                    <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
-                </a>
-                <a href="https://drive.google.com/open?id=1hIyEsw3ySne3E8YUD_xtyqcJFx1wROpF" target="_blank" class="footer-link-card">
-                    <span>📁 Mở Thư Mục Google Drive ↗</span>
-                </a>
-                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever" class="footer-link-card">
-                    <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
-                </a>
-            </div>
-        </footer>
-    </main>
 </div>
 
-<!-- LIGHTBOX MODAL -->
-<div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
-    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-    <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+<!-- Control Bar -->
+<div class="control-bar">
+    <div class="view-tabs">
+        <button class="tab-btn active" onclick="switchView('detail')">📑 Phân Tích Chi Tiết</button>
+        <button class="tab-btn" onclick="switchView('grid')">🎛 Bàn Dựng Storyboard</button>
+    </div>
+    <div class="action-btns">
+        <button class="btn-primary" onclick="playVideoAt(0)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+            Xem Toàn Bộ Video (6.0s)
+        </button>
+    </div>
+</div>
+
+<!-- Executive Insights -->
+<div class="insights-section">
+    <h2 class="section-headline">✨ 4 Trụ Cột Nghệ Thuật &amp; Kỹ Thuật Đỉnh Cao</h2>
+    <div class="insights-grid">
+        <div class="insight-card">
+            <div class="insight-title">🦶 1. Kỹ Thuật Match Cut Dậm Chân (Foot Stamp Wipe)</div>
+            <p class="insight-text">Cú đạp chân trần ở Frame 62 che kín ống kính camera (Lens Block) trong phòng ngủ được nối trực tiếp vào cú dậm giày da đen bóng lộn ở Frame 63 trên quảng trường đá. Sự liên tục động lượng (Kinetic Continuity) tạo cảm giác không gian bị bẻ cong tức thì.</p>
+        </div>
+        <div class="insight-card">
+            <div class="insight-title">📐 2. Bố Cục Góc Siêu Thấp Sát Mặt Đất (Ground-Level Low-Angle)</div>
+            <p class="insight-text">Đặt máy quay nằm bẹp dưới sàn nhà và mặt đá hướng góc 90 độ lên trời. Góc máy này tạo tỷ lệ cơ thể phi thường (kéo dài chân, tôn phom quần âu ống rộng), biến bầu trời xanh ngắt thành phông nền khổng lồ làm nổi bật chủ thể.</p>
+        </div>
+        <div class="insight-card">
+            <div class="insight-title">🎵 3. Nhịp Điệu 120 BPM &amp; Kinetic Typography Đồng Bộ</div>
+            <p class="insight-text">Video vận hành chuẩn xác theo nhịp 120 BPM (1 beat = 0.50s = 15 frames). Chữ 'ARE' (F66) ➔ 'YOU' (F72) ➔ 'READY?' (F78) nhấp nháy giật nảy đúng từng mili-giây với giọng vocal sample và tiếng nổ Bass Drop trầm rung chuyển.</p>
+        </div>
+        <div class="insight-card">
+            <div class="insight-title">🚶 4. Chuyển Đổi Trạng Thái Máy Cầm Tay &amp; Hero Strut</div>
+            <p class="insight-text">Tại giây 4.00, diễn viên cúi người nhấc camera lên (Camera Pickup Transition), chuyển từ góc máy tĩnh quan sát sang góc selfie chuyển động góc rộng. Cú sải bước tự tin khoe trọn outfit và kiến trúc quảng trường cổ kính tạo điểm kết thúc tràn ngập năng lượng.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Overview Grid -->
+<div id="grid-view" class="overview-grid" style="display: none;">
+    
+    <div class="grid-card" onclick="scrollToShot('shot-01')">
+        <div class="grid-thumb-box">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.webp" alt="Shot 1 Mid" />
+            <span class="grid-tag">S01 • 0.00s - 2.07s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation)</div>
+            <div class="grid-sub">Extreme Ground-Level Low-Angle • Worm's-Eye View (9:16)</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="scrollToShot('shot-02')">
+        <div class="grid-thumb-box">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.webp" alt="Shot 2 Mid" />
+            <span class="grid-tag">S02 • 2.10s - 3.97s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM</div>
+            <div class="grid-sub">Extreme Ground-Level Low-Angle • 9:16 Vertical</div>
+        </div>
+    </div>
+    
+    <div class="grid-card" onclick="scrollToShot('shot-03')">
+        <div class="grid-thumb-box">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.webp" alt="Shot 3 Mid" />
+            <span class="grid-tag">S03 • 4.00s - 6.00s</span>
+        </div>
+        <div class="grid-info">
+            <div class="grid-title">Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ</div>
+            <div class="grid-sub">Handheld Wide-Angle Selfie POV • Tracking Walking Shot</div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Detail Cards -->
+<div id="detail-view">
+    
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 01 / 03</span>
+                <h3 class="shot-headline-text">Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation)</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(0.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 0.00s ➔ 2.07s</span>
+                <span class="dur-pill">2.07s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_04_mid.webp', 'Shot 01 — Đầu Phân Cảnh (0.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_04_mid.webp" class="shot-thumb" alt="Shot 1 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (0.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.webp', 'Shot 01 — Khoảnh Khắc Vàng (Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation))')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_01_mid.webp" class="shot-thumb" alt="Shot 1 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_08_mid.webp', 'Shot 01 — Cuối Phân Cảnh (2.07s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_08_mid.webp" class="shot-thumb" alt="Shot 1 End" />
+                        <span class="kf-tag">CUỐI SHOT (2.07s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Diễn viên nằm bẹp trên sàn phòng để đồ hiện đại với áo ba lỗ trắng và quần short đen. Anh ta tung bổng chiếc giày lười da đen (penny loafer) lên trần nhà theo trục thẳng đứng rồi đón lấy bằng hai tay trước ngực. Ngay sau đó, anh ta tung nhẹ chiếc giày lần nữa và bất ngờ tung một cú đạp chân trần trực diện che kín hoàn toàn ống kính máy quay.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Extreme Ground-Level Low-Angle • Worm's-Eye View (9:16)</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Ultra-Wide Lens 16-20mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh sáng tự nhiên dịu nhẹ tán xạ qua trần kính mờ (Diffused Skylight) kết hợp đèn viền tủ đồ âm tường</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Clean Scandinavian Minimalist • Tông trắng sáng, xám khói trung tính, độ tương phản sắc sảo</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; Sound Design</div>
+                    <div class="info-val">Tiếng vút gió ném giày (Air Whoosh) + Tiếng bắt giày trên không (Catch Slap) + Tiếng rít dậm chân dồn dập (Sub-bass Riser)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Góc quay cực thấp (Ground-Level Worm's-eye view) biến trần nhà có rèm kính tán quang thành hậu cảnh hình học tinh tế. Chuyển động tung - bắt giày tạo cảm giác tò mò dự đoán (Anticipation Hook). Cú đạp chân che kín ống kính (Lens Block) tạo điểm cắt nối hoàn hảo không một vết gợn.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Thời lượng 2.07s đòi hỏi động tác ném và bắt phải dứt khoát tuyệt đối; diễn viên nằm sát sàn nên ánh sáng hắt từ trần có thể tạo bóng đổ nhẹ dưới hốc mắt nếu không có đèn ven hỗ trợ.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Khi quay video biến hình thời trang, mở đầu bằng hành động chơi đùa với một phụ kiện (giày, kính, đồng hồ) ở góc máy lạ sẽ tạo lực hút thị giác cao gấp 3 lần so với đứng tạo dáng thụ động.</p>
+            </div>
+
+            
+        <div class="trans-section">
+            <div class="trans-title">⚡ KỸ THUẬT NỐI CẢNH (TRANSITION: SHOT 01 ➔ SHOT 02)</div>
+            <div class="trans-box" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_10_mid.webp', 'So sánh chuyển cảnh Shot 01 ➔ Shot 02')">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_10_mid.webp" class="trans-img" alt="Transition 1 to 2" />
+                <span class="trans-tag">SO SÁNH KHUNG HÌNH (SPLIT-VIEW)</span>
+            </div>
+            <div class="trans-desc">
+                <strong>Phân tích chuyển tiếp:</strong> Foot Stamp Lens-Wipe Match Cut: Cú đạp chân trần che kín kính trong nhà nối trực tiếp vào cú dậm giày da ngoài trời.
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 02 / 03</span>
+                <h3 class="shot-headline-text">Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(2.1)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 2.10s ➔ 3.97s</span>
+                <span class="dur-pill">1.87s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_12_mid.webp', 'Shot 02 — Đầu Phân Cảnh (2.10s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_12_mid.webp" class="shot-thumb" alt="Shot 2 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (2.10s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.webp', 'Shot 02 — Khoảnh Khắc Vàng (Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_02_mid.webp" class="shot-thumb" alt="Shot 2 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_16_mid.webp', 'Shot 02 — Cuối Phân Cảnh (3.97s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_16_mid.webp" class="shot-thumb" alt="Shot 2 End" />
+                        <span class="kf-tag">CUỐI SHOT (3.97s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Chiếc giày lười da đen (đã mang vào chân cùng tất trắng và quần âu xếp ly ống rộng màu nâu) dậm thẳng lên ống kính máy quay đặt trên mặt đá quảng trường châu Âu ngập nắng. Diễn viên nhấc chân bước lùi lại, xuất hiện với diện mạo hoàn chỉnh: áo sơ mi ca-rô xanh mở cúc, áo ba lỗ trắng, kính râm đen và vòng cổ bạc. Dòng chữ Kinetic Typography 'ARE YOU READY?' nhấp nháy giật nảy chính giữa khung hình đồng bộ theo từng phách beat EDM. Anh ta nhìn thẳng xuống rồi cúi người vươn tay chạm vào camera.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Extreme Ground-Level Low-Angle • 9:16 Vertical</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Ultra-Wide Lens 16-20mm f/2.8</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh nắng gắt buổi trưa Địa Trung Hải (High Noon Direct Sun), bóng đổ ngắn sắc nét trên mặt đá cẩm thạch</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">Sun-drenched European Summer • Tông xanh thẳm của bầu trời tương phản với sắc nâu ấm và sơ mi xanh nhạt</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; Sound Design</div>
+                    <div class="info-val">Cú dậm 'THUD' dội sub-bass rung chuyển + Beat EDM 120 BPM bùng nổ (Bass Drop) + Giọng đọc vocal 'ARE... YOU... READY?'</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Cú Match Cut 'chân trần dậm ➔ giày da dậm' giải phóng năng lượng bùng nổ cực mạnh. Góc máy từ mặt đất tôn vinh tối đa chiều dài chân và độ rủ mềm mại của phom quần âu ống rộng. Typography in hoa đậm nét nổi bật trên nền trời xanh Địa Trung Hải đồng bộ từng khung hình với vocal hook.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Góc quay ngược sáng thẳng lên bầu trời buổi trưa đòi hỏi dải tương phản động (Dynamic Range) cực cao để không bị cháy sáng mây trời hoặc tối đen khuôn mặt.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Đồng bộ hóa 3 yếu tố: Cắt cảnh vật lý (Match Cut) + Điểm rơi âm thanh (Bass Drop) + Đồ họa chuyển động (Kinetic Text) tại đúng 1 khung hình duy nhất là bí quyết vàng tạo hiệu ứng viral thôi miên người xem.</p>
+            </div>
+
+            
+        <div class="trans-section">
+            <div class="trans-title">⚡ KỸ THUẬT NỐI CẢNH (TRANSITION: SHOT 02 ➔ SHOT 03)</div>
+            <div class="trans-box" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_18_mid.webp', 'So sánh chuyển cảnh Shot 02 ➔ Shot 03')">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_18_mid.webp" class="trans-img" alt="Transition 2 to 3" />
+                <span class="trans-tag">SO SÁNH KHUNG HÌNH (SPLIT-VIEW)</span>
+            </div>
+            <div class="trans-desc">
+                <strong>Phân tích chuyển tiếp:</strong> Camera Pickup Transition: Nhấc máy quay từ mặt đất lên ngang ngực, chuyển sang góc selfie đồng hành lướt qua quảng trường.
+            </div>
+        </div>
+        
+        </div>
+    </div>
+    
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-title-group">
+                <span class="shot-badge">PHÂN CẢNH 03 / 03</span>
+                <h3 class="shot-headline-text">Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ</h3>
+            </div>
+            <div class="shot-time-btn" onclick="playVideoAt(4.0)" title="Bấm để phát video phân cảnh này">
+                <span>⏱ 4.00s ➔ 6.00s</span>
+                <span class="dur-pill">2.00s</span>
+                <span class="play-hint">▶ Phát video</span>
+            </div>
+        </div>
+
+        <div class="shot-body">
+            <div class="keyframes-row">
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_20_mid.webp', 'Shot 03 — Đầu Phân Cảnh (4.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_20_mid.webp" class="shot-thumb" alt="Shot 3 Start" />
+                        <span class="kf-tag">ĐẦU SHOT (4.00s)</span>
+                    </div>
+                </div>
+                <div class="kf-col main-kf" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.webp', 'Shot 03 — Khoảnh Khắc Vàng (Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_03_mid.webp" class="shot-thumb" alt="Shot 3 Mid" />
+                        <span class="kf-tag gold">KHOẢNH KHẮC VÀNG (KEYFRAME)</span>
+                    </div>
+                </div>
+                <div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_24_mid.webp', 'Shot 03 — Cuối Phân Cảnh (6.00s)')">
+                    <div class="kf-box">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever/shot_24_mid.webp" class="shot-thumb" alt="Shot 3 End" />
+                        <span class="kf-tag">CUỐI SHOT (6.00s)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khối 1: Diễn biến đối tượng & Thông số kỹ thuật -->
+            <div class="content-block action-block">
+                <div class="block-title">🎬 Mô Tả Đối Tượng &amp; Diễn Biến Thực Tế:</div>
+                <p class="block-text">Bàn tay nhấc máy quay lên ngang tầm ngực, chuyển máy từ trạng thái tĩnh trên mặt đất sang góc quay selfie di động (Handheld Selfie POV). Diễn viên sải bước tự tin lướt qua quảng trường lịch sử tân cổ điển, vừa đi vừa xoay người khoe trọn phom dáng trang phục phóng khoáng, tà áo sơ mi bay nhẹ trong gió, kính râm thời thượng và hậu cảnh vòm cổng cổ kính tráng lệ.</p>
+            </div>
+
+            <div class="shot-info-grid">
+                <div class="info-block">
+                    <div class="info-label">🎥 Góc Máy &amp; Khung Hình</div>
+                    <div class="info-val">Handheld Wide-Angle Selfie POV • Tracking Walking Shot</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🔍 Tiêu Cự &amp; Ống Kính</div>
+                    <div class="info-val">Action-cam / Ultra-Wide 16mm Lens</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">💡 Thiết Kế Ánh Sáng</div>
+                    <div class="info-val">Ánh nắng xiên tạo viền tóc vàng óng (Golden Rim Light), phản xạ từ nền đá quảng trường làm sáng đều diện mạo</div>
+                </div>
+                <div class="info-block">
+                    <div class="info-label">🎨 Bảng Màu &amp; Color Grade</div>
+                    <div class="info-val">High-End Fashion Editorial • Tông màu tự nhiên, màu da khỏe khoắn, chi tiết sắc nét chuẩn điện ảnh</div>
+                </div>
+                <div class="info-block full-width">
+                    <div class="info-label">🔊 Thiết Kế Âm Thanh &amp; Sound Design</div>
+                    <div class="info-val">Nhịp trống EDM 120 BPM tiếp nối dồn dập + Tiếng bước chân tự tin trên mặt đá + Gió thoảng nhẹ (Breeze Ambiance)</div>
+                </div>
+            </div>
+
+            <!-- Khối 2: Đánh giá bố cục 2 chiều (Khen & Chê khách quan) -->
+            <div class="critique-grid">
+                <div class="critique-card pro-card">
+                    <div class="critique-head">✅ Điểm Sáng Thị Giác (Ưu Điểm)</div>
+                    <p>Cú nhấc máy tạo sự chuyển đổi không gian ngoạn mục từ góc nhìn cố định sang chuyển động đồng hành, mở rộng trường nhìn 360 độ bao trọn kiến trúc di sản. Thần thái nhân vật tự tin, phóng khoáng, chuẩn chất phong cách sống châu Âu cao cấp.</p>
+                </div>
+                <div class="critique-card con-card">
+                    <div class="critique-head">⚠️ Hạn Chế &amp; Điểm Cần Lưu Ý (Khắc Phục)</div>
+                    <p>Thời lượng 2 giây lướt qua rất nhanh, đòi hỏi biên độ xoay người và sải bước phải chuẩn xác để người xem kịp quan sát cả outfit lẫn bối cảnh.</p>
+                </div>
+            </div>
+
+            <!-- Khối 3: Bài học thực chiến ngắn gọn -->
+            <div class="takeaway-box">
+                <div class="takeaway-title">💡 BÀI HỌC THỰC CHIẾN ĐÚC KẾT (ACTIONABLE TAKEAWAY):</div>
+                <p class="takeaway-text">Kết thúc video thời trang bằng một cú máy di động sải bước (Hero Strut) hướng về phía trước giúp video duy trì năng lượng cao đến giây cuối cùng, kích thích người xem xem lại từ đầu (Seamless Replay Loop).</p>
+            </div>
+
+            
+        </div>
+    </div>
+    
+</div>
+
+<!-- Footer Links -->
+<div class="footer-links">
+    <h3 style="font-family: var(--font-heading); color: #ffffff; margin-bottom: 8px;">HỆ THỐNG KHO TRI THỨC ĐIỆN ẢNH &amp; PHÂN TÍCH VIDEO</h3>
+    <p style="color: var(--text-secondary); font-size: 13px;">Dữ liệu bóc tách độc quyền bởi AI Video Analysis Agent • Team anh Việt VIDEO</p>
+    <div class="footer-btn-row">
+        <a href="https://vietndj.github.io/scene.html" target="_blank" class="link-btn">🏛 Cổng Tra Cứu Điện Ảnh scene.html</a>
+        <a href="https://ytuong.fedu.vn" target="_blank" class="link-btn">💡 Kho Ý Tưởng YTUONG HUB</a>
+        <a href="https://www.instagram.com/p/Dc9LUXLAHkc/" target="_blank" class="link-btn">🔗 Xem Video Gốc Trên Instagram</a>
+    </div>
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="modal" onclick="closeLightbox()">
+    <span class="modal-close">&times;</span>
+    <img crossorigin="anonymous" id="lightboxImg" class="modal-content" src="" alt="Enlarged Frame" />
+    <div id="lightboxCaption" class="modal-caption"></div>
+</div>
+
+<!-- Video Player Modal -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="video-box" onclick="event.stopPropagation()">
+        <iframe id="mainPlayer" src="https://www.youtube.com/embed/DiQtHMces9M?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+        <div class="video-info-bar">
+            <span id="videoStatusText">Đang phát: Getting ready faster than ever (6.0s)</span>
+            <button onclick="closeVideoModalDirect()" style="background:none; border:none; color:#fb7185; cursor:pointer; font-weight:700;">Đóng ✕</button>
+        </div>
     </div>
 </div>
 
 <script>
-// Structured Shots Data
-const SHOTS_DATA = [{"id": 1, "st_frame": 0, "mid_frame": 30, "en_frame": 62, "st_time": 0.0, "mid_time": 1.0, "en_time": 2.07, "duration": 2.07, "headline": "Visual Hook ném giày & cú đạp chân trần thẳng vào ống kính (Foot Wipe Anticipation)", "subject_action": "Diễn viên nằm bẹp trên sàn phòng để đồ hiện đại với áo ba lỗ trắng và quần short đen. Anh ta tung bổng chiếc giày lười da đen (penny loafer) lên trần nhà theo trục thẳng đứng rồi đón lấy bằng hai tay trước ngực. Ngay sau đó, anh ta tung nhẹ chiếc giày lần nữa và bất ngờ tung một cú đạp chân trần trực diện che kín hoàn toàn ống kính máy quay.", "pros": "Góc quay cực thấp (Ground-Level Worm's-eye view) biến trần nhà có rèm kính tán quang thành hậu cảnh hình học tinh tế. Chuyển động tung - bắt giày tạo cảm giác tò mò dự đoán (Anticipation Hook). Cú đạp chân che kín ống kính (Lens Block) tạo điểm cắt nối hoàn hảo không một vết gợn.", "cons": "Thời lượng 2.07s đòi hỏi động tác ném và bắt phải dứt khoát tuyệt đối; diễn viên nằm sát sàn nên ánh sáng hắt từ trần có thể tạo bóng đổ nhẹ dưới hốc mắt nếu không có đèn ven hỗ trợ.", "takeaway": "Khi quay video biến hình thời trang, mở đầu bằng hành động chơi đùa với một phụ kiện (giày, kính, đồng hồ) ở góc máy lạ sẽ tạo lực hút thị giác cao gấp 3 lần so với đứng tạo dáng thụ động.", "shot_type": "Extreme Ground-Level Low-Angle • Worm's-Eye View (9:16)", "lens": "Ultra-Wide Lens 16-20mm f/2.8", "lighting": "Ánh sáng tự nhiên dịu nhẹ tán xạ qua trần kính mờ (Diffused Skylight) kết hợp đèn viền tủ đồ âm tường", "color_grade": "Clean Scandinavian Minimalist • Tông trắng sáng, xám khói trung tính, độ tương phản sắc sảo", "sound_design": "Tiếng vút gió ném giày (Air Whoosh) + Tiếng bắt giày trên không (Catch Slap) + Tiếng rít dậm chân dồn dập (Sub-bass Riser)", "transition": "Foot Stamp Lens-Wipe Match Cut (Cắt gối dậm chân che kín ống kính sang bối cảnh ngoài trời)", "start_keyframe": "shot_01_start.jpg", "mid_keyframe": "shot_01_mid.jpg", "end_keyframe": "shot_01_end.jpg"}, {"id": 2, "st_frame": 63, "mid_frame": 84, "en_frame": 119, "st_time": 2.1, "mid_time": 2.8, "en_time": 3.97, "duration": 1.87, "headline": "Cú dậm giày biến hình OOTD thần tốc & Typography 'ARE YOU READY?' bùng nổ theo nhịp 120 BPM", "subject_action": "Chiếc giày lười da đen (đã mang vào chân cùng tất trắng và quần âu xếp ly ống rộng màu nâu) dậm thẳng lên ống kính máy quay đặt trên mặt đá quảng trường châu Âu ngập nắng. Diễn viên nhấc chân bước lùi lại, xuất hiện với diện mạo hoàn chỉnh: áo sơ mi ca-rô xanh mở cúc, áo ba lỗ trắng, kính râm đen và vòng cổ bạc. Dòng chữ Kinetic Typography 'ARE YOU READY?' nhấp nháy giật nảy chính giữa khung hình đồng bộ theo từng phách beat EDM. Anh ta nhìn thẳng xuống rồi cúi người vươn tay chạm vào camera.", "pros": "Cú Match Cut 'chân trần dậm ➔ giày da dậm' giải phóng năng lượng bùng nổ cực mạnh. Góc máy từ mặt đất tôn vinh tối đa chiều dài chân và độ rủ mềm mại của phom quần âu ống rộng. Typography in hoa đậm nét nổi bật trên nền trời xanh Địa Trung Hải đồng bộ từng khung hình với vocal hook.", "cons": "Góc quay ngược sáng thẳng lên bầu trời buổi trưa đòi hỏi dải tương phản động (Dynamic Range) cực cao để không bị cháy sáng mây trời hoặc tối đen khuôn mặt.", "takeaway": "Đồng bộ hóa 3 yếu tố: Cắt cảnh vật lý (Match Cut) + Điểm rơi âm thanh (Bass Drop) + Đồ họa chuyển động (Kinetic Text) tại đúng 1 khung hình duy nhất là bí quyết vàng tạo hiệu ứng viral thôi miên người xem.", "shot_type": "Extreme Ground-Level Low-Angle • 9:16 Vertical", "lens": "Ultra-Wide Lens 16-20mm f/2.8", "lighting": "Ánh nắng gắt buổi trưa Địa Trung Hải (High Noon Direct Sun), bóng đổ ngắn sắc nét trên mặt đá cẩm thạch", "color_grade": "Sun-drenched European Summer • Tông xanh thẳm của bầu trời tương phản với sắc nâu ấm và sơ mi xanh nhạt", "sound_design": "Cú dậm 'THUD' dội sub-bass rung chuyển + Beat EDM 120 BPM bùng nổ (Bass Drop) + Giọng đọc vocal 'ARE... YOU... READY?'", "transition": "Hand Grab POV Pickup Transition (Bàn tay vươn xuống chạm vào thân máy và nhấc bổng lên)", "start_keyframe": "shot_02_start.jpg", "mid_keyframe": "shot_02_mid.jpg", "end_keyframe": "shot_02_end.jpg"}, {"id": 3, "st_frame": 120, "mid_frame": 150, "en_frame": 179, "st_time": 4.0, "mid_time": 5.0, "en_time": 6.0, "duration": 2.0, "headline": "Cú sải bước tự tin (Hero Strut) & Mở rộng không gian kiến trúc quảng trường Tây Ban Nha tráng lệ", "subject_action": "Bàn tay nhấc máy quay lên ngang tầm ngực, chuyển máy từ trạng thái tĩnh trên mặt đất sang góc quay selfie di động (Handheld Selfie POV). Diễn viên sải bước tự tin lướt qua quảng trường lịch sử tân cổ điển, vừa đi vừa xoay người khoe trọn phom dáng trang phục phóng khoáng, tà áo sơ mi bay nhẹ trong gió, kính râm thời thượng và hậu cảnh vòm cổng cổ kính tráng lệ.", "pros": "Cú nhấc máy tạo sự chuyển đổi không gian ngoạn mục từ góc nhìn cố định sang chuyển động đồng hành, mở rộng trường nhìn 360 độ bao trọn kiến trúc di sản. Thần thái nhân vật tự tin, phóng khoáng, chuẩn chất phong cách sống châu Âu cao cấp.", "cons": "Thời lượng 2 giây lướt qua rất nhanh, đòi hỏi biên độ xoay người và sải bước phải chuẩn xác để người xem kịp quan sát cả outfit lẫn bối cảnh.", "takeaway": "Kết thúc video thời trang bằng một cú máy di động sải bước (Hero Strut) hướng về phía trước giúp video duy trì năng lượng cao đến giây cuối cùng, kích thích người xem xem lại từ đầu (Seamless Replay Loop).", "shot_type": "Handheld Wide-Angle Selfie POV • Tracking Walking Shot", "lens": "Action-cam / Ultra-Wide 16mm Lens", "lighting": "Ánh nắng xiên tạo viền tóc vàng óng (Golden Rim Light), phản xạ từ nền đá quảng trường làm sáng đều diện mạo", "color_grade": "High-End Fashion Editorial • Tông màu tự nhiên, màu da khỏe khoắn, chi tiết sắc nét chuẩn điện ảnh", "sound_design": "Nhịp trống EDM 120 BPM tiếp nối dồn dập + Tiếng bước chân tự tin trên mặt đá + Gió thoảng nhẹ (Breeze Ambiance)", "transition": "Hard Cut Out / Seamless Loop Potential (Kích thích người xem bấm loop xem lại)", "start_keyframe": "shot_03_start.jpg", "mid_keyframe": "shot_03_mid.jpg", "end_keyframe": "shot_03_end.jpg"}];
-const player = document.getElementById('mainPlayer');
-const playBtn = document.getElementById('playBtn');
-const timeDisplay = document.getElementById('timeDisplay');
-const loopBtn = document.getElementById('loopBtn');
-
-let currentLoopShot = null;
-let isLooping = false;
-
-// Timeupdate listener
-player.addEventListener('timeupdate', () => {
-    const ct = player.currentTime;
-    timeDisplay.textContent = ;
-
-    if (isLooping && currentLoopShot) {
-        if (ct >= currentLoopShot.en_time) {
-            player.currentTime = currentLoopShot.st_time;
-        }
-    }
-});
-
-player.addEventListener('play', () => { playBtn.textContent = '⏸ Tạm dừng'; });
-player.addEventListener('pause', () => { playBtn.textContent = '▶ Phát'; });
-
-function togglePlay() {
-    if (player.paused) player.play();
-    else player.pause();
-}
-
-function setSpeed(speed) {
-    player.playbackRate = speed;
-    document.querySelectorAll('.ctrl-btn-group button').forEach(b => {
-        if (b.textContent === speed + 'x') b.classList.add('active');
-        else if (b.textContent.includes('x')) b.classList.remove('active');
-    });
-}
-
-function stepFrame(frames) {
-    const fps = 30.0 || 24;
-    player.currentTime += frames / fps;
-}
-
-function jumpToShot(shotId, stTime, enTime) {
-    player.currentTime = stTime;
-    player.play();
-    currentLoopShot = { id: shotId, st_time: stTime, en_time: enTime };
-
-    // Highlight card
-    document.querySelectorAll('.shot-card').forEach(c => c.style.borderColor = 'var(--cl-border)');
-    const targetCard = document.getElementById();
-    if (targetCard) {
-        targetCard.style.borderColor = 'var(--cl-accent)';
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
-}
-
-function toggleLoop() {
-    isLooping = !isLooping;
-    loopBtn.classList.toggle('active', isLooping);
-}
-
-function switchView(viewName) {
-    const detailView = document.getElementById('detailView');
-    const gridView = document.getElementById('gridView');
-    const tabDetail = document.getElementById('tabDetail');
-    const tabGrid = document.getElementById('tabGrid');
-
-    if (viewName === 'detail') {
-        detailView.style.display = 'flex';
-        gridView.style.display = 'none';
-        tabDetail.classList.add('active');
-        tabGrid.classList.remove('active');
-    } else {
+function switchView(view) {
+    const detailView = document.getElementById('detail-view');
+    const gridView = document.getElementById('grid-view');
+    const tabs = document.querySelectorAll('.tab-btn');
+    
+    if (view === 'grid') {
         detailView.style.display = 'none';
         gridView.style.display = 'grid';
-        tabDetail.classList.remove('active');
-        tabGrid.classList.add('active');
+        tabs[0].classList.remove('active');
+        tabs[1].classList.add('active');
+    } else {
+        detailView.style.display = 'block';
+        gridView.style.display = 'none';
+        tabs[0].classList.add('active');
+        tabs[1].classList.remove('active');
     }
 }
 
-// Lightbox
+function scrollToShot(id) {
+    switchView('detail');
+    setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    }, 100);
+}
+
 function openLightbox(src, caption) {
-    document.getElementById('lightboxImg').src = src;
-    document.getElementById('lightboxCaption').textContent = caption || '';
-    document.getElementById('lightboxModal').classList.add('active');
+    const modal = document.getElementById('lightboxModal');
+    const img = document.getElementById('lightboxImg');
+    const cap = document.getElementById('lightboxCaption');
+    img.src = src;
+    cap.innerText = caption || '';
+    modal.style.display = 'flex';
 }
 
 function closeLightbox() {
-    document.getElementById('lightboxModal').classList.remove('active');
+    document.getElementById('lightboxModal').style.display = 'none';
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeLightbox();
+function playVideoAt(seconds) {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    const status = document.getElementById('videoStatusText');
+    modal.style.display = 'flex';
+    video.currentTime = seconds;
+    video.play().catch(e => console.log('Autoplay error:', e));
+    status.innerText = `Đang phát từ mốc: ${seconds.toFixed(2)}s`;
+}
+
+function closeVideoModal(e) {
+    if (e.target.id === 'videoModal') {
+        closeVideoModalDirect();
+    }
+}
+
+function closeVideoModalDirect() {
+    const modal = document.getElementById('videoModal');
+    const video = document.getElementById('playerVideo');
+    video.pause();
+    modal.style.display = 'none';
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightbox();
+        closeVideoModalDirect();
+    }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

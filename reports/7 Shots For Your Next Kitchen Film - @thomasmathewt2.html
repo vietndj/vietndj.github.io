@@ -49,6 +49,7 @@
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 <header class="top-nav">
@@ -66,10 +67,7 @@
  <!-- Left Column: Video Player & Controls -->
  <aside class="player-col">
  <div class="video-box-wrap">
- <video id="main-video" controls playsinline preload="metadata">
- <source src="https://media.fedu.vn/videos/7%20Shots%20For%20Your%20Next%20Kitchen%20Film%20-%20%40thomasmathewt2.mp4" type="video/mp4">
- Trình duyệt của bạn không hỗ trợ video thẻ HTML5.
- </video>
+ <iframe id="mainPlayer" src="https://www.youtube.com/embed/iMlYR8v-g8Y?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
  </div>
  <div class="video-track-selector">
  <span class="track-pill active" onclick="switchTrack('master')">🎬 Phim Hoàn Chỉnh (Full 60s)</span>

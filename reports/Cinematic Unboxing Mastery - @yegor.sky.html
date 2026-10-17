@@ -172,15 +172,14 @@ video#mainVideo { width:100%; height:100%; object-fit:contain; background:#000; 
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="player-column">
         <div class="video-player-wrapper">
-            <video id="mainVideo" playsinline preload="auto" poster="https://media.fedu.vn/images/IG_@yegor.sky_Dcil1WWiXOC_Cinematic_Unboxing/shot_01_mid.jpg">
-                <source src="https://media.fedu.vn/videos/Cinematic%20Unboxing%20Mastery%20-%20%40yegor.sky.mp4" type="video/mp4">
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/E0w353IOFrA?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="director-controls">
             <div class="control-row">
@@ -214,7 +213,7 @@ video#mainVideo { width:100%; height:100%; object-fit:contain; background:#000; 
         <header class="report-header">
             <div class="header-badge-row">
                 <div class="badge-tag">🎬 Báo Cáo Đạo Diễn Điện Ảnh Mobile-First</div>
-                <a href="https://www.instagram.com/reels/Dcil1WWiXOC/" target="_blank" class="author-ig-badge">
+                <a href="https://www.instagram.com/p/Dcil1WWiXOC/" target="_blank" class="author-ig-badge">
                     <span>📸 @yegor.sky ↗</span>
                 </a>
             </div>
@@ -245,10 +244,10 @@ video#mainVideo { width:100%; height:100%; object-fit:contain; background:#000; 
                 <a href="https://drive.google.com/open?id=1CC76FHu-MM8sC3XQIV2khq9SdSAT-6bZ" target="_blank" class="link-row">
                     <span>📁 Mở Thư Mục Google Drive Dự Án ↗</span>
                 </a>
-                <a href="https://ytuong.fedu.vn" target="_blank" class="link-row">
-                    <span>🌐 Mở Kho Ý Tưởng YTUONG HUB (ytuong.fedu.vn) ↗</span>
+                <a href="https://vietndj.github.io/scene.html" target="_blank" class="link-row">
+                    <span>🌐 Mở Cổng Tra Cứu Điện Ảnh Trực Tuyến (scene.html) ↗</span>
                 </a>
-                <a href="https://www.instagram.com/reels/Dcil1WWiXOC/" target="_blank" class="link-row">
+                <a href="https://www.instagram.com/p/Dcil1WWiXOC/" target="_blank" class="link-row">
                     <span>📸 Xem Video Gốc Trên Instagram @yegor.sky ↗</span>
                 </a>
             </div>
@@ -268,7 +267,7 @@ video#mainVideo { width:100%; height:100%; object-fit:contain; background:#000; 
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">✕</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoomed Keyframe">
         <div class="lightbox-caption" id="lightboxCap"></div>
     </div>
 </div>
@@ -308,7 +307,7 @@ function renderShots() {
         drawerHTML += `
         <div class="drawer-item" onclick="jumpToShot(${sid}, ${s.st_time})">
             <div class="drawer-thumb-wrap">
-                <img src="${imgMid}" alt="Shot ${sidStr}" loading="lazy">
+                <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidStr}" loading="lazy">
                 <span class="drawer-time">${s.st_time.toFixed(2)}s</span>
             </div>
             <div class="drawer-info">
@@ -321,7 +320,7 @@ function renderShots() {
         gridHTML += `
         <div class="grid-card" onclick="jumpToShot(${sid}, ${s.st_time})">
             <div class="grid-thumb">
-                <img src="${imgMid}" alt="Shot ${sidStr}" loading="lazy" onclick="openLightbox('${imgMid}', 'Shot ${sidStr}: ${s.title}'); event.stopPropagation();">
+                <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidStr}" loading="lazy" onclick="openLightbox('${imgMid}', 'Shot ${sidStr}: ${s.title}'); event.stopPropagation();">
                 <span class="grid-badge">Shot ${sidStr}</span>
                 <span class="grid-dur">${s.duration.toFixed(2)}s</span>
             </div>
@@ -342,7 +341,7 @@ function renderShots() {
                     <span class="trans-desc">${s.transition}</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('${transImg}', 'Chuyển Cảnh Shot ${sidStr} ➔ Shot ${nextSidStr}')">
-                    <img src="${transImg}" alt="Transition ${sid} to ${sid+1}" loading="lazy">
+                    <img crossorigin="anonymous" src="${transImg}" alt="Transition ${sid} to ${sid+1}" loading="lazy">
                     <div class="trans-overlay-tag">🔍 Phóng to ảnh chuyển cảnh</div>
                 </div>
             </div>`;
@@ -375,19 +374,19 @@ function renderShots() {
             <div class="keyframes-grid">
                 <div class="kf-col" onclick="openLightbox('${imgStart}', 'Shot ${sidStr} Start (${s.st_time.toFixed(2)}s)')">
                     <div class="kf-img-wrap">
-                        <img src="${imgStart}" alt="Shot ${sidStr} Start" loading="lazy">
+                        <img crossorigin="anonymous" src="${imgStart}" alt="Shot ${sidStr} Start" loading="lazy">
                         <span class="kf-tag">START: ${s.st_time.toFixed(2)}s</span>
                     </div>
                 </div>
                 <div class="kf-col main-kf" onclick="openLightbox('${imgMid}', 'Shot ${sidStr} Mid (${((s.st_time+s.en_time)/2).toFixed(2)}s)')">
                     <div class="kf-img-wrap">
-                        <img src="${imgMid}" alt="Shot ${sidStr} Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidStr} Mid" loading="lazy">
                         <span class="kf-tag kf-tag-mid">MID (CHÍNH): ${((s.st_time+s.en_time)/2).toFixed(2)}s</span>
                     </div>
                 </div>
                 <div class="kf-col" onclick="openLightbox('${imgEnd}', 'Shot ${sidStr} End (${s.en_time.toFixed(2)}s)')">
                     <div class="kf-img-wrap">
-                        <img src="${imgEnd}" alt="Shot ${sidStr} End" loading="lazy">
+                        <img crossorigin="anonymous" src="${imgEnd}" alt="Shot ${sidStr} End" loading="lazy">
                         <span class="kf-tag">END: ${s.en_time.toFixed(2)}s</span>
                     </div>
                 </div>

@@ -866,6 +866,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -907,18 +947,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DZa9pzKRsAU.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1z2G9zvpkW3wOb2QxgSnlqqzSGNWrXcVU/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -941,7 +982,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">@Jade_Sheng - Video by jade.got.curious</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/reels/DZa9pzKRsAU/?igsi=ZGV5bDRiOGs4bGVw" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @Jade_Sheng"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@Jade_Sheng</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@jade.got.curious" onclick="handleCreatorClick(event, '@jade.got.curious', 'Jade.Got.Curious')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Jade.Got.Curious trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Jade.Got.Curious</strong>
+                        <span class="author-handle">(@jade.got.curious)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span></a></span>
                 <span>Tệp: <strong>IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -965,7 +1013,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 1.57, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1024,7 +1072,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(1.6, 3.2, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1083,7 +1131,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.23, 5.37, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1142,7 +1190,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.4, 7.07, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1201,7 +1249,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.1, 10.7, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1260,7 +1308,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.73, 11.8, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1319,7 +1367,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.83, 12.9, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1378,7 +1426,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.93, 14.0, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1437,7 +1485,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.03, 15.63, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1496,7 +1544,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.67, 18.9, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1555,7 +1603,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.93, 20.13, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1614,7 +1662,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.17, 24.07, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1673,7 +1721,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.1, 26.53, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1732,7 +1780,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(26.57, 27.87, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1791,7 +1839,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(27.9, 29.07, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1850,7 +1898,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-16">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(29.1, 30.5, 'SHOT 16')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1909,7 +1957,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-17">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(30.53, 32.97, 'SHOT 17')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1968,7 +2016,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-18">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(33.0, 34.5, 'SHOT 18')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2027,7 +2075,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-19">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(34.53, 35.47, 'SHOT 19')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2086,7 +2134,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-20">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(35.5, 36.7, 'SHOT 20')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2145,7 +2193,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-21">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(36.73, 39.07, 'SHOT 21')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2204,7 +2252,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-22">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(39.1, 41.2, 'SHOT 22')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2263,7 +2311,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-23">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(41.23, 42.47, 'SHOT 23')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2322,7 +2370,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-24">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(42.5, 43.8, 'SHOT 24')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2381,7 +2429,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-25">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(43.83, 45.33, 'SHOT 25')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2440,7 +2488,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-26">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(45.37, 46.2, 'SHOT 26')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2499,7 +2547,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-27">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(46.23, 46.97, 'SHOT 27')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2558,7 +2606,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-28">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(47.0, 47.67, 'SHOT 28')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2617,7 +2665,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-29">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(47.7, 48.57, 'SHOT 29')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2676,7 +2724,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-30">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(48.6, 52.87, 'SHOT 30')">
-                    <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2737,7 +2785,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 1.57, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg', 'SHOT 01 [0.0s - 1.57s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -2749,7 +2797,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(1.6, 3.2, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg', 'SHOT 02 [1.6s - 3.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -2761,7 +2809,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.23, 5.37, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg', 'SHOT 03 [3.23s - 5.37s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -2773,7 +2821,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.4, 7.07, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg', 'SHOT 04 [5.4s - 7.07s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -2785,7 +2833,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.1, 10.7, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg', 'SHOT 05 [7.1s - 10.7s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -2797,7 +2845,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.73, 11.8, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg', 'SHOT 06 [10.73s - 11.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -2809,7 +2857,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.83, 12.9, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg', 'SHOT 07 [11.83s - 12.9s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -2821,7 +2869,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.93, 14.0, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg', 'SHOT 08 [12.93s - 14.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -2833,7 +2881,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.03, 15.63, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg', 'SHOT 09 [14.03s - 15.63s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -2845,7 +2893,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.67, 18.9, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg', 'SHOT 10 [15.67s - 18.9s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -2857,7 +2905,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.93, 20.13, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg', 'SHOT 11 [18.93s - 20.13s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2869,7 +2917,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.17, 24.07, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg', 'SHOT 12 [20.17s - 24.07s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -2881,7 +2929,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.1, 26.53, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg', 'SHOT 13 [24.1s - 26.53s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -2893,7 +2941,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(26.57, 27.87, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg', 'SHOT 14 [26.57s - 27.87s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -2905,7 +2953,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(27.9, 29.07, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg', 'SHOT 15 [27.9s - 29.07s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -2917,7 +2965,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(29.1, 30.5, 'SHOT 16')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg', 'SHOT 16 [29.1s - 30.5s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 16</div>
@@ -2929,7 +2977,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(30.53, 32.97, 'SHOT 17')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg', 'SHOT 17 [30.53s - 32.97s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 17</div>
@@ -2941,7 +2989,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(33.0, 34.5, 'SHOT 18')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg', 'SHOT 18 [33.0s - 34.5s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 18</div>
@@ -2953,7 +3001,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(34.53, 35.47, 'SHOT 19')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg', 'SHOT 19 [34.53s - 35.47s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 19</div>
@@ -2965,7 +3013,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(35.5, 36.7, 'SHOT 20')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg', 'SHOT 20 [35.5s - 36.7s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 20</div>
@@ -2977,7 +3025,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(36.73, 39.07, 'SHOT 21')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg', 'SHOT 21 [36.73s - 39.07s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 21</div>
@@ -2989,7 +3037,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(39.1, 41.2, 'SHOT 22')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg', 'SHOT 22 [39.1s - 41.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 22</div>
@@ -3001,7 +3049,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(41.23, 42.47, 'SHOT 23')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg', 'SHOT 23 [41.23s - 42.47s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 23</div>
@@ -3013,7 +3061,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(42.5, 43.8, 'SHOT 24')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg', 'SHOT 24 [42.5s - 43.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 24</div>
@@ -3025,7 +3073,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(43.83, 45.33, 'SHOT 25')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg', 'SHOT 25 [43.83s - 45.33s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 25</div>
@@ -3037,7 +3085,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(45.37, 46.2, 'SHOT 26')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg', 'SHOT 26 [45.37s - 46.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 26</div>
@@ -3049,7 +3097,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(46.23, 46.97, 'SHOT 27')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg', 'SHOT 27 [46.23s - 46.97s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 27</div>
@@ -3061,7 +3109,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(47.0, 47.67, 'SHOT 28')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg', 'SHOT 28 [47.0s - 47.67s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 28</div>
@@ -3073,7 +3121,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(47.7, 48.57, 'SHOT 29')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg', 'SHOT 29 [47.7s - 48.57s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 29</div>
@@ -3085,7 +3133,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(48.6, 52.87, 'SHOT 30')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg', 'SHOT 30 [48.6s - 52.87s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 30</div>
@@ -3108,7 +3156,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 1.57, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -3121,7 +3169,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 1.6, 3.2, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -3134,7 +3182,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 3.23, 5.37, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -3147,7 +3195,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 5.4, 7.07, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -3160,7 +3208,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 7.1, 10.7, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -3173,7 +3221,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 10.73, 11.8, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -3186,7 +3234,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 11.83, 12.9, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -3199,7 +3247,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 12.93, 14.0, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -3212,7 +3260,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 14.03, 15.63, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -3225,7 +3273,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 15.67, 18.9, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -3238,7 +3286,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 18.93, 20.13, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -3251,7 +3299,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 20.17, 24.07, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -3264,7 +3312,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 24.1, 26.53, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -3277,7 +3325,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 26.57, 27.87, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -3290,7 +3338,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 27.9, 29.07, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -3303,7 +3351,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(16, 29.1, 30.5, 'SHOT 16')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 16</div>
@@ -3316,7 +3364,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(17, 30.53, 32.97, 'SHOT 17')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 17</div>
@@ -3329,7 +3377,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(18, 33.0, 34.5, 'SHOT 18')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 18</div>
@@ -3342,7 +3390,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(19, 34.53, 35.47, 'SHOT 19')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 19</div>
@@ -3355,7 +3403,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(20, 35.5, 36.7, 'SHOT 20')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 20</div>
@@ -3368,7 +3416,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(21, 36.73, 39.07, 'SHOT 21')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 21</div>
@@ -3381,7 +3429,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(22, 39.1, 41.2, 'SHOT 22')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 22</div>
@@ -3394,7 +3442,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(23, 41.23, 42.47, 'SHOT 23')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 23</div>
@@ -3407,7 +3455,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(24, 42.5, 43.8, 'SHOT 24')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 24</div>
@@ -3420,7 +3468,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(25, 43.83, 45.33, 'SHOT 25')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 25</div>
@@ -3433,7 +3481,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(26, 45.37, 46.2, 'SHOT 26')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 26</div>
@@ -3446,7 +3494,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(27, 46.23, 46.97, 'SHOT 27')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 27</div>
@@ -3459,7 +3507,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(28, 47.0, 47.67, 'SHOT 28')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 28</div>
@@ -3472,7 +3520,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(29, 47.7, 48.57, 'SHOT 29')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 29</div>
@@ -3485,7 +3533,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(30, 48.6, 52.87, 'SHOT 30')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Jade_Sheng_DZa9pzKRsAU_Video_by_jade.got.curious/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 30</div>
@@ -3501,46 +3549,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DZa9pzKRsAU.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1z2G9zvpkW3wOb2QxgSnlqqzSGNWrXcVU";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -3640,6 +3670,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

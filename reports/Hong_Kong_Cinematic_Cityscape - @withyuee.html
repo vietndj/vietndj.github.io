@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Báo Cáo Phân Tích Đạo Diễn - August in Hong Kong (@withyuee)</title>
+<style>
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Aeonik';
+    src: url('data:,') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SVN-Acta';
+    src: url('data:,') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@page {
+    size: A4 portrait;
+    margin: 12mm 12mm 12mm 12mm;
+}
+
+* {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+body {
+    font-family: 'SVN-Aeonik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #0f172a;
+    background: #f8fafc;
+    margin: 0;
+    padding: 24px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+/* Header */
+.header-hero {
+    background: linear-gradient(135deg, #091e3a 0%, #1e3a8a 50%, #b45309 100%);
+    border-radius: 14px;
+    padding: 28px;
+    color: #ffffff;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-tag {
+    display: inline-block;
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+}
+
+.header-title {
+    font-family: 'SVN-Acta', 'SVN-Aeonik', Georgia, serif;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 10px 0;
+    color: #ffffff;
+}
+
+.header-sub {
+    font-size: 13px;
+    color: #cbd5e1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.header-sub span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Overview Grid */
+.overview-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.overview-card {
+    background: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+}
+
+.overview-card .num {
+    font-family: 'SVN-Acta', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1e3a8a;
+}
+
+.overview-card .lbl {
+    font-size: 11px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 4px;
+}
+
+/* Section Titles */
+.section-title {
+    font-family: 'SVN-Acta', 'SVN-Aeonik', serif;
+    font-size: 19px;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 8px;
+    margin: 32px 0 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Shot Card */
+.shot-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.02);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.shot-card:hover {
+    border-color: #cbd5e1;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.shot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.shot-num-title {
+    font-family: 'SVN-Aeonik', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #0f172a;
+}
+
+.time-badge {
+    background: #e0e7ff;
+    color: #3730a3;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.time-badge:hover {
+    background: #c7d2fe;
+}
+
+.shot-body {
+    display: flex;
+    gap: 16px;
+}
+
+.shot-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    width: 140px;
+}
+
+.shot-thumb {
+    width: 140px;
+    aspect-ratio: 16/9;
+    background: #000;
+    border-radius: 6px;
+    object-fit: cover;
+    display: block;
+    cursor: pointer;
+    border: 1px solid #cbd5e1;
+    transition: transform 0.15s;
+}
+
+.shot-thumb:hover {
+    transform: scale(1.03);
+}
+
+.thumb-lbl {
+    font-size: 9px;
+    color: #64748b;
+    text-align: center;
+    font-weight: 600;
+    margin-top: -2px;
+}
+
+.shot-details {
+    flex: 1;
+}
+
+.shot-type {
+    display: inline-block;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.shot-desc {
+    font-size: 12.5px;
+    color: #334155;
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.shot-meta-grid {
+    background: #f8fafc;
+    border-radius: 8px;
+    padding: 10px 12px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    font-size: 11.5px;
+    margin-top: 8px;
+}
+
+.meta-row {
+    display: flex;
+    gap: 8px;
+}
+
+.meta-lbl {
+    font-weight: 700;
+    color: #475569;
+    min-width: 80px;
+}
+
+.meta-val {
+    color: #1e293b;
+    flex: 1;
+}
+
+/* Transition Box */
+.trans-box {
+    background: #fefce8;
+    border: 1px dashed #facc15;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 12px 0 18px 0;
+    text-align: center;
+    page-break-inside: avoid;
+}
+
+.trans-img {
+    max-width: 440px;
+    width: auto;
+    height: auto;
+    max-height: 160px;
+    object-fit: contain;
+    border-radius: 6px;
+    display: block;
+    margin: 6px auto;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.trans-lbl {
+    font-size: 11px;
+    font-weight: 700;
+    color: #854d0e;
+}
+
+/* Script Section */
+.script-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #1e3a8a;
+    border-radius: 10px;
+    padding: 18px;
+    margin-bottom: 18px;
+    page-break-inside: avoid;
+}
+
+.script-title {
+    font-family: 'SVN-Acta', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-bottom: 6px;
+}
+
+.script-tone {
+    font-size: 11.5px;
+    color: #64748b;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.script-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.script-table th {
+    background: #f1f5f9;
+    color: #334155;
+    text-align: left;
+    padding: 8px 10px;
+    font-weight: 700;
+}
+
+.script-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: top;
+}
+
+.script-table tr:hover td {
+    background: #f8fafc;
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.lightbox-modal.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 80vh;
+    border-radius: 8px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    object-fit: contain;
+}
+
+.lightbox-caption {
+    color: #f8fafc;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 14px;
+    text-align: center;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 28px;
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Video Modal */
+.video-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.95);
+    backdrop-filter: blur(8px);
+    justify-content: center;
+    align-items: center;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-box {
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+    position: relative;
+}
+
+.video-box video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.video-close {
+    position: absolute;
+    top: 12px;
+    right: 16px;
+    color: #ffffff;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+/* Floating Video Player Button */
+.floating-play-btn {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    background: #f59e0b;
+    color: #0f172a;
+    font-weight: 800;
+    font-size: 13px;
+    padding: 12px 20px;
+    border-radius: 30px;
+    box-shadow: 0 4px 18px rgba(245, 158, 11, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    z-index: 999;
+    border: none;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.floating-play-btn:hover {
+    transform: translateY(-2px);
+    background: #fbbf24;
+}
+
+@media print {
+    body {
+        background: #ffffff;
+        padding: 0;
+    }
+    .container {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+    .floating-play-btn, .lightbox-modal, .video-modal {
+        display: none !important;
+    }
+}
+
+/* Author Instagram Direct Link Button */
+.author-ig-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(192, 132, 252, 0.12);
+    border: 1px solid rgba(192, 132, 252, 0.35);
+    color: #e879f9;
+    padding: 2px 8px 2px 6px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    vertical-align: middle;
+}
+.author-ig-badge:hover {
+    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
+    border-color: #f43f5e;
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
+}
+.author-ig-badge strong {
+    color: #fff;
+}
+.author-ig-badge .ig-ext-btn {
+    background: linear-gradient(135deg, #c084fc, #f43f5e);
+    color: #0b0f17;
+    font-size: 10px;
+    font-weight: 800;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 2px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: all 0.15s;
+    letter-spacing: 0.2px;
+}
+.author-ig-badge:hover .ig-ext-btn {
+    background: #ffffff;
+    color: #0b0f17;
+}
+
+
+.player-box { position: relative !important; }
+.player-box video { cursor: pointer; }
+.player-fs-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 20;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.75);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    font-family: var(--font-ui, sans-serif);
+    font-size: 11.5px;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+.player-fs-btn:hover {
+    background: #1a73e8;
+    border-color: #1a73e8;
+    transform: scale(1.04);
+}
+.fs-ctrl-btn {
+    background: #fffbeb !important;
+    color: #b45309 !important;
+    border-color: #fef3c7 !important;
+    font-weight: 700 !important;
+}
+.fs-ctrl-btn:hover {
+    background: #fef3c7 !important;
+    color: #92400e !important;
+    border-color: #fcd34d !important;
+}
+
+</style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Header Hero -->
+    <div class="header-hero">
+        <span class="badge-tag">CINEMATOGRAPHY DIRECTOR BREAKDOWN</span>
+        <h1 class="header-title">Báo Cáo Bóc Tách Phân Cảnh &amp; Nghệ Thuật Quay Dựng</h1>
+        <div class="header-sub">
+            <span><b>Tác phẩm:</b> August in Hong Kong</span>
+            <span><b>Tác giả:</b> @withyuee</span>
+            <span><b>Thời lượng:</b> 37.0s (25 fps)</span>
+            <span><b>Quy mô:</b> 17 Phân Cảnh (Shots)</span>
+            <span><b>Độ phân giải:</b> 1916x1078 (Widescreen 16:9)</span>
+        </div>
+    </div>
+
+    <!-- Overview Metrics -->
+    <div class="overview-grid">
+        <div class="overview-card">
+            <div class="num">17</div>
+            <div class="lbl">Tổng Phân Cảnh</div>
+        </div>
+        <div class="overview-card">
+            <div class="num">2.18s</div>
+            <div class="lbl">Thời Lượng Trung Bình/Shot</div>
+        </div>
+        <div class="overview-card">
+            <div class="num">Golden Hour</div>
+            <div class="lbl">Gam Màu Chủ Đạo</div>
+        </div>
+        <div class="overview-card">
+            <div class="num">180&deg; Shutter</div>
+            <div class="lbl">Chuẩn Chuyển Động Điện Ảnh</div>
+        </div>
+    </div>
+
+    <!-- Section 1: Director Breakdown -->
+    <div class="section-title">
+        <span>1. Bóc Tách Chi Tiết 17 Phân Cảnh (Storyboard &amp; Cinematography)</span>
+        <span style="font-size:12px; font-weight:normal; color:#64748b;">Nhấp vào mốc thời gian để xem video cảnh đó</span>
+    </div>
+
+    <div class="shot-card" id="shot-01">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 1: Bến phà Star Ferry & Chiếc phà cập bến cảng (August in Hong Kong Hook)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(0.0)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [00.00s - 02.32s] (2.36s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_1.jpeg" class="shot-thumb" alt="Shot 01 Mid" onclick="openLightbox(this.src, 'Cảnh 1: Bến phà Star Ferry & Chiếc phà cập bến cảng (August in Hong Kong Hook) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (1.18s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_2.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 01 Start" onclick="openLightbox(this.src, 'Cảnh 1: Bến phà Star Ferry & Chiếc phà cập bến cảng (August in Hong Kong Hook) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (0.0s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Wide Shot (MWS) / Establishing Hook Shot</div>
+                <div class="shot-desc">Chiếc phà biểu tượng Star Ferry màu đỏ xanh mang dòng chữ 'Hong Kong - Asia's World City' rẽ sóng cập bến cảng dưới ánh nắng hè trong trẻo. Cầu cảng màu xanh ngọc với kết cấu kim loại đặc trưng làm tiền cảnh bên trái. Dòng chữ Title 'AUGUST IN HONG KONG' xuất hiện trang trọng tạo điểm nhấn thị giác đầu tiên (Hook).</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Chiếc phà từ từ tiến sát vào mạn cầu cảng, mũi phà xoay nhẹ đón khách.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 2: Chuyển cảnh bằng kỹ thuật không gian liền mạch (Spatial Cut) sang góc nhìn từ bên trong khoang phà nhìn ra vịnh Victoria.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Direct Cut on Subject / Urban Establishing / Color Accent Match (Sắc đỏ phà kết nối sắc trời)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Đặt máy ngang tầm mắt (Eye-level) tại cầu cảng, khóa nét vào thân phà. Sử dụng ống kính tiêu cự 35mm hoặc 50mm, tốc độ màn trập 1/50s (quy tắc 180 độ) để sóng biển dập dềnh tự nhiên.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 01 (Out) &rarr; Shot 02 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_3.jpeg" class="trans-img" alt="Transition 01 to 02" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 01 &rarr; Shot 02')" />
+        </div>
+        
+    <div class="shot-card" id="shot-02">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 2: Khung cửa sổ khoang phà hướng ra vịnh Victoria & Tháp IFC (Frame in Frame)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(2.36)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [02.36s - 04.44s] (2.12s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_4.jpeg" class="shot-thumb" alt="Shot 02 Mid" onclick="openLightbox(this.src, 'Cảnh 2: Khung cửa sổ khoang phà hướng ra vịnh Victoria & Tháp IFC (Frame in Frame) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (3.42s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_5.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 02 Start" onclick="openLightbox(this.src, 'Cảnh 2: Khung cửa sổ khoang phà hướng ra vịnh Victoria & Tháp IFC (Frame in Frame) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (2.36s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Wide Shot (WS) - Frame within a Frame</div>
+                <div class="shot-desc">Góc nhìn từ bên trong khoang hành khách của phà Star Ferry, được đóng khung nghệ thuật bởi cột phà và trần gỗ màu xanh rêu. Bên ngoài là đường chân trời vịnh Victoria với tòa tháp IFC sừng sững vươn lên giữa nền trời trong xanh và mặt nước lấp lánh.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Khung phà rung rinh nhẹ theo nhịp sóng nước bồng bềnh, mở ra toàn cảnh vịnh.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 3: Cắt cận cảnh vào luồng bọt sóng biển cuộn trào sau đuôi phà.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Frame within Frame / Environmental Context Cut / Rhythm Match</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Lùi camera vào sâu trong khoang phà để tận dụng khung cửa gỗ làm tiền cảnh tự nhiên (dirty frame), tạo chiều sâu 3D rõ rệt giữa không gian tối bên trong và vịnh biển rực sáng bên ngoài.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 02 (Out) &rarr; Shot 03 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_6.jpeg" class="trans-img" alt="Transition 02 to 03" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 02 &rarr; Shot 03')" />
+        </div>
+        
+    <div class="shot-card" id="shot-03">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 3: Luồng bọt sóng cuộn trào & Phao cứu sinh FERRY (Sensory Ocean Motion)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(4.48)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [04.48s - 06.64s] (2.2s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_7.jpeg" class="shot-thumb" alt="Shot 03 Mid" onclick="openLightbox(this.src, 'Cảnh 3: Luồng bọt sóng cuộn trào & Phao cứu sinh FERRY (Sensory Ocean Motion) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (5.58s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_8.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 03 Start" onclick="openLightbox(this.src, 'Cảnh 3: Luồng bọt sóng cuộn trào & Phao cứu sinh FERRY (Sensory Ocean Motion) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (4.48s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Close-Up (MCU) - Layered Foreground & Texture</div>
+                <div class="shot-desc">Đặc tả chiếc phao cứu sinh tròn màu trắng có dập nổi chữ 'FERRY' ở tiền cảnh, hậu cảnh là luồng nước biển cuộn trào bọt trắng xóa do chân vịt của phà tạo ra khi tăng tốc lướt trên sóng.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Vệt sóng nước cuộn trào bọt trắng dữ dội chảy dọc từ trên xuống dưới.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 4: Cắt sang người thủy thủ lớn tuổi đang đứng buộc dây neo bên mạn phà.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Motion-to-Human Cut / Kinetic Energy Transition / Texture Contrast</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Hạ góc máy hơi chếch xuống 30 độ, lấy nét vào mép phao cứu sinh để hậu cảnh nước biển cuộn trào tạo hiệu ứng thị giác mạnh mẽ. Quay ở tốc độ 24fps để giữ chuyển động bọt nước điện ảnh.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 03 (Out) &rarr; Shot 04 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_9.jpeg" class="trans-img" alt="Transition 03 to 04" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 03 &rarr; Shot 04')" />
+        </div>
+        
+    <div class="shot-card" id="shot-04">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 4: Người thủy thủ già buộc dây neo phà (Sailor Silhouette & Golden Rim)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(6.68)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [06.68s - 08.84s] (2.2s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_10.jpeg" class="shot-thumb" alt="Shot 04 Mid" onclick="openLightbox(this.src, 'Cảnh 4: Người thủy thủ già buộc dây neo phà (Sailor Silhouette & Golden Rim) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (7.78s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_11.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 04 Start" onclick="openLightbox(this.src, 'Cảnh 4: Người thủy thủ già buộc dây neo phà (Sailor Silhouette & Golden Rim) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (6.68s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Shot (MS) - Over-The-Shoulder / Human Touch</div>
+                <div class="shot-desc">Người thủy thủ kỳ cựu mặc áo sơ mi xanh nhạt, quay lưng về phía ống kính, đôi bàn tay gân guốc thoăn thoắt buộc dây thừng vào cọc bích gỗ. Hậu cảnh mờ ảo là đường chân trời thành phố phủ ánh nắng chiều ngược sáng.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Tay người thủy thủ siết chặt mối thừng neo, chuẩn bị cho phà cập bờ.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 5: Cắt đại toàn cảnh vịnh Victoria với chiếc phà xanh đang lướt qua trung tâm vịnh.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Match Action / Scale Jump (Từ bán thân con người sang đại toàn cảnh thiên nhiên & kiến trúc)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Tận dụng ánh sáng ngược (Backlight) để tạo viền sáng vàng (Rim Light) trên bờ vai và mái tóc nhân vật. Mở khẩu f/2.8 để làm mờ mềm mại các khối nhà cao tầng phía sau.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 04 (Out) &rarr; Shot 05 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_12.jpeg" class="trans-img" alt="Transition 04 to 05" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 04 &rarr; Shot 05')" />
+        </div>
+        
+    <div class="shot-card" id="shot-05">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 5: Đại toàn cảnh vịnh Victoria & Chiếc phà xanh lướt sóng (Grand Skyline Panorama)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(8.88)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [08.88s - 10.84s] (2.0s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_13.jpeg" class="shot-thumb" alt="Shot 05 Mid" onclick="openLightbox(this.src, 'Cảnh 5: Đại toàn cảnh vịnh Victoria & Chiếc phà xanh lướt sóng (Grand Skyline Panorama) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (9.88s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_14.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 05 Start" onclick="openLightbox(this.src, 'Cảnh 5: Đại toàn cảnh vịnh Victoria & Chiếc phà xanh lướt sóng (Grand Skyline Panorama) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (8.88s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Extreme Long Shot (ELS) - Classic Cityscape Establishing</div>
+                <div class="shot-desc">Đại toàn cảnh vịnh Victoria hùng vĩ với chiếc phà Star Ferry 2 tầng màu xanh lá biểu tượng đang rẽ sóng ở chính giữa khung hình. Phía sau là toàn bộ dãy cao ốc biểu tượng của đảo Hong Kong tựa lưng vào dãy núi The Peak xanh ngắt.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Chiếc phà di chuyển chậm rãi từ phải sang trái, rẽ luồng nước êm ả.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 6: Chuyển cảnh từ mặt biển sang bờ công viên thành phố với đàn chim bồ câu dạo bước.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Subject Movement Cut / Spatial Shift (Từ biển vào đất liền) / Rule of Thirds</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Sử dụng ống kính tiêu cự 85mm hoặc 105mm để nén nhẹ khoảng cách giữa chiếc phà và dãy núi cao ốc phía sau. Khép khẩu f/5.6 - f/8.0 để giữ độ nét sâu toàn dải.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 05 (Out) &rarr; Shot 06 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_15.jpeg" class="trans-img" alt="Transition 05 to 06" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 05 &rarr; Shot 06')" />
+        </div>
+        
+    <div class="shot-card" id="shot-06">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 6: Đàn chim bồ câu trong bóng râm công viên (Ground Angle & Dappled Light)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(10.88)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [10.88s - 12.72s] (1.88s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_16.jpeg" class="shot-thumb" alt="Shot 06 Mid" onclick="openLightbox(this.src, 'Cảnh 6: Đàn chim bồ câu trong bóng râm công viên (Ground Angle & Dappled Light) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (11.82s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_17.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 06 Start" onclick="openLightbox(this.src, 'Cảnh 6: Đàn chim bồ câu trong bóng râm công viên (Ground Angle & Dappled Light) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (10.88s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Ground Low Angle / Micro Lifestyle Detail</div>
+                <div class="shot-desc">Góc máy đặt sát mặt đất lát gạch công viên ngập tràn các đốm nắng xiên qua tán cây, đặc tả đàn chim bồ câu đang mổ hạt và rảo bước thong thả trong một buổi sáng bình yên.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Đàn chim bồ câu nhấp nhô di chuyển, những bước chân gõ nhẹ trên nền gạch ấm áp.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 7: Cắt nhịp nhàng sang góc nhìn trên cao của con phố sầm uất với đoàn xe minibus đỏ.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Pace Transition (Nhịp thở tĩnh lặng trước khi bước vào nhịp sống phố thị sôi động)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Đặt máy sát mặt đất (Low Angle), dùng tiêu cự 50mm mở khẩu f/2.0 để tách biệt đàn chim khỏi hậu cảnh công viên. Khóa nét vào chú chim đi đầu.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 06 (Out) &rarr; Shot 07 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_18.jpeg" class="trans-img" alt="Transition 06 to 07" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 06 &rarr; Shot 07')" />
+        </div>
+        
+    <div class="shot-card" id="shot-07">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 7: Đoàn xe Minibus đỏ nối đuôi giữa hẻm phố sầm uất (Hong Kong Red Minibuses)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(12.76)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [12.76s - 14.52s] (1.8s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_19.jpeg" class="shot-thumb" alt="Shot 07 Mid" onclick="openLightbox(this.src, 'Cảnh 7: Đoàn xe Minibus đỏ nối đuôi giữa hẻm phố sầm uất (Hong Kong Red Minibuses) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (13.66s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_20.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 07 Start" onclick="openLightbox(this.src, 'Cảnh 7: Đoàn xe Minibus đỏ nối đuôi giữa hẻm phố sầm uất (Hong Kong Red Minibuses) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (12.76s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">High Angle Telephoto / Urban Compression</div>
+                <div class="shot-desc">Góc nhìn từ trên cầu bộ hành nhìn thẳng xuống con phố hẹp đặc trưng Hong Kong với những tòa chung cư cũ kỹ và biển hiệu neon chằng chịt. Đoàn xe buýt nhỏ minibus màu đỏ chạy nối đuôi nhau ngay ngắn giữa dòng xe cộ.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Đoàn xe minibus di chuyển tịnh tiến thẳng về phía trước theo trục dọc con phố.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 8: Cắt góc nhìn từ trên cao xuống người đàn ông ngồi nghỉ cạnh quầy bán vali hè phố.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>High Angle Continuity / Color Palette Lead (Sắc đỏ minibus chuyển tiếp sang màu sắc vali)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Sử dụng ống kính tele 135mm hoặc 200mm đứng từ cầu vượt để nén không gian đường phố, làm cho các tầng biển hiệu và xe cộ xếp lớp dày đặc đậm chất điện ảnh Hong Kong.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 07 (Out) &rarr; Shot 08 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_21.jpeg" class="trans-img" alt="Transition 07 to 08" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 07 &rarr; Shot 08')" />
+        </div>
+        
+    <div class="shot-card" id="shot-08">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 8: Người đàn ông ngồi nghỉ cạnh quầy vali hè phố (Street Stall Top-Down)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(14.56)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [14.56s - 16.32s] (1.8s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_22.jpeg" class="shot-thumb" alt="Shot 08 Mid" onclick="openLightbox(this.src, 'Cảnh 8: Người đàn ông ngồi nghỉ cạnh quầy vali hè phố (Street Stall Top-Down) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (15.46s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_23.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 08 Start" onclick="openLightbox(this.src, 'Cảnh 8: Người đàn ông ngồi nghỉ cạnh quầy vali hè phố (Street Stall Top-Down) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (14.56s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">High Angle / Top-Down Observation Shot</div>
+                <div class="shot-desc">Góc nhìn từ trên cao nhìn xuống một người đàn ông lớn tuổi mặc áo sơ mi trắng ngồi tựa lưng trên chiếc ghế xếp dưới bóng dù xanh, bên cạnh là hàng chục chiếc vali du lịch nhiều màu sắc xếp ngay ngắn bên vỉa hè đầy nắng.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Nhân vật ngồi tĩnh lặng thư thái, ly trà đá mát lạnh đặt trên bàn nhỏ giữa trưa hè.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 9: Cắt sang chiếc xe buýt nhỏ màu hồng mang biển hiệu Mong Kok đón khách.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Color Blocking / High Angle Visual Punch / Street Life Vignette</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Canh góc nhìn 45-60 độ từ tầng lầu hoặc cầu thang bộ để tạo bố cục hình học thú vị giữa các khối hộp vali nhiều màu và bóng râm của chiếc dù.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 08 (Out) &rarr; Shot 09 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_24.jpeg" class="trans-img" alt="Transition 08 to 09" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 08 &rarr; Shot 09')" />
+        </div>
+        
+    <div class="shot-card" id="shot-09">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 9: Minibus hồng Mong Kok đón khách dưới gầm cầu (Mong Kok Bus Interaction)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(16.36)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [16.36s - 18.48s] (2.16s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_25.jpeg" class="shot-thumb" alt="Shot 09 Mid" onclick="openLightbox(this.src, 'Cảnh 9: Minibus hồng Mong Kok đón khách dưới gầm cầu (Mong Kok Bus Interaction) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (17.44s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_26.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 09 Start" onclick="openLightbox(this.src, 'Cảnh 9: Minibus hồng Mong Kok đón khách dưới gầm cầu (Mong Kok Bus Interaction) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (16.36s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Wide Shot (MWS) / Street Level Vignette</div>
+                <div class="shot-desc">Chiếc xe minibus màu hồng magenta nổi bật với bảng LED đỏ 'MONG KOK 旺角' dừng đỗ bên lề đường dưới gầm cầu vượt. Tài xế đồng phục đang trao đổi hướng dẫn hành khách nữ trước khi bước lên xe.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Hành khách bước lên xe, tài xế quay người chuẩn bị đóng cửa khởi hành.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 10: Cắt sang quầy bán cá cảnh rực rỡ ở phố Chợ Cá Vàng (Tung Choi Street).</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Action-to-Location Cut / Cultural Color Burst (Hồng magenta sang Đỏ cam cá vàng)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Đứng bên kia vỉa hè dùng tiêu cự 50mm bắt trọn khoảnh khắc tương tác tự nhiên của người dân mà không làm xao nhãng chủ thể (Street Photography style).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 09 (Out) &rarr; Shot 10 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_27.jpeg" class="trans-img" alt="Transition 09 to 10" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 09 &rarr; Shot 10')" />
+        </div>
+        
+    <div class="shot-card" id="shot-10">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 10: Bức tường bọc cá vàng lấp lánh tại Tung Choi Street (Goldfish Market Magic)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(18.52)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [18.52s - 20.44s] (1.96s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_28.jpeg" class="shot-thumb" alt="Shot 10 Mid" onclick="openLightbox(this.src, 'Cảnh 10: Bức tường bọc cá vàng lấp lánh tại Tung Choi Street (Goldfish Market Magic) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (19.50s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_29.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 10 Start" onclick="openLightbox(this.src, 'Cảnh 10: Bức tường bọc cá vàng lấp lánh tại Tung Choi Street (Goldfish Market Magic) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (18.52s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Shot (MS) / Iconic Hong Kong Culture</div>
+                <div class="shot-desc">Khung cảnh kinh điển tại Phố Cá Vàng (Tung Choi Street) với hàng trăm túi nilon trong suốt chứa đầy cá vàng đỏ rực được treo san sát thành một bức tường ánh sáng lung linh. Một cậu bé mặc áo sọc đang đứng chỉ tay ngắm nhìn đầy thích thú.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Cậu bé quay mặt nhìn ngắm các bọc cá vàng bơi lội phản chiếu ánh đèn neon rực rỡ.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 11: Cắt sang con hẻm nhỏ tĩnh lặng phía sau với người giao bình gas đỏ.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Subject Gaze Match / Transparency & Reflection Artistry / Color Continuity (Đỏ cá vàng ➔ Đỏ bình gas)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Lấy nét vào túi cá vàng ở cự ly trung bình, để ánh đèn neon quầy hàng phản chiếu lấp lánh qua các bọc nước. Giữ camera tĩnh để chuyển động bơi của cá làm sinh động khung hình.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 10 (Out) &rarr; Shot 11 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_30.jpeg" class="trans-img" alt="Transition 10 to 11" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 10 &rarr; Shot 11')" />
+        </div>
+        
+    <div class="shot-card" id="shot-11">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 11: Người đàn ông dắt xe thồ 3 bình gas đỏ trong hẻm sâu (Alleyway One-Point Perspective)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(20.48)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [20.48s - 22.68s] (2.24s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_31.jpeg" class="shot-thumb" alt="Shot 11 Mid" onclick="openLightbox(this.src, 'Cảnh 11: Người đàn ông dắt xe thồ 3 bình gas đỏ trong hẻm sâu (Alleyway One-Point Perspective) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (21.60s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_32.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 11 Start" onclick="openLightbox(this.src, 'Cảnh 11: Người đàn ông dắt xe thồ 3 bình gas đỏ trong hẻm sâu (Alleyway One-Point Perspective) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (20.48s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Deep Focus / One-Point Perspective Alley Shot</div>
+                <div class="shot-desc">Bố cục phối cảnh hút sâu một điểm tụ vào con hẻm nhỏ hẹp chằng chịt dây điện và biển quảng cáo cũ. Người đàn ông mặc áo đen đang đẩy chiếc xe đạp thồ chở 3 bình gas đỏ rực bước đi vào sâu trong ngõ nhỏ.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Nhân vật bước dần ra xa khỏi ống kính, bóng dáng chìm dần vào chiều sâu con hẻm.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 12: Cắt sang ngã tư tài chính Central với chiếc xe điện 2 tầng Ding Ding rẽ góc.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>One-Point Vanishing Line / Color Accent Match (3 bình gas đỏ làm điểm nhấn thị giác)</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Căn máy ngay chính giữa trục hẻm để tận dụng hai bức tường nhà cao tầng làm đường dẫn thị giác (leading lines) hút mắt người xem vào nhân vật đang di chuyển.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 11 (Out) &rarr; Shot 12 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_33.jpeg" class="trans-img" alt="Transition 11 to 12" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 11 &rarr; Shot 12')" />
+        </div>
+        
+    <div class="shot-card" id="shot-12">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 12: Xe điện hai tầng Ding Ding & Tòa tháp Two IFC chọc trời (Central Urban Symphony)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(22.72)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [22.72s - 24.68s] (2.0s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_34.jpeg" class="shot-thumb" alt="Shot 12 Mid" onclick="openLightbox(this.src, 'Cảnh 12: Xe điện hai tầng Ding Ding & Tòa tháp Two IFC chọc trời (Central Urban Symphony) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (23.72s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_35.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 12 Start" onclick="openLightbox(this.src, 'Cảnh 12: Xe điện hai tầng Ding Ding & Tòa tháp Two IFC chọc trời (Central Urban Symphony) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (22.72s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Low Angle Wide Shot / Modern & Heritage Juxtaposition</div>
+                <div class="shot-desc">Ngã tư trung tâm Central với chiếc xe điện 2 tầng màu xanh lá đậm (Ding Ding Tram) mang tính biểu tượng đang từ từ rẽ góc. Phía sau là tòa tháp chọc trời Two IFC vươn thẳng đứng lên bầu trời xanh biếc không một gợn mây.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Xe điện lướt êm qua khúc cua ngã tư, chiếc sedan đen chạy ngang giải phóng tiền cảnh.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 13: Cắt vào bên trong khoang xe điện Ding Ding ngắm cô gái nhìn ra cửa sổ.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Low Angle Scale Contrast / Outside-to-Inside Vehicle Cut</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Hạ góc máy thấp ngước lên bầu trời để làm nổi bật sự đối lập tuyệt đẹp giữa phương tiện giao thông cổ kính hơn 100 năm tuổi và những tòa nhà chọc trời hiện đại nhất thế giới.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 12 (Out) &rarr; Shot 13 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_36.jpeg" class="trans-img" alt="Transition 12 to 13" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 12 &rarr; Shot 13')" />
+        </div>
+        
+    <div class="shot-card" id="shot-13">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 13: Thiếu nữ bên khung cửa sổ xe điện Ding Ding (Nostalgic Tram Commute)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(24.72)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [24.72s - 26.84s] (2.16s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_37.jpeg" class="shot-thumb" alt="Shot 13 Mid" onclick="openLightbox(this.src, 'Cảnh 13: Thiếu nữ bên khung cửa sổ xe điện Ding Ding (Nostalgic Tram Commute) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (25.80s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_38.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 13 Start" onclick="openLightbox(this.src, 'Cảnh 13: Thiếu nữ bên khung cửa sổ xe điện Ding Ding (Nostalgic Tram Commute) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (24.72s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Close-Up (MCU) / Profile Perspective & Emotional Pause</div>
+                <div class="shot-desc">Góc máy cận cảnh bên ngoài cửa sổ xe điện Ding Ding màu xanh lam, bắt trọn khoảnh khắc một cô gái trẻ buộc tóc đuôi ngựa ngồi tựa cằm tĩnh lặng nhìn ngắm phố xá lướt qua. Phía sau là tấm biển chỉ đường xanh 'Des Voeux Road West'.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Xe điện di chuyển êm ái, vệt sáng và bóng râm đường phố lướt nhẹ qua gương mặt nhân vật.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 14: Cắt sang dòng người qua lại dưới chân cầu vượt Canal Road West (Wan Chai).</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Emotional Beat Match / Reflection & Profile Framing / Cinematic Breeze</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Sử dụng ống kính tiêu cự 85mm khẩu f/1.8 để làm mờ hậu cảnh đường phố, khóa nét vào ánh mắt suy tư của cô gái. Bắt lấy khoảnh khắc ánh nắng lướt qua tạo điểm sáng trong mắt (catchlight).</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 13 (Out) &rarr; Shot 14 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_39.jpeg" class="trans-img" alt="Transition 13 to 14" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 13 &rarr; Shot 14')" />
+        </div>
+        
+    <div class="shot-card" id="shot-14">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 14: Biển phố Canal Road West & Dòng người tấp nập Wan Chai (Street Sign Anchor)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(26.88)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [26.88s - 28.96s] (2.12s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_40.jpeg" class="shot-thumb" alt="Shot 14 Mid" onclick="openLightbox(this.src, 'Cảnh 14: Biển phố Canal Road West & Dòng người tấp nập Wan Chai (Street Sign Anchor) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (27.94s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_41.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 14 Start" onclick="openLightbox(this.src, 'Cảnh 14: Biển phố Canal Road West & Dòng người tấp nập Wan Chai (Street Sign Anchor) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (26.88s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Shot (MS) - Foreground Signpost & Busy Pedestrians</div>
+                <div class="shot-desc">Tiền cảnh bên phải là tấm biển chỉ dẫn đường phố màu xanh lá '堅拿道西 / Canal Road West 50W'. Trung cảnh và hậu cảnh là dòng người đi bộ nhộn nhịp đan xen qua lại dưới gầm cầu vượt Wan Chai nơi diễn ra những nét văn hóa dân gian lâu đời.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Dòng người đi bộ bước qua nhau ngược chiều, cờ phướn lễ hội lay nhẹ trong gió.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 15: Cắt sang con đường rợp bóng cây với người đàn ông lái xe lăn điện.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Foreground Object Anchor / Pedestrian Cross-Flow / Cultural Ambience</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Lấy nét vào dòng người đang bước đi ở trung cảnh, để tấm biển tên phố ở tiền cảnh làm vật neo định danh không gian địa lý cho người xem.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 14 (Out) &rarr; Shot 15 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_42.jpeg" class="trans-img" alt="Transition 14 to 15" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 14 &rarr; Shot 15')" />
+        </div>
+        
+    <div class="shot-card" id="shot-15">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 15: Con đường rợp bóng cây chiều hè & Người đàn ông xe lăn (Summer Tree Shadows)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(29.0)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [29.00s - 31.40s] (2.44s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_43.jpeg" class="shot-thumb" alt="Shot 15 Mid" onclick="openLightbox(this.src, 'Cảnh 15: Con đường rợp bóng cây chiều hè & Người đàn ông xe lăn (Summer Tree Shadows) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (30.22s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_44.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 15 Start" onclick="openLightbox(this.src, 'Cảnh 15: Con đường rợp bóng cây chiều hè & Người đàn ông xe lăn (Summer Tree Shadows) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (29.0s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Long Shot / One-Point Perspective Street Tracking</div>
+                <div class="shot-desc">Hàng cây cổ thụ xanh mát chạy dài dọc theo con đường lát gạch, ánh nắng chiều chiếu xiên qua kẽ lá tạo thành những vệt bóng đổ dài (Dappled Shadows). Một người đàn ông đội mũ nan đeo kính râm đang điều khiển xe lăn điện tiến thẳng về phía máy quay.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Nhân vật di chuyển đều đặn từ xa lại gần, bóng cây rung rinh trên mặt đường.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 16: Cắt chuyển cảnh nhanh (Whip / Foreground Wipe) sang vệt xe hơi lướt qua dưới ánh hoàng hôn.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Direct Approach Tracking / Dappled Light Aesthetic / Natural Pacing</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Đặt camera trên trục đường thẳng, dùng tiêu cự 70-200mm để tạo chiều sâu hun hút của hàng cây xanh và hiệu ứng vệt nắng chiều rọi xuống mặt đường.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 15 (Out) &rarr; Shot 16 (In)</div>
+            <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_45.jpeg" class="trans-img" alt="Transition 15 to 16" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 15 &rarr; Shot 16')" />
+        </div>
+        
+    <div class="shot-card" id="shot-16">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 16: Vệt xe hơi vụt qua tiền cảnh lúc hoàng hôn (Whip Motion Wipe Transition)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(31.44)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [31.44s - 32.12s] (0.72s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_46.jpeg" class="shot-thumb" alt="Shot 16 Mid" onclick="openLightbox(this.src, 'Cảnh 16: Vệt xe hơi vụt qua tiền cảnh lúc hoàng hôn (Whip Motion Wipe Transition) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (31.80s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_47.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 16 Start" onclick="openLightbox(this.src, 'Cảnh 16: Vệt xe hơi vụt qua tiền cảnh lúc hoàng hôn (Whip Motion Wipe Transition) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (31.44s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Medium Shot / Foreground Motion Blur Wipe (Fast 0.72s Cut)</div>
+                <div class="shot-desc">Một cú cắt siêu nhanh (0.72 giây) với chiếc taxi đỏ/đen phóng vụt qua tiền cảnh làm mờ nhoè khung hình (Motion Blur), hé lộ bóng dáng người phu xe kéo đứng giữa con phố trong ánh hoàng hôn rực lửa.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Thân xe hơi phóng vút qua từ trái sang phải, tạo thành một vệt quét tự nhiên (Natural Wipe).</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Sang Cảnh 17: Mở toang ra shot kết toàn cảnh hoàng hôn tuyệt mỹ của cả video.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Whip Pan / Natural Object Wipe / Pace Accelerator to Climax</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Giảm tốc độ màn trập xuống 1/40s hoặc để xe chạy với tốc độ cao sát ống kính để tạo vệt mờ chuyển động (motion blur) che phủ toàn bộ khung hình trong 3-5 frame, tạo chuyển cảnh mượt mà.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="trans-box">
+            <div class="trans-lbl">&lrarr; So Sánh Chuyển Cảnh: Shot 16 (Out) &rarr; Shot 17 (In)</div>
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape/shot_01_mid.webp" class="trans-img" alt="Transition 16 to 17" onclick="openLightbox(this.src, 'Chuyển Cảnh: Shot 16 &rarr; Shot 17')" />
+        </div>
+        
+    <div class="shot-card" id="shot-17">
+        <div class="shot-header">
+            <div class="shot-num-title">Cảnh 17: Toàn cảnh hoàng hôn vàng rực & Nhịp sống bình yên Hong Kong (Golden Sunset Climax & Outro)</div>
+            <a class="time-badge" href="javascript:void(0)" onclick="openVideoAt(32.16)">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                [32.16s - 36.96s] (4.84s)
+            </a>
+        </div>
+        <div class="shot-body">
+            <div class="shot-gallery">
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_48.jpeg" class="shot-thumb" alt="Shot 17 Mid" onclick="openLightbox(this.src, 'Cảnh 17: Toàn cảnh hoàng hôn vàng rực & Nhịp sống bình yên Hong Kong (Golden Sunset Climax & Outro) (Mid Frame)')" />
+                <div class="thumb-lbl">Keyframe Chính (34.58s)</div>
+                <img crossorigin="anonymous" src="assets/Hong_Kong_Cinematic_Cityscape_-_withyuee_49.jpeg" class="shot-thumb" style="width:140px; height:auto; aspect-ratio:16/9; opacity:0.8;" alt="Shot 17 Start" onclick="openLightbox(this.src, 'Cảnh 17: Toàn cảnh hoàng hôn vàng rực & Nhịp sống bình yên Hong Kong (Golden Sunset Climax & Outro) (Start Frame)')" />
+                <div class="thumb-lbl">Đầu Cảnh (32.16s)</div>
+            </div>
+            <div class="shot-details">
+                <div class="shot-type">Telephoto Long Shot / Master Cinematic Climax Sunset</div>
+                <div class="shot-desc">Con phố cổ kính Hong Kong chìm trong ánh hoàng hôn vàng cam đỏ rực (Golden Hour). Người phu già đẩy xe thồ bước chậm rãi dọc con dốc, một thanh niên áo trắng bước băng qua đường ở tiền cảnh. Ánh mặt trời chiếu xuyên qua khe giữa hai dãy nhà chung cư tạo thành quầng sáng hào quang (Golden Glow/Halation) huyền ảo bao bọc toàn bộ khung cảnh.</div>
+                <div class="shot-meta-grid">
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Mồi (Out):</div>
+                        <div class="meta-val">Khung cảnh tĩnh lặng, con người chuyển động chậm rãi trong luồng ánh sáng vàng óng của một chiều tháng Tám tuyệt đẹp.</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Nối (In):</div>
+                        <div class="meta-val">Hết video (Đọng lại cảm xúc sâu lắng và dư âm khó quên).</div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Kỹ thuật:</div>
+                        <div class="meta-val"><b>Golden Hour Backlit / Halation Glow / Atmospheric Climax / Lingering Master Shot</b></div>
+                    </div>
+                    <div class="meta-row">
+                        <div class="meta-lbl">&bull; Lời khuyên Đạo diễn:</div>
+                        <div class="meta-val" style="color:#0369a1;">Canh đúng 10 phút ngắn ngủi khi mặt trời lặn thẳng vào trục đường giữa hai khối nhà cao tầng. Khóa phơi sáng vào vùng highlights để bầu trời không bị cháy trắng, để các tòa nhà và bóng người chuyển thành silhouette ấm áp.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Section 2: Voiceover Scripts -->
+    <div class="section-title">
+        <span>2. Phương Án Kịch Bản Lời Thoại (Shooting &amp; Voiceover Scripts)</span>
+        <span style="font-size:12px; font-weight:normal; color:#64748b;">Tối ưu cho giọng đọc truyền cảm hứng</span>
+    </div>
+
+    <!-- Script 1 -->
+    <div class="script-card">
+        <div class="script-title">Phương án 1: Kịch bản Tự Sự Điện Ảnh - 'Tháng Tám, Hong Kong và Những Nhịp Thở Khẽ'</div>
+        <div class="script-tone"><b>Tone &amp; Mood:</b> Trầm ấm, chiêm nghiệm, giàu chất thơ, phù hợp nhạc lo-fi / indie acoustic hoài niệm.</div>
+        <table class="script-table">
+            <thead>
+                <tr>
+                    <th style="width: 180px;">Mốc Thời Gian / Phân Cảnh</th>
+                    <th>Lời Thoại Lồng Tiếng (Voiceover Script)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><b>00.00s - 06.64s (Shot 1 - 3)</b></td>
+                    <td>Người ta thường nhớ về Hong Kong qua những tòa cao ốc chọc trời hay ánh đèn neon rực rỡ... Nhưng với tôi, tháng Tám ở đây lại bắt đầu bằng một chuyến phà Star Ferry 5 đô bồng bềnh giữa sóng biển Victoria.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>06.68s - 14.52s (Shot 4 - 7)</b></td>
+                    <td>Ở nơi này, có một nhịp sống khác rất khẽ. Là đôi bàn tay chai sần của người thủy thủ già buộc dây neo... là đàn chim bồ câu thong thả mổ thóc bên thềm công viên... và những chuyến minibus đỏ nối đuôi nhau qua từng góc phố cũ.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>14.56s - 22.68s (Shot 8 - 11)</b></td>
+                    <td>Tháng Tám là vạt nắng xiên đổ dài trên chiếc ghế xếp của bác bán vali... là hàng trăm bọc cá vàng lấp lánh như ngàn ánh sao ở phố Tung Choi... và mùi khói bếp thân quen len lỏi qua từng con hẻm nhỏ.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>22.72s - 31.40s (Shot 12 - 15)</b></td>
+                    <td>Bạn chỉ cần bước lên một chuyến xe điện Ding Ding, tựa đầu bên khung cửa sổ gỗ, để gió lướt qua tóc và ngắm nhìn dòng người trôi đi chậm rãi...</td>
+                </tr>
+    
+                <tr>
+                    <td><b>31.44s - 37.00s (Shot 16 - 17)</b></td>
+                    <td>Để rồi khi hoàng hôn buông xuống, nhuộm vàng cả một góc phố... bạn sẽ nhận ra, Hong Kong không chỉ là một điểm đến, mà là một cảm xúc chẳng thể nào quên.</td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Script 2 -->
+    <div class="script-card" style="border-left-color: #f59e0b;">
+        <div class="script-title" style="color: #b45309;">Phương án 2: Kịch bản Hướng Dẫn Du Lịch Trải Nghiệm & Góc Nhìn Nhiếp Ảnh Đường Phố</div>
+        <div class="script-tone"><b>Tone &amp; Mood:</b> Hào hứng, chia sẻ kinh nghiệm thực tế, nhịp điệu trẻ trung, cuốn hút.</div>
+        <table class="script-table">
+            <thead>
+                <tr>
+                    <th style="width: 180px;">Mốc Thời Gian / Phân Cảnh</th>
+                    <th>Lời Thoại Lồng Tiếng (Voiceover Script)</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td><b>00.00s - 06.64s (Shot 1 - 3)</b></td>
+                    <td>Nếu bạn chỉ có đúng 24 giờ để cảm nhận trọn vẹn chất điện ảnh của Hong Kong vào tháng Tám, đây là hành trình dành riêng cho bạn!</td>
+                </tr>
+    
+                <tr>
+                    <td><b>06.68s - 14.52s (Shot 4 - 7)</b></td>
+                    <td>Bắt đầu buổi sáng từ bến phà Star Ferry ngắm trọn vẹn đường chân trời vịnh Victoria, sau đó bắt chuyến Minibus đỏ khám phá những con phố cổ Kowloon rực rỡ sắc màu.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>14.56s - 22.68s (Shot 8 - 11)</b></td>
+                    <td>Đừng quên ghé qua Phố Cá Vàng Tung Choi - nơi ánh sáng phản chiếu qua từng túi nước tạo nên những khung hình street photography đỉnh cao nhất thế giới.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>22.72s - 31.40s (Shot 15 - 15)</b></td>
+                    <td>Và buổi chiều, hãy dành ra 3 đô Hong Kong để ngồi trên tầng hai của chiếc xe điện Ding Ding trăm tuổi, ngắm nhìn dòng người nhộn nhịp qua lại dưới chân cầu Canal Road.</td>
+                </tr>
+    
+                <tr>
+                    <td><b>31.44s - 37.00s (Shot 16 - 17)</b></td>
+                    <td>Hãy canh đúng 15 phút Golden Hour khi hoàng hôn chiếu xuyên qua các dãy chung cư cũ... Đó chính là khoảnh khắc bạn mang cả điện ảnh Hong Kong về nhà!</td>
+                </tr>
+    
+            </tbody>
+        </table>
+    </div>
+
+</div>
+
+<!-- Lightbox Modal -->
+<div id="lightboxModal" class="lightbox-modal" onclick="closeLightbox(event)">
+    <span class="lightbox-close" onclick="closeLightboxDirect()">&times;</span>
+    <img crossorigin="anonymous" id="lightboxImg" class="lightbox-content" src="" alt="Zoom Image" />
+    <div id="lightboxCap" class="lightbox-caption"></div>
+</div>
+
+<!-- Video Modal -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+    <div class="video-box" onclick="event.stopPropagation()">
+        <span class="video-close" onclick="closeVideoDirect()">&times;</span>
+        <iframe id="mainPlayer" src="https://www.youtube.com/embed/ZdImigSIRZg?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<!-- Floating Play Button -->
+<button class="floating-play-btn" onclick="openVideoAt(0)">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    Xem Video Gốc
+</button>
+
+<script>
+function openLightbox(src, caption) {
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCap').innerText = caption;
+    document.getElementById('lightboxModal').classList.add('active');
+}
+
+function closeLightbox(e) {
+    if (e.target.id === 'lightboxModal' || e.target.id === 'lightboxImg') {
+        document.getElementById('lightboxModal').classList.remove('active');
+    }
+}
+
+function closeLightboxDirect() {
+    document.getElementById('lightboxModal').classList.remove('active');
+}
+
+function openVideoAt(seconds) {
+    var modal = document.getElementById('videoModal');
+    var vid = document.getElementById('playerVid');
+    modal.classList.add('active');
+    vid.currentTime = seconds;
+    vid.play();
+}
+
+function closeVideoModal(e) {
+    if (e.target.id === 'videoModal') {
+        closeVideoDirect();
+    }
+}
+
+function closeVideoDirect() {
+    var modal = document.getElementById('videoModal');
+    var vid = document.getElementById('playerVid');
+    vid.pause();
+    modal.classList.remove('active');
+}
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeLightboxDirect();
+        closeVideoDirect();
+    }
+});
+
+function togglePlayerFullscreen() {
+    const v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) {
+            v.requestFullscreen().catch(() => {});
+        } else if (v.webkitRequestFullscreen) {
+            v.webkitRequestFullscreen();
+        } else if (v.webkitEnterFullscreen) {
+            v.webkitEnterFullscreen();
+        }
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen().catch(() => {});
+        } else if (document.webkitExitFullscreen) {
+            document.webkitExitFullscreen();
+        }
+    }
+}
+
+document.addEventListener('keydown', (e) => {
+    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        togglePlayerFullscreen();
+    }
+});
+
+</script>
+
+</body>
+</html>

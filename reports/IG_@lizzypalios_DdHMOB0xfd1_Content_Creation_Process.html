@@ -86,13 +86,14 @@ video { width: 100%; max-height: 70vh; object-fit: contain; display: block; }
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <header class="bg-white border-bottom border-slate-200 sticky-top py-2 px-3" style="z-index:1030;">
   <div class="container-fluid d-flex align-items-center justify-content-between">
     <div class="d-flex align-items-center gap-2">
-      <a href="https://ytuong.fedu.vn" class="btn btn-sm btn-outline-secondary font-mono text-xxs">← KHO Ý TƯỞNG HUB</a>
+      <a href="https://fedu.vn/scene.html" class="btn btn-sm btn-outline-secondary font-mono text-xxs">← CỔNG SCENE.HTML</a>
       <span class="badge bg-slate-900 text-white font-mono text-xxs d-none d-md-inline-block">21 PHÂN CẢNH</span>
     </div>
     <div class="d-flex align-items-center gap-2">
@@ -119,9 +120,7 @@ video { width: 100%; max-height: 70vh; object-fit: contain; display: block; }
     <div class="col-12 col-xl-5">
       <div class="sticky-player">
         <div class="video-box mb-2">
-          <video id="mainVideo" controls playsinline preload="metadata">
-            <source src="https://media.fedu.vn/videos/DdHMOB0xfd1.mp4" type="video/mp4">
-          </video>
+          <iframe id="mainPlayer" src="https://www.youtube.com/embed/nM_2ZbrWiNU?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="bg-white rounded-3 p-3 border mb-2 shadow-xs">
           <div class="d-flex justify-content-between align-items-center mb-2">
@@ -144,7 +143,7 @@ video { width: 100%; max-height: 70vh; object-fit: contain; display: block; }
         <div class="bg-white rounded-3 p-3 border shadow-xs d-none d-xl-block">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">@lizzypalios</span>
-            <a href="https://www.instagram.com/reels/DdHMOB0xfd1/" target="_blank" class="text-xxs font-mono text-primary text-decoration-none">Instagram Reel ↗</a>
+            <a href="https://www.instagram.com/p/DdHMOB0xfd1/" target="_blank" class="text-xxs font-mono text-primary text-decoration-none">Instagram Reel ↗</a>
           </div>
           <h1 class="fs-6 fw-bold text-slate-950 mb-2">Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View</h1>
           <p class="text-slate-600 text-xs mb-2 reading-text">Bóc tách 21 phân cảnh bậc thầy của Lizzy Palios: Kỹ thuật lia máy đồng hướng Phải sang Trái (Pan R-to-L), Tăng tốc đoạn lia 2-3x (Whip-Pan), Điểm neo thời gian trung tâm (Timestamps), Xoay người khớp phách nhạc (Spin on Beat) và Cân bằng làm việc - nghỉ ngơi (Work & Downtime).</p>
@@ -205,7 +204,7 @@ function renderApp() {
           <span>⚡ TRANSITION: SHOT ${sidPad} → ${String(sid+1).padStart(2, '0')} (Whip-Pan 2-3x)</span>
         </div>
         <div class="trans-img-wrap rounded overflow-hidden border">
-          <img src="${transImg}" alt="Transition ${sidPad}" loading="lazy" class="w-100 d-block" style="max-height:160px;object-fit:contain;background:#090d16;">
+          <img crossorigin="anonymous" src="${transImg}" alt="Transition ${sidPad}" loading="lazy" class="w-100 d-block" style="max-height:160px;object-fit:contain;background:#090d16;">
         </div>
       </div>`;
     }
@@ -223,7 +222,7 @@ function renderApp() {
       <div class="row g-3">
         <div class="col-12 col-md-4">
           <div class="thumb-wrap rounded overflow-hidden border position-relative cursor-pointer" onclick="jumpTo(${st},${et},${sid})">
-            <img src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
+            <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
             <div class="thumb-overlay">▶ Phát (${dur})</div>
           </div>
         </div>
@@ -264,7 +263,7 @@ function renderApp() {
     <div class="col-6 col-md-4 col-lg-3">
       <div class="grid-card bg-white rounded border p-2 cursor-pointer h-100 shadow-xs" onclick="jumpTo(${st},${et},${sid})">
         <div class="position-relative rounded overflow-hidden mb-1">
-          <img src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
+          <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
           <span class="badge bg-slate-900 text-white font-mono position-absolute top-0 start-0 m-1 text-xxs">#${sidPad}</span>
           <span class="badge bg-dark text-white font-mono position-absolute bottom-0 end-0 m-1 text-xxs">${dur}</span>
         </div>
