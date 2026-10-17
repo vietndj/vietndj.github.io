@@ -871,7 +871,7 @@ video#mainPlayer {
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+            <div id="mainPlayer" data-yt-config="enablejsapi=1" style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
@@ -3069,13 +3069,18 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
+    if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player && typeof player.play === 'function') {
+        player.currentTime = startTime;
+        const p = player.play();
+        if (p !== undefined) {
+            p.catch(e => {
+                player.muted = true;
+                player.play().catch(err => console.log('Autoplay muted triggered'));
+            });
+        }
     }
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));

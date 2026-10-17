@@ -884,7 +884,7 @@ video#mainPlayer {
         <div class="video-player-container">
 
 <style>.carousel-stack::-webkit-scrollbar { display: none; }</style>
-<div class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
+<div id="mainPlayer" data-yt-config="enablejsapi=1" class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
 <iframe src="https://www.youtube.com/embed/BQKDakoM2g4?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="flex:0 0 100%; width:100%; height:100%; scroll-snap-align:start; background:#000; border:none;"></iframe>
 <img src="https://media.fedu.vn/images/IG_@Beixin_Travel_&amp;_Nature_Dc0zRNwDz11_Carousel_Analysis/slide_02_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
 <img src="https://media.fedu.vn/images/IG_@Beixin_Travel_&amp;_Nature_Dc0zRNwDz11_Carousel_Analysis/slide_03_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
@@ -1576,7 +1576,7 @@ if(player) {
     player.load();
 }
 
-function playShot(startTime, endTime, label) {
+/* IFRAME supported */ function playShot(startTime, endTime, label) {
 
     var stack = document.querySelector('.carousel-stack');
     if (stack) {

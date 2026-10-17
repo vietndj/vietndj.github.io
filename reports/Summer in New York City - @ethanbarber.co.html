@@ -3761,10 +3761,16 @@ function seekVideo(seconds) {
     player.play();
 }
 
+function playShot(start, end, sid) { return playShotRange(start, end, sid); }
 function playShotRange(start, end) {
     currentShotRange = { start, end };
-    player.currentTime = start;
-    player.play();
+    if (player && player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [start, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player) {
+        player.currentTime = start;
+        player.play();
+    }
 }
 
 function jumpToShot(shotId, startTime) {

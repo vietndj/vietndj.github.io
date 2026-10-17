@@ -878,7 +878,7 @@ video#mainPlayer {
 
 <style>.carousel-stack::-webkit-scrollbar { display: none; }</style>
 <div class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
-<div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+<div id="mainPlayer" data-yt-config="enablejsapi=1" style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
 </div>
 
 <div class="carousel-nav-overlay" style="position:absolute; right:10px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:100;">
@@ -978,7 +978,7 @@ if(player) {
     player.load();
 }
 
-function playShot(startTime, endTime, label) {
+/* IFRAME supported */ function playShot(startTime, endTime, label) {
 
     var stack = document.querySelector('.carousel-stack');
     if (stack) {

@@ -561,7 +561,7 @@ video.addEventListener('timeupdate', () => {
     }
 });
 
-function playShot(start, end, title) {
+/* IFRAME supported */ function playShot(start, end, title) {
     currentShot = { start: start, end: end, title: title };
     statusText.textContent = `▶ Đang phát: ${title} [${start.toFixed(2)}s - ${end.toFixed(2)}s]`;
     video.currentTime = start;

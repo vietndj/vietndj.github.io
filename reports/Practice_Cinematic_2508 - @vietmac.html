@@ -570,7 +570,7 @@ video#mainVideo {
     <!-- CỘT TRÁI: STICKY VIDEO PLAYER & CONTROLS -->
     <aside class="video-sidebar-col">
         <div class="video-player-container">
-            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
+            <div id="mainPlayer" data-yt-config="enablejsapi=1" style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         
         <div class="player-controls-panel">
@@ -1787,5 +1787,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</body>
+<script>function playShot(s){var p=document.getElementById('mainPlayer');if(p&&p.tagName==='IFRAME'&&p.contentWindow){p.contentWindow.postMessage(JSON.stringify({event:'command',func:'seekTo',args:[s,true]}),'*');}}</script></body>
 </html>

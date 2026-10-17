@@ -235,16 +235,16 @@ def detect_country(creator, title, report_desc=""):
     combined = f"{c} {t} {r}"
 
     if any(x in c for x in ['mridu', 'photoknack', 'sajad', 'thomasmathew', 'ayush', 'aayush']) or 'ấn độ' in combined or 'india' in combined:
-        return next(x for x in COUNTRIES if x['id'] == 'india')
+        return next((x for x in COUNTRIES if x['id'] == 'india'), COUNTRIES[0])
     if any(x in c for x in ['hena', 'bewoom', 'kyung6', 'nana_ic']) or 'hàn quốc' in combined or 'korea' in combined or 'seoul' in combined:
-        return next(x for x in COUNTRIES if x['id'] == 'korea')
+        return next((x for x in COUNTRIES if x['id'] == 'korea'), COUNTRIES[0])
     if any(x in c for x in ['shogentle', 'junko', 'kenshoji', 'hana.koni', 'daiki']) or any(x in combined for x in ['tokyo', 'kyoto', 'nhật bản', 'japan', 'yokocho']):
-        return next(x for x in COUNTRIES if x['id'] == 'japan')
+        return next((x for x in COUNTRIES if x['id'] == 'japan'), COUNTRIES[0])
     if any(x in c for x in ['tinanguyen', 'minhmigoi', 'thodia', 'kopdinh', 'anhsac', 'vietmac', 'startup', 'self_practice']) or any(x in combined for x in ['việt nam', 'vietnam', 'hải dương', 'sài gòn', 'saigon', 'hà nội', 'times city']):
-        return next(x for x in COUNTRIES if x['id'] == 'vietnam')
+        return next((x for x in COUNTRIES if x['id'] == 'vietnam'), COUNTRIES[0])
     if any(x in c for x in ['withyuee', 'tsangtastic', 'jazziesillona', 'nicoolalah', 'ariffathul', 'firewood', 'intothethailand', 'jsnhow', 'beixin', 'slaohuairen', 'jeromememe', 'elsaqinn', 'chowyhh', 'gakuyen', 'kerennilan', 'mkxpresar']) or any(x in combined for x in ['bangkok', 'hong kong', 'bhutan', 'thượng hải', 'shanghai', 'malaysia', 'philippines', 'thái lan']):
-        return next(x for x in COUNTRIES if x['id'] == 'asia_other')
-    return next(x for x in COUNTRIES if x['id'] == 'us_eu')
+        return next((x for x in COUNTRIES if x['id'] == 'asia_other'), COUNTRIES[0])
+    return next((x for x in COUNTRIES if x['id'] == 'us_eu'), COUNTRIES[0])
 
 PERSONAL_IDENTIFIERS = [
     "@vietmac", "practice_cinematic", "self_practice", "broll_plan", "@local", "vietnd"
@@ -900,7 +900,7 @@ def build_database():
         # Video upload từ bot telegram tải quảng cáo (Shopee, Lazada...) -> Xếp vào mục ngành nghề UGC
         if is_ad_bot or "LAZADA_" in vid_id or "SHOPEE_" in vid_id:
             is_ad_bot = True
-            ind_obj = next(i for i in INDUSTRIES if i["id"] == "ugc")
+            ind_obj = next((i for i in INDUSTRIES if i["id"] == "ugc"), INDUSTRIES[-1])
 
         fedu_opt = master.get("fedu_optimization", {}) if master else {}
 
@@ -1096,11 +1096,17 @@ def build_database():
                 idxf.write(idx_content)
             shutil.copy2(index_path, os.path.join(dist_dir, "index.html"))
             
-        # Copy reports folder
+        # Copy reports folder (1:1 mirror)
         reports_src = os.path.join(BASE_DIR, "reports")
         reports_dist = os.path.join(dist_dir, "reports")
         if os.path.exists(reports_src):
             shutil.copytree(reports_src, reports_dist, dirs_exist_ok=True)
+            src_files = set(os.listdir(reports_src))
+            for df in os.listdir(reports_dist):
+                if df not in src_files:
+                    dp = os.path.join(reports_dist, df)
+                    if os.path.isfile(dp):
+                        os.remove(dp)
             
         print("Synchronized all build files to dist/ directory.")
 
