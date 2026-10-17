@@ -893,8 +893,8 @@ def build_database():
             complexity = {"id": "nang-cao", "label": "🔴 Nâng cao (>18 shots)"}
 
         transition_level = master.get("transition_level") if master else None
-        is_ad_bot = master.get("is_ad_bot", False) if master else False
-        if not is_ad_bot and (("LAZADA_" in vid_id) or ("SHOPEE_" in vid_id) or ("UGC, Quảng cáo, AIDA" in str(tech_tags))):
+        is_ad_bot = bool(master.get("is_ad_bot", False)) if master else False
+        if not is_ad_bot and (("LAZADA_" in vid_id) or ("SHOPEE_" in vid_id)):
             is_ad_bot = True
 
         # Video upload từ bot telegram tải quảng cáo (Shopee, Lazada...) -> Xếp vào mục ngành nghề UGC
@@ -1024,9 +1024,6 @@ def build_database():
     # Đẩy các bài bị ẩn (is_excluded=True) xuống cuối danh sách để không chắn mặt tiền ở Chế độ chỉnh sửa
     processed_ideas.sort(key=lambda x: 1 if x.get("is_excluded") else 0)
     active_ideas = [x for x in processed_ideas if not x["is_excluded"]]
-    for i in processed_ideas:
-        if "daiki" in i["id"].lower():
-            print(f"DEBUG processed_idea id={i['id']}, is_excluded={i['is_excluded']}")
     
     industry_stats = {}
     for ind in INDUSTRIES:
@@ -1052,8 +1049,9 @@ def build_database():
     all_x_factors = sorted(list(set(xf for x in active_ideas for xf in x.get("x_factors", []) if xf)))
     x_factor_stats = {xf: sum(1 for x in active_ideas if xf in x.get("x_factors", [])) for xf in all_x_factors}
 
+    from datetime import datetime as _dt
     database_payload = {
-        "generated_at": "2026-09-13T18:00:00+07:00",
+        "generated_at": _dt.now().astimezone().isoformat(timespec="seconds"),
         "total_scene_items": len(portal_data),
         "total_unique_ideas": len(processed_ideas),
         "total_active_ideas": len(active_ideas),
