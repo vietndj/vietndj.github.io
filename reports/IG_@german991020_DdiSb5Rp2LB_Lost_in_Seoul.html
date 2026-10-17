@@ -1200,18 +1200,19 @@ video#mainPlayer {
     }
 }
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" src="https://media.fedu.vn/videos/DdiSb5Rp2LB.mp4" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/A7zsKDHc3W4?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DdiSb5Rp2LB.mp4" target="_blank" style="color:var(--accent-blue); font-size:0.75rem; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/DdiSb5Rp2LB/view" target="_blank" style="color:var(--accent-blue); font-size:0.75rem; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:0.75rem; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -1262,7 +1263,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 0.08, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1321,7 +1322,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.08, 1.96, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1380,7 +1381,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.0, 3.63, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1439,7 +1440,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.67, 5.3, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1498,7 +1499,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.34, 6.97, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1557,7 +1558,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.01, 8.68, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1616,7 +1617,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(8.72, 10.43, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1675,7 +1676,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.47, 12.18, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1734,7 +1735,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.22, 13.93, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1793,7 +1794,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.97, 17.5, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1852,7 +1853,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(17.54, 18.93, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1913,7 +1914,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 0.08, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg', 'SHOT 01 [0.0s - 0.08s] • ⚡ Visual Hook: Mở màn đời thường không qua chỉnh màu tạo độ mộc trước khi chuyển đổi phong cách')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -1925,7 +1926,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(0.08, 1.96, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg', 'SHOT 02 [0.08s - 1.96s] • ⚡ Biến chuyển sắc thái màu (Color Grade Shift) + Typography tối giản: Đóng đinh nhận diện series')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -1937,7 +1938,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(2.0, 3.63, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg', 'SHOT 03 [2.0s - 3.63s] • ⚡ Tiền cảnh lướt nhanh (Foreground Motion Wipe): Tạo chiều sâu lớp lang và nhịp sống đô thị Seoul')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -1949,7 +1950,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.67, 5.3, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg', 'SHOT 04 [3.67s - 5.3s] • ⚡ Nén hậu cảnh bằng Telephoto 85mm: Tách biệt nhân vật trầm ngâm giữa biển cao ốc Seoul')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -1961,7 +1962,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.34, 6.97, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg', 'SHOT 05 [5.34s - 6.97s] • ⚡ Góc ngang tầm mắt tại bàn ăn (Eye-Level Counter Shot): Đưa người xem vào trải nghiệm ẩm thực cô đơn chân thực')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -1973,7 +1974,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.01, 8.68, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg', 'SHOT 06 [7.01s - 8.68s] • ⚡ Cột tròn đóng khung + Chiều sâu hành lang vô tận: Nhấn mạnh chủ đề "lạc lối" giữa hệ thống tàu ngầm đồ sộ')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -1985,7 +1986,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(8.72, 10.43, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg', 'SHOT 07 [8.72s - 10.43s] • ⚡ Góc toàn phòng ngủ bắt trọn độ kiệt sức: Giải tỏa nhịp thở cảm xúc bằng một hành động đời thường đắt giá')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -1997,7 +1998,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.47, 12.18, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg', 'SHOT 08 [10.47s - 12.18s] • ⚡ Góc thấp ngước nhìn hẻm hẹp (Low-Angle Canyon Look): Đánh trúng nỗi đau thực tế của du khách tại Hàn Quốc')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -2009,7 +2010,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.22, 13.93, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg', 'SHOT 09 [12.22s - 13.93s] • ⚡ Tiền cảnh nhánh lá thông (Foliage Dirty Foreground): Tạo chiều sâu rình rập và cảm giác hành trình tiếp diễn')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -2021,7 +2022,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.97, 17.5, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg', 'SHOT 10 [13.97s - 17.5s] • ⚡ Cú máy tĩnh lia nhân vật qua thảm hoa dại: Đoạn kết thơ mộng giữa thiên nhiên và kiến trúc cổ truyền')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -2033,7 +2034,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(17.54, 18.93, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg', 'SHOT 11 [17.54s - 18.93s] • ⚡ Logo Outro tối giản (Minimal Brand Stamp): Đóng dấu nhận diện thương hiệu độc bản')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2056,7 +2057,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 0.08, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2069,7 +2070,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 0.08, 1.96, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2082,7 +2083,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 2.0, 3.63, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2095,7 +2096,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 3.67, 5.3, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2108,7 +2109,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 5.34, 6.97, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2121,7 +2122,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 7.01, 8.68, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2134,7 +2135,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 8.72, 10.43, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2147,7 +2148,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 10.47, 12.18, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2160,7 +2161,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 12.22, 13.93, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2173,7 +2174,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 13.97, 17.5, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2186,7 +2187,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 17.54, 18.93, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@german991020_DdiSb5Rp2LB_Lost_in_Seoul/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2202,7 +2203,7 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'></svg>" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='1' height='1'></svg>" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
@@ -2210,38 +2211,20 @@ video#mainPlayer {
 const rawVideoSrc = "https://media.fedu.vn/videos/DdiSb5Rp2LB.mp4";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2250,13 +2233,23 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
+    if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player && typeof player.play === 'function') {
+        if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player && typeof player.play === 'function') {
+        player.currentTime = startTime;
+        const p = player.play();
+        if (p !== undefined) {
+            p.catch(e => {
+                player.muted = true;
+                player.play().catch(err => console.log('Autoplay muted triggered'));
+            });
+        }
+    }
     }
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
@@ -2268,7 +2261,11 @@ function playShot(startTime, endTime, label) {
 }
 
 function setSpeed(speed, btn) {
-    player.playbackRate = speed;
+    if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'setPlaybackRate', args: [speed]}), '*');
+    } else if (player) {
+        player.playbackRate = speed;
+    }
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
 }

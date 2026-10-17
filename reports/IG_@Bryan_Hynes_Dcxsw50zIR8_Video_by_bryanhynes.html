@@ -546,6 +546,46 @@ video#mainPlayer {
     border-radius: 8px;
 }
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -587,6 +627,7 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
@@ -594,10 +635,7 @@ video#mainPlayer {
     <!-- LEFT / TOP SIDEBAR (STICKY VIDEO & CONTROLS) -->
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/Dcxsw50zIR8.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ phát video HTML5.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/BuCo3xqmiEs?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         
         <div class="video-controls-panel">
@@ -615,7 +653,14 @@ video#mainPlayer {
         </div>
 
         <div class="meta-box">
-            <div class="meta-row"><span>Tác giả:</span> <strong>@bryanhynes (Bryan Hynes)</strong></div>
+            <div class="meta-row"><span>Tác giả: 
+                    <a href="../index.html?creator=@bryanhynes" onclick="handleCreatorClick(event, '@bryanhynes', 'Bryanhynes')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Bryanhynes trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Bryanhynes</strong>
+                        <span class="author-handle">(@bryanhynes)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span> <strong>@bryanhynes (Bryan Hynes)</strong></div>
             <div class="meta-row"><span>Thời lượng:</span> <strong>18.75 giây (16 phân cảnh)</strong></div>
             <div class="meta-row"><span>Tốc độ cắt (ASL):</span> <strong>1.17s / shot (Nhịp điệu biến thiên)</strong></div>
             <div class="meta-row"><span>Phong cách:</span> <strong>Mediterranean Warm / Golden Hour</strong></div>
@@ -651,17 +696,17 @@ video#mainPlayer {
     <div class="shot-card" id="shot-1" data-shot="1" data-start="0.0" data-end="1.08">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(0.0)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">0.00s - 1.08s (1.12s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1V9s8CQOIZKDw3YymCBlclO4kkUzInIgn" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1anHets2jho7yLcjZ8vOt473inM5DaPw3" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -702,22 +747,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 1 &rarr; 2:</strong> Match Action Cut nối tiếp bước chân vào bàn</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_01_to_02.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1nb-gOcJ2WKUP8JxadYm70D71TtSKvKBw" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-2" data-shot="2" data-start="1.12" data-end="1.75">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(1.12)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">1.12s - 1.75s (0.67s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1SOo80JT0pI8_2QbUbAemyZo59XlMJfFg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1UQh0cTit37JZ7itDnOakuVM4hdrGImqz" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -758,22 +803,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 2 &rarr; 3:</strong> Direct Cut sang góc đặc tả ánh sáng bóng đổ</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_02_to_03.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=13NTR2rBlCFH1_rrbib1JirbeUUkTF15L" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-3" data-shot="3" data-start="1.79" data-end="3.08">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(1.79)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">1.79s - 3.08s (1.33s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1h_uUaSW4ZVPv51BgIU9uiq2ZfVq5eixK" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1sOUysdGSYt6mJQTMGwNyOO8ZxtwdtEeO" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -814,22 +859,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 3 &rarr; 4:</strong> Cut sang góc cận mở máy tính</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_03_to_04.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1k5-CjvYVxQDeB5b8E2urXTTJ8zNQVKqr" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-4" data-shot="4" data-start="3.12" data-end="4.79">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(3.12)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">3.12s - 4.79s (1.71s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1JQqIjJFqcHL9SmQOnrPtz3MbJiJ9hi0h" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1IEH54WUgwGXr8c8u5i6my9unMTu3X6kU" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -870,22 +915,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 4 &rarr; 5:</strong> Match Action Cut nối sang góc nhìn qua bàn phím</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_04_to_05.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1hf5pv_K7NysyzZcdjMzgJUOKVQ5lGUdL" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-5" data-shot="5" data-start="4.83" data-end="5.46">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(4.83)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">4.83s - 5.46s (0.67s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1QMc-oe2qmAY7KDEuErvFxlynt_AunuAJ" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1yDfE_weRFnnHl_BcQauvQ-fuqHQoPG1F" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -926,22 +971,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 5 &rarr; 6:</strong> Cut sang cận cảnh gõ phím</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_05_to_06.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=17kauleQOvhte7s04Q62zvI7GNs_B-My2" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-6" data-shot="6" data-start="5.5" data-end="6.62">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(5.5)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">5.50s - 6.62s (1.17s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1k4XNJWcJQeDVK48H6Zh_ATVOwEUT774N" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1RZSovEwvr2QpXlUqLg-NvNkHsIJ-jyJl" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -982,22 +1027,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 6 &rarr; 7:</strong> Cut sang góc toàn ngang sườn</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_06_to_07.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=14_n_uUL_Voc4Ja7sEdJZaT8MD7jXJkBm" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-7" data-shot="7" data-start="6.67" data-end="7.42">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(6.67)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">6.67s - 7.42s (0.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=17dVmf9uFJZW8ppq50gfWk_DXN76iiR7L" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1pMeup64gpjQtxsNe2eH_aZjPoA9EXSJf" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1038,22 +1083,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 7 &rarr; 8:</strong> Jump cut sang cận cảnh chân dung</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_07_to_08.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1tfBgtwYNLnOPinpVu8bGaJ8WgQ5HhV0S" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-8" data-shot="8" data-start="7.46" data-end="8.12">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(7.46)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">7.46s - 8.12s (0.71s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1F9w_XyTCflkPQy6hkFhB3BTXAuRHezbv" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1XWAdBCsctqtyLhXp_r7FA9Rc6Jy1bj_b" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1094,22 +1139,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 8 &rarr; 9:</strong> Cut sang góc siêu toàn bên ngoài hồ bơi</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_08_to_09.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1IsXEiOOhMjhDcRJSFCZv0Om0bf7fH_sV" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-9" data-shot="9" data-start="8.17" data-end="9.92">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(8.17)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">8.17s - 9.92s (1.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1xYVx12_9C_r477VxY0_-xtLYK6UgajxF" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1CLTTE0-BSjTlWKxUyTtZ98sAk1c9WSOp" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1150,22 +1195,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 9 &rarr; 10:</strong> Match Action Cut quay lại cận cảnh nhân vật</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_09_to_10.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1bofS18Mm3qDATgJpLzU7-ILRGFRrp9iX" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-10" data-shot="10" data-start="9.96" data-end="11.71">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(9.96)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">9.96s - 11.71s (1.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=14HCTVxTQ1wDSAI-kQNGnxGgfuW2M0VG5" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=102hUhrLDZ0XyZ1CtRNp08a78Fsj6-02u" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1206,22 +1251,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 10 &rarr; 11:</strong> Match Cut sang gập màn hình</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_10_to_11.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1vRcABa-sxTJAdTd3Km15H-auvuL3xmOX" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-11" data-shot="11" data-start="11.75" data-end="12.5">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(11.75)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">11.75s - 12.50s (0.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1DAlvU3JDPNyqNdysvozpRSGGXZmvsu0Y" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=11hegOp4ivakxlm1pCL6qpdhnTGgsTYxk" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1262,22 +1307,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 11 &rarr; 12:</strong> Fast Cut sang góc macro mặt trên máy</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_11_to_12.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1DQAlTPFRon6yBoNzns4L6bHMa_wRBofJ" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-12" data-shot="12" data-start="12.54" data-end="13.12">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(12.54)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">12.54s - 13.12s (0.62s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=151WnaUfWpm_V2ZR2KzMDoraue9XBRrCQ" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=14DbFFxL8QP4zYgsMQGKtfUrLvRkobkZ6" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1318,22 +1363,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 12 &rarr; 13:</strong> Whip Pan / Fast Motion sang động tác đứng dậy</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_12_to_13.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1WOMNrVIxl9loy2QPdFWR8ZhPbsBlds2b" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-13" data-shot="13" data-start="13.17" data-end="13.92">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(13.17)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">13.17s - 13.92s (0.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1rrWQDKTLKTUGwCX9ormbiKl681GzsbXW" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1bUJh7tKxyCerIQD58M_s2_DZY3t_knYt" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1374,22 +1419,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 13 &rarr; 14:</strong> Cut sang góc toàn đứng dậy rời bàn</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_13_to_14.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1cwYlueWVuFNJFL6-oYvELiNonyLWpeKU" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-14" data-shot="14" data-start="13.96" data-end="14.79">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(13.96)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">13.96s - 14.79s (0.88s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1Xks27gR5JIELimgL_XGXX_rJ8b5Rg2k-" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1r9Guz0WR-F6hXBIndRg6VxH1Zze5k9yR" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1430,22 +1475,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 14 &rarr; 15:</strong> Cut sang góc nhìn ngoài hồ bơi hoàn tất vòng lặp</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_14_to_15.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=1o3XVUW63xsGUFEIbSM0ndlyNVDwEosis" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-15" data-shot="15" data-start="14.83" data-end="16.92">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(14.83)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">14.83s - 16.92s (2.12s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1Dc_jKN1Jx7sGdRArKHfLcvI_bipKZQkk" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1u09IPVLFsuK_2x7bGTwqJx27-UUa7EpM" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1486,22 +1531,22 @@ video#mainPlayer {
     
     <div style="background: rgba(192, 132, 252, 0.1); border: 1px dashed rgba(192, 132, 252, 0.4); border-radius: 8px; padding: 6px 12px; margin-bottom: 12px; display: flex; align-items: center; justify-content: space-between; font-size: 11.5px; color: #c084fc;">
         <span><strong>Chuyển cảnh 15 &rarr; 16:</strong> Loop back to Shot 01</span>
-        <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/trans_15_to_16.jpg" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
+        <a href="https://ytuong.fedu.vn/api/video?id=11A4XVJ2Aqg8y6DWxAgHurlagKkFsn2Fz" target="_blank" style="color: #38bdf8; text-decoration: none; font-size: 11px;">Xem so sánh &rarr;</a>
     </div>
     <div class="shot-card" id="shot-16" data-shot="16" data-start="16.96" data-end="18.71">
         <div class="shot-media-col">
             <div class="shot-thumb-wrap" onclick="seekTo(16.96)">
-                <img class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+                <img crossorigin="anonymous" class="shot-img" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
                 <div class="play-overlay">
                     <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                 </div>
-                <button class="zoom-btn" onclick="openLightbox(https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg); event.stopPropagation();" title="Phóng to ảnh">🔍</button>
+                <button class="zoom-btn" onclick="openLightbox(https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX" title="Phóng to ảnh">🔍</button>
                 <div class="thumb-time-badge">16.96s - 18.71s (1.79s)</div>
             </div>
             <div style="display: flex; gap: 4px; margin-top: 6px;">
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_start.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1tgrBfQMX4JNKuDEsdft9saP9Gl3EnLGu" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Đầu</a>
                 <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" target="_blank" style="flex:1; text-align:center; background:#0284c7; color:#fff; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none; font-weight:700;">Giữa</a>
-                <a href="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_end.jpg" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
+                <a href="https://ytuong.fedu.vn/api/video?id=1mgGLjUrnrIz5GlSzJyeD6dtwOrnX_YVF" target="_blank" style="flex:1; text-align:center; background:#1e293b; color:#94a3b8; font-size:9.5px; padding:3px; border-radius:3px; text-decoration:none;">Cuối</a>
             </div>
         </div>
         <div class="shot-info-col">
@@ -1547,7 +1592,7 @@ video#mainPlayer {
             
     <div class="grid-item" onclick="seekTo(0.0)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#01</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.12s</span>
         </div>
@@ -1556,7 +1601,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(1.12)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#02</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.67s</span>
         </div>
@@ -1565,7 +1610,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(1.79)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#03</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.33s</span>
         </div>
@@ -1574,7 +1619,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(3.12)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#04</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.71s</span>
         </div>
@@ -1583,7 +1628,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(4.83)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#05</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.67s</span>
         </div>
@@ -1592,7 +1637,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(5.5)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#06</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.17s</span>
         </div>
@@ -1601,7 +1646,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(6.67)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#07</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.79s</span>
         </div>
@@ -1610,7 +1655,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(7.46)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#08</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.71s</span>
         </div>
@@ -1619,7 +1664,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(8.17)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#09</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.79s</span>
         </div>
@@ -1628,7 +1673,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(9.96)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#10</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.79s</span>
         </div>
@@ -1637,7 +1682,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(11.75)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#11</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.79s</span>
         </div>
@@ -1646,7 +1691,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(12.54)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#12</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.62s</span>
         </div>
@@ -1655,7 +1700,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(13.17)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#13</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.79s</span>
         </div>
@@ -1664,7 +1709,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(13.96)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#14</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">0.88s</span>
         </div>
@@ -1673,7 +1718,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(14.83)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#15</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">2.12s</span>
         </div>
@@ -1682,7 +1727,7 @@ video#mainPlayer {
     
     <div class="grid-item" onclick="seekTo(16.96)">
         <div style="position: relative; aspect-ratio: 9/16; border-radius: 6px; overflow: hidden; background: #000;">
-            <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
+            <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
             <span style="position: absolute; top: 4px; left: 4px; background: rgba(0,0,0,0.75); color: #38bdf8; font-size: 9.5px; font-weight: 800; padding: 2px 5px; border-radius: 3px; font-family: monospace;">#16</span>
             <span style="position: absolute; bottom: 4px; right: 4px; background: rgba(0,0,0,0.85); color: #f59e0b; font-size: 9px; font-weight: 700; padding: 1px 4px; border-radius: 2px; font-family: monospace;">1.79s</span>
         </div>
@@ -1709,7 +1754,7 @@ video#mainPlayer {
         <div class="drawer-list">
             
     <div class="drawer-shot-item" onclick="jumpFromDrawer(0.0, 1)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_01_mid.jpg" alt="Shot 1" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #01</strong>
@@ -1720,7 +1765,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(1.12, 2)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_02_mid.jpg" alt="Shot 2" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #02</strong>
@@ -1731,7 +1776,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(1.79, 3)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_03_mid.jpg" alt="Shot 3" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #03</strong>
@@ -1742,7 +1787,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(3.12, 4)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_04_mid.jpg" alt="Shot 4" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #04</strong>
@@ -1753,7 +1798,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(4.83, 5)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_05_mid.jpg" alt="Shot 5" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #05</strong>
@@ -1764,7 +1809,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(5.5, 6)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_06_mid.jpg" alt="Shot 6" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #06</strong>
@@ -1775,7 +1820,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(6.67, 7)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_07_mid.jpg" alt="Shot 7" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #07</strong>
@@ -1786,7 +1831,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(7.46, 8)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_08_mid.jpg" alt="Shot 8" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #08</strong>
@@ -1797,7 +1842,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(8.17, 9)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_09_mid.jpg" alt="Shot 9" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #09</strong>
@@ -1808,7 +1853,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(9.96, 10)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_10_mid.jpg" alt="Shot 10" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #10</strong>
@@ -1819,7 +1864,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(11.75, 11)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_11_mid.jpg" alt="Shot 11" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #11</strong>
@@ -1830,7 +1875,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(12.54, 12)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_12_mid.jpg" alt="Shot 12" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #12</strong>
@@ -1841,7 +1886,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(13.17, 13)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_13_mid.jpg" alt="Shot 13" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #13</strong>
@@ -1852,7 +1897,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(13.96, 14)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_14_mid.jpg" alt="Shot 14" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #14</strong>
@@ -1863,7 +1908,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(14.83, 15)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_15_mid.jpg" alt="Shot 15" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #15</strong>
@@ -1874,7 +1919,7 @@ video#mainPlayer {
     </div>
     
     <div class="drawer-shot-item" onclick="jumpFromDrawer(16.96, 16)">
-        <img src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Bryan_Hynes_Dcxsw50zIR8_Video_by_bryanhynes/shot_16_mid.jpg" alt="Shot 16" style="width: 44px; height: 78px; object-fit: cover; border-radius: 4px; flex-shrink: 0;" loading="lazy">
         <div style="flex: 1; min-width: 0;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
                 <strong style="color: #38bdf8; font-size: 11.5px; font-family: monospace;">SHOT #16</strong>
@@ -1890,7 +1935,7 @@ video#mainPlayer {
 
 <!-- LIGHTBOX MODAL -->
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
-    <img class="lightbox-img" id="lightboxImg" src="" alt="Enlarged Keyframe">
+    <img crossorigin="anonymous" class="lightbox-img" id="lightboxImg" src="" alt="Enlarged Keyframe">
 </div>
 
 <script>
@@ -2029,6 +2074,22 @@ function openLightbox(url) {
 function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

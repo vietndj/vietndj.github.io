@@ -702,6 +702,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -743,18 +783,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/pV_phUAq-mw?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/Spring_in_Hong_Kong%20-%20%40withyuee.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/Spring_in_Hong_Kong%20-%20%40withyuee/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -777,7 +818,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">Phân Tích Đạo Diễn: "Spring in Hong Kong"</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/p/DVQ3Gh6Efk1/" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @withyuee"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@withyuee</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@withyuee" onclick="handleCreatorClick(event, '@withyuee', 'Withyuee')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Withyuee trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Withyuee</strong>
+                        <span class="author-handle">(@withyuee)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span></a></span>
                 <span>Tệp: <strong>Spring_in_Hong_Kong - @withyuee.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -804,11 +852,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 0.0, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg', 'SHOT 01 [0.0s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg">🔍</button>
                     <span class="thumb-time-badge">0.00s - 0.00s</span>
                 </div>
             </div>
@@ -826,11 +874,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(0.0, 0.0, 'SHOT 01')">
-<img alt="SHOT 01" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 01" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg', 'SHOT 01 [0.0s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg">🔍</button>
 <span class="thumb-time-badge">0.00s - 0.00s</span>
 </div>
 </div>
@@ -852,7 +900,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 1" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg"/>
+<img crossorigin="anonymous" alt="Shot 1" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -897,11 +945,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(1.7, 0.0, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg', 'SHOT 02 [1.7s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg">🔍</button>
                     <span class="thumb-time-badge">1.70s - 0.00s</span>
                 </div>
             </div>
@@ -919,11 +967,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(1.7, 0.0, 'SHOT 02')">
-<img alt="SHOT 02" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 02" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg', 'SHOT 02 [1.7s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg">🔍</button>
 <span class="thumb-time-badge">1.70s - 0.00s</span>
 </div>
 </div>
@@ -945,7 +993,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 2" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg"/>
+<img crossorigin="anonymous" alt="Shot 2" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -990,11 +1038,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.2, 0.0, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg', 'SHOT 03 [3.2s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg">🔍</button>
                     <span class="thumb-time-badge">3.20s - 0.00s</span>
                 </div>
             </div>
@@ -1012,11 +1060,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(3.2, 0.0, 'SHOT 03')">
-<img alt="SHOT 03" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 03" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg', 'SHOT 03 [3.2s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg">🔍</button>
 <span class="thumb-time-badge">3.20s - 0.00s</span>
 </div>
 </div>
@@ -1038,7 +1086,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 3" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg"/>
+<img crossorigin="anonymous" alt="Shot 3" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1083,11 +1131,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.67, 0.0, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg', 'SHOT 04 [4.67s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg">🔍</button>
                     <span class="thumb-time-badge">4.67s - 0.00s</span>
                 </div>
             </div>
@@ -1105,11 +1153,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(4.67, 0.0, 'SHOT 04')">
-<img alt="SHOT 04" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 04" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg', 'SHOT 04 [4.67s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg">🔍</button>
 <span class="thumb-time-badge">4.67s - 0.00s</span>
 </div>
 </div>
@@ -1131,7 +1179,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 4" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg"/>
+<img crossorigin="anonymous" alt="Shot 4" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1176,11 +1224,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.6, 0.0, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg', 'SHOT 05 [6.6s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg">🔍</button>
                     <span class="thumb-time-badge">6.60s - 0.00s</span>
                 </div>
             </div>
@@ -1198,11 +1246,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(6.6, 0.0, 'SHOT 05')">
-<img alt="SHOT 05" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 05" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg', 'SHOT 05 [6.6s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg">🔍</button>
 <span class="thumb-time-badge">6.60s - 0.00s</span>
 </div>
 </div>
@@ -1224,7 +1272,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 5" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg"/>
+<img crossorigin="anonymous" alt="Shot 5" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1269,11 +1317,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(8.53, 0.0, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg', 'SHOT 06 [8.53s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg">🔍</button>
                     <span class="thumb-time-badge">8.53s - 0.00s</span>
                 </div>
             </div>
@@ -1291,11 +1339,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(8.53, 0.0, 'SHOT 06')">
-<img alt="SHOT 06" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 06" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg', 'SHOT 06 [8.53s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg">🔍</button>
 <span class="thumb-time-badge">8.53s - 0.00s</span>
 </div>
 </div>
@@ -1317,7 +1365,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 6" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg"/>
+<img crossorigin="anonymous" alt="Shot 6" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1362,11 +1410,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.6, 0.0, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg', 'SHOT 07 [10.6s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg">🔍</button>
                     <span class="thumb-time-badge">10.60s - 0.00s</span>
                 </div>
             </div>
@@ -1384,11 +1432,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(10.6, 0.0, 'SHOT 07')">
-<img alt="SHOT 07" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 07" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg', 'SHOT 07 [10.6s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg">🔍</button>
 <span class="thumb-time-badge">10.60s - 0.00s</span>
 </div>
 </div>
@@ -1410,7 +1458,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 7" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg"/>
+<img crossorigin="anonymous" alt="Shot 7" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1455,11 +1503,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.53, 0.0, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg', 'SHOT 08 [12.53s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg">🔍</button>
                     <span class="thumb-time-badge">12.53s - 0.00s</span>
                 </div>
             </div>
@@ -1477,11 +1525,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(12.53, 0.0, 'SHOT 08')">
-<img alt="SHOT 08" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 08" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg', 'SHOT 08 [12.53s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg">🔍</button>
 <span class="thumb-time-badge">12.53s - 0.00s</span>
 </div>
 </div>
@@ -1503,7 +1551,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 8" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg"/>
+<img crossorigin="anonymous" alt="Shot 8" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1548,11 +1596,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.63, 0.0, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg', 'SHOT 09 [14.63s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg">🔍</button>
                     <span class="thumb-time-badge">14.63s - 0.00s</span>
                 </div>
             </div>
@@ -1570,11 +1618,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(14.63, 0.0, 'SHOT 09')">
-<img alt="SHOT 09" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 09" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg', 'SHOT 09 [14.63s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg">🔍</button>
 <span class="thumb-time-badge">14.63s - 0.00s</span>
 </div>
 </div>
@@ -1596,7 +1644,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 9" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg"/>
+<img crossorigin="anonymous" alt="Shot 9" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1641,11 +1689,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.47, 0.0, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg', 'SHOT 10 [16.47s - 0.0s]')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg">🔍</button>
                     <span class="thumb-time-badge">16.47s - 0.00s</span>
                 </div>
             </div>
@@ -1663,11 +1711,11 @@ video#mainPlayer {
                     <div class="raw-card-content">
 <div class="shot-media-col">
 <div class="shot-thumb-wrap" onclick="playShot(16.47, 0.0, 'SHOT 10')">
-<img alt="SHOT 10" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg"/>
+<img crossorigin="anonymous" alt="SHOT 10" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg"/>
 <div class="play-overlay">
 <svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
 </div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg', 'SHOT 10 [16.47s - 0.0s]')">🔍</button>
+<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg">🔍</button>
 <span class="thumb-time-badge">16.47s - 0.00s</span>
 </div>
 </div>
@@ -1689,7 +1737,7 @@ video#mainPlayer {
 </div>
 <div class="shot-body">
 <div class="shot-visuals">
-<img alt="Shot 10" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg"/>
+<img crossorigin="anonymous" alt="Shot 10" class="keyframe-img" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg"/>
 </div>
 <div class="shot-info-grid">
 <div class="info-row">
@@ -1736,9 +1784,9 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 0.0, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg', 'SHOT 01 [0.0s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
                 <div class="grid-badge-bottom">0.0s - 0.0s</div>
             </div>
@@ -1747,9 +1795,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(1.7, 0.0, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg', 'SHOT 02 [1.7s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
                 <div class="grid-badge-bottom">1.7s - 0.0s</div>
             </div>
@@ -1758,9 +1806,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.2, 0.0, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg', 'SHOT 03 [3.2s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
                 <div class="grid-badge-bottom">3.2s - 0.0s</div>
             </div>
@@ -1769,9 +1817,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(4.67, 0.0, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg', 'SHOT 04 [4.67s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
                 <div class="grid-badge-bottom">4.7s - 0.0s</div>
             </div>
@@ -1780,9 +1828,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(6.6, 0.0, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg', 'SHOT 05 [6.6s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
                 <div class="grid-badge-bottom">6.6s - 0.0s</div>
             </div>
@@ -1791,9 +1839,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(8.53, 0.0, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg', 'SHOT 06 [8.53s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
                 <div class="grid-badge-bottom">8.5s - 0.0s</div>
             </div>
@@ -1802,9 +1850,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.6, 0.0, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg', 'SHOT 07 [10.6s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
                 <div class="grid-badge-bottom">10.6s - 0.0s</div>
             </div>
@@ -1813,9 +1861,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.53, 0.0, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg', 'SHOT 08 [12.53s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
                 <div class="grid-badge-bottom">12.5s - 0.0s</div>
             </div>
@@ -1824,9 +1872,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.63, 0.0, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg', 'SHOT 09 [14.63s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
                 <div class="grid-badge-bottom">14.6s - 0.0s</div>
             </div>
@@ -1835,9 +1883,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.47, 0.0, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg', 'SHOT 10 [16.47s - 0.0s]')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
                 <div class="grid-badge-bottom">16.5s - 0.0s</div>
             </div>
@@ -1857,7 +1905,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 0.0, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_001_bac7352a.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -1869,7 +1917,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 1.7, 0.0, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_002_a6ebda07.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -1881,7 +1929,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 3.2, 0.0, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_003_1d27bf11.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -1893,7 +1941,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 4.67, 0.0, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_004_5e1e51e1.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -1905,7 +1953,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 6.6, 0.0, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_005_4b10e40e.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -1917,7 +1965,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 8.53, 0.0, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_006_4e304804.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -1929,7 +1977,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 10.6, 0.0, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_007_2c48f13b.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -1941,7 +1989,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 12.53, 0.0, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_008_36e3ffd4.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -1953,7 +2001,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 14.63, 0.0, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_009_e2d30171.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -1965,7 +2013,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 16.47, 0.0, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Spring_in_Hong_Kong_-_%40withyuee/img_010_ef13be70.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -1980,46 +2028,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/Spring_in_Hong_Kong%20-%20%40withyuee.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1heH4Sv3M9UII9w793LC6XEmTCrFye0kf";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2119,6 +2149,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

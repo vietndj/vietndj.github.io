@@ -94,7 +94,7 @@
     --cl-text-muted: #64748b;    /* Slate 500 */
 
     /* Accent & Brand Colors */
-    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
+    --cl-accent: #1a73e8;        /* Google / VIDEO Royal Blue */
     --cl-accent-tint: rgba(26, 115, 232, 0.08);
     --cl-amber: #d97706;         /* Amber 600 */
     --cl-amber-bg: #fffbeb;      /* Amber 50 */
@@ -831,7 +831,7 @@ body {
     }
     .left-player-col {
         width: 100%;
-        position: sticky;
+        position: relative;
         top: 57px;
         height: auto;
         padding: 16px;
@@ -852,6 +852,46 @@ body {
         gap: 8px;
     }
 }
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
@@ -894,20 +934,21 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <!-- TOP NAV -->
 <nav class="top-nav">
     <div class="nav-left">
-        <a href="https://ytuong.fedu.vn" class="nav-brand">
-            <span>🎬 FEDU DIRECTOR REPORT</span>
+        <a href="https://fedu.vn/scene.html" class="nav-brand">
+            <span>🎬 VIDEO DIRECTOR REPORT</span>
         </a>
         <span class="nav-badge">20 PHÂN CẢNH</span>
         <span class="nav-meta-title">Neolumo • Phóng Sự Trị Liệu Da Liễu Y Khoa & Thẩm Mỹ</span>
     </div>
     <div class="nav-right">
-        <a href="https://www.instagram.com/reels/DdF-qr0s4Kk/" target="_blank" class="nav-btn primary">
+        <a href="https://www.instagram.com/p/DdF-qr0s4Kk/" target="_blank" class="nav-btn primary">
             <span>📸 Instagram Gốc ↗</span>
         </a>
         <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
@@ -921,11 +962,7 @@ body {
     <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
     <aside class="left-player-col">
         <div class="player-box">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/DdF-qr0s4Kk.mp4" type="video/mp4">
-                <source src="DdF-qr0s4Kk.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/0tRKUWW8hdU?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
 
         <!-- DIRECTOR CONTROLS -->
@@ -954,8 +991,15 @@ body {
         <div class="video-meta-card">
             <div class="video-meta-title">Neolumo • Phóng Sự Trị Liệu Da Liễu Y Khoa & Thẩm Mỹ</div>
             <div class="video-meta-author">
-                <span>Tác giả:</span>
-                <a href="https://www.instagram.com/reels/DdF-qr0s4Kk/" target="_blank" class="author-link">Neolumo Luxury Club (Uralsk, Kazakhstan) (@neolumo.uralsk)</a>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@neolumo.uralsk" onclick="handleCreatorClick(event, '@neolumo.uralsk', 'Neolumo Luxury Club (Uralsk, Kazakhstan)')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Neolumo Luxury Club (Uralsk, Kazakhstan) trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Neolumo Luxury Club (Uralsk, Kazakhstan)</strong>
+                        <span class="author-handle">(@neolumo.uralsk)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+                <a href="https://www.instagram.com/p/DdF-qr0s4Kk/" target="_blank" class="author-link">Neolumo Luxury Club (Uralsk, Kazakhstan) (@neolumo.uralsk)</a>
             </div>
         </div>
     </aside>
@@ -1007,16 +1051,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_start.webp', 'Shot 01 • Đầu (0.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_start.webp" alt="Shot 01 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.jpg', 'Shot 01 • Giữa (1.26s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp', 'Shot 01 • Giữa (1.26s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp" alt="Shot 01 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (1.26s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_end.jpg', 'Shot 01 • Cuối (2.53s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_end.webp', 'Shot 01 • Cuối (2.53s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_end.webp" alt="Shot 01 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (2.53s)</span>
                 </div>
             </div>
@@ -1056,8 +1100,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Cắt không gian (Spatial Cut) sang Shot 02</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_01_to_02.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_01_to_02.webp" alt="Transition 1 to 2" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1076,16 +1120,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_start.jpg', 'Shot 02 • Đầu (2.53s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_start.webp', 'Shot 02 • Đầu (2.53s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_start.webp" alt="Shot 02 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (2.53s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.jpg', 'Shot 02 • Giữa (4.21s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.webp', 'Shot 02 • Giữa (4.21s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.webp" alt="Shot 02 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (4.21s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_end.jpg', 'Shot 02 • Cuối (5.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_end.webp', 'Shot 02 • Cuối (5.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_end.webp" alt="Shot 02 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (5.90s)</span>
                 </div>
             </div>
@@ -1125,8 +1169,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Match Cut đổi bối cảnh sang Shot 03</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_02_to_03.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_02_to_03.webp" alt="Transition 2 to 3" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1145,16 +1189,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_start.jpg', 'Shot 03 • Đầu (5.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_start.webp', 'Shot 03 • Đầu (5.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_start.webp" alt="Shot 03 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (5.90s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.jpg', 'Shot 03 • Giữa (6.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.webp', 'Shot 03 • Giữa (6.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.webp" alt="Shot 03 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (6.85s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_end.jpg', 'Shot 03 • Cuối (7.80s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_end.webp', 'Shot 03 • Cuối (7.80s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_end.webp" alt="Shot 03 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (7.80s)</span>
                 </div>
             </div>
@@ -1194,8 +1238,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Jump Cut đổi góc sang Shot 04</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_03_to_04.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_03_to_04.webp" alt="Transition 3 to 4" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1214,16 +1258,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_start.jpg', 'Shot 04 • Đầu (7.80s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_start.webp', 'Shot 04 • Đầu (7.80s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_start.webp" alt="Shot 04 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (7.80s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.jpg', 'Shot 04 • Giữa (9.87s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.webp', 'Shot 04 • Giữa (9.87s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.webp" alt="Shot 04 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (9.87s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_end.jpg', 'Shot 04 • Cuối (11.93s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_end.webp', 'Shot 04 • Cuối (11.93s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_end.webp" alt="Shot 04 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (11.93s)</span>
                 </div>
             </div>
@@ -1263,8 +1307,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • Cắt dựng chuyển tiếp (Cutaway to Action) sang Shot 05</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_04_to_05.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_04_to_05.webp" alt="Transition 4 to 5" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1283,16 +1327,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_start.jpg', 'Shot 05 • Đầu (11.93s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_start.webp', 'Shot 05 • Đầu (11.93s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_start.webp" alt="Shot 05 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (11.93s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.jpg', 'Shot 05 • Giữa (12.63s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.webp', 'Shot 05 • Giữa (12.63s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.webp" alt="Shot 05 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (12.63s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_end.jpg', 'Shot 05 • Cuối (13.33s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_end.webp', 'Shot 05 • Cuối (13.33s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_end.webp" alt="Shot 05 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (13.33s)</span>
                 </div>
             </div>
@@ -1332,8 +1376,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Action Cut sang Shot 06</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_05_to_06.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_05_to_06.webp" alt="Transition 5 to 6" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1352,16 +1396,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_start.jpg', 'Shot 06 • Đầu (13.33s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_start.webp', 'Shot 06 • Đầu (13.33s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_start.webp" alt="Shot 06 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (13.33s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.jpg', 'Shot 06 • Giữa (13.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.webp', 'Shot 06 • Giữa (13.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.webp" alt="Shot 06 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (13.98s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_end.jpg', 'Shot 06 • Cuối (14.63s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_end.webp', 'Shot 06 • Cuối (14.63s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_end.webp" alt="Shot 06 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (14.63s)</span>
                 </div>
             </div>
@@ -1401,8 +1445,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Whip Transition nhẹ sang Shot 07</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_06_to_07.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_06_to_07.webp" alt="Transition 6 to 7" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1421,16 +1465,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_start.jpg', 'Shot 07 • Đầu (14.63s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_start.webp', 'Shot 07 • Đầu (14.63s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_start.webp" alt="Shot 07 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (14.63s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.jpg', 'Shot 07 • Giữa (15.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.webp', 'Shot 07 • Giữa (15.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.webp" alt="Shot 07 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (15.27s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_end.jpg', 'Shot 07 • Cuối (15.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_end.webp', 'Shot 07 • Cuối (15.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_end.webp" alt="Shot 07 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (15.90s)</span>
                 </div>
             </div>
@@ -1470,8 +1514,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 08 • Push-In Transition sang Shot 08</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_07_to_08.jpg?v=2', 'Chuyển cảnh Shot 07 sang Shot 08')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_07_to_08.jpg?v=2" alt="Transition 7 to 8" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_07_to_08.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_07_to_08.webp" alt="Transition 7 to 8" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1490,16 +1534,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_start.jpg', 'Shot 08 • Đầu (15.90s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_start.webp', 'Shot 08 • Đầu (15.90s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_start.webp" alt="Shot 08 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (15.90s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.jpg', 'Shot 08 • Giữa (16.68s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.webp', 'Shot 08 • Giữa (16.68s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.webp" alt="Shot 08 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (16.68s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_end.jpg', 'Shot 08 • Cuối (17.47s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_end.webp', 'Shot 08 • Cuối (17.47s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_end.webp" alt="Shot 08 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (17.47s)</span>
                 </div>
             </div>
@@ -1539,8 +1583,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 09 • Cắt ngắt nhịp (Pacing Cut) về Shot 09</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_08_to_09.jpg?v=2', 'Chuyển cảnh Shot 08 sang Shot 09')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_08_to_09.jpg?v=2" alt="Transition 8 to 9" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_08_to_09.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_08_to_09.webp" alt="Transition 8 to 9" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1559,16 +1603,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_start.jpg', 'Shot 09 • Đầu (17.47s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_start.webp', 'Shot 09 • Đầu (17.47s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_start.webp" alt="Shot 09 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (17.47s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.jpg', 'Shot 09 • Giữa (18.23s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.webp', 'Shot 09 • Giữa (18.23s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.webp" alt="Shot 09 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (18.23s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_end.jpg', 'Shot 09 • Cuối (19.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_end.webp', 'Shot 09 • Cuối (19.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_end.webp" alt="Shot 09 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (19.00s)</span>
                 </div>
             </div>
@@ -1608,8 +1652,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 10 • Match Cut hành động sang Shot 10</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_09_to_10.jpg?v=2', 'Chuyển cảnh Shot 09 sang Shot 10')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_09_to_10.jpg?v=2" alt="Transition 9 to 10" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_09_to_10.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_09_to_10.webp" alt="Transition 9 to 10" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1628,16 +1672,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_start.jpg', 'Shot 10 • Đầu (19.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_start.webp', 'Shot 10 • Đầu (19.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_start.webp" alt="Shot 10 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (19.00s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.jpg', 'Shot 10 • Giữa (19.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.webp', 'Shot 10 • Giữa (19.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.webp" alt="Shot 10 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (19.98s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_end.jpg', 'Shot 10 • Cuối (20.97s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_end.webp', 'Shot 10 • Cuối (20.97s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_end.webp" alt="Shot 10 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (20.97s)</span>
                 </div>
             </div>
@@ -1677,8 +1721,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 11 • Zoom In sang Shot 11</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_10_to_11.jpg?v=2', 'Chuyển cảnh Shot 10 sang Shot 11')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_10_to_11.jpg?v=2" alt="Transition 10 to 11" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_10_to_11.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_10_to_11.webp" alt="Transition 10 to 11" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1697,16 +1741,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_start.jpg', 'Shot 11 • Đầu (20.97s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_start.webp', 'Shot 11 • Đầu (20.97s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_start.webp" alt="Shot 11 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (20.97s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.jpg', 'Shot 11 • Giữa (21.84s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.webp', 'Shot 11 • Giữa (21.84s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.webp" alt="Shot 11 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (21.84s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_end.jpg', 'Shot 11 • Cuối (22.70s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_end.webp', 'Shot 11 • Cuối (22.70s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_end.webp" alt="Shot 11 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (22.70s)</span>
                 </div>
             </div>
@@ -1746,8 +1790,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 12 • Spatial Cut sang Shot 12</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_11_to_12.jpg?v=2', 'Chuyển cảnh Shot 11 sang Shot 12')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_11_to_12.jpg?v=2" alt="Transition 11 to 12" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_11_to_12.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_11_to_12.webp" alt="Transition 11 to 12" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1766,16 +1810,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_start.jpg', 'Shot 12 • Đầu (22.70s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_start.webp', 'Shot 12 • Đầu (22.70s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_start.webp" alt="Shot 12 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (22.70s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.jpg', 'Shot 12 • Giữa (23.69s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.webp', 'Shot 12 • Giữa (23.69s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.webp" alt="Shot 12 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (23.69s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_end.jpg', 'Shot 12 • Cuối (24.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_end.webp', 'Shot 12 • Cuối (24.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_end.webp" alt="Shot 12 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (24.67s)</span>
                 </div>
             </div>
@@ -1815,8 +1859,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 13 • Match Cut sang Shot 13</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_12_to_13.jpg?v=2', 'Chuyển cảnh Shot 12 sang Shot 13')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_12_to_13.jpg?v=2" alt="Transition 12 to 13" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_12_to_13.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_12_to_13.webp" alt="Transition 12 to 13" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1835,16 +1879,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_start.jpg', 'Shot 13 • Đầu (24.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_start.webp', 'Shot 13 • Đầu (24.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_start.webp" alt="Shot 13 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (24.67s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.jpg', 'Shot 13 • Giữa (25.55s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.webp', 'Shot 13 • Giữa (25.55s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.webp" alt="Shot 13 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (25.55s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_end.jpg', 'Shot 13 • Cuối (26.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_end.webp', 'Shot 13 • Cuối (26.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_end.webp" alt="Shot 13 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (26.43s)</span>
                 </div>
             </div>
@@ -1884,8 +1928,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 14 • Action Cut sang Shot 14</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_13_to_14.jpg?v=2', 'Chuyển cảnh Shot 13 sang Shot 14')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_13_to_14.jpg?v=2" alt="Transition 13 to 14" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_13_to_14.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_13_to_14.webp" alt="Transition 13 to 14" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1904,16 +1948,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_start.jpg', 'Shot 14 • Đầu (26.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_start.webp', 'Shot 14 • Đầu (26.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_start.webp" alt="Shot 14 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (26.43s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.jpg', 'Shot 14 • Giữa (27.33s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.webp', 'Shot 14 • Giữa (27.33s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.webp" alt="Shot 14 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (27.33s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_end.jpg', 'Shot 14 • Cuối (28.23s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_end.webp', 'Shot 14 • Cuối (28.23s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_end.webp" alt="Shot 14 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (28.23s)</span>
                 </div>
             </div>
@@ -1953,8 +1997,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 15 • Cut to Wide sang Shot 15</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_14_to_15.jpg?v=2', 'Chuyển cảnh Shot 14 sang Shot 15')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_14_to_15.jpg?v=2" alt="Transition 14 to 15" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_14_to_15.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_14_to_15.webp" alt="Transition 14 to 15" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1973,16 +2017,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_start.jpg', 'Shot 15 • Đầu (28.23s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_start.webp', 'Shot 15 • Đầu (28.23s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_start.webp" alt="Shot 15 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (28.23s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.jpg', 'Shot 15 • Giữa (29.25s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.webp', 'Shot 15 • Giữa (29.25s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.webp" alt="Shot 15 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (29.25s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_end.jpg', 'Shot 15 • Cuối (30.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_end.webp', 'Shot 15 • Cuối (30.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_end.webp" alt="Shot 15 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (30.27s)</span>
                 </div>
             </div>
@@ -2022,8 +2066,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 16 • Dolly Pan sang Shot 16</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_15_to_16.jpg?v=2', 'Chuyển cảnh Shot 15 sang Shot 16')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_15_to_16.jpg?v=2" alt="Transition 15 to 16" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_15_to_16.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_15_to_16.webp" alt="Transition 15 to 16" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2042,16 +2086,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_start.jpg', 'Shot 16 • Đầu (30.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_start.webp', 'Shot 16 • Đầu (30.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_start.webp" alt="Shot 16 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (30.27s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.jpg', 'Shot 16 • Giữa (31.15s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.webp', 'Shot 16 • Giữa (31.15s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.webp" alt="Shot 16 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (31.15s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_end.jpg', 'Shot 16 • Cuối (32.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_end.webp', 'Shot 16 • Cuối (32.03s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_end.webp" alt="Shot 16 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (32.03s)</span>
                 </div>
             </div>
@@ -2091,8 +2135,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 17 • Close Cut sang Shot 17</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_16_to_17.jpg?v=2', 'Chuyển cảnh Shot 16 sang Shot 17')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_16_to_17.jpg?v=2" alt="Transition 16 to 17" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_16_to_17.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_16_to_17.webp" alt="Transition 16 to 17" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2111,16 +2155,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_start.jpg', 'Shot 17 • Đầu (32.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_start.webp', 'Shot 17 • Đầu (32.03s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_start.webp" alt="Shot 17 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (32.03s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.jpg', 'Shot 17 • Giữa (32.62s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.webp', 'Shot 17 • Giữa (32.62s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.webp" alt="Shot 17 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (32.62s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_end.jpg', 'Shot 17 • Cuối (33.20s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_end.webp', 'Shot 17 • Cuối (33.20s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_end.webp" alt="Shot 17 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (33.20s)</span>
                 </div>
             </div>
@@ -2160,8 +2204,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 18 • Cutaway sang Shot 18</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_17_to_18.jpg?v=2', 'Chuyển cảnh Shot 17 sang Shot 18')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_17_to_18.jpg?v=2" alt="Transition 17 to 18" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_17_to_18.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_17_to_18.webp" alt="Transition 17 to 18" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2180,16 +2224,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_start.jpg', 'Shot 18 • Đầu (33.20s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_start.webp', 'Shot 18 • Đầu (33.20s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_start.webp" alt="Shot 18 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (33.20s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.jpg', 'Shot 18 • Giữa (33.81s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.webp', 'Shot 18 • Giữa (33.81s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.webp" alt="Shot 18 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (33.81s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_end.jpg', 'Shot 18 • Cuối (34.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_end.webp', 'Shot 18 • Cuối (34.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_end.webp" alt="Shot 18 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (34.43s)</span>
                 </div>
             </div>
@@ -2229,8 +2273,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 19 • Push-In Jump Cut sang Shot 19</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_18_to_19.jpg?v=2', 'Chuyển cảnh Shot 18 sang Shot 19')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_18_to_19.jpg?v=2" alt="Transition 18 to 19" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_18_to_19.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_18_to_19.webp" alt="Transition 18 to 19" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2249,16 +2293,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_start.jpg', 'Shot 19 • Đầu (34.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_start.jpg" alt="Shot 19 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_start.webp', 'Shot 19 • Đầu (34.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_start.webp" alt="Shot 19 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (34.43s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.jpg', 'Shot 19 • Giữa (39.05s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.jpg" alt="Shot 19 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.webp', 'Shot 19 • Giữa (39.05s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.webp" alt="Shot 19 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (39.05s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_end.jpg', 'Shot 19 • Cuối (43.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_end.jpg" alt="Shot 19 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_end.webp', 'Shot 19 • Cuối (43.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_end.webp" alt="Shot 19 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (43.67s)</span>
                 </div>
             </div>
@@ -2298,8 +2342,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 20 • Dissolve sang Shot 20</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_19_to_20.jpg?v=2', 'Chuyển cảnh Shot 19 sang Shot 20')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_19_to_20.jpg?v=2" alt="Transition 19 to 20" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_19_to_20.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_19_to_20.webp" alt="Transition 19 to 20" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2318,16 +2362,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_start.jpg', 'Shot 20 • Đầu (43.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_start.jpg" alt="Shot 20 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_start.webp', 'Shot 20 • Đầu (43.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_start.webp" alt="Shot 20 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (43.67s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.jpg', 'Shot 20 • Giữa (44.17s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.jpg" alt="Shot 20 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.webp', 'Shot 20 • Giữa (44.17s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.webp" alt="Shot 20 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (44.17s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_end.jpg', 'Shot 20 • Cuối (44.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_end.jpg" alt="Shot 20 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_end.webp', 'Shot 20 • Cuối (44.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_end.webp" alt="Shot 20 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (44.67s)</span>
                 </div>
             </div>
@@ -2367,8 +2411,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_20_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
-                    <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/transitions/trans_20_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp" alt="Loop Transition" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2382,7 +2426,7 @@ body {
             
         <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 2.53)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_01_mid.webp" alt="Shot 01" loading="lazy">
                 <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
             </div>
             <div class="grid-card-body">Hook Chuyển Động Bước Tới (Dolly In Walk): Tách Lớp Bác Sĩ Áo Trắng Trên Hành Lang Vô Trùng Trắng Tinh Khôi</div>
@@ -2391,7 +2435,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(2, 2.53, 5.9)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_02_mid.webp" alt="Shot 02" loading="lazy">
                 <span class="grid-thumb-badge">Shot 02 • 2.53s</span>
             </div>
             <div class="grid-card-body">Bố Cục Bán Thân Đón Tiếp 45° Tại Ngưỡng Cửa: Nụ Cười Ấm Áp Phá Vỡ Rào Cản Tâm Lý Lo Ngại Khám Da</div>
@@ -2400,7 +2444,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(3, 5.9, 7.8)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_03_mid.webp" alt="Shot 03" loading="lazy">
                 <span class="grid-thumb-badge">Shot 03 • 5.90s</span>
             </div>
             <div class="grid-card-body">Góc Quay Cận Bác Sĩ Nghiêng 45° Thao Tác: Khóa Mỏ Neo Chuyên Nghiệp Với Găng Tay Y Tế Xanh Vô Trùng</div>
@@ -2409,7 +2453,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(4, 7.8, 11.93)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_04_mid.webp" alt="Shot 04" loading="lazy">
                 <span class="grid-thumb-badge">Shot 04 • 7.80s</span>
             </div>
             <div class="grid-card-body">Thiết Lập Góc Tư Vấn Chuyên Gia (Talking Head Consultation): Ghế Bành Tối Giản & Cây Xanh Tạo Cảm Giác Thư Thái</div>
@@ -2418,7 +2462,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(5, 11.93, 13.33)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_05_mid.webp" alt="Shot 05" loading="lazy">
                 <span class="grid-thumb-badge">Shot 05 • 11.93s</span>
             </div>
             <div class="grid-card-body">Kỹ Thuật Ủ Màng Bọc Sinh Học Giãn Nở Lỗ Chân Lông: Trực Quan Hóa Bước Chuẩn Bị Da Y Khoa Chuẩn Mực</div>
@@ -2427,7 +2471,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(6, 13.33, 14.63)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_06_mid.webp" alt="Shot 06" loading="lazy">
                 <span class="grid-thumb-badge">Shot 06 • 13.33s</span>
             </div>
             <div class="grid-card-body">Sủi Da Siêu Âm Tầng Nông (Ultrasonic Peeling): Nhịp Cắt Chéo Đón Thao Tác Đầu Máy Rung Kim Loại</div>
@@ -2436,7 +2480,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(7, 14.63, 15.9)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_07_mid.webp" alt="Shot 07" loading="lazy">
                 <span class="grid-thumb-badge">Shot 07 • 14.63s</span>
             </div>
             <div class="grid-card-body">Bố Cục 2 Lớp (Two-Shot Over Shoulder): Bác Sĩ Chuyên Chú Thao Tác vs Khách Hàng Thư Giãn Thả Lỏng</div>
@@ -2445,7 +2489,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(8, 15.9, 17.47)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_08_mid.webp" alt="Shot 08" loading="lazy">
                 <span class="grid-thumb-badge">Shot 08 • 15.90s</span>
             </div>
             <div class="grid-card-body">Macro Cực Cận Sủi Sạch Bã Nhờn Cánh Mũi: Bằng Chứng Thị Giác Đắt Giá Về Sức Mạnh Làm Sạch Tầng Sâu</div>
@@ -2454,7 +2498,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(9, 17.47, 19.0)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_09_mid.webp" alt="Shot 09" loading="lazy">
                 <span class="grid-thumb-badge">Shot 09 • 17.47s</span>
             </div>
             <div class="grid-card-body">Nhịp Cắt Xen Kẽ Củng Cố Kiến Thức (Cutaway Anchor): Bác Sĩ Nhấn Mạnh Tầm Quan Trọng Của Bước Lấy Nhân Mụn</div>
@@ -2463,7 +2507,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(10, 19.0, 20.97)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_10_mid.webp" alt="Shot 10" loading="lazy">
                 <span class="grid-thumb-badge">Shot 10 • 19.00s</span>
             </div>
             <div class="grid-card-body">Thao Tác Nặn Mụn Cơ Học Bằng Gạc Vô Trùng: Chuẩn Xác Về Lực & Bảo Vệ Da Khỏi Thâm Sẹo</div>
@@ -2472,7 +2516,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(11, 20.97, 22.7)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_11_mid.webp" alt="Shot 11" loading="lazy">
                 <span class="grid-thumb-badge">Shot 11 • 20.97s</span>
             </div>
             <div class="grid-card-body">Macro Cực Cận Cây Nặn Mụn Uno Loop: Điểm Chạm Đỉnh Cao Của Phân Đoạn Trị Liệu Cơ Học</div>
@@ -2481,7 +2525,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(12, 22.7, 24.67)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_12_mid.webp" alt="Shot 12" loading="lazy">
                 <span class="grid-thumb-badge">Shot 12 • 22.70s</span>
             </div>
             <div class="grid-card-body">Bố Cục Toàn Cảnh Phòng Điều Trị Góc 3/4 Sau Lưng: Khẳng Định Vị Thế & Không Gian Y Khoa Cao Cấp</div>
@@ -2490,7 +2534,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(13, 24.67, 26.43)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_13_mid.webp" alt="Shot 13" loading="lazy">
                 <span class="grid-thumb-badge">Shot 13 • 24.67s</span>
             </div>
             <div class="grid-card-body">Cận Cảnh Hoàn Tất Làm Sạch Vùng Chữ T: Đôi Bàn Tay Khéo Léo Lau Sạch Tinh Tươm Bằng Bông Kháng Khuẩn</div>
@@ -2499,7 +2543,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(14, 26.43, 28.23)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_14_mid.webp" alt="Shot 14" loading="lazy">
                 <span class="grid-thumb-badge">Shot 14 • 26.43s</span>
             </div>
             <div class="grid-card-body">Trải Đều Mặt Nạ Băng Lạnh Alginate Màu Xanh Ngọc Bích: Kích Hoạt Cảm Giác Tươi Mát & Làm Dịu Làn Da</div>
@@ -2508,7 +2552,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(15, 28.23, 30.27)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_15_mid.webp" alt="Shot 15" loading="lazy">
                 <span class="grid-thumb-badge">Shot 15 • 28.23s</span>
             </div>
             <div class="grid-card-body">Toàn Cảnh Phủ Kín Mặt Nạ Khóa Ẩm Toàn Diện: Trạng Thái Thư Giãn Tối Đa Của Khách Hàng</div>
@@ -2517,7 +2561,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(16, 30.27, 32.03)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_16_mid.webp" alt="Shot 16" loading="lazy">
                 <span class="grid-thumb-badge">Shot 16 • 30.27s</span>
             </div>
             <div class="grid-card-body">Góc Máy Nghiêng Thiết Bị Y Tế Hiện Đại: Tôn Vinh Tiêu Chuẩn Công Nghệ & Độ Tinh Khiết Của Phòng Khám</div>
@@ -2526,7 +2570,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(17, 32.03, 33.2)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_17_mid.webp" alt="Shot 17" loading="lazy">
                 <span class="grid-thumb-badge">Shot 17 • 32.03s</span>
             </div>
             <div class="grid-card-body">Cận Cảnh Đường Nét Chăm Chút Cuối Cùng: Sự Tỉ Mỉ Và Tận Tâm Thể Hiện Trong Từng Thao Tác Nhỏ</div>
@@ -2535,7 +2579,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(18, 33.2, 34.43)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_18_mid.webp" alt="Shot 18" loading="lazy">
                 <span class="grid-thumb-badge">Shot 18 • 33.20s</span>
             </div>
             <div class="grid-card-body">Chuyển Cảnh Trở Lại Ghế Tư Vấn: Chuẩn Bị Bước Vào Thông Điệp Kêu Gọi Hành Động (CTA Prep)</div>
@@ -2544,7 +2588,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(19, 34.43, 43.67)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.jpg" alt="Shot 19" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_19_mid.webp" alt="Shot 19" loading="lazy">
                 <span class="grid-thumb-badge">Shot 19 • 34.43s</span>
             </div>
             <div class="grid-card-body">Lời Kêu Gọi Đặt Lịch Tư Vấn Trực Tiếp (Direct Call to Action): Giao Tiếp Ánh Mắt Chân Thành & Bảng Hồ Sơ Bệnh Án</div>
@@ -2553,7 +2597,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(20, 43.67, 44.67)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.jpg" alt="Shot 20" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa/shot_20_mid.webp" alt="Shot 20" loading="lazy">
                 <span class="grid-thumb-badge">Shot 20 • 43.67s</span>
             </div>
             <div class="grid-card-body">Outro Nhận Diện Thương Hiệu Đẳng Cấp: Nền Vân Đá Cẩm Thạch Sang Trọng Khắc Sâu Logo NEOLUMO LUXURY CLUB</div>
@@ -2570,10 +2614,13 @@ body {
                 <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
                     <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
                 </a>
+                <a href="https://fedu.vn/scene.html" target="_blank" class="footer-link-card">
+                    <span>🎬 Cổng Tra Cứu Điện Ảnh Scene.html ↗</span>
+                </a>
                 <a href="https://drive.google.com/drive/folders/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa" target="_blank" class="footer-link-card">
                     <span>📁 Mở Thư Mục Google Drive ↗</span>
                 </a>
-                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@neolumo.uralsk_DdF-qr0s4Kk_Spa_Y_Khoa" class="footer-link-card">
+                <a href="#" style="display:none;" class="footer-link-card">
                     <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
                 </a>
             </div>
@@ -2585,7 +2632,7 @@ body {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoomed Keyframe">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
@@ -2604,7 +2651,7 @@ let isLooping = false;
 // Timeupdate listener
 player.addEventListener('timeupdate', () => {
     const ct = player.currentTime;
-    timeDisplay.textContent = ;
+    timeDisplay.textContent = ct.toFixed(2) + 's / ' + (player.duration ? player.duration.toFixed(2) : '44.67') + 's';
 
     if (isLooping && currentLoopShot) {
         if (ct >= currentLoopShot.en_time) {
@@ -2686,6 +2733,22 @@ function closeLightbox() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

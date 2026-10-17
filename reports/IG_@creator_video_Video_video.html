@@ -1200,13 +1200,14 @@ video#mainPlayer {
     }
 }
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" src="https://media.fedu.vn/videos/video.mp4" controls autoplay muted playsinline preload="auto" loop></video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">

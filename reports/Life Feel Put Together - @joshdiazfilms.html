@@ -829,21 +829,22 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <!-- Top Header Navigation -->
 <header class="top-nav">
-    <a href="https://ytuong.fedu.vn" class="nav-brand">
-        <span class="nav-badge">FEDU Master Series</span>
+    <a href="https://vietndj.github.io/scene.html" class="nav-brand">
+        <span class="nav-badge">VIDEO Master Series</span>
         <span>Director's Shot Analysis</span>
     </a>
     <div class="nav-actions">
-        <a href="https://www.instagram.com/reels/Dctj7NfNimM/" target="_blank" class="nav-btn primary">
+        <a href="https://www.instagram.com/p/Dctj7NfNimM/" target="_blank" class="nav-btn primary">
             📸 Xem Instagram Gốc ↗
         </a>
-        <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
-            💡 Kho Ý Tưởng ↗
+        <a href="https://vietndj.github.io/scene.html" class="nav-btn">
+            🏛 Cổng Tra Cứu
         </a>
     </div>
 </header>
@@ -853,10 +854,7 @@ body {
     <!-- Left Column: Video Sticky Player -->
     <aside class="player-column">
         <div class="video-frame-box">
-            <video id="mainVideo" playsinline preload="auto">
-                <source src="https://media.fedu.vn/videos/Dctj7NfNimM.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ video thẻ video HTML5.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/DF1xhe_g0Lc?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
 
         <div class="player-controls">
@@ -877,7 +875,7 @@ body {
                 </div>
             </div>
             <div class="ctrl-row" style="margin-top: 4px;">
-                <a href="https://media.fedu.vn/videos/Dctj7NfNimM.mp4" download class="ctrl-btn" style="flex: 1; justify-content: center; text-decoration: none;">
+                <a href="https://ytuong.fedu.vn/api/video?id=1e84gHiD-gTHPyQmkroD3A1MjfnkdTZOI" download class="ctrl-btn" style="flex: 1; justify-content: center; text-decoration: none;">
                     ⬇ Tải Video Gốc MP4
                 </a>
             </div>
@@ -888,7 +886,7 @@ body {
     <main class="content-column">
         <header class="report-header">
             <div class="meta-tags-flex">
-                <a href="https://www.instagram.com/reels/Dctj7NfNimM/" target="_blank" class="author-ig-badge">
+                <a href="https://www.instagram.com/p/Dctj7NfNimM/" target="_blank" class="author-ig-badge">
                     📸 @joshdiazfilms (Josh Diaz) ↗
                 </a>
                 <span class="stat-pill">⏱ 15.93s</span>
@@ -937,19 +935,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_start.jpg', 'Shot 01 • Khung hình Đầu (0.00s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (0.00s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg', 'Shot 01 • Cao trào Giữa (1.44s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (1.44s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_end.jpg', 'Shot 01 • Khung hình Cuối (2.88s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
                         <span class="kf-badge end">Cuối (2.88s)</span>
                     </div>
                 </div>
@@ -1014,7 +1012,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 02 • Hard Cut sang chuỗi việc nhà</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_01_to_02.jpg', 'So sánh chuyển tiếp Shot 01 ➔ Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_01_to_02.jpg" alt="Transition 01 to 02" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_01_to_02.jpg" alt="Transition 01 to 02" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1043,19 +1041,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_start.jpg', 'Shot 02 • Khung hình Đầu (2.88s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (2.88s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_mid.jpg', 'Shot 02 • Cao trào Giữa (3.31s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (3.31s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_end.jpg', 'Shot 02 • Khung hình Cuối (3.75s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
                         <span class="kf-badge end">Cuối (3.75s)</span>
                     </div>
                 </div>
@@ -1120,7 +1118,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 03 • Fast Cut sang vỗ gối</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_02_to_03.jpg', 'So sánh chuyển tiếp Shot 02 ➔ Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_02_to_03.jpg" alt="Transition 02 to 03" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_02_to_03.jpg" alt="Transition 02 to 03" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1149,19 +1147,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_start.jpg', 'Shot 03 • Khung hình Đầu (3.75s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (3.75s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.jpg', 'Shot 03 • Cao trào Giữa (4.08s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (4.08s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_end.jpg', 'Shot 03 • Khung hình Cuối (4.42s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
                         <span class="kf-badge end">Cuối (4.42s)</span>
                     </div>
                 </div>
@@ -1226,7 +1224,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 04 • Match Action sang mở rèm</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_03_to_04.jpg', 'So sánh chuyển tiếp Shot 03 ➔ Shot 04')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_03_to_04.jpg" alt="Transition 03 to 04" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_03_to_04.jpg" alt="Transition 03 to 04" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1255,19 +1253,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_start.jpg', 'Shot 04 • Khung hình Đầu (4.42s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (4.42s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_mid.jpg', 'Shot 04 • Cao trào Giữa (4.67s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (4.67s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_end.jpg', 'Shot 04 • Khung hình Cuối (4.92s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
                         <span class="kf-badge end">Cuối (4.92s)</span>
                     </div>
                 </div>
@@ -1332,7 +1330,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 05 • Cut sang khu vực bếp</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_04_to_05.jpg', 'So sánh chuyển tiếp Shot 04 ➔ Shot 05')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_04_to_05.jpg" alt="Transition 04 to 05" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_04_to_05.jpg" alt="Transition 04 to 05" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1361,19 +1359,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_start.jpg', 'Shot 05 • Khung hình Đầu (4.92s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (4.92s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_mid.jpg', 'Shot 05 • Cao trào Giữa (5.17s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (5.17s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_end.jpg', 'Shot 05 • Khung hình Cuối (5.42s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
                         <span class="kf-badge end">Cuối (5.42s)</span>
                     </div>
                 </div>
@@ -1438,7 +1436,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 06 • Cut sang pha cà phê</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_05_to_06.jpg', 'So sánh chuyển tiếp Shot 05 ➔ Shot 06')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_05_to_06.jpg" alt="Transition 05 to 06" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_05_to_06.jpg" alt="Transition 05 to 06" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1467,19 +1465,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_start.jpg', 'Shot 06 • Khung hình Đầu (5.42s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (5.42s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_mid.jpg', 'Shot 06 • Cao trào Giữa (5.75s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (5.75s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_end.jpg', 'Shot 06 • Khung hình Cuối (6.09s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
                         <span class="kf-badge end">Cuối (6.09s)</span>
                     </div>
                 </div>
@@ -1544,7 +1542,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 07 • Action Cut sang nén cà phê</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_06_to_07.jpg', 'So sánh chuyển tiếp Shot 06 ➔ Shot 07')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_06_to_07.jpg" alt="Transition 06 to 07" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_06_to_07.jpg" alt="Transition 06 to 07" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1573,19 +1571,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_start.jpg', 'Shot 07 • Khung hình Đầu (6.09s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (6.09s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_mid.jpg', 'Shot 07 • Cao trào Giữa (6.30s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (6.30s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_end.jpg', 'Shot 07 • Khung hình Cuối (6.51s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
                         <span class="kf-badge end">Cuối (6.51s)</span>
                     </div>
                 </div>
@@ -1650,7 +1648,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 08 • Cut sang chiết xuất</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_07_to_08.jpg', 'So sánh chuyển tiếp Shot 07 ➔ Shot 08')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_07_to_08.jpg" alt="Transition 07 to 08" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_07_to_08.jpg" alt="Transition 07 to 08" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1679,19 +1677,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_start.jpg', 'Shot 08 • Khung hình Đầu (6.51s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (6.51s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_mid.jpg', 'Shot 08 • Cao trào Giữa (6.92s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (6.92s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_end.jpg', 'Shot 08 • Khung hình Cuối (7.34s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
                         <span class="kf-badge end">Cuối (7.34s)</span>
                     </div>
                 </div>
@@ -1756,7 +1754,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 09 • Cut sang rót sữa</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_08_to_09.jpg', 'So sánh chuyển tiếp Shot 08 ➔ Shot 09')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_08_to_09.jpg" alt="Transition 08 to 09" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_08_to_09.jpg" alt="Transition 08 to 09" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1785,19 +1783,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_start.jpg', 'Shot 09 • Khung hình Đầu (7.34s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (7.34s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_mid.jpg', 'Shot 09 • Cao trào Giữa (7.74s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (7.74s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_end.jpg', 'Shot 09 • Khung hình Cuối (8.13s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
                         <span class="kf-badge end">Cuối (8.13s)</span>
                     </div>
                 </div>
@@ -1862,7 +1860,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 10 • Cut sang bàn làm việc</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_09_to_10.jpg', 'So sánh chuyển tiếp Shot 09 ➔ Shot 10')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_09_to_10.jpg" alt="Transition 09 to 10" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_09_to_10.jpg" alt="Transition 09 to 10" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1891,19 +1889,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_start.jpg', 'Shot 10 • Khung hình Đầu (8.13s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (8.13s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_mid.jpg', 'Shot 10 • Cao trào Giữa (8.36s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (8.36s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_end.jpg', 'Shot 10 • Khung hình Cuối (8.59s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
                         <span class="kf-badge end">Cuối (8.59s)</span>
                     </div>
                 </div>
@@ -1968,7 +1966,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 11 • Cut sang bật đèn</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_10_to_11.jpg', 'So sánh chuyển tiếp Shot 10 ➔ Shot 11')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_10_to_11.jpg" alt="Transition 10 to 11" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_10_to_11.jpg" alt="Transition 10 to 11" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1997,19 +1995,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_start.jpg', 'Shot 11 • Khung hình Đầu (8.59s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (8.59s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_mid.jpg', 'Shot 11 • Cao trào Giữa (9.11s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (9.11s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_end.jpg', 'Shot 11 • Khung hình Cuối (9.63s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
                         <span class="kf-badge end">Cuối (9.63s)</span>
                     </div>
                 </div>
@@ -2074,7 +2072,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 12 • Cut sang mở sổ tay</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_11_to_12.jpg', 'So sánh chuyển tiếp Shot 11 ➔ Shot 12')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_11_to_12.jpg" alt="Transition 11 to 12" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_11_to_12.jpg" alt="Transition 11 to 12" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2103,19 +2101,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_start.jpg', 'Shot 12 • Khung hình Đầu (9.63s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (9.63s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_mid.jpg', 'Shot 12 • Cao trào Giữa (9.86s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (9.86s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_end.jpg', 'Shot 12 • Khung hình Cuối (10.09s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
                         <span class="kf-badge end">Cuối (10.09s)</span>
                     </div>
                 </div>
@@ -2180,7 +2178,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 13 • Cut sang viết mục tiêu</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_12_to_13.jpg', 'So sánh chuyển tiếp Shot 12 ➔ Shot 13')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_12_to_13.jpg" alt="Transition 12 to 13" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_12_to_13.jpg" alt="Transition 12 to 13" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2209,19 +2207,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_start.jpg', 'Shot 13 • Khung hình Đầu (10.09s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (10.09s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_mid.jpg', 'Shot 13 • Cao trào Giữa (10.55s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (10.55s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_end.jpg', 'Shot 13 • Khung hình Cuối (11.01s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
                         <span class="kf-badge end">Cuối (11.01s)</span>
                     </div>
                 </div>
@@ -2286,7 +2284,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 14 • Cut sang mở laptop</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_13_to_14.jpg', 'So sánh chuyển tiếp Shot 13 ➔ Shot 14')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_13_to_14.jpg" alt="Transition 13 to 14" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_13_to_14.jpg" alt="Transition 13 to 14" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2315,19 +2313,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_start.jpg', 'Shot 14 • Khung hình Đầu (11.01s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (11.01s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_mid.jpg', 'Shot 14 • Cao trào Giữa (11.34s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (11.34s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_end.jpg', 'Shot 14 • Khung hình Cuối (11.68s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
                         <span class="kf-badge end">Cuối (11.68s)</span>
                     </div>
                 </div>
@@ -2392,7 +2390,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 15 • Cut sang gõ phím</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_14_to_15.jpg', 'So sánh chuyển tiếp Shot 14 ➔ Shot 15')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_14_to_15.jpg" alt="Transition 14 to 15" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_14_to_15.jpg" alt="Transition 14 to 15" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2421,19 +2419,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_start.jpg', 'Shot 15 • Khung hình Đầu (11.68s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (11.68s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_mid.jpg', 'Shot 15 • Cao trào Giữa (12.09s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (12.09s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_end.jpg', 'Shot 15 • Khung hình Cuối (12.51s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
                         <span class="kf-badge end">Cuối (12.51s)</span>
                     </div>
                 </div>
@@ -2498,7 +2496,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 16 • Cut sang nhìn màn hình</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_15_to_16.jpg', 'So sánh chuyển tiếp Shot 15 ➔ Shot 16')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_15_to_16.jpg" alt="Transition 15 to 16" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_15_to_16.jpg" alt="Transition 15 to 16" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2527,19 +2525,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_start.jpg', 'Shot 16 • Khung hình Đầu (12.51s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (12.51s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_mid.jpg', 'Shot 16 • Cao trào Giữa (12.82s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (12.82s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_end.jpg', 'Shot 16 • Khung hình Cuối (13.14s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
                         <span class="kf-badge end">Cuối (13.14s)</span>
                     </div>
                 </div>
@@ -2604,7 +2602,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 17 • Cut sang ngụm cà phê</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_16_to_17.jpg', 'So sánh chuyển tiếp Shot 16 ➔ Shot 17')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_16_to_17.jpg" alt="Transition 16 to 17" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_16_to_17.jpg" alt="Transition 16 to 17" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2633,19 +2631,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_start.jpg', 'Shot 17 • Khung hình Đầu (13.14s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (13.14s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_mid.jpg', 'Shot 17 • Cao trào Giữa (13.39s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (13.39s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_end.jpg', 'Shot 17 • Khung hình Cuối (13.64s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
                         <span class="kf-badge end">Cuối (13.64s)</span>
                     </div>
                 </div>
@@ -2710,7 +2708,7 @@ body {
                     <span class="trans-title">⚡ Chuyển Cảnh Sang Shot 18 • Cut sang nụ cười kết thúc</span>
                 </div>
                 <div class="trans-img-wrap" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_17_to_18.jpg', 'So sánh chuyển tiếp Shot 17 ➔ Shot 18')">
-                    <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_17_to_18.jpg" alt="Transition 17 to 18" loading="lazy">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/transitions/trans_17_to_18.jpg" alt="Transition 17 to 18" loading="lazy">
                     <span class="zoom-indicator">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2739,19 +2737,19 @@ body {
             <div class="keyframes-grid">
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_start.jpg', 'Shot 18 • Khung hình Đầu (13.64s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
                         <span class="kf-badge start">Đầu (13.64s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_mid.jpg', 'Shot 18 • Cao trào Giữa (14.77s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
                         <span class="kf-badge mid">Giữa (14.77s)</span>
                     </div>
                 </div>
                 <div class="keyframe-item" onclick="openLightbox('https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_end.jpg', 'Shot 18 • Khung hình Cuối (15.89s)')">
                     <div class="kf-img-wrap">
-                        <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
+                        <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
                         <span class="kf-badge end">Cuối (15.89s)</span>
                     </div>
                 </div>
@@ -2820,7 +2818,7 @@ body {
             
         <div class="grid-card" onclick="jumpToShot(1, 0.0)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
                 <div class="grid-time-tag">0.00s - 2.88s</div>
                 <div class="grid-shot-tag">Shot 01</div>
             </div>
@@ -2831,7 +2829,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(2, 2.88)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
                 <div class="grid-time-tag">2.88s - 3.75s</div>
                 <div class="grid-shot-tag">Shot 02</div>
             </div>
@@ -2842,7 +2840,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(3, 3.75)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
                 <div class="grid-time-tag">3.75s - 4.42s</div>
                 <div class="grid-shot-tag">Shot 03</div>
             </div>
@@ -2853,7 +2851,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(4, 4.42)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
                 <div class="grid-time-tag">4.42s - 4.92s</div>
                 <div class="grid-shot-tag">Shot 04</div>
             </div>
@@ -2864,7 +2862,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(5, 4.92)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
                 <div class="grid-time-tag">4.92s - 5.42s</div>
                 <div class="grid-shot-tag">Shot 05</div>
             </div>
@@ -2875,7 +2873,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(6, 5.42)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
                 <div class="grid-time-tag">5.42s - 6.09s</div>
                 <div class="grid-shot-tag">Shot 06</div>
             </div>
@@ -2886,7 +2884,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(7, 6.09)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
                 <div class="grid-time-tag">6.09s - 6.51s</div>
                 <div class="grid-shot-tag">Shot 07</div>
             </div>
@@ -2897,7 +2895,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(8, 6.51)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
                 <div class="grid-time-tag">6.51s - 7.34s</div>
                 <div class="grid-shot-tag">Shot 08</div>
             </div>
@@ -2908,7 +2906,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(9, 7.34)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
                 <div class="grid-time-tag">7.34s - 8.13s</div>
                 <div class="grid-shot-tag">Shot 09</div>
             </div>
@@ -2919,7 +2917,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(10, 8.13)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
                 <div class="grid-time-tag">8.13s - 8.59s</div>
                 <div class="grid-shot-tag">Shot 10</div>
             </div>
@@ -2930,7 +2928,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(11, 8.59)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
                 <div class="grid-time-tag">8.59s - 9.63s</div>
                 <div class="grid-shot-tag">Shot 11</div>
             </div>
@@ -2941,7 +2939,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(12, 9.63)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
                 <div class="grid-time-tag">9.63s - 10.09s</div>
                 <div class="grid-shot-tag">Shot 12</div>
             </div>
@@ -2952,7 +2950,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(13, 10.09)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
                 <div class="grid-time-tag">10.09s - 11.01s</div>
                 <div class="grid-shot-tag">Shot 13</div>
             </div>
@@ -2963,7 +2961,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(14, 11.01)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
                 <div class="grid-time-tag">11.01s - 11.68s</div>
                 <div class="grid-shot-tag">Shot 14</div>
             </div>
@@ -2974,7 +2972,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(15, 11.68)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
                 <div class="grid-time-tag">11.68s - 12.51s</div>
                 <div class="grid-shot-tag">Shot 15</div>
             </div>
@@ -2985,7 +2983,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(16, 12.51)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
                 <div class="grid-time-tag">12.51s - 13.14s</div>
                 <div class="grid-shot-tag">Shot 16</div>
             </div>
@@ -2996,7 +2994,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(17, 13.14)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
                 <div class="grid-time-tag">13.14s - 13.64s</div>
                 <div class="grid-shot-tag">Shot 17</div>
             </div>
@@ -3007,7 +3005,7 @@ body {
         
         <div class="grid-card" onclick="jumpToShot(18, 13.64)">
             <div class="grid-thumb-box">
-                <img src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
                 <div class="grid-time-tag">13.64s - 15.89s</div>
                 <div class="grid-shot-tag">Shot 18</div>
             </div>
@@ -3145,7 +3143,7 @@ body {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox(event)">
     <button class="lightbox-close" onclick="closeLightbox(event)">✕</button>
     <div class="lightbox-content">
-        <img id="lightboxImg" src="" alt="Zoom Image">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoom Image">
     </div>
     <div class="lightbox-caption" id="lightboxCaption"></div>
 </div>

@@ -864,18 +864,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/t9dMk9RH2nc?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DakY2EST-Tm.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1VAqLC_HmrculSIYmNG16JehfZaLK_Vxt/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -922,7 +923,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 12.01, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -981,7 +982,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(12.05, 15.85, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1042,7 +1043,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 12.01, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg', 'SHOT 01 [0.0s - 12.01s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -1054,7 +1055,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(12.05, 15.85, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg', 'SHOT 02 [12.05s - 15.85s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -1077,7 +1078,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 12.01, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -1090,7 +1091,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 12.05, 15.85, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@김경식_[_금손남친_]_DakY2EST-Tm_Video_by_kyung6film/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -1106,46 +1107,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DakY2EST-Tm.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1VAqLC_HmrculSIYmNG16JehfZaLK_Vxt";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;

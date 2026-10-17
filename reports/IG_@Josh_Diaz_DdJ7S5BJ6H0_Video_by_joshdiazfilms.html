@@ -233,10 +233,50 @@ video#mainPlayer {
     gap: 12px;
     font-size: 12.5px;
     color: var(--text-secondary);
+    align-items: center;
 }
 
 .meta-tags-flex strong {
     color: #fff;
+}
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: var(--font-mono);
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
 }
 
 .overview-card {
@@ -823,383 +863,6 @@ video#mainPlayer {
     cursor: pointer;
 }
 
-/* Styling for 2-Column Dialogue Script & Remake Prompt Box */
-.dialogue-container-2col {
-    display: flex;
-    gap: 16px;
-    align-items: stretch;
-    margin-bottom: 20px;
-}
-
-@media (max-width: 900px) {
-    .dialogue-container-2col {
-        flex-direction: column;
-    }
-}
-
-/* CỘT CHÍNH (TRÁI): TIẾNG VIỆT ĐỌC LIỀN MẠCH */
-.col-vietnamese-flow {
-    flex: 1;
-    min-width: 0;
-    background: #0d1422;
-    border: 1px solid #1e2b40;
-    border-radius: 12px;
-    padding: 18px 22px;
-    display: flex;
-    flex-direction: column;
-}
-
-.col-flow-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #1a2538;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.col-flow-badge {
-    font-family: var(--font-heading);
-    font-size: 14.5px;
-    font-weight: 800;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    letter-spacing: 0.3px;
-}
-
-.col-flow-subtag {
-    font-size: 11.5px;
-    color: var(--accent-emerald);
-    font-weight: 700;
-    background: rgba(16, 185, 129, 0.12);
-    padding: 2px 8px;
-    border-radius: 4px;
-    border: 1px solid rgba(16, 185, 129, 0.25);
-}
-
-.vn-script-body {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.vn-script-para {
-    background: #111a2c;
-    border: 1px solid #1e2c44;
-    border-left: 3px solid var(--accent-amber);
-    border-radius: 8px;
-    padding: 11px 14px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-
-.vn-script-para:hover {
-    background: #162238;
-    border-color: #2b3d5c;
-    transform: translateX(2px);
-}
-
-.para-meta-line {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-}
-
-.para-timestamp-tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-blue);
-    background: rgba(56, 189, 248, 0.1);
-    border: 1px solid rgba(56, 189, 248, 0.25);
-    padding: 1px 6px;
-    border-radius: 3px;
-}
-
-.para-beat-label {
-    font-size: 11px;
-    font-weight: 700;
-    color: var(--accent-amber);
-    text-transform: uppercase;
-    letter-spacing: 0.4px;
-}
-
-.para-text {
-    font-size: 14.5px;
-    color: #f8fafc;
-    line-height: 1.6;
-    font-weight: 500;
-    display: block;
-}
-
-/* CỘT PHỤ (PHẢI): KHỐI NHỎ CHỮ BÉ XÍU TIẾNG ANH ĐỐI CHIẾU */
-.col-english-aside {
-    width: 270px;
-    min-width: 250px;
-    background: #090e18;
-    border: 1px solid #162030;
-    border-radius: 12px;
-    padding: 14px 16px;
-    display: flex;
-    flex-direction: column;
-}
-
-@media (max-width: 900px) {
-    .col-english-aside {
-        width: 100%;
-        min-width: 0;
-    }
-}
-
-.col-aside-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid #141c2b;
-}
-
-.aside-title {
-    font-family: var(--font-mono);
-    font-size: 10.5px;
-    font-weight: 700;
-    color: #64748b;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-}
-
-.aside-note {
-    font-size: 10px;
-    color: #475569;
-    font-style: italic;
-}
-
-.en-lines-list {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.en-line-item {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid #141d2c;
-    border-radius: 6px;
-    padding: 7px 10px;
-    cursor: pointer;
-    transition: all 0.15s ease;
-}
-
-.en-line-item:hover {
-    background: rgba(255, 255, 255, 0.04);
-    border-color: #1e2c40;
-}
-
-.en-time {
-    font-family: var(--font-mono);
-    font-size: 9.5px;
-    color: #475569;
-    font-weight: 600;
-    display: block;
-    margin-bottom: 2px;
-}
-
-.en-text {
-    font-size: 11px;
-    color: #64748b;
-    font-style: italic;
-    line-height: 1.45;
-}
-
-/* Remake Mega Prompt Box (Accordion Closed Default) */
-.remake-prompt-card {
-    background: linear-gradient(135deg, #0e1726 0%, #16243b 100%);
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
-    border-radius: 10px;
-    margin-bottom: 20px;
-    overflow: hidden;
-    transition: all 0.2s ease;
-}
-
-.prompt-accordion-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 14px;
-    cursor: pointer;
-    user-select: none;
-    background: rgba(15, 23, 42, 0.6);
-    gap: 10px;
-    transition: background 0.15s ease;
-}
-
-.prompt-accordion-header:hover {
-    background: rgba(30, 41, 59, 0.85);
-}
-
-.prompt-header-left {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    min-width: 0;
-    flex: 1;
-}
-
-.remake-header-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    background: rgba(56, 189, 248, 0.15);
-    color: #38bdf8;
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    font-size: 10.5px;
-    font-weight: 800;
-    padding: 2px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    flex-shrink: 0;
-}
-
-.remake-accordion-title {
-    font-family: var(--font-heading, sans-serif);
-    font-size: 13.5px;
-    font-weight: 700;
-    color: #f8fafc;
-    line-height: 1.3;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.prompt-header-right {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-shrink: 0;
-}
-
-.copy-prompt-btn-compact {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    background: #38bdf8;
-    color: #041324;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 6px;
-    font-size: 11.5px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-}
-
-.copy-prompt-btn-compact:hover {
-    filter: brightness(1.15);
-    transform: translateY(-1px);
-}
-
-.prompt-toggle-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 11px;
-    color: #94a3b8;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-.toggle-icon {
-    font-size: 9px;
-    transition: transform 0.2s ease;
-}
-
-.prompt-accordion-body {
-    padding: 14px 16px 16px 16px;
-    border-top: 1px solid rgba(56, 189, 248, 0.2);
-    background: rgba(8, 13, 22, 0.5);
-}
-
-.remake-subtext {
-    font-size: 12.5px;
-    color: #cbd5e1;
-    line-height: 1.5;
-    margin-bottom: 12px;
-}
-
-.prompt-code-wrapper {
-    position: relative;
-    background: #080d16;
-    border: 1px solid #1e2d45;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.prompt-code-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #0f172a;
-    padding: 8px 14px;
-    border-bottom: 1px solid #1e2d45;
-}
-
-.prompt-code-filename {
-    font-family: monospace;
-    font-size: 11px;
-    color: #94a3b8;
-    font-weight: 600;
-}
-
-.copy-prompt-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: #38bdf8;
-    color: #041324;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 6px;
-    font-size: 11.5px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-}
-
-.copy-prompt-btn:hover {
-    filter: brightness(1.1);
-    transform: translateY(-1px);
-}
-
-.prompt-code-content {
-    font-family: monospace;
-    font-size: 12px;
-    color: #cbd5e1;
-    line-height: 1.6;
-    padding: 14px;
-    max-height: 280px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    word-break: break-word;
-}
-
-@media (max-width: 640px) {
-    .remake-accordion-title {
-        font-size: 12px;
-    }
-    .prompt-accordion-header {
-        padding: 8px 10px;
-    }
-}
-
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -1241,18 +904,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/lMrRVGRT_SU?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DdJ7S5BJ6H0.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1cNxDirDWPQlx4UnOuYaD6Kodig029w_e/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -1272,11 +936,17 @@ video#mainPlayer {
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR STORYBOARD BREAKDOWN</span>
                 <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">12 SHOTS &bull; 26.48s</span>
-                <a href="https://ytuong.fedu.vn" target="_blank" style="color:var(--accent-blue); text-decoration:none; font-size:12px; font-weight:700; display:inline-flex; align-items:center; gap:4px; margin-left:auto;">💡 Kho Ý Tưởng YTUONG HUB ↗</a>
             </div>
             <h1 class="report-title">@Josh_Diaz - Video by joshdiazfilms</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <strong>@Josh_Diaz</strong></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@joshdiazfilms" onclick="handleCreatorClick(event, '@joshdiazfilms', 'Josh_Diaz')" class="creator-filter-badge" title="Bấm để lọc toàn bộ 7 video của Josh_Diaz trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>@Josh_Diaz</strong>
+                        <span class="author-handle">(@joshdiazfilms)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
                 <span>Tệp: <strong>IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -1285,130 +955,6 @@ video#mainPlayer {
         <div class="overview-card">
             <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
             <div>Tác phẩm điện ảnh ngắn gồm 12 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.</div>
-        </div>
-
-        <!-- BẢNG KỊCH BẢN THOẠI 2 CỘT (TIẾNG VIỆT ĐỌC LIỀN MẠCH + TIẾNG ANH KHỐI NHỎ BÊN CẠNH) -->
-        <div class="dialogue-container-2col">
-            <!-- CỘT CHÍNH (TRÁI): TIẾNG VIỆT ĐỌC LIỀN MẠCH KHÔNG NGẮT QUÃNG -->
-            <div class="col-vietnamese-flow">
-                <div class="col-flow-header">
-                    <div class="col-flow-badge">🎙️ KỊCH BẢN LỜI THOẠI (BẢN DỊCH THỰC CHIẾN)</div>
-                    <span class="col-flow-subtag">Đọc liền một mạch • Chuẩn 4 nhịp giữ chân</span>
-                </div>
-                
-                <div class="vn-script-body">
-                    <div class="vn-script-para" onclick="playShot(0.00, 2.66, 'HOOK 3S')">
-                        <div class="para-meta-line">
-                            <span class="para-timestamp-tag">0.00s</span>
-                            <span class="para-beat-label">Hook 3s • Bẻ gãy niềm tin</span>
-                        </div>
-                        <span class="para-text">"Nghe bảo mấy ông lần đầu làm bố là phải chuẩn bị sẵn một cái túi đồ đi viện..."</span>
-                    </div>
-
-                    <div class="vn-script-para" onclick="playShot(7.00, 12.48, 'XUNG ĐỘT')">
-                        <div class="para-meta-line">
-                            <span class="para-timestamp-tag">7.00s</span>
-                            <span class="para-beat-label">Xung đột • Cái cớ giữ thể diện</span>
-                        </div>
-                        <span class="para-text">"Vợ mình cứ cằn nhằn giục giã suốt chuyện soạn cái túi này. Mình thì cứ bảo: 'Anh là đàn ông mà, soạn vèo cái 2 phút là xong!'..."</span>
-                    </div>
-
-                    <div class="vn-script-para" onclick="playShot(12.48, 17.60, 'THỰC TẾ')">
-                        <div class="para-meta-line">
-                            <span class="para-timestamp-tag">12.48s</span>
-                            <span class="para-beat-label">Sự thật khách quan • Tỉnh ngộ</span>
-                        </div>
-                        <span class="para-text">"Nhưng mà này các ông ơi, vào viện là phải ở lại đó vài ngày liền đấy. Chắc chắn là không thể nào xong trong 2 phút được đâu!"</span>
-                    </div>
-
-                    <div class="vn-script-para" onclick="playShot(19.36, 25.48, 'KẾT BÀI')">
-                        <div class="para-meta-line">
-                            <span class="para-timestamp-tag">19.36s</span>
-                            <span class="para-beat-label">Hạ màn tự trào • Kích hoạt bình luận</span>
-                        </div>
-                        <span class="para-text">"Kiểu gì mình cũng soạn thiếu một món nào đó rồi. Khổ nỗi vợ đang không có nhà để nhắc xem thiếu cái gì. Anh em nào có kinh nghiệm chỉ giùm với, và nhớ đón xem phần hai nhé!"</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CỘT PHỤ (PHẢI): KHỐI NHỎ CHỮ BÉ XÍU ĐỐI SOÁT TIẾNG ANH -->
-            <div class="col-english-aside">
-                <div class="col-aside-header">
-                    <span class="aside-title">ORIGINAL TRANSCRIPT</span>
-                    <span class="aside-note">Phụ / Đối chiếu</span>
-                </div>
-                <div class="en-lines-list">
-                    <div class="en-line-item" onclick="playShot(0.00, 2.66, 'ORIGINAL')">
-                        <span class="en-time">0.00s</span>
-                        <div class="en-text">"Apparently first time dads need a hospital bag."</div>
-                    </div>
-                    <div class="en-line-item" onclick="playShot(7.00, 12.48, 'ORIGINAL')">
-                        <span class="en-time">7.00s</span>
-                        <div class="en-text">"Katie's been on me about packing this bag and I'm always telling her I'm a guy. It's gonna take like two minutes."</div>
-                    </div>
-                    <div class="en-line-item" onclick="playShot(12.48, 17.60, 'ORIGINAL')">
-                        <span class="en-time">12.48s</span>
-                        <div class="en-text">"Fellas, you're gonna be living in the hospital for a few days. It's definitely gonna take more than two minutes."</div>
-                    </div>
-                    <div class="en-line-item" onclick="playShot(19.36, 25.48, 'ORIGINAL')">
-                        <span class="en-time">19.36s</span>
-                        <div class="en-text">"Pretty sure I'm missing something. Unfortunately, Katie's not home right now to let me know what it is. So keep an eye out for part two."</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- KHỐI PROMPT ÁNH XẠ SANG NGÀNH NGHỀ (GEMINI MEGA PROMPT ACCORDION ĐÓNG MẶC ĐỊNH) -->
-        <div class="remake-prompt-card" id="remakePromptCard">
-            <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
-                <div class="prompt-header-left">
-                    <span class="remake-header-badge">✨ KỊCH BẢN STU</span>
-                    <span class="remake-accordion-title">Ánh xạ kịch bản này sang ngành nghề của bạn (Gemini Prompt)</span>
-                </div>
-                <div class="prompt-header-right">
-                    <button class="copy-prompt-btn-compact" onclick="copyMegaPrompt(event, this)">📋 Sao chép</button>
-                    <div class="prompt-toggle-btn">
-                        <span class="toggle-icon">▼</span>
-                        <span class="toggle-label">Mở xem</span>
-                    </div>
-                </div>
-            </div>
-            <div class="prompt-accordion-body" style="display: none;">
-                <p class="remake-subtext">Sao chép Mega Prompt này dán vào Gemini. Hệ thống tự động gợi ý đúng các ngành nghề học viên thực tế trong STU để xuất bản ngay 3 phương án kịch bản tương ứng theo chuẩn văn phong mộc mạc anh Việt (đã lọc sạch 100% văn mẫu).</p>
-                <div class="prompt-code-wrapper">
-                    <div class="prompt-code-toolbar">
-                        <span class="prompt-code-filename">📄 MEGA_PROMPT_REMAKE_GEMINI.md</span>
-                        <button class="copy-prompt-btn" onclick="copyMegaPrompt(event, this)">📋 Sao chép Prompt</button>
-                    </div>
-                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Video Ngắn &amp; Chuyên gia Tinh chỉnh Lời thoại Thực Chiến theo trường phái mộc mạc của anh Việt (nguyen-viet-voice).
-
-Tôi có cấu trúc logic giữ chân 26 giây đắt giá từ đạo diễn Josh Diaz (@joshdiazfilms) với 4 nhịp:
-1. Hook 3s: Nêu sự thật trần trụi về một việc ai cũng nghĩ là đơn giản.
-2. Xung đột 2 vế: Cái cớ chủ quan giữ thể diện ("Tưởng 2 phút là xong") đối đầu với Thực tế khách quan ("Vào cuộc mới biết mất cả buổi / ở lại mấy ngày").
-3. Tactile B-roll: Bàn tay liên tục đặt từng món đồ nghề/chi tiết thật xuống bàn làm việc theo nhịp nói (âm thanh thực tế, mắt thấy tai nghe).
-4. Kết bài tự trào &amp; Mở lời tự nhiên: Thừa nhận cái khó của người làm nghề, nhờ người xem chỉ giùm kinh nghiệm hoặc đặt câu hỏi mở chân thành.
-
-=== QUY TẮC BẮT BUỘC VỀ VĂN PHONG ANH VIỆT (TUÂN THỦ 100%) ===
-- CẤM TUYỆT ĐỐI VĂN MẪU AI &amp; TỪ NGỮ SÁO RỖNG: Không dùng 'bứt phá', 'chuyển hóa', 'vũ khí', 'thần thái', 'ma trận', 'nâng tầm', 'chạm cảm xúc', 'khơi gợi nhu cầu', 'giải pháp toàn diện', 'tối ưu hóa', 'đỉnh cao', 'bí quyết', 'bật mí', 'ngộ nhận', 'rào cản', 'tử huyệt'...
-- CẤM TUYỆT ĐỐI TỪ 'ÔNG GIÁO' hoặc xưng hô thầy bà dạy đời. Đại từ xưng hô chuẩn mực: 'mình - bạn' hoặc 'tôi - bạn'.
-- CẤM TUYỆT ĐỐI MƯỢN CỚ SỐ ĐÔNG: Không dùng 'anh em mình', 'nhiều người ngoài kia', 'chúng ta thường hay'. Đi thẳng một đường thẳng vào bản chất sự việc.
-- GIỮ TRỌN VĂN PHONG MỘC MẠC: Giọng người làm nghề khiêm tốn, biết đến đâu chia sẻ đến đấy, có nụ cười tự trào duyên dáng, tôn trọng thời gian người xem.
-
-=== HƯỚNG DẪN TƯƠNG TÁC (QUÉT TỪ CÁC NGÀNH NGHỀ HỌC VIÊN TRONG STU) ===
-Nếu trong tin nhắn này tôi ĐÃ GHI SẴN thông tin ngành nghề ở cuối, hãy BỎ QUA bước hỏi và XUẤT BẢN NGAY 3 kịch bản.
-
-Nếu tôi CHƯA GHI ngành nghề, hãy DỪNG LẠI và chỉ gửi duy nhất menu 1 câu ngắn gọn sau:
-
-"Chào bạn, để viết đúng đồ nghề và cảnh quay thực tế tại chỗ làm việc của bạn (theo nhóm ngành học viên trong STU), bạn chọn ngành nào dưới đây (chỉ cần gõ số 1, 2, 3, 4, 5 hoặc gõ 1 dòng ngắn):
-1. Làm đẹp & Spa / Da liễu Clinic / Phun xăm / Salon tóc (Bàn soi da, khay dụng cụ, kem dưỡng, kéo lược)
-2. Nội thất / Decor / Kiến trúc / Vật liệu xây dựng (Bàn làm việc, thước đo, mẫu gỗ, bảng màu sơn, bản vẽ)
-3. Ẩm thực & F&B / Tiệm bánh / Trà đồ uống (Mặt bàn pha chế, thớt dao, cân tiểu ly, ly cốc)
-4. Nông nghiệp / Phân bón / Chăm sóc sức khỏe / Dược liệu (Bao bì mẫu, cây giống, khay dinh dưỡng, bình xịt)
-5. Ngành khác của bạn trong STU: Bạn nhắn giúp mình: [Tên nghề] + [Khách hay tưởng lầm điều gì] + [3 món đồ trên bàn làm việc]"
-
-Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG ÁN KỊCH BẢN CHI TIẾT TỪNG GIÂY (Gồm 4 cột: Thời lượng | Hình ảnh B-roll xúc giác | Lời thoại A-roll mộc mạc | Âm thanh Foley thực tế) được lọc sạch 100% văn mẫu!</div>
-                </div>
-            </div>
         </div>
 
         <div class="action-toolbar">
@@ -1424,7 +970,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.59, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1483,7 +1029,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.63, 3.09, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1542,7 +1088,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.13, 3.75, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1601,7 +1147,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.8, 4.59, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1660,7 +1206,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.63, 6.88, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1719,7 +1265,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.92, 7.84, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1778,7 +1324,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.88, 17.48, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1837,7 +1383,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(17.52, 18.02, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1896,7 +1442,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.06, 18.56, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1955,7 +1501,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.6, 19.1, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2014,7 +1560,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(19.14, 19.64, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2073,7 +1619,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(19.69, 26.48, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2134,7 +1680,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
             
         <div class="grid-card" onclick="playShot(0.0, 2.59, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg', 'SHOT 01 [0.0s - 2.59s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -2146,7 +1692,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(2.63, 3.09, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg', 'SHOT 02 [2.63s - 3.09s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -2158,7 +1704,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(3.13, 3.75, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg', 'SHOT 03 [3.13s - 3.75s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -2170,7 +1716,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(3.8, 4.59, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg', 'SHOT 04 [3.8s - 4.59s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -2182,7 +1728,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(4.63, 6.88, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg', 'SHOT 05 [4.63s - 6.88s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -2194,7 +1740,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(6.92, 7.84, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg', 'SHOT 06 [6.92s - 7.84s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -2206,7 +1752,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(7.88, 17.48, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg', 'SHOT 07 [7.88s - 17.48s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -2218,7 +1764,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(17.52, 18.02, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg', 'SHOT 08 [17.52s - 18.02s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -2230,7 +1776,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(18.06, 18.56, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg', 'SHOT 09 [18.06s - 18.56s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -2242,7 +1788,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(18.6, 19.1, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg', 'SHOT 10 [18.6s - 19.1s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -2254,7 +1800,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(19.14, 19.64, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg', 'SHOT 11 [19.14s - 19.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2266,7 +1812,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="grid-card" onclick="playShot(19.69, 26.48, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg', 'SHOT 12 [19.69s - 26.48s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -2289,7 +1835,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.59, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2302,7 +1848,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.63, 3.09, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2315,7 +1861,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(3, 3.13, 3.75, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2328,7 +1874,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(4, 3.8, 4.59, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2341,7 +1887,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(5, 4.63, 6.88, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2354,7 +1900,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(6, 6.92, 7.84, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2367,7 +1913,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(7, 7.88, 17.48, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2380,7 +1926,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(8, 17.52, 18.02, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2393,7 +1939,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(9, 18.06, 18.56, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2406,7 +1952,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(10, 18.6, 19.1, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2419,7 +1965,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(11, 19.14, 19.64, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2432,7 +1978,7 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
         <div class="drawer-item" onclick="jumpToShot(12, 19.69, 26.48, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Josh_Diaz_DdJ7S5BJ6H0_Video_by_joshdiazfilms/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2448,46 +1994,28 @@ Sau khi tôi chọn hoặc điền 1 dòng, hãy xuất bản ngay 3 PHƯƠNG Á
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DdJ7S5BJ6H0.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1cNxDirDWPQlx4UnOuYaD6Kodig029w_e";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2588,48 +2116,20 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
-function togglePromptAccordion(headerEl) {
-    const card = headerEl.closest('.remake-prompt-card');
-    if (!card) return;
-    const body = card.querySelector('.prompt-accordion-body');
-    const icon = card.querySelector('.toggle-icon');
-    const label = card.querySelector('.toggle-label');
-    if (!body) return;
-    const isCollapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
-    if (isCollapsed) {
-        body.style.display = 'block';
-        if (icon) icon.textContent = '▲';
-        if (label) label.textContent = 'Thu gọn';
-    } else {
-        body.style.display = 'none';
-        if (icon) icon.textContent = '▼';
-        if (label) label.textContent = 'Mở xem';
-    }
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
 }
-
-function copyMegaPrompt(e, btn) {
-    if (e && e.stopPropagation) e.stopPropagation();
-    const card = btn.closest('.remake-prompt-card');
-    const codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
-    if (!codeEl) return;
-    const text = codeEl.innerText || codeEl.textContent;
-    navigator.clipboard.writeText(text).then(() => {
-        const orig = btn.innerHTML;
-        btn.innerHTML = '✅ Đã chép!';
-        const oldBg = btn.style.background;
-        const oldColor = btn.style.color;
-        btn.style.background = '#10b981';
-        btn.style.color = '#fff';
-        setTimeout(() => {
-            btn.innerHTML = orig;
-            btn.style.background = oldBg;
-            btn.style.color = oldColor;
-        }, 2000);
-    }).catch(err => {
-        alert('Lỗi sao chép, bạn vui lòng bôi đen văn bản để copy nhé!');
-    });
-}
-
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

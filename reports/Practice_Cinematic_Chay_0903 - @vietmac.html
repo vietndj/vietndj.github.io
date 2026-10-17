@@ -631,6 +631,7 @@ video#mainVideo {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
@@ -638,10 +639,7 @@ video#mainVideo {
     <!-- CỘT TRÁI: STICKY VIDEO PLAYER & CONTROLS -->
     <aside class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainVideo" playsinline webkit-playsinline x5-playsinline preload="auto" controls poster="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg">
-                <source src="https://media.fedu.vn/videos/practice_cinematic_chay_0903.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ phát video MP4.
-            </video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         
         <div class="player-controls-panel">
@@ -833,15 +831,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(0.0); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_start.jpg', 'Shot 01 - Đầu cảnh (0.00s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (0.00s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(0.395); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg', 'Shot 01 - Giữa cảnh (0.40s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (0.40s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(0.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_end.jpg', 'Shot 01 - Cuối cảnh (0.79s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (0.79s)</span>
             </div>
         </div>
@@ -893,15 +891,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(0.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_start.jpg', 'Shot 02 - Đầu cảnh (0.79s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (0.79s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(1.29); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg', 'Shot 02 - Giữa cảnh (1.29s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (1.29s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(1.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_end.jpg', 'Shot 02 - Cuối cảnh (1.79s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (1.79s)</span>
             </div>
         </div>
@@ -953,15 +951,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(1.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_start.jpg', 'Shot 03 - Đầu cảnh (1.79s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (1.79s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(2.73); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg', 'Shot 03 - Giữa cảnh (2.73s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (2.73s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(3.67); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_end.jpg', 'Shot 03 - Cuối cảnh (3.67s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (3.67s)</span>
             </div>
         </div>
@@ -1013,15 +1011,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(3.67); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_start.jpg', 'Shot 04 - Đầu cảnh (3.67s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (3.67s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(4.1899999999999995); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg', 'Shot 04 - Giữa cảnh (4.19s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (4.19s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(4.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_end.jpg', 'Shot 04 - Cuối cảnh (4.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (4.71s)</span>
             </div>
         </div>
@@ -1073,15 +1071,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(4.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_start.jpg', 'Shot 05 - Đầu cảnh (4.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (4.71s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(5.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg', 'Shot 05 - Giữa cảnh (5.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (5.71s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(6.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_end.jpg', 'Shot 05 - Cuối cảnh (6.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (6.71s)</span>
             </div>
         </div>
@@ -1133,15 +1131,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(6.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_start.jpg', 'Shot 06 - Đầu cảnh (6.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (6.71s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(7.710000000000001); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg', 'Shot 06 - Giữa cảnh (7.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (7.71s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(8.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_end.jpg', 'Shot 06 - Cuối cảnh (8.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (8.71s)</span>
             </div>
         </div>
@@ -1193,15 +1191,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(8.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_start.jpg', 'Shot 07 - Đầu cảnh (8.71s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (8.71s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(9.665); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg', 'Shot 07 - Giữa cảnh (9.66s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (9.66s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(10.62); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_end.jpg', 'Shot 07 - Cuối cảnh (10.62s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (10.62s)</span>
             </div>
         </div>
@@ -1253,15 +1251,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(10.62); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_start.jpg', 'Shot 08 - Đầu cảnh (10.62s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (10.62s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(11.6); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg', 'Shot 08 - Giữa cảnh (11.60s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (11.60s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(12.58); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_end.jpg', 'Shot 08 - Cuối cảnh (12.58s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (12.58s)</span>
             </div>
         </div>
@@ -1313,15 +1311,15 @@ video#mainVideo {
         
         <div class="shot-thumbnails-grid">
             <div class="shot-thumb-box" onclick="seekTo(12.58); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_start.jpg', 'Shot 09 - Đầu cảnh (12.58s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
                 <span class="thumb-tag">ĐẦU (12.58s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(14.559999999999999); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg', 'Shot 09 - Giữa cảnh (14.56s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
                 <span class="thumb-tag">GIỮA (14.56s)</span>
             </div>
             <div class="shot-thumb-box" onclick="seekTo(16.54); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_end.jpg', 'Shot 09 - Cuối cảnh (16.54s)')">
-                <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
                 <span class="thumb-tag">CUỐI (16.54s)</span>
             </div>
         </div>
@@ -1402,63 +1400,63 @@ video#mainVideo {
             <div class="grid-storyboard-container">
 
     <div class="grid-thumb-item" onclick="seekTo(0.0); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg', 'Shot 01: Bố cục vòm tán cây & Sự xuất hiện đồng thời: Nhịp mở màn 0.79s quá nhanh chưa kịp khóa tiêu điểm')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S01 • 0.79s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(0.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg', 'Shot 02: Chân dung toàn thân trục thẳng (Center Alignment): Năng lượng sải bước cô đọng nhưng thiếu tiền cảnh')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S02 • 1.00s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(1.79); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg', 'Shot 03: Tương phản tỷ lệ Người vs Cao ốc (Human Scale): Đường dẫn mép vỉa hè sâu hun hút')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S03 • 1.87s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(3.67); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg', 'Shot 04: Màu sắc lễ hội dẫn hướng mắt: Dải cờ dây sắc màu làm ranh giới thị giác sinh động')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S04 • 1.04s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(4.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg', 'Shot 05: Hình học mặt đường (Dynamic Chevron Lines): Góc chéo 45° phá vỡ sự đơn điệu của trục thẳng')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S05 • 2.00s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(6.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg', 'Shot 06: KHOẢNH KHẮC NGƯỢC SÁNG ĐỈNH CAO: Mặt đường dát bạc phản chiếu & Bóng đổ Silhouette')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S06 • 2.00s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(8.71); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg', 'Shot 07: Chân dung thể thao bùng nổ (Medium Close-Up Tracking): Viền sáng Halo bao quanh cơ bắp')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S07 • 1.92s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(10.62); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg', 'Shot 08: Hạ màn chuyển trạng thái (Motion to Stillness): Ánh mắt giao tiếp trực diện sau chặng chạy')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S08 • 1.96s</span>
         </div>
     </div>
     
     <div class="grid-thumb-item" onclick="seekTo(12.58); openLightbox('https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg', 'Shot 09: ⚠️ Khoảng đệm màn hình đen cuối Timeline (Render Black Tail Buffer): Cần cắt tỉa tối ưu')">
-        <img src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+        <img crossorigin="anonymous" src="https://media.fedu.vn/images/Practice_Cinematic_Chay_0903_@vietmac/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
         <div class="grid-overlay">
             <span class="grid-tag">S09 • 3.96s</span>
         </div>
@@ -1473,7 +1471,7 @@ video#mainVideo {
                 Báo cáo được khởi tạo tự động bởi <strong>Antigravity Director Intelligence Engine</strong> • Dữ liệu lưu trữ vĩnh viễn trên Cloudflare R2 CDN & GitHub Pages.
             </p>
             <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
-                <a href="https://ytuong.fedu.vn" target="_blank" class="btn-ctrl btn-primary" style="text-decoration: none; padding: 8px 16px;">🌐 Kho Ý Tưởng YTUONG HUB ↗</a>
+                <a href="https://vietndj.github.io/scene.html" target="_blank" class="btn-ctrl btn-primary" style="text-decoration: none; padding: 8px 16px;">🌐 Cổng Tra Cứu Điện Ảnh Scene.html ↗</a>
                 <a href="https://fedu.vn/reports/Practice_Cinematic_2508%20-%20%40vietmac.html" target="_blank" class="btn-ctrl" style="text-decoration: none; padding: 8px 16px;">🎬 Xem Lại Bản 2508 ↗</a>
             </div>
         </footer>
@@ -1484,7 +1482,7 @@ video#mainVideo {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <div class="lightbox-img-wrap" onclick="event.stopPropagation()">
         <span class="lightbox-close-btn" onclick="closeLightbox()">&times;</span>
-        <img id="lightboxImg" src="" alt="Enlarged Shot">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Enlarged Shot">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
