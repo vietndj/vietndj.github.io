@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-17T22:27:07+07:00",
+  "generated_at": "2026-10-17T23:20:36+07:00",
   "total_scene_items": 378,
   "total_unique_ideas": 359,
   "total_active_ideas": 299,
@@ -78,9 +78,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 44,
+    "talking-head": 43,
     "storytelling": 39,
-    "dien-anh": 135,
+    "dien-anh": 136,
     "chuyen-canh": 60,
     "theo-nhip-nhac": 0,
     "bts": 1
@@ -172,17 +172,27 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 28,
     "thoi-trang": 27,
     "am-thuc": 27,
-    "du-lich": 33,
+    "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 38,
+    "kien-truc": 36,
     "the-thao": 6,
-    "ky-thuat-quay": 86,
+    "ky-thuat-quay": 87,
     "ugc": 6
   },
   "x_factors": [
+    "Biểu cảm Body language",
+    "Biểu cảm Bố cục khung trong khung",
+    "Biểu cảm lo lắng / kịch tính",
+    "Biểu cảm ngạc nhiên",
+    "Bầu không khí chữa lành",
     "Chuyển cảnh cấp 2"
   ],
   "x_factor_stats": {
+    "Biểu cảm Body language": 2,
+    "Biểu cảm Bố cục khung trong khung": 2,
+    "Biểu cảm lo lắng / kịch tính": 2,
+    "Biểu cảm ngạc nhiên": 1,
+    "Bầu không khí chữa lành": 2,
     "Chuyển cảnh cấp 2": 14
   },
   "countries": [
@@ -1657,7 +1667,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "규리🍊ㅣCorporate_Girlie🇰🇷",
       "profile_url": "https://www.instagram.com/gyuree_k/",
       "video_count": 1,
-      "top_industry": "Du lịch",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40%EA%B7%9C%EB%A6%AC%F0%9F%8D%8A%E3%85%A3Corporate_Girlie%F0%9F%87%B0%F0%9F%87%B7_DdTZsoxTVFz_Video_by_gyuree_k/shot_01_mid.webp",
       "video_ids": [
         "IG_@규리🍊ㅣCorporate_Girlie🇰🇷_DdTZsoxTVFz_Video_by_gyuree_k"
@@ -1679,7 +1689,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "이현",
       "profile_url": "https://www.instagram.com/dreakwon/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40drea_%28%EC%9D%B4%ED%98%84%29_DaClEhzB5WC_Video_by_dreakwon/shot_01_mid.webp",
       "video_ids": [
         "IG_@drea_(이현)_DaClEhzB5WC_Video_by_dreakwon"
@@ -1690,7 +1700,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Korea_Street_Views",
       "profile_url": "https://www.instagram.com/korea_street_views/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40Korea_Street_Views_DcBXsaezmjo_Video_by_korea_street_views/shot_01_mid.webp",
       "video_ids": [
         "IG_@Korea_Street_Views_DcBXsaezmjo_Video_by_korea_street_views"
@@ -9505,7 +9515,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -11061,8 +11071,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -12240,7 +12250,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
@@ -12350,12 +12360,12 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "du-lich",
-          "name": "Du lịch",
-          "en_name": "Travel & Culture",
-          "icon": "✈️",
-          "badge_color": "sky",
-          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -12438,7 +12448,9 @@ var FEDU_IDEAS_DATABASE = {
           "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
         }
       ],
-      "x_factors": [],
+      "x_factors": [
+        "Biểu cảm ngạc nhiên"
+      ],
       "tags": [
         "Instagram Liked 24h: Video",
         "3 Of 18",
@@ -12503,23 +12515,25 @@ var FEDU_IDEAS_DATABASE = {
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 2 Of 18 • By @dreakwon • Shared June 26 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
-      "x_factors": [],
+      "x_factors": [
+        "Bầu không khí chữa lành"
+      ],
       "tags": [
         "Instagram Liked 24h: Video",
         "2 Of 18",
@@ -12592,15 +12606,18 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
-      "x_factors": [],
+      "x_factors": [
+        "Biểu cảm Bố cục khung trong khung",
+        "Bầu không khí chữa lành"
+      ],
       "tags": [
         "Instagram Liked 24h: Video",
         "1 Of 18",
@@ -12679,7 +12696,11 @@ var FEDU_IDEAS_DATABASE = {
           "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
-      "x_factors": [],
+      "x_factors": [
+        "Biểu cảm Body language",
+        "Biểu cảm Bố cục khung trong khung",
+        "Biểu cảm lo lắng / kịch tính"
+      ],
       "tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
@@ -12754,7 +12775,10 @@ var FEDU_IDEAS_DATABASE = {
           "desc": "Nghệ thuật bếp củi, quán cafe hè, hẻm ẩm thực đêm Yokocho, ASMR nấu nướng, đồ uống."
         }
       ],
-      "x_factors": [],
+      "x_factors": [
+        "Biểu cảm Body language",
+        "Biểu cảm lo lắng / kịch tính"
+      ],
       "tags": [
         "3 Of 18",
         "By @hayan_cook",
