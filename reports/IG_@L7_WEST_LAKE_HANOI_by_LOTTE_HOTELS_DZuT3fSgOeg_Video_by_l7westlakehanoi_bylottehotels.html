@@ -864,18 +864,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DZuT3fSgOeg.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1BmlevWt0H9lBO75sdD6QQBIzdpzRhWR_/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -922,7 +923,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.44, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -981,7 +982,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.48, 3.84, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1040,7 +1041,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.88, 5.52, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1099,7 +1100,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.56, 7.0, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1158,7 +1159,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.04, 8.36, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1217,7 +1218,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(8.4, 9.96, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1276,7 +1277,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.0, 16.04, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1335,7 +1336,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.08, 17.12, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1394,7 +1395,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(17.16, 18.44, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1453,7 +1454,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.48, 19.24, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1512,7 +1513,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(19.28, 20.36, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1571,7 +1572,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.4, 20.72, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1630,7 +1631,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.76, 21.2, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1689,7 +1690,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(21.24, 23.08, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1748,7 +1749,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(23.12, 24.8, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1807,7 +1808,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-16">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(24.84, 26.68, 'SHOT 16')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1866,7 +1867,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-17">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(26.72, 27.44, 'SHOT 17')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1925,7 +1926,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-18">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(27.48, 28.48, 'SHOT 18')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1984,7 +1985,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-19">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(28.52, 29.16, 'SHOT 19')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2043,7 +2044,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-20">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(29.2, 29.8, 'SHOT 20')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2102,7 +2103,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-21">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(29.84, 30.28, 'SHOT 21')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2161,7 +2162,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-22">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(30.32, 30.72, 'SHOT 22')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2220,7 +2221,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-23">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(30.76, 31.04, 'SHOT 23')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2279,7 +2280,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-24">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(31.08, 31.64, 'SHOT 24')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2338,7 +2339,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-25">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(31.68, 32.04, 'SHOT 25')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2397,7 +2398,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-26">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(32.08, 32.44, 'SHOT 26')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2456,7 +2457,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-27">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(32.48, 32.8, 'SHOT 27')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2515,7 +2516,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-28">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(32.84, 33.64, 'SHOT 28')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2574,7 +2575,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-29">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(33.68, 34.6, 'SHOT 29')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2633,7 +2634,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-30">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(34.64, 35.68, 'SHOT 30')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2692,7 +2693,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-31">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(35.72, 36.0, 'SHOT 31')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2751,7 +2752,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-32">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(36.04, 36.56, 'SHOT 32')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2810,7 +2811,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-33">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(36.6, 37.36, 'SHOT 33')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2869,7 +2870,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-34">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(37.4, 40.56, 'SHOT 34')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2928,7 +2929,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-35">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(40.6, 41.64, 'SHOT 35')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2987,7 +2988,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-36">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(41.68, 42.32, 'SHOT 36')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3046,7 +3047,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-37">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(42.36, 43.64, 'SHOT 37')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3105,7 +3106,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-38">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(43.68, 44.24, 'SHOT 38')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3164,7 +3165,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-39">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(44.28, 45.88, 'SHOT 39')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3223,7 +3224,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-40">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(45.92, 46.6, 'SHOT 40')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3282,7 +3283,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-41">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(46.64, 47.12, 'SHOT 41')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3341,7 +3342,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-42">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(47.16, 47.6, 'SHOT 42')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3400,7 +3401,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-43">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(47.64, 47.96, 'SHOT 43')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3459,7 +3460,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-44">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(48.0, 50.0, 'SHOT 44')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3518,7 +3519,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-45">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(50.04, 50.6, 'SHOT 45')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3577,7 +3578,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-46">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(50.64, 51.4, 'SHOT 46')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3636,7 +3637,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-47">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(51.44, 53.0, 'SHOT 47')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3695,7 +3696,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-48">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(53.04, 54.8, 'SHOT 48')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3754,7 +3755,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-49">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(54.84, 55.36, 'SHOT 49')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3813,7 +3814,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-50">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(55.4, 56.64, 'SHOT 50')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3872,7 +3873,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-51">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(56.68, 57.2, 'SHOT 51')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3931,7 +3932,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-52">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(57.24, 57.68, 'SHOT 52')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -3990,7 +3991,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-53">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(57.72, 59.0, 'SHOT 53')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4049,7 +4050,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-54">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(59.04, 59.96, 'SHOT 54')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4108,7 +4109,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-55">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(60.0, 60.88, 'SHOT 55')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4167,7 +4168,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-56">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(60.92, 62.52, 'SHOT 56')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4226,7 +4227,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-57">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(62.56, 63.32, 'SHOT 57')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4285,7 +4286,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-58">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(63.36, 63.76, 'SHOT 58')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4344,7 +4345,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-59">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(63.8, 64.32, 'SHOT 59')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4403,7 +4404,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-60">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(64.36, 64.76, 'SHOT 60')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4462,7 +4463,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-61">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(64.8, 65.16, 'SHOT 61')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4521,7 +4522,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-62">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(65.2, 65.68, 'SHOT 62')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4580,7 +4581,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-63">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(65.72, 66.36, 'SHOT 63')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4639,7 +4640,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-64">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(66.4, 67.12, 'SHOT 64')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4698,7 +4699,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-65">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(67.16, 69.36, 'SHOT 65')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4757,7 +4758,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-66">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(69.4, 69.8, 'SHOT 66')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4816,7 +4817,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-67">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(69.84, 70.48, 'SHOT 67')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4875,7 +4876,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-68">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(70.52, 70.8, 'SHOT 68')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4934,7 +4935,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-69">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(70.84, 73.16, 'SHOT 69')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -4993,7 +4994,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-70">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(73.2, 74.52, 'SHOT 70')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -5052,7 +5053,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-71">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(74.56, 76.08, 'SHOT 71')">
-                    <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -5113,7 +5114,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 2.44, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg', 'SHOT 01 [0.0s - 2.44s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -5125,7 +5126,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(2.48, 3.84, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg', 'SHOT 02 [2.48s - 3.84s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -5137,7 +5138,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.88, 5.52, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg', 'SHOT 03 [3.88s - 5.52s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -5149,7 +5150,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.56, 7.0, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg', 'SHOT 04 [5.56s - 7.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -5161,7 +5162,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.04, 8.36, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg', 'SHOT 05 [7.04s - 8.36s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -5173,7 +5174,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(8.4, 9.96, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg', 'SHOT 06 [8.4s - 9.96s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -5185,7 +5186,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.0, 16.04, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg', 'SHOT 07 [10.0s - 16.04s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -5197,7 +5198,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.08, 17.12, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg', 'SHOT 08 [16.08s - 17.12s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -5209,7 +5210,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(17.16, 18.44, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg', 'SHOT 09 [17.16s - 18.44s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -5221,7 +5222,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.48, 19.24, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg', 'SHOT 10 [18.48s - 19.24s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -5233,7 +5234,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(19.28, 20.36, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg', 'SHOT 11 [19.28s - 20.36s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -5245,7 +5246,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.4, 20.72, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg', 'SHOT 12 [20.4s - 20.72s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -5257,7 +5258,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.76, 21.2, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg', 'SHOT 13 [20.76s - 21.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -5269,7 +5270,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(21.24, 23.08, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg', 'SHOT 14 [21.24s - 23.08s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -5281,7 +5282,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(23.12, 24.8, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg', 'SHOT 15 [23.12s - 24.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -5293,7 +5294,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(24.84, 26.68, 'SHOT 16')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg', 'SHOT 16 [24.84s - 26.68s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 16</div>
@@ -5305,7 +5306,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(26.72, 27.44, 'SHOT 17')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg', 'SHOT 17 [26.72s - 27.44s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 17</div>
@@ -5317,7 +5318,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(27.48, 28.48, 'SHOT 18')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg', 'SHOT 18 [27.48s - 28.48s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 18</div>
@@ -5329,7 +5330,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(28.52, 29.16, 'SHOT 19')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg', 'SHOT 19 [28.52s - 29.16s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 19</div>
@@ -5341,7 +5342,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(29.2, 29.8, 'SHOT 20')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg', 'SHOT 20 [29.2s - 29.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 20</div>
@@ -5353,7 +5354,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(29.84, 30.28, 'SHOT 21')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg', 'SHOT 21 [29.84s - 30.28s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 21</div>
@@ -5365,7 +5366,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(30.32, 30.72, 'SHOT 22')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg', 'SHOT 22 [30.32s - 30.72s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 22</div>
@@ -5377,7 +5378,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(30.76, 31.04, 'SHOT 23')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg', 'SHOT 23 [30.76s - 31.04s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 23</div>
@@ -5389,7 +5390,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(31.08, 31.64, 'SHOT 24')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg', 'SHOT 24 [31.08s - 31.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 24</div>
@@ -5401,7 +5402,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(31.68, 32.04, 'SHOT 25')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg', 'SHOT 25 [31.68s - 32.04s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 25</div>
@@ -5413,7 +5414,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(32.08, 32.44, 'SHOT 26')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg', 'SHOT 26 [32.08s - 32.44s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 26</div>
@@ -5425,7 +5426,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(32.48, 32.8, 'SHOT 27')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg', 'SHOT 27 [32.48s - 32.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 27</div>
@@ -5437,7 +5438,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(32.84, 33.64, 'SHOT 28')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg', 'SHOT 28 [32.84s - 33.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 28</div>
@@ -5449,7 +5450,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(33.68, 34.6, 'SHOT 29')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg', 'SHOT 29 [33.68s - 34.6s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 29</div>
@@ -5461,7 +5462,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(34.64, 35.68, 'SHOT 30')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg', 'SHOT 30 [34.64s - 35.68s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 30</div>
@@ -5473,7 +5474,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(35.72, 36.0, 'SHOT 31')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg', 'SHOT 31 [35.72s - 36.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 31</div>
@@ -5485,7 +5486,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(36.04, 36.56, 'SHOT 32')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg', 'SHOT 32 [36.04s - 36.56s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 32</div>
@@ -5497,7 +5498,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(36.6, 37.36, 'SHOT 33')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg', 'SHOT 33 [36.6s - 37.36s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 33</div>
@@ -5509,7 +5510,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(37.4, 40.56, 'SHOT 34')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg', 'SHOT 34 [37.4s - 40.56s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 34</div>
@@ -5521,7 +5522,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(40.6, 41.64, 'SHOT 35')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg', 'SHOT 35 [40.6s - 41.64s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 35</div>
@@ -5533,7 +5534,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(41.68, 42.32, 'SHOT 36')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg', 'SHOT 36 [41.68s - 42.32s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 36</div>
@@ -5545,7 +5546,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(42.36, 43.64, 'SHOT 37')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg', 'SHOT 37 [42.36s - 43.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 37</div>
@@ -5557,7 +5558,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(43.68, 44.24, 'SHOT 38')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg', 'SHOT 38 [43.68s - 44.24s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 38</div>
@@ -5569,7 +5570,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(44.28, 45.88, 'SHOT 39')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg', 'SHOT 39 [44.28s - 45.88s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 39</div>
@@ -5581,7 +5582,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(45.92, 46.6, 'SHOT 40')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg', 'SHOT 40 [45.92s - 46.6s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 40</div>
@@ -5593,7 +5594,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(46.64, 47.12, 'SHOT 41')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg', 'SHOT 41 [46.64s - 47.12s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 41</div>
@@ -5605,7 +5606,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(47.16, 47.6, 'SHOT 42')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg', 'SHOT 42 [47.16s - 47.6s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 42</div>
@@ -5617,7 +5618,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(47.64, 47.96, 'SHOT 43')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg', 'SHOT 43 [47.64s - 47.96s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 43</div>
@@ -5629,7 +5630,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(48.0, 50.0, 'SHOT 44')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg', 'SHOT 44 [48.0s - 50.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 44</div>
@@ -5641,7 +5642,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(50.04, 50.6, 'SHOT 45')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg', 'SHOT 45 [50.04s - 50.6s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 45</div>
@@ -5653,7 +5654,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(50.64, 51.4, 'SHOT 46')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg', 'SHOT 46 [50.64s - 51.4s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 46</div>
@@ -5665,7 +5666,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(51.44, 53.0, 'SHOT 47')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg', 'SHOT 47 [51.44s - 53.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 47</div>
@@ -5677,7 +5678,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(53.04, 54.8, 'SHOT 48')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg', 'SHOT 48 [53.04s - 54.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 48</div>
@@ -5689,7 +5690,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(54.84, 55.36, 'SHOT 49')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg', 'SHOT 49 [54.84s - 55.36s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 49</div>
@@ -5701,7 +5702,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(55.4, 56.64, 'SHOT 50')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg', 'SHOT 50 [55.4s - 56.64s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 50</div>
@@ -5713,7 +5714,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(56.68, 57.2, 'SHOT 51')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg', 'SHOT 51 [56.68s - 57.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 51</div>
@@ -5725,7 +5726,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(57.24, 57.68, 'SHOT 52')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg', 'SHOT 52 [57.24s - 57.68s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 52</div>
@@ -5737,7 +5738,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(57.72, 59.0, 'SHOT 53')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg', 'SHOT 53 [57.72s - 59.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 53</div>
@@ -5749,7 +5750,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(59.04, 59.96, 'SHOT 54')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg', 'SHOT 54 [59.04s - 59.96s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 54</div>
@@ -5761,7 +5762,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(60.0, 60.88, 'SHOT 55')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg', 'SHOT 55 [60.0s - 60.88s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 55</div>
@@ -5773,7 +5774,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(60.92, 62.52, 'SHOT 56')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg', 'SHOT 56 [60.92s - 62.52s] • Thiết Lập Không Gian Sâu (Wide Establishing): Khắc họa quy mô bối cảnh và nhịp thở đô thị')">🔍</button>
                 <div class="grid-badge-top">SHOT 56</div>
@@ -5785,7 +5786,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(62.56, 63.32, 'SHOT 57')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg', 'SHOT 57 [62.56s - 63.32s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 57</div>
@@ -5797,7 +5798,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(63.36, 63.76, 'SHOT 58')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg', 'SHOT 58 [63.36s - 63.76s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 58</div>
@@ -5809,7 +5810,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(63.8, 64.32, 'SHOT 59')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg', 'SHOT 59 [63.8s - 64.32s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 59</div>
@@ -5821,7 +5822,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(64.36, 64.76, 'SHOT 60')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg', 'SHOT 60 [64.36s - 64.76s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 60</div>
@@ -5833,7 +5834,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(64.8, 65.16, 'SHOT 61')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg', 'SHOT 61 [64.8s - 65.16s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 61</div>
@@ -5845,7 +5846,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(65.2, 65.68, 'SHOT 62')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg', 'SHOT 62 [65.2s - 65.68s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 62</div>
@@ -5857,7 +5858,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(65.72, 66.36, 'SHOT 63')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg', 'SHOT 63 [65.72s - 66.36s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 63</div>
@@ -5869,7 +5870,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(66.4, 67.12, 'SHOT 64')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg', 'SHOT 64 [66.4s - 67.12s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 64</div>
@@ -5881,7 +5882,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(67.16, 69.36, 'SHOT 65')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg', 'SHOT 65 [67.16s - 69.36s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 65</div>
@@ -5893,7 +5894,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(69.4, 69.8, 'SHOT 66')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg', 'SHOT 66 [69.4s - 69.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 66</div>
@@ -5905,7 +5906,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(69.84, 70.48, 'SHOT 67')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg', 'SHOT 67 [69.84s - 70.48s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 67</div>
@@ -5917,7 +5918,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(70.52, 70.8, 'SHOT 68')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg', 'SHOT 68 [70.52s - 70.8s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 68</div>
@@ -5929,7 +5930,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(70.84, 73.16, 'SHOT 69')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg', 'SHOT 69 [70.84s - 73.16s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 69</div>
@@ -5941,7 +5942,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(73.2, 74.52, 'SHOT 70')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg', 'SHOT 70 [73.2s - 74.52s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 70</div>
@@ -5953,7 +5954,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(74.56, 76.08, 'SHOT 71')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg', 'SHOT 71 [74.56s - 76.08s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 71</div>
@@ -5976,7 +5977,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.44, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -5989,7 +5990,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.48, 3.84, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -6002,7 +6003,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 3.88, 5.52, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -6015,7 +6016,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 5.56, 7.0, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -6028,7 +6029,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 7.04, 8.36, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -6041,7 +6042,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 8.4, 9.96, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -6054,7 +6055,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 10.0, 16.04, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -6067,7 +6068,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 16.08, 17.12, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -6080,7 +6081,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 17.16, 18.44, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -6093,7 +6094,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 18.48, 19.24, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -6106,7 +6107,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 19.28, 20.36, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -6119,7 +6120,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 20.4, 20.72, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -6132,7 +6133,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 20.76, 21.2, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -6145,7 +6146,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 21.24, 23.08, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -6158,7 +6159,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 23.12, 24.8, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -6171,7 +6172,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(16, 24.84, 26.68, 'SHOT 16')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 16</div>
@@ -6184,7 +6185,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(17, 26.72, 27.44, 'SHOT 17')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 17</div>
@@ -6197,7 +6198,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(18, 27.48, 28.48, 'SHOT 18')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_18_mid.jpg" alt="SHOT 18" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 18</div>
@@ -6210,7 +6211,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(19, 28.52, 29.16, 'SHOT 19')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_19_mid.jpg" alt="SHOT 19" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 19</div>
@@ -6223,7 +6224,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(20, 29.2, 29.8, 'SHOT 20')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_20_mid.jpg" alt="SHOT 20" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 20</div>
@@ -6236,7 +6237,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(21, 29.84, 30.28, 'SHOT 21')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_21_mid.jpg" alt="SHOT 21" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 21</div>
@@ -6249,7 +6250,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(22, 30.32, 30.72, 'SHOT 22')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_22_mid.jpg" alt="SHOT 22" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 22</div>
@@ -6262,7 +6263,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(23, 30.76, 31.04, 'SHOT 23')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_23_mid.jpg" alt="SHOT 23" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 23</div>
@@ -6275,7 +6276,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(24, 31.08, 31.64, 'SHOT 24')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_24_mid.jpg" alt="SHOT 24" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 24</div>
@@ -6288,7 +6289,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(25, 31.68, 32.04, 'SHOT 25')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_25_mid.jpg" alt="SHOT 25" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 25</div>
@@ -6301,7 +6302,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(26, 32.08, 32.44, 'SHOT 26')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_26_mid.jpg" alt="SHOT 26" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 26</div>
@@ -6314,7 +6315,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(27, 32.48, 32.8, 'SHOT 27')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_27_mid.jpg" alt="SHOT 27" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 27</div>
@@ -6327,7 +6328,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(28, 32.84, 33.64, 'SHOT 28')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_28_mid.jpg" alt="SHOT 28" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 28</div>
@@ -6340,7 +6341,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(29, 33.68, 34.6, 'SHOT 29')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_29_mid.jpg" alt="SHOT 29" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 29</div>
@@ -6353,7 +6354,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(30, 34.64, 35.68, 'SHOT 30')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_30_mid.jpg" alt="SHOT 30" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 30</div>
@@ -6366,7 +6367,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(31, 35.72, 36.0, 'SHOT 31')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_31_mid.jpg" alt="SHOT 31" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 31</div>
@@ -6379,7 +6380,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(32, 36.04, 36.56, 'SHOT 32')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_32_mid.jpg" alt="SHOT 32" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 32</div>
@@ -6392,7 +6393,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(33, 36.6, 37.36, 'SHOT 33')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_33_mid.jpg" alt="SHOT 33" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 33</div>
@@ -6405,7 +6406,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(34, 37.4, 40.56, 'SHOT 34')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_34_mid.jpg" alt="SHOT 34" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 34</div>
@@ -6418,7 +6419,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(35, 40.6, 41.64, 'SHOT 35')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_35_mid.jpg" alt="SHOT 35" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 35</div>
@@ -6431,7 +6432,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(36, 41.68, 42.32, 'SHOT 36')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_36_mid.jpg" alt="SHOT 36" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 36</div>
@@ -6444,7 +6445,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(37, 42.36, 43.64, 'SHOT 37')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_37_mid.jpg" alt="SHOT 37" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 37</div>
@@ -6457,7 +6458,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(38, 43.68, 44.24, 'SHOT 38')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_38_mid.jpg" alt="SHOT 38" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 38</div>
@@ -6470,7 +6471,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(39, 44.28, 45.88, 'SHOT 39')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_39_mid.jpg" alt="SHOT 39" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 39</div>
@@ -6483,7 +6484,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(40, 45.92, 46.6, 'SHOT 40')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_40_mid.jpg" alt="SHOT 40" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 40</div>
@@ -6496,7 +6497,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(41, 46.64, 47.12, 'SHOT 41')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_41_mid.jpg" alt="SHOT 41" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 41</div>
@@ -6509,7 +6510,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(42, 47.16, 47.6, 'SHOT 42')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_42_mid.jpg" alt="SHOT 42" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 42</div>
@@ -6522,7 +6523,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(43, 47.64, 47.96, 'SHOT 43')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_43_mid.jpg" alt="SHOT 43" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 43</div>
@@ -6535,7 +6536,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(44, 48.0, 50.0, 'SHOT 44')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_44_mid.jpg" alt="SHOT 44" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 44</div>
@@ -6548,7 +6549,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(45, 50.04, 50.6, 'SHOT 45')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_45_mid.jpg" alt="SHOT 45" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 45</div>
@@ -6561,7 +6562,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(46, 50.64, 51.4, 'SHOT 46')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_46_mid.jpg" alt="SHOT 46" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 46</div>
@@ -6574,7 +6575,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(47, 51.44, 53.0, 'SHOT 47')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_47_mid.jpg" alt="SHOT 47" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 47</div>
@@ -6587,7 +6588,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(48, 53.04, 54.8, 'SHOT 48')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_48_mid.jpg" alt="SHOT 48" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 48</div>
@@ -6600,7 +6601,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(49, 54.84, 55.36, 'SHOT 49')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_49_mid.jpg" alt="SHOT 49" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 49</div>
@@ -6613,7 +6614,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(50, 55.4, 56.64, 'SHOT 50')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_50_mid.jpg" alt="SHOT 50" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 50</div>
@@ -6626,7 +6627,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(51, 56.68, 57.2, 'SHOT 51')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_51_mid.jpg" alt="SHOT 51" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 51</div>
@@ -6639,7 +6640,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(52, 57.24, 57.68, 'SHOT 52')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_52_mid.jpg" alt="SHOT 52" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 52</div>
@@ -6652,7 +6653,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(53, 57.72, 59.0, 'SHOT 53')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_53_mid.jpg" alt="SHOT 53" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 53</div>
@@ -6665,7 +6666,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(54, 59.04, 59.96, 'SHOT 54')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_54_mid.jpg" alt="SHOT 54" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 54</div>
@@ -6678,7 +6679,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(55, 60.0, 60.88, 'SHOT 55')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_55_mid.jpg" alt="SHOT 55" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 55</div>
@@ -6691,7 +6692,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(56, 60.92, 62.52, 'SHOT 56')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_56_mid.jpg" alt="SHOT 56" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 56</div>
@@ -6704,7 +6705,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(57, 62.56, 63.32, 'SHOT 57')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_57_mid.jpg" alt="SHOT 57" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 57</div>
@@ -6717,7 +6718,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(58, 63.36, 63.76, 'SHOT 58')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_58_mid.jpg" alt="SHOT 58" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 58</div>
@@ -6730,7 +6731,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(59, 63.8, 64.32, 'SHOT 59')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_59_mid.jpg" alt="SHOT 59" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 59</div>
@@ -6743,7 +6744,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(60, 64.36, 64.76, 'SHOT 60')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_60_mid.jpg" alt="SHOT 60" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 60</div>
@@ -6756,7 +6757,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(61, 64.8, 65.16, 'SHOT 61')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_61_mid.jpg" alt="SHOT 61" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 61</div>
@@ -6769,7 +6770,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(62, 65.2, 65.68, 'SHOT 62')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_62_mid.jpg" alt="SHOT 62" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 62</div>
@@ -6782,7 +6783,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(63, 65.72, 66.36, 'SHOT 63')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_63_mid.jpg" alt="SHOT 63" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 63</div>
@@ -6795,7 +6796,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(64, 66.4, 67.12, 'SHOT 64')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_64_mid.jpg" alt="SHOT 64" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 64</div>
@@ -6808,7 +6809,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(65, 67.16, 69.36, 'SHOT 65')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_65_mid.jpg" alt="SHOT 65" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 65</div>
@@ -6821,7 +6822,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(66, 69.4, 69.8, 'SHOT 66')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_66_mid.jpg" alt="SHOT 66" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 66</div>
@@ -6834,7 +6835,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(67, 69.84, 70.48, 'SHOT 67')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_67_mid.jpg" alt="SHOT 67" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 67</div>
@@ -6847,7 +6848,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(68, 70.52, 70.8, 'SHOT 68')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_68_mid.jpg" alt="SHOT 68" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 68</div>
@@ -6860,7 +6861,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(69, 70.84, 73.16, 'SHOT 69')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_69_mid.jpg" alt="SHOT 69" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 69</div>
@@ -6873,7 +6874,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(70, 73.2, 74.52, 'SHOT 70')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_70_mid.jpg" alt="SHOT 70" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 70</div>
@@ -6886,7 +6887,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(71, 74.56, 76.08, 'SHOT 71')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@L7_WEST_LAKE_HANOI_by_LOTTE_HOTELS_DZuT3fSgOeg_Video_by_l7westlakehanoi_bylottehotels/shot_71_mid.jpg" alt="SHOT 71" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 71</div>
@@ -6902,46 +6903,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DZuT3fSgOeg.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1BmlevWt0H9lBO75sdD6QQBIzdpzRhWR_";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;

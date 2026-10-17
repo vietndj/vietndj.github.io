@@ -1200,18 +1200,19 @@ video#mainPlayer {
     }
 }
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/qSCUd-8DMaM?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DdOu2yRsmDy.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1ETJ189Ry5u_lkYitc-EjcTver97hQP1R/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -1309,7 +1310,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 0.23, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1368,7 +1369,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.27, 0.73, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1427,7 +1428,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.77, 1.13, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1486,7 +1487,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(1.17, 1.5, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1545,7 +1546,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(1.53, 3.6, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1604,7 +1605,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.63, 4.1, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1663,7 +1664,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.13, 4.6, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1722,7 +1723,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.63, 5.1, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1781,7 +1782,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.13, 5.57, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1840,7 +1841,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.6, 6.07, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1899,7 +1900,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.1, 6.53, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1958,7 +1959,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.57, 7.0, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2017,7 +2018,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.03, 7.47, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2076,7 +2077,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.5, 8.0, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -2137,7 +2138,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
             
         <div class="grid-card" onclick="playShot(0.0, 0.23, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg', 'SHOT 01 [0.0s - 0.23s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -2149,7 +2150,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(0.27, 0.73, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg', 'SHOT 02 [0.27s - 0.73s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -2161,7 +2162,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(0.77, 1.13, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg', 'SHOT 03 [0.77s - 1.13s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -2173,7 +2174,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(1.17, 1.5, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg', 'SHOT 04 [1.17s - 1.5s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -2185,7 +2186,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(1.53, 3.6, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg', 'SHOT 05 [1.53s - 3.6s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -2197,7 +2198,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(3.63, 4.1, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg', 'SHOT 06 [3.63s - 4.1s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -2209,7 +2210,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(4.13, 4.6, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg', 'SHOT 07 [4.13s - 4.6s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -2221,7 +2222,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(4.63, 5.1, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg', 'SHOT 08 [4.63s - 5.1s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -2233,7 +2234,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(5.13, 5.57, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg', 'SHOT 09 [5.13s - 5.57s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -2245,7 +2246,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(5.6, 6.07, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg', 'SHOT 10 [5.6s - 6.07s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -2257,7 +2258,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(6.1, 6.53, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg', 'SHOT 11 [6.1s - 6.53s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2269,7 +2270,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(6.57, 7.0, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg', 'SHOT 12 [6.57s - 7.0s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -2281,7 +2282,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(7.03, 7.47, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg', 'SHOT 13 [7.03s - 7.47s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -2293,7 +2294,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="grid-card" onclick="playShot(7.5, 8.0, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg', 'SHOT 14 [7.5s - 8.0s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -2316,7 +2317,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 0.23, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2329,7 +2330,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(2, 0.27, 0.73, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2342,7 +2343,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(3, 0.77, 1.13, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2355,7 +2356,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(4, 1.17, 1.5, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2368,7 +2369,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(5, 1.53, 3.6, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2381,7 +2382,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(6, 3.63, 4.1, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2394,7 +2395,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(7, 4.13, 4.6, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2407,7 +2408,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(8, 4.63, 5.1, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2420,7 +2421,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(9, 5.13, 5.57, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2433,7 +2434,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(10, 5.6, 6.07, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2446,7 +2447,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(11, 6.1, 6.53, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2459,7 +2460,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(12, 6.57, 7.0, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2472,7 +2473,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(13, 7.03, 7.47, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -2485,7 +2486,7 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
         <div class="drawer-item" onclick="jumpToShot(14, 7.5, 8.0, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -2501,46 +2502,28 @@ Sau khi tôi chọn, hãy xuất bản ngay 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY (G
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DdOu2yRsmDy.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1rIzKaO80LS-TYEeX6pLM9Nq2P-GazN6H";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2549,13 +2532,23 @@ function playShot(startTime, endTime, label) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
+    if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player && typeof player.play === 'function') {
+        if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'seekTo', args: [startTime, true]}), '*');
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'playVideo', args: []}), '*');
+    } else if (player && typeof player.play === 'function') {
+        player.currentTime = startTime;
+        const p = player.play();
+        if (p !== undefined) {
+            p.catch(e => {
+                player.muted = true;
+                player.play().catch(err => console.log('Autoplay muted triggered'));
+            });
+        }
+    }
     }
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
@@ -2567,7 +2560,11 @@ function playShot(startTime, endTime, label) {
 }
 
 function setSpeed(speed, btn) {
-    player.playbackRate = speed;
+    if (player && player.tagName === 'IFRAME' && player.contentWindow) {
+        player.contentWindow.postMessage(JSON.stringify({event: 'command', func: 'setPlaybackRate', args: [speed]}), '*');
+    } else if (player) {
+        player.playbackRate = speed;
+    }
     document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
     if (btn) btn.classList.add('active');
 }

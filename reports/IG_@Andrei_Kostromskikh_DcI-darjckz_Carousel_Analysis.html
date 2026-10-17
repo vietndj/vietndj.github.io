@@ -1,12 +1,10 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
+<!DOCTYPE html><html lang="vi"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Carousel Multi-Slide Retention Masterclass - Nghệ Thuật Giữ Chân Chuỗi Video Đa Slide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Be+Vietnam+Pro:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
 <style>
 :root {
     --bg-main: #070a0f;
@@ -866,6 +864,46 @@ video#mainPlayer {
 }
 
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -907,18 +945,48 @@ video#mainPlayer {
 }
 
 </style>
+
+<style class="video-player-container-fix">
+.video-player-container { height: 75vh !important; max-height: none !important; aspect-ratio: auto !important; }
+.carousel-stack { overflow-y: scroll !important; scroll-snap-type: y mandatory !important; }
+.carousel-stack > * { flex: 0 0 100% !important; height: 100% !important; object-fit: contain !important; scroll-snap-align: start !important; border: none !important; }
+</style>
+        
+<style class="carousel-yt-fix-css">
+.video-player-container { height: 75vh !important; max-height: none !important; aspect-ratio: auto !important; overflow: hidden !important; position: relative !important; }
+.carousel-stack { overflow-y: scroll !important; scroll-snap-type: y mandatory !important; height: 100% !important; }
+.carousel-stack > * { flex: 0 0 100% !important; height: 100% !important; object-fit: contain !important; scroll-snap-align: start !important; }
+.carousel-stack iframe { border: none !important; }
+</style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+
+<style>.carousel-stack::-webkit-scrollbar { display: none; }</style>
+<div class="carousel-stack" style="display:flex; flex-direction:column; gap:16px; height:100%; overflow-y:auto; scroll-snap-type:y mandatory; -ms-overflow-style:none; scrollbar-width:none;">
+<iframe id="mainPlayer" src="https://www.youtube.com/embed/4sUAWlghCZ4?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+<img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" style="flex:0 0 100%; width:100%; height:100%; object-fit:contain; scroll-snap-align:start; background:#000;">
+</div>
+
+<div class="carousel-nav-overlay" style="position:absolute; right:10px; bottom:20px; display:flex; flex-direction:column; gap:10px; z-index:100;">
+    <button class="nav-btn" onclick="const stack = document.querySelector('.carousel-stack'); if(stack) stack.scrollBy({top: -stack.clientHeight, behavior: 'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;">▲</button>
+    <button class="nav-btn" onclick="const stack = document.querySelector('.carousel-stack'); if(stack) stack.scrollBy({top: stack.clientHeight, behavior: 'smooth'})" style="padding:10px; background:rgba(0,0,0,0.6); color:white; border:none; border-radius:50%; width: 44px; height: 44px; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 16px;">▼</button>
+</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/slide_01.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1eGTIdQjBYuwWvLlxQ8btCkwlKDo_6MUP/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -937,11 +1005,18 @@ video#mainPlayer {
         <div class="report-header-banner">
             <div class="header-top-row">
                 <span class="genre-badge">DIRECTOR STORYBOARD BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">8 SHOTS &bull; 25.00s</span>
+                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">8 SHOTS • 25.00s</span>
             </div>
             <h1 class="report-title">Carousel Multi-Slide Retention Masterclass - Nghệ Thuật Giữ Chân Chuỗi Video Đa Slide</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <a href="https://www.instagram.com/p/DcI-darjckz/" target="_blank" rel="noopener" class="author-ig-badge" title="Mở Instagram gốc của @kosnio (Andrei Kostromskikh)"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" style="flex-shrink:0;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg> <strong>@kosnio (Andrei Kostromskikh)</strong> <span class="ig-ext-btn">📸 Xem Instagram Gốc ↗</span></a></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@kosnio" onclick="handleCreatorClick(event, '@kosnio', 'Andrei Kostromskikh')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Andrei Kostromskikh trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Andrei Kostromskikh</strong>
+                        <span class="author-handle">(@kosnio)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
                 <span>Tệp: <strong>IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -965,11 +1040,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.5, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg', 'SHOT 01 [0.0s - 2.5s] • Slide 1 / Hook Giữ Chân (2.50s): Kích hoạt sự tò mò ngay giây đầu bằng chuyển động máy mượt')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">0.00s - 2.50s</span>
                 </div>
             </div>
@@ -1024,11 +1099,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(2.5, 5.8, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg', 'SHOT 02 [2.5s - 5.8s] • Slide 2 / Mở Rộng Không Gian (3.30s): Đưa người xem đi sâu vào bối cảnh')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">2.50s - 5.80s</span>
                 </div>
             </div>
@@ -1083,11 +1158,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.8, 9.2, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg', 'SHOT 03 [5.8s - 9.2s] • Slide 3 / Cận Cảnh Chi Tiết (3.40s): Chuyển nhịp thở sang điểm chạm cảm xúc')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">5.80s - 9.20s</span>
                 </div>
             </div>
@@ -1142,11 +1217,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.2, 13.5, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg', 'SHOT 04 [9.2s - 13.5s] • Slide 4 / Cao Trào Tương Tác (4.30s): Khắc họa mối liên kết giữa con người và môi trường')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">9.20s - 13.50s</span>
                 </div>
             </div>
@@ -1201,11 +1276,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.5, 17.0, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg', 'SHOT 05 [13.5s - 17.0s] • Slide 5 / Tĩnh Lặng Nghệ Thuật (3.50s): Đóng khung hình học đối xứng')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">13.50s - 17.00s</span>
                 </div>
             </div>
@@ -1260,11 +1335,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(17.0, 19.5, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg', 'SHOT 06 [17.0s - 19.5s] • Slide 6 / Chuyển Động Vận Tốc (2.50s): Tăng tốc độ thị giác chuẩn bị về đích')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">17.00s - 19.50s</span>
                 </div>
             </div>
@@ -1319,11 +1394,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(19.5, 22.0, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg', 'SHOT 07 [19.5s - 22.0s] • Slide 7 / Bức Họa Tương Phản (2.50s): Đẩy cao độ sâu dải màu và cảm xúc')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">19.50s - 22.00s</span>
                 </div>
             </div>
@@ -1378,11 +1453,11 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(22.0, 25.0, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy">
                     <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
                     </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg', 'SHOT 08 [22.0s - 25.0s] • Slide 8 / Kêu Gọi Hành Động (3.00s): Khép lại trọn vẹn chuỗi trải nghiệm Carousel')">🔍</button>
+                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                     <span class="thumb-time-badge">22.00s - 25.00s</span>
                 </div>
             </div>
@@ -1439,9 +1514,9 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 2.5, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg', 'SHOT 01 [0.0s - 2.5s] • Slide 1 / Hook Giữ Chân (2.50s): Kích hoạt sự tò mò ngay giây đầu bằng chuyển động máy mượt')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
                 <div class="grid-badge-bottom">0.0s - 2.5s</div>
             </div>
@@ -1451,9 +1526,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(2.5, 5.8, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg', 'SHOT 02 [2.5s - 5.8s] • Slide 2 / Mở Rộng Không Gian (3.30s): Đưa người xem đi sâu vào bối cảnh')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
                 <div class="grid-badge-bottom">2.5s - 5.8s</div>
             </div>
@@ -1463,9 +1538,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.8, 9.2, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg', 'SHOT 03 [5.8s - 9.2s] • Slide 3 / Cận Cảnh Chi Tiết (3.40s): Chuyển nhịp thở sang điểm chạm cảm xúc')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
                 <div class="grid-badge-bottom">5.8s - 9.2s</div>
             </div>
@@ -1475,9 +1550,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.2, 13.5, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg', 'SHOT 04 [9.2s - 13.5s] • Slide 4 / Cao Trào Tương Tác (4.30s): Khắc họa mối liên kết giữa con người và môi trường')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
                 <div class="grid-badge-bottom">9.2s - 13.5s</div>
             </div>
@@ -1487,9 +1562,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.5, 17.0, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg', 'SHOT 05 [13.5s - 17.0s] • Slide 5 / Tĩnh Lặng Nghệ Thuật (3.50s): Đóng khung hình học đối xứng')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
                 <div class="grid-badge-bottom">13.5s - 17.0s</div>
             </div>
@@ -1499,9 +1574,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(17.0, 19.5, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg', 'SHOT 06 [17.0s - 19.5s] • Slide 6 / Chuyển Động Vận Tốc (2.50s): Tăng tốc độ thị giác chuẩn bị về đích')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
                 <div class="grid-badge-bottom">17.0s - 19.5s</div>
             </div>
@@ -1511,9 +1586,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(19.5, 22.0, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg', 'SHOT 07 [19.5s - 22.0s] • Slide 7 / Bức Họa Tương Phản (2.50s): Đẩy cao độ sâu dải màu và cảm xúc')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
                 <div class="grid-badge-bottom">19.5s - 22.0s</div>
             </div>
@@ -1523,9 +1598,9 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(22.0, 25.0, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy">
                 <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg', 'SHOT 08 [22.0s - 25.0s] • Slide 8 / Kêu Gọi Hành Động (3.00s): Khép lại trọn vẹn chuỗi trải nghiệm Carousel')">🔍</button>
+                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://ytuong.fedu.vn/api/video?id=1Ygj0ukLgqFBEQwgMXDXa5BkoEKm0XWqX">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
                 <div class="grid-badge-bottom">22.0s - 25.0s</div>
             </div>
@@ -1540,13 +1615,13 @@ video#mainPlayer {
     <div class="drawer-panel" onclick="event.stopPropagation()">
         <div class="drawer-header">
             <div class="drawer-title">📑 MỤC LỤC PHÂN CẢNH (8)</div>
-            <button class="drawer-close-btn" onclick="toggleDrawer(false)">&times;</button>
+            <button class="drawer-close-btn" onclick="toggleDrawer(false)">×</button>
         </div>
         <div class="drawer-list">
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.5, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_01_mid.jpg" alt="SHOT 01" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -1559,7 +1634,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.5, 5.8, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_02_mid.jpg" alt="SHOT 02" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -1572,7 +1647,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 5.8, 9.2, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_03_mid.jpg" alt="SHOT 03" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -1585,7 +1660,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 9.2, 13.5, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_04_mid.jpg" alt="SHOT 04" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -1598,7 +1673,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 13.5, 17.0, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_05_mid.jpg" alt="SHOT 05" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -1611,7 +1686,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 17.0, 19.5, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_06_mid.jpg" alt="SHOT 06" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -1624,7 +1699,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 19.5, 22.0, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_07_mid.jpg" alt="SHOT 07" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -1637,7 +1712,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 22.0, 25.0, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@Andrei_Kostromskikh_DcI-darjckz_Carousel_Analysis/slide_08_mid.jpg" alt="SHOT 08" loading="lazy">
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -1652,63 +1727,52 @@ video#mainPlayer {
 </div>
 
 <div id="lightboxModal" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <span class="lightbox-close" onclick="closeLightbox()">×</span>
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()">
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/slide_01.mp4";
+const rawVideoSrc = "https://www.youtube.com/embed/4sUAWlghCZ4";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
 
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
-
 function playShot(startTime, endTime, label) {
+
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        if (match) {
+            var index = parseInt(match[1]) - 1;
+            var children = stack.children;
+            if (index >= 0 && index < children.length) {
+                children[index].scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        }
+    }
+    
+
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
     const tag = document.getElementById('shotStatusTag');
     if (tag) {
         const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
         tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
     }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
-    }
+    if(player) player.currentTime = startTime;
     document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
     const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
     if (matchCard) matchCard.classList.add('active-playing');
@@ -1793,6 +1857,22 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
+
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');
     if (!v) return;
@@ -1821,5 +1901,5 @@ document.addEventListener('keydown', (e) => {
 });
 
 </script>
-</body>
-</html>
+
+</body></html>

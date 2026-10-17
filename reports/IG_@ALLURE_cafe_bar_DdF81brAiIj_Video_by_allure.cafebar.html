@@ -823,6 +823,46 @@ video#mainPlayer {
     cursor: pointer;
 }
 
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
+
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
 .player-fs-btn {
@@ -864,18 +904,19 @@ video#mainPlayer {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <div class="app-container">
     <div class="video-sidebar-col">
         <div class="video-player-container">
-            <video id="mainPlayer" controls autoplay muted playsinline preload="auto" loop></video>
+            <div style="aspect-ratio:9/16;background:#18181b;display:flex;align-items:center;justify-content:center;color:#71717a;border-radius:12px;font-size:14px;border:1px dashed #3f3f46;">🎬 Video đang đồng bộ...</div>
         </div>
         <div class="video-controls-panel">
             <div class="current-status-bar">
                 <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://media.fedu.vn/videos/DdF81brAiIj.mp4" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
+                <a id="directVidLink" href="https://drive.google.com/file/d/1IR07RmrOGim-LV0gb3elhX0iCmAKmBO9/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
             </div>
             <div class="speed-buttons-row">
                 <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
@@ -898,7 +939,14 @@ video#mainPlayer {
             </div>
             <h1 class="report-title">@ALLURE_cafe_bar - Video by allure.cafebar</h1>
             <div class="meta-tags-flex">
-                <span>Tác giả: <strong>@ALLURE_cafe_bar</strong></span>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@allure.cafebar" onclick="handleCreatorClick(event, '@allure.cafebar', 'Allure_Cafe_Bar')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Allure_Cafe_Bar trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Allure_Cafe_Bar</strong>
+                        <span class="author-handle">(@allure.cafebar)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
                 <span>Tệp: <strong>IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar.html</strong></span>
                 <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
             </div>
@@ -922,7 +970,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-1">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(0.0, 1.33, 'SHOT 01')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -981,7 +1029,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-2">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(1.37, 3.13, 'SHOT 02')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1040,7 +1088,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-3">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(3.17, 4.43, 'SHOT 03')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1099,7 +1147,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-4">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(4.47, 5.3, 'SHOT 04')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1158,7 +1206,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-5">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(5.33, 6.6, 'SHOT 05')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1217,7 +1265,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-6">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(6.63, 7.9, 'SHOT 06')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1276,7 +1324,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-7">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(7.93, 9.7, 'SHOT 07')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1335,7 +1383,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-8">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(9.73, 10.87, 'SHOT 08')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1394,7 +1442,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-9">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(10.9, 11.93, 'SHOT 09')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1453,7 +1501,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-10">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(11.97, 13.2, 'SHOT 10')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1512,7 +1560,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-11">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(13.23, 14.37, 'SHOT 11')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1571,7 +1619,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-12">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(14.4, 15.83, 'SHOT 12')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1630,7 +1678,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-13">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(15.87, 16.83, 'SHOT 13')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1689,7 +1737,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-14">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(16.87, 18.0, 'SHOT 14')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1748,7 +1796,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-15">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(18.03, 19.07, 'SHOT 15')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1807,7 +1855,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-16">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(19.1, 20.17, 'SHOT 16')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1866,7 +1914,7 @@ video#mainPlayer {
         <div class="shot-card" id="shot-card-17">
             <div class="shot-media-col">
                 <div class="shot-thumb-wrap" onclick="playShot(20.2, 21.2, 'SHOT 17')">
-                    <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" class="shot-img" loading="lazy" />
                     <div class="play-overlay">
                         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
                     </div>
@@ -1927,7 +1975,7 @@ video#mainPlayer {
             
         <div class="grid-card" onclick="playShot(0.0, 1.33, 'SHOT 01')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg', 'SHOT 01 [0.0s - 1.33s] • Visual Hook Mở Màn: Giữ chân người xem ngay 2 giây đầu bằng nhịp chuyển động mạnh')">🔍</button>
                 <div class="grid-badge-top">SHOT 01</div>
@@ -1939,7 +1987,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(1.37, 3.13, 'SHOT 02')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg', 'SHOT 02 [1.37s - 3.13s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 02</div>
@@ -1951,7 +1999,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(3.17, 4.43, 'SHOT 03')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg', 'SHOT 03 [3.17s - 4.43s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 03</div>
@@ -1963,7 +2011,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(4.47, 5.3, 'SHOT 04')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg', 'SHOT 04 [4.47s - 5.3s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 04</div>
@@ -1975,7 +2023,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(5.33, 6.6, 'SHOT 05')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg', 'SHOT 05 [5.33s - 6.6s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 05</div>
@@ -1987,7 +2035,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(6.63, 7.9, 'SHOT 06')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg', 'SHOT 06 [6.63s - 7.9s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 06</div>
@@ -1999,7 +2047,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(7.93, 9.7, 'SHOT 07')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg', 'SHOT 07 [7.93s - 9.7s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 07</div>
@@ -2011,7 +2059,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(9.73, 10.87, 'SHOT 08')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg', 'SHOT 08 [9.73s - 10.87s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 08</div>
@@ -2023,7 +2071,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(10.9, 11.93, 'SHOT 09')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg', 'SHOT 09 [10.9s - 11.93s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 09</div>
@@ -2035,7 +2083,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(11.97, 13.2, 'SHOT 10')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg', 'SHOT 10 [11.97s - 13.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 10</div>
@@ -2047,7 +2095,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(13.23, 14.37, 'SHOT 11')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg', 'SHOT 11 [13.23s - 14.37s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 11</div>
@@ -2059,7 +2107,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(14.4, 15.83, 'SHOT 12')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg', 'SHOT 12 [14.4s - 15.83s] • Thiết Lập Không Gian Sâu (Wide Establishing): Khắc họa quy mô bối cảnh và nhịp thở đô thị')">🔍</button>
                 <div class="grid-badge-top">SHOT 12</div>
@@ -2071,7 +2119,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(15.87, 16.83, 'SHOT 13')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg', 'SHOT 13 [15.87s - 16.83s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 13</div>
@@ -2083,7 +2131,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(16.87, 18.0, 'SHOT 14')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg', 'SHOT 14 [16.87s - 18.0s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 14</div>
@@ -2095,7 +2143,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(18.03, 19.07, 'SHOT 15')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg', 'SHOT 15 [18.03s - 19.07s] • Nhịp Dẫn Theo Dõi (Medium Tracking): Duy trì sự liên tục và kết nối cảm xúc nhân vật')">🔍</button>
                 <div class="grid-badge-top">SHOT 15</div>
@@ -2107,7 +2155,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(19.1, 20.17, 'SHOT 16')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg', 'SHOT 16 [19.1s - 20.17s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 16</div>
@@ -2119,7 +2167,7 @@ video#mainPlayer {
 
         <div class="grid-card" onclick="playShot(20.2, 21.2, 'SHOT 17')">
             <div class="grid-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
                 <div class="grid-play-icon">▶</div>
                 <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg', 'SHOT 17 [20.2s - 21.2s] • Cận Cảnh Chi Tiết Cảm Xúc (Close-Up Detail): Tập trung tối đa vào điểm chạm thị giác tinh tế')">🔍</button>
                 <div class="grid-badge-top">SHOT 17</div>
@@ -2142,7 +2190,7 @@ video#mainPlayer {
             
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 1.33, 'SHOT 01')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_01_mid.jpg" alt="SHOT 01" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 01</div>
@@ -2155,7 +2203,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(2, 1.37, 3.13, 'SHOT 02')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_02_mid.jpg" alt="SHOT 02" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 02</div>
@@ -2168,7 +2216,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(3, 3.17, 4.43, 'SHOT 03')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_03_mid.jpg" alt="SHOT 03" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 03</div>
@@ -2181,7 +2229,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(4, 4.47, 5.3, 'SHOT 04')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_04_mid.jpg" alt="SHOT 04" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 04</div>
@@ -2194,7 +2242,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(5, 5.33, 6.6, 'SHOT 05')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_05_mid.jpg" alt="SHOT 05" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 05</div>
@@ -2207,7 +2255,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(6, 6.63, 7.9, 'SHOT 06')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_06_mid.jpg" alt="SHOT 06" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 06</div>
@@ -2220,7 +2268,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(7, 7.93, 9.7, 'SHOT 07')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_07_mid.jpg" alt="SHOT 07" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 07</div>
@@ -2233,7 +2281,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(8, 9.73, 10.87, 'SHOT 08')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_08_mid.jpg" alt="SHOT 08" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 08</div>
@@ -2246,7 +2294,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(9, 10.9, 11.93, 'SHOT 09')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_09_mid.jpg" alt="SHOT 09" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 09</div>
@@ -2259,7 +2307,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(10, 11.97, 13.2, 'SHOT 10')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_10_mid.jpg" alt="SHOT 10" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 10</div>
@@ -2272,7 +2320,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(11, 13.23, 14.37, 'SHOT 11')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_11_mid.jpg" alt="SHOT 11" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 11</div>
@@ -2285,7 +2333,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(12, 14.4, 15.83, 'SHOT 12')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_12_mid.jpg" alt="SHOT 12" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 12</div>
@@ -2298,7 +2346,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(13, 15.87, 16.83, 'SHOT 13')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_13_mid.jpg" alt="SHOT 13" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 13</div>
@@ -2311,7 +2359,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(14, 16.87, 18.0, 'SHOT 14')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_14_mid.jpg" alt="SHOT 14" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 14</div>
@@ -2324,7 +2372,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(15, 18.03, 19.07, 'SHOT 15')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_15_mid.jpg" alt="SHOT 15" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 15</div>
@@ -2337,7 +2385,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(16, 19.1, 20.17, 'SHOT 16')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_16_mid.jpg" alt="SHOT 16" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 16</div>
@@ -2350,7 +2398,7 @@ video#mainPlayer {
 
         <div class="drawer-item" onclick="jumpToShot(17, 20.2, 21.2, 'SHOT 17')">
             <div class="drawer-thumb">
-                <img src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_@ALLURE_cafe_bar_DdF81brAiIj_Video_by_allure.cafebar/shot_17_mid.jpg" alt="SHOT 17" loading="lazy" />
             </div>
             <div class="drawer-info">
                 <div class="drawer-shot-title">SHOT 17</div>
@@ -2366,46 +2414,28 @@ video#mainPlayer {
 
 <div id="lightboxModal" onclick="closeLightbox()">
     <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
 <script>
-const rawVideoSrc = "https://media.fedu.vn/videos/DdF81brAiIj.mp4";
+const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1IR07RmrOGim-LV0gb3elhX0iCmAKmBO9";
 let currentEndTime = null;
 
-function getCandidateUrls(src) {
-    if (!src) return [];
-    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
-    let clean = src.replace(/^(\.\/|\.\.\/)+/, '').replace(/^(videos\/|reports\/)/, '');
-    return [
-        'https://media.fedu.vn/videos/' + encodeURI(clean),
-        '../videos/' + clean,
-        './videos/' + clean,
-        './' + clean
-    ];
-}
 
-const candidateUrls = getCandidateUrls(rawVideoSrc);
-let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-
-function loadVideoCandidate() {
-    if (candidateIdx >= candidateUrls.length) return;
-    const url = candidateUrls[candidateIdx];
-    player.src = url;
-    document.getElementById('directVidLink').href = url;
+if(player) {
+    player.src = rawVideoSrc;
+    const directLnk = document.getElementById('directVidLink');
+    if (directLnk) {
+        if (rawVideoSrc.includes('/api/video?id=')) {
+            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
+        } else {
+            directLnk.href = rawVideoSrc;
+        }
+    }
     player.load();
 }
-
-player.onerror = () => {
-    candidateIdx++;
-    if (candidateIdx < candidateUrls.length) {
-        loadVideoCandidate();
-    }
-};
-
-loadVideoCandidate();
 
 function playShot(startTime, endTime, label) {
     currentEndTime = (typeof endTime === 'number') ? endTime : null;
@@ -2505,6 +2535,22 @@ document.addEventListener('keydown', (e) => {
         }
     }
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

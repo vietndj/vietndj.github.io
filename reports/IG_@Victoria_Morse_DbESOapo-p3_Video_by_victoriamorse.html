@@ -618,13 +618,14 @@ video#mainVid {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 <div class="layout">
   <!-- LEFT: STICKY DIRECTOR PLAYER -->
   <aside class="player-col">
     <div class="video-box">
-      <video id="mainVid" src="https://media.fedu.vn/videos/DbESOapo-p3.mp4" playsinline preload="metadata"></video>
+      <iframe id="mainPlayer" src="https://www.youtube.com/embed/OwXUkepRWyA?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
     </div>
     <div class="director-bar">
       <div class="dir-row">
@@ -880,7 +881,7 @@ Bạn là Đạo diễn Biên kịch Video ngắn chuyên nghiệp theo phong c�
 <!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox()">
   <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <img src="" class="lightbox-img" id="lightboxImg" onclick="event.stopPropagation()">
+  <img crossorigin="anonymous" src="" class="lightbox-img" id="lightboxImg" onclick="event.stopPropagation()">
   <div class="lightbox-cap" id="lightboxCap"></div>
 </div>
 
@@ -910,7 +911,7 @@ function renderSceneList() {
       <div class="scene-num-badge">#${pId}</div>
       <div class="scene-dur-col">${dur.toFixed(2)}s<br><span style="font-size:9.5px;color:var(--text-muted);">${st.toFixed(1)}s</span></div>
       <div class="scene-thumb-wrap" onclick="event.stopPropagation(); openLightbox('${img}', 'Cảnh ${pId} (${st.toFixed(2)}s - ${et.toFixed(2)}s): ${hl.replace(/'/g, "\\\'")}')">
-        <img src="${img}" loading="lazy" alt="Cảnh ${pId}">
+        <img crossorigin="anonymous" src="${img}" loading="lazy" alt="Cảnh ${pId}">
       </div>
       <div class="scene-desc-col">
         <div class="scene-headline">${hl}</div>

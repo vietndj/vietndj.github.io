@@ -896,7 +896,7 @@ body {
     }
     .left-player-col {
         width: 100%;
-        position: sticky;
+        position: relative;
         top: 57px;
         height: auto;
         padding: 16px;
@@ -917,6 +917,46 @@ body {
         gap: 8px;
     }
 }
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
@@ -959,6 +999,7 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
@@ -972,7 +1013,7 @@ body {
         <span class="nav-meta-title">Nghệ Thuật Điều Hòa Hệ Thần Kinh - Giải Phóng Cơn Vội Vã Vô Thức (@kawoon.lee)</span>
     </div>
     <div class="nav-right">
-        <a href="https://www.instagram.com/reels/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==" target="_blank" class="nav-btn primary">
+        <a href="https://www.instagram.com/p/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==" target="_blank" class="nav-btn primary">
             <span>📸 Instagram Gốc ↗</span>
         </a>
         <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
@@ -986,11 +1027,7 @@ body {
     <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
     <aside class="left-player-col">
         <div class="player-box">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/Teaching_Nervous_System_Not_Emergency_-_@kawoon.lee.mp4" type="video/mp4">
-                <source src="../videos/Teaching_Nervous_System_Not_Emergency_-_@kawoon.lee.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/-CqBPlOPgwo?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
 
         <!-- DIRECTOR CONTROLS -->
@@ -1019,8 +1056,15 @@ body {
         <div class="video-meta-card">
             <div class="video-meta-title">Nghệ Thuật Điều Hòa Hệ Thần Kinh - Giải Phóng Cơn Vội Vã Vô Thức (@kawoon.lee)</div>
             <div class="video-meta-author">
-                <span>Tác giả:</span>
-                <a href="https://www.instagram.com/reels/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==" target="_blank" class="author-link">Karen Lee (@kawoon.lee)</a>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@kawoon.lee" onclick="handleCreatorClick(event, '@kawoon.lee', 'Karen Lee')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Karen Lee trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Karen Lee</strong>
+                        <span class="author-handle">(@kawoon.lee)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+                <a href="https://www.instagram.com/p/DatbbgJviTV/?stkn=MW41cXVxOGNwMjUwZw==" target="_blank" class="author-link">Karen Lee (@kawoon.lee)</a>
             </div>
         </div>
 
@@ -1135,16 +1179,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_start.webp', 'Shot 01 • Đầu (0.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_start.webp" alt="Shot 01 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_mid.jpg', 'Shot 01 • Giữa (0.86s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.webp', 'Shot 01 • Giữa (0.86s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.webp" alt="Shot 01 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (0.86s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_end.jpg', 'Shot 01 • Cuối (1.73s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_end.webp', 'Shot 01 • Cuối (1.73s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_end.webp" alt="Shot 01 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (1.73s)</span>
                 </div>
             </div>
@@ -1184,8 +1228,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Cut trực tiếp (Hard Cut) sang góc chính diện trung cảnh ở Shot 02.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_01_to_02.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_01_to_02.webp" alt="Transition 1 to 2" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1204,16 +1248,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_start.jpg', 'Shot 02 • Đầu (1.73s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_start.webp', 'Shot 02 • Đầu (1.73s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_start.webp" alt="Shot 02 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (1.73s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_mid.jpg', 'Shot 02 • Giữa (3.76s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_mid.webp', 'Shot 02 • Giữa (3.76s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_mid.webp" alt="Shot 02 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (3.76s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_end.jpg', 'Shot 02 • Cuối (5.80s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_end.webp', 'Shot 02 • Cuối (5.80s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_end.webp" alt="Shot 02 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (5.80s)</span>
                 </div>
             </div>
@@ -1253,8 +1297,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Cut chuyển cảnh cứng (Hard Cut) vào bối cảnh nội thất tại bàn ăn ở Shot 03.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_02_to_03.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_02_to_03.webp" alt="Transition 2 to 3" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1273,16 +1317,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_start.jpg', 'Shot 03 • Đầu (5.80s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_start.webp', 'Shot 03 • Đầu (5.80s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_start.webp" alt="Shot 03 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (5.80s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_mid.jpg', 'Shot 03 • Giữa (8.04s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_mid.webp', 'Shot 03 • Giữa (8.04s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_mid.webp" alt="Shot 03 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (8.04s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_end.jpg', 'Shot 03 • Cuối (10.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_end.webp', 'Shot 03 • Cuối (10.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_end.webp" alt="Shot 03 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (10.27s)</span>
                 </div>
             </div>
@@ -1322,8 +1366,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Cut chuyển cảnh cứng (Hard Cut) sang không gian phòng tắm ở Shot 04.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_03_to_04.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_03_to_04.webp" alt="Transition 3 to 4" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1342,16 +1386,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_start.jpg', 'Shot 04 • Đầu (10.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_start.webp', 'Shot 04 • Đầu (10.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_start.webp" alt="Shot 04 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (10.27s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_mid.jpg', 'Shot 04 • Giữa (12.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_mid.webp', 'Shot 04 • Giữa (12.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_mid.webp" alt="Shot 04 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (12.85s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_end.jpg', 'Shot 04 • Cuối (15.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_end.webp', 'Shot 04 • Cuối (15.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_end.webp" alt="Shot 04 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (15.43s)</span>
                 </div>
             </div>
@@ -1391,8 +1435,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • Cut chuyển cảnh cứng (Hard Cut) vào cabin xe ô tô ở Shot 05.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_04_to_05.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_04_to_05.webp" alt="Transition 4 to 5" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1411,16 +1455,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_start.jpg', 'Shot 05 • Đầu (15.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_start.webp', 'Shot 05 • Đầu (15.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_start.webp" alt="Shot 05 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (15.43s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_mid.jpg', 'Shot 05 • Giữa (17.27s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_mid.webp', 'Shot 05 • Giữa (17.27s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_mid.webp" alt="Shot 05 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (17.27s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_end.jpg', 'Shot 05 • Cuối (19.10s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_end.webp', 'Shot 05 • Cuối (19.10s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_end.webp" alt="Shot 05 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (19.10s)</span>
                 </div>
             </div>
@@ -1460,8 +1504,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Jump-cut vi mô (Micro Jump-Cut) nối tiếp hành động sang Shot 06.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_05_to_06.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_05_to_06.webp" alt="Transition 5 to 6" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1480,16 +1524,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_start.jpg', 'Shot 06 • Đầu (19.10s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_start.webp', 'Shot 06 • Đầu (19.10s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_start.webp" alt="Shot 06 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (19.10s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_mid.jpg', 'Shot 06 • Giữa (19.82s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_mid.webp', 'Shot 06 • Giữa (19.82s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_mid.webp" alt="Shot 06 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (19.82s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_end.jpg', 'Shot 06 • Cuối (20.53s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_end.webp', 'Shot 06 • Cuối (20.53s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_end.webp" alt="Shot 06 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (20.53s)</span>
                 </div>
             </div>
@@ -1529,8 +1573,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Cut chuyển cảnh ngoại cảnh (Exterior Cut) sang vỉa hè khu dân cư ở Shot 07.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_06_to_07.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_06_to_07.webp" alt="Transition 6 to 7" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1549,16 +1593,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_start.jpg', 'Shot 07 • Đầu (20.53s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_start.webp', 'Shot 07 • Đầu (20.53s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_start.webp" alt="Shot 07 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (20.53s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_mid.jpg', 'Shot 07 • Giữa (22.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_mid.webp', 'Shot 07 • Giữa (22.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_mid.webp" alt="Shot 07 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (22.98s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_end.jpg', 'Shot 07 • Cuối (25.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_end.webp', 'Shot 07 • Cuối (25.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_end.webp" alt="Shot 07 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (25.43s)</span>
                 </div>
             </div>
@@ -1598,8 +1642,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 08 • Nhân vật bước lệch ra khỏi khung hình để lộ background cho Text Card ở Shot 08.</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_07_to_08.jpg?v=2', 'Chuyển cảnh Shot 07 sang Shot 08')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_07_to_08.jpg?v=2" alt="Transition 7 to 8" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_07_to_08.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/transitions/trans_07_to_08.webp" alt="Transition 7 to 8" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1618,16 +1662,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_start.jpg', 'Shot 08 • Đầu (25.43s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_start.webp', 'Shot 08 • Đầu (25.43s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_start.webp" alt="Shot 08 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (25.43s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_mid.jpg', 'Shot 08 • Giữa (26.38s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_mid.webp', 'Shot 08 • Giữa (26.38s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_mid.webp" alt="Shot 08 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (26.38s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_end.jpg', 'Shot 08 • Cuối (27.33s)')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_end.webp', 'Shot 08 • Cuối (27.33s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_end.webp" alt="Shot 08 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (27.33s)</span>
                 </div>
             </div>
@@ -1667,8 +1711,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_08_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
-                    <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/transitions/trans_08_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.webp" alt="Loop Transition" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1682,7 +1726,7 @@ body {
             
         <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 1.73)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_01_mid.webp" alt="Shot 01" loading="lazy">
                 <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
             </div>
             <div class="grid-card-body">Điểm Dừng Đột Ngột (Somatic Brake Hook) Phá Vỡ Quán Tính Cuộn Feed</div>
@@ -1691,7 +1735,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(2, 1.73, 5.8)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_02_mid.webp" alt="Shot 02" loading="lazy">
                 <span class="grid-thumb-badge">Shot 02 • 1.73s</span>
             </div>
             <div class="grid-card-body">Khóa Ánh Nhìn Chính Diện (Direct-to-Lens Gaze) Kết Hợp Xả Vai Hạ Cortisol</div>
@@ -1700,7 +1744,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(3, 5.8, 10.27)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_03_mid.webp" alt="Shot 03" loading="lazy">
                 <span class="grid-thumb-badge">Shot 03 • 5.80s</span>
             </div>
             <div class="grid-card-body">Chiếc Muỗng Bất Động Phơi Bày Căn Bệnh Ăn Vội Tiềm Thức</div>
@@ -1709,7 +1753,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(4, 10.27, 15.43)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_04_mid.webp" alt="Shot 04" loading="lazy">
                 <span class="grid-thumb-badge">Shot 04 • 10.27s</span>
             </div>
             <div class="grid-card-body">Hạ Tốc Độ Cọ Trang Điểm Tháo Dỡ Áp Lực Sáng Sớm</div>
@@ -1718,7 +1762,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(5, 15.43, 19.1)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_05_mid.webp" alt="Shot 05" loading="lazy">
                 <span class="grid-thumb-badge">Shot 05 • 15.43s</span>
             </div>
             <div class="grid-card-body">Xòe Bàn Tay Thở Thả Khí Tháo Ngòi Nổ Áp Lực Lái Xe</div>
@@ -1727,7 +1771,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(6, 19.1, 20.53)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_06_mid.webp" alt="Shot 06" loading="lazy">
                 <span class="grid-thumb-badge">Shot 06 • 19.10s</span>
             </div>
             <div class="grid-card-body">Cú Jump-Cut Thu Về Điểm Tĩnh Tâm (Visual Baseline Reset)</div>
@@ -1736,7 +1780,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(7, 20.53, 25.43)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_07_mid.webp" alt="Shot 07" loading="lazy">
                 <span class="grid-thumb-badge">Shot 07 • 20.53s</span>
             </div>
             <div class="grid-card-body">Bước Chân Chậm Dưới Bóng Nắng Trả Lại Tự Do Nội Tại</div>
@@ -1745,7 +1789,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(8, 25.43, 27.33)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/extracted_shots/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency/shot_08_mid.webp" alt="Shot 08" loading="lazy">
                 <span class="grid-thumb-badge">Shot 08 • 25.43s</span>
             </div>
             <div class="grid-card-body">Thẻ Thoại Cứu Rỗi Tâm Hồn (Emotional Anchor Card) Đọng Lại Dư Ba</div>
@@ -1768,7 +1812,7 @@ body {
                 <a href="https://drive.google.com/open?id=1BZI-pZznTc7KAL7lbt-Iyj48UoJmujVC" target="_blank" class="footer-link-card">
                     <span>📁 Mở Thư Mục Google Drive ↗</span>
                 </a>
-                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency" class="footer-link-card">
+                <a href="#" style="display:none;" class="footer-link-card">
                     <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
                 </a>
             </div>
@@ -1780,7 +1824,7 @@ body {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoomed Keyframe">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
@@ -1881,6 +1925,22 @@ function closeLightbox() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');

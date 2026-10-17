@@ -72,6 +72,22 @@ SHOOTING_STYLES = [
         "icon": "⚡",
         "badge_color": "rose",
         "desc": "Kỹ thuật cắt cảnh nhịp điệu, match cut, whip pan, zoom transition, kinetic visual loop."
+    },
+    {
+        "id": "theo-nhip-nhac",
+        "name": "Theo nhịp nhạc",
+        "en_name": "Music Beat & Rhythm",
+        "icon": "🎵",
+        "badge_color": "purple",
+        "desc": "Cắt cảnh đồng bộ nhịp điệu âm nhạc, vũ đạo, hành động khớp beat dồn dập."
+    },
+    {
+        "id": "bts",
+        "name": "BTS / Setup",
+        "en_name": "Behind The Scenes",
+        "icon": "🎥",
+        "badge_color": "zinc",
+        "desc": "Hậu trường quay dựng, góc máy setup thiết bị cho Solo Creator."
     }
 ]
 
@@ -234,6 +250,10 @@ PERSONAL_IDENTIFIERS = [
     "@vietmac", "practice_cinematic", "self_practice", "broll_plan", "@local", "vietnd"
 ]
 
+HIDDEN_CREATORS = [
+    "@mridupawasharma"
+]
+
 def load_master_classifications():
     if os.path.exists(MASTER_CLASSIFICATIONS_PATH):
         try:
@@ -266,28 +286,40 @@ def load_curation_config():
     }
 
 def extract_shortcode(item):
-    ig = item.get("ig_url", "")
-    m = re.search(r"/(?:p|reel|tv)/([A-Za-z0-9_-]+)", ig)
-    if m:
-        return m.group(1).strip().rstrip("_")
+    vid_id = item.get("id", "") or ""
+    code = item.get("code", "") or ""
+    if code:
+        return code.strip().rstrip("_")
     
-    vid_id = item.get("id", "")
-    # Ưu tiên mã Instagram chuẩn 11 ký tự dạng D...
+    # Ưu tiên mã Instagram chuẩn 11 ký tự dạng D... TỪ vid_id trước
     m_code = re.search(r"_(D[A-Za-z0-9_-]{10})(?:_|$)", vid_id)
     if m_code:
-        return m_code.group(1).strip().rstrip("_")
+        code = m_code.group(1).strip().rstrip("_")
+    else:
+        m_code2 = re.search(r"_(D[A-Za-z0-9_-]{9,11})", vid_id)
+        if m_code2:
+            code = m_code2.group(1).strip().rstrip("_")
+            
+    if not code:
+        ig = item.get("ig_url", "")
+        m = re.search(r"/(?:p|reel|tv)/([A-Za-z0-9_-]+)", ig)
+        if m:
+            code = m.group(1).strip().rstrip("_")
+            
+    if not code:
+        # Thử bóc tách từ tên file video
+        vurl = item.get("main_vid_rel", "") or item.get("root_vid_rel", "")
+        m_v = re.search(r"/([A-Za-z0-9_-]{11})\.mp4", vurl)
+        if m_v:
+            code = m_v.group(1).strip().rstrip("_")
+        else:
+            code = vid_id.strip()
+
+    if "Carousel_Analysis" in vid_id:
+        if not code.endswith("_Carousel_Analysis"):
+            code += "_Carousel_Analysis"
         
-    m_code2 = re.search(r"_(D[A-Za-z0-9_-]{9,11})", vid_id)
-    if m_code2:
-        return m_code2.group(1).strip().rstrip("_")
-        
-    # Thử bóc tách từ tên file video nếu có mã D...
-    vurl = item.get("main_vid_rel", "") or item.get("root_vid_rel", "")
-    m_v = re.search(r"/([A-Za-z0-9_-]{11})\.mp4", vurl)
-    if m_v:
-        return m_v.group(1).strip().rstrip("_")
-        
-    return vid_id.strip()
+    return code
 
 def clean_creator_info(creator_raw, ig_url="", vid_id="", item=None):
     handle = ""
@@ -312,7 +344,7 @@ def clean_creator_info(creator_raw, ig_url="", vid_id="", item=None):
         if m:
             handle = "@" + m.group(1)
         else:
-            m_id = re.search(r"IG_@([a-zA-Z0-9._]+)_", vid_id)
+            m_id = re.search(r"IG_@([^\s_][^_]*)_", vid_id)
             if m_id:
                 handle = "@" + m_id.group(1)
     
@@ -424,10 +456,64 @@ def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, creat
 
     master = master_dict.get(vid_id) or master_dict.get(code)
     if master:
-        s_id = style_overrides.get(vid_id, master["shooting_style"]["id"])
-        i_id = ind_overrides.get(vid_id, master["industry"]["id"])
-        style_obj = next((s for s in SHOOTING_STYLES if s["id"] == s_id), SHOOTING_STYLES[4])
-        ind_obj = next((i for i in INDUSTRIES if i["id"] == i_id), INDUSTRIES[8])
+        m_style = master.get("shooting_style", {})
+        if isinstance(m_style, dict):
+            s_id = style_overrides.get(vid_id, m_style.get("id"))
+            s_name = m_style.get("name")
+            s_icon = m_style.get("icon", "🎥")
+        else:
+            s_id = style_overrides.get(vid_id, str(m_style))
+            s_name = str(m_style)
+            s_icon = "🎥"
+
+        i_id = ind_overrides.get(vid_id, master.get("industry", {}).get("id", "ky-thuat-quay"))
+        if i_id == "ugc" and not master.get("is_ad_bot") and "LAZADA_" not in vid_id and "SHOPEE_" not in vid_id and "ugc" not in vid_id.lower() and "ugc" not in clean_title.lower():
+            # Tránh gán nhầm video Instagram thường vào mục ẩn UGC
+            i_id = f"{clean_title} {takeaway} {key_tech}"
+        
+        # Merge trùng lặp Style và Industry
+        invalid_style_map = {
+            "ky-thuat-quay": "dien-anh",
+            "ugc": "walk-and-talk",
+            "doi-thuong": "storytelling"
+        }
+        if s_id in invalid_style_map:
+            if i_id in ["ugc", "ky-thuat-quay"]:
+                i_id = s_id
+            s_id = invalid_style_map[s_id]
+
+        def normalize_style(style_str):
+            t = str(style_str).lower()
+            if "talking" in t or "hướng dẫn" in t or "tutorial" in t or "giáo dục" in t or "chia-se" in t or "review" in t:
+                return "talking-head" if "walk" not in t else "walk-and-talk"
+            if "walk" in t: return "walk-and-talk"
+            if "chuyển cảnh" in t or "chuyen-canh" in t or "chuyen_canh" in t or "transition" in t or "biến hình" in t or "bien-hinh" in t or "montage" in t or "split screen" in t: return "chuyen-canh"
+            if "vlog" in t or "đời thường" in t or "doi-thuong" in t or "lifestyle" in t or "storytelling" in t or "kể chuyện" in t or "day in the life" in t: return "storytelling"
+            if "bts" in t or "hậu trường" in t or "kỹ thuật quay" in t or "ky-thuat-quay" in t or "setup" in t: return "bts"
+            if "cinematic" in t or "điện ảnh" in t or "dien-anh" in t or "b-roll" in t or "pov" in t or "bố cục" in t or "lookbook" in t or "visual" in t or "commercial" in t or "quảng cáo" in t or "quang-cao" in t or "sản phẩm" in t or "san-pham" in t or "product" in t: return "dien-anh"
+            if "nhạc" in t or "beat" in t or "dance" in t: return "theo-nhip-nhac"
+            if "voice" in t or "lồng tiếng" in t: return "voice-over"
+            return "dien-anh"
+            
+        real_s_id = normalize_style(s_id)
+        style_obj = next((s for s in SHOOTING_STYLES if s["id"] == real_s_id), SHOOTING_STYLES[4])
+
+        def normalize_industry(ind_str):
+            t = str(ind_str).lower()
+            if "đẹp" in t or "spa" in t or "mỹ phẩm" in t or "da liễu" in t or "skincare" in t or "lam-dep" in t or "my-pham" in t: return "spa-lam-dep"
+            if "thương hiệu" in t or "xây kênh" in t or "cá nhân" in t or "thuong-hieu" in t or "giáo dục" in t or "đào tạo" in t or "phát triển" in t: return "thuong-hieu"
+            if "thời trang" in t or "phụ kiện" in t or "outfit" in t or "thoi-trang" in t or "streetwear" in t or "quần áo" in t: return "thoi-trang"
+            if "ẩm thực" in t or "f&b" in t or "fnb" in t or "đồ ăn" in t or "nước uống" in t or "cafe" in t or "am-thuc" in t: return "am-thuc"
+            if "du lịch" in t or "khám phá" in t or "văn hóa" in t or "phong cách sống" in t or "lifestyle" in t or "du-lich" in t or "chiang" in t or "chữa lành" in t: return "du-lich"
+            if "công nghệ" in t or "thiết bị" in t or "đồ công nghệ" in t or "gear" in t or "ai " in t or "cong-nghe" in t or "camera" in t: return "cong-nghe"
+            if "kiến trúc" in t or "không gian" in t or "nhà cửa" in t or "kien-truc" in t: return "kien-truc"
+            if "thể thao" in t or "năng động" in t or "gym" in t or "the-thao" in t: return "the-thao"
+            if "quay" in t or "dựng" in t or "nhiếp ảnh" in t or "điện ảnh" in t or "làm phim" in t or "bố cục" in t or "ky-thuat-quay" in t or "cinematic" in t: return "ky-thuat-quay"
+            if "ugc" in t or "quảng cáo" in t or "sản phẩm" in t: return "ugc"
+            return "ky-thuat-quay"
+            
+        real_i_id = normalize_industry(i_id)
+        ind_obj = next((i for i in INDUSTRIES if i["id"] == real_i_id), INDUSTRIES[8])
         purpose = master.get("purpose", "Showcase thị giác & Thẩm mỹ")
         tech_tags = master.get("tech_tags", [key_tech] if key_tech else ["Cinematic Framing"])
         logic = master.get("logic_explanation", "")
@@ -446,6 +532,8 @@ def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, creat
         target_style = "talking-head"
     elif any(w in corpus for w in ["thuyết minh", "voiceover", "voice over"]):
         target_style = "voice-over"
+    elif any(w in corpus for w in ["nhịp nhạc", "beat", "nhạc nền", "music beat"]):
+        target_style = "theo-nhip-nhac"
     elif any(w in corpus for w in ["match cut", "whip pan", "transition", "chuyển cảnh"]):
         target_style = "chuyen-canh"
     elif any(w in corpus for w in ["kể chuyện", "storytelling", "hành trình"]):
@@ -474,7 +562,130 @@ def get_item_classification(vid_id, code, clean_title, takeaway, key_tech, creat
     country_obj = detect_country(creator_handle, clean_title, takeaway)
     return style_obj, ind_obj, country_obj, "Showcase thị giác & Thẩm mỹ", [key_tech] if key_tech else ["Cinematic"], ""
 
+def _resolve_original_video_url(preview_url, r2_map, drive_fallback):
+    """Resolve video_url_original: R2 primary, Drive fallback"""
+    import urllib.parse
+    if not preview_url:
+        return ""
+    # Extract original filename from preview URL
+    fname_preview = urllib.parse.unquote(preview_url.split('/')[-1])
+    fname_original = fname_preview.replace('_preview', '')
+    # Priority 1: Check R2 video map
+    if fname_original in r2_map:
+        return r2_map[fname_original]
+    # Priority 2: Fuzzy match R2 (case-insensitive, partial)
+    fname_lower = fname_original.lower()
+    for k, v in r2_map.items():
+        if k.lower() == fname_lower:
+            return v
+    # Priority 3: Drive fallback
+    if drive_fallback:
+        drive_url = drive_fallback.get(fname_original, "")
+        if drive_url:
+            return drive_url
+    # Priority 4: Construct R2 URL optimistically
+    return f"https://media.fedu.vn/videos/{urllib.parse.quote(fname_original, safe='/@')}"
+
 def build_database():
+    import json
+    import urllib.parse
+    # Build R2 video map: scan actual R2 bucket for original videos
+    def build_r2_video_map():
+        """Scan R2 videos/ bucket and build filename→URL map"""
+        import subprocess
+        r2_map = {}
+        try:
+            result = subprocess.run(
+                ['rclone', 'ls', 'r2:vietndjmedia/videos/'],
+                capture_output=True, text=True, timeout=30
+            )
+            for line in result.stdout.strip().split('\n'):
+                if not line.strip():
+                    continue
+                parts = line.strip().split(None, 1)
+                if len(parts) == 2:
+                    fname = parts[1].strip()
+                    r2_map[fname] = f"https://media.fedu.vn/videos/{urllib.parse.quote(fname, safe='/@')}"
+        except Exception as e:
+            print(f"WARNING: Could not scan R2 videos: {e}")
+        return r2_map
+
+    def build_r2_image_set():
+        """Scan R2 images/ bucket and build set of relative paths"""
+        import subprocess
+        r2_set = set()
+        try:
+            result = subprocess.run(
+                ['rclone', 'lsf', 'r2:vietndjmedia/images/', '-R', '--files-only'],
+                capture_output=True, text=True, timeout=60
+            )
+            for line in result.stdout.strip().split('\n'):
+                line = line.strip()
+                if line:
+                    r2_set.add(line)
+        except Exception as e:
+            print(f"WARNING: Could not scan R2 images: {e}")
+        print(f"R2 image index: {len(r2_set)} files")
+        return r2_set
+
+    r2_video_map = build_r2_video_map()
+    r2_image_set = build_r2_image_set()
+
+    # Index R2 images by shortcode for robust fallback when folder names differ slightly
+    r2_code_map = {}
+    for img_path in r2_image_set:
+        m = re.search(r'([A-Za-z0-9_-]{11})', img_path)
+        if m:
+            code = m.group(1)
+            if code not in r2_code_map:
+                r2_code_map[code] = []
+            r2_code_map[code].append(img_path)
+
+    def _resolve_thumb_url(folder, shot_type, r2_image_set):
+        """Resolve thumbnail URL by checking R2 existence with .webp/.jpg fallback"""
+        # Candidate paths in priority order
+        candidates = [
+            f"{folder}/{shot_type}.webp",
+            f"{folder}/{shot_type}.jpg",
+            f"{folder}/extracted_shots/{shot_type}.webp",
+            f"{folder}/extracted_shots/{shot_type}.jpg",
+        ]
+        if "slide" in shot_type:
+            candidates.extend([
+                f"{folder}/carousel_slides/{shot_type}.webp",
+                f"{folder}/carousel_slides/{shot_type}.jpg",
+            ])
+        
+        for cand in candidates:
+            if cand in r2_image_set:
+                parts = cand.split('/')
+                encoded = '/'.join(urllib.parse.quote(p, safe='') for p in parts)
+                return f"https://media.fedu.vn/images/{encoded}"
+        
+        # Fallback via shortcode lookup if folder name in database didn't match R2 folder name exactly
+        if folder:
+            code_match = re.search(r'([A-Za-z0-9_-]{11})', folder)
+            if code_match:
+                sc = code_match.group(1)
+                if sc in r2_code_map:
+                    for path in r2_code_map[sc]:
+                        if shot_type in path:
+                            parts = path.split('/')
+                            encoded = '/'.join(urllib.parse.quote(p, safe='') for p in parts)
+                            return f"https://media.fedu.vn/images/{encoded}"
+                    if r2_code_map[sc]:
+                        parts = r2_code_map[sc][0].split('/')
+                        encoded = '/'.join(urllib.parse.quote(p, safe='') for p in parts)
+                        return f"https://media.fedu.vn/images/{encoded}"
+
+        # Default: assume .webp at root of folder
+        return ""
+    # Legacy fallback
+    try:
+        with open("/Users/vietmac/drive_links.json", "r") as f:
+            drive_links = json.load(f)
+    except:
+        drive_links = {}
     portal_data = load_portal_data()
     curation_cfg = load_curation_config()
     master_dict = load_master_classifications()
@@ -522,11 +733,25 @@ def build_database():
 
     print(f"Unique master videos: {len(unique_items_map)}")
 
+    import unicodedata
+    actual_reports = os.listdir(REPORTS_DIR) if os.path.exists(REPORTS_DIR) else []
+    nfc_report_map = {unicodedata.normalize("NFC", rf): rf for rf in actual_reports if rf.endswith(".html")}
+
     processed_ideas = []
     creators_dict = defaultdict(list)
 
     for code, item in unique_items_map.items():
-        vid_id = item.get("id", "")
+        vid_id = item.get("id", "") or ""
+        if not vid_id:
+            rep_rel = item.get("report") or item.get("root_html_rel") or ""
+            if rep_rel:
+                vid_id = os.path.splitext(os.path.basename(rep_rel))[0]
+            elif code:
+                vid_id = f"IG_{item.get('creator', '@creator')}_{code}"
+        if not vid_id:
+            continue
+        vid_id = unicodedata.normalize("NFC", vid_id)
+
         # Bỏ qua hoàn toàn các video đã bị xóa khỏi hệ thống
         if (vid_id in deleted_ids) or (code in deleted_ids):
             continue
@@ -534,6 +759,11 @@ def build_database():
         creator_raw = item.get("creator") or item.get("author") or item.get("channel_tag") or "Unknown"
         c_info = clean_creator_info(creator_raw, item.get("ig_url", ""), vid_id, item=item)
         master = master_dict.get(vid_id) or master_dict.get(code)
+        if not master:
+            for mk, mv in master_dict.items():
+                if unicodedata.normalize("NFC", mk) == vid_id:
+                    master = mv
+                    break
         if master and master.get("creator_name") and (not c_info.get("name") or c_info["name"].startswith("@")):
             c_info["name"] = master["creator_name"]
         elif c_info.get("name", "").startswith("@"):
@@ -544,7 +774,8 @@ def build_database():
         if any(p in check_str for p in PERSONAL_IDENTIFIERS):
             is_personal = True
 
-        is_excluded = is_personal or (vid_id in manually_excluded_ids) or (code in manually_excluded_ids)
+        is_hidden_creator = any(h in check_str for h in HIDDEN_CREATORS)
+        is_excluded = is_personal or is_hidden_creator or (vid_id in manually_excluded_ids) or (code in manually_excluded_ids)
         
         clean_title, short_takeaway, rep_dur = clean_title_and_takeaway(item, title_overrides)
         if master and master.get("title") and not master.get("title").startswith("Video by") and not master.get("title").startswith("@"):
@@ -555,82 +786,102 @@ def build_database():
             vid_id, code, clean_title, short_takeaway, item.get("key_tech", ""), c_info["handle"], curation_cfg, master_dict
         )
         
-        folder = item.get("folder_name") or vid_id
-        thumbs = item.get("thumbnails") or item.get("thumbs") or []
+        folder = (master.get("id") if master and master.get("id") else item.get("folder_name")) or vid_id
+        thumbs = item.get("thumbnails") or item.get("thumbs") or ([item["thumbnail"]] if item.get("thumbnail") else [])
+        
+        # Remap broken hardcoded thumbnails in scene.html that use the short code instead of full folder
+        if thumbs and thumbs[0] and f"images/{vid_id}/" in thumbs[0] and folder != vid_id:
+            thumbs = [t.replace(f"images/{vid_id}/", f"images/{folder}/") for t in thumbs]
+            
         if not thumbs or len(thumbs) < 2:
+            # Use R2-aware resolver instead of hardcoded .jpg URLs
             if "Carousel" in folder or "Carousel" in vid_id:
-                thumb_hook = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/slide_01_mid.jpg"
-                thumb_key = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/slide_03_mid.jpg"
+                thumb_hook = _resolve_thumb_url(folder, "slide_01_mid", r2_image_set)
+                thumb_key = _resolve_thumb_url(folder, "slide_03_mid", r2_image_set)
             else:
-                thumb_hook = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_01_mid.jpg"
-                thumb_key = f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{folder}/shot_03_mid.jpg"
+                thumb_hook = _resolve_thumb_url(folder, "shot_01_mid", r2_image_set)
+                thumb_key = _resolve_thumb_url(folder, "shot_03_mid", r2_image_set)
         else:
             thumb_hook = thumbs[0]
             thumb_key = thumbs[1] if len(thumbs) > 1 else thumbs[0]
 
-        # Chuẩn hóa thumbnail URL thành R2 CDN tuyệt đối và an toàn URL encoding
-        import urllib.parse
-        def normalize_thumb_url(u, fld, default_name):
-            if not u:
-                return f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{urllib.parse.quote(fld)}/{default_name}"
+        # Normalize existing thumb URLs to media.fedu.vn with proper encoding
+        def normalize_thumb_url(u, fld, default_shot_type):
+            if not u or "api/video" in u or "drive.google.com" in u or "driveusercontent" in u:
+                return _resolve_thumb_url(fld, default_shot_type, r2_image_set)
+            if "/vi/" in u:
+                yt_parts = u.split("/vi/")
+                if len(yt_parts) >= 2:
+                    yt_id = yt_parts[1].split("/")[0]
+                    if yt_id:
+                        return f"https://img.youtube.com/vi/{yt_id}/hqdefault.jpg"
             if not u.startswith("http"):
+                # Relative path - resolve via R2
                 clean = u.lstrip("./")
                 if clean.startswith("images/"):
                     clean = clean[7:]
-                return f"https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/images/{urllib.parse.quote(clean, safe='/')}"
-            # Encode non-ascii path characters in R2 URLs
+                parts = clean.split("/", 1)
+                if len(parts) == 2:
+                    fld_name = parts[0]
+                    fname = parts[1].rsplit(".", 1)[0]  # remove extension
+                    return _resolve_thumb_url(fld_name, fname, r2_image_set)
+                return _resolve_thumb_url(fld, default_shot_type, r2_image_set)
+            
             p = urllib.parse.urlsplit(u)
-            safe_path = urllib.parse.quote(p.path, safe="/")
-            return urllib.parse.urlunsplit((p.scheme, p.netloc, safe_path, p.query, p.fragment))
+            path_parts = urllib.parse.unquote(p.path).strip('/').split('/')
+            
+            if 'images' in path_parts:
+                img_idx = path_parts.index('images')
+                sub_parts = path_parts[img_idx+1:]
+                if len(sub_parts) >= 2:
+                    r2_folder = sub_parts[0]
+                    file_name = sub_parts[-1]
+                    file_stem = file_name.rsplit(".", 1)[0]
+                    resolved = _resolve_thumb_url(r2_folder, file_stem, r2_image_set)
+                    return resolved
+                elif len(sub_parts) == 1:
+                    return _resolve_thumb_url(sub_parts[0], default_shot_type, r2_image_set)
+            
+            encoded = '/'.join(urllib.parse.quote(p, safe='') for p in path_parts)
+            return f"https://media.fedu.vn/{encoded}"
 
-        thumb_hook = normalize_thumb_url(thumb_hook, folder, "shot_01_mid.jpg")
-        thumb_key = normalize_thumb_url(thumb_key, folder, "shot_03_mid.jpg")
+        thumb_hook = normalize_thumb_url(thumb_hook, folder, "shot_01_mid")
+        thumb_key = normalize_thumb_url(thumb_key, folder, "shot_03_mid")
 
         vid_url = item.get("root_vid_rel") or item.get("main_vid_rel") or ""
         if not vid_url and item.get("all_vids"):
             vid_url = item["all_vids"][0].get("rel_url", "")
 
-        # R2 Video URL Mapping Override for guaranteed 200 OK CDN streaming
-        R2_OVERRIDE_MAP = {
-            "IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdCRQnBI4ny.mp4",
-            "IG_@aidana_adilkassym_DcQy-eEOIHc_Tornado_Kick_Martial_Arts_Kinetic_Hook": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Tornado%20Kick%20Martial%20Arts%20Kinetic%20Hook%20-%20%40aidana_adilkassym.mp4",
-            "IG_@critos_pro_DcxwKHYoBFv_The_Art_of_Consistency": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcxwKHYoBFv.mp4",
-            "IG_@jamison.lange_DawDiT2M1p8_Coffee_Outfit_Match_Cut_Fashion": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DawDiT2M1p8.mp4",
-            "IG_@mako__go_DaH7X34NTNX_Palermo_Sicily": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaH7X34NTNX.mp4",
-            "IG_@valenti_k41_DdB_21Yo0Qc_Creative_Phone_Video_Ideas": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20Phone%20Video%20Ideas%20-%20Routine%20Creator%20-%20%40valenti_k41.mp4",
-            "IG_@hey.lirules_DdBDvZph1od_Hoi_An_Natural_Mask_Transitions": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdBDvZph1od.mp4",
-            "IG_@alena.feda_Dc1w07upyNF_Food_Filming_Mastery_From_Scratch": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Food%20Filming%20%26%20Styling%20Mastery%20-%20%40alena.feda.mp4",
-            "IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcyS2KEm7-v.mp4",
-            "IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcyDbGmItDV.mp4",
-            "FB_@AnhSacAnh_1964049564715249_Thuong_Hieu_Ca_Nhan_Sinh_Loi": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Thuong_Hieu_Ca_Nhan_Sinh_Loi_Anh_Sac_Anh.mp4",
-            "IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DaB-gO6hvPX.mp4",
-            "IG_@valenti_k41_DctVSroI3UB_Creative_Phone_Video_Ideas": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Creative%20phone%20video%20ideas%20-%20%40valenti_k41.mp4",
-            "IG_@jesussropero_Dc9LUXLAHkc_Getting_Ready_Faster_Than_Ever": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Getting%20Ready%20Faster%20Than%20Ever%20-%20%40jesussropero.mp4",
-            "IG_@colecoppolino_DcJiRCrTlG1": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcJiRCrTlG1.mp4",
-            "IG_@withyuee_DcTk0RGgtBO_Hong_Kong_Cinematic_Cityscape": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTk0RGgtBO.mp4",
-            "IG_@willwfit_DbRak0lsesY_The_Goal_Is_Simple": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbRak0lsesY.mp4",
-            "IG_@iamlukeluquire_DbjCyKgxp8S_Aesthetic_Routine": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DbjCyKgxp8S.mp4",
-            "IG_@lifeofriza_DcTqPjitJl1_Y_Tuong_Thanh_Hien_Thuc_Canva": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcTqPjitJl1.mp4",
-            "IG_@fabianamsolano_Dc4u6aOhR9r_Yosemite_National_Park_Music_Video_Beat_Match_Cut": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Yosemite%20National%20Park%20Music%20Video%20-%20%40fabianamsolano.mp4",
-            "IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Teaching_Nervous_System_Not_Emergency_-_%40kawoon.lee.mp4",
-            "IG_@hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/4%20Cu%20May%20Sieu%20Thi%20Bang%20Gia%20Do%20Ulanzi%20MA38%20MT85%20-%20%40hena_film_vlog.mp4",
-            "IG_@dimasyudhystira_Dc3DUsvpkrP_Gunung_Sumbing_Trekking_Match_Cut": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/Gunung%20Sumbing%20Trekking%20Match%20Cut%20-%20%40dimasyudhystira.mp4",
-            "IG_@naohasa_DdGp4XftvIn_5_Outfits_Match_Cut_Walk": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DdGp4XftvIn.mp4",
-            "IG_@Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/IG_%40Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis/slide_01.mp4",
-            "Visual_Storytelling_Carousel_@withyuee": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/carousel_slides/slide_01.mp4",
-            "IG_@treechurchlogan_DcoGfdghNwd_Bring_A_Friend_To_Church_Skit": "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/videos/DcoGfdghNwd.mp4"
-        }
-        if vid_id in R2_OVERRIDE_MAP:
-            vid_url = R2_OVERRIDE_MAP[vid_id]
-        elif vid_url and not vid_url.startswith("http"):
-            import urllib.parse
+        if vid_url and not vid_url.startswith("http"):
             clean_rel = vid_url.lstrip("./")
-            vid_url = "https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/" + urllib.parse.quote(clean_rel, safe="/")
+            if clean_rel.startswith("videos/"):
+                clean_rel = clean_rel[7:]
+            vid_url = "https://media.fedu.vn/videos/" + urllib.parse.quote(clean_rel, safe="/")
+        elif vid_url and vid_url.startswith("https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/"):
+            vid_url = vid_url.replace("https://pub-447bd44dfdac4938912655c855b8631c.r2.dev/", "https://media.fedu.vn/")
             
-        html_url = item.get("root_html_rel") or item.get("main_html_rel") or ""
-        shots_count = item.get("shots_count", 0)
+        html_url = item.get("root_html_rel") or item.get("main_html_rel") or item.get("report") or ""
+        if html_url:
+            raw_fname = unicodedata.normalize("NFC", urllib.parse.unquote(html_url.replace("reports/", "")))
+            if raw_fname in nfc_report_map:
+                html_url = f"reports/{unicodedata.normalize('NFC', nfc_report_map[raw_fname])}"
+            else:
+                html_url = ""
+        if not html_url:
+            # Fallback lookup by vid_id or shortcode in reports/
+            cand_exact = f"{vid_id}.html"
+            if cand_exact in nfc_report_map:
+                html_url = f"reports/{cand_exact}"
+            elif code and len(code) >= 5:
+                sc_clean = code.replace("_Carousel_Analysis", "")
+                for nfc_rf in sorted(nfc_report_map.keys()):
+                    if sc_clean in nfc_rf:
+                        html_url = f"reports/{nfc_rf}"
+                        break
+
+        shots_count = item.get("shots_count") or item.get("shots") or (master.get("shots_count", 0) if master else 0)
         
-        duration_str = item.get("duration", "") or rep_dur or (f"{shots_count * 2}s" if shots_count else "15s")
+        duration_str = item.get("duration", "") or rep_dur or (master.get("duration", "") if master else "") or (f"{shots_count * 2}s" if shots_count else "15s")
         if "DaB-gO6hvPX" in vid_id:
             duration_str = "90s"
         
@@ -647,18 +898,64 @@ def build_database():
             is_ad_bot = True
 
         # Video upload từ bot telegram tải quảng cáo (Shopee, Lazada...) -> Xếp vào mục ngành nghề UGC
-        if is_ad_bot or "LAZADA_" in vid_id or "SHOPEE_" in vid_id or (master and master.get("industry", {}).get("id") == "ugc"):
+        if is_ad_bot or "LAZADA_" in vid_id or "SHOPEE_" in vid_id:
             is_ad_bot = True
             ind_obj = next(i for i in INDUSTRIES if i["id"] == "ugc")
 
         fedu_opt = master.get("fedu_optimization", {}) if master else {}
+
+        # Xử lý và chuẩn hóa X-Factors
+        raw_x_factors = master.get("x_factors", []) if master else []
+        normalized_x_factors = set()
+        for xf in raw_x_factors:
+            xf_clean = xf.strip()
+            if "Bầu không khí chữa lành" in xf_clean:
+                normalized_x_factors.add("Bầu không khí chữa lành")
+            elif "Thần thái" in xf_clean:
+                normalized_x_factors.add("Thần thái tự nhiên")
+            else:
+                normalized_x_factors.add(xf_clean)
+                
+        if transition_level == "Chuyển cảnh Level 2":
+            normalized_x_factors.add("Chuyển cảnh cấp 2")
+        
+        raw_idea_tags = []
+        if master:
+            raw_idea_tags.extend(master.get("user_tags", []) or [])
+            raw_idea_tags.extend(master.get("tags", []) or [])
+        raw_idea_tags.extend(item.get("tags", []) or [])
+        if not raw_idea_tags and tech_tags:
+            raw_idea_tags.extend(tech_tags[:5])
+        
+        idea_tags = []
+        for t in raw_idea_tags:
+            if t and str(t).strip() and str(t).strip().lower() not in [x.lower() for x in idea_tags]:
+                idea_tags.append(str(t).strip())
+
+        # Chuẩn hóa YouTube ID (loại bỏ mã gán nhầm BQKDakoM2g4 và đồng bộ cả 3 trường)
+        raw_yt = (master.get("youtube_id") if master else "") or item.get("youtube_id") or (master.get("youtube_embed") if master else "") or item.get("youtube_embed") or ""
+        clean_yt_id = ""
+        if raw_yt:
+            m_yt = re.search(r"(?:embed/|v=|youtu\.be/)([A-Za-z0-9_-]{11})", str(raw_yt))
+            if m_yt:
+                clean_yt_id = m_yt.group(1)
+            elif re.match(r"^[A-Za-z0-9_-]{11}$", str(raw_yt).strip()):
+                clean_yt_id = str(raw_yt).strip()
+        if clean_yt_id == "BQKDakoM2g4":
+            clean_yt_id = ""
+
+        # Nếu vẫn chưa có thumb_hook nhưng đã có clean_yt_id, dùng ảnh bìa YouTube làm fallback
+        if not thumb_hook and clean_yt_id:
+            thumb_hook = f"https://img.youtube.com/vi/{clean_yt_id}/hqdefault.jpg"
+        if not thumb_key and thumb_hook:
+            thumb_key = thumb_hook
 
         idea_obj = {
             "id": vid_id,
             "shortcode": code,
             "title_vi": clean_title,
             "quick_takeaway": short_takeaway,
-            "key_tech": item.get("key_tech", ""),
+            "key_tech": item.get("key_tech", "") or (" • ".join(tech_tags[:5]) if tech_tags else ""),
             "shooting_style": {
                 "id": style_obj["id"],
                 "name": style_obj["name"],
@@ -666,13 +963,9 @@ def build_database():
                 "icon": style_obj["icon"],
                 "badge_color": style_obj["badge_color"]
             },
-            "industry": {
-                "id": ind_obj["id"],
-                "name": ind_obj["name"],
-                "en_name": ind_obj["en_name"],
-                "icon": ind_obj["icon"],
-                "badge_color": ind_obj["badge_color"]
-            },
+            "industries": [ind_obj],
+            "x_factors": sorted(list(normalized_x_factors)),
+            "tags": idea_tags,
             "country": {
                 "id": country_obj["id"],
                 "name": country_obj["name"],
@@ -687,18 +980,19 @@ def build_database():
             "fedu_optimization": fedu_opt,
             "logic_explanation": logic_exp,
             "creator": c_info,
-            "ig_url": item.get("ig_url", "") or c_info["profile_url"],
+            "ig_url": f"https://www.instagram.com/reel/{code}/" if code and len(code) == 11 else (c_info["profile_url"] if c_info.get("profile_url") else ""),
             "gdrive_folder": item.get("gdrive_folder", ""),
             "media": {
                 "thumb_hook": thumb_hook,
                 "thumb_key": thumb_key,
-                "video_url": vid_url,
+                "video_url": _resolve_original_video_url(vid_url, r2_video_map, drive_links),
+                "video_url_original": _resolve_original_video_url(vid_url, r2_video_map, drive_links),
                 "report_url": html_url,
                 "shots_count": shots_count,
                 "duration": duration_str,
-                "youtube_id": item.get("youtube_id") or (master.get("youtube_id") if master else ""),
-                "youtube_embed": item.get("youtube_embed") or (master.get("youtube_embed") if master else ""),
-                "youtube_url": item.get("youtube_url") or (master.get("youtube_url") if master else "")
+                "youtube_id": clean_yt_id,
+                "youtube_embed": f"https://www.youtube.com/embed/{clean_yt_id}" if clean_yt_id else "",
+                "youtube_url": f"https://youtu.be/{clean_yt_id}" if clean_yt_id else ""
             },
             "complexity": complexity,
             "is_personal": is_personal,
@@ -707,15 +1001,15 @@ def build_database():
 
         processed_ideas.append(idea_obj)
 
-        if not is_personal and not is_excluded:
+        if not is_personal:
             creators_dict[c_info["handle"]].append(idea_obj)
 
     creators_hub = []
     for handle, vids in sorted(creators_dict.items(), key=lambda x: len(x[1]), reverse=True):
         first_vid = vids[0]
         c_meta = first_vid["creator"]
-        ind_counts = Counter(v["industry"]["name"] for v in vids)
-        top_ind = ind_counts.most_common(1)[0][0]
+        ind_counts = Counter(ind["name"] for v in vids for ind in v.get("industries", []))
+        top_ind = ind_counts.most_common(1)[0][0] if ind_counts else "Unknown"
         
         creators_hub.append({
             "handle": handle,
@@ -728,10 +1022,13 @@ def build_database():
         })
 
     active_ideas = [x for x in processed_ideas if not x["is_excluded"]]
+    for i in processed_ideas:
+        if "daiki" in i["id"].lower():
+            print(f"DEBUG processed_idea id={i['id']}, is_excluded={i['is_excluded']}")
     
     industry_stats = {}
     for ind in INDUSTRIES:
-        c = sum(1 for x in active_ideas if x["industry"]["id"] == ind["id"])
+        c = sum(1 for x in active_ideas if any(i.get("id") == ind["id"] for i in x.get("industries", [])))
         industry_stats[ind["id"]] = c
 
     shooting_style_stats = {}
@@ -750,6 +1047,9 @@ def build_database():
         "ad_bot_count": sum(1 for x in active_ideas if x.get("is_ad_bot") is True)
     }
 
+    all_x_factors = sorted(list(set(xf for x in active_ideas for xf in x.get("x_factors", []) if xf)))
+    x_factor_stats = {xf: sum(1 for x in active_ideas if xf in x.get("x_factors", [])) for xf in all_x_factors}
+
     database_payload = {
         "generated_at": "2026-09-13T18:00:00+07:00",
         "total_scene_items": len(portal_data),
@@ -761,6 +1061,8 @@ def build_database():
         "shooting_style_stats": shooting_style_stats,
         "industries": INDUSTRIES,
         "industry_stats": industry_stats,
+        "x_factors": all_x_factors,
+        "x_factor_stats": x_factor_stats,
         "countries": COUNTRIES,
         "country_stats": country_stats,
         "transition_stats": transition_stats,
@@ -785,7 +1087,21 @@ def build_database():
             shutil.copy2(EXCLUDED_CONFIG_PATH, os.path.join(dist_dir, "curation_config.json"))
         index_path = os.path.join(BASE_DIR, "index.html")
         if os.path.exists(index_path):
+            import time
+            with open(index_path, "r", encoding="utf-8") as idxf:
+                idx_content = idxf.read()
+            ts = int(time.time())
+            idx_content = re.sub(r'ideas_data\.js(?:\?v=\d+)?', f'ideas_data.js?v={ts}', idx_content)
+            with open(index_path, "w", encoding="utf-8") as idxf:
+                idxf.write(idx_content)
             shutil.copy2(index_path, os.path.join(dist_dir, "index.html"))
+            
+        # Copy reports folder
+        reports_src = os.path.join(BASE_DIR, "reports")
+        reports_dist = os.path.join(dist_dir, "reports")
+        if os.path.exists(reports_src):
+            shutil.copytree(reports_src, reports_dist, dirs_exist_ok=True)
+            
         print("Synchronized all build files to dist/ directory.")
 
     print(f"Successfully generated {OUTPUT_JS_PATH}")

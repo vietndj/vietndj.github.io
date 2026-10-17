@@ -94,7 +94,7 @@
     --cl-text-muted: #64748b;    /* Slate 500 */
 
     /* Accent & Brand Colors */
-    --cl-accent: #1a73e8;        /* Google / FEDU Royal Blue */
+    --cl-accent: #1a73e8;        /* Google / VIDEO Royal Blue */
     --cl-accent-tint: rgba(26, 115, 232, 0.08);
     --cl-amber: #d97706;         /* Amber 600 */
     --cl-amber-bg: #fffbeb;      /* Amber 50 */
@@ -831,7 +831,7 @@ body {
     }
     .left-player-col {
         width: 100%;
-        position: sticky;
+        position: relative;
         top: 57px;
         height: auto;
         padding: 16px;
@@ -852,6 +852,46 @@ body {
         gap: 8px;
     }
 }
+
+.creator-filter-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 3px 10px;
+    background: rgba(56, 189, 248, 0.12);
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    border-radius: 8px;
+    color: #38bdf8;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 12px;
+    vertical-align: middle;
+}
+.creator-filter-badge:hover {
+    background: rgba(56, 189, 248, 0.25);
+    border-color: #38bdf8;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+}
+.creator-filter-badge strong {
+    color: #f8fafc;
+}
+.creator-filter-badge .author-handle {
+    color: #94a3b8;
+    font-family: monospace;
+    font-size: 11px;
+}
+.creator-filter-badge .filter-action-chip {
+    font-size: 10px;
+    padding: 1.5px 6px;
+    background: rgba(56, 189, 248, 0.25);
+    border-radius: 4px;
+    color: #e0f2fe;
+    font-weight: 700;
+    margin-left: 2px;
+}
+
 
 .player-box { position: relative !important; }
 .player-box video { cursor: pointer; }
@@ -894,20 +934,21 @@ body {
 }
 
 </style>
+<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
 </head>
 <body>
 
 <!-- TOP NAV -->
 <nav class="top-nav">
     <div class="nav-left">
-        <a href="https://ytuong.fedu.vn" class="nav-brand">
-            <span>🎬 FEDU DIRECTOR REPORT</span>
+        <a href="https://fedu.vn/scene.html" class="nav-brand">
+            <span>🎬 VIDEO DIRECTOR REPORT</span>
         </a>
         <span class="nav-badge">22 PHÂN CẢNH</span>
         <span class="nav-meta-title">Nghệ Thuật Mở Hộp Rương Quà Mùa Hè Tory Burch & Phối Đồ Điện Ảnh - @tsangtastic</span>
     </div>
     <div class="nav-right">
-        <a href="https://www.instagram.com/reels/DaB-gO6hvPX/" target="_blank" class="nav-btn primary">
+        <a href="https://www.instagram.com/p/DaB-gO6hvPX/" target="_blank" class="nav-btn primary">
             <span>📸 Instagram Gốc ↗</span>
         </a>
         <a href="https://ytuong.fedu.vn" target="_blank" class="nav-btn">
@@ -921,11 +962,7 @@ body {
     <!-- LEFT COLUMN: STICKY PLAYER & CONTROLS -->
     <aside class="left-player-col">
         <div class="player-box">
-            <video id="mainPlayer" playsinline preload="metadata">
-                <source src="https://media.fedu.vn/videos/DaB-gO6hvPX.mp4" type="video/mp4">
-                <source src="DaB-gO6hvPX.mp4" type="video/mp4">
-                Trình duyệt của bạn không hỗ trợ thẻ video.
-            </video>
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/MOk3zCj3y1w?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
 
         <!-- DIRECTOR CONTROLS -->
@@ -954,8 +991,15 @@ body {
         <div class="video-meta-card">
             <div class="video-meta-title">Nghệ Thuật Mở Hộp Rương Quà Mùa Hè Tory Burch & Phối Đồ Điện Ảnh - @tsangtastic</div>
             <div class="video-meta-author">
-                <span>Tác giả:</span>
-                <a href="https://www.instagram.com/reels/DaB-gO6hvPX/" target="_blank" class="author-link">Jenny Tsang (@tsangtastic)</a>
+                <span>Tác giả: 
+                    <a href="../index.html?creator=@tsangtastic" onclick="handleCreatorClick(event, '@tsangtastic', 'Jenny Tsang')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Jenny Tsang trên Kho Ý Tưởng FEDU">
+                        <span>👤</span>
+                        <strong>Jenny Tsang</strong>
+                        <span class="author-handle">(@tsangtastic)</span>
+                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
+                    </a>
+                </span>
+                <a href="https://www.instagram.com/p/DaB-gO6hvPX/" target="_blank" class="author-link">Jenny Tsang (@tsangtastic)</a>
             </div>
         </div>
     </aside>
@@ -1007,16 +1051,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_start.jpg', 'Shot 01 • Đầu (0.00s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_start.jpg" alt="Shot 01 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_start.webp', 'Shot 01 • Đầu (0.00s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_start.webp" alt="Shot 01 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (0.00s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.jpg', 'Shot 01 • Giữa (1.69s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.jpg" alt="Shot 01 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.webp', 'Shot 01 • Giữa (1.69s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.webp" alt="Shot 01 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (1.69s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_end.jpg', 'Shot 01 • Cuối (3.38s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_end.jpg" alt="Shot 01 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_end.webp', 'Shot 01 • Cuối (3.38s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_end.webp" alt="Shot 01 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (3.38s)</span>
                 </div>
             </div>
@@ -1056,8 +1100,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 02 • Cắt nhảy trực diện (Jump Cut to Reaction Close-Up)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_01_to_02.jpg?v=2', 'Chuyển cảnh Shot 01 sang Shot 02')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_01_to_02.jpg?v=2" alt="Transition 1 to 2" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_01_to_02.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_01_to_02.webp" alt="Transition 1 to 2" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1076,16 +1120,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_start.jpg', 'Shot 02 • Đầu (3.38s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_start.jpg" alt="Shot 02 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_start.webp', 'Shot 02 • Đầu (3.38s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_start.webp" alt="Shot 02 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (3.38s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.jpg', 'Shot 02 • Giữa (3.75s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.jpg" alt="Shot 02 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.webp', 'Shot 02 • Giữa (3.75s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.webp" alt="Shot 02 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (3.75s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_end.jpg', 'Shot 02 • Cuối (4.12s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_end.jpg" alt="Shot 02 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_end.webp', 'Shot 02 • Cuối (4.12s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_end.webp" alt="Shot 02 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (4.12s)</span>
                 </div>
             </div>
@@ -1125,8 +1169,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 03 • Cắt mở rộng (Cut to Medium Wide) sang thao tác đặt rương</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_02_to_03.jpg?v=2', 'Chuyển cảnh Shot 02 sang Shot 03')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_02_to_03.jpg?v=2" alt="Transition 2 to 3" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_02_to_03.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_02_to_03.webp" alt="Transition 2 to 3" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1145,16 +1189,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_start.jpg', 'Shot 03 • Đầu (4.12s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_start.jpg" alt="Shot 03 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_start.webp', 'Shot 03 • Đầu (4.12s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_start.webp" alt="Shot 03 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (4.12s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.jpg', 'Shot 03 • Giữa (5.67s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.jpg" alt="Shot 03 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.webp', 'Shot 03 • Giữa (5.67s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.webp" alt="Shot 03 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (5.67s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_end.jpg', 'Shot 03 • Cuối (7.22s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_end.jpg" alt="Shot 03 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_end.webp', 'Shot 03 • Cuối (7.22s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_end.webp" alt="Shot 03 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (7.22s)</span>
                 </div>
             </div>
@@ -1194,8 +1238,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 04 • Cắt tiếp nối thao tác (Action Match Cut) sang cú kéo ngăn rương</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_03_to_04.jpg?v=2', 'Chuyển cảnh Shot 03 sang Shot 04')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_03_to_04.jpg?v=2" alt="Transition 3 to 4" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_03_to_04.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_03_to_04.webp" alt="Transition 3 to 4" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1214,16 +1258,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_start.jpg', 'Shot 04 • Đầu (7.22s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_start.jpg" alt="Shot 04 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_start.webp', 'Shot 04 • Đầu (7.22s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_start.webp" alt="Shot 04 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (7.22s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.jpg', 'Shot 04 • Giữa (9.37s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.jpg" alt="Shot 04 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.webp', 'Shot 04 • Giữa (9.37s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.webp" alt="Shot 04 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (9.37s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_end.jpg', 'Shot 04 • Cuối (11.52s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_end.jpg" alt="Shot 04 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_end.webp', 'Shot 04 • Cuối (11.52s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_end.webp" alt="Shot 04 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (11.52s)</span>
                 </div>
             </div>
@@ -1263,8 +1307,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 05 • Cắt cận cảnh (Cut to Close-Up) vào bàn tay mở hộp kính</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_04_to_05.jpg?v=2', 'Chuyển cảnh Shot 04 sang Shot 05')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_04_to_05.jpg?v=2" alt="Transition 4 to 5" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_04_to_05.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_04_to_05.webp" alt="Transition 4 to 5" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1283,16 +1327,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_start.jpg', 'Shot 05 • Đầu (11.52s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_start.jpg" alt="Shot 05 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_start.webp', 'Shot 05 • Đầu (11.52s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_start.webp" alt="Shot 05 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (11.52s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.jpg', 'Shot 05 • Giữa (12.92s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.jpg" alt="Shot 05 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.webp', 'Shot 05 • Giữa (12.92s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.webp" alt="Shot 05 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (12.92s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_end.jpg', 'Shot 05 • Cuối (14.32s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_end.jpg" alt="Shot 05 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_end.webp', 'Shot 05 • Cuối (14.32s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_end.webp" alt="Shot 05 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (14.32s)</span>
                 </div>
             </div>
@@ -1332,8 +1376,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 06 • Cắt nhảy thao tác (Match Cut on Action) đeo kính lên mắt</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_05_to_06.jpg?v=2', 'Chuyển cảnh Shot 05 sang Shot 06')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_05_to_06.jpg?v=2" alt="Transition 5 to 6" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_05_to_06.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_05_to_06.webp" alt="Transition 5 to 6" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1352,16 +1396,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_start.jpg', 'Shot 06 • Đầu (14.32s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_start.jpg" alt="Shot 06 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_start.webp', 'Shot 06 • Đầu (14.32s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_start.webp" alt="Shot 06 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (14.32s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.jpg', 'Shot 06 • Giữa (15.69s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.jpg" alt="Shot 06 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.webp', 'Shot 06 • Giữa (15.69s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.webp" alt="Shot 06 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (15.69s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_end.jpg', 'Shot 06 • Cuối (17.05s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_end.jpg" alt="Shot 06 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_end.webp', 'Shot 06 • Cuối (17.05s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_end.webp" alt="Shot 06 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (17.05s)</span>
                 </div>
             </div>
@@ -1401,8 +1445,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 07 • Cắt cận cảnh (Cut to Tight Detail) vào khuyên tai bạc</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_06_to_07.jpg?v=2', 'Chuyển cảnh Shot 06 sang Shot 07')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_06_to_07.jpg?v=2" alt="Transition 6 to 7" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_06_to_07.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_06_to_07.webp" alt="Transition 6 to 7" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1421,16 +1465,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_start.jpg', 'Shot 07 • Đầu (17.05s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_start.jpg" alt="Shot 07 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_start.webp', 'Shot 07 • Đầu (17.05s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_start.webp" alt="Shot 07 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (17.05s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.jpg', 'Shot 07 • Giữa (18.95s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.jpg" alt="Shot 07 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.webp', 'Shot 07 • Giữa (18.95s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.webp" alt="Shot 07 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (18.95s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_end.jpg', 'Shot 07 • Cuối (20.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_end.jpg" alt="Shot 07 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_end.webp', 'Shot 07 • Cuối (20.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_end.webp" alt="Shot 07 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (20.85s)</span>
                 </div>
             </div>
@@ -1470,8 +1514,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 08 • Cắt nhảy (Jump Cut) sang khuyên tai đã cài hoàn thiện</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_07_to_08.jpg?v=2', 'Chuyển cảnh Shot 07 sang Shot 08')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_07_to_08.jpg?v=2" alt="Transition 7 to 8" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_07_to_08.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_07_to_08.webp" alt="Transition 7 to 8" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1490,16 +1534,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_start.jpg', 'Shot 08 • Đầu (20.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_start.jpg" alt="Shot 08 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_start.webp', 'Shot 08 • Đầu (20.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_start.webp" alt="Shot 08 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (20.85s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.jpg', 'Shot 08 • Giữa (23.32s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.jpg" alt="Shot 08 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.webp', 'Shot 08 • Giữa (23.32s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.webp" alt="Shot 08 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (23.32s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_end.jpg', 'Shot 08 • Cuối (25.78s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_end.jpg" alt="Shot 08 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_end.webp', 'Shot 08 • Cuối (25.78s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_end.webp" alt="Shot 08 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (25.78s)</span>
                 </div>
             </div>
@@ -1539,8 +1583,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 09 • Cắt mở góc toàn thân (Cut to Full Body Angle) cúi lấy túi</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_08_to_09.jpg?v=2', 'Chuyển cảnh Shot 08 sang Shot 09')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_08_to_09.jpg?v=2" alt="Transition 8 to 9" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_08_to_09.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_08_to_09.webp" alt="Transition 8 to 9" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1559,16 +1603,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_start.jpg', 'Shot 09 • Đầu (25.78s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_start.jpg" alt="Shot 09 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_start.webp', 'Shot 09 • Đầu (25.78s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_start.webp" alt="Shot 09 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (25.78s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.jpg', 'Shot 09 • Giữa (27.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.jpg" alt="Shot 09 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.webp', 'Shot 09 • Giữa (27.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.webp" alt="Shot 09 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (27.98s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_end.jpg', 'Shot 09 • Cuối (30.18s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_end.jpg" alt="Shot 09 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_end.webp', 'Shot 09 • Cuối (30.18s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_end.webp" alt="Shot 09 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (30.18s)</span>
                 </div>
             </div>
@@ -1608,8 +1652,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 10 • Cắt cận cảnh (Cut to Close-Up) vào miệng túi rút</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_09_to_10.jpg?v=2', 'Chuyển cảnh Shot 09 sang Shot 10')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_09_to_10.jpg?v=2" alt="Transition 9 to 10" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_09_to_10.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_09_to_10.webp" alt="Transition 9 to 10" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1628,16 +1672,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_start.jpg', 'Shot 10 • Đầu (30.18s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_start.jpg" alt="Shot 10 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_start.webp', 'Shot 10 • Đầu (30.18s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_start.webp" alt="Shot 10 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (30.18s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.jpg', 'Shot 10 • Giữa (32.73s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.jpg" alt="Shot 10 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.webp', 'Shot 10 • Giữa (32.73s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.webp" alt="Shot 10 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (32.73s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_end.jpg', 'Shot 10 • Cuối (35.28s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_end.jpg" alt="Shot 10 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_end.webp', 'Shot 10 • Cuối (35.28s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_end.webp" alt="Shot 10 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (35.28s)</span>
                 </div>
             </div>
@@ -1677,8 +1721,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 11 • Cắt cận tĩnh (Static Close-Up) vào bề mặt da lộn</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_10_to_11.jpg?v=2', 'Chuyển cảnh Shot 10 sang Shot 11')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_10_to_11.jpg?v=2" alt="Transition 10 to 11" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_10_to_11.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_10_to_11.webp" alt="Transition 10 to 11" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1697,16 +1741,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_start.jpg', 'Shot 11 • Đầu (35.28s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_start.jpg" alt="Shot 11 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_start.webp', 'Shot 11 • Đầu (35.28s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_start.webp" alt="Shot 11 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (35.28s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.jpg', 'Shot 11 • Giữa (37.66s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.jpg" alt="Shot 11 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.webp', 'Shot 11 • Giữa (37.66s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.webp" alt="Shot 11 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (37.66s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_end.jpg', 'Shot 11 • Cuối (40.05s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_end.jpg" alt="Shot 11 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_end.webp', 'Shot 11 • Cuối (40.05s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_end.webp" alt="Shot 11 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (40.05s)</span>
                 </div>
             </div>
@@ -1746,8 +1790,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 12 • Cắt góc toàn theo dõi (Cut to Tracking Dolly Shot) sải bước fit check</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_11_to_12.jpg?v=2', 'Chuyển cảnh Shot 11 sang Shot 12')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_11_to_12.jpg?v=2" alt="Transition 11 to 12" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_11_to_12.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_11_to_12.webp" alt="Transition 11 to 12" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1766,16 +1810,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_start.jpg', 'Shot 12 • Đầu (40.05s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_start.jpg" alt="Shot 12 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_start.webp', 'Shot 12 • Đầu (40.05s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_start.webp" alt="Shot 12 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (40.05s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.jpg', 'Shot 12 • Giữa (42.03s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.jpg" alt="Shot 12 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.webp', 'Shot 12 • Giữa (42.03s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.webp" alt="Shot 12 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (42.03s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_end.jpg', 'Shot 12 • Cuối (44.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_end.jpg" alt="Shot 12 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_end.webp', 'Shot 12 • Cuối (44.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_end.webp" alt="Shot 12 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (44.02s)</span>
                 </div>
             </div>
@@ -1815,8 +1859,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 13 • Cắt quay lại rương (Match Cut on Return) về ngăn tủ trên</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_12_to_13.jpg?v=2', 'Chuyển cảnh Shot 12 sang Shot 13')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_12_to_13.jpg?v=2" alt="Transition 12 to 13" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_12_to_13.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_12_to_13.webp" alt="Transition 12 to 13" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1835,16 +1879,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_start.jpg', 'Shot 13 • Đầu (44.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_start.jpg" alt="Shot 13 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_start.webp', 'Shot 13 • Đầu (44.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_start.webp" alt="Shot 13 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (44.02s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.jpg', 'Shot 13 • Giữa (46.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.jpg" alt="Shot 13 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.webp', 'Shot 13 • Giữa (46.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.webp" alt="Shot 13 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (46.02s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_end.jpg', 'Shot 13 • Cuối (48.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_end.jpg" alt="Shot 13 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_end.webp', 'Shot 13 • Cuối (48.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_end.webp" alt="Shot 13 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (48.02s)</span>
                 </div>
             </div>
@@ -1884,8 +1928,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 14 • Cắt cận cảnh (Cut to Close-Up) bóc hộp máy ảnh</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_13_to_14.jpg?v=2', 'Chuyển cảnh Shot 13 sang Shot 14')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_13_to_14.jpg?v=2" alt="Transition 13 to 14" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_13_to_14.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_13_to_14.webp" alt="Transition 13 to 14" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1904,16 +1948,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_start.jpg', 'Shot 14 • Đầu (48.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_start.jpg" alt="Shot 14 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_start.webp', 'Shot 14 • Đầu (48.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_start.webp" alt="Shot 14 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (48.02s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.jpg', 'Shot 14 • Giữa (50.19s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.jpg" alt="Shot 14 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.webp', 'Shot 14 • Giữa (50.19s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.webp" alt="Shot 14 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (50.19s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_end.jpg', 'Shot 14 • Cuối (52.35s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_end.jpg" alt="Shot 14 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_end.webp', 'Shot 14 • Cuối (52.35s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_end.webp" alt="Shot 14 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (52.35s)</span>
                 </div>
             </div>
@@ -1953,8 +1997,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 15 • Cắt trực diện ngắm chụp (Cut to POV Shutter Click)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_14_to_15.jpg?v=2', 'Chuyển cảnh Shot 14 sang Shot 15')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_14_to_15.jpg?v=2" alt="Transition 14 to 15" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_14_to_15.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_14_to_15.webp" alt="Transition 14 to 15" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -1973,16 +2017,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_start.jpg', 'Shot 15 • Đầu (52.35s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_start.jpg" alt="Shot 15 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_start.webp', 'Shot 15 • Đầu (52.35s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_start.webp" alt="Shot 15 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (52.35s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.jpg', 'Shot 15 • Giữa (53.97s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.jpg" alt="Shot 15 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.webp', 'Shot 15 • Giữa (53.97s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.webp" alt="Shot 15 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (53.97s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_end.jpg', 'Shot 15 • Cuối (55.58s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_end.jpg" alt="Shot 15 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_end.webp', 'Shot 15 • Cuối (55.58s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_end.webp" alt="Shot 15 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (55.58s)</span>
                 </div>
             </div>
@@ -2022,8 +2066,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 16 • Cắt góc cận (Cut to Close-Up) vào bộ bài tây</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_15_to_16.jpg?v=2', 'Chuyển cảnh Shot 15 sang Shot 16')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_15_to_16.jpg?v=2" alt="Transition 15 to 16" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_15_to_16.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_15_to_16.webp" alt="Transition 15 to 16" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2042,16 +2086,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_start.jpg', 'Shot 16 • Đầu (55.58s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_start.jpg" alt="Shot 16 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_start.webp', 'Shot 16 • Đầu (55.58s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_start.webp" alt="Shot 16 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (55.58s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.jpg', 'Shot 16 • Giữa (57.72s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.jpg" alt="Shot 16 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.webp', 'Shot 16 • Giữa (57.72s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.webp" alt="Shot 16 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (57.72s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_end.jpg', 'Shot 16 • Cuối (59.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_end.jpg" alt="Shot 16 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_end.webp', 'Shot 16 • Cuối (59.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_end.webp" alt="Shot 16 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (59.85s)</span>
                 </div>
             </div>
@@ -2091,8 +2135,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 17 • Cắt mở rộng (Cut to Medium Wide) sang phong bì lớn</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_16_to_17.jpg?v=2', 'Chuyển cảnh Shot 16 sang Shot 17')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_16_to_17.jpg?v=2" alt="Transition 16 to 17" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_16_to_17.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_16_to_17.webp" alt="Transition 16 to 17" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2111,16 +2155,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_start.jpg', 'Shot 17 • Đầu (59.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_start.jpg" alt="Shot 17 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_start.webp', 'Shot 17 • Đầu (59.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_start.webp" alt="Shot 17 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (59.85s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.jpg', 'Shot 17 • Giữa (62.35s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.jpg" alt="Shot 17 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.webp', 'Shot 17 • Giữa (62.35s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.webp" alt="Shot 17 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (62.35s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_end.jpg', 'Shot 17 • Cuối (64.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_end.jpg" alt="Shot 17 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_end.webp', 'Shot 17 • Cuối (64.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_end.webp" alt="Shot 17 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (64.85s)</span>
                 </div>
             </div>
@@ -2160,8 +2204,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 18 • Cắt giũ khăn (Action Cut on Shaking Towel)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_17_to_18.jpg?v=2', 'Chuyển cảnh Shot 17 sang Shot 18')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_17_to_18.jpg?v=2" alt="Transition 17 to 18" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_17_to_18.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_17_to_18.webp" alt="Transition 17 to 18" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2180,16 +2224,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_start.jpg', 'Shot 18 • Đầu (64.85s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_start.jpg" alt="Shot 18 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_start.webp', 'Shot 18 • Đầu (64.85s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_start.webp" alt="Shot 18 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (64.85s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.jpg', 'Shot 18 • Giữa (67.60s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.jpg" alt="Shot 18 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.webp', 'Shot 18 • Giữa (67.60s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.webp" alt="Shot 18 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (67.60s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_end.jpg', 'Shot 18 • Cuối (70.35s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_end.jpg" alt="Shot 18 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_end.webp', 'Shot 18 • Cuối (70.35s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_end.webp" alt="Shot 18 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (70.35s)</span>
                 </div>
             </div>
@@ -2229,8 +2273,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 19 • Cắt sang phao tròn (Cut to Ring Floatie Framing)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_18_to_19.jpg?v=2', 'Chuyển cảnh Shot 18 sang Shot 19')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_18_to_19.jpg?v=2" alt="Transition 18 to 19" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_18_to_19.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_18_to_19.webp" alt="Transition 18 to 19" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2249,16 +2293,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_start.jpg', 'Shot 19 • Đầu (70.35s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_start.jpg" alt="Shot 19 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_start.webp', 'Shot 19 • Đầu (70.35s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_start.webp" alt="Shot 19 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (70.35s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.jpg', 'Shot 19 • Giữa (74.19s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.jpg" alt="Shot 19 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.webp', 'Shot 19 • Giữa (74.19s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.webp" alt="Shot 19 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (74.19s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_end.jpg', 'Shot 19 • Cuối (78.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_end.jpg" alt="Shot 19 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_end.webp', 'Shot 19 • Cuối (78.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_end.webp" alt="Shot 19 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (78.02s)</span>
                 </div>
             </div>
@@ -2298,8 +2342,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 20 • Cắt match-cut viễn tưởng (Dreamy Match Cut to Infinity Pool)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_19_to_20.jpg?v=2', 'Chuyển cảnh Shot 19 sang Shot 20')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_19_to_20.jpg?v=2" alt="Transition 19 to 20" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_19_to_20.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_19_to_20.webp" alt="Transition 19 to 20" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2318,16 +2362,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_start.jpg', 'Shot 20 • Đầu (78.02s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_start.jpg" alt="Shot 20 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_start.webp', 'Shot 20 • Đầu (78.02s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_start.webp" alt="Shot 20 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (78.02s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.jpg', 'Shot 20 • Giữa (78.50s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.jpg" alt="Shot 20 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.webp', 'Shot 20 • Giữa (78.50s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.webp" alt="Shot 20 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (78.50s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_end.jpg', 'Shot 20 • Cuối (78.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_end.jpg" alt="Shot 20 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_end.webp', 'Shot 20 • Cuối (78.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_end.webp" alt="Shot 20 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (78.98s)</span>
                 </div>
             </div>
@@ -2367,8 +2411,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 21 • Cắt giật ngược về studio (Flash Cut Back to Studio)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_20_to_21.jpg?v=2', 'Chuyển cảnh Shot 20 sang Shot 21')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_20_to_21.jpg?v=2" alt="Transition 20 to 21" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_20_to_21.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_20_to_21.webp" alt="Transition 20 to 21" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2387,16 +2431,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_start.jpg', 'Shot 21 • Đầu (78.98s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_start.jpg" alt="Shot 21 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_start.webp', 'Shot 21 • Đầu (78.98s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_start.webp" alt="Shot 21 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (78.98s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.jpg', 'Shot 21 • Giữa (81.31s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.jpg" alt="Shot 21 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.webp', 'Shot 21 • Giữa (81.31s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.webp" alt="Shot 21 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (81.31s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_end.jpg', 'Shot 21 • Cuối (83.65s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_end.jpg" alt="Shot 21 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_end.webp', 'Shot 21 • Cuối (83.65s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_end.webp" alt="Shot 21 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (83.65s)</span>
                 </div>
             </div>
@@ -2436,8 +2480,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Chuyển Cảnh Sang Shot 22 • Cắt toàn cảnh bước ra (Cut to Full Runway Outro)</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_21_to_22.jpg?v=2', 'Chuyển cảnh Shot 21 sang Shot 22')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_21_to_22.jpg?v=2" alt="Transition 21 to 22" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_21_to_22.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_21_to_22.webp" alt="Transition 21 to 22" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2456,16 +2500,16 @@ body {
 
             <!-- 3 Keyframes -->
             <div class="keyframes-row">
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_start.jpg', 'Shot 22 • Đầu (83.65s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_start.jpg" alt="Shot 22 Start" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_start.webp', 'Shot 22 • Đầu (83.65s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_start.webp" alt="Shot 22 Start" loading="lazy">
                     <span class="kf-label-tag start">Đầu (83.65s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.jpg', 'Shot 22 • Giữa (86.89s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.jpg" alt="Shot 22 Mid" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.webp', 'Shot 22 • Giữa (86.89s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.webp" alt="Shot 22 Mid" loading="lazy">
                     <span class="kf-label-tag mid">Giữa (86.89s)</span>
                 </div>
-                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_end.jpg', 'Shot 22 • Cuối (90.13s)')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_end.jpg" alt="Shot 22 End" loading="lazy">
+                <div class="kf-card" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_end.webp', 'Shot 22 • Cuối (90.13s)')">
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_end.webp" alt="Shot 22 End" loading="lazy">
                     <span class="kf-label-tag end">Cuối (90.13s)</span>
                 </div>
             </div>
@@ -2505,8 +2549,8 @@ body {
             
             <div class="transition-card">
                 <div class="trans-title-bar">⚡ Khép Vòng Lặp Vô Tận (Infinite Loop) Sang Shot 01</div>
-                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_22_to_01_loop.jpg?v=2', 'Khép Vòng Lặp Vô Tận Sang Shot 01')">
-                    <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/transitions/trans_22_to_01_loop.jpg?v=2" alt="Loop Transition" loading="lazy">
+                <div class="trans-img-container" onclick="openLightbox('https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.webp'>
+                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.webp" alt="Loop Transition" loading="lazy">
                     <span class="trans-zoom-badge">🔍 Phóng to so sánh chuyển cảnh</span>
                 </div>
             </div>
@@ -2520,7 +2564,7 @@ body {
             
         <div class="grid-shot-card" onclick="jumpToShot(1, 0.0, 3.38)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.jpg" alt="Shot 01" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_01_mid.webp" alt="Shot 01" loading="lazy">
                 <span class="grid-thumb-badge">Shot 01 • 0.00s</span>
             </div>
             <div class="grid-card-body">Khung Dẫn Khung Cửa Sẫm Màu & Cú Hook Thì Thầm Thân Mật (Architectural Doorway Framing & Intimate Whisper Hook)</div>
@@ -2529,7 +2573,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(2, 3.38, 4.12)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.jpg" alt="Shot 02" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_02_mid.webp" alt="Shot 02" loading="lazy">
                 <span class="grid-thumb-badge">Shot 02 • 3.38s</span>
             </div>
             <div class="grid-card-body">Cận Cảnh Biểu Cảm Chắp Tay & Nghiêng Đầu Chớp Mắt Tương Tác Cảm Xúc (Emotional Micro-Reaction & Head-Tilt Connect)</div>
@@ -2538,7 +2582,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(3, 4.12, 7.22)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.jpg" alt="Shot 03" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_03_mid.webp" alt="Shot 03" loading="lazy">
                 <span class="grid-thumb-badge">Shot 03 • 4.12s</span>
             </div>
             <div class="grid-card-body">Thao Tác Đặt Rương Lên Mặt Bàn Đá & Định Vị Không Gian Sân Khấu (Island Counter Stage Setting & Box Placement)</div>
@@ -2547,7 +2591,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(4, 7.22, 11.52)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.jpg" alt="Shot 04" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_04_mid.webp" alt="Shot 04" loading="lazy">
                 <span class="grid-thumb-badge">Shot 04 • 7.22s</span>
             </div>
             <div class="grid-card-body">Cơ Chế Kéo Ngăn Đa Tầng Bí Ẩn & Chiết Xuất Hộp Da Xanh Olive (Multi-Tier Drawer Mechanism & Olive Case Extraction)</div>
@@ -2556,7 +2600,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(5, 11.52, 14.32)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.jpg" alt="Shot 05" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_05_mid.webp" alt="Shot 05" loading="lazy">
                 <span class="grid-thumb-badge">Shot 05 • 11.52s</span>
             </div>
             <div class="grid-card-body">Bật Nắp Hộp Da Khâu Chỉ Thủ Công & Lộ Diện Kính Mát Đồi Mồi (Textured Leather Case Pop & Tortoiseshell Sunglasses Reveal)</div>
@@ -2565,7 +2609,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(6, 14.32, 17.05)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.jpg" alt="Shot 06" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_06_mid.webp" alt="Shot 06" loading="lazy">
                 <span class="grid-thumb-badge">Shot 06 • 14.32s</span>
             </div>
             <div class="grid-card-body">Thử Kính Mát Tại Chỗ & Rút Thêm Hộp Phụ Kiện Trang Sức (Instant Eyewear Styling Check & Jewelry Pouch Tease)</div>
@@ -2574,7 +2618,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(7, 17.05, 20.85)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.jpg" alt="Shot 07" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_07_mid.webp" alt="Shot 07" loading="lazy">
                 <span class="grid-thumb-badge">Shot 07 • 17.05s</span>
             </div>
             <div class="grid-card-body">Trưng Bày Cặp Khuyên Tai Bạc Chunky Hoop & Ướm Thử Lên Vành Tai (Chunky Silver Hoop Earrings & Earlobe Try-On)</div>
@@ -2583,7 +2627,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(8, 20.85, 25.78)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.jpg" alt="Shot 08" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_08_mid.webp" alt="Shot 08" loading="lazy">
                 <span class="grid-thumb-badge">Shot 08 • 20.85s</span>
             </div>
             <div class="grid-card-body">Nụ Cười Hoàn Thiện Phong Cách & Giày Búp Bê Da Trắng Đính Khóa Logo (Look Approval Smile & Ivory Ballet Flats Reveal)</div>
@@ -2592,7 +2636,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(9, 25.78, 30.18)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.jpg" alt="Shot 09" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_09_mid.webp" alt="Shot 09" loading="lazy">
                 <span class="grid-thumb-badge">Shot 09 • 25.78s</span>
             </div>
             <div class="grid-card-body">Cúi Mình Xuống Ngăn Đáy Trầm & Trục Vớt Túi Bọc Vải Lime Green (Deep Drawer Retrieval & Lime-Green Dust Bag Pop)</div>
@@ -2601,7 +2645,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(10, 30.18, 35.28)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.jpg" alt="Shot 10" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_10_mid.webp" alt="Shot 10" loading="lazy">
                 <span class="grid-thumb-badge">Shot 10 • 30.18s</span>
             </div>
             <div class="grid-card-body">Kéo Mở Túi Bọc Lụa & Lộ Diện Túi Da Lộn Kèm Dây Charm Bóng Biển (Suede Shoulder Bag Reveal & Beach Ball Bead Charm)</div>
@@ -2610,7 +2654,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(11, 35.28, 40.05)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.jpg" alt="Shot 11" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_11_mid.webp" alt="Shot 11" loading="lazy">
                 <span class="grid-thumb-badge">Shot 11 • 35.28s</span>
             </div>
             <div class="grid-card-body">Thao Tác Chỉnh Dây Đeo Da & Trải Nghiệm Xúc Giác Túi Kẹp Nách (Strap Length Adjustment & Suede Tactile Exploration)</div>
@@ -2619,7 +2663,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(12, 40.05, 44.02)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.jpg" alt="Shot 12" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_12_mid.webp" alt="Shot 12" loading="lazy">
                 <span class="grid-thumb-badge">Shot 12 • 40.05s</span>
             </div>
             <div class="grid-card-body">Cú Bước Đi Song Song Tracking Dolly & Trình Diễn Toàn Thân Tự Tin (Side-Parallel Tracking Dolly Walk & Full-Body Fit Check)</div>
@@ -2628,7 +2672,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(13, 44.02, 48.02)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.jpg" alt="Shot 13" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_13_mid.webp" alt="Shot 13" loading="lazy">
                 <span class="grid-thumb-badge">Shot 13 • 44.02s</span>
             </div>
             <div class="grid-card-body">Khám Phá Ngăn Bí Mật Tầng Trên & Tìm Ra Chiếc Hộp Nhỏ Kỳ Thú (Upper Chamber Exploration & Mystery Box Discovery)</div>
@@ -2637,7 +2681,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(14, 48.02, 52.35)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.jpg" alt="Shot 14" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_14_mid.webp" alt="Shot 14" loading="lazy">
                 <span class="grid-thumb-badge">Shot 14 • 48.02s</span>
             </div>
             <div class="grid-card-body">Bóc Hộp Máy Ảnh Phim 35mm Chống Nước Vỏ Tím Lilac Độc Đáo (Waterproof 35mm Film Camera & Transparent Dive Housing Reveal)</div>
@@ -2646,7 +2690,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(15, 52.35, 55.58)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.jpg" alt="Shot 15" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_15_mid.webp" alt="Shot 15" loading="lazy">
                 <span class="grid-thumb-badge">Shot 15 • 52.35s</span>
             </div>
             <div class="grid-card-body">Đưa Ống Kính Lên Mắt Ngắm & Cú Bấm Máy Phá Vỡ Bức Tường Thứ 4 (POV Shutter Click & Breaking The 4th Wall)</div>
@@ -2655,7 +2699,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(16, 55.58, 59.85)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.jpg" alt="Shot 16" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_16_mid.webp" alt="Shot 16" loading="lazy">
                 <span class="grid-thumb-badge">Shot 16 • 55.58s</span>
             </div>
             <div class="grid-card-body">Kỹ Thuật Xòe Bài Card Spring Điêu Luyện & Bộ Bài Tory Burch Mùa Hè (Card Spring Flourish Cascade & Custom Playing Cards Fan)</div>
@@ -2664,7 +2708,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(17, 59.85, 64.85)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.jpg" alt="Shot 17" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_17_mid.webp" alt="Shot 17" loading="lazy">
                 <span class="grid-thumb-badge">Shot 17 • 59.85s</span>
             </div>
             <div class="grid-card-body">Bao Bì Giấy Dập Nổi Logo & Bóc Mở Gói Khăn Tắm Biển Khổng Lồ (Embossed Paper Envelope & Beach Towel Package Extraction)</div>
@@ -2673,7 +2717,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(18, 64.85, 70.35)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.jpg" alt="Shot 18" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_18_mid.webp" alt="Shot 18" loading="lazy">
                 <span class="grid-thumb-badge">Shot 18 • 64.85s</span>
             </div>
             <div class="grid-card-body">Cú Giũ Khăn Tắm Đồ Họa Vận Động Viên & Lộ Diện Ván Phao Bơi Cỡ Đại (Graphic Swimmer Towel Unfold & Inflatable Surfboard Tease)</div>
@@ -2682,7 +2726,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(19, 70.35, 78.02)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.jpg" alt="Shot 19" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_19_mid.webp" alt="Shot 19" loading="lazy">
                 <span class="grid-thumb-badge">Shot 19 • 70.35s</span>
             </div>
             <div class="grid-card-body">Lồng Mặt Qua Phao Bơi Tròn Sọc Biển & Khoảnh Khắc Mơ Mộng Bên Hồ Bơi (Striped Swim Ring Peek-Through & Poolside Daydreaming)</div>
@@ -2691,7 +2735,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(20, 78.02, 78.98)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.jpg" alt="Shot 20" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_20_mid.webp" alt="Shot 20" loading="lazy">
                 <span class="grid-thumb-badge">Shot 20 • 78.02s</span>
             </div>
             <div class="grid-card-body">Cú Cắt Chớp Nhoáng Sang Hồ Bơi Vô Cực Nhiệt Đới (Resort Infinity Pool Fantasy Flash Match-Cut)</div>
@@ -2700,7 +2744,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(21, 78.98, 83.65)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.jpg" alt="Shot 21" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_21_mid.webp" alt="Shot 21" loading="lazy">
                 <span class="grid-thumb-badge">Shot 21 • 78.98s</span>
             </div>
             <div class="grid-card-body">Bộ Ba Sẵn Sàng Lên Đường: Kính Mát, Túi Da & Máy Ảnh (Triple Readiness Checklist: Sunnies, Bag & Camera)</div>
@@ -2709,7 +2753,7 @@ body {
 
         <div class="grid-shot-card" onclick="jumpToShot(22, 83.65, 90.13)">
             <div class="grid-thumb-wrap">
-                <img src="https://media.fedu.vn/images/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.jpg" alt="Shot 22" loading="lazy">
+                <img crossorigin="anonymous" src="https://media.fedu.vn/images/IG_%40tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing/shot_22_mid.webp" alt="Shot 22" loading="lazy">
                 <span class="grid-thumb-badge">Shot 22 • 83.65s</span>
             </div>
             <div class="grid-card-body">Đóng Ngăn Rương, Nụ Cười 'Hẹn Gặp Ở Hồ Bơi' & Cú Sải Bước Rời Khung Hình (Closing The Trunk, Poolside Sign-off & Graceful Runway Exit)</div>
@@ -2726,10 +2770,13 @@ body {
                 <a href="https://ytuong.fedu.vn" target="_blank" class="footer-link-card">
                     <span>💡 Kho Ý Tưởng &amp; Mẫu Quay YTUONG HUB ↗</span>
                 </a>
+                <a href="https://fedu.vn/scene.html" target="_blank" class="footer-link-card">
+                    <span>🎬 Cổng Tra Cứu Điện Ảnh Scene.html ↗</span>
+                </a>
                 <a href="https://drive.google.com/open?id=13_XfCZ1WlHUI2E10MsvNS6UQ-75THvh5" target="_blank" class="footer-link-card">
                     <span>📁 Mở Thư Mục Google Drive ↗</span>
                 </a>
-                <a href="file:///Users/vietmac/Documents/CODE/Video phan tich/output_packages/IG_@tsangtastic_DaB-gO6hvPX_Tory_Burch_Summer_Unboxing" class="footer-link-card">
+                <a href="#" style="display:none;" class="footer-link-card">
                     <span>💻 Mở Thư Mục Trên Máy (Finder)</span>
                 </a>
             </div>
@@ -2741,7 +2788,7 @@ body {
 <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <div class="lightbox-content" onclick="event.stopPropagation()">
-        <img id="lightboxImg" src="" alt="Zoomed Keyframe">
+        <img crossorigin="anonymous" id="lightboxImg" src="" alt="Zoomed Keyframe">
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 </div>
@@ -2760,7 +2807,7 @@ let isLooping = false;
 // Timeupdate listener
 player.addEventListener('timeupdate', () => {
     const ct = player.currentTime;
-    timeDisplay.textContent = ;
+    timeDisplay.textContent = ct.toFixed(2) + 's / ' + (player.duration ? player.duration.toFixed(2) : '0.00') + 's';
 
     if (isLooping && currentLoopShot) {
         if (ct >= currentLoopShot.en_time) {
@@ -2842,6 +2889,22 @@ function closeLightbox() {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeLightbox();
 });
+
+function handleCreatorClick(e, handle, name) {
+    if (e) e.preventDefault();
+    try {
+        if (window.parent && window.parent !== window) {
+            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
+            if (typeof window.parent.filterByCreator === 'function') {
+                window.parent.closeModal('reportEmbedModal');
+                window.parent.filterByCreator(handle, name);
+                return;
+            }
+        }
+    } catch (err) {}
+    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
+}
+
 
 function togglePlayerFullscreen() {
     const v = document.getElementById('mainPlayer');
