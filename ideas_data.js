@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T15:46:17+07:00",
+  "generated_at": "2026-10-18T15:50:16+07:00",
   "total_scene_items": 380,
   "total_unique_ideas": 361,
   "total_active_ideas": 301,
@@ -78,9 +78,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 45,
+    "talking-head": 44,
     "storytelling": 39,
-    "dien-anh": 136,
+    "dien-anh": 137,
     "chuyen-canh": 60,
     "theo-nhip-nhac": 0,
     "bts": 1
@@ -174,9 +174,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 27,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 37,
+    "kien-truc": 36,
     "the-thao": 6,
-    "ky-thuat-quay": 88,
+    "ky-thuat-quay": 89,
     "ugc": 6
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -809,7 +809,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Worldwithreece",
       "profile_url": "https://www.instagram.com/worldwithreece/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
       "video_ids": [
         "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
@@ -2899,31 +2899,36 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life",
       "shortcode": "DeXSJttMxAv",
-      "title_vi": "Shot ideas you can use to film your life",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "5 Góc Máy B-Roll Chỉn Chu Biến Thói Quen Buổi Sáng Thành Thước Phim Đắt Giá",
+      "quick_takeaway": "5 công thức đặt góc máy B-Roll chỉn chu giúp biến chuỗi thói quen buổi sáng đời thường (tắt báo thức, mở tủ lấy áo, lướt chọn nhạc, đeo tai nghe, cầm cà phê dạo phố) thành thước phim cuốn hút mà không cần người quay hộ.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
       "tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Close-Up / Macro Detail Shot",
+        "Góc Máy Đời Thường",
+        "B-Roll Chỉn Chu",
+        "Kỹ Thuật Quay",
+        "Góc Nhìn POV",
+        "Quay Cuộc Sống"
       ],
       "country": {
         "id": "us_eu",
@@ -2934,6 +2939,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @worldwithreece",
       "tech_tags": [
+        "Góc Máy Đời Thường",
+        "B-Roll Chỉn Chu",
+        "Kỹ Thuật Quay",
+        "Góc Nhìn POV",
+        "Quay Cuộc Sống",
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot"
@@ -9689,7 +9699,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -12424,7 +12434,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
