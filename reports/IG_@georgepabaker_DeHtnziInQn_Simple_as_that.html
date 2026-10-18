@@ -1267,35 +1267,11 @@
         </div>
 
         
-        <section class="dialogue-section">
-            <div class="dialogue-col-main">
-                <div class="dialogue-header">
-                    <span class="dialogue-badge">KỊCH BẢN LỜI THOẠI</span>
-                    <span class="dialogue-sub">Bản dịch thực chiến</span>
-                </div>
-                <div class="dialogue-body">
-                <div class="vn-para" onclick="playShot(0.0, 7.86, 'Phân đoạn #01')">
-                    <span class="vn-time">0.00s</span>
-                    <span class="vn-beat">Phân đoạn #01</span>
-                    <span class="vn-text">"Turns out someficien supper isでは"</span>
-                </div></div>
-            </div>
-            <div class="dialogue-col-aside">
-                <div class="dialogue-aside-header">
-                    <span>ORIGINAL TRANSCRIPT</span>
-                </div>
-                <div class="dialogue-aside-body">
-                <div class="en-line" onclick="playShot(0.0, 7.86, 'ORIGINAL')">
-                    <span class="en-time">0.00s</span>
-                    <span class="en-text">"Turns out someficien supper isでは"</span>
-                </div></div>
-            </div>
-        </section>
         <div class="remake-prompt-card" id="remakePromptCard">
             <div class="prompt-accordion-header" onclick="togglePromptAccordion(this)">
                 <div class="prompt-left">
-                    <span class="prompt-badge">KỊCH BẢN STU</span>
-                    <span class="prompt-title">Ánh xạ kịch bản sang ngành nghề của bạn</span>
+                    <span class="prompt-badge">CÚ MÁY STU</span>
+                    <span class="prompt-title">Ánh xạ kỹ thuật quay sang ngành nghề của bạn</span>
                 </div>
                 <div class="prompt-right">
                     <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép</button>
@@ -1306,34 +1282,31 @@
                 </div>
             </div>
             <div class="prompt-accordion-body" style="display: none;">
-                <p class="prompt-desc">Sao chép Mega Prompt này dán vào Gemini. Hệ thống tự động gợi ý đúng các ngành nghề học viên thực tế trong STU.</p>
+                <p class="prompt-desc">Video kỹ thuật quay thuần túy (không thoại). Sao chép Prompt để AI hướng dẫn áp dụng cú máy vào quay sản phẩm thực tế.</p>
                 <div class="prompt-code-wrap">
                     <div class="prompt-code-bar">
-                        <span>MEGA_PROMPT_REMAKE_GEMINI.md</span>
+                        <span>MEGA_PROMPT_TECHNIQUE_REMAKE_GEMINI.md</span>
                         <button class="prompt-copy-btn" onclick="copyMegaPrompt(event, this)">Sao chép Prompt</button>
                     </div>
-                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Video Ngắn &amp; Chuyên gia Tinh chỉnh Lời thoại Thực Chiến theo trường phái mộc mạc của anh Việt (nguyen-viet-voice).
+                    <div class="prompt-code-content" id="megaPromptText">Bạn là Đạo diễn Hình ảnh &amp; Chuyên gia Hướng Dẫn Thao Tác Cú Máy Thực Chiến.
 
-Tôi có cấu trúc logic giữ chân từ video mẫu với 4 nhịp:
-1. Hook 3s: Nêu sự thật trần trụi về một việc ai cũng nghĩ là đơn giản.
-2. Xung đột 2 vế: Cái cớ chủ quan giữ thể diện đối đầu với Thực tế khách quan.
-3. Tactile B-roll: Bàn tay liên tục đặt từng món đồ nghề/chi tiết thật xuống bàn làm việc theo nhịp nói.
-4. Kết bài tự trào &amp; Mở lời tự nhiên: Thừa nhận cái khó của người làm nghề.
+Tôi vừa học được kỹ thuật quay đắt giá: @georgepabaker - Simple as that.
+Video này KHÔNG CÓ LỜI THOẠI, sức hút nằm ở góc đặt máy, tiêu cự và chuyển động camera.
 
-=== QUY TẮC VĂN PHONG ===
-- CẤM VĂN MẪU AI: Không dùng bứt phá, chuyển hóa, vũ khí, thần thái, nâng tầm...
-- CẤM từ ÔNG GIÁO. Xưng hô: mình - bạn hoặc tôi - bạn.
-- GIỮ VĂN PHONG MỘC MẠC.
+=== QUY TẮC ===
+- CẤM BỊA KỊCH BẢN NÓI. Tôi cần hướng dẫn cầm điện thoại quay gì, lia máy hướng nào.
+- CẤM VĂN MẪU AI.
+- VĂN PHONG MỘC MẠC: Xưng mình - bạn.
 
 === HƯỚNG DẪN ===
-Nếu tôi chưa ghi ngành nghề, hỏi 1 câu:
-1. Làm đẹp &amp; Spa / Da liễu / Salon tóc
-2. Nội thất / Decor / Kiến trúc
-3. Ẩm thực &amp; F&amp;B / Tiệm bánh
-4. Nông nghiệp / Phân bón / Sức khỏe
-5. Ngành khác: [Tên nghề] + [3 món đồ trên bàn]
+Nếu tôi chưa ghi ngành, hỏi 1 câu:
+1. Làm đẹp &amp; Spa (quay kem, thao tác tay, máy soi da)
+2. Nội thất / Decor (quay lia thớ gỗ/mẫu đá sang không gian)
+3. Ẩm thực &amp; F&amp;B (quay lia quanh món ăn, đổ sốt, khói)
+4. Nông nghiệp / Sức khỏe (kiểm tra lá cây, hạt giống, bao bì)
+5. Ngành khác: [Tên nghề] + [Sản phẩm muốn quay]
 
-Sau khi chọn → xuất 3 PHƯƠNG ÁN KỊCH BẢN (Thời lượng | B-roll | Lời thoại | Âm thanh Foley)!</div>
+Sau khi chọn → xuất 3 PHƯƠNG ÁN BỐ TRÍ CÚ MÁY!</div>
                 </div>
             </div>
         </div>
