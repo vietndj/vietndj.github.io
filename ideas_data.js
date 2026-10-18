@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T17:08:43+07:00",
-  "total_scene_items": 386,
-  "total_unique_ideas": 367,
-  "total_active_ideas": 307,
+  "generated_at": "2026-10-18T17:19:10+07:00",
+  "total_scene_items": 387,
+  "total_unique_ideas": 368,
+  "total_active_ideas": 308,
   "total_excluded_ideas": 60,
   "total_creators": 231,
   "shooting_styles": [
@@ -81,7 +81,7 @@ var FEDU_IDEAS_DATABASE = {
     "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 141,
-    "chuyen-canh": 60,
+    "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 27,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 38,
+    "kien-truc": 39,
     "the-thao": 6,
     "ky-thuat-quay": 93,
     "ugc": 6
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 212,
+    "us_eu": 213,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -445,6 +445,20 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@qfroost",
+      "name": "Qfroost",
+      "profile_url": "https://www.instagram.com/qfroost/",
+      "video_count": 4,
+      "top_industry": "Đồ công nghệ",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40qfroost_DejfEazN6QT_don%E2%80%99t_get_me_wrong%2C_i_still_use_ai_for_my_cre/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre",
+        "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
+        "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
+        "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
+      ]
+    },
+    {
       "handle": "@creator",
       "name": "Hayan Cook",
       "profile_url": "https://www.instagram.com/creator/",
@@ -575,19 +589,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ioana_iftode_Db7zNC0jPwV_Tokyo_Slow_Life_Magic_Moments",
         "IG_@ioana_iftode_DcYQVYJjHa-_Tokyo_Slow_Life_Visual_Diaries",
         "IG_@ioana_iftode_DbqCYu4DAz2_Kyoto_Slow_Life_Visual_Diaries"
-      ]
-    },
-    {
-      "handle": "@qfroost",
-      "name": "Quyen Van",
-      "profile_url": "https://www.instagram.com/qfroost/",
-      "video_count": 3,
-      "top_industry": "Đồ công nghệ",
-      "sample_thumb": "https://media.fedu.vn/images/Saigon%2C_Vietnam_-_%40qfroost/img_002_d655a123.webp",
-      "video_ids": [
-        "IG_@qfroost_DXWKIztktTN_Saigon_Vietnam",
-        "IG_@qfroost_Dah8zTnNgq5_Ray_Ban_Meta_System",
-        "IG_@qfroost_DbdG7v1tjrz_Adobe_Firefly_Workflow"
       ]
     },
     {
@@ -2933,6 +2934,83 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre",
+      "shortcode": "DejfEazN6QT",
+      "title_vi": "don’t get me wrong, i still use ai for my cre",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Wide Establishing Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
+      "shooting_style": {
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @qfroost",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot",
+        "Close-Up / Macro Detail Shot",
+        "Low-key Lighting"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chuyển Cảnh (Transition) ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@qfroost",
+        "name": "Qfroost",
+        "handle": "@qfroost",
+        "profile_url": "https://www.instagram.com/qfroost/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DejfEazN6QT/",
+      "gdrive_folder": "https://drive.google.com/open?id=18_OlaYVq4Fg0IUlMEnFXnZ23ny_1sCb5",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40qfroost_DejfEazN6QT_don%E2%80%99t_get_me_wrong%2C_i_still_use_ai_for_my_cre/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40qfroost_DejfEazN6QT_don%E2%80%99t_get_me_wrong%2C_i_still_use_ai_for_my_cre/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DejfEazN6QT.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DejfEazN6QT.mp4",
+        "report_url": "reports/IG_@qfroost_DejfEazN6QT_don’t_get_me_wrong,_i_still_use_ai_for_my_cre.html",
+        "shots_count": 15,
+        "duration": "23.1s",
+        "youtube_id": "IolT8rak6EY",
+        "youtube_embed": "https://www.youtube.com/embed/IolT8rak6EY",
+        "youtube_url": "https://youtu.be/IolT8rak6EY"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@al_dante_channel_DdHMQmrxQca_Potato_Croquets",
       "shortcode": "DdHMQmrxQca",
       "title_vi": "Potato Croquets",
@@ -3561,7 +3639,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -12954,7 +13032,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
