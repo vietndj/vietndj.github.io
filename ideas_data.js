@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T16:12:01+07:00",
+  "generated_at": "2026-10-18T16:20:08+07:00",
   "total_scene_items": 381,
   "total_unique_ideas": 362,
   "total_active_ideas": 302,
@@ -78,9 +78,9 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 45,
+    "talking-head": 44,
     "storytelling": 39,
-    "dien-anh": 137,
+    "dien-anh": 138,
     "chuyen-canh": 60,
     "theo-nhip-nhac": 0,
     "bts": 1
@@ -174,9 +174,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 27,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 37,
+    "kien-truc": 36,
     "the-thao": 6,
-    "ky-thuat-quay": 89,
+    "ky-thuat-quay": 90,
     "ugc": 6
   },
   "x_factors": [
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -809,7 +809,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Yula_Andrieieva",
       "profile_url": "https://www.instagram.com/yula_andrieieva/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography%E2%80%A6/shot_01_mid.webp",
       "video_ids": [
         "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…"
@@ -2910,24 +2910,24 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@yula_andrieieva_DeaMdF4RjPv_day_5_of_learning_cinematography…",
       "shortcode": "DeaMdF4RjPv",
-      "title_vi": "day 5 of learning cinematography…",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Biến Cảnh Lấy Nước Tủ Lạnh Thành Thước Phim Chỉn Chu Nhờ Góc Máy POV & Chuỗi Cận Cảnh Bọt Gas",
+      "quick_takeaway": "Bài tập thực hành quay dựng chỉn chu (Day 5) biến hành động lấy lon Pepsi trong tủ lạnh và rót ra cốc thành chuỗi hình ảnh giàu cảm xúc nhờ góc máy POV bên trong tủ lạnh, chuyển cảnh che ống kính (Hand-Block Wipe), kỹ thuật cắt nối hành động (Cut-on-Action) và 3 cấp độ cận cảnh ngược sáng đặc tả bọt gas.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
@@ -2935,7 +2935,12 @@ var FEDU_IDEAS_DATABASE = {
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "High-key Lighting"
+        "High-key Lighting",
+        "Góc máy POV tủ lạnh",
+        "Chuyển cảnh che ống kính",
+        "Cắt nối hành động",
+        "Quay cận cảnh đồ uống",
+        "Bố cục tiền cảnh"
       ],
       "country": {
         "id": "us_eu",
@@ -2946,6 +2951,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @yula_andrieieva",
       "tech_tags": [
+        "Góc máy POV tủ lạnh",
+        "Chuyển cảnh che ống kính",
+        "Cắt nối hành động",
+        "Quay cận cảnh đồ uống",
+        "Bố cục tiền cảnh",
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
@@ -9785,7 +9795,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1W18YrkZwvxirTC_zyeVWOHDyvSWfJzKu",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40etaemin_DdoooYmq-cd_Get_ready_for_the_shoot/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdoooYmq-cd.mp4",
         "report_url": "reports/IG_@etaemin_DdoooYmq-cd_Get_ready_for_the_shoot.html",
@@ -11342,7 +11352,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
