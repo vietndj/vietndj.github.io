@@ -3,7 +3,7 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T21:45:04+07:00",
+  "generated_at": "2026-10-18T21:59:59+07:00",
   "total_scene_items": 389,
   "total_unique_ideas": 370,
   "total_active_ideas": 310,
@@ -78,10 +78,10 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 46,
+    "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 143,
-    "chuyen-canh": 60,
+    "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
   },
@@ -174,9 +174,9 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 28,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 38,
+    "kien-truc": 37,
     "the-thao": 6,
-    "ky-thuat-quay": 95,
+    "ky-thuat-quay": 96,
     "ugc": 6
   },
   "x_factors": [
@@ -824,7 +824,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Bryanadamc",
       "profile_url": "https://www.instagram.com/bryanadamc/",
       "video_count": 1,
-      "top_industry": "Góc nhà đẹp",
+      "top_industry": "Bố cục",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40bryanadamc_DeQYfOdpUdk_dreamin%E2%80%99_bout_ya_%F0%9F%8E%A5/shot_01_mid.webp",
       "video_ids": [
         "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥"
@@ -2958,31 +2958,36 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥",
       "shortcode": "DeQYfOdpUdk",
-      "title_vi": "dreamin’ bout ya 🎥",
-      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "title_vi": "Nghệ Thuật Graphic Match Cut Hình Tròn & Đảo Trục Xoay Máy 360° POV Đỉnh Cao",
+      "quick_takeaway": "Bậc thầy chuyển cảnh đồng dạng hình học (Graphic Match Cut) kết hợp xoay máy 360 độ POV: khởi đầu từ lòng đỏ trứng tròn trong chảo, nối tiếp liên hoàn qua 15 vật thể hình tròn đặt đúng tâm khung hình (cốc cà phê, hũ nến, mặt trời, mặt trăng, đĩa than, gợn sóng, nét vẽ, viên kẹo, nắp lon, bóng rổ, gương, cánh quạt, núm TV, núm preamp, lồng máy giặt) trước khi đảo trục xoay máy 360 độ theo gương mặt nhân vật và khép lại bằng vòng lặp vô tận (Seamless Loop).",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
-        "id": "talking-head",
-        "name": "Nói Trực Diện",
-        "en_name": "Talking Head",
-        "icon": "🗣️",
-        "badge_color": "blue"
+        "id": "chuyen-canh",
+        "name": "Chuyển Cảnh",
+        "en_name": "Transitions & Flow",
+        "icon": "⚡",
+        "badge_color": "rose"
       },
       "industries": [
         {
-          "id": "kien-truc",
-          "name": "Góc nhà đẹp",
-          "en_name": "Architecture & Living",
-          "icon": "🏛️",
-          "badge_color": "emerald",
-          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+          "id": "ky-thuat-quay",
+          "name": "Bố cục",
+          "en_name": "Filmmaking Mastery",
+          "icon": "🎯",
+          "badge_color": "blue",
+          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
         }
       ],
       "x_factors": [],
       "tags": [
         "Establishing Hook Shot",
         "Low-key Lighting",
-        "Close-Up / Macro Detail Shot"
+        "Close-Up / Macro Detail Shot",
+        "Match Cut Hình Tròn",
+        "Xoay Máy 360 POV",
+        "Chuyển Cảnh Đồng Dạng",
+        "Vòng Lặp Vô Tận",
+        "Quay Dựng Chỉn Chu"
       ],
       "country": {
         "id": "us_eu",
@@ -2993,6 +2998,11 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @bryanadamc",
       "tech_tags": [
+        "Match Cut Hình Tròn",
+        "Xoay Máy 360 POV",
+        "Chuyển Cảnh Đồng Dạng",
+        "Vòng Lặp Vô Tận",
+        "Quay Dựng Chỉn Chu",
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot"
@@ -8493,7 +8503,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -12050,7 +12060,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DcVzQCSP1MR_Healing_Homecoming_Daily_Vlog/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
