@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T16:32:39+07:00",
-  "total_scene_items": 382,
-  "total_unique_ideas": 363,
-  "total_active_ideas": 303,
+  "generated_at": "2026-10-18T16:33:52+07:00",
+  "total_scene_items": 383,
+  "total_unique_ideas": 364,
+  "total_active_ideas": 304,
   "total_excluded_ideas": 60,
   "total_creators": 230,
   "shooting_styles": [
@@ -78,7 +78,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 44,
+    "talking-head": 45,
     "storytelling": 39,
     "dien-anh": 139,
     "chuyen-canh": 60,
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 27,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 37,
+    "kien-truc": 38,
     "the-thao": 6,
     "ky-thuat-quay": 90,
     "ugc": 6
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 208,
+    "us_eu": 209,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "video",
-    "IG_@creator_video_Video_video"
+    "IG_@creator_video_Video_video",
+    "video"
   ],
   "creators_hub": [
     {
@@ -308,6 +308,26 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@framebygeorge",
+      "name": "Framebygeorge",
+      "profile_url": "https://www.instagram.com/framebygeorge/",
+      "video_count": 10,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40framebygeorge_DemoZWsuTjr_October_but_cinematic%F0%9F%8D%82/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@framebygeorge_DemoZWsuTjr_October_but_cinematic🍂",
+        "IG_@framebygeorge_DdZb-x1OuDw_Day_20_learning_cinematography",
+        "IG_@framebygeorge_DdW1eYoO7Nb_Day_19_learning_cinematography",
+        "IG_@framebygeorge_DdejCP_tg7G_Day_22_learning_cinematography",
+        "IG_@framebygeorge_DcwVaP0Of8D_Day_5_learning_cinematography",
+        "IG_@framebygeorge_DdMh8uRukGJ_Day_16_learning_cinematography",
+        "IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography",
+        "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
+        "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
+        "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
+      ]
+    },
+    {
       "handle": "@ulanzi",
       "name": "Ulanzi",
       "profile_url": "https://www.instagram.com/ulanzi/",
@@ -325,25 +345,6 @@ var FEDU_IDEAS_DATABASE = {
         "IG_@ulanzi_oUV0c_MT86_Auto-Deploy_Tripod_&_Selfie_Stick,_1.52m",
         "IG_@ulanzi_lazada_Easy_Open_Portable_Aluminum_Trigopod",
         "IG_@ulanzi_oU2DB_Quick_Release_Folding_L_Bracket_and_Plate_Cam"
-      ]
-    },
-    {
-      "handle": "@framebygeorge",
-      "name": "Framebygeorge",
-      "profile_url": "https://www.instagram.com/framebygeorge/",
-      "video_count": 9,
-      "top_industry": "Góc nhà đẹp",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40framebygeorge_DdZb-x1OuDw_Day_20_learning_cinematography/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@framebygeorge_DdZb-x1OuDw_Day_20_learning_cinematography",
-        "IG_@framebygeorge_DdW1eYoO7Nb_Day_19_learning_cinematography",
-        "IG_@framebygeorge_DdejCP_tg7G_Day_22_learning_cinematography",
-        "IG_@framebygeorge_DcwVaP0Of8D_Day_5_learning_cinematography",
-        "IG_@framebygeorge_DdMh8uRukGJ_Day_16_learning_cinematography",
-        "IG_@framebygeorge_DdPQJLvulmd_Day_17_learning_cinematography",
-        "IG_@framebygeorge_DdcH-N-ONJw_Day_21_learning_cinematography",
-        "IG_@framebygeorge_DdhHCL6OOfK_Day_23_learning_cinematography",
-        "IG_@framebygeorge_DdjxG1Hu8P6_Day_24_learning_cinematography"
       ]
     },
     {
@@ -2918,6 +2919,81 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "ideas": [
+    {
+      "id": "IG_@framebygeorge_DemoZWsuTjr_October_but_cinematic🍂",
+      "shortcode": "DemoZWsuTjr",
+      "title_vi": "October but cinematic🍂",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @framebygeorge",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Medium Tracking Shot",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@framebygeorge",
+        "name": "Framebygeorge",
+        "handle": "@framebygeorge",
+        "profile_url": "https://www.instagram.com/framebygeorge/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DemoZWsuTjr/",
+      "gdrive_folder": "https://drive.google.com/open?id=1lcqimbogxlcmHzK3yTFeHNBWJyrL-Y_l",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40framebygeorge_DemoZWsuTjr_October_but_cinematic%F0%9F%8D%82/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40framebygeorge_DemoZWsuTjr_October_but_cinematic%F0%9F%8D%82/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DemoZWsuTjr.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DemoZWsuTjr.mp4",
+        "report_url": "reports/IG_@framebygeorge_DemoZWsuTjr_October_but_cinematic🍂.html",
+        "shots_count": 10,
+        "duration": "16.6s",
+        "youtube_id": "ZKOxzBWJ-jk",
+        "youtube_embed": "https://www.youtube.com/embed/ZKOxzBWJ-jk",
+        "youtube_url": "https://youtu.be/ZKOxzBWJ-jk"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
     {
       "id": "IG_@junko_livlog_DebgMp_SYGv_⁡",
       "shortcode": "DebgMp_SYGv",
@@ -7890,7 +7966,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1jpYV1rRzpuPRMXcYkd1oVjIxfm7pBZFo",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_01_mid.jpg",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40ELENA_%F0%9D%97%94%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%97%B5%F0%9D%97%B2%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%B0_%F0%9D%97%9C%F0%9D%97%BB%F0%9D%98%80%F0%9D%97%BD%F0%9D%97%B6%F0%9D%97%BF%F0%9D%97%AE%F0%9D%98%81%F0%9D%97%B6%F0%9D%97%BC%F0%9D%97%BB_%F0%9D%97%9F%F0%9D%97%B6%F0%9D%97%B3%F0%9D%97%B2%F0%9D%98%80%F0%9D%98%81%F0%9D%98%86%F0%9D%97%B9%F0%9D%97%B2_Ddb6rA7NwQd_Video_by_elenabuntushak/shot_02_mid.jpg",
         "video_url": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "video_url_original": "https://media.fedu.vn/videos/Ddb6rA7NwQd.mp4",
         "report_url": "reports/IG_@ELENA_𝗔𝗲𝘀𝘁𝗵𝗲𝘁𝗶𝗰_𝗜𝗻𝘀𝗽𝗶𝗿𝗮𝘁𝗶𝗼𝗻_𝗟𝗶𝗳𝗲𝘀𝘁𝘆𝗹𝗲_Ddb6rA7NwQd_Video_by_elenabuntushak.html",
@@ -11448,7 +11524,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_03_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
