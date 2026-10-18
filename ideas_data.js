@@ -3,12 +3,12 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T21:37:29+07:00",
-  "total_scene_items": 388,
-  "total_unique_ideas": 369,
-  "total_active_ideas": 309,
+  "generated_at": "2026-10-18T21:45:04+07:00",
+  "total_scene_items": 389,
+  "total_unique_ideas": 370,
+  "total_active_ideas": 310,
   "total_excluded_ideas": 60,
-  "total_creators": 232,
+  "total_creators": 233,
   "shooting_styles": [
     {
       "id": "walk-and-talk",
@@ -78,7 +78,7 @@ var FEDU_IDEAS_DATABASE = {
   "shooting_style_stats": {
     "walk-and-talk": 8,
     "voice-over": 12,
-    "talking-head": 45,
+    "talking-head": 46,
     "storytelling": 39,
     "dien-anh": 143,
     "chuyen-canh": 60,
@@ -174,7 +174,7 @@ var FEDU_IDEAS_DATABASE = {
     "am-thuc": 28,
     "du-lich": 34,
     "cong-nghe": 41,
-    "kien-truc": 37,
+    "kien-truc": 38,
     "the-thao": 6,
     "ky-thuat-quay": 95,
     "ugc": 6
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 214,
+    "us_eu": 215,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -259,8 +259,8 @@ var FEDU_IDEAS_DATABASE = {
     "ad_bot_count": 4
   },
   "deleted_ids": [
-    "IG_@creator_video_Video_video",
-    "video"
+    "video",
+    "IG_@creator_video_Video_video"
   ],
   "creators_hub": [
     {
@@ -817,6 +817,17 @@ var FEDU_IDEAS_DATABASE = {
       "video_ids": [
         "REMAKE_Byjxson_Quang_Cao_Dong_Ho_Bam_Gio",
         "IG_@byjxson_Dal3RFpA5nI_Project_100_Day_01"
+      ]
+    },
+    {
+      "handle": "@bryanadamc",
+      "name": "Bryanadamc",
+      "profile_url": "https://www.instagram.com/bryanadamc/",
+      "video_count": 1,
+      "top_industry": "Góc nhà đẹp",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40bryanadamc_DeQYfOdpUdk_dreamin%E2%80%99_bout_ya_%F0%9F%8E%A5/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥"
       ]
     },
     {
@@ -2945,6 +2956,79 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥",
+      "shortcode": "DeQYfOdpUdk",
+      "title_vi": "dreamin’ bout ya 🎥",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
+      "shooting_style": {
+        "id": "talking-head",
+        "name": "Nói Trực Diện",
+        "en_name": "Talking Head",
+        "icon": "🗣️",
+        "badge_color": "blue"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @bryanadamc",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Low-key Lighting",
+        "Close-Up / Macro Detail Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Talking Head ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@bryanadamc",
+        "name": "Bryanadamc",
+        "handle": "@bryanadamc",
+        "profile_url": "https://www.instagram.com/bryanadamc/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DeQYfOdpUdk/",
+      "gdrive_folder": "https://drive.google.com/open?id=18hIIYFS2OmF8HthscKz0xe_EI6BCq7zP",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40bryanadamc_DeQYfOdpUdk_dreamin%E2%80%99_bout_ya_%F0%9F%8E%A5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40bryanadamc_DeQYfOdpUdk_dreamin%E2%80%99_bout_ya_%F0%9F%8E%A5/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DeQYfOdpUdk.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DeQYfOdpUdk.mp4",
+        "report_url": "reports/IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥.html",
+        "shots_count": 26,
+        "duration": "14.1s",
+        "youtube_id": "B2AaF-z5e1c",
+        "youtube_embed": "https://www.youtube.com/embed/B2AaF-z5e1c",
+        "youtube_url": "https://youtu.be/B2AaF-z5e1c"
+      },
+      "complexity": {
+        "id": "nang-cao",
+        "label": "🔴 Nâng cao (>18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@georgepabaker_DeHtnziInQn_Simple_as_that",
       "shortcode": "DeHtnziInQn",
       "title_vi": "B-Roll Practice Bàn Làm Việc: 13 Cú Cắt Cực Cận Biến Thao Tác Nhỏ Thành Nhịp Điệu Chỉn Chu",
@@ -3752,7 +3836,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -11966,7 +12050,7 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
@@ -13145,7 +13229,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "https://drive.google.com/open?id=1cnS_6mtlO52naIU-DIE-pRJoiEN8nys8",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_02_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg/shot_01_mid.webp",
         "video_url": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "video_url_original": "https://drive.google.com/uc?id=1QpXLSybzXgrShstQexi8sX3JS9oYgQR0&export=download",
         "report_url": "reports/IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg.html",
