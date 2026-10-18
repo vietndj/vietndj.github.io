@@ -1049,6 +1049,7 @@
         const focusedClass = (idx === focusedIndex) ? 'is-focused' : '';
         const nowSec = Date.now() / 1000;
         const isNew = it.isAlgolia ? false : (nowSec - (it.mtime || 0)) < 7 * 24 * 3600;
+        const fileName = it.url ? it.url.split('/').pop() : '';
 
         return `
           <div class="card ${focusedClass}" id="card-item-${idx}" data-idx="${idx}">
@@ -1073,7 +1074,7 @@
               <p class="card-desc">${descHl || 'Không có mô tả chi tiết.'}</p>
               ${tagsHtml ? `<div class="card-tags">${tagsHtml}</div>` : ""}
             </div>
-            
+            ${fileName ? `<div style="font-size: 10px; color: #cbd5e1; text-align: right; margin-top: 8px; padding-top: 4px; font-family: var(--font-mono); user-select: all; opacity: 0.8;" title="Tên file">${fileName}</div>` : ""}
           </div>
         `;
       }).join('');
