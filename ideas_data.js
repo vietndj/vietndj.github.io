@@ -3,10 +3,10 @@
  * Do not edit manually. Re-run build_ideas_bank.py to update.
  */
 var FEDU_IDEAS_DATABASE = {
-  "generated_at": "2026-10-18T22:50:43+07:00",
-  "total_scene_items": 389,
-  "total_unique_ideas": 370,
-  "total_active_ideas": 310,
+  "generated_at": "2026-10-19T21:30:56+07:00",
+  "total_scene_items": 390,
+  "total_unique_ideas": 371,
+  "total_active_ideas": 311,
   "total_excluded_ideas": 60,
   "total_creators": 233,
   "shooting_styles": [
@@ -80,7 +80,7 @@ var FEDU_IDEAS_DATABASE = {
     "voice-over": 12,
     "talking-head": 44,
     "storytelling": 39,
-    "dien-anh": 144,
+    "dien-anh": 145,
     "chuyen-canh": 61,
     "theo-nhip-nhac": 0,
     "bts": 2
@@ -172,11 +172,11 @@ var FEDU_IDEAS_DATABASE = {
     "thuong-hieu": 28,
     "thoi-trang": 27,
     "am-thuc": 28,
-    "du-lich": 34,
+    "du-lich": 35,
     "cong-nghe": 41,
-    "kien-truc": 37,
+    "kien-truc": 38,
     "the-thao": 6,
-    "ky-thuat-quay": 96,
+    "ky-thuat-quay": 95,
     "ugc": 6
   },
   "x_factors": [
@@ -246,7 +246,7 @@ var FEDU_IDEAS_DATABASE = {
     }
   ],
   "country_stats": {
-    "us_eu": 215,
+    "us_eu": 216,
     "korea": 10,
     "india": 3,
     "japan": 7,
@@ -501,6 +501,19 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
+      "handle": "@jade.got.curious",
+      "name": "Jade Got Curious",
+      "profile_url": "https://www.instagram.com/jade.got.curious/",
+      "video_count": 3,
+      "top_industry": "Xây kênh",
+      "sample_thumb": "https://media.fedu.vn/images/IG_%40jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow/shot_01_mid.webp",
+      "video_ids": [
+        "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
+        "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
+        "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
+      ]
+    },
+    {
       "handle": "@arturbr",
       "name": "Arturbr",
       "profile_url": "https://www.instagram.com/arturbr/",
@@ -700,18 +713,6 @@ var FEDU_IDEAS_DATABASE = {
       ]
     },
     {
-      "handle": "@jade.got.curious",
-      "name": "Jade_Sheng",
-      "profile_url": "https://www.instagram.com/jade.got.curious/",
-      "video_count": 2,
-      "top_industry": "Xây kênh",
-      "sample_thumb": "https://media.fedu.vn/images/IG_%40Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious/shot_01_mid.webp",
-      "video_ids": [
-        "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
-        "IG_@jade.got.curious_DbgtGKjNcH9_10_Weeks_Challenge_Storytelling"
-      ]
-    },
-    {
       "handle": "@nemo_ooo",
       "name": "尼莫Nemo_ིྀ_ᗦ↞◃",
       "profile_url": "https://www.instagram.com/nemo_ooo/",
@@ -879,7 +880,7 @@ var FEDU_IDEAS_DATABASE = {
       "name": "Worldwithreece",
       "profile_url": "https://www.instagram.com/worldwithreece/",
       "video_count": 1,
-      "top_industry": "Bố cục",
+      "top_industry": "Du lịch",
       "sample_thumb": "https://media.fedu.vn/images/IG_%40worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life/shot_01_mid.webp",
       "video_ids": [
         "IG_@worldwithreece_DeXSJttMxAv_Shot_ideas_you_can_use_to_film_your_life"
@@ -2956,6 +2957,81 @@ var FEDU_IDEAS_DATABASE = {
   ],
   "ideas": [
     {
+      "id": "IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow",
+      "shortcode": "DepzH7jxO0z",
+      "title_vi": "Nothing in these shots was special. A shadow",
+      "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
+      "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Wide Establishing Shot",
+      "shooting_style": {
+        "id": "dien-anh",
+        "name": "Chỉn Chu",
+        "en_name": "Cinematic Mastery",
+        "icon": "🎬",
+        "badge_color": "sky"
+      },
+      "industries": [
+        {
+          "id": "kien-truc",
+          "name": "Góc nhà đẹp",
+          "en_name": "Architecture & Living",
+          "icon": "🏛️",
+          "badge_color": "emerald",
+          "desc": "Bố cục đối xứng kiến trúc, nghệ thuật nhịp sống ga tàu điện ngầm, không gian gỗ tĩnh lặng (Slow Living)."
+        }
+      ],
+      "x_factors": [],
+      "tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "country": {
+        "id": "us_eu",
+        "name": "Âu Mỹ",
+        "en_name": "US & Europe",
+        "flag": "🇺🇸/🇪🇺",
+        "badge_color": "purple"
+      },
+      "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @jade.got.curious",
+      "tech_tags": [
+        "Establishing Hook Shot",
+        "Close-Up / Macro Detail Shot",
+        "Medium Tracking Shot",
+        "Wide Establishing Shot"
+      ],
+      "transition_level": null,
+      "is_ad_bot": false,
+      "fedu_optimization": {},
+      "logic_explanation": "Tự động phân loại cấu trúc Chỉn Chu ngành Kiến Trúc & Không Gian Sống.",
+      "creator": {
+        "raw": "@jade.got.curious",
+        "name": "Jade Got Curious",
+        "handle": "@jade.got.curious",
+        "profile_url": "https://www.instagram.com/jade.got.curious/"
+      },
+      "ig_url": "https://www.instagram.com/reel/DepzH7jxO0z/",
+      "gdrive_folder": "https://drive.google.com/open?id=1i68maEcRW1KLqkACJyyhC00Fsw3vrPKd",
+      "media": {
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow/shot_03_mid.webp",
+        "video_url": "https://media.fedu.vn/videos/DepzH7jxO0z.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DepzH7jxO0z.mp4",
+        "report_url": "reports/IG_@jade.got.curious_DepzH7jxO0z_Nothing_in_these_shots_was_special._A_shadow.html",
+        "shots_count": 14,
+        "duration": "15.5s",
+        "youtube_id": "agKcVlwxnBY",
+        "youtube_embed": "https://www.youtube.com/embed/agKcVlwxnBY",
+        "youtube_url": "https://youtu.be/agKcVlwxnBY"
+      },
+      "complexity": {
+        "id": "trung-binh",
+        "label": "🟡 Trung bình (9-18 shots)"
+      },
+      "is_personal": false,
+      "is_excluded": false
+    },
+    {
       "id": "IG_@bryanadamc_DeQYfOdpUdk_dreamin’_bout_ya_🎥",
       "shortcode": "DeQYfOdpUdk",
       "title_vi": "Nghệ Thuật Graphic Match Cut Hình Tròn & Đảo Trục Xoay Máy 360° POV Đỉnh Cao",
@@ -3144,15 +3220,26 @@ var FEDU_IDEAS_DATABASE = {
       ],
       "x_factors": [],
       "tags": [
+        "Bố cục 1/3",
+        "Ánh sáng tự nhiên",
+        "Toàn cảnh (Wide)",
+        "Hook thị giác 3s",
+        "Đi bộ theo (Tracking)",
+        "Đặc tả (Macro)",
+        "Cận cảnh (Close-up)",
+        "Low-key Lighting",
+        "Kỹ thuật ghép phân thân",
+        "Cố định (Tripod)",
+        "Thời trang đường phố",
+        "Cut on Action",
+        "Match Cut",
+        "Đẩy máy (Push-in)",
         "Establishing Hook Shot",
         "Medium Tracking Shot",
         "Wide Establishing Shot",
         "Close-Up / Macro Detail Shot",
-        "Low-key Lighting",
-        "Kỹ thuật ghép phân thân",
         "Khóa chân máy Tripod",
         "Tương phản Hậu trường & Thành phẩm",
-        "Thời trang đường phố",
         "Chuyển cảnh bước qua ống kính"
       ],
       "country": {
@@ -3164,6 +3251,17 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @qfroost",
       "tech_tags": [
+        "Bố cục 1/3",
+        "Ánh sáng tự nhiên",
+        "Toàn cảnh (Wide)",
+        "Hook thị giác 3s",
+        "Đi bộ theo (Tracking)",
+        "Đặc tả (Macro)",
+        "Cận cảnh (Close-up)",
+        "Cố định (Tripod)",
+        "Cut on Action",
+        "Match Cut",
+        "Đẩy máy (Push-in)",
         "Kỹ thuật ghép phân thân",
         "Khóa chân máy Tripod",
         "Tương phản Hậu trường & Thành phẩm",
@@ -3715,23 +3813,24 @@ var FEDU_IDEAS_DATABASE = {
       },
       "industries": [
         {
-          "id": "ky-thuat-quay",
-          "name": "Bố cục",
-          "en_name": "Filmmaking Mastery",
-          "icon": "🎯",
-          "badge_color": "blue",
-          "desc": "Bóc tách 4 cuts, góc máy điện ảnh, bố cục khung hình, kỹ thuật đánh đèn studio 3 điểm."
+          "id": "du-lich",
+          "name": "Du lịch",
+          "en_name": "Travel & Culture",
+          "icon": "✈️",
+          "badge_color": "sky",
+          "desc": "Du ký khám phá, phong cảnh đại ngàn, chân dung bản địa, ánh sáng tự nhiên phố cổ."
         }
       ],
       "x_factors": [],
       "tags": [
+        "Góc máy",
+        "B-Roll Chỉn Chu",
+        "Góc Máy Đời Thường",
+        "Góc Nhìn POV",
         "Establishing Hook Shot",
         "Low-key Lighting",
         "Close-Up / Macro Detail Shot",
-        "Góc Máy Đời Thường",
-        "B-Roll Chỉn Chu",
         "Kỹ Thuật Quay",
-        "Góc Nhìn POV",
         "Quay Cuộc Sống"
       ],
       "country": {
@@ -3743,6 +3842,7 @@ var FEDU_IDEAS_DATABASE = {
       },
       "purpose": "Phân tích chuyên sâu ngôn ngữ điện ảnh và nghệ thuật thị giác cho @worldwithreece",
       "tech_tags": [
+        "Góc máy",
         "Góc Máy Đời Thường",
         "B-Roll Chỉn Chu",
         "Kỹ Thuật Quay",
@@ -3845,7 +3945,7 @@ var FEDU_IDEAS_DATABASE = {
       "gdrive_folder": "",
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40medium.lady_DeNRxHJPgse_No_shade_no_shame%2C_please_put_down_your_phone/shot_02_mid.webp",
         "video_url": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "video_url_original": "https://media.fedu.vn/videos/8oIelIZi_4c",
         "report_url": "reports/IG_@medium.lady_DeNRxHJPgse_No_shade_no_shame,_please_put_down_your_phone.html",
@@ -7979,7 +8079,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Harry_DdlmRIcBw81_Video_by_hdnimedia",
       "shortcode": "DdlmRIcBw81",
-      "title_vi": "Video by hdnimedia",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 16 Cảnh Ngành Góc nhà đẹp (Harry)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 2 Of 18 • By @hdnimedia • Shared September 22 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -8988,7 +9088,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Sodam_Kim_DcYZMc7Sc49_Video_by_31.ioa",
       "shortcode": "DcYZMc7Sc49",
-      "title_vi": "Video by 31.ioa",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 10 Cảnh Ngành Góc nhà đẹp (Sodam Kim)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
@@ -9298,7 +9398,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Flying_DdplzLRytOA_Video_by_loveqinghe",
       "shortcode": "DdplzLRytOA",
-      "title_vi": "Video by loveqinghe",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 10 Cảnh Ngành Góc nhà đẹp (Flying)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -9579,7 +9679,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1y3zSD0GyixX_DnPy8JuDPAjo0UfdpeiV&export=download",
         "report_url": "reports/Smooth Criminal Punch Transition Travel - @bysuncan.html",
         "shots_count": 6,
-        "duration": "17.00s",
+        "duration": "15s",
         "youtube_id": "d1C7DMZn5rk",
         "youtube_embed": "https://www.youtube.com/embed/d1C7DMZn5rk",
         "youtube_url": "https://youtu.be/d1C7DMZn5rk"
@@ -11378,7 +11478,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@EcomBrand_ECOM_Ulanzi_Ulanzi",
       "shortcode": "ECOM_Ulanzi",
-      "title_vi": "Ulanzi",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 16 Cảnh Ngành Đồ công nghệ (Ecombrand)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Wide Establishing Shot • High-key Lighting",
       "shooting_style": {
@@ -11846,7 +11946,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Жамьяна_Осознанный_стилист_UGC_DdeWMWLsaHA_Video_by_zhamyana",
       "shortcode": "DdeWMWLsaHA",
-      "title_vi": "Biến hình thời trang đường phố Worm's-Eye",
+      "title_vi": "Biến hình thời trang đường phố Worm&#x27;s-Eye",
       "quick_takeaway": "Đặt camera sát sàn ngửa lên 85-90 độ mở màn bằng cú tung đồ mồi tò mò. Dùng động tác hất tóc lấy đà để che vết cắt chuyển cảnh sang ngoại cảnh đối lập 180 độ.",
       "key_tech": "Hook • Diễn • Worm's-Eye • Match-Action • Hair Flip • Biến hình • UGC",
       "shooting_style": {
@@ -12059,8 +12159,8 @@ var FEDU_IDEAS_DATABASE = {
       "ig_url": "https://www.instagram.com/reel/DdbCdHFKZsP/",
       "gdrive_folder": "https://drive.google.com/open?id=1TrKEslz5f0-vToucfldVqxVIuHSb19Wp",
       "media": {
-        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_01_mid.webp",
-        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DY_0KNxvNJa_Unboxing_Cinematic_Flow/shot_03_mid.webp",
+        "thumb_hook": "https://media.fedu.vn/images/IG_%40hena_film_vlog_DdlmZczPsCE_%ED%98%BC%EC%9E%90_%EB%A7%8C%EB%93%9C%EB%8A%94%EB%8D%B0_%EC%B4%AC%EC%98%81%EC%9D%80_%EB%88%84%EA%B0%80_%ED%95%98%EB%83%90%EA%B3%A0%EC%9A%94%F0%9F%A4%B7%F0%9F%8F%BB%E2%80%8D%E2%99%80%EF%B8%8F_%EC%A0%9C%ED%92%88%EC%A0%9C%EA%B3%B5/shot_01_mid.webp",
+        "thumb_key": "https://media.fedu.vn/images/IG_%40hena_film_vlog_Db-mZWEKECo_4_Cu_May_Sieu_Thi_Ulanzi_MA38_MT85/extracted_shots/shot_03_mid.webp",
         "video_url": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "video_url_original": "https://media.fedu.vn/videos/DdbCdHFKZsP.mp4",
         "report_url": "reports/IG_@hena_film_vlog_DdbCdHFKZsP_햇빛_없는_집,_음식_촬영_가능함🤔_제품제공.html",
@@ -12158,7 +12258,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@mylene_mae_DdeCKRRRGvd_Video_by_mylenesmind",
       "shortcode": "DdeCKRRRGvd",
-      "title_vi": "Video by mylenesmind",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 21 Cảnh Ngành Bố cục (Mylene Mae)",
       "quick_takeaway": "⚡ Dùng talking head kết hợp B-roll cận cảnh bàn làm việc ➔ Chặn feed người xem bằng nhịp chuyển đổi khung hình liên tục. ➔ ⚡ Thực chiến: Xen kẽ góc máy chính diện và góc cận bàn làm việc/màn hình edit, đổi khung hình mỗi 2-3 giây để chống nhàm chán khi chia sẻ câu chuyện dài.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Low-key Lighting • Medium Tracking Shot • High-key Lighting",
       "shooting_style": {
@@ -12235,8 +12335,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Saro_Deele_DXjRnwCISNU_Video_by_sarodeele",
       "shortcode": "DXjRnwCISNU",
-      "title_vi": "Video by sarodeele",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 23 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Thời trang, chuyển cảnh — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Saro Deele)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 23 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -12308,7 +12408,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Leticia_Quadros_DYXXgkbxPj7_Video_by_leticiaqdrs",
       "shortcode": "DYXXgkbxPj7",
-      "title_vi": "Video by leticiaqdrs",
+      "title_vi": "Mục chuyển cảnh . điểm nhấn chuyển cảnh cấp 2 — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Leticia Quadros)",
       "quick_takeaway": "mục chuyển cảnh . điểm nhấn chuyển cảnh cấp 2",
       "key_tech": "Establishing Hook Shot • Close-Up / Macro Detail Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -12619,7 +12719,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Studio_Berdua_DdOu2yRsmDy_Video_by_studioberdua",
       "shortcode": "DdOu2yRsmDy",
-      "title_vi": "Video by studioberdua",
+      "title_vi": "Phân Tích Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu: Nhịp Dựng 14 Cảnh Ngành Đồ công nghệ (Studio Berdua)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 13 Of 18 • By @studioberdua • Shared September 13 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12779,7 +12879,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Eugenia_Syd_UGC_creator_DdA1ErpRMg2_Video_by_eugcreates.ugc",
       "shortcode": "DdA1ErpRMg2",
-      "title_vi": "Video by eugcreates.ugc",
+      "title_vi": "Phân Tích Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu: Nhịp Dựng 9 Cảnh Ngành UGC (Eugenia Syd Ugc Creator)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 9 Of 18 • By @eugcreates.ugc • Shared September 7 • 2026 • Establishing Hook Shot • High-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -12859,7 +12959,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Hayden_Slow_Korean_&_Daily_Life_Daz3Po8zHIE_Video_by_haydenkorean",
       "shortcode": "Daz3Po8zHIE",
-      "title_vi": "@Hayden_Slow_Korean_&_Daily_Life - Video by haydenkorean",
+      "title_vi": "@Hayden_Slow_Korean_&amp;_Daily_Life - Video by haydenkorean",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Góc trung là xương sống kể chuyện, hãy thêm chuyển động camera nhẹ để tạo cảm giác điện ảnh sống động.",
       "key_tech": "Instagram Liked 24h: Video • 7 Of 18 • By @haydenkorean • Shared July 15 • 2026 • Establishing Hook Shot • Medium Tracking Shot • Low-key Lighting",
       "shooting_style": {
@@ -12940,7 +13040,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@JAEHYUNG_DdWa3o2zc0w_Video_by__hyungs",
       "shortcode": "DdWa3o2zc0w",
-      "title_vi": "Video by  hyungs",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 1 Cảnh Ngành Góc nhà đẹp (Jaehyung)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết.",
       "key_tech": "Instagram Liked 24h: Video • 5 Of 18 • By @_hyungs • Shared September 16 • 2026 • Establishing Hook Shot • Low-key Lighting",
       "shooting_style": {
@@ -13019,7 +13119,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Indang_Ayu_DccpHbETFSr_Video_by_indanayuu",
       "shortcode": "DccpHbETFSr",
-      "title_vi": "Video by indanayuu",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 8 Cảnh Ngành Góc nhà đẹp (Indang Ayu)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 4 Of 18 • By @indanayuu • Shared August 24 • 2026 • Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13179,7 +13279,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Five_Oars_Coffee_Roasters_DcxcVGtxjNl_Video_by_focr.sg",
       "shortcode": "DcxcVGtxjNl",
-      "title_vi": "Video by focr.sg",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 2 Cảnh Ngành Góc nhà đẹp (Five Oars Coffee Roasters)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Dùng góc cận xen kẽ góc toàn để tạo nhịp co giãn thị giác (Breathe In - Breathe Out) cho người xem.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @focr.sg • Shared September 2 • 2026 • Establishing Hook Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -13582,7 +13682,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Korea_Street_Views_DcBXsaezmjo_Video_by_korea_street_views",
       "shortcode": "DcBXsaezmjo",
-      "title_vi": "Video by korea street views",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 3 Cảnh Ngành Du lịch (Korea Street Views)",
       "quick_takeaway": "⚡ Sử dụng quy tắc 2s đầu (Visual Hook) để định hình nhịp điệu và không gian trước khi đi vào chi tiết. ➔ Khi quay góc rộng khung dọc, luôn bố trí một trục chuyển động hoặc đường dẫn (Leading Lines) về trung tâm.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @korea_street_views • Shared August 14 • 2026 • Establishing Hook Shot • Wide Establishing Shot",
       "shooting_style": {
@@ -13664,7 +13764,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Banh_shimano_Dc0-FXlE4kV_Carousel_Analysis",
       "shortcode": "Dc0-FXlE4kV_Carousel_Analysis",
-      "title_vi": "Video by diego51",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 6 Cảnh Ngành Bố cục (Banh Shimano)",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 6 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot • Close-Up / Macro Detail Shot",
       "shooting_style": {
@@ -14240,8 +14340,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@3413882081_Dcx7pQpS6zs_Video_by_syooaann",
       "shortcode": "Dcx7pQpS6zs",
-      "title_vi": "Video by syooaann",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 1 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Phân Tích Kỹ Thuật Quay B-Roll &amp; Bố Cục: Nhịp Dựng 1 Cảnh Ngành Bố cục (3413882081)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 1 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Video • 3 Of 18 • By @syooaann • Shared September 2 • 2026 • Establishing Hook Shot",
       "shooting_style": {
         "id": "dien-anh",
@@ -14318,8 +14418,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Megan_Tan_DOd8XMMjxcH_Video_by_megantanhweewen",
       "shortcode": "DOd8XMMjxcH",
-      "title_vi": "Video by megantanhweewen",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 4 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Phân Tích Talking Head Chuyên Gia Đối Thoại: Nhịp Dựng 4 Cảnh Ngành Bố cục (Megan Tan)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 4 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Video • 1 Of 18 • By @megantanhweewen • Shared September 11 • 2025 • Establishing Hook Shot • Low-key Lighting • Medium Tracking Shot",
       "shooting_style": {
         "id": "talking-head",
@@ -14399,7 +14499,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle",
       "shortcode": "DdTeHleIqkg",
-      "title_vi": "Director's Report • Director's Report",
+      "title_vi": "Director&#x27;s Report • Director&#x27;s Report",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 24 phân cảnh.",
       "key_tech": "Establishing Hook Shot • Low-key Lighting • Close-Up / Macro Detail Shot • High-key Lighting",
       "shooting_style": {
@@ -14459,7 +14559,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1G7s1zBlYAQTZa88c5GYfIPOePrvh_dCD&export=download",
         "report_url": "reports/IG_@AL,_The_Creator_Videography_Reels_DdTeHleIqkg_Video_by_shogentle.html",
         "shots_count": 24,
-        "duration": "48.00s",
+        "duration": "48.0s",
         "youtube_id": "6P7zBTMRnEc",
         "youtube_embed": "https://www.youtube.com/embed/6P7zBTMRnEc",
         "youtube_url": "https://youtu.be/6P7zBTMRnEc"
@@ -16326,7 +16426,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1uyhc5TVwH7m6bPYaeK3XLNHCbq5x-T7v&export=download",
         "report_url": "reports/IG_@kawoon.lee_DatbbgJviTV_Teaching_Nervous_System_Not_Emergency.html",
         "shots_count": 8,
-        "duration": "27.33s",
+        "duration": "27.3s",
         "youtube_id": "-CqBPlOPgwo",
         "youtube_embed": "https://www.youtube.com/embed/-CqBPlOPgwo",
         "youtube_url": "https://youtu.be/-CqBPlOPgwo"
@@ -16409,8 +16509,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho/extracted_shots/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40mercantegi_DbQtoVPRMWk_5_Cenas_Criativas_Trabalho/extracted_shots/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1n11mLGjuCdzbzAV9kaDlcB5sQnbBaITx&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1n11mLGjuCdzbzAV9kaDlcB5sQnbBaITx&export=download",
+        "video_url": "https://media.fedu.vn/videos/DbQtoVPRMWk.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DbQtoVPRMWk.mp4",
         "report_url": "reports/5 Cenas Criativas Trabalho - @mercantegi.html",
         "shots_count": 11,
         "duration": "19.17s",
@@ -16582,7 +16682,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1NM0OyKKorE8361mcGGDXUIN3Z5eIc1XW&export=download",
         "report_url": "reports/Cannes Street Fit Check - @vicgaibar.html",
         "shots_count": 18,
-        "duration": "27.20s",
+        "duration": "27.2s",
         "youtube_id": "yK60tI_48NQ",
         "youtube_embed": "https://www.youtube.com/embed/yK60tI_48NQ",
         "youtube_url": "https://youtu.be/yK60tI_48NQ"
@@ -16661,7 +16761,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1SzgWqWQ7VdtWpN-5n4OrZ9mAsEUZ66MT&export=download",
         "report_url": "reports/IG_@hannya.tattoos_DdLedJjsbNW_Asian_Dragon_Tattoo_Journey.html",
         "shots_count": 18,
-        "duration": "63.03s",
+        "duration": "63.0s",
         "youtube_id": "TMNPTUYlV_w",
         "youtube_embed": "https://www.youtube.com/embed/TMNPTUYlV_w",
         "youtube_url": "https://youtu.be/TMNPTUYlV_w"
@@ -16739,7 +16839,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1BAfc_gWmcRZ6XcA6Cut48a1Ie1fREQ5s&export=download",
         "report_url": "reports/Day In My Life SF Speed Transitions - @celfstudies.html",
         "shots_count": 25,
-        "duration": "15.87s",
+        "duration": "15.9s",
         "youtube_id": "Mw1P7ZCe2T0",
         "youtube_embed": "https://www.youtube.com/embed/Mw1P7ZCe2T0",
         "youtube_url": "https://youtu.be/Mw1P7ZCe2T0"
@@ -16819,7 +16919,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1TSaRvnQHJN4OYJgmhIwKHzcrG8rizyNK&export=download",
         "report_url": "reports/IG_@hanoi.liebe_DdHf_1yA4WQ_Massage_and_Matcha.html",
         "shots_count": 30,
-        "duration": "34.80s",
+        "duration": "34.8s",
         "youtube_id": "W35AQHUeCeI",
         "youtube_embed": "https://www.youtube.com/embed/W35AQHUeCeI",
         "youtube_url": "https://youtu.be/W35AQHUeCeI"
@@ -16981,7 +17081,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1OyvazuDf6_Ve0OsMK09aZbN-bJopz697&export=download",
         "report_url": "reports/UTS Vietnam Open Day Campus Tour - @utsint.html",
         "shots_count": 9,
-        "duration": "34.00s",
+        "duration": "34.0s",
         "youtube_id": "2A0zbQqLhL0",
         "youtube_embed": "https://www.youtube.com/embed/2A0zbQqLhL0",
         "youtube_url": "https://youtu.be/2A0zbQqLhL0"
@@ -17058,7 +17158,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1TghJCZcLRbKJEj5hkf2sMmzhUx0obMHo&export=download",
         "report_url": "reports/Kien Truc Chuoi Canh Sequence - @the.isaacelguera.html",
         "shots_count": 21,
-        "duration": "74.13s",
+        "duration": "74.1s",
         "youtube_id": "GlVZM5wuJ8U",
         "youtube_embed": "https://www.youtube.com/embed/GlVZM5wuJ8U",
         "youtube_url": "https://youtu.be/GlVZM5wuJ8U"
@@ -17215,7 +17315,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1YyRPrj3FxZsvRJ7wl6nr4ShrRNVrArNy&export=download",
         "report_url": "reports/Slow Living Scent & Giftspace - @moodme.sg.html",
         "shots_count": 14,
-        "duration": "14.67s",
+        "duration": "14.7s",
         "youtube_id": "DPSyW544iJw",
         "youtube_embed": "https://www.youtube.com/embed/DPSyW544iJw",
         "youtube_url": "https://youtu.be/DPSyW544iJw"
@@ -17374,7 +17474,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1ynjmpJGwTi2xxrs32WP3r8nusVfIMvZL&export=download",
         "report_url": "reports/4 Cu May Sieu Thi Bang Gia Do Ulanzi MA38 MT85 - @hena_film_vlog.html",
         "shots_count": 10,
-        "duration": "19.30s",
+        "duration": "19.3s",
         "youtube_id": "FKDuLkfKepY",
         "youtube_embed": "https://www.youtube.com/embed/FKDuLkfKepY",
         "youtube_url": "https://youtu.be/FKDuLkfKepY"
@@ -17538,7 +17638,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://media.fedu.vn/videos/5%20Outfits%20Match%20Cut%20Walk%20-%20@naohasa.mp4",
         "report_url": "reports/5 Outfits Match Cut Walk - @naohasa.html",
         "shots_count": 5,
-        "duration": "13.68s",
+        "duration": "13.7s",
         "youtube_id": "DIf9xxCY8uw",
         "youtube_embed": "https://www.youtube.com/embed/DIf9xxCY8uw",
         "youtube_url": "https://youtu.be/DIf9xxCY8uw"
@@ -17982,7 +18082,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1AnCtKf6UV1sfsCGjPQyn3fmhSGb1aiIa&export=download",
         "report_url": "reports/A Little Hong Kong A Lot Of Happiness - @saebomoh.html",
         "shots_count": 6,
-        "duration": "16.33s",
+        "duration": "15s",
         "youtube_id": "3Oz60JvZw_0",
         "youtube_embed": "https://www.youtube.com/embed/3Oz60JvZw_0",
         "youtube_url": "https://youtu.be/3Oz60JvZw_0"
@@ -18124,7 +18224,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1PmB81EDu74LBZQe1gaDq96H9osSLm0bc&export=download",
         "report_url": "reports/IG_@korea_bigmama_DdBnto_O0He_Banana_Snickers_Twist.html",
         "shots_count": 6,
-        "duration": "20.33s",
+        "duration": "15s",
         "youtube_id": "cgsrFOmW3FY",
         "youtube_embed": "https://www.youtube.com/embed/cgsrFOmW3FY",
         "youtube_url": "https://youtu.be/cgsrFOmW3FY"
@@ -18189,7 +18289,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1KKgy-jCjS4Is3jcuGuKkQaP6TBjOhULP&export=download",
         "report_url": "reports/Time To Go For A Run - @quinematic.html",
         "shots_count": 16,
-        "duration": "12.26s",
+        "duration": "15s",
         "youtube_id": "3gKpH1_-6_Y",
         "youtube_embed": "https://www.youtube.com/embed/3gKpH1_-6_Y",
         "youtube_url": "https://youtu.be/3gKpH1_-6_Y"
@@ -18254,7 +18354,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=18MEyTu0X9v_9lJyQJSfoWrU04xZP5dtc&export=download",
         "report_url": "reports/Gunung Sumbing Trekking Match Cut - @dimasyudhystira.html",
         "shots_count": 8,
-        "duration": "15.30s",
+        "duration": "15s",
         "youtube_id": "_BMNrbhe5OA",
         "youtube_embed": "https://www.youtube.com/embed/_BMNrbhe5OA",
         "youtube_url": "https://youtu.be/_BMNrbhe5OA"
@@ -18473,7 +18573,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=10kdcqpe1Ubu7-Rxinb0gdmrGcrDzE6oE&export=download",
         "report_url": "reports/IG_@steven.vuu_DaBLA-QJcrk_How_I_Wake_Up_Skit.html",
         "shots_count": 3,
-        "duration": "20.03s",
+        "duration": "15s",
         "youtube_id": "nyW_YJ5InZU",
         "youtube_embed": "https://www.youtube.com/embed/nyW_YJ5InZU",
         "youtube_url": "https://youtu.be/nyW_YJ5InZU"
@@ -18538,7 +18638,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1_a0AIgmkErEXjrITbRZ2faejtIO-Wred&export=download",
         "report_url": "reports/IG_@kulniyasally_DdGRCKwsaaI_Kamera_05x_Behind_The_Scene_Food_POV.html",
         "shots_count": 7,
-        "duration": "15.33s",
+        "duration": "15s",
         "youtube_id": "D4ifl7L8OZQ",
         "youtube_embed": "https://www.youtube.com/embed/D4ifl7L8OZQ",
         "youtube_url": "https://youtu.be/D4ifl7L8OZQ"
@@ -18603,7 +18703,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=18lCFHqwYjPDczHjkMKye6RlUF8e9gJt4&export=download",
         "report_url": "reports/Outdoor Fashion Match Cut Gear Showcase - @hsuan_yunn.html",
         "shots_count": 7,
-        "duration": "9.27s",
+        "duration": "15s",
         "youtube_id": "KBkmSbkFWuM",
         "youtube_embed": "https://www.youtube.com/embed/KBkmSbkFWuM",
         "youtube_url": "https://youtu.be/KBkmSbkFWuM"
@@ -18745,7 +18845,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=11wpzTiDpJhuYHR2YtFHf4YNnYBH0QnqM&export=download",
         "report_url": "reports/Meta Ray-Ban AI vs Tri Mun Hero Cosmetics Skit - @steven.vuu.html",
         "shots_count": 10,
-        "duration": "24.20s",
+        "duration": "15s",
         "youtube_id": "7jAFT67i58E",
         "youtube_embed": "https://www.youtube.com/embed/7jAFT67i58E",
         "youtube_url": "https://youtu.be/7jAFT67i58E"
@@ -18810,7 +18910,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1gaJv5LhE1f595ygYeZu1pBBMi2xJAyVp&export=download",
         "report_url": "reports/IG_@yegor.sky_DdJaKjQCMTm_How_To_Film_Yourself_In_City.html",
         "shots_count": 10,
-        "duration": "16.21s",
+        "duration": "15s",
         "youtube_id": "YQpg4oROHiE",
         "youtube_embed": "https://www.youtube.com/embed/YQpg4oROHiE",
         "youtube_url": "https://youtu.be/YQpg4oROHiE"
@@ -19141,7 +19241,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://media.fedu.vn/videos/Fast%20Food%20Outsells%20Restaurant%20-%20@shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DdCRQnBI4ny_Fast_Food_Outsells_Restaurant.html",
         "shots_count": 16,
-        "duration": "43.00s",
+        "duration": "32s",
         "youtube_id": "L1fF6DjIR4Q",
         "youtube_embed": "https://www.youtube.com/embed/L1fF6DjIR4Q",
         "youtube_url": "https://youtu.be/L1fF6DjIR4Q"
@@ -19226,7 +19326,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1KVv2CMmuZdADiZwFXXlku6SHy6aWcf5_&export=download",
         "report_url": "reports/Tornado Kick Martial Arts Kinetic Hook - @aidana_adilkassym.html",
         "shots_count": 7,
-        "duration": "10.90s",
+        "duration": "14s",
         "youtube_id": "ZwfjHjE4E5c",
         "youtube_embed": "https://www.youtube.com/embed/ZwfjHjE4E5c",
         "youtube_url": "https://youtu.be/ZwfjHjE4E5c"
@@ -19394,7 +19494,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1D9q-okkJWT7-s825z90q-bNGr1ivh5kG&export=download",
         "report_url": "reports/Coffee + Outfit Match Cut Transition - @jamison.lange.html",
         "shots_count": 22,
-        "duration": "28.27s",
+        "duration": "44s",
         "youtube_id": "l7MBARAlhZI",
         "youtube_embed": "https://www.youtube.com/embed/l7MBARAlhZI",
         "youtube_url": "https://youtu.be/l7MBARAlhZI"
@@ -19561,7 +19661,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1q04wvmL7rGGdODQEqmGF_oxdvuin4YsZ&export=download",
         "report_url": "reports/Lifestyle Habit & Cinematic Routine - @joshdiazfilms.html",
         "shots_count": 9,
-        "duration": "18.39s",
+        "duration": "18.4s",
         "youtube_id": "dGZ-cPgXXEo",
         "youtube_embed": "https://www.youtube.com/embed/dGZ-cPgXXEo",
         "youtube_url": "https://youtu.be/dGZ-cPgXXEo"
@@ -19729,7 +19829,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1J1ldw7-sIPUHDIL0SIRjvM-KGC2bcz2B&export=download",
         "report_url": "reports/Xay_Dung_Kho_B_Roll_Dung_1_Nam_-_@watch.gabe.html",
         "shots_count": 7,
-        "duration": "47.80s",
+        "duration": "47.8s",
         "youtube_id": "dWprO8Lf7QE",
         "youtube_embed": "https://www.youtube.com/embed/dWprO8Lf7QE",
         "youtube_url": "https://youtu.be/dWprO8Lf7QE"
@@ -19744,8 +19844,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Gabe_Harris_Dc3ih_5jlqz_Carousel_Analysis",
       "shortcode": "Dc3ih_5jlqz_Carousel_Analysis",
-      "title_vi": "Video by watch.gabe",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 7 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Showcase thị giác &amp; Thẩm mỹ — Kỹ Thuật Quay B-Roll &amp; Bố Cục (Gabe Harris)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 7 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
@@ -19962,7 +20062,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1zR9CUwuztuob3HOX1RnhB4jADDXJiq3i&export=download",
         "report_url": "reports/Food Filming & Styling Mastery - @alena.feda.html",
         "shots_count": 15,
-        "duration": "40.80s",
+        "duration": "40.8s",
         "youtube_id": "4PPt0Cg-6q8",
         "youtube_embed": "https://www.youtube.com/embed/4PPt0Cg-6q8",
         "youtube_url": "https://youtu.be/4PPt0Cg-6q8"
@@ -20045,7 +20145,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1jRNAcRduPQEH1IhdgQLF5vFtvtSGIQsT&export=download",
         "report_url": "reports/IG_@ulanzi.global_DcyS2KEm7-v_Ulanzi_LA30_RGB_Air_Tube_Light.html",
         "shots_count": 17,
-        "duration": "19.89s",
+        "duration": "19.9s",
         "youtube_id": "Xmdi89QepFs",
         "youtube_embed": "https://www.youtube.com/embed/Xmdi89QepFs",
         "youtube_url": "https://youtu.be/Xmdi89QepFs"
@@ -20213,7 +20313,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://media.fedu.vn/videos/One%20Lamp%20Beats%20Five%20-%20@shogentle.mp4",
         "report_url": "reports/IG_@shogentle_DcyDbGmItDV_One_Lamp_Beats_Five.html",
         "shots_count": 16,
-        "duration": "26.00s",
+        "duration": "26.0s",
         "youtube_id": "RuCS8INJQYs",
         "youtube_embed": "https://www.youtube.com/embed/RuCS8INJQYs",
         "youtube_url": "https://youtu.be/RuCS8INJQYs"
@@ -20297,7 +20397,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1RZS2u3QQEbf5eGDRSFI4LBonlcugzIXL&export=download",
         "report_url": "reports/IG_@_mubeenart_Dca9-aWotLM_Unboxing_Ulanzi_LM01.html",
         "shots_count": 17,
-        "duration": "23.56s",
+        "duration": "23.6s",
         "youtube_id": "6m_o80edzoY",
         "youtube_embed": "https://www.youtube.com/embed/6m_o80edzoY",
         "youtube_url": "https://youtu.be/6m_o80edzoY"
@@ -22105,8 +22205,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40kortafilms_DcdthwaTM3J_Camera_Angles_Mastery/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1INt7OQ9RV7Li1bcTPWl0dNjDP0dwyKU0&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1INt7OQ9RV7Li1bcTPWl0dNjDP0dwyKU0&export=download",
+        "video_url": "https://media.fedu.vn/videos/DcdthwaTM3J.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/DcdthwaTM3J.mp4",
         "report_url": "reports/IG_@kortafilms_DcdthwaTM3J_Camera_Angles_Mastery.html",
         "shots_count": 8,
         "duration": "0.2s",
@@ -22912,7 +23012,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@岳_🍜_GAKU_Dc0MHhTE9z0_Carousel_Analysis",
       "shortcode": "Dc0MHhTE9z0_Carousel_Analysis",
       "title_vi": "@岳_🍜_GAKU - Video by gakuyen",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 10 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 10 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "dien-anh",
@@ -23038,8 +23138,8 @@ var FEDU_IDEAS_DATABASE = {
       "media": {
         "thumb_hook": "https://media.fedu.vn/images/IG_%40joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_01_mid.webp",
         "thumb_key": "https://media.fedu.vn/images/IG_%40joshdiazfilms_Dctj7NfNimM_Life_Feel_Put_Together/shot_03_mid.webp",
-        "video_url": "https://drive.google.com/uc?id=1UK_EIfi3m0AaCI4vdkQazTFbI-d22JzX&export=download",
-        "video_url_original": "https://drive.google.com/uc?id=1UK_EIfi3m0AaCI4vdkQazTFbI-d22JzX&export=download",
+        "video_url": "https://media.fedu.vn/videos/Dctj7NfNimM.mp4",
+        "video_url_original": "https://media.fedu.vn/videos/Dctj7NfNimM.mp4",
         "report_url": "reports/Life Feel Put Together - @joshdiazfilms.html",
         "shots_count": 18,
         "duration": "0.2s",
@@ -23467,7 +23567,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@Andrei_Kostromskikh_DctRlh0jZlj_Carousel_Analysis",
       "shortcode": "DctRlh0jZlj_Carousel_Analysis",
       "title_vi": "Andrei Kostromskikh • Phân Tích Phân Cảnh Carousel Đa Video & Ngôn Ngữ Điện Ảnh - @Andrei_Kostromskikh",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 8 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng phân cảnh đa video của creator @Andrei_Kostromskikh.",
       "key_tech": "Cinematic Lighting, Composition Mastery, Color Grading, Storyboard Rhythm, Carousel Flow",
       "shooting_style": {
         "id": "dien-anh",
@@ -23601,7 +23701,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1gsKwStfEAVj7qQP9CzBjDeq4sQ-JJfI7&export=download",
         "report_url": "reports/IG_@shogentle_DcJDJjVJGy6_The_Invisible_Prep_in_Video.html",
         "shots_count": 14,
-        "duration": "30s",
+        "duration": "0.15s",
         "youtube_id": "Ox1R0vXHDYs",
         "youtube_embed": "https://www.youtube.com/embed/Ox1R0vXHDYs",
         "youtube_url": "https://youtu.be/Ox1R0vXHDYs"
@@ -23763,7 +23863,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=19j6DPKYopzSCN_koR_Bk1EuZsTW3VHtf&export=download",
         "report_url": "reports/Cinematic Unboxing Mastery - @yegor.sky.html",
         "shots_count": 10,
-        "duration": "15.00s",
+        "duration": "0.2s",
         "youtube_id": "E0w353IOFrA",
         "youtube_embed": "https://www.youtube.com/embed/E0w353IOFrA",
         "youtube_url": "https://youtu.be/E0w353IOFrA"
@@ -23844,7 +23944,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1cklevf2n4RhWcHCKcfRAGkGIN816VpL1&export=download",
         "report_url": "reports/Summer in the Village - @rubyscafe.html",
         "shots_count": 14,
-        "duration": "16.32s",
+        "duration": "0.2s",
         "youtube_id": "fu-3nmcqCCM",
         "youtube_embed": "https://www.youtube.com/embed/fu-3nmcqCCM",
         "youtube_url": "https://youtu.be/fu-3nmcqCCM"
@@ -24160,7 +24260,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1oqmG1OfRFfuCcL6rN90MRz-mrekNv3MZ&export=download",
         "report_url": "reports/Personal Cinema - @arturbr.html",
         "shots_count": 18,
-        "duration": "20.00s",
+        "duration": "0.15s",
         "youtube_id": "jzsxzBLR4wA",
         "youtube_embed": "https://www.youtube.com/embed/jzsxzBLR4wA",
         "youtube_url": "https://youtu.be/jzsxzBLR4wA"
@@ -25404,7 +25504,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1b0eCGK5yrCZRmjpDQseBBi4oEhhF4wj9&export=download",
         "report_url": "reports/Making_Beginner_Cameras_Look_Cinematic - @by.bennnj.html",
         "shots_count": 36,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "6RG2QCCr9fY",
         "youtube_embed": "https://www.youtube.com/embed/6RG2QCCr9fY",
         "youtube_url": "https://youtu.be/6RG2QCCr9fY"
@@ -26413,7 +26513,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1FDXuIuSh2w2qQ3l8YUTDk2xMIBjqvZG2&export=download",
         "report_url": "reports/The Art of Visual Sequence - @bryanhynes.html",
         "shots_count": 20,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "BuCo3xqmiEs",
         "youtube_embed": "https://www.youtube.com/embed/BuCo3xqmiEs",
         "youtube_url": "https://youtu.be/BuCo3xqmiEs"
@@ -26494,7 +26594,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1YvbZUZ-4f6pS7aYwLxw_LbLLNO9HjUzN&export=download",
         "report_url": "reports/The Art of Static Shot - @kenshoji.visuals.html",
         "shots_count": 11,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "6xw3QG-Y7Pc",
         "youtube_embed": "https://www.youtube.com/embed/6xw3QG-Y7Pc",
         "youtube_url": "https://youtu.be/6xw3QG-Y7Pc"
@@ -26575,7 +26675,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1qE9ytBxmopecZbdBEqZJW3DzZYEsEF24&export=download",
         "report_url": "reports/Camera Angles Mastery - @mcjacoub.html",
         "shots_count": 7,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "BUELcNpusNc",
         "youtube_embed": "https://www.youtube.com/embed/BUELcNpusNc",
         "youtube_url": "https://youtu.be/BUELcNpusNc"
@@ -26822,7 +26922,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=18P5YtX6jKnoZTqmZIgZmA_tjU1Huunj-&export=download",
         "report_url": "reports/People of Bhutan - @jeromememe.html",
         "shots_count": 17,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "NzTg7-1QFDQ",
         "youtube_embed": "https://www.youtube.com/embed/NzTg7-1QFDQ",
         "youtube_url": "https://youtu.be/NzTg7-1QFDQ"
@@ -26903,7 +27003,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1erAxsaiS3ouCcNMUUGyszDjHiuMbHKy1&export=download",
         "report_url": "reports/People_of_Porto - @jeromememe.html",
         "shots_count": 11,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "B24bOpks42E",
         "youtube_embed": "https://www.youtube.com/embed/B24bOpks42E",
         "youtube_url": "https://youtu.be/B24bOpks42E"
@@ -26984,7 +27084,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1Pn8g6LPPjbtE6Z-oa2z-pKsNeRV9LPrf&export=download",
         "report_url": "reports/Artisans of Venice - @jeromememe.html",
         "shots_count": 26,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "B0r_civnFvA",
         "youtube_embed": "https://www.youtube.com/embed/B0r_civnFvA",
         "youtube_url": "https://youtu.be/B0r_civnFvA"
@@ -27065,7 +27165,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1_zeb1foHqbDQZ-1cFOA6a4UamvAUJRao&export=download",
         "report_url": "reports/People of Copenhagen - @jeromememe.html",
         "shots_count": 15,
-        "duration": "500s",
+        "duration": "0.15s",
         "youtube_id": "iMm6kkQkLlY",
         "youtube_embed": "https://www.youtube.com/embed/iMm6kkQkLlY",
         "youtube_url": "https://youtu.be/iMm6kkQkLlY"
@@ -29651,8 +29751,8 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Jade_Sheng_DZwO5X6N_MS_Video_by_jade.got.curious",
       "shortcode": "DZwO5X6N_MS",
-      "title_vi": "Video by jade.got.curious",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 14 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "title_vi": "Thêm mục chuyển cảnh — Kỹ Thuật Chuyển Cảnh &amp; Nhịp Điệu (Jade Sheng)",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 14 phân cảnh.",
       "key_tech": "Thêm • Establishing Hook Shot • Medium Tracking Shot • Close-Up / Macro Detail Shot • Low-key Lighting",
       "shooting_style": {
         "id": "chuyen-canh",
@@ -29729,7 +29829,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@creator_DdSs5rahILb_Video_DdSs5rahILb",
       "shortcode": "DdSs5rahILb",
       "title_vi": "@creator DdSs5rahILb Video DdSs5rahILb",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 0 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
       "key_tech": "Instagram Liked 24h: Photo • 15 Of 18 • By @ru9vn • Shared September 14 • 2026 • Cinematic Lighting • Composition Mastery • Visual Rhythm",
       "shooting_style": {
         "id": "dien-anh",
@@ -29808,7 +29908,7 @@ var FEDU_IDEAS_DATABASE = {
     {
       "id": "IG_@Caleb_Natale_Dcbn7Bix-X-_Video_by_calebnatale",
       "shortcode": "Dcbn7Bix-X-",
-      "title_vi": "X- Video by calebnatale • Director's Report",
+      "title_vi": "X- Video by calebnatale • Director&#x27;s Report",
       "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 8 phân cảnh.",
       "key_tech": "Macro Detail Shot • Tabletop Lighting • Food Cinematography • Side Lighting 45°",
       "shooting_style": {
@@ -29866,7 +29966,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=1LmL0QQ0T2R_WeToQTX5Eo6G2j5CJV6wk&export=download",
         "report_url": "reports/IG_@Caleb_Natale_Dcbn7Bix-X-_Video_by_calebnatale.html",
         "shots_count": 8,
-        "duration": "16.00s",
+        "duration": "16.0s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -29950,7 +30050,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "https://drive.google.com/uc?id=10sk7NNamDYtyjPkby97hZHftu_yode55&export=download",
         "report_url": "reports/allinB_Coffee_Khong_Gian_Quan_Vibe_Thu_Thai_Sai_Gon_-_@allinbcoffee.html",
         "shots_count": 14,
-        "duration": "14.43s",
+        "duration": "14.4s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""
@@ -30434,7 +30534,7 @@ var FEDU_IDEAS_DATABASE = {
       "id": "IG_@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄_DcgSonjgnkV_Carousel_Analysis",
       "shortcode": "DcgSonjgnkV_Carousel_Analysis",
       "title_vi": "@𝗧𝗵𝗼𝗺𝗮𝘀_𝗠𝗮𝘁𝗵𝗲𝘄 - Video by thomasmathewt2",
-      "quick_takeaway": "Tác phẩm điện ảnh ngắn gồm 0 phân cảnh được tính toán tỉ mỉ. Bố cục duy trì tỷ lệ khung hình dọc 9:16 sắc nét, khai thác ánh sáng tự nhiên kết hợp tông màu điện ảnh chuyên nghiệp.",
+      "quick_takeaway": "Báo cáo phân tích chuyên sâu ngôn ngữ điện ảnh, ánh sáng, góc máy và nhịp dựng 0 phân cảnh.",
       "key_tech": "Hyper-Realistic Food Tattoo • Result-First Hook • Macro Needle ASMR • Wet Towel Wipe Reveal • Audio-Visual Rhyme • Cultural Identity Storytelling • Unpopular Opinion Hook • Procreate iPad Mockup • Museum Lighting Glide",
       "shooting_style": {
         "id": "storytelling",
@@ -31413,7 +31513,7 @@ var FEDU_IDEAS_DATABASE = {
         "video_url_original": "",
         "report_url": "reports/Making_Beginner_Cameras_Look_Cinematic - @by.bennnj.html",
         "shots_count": 0,
-        "duration": "50s",
+        "duration": "0.15s",
         "youtube_id": "",
         "youtube_embed": "",
         "youtube_url": ""

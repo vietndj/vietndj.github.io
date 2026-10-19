@@ -1,420 +1,1855 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View - @lizzypalios • Director's Report</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-:root {
-  --font-disp: 'Plus Jakarta Sans', sans-serif;
-  --font-body: 'Newsreader', Georgia, serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --bg-tint: #f8fafc;
-  --slate-950: #090d16;
-  --slate-900: #0f172a;
-  --slate-800: #1e293b;
-  --slate-700: #334155;
-  --slate-500: #64748b;
-  --slate-200: #e2e8f0;
-}
-body { background-color: var(--bg-tint); color: var(--slate-900); font-family: var(--font-disp); line-height: 1.55; -webkit-font-smoothing: antialiased; }
-.font-mono { font-family: var(--font-mono) !important; }
-.reading-text { font-family: var(--font-body); font-size: 0.95rem; line-height: 1.5; }
-.text-xxs { font-size: 0.72rem; }
-.cursor-pointer { cursor: pointer; }
-.sticky-player { position: sticky; top: 1rem; z-index: 1020; }
-.video-box { background: #000; border-radius: 0.75rem; overflow: hidden; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15); }
-video { width: 100%; max-height: 70vh; object-fit: contain; display: block; }
-.shot-card { border: 1px solid var(--slate-200); transition: all 0.2s ease; }
-.shot-card:hover { box-shadow: 0 6px 16px rgba(0,0,0,0.06); }
-.shot-card.active-shot { border-color: #3b82f6 !important; box-shadow: 0 0 0 3px rgba(59,130,246,0.2) !important; }
-.bg-emerald-light { background-color: #ecfdf5; border: 1px solid #a7f3d0; }
-.bg-rose-light { background-color: #fff1f2; border: 1px solid #fecdd3; }
-.bg-amber-light { background-color: #fffbeb; border: 1px solid #fde68a; }
-.time-btn { background: rgba(59,130,246,0.08); border: 1px solid rgba(59,130,246,0.3); color: #2563eb; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; cursor: pointer; }
-.loop-btn { background: #f1f5f9; border: 1px solid #cbd5e1; color: #475569; padding: 2px 8px; border-radius: 4px; cursor: pointer; }
-.thumb-overlay { position: absolute; inset: 0; background: rgba(9,13,22,0.4); display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-mono); font-size: 0.75rem; opacity: 0; transition: opacity 0.2s; }
-.thumb-wrap:hover .thumb-overlay { opacity: 1; }
-.drawer { position: fixed; top: 0; bottom: 0; right: -320px; width: 320px; background: #fff; z-index: 1050; box-shadow: -5px 0 25px rgba(0,0,0,0.15); transition: right 0.3s cubic-bezier(0.16,1,0.3,1); }
-.drawer.open { right: 0; }
-.drawer-mask { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.4); z-index: 1040; }
-.drawer-mask.open { display: block; }
-.grid-card:hover { transform: translateY(-3px); transition: transform 0.2s ease; }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
+
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
+
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
+
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
+
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
+
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
+
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
+
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
+
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
+
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
+
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
+
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
+
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
+
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
+
+        .meta-dot {
+            opacity: 0.5;
+        }
+
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
+
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
+
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
+
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
+
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
+
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
+
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
+
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
+
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
+
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
+
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
+
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
+
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
+
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
+
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
+
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
+
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
+
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
+
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
+
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
+
+
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
+
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
-    font-weight: 600;
+    justify-content: center;
     cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
-}
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
-}
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
+}
+.edit-modal-backdrop.open {
+    display: flex;
+}
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--cl-text-base);
+    margin: 0;
+}
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--cl-text-muted);
+    line-height: 1;
+}
+
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.edit-field label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
+}
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
+}
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
 
-<header class="bg-white border-bottom border-slate-200 sticky-top py-2 px-3" style="z-index:1030;">
-  <div class="container-fluid d-flex align-items-center justify-content-between">
-    <div class="d-flex align-items-center gap-2">
-      <a href="https://fedu.vn/scene.html" class="btn btn-sm btn-outline-secondary font-mono text-xxs">← CỔNG SCENE.HTML</a>
-      <span class="badge bg-slate-900 text-white font-mono text-xxs d-none d-md-inline-block">21 PHÂN CẢNH</span>
+<div class="app-container">
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/nM_2ZbrWiNU?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+        </div>
+        <div class="video-controls">
+            <div class="speed-row">
+                <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
+                <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
+                <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
+            </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
+        </div>
     </div>
-    <div class="d-flex align-items-center gap-2">
-      <div class="btn-group btn-group-sm">
-        <button type="button" class="btn btn-primary font-mono text-xxs" id="btnDetail" onclick="switchView('detail')">BẢNG PHÂN CẢNH</button>
-        <button type="button" class="btn btn-outline-secondary font-mono text-xxs" id="btnGrid" onclick="switchView('grid')">LƯỚI ẢNH (GRID)</button>
-      </div>
-      <button class="btn btn-sm btn-light border font-mono text-xxs" onclick="toggleDrawer()">☰ MENU 21 SHOTS</button>
-    </div>
-  </div>
-</header>
 
-<div class="drawer-mask" id="drawerMask" onclick="closeDrawer()"></div>
-<div class="drawer d-flex flex-column" id="drawerMenu">
-  <div class="p-3 border-bottom d-flex justify-content-between align-items-center bg-slate-900 text-white">
-    <span class="font-mono fw-bold text-xs">DANH SÁCH 21 PHÂN CẢNH</span>
-    <button class="btn btn-sm text-white" onclick="closeDrawer()">✕</button>
-  </div>
-  <div class="overflow-y-auto flex-grow-1" id="drawerItemsContainer"></div>
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Bố cục</span> <span class="badge badge-alt">Chỉn Chu</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/DdHMOB0xfd1/" target="_blank" rel="noopener">Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/lizzypalios/" target="_blank" class="creator-link">@lizzypalios ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">1 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">5.00s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
+            </div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 1 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios]</div>
+        </section>
+
+        <div class="overview-card">
+            Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống &#x27;A Day In The Life&#x27; của Business &amp; Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật: Lia máy Phải sang Trái, Tăng tốc đoạn lia 2-3x (Whip...
+        </div>
+
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (1)</button>
+            </div>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
+        </div>
+
+        <div id="storyboardView">
+            
+        <div class="shot-card" id="shot-card-1">
+            <div class="shot-thumb" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/IG_%40lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 5.0s</span>
+            </div>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">5.00s</span>
+                </div>
+                <h4 class="shot-headline">Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios</h4>
+                <p class="shot-insight">Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống &#x27;A Day In The Life&#x27; của Business &amp; Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật: Lia máy Phải sang Trái, Tăng tốc đoạn lia 2-3x (Whip...</p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        <div class="meta-item"><span class="meta-label">Góc máy</span><span class="meta-val">Chỉn Chu</span></div>
+                        
+                        
+                    </div>
+                    <div class="critique-good">Bóc tách 21 phân cảnh bậc thầy về nghệ thuật sáng tạo nội dung phong cách sống &#x27;A Day In The Life&#x27; của Business &amp; Marketing Coach Lizzy Palios. Video thị phạm chi tiết 6 bước kỹ thuật: Lia máy Phải sang Trái, Tăng tốc đoạn lia 2-3x (Whip...</div>
+                    
+                    <div class="shot-narrative">Showcase thị giác &amp; Thẩm mỹ</div>
+                </details>
+            </div>
+        </div>
+        </div>
+
+        <div id="gridView">
+            
+        <div class="grid-item" onclick="playShot(0.0, 5.0, 'SHOT 01')">
+            <div class="grid-thumb">
+                <img src="https://media.fedu.vn/images/IG_%40lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 5.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/IG_%40lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.webp', 'SHOT 01 • Quy Trình 6 Bước Dựng Video &#x27;A Day In The Life&#x27; Triệu View (Whip-Pan &amp; Spin-On-Beat) - @lizzypalios')">⊕</button>
+            </div>
+            <div class="grid-title">Quy Trình 6 Bước Dựng Video &#x27;A Day In Th</div>
+        </div>
+        </div>
+    </div>
 </div>
 
-<main class="container-fluid px-3 px-md-4 py-3">
-  <div class="row g-4">
-    <div class="col-12 col-xl-5">
-      <div class="sticky-player">
-        <div class="video-box mb-2">
-          <iframe id="mainPlayer" src="https://www.youtube.com/embed/nM_2ZbrWiNU?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
+    <div class="drawer-panel" onclick="event.stopPropagation()">
+        <div class="drawer-head">
+            <span>MỤC LỤC (1)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
         </div>
-        <div class="bg-white rounded-3 p-3 border mb-2 shadow-xs">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="font-mono text-xxs fw-bold text-slate-700">🎛 BỘ ĐIỀU KHIỂN ĐẠO DIỄN:</span>
-            <span class="font-mono text-xxs text-primary" id="timeDisp">00:00.00 / 00:27.90</span>
-          </div>
-          <div class="d-flex align-items-center gap-1 flex-wrap mb-2">
-            <button class="btn btn-sm btn-outline-secondary font-mono text-xxs py-0 px-2" onclick="stepFrame(-1)">⏮ -1F</button>
-            <button class="btn btn-sm btn-outline-secondary font-mono text-xxs py-0 px-2" onclick="stepFrame(1)">+1F ⏭</button>
-            <button class="btn btn-sm btn-outline-secondary font-mono text-xxs py-0 px-2" onclick="setSpeed(0.25)">0.25x</button>
-            <button class="btn btn-sm btn-outline-secondary font-mono text-xxs py-0 px-2" onclick="setSpeed(0.5)">0.5x</button>
-            <button class="btn btn-sm btn-primary font-mono text-xxs py-0 px-2" onclick="setSpeed(1.0)">1.0x</button>
-            <button class="btn btn-sm btn-outline-secondary font-mono text-xxs py-0 px-2" onclick="setSpeed(1.5)">1.5x</button>
-            <button class="btn btn-sm btn-outline-warning font-mono text-xxs py-0 px-2" id="btnLoop" onclick="toggleLoopCurrent()">🔁 Loop Shot</button>
-          </div>
-          <div class="p-1 rounded bg-slate-50 border text-xxs font-mono text-slate-500">
-            Phím tắt: Space (Play/Pause) • J/L (Lùi/Tiến 1s) • ←/→ (Frame)
-          </div>
-        </div>
-        <div class="bg-white rounded-3 p-3 border shadow-xs d-none d-xl-block">
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <span class="badge bg-slate-100 text-slate-700 font-mono text-xxs">@lizzypalios</span>
-            <a href="https://www.instagram.com/p/DdHMOB0xfd1/" target="_blank" class="text-xxs font-mono text-primary text-decoration-none">Instagram Reel ↗</a>
-          </div>
-          <h1 class="fs-6 fw-bold text-slate-950 mb-2">Quy Trình 6 Bước Dựng Video 'A Day In The Life' Triệu View</h1>
-          <p class="text-slate-600 text-xs mb-2 reading-text">Bóc tách 21 phân cảnh bậc thầy của Lizzy Palios: Kỹ thuật lia máy đồng hướng Phải sang Trái (Pan R-to-L), Tăng tốc đoạn lia 2-3x (Whip-Pan), Điểm neo thời gian trung tâm (Timestamps), Xoay người khớp phách nhạc (Spin on Beat) và Cân bằng làm việc - nghỉ ngơi (Work & Downtime).</p>
-          <div class="border-top pt-2">
-            <span class="text-xxs font-mono text-slate-500 d-block mb-1">CÔNG THỨC:</span>
-            <span class="badge bg-light text-slate-700 font-mono text-xxs me-1">Whip-Pan 2-3x</span>
-            <span class="badge bg-light text-slate-700 font-mono text-xxs me-1">Centered Timestamps</span>
-            <span class="badge bg-light text-slate-700 font-mono text-xxs me-1">Spin-on-Beat</span>
-            <span class="badge bg-light text-slate-700 font-mono text-xxs">Work & Downtime</span>
-          </div>
-        </div>
-      </div>
+        <div class="drawer-list">
+        <div class="drawer-item" onclick="jumpToShot(1, 0.0, 5.0, 'SHOT 01')">
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/IG_%40lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.webp" alt="SHOT 01" loading="lazy" /></div>
+            <div class="drawer-info">
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">Quy Trình 6 Bước Dựng Video &#x27;A Day In The </div>
+                <div class="drawer-shot-time">0.00s – 5.00s</div>
+            </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
     </div>
-    <div class="col-12 col-xl-7">
-      <div id="detailView"></div>
-      <div id="gridView" style="display:none;">
-        <div class="row g-2" id="gridItemsContainer"></div>
-      </div>
-    </div>
-  </div>
-</main>
+</div>
 
-<footer class="bg-white border-top py-3 mt-4 text-center">
-  <div class="container">
-    <p class="text-slate-500 text-xxs font-mono mb-0">BÁO CÁO PHÂN TÍCH ĐẠO DIỄN CHUYÊN SÂU • HỆ THỐNG KIẾN THỨC FEDU.VN • OPENCV & R2 CDN</p>
-  </div>
-</footer>
+<div id="lightboxModal" onclick="closeLightbox()">
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
+    <div id="lightboxCaption"></div>
+</div>
+
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
 
 <script>
-const R2_BASE = "https://media.fedu.vn";
-const PKG_NAME = "IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process";
-const rawShots = [{"shot_id": 1, "start_time": 0.0, "end_time": 1.47, "duration": 1.5, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_01_mid.webp", "headline": "Visual Hook 'Thức Dậy 6:15 AM': Kích hoạt bản năng tò mò bằng vector lia máy Phải sang Trái phá tan nhịp tĩnh", "subject_action": "6:15 AM. Lizzy nằm trên giường phủ chăn trắng tinh khôi, ánh ban mai rọi xiên qua cửa sổ. Cô thức dậy, vươn tay kéo chăn trong khi camera thực hiện cú lia ngang mượt mà từ mép phải sang mép trái khung hình. Chữ lớn trên màn hình: 'Viral day in the life trend // 6.15AM'.", "composition_good": "Bố cục góc chéo bắt trọn chuyển động mở màn tự nhiên; vector lia máy từ phải sang trái định hình ngay 'trục chuyển động chủ đạo' (Primary Motion Axis) cho toàn bộ 27 giây tiếp theo.", "composition_bad": "Ánh sáng cửa sổ phía sau hơi gắt nhẹ ở vùng highlight của drap giường, nếu kéo giảm exposure 0.3 EV sẽ giữ lại chi tiết nếp vải tốt hơn.", "takeaway": "Muốn mở màn video lifestyle mượt mà, hãy bắt đầu từ một chuyển động cơ thể đời thường (thức dậy, kéo chăn) kết hợp lia máy cùng hướng với các shot tiếp theo để khóa mắt người xem.", "specs": "0.00s - 1.47s (1.50s) • Wide 24mm f/2.2 • Giường ngủ phòng ngủ sáng sớm • Soft Morning Daylight • Whip Pan match cut sang Shot 02"}, {"shot_id": 2, "start_time": 1.5, "end_time": 2.7, "duration": 1.23, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_02_mid.webp", "headline": "Duy Trì Đà Chuyển Động Skincare 6:30 AM: Kế thừa quán tính lia máy đưa người xem vào không gian riêng tư trước gương", "subject_action": "6:30 AM. Chuyển sang phòng tắm sáng bóng. Lizzy mặc áo thun be tối giản, tay cầm bông tẩy trang thoa nhẹ lên má trước gương lavabo, camera tiếp tục lia ngang từ phải sang trái quét qua người cô. Text: 'Viral day in the life trend // 6.30AM'.", "composition_good": "Sự liền mạch tuyệt đối của trục lia máy (Pan Continuity) khiến não bộ người xem không cảm thấy bị gián đoạn giữa 2 bối cảnh khác nhau; gương phòng tắm tạo chiều sâu phản chiếu nhân đôi không gian.", "composition_bad": "Thời lượng 1.23s khá nhanh khiến thao tác dưỡng da chưa kịp đặc tả giọt serum, chỉ mang tính chất thiết lập hành vi lướt qua.", "takeaway": "Giữ đúng một hướng lia máy giữa các phòng khác nhau là bí quyết 'tàng hình vết cắt' (Invisible Cut) mạnh nhất mà không cần kỹ xảo phức tạp.", "specs": "1.50s - 2.70s (1.23s) • Standard 35mm f/2.0 • Phòng tắm gương Lavabo • Đèn gương dịu nhẹ kết hợp ánh sáng sạch • Whip Pan nối nhịp sang Bếp"}, {"shot_id": 3, "start_time": 2.73, "end_time": 4.33, "duration": 1.63, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_03_mid.webp", "headline": "Bước 1 'Film Panning Right To Left': Tận dụng dòng chảy cà phê 7:03 AM làm điểm chạm thính giác & bài học kỹ thuật", "subject_action": "7:03 AM. Cận cảnh máy pha Breville, dòng espresso đậm đặc sánh mịn rót xuống ly thủy tinh trong suốt. Camera lia ngang từ phải qua trái. Dòng text hướng dẫn xuất hiện đanh thép: '1. Film videos panning right to left. // 7.03AM'.", "composition_good": "Tạo điểm nhấn thính giác và xúc giác (Sensory B-Roll); chất lỏng chuyển động thẳng đứng vuông góc với hướng lia máy ngang tạo sự cân bằng động lực học thị giác rất đẹp mắt.", "composition_bad": "Dòng text phụ đề đặt hơi sát tâm ly cà phê, che mất một phần giọt cà phê đang rơi ở 0.5s đầu.", "takeaway": "Chèn thông điệp bài học hoặc tips chính ngay tại khoảnh khắc B-roll đắt giá nhất (rót nước, pha cà phê) để người xem vừa thỏa mãn thị giác vừa ghi nhớ kiến thức.", "specs": "2.73s - 4.33s (1.63s) • Macro 50mm f/1.8 • Quầy bar bếp gia đình • Natural Key Light chiếu ngang tôn chất lỏng espresso • Whip Pan lia sang tủ lạnh"}, {"shot_id": 4, "start_time": 4.37, "end_time": 5.63, "duration": 1.3, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_04_mid.webp", "headline": "Thay Đổi Tương Phản Ánh Sáng Tủ Lạnh 7:27 AM: Tạo cú hích thị giác (Contrast Shift) bằng khoảng tối bí ẩn bên trong khoang lạnh", "subject_action": "7:27 AM. Tay Lizzy mở cánh cửa tủ lạnh tối màu, bên trong sáng bừng ánh đèn LED tủ lạnh chiếu rọi gói phô mai Sargento Sharp Cheddar và đồ ăn sáng. Camera lia từ phải sang trái. Text: '1. Film videos panning right to left // 7.27AM'.", "composition_good": "Sự tương phản ánh sáng đột ngột (Low-key bao quanh High-key LED) đánh thức nhãn cầu người xem sau 3 cảnh sáng; góc nhìn POV cận cảnh tạo cảm giác chân thật đời thường.", "composition_bad": "Vùng tối xung quanh cánh tủ lạnh bị mất chi tiết hoàn toàn do độ tương phản động (dynamic range) quá rộng giữa bên trong và ngoài tủ.", "takeaway": "Xen kẽ các phân cảnh có mức phơi sáng khác nhau (sáng ấm phòng khách -> sâu tối mở tủ lạnh) để video không bị phẳng lì và đều đều một màu.", "specs": "4.37s - 5.63s (1.30s) • Ultra-wide 18mm f/2.8 • Khoang tủ lạnh gia đình • Practical LED Light trong tủ lạnh • Lia máy nhanh sang chảo bếp"}, {"shot_id": 5, "start_time": 5.67, "end_time": 6.3, "duration": 0.67, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_05_mid.webp", "headline": "Micro-Beat Chớp Nhoáng Nấu Ăn 7:27 AM: Nhát cắt siêu ngắn 0.67s đóng vai trò 'Gia tốc nhịp thở' đẩy nhanh tiết tấu", "subject_action": "7:27 AM. Chảo chống dính trên bếp nấu, món ăn xèo xèo bốc hơi nóng thơm lừng. Camera lướt thật nhanh qua mặt chảo đúng 0.67 giây rồi cắt cảnh. Text: '1. Film videos panning right to left // 7.27AM'.", "composition_good": "Shot diễn ra cực nhanh đóng vai trò một 'micro-beat chuyển nhịp', không để người xem kịp chán hay nhận ra điểm ngắt; tạo cảm giác buổi sáng bận rộn nhưng ngăn nắp.", "composition_bad": "Vì quá nhanh (dưới 20 frame) nên người xem chỉ kịp bắt hình bóng chảo chứ không đọc kịp text nếu không tua chậm.", "takeaway": "Trong chuỗi B-roll sinh hoạt, hãy chèn 1-2 shot 'tốc độ cao' (micro-cut < 0.8s) để tạo nhịp co giật dopamine kích thích nhịp tim người xem.", "specs": "5.67s - 6.30s (0.67s) • Standard 35mm f/2.0 • Mặt bếp từ • Ánh sáng bếp tự nhiên • Cut lướt nhanh sang bàn ăn"}, {"shot_id": 6, "start_time": 6.33, "end_time": 7.43, "duration": 1.13, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_06_mid.webp", "headline": "Hạ Cánh Tại Bàn Ăn Bữa Sáng: Khép lại chuỗi hành động chuẩn bị bằng thành quả trọn vẹn giàu năng lượng", "subject_action": "7:27 AM. Bàn ăn gỗ sáng màu, đĩa đồ ăn sáng tươm tất kết hợp ly cà phê đá sóng sánh, camera lia ngang kết thúc phân đoạn buổi sáng tại nhà. Text: '1. Film videos panning right to left // 7.27AM'.", "composition_good": "Đĩa thức ăn và ly cà phê tạo tam giác thị giác cân xứng; bề mặt gỗ sồi mang lại cảm giác ấm cúng, sang trọng và chuẩn thẩm mỹ 'Clean Aesthetic'.", "composition_bad": "Góc lia máy hơi thấp nên chưa khoe trọn vẹn toàn bộ bề mặt đĩa ăn từ trên cao (Top-down view).", "takeaway": "Chuỗi hành vi chuẩn bị luôn cần một 'cú hạ cánh' (Payoff Shot) - cho thấy thành quả hoàn thiện trước khi chuyển sang phân đoạn tiếp theo.", "specs": "6.33s - 7.43s (1.13s) • Standard 35mm f/2.2 • Bàn ăn gỗ tự nhiên • Ánh ban mai ngập tràn phòng ăn • Whip Pan sang Bước 2"}, {"shot_id": 7, "start_time": 7.47, "end_time": 9.03, "duration": 1.6, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_07_mid.webp", "headline": "Bước 2 'Add Into The Edits App' 7:31 AM: Mở khóa bí quyết hậu kỳ tại ranh giới chuyển dịch sang không gian làm việc", "subject_action": "7:31 AM. Chuẩn bị đồ đạc cá nhân và bước vào không gian làm việc. Dòng text lớn xuất hiện: '2. Add them all into the Edits app // 7.31AM' kèm theo các thẻ nhãn phân loại nội dung.", "composition_good": "Điểm neo thời gian 7:31 AM đánh dấu bước chuyển pha sinh học từ sinh hoạt cá nhân sang chuẩn bị làm việc; không gian gọn gàng tạo sự tin cậy cao của một coach chuyên nghiệp.", "composition_bad": "Các nhãn text xuất hiện hơi nhiều chi tiết phụ (Argento / Sharp / Cheddar) có thể gây phân tâm nhẹ khỏi thông điệp cốt lõi 'Add into Edits app'.", "takeaway": "Khi hướng dẫn quy trình, hãy đặt bước 2 đúng vào thời điểm nhân vật di chuyển từ không gian sinh hoạt sang không gian sáng tạo để logic thời gian trùng khớp với logic nội dung.", "specs": "7.47s - 9.03s (1.60s) • Wide 28mm f/2.4 • Khu vực chuẩn bị làm việc • Ambient Light tự nhiên • Lia ngang sang mở bàn máy"}, {"shot_id": 8, "start_time": 9.07, "end_time": 9.5, "duration": 0.47, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_08_mid.webp", "headline": "Cú Lướt Không Gian Cực Ngắn 0.47s: Nối cầu thị giác giữa việc chuẩn bị và hạ đặt máy tính làm việc", "subject_action": "7:37 AM. Camera lướt qua mép bàn làm việc, chuyển động cực dứt khoát chỉ trong gần nửa giây để chuẩn bị cho shot giao diện app tiếp theo. Text: '2. Add them all into the Edits app // 7.37AM'.", "composition_good": "Quán tính lia máy cực cao tạo hiệu ứng Motion Blur tự nhiên (In-camera blur) làm sạch khung hình và xóa tan cảm giác giật của một nhát cắt thô.", "composition_bad": "Thời lượng quá ngắn (0.47s) khiến người xem không nhận diện được vật thể nào cụ thể trên bàn.", "takeaway": "Khi cần chuyển từ cảnh người sang cảnh màn hình giao diện máy móc, hãy dùng một shot lướt siêu ngắn (Bridge Shot) có chuyển động mờ để mắt người xem trượt êm ái sang môi trường mới.", "specs": "9.07s - 9.50s (0.47s) • Standard 35mm f/2.0 • Mặt bàn làm việc • Ánh sáng bàn làm việc • Match Pan sang màn hình app"}, {"shot_id": 9, "start_time": 9.53, "end_time": 10.87, "duration": 1.37, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_09_mid.webp", "headline": "Trực Quan Hóa Màn Hình Biên Tập: Cung cấp bằng chứng thực tế nhập footage vào ứng dụng dựng video", "subject_action": "7:37 AM. Góc quay cận màn hình hoặc thao tác đưa hàng loạt clip đã quay lia ngang vào timeline ứng dụng dựng video (Instagram Edits / CapCut). Text: '2. Add them all into the Edits app // 7.37AM'.", "composition_good": "Cung cấp bằng chứng thị giác trực quan (Visual Proof), chứng minh cho người xem thấy các clip vừa quay đều nằm ngăn nắp trong app sẵn sàng dựng.", "composition_bad": "Ánh sáng phản xạ từ màn hình điện tử hơi lóa nhẹ ở phần viền trên.", "takeaway": "Hướng dẫn làm video thì bắt buộc phải có shot quay màn hình thực tế (Proof of Work) - người xem chỉ tin và làm theo khi nhìn thấy giao diện thật.", "specs": "9.53s - 10.87s (1.37s) • Close-up 50mm f/2.0 • Bàn làm việc công nghệ • Màn hình kết hợp ánh sáng phòng • Pan sang Bước 3"}, {"shot_id": 10, "start_time": 10.9, "end_time": 12.33, "duration": 1.47, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_10_mid.webp", "headline": "Bước 3 'Speed Up The Turns To 2-3x Speed': 'Tuyệt kỹ vàng' tạo hiệu ứng Whip Pan siêu mượt bằng Split & Speed", "subject_action": "7:38 AM. Thao tác trên timeline: cắt (split) đoạn camera đang xoay lia giữa 2 cảnh và đẩy tốc độ (speed) lên 2x - 3x. Dòng text: '3. Speed up the turns to 2-3 speed // using the split & speed features // 7.38AM'.", "composition_good": "Đây là giá trị kỹ thuật cốt lõi (Core Secret) của toàn bộ video - giải thích tại sao video trông cực kỳ chuyên nghiệp mà không cần plugin phức tạp; text hướng dẫn rõ ràng từng nút bấm.", "composition_bad": "Hướng dẫn dạng text hơi dài, người mới bắt đầu có thể cần pause lại để đọc kỹ thao tác.", "takeaway": "Tăng tốc đoạn lia máy (Speed Ramping / Whip Pan) từ 1x lên 2.5x chính là chìa khóa biến các cảnh quay điện thoại bình thường thành những cú chuyển cảnh điện ảnh mượt mà.", "specs": "10.90s - 12.33s (1.47s) • Standard 35mm f/2.2 • Không gian bàn làm việc • Tự nhiên êm dịu • Nối tiếp nhịp làm việc"}, {"shot_id": 11, "start_time": 12.37, "end_time": 13.8, "duration": 1.47, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_11_mid.webp", "headline": "Điểm Neo Văn Hóa 'Proverbs & Sổ Tay' 7:39 AM: Khắc họa chiều sâu tư duy và kỷ luật nội tâm của creator", "subject_action": "7:39 AM. Camera lia qua cuốn sổ tay ghi chép câu trích dẫn truyền cảm hứng Proverbs, bút viết và kế hoạch làm việc buổi sáng. Text: '3. Speed up the turns to 2-3 speed // 7.39AM'.", "composition_good": "Xây dựng hình tượng chuyên gia sâu sắc (Thoughtful Authority); chữ viết tay và trang sách tạo cảm giác mộc mạc, đối lập với sự bóng bẩy số học trên màn hình.", "composition_bad": "Chữ trên trang sách hơi nhỏ, camera lia nhanh nên người xem khó đọc hết trọn vẹn nội dung câu trích dẫn.", "takeaway": "Đừng chỉ quay màn hình và máy móc; hãy lồng ghép những chi tiết mang tính triết lý sống (sổ tay, trang sách) để tạo chiều sâu thương hiệu cá nhân.", "specs": "12.37s - 13.80s (1.47s) • Medium Close-up 40mm f/2.0 • Bàn gỗ đọc sách • Ánh sáng cửa sổ chiếu nghiêng 45 độ • Pan sang mở máy tính"}, {"shot_id": 12, "start_time": 13.83, "end_time": 15.3, "duration": 1.5, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_12_mid.webp", "headline": "Bước Vào Ca Làm Việc Sáng 8:12 AM: Chuyển dịch năng lượng sang chế độ tập trung cao độ (Deep Work Mode)", "subject_action": "8:12 AM. Màn hình laptop hiển thị tài liệu công việc, camera lướt ngang qua bàn phím và không gian làm việc sáng sủa. Dòng text mốc giờ: '8.12AM'.", "composition_good": "Tỷ lệ tương quan giữa màn hình và bàn làm việc cân đối; đường dẫn thị giác từ mép bàn hướng thẳng vào màn hình làm việc tạo sự tập trung.", "composition_bad": "Góc máy tương tự Shot 09, cần đổi tiêu cự hoặc góc cao hơn để tạo sự đa dạng thị giác.", "takeaway": "Cần định vị rõ mốc thời gian chuyển giao (8:12 AM) để người xem cảm nhận được nhịp trôi thực tế của một ngày làm việc hiệu suất.", "specs": "13.83s - 15.30s (1.50s) • Standard 35mm f/2.0 • Bàn làm việc laptop • Neutral Daylight • Pan sang ly Stanley"}, {"shot_id": 13, "start_time": 15.33, "end_time": 16.93, "duration": 1.63, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_13_mid.webp", "headline": "Bước 4 'Add A Time Stamp In The Center' 9:03 AM: Ly Stanley & Slogan định hình cá tính thương hiệu hiện đại", "subject_action": "9:03 AM. Cận cảnh ly giữ nhiệt Stanley màu kem trendy bên cạnh sổ tay có dòng chữ 'stay humble, work hard, be kind'. Text hướng dẫn xuất hiện to rõ ở trung tâm: '4. Add a time stamp in the center // 9.03AM // HOOKS'.", "composition_good": "Bố cục trung tâm hoàn hảo; ly Stanley là một 'Prop' thị giác cực kỳ quen thuộc của giới creator hiện đại, tạo cảm giác thời thượng và gần gũi.", "composition_bad": "Chữ 'TANLEY' bị cắt mất chữ S ở rìa trái do khung dọc 9:16 crop hẹp.", "takeaway": "Chèn mốc thời gian lớn (Time Stamp) ở chính tâm màn hình là một 'Anchor Point' thị giác cực mạnh, giúp người xem luôn định vị được câu chuyện đang ở đâu trong chu kỳ 24h.", "specs": "15.33s - 16.93s (1.63s) • Close-up 50mm f/1.8 • Bàn làm việc góc phong cách • High-key dịu nhẹ • Lia máy sang ăn trưa"}, {"shot_id": 14, "start_time": 16.97, "end_time": 18.2, "duration": 1.27, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_14_mid.webp", "headline": "Bẻ Nhịp Ăn Trưa Nhanh 12:07 PM: Đan xen chi tiết đời thường chân thật phá vỡ tính khuôn mẫu dạy học", "subject_action": "12:07 PM. Mốc trưa xuất hiện: '12.07PM // Quick Chick // SUPER NINTENDO'. Bữa ăn trưa nhanh tiện lợi và góc máy máy chơi game hoài niệm.", "composition_good": "Nhịp chuyển từ bàn làm việc 9:03 AM sang ăn trưa 12:07 PM rất hợp lý; sự xuất hiện của đồ ăn mang lại năng lượng đời thường, chống nhàm chán.", "composition_bad": "Vùng chữ hơi dày đặc (Quick Chick, Super Nintendo, Time Stamp) làm màn hình hơi chật chội trong 1.27s.", "takeaway": "Đừng làm video quá nghiêm túc; người xem thích những khoảnh khắc đời thường (ăn đồ ăn nhanh, chơi game) vì nó khiến creator trở nên chân thật và đáng mến hơn.", "specs": "16.97s - 18.20s (1.27s) • Standard 35mm f/2.2 • Khu vực ăn trưa / nghỉ ngơi • Giữa trưa tự nhiên qua cửa sổ • Lia sang đầu giờ chiều"}, {"shot_id": 15, "start_time": 18.23, "end_time": 19.8, "duration": 1.6, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_15_mid.webp", "headline": "Chuyển Giao Năng Lượng Chiều 1:24 PM: Duy trì đà bước đi và nhịp sống năng động sau bữa trưa", "subject_action": "1:24 PM. Mốc thời gian trung tâm: '1.24PM'. Lizzy di chuyển hoặc hoạt động trong không gian ngập tràn ánh nắng ấm, cơ thể thả lỏng tự nhiên.", "composition_good": "Ánh sáng ban chiều rực rỡ tạo cảm giác tươi mới; chuyển động bước đi chuẩn bị cho cú 'Spin on beat' bùng nổ ở shot tiếp theo.", "composition_bad": "Chi tiết nền hơi nhiều đồ vật trang trí nhỏ làm phân tán nhẹ điểm nhìn chính.", "takeaway": "Trước khi thực hiện một cú chuyển cảnh điểm nhấn (Hero Transition), hãy dùng một shot đệm nhẹ nhàng để lấy đà thị giác cho người xem.", "specs": "18.23s - 19.80s (1.60s) • Wide 28mm f/2.4 • Phòng sinh hoạt chung • Golden-hour sớm ấm áp • Nối vào cú xoay người Spin"}, {"shot_id": 16, "start_time": 19.83, "end_time": 21.57, "duration": 1.77, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_16_mid.webp", "headline": "Bước 5 'Spin On Beat' 1:56 PM: Cú xoay người 360 độ khớp chuẩn từng phách kick của bản nhạc bắt trend", "subject_action": "1:56 PM. Lizzy xoay tròn toàn thân (Body Spin) theo chiều kim đồng hồ, tà áo và mái tóc tung nhẹ theo chuyển động. Text hướng dẫn: '5. Use this audio & spin on beat // -1.56PM-'. Cú xoay rơi chính xác vào nốt rơi của beat nhạc.", "composition_good": "Đây là đỉnh cao của sự ăn khớp âm thanh và hình ảnh (Audio-Visual Sync); cú xoay cơ thể tạo ra lực ly tâm thị giác giữ chặt mắt người xem vào giữa màn hình.", "composition_bad": "Đáy khung hình hơi sát gấu quần của Lizzy, nếu lùi camera thêm 20cm sẽ có thêm không gian thở (foot room) hoàn mỹ hơn.", "takeaway": "Cú xoay người khớp nhạc (Spin on beat) là một trong những chuyển động có tỷ lệ re-watch cao nhất trên Reels/TikTok vì mắt người luôn bị kích thích bởi vòng xoay tròn.", "specs": "19.83s - 21.57s (1.77s) • Medium 35mm f/2.0 Full Body Shot • Giữa phòng khách thoáng đãng • Soft Ambient Light • Xoay vòng nối sang Shot 17"}, {"shot_id": 17, "start_time": 21.6, "end_time": 22.9, "duration": 1.33, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_17_mid.webp", "headline": "Trở Lại Bàn Làm Việc 3:35 PM: Hạ cánh mượt mà sau cú xoay cơ thể để hoàn thành công việc buổi chiều", "subject_action": "3:35 PM. Sau cú xoay người, camera hạ cánh ngay tại bàn làm việc buổi chiều. Lizzy tập trung tư vấn hoặc xử lý các đầu việc marketing quan trọng cuối ngày. Text: '3.35PM'.", "composition_good": "Độ tương phản giữa sự vui tươi (cú xoay 1:56 PM) và sự nghiêm túc (làm việc 3:35 PM) khắc họa chân dung một người làm việc linh hoạt, vừa chill vừa kỷ luật.", "composition_bad": "Cắt cảnh từ chuyển động xoay nhanh sang ngồi tĩnh hơi gắt, cần chèn thêm 0.2s motion blur chuyển tiếp.", "takeaway": "Cân bằng giữa 'Chơi' và 'Làm' là cốt lõi của nội dung phong cách sống hiện đại; đừng chỉ thể hiện mình cắm đầu làm việc 24/7.", "specs": "21.60s - 22.90s (1.33s) • Standard 35mm f/2.2 • Bàn làm việc chiều • Ánh chiều tà dịu dần • Chuyển sang Bước 6"}, {"shot_id": 18, "start_time": 22.93, "end_time": 23.6, "duration": 0.7, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_18_mid.webp", "headline": "Bước 6 'Show Work & Downtime' 4:49 PM: Mở màn triết lý cân bằng cuộc sống của creator kinh doanh tự do", "subject_action": "4:49 PM. Lizzy đóng laptop hoặc ngả lưng thư giãn bên ghế. Dòng text lớn bước cuối cùng: '6. Show work & downtime // 4.49PM'.", "composition_good": "Thông điệp 'Show work & downtime' chạm đúng tâm lý của hàng triệu người theo dõi: khao khát một lối sống vừa kiếm ra tiền vừa có thời gian tận hưởng bản thân.", "composition_bad": "Thời lượng 0.7s hơi ngắn, đóng vai trò bản lề chuyển pha sang buổi tối.", "takeaway": "Video phong cách sống viral không bán sản phẩm thô thiển, nó bán một 'Lối sống đáng mơ ước' (Aspirational Lifestyle) kết hợp giữa làm việc thông minh và nghỉ ngơi trọn vẹn.", "specs": "22.93s - 23.60s (0.70s) • Standard 35mm f/2.0 • Góc sofa thư giãn • Chạng vạng chiều • Lia sang màn hình giải trí"}, {"shot_id": 19, "start_time": 23.63, "end_time": 24.5, "duration": 0.9, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_19_mid.webp", "headline": "Downtime Chơi Game Giải Trí: Nét chấm phá hài hước và chân thật của thế hệ Creator trẻ", "subject_action": "4:49 PM. Cận cảnh màn hình game console (Drafting game / Nintendo), hiển thị danh sách người chơi tham gia phòng game. Text: '6. Show work & downtime // 4.49PM'.", "composition_good": "Thể hiện đúng nghĩa từ 'Downtime' - không phải nghỉ ngơi giả tạo như đi spa sang chảnh, mà là chơi game bình dị như bao bạn trẻ khác.", "composition_bad": "Màn hình game nhiều chữ nhỏ li ti có thể khiến người xem tập trung đọc chữ game thay vì nắm bắt nhịp video.", "takeaway": "Những sở thích cá nhân cụ thể (chơi game, chăm mèo, đọc truyện) chính là 'chất keo gắn kết' (Relatability Glue) biến người xem vãng lai thành fan trung thành.", "specs": "23.63s - 24.50s (0.90s) • Close-up màn hình • Phòng giải trí • Ánh sáng màn hình • Lia sang bữa tối"}, {"shot_id": 20, "start_time": 24.53, "end_time": 26.03, "duration": 1.53, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_20_mid.webp", "headline": "Bữa Tối Hoàng Hôn 6:13 PM: Màu sắc ấm cúng xua tan mọi áp lực của một ngày làm việc dài", "subject_action": "6:13 PM. Bếp ăn buổi tối ấm áp, đèn vàng ấm cúng rọi xuống bàn ăn, bữa tối nhẹ nhàng kết thúc một ngày làm việc hiệu suất cao. Text: '6. Show work & downtime // 6.13PM'.", "composition_good": "Tông màu ấm (Warm Tungsten Tone) đối lập rõ nét với tông xanh mát ban sáng, báo hiệu nhịp sinh học đang chuyển dần về trạng thái nghỉ ngơi sâu.", "composition_bad": "Góc lia máy hơi nhanh ở đoạn cuối khiến chi tiết món ăn tối bị trôi nhanh.", "takeaway": "Sử dụng nhiệt độ màu (Color Temperature) thay đổi theo thời gian thực (6000K sáng sớm -> 3200K tối) để dẫn dắt cảm xúc người xem một cách vô thức.", "specs": "24.53s - 26.03s (1.53s) • Standard 35mm f/2.0 • Bàn ăn tối gia đình • Đèn vàng ấm cúng 3000K • Nối vào cảnh kết phòng ngủ"}, {"shot_id": 21, "start_time": 26.07, "end_time": 27.87, "duration": 1.83, "img_url": "https://media.fedu.vn/images/IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process/shot_21_mid.webp", "headline": "Khép Lại Chu Trình 9:14 PM: Cú hạ màn êm ái hoàn tất vòng tuần hoàn hoàn hảo 24 giờ của một ngày", "subject_action": "9:14 PM. Phòng ngủ buổi tối dịu dàng, ánh đèn đầu giường ấm áp, Lizzy chuẩn bị đi ngủ hoặc tắt đèn, khép lại trọn vẹn một ngày 'Day In The Life' từ 6:15 AM đến 9:14 PM. Text: '6. Show work & downtime // 9.14PM'.", "composition_good": "Cấu trúc đóng khung đầu cuối tương ứng (Full Circle Narrative): mở màn ở giường ngủ lúc 6:15 AM và kết thúc tại giường ngủ lúc 9:14 PM tạo cảm giác trọn vẹn, thỏa mãn cho tâm lý người xem.", "composition_bad": "Phần text CTA kêu gọi comment (theo caption) không xuất hiện trên màn hình video mà chỉ nằm trong caption Instagram.", "takeaway": "Luôn kết thúc video lifestyle bằng cấu trúc vòng tròn (Circular Storytelling) - quay lại điểm xuất phát ban đầu để tạo cảm giác tròn trịa và kích thích người xem xem lại từ đầu (Looping).", "specs": "26.07s - 27.87s (1.83s) • Wide 28mm f/2.0 • Giường ngủ buổi tối • Low-key Warm Bedside Lamp • Fade out kết thúc"}];
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://www.youtube.com/embed/nM_2ZbrWiNU';
+let currentEndTime = null;
 
-// Dynamic Render Function
-function renderApp() {
-  const detailEl = document.getElementById('detailView');
-  const gridEl = document.getElementById('gridItemsContainer');
-  const drawerEl = document.getElementById('drawerItemsContainer');
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
+}
 
-  let cardsHtml = '';
-  let gridHtml = '';
-  let drawerHtml = '';
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
+const player = document.getElementById('mainPlayer');
+window.isYtMuted = false;
 
-  rawShots.forEach((s) => {
-    const sid = s.shot_id;
-    const st = s.start_time;
-    const et = s.end_time;
-    const dur = s.duration.toFixed(2) + 's';
-    const sidPad = String(sid).padStart(2, '0');
-    const imgMid = `${R2_BASE}/images/${PKG_NAME}/shot_${sidPad}_mid.jpg`;
-    const transImg = sid < 21 ? `${R2_BASE}/images/${PKG_NAME}/transitions/trans_${sidPad}_to_${String(sid+1).padStart(2, '0')}.jpg` : '';
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
+    player.load();
+}
 
-    let transHtml = '';
-    if (transImg) {
-      transHtml = `
-      <div class="trans-box mt-3 pt-2 border-top">
-        <div class="d-flex justify-content-between text-xxs font-mono text-muted mb-1">
-          <span>⚡ TRANSITION: SHOT ${sidPad} → ${String(sid+1).padStart(2, '0')} (Whip-Pan 2-3x)</span>
-        </div>
-        <div class="trans-img-wrap rounded overflow-hidden border">
-          <img crossorigin="anonymous" src="${transImg}" alt="Transition ${sidPad}" loading="lazy" class="w-100 d-block" style="max-height:160px;object-fit:contain;background:#090d16;">
-        </div>
-      </div>`;
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
+}
+
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
     }
-
-    cardsHtml += `
-    <article class="shot-card bg-white rounded-3 p-3 mb-3 border shadow-xs" id="shot-${sidPad}" data-st="${st}" data-et="${et}">
-      <div class="d-flex justify-content-between align-items-center gap-2 mb-2 pb-2 border-bottom">
-        <div class="d-flex align-items-center gap-2">
-          <span class="badge bg-slate-900 text-white font-mono">SHOT #${sidPad}</span>
-          <button class="time-btn font-mono" onclick="jumpTo(${st},${et},${sid})">⏱ ${st.toFixed(2)}s - ${et.toFixed(2)}s (${dur})</button>
-        </div>
-        <button class="loop-btn font-mono text-xxs" onclick="loopShot(${st},${et})">🔁 Lặp Shot</button>
-      </div>
-      <h3 class="shot-headline fs-6 fw-bold text-slate-950 mb-2">${s.headline}</h3>
-      <div class="row g-3">
-        <div class="col-12 col-md-4">
-          <div class="thumb-wrap rounded overflow-hidden border position-relative cursor-pointer" onclick="jumpTo(${st},${et},${sid})">
-            <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
-            <div class="thumb-overlay">▶ Phát (${dur})</div>
-          </div>
-        </div>
-        <div class="col-12 col-md-8 d-flex flex-column justify-content-between">
-          <div>
-            <div class="info-block bg-light p-2 rounded mb-2">
-              <div class="label-tag text-slate-500 font-mono text-xxs fw-bold">🎬 MÔ TẢ ĐỐI TƯỢNG & DIỄN BIẾN</div>
-              <p class="mb-0 text-slate-800 text-sm reading-text">${s.subject_action}</p>
-            </div>
-            <div class="row g-2 mb-2">
-              <div class="col-12 col-lg-6">
-                <div class="info-block bg-emerald-light p-2 rounded h-100">
-                  <div class="label-tag text-emerald-800 font-mono text-xxs fw-bold">✅ ƯU ĐIỂM THỊ GIÁC</div>
-                  <p class="mb-0 text-slate-800 text-xs reading-text">${s.composition_good}</p>
-                </div>
-              </div>
-              <div class="col-12 col-lg-6">
-                <div class="info-block bg-rose-light p-2 rounded h-100">
-                  <div class="label-tag text-rose-800 font-mono text-xxs fw-bold">⚠️ HẠN CHẾ CẦN LƯU Ý</div>
-                  <p class="mb-0 text-slate-800 text-xs reading-text">${s.composition_bad}</p>
-                </div>
-              </div>
-            </div>
-            <div class="info-block bg-amber-light p-2 rounded">
-              <div class="label-tag text-amber-900 font-mono text-xxs fw-bold">💡 BÀI HỌC THỰC CHIẾN ĐẠO DIỄN</div>
-              <p class="mb-0 text-slate-900 text-xs fw-semibold reading-text">${s.takeaway}</p>
-            </div>
-          </div>
-          <div class="mt-2 pt-2 border-top text-xxs font-mono text-slate-500">
-            📐 THÔNG SỐ: ${s.specs}
-          </div>
-        </div>
-      </div>
-      ${transHtml}
-    </article>`;
-
-    gridHtml += `
-    <div class="col-6 col-md-4 col-lg-3">
-      <div class="grid-card bg-white rounded border p-2 cursor-pointer h-100 shadow-xs" onclick="jumpTo(${st},${et},${sid})">
-        <div class="position-relative rounded overflow-hidden mb-1">
-          <img crossorigin="anonymous" src="${imgMid}" alt="Shot ${sidPad}" loading="lazy" class="w-100 d-block" style="aspect-ratio:9/16;object-fit:cover;">
-          <span class="badge bg-slate-900 text-white font-mono position-absolute top-0 start-0 m-1 text-xxs">#${sidPad}</span>
-          <span class="badge bg-dark text-white font-mono position-absolute bottom-0 end-0 m-1 text-xxs">${dur}</span>
-        </div>
-        <div class="text-xs fw-bold text-slate-900 text-truncate" title="${s.headline}">${s.headline}</div>
-        <div class="text-xxs text-slate-500 font-mono mt-1">⏱ ${st.toFixed(2)}s - ${et.toFixed(2)}s</div>
-      </div>
-    </div>`;
-
-    drawerHtml += `
-    <div class="drawer-row py-2 px-3 border-bottom cursor-pointer d-flex justify-content-between align-items-center" onclick="jumpTo(${st},${et},${sid});closeDrawer();">
-      <div class="d-flex align-items-center gap-2 text-truncate">
-        <span class="badge bg-slate-100 text-slate-800 font-mono text-xxs">#${sidPad}</span>
-        <span class="text-xs text-slate-800 text-truncate">${s.headline.substring(0, 38)}...</span>
-      </div>
-      <span class="font-mono text-xxs text-slate-400 ms-2">${st.toFixed(1)}s</span>
-    </div>`;
-  });
-
-  detailEl.innerHTML = cardsHtml;
-  gridEl.innerHTML = gridHtml;
-  drawerEl.innerHTML = drawerHtml;
-}
-
-renderApp();
-
-const video = document.getElementById('mainVideo');
-const timeDisp = document.getElementById('timeDisp');
-let loopActive = false;
-let loopStart = 0;
-let loopEnd = 0;
-let curShotId = 1;
-
-video.addEventListener('timeupdate', () => {
-  const cur = video.currentTime;
-  const m = Math.floor(cur / 60);
-  const s = Math.floor(cur % 60);
-  const ms = Math.floor((cur % 1) * 100);
-  timeDisp.textContent = `${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}.${String(ms).padStart(2,'0')} / 00:27.90`;
-
-  if (loopActive && cur >= loopEnd) {
-    video.currentTime = loopStart;
-    video.play();
-  }
-
-  for (const sh of rawShots) {
-    if (cur >= sh.start_time && cur < sh.end_time) {
-      if (curShotId !== sh.shot_id) {
-        curShotId = sh.shot_id;
-        highlight(sh.shot_id);
-      }
-      break;
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
     }
-  }
-});
-
-function highlight(id) {
-  document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-shot'));
-  const el = document.getElementById(`shot-${String(id).padStart(2,'0')}`);
-  if (el) el.classList.add('active-shot');
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
+    if (window.innerWidth < 1024) {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 }
 
-function jumpTo(st, et, sid) {
-  loopActive = false;
-  video.currentTime = st;
-  video.play();
-  highlight(sid);
-  const el = document.getElementById(`shot-${String(sid).padStart(2,'0')}`);
-  if (el && document.getElementById('detailView').style.display !== 'none') {
-    el.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+function setSpeed(speed, btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
+    if (btn) btn.classList.add('active');
 }
 
-function loopShot(st, et) {
-  loopStart = st;
-  loopEnd = et;
-  loopActive = true;
-  video.currentTime = st;
-  video.play();
+function stepFrame(frames) {
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
 }
 
-function toggleLoopCurrent() {
-  const cur = video.currentTime;
-  const sh = rawShots.find(s => cur >= s.start_time && cur < s.end_time);
-  if (sh) {
-    if (loopActive) loopActive = false;
-    else loopShot(sh.start_time, sh.end_time);
-  }
+function toggleMute(btn) {
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
 }
-
-function setSpeed(sp) { video.playbackRate = sp; }
-function stepFrame(frames) { video.pause(); video.currentTime += frames * (1 / 30.0); }
-
-function switchView(v) {
-  const d = document.getElementById('detailView');
-  const g = document.getElementById('gridView');
-  const bD = document.getElementById('btnDetail');
-  const bG = document.getElementById('btnGrid');
-  if (v === 'detail') {
-    d.style.display = 'block'; g.style.display = 'none';
-    bD.className = 'btn btn-primary font-mono text-xxs'; bG.className = 'btn btn-outline-secondary font-mono text-xxs';
-  } else {
-    d.style.display = 'none'; g.style.display = 'block';
-    bD.className = 'btn btn-outline-secondary font-mono text-xxs'; bG.className = 'btn btn-primary font-mono text-xxs';
-  }
-}
-
-function toggleDrawer() {
-  document.getElementById('drawerMenu').classList.toggle('open');
-  document.getElementById('drawerMask').classList.toggle('open');
-}
-function closeDrawer() {
-  document.getElementById('drawerMenu').classList.remove('open');
-  document.getElementById('drawerMask').classList.remove('open');
-}
-
-window.addEventListener('keydown', (e) => {
-  if (['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return;
-  if (e.code === 'Space') { e.preventDefault(); video.paused ? video.play() : video.pause(); }
-  else if (e.code === 'ArrowLeft') { e.preventDefault(); stepFrame(-1); }
-  else if (e.code === 'ArrowRight') { e.preventDefault(); stepFrame(1); }
-  else if (e.code === 'KeyJ') { video.currentTime = Math.max(0, video.currentTime - 1); }
-  else if (e.code === 'KeyL') { video.currentTime = Math.min(video.duration, video.currentTime + 1); }
-});
 
 function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
+    var v = document.getElementById('mainPlayer');
     if (!v) return;
     if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
     }
 }
 
-document.addEventListener('keydown', (e) => {
+document.addEventListener('keydown', function(e) {
     if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
         e.preventDefault();
         togglePlayerFullscreen();
     }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
 });
 
+function switchView(view) {
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
+    if (view === 'grid') {
+        sb.style.display = 'none';
+        grid.style.display = 'grid';
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
+    } else {
+        sb.style.display = 'flex';
+        grid.style.display = 'none';
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
+    }
+}
+
+function toggleDrawer(open) {
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
+}
+
+function jumpToShot(shotNum, st, et, label) {
+    toggleDrawer(false);
+    switchView('detail');
+    playShot(st, et, label);
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+function openLightbox(src, caption) {
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
+    modal.style.display = 'flex';
+}
+
+function closeLightbox() {
+    document.getElementById('lightboxModal').style.display = 'none';
+}
+
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
+    } else {
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
+    }
+}
+
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
+
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'IG_@lizzypalios_DdHMOB0xfd1_Content_Creation_Process';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
 </script>
 </body>
 </html>

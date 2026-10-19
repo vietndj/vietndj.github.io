@@ -1,2529 +1,2107 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>People of Porto 🇵🇹</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Be+Vietnam+Pro:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
-<style>
-:root {
-    --bg-main: #070a0f;
-    --bg-card: #0e1420;
-    --bg-card-hover: #151e30;
-    --bg-surface: #121928;
-    --border-color: #1e293b;
-    --border-active: #38bdf8;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --accent-blue: #38bdf8;
-    --accent-amber: #f59e0b;
-    --accent-emerald: #10b981;
-    --font-heading: 'Plus Jakarta Sans', sans-serif;
-    --font-body: 'Be Vietnam Pro', sans-serif;
-    --font-mono: 'JetBrains Mono', monospace;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People of Porto • Nghệ Thuật Quan Sát Phố Thị Sớm &amp; Hơi Thở Đời Thường Bồ Đào Nha - @jeromememe</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230B0F19'/%3E%3Crect x='1' y='1' width='62' height='62' rx='15' fill='none' stroke='%23FFFFFF' stroke-opacity='0.12' stroke-width='1.5'/%3E%3Ctext x='32' y='38' text-anchor='middle' font-family='system-ui, sans-serif' font-weight='900' font-size='23' fill='%23FFFFFF'%3EYT%3C/text%3E%3Ccircle cx='48' cy='18' r='4' fill='%23eab308'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @font-face {
+            font-family: 'FD Aeonik Extended';
+            src: url('https://font.fedu.vn/FDAeonikExtended-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'FD Aeonik';
+            src: url('https://font.fedu.vn/FDAeonik-SemiBold.woff2') format('woff2');
+            font-weight: 600;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tiempos Text';
+            src: url('https://font.fedu.vn/TiemposText-Regular.woff2') format('woff2');
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Medium.woff2') format('woff2');
+            font-weight: 500;
+            font-style: normal;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'JetBrains Mono';
+            src: url('https://font.fedu.vn/JetBrainsMono-Bold.woff2') format('woff2');
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap;
+        }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-tap-highlight-color: transparent;
-}
+        :root {
+            --cl-bg: #ffffff;
+            --cl-tint: #f8fafc;
+            --cl-card: #ffffff;
+            --cl-accent: #1a73e8;
+            --cl-accent-tint: rgba(26, 115, 232, 0.08);
+            --cl-text-base: #090d16;
+            --cl-text-body: #0f172a;
+            --cl-text-muted: #475569;
+            --cl-line: rgba(0, 0, 0, 0.06);
+            --cl-line-strong: rgba(0, 0, 0, 0.12);
+            --cl-danger: #dc2626;
+            --cl-success: #16a34a;
+            --cl-radius-lg: 24px;
+            --cl-radius-md: 16px;
+            --cl-radius-sm: 10px;
+            --cl-radius-full: 9999px;
+            --font-display: 'FD Aeonik Extended', 'Inter', -apple-system, sans-serif;
+            --font-body: 'Tiempos Text', 'FD Aeonik', 'Inter', Georgia, serif;
+            --font-ui: 'FD Aeonik', 'Inter', -apple-system, sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --apple-spring: cubic-bezier(0.25, 1, 0.35, 1.05);
+            --apple-ease: cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-body {
-    background-color: var(--bg-main);
-    color: var(--text-primary);
-    font-family: var(--font-body);
-    line-height: 1.5;
-    font-size: 14px;
-    overflow-x: hidden;
-}
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: var(--bg-main); }
-::-webkit-scrollbar-thumb { background: #202d42; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: var(--accent-blue); }
+        /* General Body */
+        body {
+            background: var(--cl-bg);
+            color: var(--cl-text-body);
+            font-family: var(--font-body);
+            -webkit-font-smoothing: antialiased;
+        }
 
-.app-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    width: 100%;
-}
+        a { text-decoration: none; color: inherit; }
 
-@media (min-width: 1024px) {
-    .app-container {
-        flex-direction: row;
-        height: 100vh;
-        overflow: hidden;
-    }
-    .video-sidebar-col {
-        width: 440px;
-        min-width: 440px;
-        max-width: 480px;
-        height: 100vh;
-        overflow-y: auto;
-        border-right: 1px solid var(--border-color);
-        background: var(--bg-surface);
-        display: flex;
-        flex-direction: column;
-        z-index: 30;
-    }
-    .content-scroll-col {
-        flex: 1;
-        height: 100vh;
-        overflow-y: auto;
-        padding: 24px 32px 60px;
-        min-width: 0;
-    }
-}
+        .app-container {
+            display: flex;
+            min-height: 100vh;
+        }
 
-@media (max-width: 1023px) {
-    .video-sidebar-col {
-        width: 100%;
-        position: sticky;
-        top: 0;
-        z-index: 50;
-        background: rgba(14, 20, 32, 0.95);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-bottom: 1px solid var(--border-color);
-    }
-    .content-scroll-col {
-        width: 100%;
-        padding: 16px 14px 80px;
-    }
-}
+        /* Video Sidebar */
+        .video-sidebar {
+            width: 420px;
+            max-width: 420px;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            background: var(--cl-tint);
+            border-right: 1px solid var(--cl-line);
+            display: flex;
+            flex-direction: column;
+            padding: 24px;
+            gap: 16px;
+        }
 
-.video-player-container {
-    position: relative;
-    width: 100%;
-    background: #000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
+        .video-wrap {
+            width: 100%;
+            aspect-ratio: 9/16;
+            max-height: 70vh;
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            background: #000;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
 
-@media (min-width: 1024px) {
-    .video-player-container {
-        aspect-ratio: 9/16;
-        max-height: 60vh;
-    }
-}
-@media (max-width: 1023px) {
-    .video-player-container {
-        max-height: 38vh;
-        aspect-ratio: 16/9;
-    }
-}
+        .video-wrap video, .video-wrap iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border: none;
+        }
 
-video#mainPlayer {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    outline: none;
-}
+        .video-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.video-controls-panel {
-    padding: 12px 16px;
-    background: #0b111c;
-    border-bottom: 1px solid var(--border-color);
-}
+        .speed-row, .action-row {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.current-status-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-size: 12px;
-}
+        .ctrl-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s var(--apple-ease);
+        }
 
-.status-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(56, 189, 248, 0.15);
-    color: var(--accent-blue);
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-weight: 700;
-    font-size: 11.5px;
-}
+        .ctrl-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
 
-.speed-buttons-row {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    overflow-x: auto;
-    padding-bottom: 4px;
-}
+        .ctrl-btn.active {
+            background: var(--cl-accent);
+            color: white;
+            border-color: var(--cl-accent);
+        }
 
-.ctrl-btn {
-    background: #162032;
-    color: #cbd5e1;
-    border: 1px solid #283750;
-    padding: 5px 9px;
-    border-radius: 6px;
-    font-size: 11.5px;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.15s;
-}
+        #shotStatusTag {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            text-align: center;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-full);
+            margin-top: 8px;
+            word-break: break-all;
+        }
 
-.ctrl-btn:hover, .ctrl-btn:active {
-    background: #25334d;
-    color: #fff;
-}
+        /* Content Column */
+        .content-column {
+            flex: 1;
+            padding: 32px 40px;
+            overflow-y: auto;
+            max-width: 1000px;
+        }
 
-.ctrl-btn.active {
-    background: var(--accent-blue);
-    color: #041324;
-    border-color: var(--accent-blue);
-    font-weight: 800;
-}
+        /* Report Header */
+        .report-header {
+            margin-bottom: 32px;
+        }
 
-.report-header-banner {
-    background: linear-gradient(135deg, #0e1726 0%, #152238 100%);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 20px;
-    margin-bottom: 20px;
-}
+        .header-badges {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
 
-.header-top-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 8px;
-}
+        .header-badges span {
+            background: var(--cl-accent-tint);
+            color: var(--cl-accent);
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+        }
 
-.genre-badge {
-    background: rgba(245, 158, 11, 0.15);
-    color: var(--accent-amber);
-    border: 1px solid rgba(245, 158, 11, 0.3);
-    font-size: 11px;
-    font-weight: 800;
-    padding: 3px 8px;
-    border-radius: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
+        .report-title {
+            font-family: var(--font-body);
+            font-size: clamp(24px, 3.5vw, 36px);
+            font-weight: 400;
+            color: var(--cl-text-base);
+            margin-bottom: 16px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
+        }
 
-.report-title {
-    font-family: var(--font-heading);
-    font-size: 20px;
-    font-weight: 800;
-    color: #fff;
-    line-height: 1.35;
-    margin-bottom: 10px;
-}
+        .report-title a {
+            color: inherit;
+        }
+        .report-title a:hover {
+            text-decoration: underline;
+        }
 
-.meta-tags-flex {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    font-size: 12.5px;
-    color: var(--text-secondary);
-}
+        .header-meta {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            flex-wrap: wrap;
+        }
 
-.meta-tags-flex strong { color: #fff; }
+        .creator-link {
+            color: var(--cl-accent);
+            font-weight: 600;
+        }
 
-.overview-card {
-    background: #0e1420;
-    border: 1px solid var(--border-color);
-    border-left: 4px solid var(--accent-blue);
-    border-radius: 10px;
-    padding: 14px 18px;
-    margin-bottom: 20px;
-    font-size: 13.5px;
-    color: #cbd5e1;
-    line-height: 1.6;
-}
+        .hub-link {
+            margin-left: auto;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            text-decoration: underline;
+        }
 
-.action-toolbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 20px;
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    background: var(--bg-main);
-    padding: 10px 0;
-}
+        .hub-link:hover {
+            color: var(--cl-accent);
+        }
 
-.view-tabs-group {
-    display: flex;
-    gap: 4px;
-    background: #0f1624;
-    padding: 4px;
-    border-radius: 8px;
-    border: 1px solid var(--border-color);
-}
+        .meta-dot {
+            opacity: 0.5;
+        }
 
-.view-tab-btn {
-    background: transparent;
-    border: none;
-    color: var(--text-secondary);
-    font-size: 12.5px;
-    font-weight: 600;
-    padding: 6px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    transition: all 0.15s;
-}
+        /* Script Axis */
+        .script-axis-card {
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            padding: 16px 20px;
+            margin-bottom: 24px;
+        }
+        .script-axis-title {
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            font-size: 13px;
+            color: var(--cl-accent);
+            letter-spacing: 0.08em;
+            margin-bottom: 8px;
+        }
+        .script-axis-content {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            color: var(--cl-text-body);
+        }
 
-.view-tab-btn.active {
-    background: #1e293b;
-    color: #fff;
-    font-weight: 700;
-}
+        /* Overview */
+        .overview-card {
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-md);
+            padding: 20px 24px;
+            border: 1px solid var(--cl-line);
+            margin-bottom: 24px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
 
-.drawer-trigger-btn {
-    background: linear-gradient(135deg, #0284c7, #0369a1);
-    color: #fff;
-    border: none;
-    padding: 8px 14px;
-    border-radius: 8px;
-    font-weight: 700;
-    font-size: 12.5px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-}
+        /* Toolbar */
+        .toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 24px 0 16px;
+        }
 
-.storyboard-container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
+        .tab-group {
+            display: flex;
+            gap: 8px;
+        }
 
-.shot-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 12px;
-    padding: 14px;
-    display: flex;
-    gap: 16px;
-    transition: transform 0.15s, border-color 0.15s;
-}
+        .tab-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: none;
+            background: transparent;
+            color: var(--cl-text-muted);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
 
-.shot-card:hover {
-    background: var(--bg-card-hover);
-    border-color: #2e3e5a;
-}
+        .tab-btn:hover {
+            background: var(--cl-line);
+        }
 
-.shot-card.active-playing {
-    border-color: var(--accent-blue);
-    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
-}
+        .tab-btn.active {
+            background: var(--cl-accent);
+            color: white;
+        }
 
-.shot-media-col {
-    width: 120px;
-    min-width: 120px;
-    flex-shrink: 0;
-}
+        .drawer-btn {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            border: 1px solid var(--cl-line-strong);
+            background: var(--cl-card);
+            border-radius: var(--cl-radius-full);
+            cursor: pointer;
+        }
 
-.shot-thumb-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 9/16;
-    background: #000;
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-}
+        /* Shot Cards */
+        #storyboardView {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
 
-.shot-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+        .shot-card {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            transition: border-color 0.2s var(--apple-ease);
+        }
 
-.play-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.35);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.7;
-}
+        .shot-card:hover {
+            border-color: var(--cl-accent);
+        }
 
-.play-overlay svg { width: 32px; height: 32px; color: #fff; }
+        .shot-card.active-playing {
+            border-color: var(--cl-accent);
+            box-shadow: 0 0 0 2px var(--cl-accent-tint);
+        }
 
-.zoom-btn {
-    position: absolute;
-    top: 6px;
-    right: 6px;
-    background: rgba(0,0,0,0.65);
-    border: none;
-    border-radius: 4px;
-    width: 24px;
-    height: 24px;
-    font-size: 11px;
-    cursor: pointer;
-    color: #fff;
-}
+        .shot-thumb {
+            width: 130px;
+            flex-shrink: 0;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            aspect-ratio: 9/16;
+            background: #000;
+        }
 
-.thumb-time-badge {
-    position: absolute;
-    bottom: 6px;
-    left: 6px;
-    right: 6px;
-    background: rgba(15, 23, 42, 0.85);
-    font-size: 9.5px;
-    font-weight: 700;
-    color: var(--accent-amber);
-    padding: 2px 4px;
-    border-radius: 3px;
-    text-align: center;
-    font-family: var(--font-mono);
-}
+        .shot-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: transform 0.3s var(--apple-ease), opacity 0.3s;
+        }
+        
+        .shot-thumb:hover img {
+            transform: scale(1.05);
+            opacity: 1;
+        }
 
-.shot-info-col {
-    flex: 1;
-    min-width: 0;
-    display: flex;
-    flex-direction: column;
-}
+        .shot-play-icon {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            background: rgba(0,0,0,0.2);
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .shot-thumb:hover .shot-play-icon {
+            opacity: 1;
+        }
+        
+        .shot-play-icon svg {
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.4));
+        }
 
-.shot-card-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 8px;
-    border-bottom: 1px solid #1a2436;
-    padding-bottom: 8px;
-    margin-bottom: 8px;
-}
+        .shot-time-badge {
+            position: absolute;
+            bottom: 6px;
+            right: 6px;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 600;
+            padding: 2px 6px;
+            border-radius: 4px;
+            backdrop-filter: blur(4px);
+        }
 
-.shot-badge-num {
-    background: #1e293b;
-    color: var(--accent-blue);
-    font-family: var(--font-mono);
-    font-weight: 800;
-    font-size: 11px;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-right: 6px;
-}
+        .shot-body {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-.shot-heading { font-size: 14.5px; font-weight: 700; color: #fff; display: inline; }
+        .shot-head {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 8px;
+        }
 
-.time-jump-btn {
-    background: rgba(56, 189, 248, 0.12);
-    color: var(--accent-blue);
-    border: 1px solid rgba(56, 189, 248, 0.3);
-    padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 12px;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    cursor: pointer;
-}
+        .shot-num {
+            font-family: var(--font-mono);
+            font-size: 11.5px;
+            font-weight: 700;
+            color: var(--cl-accent);
+            background: var(--cl-accent-tint);
+            padding: 4px 10px;
+            border-radius: var(--cl-radius-full);
+            letter-spacing: 0.05em;
+        }
+        
+        .shot-dur {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+        }
 
-.props-list {
-    font-size: 12.5px;
-    color: #cbd5e1;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-    margin-bottom: 8px;
-}
+        .shot-headline {
+            font-family: var(--font-ui);
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            margin: 0 0 10px 0;
+            line-height: 1.35;
+        }
 
-.prop-label { font-weight: 700; color: #94a3b8; }
-.prop-val { color: #e2e8f0; }
+        .shot-insight {
+            font-family: var(--font-body);
+            font-size: 16px;
+            color: var(--cl-text-body);
+            line-height: 1.6;
+            margin: 0;
+        }
 
-.tags-row { display: flex; flex-wrap: wrap; gap: 4px; margin-top: auto; }
-.tag-pill { background: #162032; color: #94a3b8; font-size: 11px; font-weight: 600; padding: 2px 7px; border-radius: 4px; }
+        .shot-details {
+            margin-top: 16px;
+            background: var(--cl-tint);
+            border-radius: var(--cl-radius-sm);
+            border: 1px solid var(--cl-line);
+        }
 
-.grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-    gap: 12px;
-}
+        .shot-details summary {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            color: var(--cl-text-muted);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 10px 14px;
+            user-select: none;
+            transition: color 0.2s;
+        }
+        
+        .shot-details summary:hover {
+            color: var(--cl-accent);
+        }
+        
+        .shot-details[open] summary {
+            border-bottom: 1px solid var(--cl-line);
+            color: var(--cl-accent);
+            margin-bottom: 12px;
+        }
 
-.grid-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-    cursor: pointer;
-}
+        .shot-meta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
+            padding: 0 14px 12px;
+        }
 
-.grid-img-wrap {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 9/16;
-    background: #000;
-}
+        .meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
 
-.grid-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
+        .meta-label {
+            font-family: var(--font-ui);
+            font-size: 11.5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--cl-text-muted);
+            font-weight: 600;
+        }
+        
+        .meta-val {
+            font-family: var(--font-ui);
+            font-size: 14px;
+            color: var(--cl-text-base);
+            line-height: 1.4;
+        }
 
-.grid-play-icon {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    color: #fff;
-    background: rgba(0,0,0,0.3);
-    opacity: 0;
-}
+        .critique-good, .critique-warn, .shot-narrative {
+            margin: 0 14px 12px;
+            padding: 10px 14px;
+            border-radius: 6px;
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            line-height: 1.5;
+        }
 
-.grid-card:hover .grid-play-icon { opacity: 1; }
+        .critique-good {
+            background: #f0fdf4;
+            border-left: 3px solid var(--cl-success);
+            color: #166534;
+        }
 
-.grid-zoom-btn {
-    position: absolute;
-    top: 4px;
-    right: 4px;
-    background: rgba(0,0,0,0.7);
-    border: none;
-    border-radius: 3px;
-    color: #fff;
-    font-size: 10px;
-    width: 20px;
-    height: 20px;
-}
+        .critique-warn {
+            background: #fffbeb;
+            border-left: 3px solid #f59e0b;
+            color: #b45309;
+        }
+        
+        .shot-narrative {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            color: var(--cl-text-muted);
+            font-style: italic;
+        }
 
-.grid-badge-top {
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    background: rgba(15, 23, 42, 0.85);
-    color: var(--accent-blue);
-    font-size: 9px;
-    font-weight: 800;
-    padding: 1px 5px;
-    border-radius: 3px;
-    font-family: var(--font-mono);
-}
 
-.grid-badge-bottom {
-    position: absolute;
-    bottom: 4px;
-    left: 4px;
-    right: 4px;
-    background: rgba(15, 23, 42, 0.85);
-    color: var(--accent-amber);
-    font-size: 9px;
-    font-weight: 700;
-    padding: 1px 4px;
-    border-radius: 3px;
-    text-align: center;
-    font-family: var(--font-mono);
-}
+        /* Grid View */
+        #gridView {
+            display: none;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        
+        .grid-item {
+            cursor: pointer;
+        }
 
-.drawer-backdrop {
+        .grid-thumb {
+            width: 100%;
+            aspect-ratio: 9/16;
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            margin-bottom: 4px;
+        }
+
+        .grid-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .grid-title {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            color: var(--cl-text-body);
+            text-align: center;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* Drawer */
+        .drawer-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.3);
+            backdrop-filter: blur(4px);
+            z-index: 100;
+            display: none;
+        }
+
+        .drawer-backdrop.open {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .drawer-panel {
+            width: 340px;
+            max-width: 90vw;
+            height: 100vh;
+            background: var(--cl-card);
+            border-left: 1px solid var(--cl-line);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-head {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 14px;
+            color: var(--cl-text-base);
+        }
+
+        .drawer-head button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--cl-text-muted);
+        }
+
+        .drawer-list {
+            padding: 16px 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Lightbox */
+        #lightboxModal {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.85);
+            z-index: 200;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox-x {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #lightboxImg {
+            max-width: 90%;
+            max-height: 80vh;
+            border-radius: var(--cl-radius-md);
+        }
+
+        #lightboxCaption {
+            margin-top: 16px;
+            color: white;
+            font-family: var(--font-ui);
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* Dialogue Section */
+        .dialogue-section {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .dialogue-col-main {
+            flex: 1;
+            background: var(--cl-card);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+        }
+
+        .dialogue-col-aside {
+            flex: 0 0 320px;
+            background: var(--cl-tint);
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dialogue-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-card);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--cl-line);
+            background: var(--cl-tint);
+            display: flex;
+            align-items: center;
+        }
+
+        .dialogue-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-text-base);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-sub {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-text-muted);
+        }
+
+        .dialogue-aside-header span {
+            font-family: var(--font-ui);
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--cl-text-muted);
+            letter-spacing: 0.05em;
+        }
+
+        .dialogue-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .dialogue-aside-body {
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            overflow-y: auto;
+            max-height: 400px;
+        }
+
+        .vn-para {
+            cursor: pointer;
+            padding: 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s var(--apple-ease);
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            border: 1px solid transparent;
+        }
+
+        .vn-para:hover {
+            background: var(--cl-tint);
+            border-color: var(--cl-line);
+        }
+
+        .vn-time {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .vn-beat {
+            font-family: var(--font-ui);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: var(--cl-accent);
+        }
+
+        .vn-text {
+            font-family: var(--font-body);
+            font-size: 17px;
+            line-height: 1.6;
+            color: var(--cl-text-body);
+        }
+
+        .en-line {
+            cursor: pointer;
+            padding: 10px 14px;
+            border-radius: var(--cl-radius-sm);
+            transition: background 0.2s;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .en-line:hover {
+            background: rgba(0,0,0,0.03);
+        }
+
+        .en-time {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--cl-text-muted);
+        }
+
+        .en-text {
+            font-family: var(--font-body);
+            font-size: 14px;
+            color: var(--cl-text-muted);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        /* Remake Prompt Card */
+        .remake-prompt-card {
+            background: var(--cl-card);
+            border: 1px solid var(--cl-accent);
+            border-radius: var(--cl-radius-md);
+            margin-bottom: 32px;
+            box-shadow: 0 4px 20px var(--cl-accent-tint);
+            overflow: hidden;
+        }
+
+        .prompt-accordion-header {
+            padding: 16px 20px;
+            background: #f0f7ff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.2s;
+            border-bottom: 1px solid transparent;
+        }
+
+        .prompt-accordion-header:hover {
+            background: #e0efff;
+        }
+
+        .prompt-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .prompt-badge {
+            font-family: var(--font-ui);
+            font-size: 11px;
+            font-weight: 700;
+            color: white;
+            background: var(--cl-accent);
+            padding: 4px 8px;
+            border-radius: 4px;
+            letter-spacing: 0.05em;
+        }
+
+        .prompt-title {
+            font-family: var(--font-ui);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+        }
+
+        .prompt-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .prompt-copy-btn {
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--cl-text-base);
+            background: white;
+            border: 1px solid var(--cl-line-strong);
+            padding: 6px 12px;
+            border-radius: var(--cl-radius-sm);
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .prompt-copy-btn:hover {
+            border-color: var(--cl-accent);
+            color: var(--cl-accent);
+        }
+
+        .prompt-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--cl-text-muted);
+            font-family: var(--font-ui);
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .prompt-accordion-body {
+            padding: 24px;
+            border-top: 1px solid #e0efff;
+        }
+
+        .prompt-desc {
+            font-family: var(--font-ui);
+            font-size: 14.5px;
+            color: var(--cl-text-muted);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .prompt-code-wrap {
+            border: 1px solid var(--cl-line);
+            border-radius: var(--cl-radius-sm);
+            overflow: hidden;
+        }
+
+        .prompt-code-bar {
+            background: var(--cl-tint);
+            padding: 10px 16px;
+            border-bottom: 1px solid var(--cl-line);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--cl-text-muted);
+        }
+
+        .prompt-code-content {
+            padding: 20px;
+            font-family: var(--font-mono);
+            font-size: 13.5px;
+            line-height: 1.6;
+            color: var(--cl-text-base);
+            background: white;
+            white-space: pre-wrap;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .dialogue-section {
+                flex-direction: column;
+            }
+            .dialogue-col-aside {
+                flex: none;
+                max-height: 300px;
+            }
+            .prompt-accordion-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .prompt-right {
+                width: 100%;
+                justify-content: space-between;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 1024px) {
+            .app-container {
+                flex-direction: column;
+            }
+            .video-sidebar {
+                width: 100%;
+                max-width: 100%;
+                position: relative;
+                height: auto;
+                padding: 16px;
+                border-right: none;
+                border-bottom: 1px solid var(--cl-line);
+            }
+            .content-column {
+                padding: 20px 16px;
+            }
+            .shot-card {
+                flex-direction: column;
+            }
+            .shot-thumb {
+                width: 100%;
+                aspect-ratio: 16/9;
+            }
+            #gridView {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hub-link {
+                width: 100%;
+                margin-left: 0;
+                margin-top: 8px;
+            }
+        }
+
+/* === EDIT INLINE FEATURE === */
+.edit-fab {
     position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(4px);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.25s ease;
-}
-
-.drawer-backdrop.open { opacity: 1; visibility: visible; }
-
-.drawer-panel {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 320px;
-    max-width: 85vw;
-    background: #0f172a;
-    border-left: 1px solid var(--border-color);
-    z-index: 101;
-    display: flex;
-    flex-direction: column;
-    transform: translateX(100%);
-    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.drawer-backdrop.open .drawer-panel { transform: translateX(0); }
-
-.drawer-header {
-    padding: 16px 20px;
-    border-bottom: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.drawer-title { font-weight: 800; font-size: 15px; color: #fff; }
-.drawer-close-btn { background: #1e293b; border: none; color: #fff; width: 28px; height: 28px; border-radius: 6px; font-size: 16px; cursor: pointer; }
-
-.drawer-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 12px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.drawer-item {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 10px;
-    background: #131d30;
-    border: 1px solid #1e2d48;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.drawer-item:hover, .drawer-item:active {
-    background: #1c2b47;
-    border-color: var(--accent-blue);
-}
-
-.drawer-thumb {
-    width: 44px;
-    height: 58px;
-    border-radius: 4px;
-    overflow: hidden;
-    flex-shrink: 0;
-    background: #000;
-}
-
-.drawer-thumb img { width: 100%; height: 100%; object-fit: cover; }
-.drawer-info { flex: 1; min-width: 0; }
-.drawer-shot-title { font-weight: 700; font-size: 13px; color: #fff; }
-.drawer-shot-time { font-size: 11.5px; color: var(--accent-amber); font-family: var(--font-mono); }
-.drawer-play-arrow { font-size: 13px; color: var(--accent-blue); }
-
-#lightboxModal {
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.92);
-    backdrop-filter: blur(8px);
-    z-index: 200;
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-}
-
-#lightboxImg {
-    max-width: 90vw;
-    max-height: 80vh;
-    object-fit: contain;
-    border-radius: 8px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
-    border: 1px solid #334155;
-}
-
-#lightboxCaption {
-    color: #e2e8f0;
-    font-size: 13.5px;
-    margin-top: 14px;
-    text-align: center;
-    background: rgba(15, 23, 42, 0.85);
-    padding: 6px 16px;
-    border-radius: 20px;
-    border: 1px solid #334155;
-}
-
-.lightbox-close {
-    position: absolute;
     top: 20px;
-    right: 25px;
-    color: #fff;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-/* Author Instagram Direct Link Button */
-.author-ig-badge {
-    display: inline-flex;
+    right: 20px;
+    z-index: 50;
+    width: 44px;
+    height: 44px;
+    border-radius: var(--cl-radius-full);
+    background: var(--cl-card);
+    border: 1px solid var(--cl-line-strong);
+    display: flex;
     align-items: center;
-    gap: 6px;
-    background: rgba(192, 132, 252, 0.12);
-    border: 1px solid rgba(192, 132, 252, 0.35);
-    color: #e879f9;
-    padding: 2px 8px 2px 6px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 12px;
-    transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    vertical-align: middle;
-}
-.author-ig-badge:hover {
-    background: linear-gradient(135deg, rgba(192, 132, 252, 0.3), rgba(244, 63, 94, 0.3));
-    border-color: #f43f5e;
-    color: #fff;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(244, 63, 94, 0.3);
-}
-.author-ig-badge strong {
-    color: #fff;
-}
-.author-ig-badge .ig-ext-btn {
-    background: linear-gradient(135deg, #c084fc, #f43f5e);
-    color: #0b0f17;
-    font-size: 10px;
-    font-weight: 800;
-    padding: 2px 6px;
-    border-radius: 4px;
-    margin-left: 2px;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    transition: all 0.15s;
-    letter-spacing: 0.2px;
-}
-.author-ig-badge:hover .ig-ext-btn {
-    background: #ffffff;
-    color: #0b0f17;
-}
-
-
-.creator-filter-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 3px 10px;
-    background: rgba(56, 189, 248, 0.12);
-    border: 1px solid rgba(56, 189, 248, 0.35);
-    border-radius: 8px;
-    color: #38bdf8;
-    text-decoration: none;
+    justify-content: center;
     cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 12px;
-    vertical-align: middle;
+    font-size: 18px;
+    transition: all 0.2s var(--apple-ease);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
-.creator-filter-badge:hover {
-    background: rgba(56, 189, 248, 0.25);
-    border-color: #38bdf8;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.25);
+.edit-fab:hover {
+    border-color: var(--cl-accent);
+    box-shadow: 0 4px 16px rgba(26, 115, 232, 0.15);
+    transform: scale(1.05);
 }
-.creator-filter-badge strong {
-    color: #f8fafc;
+
+.edit-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    backdrop-filter: blur(6px);
+    z-index: 300;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 40px 16px;
+    overflow-y: auto;
 }
-.creator-filter-badge .author-handle {
-    color: #94a3b8;
-    font-family: monospace;
-    font-size: 11px;
+.edit-modal-backdrop.open {
+    display: flex;
 }
-.creator-filter-badge .filter-action-chip {
-    font-size: 10px;
-    padding: 1.5px 6px;
-    background: rgba(56, 189, 248, 0.25);
-    border-radius: 4px;
-    color: #e0f2fe;
+
+.edit-modal {
+    background: var(--cl-card);
+    border-radius: var(--cl-radius-lg);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+    overflow: hidden;
+    animation: editSlideIn 0.3s var(--apple-spring);
+}
+
+@keyframes editSlideIn {
+    from { opacity: 0; transform: translateY(-20px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.edit-modal-head {
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--cl-line);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.edit-modal-head h3 {
+    font-family: var(--font-display);
+    font-size: 16px;
     font-weight: 700;
-    margin-left: 2px;
+    color: var(--cl-text-base);
+    margin: 0;
 }
-
-
-.player-box { position: relative !important; }
-.player-box video { cursor: pointer; }
-.player-fs-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    z-index: 20;
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    padding: 6px 12px;
-    border-radius: 8px;
-    background: rgba(0, 0, 0, 0.75);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    font-family: var(--font-ui, sans-serif);
-    font-size: 11.5px;
-    font-weight: 600;
+.edit-modal-close {
+    background: none;
+    border: none;
+    font-size: 24px;
     cursor: pointer;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    transition: all 0.2s ease;
-}
-.player-fs-btn:hover {
-    background: #1a73e8;
-    border-color: #1a73e8;
-    transform: scale(1.04);
-}
-.fs-ctrl-btn {
-    background: #fffbeb !important;
-    color: #b45309 !important;
-    border-color: #fef3c7 !important;
-    font-weight: 700 !important;
-}
-.fs-ctrl-btn:hover {
-    background: #fef3c7 !important;
-    color: #92400e !important;
-    border-color: #fcd34d !important;
+    color: var(--cl-text-muted);
+    line-height: 1;
 }
 
-</style>
-<style id="yt-player-fix">.player-box { aspect-ratio: 9/16 !important; min-height: 520px !important; height: auto !important; } .player-box iframe { width: 100% !important; height: 100% !important; min-height: 520px !important; border-radius: 12px; }</style>
+.edit-modal-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.edit-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.edit-field label {
+    font-family: var(--font-ui);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cl-text-muted);
+}
+.edit-field select,
+.edit-field input,
+.edit-field textarea {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    padding: 10px 14px;
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-sm);
+    background: var(--cl-card);
+    color: var(--cl-text-body);
+    transition: border-color 0.2s;
+    width: 100%;
+}
+.edit-field select:focus,
+.edit-field input:focus,
+.edit-field textarea:focus {
+    outline: none;
+    border-color: var(--cl-accent);
+    box-shadow: 0 0 0 3px var(--cl-accent-tint);
+}
+.edit-field textarea {
+    min-height: 72px;
+    resize: vertical;
+}
+
+.edit-modal-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--cl-line);
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.edit-save-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 24px;
+    background: var(--cl-accent);
+    color: white;
+    border: none;
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.edit-save-btn:hover { opacity: 0.9; }
+.edit-save-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.edit-cancel-btn {
+    font-family: var(--font-ui);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 10px 20px;
+    background: transparent;
+    color: var(--cl-text-muted);
+    border: 1px solid var(--cl-line-strong);
+    border-radius: var(--cl-radius-full);
+    cursor: pointer;
+}
+
+.edit-status {
+    font-family: var(--font-ui);
+    font-size: 13px;
+    padding: 8px 14px;
+    border-radius: var(--cl-radius-sm);
+    display: none;
+}
+.edit-status.success {
+    display: block;
+    background: #f0fdf4;
+    color: #166534;
+    border: 1px solid #bbf7d0;
+}
+.edit-status.error {
+    display: block;
+    background: #fef2f2;
+    color: #dc2626;
+    border: 1px solid #fecaca;
+}
+
+.edit-pw-field {
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.edit-pw-field label { min-width: fit-content; }
+.edit-pw-field input {
+    max-width: 120px;
+    text-align: center;
+    letter-spacing: 0.15em;
+    font-family: var(--font-mono);
+}
+
+@media (max-width: 1024px) {
+    .edit-fab {
+        top: auto;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+    </style>
 </head>
 <body>
 
 <div class="app-container">
-    <div class="video-sidebar-col">
-        <div class="video-player-container">
-            <iframe id="mainPlayer" src="https://www.youtube.com/embed/B24bOpks42E?enablejsapi=1&rel=0&modestbranding=1" style="width:100%; height:100%; border:none; border-radius:12px; aspect-ratio:9/16; background:#000;" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="video-sidebar">
+        <div class="video-wrap">
+            <iframe id="mainPlayer" src="https://www.youtube.com/embed/B24bOpks42E?enablejsapi=1&rel=0&modestbranding=1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:9/16;border-radius:12px;"></iframe>
         </div>
-        <div class="video-controls-panel">
-            <div class="current-status-bar">
-                <span class="status-tag" id="shotStatusTag">🎬 Phân cảnh: Toàn bộ video</span>
-                <a id="directVidLink" href="https://drive.google.com/file/d/People_of_Porto%20-%20%40jeromememe/view" target="_blank" style="color:var(--accent-blue); font-size:11.5px; text-decoration:none;">Tệp gốc ↗</a>
-            </div>
-            <div class="speed-buttons-row">
-                <span style="font-size:11.5px; color:#94a3b8; font-weight:700; margin-right:4px;">Tốc độ:</span>
+        <div class="video-controls">
+            <div class="speed-row">
                 <button class="ctrl-btn" onclick="setSpeed(0.25, this)">0.25x</button>
                 <button class="ctrl-btn" onclick="setSpeed(0.5, this)">0.5x</button>
-                <button class="ctrl-btn active" onclick="setSpeed(1.0, this)">1.0x</button>
+                <button class="ctrl-btn active" onclick="setSpeed(1, this)">1.0x</button>
                 <button class="ctrl-btn" onclick="setSpeed(1.5, this)">1.5x</button>
-                <button class="ctrl-btn" onclick="stepFrame(-1)">⏮ -1F</button>
-                <button class="ctrl-btn" onclick="stepFrame(1)">+1F ⏭</button>
-                <button class="ctrl-btn" onclick="toggleMute(this)">🔊 Tiếng</button>
             </div>
+            <div class="action-row">
+                <button class="ctrl-btn" onclick="stepFrame(-1)">-1F</button>
+                <button class="ctrl-btn" onclick="stepFrame(1)">+1F</button>
+                <button class="ctrl-btn" onclick="toggleMute(this)">Âm thanh</button>
+                <button class="ctrl-btn" onclick="togglePlayerFullscreen()">Toàn màn hình</button>
+            </div>
+            <div id="shotStatusTag">Sẵn sàng</div>
         </div>
     </div>
 
-    <div class="content-scroll-col">
-        <div class="report-header-banner">
-            <div class="header-top-row">
-                <span class="genre-badge">DIRECTOR BREAKDOWN</span>
-                <span style="font-size:12px; color:var(--accent-amber); font-family:var(--font-mono); font-weight:700;">11 SHOTS &bull; 20.72s</span>
+    <div class="content-column">
+        <header class="report-header">
+            <div class="header-badges"><span class="badge">Du lịch</span> <span class="badge badge-alt">Chỉn Chu</span></div>
+            <h1 class="report-title">
+                <a href="https://www.instagram.com/reel/DQuEXMbj8fT/" target="_blank" rel="noopener">People of Porto • Nghệ Thuật Quan Sát Phố Thị Sớm &amp; Hơi Thở Đời Thường Bồ Đào Nha - @jeromememe</a>
+            </h1>
+            <div class="header-meta">
+                <span>Nguồn: <a href="https://www.instagram.com/jeromememe/" target="_blank" class="creator-link">@jeromememe ↗</a></span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">11 cảnh</span>
+                <span class="meta-dot">•</span>
+                <span class="meta-stat">20.72s</span>
+                <a href="https://ytuong.fedu.vn" target="_blank" class="hub-link">Kho Ý Tưởng ↗</a>
             </div>
-            <h1 class="report-title">People of Porto 🇵🇹</h1>
-            <div class="meta-tags-flex">
-                <span>Tác giả: 
-                    <a href="../index.html?creator=@jeromememe" onclick="handleCreatorClick(event, '@jeromememe', 'Jerome Teo')" class="creator-filter-badge" title="Bấm để lọc toàn bộ video của Jerome Teo trên Kho Ý Tưởng FEDU">
-                        <span>👤</span>
-                        <strong>Jerome Teo</strong>
-                        <span class="author-handle">(@jeromememe)</span>
-                        <span class="filter-action-chip">🔍 Lọc toàn bộ video</span>
-                    </a>
-                </span></a></span>
-                <span>Tệp: <strong>People_of_Porto - @jeromememe.html</strong></span>
-                <span>Trực quan: <strong>9:16 Vertical HD</strong></span>
-            </div>
-        </div>
+        </header>
+
+        
+        <section class="script-axis-card">
+            <h3 class="script-axis-title">TRỤC KỊCH BẢN 3 NHỊP</h3>
+            <div class="script-axis-content">[Giai đoạn 1 • Mở màn (Hook): SHOT 01] ➔ [Giai đoạn 2 • Triển khai &amp; Giữ nhịp: Chuỗi 9 nhịp cắt đan xen đa cỡ cảnh] ➔ [Giai đoạn 3 • Điểm rơi &amp; Chốt thông điệp: SHOT 11]</div>
+        </section>
 
         <div class="overview-card">
-            <h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-            <div>
-<h3 style="color:#fff; font-size:14px; margin-bottom:6px; font-weight:700;">🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH:</h3>
-<div>Bóc tách toàn diện 11 phân cảnh chuẩn mực điện ảnh: Nghệ thuật quan sát tĩnh (Static Observational Framing), ánh sáng vàng sớm trên sông Douro, bố cục chéo gạch men Azulejo, nhịp nhảy cầu sông Douro, chiều sâu ngõ hẻm và điểm neo cảm xúc cuộc trò chuyện tại quán cafe O Caseirinho.</div>
-</div>
+            🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH: 🎯 TỔNG QUAN PHONG CÁCH THỊ GIÁC &amp; NGÔN NGỮ ĐIỆN ẢNH: Bóc tách toàn diện 11 phân cảnh chuẩn mực điện ảnh: Nghệ thuật quan sát tĩnh (Static Observational Framing), ánh sáng vàng sớm trên sông Douro, bố cục chéo gạch men Azulejo, nhịp nhảy cầu sông Douro, chiều sâu ngõ hẻm và điểm neo cảm xúc cuộc trò chuyện tại quán cafe O Caseirinho.
         </div>
 
-        <div class="action-toolbar">
-            <div class="view-tabs-group">
-                <button class="view-tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">📋 Bóc Tách Chi Tiết</button>
-                <button class="view-tab-btn" id="tabGridBtn" onclick="switchView('grid')">🖼️ Lưới Soi Ảnh (11)</button>
+        
+
+        <div class="toolbar">
+            <div class="tab-group">
+                <button class="tab-btn active" id="tabDetailBtn" onclick="switchView('detail')">Bóc tách chi tiết</button>
+                <button class="tab-btn" id="tabGridBtn" onclick="switchView('grid')">Lưới ảnh (11)</button>
             </div>
-            <button class="drawer-trigger-btn" onclick="toggleDrawer(true)">📑 Mục Lục Shot</button>
+            <button class="drawer-btn" onclick="toggleDrawer(true)">Mục lục</button>
         </div>
 
-        <div class="storyboard-container" id="storyboardView">
+        <div id="storyboardView">
             
         <div class="shot-card" id="shot-card-1">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(0.0, 2.4, 'SHOT 01')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp" alt="SHOT 01" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp">🔍</button>
-                    <span class="thumb-time-badge">0.00s - 2.40s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(0.0, 2.4, 'SHOT 01')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp" alt="SHOT 01" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">0.0s – 2.4s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 01</span>
-                        <h4 class="shot-heading">SHOT 01</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 01</span>
+                    <span class="shot-dur">2.40s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 01</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(0.0, 2.4, 'SHOT 01')">
-                        ▶ 0.00s ➔ 2.40s (2.40s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(0.0, 2.4, 'SHOT 01')">
-<img crossorigin="anonymous" alt="SHOT 01" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp">🔍</button>
-<span class="thumb-time-badge">0.00s - 2.40s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 01</span>
-<h4 class="shot-heading">SHOT 01</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(0.0, 2.4, 'SHOT 01')">
-                        ▶ 0.00s ➔ 2.40s (2.40s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 01</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(0.0)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 0.00s - 2.40s (2.44s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Extreme Wide Shot (EWS) / Golden Hour Establishing / Title Reveal</div>
-</div>
-<div class="shot-main-title">Mở Màn: Bình Minh Trên Sông Douro &amp; Dòng Tiêu Đề 'People of PORTO'</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Vách đá cổ nhìn xuống thung lũng sông Douro, Porto, Bồ Đào Nha</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp">
-<img crossorigin="anonymous" alt="Shot 1 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp"/>
-<div class="kf-label">Start (0.00s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp">
-<img crossorigin="anonymous" alt="Shot 1 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_006_f8001919.webp">
-<img crossorigin="anonymous" alt="Shot 1 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_006_f8001919.webp"/>
-<div class="kf-label">End (2.40s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung cảnh bình minh tráng lệ nhìn từ sườn dốc đá cổ kính xuống dòng sông Douro. Ánh nắng vàng hổ phách (Golden Glow) quét xiên làm rực rỡ mảng tường đá hoa cương và mái ngói đất nung bên phải, tương phản với sắc xanh lam tĩnh mịch của lòng sông còn đọng sương sớm. Một phụ nữ dắt tay con nhỏ chầm chậm bước xuống bậc thang đá. Dòng chữ tiêu đề trang nhã 'People of PORTO' xuất hiện thanh lịch ở trung tâm trên nền không gian sông nước bao la.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Người mẹ dắt con nhỏ bước chầm chậm xuống con dốc đá ở tiền cảnh bên phải; ánh nắng sớm rọi bóng dài trên mặt đất.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Cắt dứt khoát sang Cảnh 2: Góc máy ngước lên mặt tiền tòa nhà gạch men Azulejo rực rỡ với người phụ nữ mở tung cánh cửa sổ tầng 3.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Atmospheric Visual Establishing &amp; Typography Reveal (Thiết lập bầu không khí hoài niệm và điểm nhấn văn bản cổ điển)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Sử dụng cú máy tĩnh tuyệt đối (Static Lock-off) trên chân máy vững chãi, tiêu cự 35mm để lấy trọn chiều sâu từ con dốc đá tiền cảnh đến dãy thành phố phía xa. Đo sáng bảo vệ chi tiết vùng trời sớm và vệt nắng ven tường (Expose for Highlights).</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Khẩu độ f/5.6 - f/8.0 để giữ toàn bộ độ nét sâu từ bậc đá đến đường chân trời. Tốc độ màn trập 1/50s (chuẩn 180° Shutter Rule) giữ nhịp bước chân người đi bộ thật êm ái.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 01 ➔ 02</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 01 (Out) sang Shot 02 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_008_6fc630df.webp">
-<img crossorigin="anonymous" alt="Transition 1 to 2" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_008_6fc630df.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-2">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(2.44, 4.64, 'SHOT 02')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp" alt="SHOT 02" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp">🔍</button>
-                    <span class="thumb-time-badge">2.44s - 4.64s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(2.44, 4.64, 'SHOT 02')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp" alt="SHOT 02" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">2.4s – 4.6s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 02</span>
-                        <h4 class="shot-heading">SHOT 02</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 02</span>
+                    <span class="shot-dur">2.20s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 02</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(2.44, 4.64, 'SHOT 02')">
-                        ▶ 2.44s ➔ 4.64s (2.20s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(2.44, 4.64, 'SHOT 02')">
-<img crossorigin="anonymous" alt="SHOT 02" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp">🔍</button>
-<span class="thumb-time-badge">2.44s - 4.64s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 02</span>
-<h4 class="shot-heading">SHOT 02</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(2.44, 4.64, 'SHOT 02')">
-                        ▶ 2.44s ➔ 4.64s (2.20s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 02</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(2.44)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 2.44s - 4.64s (2.24s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Low-Angle Medium Wide Shot / Diagonal Architectural Perspective</div>
-</div>
-<div class="shot-main-title">Bố Cục Chéo Mặt Tiền Gạch Men Azulejo &amp; Người Phụ Nữ Bên Cửa Sổ Tầng Cao</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Tòa nhà cổ điển ốp gạch men Azulejo, khu phố cổ Porto</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp">
-<img crossorigin="anonymous" alt="Shot 2 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp"/>
-<div class="kf-label">Start (2.44s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp">
-<img crossorigin="anonymous" alt="Shot 2 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_014_a579bb0e.webp">
-<img crossorigin="anonymous" alt="Shot 2 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_014_a579bb0e.webp"/>
-<div class="kf-label">End (4.64s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Góc máy ngước thấp chếch góc (Dutch Tilt / Diagonal Perspective) hướng lên mặt tiền tòa nhà 4 tầng phủ kín gạch men gốm truyền thống Bồ Đào Nha (Azulejos hoa văn xanh lục - vàng nghệ) và ban công sắt rèn uốn lượn. Ở khung cửa sổ tầng 3, một người phụ nữ trong trang phục áo sáng màu mở toang cánh cửa gỗ đôi, vươn người ra ngoài giũ khăn và tận hưởng không khí trong lành của buổi sáng.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Người phụ nữ vươn hai tay giũ nhẹ tấm khăn sáng màu ra khỏi bậu cửa sổ, ánh nắng sớm chiếu rọi viền tóc và bờ vai.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Chuyển sang Cảnh 3: Cú phóng người nhảy cầu dũng mãnh của thiếu niên từ dàn khung thép cầu Dom Luís I xuống sông Douro.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Diagonal Leading Lines &amp; Human-in-Architecture Scale (Đường dẫn chéo kiến trúc và tỷ lệ con người giữa không gian di sản)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Tận dụng góc máy chéo để biến mặt tiền tòa nhà thành một cấu trúc đồ họa hình học cuốn hút. Ánh sáng xiên buổi sáng tạo độ bóng bẩy trên bề mặt gạch men tráng men bóng và nổi khối các hoa văn cổ điển.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự 50mm f/4.0 trên Full-frame giữ tỷ lệ thẳng đứng của các ô cửa sổ mà không bị méo góc, tốc độ 1/50s.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 02 ➔ 03</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 02 (Out) sang Shot 03 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_016_78699f3f.webp">
-<img crossorigin="anonymous" alt="Transition 2 to 3" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_016_78699f3f.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-3">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(4.68, 6.72, 'SHOT 03')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp" alt="SHOT 03" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp">🔍</button>
-                    <span class="thumb-time-badge">4.68s - 6.72s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(4.68, 6.72, 'SHOT 03')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp" alt="SHOT 03" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">4.7s – 6.7s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 03</span>
-                        <h4 class="shot-heading">SHOT 03</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 03</span>
+                    <span class="shot-dur">2.04s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 03</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(4.68, 6.72, 'SHOT 03')">
-                        ▶ 4.68s ➔ 6.72s (2.04s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(4.68, 6.72, 'SHOT 03')">
-<img crossorigin="anonymous" alt="SHOT 03" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp">🔍</button>
-<span class="thumb-time-badge">4.68s - 6.72s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 03</span>
-<h4 class="shot-heading">SHOT 03</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(4.68, 6.72, 'SHOT 03')">
-                        ▶ 4.68s ➔ 6.72s (2.04s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 03</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(4.68)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 4.68s - 6.72s (2.08s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Medium Wide Shot (MWS) / Action Momentum &amp; High-Shutter Freeze</div>
-</div>
-<div class="shot-main-title">Cú Nhảy Cầu Sông Douro Từ Dàn Khung Thép Cầu Biểu Tượng Dom Luís I</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Cầu vòm thép hai tầng Dom Luís I bắc qua sông Douro</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp">
-<img crossorigin="anonymous" alt="Shot 3 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp"/>
-<div class="kf-label">Start (4.68s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp">
-<img crossorigin="anonymous" alt="Shot 3 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_022_dfcf8e40.webp">
-<img crossorigin="anonymous" alt="Shot 3 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_022_dfcf8e40.webp"/>
-<div class="kf-label">End (6.72s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung cảnh tràn đầy sức sống trẻ trung trên dàn khung thép kết cấu Eiffel biểu tượng của cầu Dom Luís I. Một nhóm thiếu niên bản địa mặc quần bơi đang đứng bám trên các thanh dầm thép; một cậu bé dũng cảm lấy đà phóng người lộn nhào ngoạn mục xuống làn nước sông Douro xanh thẫm màu ngọc lục bảo. Trên lan can cầu phía trên, đám đông du khách và người dân đứng tựa thành cầu chăm chú dõi theo.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Cậu bé phóng người lao vút xuống mặt nước bên góc phải khung hình, cơ thể uốn cong giữa không trung.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 4: Sự tĩnh lặng và chậm rãi bên cánh cửa gỗ cổ nơi người họa sĩ đường phố đang ngồi vẽ tranh.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Kinetic Energy Climax &amp; High-Speed Action Capture (Đỉnh cao năng lượng vận động kết hợp bố cục đối xứng công nghiệp)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Đây là cú máy chuyển đổi tiết tấu (Pace Shift) quan trọng, đẩy năng lượng của toàn bộ video lên cao trào trước khi đưa khán giả trở về với những lát cắt tĩnh lặng của đời sống vỉa hè.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự tele tầm trung 85mm f/4.0, tăng tốc độ màn trập lên 1/500s để bắt dính khoảnh khắc cơ thể lơ lửng trên không trung và các giọt nước bắn.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 03 ➔ 04</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 03 (Out) sang Shot 04 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_024_a2ee2051.webp">
-<img crossorigin="anonymous" alt="Transition 3 to 4" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_024_a2ee2051.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-4">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(6.76, 8.2, 'SHOT 04')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp" alt="SHOT 04" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp">🔍</button>
-                    <span class="thumb-time-badge">6.76s - 8.20s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(6.76, 8.2, 'SHOT 04')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp" alt="SHOT 04" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">6.8s – 8.2s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 04</span>
-                        <h4 class="shot-heading">SHOT 04</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 04</span>
+                    <span class="shot-dur">1.44s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 04</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(6.76, 8.2, 'SHOT 04')">
-                        ▶ 6.76s ➔ 8.20s (1.44s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(6.76, 8.2, 'SHOT 04')">
-<img crossorigin="anonymous" alt="SHOT 04" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp">🔍</button>
-<span class="thumb-time-badge">6.76s - 8.20s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 04</span>
-<h4 class="shot-heading">SHOT 04</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(6.76, 8.2, 'SHOT 04')">
-                        ▶ 6.76s ➔ 8.20s (1.44s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 04</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(6.76)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 6.76s - 8.20s (1.48s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Medium Shot (MS) / Street Level Observational Frame</div>
-</div>
-<div class="shot-main-title">Góc Phố Nghệ Sĩ Tranh Vẽ &amp; Du Khách Dạo Bước Bên Cánh Cửa Gỗ Cổ</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Con ngõ nhỏ phố cổ lát đá cuội, trung tâm Porto</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp">
-<img crossorigin="anonymous" alt="Shot 4 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp"/>
-<div class="kf-label">Start (6.76s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp">
-<img crossorigin="anonymous" alt="Shot 4 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_030_0ec7b330.webp">
-<img crossorigin="anonymous" alt="Shot 4 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_030_0ec7b330.webp"/>
-<div class="kf-label">End (8.20s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Cánh cửa gỗ cao màu xám mộc mạc phủ đầy những bức tranh ký họa mực đen, tranh màu nước vẽ cảnh đẹp Porto được đính ghim tỉ mỉ. Bên phải, người nghệ sĩ đường phố lớn tuổi đội mũ beret ngồi tĩnh lặng trên chiếc ghế xếp quan sát dòng người. Bên trái, một cặp đôi du khách (chàng trai mang balo, cô gái diện váy trắng mùa hè tinh khôi) đang dừng bước say sưa ngắm nhìn từng tác phẩm.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Cô gái áo trắng hơi nghiêng đầu chỉ tay vào bức ký họa trung tâm, người họa sĩ già mỉm cười gật đầu nhẹ.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 5: Bố cục chính diện hoàn hảo mặt tiền nhà trọ di sản Residencial Caldeira.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">3-Layer Observational Mise-en-scène (Phân lớp bố cục 3 chủ thể: Nghệ sĩ - Tác phẩm nghệ thuật - Du khách thưởng ngoạn)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Đặt máy quay ngang tầm mắt trong vùng bóng râm tự nhiên của ngõ hẹp (Open Shade). Ánh sáng tán xạ mềm mại giúp tôn vinh chi tiết chất liệu giấy vẽ, thớ gỗ nứt nẻ của cánh cửa và nếp váy trắng mềm mại.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự chuẩn 50mm f/2.8 tạo độ tách bạch nhẹ nhàng giữa cặp đôi tiền cảnh và bức tường tranh phía sau.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 04 ➔ 05</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 04 (Out) sang Shot 05 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_032_89d3337e.webp">
-<img crossorigin="anonymous" alt="Transition 4 to 5" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_032_89d3337e.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-5">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(8.24, 9.36, 'SHOT 05')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp" alt="SHOT 05" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp">🔍</button>
-                    <span class="thumb-time-badge">8.24s - 9.36s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(8.24, 9.36, 'SHOT 05')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp" alt="SHOT 05" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">8.2s – 9.4s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 05</span>
-                        <h4 class="shot-heading">SHOT 05</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 05</span>
+                    <span class="shot-dur">1.12s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 05</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(8.24, 9.36, 'SHOT 05')">
-                        ▶ 8.24s ➔ 9.36s (1.12s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(8.24, 9.36, 'SHOT 05')">
-<img crossorigin="anonymous" alt="SHOT 05" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp">🔍</button>
-<span class="thumb-time-badge">8.24s - 9.36s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 05</span>
-<h4 class="shot-heading">SHOT 05</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(8.24, 9.36, 'SHOT 05')">
-                        ▶ 8.24s ➔ 9.36s (1.12s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 05</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(8.24)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 8.24s - 9.36s (1.16s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Wide Symmetrical Shot / Wes Anderson-style Frontal Grid</div>
-</div>
-<div class="shot-main-title">Bố Cục Đối Xứng Mặt Tiền Nhà Trọ Cổ Residencial Caldeira &amp; Nghi Thức Quét Phố</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Mặt tiền tòa nhà di sản Residencial Caldeira, Porto</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp">
-<img crossorigin="anonymous" alt="Shot 5 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp"/>
-<div class="kf-label">Start (8.24s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp">
-<img crossorigin="anonymous" alt="Shot 5 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_038_be38d62a.webp">
-<img crossorigin="anonymous" alt="Shot 5 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_038_be38d62a.webp"/>
-<div class="kf-label">End (9.36s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung hình chính diện trực giao mang phong cách hình học đối xứng chuẩn mực. Tòa nhà cổ điển với biển hiệu chữ đồng uốn lượn 'Residencial Caldeira', các ô cửa sổ gỗ màu xanh lá rêu đồng nhất, ban công phủ dây leo xanh mát và chậu hoa rực rỡ. Dưới sảnh thềm đá, người chủ quán trong chiếc tạp dề đang thong thả quét từng nhát chổi sạch bậc thềm đón khách ngày mới.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Bác chủ quán đưa nhát chổi từ bậu cửa ra vỉa hè đá cuội theo nhịp điệu chậm rãi, an yên.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 6: Góc nhìn ngõ dốc sâu hun hút hướng thẳng ra vòm cầu thép Dom Luís I và biển bia Super Bock.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">One-Point Frontal Symmetry &amp; Daily Routine Ritual (Bố cục trực giao đối xứng 1 điểm tụ và tôn vinh nghi thức sinh hoạt đời thường)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Căn chỉnh trục quang học của ống kính vuông góc 90 độ tuyệt đối với mặt phẳng bức tường. Khung hình mang tính đồ họa kiến trúc cao, tạo cảm giác yên bình đặc trưng của các thị trấn châu Âu cổ kính.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Ống kính 35mm f/4.0 khép khẩu sâu để toàn bộ các chi tiết hoa văn trên ban công và dòng chữ biển hiệu đạt độ sắc nét tối đa.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 05 ➔ 06</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 05 (Out) sang Shot 06 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_040_74357d77.webp">
-<img crossorigin="anonymous" alt="Transition 5 to 6" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_040_74357d77.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-6">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(9.4, 10.56, 'SHOT 06')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp" alt="SHOT 06" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp">🔍</button>
-                    <span class="thumb-time-badge">9.40s - 10.56s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(9.4, 10.56, 'SHOT 06')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp" alt="SHOT 06" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">9.4s – 10.6s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 06</span>
-                        <h4 class="shot-heading">SHOT 06</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 06</span>
+                    <span class="shot-dur">1.16s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 06</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(9.4, 10.56, 'SHOT 06')">
-                        ▶ 9.40s ➔ 10.56s (1.16s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(9.4, 10.56, 'SHOT 06')">
-<img crossorigin="anonymous" alt="SHOT 06" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp">🔍</button>
-<span class="thumb-time-badge">9.40s - 10.56s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 06</span>
-<h4 class="shot-heading">SHOT 06</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(9.4, 10.56, 'SHOT 06')">
-                        ▶ 9.40s ➔ 10.56s (1.16s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 06</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(9.4)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 9.40s - 10.56s (1.20s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Framed Long Shot / Multi-Layered Urban Tunnel View</div>
-</div>
-<div class="shot-main-title">Khung Cảnh Ngõ Dốc Đóng Khung Vòm Cầu Dom Luís I &amp; Biển Hiệu Bia Super Bock</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Con dốc ngõ hẹp Bairro da Sé nhìn ra sông Douro</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp">
-<img crossorigin="anonymous" alt="Shot 6 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp"/>
-<div class="kf-label">Start (9.40s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp">
-<img crossorigin="anonymous" alt="Shot 6 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_046_6d8a0be6.webp">
-<img crossorigin="anonymous" alt="Shot 6 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_046_6d8a0be6.webp"/>
-<div class="kf-label">End (10.56s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Góc nhìn sâu hun hút qua hẻm phố dốc đặc trưng của Porto. Bên trái là mảng tường tranh vẽ nghệ thuật đường phố (Mural) khổng lồ vẽ chân dung giàu cảm xúc; ở trung cảnh là ngôi nhà nhỏ xinh xắn với mái ngói đỏ tươi và biển hiệu tròn đỏ rực mang thương hiệu bia biểu tượng Bồ Đào Nha 'Super Bock'; hậu cảnh mở ra vòm thép đồ sộ của cầu Dom Luís I và bờ sông Gaia bên kia.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Ánh nắng ban mai rọi sáng mái ngói đỏ tươi và biển hiệu Super Bock, tạo điểm nhấn màu sắc rực rỡ giữa hai bức tường hẻm tối.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 7: Mảng màu vàng nghệ rực sáng tại sân bóng rổ đường phố với đứa trẻ đang ném bóng.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Framing through Alleyway &amp; Multi-depth Spatial Compression (Kỹ thuật đóng khung qua hẻm phố và nén không gian đa tầng)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Tận dụng hai bờ tường hẻm tối làm lớp khung tự nhiên (Frame-within-Frame), dẫn hướng mắt người xem thẳng vào tâm điểm mái ngói đỏ và cây cầu thép lịch sử phía xa.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự 50mm - 70mm f/5.6 nén cự ly không gian giữa hẻm phố tiền cảnh và vòm cầu hậu cảnh.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 06 ➔ 07</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 06 (Out) sang Shot 07 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_048_30a646b6.webp">
-<img crossorigin="anonymous" alt="Transition 6 to 7" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_048_30a646b6.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-7">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(10.6, 12.28, 'SHOT 07')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp" alt="SHOT 07" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp">🔍</button>
-                    <span class="thumb-time-badge">10.60s - 12.28s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(10.6, 12.28, 'SHOT 07')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp" alt="SHOT 07" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">10.6s – 12.3s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 07</span>
-                        <h4 class="shot-heading">SHOT 07</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 07</span>
+                    <span class="shot-dur">1.68s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 07</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(10.6, 12.28, 'SHOT 07')">
-                        ▶ 10.60s ➔ 12.28s (1.68s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(10.6, 12.28, 'SHOT 07')">
-<img crossorigin="anonymous" alt="SHOT 07" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp">🔍</button>
-<span class="thumb-time-badge">10.60s - 12.28s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 07</span>
-<h4 class="shot-heading">SHOT 07</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(10.6, 12.28, 'SHOT 07')">
-                        ▶ 10.60s ➔ 12.28s (1.68s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 07</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(10.6)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 10.60s - 12.28s (1.72s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Wide Shot (WS) / Geometric Color Block &amp; Urban Play</div>
-</div>
-<div class="shot-main-title">Sân Bóng Rổ Bờ Tường Vàng Nghệ &amp; Đứa Trẻ Ném Bóng Trong Nắng</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Sân thể thao công cộng khu dân cư Miragaia, Porto</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp">
-<img crossorigin="anonymous" alt="Shot 7 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp"/>
-<div class="kf-label">Start (10.60s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp">
-<img crossorigin="anonymous" alt="Shot 7 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_054_02700903.webp">
-<img crossorigin="anonymous" alt="Shot 7 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_054_02700903.webp"/>
-<div class="kf-label">End (12.28s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung cảnh tươi vui, tràn ngập năng lượng tuổi thơ tại một sân bóng rổ ngoài trời độc đáo. Bức tường đá cổ được sơn phủ mảng màu vàng nghệ (Mustard Yellow) rực rỡ chiếm trọn nửa dưới khung hình, bên cạnh là bậc thang đá rêu phong và tán cây cổ thụ xanh mướt. Một thiếu niên mặc trang phục thể thao đen đang tung người thực hiện cú ném bóng rổ màu cam về phía bảng rổ gắn trên tường.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Cậu bé bật nhảy, cánh tay vươn cao đẩy trái bóng rổ màu cam bay theo đường parabol hướng về phía rổ.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 8: Góc máy ngước thấp nhìn lên những dãy nhà cổ sắc màu tại quảng trường Praça da Ribeira.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Color Blocking Mise-en-scène &amp; Kinetic Trajectory (Bố cục khối màu tương phản mạnh và quỹ đạo chuyển động thể thao)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Sử dụng độ tương phản mạnh giữa mảng tường vàng nghệ rực rỡ và bóng hình nhân vật màu đen để tạo nên một khung hình giàu tính hội họa hiện đại (Pop Art Cinematography).</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự 35mm f/4.0, Shutter Speed 1/250s bắt rõ đường bay của trái bóng rổ và bước nhảy của cậu bé.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 07 ➔ 08</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 07 (Out) sang Shot 08 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_056_430a76a3.webp">
-<img crossorigin="anonymous" alt="Transition 7 to 8" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_056_430a76a3.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-8">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(12.32, 13.88, 'SHOT 08')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp" alt="SHOT 08" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp">🔍</button>
-                    <span class="thumb-time-badge">12.32s - 13.88s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(12.32, 13.88, 'SHOT 08')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp" alt="SHOT 08" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">12.3s – 13.9s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 08</span>
-                        <h4 class="shot-heading">SHOT 08</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 08</span>
+                    <span class="shot-dur">1.56s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 08</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(12.32, 13.88, 'SHOT 08')">
-                        ▶ 12.32s ➔ 13.88s (1.56s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(12.32, 13.88, 'SHOT 08')">
-<img crossorigin="anonymous" alt="SHOT 08" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp">🔍</button>
-<span class="thumb-time-badge">12.32s - 13.88s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 08</span>
-<h4 class="shot-heading">SHOT 08</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(12.32, 13.88, 'SHOT 08')">
-                        ▶ 12.32s ➔ 13.88s (1.56s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 08</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(12.32)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 12.32s - 13.88s (1.60s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Low-Angle Dynamic Wide Shot / Architectural Canyon</div>
-</div>
-<div class="shot-main-title">Góc Thấp Quảng Trường Ribeira &amp; Dãy Nhà Cổ Sắc Màu Xếp Tầng</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Quảng trường lịch sử ven sông Praça da Ribeira (Di sản Thế giới UNESCO)</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp">
-<img crossorigin="anonymous" alt="Shot 8 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp"/>
-<div class="kf-label">Start (12.32s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp">
-<img crossorigin="anonymous" alt="Shot 8 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_062_49915381.webp">
-<img crossorigin="anonymous" alt="Shot 8 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_062_49915381.webp"/>
-<div class="kf-label">End (13.88s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Góc máy ngước thấp từ mặt quảng trường đá cuội nhìn lên dãy nhà phố cổ hàng trăm năm tuổi xếp lớp san sát như hẻm vực kiến trúc. Các mặt tiền nhà rực rỡ sắc màu: vàng đất nung, xanh lục bảo, đỏ mận và gạch men hoa văn vươn cao ngút tầm mắt. Dưới chân quảng trường, người cha dắt tay đứa con nhỏ chập chững bước đi qua những dãy bàn ghế nhà hàng được xếp gọn gàng chuẩn bị đón khách.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Hai cha con dắt tay nhau bước từ trái qua phải ở tiền cảnh; những tia nắng sớm chiếu xiên qua khe hở giữa các tòa nhà.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 9: Cảnh cận hai cụ ông địa phương đang ngồi uống cafe trò chuyện tại quán O Caseirinho.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Worm's Eye Architectural Scale &amp; Family Micro-moment (Góc nhìn ngước tôn vinh kiến trúc đồ sộ kết hợp khoảnh khắc gia đình ấm áp)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Hạ thấp góc máy sát mặt sàn đá cuội để đưa kết cấu đá lát vào tiền cảnh, đồng thời hướng góc ngước lên trời để làm tăng chiều cao và độ ấn tượng của những mặt tiền nhà di sản Porto.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Ống kính góc rộng 24mm - 28mm f/5.6 giữ trọn vẹn cả mặt đất đá cuội lẫn đường viền mái ngói trên nền trời xanh.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 08 ➔ 09</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 08 (Out) sang Shot 09 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_064_63288d0a.webp">
-<img crossorigin="anonymous" alt="Transition 8 to 9" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_064_63288d0a.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-9">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(13.92, 17.36, 'SHOT 09')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp" alt="SHOT 09" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp">🔍</button>
-                    <span class="thumb-time-badge">13.92s - 17.36s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(13.92, 17.36, 'SHOT 09')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp" alt="SHOT 09" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">13.9s – 17.4s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 09</span>
-                        <h4 class="shot-heading">SHOT 09</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 09</span>
+                    <span class="shot-dur">3.44s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 09</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(13.92, 17.36, 'SHOT 09')">
-                        ▶ 13.92s ➔ 17.36s (3.44s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(13.92, 17.36, 'SHOT 09')">
-<img crossorigin="anonymous" alt="SHOT 09" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp">🔍</button>
-<span class="thumb-time-badge">13.92s - 17.36s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 09</span>
-<h4 class="shot-heading">SHOT 09</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(13.92, 17.36, 'SHOT 09')">
-                        ▶ 13.92s ➔ 17.36s (3.44s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 09</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(13.92)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 13.92s - 17.36s (3.48s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Eye-Level Medium Shot (MS) / Frontal Human Narrative &amp; Emotional Anchor</div>
-</div>
-<div class="shot-main-title">Điểm Neo Cảm Xúc: Cuộc Trò Chuyện Ban Mai Của Hai Cụ Ông Quán Cafe O Caseirinho</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Hiệu ăn gia đình O Caseirinho (Especialidade Arroz de Marisco), Ribeira</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp">
-<img crossorigin="anonymous" alt="Shot 9 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp"/>
-<div class="kf-label">Start (13.92s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp">
-<img crossorigin="anonymous" alt="Shot 9 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_070_29be722a.webp">
-<img crossorigin="anonymous" alt="Shot 9 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_070_29be722a.webp"/>
-<div class="kf-label">End (17.36s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung cảnh đậm đà chất thơ và hơi thở cuộc sống địa phương. Trước mặt tiền tiệm ăn cổ ốp gạch men Azulejo hoa văn xanh trắng li ti và biển hiệu 'O CASEIRINHO', hai cụ ông người Bồ Đào Nha tóc bạc phơ ngồi trên ghế sắt vỉa hè thảnh thơi nhâm nhi ly cafe espresso (Bica). Ở tiền cảnh góc trái là chiếc bàn ăn phủ khăn ca-rô tím trắng kinh điển. Hai cụ ông say sưa trò chuyện, khua tay diễn giải với những nụ cười hiền hậu.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Cụ ông bên phải cầm ly cafe đưa lên miệng rồi đặt xuống bàn, hai người tiếp tục cuộc trò chuyện tâm đắc trong ánh nắng ban mai.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 10: Toàn cảnh khu bờ kè Cais da Ribeira ngập tràn ánh nắng rực rỡ.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Rhythmic Deceleration &amp; Authentic Human Connection (Kỹ thuật hãm nhịp tạo điểm neo cảm xúc và chiều sâu nhân văn)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Đây là phân cảnh có thời lượng dài nhất toàn bộ video (gần 3.5 giây), đóng vai trò 'nhịp thở' cốt lõi giúp người xem thực sự đắm chìm vào tinh thần sống chậm, trân trọng từng khoảnh khắc gặp gỡ của người dân xứ rượu vang Porto.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Ống kính chân dung tiêu cự 50mm f/2.8, khóa khung hình tĩnh tuyệt đối trên chân máy để tôn trọng câu chuyện tự nhiên của hai nhân vật lão niên.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 09 ➔ 10</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 09 (Out) sang Shot 10 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_072_0fabd4f7.webp">
-<img crossorigin="anonymous" alt="Transition 9 to 10" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_072_0fabd4f7.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-10">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(17.4, 19.0, 'SHOT 10')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp" alt="SHOT 10" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp">🔍</button>
-                    <span class="thumb-time-badge">17.40s - 19.00s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(17.4, 19.0, 'SHOT 10')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp" alt="SHOT 10" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">17.4s – 19.0s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 10</span>
-                        <h4 class="shot-heading">SHOT 10</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 10</span>
+                    <span class="shot-dur">1.60s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 10</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(17.4, 19.0, 'SHOT 10')">
-                        ▶ 17.40s ➔ 19.00s (1.60s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(17.4, 19.0, 'SHOT 10')">
-<img crossorigin="anonymous" alt="SHOT 10" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp">🔍</button>
-<span class="thumb-time-badge">17.40s - 19.00s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 10</span>
-<h4 class="shot-heading">SHOT 10</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(17.4, 19.0, 'SHOT 10')">
-                        ▶ 17.40s ➔ 19.00s (1.60s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 10</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(17.4)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 17.40s - 19.00s (1.64s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Wide Shot (WS) / Urban Architectural Horizon &amp; Waterfront Promenade</div>
-</div>
-<div class="shot-main-title">Bờ Kè Ven Sông Douro &amp; Những Tòa Nhà Cổ Ngợp Nắng Dưới Bầu Trời Xanh</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Bờ kè đi bộ Cais da Ribeira ven sông Douro</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp">
-<img crossorigin="anonymous" alt="Shot 10 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp"/>
-<div class="kf-label">Start (17.40s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp">
-<img crossorigin="anonymous" alt="Shot 10 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_078_0dc01325.webp">
-<img crossorigin="anonymous" alt="Shot 10 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_078_0dc01325.webp"/>
-<div class="kf-label">End (19.00s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Toàn cảnh khu phố ven sông Cais da Ribeira bừng sáng trong ánh nắng ban trưa trong trẻo. Dãy nhà cổ 5 tầng với hàng trăm ô cửa sổ gỗ màu trắng, mái ngói đất nung và các mảng gạch men phản chiếu ánh mặt trời rực rỡ dưới nền trời xanh thẳm không gợn mây. Phía trước là khu vực bàn ghế cafe ngoài trời có mái che bạt căng hiện đại thanh lịch.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Những chậu cây xanh trên ban công đung đưa nhẹ theo làn gió sông mát rượi, du khách tản bộ thong dong ở mép phải khung hình.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Sang Cảnh 11: Khung cảnh hoàng hôn đỏ lửa tráng lệ bao trùm tu viện cổ Mosteiro da Serra do Pilar.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Spatial Expansion &amp; Horizon Geometry (Mở rộng quy mô không gian và thiết lập nhịp chuyển giao thời gian)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Cú máy chuyển tiếp hoàn hảo từ lát cắt con người cụ thể (Shot 09) mở rộng ra toàn bộ bối cảnh không gian sống của cộng đồng đô thị ven sông, chuẩn bị tâm lý cho đoạn kết hoàng hôn huy hoàng.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Tiêu cự 35mm f/5.6 lấy nét vô cực (Infinity Focus) để từng ô cửa sổ và đường nét kiến trúc đều đạt độ phân giải quang học tinh tế nhất.</div>
-</div>
-</div>
-<div class="trans-box">
-<div class="trans-title">
-<span class="trans-badge">TRANSITION 10 ➔ 11</span>
-<span class="trans-continuity-title">Nối Nhịp Thị Giác: Shot 10 (Out) sang Shot 11 (In)</span>
-</div>
-<div class="trans-preview" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_080_b4295785.webp">
-<img crossorigin="anonymous" alt="Transition 10 to 11" class="trans-img" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_080_b4295785.webp"/>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
 
         <div class="shot-card" id="shot-card-11">
-            <div class="shot-media-col">
-                <div class="shot-thumb-wrap" onclick="playShot(19.04, 20.72, 'SHOT 11')">
-                    <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp" alt="SHOT 11" class="shot-img" loading="lazy" />
-                    <div class="play-overlay">
-                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-                    </div>
-                    <button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp">🔍</button>
-                    <span class="thumb-time-badge">19.04s - 20.72s</span>
-                </div>
+            <div class="shot-thumb" onclick="playShot(19.04, 20.72, 'SHOT 11')">
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp" alt="SHOT 11" loading="lazy" />
+                <div class="shot-play-icon"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>
+                <span class="shot-time-badge">19.0s – 20.7s</span>
             </div>
-            <div class="shot-info-col">
-                <div class="shot-card-header">
-                    <div class="shot-title-wrap">
-                        <span class="shot-badge-num">SHOT 11</span>
-                        <h4 class="shot-heading">SHOT 11</h4>
+            <div class="shot-body">
+                <div class="shot-head">
+                    <span class="shot-num">SHOT 11</span>
+                    <span class="shot-dur">1.68s</span>
+                </div>
+                <h4 class="shot-headline">SHOT 11</h4>
+                <p class="shot-insight"></p>
+                <details class="shot-details">
+                    <summary>Chi tiết kỹ thuật ▸</summary>
+                    <div class="shot-meta-grid">
+                        
+                        
+                        
+                        
                     </div>
-                    <button class="time-jump-btn" onclick="playShot(19.04, 20.72, 'SHOT 11')">
-                        ▶ 19.04s ➔ 20.72s (1.68s)
-                    </button>
-                </div>
-                <div class="props-list">
-                    <div class="raw-card-content">
-<div class="shot-media-col">
-<div class="shot-thumb-wrap" onclick="playShot(19.04, 20.72, 'SHOT 11')">
-<img crossorigin="anonymous" alt="SHOT 11" class="shot-img" loading="lazy" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp"/>
-<div class="play-overlay">
-<svg fill="currentColor" viewbox="0 0 24 24"><path d="M8 5v14l11-7z"></path></svg>
-</div>
-<button class="zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp">🔍</button>
-<span class="thumb-time-badge">19.04s - 20.72s</span>
-</div>
-</div>
-<div class="shot-info-col">
-<div class="shot-card-header">
-<div class="shot-title-wrap">
-<span class="shot-badge-num">SHOT 11</span>
-<h4 class="shot-heading">SHOT 11</h4>
-</div>
-<button class="time-jump-btn" onclick="playShot(19.04, 20.72, 'SHOT 11')">
-                        ▶ 19.04s ➔ 20.72s (1.68s)
-                    </button>
-</div>
-<div class="props-list">
-<div class="raw-card-content">
-<div class="shot-header">
-<div class="shot-title-left">
-<span class="shot-number">SHOT 11</span>
-<span class="shot-timestamp" onclick="playVideoAtTimestamp(19.04)" title="Click để phát video từ mốc thời gian này">
-                    ⏱ 19.04s - 20.72s (1.72s) <span class="play-hint">▶ Play</span>
-</span>
-</div>
-<div class="shot-type-badge">Telephoto Silhouette Shot / Sunset Cinematic Outro</div>
-</div>
-<div class="shot-main-title">Khép Màn: Hoàng Hôn Đỏ Lửa Tu Viện Serra do Pilar &amp; Bóng Đen Người Ngắm Cảnh</div>
-<div class="shot-location">📍 <strong>Bối cảnh:</strong> Vọng cảnh nhìn sang Tu viện Mosteiro da Serra do Pilar (Vila Nova de Gaia)</div>
-<div class="keyframes-grid">
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp">
-<img crossorigin="anonymous" alt="Shot 11 Start" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp"/>
-<div class="kf-label">Start (19.04s)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp">
-<img crossorigin="anonymous" alt="Shot 11 Mid" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp"/>
-<div class="kf-label">Mid Frame (Cao trào)</div>
-</div>
-<div class="kf-col" onclick="openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_086_99051c62.webp">
-<img crossorigin="anonymous" alt="Shot 11 End" class="shot-thumb" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_086_99051c62.webp"/>
-<div class="kf-label">End (20.72s)</div>
-</div>
-</div>
-<div class="shot-breakdown-table">
-<div class="breakdown-row">
-<div class="breakdown-label">🎬 Diễn Họa &amp; Thị Giác</div>
-<div class="breakdown-val">Khung hình khép màn đẹp như một bức tranh sơn dầu cổ điển. Bầu trời Porto chuyển mình sang dải màu hoàng hôn rực lửa (Fiery Amber &amp; Sunset Orange Gradient). Trên đỉnh vách đá sừng sững bên kia sông, quần thể tu viện tròn lịch sử Mosteiro da Serra do Pilar được thắp sáng đèn vàng rực rỡ. Ở tiền cảnh, bóng đen silhouette của những người dân và du khách đang tụ họp bên lan can, lặng lẽ chiêm ngưỡng khoảnh khắc ngày tàn buông xuống trên thành phố di sản.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚡ Mồi Chuyển Động (Out)</div>
-<div class="breakdown-val">Dòng người tiền cảnh đứng yên ngắm nhìn về phía tu viện sáng đèn; nền trời hoàng hôn chuyển dần từ cam cháy sang tím thẫm.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🔗 Nối Chuyển Động (In)</div>
-<div class="breakdown-val">Fade to Black kết thúc trọn vẹn thước phim nghệ thuật 'People of Porto'.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎯 Thủ Pháp Điện Ảnh</div>
-<div class="breakdown-val highlight-tech">Circular Narrative Arc &amp; Sunset Silhouette Climax (Cấu trúc vòng lặp thời gian hoàn mỹ và cao trào thị giác bóng đổ hoàng hôn)</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">🎥 Ghi Chú Đạo Diễn</div>
-<div class="breakdown-val director-notes-text">Sử dụng ống kính Telephoto tầm xa để nén không gian giữa đám đông tiền cảnh và tu viện cổ trên vách đá. Sự tương phản giữa bóng đen người xem và nền trời rực lửa tạo cảm giác thiêng liêng, lắng đọng khó quên.</div>
-</div>
-<div class="breakdown-row">
-<div class="breakdown-label">⚙️ Thiết Lập Máy Quay</div>
-<div class="breakdown-val gear-tips-text">Ống kính Telephoto 85mm - 135mm f/2.8, đo sáng vào vùng trời hoàng hôn (Expose for Sky Highlights) để giữ trọn dải màu rực rỡ và biến toàn bộ tiền cảnh thành bóng đen sắc nét.</div>
-</div>
-</div>
-</div>
-</div>
-<div class="tags-row">
-</div>
-</div>
-</div>
-                </div>
-                <div class="tags-row">
                     
-                </div>
+                    
+                    
+                </details>
             </div>
         </div>
-        
         </div>
 
-        <div class="grid-container" id="gridView" style="display:none;">
+        <div id="gridView">
             
-        <div class="grid-card" onclick="playShot(0.0, 2.4, 'SHOT 01')">
+        <div class="grid-item" onclick="playShot(0.0, 2.4, 'SHOT 01')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp" alt="SHOT 01" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 01</div>
-                <div class="grid-badge-bottom">0.0s - 2.4s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp" alt="SHOT 01" loading="lazy" />
+                <span class="grid-num">SHOT 01</span>
+                <span class="grid-time">0.0s – 2.4s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp', 'SHOT 01 • SHOT 01')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 01</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(2.44, 4.64, 'SHOT 02')">
+        <div class="grid-item" onclick="playShot(2.44, 4.64, 'SHOT 02')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp" alt="SHOT 02" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 02</div>
-                <div class="grid-badge-bottom">2.4s - 4.6s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp" alt="SHOT 02" loading="lazy" />
+                <span class="grid-num">SHOT 02</span>
+                <span class="grid-time">2.4s – 4.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp', 'SHOT 02 • SHOT 02')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 02</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(4.68, 6.72, 'SHOT 03')">
+        <div class="grid-item" onclick="playShot(4.68, 6.72, 'SHOT 03')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp" alt="SHOT 03" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 03</div>
-                <div class="grid-badge-bottom">4.7s - 6.7s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp" alt="SHOT 03" loading="lazy" />
+                <span class="grid-num">SHOT 03</span>
+                <span class="grid-time">4.7s – 6.7s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp', 'SHOT 03 • SHOT 03')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 03</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(6.76, 8.2, 'SHOT 04')">
+        <div class="grid-item" onclick="playShot(6.76, 8.2, 'SHOT 04')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp" alt="SHOT 04" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 04</div>
-                <div class="grid-badge-bottom">6.8s - 8.2s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp" alt="SHOT 04" loading="lazy" />
+                <span class="grid-num">SHOT 04</span>
+                <span class="grid-time">6.8s – 8.2s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp', 'SHOT 04 • SHOT 04')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 04</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(8.24, 9.36, 'SHOT 05')">
+        <div class="grid-item" onclick="playShot(8.24, 9.36, 'SHOT 05')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp" alt="SHOT 05" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 05</div>
-                <div class="grid-badge-bottom">8.2s - 9.4s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp" alt="SHOT 05" loading="lazy" />
+                <span class="grid-num">SHOT 05</span>
+                <span class="grid-time">8.2s – 9.4s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp', 'SHOT 05 • SHOT 05')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 05</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(9.4, 10.56, 'SHOT 06')">
+        <div class="grid-item" onclick="playShot(9.4, 10.56, 'SHOT 06')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp" alt="SHOT 06" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 06</div>
-                <div class="grid-badge-bottom">9.4s - 10.6s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp" alt="SHOT 06" loading="lazy" />
+                <span class="grid-num">SHOT 06</span>
+                <span class="grid-time">9.4s – 10.6s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp', 'SHOT 06 • SHOT 06')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 06</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(10.6, 12.28, 'SHOT 07')">
+        <div class="grid-item" onclick="playShot(10.6, 12.28, 'SHOT 07')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp" alt="SHOT 07" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 07</div>
-                <div class="grid-badge-bottom">10.6s - 12.3s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp" alt="SHOT 07" loading="lazy" />
+                <span class="grid-num">SHOT 07</span>
+                <span class="grid-time">10.6s – 12.3s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp', 'SHOT 07 • SHOT 07')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 07</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(12.32, 13.88, 'SHOT 08')">
+        <div class="grid-item" onclick="playShot(12.32, 13.88, 'SHOT 08')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp" alt="SHOT 08" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 08</div>
-                <div class="grid-badge-bottom">12.3s - 13.9s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp" alt="SHOT 08" loading="lazy" />
+                <span class="grid-num">SHOT 08</span>
+                <span class="grid-time">12.3s – 13.9s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp', 'SHOT 08 • SHOT 08')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 08</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(13.92, 17.36, 'SHOT 09')">
+        <div class="grid-item" onclick="playShot(13.92, 17.36, 'SHOT 09')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp" alt="SHOT 09" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 09</div>
-                <div class="grid-badge-bottom">13.9s - 17.4s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp" alt="SHOT 09" loading="lazy" />
+                <span class="grid-num">SHOT 09</span>
+                <span class="grid-time">13.9s – 17.4s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp', 'SHOT 09 • SHOT 09')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 09</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(17.4, 19.0, 'SHOT 10')">
+        <div class="grid-item" onclick="playShot(17.4, 19.0, 'SHOT 10')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp" alt="SHOT 10" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 10</div>
-                <div class="grid-badge-bottom">17.4s - 19.0s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp" alt="SHOT 10" loading="lazy" />
+                <span class="grid-num">SHOT 10</span>
+                <span class="grid-time">17.4s – 19.0s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp', 'SHOT 10 • SHOT 10')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 10</div>
         </div>
-        
 
-        <div class="grid-card" onclick="playShot(19.04, 20.72, 'SHOT 11')">
+        <div class="grid-item" onclick="playShot(19.04, 20.72, 'SHOT 11')">
             <div class="grid-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp" alt="SHOT 11" loading="lazy" />
-                <div class="grid-play-icon">▶</div>
-                <button class="grid-zoom-btn" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp">🔍</button>
-                <div class="grid-badge-top">SHOT 11</div>
-                <div class="grid-badge-bottom">19.0s - 20.7s</div>
+                <img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp" alt="SHOT 11" loading="lazy" />
+                <span class="grid-num">SHOT 11</span>
+                <span class="grid-time">19.0s – 20.7s</span>
+                <button class="grid-zoom" onclick="event.stopPropagation(); openLightbox('https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp', 'SHOT 11 • SHOT 11')">⊕</button>
             </div>
+            <div class="grid-title">SHOT 11</div>
         </div>
-        
         </div>
     </div>
 </div>
 
-<div class="drawer-backdrop" id="drawerBackdrop" onclick="toggleDrawer(false)">
+<div id="drawerBackdrop" class="drawer-backdrop" onclick="toggleDrawer(false)">
     <div class="drawer-panel" onclick="event.stopPropagation()">
-        <div class="drawer-header">
-            <div class="drawer-title">📑 MỤC LỤC PHÂN CẢNH (11)</div>
-            <button class="drawer-close-btn" onclick="toggleDrawer(false)">&times;</button>
+        <div class="drawer-head">
+            <span>MỤC LỤC (11)</span>
+            <button onclick="toggleDrawer(false)">&times;</button>
         </div>
         <div class="drawer-list">
-            
         <div class="drawer-item" onclick="jumpToShot(1, 0.0, 2.4, 'SHOT 01')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_002_c7376907.webp" alt="SHOT 01" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_004_5e39f4f3.webp" alt="SHOT 01" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 01</div>
-                <div class="drawer-shot-time">⏱ 0.00s - 2.40s</div>
+                <div class="drawer-shot-num">SHOT 01</div>
+                <div class="drawer-shot-hl">SHOT 01</div>
+                <div class="drawer-shot-time">0.00s – 2.40s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(2, 2.44, 4.64, 'SHOT 02')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_010_9919f8ae.webp" alt="SHOT 02" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_012_90d231f5.webp" alt="SHOT 02" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 02</div>
-                <div class="drawer-shot-time">⏱ 2.44s - 4.64s</div>
+                <div class="drawer-shot-num">SHOT 02</div>
+                <div class="drawer-shot-hl">SHOT 02</div>
+                <div class="drawer-shot-time">2.44s – 4.64s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(3, 4.68, 6.72, 'SHOT 03')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_018_f69c373c.webp" alt="SHOT 03" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_020_30442729.webp" alt="SHOT 03" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 03</div>
-                <div class="drawer-shot-time">⏱ 4.68s - 6.72s</div>
+                <div class="drawer-shot-num">SHOT 03</div>
+                <div class="drawer-shot-hl">SHOT 03</div>
+                <div class="drawer-shot-time">4.68s – 6.72s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(4, 6.76, 8.2, 'SHOT 04')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_026_d6a121e7.webp" alt="SHOT 04" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_028_9000438a.webp" alt="SHOT 04" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 04</div>
-                <div class="drawer-shot-time">⏱ 6.76s - 8.20s</div>
+                <div class="drawer-shot-num">SHOT 04</div>
+                <div class="drawer-shot-hl">SHOT 04</div>
+                <div class="drawer-shot-time">6.76s – 8.20s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(5, 8.24, 9.36, 'SHOT 05')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_034_9b5530bb.webp" alt="SHOT 05" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_036_59b1029b.webp" alt="SHOT 05" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 05</div>
-                <div class="drawer-shot-time">⏱ 8.24s - 9.36s</div>
+                <div class="drawer-shot-num">SHOT 05</div>
+                <div class="drawer-shot-hl">SHOT 05</div>
+                <div class="drawer-shot-time">8.24s – 9.36s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(6, 9.4, 10.56, 'SHOT 06')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_042_3a832256.webp" alt="SHOT 06" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_044_1d536c78.webp" alt="SHOT 06" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 06</div>
-                <div class="drawer-shot-time">⏱ 9.40s - 10.56s</div>
+                <div class="drawer-shot-num">SHOT 06</div>
+                <div class="drawer-shot-hl">SHOT 06</div>
+                <div class="drawer-shot-time">9.40s – 10.56s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(7, 10.6, 12.28, 'SHOT 07')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_050_01e537f7.webp" alt="SHOT 07" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_052_5d471642.webp" alt="SHOT 07" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 07</div>
-                <div class="drawer-shot-time">⏱ 10.60s - 12.28s</div>
+                <div class="drawer-shot-num">SHOT 07</div>
+                <div class="drawer-shot-hl">SHOT 07</div>
+                <div class="drawer-shot-time">10.60s – 12.28s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(8, 12.32, 13.88, 'SHOT 08')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_058_a9ce659c.webp" alt="SHOT 08" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_060_74476224.webp" alt="SHOT 08" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 08</div>
-                <div class="drawer-shot-time">⏱ 12.32s - 13.88s</div>
+                <div class="drawer-shot-num">SHOT 08</div>
+                <div class="drawer-shot-hl">SHOT 08</div>
+                <div class="drawer-shot-time">12.32s – 13.88s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(9, 13.92, 17.36, 'SHOT 09')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_066_64759333.webp" alt="SHOT 09" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_068_4c8ac477.webp" alt="SHOT 09" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 09</div>
-                <div class="drawer-shot-time">⏱ 13.92s - 17.36s</div>
+                <div class="drawer-shot-num">SHOT 09</div>
+                <div class="drawer-shot-hl">SHOT 09</div>
+                <div class="drawer-shot-time">13.92s – 17.36s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(10, 17.4, 19.0, 'SHOT 10')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_074_b332bc5a.webp" alt="SHOT 10" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_076_9d5d3f02.webp" alt="SHOT 10" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 10</div>
-                <div class="drawer-shot-time">⏱ 17.40s - 19.00s</div>
+                <div class="drawer-shot-num">SHOT 10</div>
+                <div class="drawer-shot-hl">SHOT 10</div>
+                <div class="drawer-shot-time">17.40s – 19.00s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
+            <div class="drawer-arrow">▶</div>
         </div>
-        
 
         <div class="drawer-item" onclick="jumpToShot(11, 19.04, 20.72, 'SHOT 11')">
-            <div class="drawer-thumb">
-                <img crossorigin="anonymous" src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_082_3f4a35d6.webp" alt="SHOT 11" loading="lazy" />
-            </div>
+            <div class="drawer-thumb"><img src="https://media.fedu.vn/images/People_of_Porto_-_%40jeromememe/img_084_10b6549e.webp" alt="SHOT 11" loading="lazy" /></div>
             <div class="drawer-info">
-                <div class="drawer-shot-title">SHOT 11</div>
-                <div class="drawer-shot-time">⏱ 19.04s - 20.72s</div>
+                <div class="drawer-shot-num">SHOT 11</div>
+                <div class="drawer-shot-hl">SHOT 11</div>
+                <div class="drawer-shot-time">19.04s – 20.72s</div>
             </div>
-            <div class="drawer-play-arrow">▶</div>
-        </div>
-        
-        </div>
+            <div class="drawer-arrow">▶</div>
+        </div></div>
     </div>
 </div>
 
 <div id="lightboxModal" onclick="closeLightbox()">
-    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-    <img crossorigin="anonymous" id="lightboxImg" src="" onclick="event.stopPropagation()" />
+    <span class="lightbox-x" onclick="closeLightbox()">&times;</span>
+    <img id="lightboxImg" onclick="event.stopPropagation()" />
     <div id="lightboxCaption"></div>
 </div>
 
+<!-- Edit Inline Feature -->
+<button class="edit-fab" onclick="openEditModal()" title="Sửa phân loại">✎</button>
+
+<div id="editModalBackdrop" class="edit-modal-backdrop" onclick="closeEditModal()">
+    <div class="edit-modal" onclick="event.stopPropagation()">
+        <div class="edit-modal-head">
+            <h3>✎ Sửa Phân Loại</h3>
+            <button class="edit-modal-close" onclick="closeEditModal()">&times;</button>
+        </div>
+        <div class="edit-modal-body">
+            <div id="editStatus" class="edit-status"></div>
+
+            <div class="edit-field">
+                <label>Ngành nghề</label>
+                <select id="editIndustry">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="ky-thuat-quay">🎯 Bố cục / Kỹ Thuật Quay Dựng</option>
+                    <option value="thuong-hieu">💼 Xây kênh / Thương Hiệu Cá Nhân</option>
+                    <option value="kien-truc">🏛️ Góc nhà đẹp / Kiến Trúc & Không Gian</option>
+                    <option value="am-thuc">🍜 F&B / Ẩm Thực & Cafe</option>
+                    <option value="thoi-trang">👔 Thời trang & Phụ Kiện</option>
+                    <option value="spa-lam-dep">💆 Làm đẹp / Spa & Y Tế</option>
+                    <option value="du-lich">✈️ Du lịch / Phong Cách Sống</option>
+                    <option value="cong-nghe">📱 Đồ công nghệ & Thiết Bị</option>
+                    <option value="the-thao">🏃 Thể thao & Sức Khỏe</option>
+                    <option value="ugc">📱 UGC / E-Commerce & Bán Hàng</option>
+                </select>
+                <input type="text" id="editIndustryCustom" placeholder="Hoặc gõ ngành tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Kiểu quay / Phong cách</label>
+                <select id="editStyle">
+                    <option value="">— Chọn hoặc gõ bên dưới —</option>
+                    <option value="dien-anh">🎬 Chỉn Chu (B-Roll Thuần Hình / Cinematic)</option>
+                    <option value="talking-head">🗣️ Nói Trực Diện (Talking Head)</option>
+                    <option value="walk-and-talk">🚶 Walk & Talk (Vừa đi vừa nói)</option>
+                    <option value="voice-over">🎙️ Lồng Tiếng (Voice Over)</option>
+                    <option value="storytelling">📖 Kể Chuyện / Đời Thường (Storytelling)</option>
+                    <option value="chuyen-canh">⚡ Chuyển Cảnh (Transition / Montage)</option>
+                    <option value="bts">🎥 BTS / Setup Hậu Trường</option>
+                    <option value="theo-nhip-nhac">🎵 Theo nhịp nhạc</option>
+                </select>
+                <input type="text" id="editStyleCustom" placeholder="Hoặc gõ kiểu quay tùy chỉnh...">
+            </div>
+
+            <div class="edit-field">
+                <label>Tags kỹ thuật (phân tách bằng dấu phẩy)</label>
+                <textarea id="editTags" placeholder="VD: B-Roll Practice, Góc máy cận cảnh, Chuyển cảnh"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Mục đích / Tóm tắt (Purpose)</label>
+                <textarea id="editPurpose"></textarea>
+            </div>
+
+            <div class="edit-field">
+                <label>Bài học rút gọn (Quick Takeaway)</label>
+                <textarea id="editTakeaway"></textarea>
+            </div>
+
+            <div class="edit-field edit-pw-field">
+                <label>Mật khẩu</label>
+                <input type="password" id="editPassword" value="0070" placeholder="••••" autocomplete="off">
+            </div>
+        </div>
+        <div class="edit-modal-footer">
+            <button class="edit-cancel-btn" onclick="closeEditModal()">Hủy</button>
+            <button class="edit-save-btn" id="editSaveBtn" onclick="saveEdit()">Lưu thay đổi</button>
+        </div>
+    </div>
+</div>
+
 <script>
-const rawVideoSrc = "https://ytuong.fedu.vn/api/video?id=1erAxsaiS3ouCcNMUUGyszDjHiuMbHKy1";
+// Video source resolution - try multiple paths
+const rawVideoSrc = 'https://www.youtube.com/embed/B24bOpks42E';
 let currentEndTime = null;
 
+function getCandidateUrls(src) {
+    if (!src) return [];
+    if (src.startsWith('http://') || src.startsWith('https://')) return [src];
+    let clean = src.replace(/^(\.\.\/|\.\/)*/g, '').replace(/^(videos\/|reports\/)/, '');
+    return [
+        'https://media.fedu.vn/videos/' + encodeURI(clean),
+        '../videos/' + clean,
+        './videos/' + clean,
+        './' + clean
+    ];
+}
 
+const candidateUrls = getCandidateUrls(rawVideoSrc);
+let candidateIdx = 0;
 const player = document.getElementById('mainPlayer');
-if(player) {
-    player.src = rawVideoSrc;
-    const directLnk = document.getElementById('directVidLink');
-    if (directLnk) {
-        if (rawVideoSrc.includes('/api/video?id=')) {
-            directLnk.href = rawVideoSrc.replace('https://ytuong.fedu.vn/api/video?id=', 'https://drive.google.com/file/d/') + '/view';
-        } else {
-            directLnk.href = rawVideoSrc;
-        }
-    }
+window.isYtMuted = false;
+
+function loadVideoCandidate() {
+    if (!player || player.tagName === 'IFRAME' || candidateIdx >= candidateUrls.length) return;
+    player.src = candidateUrls[candidateIdx];
+    var link = document.getElementById('directVidLink');
+    if (link) link.href = candidateUrls[candidateIdx];
     player.load();
 }
 
-function playShot(startTime, endTime, label) {
-    currentEndTime = (typeof endTime === 'number') ? endTime : null;
-    const tag = document.getElementById('shotStatusTag');
-    if (tag) {
-        const endTxt = currentEndTime ? ` - ${currentEndTime.toFixed(2)}s` : '';
-        tag.innerText = `🎬 ${label || 'Phân cảnh'}: [${startTime.toFixed(2)}s${endTxt}]`;
-    }
-    player.currentTime = startTime;
-    const p = player.play();
-    if (p !== undefined) {
-        p.catch(e => {
-            player.muted = true;
-            player.play().catch(err => console.log('Autoplay muted triggered'));
-        });
-    }
-    document.querySelectorAll('.shot-card').forEach(c => c.classList.remove('active-playing'));
-    const matchCard = Array.from(document.querySelectorAll('.shot-card')).find(c => c.innerText.includes(label));
-    if (matchCard) matchCard.classList.add('active-playing');
+if (player && player.tagName !== 'IFRAME') {
+    player.onerror = function() {
+        candidateIdx++;
+        if (candidateIdx < candidateUrls.length) loadVideoCandidate();
+    };
+    loadVideoCandidate();
+}
 
+function playShot(startTime, endTime, label) {
+    var stack = document.querySelector('.carousel-stack');
+    if (stack) {
+        var match = label ? label.match(/SHOT\s+(\d+)/i) : null;
+        var slideIndex = 0;
+        if (match) {
+            slideIndex = parseInt(match[1]) - 1;
+        } else if (startTime > 0) {
+            slideIndex = Math.floor(startTime);
+        }
+        var target = stack.querySelectorAll('video, img')[slideIndex];
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            stack.querySelectorAll('video').forEach(function(v) { v.pause(); });
+            if (target.tagName === 'VIDEO') { target.currentTime = 0; target.play().catch(function(){}); }
+        }
+        var tag = document.getElementById('shotStatusTag');
+        if (tag) tag.innerText = (label || ('Slide ' + (slideIndex+1))) + ' (Đang xem)';
+        return;
+    }
+    if (!player) return;
+    currentEndTime = (typeof endTime === 'number') ? endTime : null;
+    var tag = document.getElementById('shotStatusTag');
+    if (tag) {
+        var endTxt = currentEndTime ? ' - ' + currentEndTime.toFixed(2) + 's' : '';
+        tag.innerText = (label || 'Phân cảnh') + ': [' + startTime.toFixed(2) + 's' + endTxt + ']';
+    }
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'seekTo',
+            args: [startTime, true]
+        }), '*');
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'playVideo',
+            args: []
+        }), '*');
+    } else {
+        player.currentTime = startTime;
+        var p = player.play();
+        if (p !== undefined) {
+            p.catch(function() {
+                player.muted = true;
+                player.play().catch(function() {});
+            });
+        }
+    }
+    document.querySelectorAll('.shot-card').forEach(function(c) { c.classList.remove('active-playing'); });
+    var cards = document.querySelectorAll('.shot-card');
+    for (var i = 0; i < cards.length; i++) {
+        if (cards[i].innerText.indexOf(label) !== -1) {
+            cards[i].classList.add('active-playing');
+            break;
+        }
+    }
     if (window.innerWidth < 1024) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 }
 
 function setSpeed(speed, btn) {
-    player.playbackRate = speed;
-    document.querySelectorAll('.speed-buttons-row .ctrl-btn').forEach(b => b.classList.remove('active'));
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: 'setPlaybackRate',
+            args: [speed]
+        }), '*');
+    } else {
+        player.playbackRate = speed;
+    }
+    document.querySelectorAll('.speed-row .ctrl-btn').forEach(function(b) { b.classList.remove('active'); });
     if (btn) btn.classList.add('active');
 }
 
 function stepFrame(frames) {
-    player.pause();
-    player.currentTime += (frames * (1/30));
+    if (!player) return;
+    if (player.tagName !== 'IFRAME') {
+        player.pause();
+        player.currentTime += (frames * (1/30));
+    }
 }
 
 function toggleMute(btn) {
-    player.muted = !player.muted;
-    if (btn) btn.innerText = player.muted ? '🔇 Tắt Tiếng' : '🔊 Tiếng';
+    if (!player) return;
+    if (player.tagName === 'IFRAME') {
+        window.isYtMuted = !window.isYtMuted;
+        player.contentWindow.postMessage(JSON.stringify({
+            event: 'command',
+            func: window.isYtMuted ? 'mute' : 'unMute',
+            args: []
+        }), '*');
+        if (btn) btn.innerText = window.isYtMuted ? 'Tắt tiếng' : 'Âm thanh';
+    } else {
+        player.muted = !player.muted;
+        if (btn) btn.innerText = player.muted ? 'Tắt tiếng' : 'Âm thanh';
+    }
 }
 
+function togglePlayerFullscreen() {
+    var v = document.getElementById('mainPlayer');
+    if (!v) return;
+    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+        if (v.requestFullscreen) v.requestFullscreen().catch(function(){});
+        else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+        else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+    } else {
+        if (document.exitFullscreen) document.exitFullscreen().catch(function(){});
+        else if (document.webkitExitFullscreen) document.webkitExitFullscreen();
+    }
+}
+
+document.addEventListener('keydown', function(e) {
+    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        togglePlayerFullscreen();
+    }
+    if (e.key === 'Escape') {
+        closeLightbox();
+        toggleDrawer(false);
+    }
+    if (e.key === ' ' && document.activeElement.tagName !== 'INPUT') {
+        e.preventDefault();
+        if (player) player.paused ? player.play() : player.pause();
+    }
+});
+
 function switchView(view) {
-    const sb = document.getElementById('storyboardView');
-    const grid = document.getElementById('gridView');
-    const tabDetail = document.getElementById('tabDetailBtn');
-    const tabGrid = document.getElementById('tabGridBtn');
+    var sb = document.getElementById('storyboardView');
+    var grid = document.getElementById('gridView');
+    var tabD = document.getElementById('tabDetailBtn');
+    var tabG = document.getElementById('tabGridBtn');
     if (view === 'grid') {
         sb.style.display = 'none';
         grid.style.display = 'grid';
-        tabDetail.classList.remove('active');
-        tabGrid.classList.add('active');
+        tabD.classList.remove('active');
+        tabG.classList.add('active');
     } else {
         sb.style.display = 'flex';
         grid.style.display = 'none';
-        tabDetail.classList.add('active');
-        tabGrid.classList.remove('active');
+        tabD.classList.add('active');
+        tabG.classList.remove('active');
     }
 }
 
 function toggleDrawer(open) {
-    const drawer = document.getElementById('drawerBackdrop');
-    if (open) drawer.classList.add('open');
-    else drawer.classList.remove('open');
+    var d = document.getElementById('drawerBackdrop');
+    if (open) d.classList.add('open');
+    else d.classList.remove('open');
 }
 
 function jumpToShot(shotNum, st, et, label) {
     toggleDrawer(false);
     switchView('detail');
     playShot(st, et, label);
-    const targetCard = document.getElementById('shot-card-' + shotNum);
-    if (targetCard) {
-        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }
+    var card = document.getElementById('shot-card-' + shotNum);
+    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
 function openLightbox(src, caption) {
-    const modal = document.getElementById('lightboxModal');
-    const img = document.getElementById('lightboxImg');
-    const cap = document.getElementById('lightboxCaption');
-    img.src = src;
-    cap.innerText = caption || '';
+    var modal = document.getElementById('lightboxModal');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxCaption').innerText = caption || '';
     modal.style.display = 'flex';
 }
 
@@ -2531,61 +2109,227 @@ function closeLightbox() {
     document.getElementById('lightboxModal').style.display = 'none';
 }
 
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        closeLightbox();
-        toggleDrawer(false);
-    } else if (e.key === ' ') {
-        if (document.activeElement.tagName !== 'INPUT') {
-            e.preventDefault();
-            player.paused ? player.play() : player.pause();
-        }
-    }
-});
-
-function handleCreatorClick(e, handle, name) {
-    if (e) e.preventDefault();
-    try {
-        if (window.parent && window.parent !== window) {
-            window.parent.postMessage({ type: 'FILTER_CREATOR', handle: handle, name: name }, '*');
-            if (typeof window.parent.filterByCreator === 'function') {
-                window.parent.closeModal('reportEmbedModal');
-                window.parent.filterByCreator(handle, name);
-                return;
-            }
-        }
-    } catch (err) {}
-    window.location.href = '../index.html?creator=' + encodeURIComponent(handle);
-}
-
-
-function togglePlayerFullscreen() {
-    const v = document.getElementById('mainPlayer');
-    if (!v) return;
-    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-        if (v.requestFullscreen) {
-            v.requestFullscreen().catch(() => {});
-        } else if (v.webkitRequestFullscreen) {
-            v.webkitRequestFullscreen();
-        } else if (v.webkitEnterFullscreen) {
-            v.webkitEnterFullscreen();
-        }
+function togglePromptAccordion(headerEl) {
+    var card = headerEl.closest('.remake-prompt-card');
+    if (!card) return;
+    var body = card.querySelector('.prompt-accordion-body');
+    var icon = card.querySelector('.toggle-icon');
+    var label = card.querySelector('.toggle-label');
+    if (!body) return;
+    var collapsed = (body.style.display === 'none' || getComputedStyle(body).display === 'none');
+    if (collapsed) {
+        body.style.display = 'block';
+        if (icon) icon.textContent = '▲';
+        if (label) label.textContent = 'Thu gọn';
     } else {
-        if (document.exitFullscreen) {
-            document.exitFullscreen().catch(() => {});
-        } else if (document.webkitExitFullscreen) {
-            document.webkitExitFullscreen();
-        }
+        body.style.display = 'none';
+        if (icon) icon.textContent = '▼';
+        if (label) label.textContent = 'Mở xem';
     }
 }
 
-document.addEventListener('keydown', (e) => {
-    if ((e.key === 'f' || e.key === 'F') && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
-        e.preventDefault();
-        togglePlayerFullscreen();
-    }
-});
+function copyMegaPrompt(e, btn) {
+    if (e && e.stopPropagation) e.stopPropagation();
+    var card = btn.closest('.remake-prompt-card');
+    var codeEl = card ? card.querySelector('.prompt-code-content') : document.getElementById('megaPromptText');
+    if (!codeEl) return;
+    var text = codeEl.innerText || codeEl.textContent;
+    navigator.clipboard.writeText(text).then(function() {
+        var orig = btn.innerHTML;
+        btn.innerHTML = '✅ Đã chép!';
+        btn.style.background = '#16a34a';
+        btn.style.color = '#fff';
+        setTimeout(function() {
+            btn.innerHTML = orig;
+            btn.style.background = '';
+            btn.style.color = '';
+        }, 2000);
+    }).catch(function() {
+        alert('Lỗi sao chép, bạn bôi đen văn bản để copy nhé!');
+    });
+}
 
+// === EDIT INLINE FEATURE ===
+var ENTRY_KEY = 'People_of_Porto - @jeromememe';
+var CLASSIFICATION_DATA = {};
+
+function openEditModal() {
+    var d = CLASSIFICATION_DATA || {};
+    var indSel = document.getElementById('editIndustry');
+    var indCust = document.getElementById('editIndustryCustom');
+    var stySel = document.getElementById('editStyle');
+    var styCust = document.getElementById('editStyleCustom');
+    
+    // Pre-fill industry (support both id and name)
+    var indId = (d.industry && d.industry.id) ? d.industry.id : '';
+    var indName = (d.industry && d.industry.name) ? d.industry.name : '';
+    indSel.value = '';
+    indCust.value = '';
+    for (var i = 0; i < indSel.options.length; i++) {
+        if (indSel.options[i].value === indId || indSel.options[i].value === indName) {
+            indSel.value = indSel.options[i].value;
+            break;
+        }
+    }
+    if (!indSel.value && indName) indCust.value = indName;
+
+    // Pre-fill style (support both id and name)
+    var styId = (d.shooting_style && d.shooting_style.id) ? d.shooting_style.id : '';
+    var styName = (d.shooting_style && d.shooting_style.name) ? d.shooting_style.name : '';
+    stySel.value = '';
+    styCust.value = '';
+    for (var j = 0; j < stySel.options.length; j++) {
+        if (stySel.options[j].value === styId || stySel.options[j].value === styName) {
+            stySel.value = stySel.options[j].value;
+            break;
+        }
+    }
+    if (!stySel.value && styName) styCust.value = styName;
+
+    // Pre-fill tags
+    document.getElementById('editTags').value = (d.tags || d.tech_tags || []).join(', ');
+    document.getElementById('editPurpose').value = d.purpose || d.logic_explanation || '';
+    document.getElementById('editTakeaway').value = d.quick_takeaway || '';
+    var pwEl = document.getElementById('editPassword');
+    if (pwEl && !pwEl.value) pwEl.value = '0070';
+
+    // Reset status
+    var st = document.getElementById('editStatus');
+    st.className = 'edit-status';
+    st.style.display = 'none';
+    document.getElementById('editSaveBtn').disabled = false;
+    document.getElementById('editSaveBtn').textContent = 'Lưu thay đổi';
+
+    document.getElementById('editModalBackdrop').classList.add('open');
+}
+
+function closeEditModal() {
+    document.getElementById('editModalBackdrop').classList.remove('open');
+}
+
+function saveEdit() {
+    var btn = document.getElementById('editSaveBtn');
+    var st = document.getElementById('editStatus');
+    var pw = document.getElementById('editPassword').value || '0070';
+
+    // Collect values
+    var indSel = document.getElementById('editIndustry').value;
+    var indCust = document.getElementById('editIndustryCustom').value.trim();
+    var industry = indCust || indSel || null;
+
+    var stySel = document.getElementById('editStyle').value;
+    var styCust = document.getElementById('editStyleCustom').value.trim();
+    var style = styCust || stySel || null;
+
+    var tags = document.getElementById('editTags').value;
+    var purpose = document.getElementById('editPurpose').value;
+    var takeaway = document.getElementById('editTakeaway').value;
+
+    var updates = {};
+    if (industry) updates.industry = industry;
+    if (style) updates.shooting_style = style;
+    if (tags) updates.tech_tags = tags;
+    if (purpose) updates.purpose = purpose;
+    if (takeaway) updates.quick_takeaway = takeaway;
+
+    if (Object.keys(updates).length === 0) {
+        st.className = 'edit-status error';
+        st.textContent = 'Chưa có thay đổi nào.';
+        st.style.display = 'block';
+        return;
+    }
+
+    btn.disabled = true;
+    btn.textContent = 'Đang lưu...';
+    st.style.display = 'none';
+
+    var payload = JSON.stringify({
+        password: pw,
+        entryKey: ENTRY_KEY,
+        updates: updates
+    });
+
+    function handleSuccess(data) {
+        st.className = 'edit-status success';
+        st.textContent = '✅ Đã lưu & Tự học thành công! (' + (data.commit || 'synced') + ')';
+        st.style.display = 'block';
+        btn.textContent = '✅ Đã lưu';
+
+        if (data.updatedEntry) {
+            CLASSIFICATION_DATA = data.updatedEntry;
+        }
+        var badges = document.querySelector('.header-badges');
+        if (badges && (updates.industry || updates.shooting_style)) {
+            var html = '';
+            var ind = (CLASSIFICATION_DATA.industry && CLASSIFICATION_DATA.industry.name) || updates.industry || '';
+            var sty = (CLASSIFICATION_DATA.shooting_style && CLASSIFICATION_DATA.shooting_style.name) || updates.shooting_style || '';
+            if (ind) html += '<span class="badge">' + ind + '</span> ';
+            if (sty) html += '<span class="badge badge-alt">' + sty + '</span>';
+            badges.innerHTML = html;
+        }
+    }
+
+    fetch('/api/edit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: payload
+    })
+    .then(function(res) { return res.json().then(function(data) { return { ok: res.ok, data: data }; }); })
+    .then(function(result) {
+        if (result.ok && result.data.success) {
+            handleSuccess(result.data);
+        } else {
+            return fetch('https://file.fedu.vn/api/edit-classification', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: payload
+            })
+            .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+            .then(function(res2) {
+                if (res2.ok && res2.data.success) {
+                    handleSuccess(res2.data);
+                } else {
+                    st.className = 'edit-status error';
+                    st.textContent = '❌ ' + ((res2.data && res2.data.error) || (result.data && result.data.error) || 'Lỗi không xác định');
+                    st.style.display = 'block';
+                    btn.disabled = false;
+                    btn.textContent = 'Lưu thay đổi';
+                }
+            });
+        }
+    })
+    .catch(function(err) {
+        fetch('https://file.fedu.vn/api/edit-classification', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: payload
+        })
+        .then(function(r2) { return r2.json().then(function(d2) { return { ok: r2.ok, data: d2 }; }); })
+        .then(function(res2) {
+            if (res2.ok && res2.data.success) {
+                handleSuccess(res2.data);
+            } else {
+                st.className = 'edit-status error';
+                st.textContent = '❌ Lỗi mạng: ' + err.message;
+                st.style.display = 'block';
+                btn.disabled = false;
+                btn.textContent = 'Lưu thay đổi';
+            }
+        })
+        .catch(function(err2) {
+            st.className = 'edit-status error';
+            st.textContent = '❌ Lỗi mạng: ' + err2.message;
+            st.style.display = 'block';
+            btn.disabled = false;
+            btn.textContent = 'Lưu thay đổi';
+        });
+    });
+}
+
+// Đóng modal khi bấm Escape
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeEditModal();
+});
 </script>
 </body>
 </html>
